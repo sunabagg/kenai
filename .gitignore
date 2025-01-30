@@ -1,2 +1,11 @@
 CMakeLists.txt.user
 .vscode/settings.json
+cmake-build-debug/*
+cmake-build-debug-visual-studio/*
+cmake-build-default/*
+cmake-build-minsizerel/*
+cmake-build-release/*
+cmake-build-relwithdebinfo/*
+out/*
+.vs/*
+vcpkg_installed/*
