@@ -18,10 +18,10 @@ set ( LUA_INIT "LUA_INIT" CACHE STRING "Environment variable for initial script.
 option ( LUA_ANSI "Use only ansi features." OFF )
 option ( LUA_USE_RELATIVE_LOADLIB "Use modified loadlib.c with support for relative paths on posix systems." 
   ON )
-set ( LUA_IDSIZE 60 CACHE NUMBER "gives the maximum size for the description of the source." )
+set ( LUA_IDSIZE 60 CACHE STRING "gives the maximum size for the description of the source." )
 set ( LUA_PROMPT "> " CACHE STRING "Is the default prompt used by stand-alone Lua." )
 set ( LUA_PROMPT2 ">> " CACHE STRING "Is the default continuation prompt used by stand-alone Lua." )
-set ( LUA_MAXINPUT 512 CACHE NUMBER "Is the maximum length for an input line in the stand-alone interpreter." )
+set ( LUA_MAXINPUT 512 CACHE STRING "Is the maximum length for an input line in the stand-alone interpreter." )
 
 #2DO: LUAI_* and LUAL_* settings, for now defaults are used.
 set ( LUA_DIRSEP "/" )
@@ -68,15 +68,15 @@ endif ( )
 
 ## SETUP
 # Optional libraries
-find_package ( Readline )
-if ( READLINE_FOUND )
-  option ( LUA_USE_READLINE "Use readline in the Lua CLI." ON )
-endif ( )
+#find_package ( Readline )
+#if ( READLINE_FOUND )
+#  option ( LUA_USE_READLINE "Use readline in the Lua CLI." ON )
+#endif ( )
 
-find_package ( Curses )
-if ( CURSES_FOUND )
-  option ( LUA_USE_CURSES "Use curses in the Lua CLI." ON )
-endif ( )
+#find_package ( Curses )
+#if ( CURSES_FOUND )
+#  option ( LUA_USE_CURSES "Use curses in the Lua CLI." ON )
+#endif ( )
 
 # Setup needed variables and libraries
 if ( LUA_USE_POSIX )
@@ -105,17 +105,17 @@ if ( LUA_WIN )
   endif ( )
 endif ( )
 
-if ( LUA_USE_READLINE )
-  # Add readline
-  include_directories ( ${READLINE_INCLUDE_DIR} )
-  list ( APPEND LIBS ${READLINE_LIBRARY} )
-endif ( )
-
-if ( LUA_USE_CURSES )
-  # Add curses
-  include_directories ( ${CURSES_INCLUDE_DIR} )
-  list ( APPEND LIBS ${CURSES_LIBRARY} )
-endif ( )
+#if ( LUA_USE_READLINE )
+#  # Add readline
+#  include_directories ( ${READLINE_INCLUDE_DIR} )
+#  list ( APPEND LIBS ${READLINE_LIBRARY} )
+#endif ( )
+#
+#if ( LUA_USE_CURSES )
+#  # Add curses
+#  include_directories ( ${CURSES_INCLUDE_DIR} )
+#  list ( APPEND LIBS ${CURSES_LIBRARY} )
+#endif ( )
 
 ## SOURCES
 # Generate luaconf.h
