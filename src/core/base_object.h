@@ -5,11 +5,11 @@
 #ifndef NH_OBJECT_H
 #define NH_OBJECT_H
 
-#include <lua.h>
+//#include <lua.h>
 
 namespace newhaven_core
 {
-    static void generateBaseObjectUsertype(lua_State* L) {}
+    //static void generateBaseObjectUsertype(lua_State* L) {}
 
     class BaseObject {
     };
