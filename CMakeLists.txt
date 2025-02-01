@@ -199,13 +199,27 @@ else()
     target_include_directories(liblua_static PRIVATE ${CMAKE_SOURCE_DIR}/extern/lua-5.1.5/include/lua51_prefix.h)
 endif ()
 
-option(USE_LUAJIT "Use LuaJIT" ONsol2)
+option(USE_LUAJIT "Use LuaJIT" ON)
 
-# Include the PkgConfig module
-include(FindPkgConfig)
+if (USE_LUAJIT)
+    # Include the PkgConfig module
+    include(FindPkgConfig)
 
-# Check for LuaJit using pkg-config
-pkg_check_modules(LUAJIT REQUIRED luajit)
+    # Check for LuaJit using pkg-config
+    pkg_check_modules(LUAJIT REQUIRED luajit)
+
+    if (LUAJIT_FOUND)
+        # Include directories for LuaJit
+        include_directories(${LUAJIT_INCLUDE_DIRS})
+    else()
+        # Fallback: Manually specify the LuaJit paths
+        if (MSVC)
+		    set(LUAJIT_INCLUDE_DIRS "C:\Users\mintkat\luajit\src")
+            set(LUAJIT_LIBRARIES "C:\Users\mintkat\luajit\src\lua51.dll")
+        endif()
+        include_directories(${LUAJIT_INCLUDE_DIRS})
+    endif()
+endif()
 
 # For anyone on MSVC having issues with 'lua51.lib' copy it to the build directory,
 # because the linker can't find it in the vcpkg_installed directory.
@@ -240,8 +254,8 @@ else()
     target_link_libraries(${PROJECT_NAME}
             PRIVATE
             godot-cpp
-            sol2
             liblua_static
+            sol2
             #Luau.Compiler Luau.VM
     )
 endif()

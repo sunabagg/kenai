@@ -6,7 +6,6 @@
 #define LUA_BIND_H
 
 #include <godot_cpp/classes/object.hpp>
-#include "lua.h"
 #include <sol/sol.hpp>
 
 using namespace godot;
