@@ -6,6 +6,7 @@
 #define APP_H
 
 #include <godot_cpp/classes/node.hpp>
+#include <sol/state.hpp>
 
 using namespace godot;
 
@@ -15,6 +16,8 @@ namespace newhaven
         GDCLASS(App, Node)
     protected:
         static void _bind_methods();
+
+        sol::state global_state;
     public:
         App();
         ~App();

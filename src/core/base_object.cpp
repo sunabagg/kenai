@@ -5,3 +5,8 @@
 #include "base_object.h"
 
 using namespace newhaven_core;
+
+void BaseObject::free()
+{
+    delete this;
+}

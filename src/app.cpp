@@ -7,6 +7,8 @@
 #include <godot_cpp/variant/utility_functions.hpp>
 #include <godot_cpp/classes/engine.hpp>
 
+#include"core/lua_bind.h"
+
 using namespace newhaven;
 using namespace godot;
 
@@ -27,6 +29,9 @@ void App::_ready() {
     }
 
     UtilityFunctions::print("Hello, World!");
+
+    newhaven_core::bind_all_godot_classes( global_state );
+    newhaven_core::initialize_lua( global_state );
 }
 
 void App::start() {

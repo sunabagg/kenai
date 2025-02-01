@@ -39,7 +39,10 @@ add_library( ${PROJECT_NAME} SHARED
         src/core/base_object.cpp
         src/core/base_object.h
         src/app.cpp
-        src/app.h)
+        src/app.h
+        src/core/scene_system.h
+        src/core/lua_bind.h
+        src/core/lua_bind.cpp)
 
 target_compile_features( ${PROJECT_NAME}
     PRIVATE
@@ -134,30 +137,95 @@ endif()
 set( GODOT_CPP_SYSTEM_HEADERS ON CACHE BOOL "" FORCE )
 
 add_subdirectory( extern/godot-cpp )
+if ( NOT MSVC )
+    # Add this before the add_subdirectory( extern/quickjs ) line
+    set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wno-error=pedantic -Wno-error=cast-function-type")
+
+    # Add this line to disable treating warnings as errors
+    set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wno-error=duplicated-branches")
+    set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wno-error=shadow")
+    set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wno-dev")
+    set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wno-error=deprecated-declarations")
+    set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wno-error=unused-function")
+    set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wno-error=missing-field-initializers")
+    set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wno-error=return-type")
+    set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wno-error=address")
+    set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -g")
+else ()
+    # Add this line to disable treating warnings as errors
+    set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} /wd4244")
+
+    set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} /wd4005")
+
+    set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} /wd4002")
+
+    set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} /wd4458")
+
+    set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} /wd4700")
+
+    set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} /wd4505")
+endif ()
 
 set_target_properties( godot-cpp
     PROPERTIES
         CXX_VISIBILITY_PRESET hidden    # visibility needs to be the same as the main library
 )
 
-option(LUAU_BUILD_CLI "" OFF)
-option(LUAU_BUILD_TESTS "" OFF)
-option(LUAU_STATIC_CRT "" ON)
-add_subdirectory( extern/luau )
+# Set the CMAKE_PREFIX_PATH to include the Vcpkg installed directory
+set(CMAKE_PREFIX_PATH "${CMAKE_PREFIX_PATH};${CMAKE_SOURCE_DIR}/vcpkg_installed/x64-windows")
 
-target_include_directories( ${PROJECT_NAME}
-    PRIVATE
-        "extern/luau/VM/include",
-        "extern/luau/Analysis/include",
-        "extern/luau/Ast/include",
-        "extern/luau/CodeGen/include",
-        "extern/luau/Common/include",
-        "extern/luau/Compiler/include",
-        "extern/luau/Config/include",
-        "extern/luau/EqSat/include"
-        "extern/luau/Ast/include")
+#option(LUAU_BUILD_CLI "" OFF)
+#option(LUAU_BUILD_TESTS "" OFF)
+#option(LUAU_STATIC_CRT "" ON)
+#add_subdirectory( extern/luau )
+
+#target_include_directories( ${PROJECT_NAME}
+#    PRIVATE
+#        "extern/luau/VM/include",
+#        "extern/luau/Analysis/include",
+#        "extern/luau/Ast/include",
+#        "extern/luau/CodeGen/include",
+#        "extern/luau/Common/include",
+#        "extern/luau/Compiler/include",
+#        "extern/luau/Config/include",
+#        "extern/luau/EqSat/include"
+#        "extern/luau/Ast/include")
+
+add_subdirectory( extern/lua-5.1.5 )
+
+if ( NOT MSVC)
+    target_compile_options(liblua_static PRIVATE -include ${CMAKE_SOURCE_DIR}/extern/lua-5.1.5/include/lua51_prefix.h)
+else()
+    target_include_directories(liblua_static PRIVATE ${CMAKE_SOURCE_DIR}/extern/lua-5.1.5/include)
+endif ()
+
+option(USE_LUAJIT "Use LuaJIT" ON)
+
+# Include the PkgConfig module
+include(FindPkgConfig)
+
+# Check for LuaJit using pkg-config
+pkg_check_modules(LUAJIT REQUIRED luajit)
+
+# For anyone on MSVC having issues with 'lua51.lib' copy it to the build directory,
+# because the linker can't find it in the vcpkg_installed directory.
+
+if (USE_LUAJIT)
+    # Include directories for LuaJit
+    include_directories(${LUAJIT_INCLUDE_DIRS})
+else()
+    include_directories ( ${CMAKE_SOURCE_DIR}/extern/lua-5.1.5/include )
+    include_directories ( ${CMAKE_SOURCE_DIR}/extern/lua-5.1.5/src )
+endif()
+
+
+# Find the sol2 package
+find_package(sol2 CONFIG REQUIRED)
 
 target_link_libraries( ${PROJECT_NAME}
     PRIVATE
         godot-cpp
+        ${LUAJIT_LIBRARIES}
+        sol2
+        #liblua_static
 )
