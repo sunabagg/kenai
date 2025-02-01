@@ -35,7 +35,9 @@ project( Newhaven
 )
 
 # Create our library
-add_library( ${PROJECT_NAME} SHARED )
+add_library( ${PROJECT_NAME} SHARED
+        src/core/base_object.cpp
+        src/core/base_object.h)
 
 target_compile_features( ${PROJECT_NAME}
     PRIVATE
@@ -135,6 +137,23 @@ set_target_properties( godot-cpp
     PROPERTIES
         CXX_VISIBILITY_PRESET hidden    # visibility needs to be the same as the main library
 )
+
+option(LUAU_BUILD_CLI "" OFF)
+option(LUAU_BUILD_TESTS "" OFF)
+option(LUAU_STATIC_CRT "" ON)
+add_subdirectory( extern/luau )
+
+target_include_directories( ${PROJECT_NAME}
+    PRIVATE
+        "extern/luau/VM/include",
+        "extern/luau/Analysis/include",
+        "extern/luau/Ast/include",
+        "extern/luau/CodeGen/include",
+        "extern/luau/Common/include",
+        "extern/luau/Compiler/include",
+        "extern/luau/Config/include",
+        "extern/luau/EqSat/include"
+        "extern/luau/Ast/include")
 
 target_link_libraries( ${PROJECT_NAME}
     PRIVATE
