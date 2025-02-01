@@ -37,7 +37,9 @@ project( Newhaven
 # Create our library
 add_library( ${PROJECT_NAME} SHARED
         src/core/base_object.cpp
-        src/core/base_object.h)
+        src/core/base_object.h
+        src/app.cpp
+        src/app.h)
 
 target_compile_features( ${PROJECT_NAME}
     PRIVATE

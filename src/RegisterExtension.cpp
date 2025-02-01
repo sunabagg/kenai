@@ -6,7 +6,8 @@
 #include "godot_cpp/core/defs.hpp"
 #include "godot_cpp/godot.hpp"
 
-#include "godot_cpp/variant/utility_functions.hpp"
+
+#include "app.h"
 
 /// @file
 /// Register our classes with Godot.
@@ -25,7 +26,7 @@ namespace
             return;
         }
 
-        godot::UtilityFunctions::print("Hello, World!");
+        godot::ClassDB::register_class<newhaven::App>();
     }
 
     /// @brief Called by Godot to let us do any cleanup.

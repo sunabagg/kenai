@@ -1,6 +1,8 @@
 target_sources( ${PROJECT_NAME}
     PRIVATE
         RegisterExtension.cpp
+        app.h
+        app.cpp
 )
 
 add_subdirectory( core )
