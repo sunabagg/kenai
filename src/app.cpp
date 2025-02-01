@@ -26,9 +26,8 @@ void App::_ready() {
         return;
     }
 
-    UtilityFunctions::print("App ready");
+    UtilityFunctions::print("Hello, World!");
 }
 
 void App::start() {
-    UtilityFunctions::print("Hello, World!");
 }
