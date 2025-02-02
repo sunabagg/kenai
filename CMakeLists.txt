@@ -165,6 +165,8 @@ else ()
     set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} /wd4700")
 
     set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} /wd4505")
+
+    set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} /wd4715")
 endif ()
 
 set_target_properties( godot-cpp

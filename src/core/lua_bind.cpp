@@ -18,16 +18,110 @@ void newhaven_core::bind_class_to_lua(sol::state& lua, const String& class_name)
         godot::UtilityFunctions::print("Class not found: ", class_name);
         return;
     }
-    // Create a new Lua usertype
-    sol::usertype<godot::Object> ut = lua.new_usertype<godot::Object>(
-        class_name.utf8().get_data(),
-        sol::constructors<>(),
-        "new", sol::factories([class_name]() { 
-            return ClassDB::instantiate( class_name ); 
-            }
-        )
-    );
 
+    auto indexFunc = [class_name, &lua](Object *obj, const std::string key) {
+        String key_string = String(key.c_str()); //String(maybe_string_key.value().c_str());
+        if (key_string.begins_with("emit_")) {
+            String signal_name = key_string.substr(5);
+            auto emit_func = [obj, signal_name](sol::variadic_args va) {
+                Array args;
+                for (const auto& arg : va) {
+                    args.append(arg);
+                }    
+                obj->emit_signal(signal_name, args);
+            };
+            return sol::make_object(lua, emit_func);
+        }
+        else if (key_string.begins_with("connect_")) {
+            String signal_name = key_string.substr(7);
+            auto connect_func = [obj, signal_name](sol::stack_object func) {
+                auto function = func.as<sol::function>();
+                Callable callable = newhaven_core::create_callable_from_lua_function(function);
+                obj->connect(signal_name, callable);
+                return callable;
+            };
+            return sol::make_object(lua, connect_func);
+        }
+        else if (key_string.begins_with("disconnect_")) {
+            String signal_name = key_string.substr(10);
+            auto disconnect_func = [obj, signal_name](sol::stack_object func) {
+                Callable callable = func.as<Callable>();
+                obj->disconnect(signal_name, callable);
+            };
+            return sol::make_object(lua, disconnect_func);
+        }
+        
+        if (ClassDB::class_has_integer_constant(class_name, key_string)) {
+            return sol::make_object(lua, ClassDB::class_get_integer_constant(class_name, key_string));
+        }
+
+        if (ClassDB::class_has_method(class_name, key_string)) {
+            auto func = [obj, key_string](sol::variadic_args va) {
+                Array args;
+                for (const auto& arg : va) {
+                    args.append(arg);
+                }
+                return obj->callv(key_string, args);
+            };
+
+            return sol::make_object(lua, func);
+        }
+        
+        auto value = obj->get(key_string);
+        if (value.get_type() != Variant::NIL) {
+            return sol::make_object(lua, value);
+        }
+
+        return sol::make_object(lua, sol::nil_t());
+    };
+
+    auto new_indexFunc = [class_name](Object *obj, sol::stack_object key, sol::stack_object value, sol::this_state L) {
+        auto maybe_string_key
+            = key.as<sol::optional<std::string>>();
+        if (maybe_string_key) {
+            String key_string = String(maybe_string_key.value().c_str());
+            auto old_value = obj->get(key_string);
+            if (old_value.get_type() != Variant::NIL) {
+                Variant new_value;
+                if (value.is<std::string>()) {
+                    String str = String(value.as<std::string>().c_str());
+                    new_value = str;
+                }
+                else if (value.is<int>()) {
+                    new_value = int(value.as<int>());
+                }
+                else if (value.is<float>()) {
+                    new_value = float(value.as<float>());
+                }
+                else if (value.is<bool>()) {
+                    new_value = bool(value.as<bool>());
+                }
+                else if (value.is<double>()) {
+                    new_value = double(value.as<double>());
+                }
+                else if (value.is<godot::Object*>()) {
+                    new_value = value.as<godot::Object*>();
+                }
+                obj->set(key_string, new_value);
+                return sol::make_object(L, new_value);
+            }
+        }
+    };
+    // Create a new Lua usertype
+    sol::usertype<godot::Object> ut; ut = lua.new_usertype<godot::Object>(
+        class_name.utf8().get_data(),
+        sol::factories([class_name, &lua, ut, indexFunc, new_indexFunc]() { 
+            auto obj = ClassDB::instantiate( class_name ); 
+            RefCounted *ref_obj = Object::cast_to<RefCounted>(obj);
+            if (ref_obj) {
+                ref_obj->reference();
+            }
+            return obj;
+        }),
+        sol::meta_function::index, sol::factories(indexFunc),
+        sol::meta_function::new_index, sol::factories(new_indexFunc)
+    );
+    /*
     PackedStringArray enum_list = ClassDB::class_get_enum_list(class_name);
     for (const auto& enum_name : enum_list) {
         PackedStringArray enum_constants = ClassDB::class_get_enum_constants(class_name, enum_name);
@@ -84,7 +178,7 @@ void newhaven_core::bind_class_to_lua(sol::state& lua, const String& class_name)
         ut.set(method_name.utf8().get_data(), func);
         /*if (!(ut.get)) {
             godot::UtilityFunctions::print("Failed to bind method: ", method_name);
-        }*/
+        }
     }
     
     TypedArray<Dictionary> signal_list = ClassDB::class_get_signal_list(class_name);
@@ -123,7 +217,7 @@ void newhaven_core::bind_class_to_lua(sol::state& lua, const String& class_name)
         };
 
         ut.set(("disconnect_" + signal_name).utf8().get_data(), disconnect_func);
-    }
+    }*/
 }
 
 void newhaven_core::bind_all_godot_classes(sol::state& lua) {
@@ -145,6 +239,13 @@ void newhaven_core::initialize_lua(sol::state& lua) {
 
     lua.script(R"(
         myNode = Node.new()
+        if myNode == nil then
+            print("Node is nil")
+        else
+            print("Node is not nil")
+        end
+        --local str = myNode.toString()
+        --print(str)  -- Example usage
     )");
 
     lua.script(R"(
@@ -198,8 +299,18 @@ void newhaven_core::initialize_lua(sol::state& lua) {
             print("Node is nil")
         else
             print("Node is not nil")
+            print(myNode.__type.name)
+            if myNode.__index == nil then
+                print("Node.__index is nil")
+            else
+                print("Node.__index is not nil")
+            end
+            if myNode['name'] ~= nil then
+                local name = myNode['name']
+                print(name)  -- Example usage
+            else
+                print("Node does not have a name field")
+            end
         end
-        --local str = myNode.toString()
-        --print(str)  -- Example usage
     )");
 }

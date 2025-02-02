@@ -48,7 +48,7 @@ void App::_ready() {
     UtilityFunctions::print("Hello, World!");
 
     //newhaven_core::bind_all_godot_classes( global_state );
-    newhaven_core::initialize_lua( global_state );
+    //newhaven_core::initialize_lua( global_state );
 }
 
 void App::start() {
