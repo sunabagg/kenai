@@ -144,6 +144,10 @@ void newhaven_core::initialize_lua(sol::state& lua) {
     bind_all_godot_classes(lua);
 
     lua.script(R"(
+        myNode = Node.new()
+    )");
+
+    lua.script(R"(
         function printAllGlobals()
 	        local seen={}
 	        local function dump(t,i)
@@ -189,8 +193,13 @@ void newhaven_core::initialize_lua(sol::state& lua) {
         print("Hello from Lua!")
     )");
 
-    /*lua.script(R"(
-        local node = Node.new()
-        print(node:get_name())  -- Example usage
-    )");*/
+    lua.script(R"(
+        if myNode == nil then
+            print("Node is nil")
+        else
+            print("Node is not nil")
+        end
+        --local str = myNode.toString()
+        --print(str)  -- Example usage
+    )");
 }

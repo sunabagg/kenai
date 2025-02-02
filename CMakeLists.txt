@@ -43,7 +43,6 @@ add_library( ${PROJECT_NAME} SHARED
         src/core/scene_system.h
         src/core/lua_bind.h
         src/core/lua_bind.cpp
-        src/core/lambda_callable_wrapper.h
         src/core/lua_function_wrapper.h)
 
 target_compile_features( ${PROJECT_NAME}
