@@ -28,9 +28,26 @@ void App::_ready() {
         return;
     }
 
+    global_state.open_libraries( sol::lib::base, sol::lib::bit32, sol::lib::coroutine,
+                                     sol::lib::count, sol::lib::math, sol::lib::string,
+                                     sol::lib::table, sol::lib::utf8 );
+
+    global_state["print"] = [this]( sol::variadic_args args ) {
+        String msg;
+        for ( const auto &arg : args )
+        {
+            if ( arg.is<std::string>() )
+            {
+                std::string str = arg.as<std::string>();
+                msg += str.c_str();
+            }
+        }
+        godot::UtilityFunctions::print( msg );
+    };
+
     UtilityFunctions::print("Hello, World!");
 
-    newhaven_core::bind_all_godot_classes( global_state );
+    //newhaven_core::bind_all_godot_classes( global_state );
     newhaven_core::initialize_lua( global_state );
 }
 

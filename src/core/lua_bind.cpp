@@ -29,6 +29,7 @@ void newhaven_core::bind_class_to_lua(sol::state& lua, const String& class_name)
 
     // Iterate through methods and bind them
     for (const MethodInfo& method : method_list) {
+        godot::UtilityFunctions::print("Binding method: ", method.name);
         lua[class_name.utf8().get_data()][((String)method.name).utf8().get_data()] =
             [class_name, method](godot::Object* obj, sol::variadic_args va) {
                 Array args;
@@ -41,10 +42,10 @@ void newhaven_core::bind_class_to_lua(sol::state& lua, const String& class_name)
 }
 
 void newhaven_core::bind_all_godot_classes(sol::state& lua) {
-    List<StringName> all_classes;
-    ClassDB::get_class_list();
+    auto all_classes = ClassDB::get_class_list();
 
-    for (const StringName& class_name : all_classes) {
+    for (const String& class_name : all_classes) {
+        godot::UtilityFunctions::print(class_name);
         if (class_name == String("OS") || class_name == String("DisplayServer") ||
             class_name == String("RenderingDevice") || class_name == String("FileAccess")) {
             continue; // Exclude core engine classes
@@ -57,7 +58,51 @@ void newhaven_core::initialize_lua(sol::state& lua) {
     bind_all_godot_classes(lua);
 
     lua.script(R"(
+        function printAllGlobals()
+	        local seen={}
+	        local function dump(t,i)
+				if t == nil then
+                    --print("t is nil)
+					return
+				end
+		        seen[t]=true
+		        local s={}
+		        local n=0
+		        for k, v in pairs(t) do
+			        n=n+1
+                    if s[n] == nil then
+                        s[n] = ""
+                    end
+			        s[n]=tostring(k)
+		        end
+		        table.sort(s)
+		        for k,v in ipairs(s) do
+			        print(i .. v)
+			        v=t[v]
+			        if type(v)=="table" and not seen[v] then
+				        dump(v,i.."\t")
+			        end
+		        end
+	        end
+
+	        dump(_G,"")
+        end
+
+        if _G == nil then
+            print("Global table is nil")
+        else
+            print("Global table is not nil")
+        end
+
+        printAllGlobals()
+    )");
+
+    lua.script(R"(
+        print("Hello from Lua!")
+    )");
+
+    /*lua.script(R"(
         local node = Node.new()
         print(node:get_name())  -- Example usage
-    )");
+    )");*/
 }

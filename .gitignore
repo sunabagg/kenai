@@ -6,6 +6,7 @@ cmake-build-default/*
 cmake-build-minsizerel/*
 cmake-build-release/*
 cmake-build-relwithdebinfo/*
+Newhaven-build/*
 out/*
 .vs/*
 vcpkg_installed/*

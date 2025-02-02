@@ -8,10 +8,14 @@
             "name": "Windows Launch",
             "type": "cppvsdbg",
             "request": "launch",
-            "program": "${command:cmake.launchTargetPath}",
-            "args": [],
-            "cwd": "${command:cmake.buildDirectory}/bin",
-            "preLaunchTask": "CMake: build",
+            "program": "C:\\Users\\lucas\\Desktop\\Godot_v4.3-stable_win64.exe",
+            "args": [
+                "--path",
+                "${workspaceRoot}/out/build/x64-debug/Newhaven",
+                "--verbose"
+            ],
+            "cwd": "${workspaceFolder}",
+            //"preLaunchTask": "CMake: build",
             "internalConsoleOptions": "openOnSessionStart",
             "console": "internalConsole",
             "environment": [
@@ -26,8 +30,12 @@
             "name": "macOS/Linux Launch",
             "type": "lldb",
             "request": "launch",
-            "program": "${command:cmake.launchTargetPath}",
-            "args": [],
+            "program": "C:\\Users\\lucas\\Desktop\\Godot_v4.3-stable_win64.exe",
+            "args": [
+                "--path",
+                "${workspaceRoot}Newhaven-build/Newhaven",
+                "--verbose"
+            ],
             "cwd": "${command:cmake.buildDirectory}/bin",
             "visualizerFile": "${workspaceFolder}/.vscode/godot.natvis"
         }
