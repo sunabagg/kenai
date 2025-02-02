@@ -4,6 +4,7 @@ target_sources(${PROJECT_NAME} PRIVATE
         scene_system.h
         lua_bind.h
         lua_bind.cpp
+        lambda_callable_wrapper.h
 )
 
 target_include_directories( ${PROJECT_NAME}

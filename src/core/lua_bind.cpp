@@ -7,6 +7,8 @@
 #include <godot_cpp/variant/utility_functions.hpp>
 #include <godot_cpp/classes/json.hpp>
 
+#include "lua_function_wrapper.h"
+
 using namespace godot;
 using namespace newhaven_core;
 
@@ -25,6 +27,24 @@ void newhaven_core::bind_class_to_lua(sol::state& lua, const String& class_name)
             }
         )
     );
+
+    PackedStringArray enum_list = ClassDB::class_get_enum_list(class_name);
+    for (const auto& enum_name : enum_list) {
+        PackedStringArray enum_constants = ClassDB::class_get_enum_constants(class_name, enum_name);
+        UtilityFunctions::print(enum_constants);
+        for (const String enum_constant : enum_constants) {
+            int enum_value = ClassDB::class_get_integer_constant(class_name, enum_constant);
+            UtilityFunctions::print("Binding enum constant: ", enum_constant, " with value: ", enum_value);
+            auto get_func = [enum_value]( godot::Object *obj ) { return enum_value; };
+            auto set_func = []( godot::Object *obj, const Variant &value ) {};
+            ut.set( enum_constant.utf8().get_data(), sol::property( get_func, set_func ) );
+        }
+        //sol::table enum_table = lua.create_table();
+        //for (const auto& enum_value : enum_constants) {
+            //enum_table[enum_value] = enum_value;
+        //}
+        //ut[enum_name.utf8().get_data()] = enum_table;
+    }
 
     TypedArray<Dictionary> property_list = ClassDB::class_get_property_list(class_name);
     TypedArray<Dictionary>* property_list_ptr = &property_list;
@@ -67,23 +87,43 @@ void newhaven_core::bind_class_to_lua(sol::state& lua, const String& class_name)
         }*/
     }
     
+    TypedArray<Dictionary> signal_list = ClassDB::class_get_signal_list(class_name);
+    TypedArray<Dictionary>* signal_list_ptr = &signal_list;
 
-    // Iterate through methods and bind them
-    /*for (const auto& method : method_list) {
-        godot::UtilityFunctions::print("Binding method: ", method.name);
-        auto func = [class_name, method](godot::Object* obj, sol::variadic_args va) {
-                Array args;
-                for (const auto& arg : va) {
-                    args.append(arg);
-                }
-                return obj->call(method.name, args);
+    for (int i = 0; i < signal_list_ptr->size(); i++)
+    {
+        Dictionary signal = signal_list[i];
+        String signal_name = signal["name"];
+        godot::UtilityFunctions::print("Binding signal: ", signal_name);
+
+        auto emit_func = [class_name, signal](godot::Object* obj, sol::variadic_args va) {
+            Array args;
+            for (const auto& arg : va) {
+                args.append(arg);
+            }    
+            obj->emit_signal(signal["name"], args);
         };
-        lua[class_name.utf8().get_data()][((String)method.name).utf8().get_data()] = func;
 
-        if (!(lua[class_name.utf8().get_data()][((String)method.name).utf8().get_data()] == func)) {
-            godot::UtilityFunctions::print("Failed to bind method: ", method.name);
-        }
-    }*/
+        ut.set(("emit_" + signal_name).utf8().get_data(), emit_func);
+
+        auto connect_func = [class_name, signal](godot::Object* obj, sol::variadic_args va) {
+            auto function = va[0].as<sol::function>();
+            Callable callable = newhaven_core::create_callable_from_lua_function(function);
+            obj->connect(signal["name"], callable);
+            //newhaven_core::SignalDB::add_signal(obj, signal["name"], callable);
+            return callable;
+        };
+
+        ut.set(("connect_" + signal_name).utf8().get_data(), connect_func);
+
+        auto disconnect_func = [class_name, signal](godot::Object* obj, sol::variadic_args va) {
+            Callable callable = va[0].as<Callable>();
+            obj->disconnect(signal["name"], callable);
+            //newhaven_core::SignalDB::remove_signal(obj, signal["name"]);
+        };
+
+        ut.set(("disconnect_" + signal_name).utf8().get_data(), disconnect_func);
+    }
 }
 
 void newhaven_core::bind_all_godot_classes(sol::state& lua) {
