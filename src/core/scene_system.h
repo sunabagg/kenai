@@ -39,16 +39,6 @@ namespace newhaven_core
         virtual void onPhysicsUpdate(float delta) {}
     };
 
-    // Example Component (Transform)
-    class Transform : public Component {
-    public:
-        godot::Transform3D* transform;
-
-        void onInit() override {
-            transform = new godot::Transform3D();
-        }
-    };
-
     class Entity : public BaseObject
     {
     public:
