@@ -16,6 +16,8 @@ namespace newhaven_core
 
     void bind_all_godot_classes(sol::state& lua);
 
+    void bind_base_types(sol::state& lua);
+
     void initialize_lua(sol::state& lua);
 }
 

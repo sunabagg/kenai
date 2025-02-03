@@ -11,11 +11,14 @@
 #include <string>
 #include <iostream>
 #include <godot_cpp/variant/transform3d.hpp>
+#include <sol/sol.hpp>
 
 #include "base_object.h"
 
 namespace newhaven_core
 {
+    void bindSceneSystem(sol::state& lua);
+    
     // Forward declare Scene
     class Scene;
     class Entity;
