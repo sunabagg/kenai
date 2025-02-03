@@ -13,6 +13,7 @@ namespace newhaven_core
 
     class BaseObject {
     public:
+        virtual void onFree() {}
         void free();
     };
 }

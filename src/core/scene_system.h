@@ -10,6 +10,7 @@
 #include <vector>
 #include <string>
 #include <iostream>
+#include <godot_cpp/variant/transform3d.hpp>
 
 #include "base_object.h"
 
@@ -17,26 +18,35 @@ namespace newhaven_core
 {
     // Forward declare Scene
     class Scene;
+    class Entity;
 
     class Component : public BaseObject
     {
     public:
+        Entity* entity;
+        Scene* scene;
+
+        Component() {}
+
         virtual ~Component() = default;
+
+        virtual void onInit() {}
+
+        virtual void onReady() {}
+
+        virtual void onUpdate(float delta) {}
+
+        virtual void onPhysicsUpdate(float delta) {}
     };
 
     // Example Component (Transform)
-    class TransformComponent : public Component {
+    class Transform : public Component {
     public:
-        float x = 0,
-              y = 0,
-              z = 0;
+        godot::Transform3D* transform;
 
-        TransformComponent(float x = 0,
-                           float y = 0,
-                           float z = 0) :
-                                 x(x),
-                                 y(y),
-                                 z(z) {}
+        void onInit() override {
+            transform = new godot::Transform3D();
+        }
     };
 
     class Entity : public BaseObject
@@ -44,37 +54,157 @@ namespace newhaven_core
     public:
         std::string name;
         std::unordered_map<std::string, std::unique_ptr<Component>> components;
-        std::unordered_map<std::string, std::unique_ptr<Entity>> children;
+        std::vector<std::unique_ptr<Entity>> children;
+        Entity* parent;
+        Scene* scene;
 
-        template <typename T, typename... Args>
-        void addComponent(Args&&... args) {
-            components[typeid(T).name()] = std::make_unique<T>(std::forward<Args>(args)...);
+        Entity() {
+            parent = nullptr;
+            scene = nullptr;
         }
 
-        template <typename T>
-        T* getComponent() {
-            auto it = components.find(typeid(T).name());
-            return it != components.end() ? dynamic_cast<T*>(it->second.get()) : nullptr;
+        void addComponent(Component* component, std::string name) {
+            auto comp = std::unique_ptr<Component>(component);
+            comp->entity = this;
+            comp->scene = this->scene;
+            comp->onInit();
+            components[name] = std::move(comp);
+        };
+
+        Component* getComponent(std::string name) {
+            if (components.find(name) != components.end()) {
+                return components[name].get();
+            }
+            return nullptr;
         }
+
+        void removeComponent(std::string name) {
+            components.erase(name);
+        }
+
+        bool hasComponent(std::string name) {
+            return components.find(name) != components.end();
+        }
+
+        void addChild(Entity* entity) {
+            auto ent = std::unique_ptr<Entity>(entity);
+            ent->parent = this;
+            ent->scene = this->scene;
+            children.push_back(std::move(ent));
+        }
+
+        void removeChild(Entity* entity) {
+            for (auto it = children.begin(); it != children.end(); ++it) {
+                if (it->get() == entity) {
+                    it->get()->parent = nullptr;
+                    it->get()->scene = nullptr;
+                    children.erase(it);
+                    break;
+                }
+            }
+        }
+
+        bool hasChild(Entity* entity) {
+            for (auto& child : children) {
+                if (child.get() == entity) {
+                    return true;
+                }
+            }
+            return false;
+        }
+
+        void ready() {
+            for (auto& component : components) {
+                component.second->onReady();
+            }
+            for (auto& child : children) {
+                child->ready();
+            }
+        }
+
+        void update(float delta) {
+            for (auto& component : components) {
+                component.second->onUpdate(delta);
+            }
+            for (auto& child : children) {
+                child->update(delta);
+            }
+        }
+
+        void physicsUpdate(float delta) {
+            for (auto& component : components) {
+                component.second->onPhysicsUpdate(delta);
+            }
+            for (auto& child : children) {
+                child->physicsUpdate(delta);
+            }
+        }
+
+        void onFree() override {
+            for (auto& component : components) {
+                component.second->onFree();
+            }
+            for (auto& child : children) {
+                child->onFree();
+            }
+        }
+
     };
 
     class Scene : public BaseObject {
     public:
-        std::unordered_map<std::string, std::unique_ptr<Entity>> entities;
+        std::vector<std::unique_ptr<Entity>> entities;
+
+        void addEntity(Entity* entity) {
+            auto ent = std::unique_ptr<Entity>(entity);
+            ent->scene = this;
+            entities.push_back(std::move(ent));
+        }
+
+        void removeEntity(Entity* entity) {
+            for (auto it = entities.begin(); it != entities.end(); ++it) {
+                if (it->get() == entity) {
+                    it->get()->scene = nullptr;
+                    entities.erase(it);
+                    break;
+                }
+            }
+        }
+
+        bool hasEntity(Entity* entity) {
+            for (auto& ent : entities) {
+                if (ent.get() == entity) {
+                    return true;
+                }
+            }
+            return false;
+        }
+
+        void ready() {
+            for (auto& entity : entities) {
+                entity->ready();
+            }
+        }
+
+        void update(float delta) {
+            for (auto& entity : entities) {
+                entity->update(delta);
+            }
+        }
+
+        void physicsUpdate(float delta) {
+            for (auto& entity : entities) {
+                entity->physicsUpdate(delta);
+            }
+        }
+
+        void onFree() override {
+            for (auto& entity : entities) {
+                entity->onFree();
+            }
+        }
 
         Scene() {}
-
-        Entity* createEntity(const std::string& name) {
-            auto entity = std::make_unique<Entity>(name);
-            Entity* ptr = entity.get();
-            entities[name] = std::move(entity);
-            return ptr;
-        }
-
-        Entity* getEntity(const std::string& name) {
-            auto it = entities.find(name);
-            return it != entities.end() ? it->second.get() : nullptr;
-        }
     };
 }
 

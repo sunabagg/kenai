@@ -8,5 +8,6 @@ using namespace newhaven_core;
 
 void BaseObject::free()
 {
+    this->onFree();
     delete this;
 }
