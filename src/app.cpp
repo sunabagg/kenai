@@ -8,6 +8,7 @@
 #include <godot_cpp/classes/engine.hpp>
 
 #include"core/lua_bind.h"
+#include "core/scene_system.h"
 
 using namespace newhaven;
 using namespace godot;
@@ -48,6 +49,7 @@ void App::_ready() {
     UtilityFunctions::print("Hello, World!");
 
     newhaven_core::bind_base_types( global_state );
+    newhaven_core::bindSceneSystem( global_state );
     //newhaven_core::bind_all_godot_classes( global_state );
     //newhaven_core::initialize_lua( global_state );
 
