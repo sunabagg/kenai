@@ -47,8 +47,51 @@ void App::_ready() {
 
     UtilityFunctions::print("Hello, World!");
 
+    newhaven_core::bind_base_types( global_state );
     //newhaven_core::bind_all_godot_classes( global_state );
     //newhaven_core::initialize_lua( global_state );
+
+    global_state.script(R"(
+        function printAllGlobals()
+	        local seen={}
+	        local function dump(t,i)
+				if t == nil then
+                    --print("t is nil)
+					return
+				end
+		        seen[t]=true
+		        local s={}
+		        local n=0
+		        for k, v in pairs(t) do
+			        n=n+1
+                    if s[n] == nil then
+                        s[n] = ""
+                    end
+			        s[n]=tostring(k)
+		        end
+		        table.sort(s)
+		        for k,v in ipairs(s) do
+			        print(i .. v)
+			        v=t[v]
+			        if type(v)=="table" and not seen[v] then
+				        dump(v,i.."\t")
+                    elseif type(v)=="userdata" and not seen[v] then
+                        dump(getmetatable(v),i.."\t")
+			        end
+		        end
+	        end
+
+	        dump(_G,"")
+        end
+
+        if _G == nil then
+            print("Global table is nil")
+        else
+            print("Global table is not nil")
+        end
+
+        printAllGlobals()
+    )");
 }
 
 void App::start() {

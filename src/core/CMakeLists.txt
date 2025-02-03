@@ -4,6 +4,7 @@ target_sources(${PROJECT_NAME} PRIVATE
         scene_system.h
         lua_bind.h
         lua_bind.cpp
+        type_bind.cpp
         lua_function_wrapper.h
 )
 

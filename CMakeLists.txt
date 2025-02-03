@@ -167,6 +167,8 @@ else ()
     set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} /wd4505")
 
     set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} /wd4715")
+
+    target_compile_options(${PROJECT_NAME} PRIVATE /bigobj)
 endif ()
 
 set_target_properties( godot-cpp
