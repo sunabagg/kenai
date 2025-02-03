@@ -79,6 +79,17 @@ namespace newhaven_core
             return components.find(name) != components.end();
         }
 
+        template<typename T>
+        std::vector<Component*> getComponentsByType() {
+            std::vector<Component*> result;
+            for (auto& comp : components) {
+                if (typeid(T) == typeid(*comp.second.get())) {
+                    result.push_back(comp.second.get());
+                }
+            }
+            return result;
+        }
+
         void addChild(Entity* entity) {
             auto ent = std::unique_ptr<Entity>(entity);
             ent->parent = this;
