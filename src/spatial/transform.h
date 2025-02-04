@@ -73,7 +73,7 @@ namespace newhaven_spatial
 	    void _clear_dirty_bits(uint32_t p_bits) const;
 
         void _notify_dirty();
-	    void _propagate_transform_changed(SpatialTransform *p_origin);
+	    void _propagate_transform_changed(const SpatialTransform *p_origin) const;
 
         void _propagate_visibility_changed();
 
@@ -113,14 +113,16 @@ namespace newhaven_spatial
         void setGlobalPosition(const Vector3 &pPosition);
         void setGlobalBasis(const Basis &pBasis);
         void setGlobalRotation(const Vector3 &pEulerRad);
-        void setGlobalRotation_degrees(const Vector3 &pEulerDeg);
+        void setGlobalRotationDegrees(const Vector3 &pEulerDeg);
 
         Vector3 getPosition() const;
         Transform3D getTransform() const;
         EulerOrder getRotationOrder() const;
         Vector3 getRotation() const;
         Vector3 getRotationDegrees() const;
+        Quaternion getQuaternion() const;
         Vector3 getScale() const;
+        Basis getBasis() const;
 
         Transform3D getGlobalTransform() const;
         Vector3 getGlobalPosition() const;

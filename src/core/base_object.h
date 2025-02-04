@@ -15,7 +15,7 @@ namespace newhaven_core
     public:
         virtual void onNotification( int p_what );
 
-        void notification(int p_notification, bool p_reversed = false);
+        void notification(const int p_notification, bool p_reversed = false) const;
 
         virtual void onFree() {}
         void free();
