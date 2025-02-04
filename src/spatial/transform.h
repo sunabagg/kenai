@@ -24,6 +24,12 @@ namespace newhaven_spatial
 		return value.fetch_and(p_value, std::memory_order_acq_rel);
 	}
 
+    template<typename T>
+    T bit_or(SafeNumeric<T>& sn, T p_value) {
+        std::atomic<T> &value = sn.value;
+		return value.fetch_or(p_value, std::memory_order_acq_rel);
+	}
+
     class SpatialTransform : public Component
     {
     private:
@@ -66,6 +72,8 @@ namespace newhaven_spatial
             bool disableScale = false;
         } data;
 
+        std::string visibilityParentPath;
+
         _FORCE_INLINE_ uint32_t _read_dirty_mask() const { return  data.dirty.mt.get(); }
 	    _FORCE_INLINE_ bool _test_dirty_bits(uint32_t p_bits) const { return bit_and(data.dirty.mt, p_bits); }
 	    void _replace_dirty_mask(uint32_t p_mask) const;
@@ -73,7 +81,7 @@ namespace newhaven_spatial
 	    void _clear_dirty_bits(uint32_t p_bits) const;
 
         void _notify_dirty();
-	    void _propagate_transform_changed(const SpatialTransform *p_origin) const;
+	    void _propagate_transform_changed(const SpatialTransform *p_origin);
 
         void _propagate_visibility_changed();
 
@@ -130,14 +138,16 @@ namespace newhaven_spatial
         Vector3 getGlobalRotation() const;
         Vector3 getGlobalRotationDegrees() const;
 
-        void setTransform(const Transform3D &pTransform) const;
-        void setBasis(const Basis &p_basis) const;
-        void setQuaternion(const Quaternion &pQuaternion) const;
-        void setGlobalTransform(const Transform3D &pTransform) const;
+        void setTransform(const Transform3D &pTransform);
+        void setBasis(const Basis &p_basis);
+        void setQuaternion(const Quaternion &pQuaternion);
+        void setGlobalTransform(const Transform3D &pTransform);
 
         void setAsTopLevel(bool pEnabled);
         void setAsTopLevelKeepLocal(bool pEnabled);
+        bool isSetAsTopLevel() const;
         bool isScaleDisabled() const;
+        void setDisableScale(bool p_disable);
 
         _FORCE_INLINE_ bool isInsideWorld() const { return data.insideWorld; }
 
@@ -177,13 +187,17 @@ namespace newhaven_spatial
         void show();
         void hide();
         bool isVisible() const;
-        bool isVisibleInScene() const;
+        bool isVisibleInTree() const;
 
         void forceUpdateTransform();
 
         void setVisibilityParent(const std::string &pPath);
 
+        std::string getVisibilityParent() const;
+
         SpatialTransform();
+
+        void onFree() override;
     };
 }
 

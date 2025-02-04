@@ -8,6 +8,27 @@ using namespace godot;
 using namespace newhaven_core;
 namespace newhaven_spatial {
 
+    void SpatialTransform::_propagate_transform_changed(const SpatialTransform *p_origin) {
+        if (!scene && !entity->parent) return;
+
+        for (SpatialTransform* &E : data.children) {
+            if (E->data.topLevel) {
+                continue;
+            }
+            E->_propagate_transform_changed(p_origin);
+            if (data.notifyTransform && !data.ignoreNotification && !xform_change.in_list()) {
+                scene->xform_change_list.add(&xform_change);
+            }
+        }
+        _set_dirty_bits(DIRTY_GLOBAL_TRANSFORM);
+    }
+
+    void SpatialTransform::_propagate_transform_changed_deferred() {
+        if ((scene && entity->parent) && !xform_change.in_list()) {
+            scene->xform_change_list.add(&xform_change);
+        }
+    }
+
     void SpatialTransform::_updateLocalTransform() const {
         data.localTransform.basis.set_euler_scale(data.eulerRotation, data.scale, data.eulerRotationOrder);
         _clear_dirty_bits(DIRTY_LOCAL_TRANSFORM);
@@ -82,11 +103,11 @@ namespace newhaven_spatial {
         }
     }
 
-    void SpatialTransform::setBasis(const Basis& p_basis) const {
+    void SpatialTransform::setBasis(const Basis& p_basis) {
         setTransform(Transform3D(p_basis, data.localTransform.origin));
     }
 
-    void SpatialTransform::setQuaternion(const Quaternion& p_quat) const {
+    void SpatialTransform::setQuaternion(const Quaternion& p_quat) {
         if (_test_dirty_bits(DIRTY_EULER_ROTATION_AND_SCALE)) {
             data.scale = data.localTransform.basis.get_scale();
             _clear_dirty_bits(DIRTY_EULER_ROTATION_AND_SCALE);
@@ -142,7 +163,7 @@ namespace newhaven_spatial {
         setGlobalRotation(radians);
     }
 
-    void SpatialTransform::setTransform(const Transform3D& p_transform) const {
+    void SpatialTransform::setTransform(const Transform3D& p_transform) {
         data.localTransform = p_transform;
         _replace_dirty_mask(DIRTY_EULER_ROTATION_AND_SCALE);
 
@@ -160,7 +181,7 @@ namespace newhaven_spatial {
         return getTransform().basis.get_rotation_quaternion();
     }
 
-    void SpatialTransform::setGlobalTransform(const Transform3D& p_transform) const {
+    void SpatialTransform::setGlobalTransform(const Transform3D& p_transform) {
         Transform3D xform = (data.parentTransform && !data.topLevel) 
             ? data.parentTransform->getGlobalTransform().affine_inverse() * p_transform 
             : p_transform;
@@ -262,6 +283,337 @@ namespace newhaven_spatial {
     }
 
     void SpatialTransform::setRotation(const Vector3& p_rotation) {
+        if (_test_dirty_bits(DIRTY_EULER_ROTATION_AND_SCALE)) {
+            data.scale = data.localTransform.basis.get_scale();
+            _clear_dirty_bits(DIRTY_EULER_ROTATION_AND_SCALE);
+        }
+
+        data.eulerRotation = p_rotation;
+        _replace_dirty_mask(DIRTY_LOCAL_TRANSFORM);
+        _propagate_transform_changed(this);
+        if (data.notifyLocalTransform) {
+            notification(NOTIFICATION_LOCAL_TRANSFORM_CHANGED);
+        }
+    }
+
+    void SpatialTransform::setRotationDegrees(const Vector3& p_rotation) {
+        Vector3 radians = Vector3(Math::deg_to_rad(p_rotation.x), Math::deg_to_rad(p_rotation.y), Math::deg_to_rad(p_rotation.z));
+        setRotation(radians);
+    }
+
+    void SpatialTransform::setScale(const Vector3& p_scale) {
+        if (_test_dirty_bits(DIRTY_EULER_ROTATION_AND_SCALE)) {
+            data.eulerRotation = data.localTransform.basis.get_euler_normalized(data.eulerRotationOrder);
+            _clear_dirty_bits(DIRTY_EULER_ROTATION_AND_SCALE);
+        }
+
+        data.scale = p_scale;
+        _replace_dirty_mask(DIRTY_LOCAL_TRANSFORM);
+        _propagate_transform_changed(this);
+        if (data.notifyLocalTransform) {
+            notification(NOTIFICATION_LOCAL_TRANSFORM_CHANGED);
+        }
+    }
+
+    Vector3 SpatialTransform::getPosition() const {
+        return data.localTransform.origin;
+    }
+
+    Vector3 SpatialTransform::getRotation() const {
+        if (_test_dirty_bits(DIRTY_EULER_ROTATION_AND_SCALE)) {
+            _updateRotationAndScale();
+        }
+
+        return data.eulerRotation;
+    }
+
+    Vector3 SpatialTransform::getRotationDegrees() const {
+        Vector3 radians = getRotation();
+        return Vector3(Math::rad_to_deg(radians.x), Math::rad_to_deg(radians.y), Math::rad_to_deg(radians.z));
+    }
+
+    Vector3 SpatialTransform::getScale() const {
+        if (_test_dirty_bits(DIRTY_EULER_ROTATION_AND_SCALE)) {
+            _updateRotationAndScale();
+        }
+
+        return data.scale;
+    }
+
+    void SpatialTransform::_replace_dirty_mask(uint32_t p_mask) const {
+        data.dirty.mt.set(p_mask);
+    }
+
+    void SpatialTransform::_set_dirty_bits(uint32_t p_mask) const {
+        bit_or(data.dirty.mt, p_mask);
+    }
+
+    void SpatialTransform::_clear_dirty_bits(uint32_t p_mask) const {
+        bit_and(data.dirty.mt, ~p_mask);
+    }
+
+    void SpatialTransform::setDisableScale(bool p_disable) {
+        if (data.disableScale == p_disable) {
+            return;
+        }
+
+        data.disableScale = p_disable;
+    }
+
+    bool SpatialTransform::isScaleDisabled() const {
+        return data.disableScale;    
+    }
+
+    void SpatialTransform::setAsTopLevel(bool p_enable) {
+        if (data.topLevel == p_enable) {
+            return;
+        }
+        if (scene && entity->parent) {
+            if (p_enable) {
+                setTransform(getGlobalTransform());
+            } else if (data.parentTransform) {
+                setTransform(data.parentTransform->getGlobalTransform().affine_inverse() * getGlobalTransform());
+            }
+        }
+        data.topLevel = p_enable;
+    }
+
+    void SpatialTransform::setAsTopLevelKeepLocal(bool p_enable) {
+        if (data.topLevel == p_enable) {
+            return;
+        }
+        data.topLevel = p_enable;
+        _propagate_transform_changed(this);
+    }
+
+    bool SpatialTransform::isSetAsTopLevel() const {
+        return data.topLevel;
+    }
+
+    Ref<World3D> SpatialTransform::getWorld() const {
+        if (scene) {
+            return scene->viewport->find_world_3d();
+        }
+        return nullptr;
+    }
+
+    void SpatialTransform::_propagate_visibility_changed() {
+        notification(NOTIFICATION_VISIBILITY_CHANGED);
+
+        for (SpatialTransform* child : data.children) {
+            if (!child || !child->data.visible) {
+                continue;
+            }
+            child->_propagate_visibility_changed();
+        }
+    }
+
+    void SpatialTransform::show() {
+        setVisible(true);
+    }
+
+    void SpatialTransform::hide() {
+        setVisible(false);
+    }
+
+    void SpatialTransform::setVisible(bool p_visible) {
+        if (data.visible == p_visible) {
+            return;
+        }
+
+        data.visible = p_visible;
+
+        if (!scene && !entity->parent) {
+            return;
+        }
+        _propagate_visibility_changed();
+    }
+
+    bool SpatialTransform::isVisible() const {
+        return data.visible;
+    }
+
+    bool SpatialTransform::isVisibleInTree() const {
+        if (!scene) {
+            return false;
+        }
+
+        const SpatialTransform* s = this;
+        while (s) {
+            if (!s->data.visible) {
+                return false;
+            }
+            s = s->data.parentTransform;
+        }
+        return true;
+    }
+
+    void SpatialTransform::rotateObjectLocal(const Vector3& p_axis, real_t p_angle) {
+        Transform3D t = getTransform();
+        t.basis.rotate_local(p_axis, p_angle);
+        setTransform(t);
+    }
+
+    void SpatialTransform::rotate(const Vector3& p_axis, real_t p_angle) {
+        Transform3D t = getTransform();
+        t.basis.rotate(p_axis, p_angle);
+        setTransform(t);
+    }
+
+    void SpatialTransform::rotateX(real_t p_angle) {
+        Transform3D t = getTransform();
+        t.basis.rotate(Vector3(1, 0, 0), p_angle);
+        setTransform(t);
+    }
+
+    void SpatialTransform::rotateY(real_t p_angle) {
+        Transform3D t = getTransform();
+        t.basis.rotate(Vector3(0, 1, 0), p_angle);
+        setTransform(t);
+    }
+
+    void SpatialTransform::rotateZ(real_t p_angle) {
+        Transform3D t = getTransform();
+        t.basis.rotate(Vector3(0, 0, 1), p_angle);
+        setTransform(t);
+    }
+
+    void SpatialTransform::translate(const Vector3& p_offset) {
+        Transform3D t = getTransform();
+        t.translate_local(p_offset);
+        setTransform(t);
+    }
+
+    void SpatialTransform::translateObjectLocal(const Vector3& p_offset) {
+        Transform3D t = getTransform();
+
+        Transform3D s;
+        s.translate_local(p_offset);
+        setTransform(t * s);
+    }
+
+    void SpatialTransform::scale(const Vector3& p_scale) {
+        Transform3D t = getTransform();
+        t.basis.scale(p_scale);
+        setTransform(t);
+    }
+
+    void SpatialTransform::scaleObjectLocal(const Vector3& p_scale) {
+        Transform3D t = getTransform();
+        t.basis.scale_local(p_scale);
+        setTransform(t);
+    }
+
+    void SpatialTransform::globalRotate(const Vector3& p_axis, real_t p_angle) {
+        Transform3D t = getGlobalTransform();
+        t.basis.rotate(p_axis, p_angle);
+        setGlobalTransform(t);
+    }
+
+    void SpatialTransform::globalScale(const Vector3& p_scale) {
+        Transform3D t = getGlobalTransform();
+        t.basis.scale(p_scale);
+        setGlobalTransform(t);
+    }
+
+    void SpatialTransform::globalTranslate(const Vector3& p_offset) {
+        Transform3D t = getGlobalTransform();
+        t.origin += p_offset;
+        setGlobalTransform(t);
+    }
+
+    void SpatialTransform::orthonormalize() {
+        Transform3D t = getTransform();
+        t.orthogonalize();
+        setTransform(t);
+    }
+
+    void SpatialTransform::setIdentity() {
+        setTransform(Transform3D());
+    }
+
+    void SpatialTransform::lookAt(const Vector3& p_target, const Vector3& p_up, bool p_use_model_front) {
+        Vector3 origin = getGlobalTransform().origin;
+        lookAtFromPosition(origin, p_target, p_up, p_use_model_front);
+    }
+
+    void SpatialTransform::lookAtFromPosition(const Vector3& p_position, const Vector3& p_target, const Vector3& p_up, bool p_use_model_front) {
+        Vector3 forward = p_target - p_position;
+        Basis lookat_basis = Basis::looking_at(forward, p_up);
+        Vector3 originalScale = getScale();
+        setGlobalTransform(Transform3D(lookat_basis, p_position));
+        setScale(originalScale);
+    }
+
+    Vector3 SpatialTransform::toLocal(Vector3 p_vector) const {
+        return getGlobalTransform().affine_inverse().xform(p_vector);
+    }
+
+    Vector3 SpatialTransform::toGlobal(Vector3 p_vector) const {
+        return getGlobalTransform().xform(p_vector);
+    }
+
+    void SpatialTransform::setNotifyTransform(bool p_notify) {
+        data.notifyTransform = p_notify;
+    }
+
+    void SpatialTransform::setNotifyLocalTransform(bool p_notify) {
+        data.notifyLocalTransform = p_notify;
+    }
+
+    bool SpatialTransform::isLocalTransformNotificationEnabled() const {
+        return data.notifyLocalTransform;
+    }
+
+    void SpatialTransform::forceUpdateTransform() {
+        if (!xform_change.in_list()) {
+            return;
+        }
+        scene->xform_change_list.remove(&xform_change);
+    }
+
+    void SpatialTransform::_update_visibility_parent(bool p_update_root) {
+        RID new_parent;
+
+        if (!visibilityParentPath.empty()) {
+            if (!p_update_root) {
+                return;
+            }
+            Entity* parent = entity->find(visibilityParentPath);
+            //GeometryInstance3D *gi = Object::cast_to<GeometryInstance3D>(parent);
+            //new_parent = gi ? gi->get_instance() : RID();
+        } else if (data.parentTransform) {
+            new_parent = data.parentTransform->data.visibilityParent;
+        }
+
+        if (new_parent == data.visibilityParent) {
+            return;
+        }
+
+        //VisualInstance3D *vi = Object::cast_to<VisualInstance3D>(this);
+        //if (vi) {
+		//    RS::get_singleton()->instance_set_visibility_parent(vi->get_instance(), data.visibility_parent);
+	    //}
+
+        for (SpatialTransform *child : data.children) {
+            child->_update_visibility_parent(false);
+        }
+    }
+
+    void SpatialTransform::setVisibilityParent(const std::string& p_path) {
+        visibilityParentPath = p_path;
+        if (scene && entity->parent) {
+            _update_visibility_parent(true);
+        }
+    }
+
+    std::string SpatialTransform::getVisibilityParent() const {
+        return visibilityParentPath;
+    }
+
+    SpatialTransform::SpatialTransform() : xform_change(this->entity) {}
+
+    void SpatialTransform::onFree() {
         
     }
 }

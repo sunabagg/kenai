@@ -31,7 +31,7 @@ void App::_ready() {
 
     global_state.open_libraries( sol::lib::base, sol::lib::bit32, sol::lib::coroutine,
                                      sol::lib::count, sol::lib::math, sol::lib::string,
-                                     sol::lib::table, sol::lib::utf8 );
+                                     sol::lib::table, sol::lib::utf8, sol::lib::jit );
 
     global_state["print"] = [this]( sol::variadic_args args ) {
         String msg;

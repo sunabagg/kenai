@@ -11,3 +11,13 @@ void BaseObject::free()
     this->onFree();
     delete this;
 }
+
+void BaseObject::notification(const int p_notification, bool p_reversed) const
+{
+    if (p_reversed) {
+        this->onNotification(p_notification);
+    }
+    else {
+        this->onNotification(-p_notification);
+    }
+}

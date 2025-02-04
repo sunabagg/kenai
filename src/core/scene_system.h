@@ -113,6 +113,19 @@ namespace newhaven_core
 
     class Entity : public BaseObject
     {
+        private:
+        Entity* findEnt(PackedStringArray path, int index) {
+            if (index == path.size() - 1) {
+                return this;
+            }
+            for (auto& child : children) {
+                if (child->name.c_str() == path[index]) {
+                    return child->findEnt(path, index + 1);
+                }
+            }
+            return nullptr;
+        }
+
     public:
         std::string name;
         std::unordered_map<std::string, std::unique_ptr<Component>> components;
@@ -185,8 +198,14 @@ namespace newhaven_core
             }
             return false;
         }
+        
+        Entity* find(std::string path) {
+            String gdStr = path.c_str();
+            auto split = gdStr.split("/");
+            return findEnt(split, 0);
+        }
 
-        int getChildCount() {
+        size_t getChildCount() {
             return children.size();
         }
 

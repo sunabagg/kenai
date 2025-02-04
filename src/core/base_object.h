@@ -13,9 +13,9 @@ namespace newhaven_core
 
     class BaseObject {
     public:
-        virtual void onNotification( int p_what );
+        virtual void onNotification( int p_what ) {}
 
-        void notification(const int p_notification, bool p_reversed = false) const;
+        void notification(const int p_notification, bool p_reversed = false);
 
         virtual void onFree() {}
         void free();
