@@ -12,6 +12,10 @@
 #include <iostream>
 #include <godot_cpp/variant/transform3d.hpp>
 #include <sol/sol.hpp>
+#include <godot_cpp/templates/safe_refcount.hpp>
+#include <godot_cpp/templates/self_list.hpp>
+#include <godot_cpp/classes/main_loop.hpp>
+#include <godot_cpp/classes/viewport.hpp>
 
 #include "base_object.h"
 
@@ -25,7 +29,67 @@ namespace newhaven_core
 
     class Component : public BaseObject
     {
+    protected:
+        template <typename T>
+	    union MTNumeric {
+		    godot::SafeNumeric<T> mt;
+		    T st;
+		    MTNumeric() :
+				    mt{} {}
+	    };
+
     public:
+        enum {
+		    // You can make your own, but don't use the same numbers as other notifications in other nodes.
+		    NOTIFICATION_ENTER_TREE = 10,
+		    NOTIFICATION_EXIT_TREE = 11,
+		    NOTIFICATION_MOVED_IN_PARENT = 12,
+		    NOTIFICATION_READY = 13,
+		    NOTIFICATION_PAUSED = 14,
+		    NOTIFICATION_UNPAUSED = 15,
+		    NOTIFICATION_PHYSICS_UPDATE = 16,
+		    NOTIFICATION_UPDATE = 17,
+		    NOTIFICATION_PARENTED = 18,
+		    NOTIFICATION_UNPARENTED = 19,
+		    NOTIFICATION_SCENE_INSTANTIATED = 20,
+		    NOTIFICATION_DRAG_BEGIN = 21,
+		    NOTIFICATION_DRAG_END = 22,
+		    NOTIFICATION_PATH_RENAMED = 23,
+		    NOTIFICATION_CHILD_ORDER_CHANGED = 24,
+		    NOTIFICATION_INTERNAL_PROCESS = 25,
+		    NOTIFICATION_INTERNAL_PHYSICS_PROCESS = 26,
+		    NOTIFICATION_POST_ENTER_TREE = 27,
+		    NOTIFICATION_DISABLED = 28,
+		    NOTIFICATION_ENABLED = 29,
+		    NOTIFICATION_RESET_PHYSICS_INTERPOLATION = 2001, // A GodotSpace Odyssey.
+		    // Keep these linked to Node.
+		    NOTIFICATION_WM_MOUSE_ENTER = 1002,
+		    NOTIFICATION_WM_MOUSE_EXIT = 1003,
+		    NOTIFICATION_WM_WINDOW_FOCUS_IN = 1004,
+		    NOTIFICATION_WM_WINDOW_FOCUS_OUT = 1005,
+		    NOTIFICATION_WM_CLOSE_REQUEST = 1006,
+		    NOTIFICATION_WM_GO_BACK_REQUEST = 1007,
+		    NOTIFICATION_WM_SIZE_CHANGED = 1008,
+		    NOTIFICATION_WM_DPI_CHANGE = 1009,
+		    NOTIFICATION_VP_MOUSE_ENTER = 1010,
+		    NOTIFICATION_VP_MOUSE_EXIT = 1011,
+
+		    NOTIFICATION_OS_MEMORY_WARNING = godot::MainLoop::NOTIFICATION_OS_MEMORY_WARNING,
+		    NOTIFICATION_TRANSLATION_CHANGED = godot::MainLoop::NOTIFICATION_TRANSLATION_CHANGED,
+		    NOTIFICATION_WM_ABOUT = godot::MainLoop::NOTIFICATION_WM_ABOUT,
+		    NOTIFICATION_CRASH = godot::MainLoop::NOTIFICATION_CRASH,
+		    NOTIFICATION_OS_IME_UPDATE = godot::MainLoop::NOTIFICATION_OS_IME_UPDATE,
+		    NOTIFICATION_APPLICATION_RESUMED = godot::MainLoop::NOTIFICATION_APPLICATION_RESUMED,
+		    NOTIFICATION_APPLICATION_PAUSED = godot::MainLoop::NOTIFICATION_APPLICATION_PAUSED,
+		    NOTIFICATION_APPLICATION_FOCUS_IN = godot::MainLoop::NOTIFICATION_APPLICATION_FOCUS_IN,
+		    NOTIFICATION_APPLICATION_FOCUS_OUT = godot::MainLoop::NOTIFICATION_APPLICATION_FOCUS_OUT,
+		    NOTIFICATION_TEXT_SERVER_CHANGED = godot::MainLoop::NOTIFICATION_TEXT_SERVER_CHANGED,
+
+		    // Editor specific node notifications
+		    NOTIFICATION_EDITOR_PRE_SAVE = 9001,
+		    NOTIFICATION_EDITOR_POST_SAVE = 9002,
+	    };
+
         Entity* entity;
         Scene* scene;
 
@@ -40,6 +104,11 @@ namespace newhaven_core
         virtual void onUpdate(float delta) {}
 
         virtual void onPhysicsUpdate(float delta) {}
+
+        template<typename T>
+        T cast() {
+            return static_cast<T>(this);
+        }
     };
 
     class Entity : public BaseObject
@@ -117,6 +186,10 @@ namespace newhaven_core
             return false;
         }
 
+        int getChildCount() {
+            return children.size();
+        }
+
         void ready() {
             for (auto& component : components) {
                 component.second->onReady();
@@ -157,7 +230,10 @@ namespace newhaven_core
 
     class Scene : public BaseObject {
     public:
+        godot::SelfList<Entity>::List xform_change_list;
         std::vector<std::unique_ptr<Entity>> entities;
+
+        godot::Viewport* viewport;
 
         void addEntity(Entity* entity) {
             auto ent = std::unique_ptr<Entity>(entity);
@@ -208,7 +284,7 @@ namespace newhaven_core
             }
         }
 
-        Scene() {}
+        Scene() = default;
     };
 }
 

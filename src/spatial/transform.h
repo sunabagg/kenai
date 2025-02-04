@@ -6,6 +6,8 @@
 #include <godot_cpp/classes/scene_tree.hpp>
 #include <vector>
 #include <sol/sol.hpp>
+#include <godot_cpp/templates/safe_refcount.hpp>
+#include <godot_cpp/templates/self_list.hpp>
 
 #include "../core/scene_system.h"
 
@@ -16,16 +18,34 @@ namespace newhaven_spatial
 {
     void bindSpatialTransform( sol::state& lua );
 
+    template<typename T>
+    T bit_and(SafeNumeric<T>& sn, T p_value) {
+        std::atomic<T> &value = sn.value;
+		return value.fetch_and(p_value, std::memory_order_acq_rel);
+	}
+
     class SpatialTransform : public Component
     {
     private:
+
+        enum TransformDirty {
+		    DIRTY_NONE = 0,
+		    DIRTY_EULER_ROTATION_AND_SCALE = 1,
+		    DIRTY_LOCAL_TRANSFORM = 2,
+		    DIRTY_GLOBAL_TRANSFORM = 4
+	    };
+
+        mutable SelfList<Entity> xform_change;
+
         struct Data
         {
             mutable Transform3D globalTransform;
             mutable Transform3D localTransform;
-            mutable EulerOrder eulerRotationOrder = EulerOrder::YXZ;
+            mutable EulerOrder eulerRotationOrder = EulerOrder::EULER_ORDER_YXZ;
             mutable Vector3 eulerRotation;
             mutable Vector3 scale = Vector3( 1, 1, 1 );
+
+            mutable MTNumeric<uint32_t> dirty;
 
             Viewport *viewport = nullptr;
 
@@ -35,7 +55,8 @@ namespace newhaven_spatial
             RID visibilityParent;
 
             SpatialTransform *parentTransform = nullptr;
-            std::vector<SpatialTransform *> children;
+            List<SpatialTransform *> children;
+            List<SpatialTransform *>::Element *C = nullptr;
 
             bool ignoreNotification = false;
             bool notifyLocalTransform = false;
@@ -45,15 +66,30 @@ namespace newhaven_spatial
             bool disableScale = false;
         } data;
 
+        _FORCE_INLINE_ uint32_t _read_dirty_mask() const { return  data.dirty.mt.get(); }
+	    _FORCE_INLINE_ bool _test_dirty_bits(uint32_t p_bits) const { return bit_and(data.dirty.mt, p_bits); }
+	    void _replace_dirty_mask(uint32_t p_mask) const;
+	    void _set_dirty_bits(uint32_t p_bits) const;
+	    void _clear_dirty_bits(uint32_t p_bits) const;
+
+        void _notify_dirty();
+	    void _propagate_transform_changed(SpatialTransform *p_origin);
+
+        void _propagate_visibility_changed();
+
+	    void _propagate_visibility_parent();
+	    void _update_visibility_parent(bool p_update_root);
+	    void _propagate_transform_changed_deferred();
+
     protected:
         _FORCE_INLINE_ void  setIgnoreTransformNotification( bool ignore ) { data.ignoreNotification = ignore; }
 
         _FORCE_INLINE_ void _updateLocalTransform() const;
         _FORCE_INLINE_ void _updateRotationAndScale() const;
 
-        void _notification( int p_what );
-
     public:
+        void onNotification( int p_what ) override;
+
         enum
         {
             NOTIFICATION_TRANSFORM_CHANGED = 2000,
@@ -80,12 +116,13 @@ namespace newhaven_spatial
         void setGlobalRotation_degrees(const Vector3 &pEulerDeg);
 
         Vector3 getPosition() const;
-
+        Transform3D getTransform() const;
         EulerOrder getRotationOrder() const;
         Vector3 getRotation() const;
         Vector3 getRotationDegrees() const;
         Vector3 getScale() const;
 
+        Transform3D getGlobalTransform() const;
         Vector3 getGlobalPosition() const;
         Basis getGlobalBasis() const;
         Vector3 getGlobalRotation() const;
