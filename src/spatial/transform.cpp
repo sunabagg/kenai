@@ -616,7 +616,7 @@ namespace newhaven_spatial {
         return visibilityParentPath;
     }
 
-    void SpatialTransform::isTransformNotificationEnabled() const {
+    bool SpatialTransform::isTransformNotificationEnabled() const {
         return data.notifyTransform;
     }
 
