@@ -114,7 +114,7 @@ namespace newhaven_core
     class Entity : public BaseObject
     {
         private:
-        Entity* findEnt(PackedStringArray path, int index) {
+        Entity* findEnt(godot::PackedStringArray path, int index) {
             if (index == path.size() - 1) {
                 return this;
             }
@@ -200,7 +200,7 @@ namespace newhaven_core
         }
         
         Entity* find(std::string path) {
-            String gdStr = path.c_str();
+            godot::String gdStr = path.c_str();
             auto split = gdStr.split("/");
             return findEnt(split, 0);
         }

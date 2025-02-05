@@ -12,12 +12,12 @@ void BaseObject::free()
     delete this;
 }
 
-void BaseObject::notification(const int p_notification, bool p_reversed) const
+void BaseObject::notification(const int p_notification, bool p_reversed)
 {
     if (p_reversed) {
-        this->onNotification(p_notification);
+        onNotification(p_notification);
     }
     else {
-        this->onNotification(-p_notification);
+        onNotification(-p_notification);
     }
 }
