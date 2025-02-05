@@ -7,6 +7,11 @@
 using namespace godot;
 using namespace newhaven_core;
 namespace newhaven_spatial {
+    void SpatialTransform::_notify_dirty() {
+        if (data.notifyTransform && !data.ignoreNotification && !xform_change.in_list()) {
+		    scene->xform_change_list.add(&xform_change);
+	    }
+    }
 
     void SpatialTransform::_propagate_transform_changed(const SpatialTransform *p_origin) {
         if (!scene && !entity->parent) return;
@@ -609,6 +614,10 @@ namespace newhaven_spatial {
 
     std::string SpatialTransform::getVisibilityParent() const {
         return visibilityParentPath;
+    }
+
+    void SpatialTransform::isTransformNotificationEnabled() const {
+        return data.notifyTransform;
     }
 
     SpatialTransform::SpatialTransform() : xform_change(this->entity) {}

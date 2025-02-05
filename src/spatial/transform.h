@@ -85,7 +85,7 @@ namespace newhaven_spatial
 
         void _propagate_visibility_changed();
 
-	    void _propagate_visibility_parent();
+	    //void _propagate_visibility_parent();
 	    void _update_visibility_parent(bool p_update_root);
 	    void _propagate_transform_changed_deferred();
 
