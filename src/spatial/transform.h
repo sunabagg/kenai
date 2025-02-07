@@ -132,6 +132,106 @@ namespace newhaven_spatial
             node->force_update_transform();
         }
 
+        SpatialTransform* getParentTransform() {
+            auto parentNode = node->get_parent();
+            Entity* parentEntity = entity->parent;
+            if (parentEntity->getNode() == parentNode) {
+                SpatialTransform* parentTransform = static_cast<SpatialTransform*>(parentEntity->getComponent("SpatialTransform"));
+                if (parentTransform) {
+                    return parentTransform;
+                }
+            }
+            return nullptr;
+        }
+
+        void GlobalRotate(Vector3 axis, float angle) {
+            node->global_rotate(axis, angle);
+        }
+
+        void GlobalTranslate(Vector3 offset) {
+            node->global_translate(offset);
+        }
+
+        void globalScale(Vector3 scale) {
+            node->global_scale(scale);
+        }
+
+        void hide() {
+            node->hide();
+        }
+
+        bool isScaleDisabled() {
+            return node->is_scale_disabled();
+        }
+
+        bool isVisibleInTree() {
+            return node->is_visible_in_tree();
+        }
+
+        void lookAt(Vector3 target, Vector3 up = Vector3(0, 1, 0), bool useModelFront = false) {
+            node->look_at(target, up, useModelFront);
+        }
+
+        void lookAtFromPosition(Vector3 position, Vector3 target, Vector3 up = Vector3(0, 1, 0), bool useModelFront = false) {
+            node->look_at_from_position(position, target, up, useModelFront);
+        }
+
+        void orthonormalize() {
+            node->orthonormalize();
+        }
+
+        void rotate(Vector3 axis, float angle) {
+            node->rotate(axis, angle);
+        }
+
+        void rotateObjectLocal(Vector3 axis, float angle) {
+            node->rotate_object_local(axis, angle);
+        }
+
+        void rotateX(float angle) {
+            node->rotate_x(angle);
+        }
+
+        void rotateY(float angle) {
+            node->rotate_y(angle);
+        }
+
+        void rotateZ(float angle) {
+            node->rotate_z(angle);
+        }
+
+        void scaleObjectLocal(Vector3 scale) {
+            node->scale_object_local(scale);
+        }
+
+        void setDisableScale(bool disable) {
+            node->set_disable_scale(disable);
+        }
+
+        void setIdentity() {
+            node->set_identity();
+        }
+
+        void show() {
+            node->show();
+        }
+
+        Vector3 toGlobal(Vector3 local) {
+            return node->to_global(local);
+        }
+
+        Vector3 toLocal(Vector3 global) {
+            return node->to_local(global);
+        }
+
+        void translate(Vector3 offset) {
+            node->translate(offset);
+        }
+
+        void translateObjectLocal(Vector3 offset) {
+            node->translate_object_local(offset);
+        }
+
         void onInit() override {
             node = memnew(Node3D);
             node->set_name(entity->name.c_str());
