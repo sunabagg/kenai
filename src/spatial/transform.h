@@ -23,186 +23,120 @@ namespace newhaven_spatial
     
     class SpatialTransform : public Component
     {
-    private:
-
-        enum TransformDirty {
-		    DIRTY_NONE = 0,
-		    DIRTY_EULER_ROTATION_AND_SCALE = 1,
-		    DIRTY_LOCAL_TRANSFORM = 2,
-		    DIRTY_GLOBAL_TRANSFORM = 4
-	    };
-
-        mutable SelfList<Entity> xform_change;
-
-        struct Data
-        {
-            mutable Transform3D globalTransform;
-            mutable Transform3D localTransform;
-            mutable EulerOrder eulerRotationOrder = EulerOrder::EULER_ORDER_YXZ;
-            mutable Vector3 eulerRotation;
-            mutable Vector3 scale = Vector3( 1, 1, 1 );
-
-            mutable MTNumeric<uint32_t> dirty;
-
-            Viewport *viewport = nullptr;
-
-            bool topLevel = false;
-            bool insideWorld = false;
-
-            RID visibilityParent;
-
-            SpatialTransform *parentTransform = nullptr;
-            List<SpatialTransform *> children;
-            List<SpatialTransform *>::Element *C = nullptr;
-
-            bool ignoreNotification = false;
-            bool notifyLocalTransform = false;
-            bool notifyTransform = false;
-
-            bool visible = true;
-            bool disableScale = false;
-        } data;
-
-        std::string visibilityParentPath;
-
-        _FORCE_INLINE_ uint32_t _read_dirty_mask() const { return  data.dirty.mt.get(); }
-        _FORCE_INLINE_ bool _test_dirty_bits( uint32_t p_bits ) const
-        {
-            return data.dirty.mt.bit_and( p_bits );
-        }
-	    void _replace_dirty_mask(uint32_t p_mask) const;
-	    void _set_dirty_bits(const uint32_t p_bits);
-	    void _clear_dirty_bits(uint32_t p_bits) const;
-
-        void _notify_dirty();
-	    void _propagate_transform_changed(const SpatialTransform *p_origin);
-
-        void _propagate_visibility_changed();
-
-	    //void _propagate_visibility_parent();
-	    void _update_visibility_parent(bool p_update_root);
-	    void _propagate_transform_changed_deferred();
-
     protected:
-        _FORCE_INLINE_ void  setIgnoreTransformNotification( bool ignore ) { data.ignoreNotification = ignore; }
-
-        _FORCE_INLINE_ void _updateLocalTransform() const;
-        _FORCE_INLINE_ void _updateRotationAndScale() const;
+        Node3D* node;
 
     public:
-        void onNotification( int p_what ) override;
+        Basis getBasis() {
+            return node->get_basis();
+        }
+        void setBasis(Basis b) {
+            node->set_basis(b);
+        }
 
-        enum
-        {
-            NOTIFICATION_TRANSFORM_CHANGED = 2000,
-            NOTIFICATION_ENTER_WORLD = 41,
-            NOTIFICATION_EXIT_WORLD = 42,
-            NOTIFICATION_VISIBILITY_CHANGED = 43,
-            NOTIFICATION_LOCAL_TRANSFORM_CHANGED = 44,
-        };
+        Vector3 getPosition() {
+            return node->get_position();
+        }
+        void setPosition(Vector3 p) {
+        /**
+         * Sets the position of the node.
+         *
+         * @param p The desired position as a Vector3.
+         */
+            node->set_position(p);
+        }
 
-        SpatialTransform *getParentTransform() const;
+        Vector3 getRotationDegrees() {
+            return node->get_rotation_degrees();
+        }
+        void setRotationDegrees(Vector3 r) {
+            node->set_rotation_degrees(r);
+        }
 
-        Ref<World3D> getWorld() const;
+        Vector3 getRotation() {
+            return node->get_rotation();
+        }
+        void setRotation(Vector3 r) {
+            node->set_rotation(r);
+        }
 
-        void onEnterTree() override;
-        void onExitTree() override;
-        void onEnterWorld();
-        void onExitWorld();
-        void onLocalTransformChanged();
+        Vector3 getScale() {
+            return node->get_scale();
+        }
+        void setScale(Vector3 s) {
+            node->set_scale(s);
+        }
 
-        void setPosition(const Vector3 &pPosition);
+        Quaternion getQuaternion() {
+            return node->get_quaternion();
+        }
 
-        void setRotationOrder(EulerOrder pOrder);
-        void setRotation(const Vector3 &pEulerRad);
-        void setRotationDegrees(const Vector3 &pEulerDeg);
-        void setScale(const Vector3 &pScale);
+        void setQuaternion(Quaternion q) {
+            node->set_quaternion(q);
+        }
 
-        void setGlobalPosition(const Vector3 &pPosition);
-        void setGlobalBasis(const Basis &pBasis);
-        void setGlobalRotation(const Vector3 &pEulerRad);
-        void setGlobalRotationDegrees(const Vector3 &pEulerDeg);
+        int getRotationOrder() {
+            return node->get_rotation_order();
+        }
 
-        Vector3 getPosition() const;
-        Transform3D getTransform() const;
-        EulerOrder getRotationOrder() const;
-        Vector3 getRotation() const;
-        Vector3 getRotationDegrees() const;
-        Quaternion getQuaternion() const;
-        Vector3 getScale() const;
-        Basis getBasis() const;
+        void setRotationOrder(int order) {
+            node->set_rotation_order(static_cast<EulerOrder>(order));
+        }
 
-        Transform3D getGlobalTransform() const;
-        Vector3 getGlobalPosition() const;
-        Basis getGlobalBasis() const;
-        Vector3 getGlobalRotation() const;
-        Vector3 getGlobalRotationDegrees() const;
-        Vector3 getGlobalScale() const;
+        Transform3D getTransform() {
+            return node->get_transform();
+        }
 
-        void setTransform(const Transform3D &pTransform);
-        void setBasis(const Basis &p_basis);
-        void setQuaternion(const Quaternion &pQuaternion);
-        void setGlobalTransform(const Transform3D &pTransform);
-        //void setGlobalBasis(const Basis &p_basis);
-        //void setGlobalRotation(const Vector3 &pEulerRad);
-        //void setGlobalRotationDegrees(const Vector3 &pEulerDeg);
-        void setGlobalScale(const Vector3 &pScale);
+        void setTransform(Transform3D t) {
+            node->set_transform(t);
+        }
 
-        void setAsTopLevel(bool pEnabled);
-        void setAsTopLevelKeepLocal(bool pEnabled);
-        bool isSetAsTopLevel() const;
-        bool isScaleDisabled() const;
-        void setDisableScale(bool p_disable);
+        Vector3 getGlobalPosition() {
+            return node->get_global_position();
+        }
+        void setGlobalPosition(Vector3 p) {
+            node->set_global_position(p);
+        }
 
-        _FORCE_INLINE_ bool isInsideWorld() const { return data.insideWorld; }
+        Vector3 getGlobalRotation() {
+            return node->get_global_rotation();
+        }    
+        void setGlobalRotation(Vector3 r) {
+            node->set_global_rotation(r);
+        }
 
-        Transform3D getRelativeTransform(const Entity *pParent) const;
+        Transform3D getGlobalTransform() {
+            return node->get_global_transform();
+        }
 
-        void rotate(const Vector3 &pAxis, real_t pAngle);
-        void rotateX(real_t pAngle);
-        void rotateY(real_t pAngle);
-        void rotateZ(real_t pAngle);
-        void translate(const Vector3 &pOffset);
-        void scale(const Vector3 &pRatio);
+        void setGlobalTransform(Transform3D t) {
+            node->set_global_transform(t);
+        }
 
-        void rotateObjectLocal(const Vector3 &pAxis, real_t pAngle);
-        void scaleObjectLocal(const Vector3 &pScale);
-        void translateObjectLocal(const Vector3 &pOffset);
+        bool isTopLevel() {
+            return node->is_set_as_top_level();
+        }
 
-        void globalRotate(const Vector3 &pAxis, real_t pAngle);
-        void globalScale(const Vector3 &pScale);
-        void globalTranslate(const Vector3 &pOffset);
+        void setNode(Node3D* n) {
+            Transform3D t = node->get_transform();
+            n->set_transform(t);
+            node = n;
+            entity->setNode(n);
+        }
 
-        void lookAt(const Vector3 &pTarget, const Vector3 &pUp = Vector3(0, 1, 0), bool pUseModelFront = false);
-        void lookAtFromPosition(const Vector3 &pPos, const Vector3 &pTarget, const Vector3 &pUp = Vector3(0, 1, 0), bool pUseModelFront = false);
+        Node* getNode() {
+            return node;
+        }
 
-        Vector3 toLocal(Vector3 pGlobal) const;
-        Vector3 toGlobal(Vector3 pLocal) const;
+        void forceUpdate() {
+            node->force_update_transform();
+        }
 
-        void setNotifyTransform(bool pEnabled);
-        bool isTransformNotificationEnabled() const;
-
-        void setNotifyLocalTransform(bool pEnabled);
-        bool isLocalTransformNotificationEnabled() const;
-
-        void orthonormalize();
-        void setIdentity();
-
-        void setVisible(bool pVisible);
-        void show();
-        void hide();
-        bool isVisible() const;
-        bool isVisibleInTree() const;
-
-        void forceUpdateTransform();
-
-        void setVisibilityParent(const std::string &pPath);
-
-        std::string getVisibilityParent() const;
-
-        SpatialTransform();
-
-        void onFree() override;
+        void onInit() override {
+            node = memnew(Node3D);
+            node->set_name(entity->name.c_str());
+            entity->setNode(node);
+        }
     };
 }
 

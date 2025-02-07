@@ -16,6 +16,7 @@
 #include <godot_cpp/templates/self_list.hpp>
 #include <godot_cpp/classes/main_loop.hpp>
 #include <godot_cpp/classes/viewport.hpp>
+#include <godot_cpp/classes/node.hpp>
 
 #include "base_object.h"
 
@@ -119,7 +120,42 @@ namespace newhaven_core
 
     class Entity : public BaseObject
     {
-        private:
+    private:
+        godot::Node* node = nullptr;
+    public:
+        std::string name;
+        std::unordered_map<std::string, std::unique_ptr<Component>> components;
+        std::vector<std::unique_ptr<Entity>> children;
+        Entity* parent;
+        
+        Scene* scene;
+
+        Entity() {
+            parent = nullptr;
+            scene = nullptr;
+        }
+
+        godot::Node* getNode() {
+            return node;
+        }
+        
+        void setNode(godot::Node* n) {
+            if (node != nullptr) {
+                godot::List<godot::Node*> children;
+                for (auto i = 0; i < node->get_child_count(); i++) {
+                    auto child = node->get_child(i);
+                    children.push_back(child);
+                    node->remove_child(child);
+                }
+                for (auto child : children) {
+                    n->add_child(child);
+                }
+                
+                node->queue_free();
+            }
+            node = n;
+        }
+
         Entity* findEnt(godot::PackedStringArray path, int index) {
             if (index == path.size() - 1) {
                 return this;
@@ -130,18 +166,6 @@ namespace newhaven_core
                 }
             }
             return nullptr;
-        }
-
-    public:
-        std::string name;
-        std::unordered_map<std::string, std::unique_ptr<Component>> components;
-        std::vector<std::unique_ptr<Entity>> children;
-        Entity* parent;
-        Scene* scene;
-
-        Entity() {
-            parent = nullptr;
-            scene = nullptr;
         }
 
         void setScene(Scene* scene) {
@@ -213,6 +237,9 @@ namespace newhaven_core
             ent->parent = this;
             entity->setScene(this->scene);
             children.push_back(std::move(ent));
+            if (node != nullptr) {
+                node->add_child(entity->node);
+            }
             if (scene != nullptr)
                 entity->enterTree();
         }
@@ -223,6 +250,8 @@ namespace newhaven_core
                     it->get()->parent = nullptr;
                     it->get()->scene = nullptr;
                     children.erase(it);
+                    if (node != nullptr)
+                        node->remove_child(entity->node);
                     if (scene != nullptr)
                         exitTree();
                     break;
@@ -292,9 +321,20 @@ namespace newhaven_core
     };
 
     class Scene : public BaseObject {
+    private:
+        Entity* findEnt(godot::PackedStringArray path, int index) {
+    
+            for (auto& child : entities) {
+                if (child->name.c_str() == path[index]) {
+                    return child->findEnt(path, index + 1);
+                }
+            }
+            return nullptr;
+        }
     public:
         godot::SelfList<Entity>::List xform_change_list;
         std::vector<std::unique_ptr<Entity>> entities;
+        godot::Node* root;
 
         godot::Viewport* viewport;
 
@@ -302,14 +342,21 @@ namespace newhaven_core
             auto ent = std::unique_ptr<Entity>(entity);
             ent->setScene(this);
             entities.push_back(std::move(ent));
+            if (root != nullptr) {
+                root->add_child(entity->getNode());
+            }
             entity->enterTree();
         }
 
         void removeEntity(Entity* entity) {
             for (auto it = entities.begin(); it != entities.end(); ++it) {
                 if (it->get() == entity) {
-                    it->get()->exitTree();
-                    it->get()->scene = nullptr;
+                    entity->exitTree();
+                    if (root != nullptr)
+                    {
+                        root->remove_child(entity->getNode());
+                        entity->scene = nullptr;
+                    }
                     entities.erase(it);
                     break;
                 }
@@ -323,6 +370,12 @@ namespace newhaven_core
                 }
             }
             return false;
+        }
+
+        Entity* find(std::string path) {
+            godot::String gdStr = path.c_str();
+            auto split = gdStr.split("/");
+            return findEnt(split, 0);
         }
 
         size_t getEntityCount() {
@@ -357,7 +410,7 @@ namespace newhaven_core
             }
         }
 
-        Scene() = default;
+        Scene() : root(memnew(godot::Node)){};
     };
 }
 

@@ -15,7 +15,7 @@ namespace newhaven_tests
         auto spatialTransform = static_cast<SpatialTransform*>(entity->getComponent("SpatialTransform"));
         if (spatialTransform) {
             godot::UtilityFunctions::print(indent + "    Transform: " + spatialTransform->getPosition() + " " + spatialTransform->getRotation() + " " + spatialTransform->getScale());
-            godot::UtilityFunctions::print(indent + "    Global Transform: " + spatialTransform->getGlobalPosition() + " " + spatialTransform->getGlobalRotation() + " " + spatialTransform->getGlobalScale());
+            godot::UtilityFunctions::print(indent + "    Global Transform: " + spatialTransform->getGlobalTransform());
         }
         for (auto i = 0; i < entity->getChildCount(); i++) {
             auto child = entity->getChild(i);
@@ -39,6 +39,7 @@ namespace newhaven_tests
         }
         
         auto scene = new Scene();
+        add_child(scene->root);
         scene->viewport = get_viewport();
         auto entity1 = new Entity();
         entity1->name = "Entity1";
@@ -52,7 +53,7 @@ namespace newhaven_tests
         child1->addComponent(c1transform, "SpatialTransform");
         entity1->addChild(child1);
         c1transform->setPosition(Vector3(4, 5, 6));
-        /*auto child2 = new Entity();
+        auto child2 = new Entity();
         child2->name = "Child2";
         auto c2transform = new SpatialTransform();
         child2->addComponent(c2transform, "SpatialTransform");
@@ -63,7 +64,7 @@ namespace newhaven_tests
         auto e2transform = new SpatialTransform();
         entity2->addComponent(e2transform, "SpatialTransform");
         scene->addEntity(entity2);
-        e2transform->setPosition(Vector3(5, 3, 7));*/
+        e2transform->setPosition(Vector3(5, 3, 7));
 
         printScene(scene);
         /*godot::UtilityFunctions::print("Scene");

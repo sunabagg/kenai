@@ -19,7 +19,10 @@ void newhaven_core::bindSceneSystem(sol::state& lua)
         "update", &Scene::update, 
         "physicsUpdate", &Scene::physicsUpdate, 
         "ready", &Scene::ready, 
-        "onFree", &Scene::onFree);
+        "onFree", &Scene::onFree,
+        "find", &Scene::find,
+        "getEntityCount", &Scene::getEntityCount,
+        "getEntity", &Scene::getEntity);
     lua.new_usertype<Entity>(
         "Entity", 
         sol::constructors<Entity()>(), 
@@ -28,7 +31,10 @@ void newhaven_core::bindSceneSystem(sol::state& lua)
         "removeComponent", &Entity::removeComponent,
         "addChild", &Entity::addChild, 
         "removeChild", &Entity::removeChild,
-        "onFree", &Entity::onFree);
+        "onFree", &Entity::onFree,
+        "find", &Entity::find,
+        "getChildCount", &Entity::getChildCount,
+        "getChild", &Entity::getChild);
     lua.new_usertype<Component>(
         "Component", 
         sol::constructors<Component()>(), 
