@@ -105,6 +105,22 @@ namespace newhaven_spatial
             node->set_global_rotation(r);
         }
 
+        Vector3 getGlobalRotationDegrees() {
+            return node->get_global_rotation_degrees();
+        }
+
+        void setGlobalRotationDegrees(Vector3 r) {
+            node->set_global_rotation_degrees(r);
+        }
+
+        Basis getGlobalBasis() {
+            return node->get_global_basis();
+        }
+
+        void setGlobalBasis(Basis b) {
+            node->set_global_basis(b);
+        }
+
         Transform3D getGlobalTransform() {
             return node->get_global_transform();
         }
