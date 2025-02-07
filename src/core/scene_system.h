@@ -410,7 +410,7 @@ namespace newhaven_core
             }
         }
 
-        Scene() : root(memnew(godot::Node)){};
+        Scene() : root(memnew(godot::Node)) {};
     };
 }
 
