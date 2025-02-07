@@ -1,0 +1,79 @@
+#include "scene_test.h"
+#include "../core/scene_system.h"
+#include "../spatial/transform.h"
+
+#include <godot_cpp/variant/utility_functions.hpp>
+#include <godot_cpp/classes/engine.hpp>
+
+using namespace newhaven_core;
+using namespace newhaven_spatial;
+
+namespace newhaven_tests
+{
+    void printEntity(Entity* entity, String indent) {
+        godot::UtilityFunctions::print(indent + "Entity: " + entity->name.c_str());
+        auto spatialTransform = static_cast<SpatialTransform*>(entity->getComponent("SpatialTransform"));
+        if (spatialTransform) {
+            godot::UtilityFunctions::print(indent + "    Transform: " + spatialTransform->getPosition() + " " + spatialTransform->getRotation() + " " + spatialTransform->getScale());
+            godot::UtilityFunctions::print(indent + "    Global Transform: " + spatialTransform->getGlobalPosition() + " " + spatialTransform->getGlobalRotation() + " " + spatialTransform->getGlobalScale());
+        }
+        for (auto i = 0; i < entity->getChildCount(); i++) {
+            auto child = entity->getChild(i);
+            printEntity(child, indent + "    ");
+        }
+    }
+    
+    void printScene(Scene* scene) {
+        godot::UtilityFunctions::print("Scene");
+        for (auto i = 0; i < scene->getEntityCount(); i++) {
+            auto entity = scene->getEntity(i);
+            printEntity(entity, "    ");
+        }
+    }
+    
+    void SceneTest::_ready()
+    {
+        if (godot::Engine::get_singleton()->is_editor_hint())
+        {
+            return;
+        }
+        
+        auto scene = new Scene();
+        scene->viewport = get_viewport();
+        auto entity1 = new Entity();
+        entity1->name = "Entity1";
+        auto e1transform = new SpatialTransform();
+        entity1->addComponent(e1transform, "SpatialTransform");
+        scene->addEntity(entity1);
+        e1transform->setPosition(Vector3(1, 2, 3));
+        auto child1 = new Entity();
+        child1->name = "Child1";
+        auto c1transform = new SpatialTransform();
+        child1->addComponent(c1transform, "SpatialTransform");
+        entity1->addChild(child1);
+        c1transform->setPosition(Vector3(4, 5, 6));
+        /*auto child2 = new Entity();
+        child2->name = "Child2";
+        auto c2transform = new SpatialTransform();
+        child2->addComponent(c2transform, "SpatialTransform");
+        entity1->addChild(child2);
+        c2transform->setPosition(Vector3(7, 8, 9));
+        auto entity2 = new Entity();
+        entity2->name = "Entity2";
+        auto e2transform = new SpatialTransform();
+        entity2->addComponent(e2transform, "SpatialTransform");
+        scene->addEntity(entity2);
+        e2transform->setPosition(Vector3(5, 3, 7));*/
+
+        printScene(scene);
+        /*godot::UtilityFunctions::print("Scene");
+        godot::UtilityFunctions::print("    Entity1");
+        godot::UtilityFunctions::print("        Transform: " + e1transform->getPosition());
+        godot::UtilityFunctions::print("        Child1");
+        godot::UtilityFunctions::print("            Transform: " + c1transform->getPosition());
+        godot::UtilityFunctions::print("        Child2");
+        godot::UtilityFunctions::print("            Transform: " + c2transform->getPosition());
+        godot::UtilityFunctions::print("    Entity2");
+        godot::UtilityFunctions::print("        Transform: " + e2transform->getPosition());*/
+    }
+}

@@ -6,7 +6,7 @@
 #include "godot_cpp/core/defs.hpp"
 #include "godot_cpp/godot.hpp"
 
-
+#include "tests/scene_test.h"
 #include "app.h"
 
 /// @file
@@ -27,6 +27,7 @@ namespace
         }
 
         godot::ClassDB::register_class<newhaven::App>();
+        godot::ClassDB::register_class<newhaven_tests::SceneTest>();
     }
 
     /// @brief Called by Godot to let us do any cleanup.

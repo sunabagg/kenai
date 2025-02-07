@@ -168,6 +168,8 @@ else ()
 
     set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} /wd4715")
 
+    set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} /wd4238")
+
     target_compile_options(${PROJECT_NAME} PRIVATE /bigobj)
 endif ()
 

@@ -4,9 +4,14 @@
 #include <godot_cpp/classes/node.hpp>
 #include <godot_cpp/classes/engine.hpp>
 
-using namespace godot;
 using namespace newhaven_core;
+using namespace godot;
+
 namespace newhaven_spatial {
+    void bindSpatialTransform( sol::state &lua )
+    {
+    }
+
     void SpatialTransform::_notify_dirty() {
         if (data.notifyTransform && !data.ignoreNotification && !xform_change.in_list()) {
 		    scene->xform_change_list.add(&xform_change);
@@ -45,67 +50,93 @@ namespace newhaven_spatial {
         _clear_dirty_bits(DIRTY_EULER_ROTATION_AND_SCALE);
     }
 
+    void SpatialTransform::onEnterTree() {
+        Entity* p = entity->parent;
+        if (p) {
+        data.parentTransform = static_cast<SpatialTransform*>(
+            p->getComponent( "SpatialTransform" ) );
+        }
+
+        if (data.parentTransform) {
+            data.C = data.parentTransform->data.children.push_back(this);
+        } else {
+            data.C = nullptr;
+        }
+
+        if (data.topLevel && !Engine::get_singleton()->is_editor_hint()) {
+            if (data.parentTransform) {
+                if (!data.topLevel) {
+                    data.localTransform = data.parentTransform->getGlobalTransform() * getTransform();
+                } else {
+                    data.localTransform = getTransform();
+                }
+                _replace_dirty_mask(DIRTY_EULER_ROTATION_AND_SCALE);
+            }
+        }
+
+        _set_dirty_bits(DIRTY_GLOBAL_TRANSFORM);
+        _notify_dirty();
+
+        onEnterWorld();
+        _update_visibility_parent(true);
+    }
+
+    void SpatialTransform::onExitTree() {
+        onExitWorld();
+        if (xform_change.in_list()) {
+            scene->xform_change_list.remove(&xform_change);
+        }
+        if (data.C) {
+            data.parentTransform->data.children.erase(data.C);
+        }
+        data.parentTransform = nullptr;
+        data.C = nullptr;
+        _update_visibility_parent(true);
+    }
+
+    void SpatialTransform::onEnterWorld() {
+        data.insideWorld = true;
+        data.viewport = scene->viewport; 
+    }
+
+    void SpatialTransform::onExitWorld() {
+        data.viewport = nullptr;
+        data.insideWorld = false;
+    }
+
     void SpatialTransform::onNotification(int p_what) {
         switch (p_what)
         {
             case NOTIFICATION_ENTER_TREE: {
-                
-                Entity* p = entity->parent;
-                if (p) {
-                    data.parentTransform = &(p->getComponent("SpatialTransform")->cast<SpatialTransform>());
-                }
-
-                if (data.parentTransform) {
-                    data.C = data.parentTransform->data.children.push_back(this);
-                } else {
-                    data.C = nullptr;
-                }
-
-                if (data.topLevel && !Engine::get_singleton()->is_editor_hint()) {
-                    if (data.parentTransform) {
-                        if (!data.topLevel) {
-                            data.localTransform = data.parentTransform->getGlobalTransform() * getTransform();
-                        } else {
-                            data.localTransform = getTransform();
-                        }
-                        _replace_dirty_mask(DIRTY_EULER_ROTATION_AND_SCALE);
-                    }
-                }
-
-                _set_dirty_bits(DIRTY_GLOBAL_TRANSFORM);
-                _notify_dirty();
-
-                notification(NOTIFICATION_ENTER_WORLD);
-                _update_visibility_parent(true);
             } break;
             case NOTIFICATION_EXIT_TREE: {
 
-                notification(NOTIFICATION_EXIT_WORLD, true);
-                if (xform_change.in_list()) {
-                    scene->xform_change_list.remove(&xform_change);
-                }
-                if (data.C) {
-                    data.parentTransform->data.children.erase(data.C);
-                }
-                data.parentTransform = nullptr;
-                data.C = nullptr;
-                _update_visibility_parent(true);
+                
             } break;
             case NOTIFICATION_ENTER_WORLD: {
-
-                data.insideWorld = true;
-                data.viewport = scene->viewport; 
             } break;
 
             case NOTIFICATION_EXIT_WORLD: {
-                data.viewport = nullptr;
-                data.insideWorld = false;
+                
             } break;
 
             case NOTIFICATION_TRANSFORM_CHANGED: {
-                //
+                _updateLocalTransform();
             } break;
+
+            case NOTIFICATION_LOCAL_TRANSFORM_CHANGED: {
+                setGlobalTransform(getTransform());
+            }break;
         }
+    }
+    void SpatialTransform::onLocalTransformChanged() {
+        setGlobalTransform(getTransform());
+    }
+
+    void SpatialTransform::setGlobalScale(const Vector3& p_scale) {
+        Transform3D t = getGlobalTransform();
+        t.basis.scale(p_scale);
+        setGlobalTransform(t);
     }
 
     void SpatialTransform::setBasis(const Basis& p_basis) {
@@ -174,7 +205,7 @@ namespace newhaven_spatial {
 
         _propagate_transform_changed(this);
         if (data.notifyLocalTransform) {
-            notification(NOTIFICATION_LOCAL_TRANSFORM_CHANGED);
+            onLocalTransformChanged();
         }
     }
 
@@ -232,7 +263,8 @@ namespace newhaven_spatial {
             return nullptr;
         }
 
-        return &(entity->parent->getComponent("SpatialTransform")->cast<SpatialTransform>());
+        return static_cast<SpatialTransform*>(
+            entity->parent->getComponent( "SpatialTransform" ) );
     }
 
     Transform3D SpatialTransform::getRelativeTransform(const Entity* p_parent) const {
@@ -345,16 +377,20 @@ namespace newhaven_spatial {
         return data.scale;
     }
 
+    Vector3 SpatialTransform::getGlobalScale() const {
+        return getGlobalTransform().basis.get_scale();
+    }
+
     void SpatialTransform::_replace_dirty_mask(uint32_t p_mask) const {
         data.dirty.mt.set(p_mask);
     }
 
-    void SpatialTransform::_set_dirty_bits(uint32_t p_mask) const {
-        bit_or(data.dirty.mt, p_mask);
+    void SpatialTransform::_set_dirty_bits(const uint32_t p_mask) {
+         data.dirty.mt.bit_or( p_mask );
     }
 
     void SpatialTransform::_clear_dirty_bits(uint32_t p_mask) const {
-        bit_and(data.dirty.mt, ~p_mask);
+        data.dirty.mt.bit_and(  ~p_mask );
     }
 
     void SpatialTransform::setDisableScale(bool p_disable) {
@@ -584,7 +620,7 @@ namespace newhaven_spatial {
             if (!p_update_root) {
                 return;
             }
-            Entity* parent = entity->find(visibilityParentPath);
+            //Entity* parent = entity->find(visibilityParentPath);
             //GeometryInstance3D *gi = Object::cast_to<GeometryInstance3D>(parent);
             //new_parent = gi ? gi->get_instance() : RID();
         } else if (data.parentTransform) {

@@ -3,33 +3,24 @@
 
 #include <godot_cpp/variant/transform3d.hpp>
 #include <godot_cpp/classes/node3d.hpp>
+#include <godot_cpp/classes/world3d.hpp>
 #include <godot_cpp/classes/scene_tree.hpp>
 #include <vector>
 #include <sol/sol.hpp>
-#include <godot_cpp/templates/safe_refcount.hpp>
+#include "../core/safe_refcount.h"
+//#include <godot_cpp/templates/safe_refcount.hpp>
 #include <godot_cpp/templates/self_list.hpp>
 
 #include "../core/scene_system.h"
 
-using namespace godot;
 using namespace newhaven_core;
+using namespace godot;
 
 namespace newhaven_spatial
 {
     void bindSpatialTransform( sol::state& lua );
 
-    template<typename T>
-    T bit_and(SafeNumeric<T>& sn, T p_value) {
-        std::atomic<T> &value = sn.value;
-		return value.fetch_and(p_value, std::memory_order_acq_rel);
-	}
-
-    template<typename T>
-    T bit_or(SafeNumeric<T>& sn, T p_value) {
-        std::atomic<T> &value = sn.value;
-		return value.fetch_or(p_value, std::memory_order_acq_rel);
-	}
-
+    
     class SpatialTransform : public Component
     {
     private:
@@ -75,9 +66,12 @@ namespace newhaven_spatial
         std::string visibilityParentPath;
 
         _FORCE_INLINE_ uint32_t _read_dirty_mask() const { return  data.dirty.mt.get(); }
-	    _FORCE_INLINE_ bool _test_dirty_bits(uint32_t p_bits) const { return bit_and(data.dirty.mt, p_bits); }
+        _FORCE_INLINE_ bool _test_dirty_bits( uint32_t p_bits ) const
+        {
+            return data.dirty.mt.bit_and( p_bits );
+        }
 	    void _replace_dirty_mask(uint32_t p_mask) const;
-	    void _set_dirty_bits(uint32_t p_bits) const;
+	    void _set_dirty_bits(const uint32_t p_bits);
 	    void _clear_dirty_bits(uint32_t p_bits) const;
 
         void _notify_dirty();
@@ -111,6 +105,12 @@ namespace newhaven_spatial
 
         Ref<World3D> getWorld() const;
 
+        void onEnterTree() override;
+        void onExitTree() override;
+        void onEnterWorld();
+        void onExitWorld();
+        void onLocalTransformChanged();
+
         void setPosition(const Vector3 &pPosition);
 
         void setRotationOrder(EulerOrder pOrder);
@@ -137,11 +137,16 @@ namespace newhaven_spatial
         Basis getGlobalBasis() const;
         Vector3 getGlobalRotation() const;
         Vector3 getGlobalRotationDegrees() const;
+        Vector3 getGlobalScale() const;
 
         void setTransform(const Transform3D &pTransform);
         void setBasis(const Basis &p_basis);
         void setQuaternion(const Quaternion &pQuaternion);
         void setGlobalTransform(const Transform3D &pTransform);
+        //void setGlobalBasis(const Basis &p_basis);
+        //void setGlobalRotation(const Vector3 &pEulerRad);
+        //void setGlobalRotationDegrees(const Vector3 &pEulerDeg);
+        void setGlobalScale(const Vector3 &pScale);
 
         void setAsTopLevel(bool pEnabled);
         void setAsTopLevelKeepLocal(bool pEnabled);

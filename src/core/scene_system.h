@@ -12,7 +12,7 @@
 #include <iostream>
 #include <godot_cpp/variant/transform3d.hpp>
 #include <sol/sol.hpp>
-#include <godot_cpp/templates/safe_refcount.hpp>
+#include "safe_refcount.h"
 #include <godot_cpp/templates/self_list.hpp>
 #include <godot_cpp/classes/main_loop.hpp>
 #include <godot_cpp/classes/viewport.hpp>
@@ -32,7 +32,7 @@ namespace newhaven_core
     protected:
         template <typename T>
 	    union MTNumeric {
-		    godot::SafeNumeric<T> mt;
+		    SafeNumeric<T> mt;
 		    T st;
 		    MTNumeric() :
 				    mt{} {}
@@ -99,16 +99,22 @@ namespace newhaven_core
 
         virtual void onInit() {}
 
+        virtual void onEnterTree() {}
+
         virtual void onReady() {}
 
         virtual void onUpdate(float delta) {}
 
         virtual void onPhysicsUpdate(float delta) {}
 
+        virtual void onExitTree() {}
+
+        /*
         template<typename T>
-        T cast() {
+        T* cast() {
             return static_cast<T>(this);
         }
+        */
     };
 
     class Entity : public BaseObject
@@ -138,6 +144,16 @@ namespace newhaven_core
             scene = nullptr;
         }
 
+        void setScene(Scene* scene) {
+            this->scene = scene;
+            for (auto& component : components) {
+                component.second->scene = scene;
+            }
+            for (auto& child : children) {
+                child->setScene(scene);
+            }
+        }
+
         void addComponent(Component* component, std::string name) {
             auto comp = std::unique_ptr<Component>(component);
             comp->entity = this;
@@ -145,6 +161,26 @@ namespace newhaven_core
             comp->onInit();
             components[name] = std::move(comp);
         };
+
+        void enterTree() {
+            for (auto& component : components) {
+                component.second->onEnterTree();
+                component.second->notification(Component::NOTIFICATION_ENTER_TREE);
+            }
+            for (auto& child : children) {
+                child->enterTree();
+            }
+        }
+
+        void exitTree() {
+            for (auto& component : components) {
+                component.second->onExitTree();
+                component.second->notification(Component::NOTIFICATION_EXIT_TREE);
+            }
+            for (auto& child : children) {
+                child->exitTree();
+            }
+        }
 
         Component* getComponent(std::string name) {
             if (components.find(name) != components.end()) {
@@ -175,8 +211,10 @@ namespace newhaven_core
         void addChild(Entity* entity) {
             auto ent = std::unique_ptr<Entity>(entity);
             ent->parent = this;
-            ent->scene = this->scene;
+            entity->setScene(this->scene);
             children.push_back(std::move(ent));
+            if (scene != nullptr)
+                entity->enterTree();
         }
 
         void removeChild(Entity* entity) {
@@ -185,6 +223,8 @@ namespace newhaven_core
                     it->get()->parent = nullptr;
                     it->get()->scene = nullptr;
                     children.erase(it);
+                    if (scene != nullptr)
+                        exitTree();
                     break;
                 }
             }
@@ -207,6 +247,10 @@ namespace newhaven_core
 
         size_t getChildCount() {
             return children.size();
+        }
+
+        Entity* getChild(size_t index) {
+            return children[index].get();
         }
 
         void ready() {
@@ -256,13 +300,15 @@ namespace newhaven_core
 
         void addEntity(Entity* entity) {
             auto ent = std::unique_ptr<Entity>(entity);
-            ent->scene = this;
+            ent->setScene(this);
             entities.push_back(std::move(ent));
+            entity->enterTree();
         }
 
         void removeEntity(Entity* entity) {
             for (auto it = entities.begin(); it != entities.end(); ++it) {
                 if (it->get() == entity) {
+                    it->get()->exitTree();
                     it->get()->scene = nullptr;
                     entities.erase(it);
                     break;
@@ -277,6 +323,14 @@ namespace newhaven_core
                 }
             }
             return false;
+        }
+
+        size_t getEntityCount() {
+            return entities.size();
+        }
+
+        Entity* getEntity(size_t index) {
+            return entities[index].get();
         }
 
         void ready() {
