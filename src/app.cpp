@@ -9,6 +9,7 @@
 
 #include"core/lua_bind.h"
 #include "core/scene_system.h"
+#include "spatial/transform.h"
 
 using namespace newhaven;
 using namespace godot;
@@ -50,6 +51,7 @@ void App::_ready() {
 
     newhaven_core::bind_base_types( global_state );
     newhaven_core::bindSceneSystem( global_state );
+    newhaven_spatial::bindSpatialTransform( global_state );
     //newhaven_core::bind_all_godot_classes( global_state );
     //newhaven_core::initialize_lua( global_state );
 
