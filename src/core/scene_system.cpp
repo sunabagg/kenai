@@ -12,7 +12,7 @@ void newhaven_core::bindSceneSystem(sol::state& lua)
     );
     lua.new_usertype<Scene>(
         "Scene", 
-        sol::constructors<Scene()>(), 
+        sol::constructors<Scene()>(),
         "addEntity", &Scene::addEntity, 
         "hasEntity", &Scene::hasEntity, 
         "removeEntity", &Scene::removeEntity,
@@ -26,6 +26,7 @@ void newhaven_core::bindSceneSystem(sol::state& lua)
     lua.new_usertype<Entity>(
         "Entity", 
         sol::constructors<Entity()>(), 
+        "name",sol::property( [](Entity* e) { return e->name; }, [](Entity* e, std::string name) { e->name = name; }),
         "addComponent", &Entity::addComponent, 
         "hasComponent", &Entity::hasComponent, 
         "removeComponent", &Entity::removeComponent,

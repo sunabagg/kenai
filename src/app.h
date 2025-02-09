@@ -8,6 +8,8 @@
 #include <godot_cpp/classes/node.hpp>
 #include <sol/state.hpp>
 
+#include "core/scene_system.h"
+
 using namespace godot;
 
 namespace newhaven
@@ -24,6 +26,8 @@ namespace newhaven
 
         void _ready() override;
         void start();
+
+        newhaven_core::Scene* createScene();
     };
 }
 

@@ -8,11 +8,7 @@ namespace newhaven_spatial {
     void bindSpatialTransform(sol::state& lua) {
         lua.new_usertype<SpatialTransform>("SpatialTransform",  
             sol::constructors<SpatialTransform()>(), 
-            "onInit", &SpatialTransform::onInit, 
-            "onReady", &SpatialTransform::onReady, 
-            "onUpdate", &SpatialTransform::onUpdate,    
-            "onPhysicsUpdate", &SpatialTransform::onPhysicsUpdate,
-            "onFree", &SpatialTransform::onFree,
+            sol::base_classes, sol::bases<Component>(),
             "basis", sol::property(&SpatialTransform::getBasis, &SpatialTransform::setBasis),
             "position", sol::property(&SpatialTransform::getPosition, &SpatialTransform::setPosition),
             "rotation", sol::property(&SpatialTransform::getRotation, &SpatialTransform::setRotation),

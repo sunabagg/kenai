@@ -10,6 +10,9 @@
 #include"core/lua_bind.h"
 #include "core/scene_system.h"
 #include "spatial/transform.h"
+#include "spatial/camera.h"
+#include "spatial/mesh/mesh_renderer.h"
+#include "spatial/mesh/box.h"
 
 using namespace newhaven;
 using namespace godot;
@@ -43,6 +46,58 @@ void App::_ready() {
                 std::string str = arg.as<std::string>();
                 msg += str.c_str();
             }
+            else if (arg.is<sol::table>())
+            {
+                msg += "table";
+            }
+            else if (arg.is<Vector3>())
+            {
+                Vector3 vec = arg.as<Vector3>();
+                msg += String(vec);
+            }
+            else if (arg.is<Vector2>())
+            {
+                Vector2 vec = arg.as<Vector2>();
+                msg += String(vec);
+            }
+            else if (arg.is<float>())
+            {
+                float f = arg.as<float>();
+                Variant v = f;
+                msg += v;
+            }
+            else if (arg.is<bool>())
+            {
+                bool b = arg.as<bool>();
+                Variant v = b;
+                msg += v;
+            }
+            else if (arg.is<int>())
+            {
+                int i = arg.as<int>();
+                Variant v = i;
+                msg += v;
+            }
+            else if (arg.is<Vector4>())
+            {
+                Vector4 vec = arg.as<Vector4>();
+                msg += String(vec);
+            }
+            else if (arg.is<Vector4i>())
+            {
+                Vector4i vec = arg.as<Vector4i>();
+                msg += String(vec);
+            }
+            else if (arg.is<Vector2i>())
+            {
+                Vector2i vec = arg.as<Vector2i>();
+                msg += String(vec);
+            }
+            else if (arg.is<Vector3i>())
+            {
+                Vector3i vec = arg.as<Vector3i>();
+                msg += String(vec);
+            }
         }
         godot::UtilityFunctions::print( msg );
     };
@@ -52,8 +107,16 @@ void App::_ready() {
     newhaven_core::bind_base_types( global_state );
     newhaven_core::bindSceneSystem( global_state );
     newhaven_spatial::bindSpatialTransform( global_state );
+    newhaven_spatial::bindCamera( global_state );
+    newhaven_spatial_mesh::bindMeshRenderer( global_state );
+    newhaven_spatial_mesh::bindBox( global_state );
+
     //newhaven_core::bind_all_godot_classes( global_state );
     //newhaven_core::initialize_lua( global_state );
+
+    global_state.set_function( "createScene", [this]() {
+        return createScene();
+    } );
 
     global_state.script(R"(
         function printAllGlobals()
@@ -96,7 +159,65 @@ void App::_ready() {
 
         printAllGlobals()
     )");
+    global_state.script(R"(
+        print("Hello, World!")
+        local vec = Vector3.new(1, 2, 3)
+        vec.x = 1
+        vec.y = 2
+        vec.z = 3
+        print(vec.x)
+        print(vec.y)
+        print(vec.z)
+    )");
+    
+    global_state.script(R"(
+        local scene = createScene()
+        local entity1 = Entity.new()
+        entity1.name = "Entity1"
+        local e1transform = SpatialTransform.new()
+        entity1:addComponent(e1transform, "SpatialTransform")
+        scene:addEntity(entity1)
+        e1transform.position = Vector3.new(1, 2, 3)
+        local child1 = Entity.new()
+        child1.name = "Child1"
+        local c1transform = SpatialTransform.new()
+        child1:addComponent(c1transform, "SpatialTransform")
+        entity1:addChild(child1)
+        c1transform.position = Vector3.new(4, 5, 6)
+        local entity2 = Entity.new()
+        entity2.name = "Entity2"
+        local e2transform = SpatialTransform.new()
+        entity2:addComponent(e2transform, "SpatialTransform")
+        scene:addEntity(entity2)
+        e2transform.position = Vector3.new(7, 8, 9)
+        local entity3 = Entity.new()
+        entity3.name = "Entity3"
+        local e3transform = SpatialTransform.new()
+        entity3:addComponent(e3transform, "SpatialTransform")
+        local e3camera = Camera.new()
+        entity3:addComponent(e3camera, "Camera")
+        scene:addEntity(entity3)
+        e3transform.position = Vector3.new(0, 0, 1)    
+        local entity4 = Entity.new()
+        entity4.name = "Entity4"
+        local e4transform = SpatialTransform.new()
+        entity4:addComponent(e4transform, "SpatialTransform")
+        local e4mesh = MeshRenderer.new()
+        entity4:addComponent(e4mesh, "MeshRenderer")
+        local e4box = Box.new()
+        entity4:addComponent(e4box, "Box")
+        e4box.size = Vector3.new(1, 1, 1)
+        scene:addEntity(entity4)
+        e4transform.position = Vector3.new(0, 0, -1)
+    )");
 }
 
 void App::start() {
+}
+
+Scene* App::createScene() {
+    auto scene = new Scene();
+    add_child(scene->root);
+    scene->viewport = get_viewport();
+    return scene;
 }

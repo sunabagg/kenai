@@ -8,11 +8,7 @@ namespace newhaven_spatial_mesh {
         lua.new_usertype<MeshRenderer>(
             "MeshRenderer",
             sol::constructors<MeshRenderer()>(),
-            "onInit", &MeshRenderer::onInit, 
-            "onReady", &MeshRenderer::onReady, 
-            "onUpdate", &MeshRenderer::onUpdate,    
-            "onPhysicsUpdate", &MeshRenderer::onPhysicsUpdate,
-            "onFree", &MeshRenderer::onFree,
+            sol::base_classes, sol::bases<Component>(),
             "create_convex_collision", &MeshRenderer::createConvexCollision,
             "create_debug_tangents", &MeshRenderer::createDebugTangents,
             "create_trimesh_collision", &MeshRenderer::createTrimeshCollision,

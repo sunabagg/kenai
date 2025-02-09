@@ -6,11 +6,7 @@ namespace newhaven_spatial_mesh
         lua.new_usertype<Box>(
             "Box",
             sol::constructors<Box()>(),
-            "onInit", &Box::onInit, 
-            "onReady", &Box::onReady, 
-            "onUpdate", &Box::onUpdate,    
-            "onPhysicsUpdate", &Box::onPhysicsUpdate,
-            "onFree", &Box::onFree,
+            sol::base_classes, sol::bases<Component>(),
             "size", sol::property(&Box::getSize, &Box::setSize),
             "subdivideDepth", sol::property(&Box::getSubdivideDepth, &Box::setSubdivideDepth),
             "subdivideHeight", sol::property(&Box::getSubdivideHeight, &Box::setSubdivideHeight),
