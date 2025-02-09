@@ -1,6 +1,7 @@
 #include "scene_test.h"
 #include "../core/scene_system.h"
 #include "../spatial/transform.h"
+#include "../spatial/camera.h"
 
 #include <godot_cpp/variant/utility_functions.hpp>
 #include <godot_cpp/classes/engine.hpp>
@@ -65,6 +66,14 @@ namespace newhaven_tests
         entity2->addComponent(e2transform, "SpatialTransform");
         scene->addEntity(entity2);
         e2transform->setPosition(Vector3(5, 3, 7));
+        auto entity3 = new Entity();
+        entity3->name = "Entity3";
+        auto e3transform = new SpatialTransform();
+        entity3->addComponent(e3transform, "SpatialTransform");
+        auto e3camera = new Camera();
+        entity3->addComponent(e3camera, "Camera");
+        scene->addEntity(entity3);
+        e3transform->setPosition(Vector3(0, 0, 1));
 
         printScene(scene);
         /*godot::UtilityFunctions::print("Scene");
