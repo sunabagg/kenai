@@ -90,14 +90,5 @@ namespace newhaven_tests
         e4transform->setPosition(Vector3(0, 0, -1));
 
         printScene(scene);
-        /*godot::UtilityFunctions::print("Scene");
-        godot::UtilityFunctions::print("    Entity1");
-        godot::UtilityFunctions::print("        Transform: " + e1transform->getPosition());
-        godot::UtilityFunctions::print("        Child1");
-        godot::UtilityFunctions::print("            Transform: " + c1transform->getPosition());
-        godot::UtilityFunctions::print("        Child2");
-        godot::UtilityFunctions::print("            Transform: " + c2transform->getPosition());
-        godot::UtilityFunctions::print("    Entity2");
-        godot::UtilityFunctions::print("        Transform: " + e2transform->getPosition());*/
     }
 }
