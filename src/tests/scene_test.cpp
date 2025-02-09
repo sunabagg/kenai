@@ -2,12 +2,15 @@
 #include "../core/scene_system.h"
 #include "../spatial/transform.h"
 #include "../spatial/camera.h"
+#include "../spatial/mesh/mesh_renderer.h"
+#include "../spatial/mesh/box.h"
 
 #include <godot_cpp/variant/utility_functions.hpp>
 #include <godot_cpp/classes/engine.hpp>
 
 using namespace newhaven_core;
 using namespace newhaven_spatial;
+using namespace newhaven_spatial_mesh;
 
 namespace newhaven_tests
 {
@@ -74,6 +77,17 @@ namespace newhaven_tests
         entity3->addComponent(e3camera, "Camera");
         scene->addEntity(entity3);
         e3transform->setPosition(Vector3(0, 0, 1));
+        auto entity4 = new Entity();
+        entity4->name = "Entity4";
+        auto e4transform = new SpatialTransform();
+        entity4->addComponent(e4transform, "SpatialTransform");
+        auto e4mesh = new MeshRenderer();
+        entity4->addComponent(e4mesh, "MeshRenderer");
+        auto e4box = new Box();
+        entity4->addComponent(e4box, "Box");
+        e4box->setSize(Vector3(1, 1, 1));
+        scene->addEntity(entity4);
+        e4transform->setPosition(Vector3(0, 0, -1));
 
         printScene(scene);
         /*godot::UtilityFunctions::print("Scene");

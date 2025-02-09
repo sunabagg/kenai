@@ -1,0 +1,61 @@
+#ifndef BOX_H
+#define BOX_H
+
+#include <godot_cpp/classes/box_mesh.hpp>
+
+#include "../../core/scene_system.h"
+#include "mesh_renderer.h"
+
+using namespace godot;
+using namespace newhaven_core;
+
+namespace newhaven_spatial_mesh {
+
+    void bindBox(sol::state& lua);
+
+    class Box : public MeshRenderer {
+    private:
+        BoxMesh* boxMesh;
+    public:
+        Vector3 getSize() {
+            return boxMesh->get_size();
+        }
+
+        void setSize(Vector3 size) {
+            boxMesh->set_size(size);
+        }
+
+        int getSubdivideDepth() {
+            return boxMesh->get_subdivide_depth();
+        }
+
+        void setSubdivideDepth(int depth) {
+            boxMesh->set_subdivide_depth(depth);
+        }
+
+        int getSubdivideHeight() {
+            return boxMesh->get_subdivide_height();
+        }
+
+        void setSubdivideHeight(int height) {
+            boxMesh->set_subdivide_height(height);
+        }
+
+        int getSubdivideWidth() {
+            return boxMesh->get_subdivide_width();
+        }
+
+        void setSubdivideWidth(int width) {
+            boxMesh->set_subdivide_width(width);
+        }
+
+        void onInit() override {
+            boxMesh = memnew(BoxMesh);
+            MeshRenderer* meshRenderer = static_cast<MeshRenderer*>(entity->getComponent("MeshRenderer"));
+            meshRenderer->getNode()->set_mesh(boxMesh);
+        }
+    };
+}
+
+#endif // BOX_H
+

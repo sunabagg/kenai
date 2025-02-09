@@ -8,6 +8,12 @@ namespace newhaven_spatial
     void bindCamera(sol::state& lua){
         lua.new_usertype<Camera>(
             "Camera",
+            sol::constructors<Camera()>(),
+            "onInit", &Camera::onInit, 
+            "onReady", &Camera::onReady, 
+            "onUpdate", &Camera::onUpdate,    
+            "onPhysicsUpdate", &Camera::onPhysicsUpdate,
+            "onFree", &Camera::onFree,
             "cullMask", sol::property(&Camera::getCullMask, &Camera::setCullMask),
             "current", sol::property(&Camera::getCurrent, &Camera::setCurrent),
             "dopplerTracking", sol::property(&Camera::getDopplerTracking, &Camera::setDopplerTracking),
