@@ -6,6 +6,7 @@
 #include "godot_cpp/core/defs.hpp"
 #include "godot_cpp/godot.hpp"
 
+#include "core/scene_node.h"
 #include "tests/scene_test.h"
 #include "app.h"
 
@@ -28,6 +29,7 @@ namespace
 
         godot::ClassDB::register_class<newhaven::App>();
         godot::ClassDB::register_class<newhaven_tests::SceneTest>();
+        godot::ClassDB::register_class<newhaven_core::SceneNode>();
     }
 
     /// @brief Called by Godot to let us do any cleanup.

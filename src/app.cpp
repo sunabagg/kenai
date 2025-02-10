@@ -8,6 +8,7 @@
 #include <godot_cpp/classes/engine.hpp>
 
 #include"core/lua_bind.h"
+#include "core/scene_node.h"
 #include "core/scene_system.h"
 #include "spatial/transform.h"
 #include "spatial/camera.h"
@@ -216,7 +217,8 @@ void App::start() {
 }
 
 Scene* App::createScene() {
-    auto scene = new Scene();
+    auto sceneNode = memnew( SceneNode );
+    auto scene = sceneNode->getScene();
     add_child(scene->root);
     scene->viewport = get_viewport();
     return scene;

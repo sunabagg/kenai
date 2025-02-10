@@ -3,6 +3,8 @@ target_sources(${PROJECT_NAME} PRIVATE
         base_object.cpp
         scene_system.h
         scene_system.cpp
+        scene_node.h
+        scene_node.cpp
         lua_bind.h
         lua_bind.cpp
         type_bind.cpp

@@ -54,6 +54,10 @@ namespace newhaven_spatial_mesh {
             MeshRenderer* meshRenderer = static_cast<MeshRenderer*>(entity->getComponent("MeshRenderer"));
             meshRenderer->getNode()->set_mesh(boxMesh);
         }
+
+        void onFree() override {
+           boxMesh->unreference();
+        }
     };
 }
 

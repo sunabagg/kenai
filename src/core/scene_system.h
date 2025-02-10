@@ -104,9 +104,9 @@ namespace newhaven_core
 
         virtual void onReady() {}
 
-        virtual void onUpdate(float delta) {}
+        virtual void onUpdate(double delta) {}
 
-        virtual void onPhysicsUpdate(float delta) {}
+        virtual void onPhysicsUpdate(double delta) {}
 
         virtual void onExitTree() {}
 
@@ -291,7 +291,7 @@ namespace newhaven_core
             }
         }
 
-        void update(float delta) {
+        void update(double delta) {
             for (auto& component : components) {
                 component.second->onUpdate(delta);
             }
@@ -300,7 +300,7 @@ namespace newhaven_core
             }
         }
 
-        void physicsUpdate(float delta) {
+        void physicsUpdate(double delta) {
             for (auto& component : components) {
                 component.second->onPhysicsUpdate(delta);
             }
@@ -392,13 +392,13 @@ namespace newhaven_core
             }
         }
 
-        void update(float delta) {
+        void update(double delta) {
             for (auto& entity : entities) {
                 entity->update(delta);
             }
         }
 
-        void physicsUpdate(float delta) {
+        void physicsUpdate(double delta) {
             for (auto& entity : entities) {
                 entity->physicsUpdate(delta);
             }
