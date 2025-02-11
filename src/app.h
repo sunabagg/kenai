@@ -9,7 +9,6 @@
 #include <sol/state.hpp>
 
 #include "core/scene_system.h"
-#include "core/scene_node.h"
 
 using namespace godot;
 
@@ -24,8 +23,6 @@ namespace newhaven
     public:
         App();
         ~App();
-
-        List<newhaven_core::SceneNode*> scenes;
 
         void _ready() override;
         void start();

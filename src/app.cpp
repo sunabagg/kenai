@@ -9,6 +9,7 @@
 
 #include"core/lua_bind.h"
 #include "core/scene_system.h"
+#include "core/scene_node.h"
 #include "spatial/transform.h"
 #include "spatial/camera.h"
 #include "spatial/mesh/mesh_renderer.h"
@@ -26,10 +27,6 @@ App::App() {
 
 App::~App() {
     //UtilityFunctions::print("App destructor");
-    for (auto i = 0; i < scenes.size(); i++) {
-        auto scene = scenes[i];
-        scene->queue_free();
-    }
 }
 
 void App::_ready() {
@@ -224,6 +221,5 @@ Scene* App::createScene() {
     auto scene = sceneNode->getScene();
     add_child(scene->root);
     scene->viewport = get_viewport();
-    scenes.push_back(sceneNode);
     return scene;
 }
