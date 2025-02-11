@@ -8,14 +8,12 @@
             "name": "Windows Launch",
             "type": "cppvsdbg",
             "request": "launch",
-            "program": "C:\\Users\\lucas\\Desktop\\Godot_v4.3-stable_win64.exe",
+            "program": "godot",
             "args": [
-                "--path",
-                "${workspaceRoot}/out/build/x64-debug/Newhaven",
                 "--verbose"
             ],
-            "cwd": "${workspaceFolder}",
-            //"preLaunchTask": "CMake: build",
+            "cwd": "${command:cmake.buildDirectory}/Newhaven",
+            "preLaunchTask": "CMake: build",
             "internalConsoleOptions": "openOnSessionStart",
             "console": "internalConsole",
             "environment": [
@@ -30,7 +28,7 @@
             "name": "macOS/Linux Launch",
             "type": "lldb",
             "request": "launch",
-            "program": "C:\\Users\\lucas\\Desktop\\Godot_v4.3-stable_win64.exe",
+            "program": "godot",
             "args": [
                 "--path",
                 "${workspaceRoot}Newhaven-build/Newhaven",
