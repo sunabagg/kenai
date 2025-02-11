@@ -6,12 +6,6 @@
 
 using namespace newhaven_core;
 
-void BaseObject::free()
-{
-    this->onFree();
-    delete this;
-}
-
 void BaseObject::notification(const int p_notification, bool p_reversed)
 {
     if (p_reversed) {

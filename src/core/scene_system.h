@@ -124,8 +124,8 @@ namespace newhaven_core
         godot::Node* node = nullptr;
     public:
         std::string name;
-        std::unordered_map<std::string, std::unique_ptr<Component>> components;
-        std::vector<std::unique_ptr<Entity>> children;
+        std::unordered_map<std::string, Component*> components;
+        std::vector<Entity*> children;
         Entity* parent;
         
         Scene* scene;
@@ -179,11 +179,10 @@ namespace newhaven_core
         }
 
         void addComponent(Component* component, std::string name) {
-            auto comp = std::unique_ptr<Component>(component);
-            comp->entity = this;
-            comp->scene = this->scene;
-            comp->onInit();
-            components[name] = std::move(comp);
+            component->entity = this;
+            component->scene = this->scene;
+            component->onInit();
+            components[name] = component;
         };
 
         void enterTree() {
@@ -208,7 +207,7 @@ namespace newhaven_core
 
         Component* getComponent(std::string name) {
             if (components.find(name) != components.end()) {
-                return components[name].get();
+                return components[name];
             }
             return nullptr;
         }
@@ -233,10 +232,9 @@ namespace newhaven_core
         }
 
         void addChild(Entity* entity) {
-            auto ent = std::unique_ptr<Entity>(entity);
-            ent->parent = this;
+            entity->parent = this;
             entity->setScene(this->scene);
-            children.push_back(std::move(ent));
+            children.push_back(entity);
             if (node != nullptr) {
                 node->add_child(entity->node);
             }
@@ -245,15 +243,16 @@ namespace newhaven_core
         }
 
         void removeChild(Entity* entity) {
-            for (auto it = children.begin(); it != children.end(); ++it) {
-                if (it->get() == entity) {
-                    it->get()->parent = nullptr;
-                    it->get()->scene = nullptr;
-                    children.erase(it);
+            for (auto i = 0; i < children.size(); i++) {
+                Entity* ent = children[i];
+                if (ent == entity) {
+                    ent->parent = nullptr;
+                    ent->scene = nullptr;
+                    children.erase(children.begin() + i);
                     if (node != nullptr)
                         node->remove_child(entity->node);
                     if (scene != nullptr)
-                        exitTree();
+                        ent->exitTree();
                     break;
                 }
             }
@@ -261,7 +260,7 @@ namespace newhaven_core
 
         bool hasChild(Entity* entity) {
             for (auto& child : children) {
-                if (child.get() == entity) {
+                if (child == entity) {
                     return true;
                 }
             }
@@ -279,7 +278,7 @@ namespace newhaven_core
         }
 
         Entity* getChild(size_t index) {
-            return children[index].get();
+            return children[index];
         }
 
         void ready() {
@@ -311,11 +310,12 @@ namespace newhaven_core
 
         void onFree() override {
             for (auto& component : components) {
-                component.second->onFree();
+                delete component.second;
             }
             for (auto& child : children) {
-                child->onFree();
+                delete child;
             }
+            node->queue_free();
         }
 
     };
@@ -333,15 +333,14 @@ namespace newhaven_core
         }
     public:
         godot::SelfList<Entity>::List xform_change_list;
-        std::vector<std::unique_ptr<Entity>> entities;
+        std::vector<Entity*> entities;
         godot::Node* root;
 
         godot::Viewport* viewport;
 
         void addEntity(Entity* entity) {
-            auto ent = std::unique_ptr<Entity>(entity);
-            ent->setScene(this);
-            entities.push_back(std::move(ent));
+            entity->setScene(this);
+            entities.push_back(entity);
             if (root != nullptr) {
                 root->add_child(entity->getNode());
             }
@@ -349,15 +348,15 @@ namespace newhaven_core
         }
 
         void removeEntity(Entity* entity) {
-            for (auto it = entities.begin(); it != entities.end(); ++it) {
-                if (it->get() == entity) {
-                    entity->exitTree();
+            for (auto i = 0; i < entities.size(); i++) {
+                Entity* ent = entities[i];
+                if (ent == entity) {
+                    ent->parent = nullptr;
+                    ent->scene = nullptr;
+                    entities.erase(entities.begin() + i);
                     if (root != nullptr)
-                    {
                         root->remove_child(entity->getNode());
-                        entity->scene = nullptr;
-                    }
-                    entities.erase(it);
+                    ent->exitTree();
                     break;
                 }
             }
@@ -365,7 +364,7 @@ namespace newhaven_core
 
         bool hasEntity(Entity* entity) {
             for (auto& ent : entities) {
-                if (ent.get() == entity) {
+                if (ent == entity) {
                     return true;
                 }
             }
@@ -383,7 +382,7 @@ namespace newhaven_core
         }
 
         Entity* getEntity(size_t index) {
-            return entities[index].get();
+            return entities[index];
         }
 
         void ready() {

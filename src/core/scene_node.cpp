@@ -9,7 +9,7 @@ namespace newhaven_core {
     
     SceneNode::~SceneNode() {
         if (scene != nullptr) {
-            //scene->free();
+            delete scene;
         }
     }
 
