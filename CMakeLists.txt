@@ -170,6 +170,12 @@ else ()
 
     set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} /wd4238")
 
+    # sets the fsanitize flags
+    #set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} /fsanitize=address")
+    #set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} /MDd")
+
+    #set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} /MT")
+
     target_compile_options(${PROJECT_NAME} PRIVATE /bigobj)
 endif ()
 
