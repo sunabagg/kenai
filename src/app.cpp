@@ -186,7 +186,7 @@ void App::_ready() {
                 local global = spatialTransform.global
                 --print(position == nil)
 
-                print(indent .. "    Transform: " .. vector3tostring(position) .. ", " .. vector3tostring(rotation) .. ", " .. vector3tostring(scale))
+                print(indent .. "    Transform: " .. position:tostring() .. ", " .. rotation:tostring() .. ", " .. scale:tostring())
                 print(indent .. "    Global Transform: " .. global:tostring())
             end
             for i = 0, entity:getChildCount() - 1 do
