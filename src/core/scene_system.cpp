@@ -39,8 +39,8 @@ void newhaven_core::bindSceneSystem(sol::state& lua)
     lua.new_usertype<Component>(
         "Component", 
         sol::base_classes, sol::bases<BaseObject>(),
-        "rawEntity", sol::property( [](Component* c) { return c->entity; }, [](Component* c, Entity* e) { c->entity = e; }),
-        "rawScene", sol::property( [](Component* c) { return c->scene; }, [](Component* c, Scene* s) { c->scene = s; }),
+        "entity", sol::property( [](Component* c) { return c->entity; }, [](Component* c, Entity* e) { c->entity = e; }),
+        "scene", sol::property( [](Component* c) { return c->scene; }, [](Component* c, Scene* s) { c->scene = s; }),
         "onInit", &Component::onInit,
         "onReady", &Component::onReady, 
         "onUpdate", &Component::onUpdate,    
