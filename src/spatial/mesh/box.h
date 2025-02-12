@@ -13,7 +13,7 @@ namespace newhaven_spatial_mesh {
 
     void bindBox(sol::state& lua);
 
-    class Box : public MeshRenderer {
+    class Box : public Component {
     private:
         BoxMesh* boxMesh;
     public:
