@@ -10,6 +10,11 @@ namespace newhaven_spatial_mesh
             "size", sol::property(&Box::getSize, &Box::setSize),
             "subdivideDepth", sol::property(&Box::getSubdivideDepth, &Box::setSubdivideDepth),
             "subdivideHeight", sol::property(&Box::getSubdivideHeight, &Box::setSubdivideHeight),
-            "subdivideWidth", sol::property(&Box::getSubdivideWidth, &Box::setSubdivideWidth));
+            "subdivideWidth", sol::property(&Box::getSubdivideWidth, &Box::setSubdivideWidth),
+            "getFromEntity", [](Entity* entity) {
+                Component* component = entity->getComponent("Box");
+                return static_cast<Box*>(component);
+            }
+        );
     }
 }

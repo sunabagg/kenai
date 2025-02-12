@@ -172,6 +172,37 @@ void App::_ready() {
     )");
     
     global_state.script(R"(
+        function vector3tostring(vec)
+            return "<" .. vec.x .. ", " .. vec.y .. ", " .. vec.z .. ">"
+        end
+
+        function printEntity(entity, indent)
+            print(indent .. "Entity: " .. entity.name)
+            local spatialTransform = SpatialTransform.getFromEntity(entity)
+            if spatialTransform then
+                local position = spatialTransform.position
+                local rotation = spatialTransform.rotation
+                local scale = spatialTransform.scale
+                local global = spatialTransform.global
+                --print(position == nil)
+
+                print(indent .. "    Transform: " .. vector3tostring(position) .. ", " .. vector3tostring(rotation) .. ", " .. vector3tostring(scale))
+                print(indent .. "    Global Transform: " .. global:tostring())
+            end
+            for i = 0, entity:getChildCount() - 1 do
+                local child = entity:getChild(i)
+                printEntity(child, indent .. "    ")
+            end
+        end
+
+        function printScene(_scene)
+            print("Scene")
+            for i = 0, _scene:getEntityCount() - 1 do
+                local entity = _scene:getEntity(i)
+                printEntity(entity, "    ")
+            end
+        end
+
         local scene = createScene()
         local entity1 = Entity.new()
         entity1.name = "Entity1"
@@ -210,6 +241,8 @@ void App::_ready() {
         e4box.size = Vector3.new(1, 1, 1)
         scene:addEntity(entity4)
         e4transform.position = Vector3.new(0, 0, -1)
+
+        printScene(scene)
     )");
 }
 

@@ -56,7 +56,8 @@ void newhaven_core::bind_base_types(sol::state& lua) {
         "round", &Vector2::round,
         "snapped", &Vector2::snapped,
         "clamp", &Vector2::clamp,
-        "aspect", &Vector2::aspect
+        "aspect", &Vector2::aspect,
+        "tostring", [](const Vector2& v) { return std::string((v.operator String()).utf8().get_data()); }
         );
     
     lua.new_usertype<Rect2>(
@@ -81,7 +82,8 @@ void newhaven_core::bind_base_types(sol::state& lua) {
         "intersects", &Rect2::intersects,
         "isEqualApprox", &Rect2::is_equal_approx,
         //"isFinite", &Rect2::is_finite,
-        "merge", &Rect2::merge
+        "merge", &Rect2::merge,
+        "tostring", [](const Rect2& r) { return std::string((r.operator String()).utf8().get_data()); }
     );
 
     lua.new_usertype<godot::Vector2i>(
@@ -102,7 +104,8 @@ void newhaven_core::bind_base_types(sol::state& lua) {
             "maxAxisIndex", &Vector2i::max_axis_index,
             "min", &Vector2i::min,
             "minAxisIndex", &Vector2i::min_axis_index,
-            "sign", &Vector2i::sign
+            "sign", &Vector2i::sign,
+            "tostring", [](const Vector2i& v) { return std::string((v.operator String()).utf8().get_data()); }
             //"snapped", &Vector2i::snapped
     );
 
@@ -123,7 +126,8 @@ void newhaven_core::bind_base_types(sol::state& lua) {
             "hasArea", &Rect2i::has_area,
             "hasPoint", &Rect2i::has_point,
             "intersection", &Rect2i::intersection,
-            "intersects", &Rect2i::intersects
+            "intersects", &Rect2i::intersects,
+            "tostring", [](const Rect2i& r) { return std::string((r.operator String()).utf8().get_data()); }
             //"isEqualApprox", &Rect2i::is_equal_approx,
     );
 
@@ -178,7 +182,8 @@ void newhaven_core::bind_base_types(sol::state& lua) {
         "signedAngleTo", &Vector3::signed_angle_to,
         "slerp", &Vector3::slerp,
         "slide", &Vector3::slide,
-        "snapped", &Vector3::snapped
+        "snapped", &Vector3::snapped,
+        "tostring", [](const Vector3& v) { return std::string((v.operator String()).utf8().get_data()); }
         );
     
     lua.new_usertype<godot::Vector4>(
@@ -215,7 +220,8 @@ void newhaven_core::bind_base_types(sol::state& lua) {
         "posmodv", &Vector4::posmodv,
         "round", &Vector4::round,
         "sign", &Vector4::sign,
-        "snapped", &Vector4::snapped
+        "snapped", &Vector4::snapped,
+        "tostring", [](const Vector4& v) { return std::string((v.operator String()).utf8().get_data()); }
     );
 
     lua.new_usertype<godot::Vector4i>(
@@ -235,7 +241,8 @@ void newhaven_core::bind_base_types(sol::state& lua) {
         "maxAxisIndex", &Vector4i::max_axis_index,
         "min", &Vector4i::min,
         "minAxisIndex", &Vector4i::min_axis_index,
-        "sign", &Vector4i::sign
+        "sign", &Vector4i::sign,
+        "tostring", [](const Vector4i& v) { return std::string((v.operator String()).utf8().get_data()); }
         //"snapped", &Vector4i::snapped
     );
 
@@ -259,7 +266,8 @@ void newhaven_core::bind_base_types(sol::state& lua) {
         "normalized", &Quaternion::normalized,
         "slerp", &Quaternion::slerp,
         "sphericalCubicInterpolate", &Quaternion::spherical_cubic_interpolate,
-        "sphericalLinearInterpolateInTime", &Quaternion::spherical_cubic_interpolate_in_time
+        "sphericalLinearInterpolateInTime", &Quaternion::spherical_cubic_interpolate_in_time,
+        "tosring", [](const Quaternion& q) { return std::string((q.operator String()).utf8().get_data()); }
     );
 
     lua.new_usertype<godot::Basis>(
@@ -284,7 +292,8 @@ void newhaven_core::bind_base_types(sol::state& lua) {
         "tdotx", &Basis::tdotx,
         "tdoty", &Basis::tdoty,
         "tdotz", &Basis::tdotz,
-        "transposed", &Basis::transposed
+        "transposed", &Basis::transposed,
+        "tostring", [](const Basis& b) { return std::string((b.operator String()).utf8().get_data()); }
     );
 
     lua.new_usertype<godot::Transform3D>(
@@ -303,7 +312,8 @@ void newhaven_core::bind_base_types(sol::state& lua) {
         "scaled", &Transform3D::scaled,
         "scaledLocal", &Transform3D::scaled_local,
         "translated", &Transform3D::translated,
-        "translatedLocal", &Transform3D::translated_local
+        "translatedLocal", &Transform3D::translated_local,
+        "tostring", [](const Transform3D& t) { return std::string((t.operator String()).utf8().get_data()); }
     );
 
     lua.new_usertype<godot::AABB>(
@@ -343,7 +353,8 @@ void newhaven_core::bind_base_types(sol::state& lua) {
         "intersectsRay", &AABB::intersects_ray,
         "isEqualApprox", &AABB::is_equal_approx,
         //"isFinite", &AABB::is_finite,
-        "merge", &AABB::merge
+        "merge", &AABB::merge,
+        "tostring", [](const AABB& a) { return std::string((a.operator String()).utf8().get_data()); }
     );
 
     lua.new_usertype<godot::Color>(
@@ -386,6 +397,7 @@ void newhaven_core::bind_base_types(sol::state& lua) {
         "toArgb64", &Color::to_argb64,
         "toHtml", &Color::to_html,
         "toRgba32", &Color::to_rgba32,
-        "toRgba64", &Color::to_rgba64
+        "toRgba64", &Color::to_rgba64,
+        "toString", [](const Color& c) { return std::string((c.operator String()).utf8().get_data()); }
     );
 }

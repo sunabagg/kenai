@@ -46,7 +46,11 @@ namespace newhaven_spatial {
             "toGlobal", &SpatialTransform::toGlobal,
             "toLocal", &SpatialTransform::toLocal,
             "translate", &SpatialTransform::translate,
-            "translateObjectLocal", &SpatialTransform::translateObjectLocal
+            "translateObjectLocal", &SpatialTransform::translateObjectLocal,
+            "getFromEntity", [](Entity* entity) { 
+                Component* component = entity->getComponent("SpatialTransform");
+                return static_cast<SpatialTransform*>(component);
+             }
         );
 
     }

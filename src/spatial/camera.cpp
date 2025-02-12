@@ -1,4 +1,5 @@
 #include "camera.h"
+#include "../core/scene_system.h"
 
 using namespace godot;
 using namespace newhaven_core;
@@ -35,7 +36,12 @@ namespace newhaven_spatial
             "setFrustum", &Camera::setFrustum,
             "setOrthogonal", &Camera::setOrthogonal,
             "setPerspective", &Camera::setPerspective,
-            "unprojectPosition", &Camera::unprojectPosition);
+            "unprojectPosition", &Camera::unprojectPosition,
+            "getFromEntity", [](Entity* entity) {
+                Component* component = entity->getComponent("Camera");
+                return static_cast<Camera*>(component);
+            }
+        );
 
     }
 }

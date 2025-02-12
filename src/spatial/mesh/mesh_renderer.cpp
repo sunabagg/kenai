@@ -16,6 +16,11 @@ namespace newhaven_spatial_mesh {
             "get_blend_shape_count", &MeshRenderer::getBlendShapeCount,
             "get_blend_shape_value", &MeshRenderer::getBlendShapeValue,
             "get_surface_override_material_count", &MeshRenderer::getSurfaceOverideMaterialCount,
-            "set_blend_shape_value", &MeshRenderer::setBlendShapeValue);
+            "set_blend_shape_value", &MeshRenderer::setBlendShapeValue,
+            "getFromEntity", [](Entity* entity) {
+                Component* component = entity->getComponent("MeshRenderer");
+                return static_cast<MeshRenderer*>(component);
+            }
+        );
     }
 }

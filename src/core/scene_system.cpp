@@ -30,6 +30,7 @@ void newhaven_core::bindSceneSystem(sol::state& lua)
         "addComponent", &Entity::addComponent, 
         "hasComponent", &Entity::hasComponent, 
         "removeComponent", &Entity::removeComponent,
+        "getComponent", &Entity::getComponent,
         "addChild", &Entity::addChild, 
         "removeChild", &Entity::removeChild,
         "onFree", &Entity::onFree,
