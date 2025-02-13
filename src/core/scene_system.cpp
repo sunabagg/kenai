@@ -57,7 +57,8 @@ void newhaven_core::bindSceneSystem(sol::state& lua)
         "onFree", &Component::onFree);
 }
 
-// hacky way to get around the fact that we can't use the scene removeEntity function in the header file
+// hacky way to get around the fact that 
+//we can't use the scene removeEntity function in the header file
 void newhaven_core::Entity::removeFromScene() {
     scene->removeEntity(this);
 }
