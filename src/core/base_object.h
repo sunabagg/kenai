@@ -17,14 +17,19 @@ namespace newhaven_core
 
         void notification(const int p_notification, bool p_reversed = false);
 
+        bool freed = false;
+
         virtual void onFree() {}
         
         void free() { 
-            delete this; 
+            this->onFree();
+            freed = true;
         }
 
         ~BaseObject() {
-            this->onFree();
+            if (!freed) {
+                free();
+            }
         }
     };
 }

@@ -251,6 +251,9 @@ void App::_ready() {
         e4transform.position = Vector3.new(0, 0, -1)
 
         printScene(scene)
+
+        --child1:free()
+        child1 = nil
     )");
 }
 

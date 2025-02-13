@@ -309,13 +309,16 @@ namespace newhaven_core
         }
 
         void onFree() override {
+            if (parent != nullptr) 
+                parent->removeChild(this);
             for (auto& component : components) {
-                delete component.second;
+                component.second->onFree();
             }
             for (auto& child : children) {
-                delete child;
+                child->onFree();
             }
-            node->queue_free();
+            if (node != nullptr)
+                node->queue_free();
         }
 
     };

@@ -253,6 +253,13 @@ namespace newhaven_spatial
             node->set_name(entity->name.c_str());
             entity->setNode(node);
         }
+
+        void onFree() override {
+            if (node != nullptr) {
+                node->queue_free();
+                entity->setNode(nullptr);
+            }
+        }
     };
 }
 
