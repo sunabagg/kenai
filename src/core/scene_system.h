@@ -122,6 +122,8 @@ namespace newhaven_core
     {
     private:
         godot::Node* node = nullptr;
+
+        void removeFromScene();
     public:
         std::string name;
         std::unordered_map<std::string, Component*> components;
@@ -309,8 +311,12 @@ namespace newhaven_core
         }
 
         void onFree() override {
-            if (parent != nullptr) 
+            if (parent != nullptr) {
                 parent->removeChild(this);
+            }
+            else if (this->scene != nullptr) {
+                removeFromScene();
+            }
             for (auto& component : components) {
                 component.second->onFree();
             }
@@ -320,7 +326,6 @@ namespace newhaven_core
             if (node != nullptr)
                 node->queue_free();
         }
-
     };
 
     class Scene : public BaseObject {
@@ -354,7 +359,6 @@ namespace newhaven_core
             for (auto i = 0; i < entities.size(); i++) {
                 Entity* ent = entities[i];
                 if (ent == entity) {
-                    ent->parent = nullptr;
                     ent->scene = nullptr;
                     entities.erase(entities.begin() + i);
                     if (root != nullptr)
