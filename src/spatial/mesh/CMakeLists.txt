@@ -5,6 +5,8 @@ target_sources(${PROJECT_NAME} PRIVATE
         box.cpp
         sphere.h
         sphere.cpp
+        capsule.h
+        capsule.cpp
 )
 
 target_include_directories( ${PROJECT_NAME}
