@@ -249,26 +249,97 @@ else() #
     include_directories ( ${CMAKE_SOURCE_DIR}/extern/lua-5.1.5/src )
 endif()
 
+set(V8_LIB_FOUND FALSE)
 
+if (WIN32)
+    if (${LIB_ARCH} STREQUAL "x86_64")
+        set(V8_LIB_PATH "${CMAKE_SOURCE_DIR}/extern/v8/windows_x86_64_release/v8_monolith.lib")
+        set(V8_LIB_FOUND TRUE)
+    elseif( ${LIB_ARCH} STREQUAL "arm64")
+        set(V8_LIB_PATH "${CMAKE_SOURCE_DIR}/extern/v8/windows_arm64_release/v8_monolith.lib")
+        set(V8_LIB_FOUND TRUE)
+    endif()
+elseif(LINUX)
+    if (${LIB_ARCH} STREQUAL "x86_64")
+        set(V8_LIB_PATH "${CMAKE_SOURCE_DIR}/extern/v8/linux_x86_64_release/libv8_monolith.a")
+        set(V8_LIB_FOUND TRUE)
+    else(${LIB_ARCH} STREQUAL "arm64")
+        set(V8_LIB_PATH "${CMAKE_SOURCE_DIR}/extern/v8/linux_arm64_release/libv8_monolith.a")
+        set(V8_LIB_FOUND TRUE)
+    endif()
+elseif(APPLE)
+    if (IOS)
+        if (${LIB_ARCH} STREQUAL "arm64")    
+            set(V8_LIB_PATH "${CMAKE_SOURCE_DIR}/extern/v8/ios_arm64_release/libv8_monolith.a")
+            set(V8_LIB_FOUND TRUE)
+        elseif(${LIB_ARCH} STREQUAL "x86_64")
+            set(V8_LIB_PATH "${CMAKE_SOURCE_DIR}/extern/v8/ios_x86_64_release/libv8_monolith.a")
+            set(V8_LIB_FOUND TRUE)
+        endif()
+    else()
+        if (${LIB_ARCH} STREQUAL "arm64")
+            set(V8_LIB_PATH "${CMAKE_SOURCE_DIR}/extern/v8/macos_arm64_release/libv8_monolith.a")
+            set(V8_LIB_FOUND TRUE)
+        elseif(${LIB_ARCH} STREQUAL "x86_64")
+            set(V8_LIB_PATH "${CMAKE_SOURCE_DIR}/extern/v8/macos_x86_64_release/libv8_monolith.a")
+            set(V8_LIB_FOUND TRUE)
+        endif()
+    endif()
+elseif(ANDROID)
+    if (${LIB_ARCH} STREQUAL "arm64")
+        set(V8_LIB_PATH "${CMAKE_SOURCE_DIR}/extern/v8/android_arm64_release/libv8_monolith.a")
+        set(V8_LIB_FOUND TRUE)
+    elseif(${LIB_ARCH} STREQUAL "arm32")
+        set(V8_LIB_PATH "${CMAKE_SOURCE_DIR}/extern/v8/android_arm_release/libv8_monolith.a")
+        set(V8_LIB_FOUND TRUE)
+    elseif(${LIB_ARCH} STREQUAL "x86_64")
+        set(V8_LIB_PATH "${CMAKE_SOURCE_DIR}/extern/v8/android_x86_64_release/libv8_monolith.a")
+        set(V8_LIB_FOUND TRUE)
+    endif()
+endif()
+
+include_directories(${CMAKE_SOURCE_DIR}/extern/v8/include)
 
 # Find the sol2 package
 find_package(sol2 CONFIG REQUIRED)
 
 # Link the libraries
 if (USE_LUAJIT)
-    target_link_libraries(${PROJECT_NAME}
+    if (NOT V8_LIB_FOUND)
+        target_link_libraries(${PROJECT_NAME}
             PRIVATE
             godot-cpp
             ${LUAJIT_LIBRARIES}
             sol2
+             #Luau.Compiler Luau.VM
+        )
+    else()
+        target_link_libraries(${PROJECT_NAME}
+            PRIVATE
+            godot-cpp
+            ${LUAJIT_LIBRARIES}
+            ${V8_LIB_PATH}
+            sol2
             #Luau.Compiler Luau.VM
-    )
+        )
+    endif()
 else()
-    target_link_libraries(${PROJECT_NAME}
+    if (NOT V8_LIB_FOUND)
+        target_link_libraries(${PROJECT_NAME}
             PRIVATE
             godot-cpp
             liblua_static
             sol2
              #Luau.Compiler Luau.VM
-    )
+        )
+    else()
+        target_link_libraries(${PROJECT_NAME}
+            PRIVATE
+            godot-cpp
+            liblua_static
+            ${V8_LIB_PATH}
+            sol2
+            #Luau.Compiler Luau.VM
+        )
+    endif()
 endif()

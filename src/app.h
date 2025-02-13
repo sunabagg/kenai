@@ -7,6 +7,7 @@
 
 #include <godot_cpp/classes/node.hpp>
 #include <sol/state.hpp>
+#include <v8.h>
 
 #include "core/scene_system.h"
 
@@ -20,9 +21,15 @@ namespace newhaven
         static void _bind_methods();
 
         sol::state global_state;
+
+        v8::Isolate* isolate;
+
+        v8::Platform* platform;
     public:
         App();
         ~App();
+
+        void init_v8();
 
         void _ready() override;
         void start();
