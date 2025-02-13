@@ -250,8 +250,8 @@ void App::_ready() {
         scene:addEntity(entity4)
         e4transform.position = Vector3.new(0, 0, -1)
 
-        child1:free()
-        child1 = nil
+        --child1:free()
+        --child1 = nil
 
         printScene(scene)
     )");
