@@ -228,7 +228,7 @@ if (USE_LUAJIT)
         # Fallback: Manually specify the LuaJit paths
         if (MSVC)
 		    set(LUAJIT_INCLUDE_DIRS "C:\Users\mintkat\luajit\src")
-            set(LUAJIT_LIBRARIES "C:\Users\mintkat\luajit\src\lua51.lib")
+            set(LUAJIT_LIBRARIES "C:\Users\mintkat\luajit\src\lua51.dll")
         endif()
         include_directories(${LUAJIT_INCLUDE_DIRS})
     endif()

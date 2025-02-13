@@ -15,7 +15,6 @@
 #include "spatial/mesh/mesh_renderer.h"
 #include "spatial/mesh/box.h"
 #include "spatial/mesh/sphere.h"
-#include "spatial/mesh/capsule.h"
 
 using namespace newhaven;
 using namespace godot;
@@ -114,7 +113,6 @@ void App::_ready() {
     newhaven_spatial_mesh::bindMeshRenderer( global_state );
     newhaven_spatial_mesh::bindBox( global_state );
     newhaven_spatial_mesh::bindSphere( global_state );
-    newhaven_spatial_mesh::bindCapsule( global_state );
 
     //newhaven_core::bind_all_godot_classes( global_state );
     //newhaven_core::initialize_lua( global_state );
@@ -240,10 +238,8 @@ void App::_ready() {
         entity4:addComponent(e4transform, "SpatialTransform")
         local e4mesh = MeshRenderer.new()
         entity4:addComponent(e4mesh, "MeshRenderer")
-        local e4capsule = Capsule.new()
-        entity4:addComponent(e4capsule, "Capsule")
-        --local e4sphere = Sphere.new()
-        --entity4:addComponent(e4sphere, "Sphere")
+        local e4sphere = Sphere.new()
+        entity4:addComponent(e4sphere, "Sphere")
         --local e4box = Box.new()
         --entity4:addComponent(e4box, "Box")
         --e4box.size = Vector3.new(1, 1, 1)
