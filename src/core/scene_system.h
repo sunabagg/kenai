@@ -12,7 +12,6 @@
 #include <iostream>
 #include <godot_cpp/variant/transform3d.hpp>
 #include <sol/sol.hpp>
-#include "safe_refcount.h"
 #include <godot_cpp/templates/self_list.hpp>
 #include <godot_cpp/classes/main_loop.hpp>
 #include <godot_cpp/classes/viewport.hpp>
@@ -30,15 +29,6 @@ namespace newhaven_core
 
     class Component : public BaseObject
     {
-    protected:
-        template <typename T>
-	    union MTNumeric {
-		    SafeNumeric<T> mt;
-		    T st;
-		    MTNumeric() :
-				    mt{} {}
-	    };
-
     public:
         enum {
 		    // You can make your own, but don't use the same numbers as other notifications in other nodes.
@@ -340,7 +330,6 @@ namespace newhaven_core
             return nullptr;
         }
     public:
-        godot::SelfList<Entity>::List xform_change_list;
         std::vector<Entity*> entities;
         godot::Node* root;
 
