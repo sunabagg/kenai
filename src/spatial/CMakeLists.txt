@@ -3,6 +3,8 @@ target_sources(${PROJECT_NAME} PRIVATE
         transform.cpp
         camera.h
         camera.cpp
+        i_visual_instance.h
+        i_visual_instance.cpp
 )
 
 add_subdirectory( mesh )
