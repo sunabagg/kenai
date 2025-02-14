@@ -10,3 +10,4 @@ Newhaven-build/*
 out/*
 .vs/*
 vcpkg_installed/*
+CMakeUserPresets.json
