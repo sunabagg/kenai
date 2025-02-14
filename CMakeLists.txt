@@ -269,6 +269,6 @@ else()
             godot-cpp
             liblua_static
             sol2
-             #Luau.Compiler Luau.VM
+            #Luau.Compiler Luau.VM
     )
 endif()
