@@ -16,7 +16,7 @@ namespace newhaven_tests
 {
     void printEntity(Entity* entity, String indent) {
         godot::UtilityFunctions::print(indent + "Entity: " + entity->name.c_str());
-        auto spatialTransform = static_cast<SpatialTransform*>(entity->getComponent("SpatialTransform"));
+        auto spatialTransform = entity->getComponentByT<SpatialTransform>();
         if (spatialTransform) {
             godot::UtilityFunctions::print(indent + "    Transform: " + spatialTransform->getPosition() + " " + spatialTransform->getRotation() + " " + spatialTransform->getScale());
             godot::UtilityFunctions::print(indent + "    Global Transform: " + spatialTransform->getGlobalTransform());

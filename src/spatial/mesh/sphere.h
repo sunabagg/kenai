@@ -53,7 +53,7 @@ namespace newhaven_spatial_mesh {
 
         void onInit() override {
             sphereMesh = memnew(SphereMesh);
-            MeshRenderer* meshRenderer = static_cast<MeshRenderer*>(entity->getComponent("MeshRenderer"));
+            MeshRenderer* meshRenderer = entity->getComponentByT<MeshRenderer>();
             meshRenderer->getNode()->set_mesh(sphereMesh);
         }
 

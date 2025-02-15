@@ -11,7 +11,7 @@ void newhaven_spatial_mesh::bindSphere(sol::state& lua) {
         "rings", sol::property(&Sphere::getRings, &Sphere::setRings),
         "radius", sol::property(&Sphere::getRadius, &Sphere::setRadius),
         "getFromEntity", [](Entity* entity) {
-            Component* component = entity->getComponent("Sphere");
+            Component* component = entity->getComponentByT<Sphere>();
             return static_cast<Sphere*>(component);
         }
     );

@@ -10,8 +10,7 @@ void newhaven_spatial_mesh::bindCapsule(sol::state& lua) {
         "rings", sol::property(&Capsule::getRings, &Capsule::setRings),
         "radius", sol::property(&Capsule::getRadius, &Capsule::setRadius),
         "getFromEntity", [](Entity* entity) {
-            Component* component = entity->getComponent("Capsule");
-            return static_cast<Capsule*>(component);
+            return entity->getComponentByT<Capsule>();
         }
     );
 }

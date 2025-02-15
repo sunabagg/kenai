@@ -17,8 +17,7 @@ void newhaven_spatial_mesh::bindMeshRenderer(sol::state& lua) {
         "get_surface_override_material_count", &MeshRenderer::getSurfaceOverideMaterialCount,
         "set_blend_shape_value", &MeshRenderer::setBlendShapeValue,
         "getFromEntity", [](Entity* entity) {
-            Component* component = entity->getComponent("MeshRenderer");
-            return static_cast<MeshRenderer*>(component);
+            return entity->getComponentByT<MeshRenderer>();
         }
     );
 }

@@ -152,7 +152,7 @@ namespace newhaven_spatial
             auto parentNode = node->get_parent();
             Entity* parentEntity = entity->parent;
             if (parentEntity->getNode() == parentNode) {
-                SpatialTransform* parentTransform = static_cast<SpatialTransform*>(parentEntity->getComponent("SpatialTransform"));
+                SpatialTransform* parentTransform = parentEntity->getComponentByT<SpatialTransform>();
                 if (parentTransform) {
                     return parentTransform;
                 }

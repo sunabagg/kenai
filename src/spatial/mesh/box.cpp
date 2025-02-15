@@ -10,8 +10,7 @@ void newhaven_spatial_mesh::bindBox(sol::state& lua) {
         "subdivideHeight", sol::property(&Box::getSubdivideHeight, &Box::setSubdivideHeight),
         "subdivideWidth", sol::property(&Box::getSubdivideWidth, &Box::setSubdivideWidth),
         "getFromEntity", [](Entity* entity) {
-            Component* component = entity->getComponent("Box");
-            return static_cast<Box*>(component);
+            return entity->getComponentByT<Box>();
         }
     );
 }

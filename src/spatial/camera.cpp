@@ -38,8 +38,7 @@ namespace newhaven_spatial
             "setPerspective", &Camera::setPerspective,
             "unprojectPosition", &Camera::unprojectPosition,
             "getFromEntity", [](Entity* entity) {
-                Component* component = entity->getComponent("Camera");
-                return static_cast<Camera*>(component);
+                return entity->getComponentByT<Camera>();
             }
         );
 

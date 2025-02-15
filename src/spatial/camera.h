@@ -168,7 +168,7 @@ namespace newhaven_spatial {
         void onInit() override {
             node = memnew(Camera3D);
             node->set_name("Camera");
-            SpatialTransform* transform = static_cast<SpatialTransform*>(entity->getComponent("SpatialTransform"));
+            SpatialTransform* transform = entity->getComponentByT<SpatialTransform>();
             if (transform) {
                 transform->getNode()->add_child(node);
             }

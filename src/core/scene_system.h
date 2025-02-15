@@ -29,6 +29,10 @@ namespace newhaven_core
 
     class Component : public BaseObject
     {
+    private:    
+        sol::table scriptType = sol::nil;
+
+        sol::table scriptInstance = sol::nil;
     public:
         enum {
 		    // You can make your own, but don't use the same numbers as other notifications in other nodes.
@@ -88,17 +92,64 @@ namespace newhaven_core
 
         virtual ~Component() = default;
 
-        virtual void onInit() {}
+        virtual void onInit() {
+            if (scriptInstance == sol::nil) return;
+            auto func = scriptInstance["onInit"].get<sol::function>();
+            if (!func) return;
+            func();
+        }
 
-        virtual void onEnterTree() {}
+        virtual void onEnterTree() {
+            if (scriptInstance == sol::nil) return;
+            auto func = scriptInstance["onEnterTree"].get<sol::function>();
+            if (!func) return;
+            func();
+        }
 
-        virtual void onReady() {}
+        virtual void onReady() {
+            if (scriptInstance == sol::nil) return;
+            auto func = scriptInstance["onReady"].get<sol::function>();
+            if (!func) return;
+            func();
+        }
 
-        virtual void onUpdate(double delta) {}
+        virtual void onUpdate(double delta) {
+            if (scriptInstance == sol::nil) return;
+            auto func = scriptInstance["onUpdate"].get<sol::function>();
+            if (!func) return;
+            func();
+        }
 
-        virtual void onPhysicsUpdate(double delta) {}
+        virtual void onPhysicsUpdate(double delta) {
+            if (scriptInstance == sol::nil) return;
+            auto func = scriptInstance["onPhysicsUpdate"].get<sol::function>();
+            if (!func) return;
+            func();
+        }
 
-        virtual void onExitTree() {}
+        virtual void onExitTree() {
+            if (scriptInstance == sol::nil) return;
+            auto func = scriptInstance["onExitTree"].get<sol::function>();
+            if (!func) return;
+            func();
+        }
+
+        sol::table getScriptType() {
+            return scriptType;
+        }
+
+        void setScriptType(sol::table t) {
+            scriptType = t;
+        }
+
+        sol::table getScriptInstance() {
+            return scriptInstance;
+        }
+
+        void setScriptInstance(sol::table t) {
+            scriptInstance = t;
+        }
+
 
         /*
         template<typename T>
@@ -197,23 +248,23 @@ namespace newhaven_core
             }
         }
 
-        Component* getComponent(std::string name) {
+        Component* getComponentByName(std::string name) {
             if (components.find(name) != components.end()) {
                 return components[name];
             }
             return nullptr;
         }
 
-        void removeComponent(std::string name) {
+        void removeComponentByName(std::string name) {
             components.erase(name);
         }
 
-        bool hasComponent(std::string _name) {
+        bool hasComponentByName(std::string _name) {
             return components.find(_name) != components.end();
         }
 
         template<typename T>
-        std::vector<Component*> getComponentsByType() {
+        std::vector<Component*> getComponentsByT() {
             std::vector<Component*> result;
             for (auto& comp : components) {
                 if (typeid(T) == typeid(*comp.second)) {
@@ -222,6 +273,76 @@ namespace newhaven_core
             }
             return result;
         }
+
+        std::vector<Component*> getComponentsByType(sol::userdata& type) {
+            std::vector<Component*> result;
+            auto typeName = type["__name"].get<std::string>();
+            for (auto& comp : components) {
+                if (comp.first == typeName) {
+                    result.push_back(comp.second);
+                }
+            }
+            return result;
+        }
+
+        sol::table getUserComponentsByType(sol::table t) {
+            sol::table result;
+            for (auto& comp : components) {
+                if (comp.second->getScriptType() == t) {
+                    result[comp.first] = comp.second->getScriptInstance();
+                }
+            }
+            return result;
+        }
+
+        sol::object getUserComponent(sol::table& type) {
+            for (auto& comp : components) {
+                if (comp.second->getScriptType() == type) {
+                    return comp.second->getScriptInstance();
+                }
+            }
+            
+            return sol::nil;
+        }
+
+        Component* getComponent(sol::userdata& type) {
+            auto typeName = type.as<sol::userdata>()["__name"].get<std::string>();
+            for (auto& comp : components) {
+                if (comp.first == typeName) {
+                    return comp.second;
+                }
+            }
+            return nullptr;
+        }
+
+        template<typename T>
+        T* getComponentByT() {
+            for (auto& comp : components) {
+                if (typeid(T) == typeid(*comp.second)) {
+                    return static_cast<T*>(comp.second);
+                }
+            }
+            return nullptr;
+        }
+
+        void removeComponent(sol::table& type) {
+            for (auto& comp : components) {
+                if (comp.second->getScriptType() == type) {
+                    removeComponentByName(comp.first);
+                }
+            }
+        }
+
+        bool hasComponent(sol::table& type) {
+            for (auto& comp : components) {
+                if (comp.second->getScriptType() == type) {
+                    return true;
+                }
+            }
+            return false;
+        }
+
+        
 
         void addChild(Entity* entity) {
             entity->parent = this;

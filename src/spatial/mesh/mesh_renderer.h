@@ -57,14 +57,14 @@ namespace newhaven_spatial_mesh
 
         void setNode(MeshInstance3D* n) {
             if (node != nullptr) {
-                SpatialTransform* transform = static_cast<SpatialTransform*>(entity->getComponent("SpatialTransform"));
+                SpatialTransform* transform = entity->getComponentByT<SpatialTransform>();
                 if (transform) {
                     transform->getNode()->remove_child(node);
                 }
                 node->queue_free();
             }
             node = n;
-            SpatialTransform* transform = static_cast<SpatialTransform*>(entity->getComponent("SpatialTransform"));
+            SpatialTransform* transform = entity->getComponentByT<SpatialTransform>();
             if (transform) {
                 transform->getNode()->add_child(node);
             }
@@ -72,7 +72,7 @@ namespace newhaven_spatial_mesh
 
         void onInit() override {
             node = memnew(MeshInstance3D);
-            SpatialTransform* transform = static_cast<SpatialTransform*>(entity->getComponent("SpatialTransform"));
+            SpatialTransform* transform = entity->getComponentByT<SpatialTransform>();
             if (transform) {
                 transform->getNode()->add_child(node);
             }

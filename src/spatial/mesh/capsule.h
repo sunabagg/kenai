@@ -46,7 +46,7 @@ namespace newhaven_spatial_mesh {
 
         void onInit() override {
             capsuleMesh = memnew(CapsuleMesh);
-            MeshRenderer* meshRenderer = static_cast<MeshRenderer*>(entity->getComponent("MeshRenderer"));
+            MeshRenderer* meshRenderer = entity->getComponentByT<MeshRenderer>();
             meshRenderer->getNode()->set_mesh(capsuleMesh);
         }
     };
