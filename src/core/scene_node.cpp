@@ -1,10 +1,12 @@
 #include "scene_node.h"
 
 #include <godot_cpp/classes/engine.hpp>
+#include <godot_cpp/variant/utility_functions.hpp>
 
 namespace newhaven_core {
     SceneNode::SceneNode() {
         scene = new Scene();
+        scene->root = this;
     }
     
     SceneNode::~SceneNode() {
@@ -18,6 +20,7 @@ namespace newhaven_core {
             return;
         }
         if (scene != nullptr) {
+            UtilityFunctions::print("SceneNode ready");
             scene->ready();
         }
     }

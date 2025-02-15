@@ -165,6 +165,8 @@ namespace newhaven_core
         godot::Node* node = nullptr;
 
         void removeFromScene();
+
+        bool started = false;
     public:
         std::string name;
         std::unordered_map<std::string, Component*> components;
@@ -226,6 +228,9 @@ namespace newhaven_core
             component->scene = this->scene;
             component->onInit();
             components[n] = component;
+            if (started) {
+                component->onReady();
+            }
         };
 
         void enterTree() {
@@ -353,6 +358,8 @@ namespace newhaven_core
             }
             if (scene != nullptr)
                 entity->enterTree();
+            if (started)
+                entity->ready();
         }
 
         void removeChild(Entity* entity) {
@@ -395,12 +402,14 @@ namespace newhaven_core
         }
 
         void ready() {
+            if (started) return;
             for (auto& component : components) {
                 component.second->onReady();
             }
             for (auto& child : children) {
                 child->ready();
             }
+            started = true;
         }
 
         void update(double delta) {
@@ -450,6 +459,8 @@ namespace newhaven_core
             }
             return nullptr;
         }
+
+        bool started = false;
     public:
         std::vector<Entity*> entities;
         godot::Node* root;
@@ -463,6 +474,9 @@ namespace newhaven_core
                 root->add_child(entity->getNode());
             }
             entity->enterTree();
+            if (started) {
+                entity->ready();
+            }
         }
 
         void removeEntity(Entity* entity) {
@@ -502,10 +516,16 @@ namespace newhaven_core
             return entities[index];
         }
 
+        void start() {
+            ready();
+        }
+
         void ready() {
+            if (started) return;
             for (auto& entity : entities) {
                 entity->ready();
             }
+            started = true;
         }
 
         void update(double delta) {

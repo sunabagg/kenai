@@ -254,6 +254,8 @@ void App::_ready() {
         --child1 = nil
 
         printScene(scene)
+
+        scene:start()
     )");
 }
 
@@ -263,7 +265,7 @@ void App::start() {
 Scene* App::createScene() {
     auto sceneNode = memnew( SceneNode );
     auto scene = sceneNode->getScene();
-    add_child(scene->root);
+    add_child(sceneNode);
     scene->viewport = get_viewport();
     return scene;
 }

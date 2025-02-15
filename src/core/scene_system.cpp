@@ -18,6 +18,7 @@ void newhaven_core::bindSceneSystem(sol::state& lua)
         "removeEntity", &Scene::removeEntity,
         "update", &Scene::update, 
         "physicsUpdate", &Scene::physicsUpdate, 
+        "start", &Scene::start,
         "ready", &Scene::ready, 
         "onFree", &Scene::onFree,
         "find", &Scene::find,
