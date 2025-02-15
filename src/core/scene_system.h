@@ -133,13 +133,13 @@ namespace newhaven_core
         
         void setNode(godot::Node* n) {
             if (node != nullptr) {
-                godot::List<godot::Node*> children;
+                godot::List<godot::Node*> c;
                 for (auto i = 0; i < node->get_child_count(); i++) {
-                    auto child = node->get_child(i);
-                    children.push_back(child);
+                    godot::Node* child = node->get_child(i);
+                    c.push_back(child);
                     node->remove_child(child);
                 }
-                for (auto child : children) {
+                for (auto child : c) {
                     n->add_child(child);
                 }
                 
@@ -160,8 +160,8 @@ namespace newhaven_core
             return nullptr;
         }
 
-        void setScene(Scene* scene) {
-            this->scene = scene;
+        void setScene(Scene* s) {
+            this->scene = s;
             for (auto& component : components) {
                 component.second->scene = scene;
             }
@@ -170,11 +170,11 @@ namespace newhaven_core
             }
         }
 
-        void addComponent(Component* component, std::string name) {
+        void addComponent(Component* component, std::string n) {
             component->entity = this;
             component->scene = this->scene;
             component->onInit();
-            components[name] = component;
+            components[n] = component;
         };
 
         void enterTree() {
@@ -208,16 +208,16 @@ namespace newhaven_core
             components.erase(name);
         }
 
-        bool hasComponent(std::string name) {
-            return components.find(name) != components.end();
+        bool hasComponent(std::string _name) {
+            return components.find(_name) != components.end();
         }
 
         template<typename T>
         std::vector<Component*> getComponentsByType() {
             std::vector<Component*> result;
             for (auto& comp : components) {
-                if (typeid(T) == typeid(*comp.second.get())) {
-                    result.push_back(comp.second.get());
+                if (typeid(T) == typeid(*comp.second)) {
+                    result.push_back(comp.second);
                 }
             }
             return result;

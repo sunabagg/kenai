@@ -10,7 +10,7 @@ using namespace godot;
 namespace newhaven_core {
     
     class SceneNode : public godot::Node {
-        GDCLASS(SceneNode, Node);
+        GDCLASS(SceneNode, Node)
     protected:
         static void _bind_methods() {}
     private:

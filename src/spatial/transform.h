@@ -140,7 +140,7 @@ namespace newhaven_spatial
             entity->setNode(n);
         }
 
-        Node* getNode() {
+        godot::Node* getNode() {
             return node;
         }
 

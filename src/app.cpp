@@ -67,19 +67,19 @@ void App::_ready() {
             {
                 float f = arg.as<float>();
                 Variant v = f;
-                msg += v;
+                msg += String(v);
             }
             else if (arg.is<bool>())
             {
                 bool b = arg.as<bool>();
                 Variant v = b;
-                msg += v;
+                msg += String(v);
             }
             else if (arg.is<int>())
             {
                 int i = arg.as<int>();
                 Variant v = i;
-                msg += v;
+                msg += String(v);
             }
             else if (arg.is<Vector4>())
             {

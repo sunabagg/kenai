@@ -26,7 +26,7 @@ namespace newhaven_core
             freed = true;
         }
 
-        ~BaseObject() {
+        virtual ~BaseObject() {
             if (!freed) {
                 free();
             }
