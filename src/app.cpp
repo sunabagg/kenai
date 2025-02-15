@@ -254,8 +254,6 @@ void App::_ready() {
         --child1 = nil
 
         printScene(scene)
-
-        scene:start()
     )");
 }
 

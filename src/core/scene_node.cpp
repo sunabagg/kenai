@@ -20,7 +20,6 @@ namespace newhaven_core {
             return;
         }
         if (scene != nullptr) {
-            UtilityFunctions::print("SceneNode ready");
             scene->ready();
         }
     }
