@@ -217,12 +217,16 @@ endif ()
 
 option(USE_LUAJIT "Use LuaJIT" ON)
 
+if (EMSCRIPTEN)
+    set(USE_LUAJIT OFF)
+endif()
+
 if (USE_LUAJIT)
     # Include the PkgConfig module
     include(FindPkgConfig)
 
     # Check for LuaJit using pkg-config
-    pkg_check_modules(LUAJIT REQUIRED luajit)
+    pkg_check_modules(LUAJIT luajit)
 
     if (LUAJIT_FOUND)
         # Include directories for LuaJit
@@ -230,7 +234,7 @@ if (USE_LUAJIT)
     else()
         # Fallback: Manually specify the LuaJit paths
         if (MSVC)
-		    set(LUAJIT_INCLUDE_DIRS "C:\Users\mintkat\luajit\src")
+            set(LUAJIT_INCLUDE_DIRS "C:\Users\mintkat\luajit\src")
             set(LUAJIT_LIBRARIES "C:\Users\mintkat\luajit\src\lua51.lib")
         endif()
         include_directories(${LUAJIT_INCLUDE_DIRS})
