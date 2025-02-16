@@ -2,9 +2,9 @@
 #include "../core/scene_system.h"
 
 using namespace godot;
-using namespace newhaven_core;
+using namespace sunaba_core;
 
-namespace newhaven_spatial
+namespace sunaba_spatial
 {
     void bindCamera(sol::state& lua){
         lua.new_usertype<Camera>(

@@ -1,6 +1,6 @@
 #include "sphere.h"
 
-void newhaven_spatial_mesh::bindSphere(sol::state& lua) {
+void sunaba_spatial_mesh::bindSphere(sol::state& lua) {
     lua.new_usertype<Sphere>(
         "Sphere",
         sol::constructors<Sphere()>(),

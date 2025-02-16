@@ -12,7 +12,7 @@
             "args": [
                 "--verbose"
             ],
-            "cwd": "${command:cmake.buildDirectory}/Newhaven",
+            "cwd": "${command:cmake.buildDirectory}/sunaba",
             "preLaunchTask": "CMake: build",
             "internalConsoleOptions": "openOnSessionStart",
             "console": "internalConsole",
@@ -31,7 +31,7 @@
             "program": "godot",
             "args": [
                 "--path",
-                "${workspaceRoot}Newhaven-build/Newhaven",
+                "${workspaceRoot}sunaba-build/sunaba",
                 "--verbose"
             ],
             "cwd": "${command:cmake.buildDirectory}/bin",

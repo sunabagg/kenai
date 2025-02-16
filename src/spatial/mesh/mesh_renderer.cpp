@@ -1,9 +1,9 @@
 #include "mesh_renderer.h"
 
 using namespace godot;
-using namespace newhaven_core;
+using namespace sunaba_core;
 
-void newhaven_spatial_mesh::bindMeshRenderer(sol::state& lua) {
+void sunaba_spatial_mesh::bindMeshRenderer(sol::state& lua) {
     lua.new_usertype<MeshRenderer>(
         "MeshRenderer",
         sol::constructors<MeshRenderer()>(),

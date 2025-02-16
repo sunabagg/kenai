@@ -1,6 +1,6 @@
 #include "i_visual_instance.h"
 
-void newhaven_spatial::bindVisualInstance(sol::state& lua) {
+void sunaba_spatial::bindVisualInstance(sol::state& lua) {
     lua.new_usertype<IVisualInstance>(
         "IVisualInstance",
         sol::no_constructor,

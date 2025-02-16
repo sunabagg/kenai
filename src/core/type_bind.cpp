@@ -10,9 +10,9 @@
 #include <godot_cpp/variant/basis.hpp>
 
 using namespace godot;
-using namespace newhaven_core;
+using namespace sunaba_core;
 
-void newhaven_core::bind_base_types(sol::state& lua) {
+void sunaba_core::bind_base_types(sol::state& lua) {
     lua.new_usertype<Vector2>(
         "Vector2",
         sol::constructors<Vector2(), Vector2(float, float)>(),

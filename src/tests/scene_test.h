@@ -10,7 +10,7 @@
 
 using namespace godot;
 
-namespace newhaven_tests
+namespace sunaba_tests
 {
     class SceneTest : public Node {
         GDCLASS(SceneTest, Node)

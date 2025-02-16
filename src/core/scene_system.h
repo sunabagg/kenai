@@ -19,7 +19,7 @@
 
 #include "base_object.h"
 
-namespace newhaven_core
+namespace sunaba_core
 {
     void bindSceneSystem(sol::state& lua);
     

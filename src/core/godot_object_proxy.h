@@ -7,7 +7,7 @@
 
 using namespace godot;
 
-namespace newhaven_core{
+namespace sunaba_core{
     struct GodotObjectProxy
     {
         Object* object;

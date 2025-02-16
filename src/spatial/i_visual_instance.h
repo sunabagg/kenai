@@ -7,9 +7,9 @@
 #include "transform.h"
 
 using namespace godot;
-using namespace newhaven_core;
+using namespace sunaba_core;
 
-namespace newhaven_spatial
+namespace sunaba_spatial
 {
     void bindVisualInstance(sol::state& lua);
 

@@ -27,9 +27,9 @@ namespace
             return;
         }
 
-        godot::ClassDB::register_class<newhaven::App>();
-        godot::ClassDB::register_class<newhaven_tests::SceneTest>();
-        godot::ClassDB::register_class<newhaven_core::SceneNode>();
+        godot::ClassDB::register_class<sunaba::App>();
+        godot::ClassDB::register_class<sunaba_tests::SceneTest>();
+        godot::ClassDB::register_class<sunaba_core::SceneNode>();
     }
 
     /// @brief Called by Godot to let us do any cleanup.

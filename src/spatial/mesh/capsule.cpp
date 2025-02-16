@@ -1,6 +1,6 @@
 #include "capsule.h"
 
-void newhaven_spatial_mesh::bindCapsule(sol::state& lua) {
+void sunaba_spatial_mesh::bindCapsule(sol::state& lua) {
     lua.new_usertype<Capsule>(
         "Capsule",
         sol::constructors<Capsule()>(),

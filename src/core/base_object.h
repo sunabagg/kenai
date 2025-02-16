@@ -7,7 +7,7 @@
 
 #include <lua.h>
 
-namespace newhaven_core
+namespace sunaba_core
 {
     //static void generateBaseObjectUsertype(lua_State* L);
 

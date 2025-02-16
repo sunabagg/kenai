@@ -17,7 +17,7 @@
 #include "spatial/mesh/sphere.h"
 #include "spatial/mesh/capsule.h"
 
-using namespace newhaven;
+using namespace sunaba;
 using namespace godot;
 
 void App::_bind_methods() {
@@ -107,17 +107,17 @@ void App::_ready() {
 
     UtilityFunctions::print("Hello, World!");
 
-    newhaven_core::bind_base_types( global_state );
-    newhaven_core::bindSceneSystem( global_state );
-    newhaven_spatial::bindSpatialTransform( global_state );
-    newhaven_spatial::bindCamera( global_state );
-    newhaven_spatial_mesh::bindMeshRenderer( global_state );
-    newhaven_spatial_mesh::bindBox( global_state );
-    newhaven_spatial_mesh::bindSphere( global_state );
-    newhaven_spatial_mesh::bindCapsule( global_state );
+    sunaba_core::bind_base_types( global_state );
+    sunaba_core::bindSceneSystem( global_state );
+    sunaba_spatial::bindSpatialTransform( global_state );
+    sunaba_spatial::bindCamera( global_state );
+    sunaba_spatial_mesh::bindMeshRenderer( global_state );
+    sunaba_spatial_mesh::bindBox( global_state );
+    sunaba_spatial_mesh::bindSphere( global_state );
+    sunaba_spatial_mesh::bindCapsule( global_state );
 
-    //newhaven_core::bind_all_godot_classes( global_state );
-    //newhaven_core::initialize_lua( global_state );
+    //sunaba_core::bind_all_godot_classes( global_state );
+    //sunaba_core::initialize_lua( global_state );
 
     global_state.set_function( "createScene", [this]() {
         return createScene();

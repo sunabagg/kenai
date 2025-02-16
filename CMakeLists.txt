@@ -27,7 +27,7 @@ if ( APPLE )
 endif()
 
 # Main project information
-project( Newhaven
+project( sunaba
     LANGUAGES
         CXX
     VERSION

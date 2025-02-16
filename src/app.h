@@ -12,7 +12,7 @@
 
 using namespace godot;
 
-namespace newhaven
+namespace sunaba
 {
     class App : public Node {
         GDCLASS(App, Node)
@@ -27,7 +27,7 @@ namespace newhaven
         void _ready() override;
         void start();
 
-        newhaven_core::Scene* createScene();
+        sunaba_core::Scene* createScene();
     };
 }
 

@@ -1,9 +1,9 @@
 #include "transform.h"
 
-using namespace newhaven_core;
+using namespace sunaba_core;
 using namespace godot;
 
-namespace newhaven_spatial {
+namespace sunaba_spatial {
 
     void bindSpatialTransform(sol::state& lua) {
         lua.new_usertype<SpatialTransform>("SpatialTransform",  

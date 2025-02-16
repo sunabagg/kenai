@@ -7,9 +7,9 @@
 #include "mesh_renderer.h"
 
 using namespace godot;
-using namespace newhaven_core;
+using namespace sunaba_core;
 
-namespace newhaven_spatial_mesh {
+namespace sunaba_spatial_mesh {
 
     void bindBox(sol::state& lua);
 

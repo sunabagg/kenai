@@ -7,10 +7,10 @@
 #include "../../core/scene_system.h"
 
 using namespace godot;
-using namespace newhaven_core;
-using namespace newhaven_spatial;
+using namespace sunaba_core;
+using namespace sunaba_spatial;
 
-namespace newhaven_spatial_mesh
+namespace sunaba_spatial_mesh
 {
     void bindMeshRenderer(sol::state& lua);
 

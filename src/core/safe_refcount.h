@@ -1,10 +1,10 @@
-#ifndef NEWHAVEN_SAFE_RETCOUNT_H
-#define NEWHAVEN_SAFE_RETCOUNT_H
+#ifndef SUNABA_SAFE_RETCOUNT_H
+#define SUNABA_SAFE_RETCOUNT_H
 
 #include <atomic>
 #include <type_traits>
 
-namespace newhaven_core {
+namespace sunaba_core {
 template <class T>
 class SafeNumeric {
 	std::atomic<T> value;
@@ -94,4 +94,4 @@ public:
 };
 }
 
-#endif // !NEWHAVEN_SAFE_RETCOUNT_H
+#endif // !SUNABA_SAFE_RETCOUNT_H
