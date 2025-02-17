@@ -96,42 +96,42 @@ namespace sunaba::core
             if (scriptInstance == sol::nil) return;
             auto func = scriptInstance["onInit"].get<sol::function>();
             if (!func) return;
-            func();
+            //func();
         }
 
         virtual void onEnterTree() {
             if (scriptInstance == sol::nil) return;
             auto func = scriptInstance["onEnterTree"].get<sol::function>();
             if (!func) return;
-            func();
+            //func();
         }
 
         virtual void onReady() {
             if (scriptInstance == sol::nil) return;
             auto func = scriptInstance["onReady"].get<sol::function>();
             if (!func) return;
-            func();
+            //func();
         }
 
         virtual void onUpdate(double delta) {
             if (scriptInstance == sol::nil) return;
             auto func = scriptInstance["onUpdate"].get<sol::function>();
             if (!func) return;
-            func();
+            //func();
         }
 
         virtual void onPhysicsUpdate(double delta) {
             if (scriptInstance == sol::nil) return;
             auto func = scriptInstance["onPhysicsUpdate"].get<sol::function>();
             if (!func) return;
-            func();
+            //func();
         }
 
         virtual void onExitTree() {
             if (scriptInstance == sol::nil) return;
             auto func = scriptInstance["onExitTree"].get<sol::function>();
             if (!func) return;
-            func();
+            //func();
         }
 
         sol::table getScriptType() {
@@ -279,7 +279,7 @@ namespace sunaba::core
             return result;
         }
 
-        std::vector<Component*> getComponentsByType(sol::userdata& type) {
+        std::vector<Component*> getComponentsByType(sol::userdata type) {
             std::vector<Component*> result;
             auto typeName = type["__name"].get<std::string>();
             for (auto& comp : components) {
@@ -300,7 +300,7 @@ namespace sunaba::core
             return result;
         }
 
-        sol::object getUserComponent(sol::table& type) {
+        sol::object getUserComponent(sol::table type) {
             for (auto& comp : components) {
                 if (comp.second->getScriptType() == type) {
                     return comp.second->getScriptInstance();
@@ -310,7 +310,7 @@ namespace sunaba::core
             return sol::nil;
         }
 
-        Component* getComponent(sol::userdata& type) {
+        Component* getComponent(sol::userdata type) {
             auto typeName = type.as<sol::userdata>()["__name"].get<std::string>();
             for (auto& comp : components) {
                 if (comp.first == typeName) {
@@ -330,7 +330,7 @@ namespace sunaba::core
             return nullptr;
         }
 
-        void removeComponent(sol::table& type) {
+        void removeUserComponent(sol::table type) {
             for (auto& comp : components) {
                 if (comp.second->getScriptType() == type) {
                     removeComponentByName(comp.first);
@@ -338,7 +338,15 @@ namespace sunaba::core
             }
         }
 
-        bool hasComponent(sol::table& type) {
+        void removeComponent(Component* component) {
+            for (auto& comp : components) {
+                if (comp.second == component) {
+                    removeComponentByName(comp.first);
+                }
+            }
+        }
+
+        bool hasComponent(sol::table type) {
             for (auto& comp : components) {
                 if (comp.second->getScriptType() == type) {
                     return true;
