@@ -154,6 +154,7 @@ if ( NOT MSVC )
     set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wno-error=pedantic")
     set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wno-error=sign-compare")
     set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wno-error=comment")
+    set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wno-error=array-bounds")
     set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -g")
 else ()
     # Add this line to disable treating warnings as errors
