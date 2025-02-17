@@ -28,7 +28,16 @@ void sunaba::core::bindSceneSystem(sol::state& lua)
         "Entity", 
         sol::constructors<Entity()>(),
         sol::base_classes, sol::bases<BaseObject>(),
-        "name",sol::property( [](Entity* e) { return e->name; }, [](Entity* e, std::string name) { e->name = name; e->getNode()->set_name(name.c_str()); } ),
+        "name",sol::property( 
+            [](Entity* e) { 
+                return e->name; 
+            }, 
+            [](Entity* e, std::string name) { 
+                e->name = name;  
+                if (e->getNode() != nullptr) 
+                    e->getNode()->set_name(name.c_str()); 
+            } 
+        ),
         "addComponent", &Entity::addComponent,
         "hasComponent", &Entity::hasComponent,
         "hasComponentByName", &Entity::hasComponentByName,
