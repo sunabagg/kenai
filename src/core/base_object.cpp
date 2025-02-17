@@ -4,7 +4,7 @@
 
 #include "base_object.h"
 
-using namespace sunaba_core;
+using namespace sunaba::core;
 
 void BaseObject::notification(const int p_notification, bool p_reversed)
 {

@@ -4,7 +4,7 @@
 #include <atomic>
 #include <type_traits>
 
-namespace sunaba_core {
+namespace sunaba::core {
 template <class T>
 class SafeNumeric {
 	std::atomic<T> value;

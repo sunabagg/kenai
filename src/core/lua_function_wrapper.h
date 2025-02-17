@@ -16,7 +16,7 @@
 
 using namespace godot;
 
-namespace sunaba_core {
+namespace sunaba::core {
     class LuaFunctionWrapper : public Object {
         GDCLASS(LuaFunctionWrapper, Object);
     private:

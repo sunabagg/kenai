@@ -19,7 +19,7 @@
 
 #include "base_object.h"
 
-namespace sunaba_core
+namespace sunaba::core
 {
     void bindSceneSystem(sol::state& lua);
     

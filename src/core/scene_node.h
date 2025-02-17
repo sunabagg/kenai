@@ -7,7 +7,7 @@
 #include "scene_system.h"
 
 using namespace godot;
-namespace sunaba_core {
+namespace sunaba::core {
     
     class SceneNode : public godot::Node {
         GDCLASS(SceneNode, Node)

@@ -13,10 +13,10 @@
 
 #include "../core/scene_system.h"
 
-using namespace sunaba_core;
+using namespace sunaba::core;
 using namespace godot;
 
-namespace sunaba_spatial
+namespace sunaba::spatial
 {
     void bindSpatialTransform( sol::state& lua );
 

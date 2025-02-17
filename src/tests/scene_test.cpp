@@ -8,11 +8,11 @@
 #include <godot_cpp/variant/utility_functions.hpp>
 #include <godot_cpp/classes/engine.hpp>
 
-using namespace sunaba_core;
-using namespace sunaba_spatial;
-using namespace sunaba_spatial_mesh;
+using namespace sunaba::core;
+using namespace sunaba::spatial;
+using namespace sunaba::spatial::mesh;
 
-namespace sunaba_tests
+namespace sunaba::tests
 {
     void printEntity(Entity* entity, String indent) {
         godot::UtilityFunctions::print(indent + "Entity: " + entity->name.c_str());

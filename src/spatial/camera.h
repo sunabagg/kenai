@@ -7,9 +7,9 @@
 #include "transform.h"
 
 using namespace godot;
-using namespace sunaba_core;
+using namespace sunaba::core;
 
-namespace sunaba_spatial {
+namespace sunaba::spatial {
     void bindCamera(sol::state& lua);
 
     class Camera : public Component {

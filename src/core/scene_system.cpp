@@ -1,8 +1,8 @@
 #include "scene_system.h"
 
-using namespace sunaba_core;
+using namespace sunaba::core;
 
-void sunaba_core::bindSceneSystem(sol::state& lua)
+void sunaba::core::bindSceneSystem(sol::state& lua)
 {
     lua.new_usertype<BaseObject>(
         "BaseObject", 
@@ -67,6 +67,6 @@ void sunaba_core::bindSceneSystem(sol::state& lua)
 
 // hacky way to get around the fact that 
 // we can't use the scene removeEntity function in the header file
-void sunaba_core::Entity::removeFromScene() {
+void sunaba::core::Entity::removeFromScene() {
     scene->removeEntity(this);
 }

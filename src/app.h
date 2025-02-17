@@ -27,7 +27,7 @@ namespace sunaba
         void _ready() override;
         void start();
 
-        sunaba_core::Scene* createScene();
+        sunaba::core::Scene* createScene();
     };
 }
 

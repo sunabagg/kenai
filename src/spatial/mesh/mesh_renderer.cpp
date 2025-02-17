@@ -1,10 +1,10 @@
 #include "mesh_renderer.h"
 
 using namespace godot;
-using namespace sunaba_core;
+using namespace sunaba::core;
 
-void sunaba_spatial_mesh::bindMeshRenderer(sol::state& lua) {
-    sunaba_spatial::bindGeometryInstance(lua);
+void sunaba::spatial::mesh::bindMeshRenderer(sol::state& lua) {
+    sunaba::spatial::bindGeometryInstance(lua);
     lua.new_usertype<MeshRenderer>(
         "MeshRenderer",
         sol::constructors<MeshRenderer()>(),

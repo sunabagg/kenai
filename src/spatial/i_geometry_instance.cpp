@@ -1,7 +1,7 @@
 #include "i_geometry_instance.h"
 
-void sunaba_spatial::bindGeometryInstance(sol::state& lua) {
-    sunaba_spatial::bindVisualInstance(lua);
+void sunaba::spatial::bindGeometryInstance(sol::state& lua) {
+    sunaba::spatial::bindVisualInstance(lua);
     lua.new_usertype<IGeometryInstance>(
         "IGeometryInstance",
         sol::constructors<IGeometryInstance()>(),
