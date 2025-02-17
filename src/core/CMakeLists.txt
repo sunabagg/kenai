@@ -9,6 +9,8 @@ target_sources(${PROJECT_NAME} PRIVATE
         lua_bind.cpp
         type_bind.cpp
         lua_function_wrapper.h
+        bind_core_classes.h
+        bind_core_classes.cpp
 )
 
 target_include_directories( ${PROJECT_NAME}

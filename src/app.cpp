@@ -7,17 +7,13 @@
 #include <godot_cpp/variant/utility_functions.hpp>
 #include <godot_cpp/classes/engine.hpp>
 
-#include"core/lua_bind.h"
 #include "core/scene_system.h"
 #include "core/scene_node.h"
-#include "spatial/transform.h"
-#include "spatial/camera.h"
-#include "spatial/mesh/mesh_renderer.h"
-#include "spatial/mesh/box.h"
-#include "spatial/mesh/sphere.h"
-#include "spatial/mesh/capsule.h"
+#include "core/bind_core_classes.h"
+#include "spatial/bind_spatial_classes.h"
 
 using namespace sunaba;
+using namespace sunaba::core;
 using namespace godot;
 
 void App::_bind_methods() {
@@ -107,14 +103,8 @@ void App::_ready() {
 
     UtilityFunctions::print("Hello, World!");
 
-    sunaba::core::bind_base_types( global_state );
-    sunaba::core::bindSceneSystem( global_state );
-    sunaba::spatial::bindSpatialTransform( global_state );
-    sunaba::spatial::bindCamera( global_state );
-    sunaba::spatial::mesh::bindMeshRenderer( global_state );
-    sunaba::spatial::mesh::bindBox( global_state );
-    sunaba::spatial::mesh::bindSphere( global_state );
-    sunaba::spatial::mesh::bindCapsule( global_state );
+    sunaba::core::bindCoreClasses(global_state);
+    sunaba::spatial::bindSpatialClasses(global_state);
 
     //sunaba::core::bind_all_godot_classes( global_state );
     //sunaba::core::initialize_lua( global_state );

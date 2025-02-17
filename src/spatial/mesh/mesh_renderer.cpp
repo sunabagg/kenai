@@ -4,7 +4,6 @@ using namespace godot;
 using namespace sunaba::core;
 
 void sunaba::spatial::mesh::bindMeshRenderer(sol::state& lua) {
-    sunaba::spatial::bindGeometryInstance(lua);
     lua.new_usertype<MeshRenderer>(
         "MeshRenderer",
         sol::constructors<MeshRenderer()>(),

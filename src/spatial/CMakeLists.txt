@@ -7,6 +7,8 @@ target_sources(${PROJECT_NAME} PRIVATE
         i_visual_instance.cpp
         i_geometry_instance.h
         i_geometry_instance.cpp
+        bind_spatial_classes.h
+        bind_spatial_classes.cpp
 )
 
 add_subdirectory( mesh )
