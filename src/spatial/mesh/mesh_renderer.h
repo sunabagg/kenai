@@ -4,6 +4,7 @@
 #include <godot_cpp/classes/mesh_instance3d.hpp>
 
 #include "../transform.h"
+#include "../i_geometry_instance.h"
 #include "../../core/scene_system.h"
 
 using namespace godot;
@@ -14,7 +15,7 @@ namespace sunaba_spatial_mesh
 {
     void bindMeshRenderer(sol::state& lua);
 
-    class MeshRenderer : public Component
+    class MeshRenderer : public IGeometryInstance
     {
     protected:
         MeshInstance3D* node;

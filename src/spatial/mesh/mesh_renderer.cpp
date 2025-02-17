@@ -4,10 +4,11 @@ using namespace godot;
 using namespace sunaba_core;
 
 void sunaba_spatial_mesh::bindMeshRenderer(sol::state& lua) {
+    sunaba_spatial::bindGeometryInstance(lua);
     lua.new_usertype<MeshRenderer>(
         "MeshRenderer",
         sol::constructors<MeshRenderer()>(),
-        sol::base_classes, sol::bases<Component>(),
+        sol::base_classes, sol::bases<IGeometryInstance, IVisualInstance, Component>(),
         "create_convex_collision", &MeshRenderer::createConvexCollision,
         "create_debug_tangents", &MeshRenderer::createDebugTangents,
         "create_trimesh_collision", &MeshRenderer::createTrimeshCollision,

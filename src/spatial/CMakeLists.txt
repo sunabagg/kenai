@@ -5,6 +5,8 @@ target_sources(${PROJECT_NAME} PRIVATE
         camera.cpp
         i_visual_instance.h
         i_visual_instance.cpp
+        i_geometry_instance.h
+        i_geometry_instance.cpp
 )
 
 add_subdirectory( mesh )
