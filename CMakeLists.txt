@@ -249,7 +249,7 @@ endif()
 #find_package(Lua REQUIRED)
 
 if (USE_LUAJIT)
-    # Include directories for LuaJit
+    # Include directories for LuaJIT
     include_directories(${LUAJIT_INCLUDE_DIRS})
 else() #
     #include_directories ( ${LUA_INCLUDE_DIR} )
