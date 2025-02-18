@@ -253,7 +253,8 @@ else() #
     include_directories ( ${CMAKE_SOURCE_DIR}/extern/lua-5.1.5/src )
 endif()
 
-
+find_path(PORTABLE_FILE_DIALOGS_INCLUDE_DIRS "portable-file-dialogs.h")
+target_include_directories(${PROJECT_NAME} PRIVATE ${PORTABLE_FILE_DIALOGS_INCLUDE_DIRS})
 
 # Find the sol2 package
 find_package(sol2 CONFIG REQUIRED)
