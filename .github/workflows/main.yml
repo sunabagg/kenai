@@ -69,6 +69,11 @@ jobs:
           runVcpkgInstall: true
           vcpkgJsonGlob: '**/vcpkg.json'
         
+      
+      - name: Install vcpkg dependencies
+        run: |
+          ${{ github.workspace }}/vcpkg/vcpkg install
+
       - name: Configure
         run: >
           mkdir GDExtension-build
