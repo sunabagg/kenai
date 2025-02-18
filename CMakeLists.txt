@@ -208,14 +208,6 @@ set(CMAKE_PREFIX_PATH "${CMAKE_PREFIX_PATH};${CMAKE_SOURCE_DIR}/vcpkg_installed/
 #        "extern/luau/EqSat/include"
 #        "extern/luau/Ast/include")
 
-add_subdirectory( extern/lua-5.1.5 )
-
-if ( NOT MSVC)
-    target_compile_options(liblua_static PRIVATE -include ${CMAKE_SOURCE_DIR}/extern/lua-5.1.5/include/lua51_prefix.h)
-else()
-    target_include_directories(liblua_static PRIVATE ${CMAKE_SOURCE_DIR}/extern/lua-5.1.5/include/lua51_prefix.h)
-endif ()
-
 option(USE_LUAJIT "Use LuaJIT" ON)
 
 if (EMSCRIPTEN)
@@ -236,6 +228,14 @@ if (USE_LUAJIT)
         # Fallback: Manually specify the LuaJit paths
         set(USE_LUAJIT OFF)
     endif()
+else()
+    add_subdirectory( extern/lua-5.1.5 )
+    
+    if ( NOT MSVC)
+        target_compile_options(liblua_static PRIVATE -include ${CMAKE_SOURCE_DIR}/extern/lua-5.1.5/include/lua51_prefix.h)
+    else()
+        target_include_directories(liblua_static PRIVATE ${CMAKE_SOURCE_DIR}/extern/lua-5.1.5/include/lua51_prefix.h)
+    endif ()
 endif()
 
 # For anyone on MSVC having issues with 'lua51.lib' copy it to the build directory,
