@@ -90,7 +90,7 @@ jobs:
       - name: Copy luajit lib (Windows)
         if: matrix.config.os == 'windows-latest'
         run: |
-          cp ${{ github.workspace }}/lua51.lib ${{ github.workspace }}/GDExtension-build /lua51.lib
+          cp ${{ github.workspace }}/lua51.lib ${{ github.workspace }}/GDExtension-build/lua51.lib
 
       - name: Build
         run: cmake --build GDExtension-build
