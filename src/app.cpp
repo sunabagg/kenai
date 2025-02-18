@@ -18,7 +18,7 @@ using namespace sunaba::core;
 using namespace godot;
 
 void App::_bind_methods() {
-    ClassDB::bind_method(D_METHOD("start"), &App::start);
+    ClassDB::bind_method(D_METHOD("start", "path"), &App::start);
 }
 
 App::App() {
@@ -32,12 +32,14 @@ void App::_ready() {
     if (Engine::get_singleton()->is_editor_hint()) {
         return;
     }
+}
 
+void App::start( const String &path) {
     global_state.open_libraries( sol::lib::base, sol::lib::bit32, sol::lib::coroutine,
-                                     sol::lib::count, sol::lib::math, sol::lib::string,
-                                     sol::lib::table, sol::lib::utf8, sol::lib::jit );
+        sol::lib::count, sol::lib::math, sol::lib::string,
+        sol::lib::table, sol::lib::utf8, sol::lib::jit );
 
-    global_state["print"] = [this]( sol::variadic_args args ) {
+        global_state["print"] = [this]( sol::variadic_args args ) {
         String msg;
         for ( const auto &arg : args )
         {
@@ -144,18 +146,19 @@ void App::_ready() {
                         end
                     end
                 end
-    
+
                 dump(_G,"")
             end
-    
+
             if _G == nil then
                 print("Global table is nil")
             else
                 print("Global table is not nil")
             end
-    
+
             printAllGlobals()
         )");
+
         global_state.script(R"(
             print("Hello, World!")
             local vec = Vector3.new(1, 2, 3)
@@ -166,12 +169,12 @@ void App::_ready() {
             print(vec.y)
             print(vec.z)
         )");
-        
+
         global_state.script(R"(
             function vector3tostring(vec)
                 return "<" .. vec.x .. ", " .. vec.y .. ", " .. vec.z .. ">"
             end
-    
+
             function printEntity(entity, indent)
                 print(indent .. "Entity: " .. entity.name)
                 local spatialTransform = SpatialTransform.getFromEntity(entity)
@@ -181,7 +184,7 @@ void App::_ready() {
                     local scale = spatialTransform.scale
                     local global = spatialTransform.global
                     --print(position == nil)
-    
+
                     print(indent .. "    Transform: " .. position:tostring() .. ", " .. rotation:tostring() .. ", " .. scale:tostring())
                     print(indent .. "    Global Transform: " .. global:tostring())
                 end
@@ -190,7 +193,7 @@ void App::_ready() {
                     printEntity(child, indent .. "    ")
                 end
             end
-    
+
             function printScene(_scene)
                 print("Scene")
                 for i = 0, _scene:getEntityCount() - 1 do
@@ -198,7 +201,7 @@ void App::_ready() {
                     printEntity(entity, "    ")
                 end
             end
-    
+
             local scene = createScene()
             local entity1 = Entity.new()
             entity1.name = "Entity1"
@@ -241,10 +244,10 @@ void App::_ready() {
             --e4box.size = Vector3.new(1, 1, 1)
             scene:addEntity(entity4)
             e4transform.position = Vector3.new(0, 0, -1)
-    
+
             --child1:free()
             --child1 = nil
-    
+
             printScene(scene)
         )");
     }
@@ -252,9 +255,6 @@ void App::_ready() {
         UtilityFunctions::print(e.what());
         pfd::message::message("Error", e.what(), pfd::choice::ok, pfd::icon::error).result();
     }
-}
-
-void App::start() {
 }
 
 Scene* App::createScene() {

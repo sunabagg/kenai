@@ -25,7 +25,7 @@ namespace sunaba
         ~App();
 
         void _ready() override;
-        void start();
+        void start( const String &path );
 
         sunaba::core::Scene* createScene();
     };
