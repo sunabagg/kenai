@@ -423,6 +423,14 @@ namespace sunaba::core
 
         void update(double delta) {
             for (auto& component : components) {
+                if (component.second == nullptr) {
+                    std::cerr << "Warning: Null component detected." << std::endl;
+                    continue;
+                }
+                if (!component.second) {
+                    std::cerr << "Error: Invalid component pointer detected." << std::endl;
+                    continue;
+                }
                 component.second->onUpdate(delta);
             }
             for (auto& child : children) {
