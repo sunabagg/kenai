@@ -26,7 +26,7 @@
         },
         {
             "name": "macOS/Linux Launch",
-            "type": "lldb",
+            "type": "cppdbg",
             "request": "launch",
             "program": "godot",
             "args": [
@@ -34,7 +34,9 @@
                 "${workspaceRoot}sunaba-build/sunaba",
                 "--verbose"
             ],
-            "cwd": "${command:cmake.buildDirectory}/bin",
+            "cwd": "${command:cmake.buildDirectory}/sunaba",
+            "preLaunchTask": "CMake: build",
+            "internalConsoleOptions": "openOnSessionStart",
             "visualizerFile": "${workspaceFolder}/.vscode/godot.natvis"
         }
     ]
