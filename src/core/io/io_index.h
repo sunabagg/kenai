@@ -21,6 +21,10 @@ namespace sunaba::core::io {
         static void bindIoManger(sol::state_view& lua, IoManager* ioManager) {
             ioManagers[lua] = ioManager;
         }
+
+        static void unbindIoManager(sol::state_view& lua) {
+            ioManagers.erase(lua);
+        }
     };
 }
 

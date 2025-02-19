@@ -47,9 +47,13 @@ namespace sunaba::core::io {
 
     FileSystemIo* FileSystemIo::create(std::string basePath, std::string pathUrl) {
         FileSystemIo* io = new FileSystemIo();
+        if (!StringUtils::endsWith(basePath, "/")) {
+            basePath += "/";
+        }
         io->basePath = basePath;
         io->altPath = StringUtils::replace(basePath, "/", "\\");
         io->altPath2 = StringUtils::replace(basePath, "\\", "/");
+        io->pathUrl = pathUrl;
         return io;
     }
 }

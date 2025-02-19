@@ -19,13 +19,13 @@ namespace sunaba
         GDCLASS(App, Node)
     protected:
         static void _bind_methods();
-
-        sol::state global_state;
     public:
         App();
         ~App();
 
-        sunaba::core::io::IoManager ioManager;
+        sol::state global_state;
+
+        sunaba::core::io::IoManager* ioManager;
 
         void _ready() override;
         void start( const String &path );

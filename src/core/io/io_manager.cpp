@@ -56,7 +56,7 @@ namespace sunaba::core::io {
 
     std::string IoManager::loadText(const std::string &path) const {
         for (auto& io : interfaces) {
-            if (io->fileExists(path)) {
+            if (StringUtils::beginsWith(path, io->pathUrl)) {
                 return io->loadText(path);
             }
         }
@@ -74,7 +74,7 @@ namespace sunaba::core::io {
 
     PackedByteArray IoManager::loadBytes(const std::string &path) const {
         for (auto& io : interfaces) {
-            if (io->fileExists(path)) {
+            if (StringUtils::beginsWith(path, io->pathUrl)) {
                 return io->loadBytes(path);
             }
         }
