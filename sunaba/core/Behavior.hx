@@ -1,16 +1,26 @@
 package sunaba.core;
 
-class Behavior extends Component {
+class Behavior {
+    public var component : Component;
+    
     public function new() {
-        super();
-
         var type = Type.getClass(this);
         if (type == null) {
             throw "Behavior must be a class";
         }
 
-        setScriptType(type);
+        var comp = new Component();
+        component = comp;
+        comp.setScriptType(type);
 
-        setScriptInstance(this);
+        comp.setScriptInstance(this);
     }
+
+    public function onInit() : Void {}
+
+    public function onReady() : Void {}
+
+    public function onUpdate(deltaTime : Float) : Void {}
+
+    public function onPhysicsUpdate(delatTime : Float) : Void {}
 }

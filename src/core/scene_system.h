@@ -96,42 +96,43 @@ namespace sunaba::core
             if (scriptInstance == sol::nil) return;
             auto func = scriptInstance["onInit"].get<sol::function>();
             if (!func) return;
-            //func();
+            func(scriptInstance);
         }
 
         virtual void onEnterTree() {
             if (scriptInstance == sol::nil) return;
             auto func = scriptInstance["onEnterTree"].get<sol::function>();
             if (!func) return;
-            //func();
+            func(scriptInstance);
         }
 
         virtual void onReady() {
             if (scriptInstance == sol::nil) return;
             auto func = scriptInstance["onReady"].get<sol::function>();
             if (!func) return;
-            //func();
+            func(scriptInstance);
         }
 
         virtual void onUpdate(double delta) {
             if (scriptInstance == sol::nil) return;
             auto func = scriptInstance["onUpdate"].get<sol::function>();
             if (!func) return;
-            //func();
+            
+            func(scriptInstance, delta);
         }
 
         virtual void onPhysicsUpdate(double delta) {
             if (scriptInstance == sol::nil) return;
             auto func = scriptInstance["onPhysicsUpdate"].get<sol::function>();
             if (!func) return;
-            //func();
+            func(scriptInstance, delta);
         }
 
         virtual void onExitTree() {
             if (scriptInstance == sol::nil) return;
             auto func = scriptInstance["onExitTree"].get<sol::function>();
             if (!func) return;
-            //func();
+            func(scriptInstance);
         }
 
         sol::table getScriptType() {

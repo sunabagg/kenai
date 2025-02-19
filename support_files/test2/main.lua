@@ -187,14 +187,20 @@ local Main = _hx_e()
 local Math = _hx_e()
 local String = _hx_e()
 local Std = _hx_e()
+local Type = _hx_e()
 __haxe_Exception = _hx_e()
+__haxe_Log = _hx_e()
 __haxe_NativeStackTrace = _hx_e()
 __haxe_ValueException = _hx_e()
 __haxe_exceptions_PosException = _hx_e()
 __haxe_exceptions_NotImplementedException = _hx_e()
 __haxe_iterators_ArrayIterator = _hx_e()
 __haxe_iterators_ArrayKeyValueIterator = _hx_e()
+__lua_Boot = _hx_e()
+__lua_UserData = _hx_e()
 __lua_Thread = _hx_e()
+__sunaba_core_Behavior = _hx_e()
+__support_files_test2_src_DeltaTimePrinter = _hx_e()
 
 local _hx_bind, _hx_bit, _hx_staticToInstance, _hx_funcToField, _hx_maxn, _hx_print, _hx_apply_self, _hx_box_mr, _hx_bit_clamp, _hx_table, _hx_bit_raw
 local _hx_pcall_default = {};
@@ -544,10 +550,18 @@ Array.prototype.resize = function(self,len)
   end;
 end
 
+Array.prototype.__class__ =  Array
+
 Main.new = {}
 Main.__name__ = true
 Main.main = function() 
   _G.print("Hello, World!");
+  local scene = createScene();
+  local entity = Entity.new();
+  entity.name = "Entity";
+  scene:addEntity(entity);
+  local deltaTimePrinter = __support_files_test2_src_DeltaTimePrinter.new();
+  entity:addComponent(deltaTimePrinter.component, "DeltaTimePrinter");
 end
 
 Math.new = {}
@@ -746,6 +760,8 @@ String.prototype.substr = function(self,pos,len)
   do return _G.string.sub(self, pos + 1, pos + len) end
 end
 
+String.prototype.__class__ =  String
+
 Std.new = {}
 Std.__name__ = true
 Std.string = function(s) 
@@ -756,6 +772,29 @@ Std.int = function(x)
     do return 0 end;
   else
     do return _hx_bit_clamp(x) end;
+  end;
+end
+
+Type.new = {}
+Type.__name__ = true
+Type.getClass = function(o) 
+  if (o == nil) then 
+    do return nil end;
+  end;
+  local o = o;
+  if (__lua_Boot.__instanceof(o, Array)) then 
+    do return Array end;
+  else
+    if (__lua_Boot.__instanceof(o, String)) then 
+      do return String end;
+    else
+      local cl = o.__class__;
+      if (cl ~= nil) then 
+        do return cl end;
+      else
+        do return nil end;
+      end;
+    end;
   end;
 end
 
@@ -778,12 +817,51 @@ __haxe_Exception.super = function(self,message,previous,native)
   end;
 end
 __haxe_Exception.__name__ = true
+__haxe_Exception.thrown = function(value) 
+  if (__lua_Boot.__instanceof(value, __haxe_Exception)) then 
+    do return value:get_native() end;
+  else
+    local e = __haxe_ValueException.new(value);
+    e.__skipStack = e.__skipStack + 1;
+    do return e end;
+  end;
+end
 __haxe_Exception.prototype = _hx_e();
 __haxe_Exception.prototype.toString = function(self) 
   do return self:get_message() end
 end
 __haxe_Exception.prototype.get_message = function(self) 
   do return self.__exceptionMessage end
+end
+__haxe_Exception.prototype.get_native = function(self) 
+  do return self.__nativeException end
+end
+
+__haxe_Exception.prototype.__class__ =  __haxe_Exception
+
+__haxe_Log.new = {}
+__haxe_Log.__name__ = true
+__haxe_Log.formatOutput = function(v,infos) 
+  local str = Std.string(v);
+  if (infos == nil) then 
+    do return str end;
+  end;
+  local pstr = Std.string(Std.string(infos.fileName) .. Std.string(":")) .. Std.string(infos.lineNumber);
+  if (infos.customParams ~= nil) then 
+    local _g = 0;
+    local _g1 = infos.customParams;
+    while (_g < _g1.length) do _hx_do_first_1 = false;
+      
+      local v = _g1[_g];
+      _g = _g + 1;
+      str = Std.string(str) .. Std.string((Std.string(", ") .. Std.string(Std.string(v))));
+    end;
+  end;
+  do return Std.string(Std.string(pstr) .. Std.string(": ")) .. Std.string(str) end;
+end
+__haxe_Log.trace = function(v,infos) 
+  local str = __haxe_Log.formatOutput(v, infos);
+  _hx_print(str);
 end
 
 __haxe_NativeStackTrace.new = {}
@@ -820,6 +898,8 @@ __haxe_ValueException.super = function(self,value,previous,native)
 end
 __haxe_ValueException.__name__ = true
 __haxe_ValueException.prototype = _hx_e();
+
+__haxe_ValueException.prototype.__class__ =  __haxe_ValueException
 __haxe_ValueException.__super__ = __haxe_Exception
 setmetatable(__haxe_ValueException.prototype,{__index=__haxe_Exception.prototype})
 
@@ -841,6 +921,8 @@ __haxe_exceptions_PosException.prototype = _hx_e();
 __haxe_exceptions_PosException.prototype.toString = function(self) 
   do return Std.string(Std.string(Std.string(Std.string(Std.string(Std.string(Std.string(Std.string(Std.string("") .. Std.string(__haxe_Exception.prototype.toString(self))) .. Std.string(" in ")) .. Std.string(self.posInfos.className)) .. Std.string(".")) .. Std.string(self.posInfos.methodName)) .. Std.string(" at ")) .. Std.string(self.posInfos.fileName)) .. Std.string(":")) .. Std.string(self.posInfos.lineNumber) end
 end
+
+__haxe_exceptions_PosException.prototype.__class__ =  __haxe_exceptions_PosException
 __haxe_exceptions_PosException.__super__ = __haxe_Exception
 setmetatable(__haxe_exceptions_PosException.prototype,{__index=__haxe_Exception.prototype})
 
@@ -857,6 +939,8 @@ __haxe_exceptions_NotImplementedException.super = function(self,message,previous
 end
 __haxe_exceptions_NotImplementedException.__name__ = true
 __haxe_exceptions_NotImplementedException.prototype = _hx_e();
+
+__haxe_exceptions_NotImplementedException.prototype.__class__ =  __haxe_exceptions_NotImplementedException
 __haxe_exceptions_NotImplementedException.__super__ = __haxe_exceptions_PosException
 setmetatable(__haxe_exceptions_NotImplementedException.prototype,{__index=__haxe_exceptions_PosException.prototype})
 
@@ -884,8 +968,10 @@ __haxe_iterators_ArrayIterator.prototype.next = function(self)
    end)()] end
 end
 
+__haxe_iterators_ArrayIterator.prototype.__class__ =  __haxe_iterators_ArrayIterator
+
 __haxe_iterators_ArrayKeyValueIterator.new = function(array) 
-  local self = _hx_new()
+  local self = _hx_new(__haxe_iterators_ArrayKeyValueIterator.prototype)
   __haxe_iterators_ArrayKeyValueIterator.super(self,array)
   return self
 end
@@ -893,9 +979,173 @@ __haxe_iterators_ArrayKeyValueIterator.super = function(self,array)
   self.array = array;
 end
 __haxe_iterators_ArrayKeyValueIterator.__name__ = true
+__haxe_iterators_ArrayKeyValueIterator.prototype = _hx_e();
+
+__haxe_iterators_ArrayKeyValueIterator.prototype.__class__ =  __haxe_iterators_ArrayKeyValueIterator
+
+__lua_Boot.new = {}
+__lua_Boot.__name__ = true
+__lua_Boot.__instanceof = function(o,cl) 
+  if (cl == nil) then 
+    do return false end;
+  end;
+  local cl1 = cl;
+  if (cl1) == Array then 
+    do return __lua_Boot.isArray(o) end;
+  elseif (cl1) == Bool then 
+    do return _G.type(o) == "boolean" end;
+  elseif (cl1) == Dynamic then 
+    do return o ~= nil end;
+  elseif (cl1) == Float then 
+    do return _G.type(o) == "number" end;
+  elseif (cl1) == Int then 
+    if (_G.type(o) == "number") then 
+      do return _hx_bit_clamp(o) == o end;
+    else
+      do return false end;
+    end;
+  elseif (cl1) == String then 
+    do return _G.type(o) == "string" end;
+  elseif (cl1) == _G.table then 
+    do return _G.type(o) == "table" end;
+  elseif (cl1) == __lua_Thread then 
+    do return _G.type(o) == "thread" end;
+  elseif (cl1) == __lua_UserData then 
+    do return _G.type(o) == "userdata" end;else
+  if (((o ~= nil) and (_G.type(o) == "table")) and (_G.type(cl) == "table")) then 
+    local tmp;
+    if (__lua_Boot.__instanceof(o, Array)) then 
+      tmp = Array;
+    else
+      if (__lua_Boot.__instanceof(o, String)) then 
+        tmp = String;
+      else
+        local cl = o.__class__;
+        tmp = (function() 
+          local _hx_1
+          if (cl ~= nil) then 
+          _hx_1 = cl; else 
+          _hx_1 = nil; end
+          return _hx_1
+        end )();
+      end;
+    end;
+    if (__lua_Boot.extendsOrImplements(tmp, cl)) then 
+      do return true end;
+    end;
+    if ((function() 
+      local _hx_2
+      if (cl == Class) then 
+      _hx_2 = o.__name__ ~= nil; else 
+      _hx_2 = false; end
+      return _hx_2
+    end )()) then 
+      do return true end;
+    end;
+    if ((function() 
+      local _hx_3
+      if (cl == Enum) then 
+      _hx_3 = o.__ename__ ~= nil; else 
+      _hx_3 = false; end
+      return _hx_3
+    end )()) then 
+      do return true end;
+    end;
+    do return o.__enum__ == cl end;
+  else
+    do return false end;
+  end; end;
+end
+__lua_Boot.isArray = function(o) 
+  if (_G.type(o) == "table") then 
+    if ((o.__enum__ == nil) and (_G.getmetatable(o) ~= nil)) then 
+      do return _G.getmetatable(o).__index == Array.prototype end;
+    else
+      do return false end;
+    end;
+  else
+    do return false end;
+  end;
+end
+__lua_Boot.extendsOrImplements = function(cl1,cl2) 
+  if ((cl1 == nil) or (cl2 == nil)) then 
+    do return false end;
+  else
+    if (cl1 == cl2) then 
+      do return true end;
+    else
+      if (cl1.__interfaces__ ~= nil) then 
+        local intf = cl1.__interfaces__;
+        local _g = 1;
+        local _g1 = _hx_table.maxn(intf) + 1;
+        while (_g < _g1) do _hx_do_first_1 = false;
+          
+          _g = _g + 1;
+          local i = _g - 1;
+          if (__lua_Boot.extendsOrImplements(intf[i], cl2)) then 
+            do return true end;
+          end;
+        end;
+      end;
+    end;
+  end;
+  do return __lua_Boot.extendsOrImplements(cl1.__super__, cl2) end;
+end
+
+__lua_UserData.new = {}
+__lua_UserData.__name__ = true
 
 __lua_Thread.new = {}
 __lua_Thread.__name__ = true
+
+__sunaba_core_Behavior.new = function() 
+  local self = _hx_new(__sunaba_core_Behavior.prototype)
+  __sunaba_core_Behavior.super(self)
+  return self
+end
+__sunaba_core_Behavior.super = function(self) 
+  local type = Type.getClass(self);
+  if (type == nil) then 
+    _G.error(__haxe_Exception.thrown("Behavior must be a class"),0);
+  end;
+  local comp = Component.new();
+  self.component = comp;
+  comp:setScriptType(type);
+  comp:setScriptInstance(self);
+end
+__sunaba_core_Behavior.__name__ = true
+__sunaba_core_Behavior.prototype = _hx_e();
+__sunaba_core_Behavior.prototype.onInit = function(self) 
+end
+__sunaba_core_Behavior.prototype.onReady = function(self) 
+end
+__sunaba_core_Behavior.prototype.onUpdate = function(self,deltaTime) 
+end
+__sunaba_core_Behavior.prototype.onPhysicsUpdate = function(self,delatTime) 
+end
+
+__sunaba_core_Behavior.prototype.__class__ =  __sunaba_core_Behavior
+
+__support_files_test2_src_DeltaTimePrinter.new = function() 
+  local self = _hx_new(__support_files_test2_src_DeltaTimePrinter.prototype)
+  __support_files_test2_src_DeltaTimePrinter.super(self)
+  return self
+end
+__support_files_test2_src_DeltaTimePrinter.super = function(self) 
+  __sunaba_core_Behavior.super(self);
+end
+__support_files_test2_src_DeltaTimePrinter.__name__ = true
+__support_files_test2_src_DeltaTimePrinter.prototype = _hx_e();
+__support_files_test2_src_DeltaTimePrinter.prototype.onUpdate = function(self,deltaTime) 
+  __haxe_Log.trace(Std.string("DeltaTimePrinter.onUpdate: ") .. Std.string(deltaTime), _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="support_files/test2/src/DeltaTimePrinter.hx",lineNumber=7,className="support_files.test2.src.DeltaTimePrinter",methodName="onUpdate"}));
+end
+__support_files_test2_src_DeltaTimePrinter.prototype.onInit = function(self) 
+  _G.print("DeltaTimePrinter.onInit");
+end
+
+__support_files_test2_src_DeltaTimePrinter.prototype.__class__ =  __support_files_test2_src_DeltaTimePrinter
+__support_files_test2_src_DeltaTimePrinter.__super__ = __sunaba_core_Behavior
+setmetatable(__support_files_test2_src_DeltaTimePrinter.prototype,{__index=__sunaba_core_Behavior.prototype})
 if _hx_bit_raw then
     _hx_bit_clamp = function(v)
     if v <= 2147483647 and v >= -2147483648 then
@@ -938,6 +1188,21 @@ local _hx_static_init = function()
   String.__name__ = true;
   Array.__name__ = true;
 end
+
+_hx_print = print or (function() end)
+
+_hx_table = {}
+_hx_table.pack = _G.table.pack or function(...)
+    return {...}
+end
+_hx_table.unpack = _G.table.unpack or _G.unpack
+_hx_table.maxn = _G.table.maxn or function(t)
+  local maxn=0;
+  for i in pairs(t) do
+    maxn=type(i)=='number'and i>maxn and i or maxn
+  end
+  return maxn
+end;
 
 function _hx_handle_error(obj)
   local message = tostring(obj)

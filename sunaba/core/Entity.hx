@@ -4,7 +4,9 @@ package sunaba.core;
 extern class Entity extends BaseObject {
     public var name : String;
 
-    public function addComponent(comp: Component) : Void;
+    public function new();
+
+    public function addComponent(comp: Component, name : String) : Void;
 
     public function hasComponent(comp : Behavior) : Bool;
 
@@ -13,9 +15,7 @@ extern class Entity extends BaseObject {
     public function removeComponent(comp : Component) : Void;
 
     public function removeUserComponent(comp : Behavior) : Void;
-
-    public function addUserComponent(comp : Behavior) : Void;
-
+    
     public function getUserComponent(type : Class<Behavior>) : Behavior;
 
     public function getComponent(type : Class<Component>) : Component;

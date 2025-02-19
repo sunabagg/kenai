@@ -62,7 +62,7 @@ void sunaba::core::bindSceneSystem(sol::state& lua)
         ),
         "scene", sol::property( 
             [](Component* c) { 
-                return c->scene; 
+                return c->entity->scene; 
             }
         ),
         "onInit", &Component::onInit,
