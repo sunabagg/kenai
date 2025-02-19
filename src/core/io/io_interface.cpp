@@ -6,6 +6,7 @@ void sunaba::core::io::bindIoInterface(sol::state lua) {
     lua.new_usertype<IoInterface>(
         "IoInterface",
         sol::base_classes, sol::bases<BaseObject>(),
+        sol::no_constructor,
         "getFilePath", &IoInterface::getFilePath,
         "loadText", &IoInterface::loadText,
         "saveText", &IoInterface::saveText,

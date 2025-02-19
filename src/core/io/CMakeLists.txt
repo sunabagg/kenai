@@ -3,6 +3,8 @@ target_sources(${PROJECT_NAME} PRIVATE
         io_interface.cpp
         system_io_interface.h
         system_io_interface.cpp
+        file_system_io.h
+        file_system_io.cpp
 )
 
 target_include_directories( ${PROJECT_NAME}

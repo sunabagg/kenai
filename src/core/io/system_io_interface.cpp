@@ -13,12 +13,14 @@ namespace sunaba::core::io {
         lua.new_usertype<SystemIoInterface>(
             "SystemIoInterface",
             sol::base_classes, sol::bases<IoInterface>(),
+            sol::no_constructor,
             "getFileUrl", &SystemIoInterface::getFileUrl
         );
     }
     
     std::string SystemIoInterface::loadText(const std::string &path) const {
-        Ref<FileAccess> file = FileAccess::open(path.c_str(), FileAccess::READ);
+        std::string realPath = getFilePath(path);
+        Ref<FileAccess> file = FileAccess::open(realPath.c_str(), FileAccess::READ);
         if (file == nullptr) {
             return "";
         }
@@ -28,7 +30,8 @@ namespace sunaba::core::io {
     }
 
     void SystemIoInterface::saveText(const std::string &path, std::string &text) const {
-        Ref<FileAccess> file = FileAccess::open(path.c_str(), FileAccess::WRITE);
+        std::string realPath = getFilePath(path);
+        Ref<FileAccess> file = FileAccess::open(realPath.c_str(), FileAccess::WRITE);
         if (file == nullptr) {
             return;
         }
@@ -37,7 +40,8 @@ namespace sunaba::core::io {
     }
 
     PackedByteArray SystemIoInterface::loadBytes(const std::string &path) const {
-        Ref<FileAccess> file = FileAccess::open(path.c_str(), FileAccess::READ);
+        std::string realPath = getFilePath(path);
+        Ref<FileAccess> file = FileAccess::open(realPath.c_str(), FileAccess::READ);
         if (file == nullptr) {
             return PackedByteArray();
         }
@@ -47,7 +51,8 @@ namespace sunaba::core::io {
     }
 
     void SystemIoInterface::saveBytes(const std::string &path, const PackedByteArray &bytes) const {
-        Ref<FileAccess> file = FileAccess::open(path.c_str(), FileAccess::WRITE);
+        std::string realPath = getFilePath(path);
+        Ref<FileAccess> file = FileAccess::open(realPath.c_str(), FileAccess::WRITE);
         if (file == nullptr) {
             return;
         }
@@ -56,7 +61,7 @@ namespace sunaba::core::io {
     }
 
     std::vector<std::string> SystemIoInterface::getFileList(const std::string &path, const std::string &extension, const bool recursive) const {
-        String pathStr = path.c_str();
+        String pathStr = getFilePath(path).c_str();
         if (StringUtils::endsWith(path, "/")) {
             pathStr = path.substr(0, path.size() - 1).c_str();
         }
@@ -92,13 +97,15 @@ namespace sunaba::core::io {
     void SystemIoInterface::deleteFile(const std::string &path) const {
         if (StringUtils::endsWith(path, "/")) return;
         Ref<DirAccess> dir = memnew(DirAccess);
-        dir->remove(path.c_str());
+        std::string realPath = getFilePath(path);
+        dir->remove(realPath.c_str());
     }
 
     int SystemIoInterface::createDirectory(const std::string &path) const {
+        std::string realPath = getFilePath(path);
         Ref<DirAccess> dir = memnew(DirAccess);
-        if (!dir->dir_exists(path.c_str())) {
-            auto err = dir->make_dir(path.c_str());
+        if (!dir->dir_exists(realPath.c_str())) {
+            auto err = dir->make_dir(realPath.c_str());
             if (err == OK) {
                 return 0;
             }
@@ -108,13 +115,15 @@ namespace sunaba::core::io {
 
     void SystemIoInterface::deleteDirectory(const std::string &path) const {
         if (!StringUtils::endsWith(path, "/")) return;
+        std::string realPath = getFilePath(path);
         Ref<DirAccess> dir = memnew(DirAccess);
-        dir->remove(path.c_str());
+        dir->remove(realPath.c_str());
     }
 
     bool SystemIoInterface::directoryExists(const std::string &path) const {
+        std::string realPath = getFilePath(path);
         Ref<DirAccess> dir = memnew(DirAccess);
-        return dir->dir_exists(path.c_str());
+        return dir->dir_exists(realPath.c_str());
     }
 }
 
