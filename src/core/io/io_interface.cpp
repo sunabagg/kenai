@@ -7,6 +7,10 @@ void sunaba::core::io::bindIoInterface(sol::state lua) {
         "IoInterface",
         sol::base_classes, sol::bases<BaseObject>(),
         sol::no_constructor,
+        "fileUrl", sol::property(
+            [](IoInterface& self) { return self.pathUrl; },
+            [](IoInterface& self, const std::string &value) { self.pathUrl = value; }
+        ),
         "getFilePath", &IoInterface::getFilePath,
         "loadText", &IoInterface::loadText,
         "saveText", &IoInterface::saveText,

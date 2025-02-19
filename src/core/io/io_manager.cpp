@@ -7,6 +7,16 @@ using namespace godot;
 using namespace sunaba::core;
 
 namespace sunaba::core::io {
+    void bindIoManager(sol::state lua) {
+        lua.new_usertype<IoManager>(
+            "IoManager",
+            sol::constructors<IoManager()>(),
+            "add", &IoManager::add,
+            "remove", &IoManager::remove,
+            "getFileUrl", &IoManager::getFileUrl
+        );
+    }
+
     void IoManager::add(IoInterface* io) {
         interfaces.push_back(io);
     }
