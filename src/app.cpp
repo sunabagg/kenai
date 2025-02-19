@@ -118,7 +118,6 @@ void App::start( const String &path) {
     ioManager = IoManager();
     IoIndex::bindIoManger(global_state, &ioManager);
     ioManager.add( FileSystemIo::create(path.utf8().get_data(), "res://") );
-
     global_state.set("ioManager", &ioManager);
 
     //sunaba::core::bind_all_godot_classes( global_state );
