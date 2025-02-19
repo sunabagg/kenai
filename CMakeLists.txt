@@ -174,6 +174,8 @@ else ()
 
     set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} /wd4238")
 
+    set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} /wd4239")
+
     # sets the fsanitize flags
     #set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} /fsanitize=address")
     #set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} /MDd")
@@ -257,7 +259,7 @@ find_path(PORTABLE_FILE_DIALOGS_INCLUDE_DIRS "portable-file-dialogs.h")
 target_include_directories(${PROJECT_NAME} PRIVATE ${PORTABLE_FILE_DIALOGS_INCLUDE_DIRS})
 
 # Find the sol2 package
-find_package(sol2 CONFIG REQUIRED)
+add_subdirectory( extern/sol2 )
 
 # Link the libraries
 if (USE_LUAJIT)
