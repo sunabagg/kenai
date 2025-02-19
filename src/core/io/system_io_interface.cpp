@@ -9,11 +9,11 @@ using namespace godot;
 using namespace sunaba::core;
 
 namespace sunaba::core::io {
-    void bindSystemIoInterface(sol::state lua) {
+    void bindSystemIoInterface(sol::state& lua) {
         lua.new_usertype<SystemIoInterface>(
             "SystemIoInterface",
-            sol::base_classes, sol::bases<IoInterface>(),
             sol::no_constructor,
+            sol::base_classes, sol::bases<IoInterface>(),
             "getFileUrl", &SystemIoInterface::getFileUrl
         );
     }

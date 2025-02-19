@@ -4,11 +4,11 @@
 #include "io_interface.h"
 
 namespace sunaba::core::io {
-    void bindSystemIoInterface(sol::state lua);
-    
+    void bindSystemIoInterface(sol::state& lua);
+
     class SystemIoInterface : public IoInterface {
     public:
-        virtual std::string getFileUrl(const std::string &path) const; 
+        virtual std::string getFileUrl(const std::string &path) const { return pathUrl + path; } 
 
         std::string loadText(const std::string &path) const override;
         void saveText(const std::string &path, std::string &text) const override;
@@ -21,8 +21,8 @@ namespace sunaba::core::io {
         bool directoryExists(const std::string &path) const override;
 
 
-        SystemIoInterface();
-        ~SystemIoInterface();
+        SystemIoInterface() {}        
+        ~SystemIoInterface() {}
     };;
     
 }

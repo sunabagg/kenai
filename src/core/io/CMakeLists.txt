@@ -7,6 +7,8 @@ target_sources(${PROJECT_NAME} PRIVATE
         file_system_io.cpp
         io_manager.h 
         io_manager.cpp
+        bind_io_classes.h
+        bind_io_classes.cpp
 )
 
 target_include_directories( ${PROJECT_NAME}

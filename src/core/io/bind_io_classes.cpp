@@ -1,0 +1,14 @@
+#include "bind_io_classes.h"
+
+#include "io_interface.h"
+#include "system_io_interface.h"
+#include "file_system_io.h"
+#include "io_manager.h"
+
+
+void sunaba::core::io::bindIoClasses(sol::state& lua) {
+    bindIoInterface(lua);
+    bindSystemIoInterface(lua);
+    bindFileSystemIo(lua);
+    bindIoManager(lua);
+}

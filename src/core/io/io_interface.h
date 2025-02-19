@@ -18,7 +18,7 @@ using namespace sunaba::core;
 
 namespace sunaba::core::io {
 
-    void bindIoInterface(sol::state lua);
+    void bindIoInterface(sol::state& lua);
 
     class IoInterface : public BaseObject {
     public:
@@ -54,7 +54,7 @@ namespace sunaba::core::io {
             deleteFile(from);
         }
 
-        virtual int createDirectory(const std::string &path) const {}
+        virtual int createDirectory(const std::string &path) const { return -1;}
 
         virtual void deleteDirectory(const std::string &path) const {}
 

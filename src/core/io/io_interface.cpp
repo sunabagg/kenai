@@ -2,11 +2,11 @@
 
 using namespace godot;
 
-void sunaba::core::io::bindIoInterface(sol::state lua) {
+void sunaba::core::io::bindIoInterface(sol::state& lua) {
     lua.new_usertype<IoInterface>(
         "IoInterface",
-        sol::base_classes, sol::bases<BaseObject>(),
         sol::no_constructor,
+        sol::base_classes, sol::bases<BaseObject>(),
         "fileUrl", sol::property(
             [](IoInterface& self) { return self.pathUrl; },
             [](IoInterface& self, const std::string &value) { self.pathUrl = value; }

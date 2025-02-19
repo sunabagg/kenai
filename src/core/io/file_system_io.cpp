@@ -6,11 +6,11 @@ using namespace godot;
 using namespace sunaba::core;
 
 namespace sunaba::core::io {
-    void bindFileSystemIo(sol::state lua) {
+    void bindFileSystemIo(sol::state& lua) {
         lua.new_usertype<FileSystemIo>(
             "FileSystemIo",
-            sol::base_classes, sol::bases<SystemIoInterface>(),
             sol::constructors<FileSystemIo()>(),
+            sol::base_classes, sol::bases<SystemIoInterface>(),
             "basePath", sol::property(
                 [](FileSystemIo& self) { return self.basePath; }
             ),
