@@ -11,7 +11,10 @@ target_sources(${PROJECT_NAME} PRIVATE
         lua_function_wrapper.h
         bind_core_classes.h
         bind_core_classes.cpp
+        string_utils.h
 )
+
+add_subdirectory(io)
 
 target_include_directories( ${PROJECT_NAME}
         PRIVATE

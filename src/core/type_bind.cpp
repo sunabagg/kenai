@@ -8,11 +8,25 @@
 #include <godot_cpp/classes/json.hpp>
 #include <godot_cpp/variant/variant.hpp>
 #include <godot_cpp/variant/basis.hpp>
+#include <vector>
 
 using namespace godot;
 using namespace sunaba::core;
 
 void sunaba::core::bind_base_types(sol::state& lua) {
+    lua.new_usertype<PackedByteArray>("Bytes",
+        sol::constructors<PackedByteArray()>(),
+        "size", &PackedByteArray::size,
+        "get", [](const PackedByteArray& pba, int index) { return pba[index]; },
+        "set", &PackedByteArray::set,
+        "resize", &PackedByteArray::resize,
+        "append", &PackedByteArray::append,
+        "insert", &PackedByteArray::insert,
+        "remove_at", &PackedByteArray::remove_at,
+        "clear", &PackedByteArray::clear,
+        "tostring", [](const PackedByteArray& pba) { return std::string(pba.get_string_from_utf8().utf8().get_data()); }
+    );
+
     lua.new_usertype<Vector2>(
         "Vector2",
         sol::constructors<Vector2(), Vector2(float, float)>(),
