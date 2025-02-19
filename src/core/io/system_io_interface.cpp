@@ -9,6 +9,14 @@ using namespace godot;
 using namespace sunaba::core;
 
 namespace sunaba::core::io {
+    void bindSystemIoInterface(sol::state lua) {
+        lua.new_usertype<SystemIoInterface>(
+            "SystemIoInterface",
+            sol::base_classes, sol::bases<IoInterface>(),
+            "getFileUrl", &SystemIoInterface::getFileUrl
+        );
+    }
+    
     std::string SystemIoInterface::loadText(const std::string &path) const {
         Ref<FileAccess> file = FileAccess::open(path.c_str(), FileAccess::READ);
         if (file == nullptr) {

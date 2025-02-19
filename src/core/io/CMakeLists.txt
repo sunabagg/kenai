@@ -1,5 +1,6 @@
 target_sources(${PROJECT_NAME} PRIVATE
         io_interface.h
+        io_interface.cpp
         system_io_interface.h
         system_io_interface.cpp
 )
