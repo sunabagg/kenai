@@ -49,7 +49,7 @@ void App::start( const String &path) {
     }
     global_state.open_libraries( sol::lib::base, sol::lib::bit32, sol::lib::coroutine,
         sol::lib::count, sol::lib::math, sol::lib::string,
-        sol::lib::table, sol::lib::utf8, sol::lib::jit );
+        sol::lib::table, sol::lib::utf8, sol::lib::package );
 
     global_state["print"] = [this]( sol::variadic_args args ) {
         String msg;
@@ -116,7 +116,7 @@ void App::start( const String &path) {
         godot::UtilityFunctions::print( msg );
     };
 
-    UtilityFunctions::print("Hello, World!");
+    //UtilityFunctions::print("Hello, World!");
 
     sunaba::core::bindCoreClasses(global_state);
     sunaba::spatial::bindSpatialClasses(global_state);
@@ -124,7 +124,7 @@ void App::start( const String &path) {
     ioManager = new IoManager();
     IoIndex::bindIoManger(global_state, ioManager);
     auto fsio = FileSystemIo::create(path.utf8().get_data(), "app://");
-    UtilityFunctions::print(fsio->basePath.c_str());
+    //UtilityFunctions::print(fsio->basePath.c_str());
     ioManager->add(fsio);
     global_state.set("ioManager", ioManager);
 
@@ -138,7 +138,7 @@ void App::start( const String &path) {
     try {
 
         std::string script = ioManager->loadText("app://main.lua");
-        UtilityFunctions::print(script.c_str());
+        //UtilityFunctions::print(script.c_str());
         global_state.script(script);
     }
     catch (const sol::error &e) {

@@ -15,11 +15,7 @@ void sunaba::core::bindSceneSystem(sol::state& lua)
         sol::base_classes, sol::bases<BaseObject>(),
         "addEntity", &Scene::addEntity, 
         "hasEntity", &Scene::hasEntity, 
-        "removeEntity", &Scene::removeEntity,
-        "update", &Scene::update, 
-        "physicsUpdate", &Scene::physicsUpdate, 
-        "start", &Scene::start,
-        "ready", &Scene::ready, 
+        "removeEntity", &Scene::removeEntity, 
         "onFree", &Scene::onFree,
         "find", &Scene::find,
         "getEntityCount", &Scene::getEntityCount,
@@ -51,6 +47,7 @@ void sunaba::core::bindSceneSystem(sol::state& lua)
         "getUserComponentsByType", &Entity::getUserComponentsByType,
         "addChild", &Entity::addChild,
         "removeChild", &Entity::removeChild,
+        "hasChild", &Entity::hasChild,
         "onFree", &Entity::onFree,
         "find", &Entity::find,
         "getChildCount", &Entity::getChildCount,
@@ -72,7 +69,9 @@ void sunaba::core::bindSceneSystem(sol::state& lua)
         "onReady", &Component::onReady, 
         "onUpdate", &Component::onUpdate,    
         "onPhysicsUpdate", &Component::onPhysicsUpdate,
-        "onFree", &Component::onFree);
+        "onFree", &Component::onFree,
+        "setScriptType", &Component::setScriptType,
+        "setScriptInstance", &Component::setScriptInstance);
 }
 
 // hacky way to get around the fact that 
