@@ -9,6 +9,7 @@
 #include <sol/state.hpp>
 
 #include "core/scene_system.h"
+#include "core/io/io_manager.h"
 
 using namespace godot;
 
@@ -23,6 +24,8 @@ namespace sunaba
     public:
         App();
         ~App();
+
+        sunaba::core::io::IoManager ioManager;
 
         void _ready() override;
         void start( const String &path );

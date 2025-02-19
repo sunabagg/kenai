@@ -11,10 +11,13 @@
 #include "core/scene_system.h"
 #include "core/scene_node.h"
 #include "core/bind_core_classes.h"
+#include "core/io/file_system_io.h"
+#include "core/io/io_index.h"
 #include "spatial/bind_spatial_classes.h"
 
 using namespace sunaba;
 using namespace sunaba::core;
+using namespace sunaba::core::io;
 using namespace godot;
 
 void App::_bind_methods() {
@@ -35,6 +38,9 @@ void App::_ready() {
 }
 
 void App::start( const String &path) {
+    if (path == "") {
+        return;
+    }
     global_state.open_libraries( sol::lib::base, sol::lib::bit32, sol::lib::coroutine,
         sol::lib::count, sol::lib::math, sol::lib::string,
         sol::lib::table, sol::lib::utf8, sol::lib::jit );
@@ -109,14 +115,20 @@ void App::start( const String &path) {
     sunaba::core::bindCoreClasses(global_state);
     sunaba::spatial::bindSpatialClasses(global_state);
 
+    ioManager = IoManager();
+    IoIndex::bindIoManger(global_state, &ioManager);
+    ioManager.add( FileSystemIo::create(path.utf8().get_data(), "res://") );
+
+    global_state.set("ioManager", &ioManager);
+
     //sunaba::core::bind_all_godot_classes( global_state );
     //sunaba::core::initialize_lua( global_state );
 
     global_state.set_function( "createScene", [this]() {
         return createScene();
-    } );
+    });
 
-    try {
+    try {/*
         global_state.script(R"(
             function printAllGlobals()
                 local seen={}
@@ -249,7 +261,10 @@ void App::start( const String &path) {
             --child1 = nil
 
             printScene(scene)
-        )");
+        )");*/
+
+        std::string script = ioManager.loadText("res://main.lua");
+        global_state.script(script);
     }
     catch (const sol::error &e) {
         UtilityFunctions::print(e.what());
