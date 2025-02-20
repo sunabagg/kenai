@@ -10,7 +10,9 @@ namespace sunaba::core::io {
         public:
         uint8_t *data;
 
-        Byte(uint8_t *data) : data(data) {}
+        Byte() : data(nullptr) {}
+
+        Byte(uint8_t data) : data(&data) {}
 
         Byte(double value) {
             data = new uint8_t[sizeof(double)];
@@ -43,6 +45,22 @@ namespace sunaba::core::io {
             double value;
             memcpy(&value, data, sizeof(double));
             return value;
+        }
+
+        void setInt(int value) {
+            memcpy(data, &value, sizeof(int));
+        }
+
+        void setFloat(float value) {
+            memcpy(data, &value, sizeof(float));
+        }
+
+        void setDouble(double value) {
+            memcpy(data, &value, sizeof(double));
+        }
+
+        uint8_t getData() {
+            return *data;
         }
     };
 }

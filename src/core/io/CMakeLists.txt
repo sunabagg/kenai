@@ -1,6 +1,10 @@
 target_sources(${PROJECT_NAME} PRIVATE
         byte.h
         byte.cpp
+        binary_data.h
+        binary_data.cpp
+        bind_binary_classes.h
+        bind_binary_classes.cpp
         io_interface.h
         io_interface.cpp
         system_io_interface.h
