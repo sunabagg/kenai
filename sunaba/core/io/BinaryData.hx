@@ -1,4 +1,4 @@
-package sunaba.core;
+package sunaba.core.io;
 
 @:native("BinaryData")
 // BinaryData is a class that represents a binary data buffer.

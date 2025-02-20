@@ -1,4 +1,4 @@
-package sunaba.core;
+package sunaba.core.io;
 
 @:native("Byte")
 extern class ByteObject  {
