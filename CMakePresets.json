@@ -41,9 +41,41 @@
       }
     },
     {
+      "name": "windows-debug-mingw",
+      "displayName": "64bit Windows Debug (Mingw)",
+      "inherits": "default",
+      "binaryDir": "${sourceDir}/../build_sunaba_mingw_Windows-AMD64",
+      "condition": {
+        "type": "equals",
+        "lhs": "${hostSystemName}",
+        "rhs": "Windows"
+      },
+      "toolset": {
+        "value": "host=x64",
+        "strategy": "external"
+      },
+      "architecture": {
+        "value": "x64",
+        "strategy": "external"
+      },
+      "cacheVariables": {
+        "CMAKE_C_COMPILER": "gcc.exe",
+        "CMAKE_CXX_COMPILER": "g++.exe",
+        "CMAKE_BUILD_TYPE": "Debug"
+      }
+    },
+    {
       "name": "windows-release",
       "displayName": "64bit Windows Release",
       "inherits": "windows-debug",
+      "cacheVariables": {
+        "CMAKE_BUILD_TYPE": "Release"
+      }
+    },
+    {
+      "name": "windows-release-mingw",
+      "displayName": "64bit Windows Release (Mingw)",
+      "inherits": "windows-debug-mingw",
       "cacheVariables": {
         "CMAKE_BUILD_TYPE": "Release"
       }
