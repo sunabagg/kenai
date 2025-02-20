@@ -12,6 +12,7 @@
 #include <sol/sol.hpp>
 
 #include "../base_object.h"
+#include "binary_data.h"
 
 using namespace godot;
 using namespace sunaba::core;
@@ -33,6 +34,16 @@ namespace sunaba::core::io {
         virtual PackedByteArray loadBytes(const std::string &path) const { return PackedByteArray(); }
 
         virtual void saveBytes(const std::string &path, const PackedByteArray &bytes) const {}
+
+        BinaryData loadBinary(const std::string &path) const {
+            PackedByteArray bytes = loadBytes(path);
+            return BinaryData(bytes);
+        }
+
+        void saveBinary(const std::string &path, const BinaryData &data) const {
+            PackedByteArray bytes = data.toPackedByteArray();
+            saveBytes(path, bytes);
+        }
 
         std::vector<std::string> getFileListAll(const std::string &extension = "", const bool recursive = true) const {
             return getFileList(pathUrl, extension, recursive);

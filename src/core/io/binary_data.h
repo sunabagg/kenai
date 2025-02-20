@@ -125,6 +125,14 @@ namespace sunaba::core::io {
             }
             return packed_data;
         }
+
+        sol::table toTable(sol::state& lua) const {
+            sol::table table = lua.create_table();
+            for (size_t i = 0; i < data.size(); ++i) {
+                table[i] = data[i]->getDouble();
+            }
+            return table;
+        }
     };
 }
 

@@ -8,6 +8,7 @@ void sunaba::core::io::bindBinaryData(sol::state& lua) {
         "set", &BinaryData::set,
         "resize", &BinaryData::resize,
         "append", &BinaryData::append,
-        "insert", &BinaryData::insert
+        "insert", &BinaryData::insert,
+        "toTable", &BinaryData::toTable
     );
 }
