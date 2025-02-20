@@ -147,6 +147,10 @@ void App::start( const String &path) {
     }
 }
 
+void App::_process(double delta) {
+    global_state.collect_garbage();
+}
+
 Scene* App::createScene() {
     auto sceneNode = memnew( SceneNode );
     auto scene = sceneNode->getScene();

@@ -4,7 +4,8 @@ import sunaba.core.Behavior;
 
 class DeltaTimePrinter extends Behavior{
     override function onUpdate(deltaTime: Float) : Void {
-        trace("DeltaTimePrinter.onUpdate: " + deltaTime);
+        Sys.println("DeltaTimePrinter.onUpdate: " + deltaTime);
+        //trace();
     }
 
     override function onInit() {

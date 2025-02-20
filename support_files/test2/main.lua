@@ -189,7 +189,6 @@ local String = _hx_e()
 local Std = _hx_e()
 local Type = _hx_e()
 __haxe_Exception = _hx_e()
-__haxe_Log = _hx_e()
 __haxe_NativeStackTrace = _hx_e()
 __haxe_ValueException = _hx_e()
 __haxe_exceptions_PosException = _hx_e()
@@ -839,31 +838,6 @@ end
 
 __haxe_Exception.prototype.__class__ =  __haxe_Exception
 
-__haxe_Log.new = {}
-__haxe_Log.__name__ = true
-__haxe_Log.formatOutput = function(v,infos) 
-  local str = Std.string(v);
-  if (infos == nil) then 
-    do return str end;
-  end;
-  local pstr = Std.string(Std.string(infos.fileName) .. Std.string(":")) .. Std.string(infos.lineNumber);
-  if (infos.customParams ~= nil) then 
-    local _g = 0;
-    local _g1 = infos.customParams;
-    while (_g < _g1.length) do _hx_do_first_1 = false;
-      
-      local v = _g1[_g];
-      _g = _g + 1;
-      str = Std.string(str) .. Std.string((Std.string(", ") .. Std.string(Std.string(v))));
-    end;
-  end;
-  do return Std.string(Std.string(pstr) .. Std.string(": ")) .. Std.string(str) end;
-end
-__haxe_Log.trace = function(v,infos) 
-  local str = __haxe_Log.formatOutput(v, infos);
-  _hx_print(str);
-end
-
 __haxe_NativeStackTrace.new = {}
 __haxe_NativeStackTrace.__name__ = true
 __haxe_NativeStackTrace.saveStack = function(exception) 
@@ -1137,7 +1111,7 @@ end
 __support_files_test2_src_DeltaTimePrinter.__name__ = true
 __support_files_test2_src_DeltaTimePrinter.prototype = _hx_e();
 __support_files_test2_src_DeltaTimePrinter.prototype.onUpdate = function(self,deltaTime) 
-  __haxe_Log.trace(Std.string("DeltaTimePrinter.onUpdate: ") .. Std.string(deltaTime), _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="support_files/test2/src/DeltaTimePrinter.hx",lineNumber=7,className="support_files.test2.src.DeltaTimePrinter",methodName="onUpdate"}));
+  _G.print(Std.string(Std.string("DeltaTimePrinter.onUpdate: ") .. Std.string(deltaTime)));
 end
 __support_files_test2_src_DeltaTimePrinter.prototype.onInit = function(self) 
   _G.print("DeltaTimePrinter.onInit");
@@ -1188,8 +1162,6 @@ local _hx_static_init = function()
   String.__name__ = true;
   Array.__name__ = true;
 end
-
-_hx_print = print or (function() end)
 
 _hx_table = {}
 _hx_table.pack = _G.table.pack or function(...)

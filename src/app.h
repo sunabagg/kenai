@@ -28,6 +28,7 @@ namespace sunaba
         sunaba::core::io::IoManager* ioManager;
 
         void _ready() override;
+        void _process(double delta) override;
         void start( const String &path );
 
         sunaba::core::Scene* createScene();
