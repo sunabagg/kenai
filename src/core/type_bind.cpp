@@ -433,6 +433,6 @@ void sunaba::core::bind_base_types(sol::state& lua) {
         "toHtml", &Color::to_html,
         "toRgba32", &Color::to_rgba32,
         "toRgba64", &Color::to_rgba64,
-        "toString", [](const Color& c) { return std::string((c.operator String()).utf8().get_data()); }
+        "tostring", [](const Color& c) { return std::string((c.operator String()).utf8().get_data()); }
     );
 }
