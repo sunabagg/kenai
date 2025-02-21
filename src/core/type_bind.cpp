@@ -187,6 +187,26 @@ void sunaba::core::bind_base_types(sol::state& lua) {
         "tostring", [](const Vector3& v) { return std::string((v.operator String()).utf8().get_data()); }
         );
     
+    lua.new_usertype<godot::Vector3i>(
+        "Vector3i",
+        sol::constructors<Vector3i(), Vector3i(int, int, int)>(),
+        "x", &Vector3i::x,
+        "y", &Vector3i::y,
+        "z", &Vector3i::z,
+        "abs", &Vector3i::abs,
+        "clamp", &Vector3i::clamp,
+        //"distanceSquaredTo", &Vector3i::distance_squared_to,
+        //"distanceTo", &Vector3i::distance_to,
+        "length", &Vector3i::length,
+        "lengthSquared", &Vector3i::length_squared,
+        "max", &Vector3i::max,
+        "maxAxisIndex", &Vector3i::max_axis_index,
+        "min", &Vector3i::min,
+        "minAxisIndex", &Vector3i::min_axis_index,
+        "sign", &Vector3i::sign,
+        "tostring", [](const Vector3i& v) { return std::string((v.operator String()).utf8().get_data()); }
+    );
+    
     lua.new_usertype<godot::Vector4>(
         "Vector4",
         sol::constructors<Vector4(), Vector4(float, float, float, float)>(),
@@ -268,13 +288,27 @@ void sunaba::core::bind_base_types(sol::state& lua) {
         "slerp", &Quaternion::slerp,
         "sphericalCubicInterpolate", &Quaternion::spherical_cubic_interpolate,
         "sphericalLinearInterpolateInTime", &Quaternion::spherical_cubic_interpolate_in_time,
-        "tosring", [](const Quaternion& q) { return std::string((q.operator String()).utf8().get_data()); }
+        "tostring", [](const Quaternion& q) { return std::string((q.operator String()).utf8().get_data()); }
     );
 
     lua.new_usertype<godot::Basis>(
         "Basis",
         sol::constructors<Basis(), Basis(Vector3, Vector3, Vector3)>(),
-        "rows" , &Basis::rows,
+        "rows" , sol::property(
+            [](Basis& self) { 
+                auto rows = self.rows;
+                std::vector<Vector3> vecs;
+                vecs.push_back(rows[0]);
+                vecs.push_back(rows[1]);
+                vecs.push_back(rows[2]);
+                return vecs;
+            }, 
+            [](Basis& self, const std::vector<Vector3>& value) { 
+                self.rows[0] = value[0];
+                self.rows[1] = value[1];
+                self.rows[2] = value[2];
+            }
+        ),
         "determinant", &Basis::determinant,
         "fromEuler", &Basis::from_euler,
         "fromScale", &Basis::from_scale,
