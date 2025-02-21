@@ -8,21 +8,25 @@ class Main {
     public static function main() {
         var scene : Scene = untyped __lua__("createScene()");
         var entity1 = new Entity();
+        entity1.name = "Entity1";
         var e1transform = new SpatialTransform();
         entity1.addComponent(e1transform, "SpatialTransform");
         scene.addEntity(entity1);
         e1transform.position = new Vector3(1, 2, 3);
         var child1 = new Entity();
+        child1.name = "Child1";
         var c1transform = new SpatialTransform();
         child1.addComponent(c1transform, "SpatialTransform");
         entity1.addChild(child1);
         c1transform.position = new Vector3(4, 5, 6);
         var entity2 = new Entity();
+        entity2.name = "Entity2";
         var e2transform = new SpatialTransform();
         entity2.addComponent(e2transform, "SpatialTransform");
         scene.addEntity(entity2);
         e2transform.position = new Vector3(7, 8, 9);
         var entity3 = new Entity();
+        entity3.name = "Camera";
         var e3transform = new SpatialTransform();
         entity3.addComponent(e3transform, "SpatialTransform");
         var camera = new Camera();
@@ -30,6 +34,7 @@ class Main {
         scene.addEntity(entity3);
         e3transform.position = new Vector3(0, 0, 1);
         var entity4 = new Entity();
+        entity4.name = "Box";
         var e4transform = new SpatialTransform();
         entity4.addComponent(e4transform, "SpatialTransform");
         var e4mesh = new MeshRenderer();

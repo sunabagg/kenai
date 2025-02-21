@@ -560,21 +560,25 @@ Main.__name__ = "Main"
 Main.main = function() 
   local scene = createScene();
   local entity1 = Entity.new();
+  entity1.name = "Entity1";
   local e1transform = SpatialTransform.new();
   entity1:addComponent(e1transform, "SpatialTransform");
   scene:addEntity(entity1);
   e1transform.position = __sunaba_core__Vector3_Vector3_Impl_._new(1, 2, 3);
   local child1 = Entity.new();
+  child1.name = "Child1";
   local c1transform = SpatialTransform.new();
   child1:addComponent(c1transform, "SpatialTransform");
   entity1:addChild(child1);
   c1transform.position = __sunaba_core__Vector3_Vector3_Impl_._new(4, 5, 6);
   local entity2 = Entity.new();
+  entity2.name = "Entity2";
   local e2transform = SpatialTransform.new();
   entity2:addComponent(e2transform, "SpatialTransform");
   scene:addEntity(entity2);
   e2transform.position = __sunaba_core__Vector3_Vector3_Impl_._new(7, 8, 9);
   local entity3 = Entity.new();
+  entity3.name = "Camera";
   local e3transform = SpatialTransform.new();
   entity3:addComponent(e3transform, "SpatialTransform");
   local camera = Camera.new();
@@ -582,6 +586,7 @@ Main.main = function()
   scene:addEntity(entity3);
   e3transform.position = __sunaba_core__Vector3_Vector3_Impl_._new(0, 0, 1);
   local entity4 = Entity.new();
+  entity4.name = "Box";
   local e4transform = SpatialTransform.new();
   entity4:addComponent(e4transform, "SpatialTransform");
   local e4mesh = MeshRenderer.new();
