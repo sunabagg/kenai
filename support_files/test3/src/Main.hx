@@ -3,6 +3,7 @@ import sunaba.spatial.Camera;
 import sunaba.spatial.SpatialTransform;
 import sunaba.spatial.mesh.MeshRenderer;
 import sunaba.spatial.mesh.Box;
+import support_files.test3.src.RotateComponent;
 
 class Main {
     public static function main() {
@@ -36,12 +37,15 @@ class Main {
         var entity4 = new Entity();
         entity4.name = "Box";
         var e4transform = new SpatialTransform();
-        entity4.addComponent(e4transform, "SpatialTransform");
+        var transformName = Type.getClassName(SpatialTransform);
+        entity4.addComponent(e4transform, transformName);
         var e4mesh = new MeshRenderer();
         entity4.addComponent(e4mesh, "MeshRenderer");
         var e4box = new Box();
         entity4.addComponent(e4box, "Box");
         e4box.size = new Vector3(1, 1, 1);
+        var rotateComponent = new RotateComponent();
+        entity4.addComponent(rotateComponent.component, "RotateComponent");
         scene.addEntity(entity4);
         e4transform.position = new Vector3(0, 0, -1);
 

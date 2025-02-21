@@ -188,8 +188,12 @@ local Math = _hx_e()
 local Reflect = _hx_e()
 local String = _hx_e()
 local Std = _hx_e()
+local StringBuf = _hx_e()
 local Type = _hx_e()
+__haxe_StackItem = _hx_e()
+__haxe__CallStack_CallStack_Impl_ = _hx_e()
 __haxe_Exception = _hx_e()
+__haxe_Log = _hx_e()
 __haxe_NativeStackTrace = _hx_e()
 __haxe_ValueException = _hx_e()
 __haxe_exceptions_PosException = _hx_e()
@@ -204,6 +208,7 @@ __sunaba_core_Behavior = _hx_e()
 __sunaba_core__Quaternion_Quaternion_Impl_ = _hx_e()
 __sunaba_core__Vector2_Vector2_Impl_ = _hx_e()
 __sunaba_core__Vector3_Vector3_Impl_ = _hx_e()
+__support_files_test3_src_RotateComponent = _hx_e()
 
 local _hx_bind, _hx_bit, _hx_staticToInstance, _hx_funcToField, _hx_maxn, _hx_print, _hx_apply_self, _hx_box_mr, _hx_bit_clamp, _hx_table, _hx_bit_raw
 local _hx_pcall_default = {};
@@ -588,12 +593,17 @@ Main.main = function()
   local entity4 = Entity.new();
   entity4.name = "Box";
   local e4transform = SpatialTransform.new();
-  entity4:addComponent(e4transform, "SpatialTransform");
+  local transformName = SpatialTransform.__name__;
+  _G.print(SpatialTransform.__name__);
+  return;
+  --entity4:addComponent(e4transform, transformName);
   local e4mesh = MeshRenderer.new();
   entity4:addComponent(e4mesh, "MeshRenderer");
   local e4box = Box.new();
   entity4:addComponent(e4box, "Box");
   e4box.size = __sunaba_core__Vector3_Vector3_Impl_._new(1, 1, 1);
+  local rotateComponent = __support_files_test3_src_RotateComponent.new();
+  entity4:addComponent(rotateComponent.component, "RotateComponent");
   scene:addEntity(entity4);
   e4transform.position = __sunaba_core__Vector3_Vector3_Impl_._new(0, 0, -1);
   local _hx_status, _hx_result = pcall(function() 
@@ -882,6 +892,38 @@ Std.int = function(x)
     do return _hx_bit_clamp(x) end;
   end;
 end
+Std.parseInt = function(x) 
+  if (x == nil) then 
+    do return nil end;
+  end;
+  local sign, numString = _G.string.match(x, "^%s*([%-+]?)0[xX]([%da-fA-F]*)");
+  if (numString ~= nil) then 
+    if (sign == "-") then 
+      do return -_G.tonumber(numString, 16) end;
+    else
+      do return _G.tonumber(numString, 16) end;
+    end;
+  end;
+  local intMatch = _G.string.match(x, "^%s*[%-+]?%d*");
+  if (intMatch == nil) then 
+    do return nil end;
+  end;
+  do return _G.tonumber(intMatch) end;
+end
+
+StringBuf.new = function() 
+  local self = _hx_new(StringBuf.prototype)
+  StringBuf.super(self)
+  return self
+end
+StringBuf.super = function(self) 
+  self.b = ({});
+  self.length = 0;
+end
+StringBuf.__name__ = "StringBuf"
+StringBuf.prototype = _hx_e();
+
+StringBuf.prototype.__class__ =  StringBuf
 
 Type.new = {}
 Type.__name__ = "Type"
@@ -907,6 +949,122 @@ Type.getClass = function(o)
 end
 Type.createInstance = function(cl,args) 
   do return cl.new(_hx_table.unpack(args, 0)) end;
+end
+_hxClasses["haxe.StackItem"] = { __ename__ = true, __constructs__ = _hx_tab_array({[0]="CFunction","Module","FilePos","Method","LocalFunction"},5)}
+__haxe_StackItem = _hxClasses["haxe.StackItem"];
+__haxe_StackItem.CFunction = _hx_tab_array({[0]="CFunction",0,__enum__ = __haxe_StackItem},2)
+
+__haxe_StackItem.Module = function(m) local _x = _hx_tab_array({[0]="Module",1,m,__enum__=__haxe_StackItem}, 3); return _x; end 
+__haxe_StackItem.FilePos = function(s,file,line,column) local _x = _hx_tab_array({[0]="FilePos",2,s,file,line,column,__enum__=__haxe_StackItem}, 6); return _x; end 
+__haxe_StackItem.Method = function(classname,method) local _x = _hx_tab_array({[0]="Method",3,classname,method,__enum__=__haxe_StackItem}, 4); return _x; end 
+__haxe_StackItem.LocalFunction = function(v) local _x = _hx_tab_array({[0]="LocalFunction",4,v,__enum__=__haxe_StackItem}, 3); return _x; end 
+
+__haxe__CallStack_CallStack_Impl_.new = {}
+__haxe__CallStack_CallStack_Impl_.__name__ = "haxe._CallStack.CallStack_Impl_"
+__haxe__CallStack_CallStack_Impl_.toString = function(stack) 
+  local b = StringBuf.new();
+  local _g = 0;
+  local _g1 = stack;
+  while (_g < _g1.length) do _hx_do_first_1 = false;
+    
+    local s = _g1[_g];
+    _g = _g + 1;
+    local str = "\nCalled from ";
+    _G.table.insert(b.b, str);
+    local b1 = b;
+    b1.length = b1.length + #str;
+    __haxe__CallStack_CallStack_Impl_.itemToString(b, s);
+  end;
+  do return _G.table.concat(b.b) end;
+end
+__haxe__CallStack_CallStack_Impl_.itemToString = function(b,s) 
+  local tmp = s[1];
+  if (tmp) == 0 then 
+    local str = "a C function";
+    _G.table.insert(b.b, str);
+    local b = b;
+    b.length = b.length + #str;
+  elseif (tmp) == 1 then 
+    local m = s[2];
+    local str = "module ";
+    _G.table.insert(b.b, str);
+    local b1 = b;
+    b1.length = b1.length + #str;
+    local str = Std.string(m);
+    _G.table.insert(b.b, str);
+    local b = b;
+    b.length = b.length + #str;
+  elseif (tmp) == 2 then 
+    local s1 = s[2];
+    local file = s[3];
+    local line = s[4];
+    local col = s[5];
+    if (s1 ~= nil) then 
+      __haxe__CallStack_CallStack_Impl_.itemToString(b, s1);
+      local str = " (";
+      _G.table.insert(b.b, str);
+      local b = b;
+      b.length = b.length + #str;
+    end;
+    local str = Std.string(file);
+    _G.table.insert(b.b, str);
+    local b1 = b;
+    b1.length = b1.length + #str;
+    local str = " line ";
+    _G.table.insert(b.b, str);
+    local b1 = b;
+    b1.length = b1.length + #str;
+    local str = Std.string(line);
+    _G.table.insert(b.b, str);
+    local b1 = b;
+    b1.length = b1.length + #str;
+    if (col ~= nil) then 
+      local str = " column ";
+      _G.table.insert(b.b, str);
+      local b1 = b;
+      b1.length = b1.length + #str;
+      local str = Std.string(col);
+      _G.table.insert(b.b, str);
+      local b = b;
+      b.length = b.length + #str;
+    end;
+    if (s1 ~= nil) then 
+      local str = ")";
+      _G.table.insert(b.b, str);
+      local b = b;
+      b.length = b.length + #str;
+    end;
+  elseif (tmp) == 3 then 
+    local cname = s[2];
+    local meth = s[3];
+    local str = Std.string((function() 
+      local _hx_1
+      if (cname == nil) then 
+      _hx_1 = "<unknown>"; else 
+      _hx_1 = cname; end
+      return _hx_1
+    end )());
+    _G.table.insert(b.b, str);
+    local b1 = b;
+    b1.length = b1.length + #str;
+    local str = ".";
+    _G.table.insert(b.b, str);
+    local b1 = b;
+    b1.length = b1.length + #str;
+    local str = Std.string(meth);
+    _G.table.insert(b.b, str);
+    local b = b;
+    b.length = b.length + #str;
+  elseif (tmp) == 4 then 
+    local n = s[2];
+    local str = "local function #";
+    _G.table.insert(b.b, str);
+    local b1 = b;
+    b1.length = b1.length + #str;
+    local str = Std.string(n);
+    _G.table.insert(b.b, str);
+    local b = b;
+    b.length = b.length + #str; end;
 end
 
 __haxe_Exception.new = function(message,previous,native) 
@@ -951,14 +1109,51 @@ end
 __haxe_Exception.prototype.toString = function(self) 
   do return self:get_message() end
 end
+__haxe_Exception.prototype.__shiftStack = function(self) 
+  self.__skipStack = self.__skipStack + 1;
+end
 __haxe_Exception.prototype.get_message = function(self) 
   do return self.__exceptionMessage end
 end
 __haxe_Exception.prototype.get_native = function(self) 
   do return self.__nativeException end
 end
+__haxe_Exception.prototype.get_stack = function(self) 
+  local _g = self.__exceptionStack;
+  if (_g == nil) then 
+    self.__exceptionStack = __haxe_NativeStackTrace.toHaxe(self.__nativeStack, self.__skipStack) do return self.__exceptionStack end;
+  else
+    local s = _g;
+    do return s end;
+  end;
+end
 
 __haxe_Exception.prototype.__class__ =  __haxe_Exception
+
+__haxe_Log.new = {}
+__haxe_Log.__name__ = "haxe.Log"
+__haxe_Log.formatOutput = function(v,infos) 
+  local str = Std.string(v);
+  if (infos == nil) then 
+    do return str end;
+  end;
+  local pstr = Std.string(Std.string(infos.fileName) .. Std.string(":")) .. Std.string(infos.lineNumber);
+  if (infos.customParams ~= nil) then 
+    local _g = 0;
+    local _g1 = infos.customParams;
+    while (_g < _g1.length) do _hx_do_first_1 = false;
+      
+      local v = _g1[_g];
+      _g = _g + 1;
+      str = Std.string(str) .. Std.string((Std.string(", ") .. Std.string(Std.string(v))));
+    end;
+  end;
+  do return Std.string(Std.string(pstr) .. Std.string(": ")) .. Std.string(str) end;
+end
+__haxe_Log.trace = function(v,infos) 
+  local str = __haxe_Log.formatOutput(v, infos);
+  _hx_print(str);
+end
 
 __haxe_NativeStackTrace.new = {}
 __haxe_NativeStackTrace.__name__ = "haxe.NativeStackTrace"
@@ -976,6 +1171,50 @@ end
 __haxe_NativeStackTrace.exceptionStack = function() 
   do return _hx_tab_array({}, 0) end;
 end
+__haxe_NativeStackTrace.toHaxe = function(native,skip) 
+  if (skip == nil) then 
+    skip = 0;
+  end;
+  local stack = _hx_tab_array({}, 0);
+  local cnt = -1;
+  local _g = 0;
+  local _hx_continue_1 = false;
+  while (_g < native.length) do _hx_do_first_1 = false;
+    repeat 
+    local item = native[_g];
+    _g = _g + 1;
+    local parts = String.prototype.split(String.prototype.substr(item, 1), ":");
+    local file = parts[0];
+    if (file == "[C]") then 
+      break;
+    end;
+    cnt = cnt + 1;
+    if (skip > cnt) then 
+      break;
+    end;
+    local line = parts[1];
+    local method;
+    if (parts.length <= 2) then 
+      method = nil;
+    else
+      local methodPos = String.prototype.indexOf(parts[2], "'");
+      method = (function() 
+        local _hx_1
+        if (methodPos < 0) then 
+        _hx_1 = nil; else 
+        _hx_1 = __haxe_StackItem.Method(nil, String.prototype.substring(parts[2], methodPos + 1, #parts[2] - 1)); end
+        return _hx_1
+      end )();
+    end;
+    stack:push(__haxe_StackItem.FilePos(method, file, Std.parseInt(line)));until true
+    if _hx_continue_1 then 
+    _hx_continue_1 = false;
+    break;
+    end;
+    
+  end;
+  do return stack end;
+end
 
 __haxe_ValueException.new = function(value,previous,native) 
   local self = _hx_new(__haxe_ValueException.prototype)
@@ -991,6 +1230,7 @@ __haxe_ValueException.super = function(self,value,previous,native)
     return _hx_1
   end )(),previous,native);
   self.value = value;
+  self.__skipStack = self.__skipStack + 1;
 end
 __haxe_ValueException.__name__ = "haxe.ValueException"
 __haxe_ValueException.prototype = _hx_e();
@@ -1014,6 +1254,7 @@ __haxe_exceptions_PosException.super = function(self,message,previous,pos)
   else
     self.posInfos = pos;
   end;
+  self.__skipStack = self.__skipStack + 1;
 end
 __haxe_exceptions_PosException.__name__ = "haxe.exceptions.PosException"
 __haxe_exceptions_PosException.prototype = _hx_e();
@@ -1035,6 +1276,7 @@ __haxe_exceptions_NotImplementedException.super = function(self,message,previous
     message = "Not implemented";
   end;
   __haxe_exceptions_PosException.super(self,message,previous,pos);
+  self.__skipStack = self.__skipStack + 1;
 end
 __haxe_exceptions_NotImplementedException.__name__ = "haxe.exceptions.NotImplementedException"
 __haxe_exceptions_NotImplementedException.prototype = _hx_e();
@@ -1386,6 +1628,49 @@ __sunaba_core_Behavior.super = function(self)
 end
 __sunaba_core_Behavior.__name__ = "sunaba.core.Behavior"
 __sunaba_core_Behavior.prototype = _hx_e();
+__sunaba_core_Behavior.prototype.getComponent_sunaba_spatial_SpatialTransform = function(self,type,entity) 
+  if (entity == nil) then 
+    entity = self.component.entity;
+    __haxe_Log.trace("Entity is null, using this.component.entity", _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="sunaba/core/Behavior.hx",lineNumber=55,className="sunaba.core.Behavior",methodName="getComponent"}));
+  end;
+  local compType = type;
+  local isComponent = type(type) == 'userdata' == true;
+  if (compType ~= nil) then 
+    __haxe_Log.trace(Std.string("Checking for Component: ") .. Std.string(type.__name__), _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="sunaba/core/Behavior.hx",lineNumber=61,className="sunaba.core.Behavior",methodName="getComponent"}));
+    local component = entity:getComponentByName(type.__name__);
+    if (component ~= nil) then 
+      __haxe_Log.trace(Std.string("Component found: ") .. Std.string(type.__name__), _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="sunaba/core/Behavior.hx",lineNumber=64,className="sunaba.core.Behavior",methodName="getComponent"}));
+      local tComponent = component;
+      if (tComponent ~= nil) then 
+        __haxe_Log.trace(Std.string("Component type match: ") .. Std.string(type.__name__), _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="sunaba/core/Behavior.hx",lineNumber=67,className="sunaba.core.Behavior",methodName="getComponent"}));
+        do return tComponent end;
+      else
+        __haxe_Log.trace(Std.string("Component type mismatch: ") .. Std.string(type.__name__), _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="sunaba/core/Behavior.hx",lineNumber=71,className="sunaba.core.Behavior",methodName="getComponent"}));
+      end;
+    else
+      __haxe_Log.trace(Std.string("Component not found: ") .. Std.string(type.__name__), _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="sunaba/core/Behavior.hx",lineNumber=75,className="sunaba.core.Behavior",methodName="getComponent"}));
+    end;
+  end;
+  local behaviorType = type;
+  if (behaviorType ~= nil) then 
+    __haxe_Log.trace(Std.string("Checking for Behavior: ") .. Std.string(type.__name__), _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="sunaba/core/Behavior.hx",lineNumber=81,className="sunaba.core.Behavior",methodName="getComponent"}));
+    local behavior = entity:getUserComponent(behaviorType);
+    if (behavior ~= nil) then 
+      __haxe_Log.trace(Std.string("Behavior found: ") .. Std.string(type.__name__), _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="sunaba/core/Behavior.hx",lineNumber=84,className="sunaba.core.Behavior",methodName="getComponent"}));
+      local tBehavior = behavior;
+      if (tBehavior ~= nil) then 
+        __haxe_Log.trace(Std.string("Behavior type match: ") .. Std.string(type.__name__), _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="sunaba/core/Behavior.hx",lineNumber=87,className="sunaba.core.Behavior",methodName="getComponent"}));
+        do return tBehavior end;
+      else
+        __haxe_Log.trace(Std.string("Behavior type mismatch: ") .. Std.string(type.__name__), _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="sunaba/core/Behavior.hx",lineNumber=91,className="sunaba.core.Behavior",methodName="getComponent"}));
+      end;
+    else
+      __haxe_Log.trace(Std.string("Behavior not found: ") .. Std.string(type.__name__), _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="sunaba/core/Behavior.hx",lineNumber=95,className="sunaba.core.Behavior",methodName="getComponent"}));
+    end;
+  end;
+  __haxe_Log.trace(Std.string("Component or Behavior not found: ") .. Std.string(type.__name__), _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="sunaba/core/Behavior.hx",lineNumber=99,className="sunaba.core.Behavior",methodName="getComponent"}));
+  do return nil end
+end
 __sunaba_core_Behavior.prototype.onInit = function(self) 
 end
 __sunaba_core_Behavior.prototype.onReady = function(self) 
@@ -1965,6 +2250,81 @@ end
 __sunaba_core__Vector3_Vector3_Impl_.toString = function(v) 
   do return v.tostring() end;
 end
+
+__support_files_test3_src_RotateComponent.new = function() 
+  local self = _hx_new(__support_files_test3_src_RotateComponent.prototype)
+  __support_files_test3_src_RotateComponent.super(self)
+  return self
+end
+__support_files_test3_src_RotateComponent.super = function(self) 
+  __sunaba_core_Behavior.super(self);
+end
+__support_files_test3_src_RotateComponent.__name__ = "support_files.test3.src.RotateComponent"
+__support_files_test3_src_RotateComponent.prototype = _hx_e();
+__support_files_test3_src_RotateComponent.prototype.onInit = function(self) 
+  _G.print("RotateComponent: onInit called");
+  _G.print(Std.string(Std.string("RotateComponent: entity name: ") .. Std.string(self.component.entity.name)));
+end
+__support_files_test3_src_RotateComponent.prototype.onReady = function(self) 
+  _G.print("RotateComponent: onReady called");
+  _G.print(Std.string(Std.string("RotateComponent: entity name: ") .. Std.string(self.component.entity.name)));
+  local _hx_status, _hx_result = pcall(function() 
+  
+      local t = self:getComponent_sunaba_spatial_SpatialTransform(SpatialTransform);
+      if (t == nil) then 
+        _G.print("RotateComponent: transform is null");
+      else
+        _G.print("RotateComponent: transform is not null");
+      end;
+      self.transform = t;
+      if (self.transform ~= nil) then 
+        _G.print(Std.string(Std.string("RotateComponent: transform position: ") .. Std.string(((function() 
+          local _hx_1
+          if (self.transform.position == nil) then 
+          _hx_1 = "null"; else 
+          _hx_1 = (__sunaba_core__Vector3_Vector3_Impl_.fieldRead(self.transform.position, "toString"))(); end
+          return _hx_1
+        end )()))));
+        _G.print(Std.string(Std.string("RotateComponent: transform rotation: ") .. Std.string(((function() 
+          local _hx_2
+          if (self.transform.rotation == nil) then 
+          _hx_2 = "null"; else 
+          _hx_2 = (__sunaba_core__Vector3_Vector3_Impl_.fieldRead(self.transform.rotation, "toString"))(); end
+          return _hx_2
+        end )()))));
+        _G.print(Std.string(Std.string("RotateComponent: transform scale: ") .. Std.string(((function() 
+          local _hx_3
+          if (self.transform.scale == nil) then 
+          _hx_3 = "null"; else 
+          _hx_3 = (__sunaba_core__Vector3_Vector3_Impl_.fieldRead(self.transform.scale, "toString"))(); end
+          return _hx_3
+        end )()))));
+      else
+        _G.print("RotateComponent: transform is null");
+      end;
+    return _hx_pcall_default
+  end)
+  if not _hx_status and _hx_result == "_hx_pcall_break" then
+  elseif not _hx_status then 
+    local _g = _hx_result;
+    local e = __haxe_Exception.caught(_g);
+    local v = Std.string(Std.string("RotateComponent: onReady error: ") .. Std.string(Std.string(e))) .. Std.string(" : ");
+    local tmp = e:get_stack();
+    _G.print(Std.string(Std.string(v) .. Std.string(((function() 
+      local _hx_4
+      if (tmp == nil) then 
+      _hx_4 = "null"; else 
+      _hx_4 = _hx_wrap_if_string_field(__haxe__CallStack_CallStack_Impl_,'toString')(tmp); end
+      return _hx_4
+    end )()))));
+  elseif _hx_result ~= _hx_pcall_default then
+    return _hx_result
+  end;
+end
+
+__support_files_test3_src_RotateComponent.prototype.__class__ =  __support_files_test3_src_RotateComponent
+__support_files_test3_src_RotateComponent.__super__ = __sunaba_core_Behavior
+setmetatable(__support_files_test3_src_RotateComponent.prototype,{__index=__sunaba_core_Behavior.prototype})
 if _hx_bit_raw then
     _hx_bit_clamp = function(v)
     if v <= 2147483647 and v >= -2147483648 then
@@ -2007,6 +2367,8 @@ local _hx_static_init = function()
   String.__name__ = "String";
   Array.__name__ = "Array";
 end
+
+_hx_print = print or (function() end)
 
 _hx_table = {}
 _hx_table.pack = _G.table.pack or function(...)
