@@ -1097,6 +1097,25 @@ __sunaba_core_Behavior.prototype.onUpdate = function(self,deltaTime)
 end
 __sunaba_core_Behavior.prototype.onPhysicsUpdate = function(self,delatTime) 
 end
+__sunaba_core_Behavior.prototype.removeComponent = function(self,type,entity) 
+  if (entity == nil) then 
+    entity = self.component.entity;
+  end;
+  local compType = type;
+  if (compType ~= nil) then 
+    local component = entity:getComponent(compType);
+    if (component ~= nil) then 
+      entity:removeComponent(component);
+    end;
+  end;
+  local behaviorType = type;
+  if (behaviorType ~= nil) then 
+    local behavior = entity:getUserComponent(behaviorType);
+    if (behavior ~= nil) then 
+      entity:removeUserComponent(behavior);
+    end;
+  end;
+end
 
 __sunaba_core_Behavior.prototype.__class__ =  __sunaba_core_Behavior
 

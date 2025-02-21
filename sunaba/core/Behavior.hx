@@ -25,27 +25,72 @@ class Behavior {
     public function onPhysicsUpdate(delatTime : Float) : Void {}
 
     @:generic
-    public function getComponent<T>(entity : Entity = null) : T {
+    public function getComponent<T>(type : Class<T>, entity : Entity = null) : T {
         if (entity == null) {
-            entity = component.entity;
+            entity = this.component.entity;
         }
-        try {
-            var comp = entity.getComponent(component.getType());
-            if (comp != null) {
-                return cast comp;
-            }
-        }
-        catch (e : Dynamic) {}
-        try {
-            var userComp = entity.getUserComponent(component.getType());
-            if (userComp != null) {
-                return cast userComp;
-            }
-            return null;
-        }
-        catch (e : Dynamic) {}
 
-        throw "Component not found";
+        var compType : Class<Component> = cast type;
+        if (compType != null) {
+            var component : T = cast entity.getComponent(compType);
+            if (component != null) {
+                return component;
+            }
+        }
+        
+        var behaviorType : Class<Behavior> = cast type;
+        if (behaviorType != null) {
+            var behavior : Behavior = entity.getUserComponent(behaviorType);
+            if (behavior != null) {
+                return cast behavior;
+            }
+        }
+
         return null;
+    }
+
+    @:generic
+    public function addComponent<T>(type : Class<T>, entity : Entity = null) : T {
+        var compType : Class<Component> = cast type;
+        if (compType != null) {
+            var component : Component = Type.createInstance(compType, []);
+            this.component.entity.addComponent(component, Type.getClassName(compType));
+            return cast component;
+        }
+
+        var behaviorType : Class<Behavior> = cast type;
+        if (behaviorType != null) {
+            var behavior = Type.createInstance(behaviorType, []);
+            var behaviorComp : Component = cast untyped behavior.component;
+            if (behaviorComp != null) {
+                this.component.entity.addComponent(behaviorComp, Type.getClassName(behaviorType));
+                return cast behavior;
+            }
+        }
+        
+        throw "Invalid Component";
+        return null;
+    } 
+
+    public function removeComponent(type : Class<Any>, entity : Entity = null) : Void {
+        if (entity == null) {
+            entity = this.component.entity;
+        }
+
+        var compType : Class<Component> = cast type;
+        if (compType != null) {
+            var component : Component = cast entity.getComponent(compType);
+            if (component != null) {
+                entity.removeComponent(component);
+            }
+        }
+
+        var behaviorType : Class<Behavior> = cast type;
+        if (behaviorType != null) {
+            var behavior : Behavior = cast entity.getUserComponent(behaviorType);
+            if (behavior != null) {
+                entity.removeUserComponent(behavior);
+            }
+        }
     }
 }
