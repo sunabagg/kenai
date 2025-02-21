@@ -38,7 +38,7 @@ extern class NativeVector2 {
     public function isZeroApprox() : Bool;
     public function angle() : Float;
     public function abs() : Vector2;
-    public function rotated(by, Float) : Vector2;
+    public function rotated(by: Float) : Vector2;
     public function orthogonal() : Vector2;
     public function sign() : Vector2;
     public function floor() : Vector2;

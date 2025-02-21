@@ -51,5 +51,5 @@ extern class NativeVector3 {
     public function slide(normal : NativeVector3) : Vector3;
     public function snapped(val : NativeVector3) : Vector3;
     @:native("tostring")
-    public function toString();
+    public function toString() : String;
 }

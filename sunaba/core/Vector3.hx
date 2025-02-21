@@ -10,7 +10,7 @@ abstract Vector3(NativeVector3) from NativeVector3 {
         if (name == 'toString') {
             return function() : String {
                 var v = this;
-                return untyped __lua__('v.tostring()');
+                return "(" + v.x + ", " + v.y + ", " + v.z + ")";
             }
         } else if (Reflect.hasField(this, name)) {
             return Reflect.field(this, name);

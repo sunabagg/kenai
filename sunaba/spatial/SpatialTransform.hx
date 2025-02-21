@@ -6,6 +6,7 @@ import sunaba.core.Quaternion;
 import sunaba.core.Vector3;
 import sunaba.core.Basis;
 import sunaba.core.Component;
+import sunaba.core.Entity;
 
 @:native("SpatialTransform")
 extern class SpatialTransform extends Component {
@@ -31,8 +32,8 @@ extern class SpatialTransform extends Component {
     public function hide() : Void;
     public function isScaleDisabled() : Bool;
     public function isVisible() : Bool;
-    public function lookAt(target : NativeVector3, up : NativeVector3 = new Vector3(0, 1, 0), useModelFront : Bool = false) : Void;
-    public function lookAtFromPosition(position : NativeVector3, target : NativeVector3, up : NativeVector3 = new Vector3(0, 1, 0), useModelFront : Bool = false) : Void;
+    public function lookAt(target : NativeVector3, up : NativeVector3, useModelFront : Bool = false) : Void;
+    public function lookAtFromPosition(position : NativeVector3, target : NativeVector3, up : NativeVector3, useModelFront : Bool = false) : Void;
     public function orthonormalize() : Void;
     public function roate(axis : NativeVector3, angle : Float) : Void;
     public function rotateObjectLocal(axis : NativeVector3, angle : Float) : Void;

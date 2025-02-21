@@ -10,7 +10,7 @@ extern class Transform3D {
     public function affineInverse() : Transform3D;
     public function interpolateWith(tform : Transform3D, c : Float) : Transform3D;
     public function isEqualApprox(tform : Transform3D) : Bool;
-    public function lookingAt(target : NativeVector3, up : NativeVector3 = new Vector3(0, 1, 0)) : Transform3D;
+    public function lookingAt(target : NativeVector3, up : NativeVector3) : Transform3D;
     public function orthonormalized() : Transform3D;
     public function rotated(axis : NativeVector3, angle : Float) : Transform3D;
     public function rotatedLocal(axis : NativeVector3, angle : Float) : Transform3D;

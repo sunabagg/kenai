@@ -10,7 +10,7 @@ abstract Vector4(NativeVector4) from NativeVector4 {
         if (name == "toString") {
             return function() : String {
                 var v = this;
-                return untyped __lua__("v.tostring()");
+                return "(" + v.x + ", " + v.y + ", " + v.z + ", " + v.w + ")";
             }
         } else if (name == "native") {
             return this;

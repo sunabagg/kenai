@@ -14,7 +14,7 @@ extern class NativeBasis {
     public function getScale() : Vector3;
     public function inverse() : Basis;
     public function isEqualApprox(basis : Basis) : Bool;
-    public function lookingAt(target : NativeVector3, up : NativeVector3 = new Vector3(0, 1, 0)) : Basis;
+    public function lookingAt(target : NativeVector3, up : NativeVector3) : Basis;
     public function orthonormalized() : Basis;
     public function scaled(scale : NativeVector3) : Basis;
     public function slerp(to : Basis, weight : Float) : Basis;

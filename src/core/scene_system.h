@@ -403,7 +403,7 @@ namespace sunaba::core
         }
 
         size_t getChildCount() {
-            return children.size() - 1;
+            return children.size();
         }
 
         Entity* getChild(size_t index) {
@@ -526,7 +526,7 @@ namespace sunaba::core
         }
 
         size_t getEntityCount() {
-            return entities.size() - 1;
+            return entities.size();
         }
 
         Entity* getEntity(size_t index) {

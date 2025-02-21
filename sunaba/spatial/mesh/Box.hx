@@ -4,7 +4,7 @@ import sunaba.core.Vector3;
 import sunaba.core.Component;
 
 @:native("Box")
-class Box extends Component {
+extern class Box extends Component {
     public var size : Vector3;
     public var subdivideDepth : Int;
     public var subdivideWidth : Int;

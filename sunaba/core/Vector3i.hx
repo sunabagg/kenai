@@ -10,7 +10,7 @@ abstract Vector3i(NativeVector3i) from NativeVector3i {
         if (name == "toString") {
             return function() : String {
                 var v = this;
-                return untyped __lua__("v.tostring()");
+                return "(" + v.x + ", " + v.y + ", " + v.z + ")";
             }
         } else if (name == "native") {
             return this;

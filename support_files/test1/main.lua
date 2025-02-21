@@ -60,7 +60,7 @@ function printEntity(entity, indent)
         print(indent .. "    Transform: " .. position:tostring() .. ", " .. rotation:tostring() .. ", " .. scale:tostring())
         print(indent .. "    Global Transform: " .. global:tostring())
     end
-    for i = 0, entity:getChildCount() - 1 do
+    for i = 0, entity:getChildCount() do
         local child = entity:getChild(i)
         printEntity(child, indent .. "    ")
     end
@@ -68,7 +68,7 @@ end
 
 function printScene(_scene)
     print("Scene")
-    for i = 0, _scene:getEntityCount() - 1 do
+    for i = 0, _scene:getEntityCount() do
         local entity = _scene:getEntity(i)
         printEntity(entity, "    ")
     end

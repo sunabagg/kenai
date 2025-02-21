@@ -10,7 +10,7 @@ abstract Vector2(NativeVector2) from NativeVector2 to NativeVector2 {
             if (name == 'toString') {
                 return function() : String {
                     var v = this;
-                    return untyped __lua__('v.tostring()');
+                    return "(" + v.x + ", " + v.y + ")";
                 }
             } else if (Reflect.hasField(this, name)) {
                 return Reflect.field(this, name);

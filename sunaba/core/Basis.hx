@@ -30,23 +30,26 @@ abstract Basis(NativeBasis) from NativeBasis {
     
     @:op([]) 
     public function arrayRead(n:Dynamic) {
-        if (n == 0) return this.x;
-        if (n == 1) return this.y;
-        if (n == 2) return this.z;
-        if (n == 'x') return this.x;
-        if (n == 'y') return this.y;
-        if (n == 'z') return this.z; 
+        var rowsTable = this.rows;
+        if (n == 0) return rowsTable[0];
+        else if (n == 1) return rowsTable[1];
+        else if (n == 2) return rowsTable[2];
+        else if (n == 'x') return rowsTable[0];
+        else if (n == 'y') return rowsTable[1];
+        else if (n == 'z') return rowsTable[2];
+        else
         throw 'Invalid index';
     }
         
     @:op([]) 
-    public function arrayWrite(n:Dynamic, value:GdVector3) {
-        if (n == 0) this.x = value;
-        else if (n == 1) this.y = value;
-        else if (n == 2) this.z = value;
-        else if (n == 'x') this.x = value;
-        else if (n == 'y') this.y = value;
-        else if (n == 'z') this.z = value;
+    public function arrayWrite(n:Dynamic, value:NativeVector3) {
+        var rowsTable = this.rows;
+        if (n == 0) rowsTable[0] = value;
+        else if (n == 1) rowsTable[1] = value;
+        else if (n == 2) rowsTable[2] = value;
+        else if (n == 'x') rowsTable[0] = value;
+        else if (n == 'y') rowsTable[1] = value;
+        else if (n == 'z') rowsTable[2] = value;
         else throw 'Invalid index';
     }
     

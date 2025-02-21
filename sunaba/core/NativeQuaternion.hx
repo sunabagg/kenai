@@ -17,7 +17,7 @@ extern class NativeQuaternion {
     public function isNormalized() : Bool;
     public function length() : Float;
     public function lengthSquared() : Float;
-    public function log();
+    public function log() : Quaternion;
     public function normalized() : Quaternion;
     public function slerp(to : NativeQuaternion, weight : Float) : Quaternion;
     public function sphericalCubicInterpolate(b : NativeQuaternion, preA : NativeQuaternion, postB : NativeQuaternion, weight : Float) : Quaternion;
