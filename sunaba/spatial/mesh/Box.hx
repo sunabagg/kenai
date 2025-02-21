@@ -3,6 +3,7 @@ package sunaba.spatial.mesh;
 import sunaba.core.Vector3;
 import sunaba.core.Component;
 
+@:native("Box")
 class Box extends Component {
     public var size : Vector3;
     public var subdivideDepth : Int;
