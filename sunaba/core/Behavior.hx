@@ -24,6 +24,30 @@ class Behavior {
 
     public function onPhysicsUpdate(delatTime : Float) : Void {}
 
+    public function getComponentNG(type : Any, entity : Entity = null) {
+        if (entity == null) {
+            entity = this.component.entity;
+        }
+
+        var compType : Class<Component> = cast type;
+        if (compType != null) {
+            var component : Component = cast entity.getComponent(compType);
+            if (component != null) {
+                return cast component;
+            }
+        }
+        
+        var behaviorType : Class<Behavior> = cast type;
+        if (behaviorType != null) {
+            var behavior : Behavior = entity.getUserComponent(behaviorType);
+            if (behavior != null) {
+                return cast behavior;
+            }
+        }
+
+        return null;
+    }
+
     @:generic
     public function getComponent<T>(type : Class<T>, entity : Entity = null) : T {
         if (entity == null) {
@@ -48,6 +72,28 @@ class Behavior {
 
         return null;
     }
+    
+    public function addComponentNG(type : Any, entity : Entity = null) {
+        var compType : Class<Component> = cast type;
+        if (compType != null) {
+            var component : Component = Type.createInstance(compType, []);
+            this.component.entity.addComponent(component, Type.getClassName(compType));
+            return cast component;
+        }
+
+        var behaviorType : Class<Behavior> = cast type;
+        if (behaviorType != null) {
+            var behavior = Type.createInstance(behaviorType, []);
+            var behaviorComp : Component = cast untyped behavior.component;
+            if (behaviorComp != null) {
+                this.component.entity.addComponent(behaviorComp, Type.getClassName(behaviorType));
+                return cast behavior;
+            }
+        }
+        
+        throw "Invalid Component";
+        return null;
+    } 
 
     @:generic
     public function addComponent<T>(type : Class<T>, entity : Entity = null) : T {

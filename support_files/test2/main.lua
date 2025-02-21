@@ -213,7 +213,7 @@ end
 Array.super = function(self) 
   _hx_tab_array(self, 0);
 end
-Array.__name__ = true
+Array.__name__ = "Array"
 Array.prototype = _hx_e();
 Array.prototype.concat = function(self,a) 
   local _g = _hx_tab_array({}, 0);
@@ -552,7 +552,7 @@ end
 Array.prototype.__class__ =  Array
 
 Main.new = {}
-Main.__name__ = true
+Main.__name__ = "Main"
 Main.main = function() 
   _G.print("Hello, World!");
   local scene = createScene();
@@ -564,7 +564,7 @@ Main.main = function()
 end
 
 Math.new = {}
-Math.__name__ = true
+Math.__name__ = "Math"
 Math.isNaN = function(f) 
   do return f ~= f end;
 end
@@ -591,7 +591,7 @@ String.new = function(string)
 end
 String.super = function(self,string) 
 end
-String.__name__ = true
+String.__name__ = "String"
 String.__index = function(s,k) 
   if (k == "length") then 
     do return _G.string.len(s) end;
@@ -762,7 +762,7 @@ end
 String.prototype.__class__ =  String
 
 Std.new = {}
-Std.__name__ = true
+Std.__name__ = "Std"
 Std.string = function(s) 
   do return _hx_tostring(s, 0) end;
 end
@@ -775,7 +775,7 @@ Std.int = function(x)
 end
 
 Type.new = {}
-Type.__name__ = true
+Type.__name__ = "Type"
 Type.getClass = function(o) 
   if (o == nil) then 
     do return nil end;
@@ -796,6 +796,9 @@ Type.getClass = function(o)
     end;
   end;
 end
+Type.createInstance = function(cl,args) 
+  do return cl.new(_hx_table.unpack(args, 0)) end;
+end
 
 __haxe_Exception.new = function(message,previous,native) 
   local self = _hx_new(__haxe_Exception.prototype)
@@ -815,7 +818,7 @@ __haxe_Exception.super = function(self,message,previous,native)
     self.__skipStack = 1;
   end;
 end
-__haxe_Exception.__name__ = true
+__haxe_Exception.__name__ = "haxe.Exception"
 __haxe_Exception.thrown = function(value) 
   if (__lua_Boot.__instanceof(value, __haxe_Exception)) then 
     do return value:get_native() end;
@@ -839,7 +842,7 @@ end
 __haxe_Exception.prototype.__class__ =  __haxe_Exception
 
 __haxe_NativeStackTrace.new = {}
-__haxe_NativeStackTrace.__name__ = true
+__haxe_NativeStackTrace.__name__ = "haxe.NativeStackTrace"
 __haxe_NativeStackTrace.saveStack = function(exception) 
 end
 __haxe_NativeStackTrace.callStack = function() 
@@ -870,7 +873,7 @@ __haxe_ValueException.super = function(self,value,previous,native)
   end )(),previous,native);
   self.value = value;
 end
-__haxe_ValueException.__name__ = true
+__haxe_ValueException.__name__ = "haxe.ValueException"
 __haxe_ValueException.prototype = _hx_e();
 
 __haxe_ValueException.prototype.__class__ =  __haxe_ValueException
@@ -890,7 +893,7 @@ __haxe_exceptions_PosException.super = function(self,message,previous,pos)
     self.posInfos = pos;
   end;
 end
-__haxe_exceptions_PosException.__name__ = true
+__haxe_exceptions_PosException.__name__ = "haxe.exceptions.PosException"
 __haxe_exceptions_PosException.prototype = _hx_e();
 __haxe_exceptions_PosException.prototype.toString = function(self) 
   do return Std.string(Std.string(Std.string(Std.string(Std.string(Std.string(Std.string(Std.string(Std.string("") .. Std.string(__haxe_Exception.prototype.toString(self))) .. Std.string(" in ")) .. Std.string(self.posInfos.className)) .. Std.string(".")) .. Std.string(self.posInfos.methodName)) .. Std.string(" at ")) .. Std.string(self.posInfos.fileName)) .. Std.string(":")) .. Std.string(self.posInfos.lineNumber) end
@@ -911,7 +914,7 @@ __haxe_exceptions_NotImplementedException.super = function(self,message,previous
   end;
   __haxe_exceptions_PosException.super(self,message,previous,pos);
 end
-__haxe_exceptions_NotImplementedException.__name__ = true
+__haxe_exceptions_NotImplementedException.__name__ = "haxe.exceptions.NotImplementedException"
 __haxe_exceptions_NotImplementedException.prototype = _hx_e();
 
 __haxe_exceptions_NotImplementedException.prototype.__class__ =  __haxe_exceptions_NotImplementedException
@@ -927,7 +930,7 @@ __haxe_iterators_ArrayIterator.super = function(self,array)
   self.current = 0;
   self.array = array;
 end
-__haxe_iterators_ArrayIterator.__name__ = true
+__haxe_iterators_ArrayIterator.__name__ = "haxe.iterators.ArrayIterator"
 __haxe_iterators_ArrayIterator.prototype = _hx_e();
 __haxe_iterators_ArrayIterator.prototype.hasNext = function(self) 
   do return self.current < self.array.length end
@@ -952,13 +955,13 @@ end
 __haxe_iterators_ArrayKeyValueIterator.super = function(self,array) 
   self.array = array;
 end
-__haxe_iterators_ArrayKeyValueIterator.__name__ = true
+__haxe_iterators_ArrayKeyValueIterator.__name__ = "haxe.iterators.ArrayKeyValueIterator"
 __haxe_iterators_ArrayKeyValueIterator.prototype = _hx_e();
 
 __haxe_iterators_ArrayKeyValueIterator.prototype.__class__ =  __haxe_iterators_ArrayKeyValueIterator
 
 __lua_Boot.new = {}
-__lua_Boot.__name__ = true
+__lua_Boot.__name__ = "lua.Boot"
 __lua_Boot.__instanceof = function(o,cl) 
   if (cl == nil) then 
     do return false end;
@@ -1067,10 +1070,10 @@ __lua_Boot.extendsOrImplements = function(cl1,cl2)
 end
 
 __lua_UserData.new = {}
-__lua_UserData.__name__ = true
+__lua_UserData.__name__ = "lua.UserData"
 
 __lua_Thread.new = {}
-__lua_Thread.__name__ = true
+__lua_Thread.__name__ = "lua.Thread"
 
 __sunaba_core_Behavior.new = function() 
   local self = _hx_new(__sunaba_core_Behavior.prototype)
@@ -1087,7 +1090,7 @@ __sunaba_core_Behavior.super = function(self)
   comp:setScriptType(type);
   comp:setScriptInstance(self);
 end
-__sunaba_core_Behavior.__name__ = true
+__sunaba_core_Behavior.__name__ = "sunaba.core.Behavior"
 __sunaba_core_Behavior.prototype = _hx_e();
 __sunaba_core_Behavior.prototype.onInit = function(self) 
 end
@@ -1096,6 +1099,44 @@ end
 __sunaba_core_Behavior.prototype.onUpdate = function(self,deltaTime) 
 end
 __sunaba_core_Behavior.prototype.onPhysicsUpdate = function(self,delatTime) 
+end
+__sunaba_core_Behavior.prototype.getComponentNG = function(self,type,entity) 
+  if (entity == nil) then 
+    entity = self.component.entity;
+  end;
+  local compType = type;
+  if (compType ~= nil) then 
+    local component = entity:getComponent(compType);
+    if (component ~= nil) then 
+      do return component end;
+    end;
+  end;
+  local behaviorType = type;
+  if (behaviorType ~= nil) then 
+    local behavior = entity:getUserComponent(behaviorType);
+    if (behavior ~= nil) then 
+      do return behavior end;
+    end;
+  end;
+  do return nil end
+end
+__sunaba_core_Behavior.prototype.addComponentNG = function(self,type,entity) 
+  local compType = type;
+  if (compType ~= nil) then 
+    local component = Type.createInstance(compType, _hx_tab_array({}, 0));
+    self.component.entity:addComponent(component, compType.__name__);
+    do return component end;
+  end;
+  local behaviorType = type;
+  if (behaviorType ~= nil) then 
+    local behavior = Type.createInstance(behaviorType, _hx_tab_array({}, 0));
+    local behaviorComp = behavior.component;
+    if (behaviorComp ~= nil) then 
+      self.component.entity:addComponent(behaviorComp, behaviorType.__name__);
+      do return behavior end;
+    end;
+  end;
+  _G.error(__haxe_Exception.thrown("Invalid Component"),0);
 end
 __sunaba_core_Behavior.prototype.removeComponent = function(self,type,entity) 
   if (entity == nil) then 
@@ -1127,7 +1168,7 @@ end
 __support_files_test2_src_DeltaTimePrinter.super = function(self) 
   __sunaba_core_Behavior.super(self);
 end
-__support_files_test2_src_DeltaTimePrinter.__name__ = true
+__support_files_test2_src_DeltaTimePrinter.__name__ = "support_files.test2.src.DeltaTimePrinter"
 __support_files_test2_src_DeltaTimePrinter.prototype = _hx_e();
 __support_files_test2_src_DeltaTimePrinter.prototype.onUpdate = function(self,deltaTime) 
   _G.print(Std.string(Std.string("DeltaTimePrinter.onUpdate: ") .. Std.string(deltaTime)));
@@ -1178,8 +1219,8 @@ else
 end
 local _hx_static_init = function()
   
-  String.__name__ = true;
-  Array.__name__ = true;
+  String.__name__ = "String";
+  Array.__name__ = "Array";
 end
 
 _hx_table = {}
