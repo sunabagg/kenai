@@ -82,7 +82,7 @@ class Behavior {
                 //trace("Component found: " + typeName);
                 var tComponent : T = ObjectUtils.castObjectAs(type, component);
                 if (tComponent != null) {
-                    trace("Component type match: " + typeName);
+                    //trace("Component type match: " + typeName);
                     return tComponent;
                 }
                 else {
@@ -96,7 +96,7 @@ class Behavior {
         
         
 
-        trace("Component or Behavior not found: " + Type.getClassName(type));
+        //trace("Component or Behavior not found: " + Type.getClassName(type));
 
         return null;
     }

@@ -188,10 +188,7 @@ local Math = _hx_e()
 local Reflect = _hx_e()
 local String = _hx_e()
 local Std = _hx_e()
-local StringBuf = _hx_e()
 local Type = _hx_e()
-__haxe_StackItem = _hx_e()
-__haxe__CallStack_CallStack_Impl_ = _hx_e()
 __haxe_Exception = _hx_e()
 __haxe_Log = _hx_e()
 __haxe_NativeStackTrace = _hx_e()
@@ -890,38 +887,6 @@ Std.int = function(x)
     do return _hx_bit_clamp(x) end;
   end;
 end
-Std.parseInt = function(x) 
-  if (x == nil) then 
-    do return nil end;
-  end;
-  local sign, numString = _G.string.match(x, "^%s*([%-+]?)0[xX]([%da-fA-F]*)");
-  if (numString ~= nil) then 
-    if (sign == "-") then 
-      do return -_G.tonumber(numString, 16) end;
-    else
-      do return _G.tonumber(numString, 16) end;
-    end;
-  end;
-  local intMatch = _G.string.match(x, "^%s*[%-+]?%d*");
-  if (intMatch == nil) then 
-    do return nil end;
-  end;
-  do return _G.tonumber(intMatch) end;
-end
-
-StringBuf.new = function() 
-  local self = _hx_new(StringBuf.prototype)
-  StringBuf.super(self)
-  return self
-end
-StringBuf.super = function(self) 
-  self.b = ({});
-  self.length = 0;
-end
-StringBuf.__name__ = "StringBuf"
-StringBuf.prototype = _hx_e();
-
-StringBuf.prototype.__class__ =  StringBuf
 
 Type.new = {}
 Type.__name__ = "Type"
@@ -950,122 +915,6 @@ Type.getSuperClass = function(c)
 end
 Type.createInstance = function(cl,args) 
   do return cl.new(_hx_table.unpack(args, 0)) end;
-end
-_hxClasses["haxe.StackItem"] = { __ename__ = true, __constructs__ = _hx_tab_array({[0]="CFunction","Module","FilePos","Method","LocalFunction"},5)}
-__haxe_StackItem = _hxClasses["haxe.StackItem"];
-__haxe_StackItem.CFunction = _hx_tab_array({[0]="CFunction",0,__enum__ = __haxe_StackItem},2)
-
-__haxe_StackItem.Module = function(m) local _x = _hx_tab_array({[0]="Module",1,m,__enum__=__haxe_StackItem}, 3); return _x; end 
-__haxe_StackItem.FilePos = function(s,file,line,column) local _x = _hx_tab_array({[0]="FilePos",2,s,file,line,column,__enum__=__haxe_StackItem}, 6); return _x; end 
-__haxe_StackItem.Method = function(classname,method) local _x = _hx_tab_array({[0]="Method",3,classname,method,__enum__=__haxe_StackItem}, 4); return _x; end 
-__haxe_StackItem.LocalFunction = function(v) local _x = _hx_tab_array({[0]="LocalFunction",4,v,__enum__=__haxe_StackItem}, 3); return _x; end 
-
-__haxe__CallStack_CallStack_Impl_.new = {}
-__haxe__CallStack_CallStack_Impl_.__name__ = "haxe._CallStack.CallStack_Impl_"
-__haxe__CallStack_CallStack_Impl_.toString = function(stack) 
-  local b = StringBuf.new();
-  local _g = 0;
-  local _g1 = stack;
-  while (_g < _g1.length) do _hx_do_first_1 = false;
-    
-    local s = _g1[_g];
-    _g = _g + 1;
-    local str = "\nCalled from ";
-    _G.table.insert(b.b, str);
-    local b1 = b;
-    b1.length = b1.length + #str;
-    __haxe__CallStack_CallStack_Impl_.itemToString(b, s);
-  end;
-  do return _G.table.concat(b.b) end;
-end
-__haxe__CallStack_CallStack_Impl_.itemToString = function(b,s) 
-  local tmp = s[1];
-  if (tmp) == 0 then 
-    local str = "a C function";
-    _G.table.insert(b.b, str);
-    local b = b;
-    b.length = b.length + #str;
-  elseif (tmp) == 1 then 
-    local m = s[2];
-    local str = "module ";
-    _G.table.insert(b.b, str);
-    local b1 = b;
-    b1.length = b1.length + #str;
-    local str = Std.string(m);
-    _G.table.insert(b.b, str);
-    local b = b;
-    b.length = b.length + #str;
-  elseif (tmp) == 2 then 
-    local s1 = s[2];
-    local file = s[3];
-    local line = s[4];
-    local col = s[5];
-    if (s1 ~= nil) then 
-      __haxe__CallStack_CallStack_Impl_.itemToString(b, s1);
-      local str = " (";
-      _G.table.insert(b.b, str);
-      local b = b;
-      b.length = b.length + #str;
-    end;
-    local str = Std.string(file);
-    _G.table.insert(b.b, str);
-    local b1 = b;
-    b1.length = b1.length + #str;
-    local str = " line ";
-    _G.table.insert(b.b, str);
-    local b1 = b;
-    b1.length = b1.length + #str;
-    local str = Std.string(line);
-    _G.table.insert(b.b, str);
-    local b1 = b;
-    b1.length = b1.length + #str;
-    if (col ~= nil) then 
-      local str = " column ";
-      _G.table.insert(b.b, str);
-      local b1 = b;
-      b1.length = b1.length + #str;
-      local str = Std.string(col);
-      _G.table.insert(b.b, str);
-      local b = b;
-      b.length = b.length + #str;
-    end;
-    if (s1 ~= nil) then 
-      local str = ")";
-      _G.table.insert(b.b, str);
-      local b = b;
-      b.length = b.length + #str;
-    end;
-  elseif (tmp) == 3 then 
-    local cname = s[2];
-    local meth = s[3];
-    local str = Std.string((function() 
-      local _hx_1
-      if (cname == nil) then 
-      _hx_1 = "<unknown>"; else 
-      _hx_1 = cname; end
-      return _hx_1
-    end )());
-    _G.table.insert(b.b, str);
-    local b1 = b;
-    b1.length = b1.length + #str;
-    local str = ".";
-    _G.table.insert(b.b, str);
-    local b1 = b;
-    b1.length = b1.length + #str;
-    local str = Std.string(meth);
-    _G.table.insert(b.b, str);
-    local b = b;
-    b.length = b.length + #str;
-  elseif (tmp) == 4 then 
-    local n = s[2];
-    local str = "local function #";
-    _G.table.insert(b.b, str);
-    local b1 = b;
-    b1.length = b1.length + #str;
-    local str = Std.string(n);
-    _G.table.insert(b.b, str);
-    local b = b;
-    b.length = b.length + #str; end;
 end
 
 __haxe_Exception.new = function(message,previous,native) 
@@ -1110,23 +959,11 @@ end
 __haxe_Exception.prototype.toString = function(self) 
   do return self:get_message() end
 end
-__haxe_Exception.prototype.__shiftStack = function(self) 
-  self.__skipStack = self.__skipStack + 1;
-end
 __haxe_Exception.prototype.get_message = function(self) 
   do return self.__exceptionMessage end
 end
 __haxe_Exception.prototype.get_native = function(self) 
   do return self.__nativeException end
-end
-__haxe_Exception.prototype.get_stack = function(self) 
-  local _g = self.__exceptionStack;
-  if (_g == nil) then 
-    self.__exceptionStack = __haxe_NativeStackTrace.toHaxe(self.__nativeStack, self.__skipStack) do return self.__exceptionStack end;
-  else
-    local s = _g;
-    do return s end;
-  end;
 end
 
 __haxe_Exception.prototype.__class__ =  __haxe_Exception
@@ -1172,50 +1009,6 @@ end
 __haxe_NativeStackTrace.exceptionStack = function() 
   do return _hx_tab_array({}, 0) end;
 end
-__haxe_NativeStackTrace.toHaxe = function(native,skip) 
-  if (skip == nil) then 
-    skip = 0;
-  end;
-  local stack = _hx_tab_array({}, 0);
-  local cnt = -1;
-  local _g = 0;
-  local _hx_continue_1 = false;
-  while (_g < native.length) do _hx_do_first_1 = false;
-    repeat 
-    local item = native[_g];
-    _g = _g + 1;
-    local parts = String.prototype.split(String.prototype.substr(item, 1), ":");
-    local file = parts[0];
-    if (file == "[C]") then 
-      break;
-    end;
-    cnt = cnt + 1;
-    if (skip > cnt) then 
-      break;
-    end;
-    local line = parts[1];
-    local method;
-    if (parts.length <= 2) then 
-      method = nil;
-    else
-      local methodPos = String.prototype.indexOf(parts[2], "'");
-      method = (function() 
-        local _hx_1
-        if (methodPos < 0) then 
-        _hx_1 = nil; else 
-        _hx_1 = __haxe_StackItem.Method(nil, String.prototype.substring(parts[2], methodPos + 1, #parts[2] - 1)); end
-        return _hx_1
-      end )();
-    end;
-    stack:push(__haxe_StackItem.FilePos(method, file, Std.parseInt(line)));until true
-    if _hx_continue_1 then 
-    _hx_continue_1 = false;
-    break;
-    end;
-    
-  end;
-  do return stack end;
-end
 
 __haxe_ValueException.new = function(value,previous,native) 
   local self = _hx_new(__haxe_ValueException.prototype)
@@ -1231,7 +1024,6 @@ __haxe_ValueException.super = function(self,value,previous,native)
     return _hx_1
   end )(),previous,native);
   self.value = value;
-  self.__skipStack = self.__skipStack + 1;
 end
 __haxe_ValueException.__name__ = "haxe.ValueException"
 __haxe_ValueException.prototype = _hx_e();
@@ -1255,7 +1047,6 @@ __haxe_exceptions_PosException.super = function(self,message,previous,pos)
   else
     self.posInfos = pos;
   end;
-  self.__skipStack = self.__skipStack + 1;
 end
 __haxe_exceptions_PosException.__name__ = "haxe.exceptions.PosException"
 __haxe_exceptions_PosException.prototype = _hx_e();
@@ -1277,7 +1068,6 @@ __haxe_exceptions_NotImplementedException.super = function(self,message,previous
     message = "Not implemented";
   end;
   __haxe_exceptions_PosException.super(self,message,previous,pos);
-  self.__skipStack = self.__skipStack + 1;
 end
 __haxe_exceptions_NotImplementedException.__name__ = "haxe.exceptions.NotImplementedException"
 __haxe_exceptions_NotImplementedException.prototype = _hx_e();
@@ -2292,64 +2082,11 @@ end
 __support_files_test3_src_RotateComponent.__name__ = "support_files.test3.src.RotateComponent"
 __support_files_test3_src_RotateComponent.prototype = _hx_e();
 __support_files_test3_src_RotateComponent.prototype.onInit = function(self) 
-  _G.print("RotateComponent: onInit called");
-  _G.print(Std.string(Std.string("RotateComponent: entity name: ") .. Std.string(self.component.entity.name)));
+  self.transform = self:getComponent_sunaba_spatial_SpatialTransform(SpatialTransform);
 end
-__support_files_test3_src_RotateComponent.prototype.onReady = function(self) 
-  _G.print("RotateComponent: onReady called");
-  _G.print(Std.string(Std.string("RotateComponent: entity name: ") .. Std.string(self.component.entity.name)));
-  local _hx_status, _hx_result = pcall(function() 
-  
-      local t = self:getComponent_sunaba_spatial_SpatialTransform(SpatialTransform);
-      if (t == nil) then 
-        _G.print("RotateComponent: transform is null");
-      else
-        _G.print("RotateComponent: transform is not null");
-      end;
-      self.transform = t;
-      if (self.transform ~= nil) then 
-        _G.print(Std.string(Std.string("RotateComponent: transform position: ") .. Std.string(((function() 
-          local _hx_1
-          if (self.transform.position == nil) then 
-          _hx_1 = "null"; else 
-          _hx_1 = (__sunaba_core__Vector3_Vector3_Impl_.fieldRead(self.transform.position, "toString"))(); end
-          return _hx_1
-        end )()))));
-        _G.print(Std.string(Std.string("RotateComponent: transform rotation: ") .. Std.string(((function() 
-          local _hx_2
-          if (self.transform.rotation == nil) then 
-          _hx_2 = "null"; else 
-          _hx_2 = (__sunaba_core__Vector3_Vector3_Impl_.fieldRead(self.transform.rotation, "toString"))(); end
-          return _hx_2
-        end )()))));
-        _G.print(Std.string(Std.string("RotateComponent: transform scale: ") .. Std.string(((function() 
-          local _hx_3
-          if (self.transform.scale == nil) then 
-          _hx_3 = "null"; else 
-          _hx_3 = (__sunaba_core__Vector3_Vector3_Impl_.fieldRead(self.transform.scale, "toString"))(); end
-          return _hx_3
-        end )()))));
-      else
-        _G.print("RotateComponent: transform is null");
-      end;
-    return _hx_pcall_default
-  end)
-  if not _hx_status and _hx_result == "_hx_pcall_break" then
-  elseif not _hx_status then 
-    local _g = _hx_result;
-    local e = __haxe_Exception.caught(_g);
-    local v = Std.string(Std.string("RotateComponent: onReady error: ") .. Std.string(Std.string(e))) .. Std.string(" : ");
-    local tmp = e:get_stack();
-    _G.print(Std.string(Std.string(v) .. Std.string(((function() 
-      local _hx_4
-      if (tmp == nil) then 
-      _hx_4 = "null"; else 
-      _hx_4 = _hx_wrap_if_string_field(__haxe__CallStack_CallStack_Impl_,'toString')(tmp); end
-      return _hx_4
-    end )()))));
-  elseif _hx_result ~= _hx_pcall_default then
-    return _hx_result
-  end;
+__support_files_test3_src_RotateComponent.prototype.onUpdate = function(self,deltaTime) 
+  local rotation = -0.5 * deltaTime;
+  self.transform:rotateY(rotation);
 end
 
 __support_files_test3_src_RotateComponent.prototype.__class__ =  __support_files_test3_src_RotateComponent
