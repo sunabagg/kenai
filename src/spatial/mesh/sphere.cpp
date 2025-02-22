@@ -5,6 +5,7 @@ void sunaba::spatial::mesh::bindSphere(sol::state& lua) {
         "Sphere",
         sol::constructors<Sphere()>(),
         sol::base_classes, sol::bases<Component>(),
+        sol::meta_function::garbage_collect, sol::destructor([](Sphere* s) {  }),
         "height", sol::property(&Sphere::getHeight, &Sphere::setHeight),
         "isHemisphere", sol::property(&Sphere::getIsHemisphere, &Sphere::setIsHemisphere),
         "radialSegments", sol::property(&Sphere::getRadialSegments, &Sphere::setRadialSegments),

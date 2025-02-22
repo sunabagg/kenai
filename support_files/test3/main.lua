@@ -1439,12 +1439,10 @@ __sunaba_core_Behavior.prototype.getComponent_sunaba_spatial_SpatialTransform = 
     if (component ~= nil) then 
       local tComponent = __sunaba_core_ObjectUtils.castObjectAs_getComponent_T(type, component);
       if (tComponent ~= nil) then 
-        __haxe_Log.trace(Std.string("Component type match: ") .. Std.string(typeName), _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="sunaba/core/Behavior.hx",lineNumber=85,className="sunaba.core.Behavior",methodName="getComponent"}));
         do return tComponent end;
       end;
     end;
   end;
-  __haxe_Log.trace(Std.string("Component or Behavior not found: ") .. Std.string(type.__name__), _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="sunaba/core/Behavior.hx",lineNumber=99,className="sunaba.core.Behavior",methodName="getComponent"}));
   do return nil end
 end
 __sunaba_core_Behavior.prototype.onInit = function(self) 

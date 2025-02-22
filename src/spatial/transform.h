@@ -255,6 +255,7 @@ namespace sunaba::spatial
         }
 
         void onFree() override {
+            Component::onFree();
             if (node != nullptr) {
                 node->queue_free();
                 entity->setNode(nullptr);

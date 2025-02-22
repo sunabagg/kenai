@@ -5,6 +5,7 @@ void sunaba::spatial::bindVisualInstance(sol::state& lua) {
         "IVisualInstance",
         sol::constructors<IVisualInstance()>(),
         sol::base_classes, sol::bases<Component>(),
+        sol::meta_function::garbage_collect, sol::destructor([](IVisualInstance* i) {  }),
         "layerMask", sol::property(&IVisualInstance::getLayerMask, &IVisualInstance::setLayerMask),
         "sortingOffset", sol::property(&IVisualInstance::getSortingOffset, &IVisualInstance::setSortingOffset),
         "sortingUseAabbCenter", sol::property(&IVisualInstance::getSortingUseAabbCenter, &IVisualInstance::setSortingUseAabbCenter),

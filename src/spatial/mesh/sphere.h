@@ -58,7 +58,12 @@ namespace sunaba::spatial::mesh {
         }
 
         void onFree() override {
+            Component::onFree();
+            if (sphereMesh == nullptr) return;
+            MeshRenderer* meshRenderer = entity->getComponentByT<MeshRenderer>();
+            meshRenderer->getNode()->set_mesh(nullptr);
             sphereMesh->unreference();
+            sphereMesh = nullptr;
         }
     };
 }

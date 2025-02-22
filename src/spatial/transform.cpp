@@ -9,6 +9,7 @@ namespace sunaba::spatial {
         lua.new_usertype<SpatialTransform>("SpatialTransform",  
             sol::constructors<SpatialTransform()>(), 
             sol::base_classes, sol::bases<Component>(),
+            sol::meta_function::garbage_collect, sol::destructor([](SpatialTransform* t) {  }),
             "basis", sol::property(&SpatialTransform::getBasis, &SpatialTransform::setBasis),
             "position", sol::property(&SpatialTransform::getPosition, &SpatialTransform::setPosition),
             "rotation", sol::property(&SpatialTransform::getRotation, &SpatialTransform::setRotation),

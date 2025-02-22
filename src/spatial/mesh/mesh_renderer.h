@@ -78,6 +78,13 @@ namespace sunaba::spatial::mesh
                 transform->getNode()->add_child(node);
             }
         }
+
+        void onFree() override {
+            Component::onFree();
+            if (node != nullptr) {
+                node->queue_free();
+            }
+        }
     };
 }
 

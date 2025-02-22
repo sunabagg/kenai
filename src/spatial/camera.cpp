@@ -11,6 +11,7 @@ namespace sunaba::spatial
             "Camera",
             sol::constructors<Camera()>(),
             sol::base_classes, sol::bases<Component>(),
+            sol::meta_function::garbage_collect, sol::destructor([](Camera* c) {  }),
             "cullMask", sol::property(&Camera::getCullMask, &Camera::setCullMask),
             "current", sol::property(&Camera::getCurrent, &Camera::setCurrent),
             "dopplerTracking", sol::property(&Camera::getDopplerTracking, &Camera::setDopplerTracking),

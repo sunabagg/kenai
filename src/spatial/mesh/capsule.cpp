@@ -5,6 +5,7 @@ void sunaba::spatial::mesh::bindCapsule(sol::state& lua) {
         "Capsule",
         sol::constructors<Capsule()>(),
         sol::base_classes, sol::bases<Component>(),
+        sol::meta_function::garbage_collect, sol::destructor([](Capsule* c) {  }),
         "height", sol::property(&Capsule::getHeight, &Capsule::setHeight),
         "radialSegments", sol::property(&Capsule::getRadialSegments, &Capsule::setRadialSegments),
         "rings", sol::property(&Capsule::getRings, &Capsule::setRings),

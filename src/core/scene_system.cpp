@@ -7,12 +7,14 @@ void sunaba::core::bindSceneSystem(sol::state& lua)
     lua.new_usertype<BaseObject>(
         "BaseObject", 
         sol::constructors<BaseObject()>(), 
+        sol::meta_function::garbage_collect, sol::destructor([](BaseObject* b) {  }),
         "onFree", &BaseObject::onFree,
         "free", &BaseObject::free
     );
     lua.new_usertype<Scene>(
         "Scene", 
         sol::base_classes, sol::bases<BaseObject>(),
+        sol::meta_function::garbage_collect, sol::destructor([](Scene* s) {  }),
         "addEntity", &Scene::addEntity, 
         "hasEntity", &Scene::hasEntity, 
         "removeEntity", &Scene::removeEntity, 
@@ -25,6 +27,7 @@ void sunaba::core::bindSceneSystem(sol::state& lua)
         "Entity", 
         sol::constructors<Entity()>(),
         sol::base_classes, sol::bases<BaseObject>(),
+        sol::meta_function::garbage_collect, sol::destructor([](Entity* e) {  }),
         "name",sol::property( 
             [](Entity* e) { 
                 return e->name; 
@@ -57,6 +60,8 @@ void sunaba::core::bindSceneSystem(sol::state& lua)
     lua.new_usertype<Component>(
         "Component", 
         sol::base_classes, sol::bases<BaseObject>(),
+        sol::meta_function::garbage_collect, sol::destructor([](Component* c) {  
+        }),
         "entity", sol::property( 
             [](Component* c) { 
                 return c->entity; 
@@ -81,4 +86,10 @@ void sunaba::core::bindSceneSystem(sol::state& lua)
 // we can't use the scene removeEntity function in the header file
 void sunaba::core::Entity::removeFromScene() {
     scene->removeEntity(this);
+}
+
+void sunaba::core::Component::onFree()  {
+    if (entity != nullptr) {
+        entity->removeComponent(this);
+    }
 }

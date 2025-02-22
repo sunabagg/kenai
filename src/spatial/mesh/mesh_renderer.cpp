@@ -8,6 +8,7 @@ void sunaba::spatial::mesh::bindMeshRenderer(sol::state& lua) {
         "MeshRenderer",
         sol::constructors<MeshRenderer()>(),
         sol::base_classes, sol::bases<IGeometryInstance, IVisualInstance, Component>(),
+        sol::meta_function::garbage_collect, sol::destructor([](MeshRenderer* m) {  }),
         "createConvexCollision", &MeshRenderer::createConvexCollision,
         "createDebugTangents", &MeshRenderer::createDebugTangents,
         "createTrimeshCollision", &MeshRenderer::createTrimeshCollision,

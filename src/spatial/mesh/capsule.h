@@ -49,6 +49,16 @@ namespace sunaba::spatial::mesh {
             MeshRenderer* meshRenderer = entity->getComponentByT<MeshRenderer>();
             meshRenderer->getNode()->set_mesh(capsuleMesh);
         }
+
+        void onFree() override {
+            Component::onFree();
+            if (capsuleMesh != nullptr) {
+                MeshRenderer* meshRenderer = entity->getComponentByT<MeshRenderer>();
+                meshRenderer->getNode()->set_mesh(nullptr);
+                capsuleMesh->unreference();
+                capsuleMesh = nullptr;
+            }
+        }
     };
 }
 #endif // CAPSULE_H

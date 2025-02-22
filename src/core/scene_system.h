@@ -118,14 +118,17 @@ namespace sunaba::core
             auto func = scriptInstance["onUpdate"].get<sol::function>();
             if (!func) return;
             
-            func(scriptInstance, delta);
+            sol::object deltaObj = sol::make_object(scriptInstance.lua_state(), delta);
+            func(scriptInstance, deltaObj);
         }
 
         virtual void onPhysicsUpdate(double delta) {
             if (scriptInstance == sol::nil) return;
             auto func = scriptInstance["onPhysicsUpdate"].get<sol::function>();
             if (!func) return;
-            func(scriptInstance, delta);
+            
+            sol::object deltaObj = sol::make_object(scriptInstance.lua_state(), delta);
+            func(scriptInstance, deltaObj);
         }
 
         virtual void onExitTree() {
@@ -151,6 +154,7 @@ namespace sunaba::core
             scriptInstance = t;
         }
 
+        void onFree() override;
 
         /*
         template<typename T>
@@ -439,6 +443,10 @@ namespace sunaba::core
                     std::cerr << "Error: Invalid component pointer detected." << std::endl;
                     continue;
                 }
+                if (component.second->freed == true) {
+                    std::cerr << "Error: Component has been freed." << std::endl;
+                    continue;
+                }
                 component.second->onUpdate(delta);
             }
             for (auto& child : children) {
@@ -448,6 +456,18 @@ namespace sunaba::core
 
         void physicsUpdate(double delta) {
             for (auto& component : components) {
+                if (component.second == nullptr) {
+                    std::cerr << "Warning: Null component detected." << std::endl;
+                    continue;
+                }
+                if (!component.second) {
+                    std::cerr << "Error: Invalid component pointer detected." << std::endl;
+                    continue;
+                }
+                if (component.second->freed == true) {
+                    std::cerr << "Error: Component has been freed." << std::endl;
+                    continue;
+                }
                 component.second->onPhysicsUpdate(delta);
             }
             for (auto& child : children) {
@@ -463,6 +483,18 @@ namespace sunaba::core
                 removeFromScene();
             }
             for (auto& component : components) {
+                if (component.second == nullptr) {
+                    std::cerr << "Warning: Null component detected." << std::endl;
+                    continue;
+                }
+                if (!component.second) {
+                    std::cerr << "Error: Invalid component pointer detected." << std::endl;
+                    continue;
+                }
+                if (component.second->freed == true) {
+                    std::cerr << "Error: Component has been freed." << std::endl;
+                    continue;
+                }
                 component.second->onFree();
             }
             for (auto& child : children) {
