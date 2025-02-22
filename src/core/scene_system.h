@@ -170,8 +170,8 @@ namespace sunaba::core
         bool started = false;
     public:
         std::string name;
-        std::unordered_map<std::string, std::unique_ptr<Component>>components;
-        std::vector<std::unique_ptr<Entity>> children;
+        std::unordered_map<std::string, Component*> components;
+        std::vector<Entity*> children;
         Entity* parent;
         
         Scene* scene;
@@ -228,7 +228,7 @@ namespace sunaba::core
             component->entity = this;
             component->scene = this->scene;
             component->onInit();
-            components[n] = std::unique_ptr<Component>(component);
+            components[n] = component;
             if (started) {
                 component->onReady();
             }
@@ -256,7 +256,7 @@ namespace sunaba::core
 
         Component* getComponentByName(std::string name) {
             if (components.find(name) != components.end()) {
-                return components[name].get();
+                return components[name];
             }
             return nullptr;
         }
@@ -285,7 +285,7 @@ namespace sunaba::core
             auto typeName = type["__name"].get<std::string>();
             for (auto& comp : components) {
                 if (comp.first == typeName) {
-                    result.push_back(comp.second.get());
+                    result.push_back(comp.second);
                 }
             }
             return result;
@@ -323,7 +323,7 @@ namespace sunaba::core
             auto typeName = type.as<sol::userdata>()["__name"].get<std::string>();
             for (auto& comp : components) {
                 if (comp.first == typeName) {
-                    return comp.second.get();
+                    return comp.second;
                 }
             }
             return nullptr;
@@ -331,9 +331,9 @@ namespace sunaba::core
 
         template<typename T>
         T* getComponentByT() {
-            for (auto& comp : components) { 
+            for (auto& comp : components) {
                 if (typeid(T) == typeid(*comp.second)) {
-                    return static_cast<T*>(comp.second.get());
+                    return static_cast<T*>(comp.second);
                 }
             }
             return nullptr;
@@ -349,7 +349,7 @@ namespace sunaba::core
 
         void removeComponent(Component* component) {
             for (auto& comp : components) {
-                if (comp.second.get() == component) {
+                if (comp.second == component) {
                     removeComponentByName(comp.first);
                 }
             }
@@ -369,7 +369,7 @@ namespace sunaba::core
         void addChild(Entity* entity) {
             entity->parent = this;
             entity->setScene(this->scene);
-            children.push_back(std::unique_ptr<Entity>(entity));
+            children.push_back(entity);
             if (node != nullptr) {
                 node->add_child(entity->node);
             }
@@ -381,7 +381,7 @@ namespace sunaba::core
 
         void removeChild(Entity* entity) {
             for (auto i = 0; i < children.size(); i++) {
-                Entity* ent = children[i].get();
+                Entity* ent = children[i];
                 if (ent == entity) {
                     ent->parent = nullptr;
                     ent->scene = nullptr;
@@ -397,7 +397,7 @@ namespace sunaba::core
 
         bool hasChild(Entity* entity) {
             for (auto& child : children) {
-                if (child.get() == entity) {
+                if (child == entity) {
                     return true;
                 }
             }
@@ -415,7 +415,7 @@ namespace sunaba::core
         }
 
         Entity* getChild(size_t index) {
-            return children[index].get();
+            return children[index];
         }
 
         void ready() {
@@ -487,14 +487,14 @@ namespace sunaba::core
 
         bool started = false;
     public:
-        std::vector<std::unique_ptr<Entity>> entities;
+        std::vector<Entity*> entities;
         godot::Node* root;
 
         godot::Viewport* viewport;
 
         void addEntity(Entity* entity) {
             entity->setScene(this);
-            entities.push_back(std::unique_ptr<Entity>(entity));
+            entities.push_back(entity);
             if (root != nullptr) {
                 root->add_child(entity->getNode());
             }
@@ -506,7 +506,7 @@ namespace sunaba::core
 
         void removeEntity(Entity* entity) {
             for (auto i = 0; i < entities.size(); i++) {
-                Entity* ent = entities[i].get();
+                Entity* ent = entities[i];
                 if (ent == entity) {
                     ent->scene = nullptr;
                     entities.erase(entities.begin() + i);
@@ -520,7 +520,7 @@ namespace sunaba::core
 
         bool hasEntity(Entity* entity) {
             for (auto& ent : entities) {
-                if (ent.get() == entity) {
+                if (ent == entity) {
                     return true;
                 }
             }
@@ -538,7 +538,7 @@ namespace sunaba::core
         }
 
         Entity* getEntity(size_t index) {
-            return entities[index].get();
+            return entities[index];
         }
 
         void start() {
