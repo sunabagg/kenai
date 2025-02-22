@@ -11,6 +11,9 @@ void sunaba::spatial::mesh::bindBox(sol::state& lua) {
         "subdivideWidth", sol::property(&Box::getSubdivideWidth, &Box::setSubdivideWidth),
         "getFromEntity", [](Entity* entity) {
             return entity->getComponentByT<Box>();
+        },
+        "cast", [](Component* component) { 
+            return static_cast<Box*>(component); 
         }
     );
 }

@@ -205,6 +205,7 @@ __lua_UserData = _hx_e()
 __lua_Thread = _hx_e()
 __sunaba_core__Basis_Basis_Impl_ = _hx_e()
 __sunaba_core_Behavior = _hx_e()
+__sunaba_core_ObjectUtils = _hx_e()
 __sunaba_core__Quaternion_Quaternion_Impl_ = _hx_e()
 __sunaba_core__Vector2_Vector2_Impl_ = _hx_e()
 __sunaba_core__Vector3_Vector3_Impl_ = _hx_e()
@@ -567,40 +568,37 @@ Main.main = function()
   local entity1 = Entity.new();
   entity1.name = "Entity1";
   local e1transform = SpatialTransform.new();
-  entity1:addComponent(e1transform, "SpatialTransform");
+  entity1:addComponent(e1transform, __sunaba_core_ObjectUtils.getName(SpatialTransform));
   scene:addEntity(entity1);
   e1transform.position = __sunaba_core__Vector3_Vector3_Impl_._new(1, 2, 3);
   local child1 = Entity.new();
   child1.name = "Child1";
   local c1transform = SpatialTransform.new();
-  child1:addComponent(c1transform, "SpatialTransform");
+  child1:addComponent(c1transform, __sunaba_core_ObjectUtils.getName(SpatialTransform));
   entity1:addChild(child1);
   c1transform.position = __sunaba_core__Vector3_Vector3_Impl_._new(4, 5, 6);
   local entity2 = Entity.new();
   entity2.name = "Entity2";
   local e2transform = SpatialTransform.new();
-  entity2:addComponent(e2transform, "SpatialTransform");
+  entity2:addComponent(e2transform, __sunaba_core_ObjectUtils.getName(SpatialTransform));
   scene:addEntity(entity2);
   e2transform.position = __sunaba_core__Vector3_Vector3_Impl_._new(7, 8, 9);
   local entity3 = Entity.new();
   entity3.name = "Camera";
   local e3transform = SpatialTransform.new();
-  entity3:addComponent(e3transform, "SpatialTransform");
+  entity3:addComponent(e3transform, __sunaba_core_ObjectUtils.getName(SpatialTransform));
   local camera = Camera.new();
-  entity3:addComponent(camera, "Camera");
+  entity3:addComponent(camera, __sunaba_core_ObjectUtils.getName(Camera));
   scene:addEntity(entity3);
   e3transform.position = __sunaba_core__Vector3_Vector3_Impl_._new(0, 0, 1);
   local entity4 = Entity.new();
   entity4.name = "Box";
   local e4transform = SpatialTransform.new();
-  local transformName = SpatialTransform.__name__;
-  _G.print(SpatialTransform.__name__);
-  return;
-  --entity4:addComponent(e4transform, transformName);
+  entity4:addComponent(e4transform, __sunaba_core_ObjectUtils.getName(SpatialTransform));
   local e4mesh = MeshRenderer.new();
-  entity4:addComponent(e4mesh, "MeshRenderer");
+  entity4:addComponent(e4mesh, __sunaba_core_ObjectUtils.getName(MeshRenderer));
   local e4box = Box.new();
-  entity4:addComponent(e4box, "Box");
+  entity4:addComponent(e4box, __sunaba_core_ObjectUtils.getName(Box));
   e4box.size = __sunaba_core__Vector3_Vector3_Impl_._new(1, 1, 1);
   local rotateComponent = __support_files_test3_src_RotateComponent.new();
   entity4:addComponent(rotateComponent.component, "RotateComponent");
@@ -946,6 +944,9 @@ Type.getClass = function(o)
       end;
     end;
   end;
+end
+Type.getSuperClass = function(c) 
+  do return c.__super__ end;
 end
 Type.createInstance = function(cl,args) 
   do return cl.new(_hx_table.unpack(args, 0)) end;
@@ -1633,39 +1634,24 @@ __sunaba_core_Behavior.prototype.getComponent_sunaba_spatial_SpatialTransform = 
     entity = self.component.entity;
     __haxe_Log.trace("Entity is null, using this.component.entity", _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="sunaba/core/Behavior.hx",lineNumber=55,className="sunaba.core.Behavior",methodName="getComponent"}));
   end;
-  local compType = type;
-  local isComponent = type(type) == 'userdata' == true;
-  if (compType ~= nil) then 
-    __haxe_Log.trace(Std.string("Checking for Component: ") .. Std.string(type.__name__), _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="sunaba/core/Behavior.hx",lineNumber=61,className="sunaba.core.Behavior",methodName="getComponent"}));
-    local component = entity:getComponentByName(type.__name__);
-    if (component ~= nil) then 
-      __haxe_Log.trace(Std.string("Component found: ") .. Std.string(type.__name__), _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="sunaba/core/Behavior.hx",lineNumber=64,className="sunaba.core.Behavior",methodName="getComponent"}));
-      local tComponent = component;
-      if (tComponent ~= nil) then 
-        __haxe_Log.trace(Std.string("Component type match: ") .. Std.string(type.__name__), _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="sunaba/core/Behavior.hx",lineNumber=67,className="sunaba.core.Behavior",methodName="getComponent"}));
-        do return tComponent end;
-      else
-        __haxe_Log.trace(Std.string("Component type mismatch: ") .. Std.string(type.__name__), _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="sunaba/core/Behavior.hx",lineNumber=71,className="sunaba.core.Behavior",methodName="getComponent"}));
-      end;
-    else
-      __haxe_Log.trace(Std.string("Component not found: ") .. Std.string(type.__name__), _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="sunaba/core/Behavior.hx",lineNumber=75,className="sunaba.core.Behavior",methodName="getComponent"}));
-    end;
-  end;
   local behaviorType = type;
-  if (behaviorType ~= nil) then 
-    __haxe_Log.trace(Std.string("Checking for Behavior: ") .. Std.string(type.__name__), _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="sunaba/core/Behavior.hx",lineNumber=81,className="sunaba.core.Behavior",methodName="getComponent"}));
+  if (__sunaba_core_ObjectUtils.typeInheritsFrom(type, __sunaba_core_Behavior)) then 
     local behavior = entity:getUserComponent(behaviorType);
     if (behavior ~= nil) then 
-      __haxe_Log.trace(Std.string("Behavior found: ") .. Std.string(type.__name__), _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="sunaba/core/Behavior.hx",lineNumber=84,className="sunaba.core.Behavior",methodName="getComponent"}));
       local tBehavior = behavior;
       if (tBehavior ~= nil) then 
-        __haxe_Log.trace(Std.string("Behavior type match: ") .. Std.string(type.__name__), _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="sunaba/core/Behavior.hx",lineNumber=87,className="sunaba.core.Behavior",methodName="getComponent"}));
         do return tBehavior end;
-      else
-        __haxe_Log.trace(Std.string("Behavior type mismatch: ") .. Std.string(type.__name__), _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="sunaba/core/Behavior.hx",lineNumber=91,className="sunaba.core.Behavior",methodName="getComponent"}));
       end;
-    else
-      __haxe_Log.trace(Std.string("Behavior not found: ") .. Std.string(type.__name__), _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="sunaba/core/Behavior.hx",lineNumber=95,className="sunaba.core.Behavior",methodName="getComponent"}));
+    end;
+  else
+    local typeName = type.__name;
+    local component = entity:getComponentByName(typeName);
+    if (component ~= nil) then 
+      local tComponent = __sunaba_core_ObjectUtils.castObjectAs_getComponent_T(type, component);
+      if (tComponent ~= nil) then 
+        __haxe_Log.trace(Std.string("Component type match: ") .. Std.string(typeName), _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="sunaba/core/Behavior.hx",lineNumber=85,className="sunaba.core.Behavior",methodName="getComponent"}));
+        do return tComponent end;
+      end;
     end;
   end;
   __haxe_Log.trace(Std.string("Component or Behavior not found: ") .. Std.string(type.__name__), _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="sunaba/core/Behavior.hx",lineNumber=99,className="sunaba.core.Behavior",methodName="getComponent"}));
@@ -1738,6 +1724,50 @@ __sunaba_core_Behavior.prototype.removeComponent = function(self,type,entity)
 end
 
 __sunaba_core_Behavior.prototype.__class__ =  __sunaba_core_Behavior
+
+__sunaba_core_ObjectUtils.new = {}
+__sunaba_core_ObjectUtils.__name__ = "sunaba.core.ObjectUtils"
+__sunaba_core_ObjectUtils.castObjectAs_getComponent_T = function(_type,object) 
+  local obj = _type.cast(object);
+  if (obj == nil) then 
+    _G.error(__haxe_Exception.thrown(Std.string("Object is not of type ") .. Std.string(Std.string(_type))),0);
+  end;
+  do return obj end;
+end
+__sunaba_core_ObjectUtils.getName = function(object) 
+  do return object.__name end;
+end
+__sunaba_core_ObjectUtils.typeInheritsFrom = function(type1,type2) 
+  local type1Name = type1.__name;
+  if (type1Name == nil) then 
+    type1Name = type1.__name__;
+    if (type1Name == nil) then 
+      do return false end;
+    end;
+  end;
+  local type2Name = type2.__name;
+  if (type2Name == nil) then 
+    type2Name = type2.__name__;
+    if (type2Name == nil) then 
+      do return false end;
+    end;
+  end;
+  if (type1Name == type2Name) then 
+    do return true end;
+  end;
+  local type1Super = Type.getSuperClass(type1);
+  while (type1Super ~= nil) do _hx_do_first_1 = false;
+    
+    if (type1Super == type2) then 
+      do return true end;
+    end;
+    type1Super = Type.getSuperClass(type1Super);
+    if (type1Super == nil) then 
+      break;
+    end;
+  end;
+  do return false end;
+end
 
 __sunaba_core__Quaternion_Quaternion_Impl_.new = {}
 __sunaba_core__Quaternion_Quaternion_Impl_.__name__ = "sunaba.core._Quaternion.Quaternion_Impl_"

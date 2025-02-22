@@ -11,6 +11,9 @@ void sunaba::spatial::bindVisualInstance(sol::state& lua) {
         "getAabb", &IVisualInstance::getAabb,
         "onGetAabb", &IVisualInstance::onGetAabb,
         "getLayerMaskValue", &IVisualInstance::getLayerMaskValue,
-        "setLayerMaskValue", &IVisualInstance::setLayerMaskValue
+        "setLayerMaskValue", &IVisualInstance::setLayerMaskValue,
+        "cast", [](Component* component) { 
+            return static_cast<IVisualInstance*>(component); 
+        }
     );
 }

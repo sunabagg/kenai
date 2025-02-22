@@ -39,6 +39,9 @@ namespace sunaba::spatial
             "unprojectPosition", &Camera::unprojectPosition,
             "getFromEntity", [](Entity* entity) {
                 return entity->getComponentByT<Camera>();
+            },
+            "cast", [](Component* component) { 
+                return static_cast<Camera*>(component); 
             }
         );
 

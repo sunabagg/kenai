@@ -302,12 +302,20 @@ namespace sunaba::core
         }
 
         sol::object getUserComponent(sol::table type) {
+            std::cout << "getUserComponent: Looking for component with script type" << std::endl;
             for (auto& comp : components) {
-                if (comp.second->getScriptType() == type) {
+                std::cout << "getUserComponent: Checking component " << comp.first << std::endl;
+                auto scriptType = comp.second->getScriptType();
+                if (scriptType == sol::nil) {
+                    continue;
+                }
+                if (scriptType == type) {
+                    std::cout << "getUserComponent: Found matching component " << comp.first << std::endl;
                     return comp.second->getScriptInstance();
                 }
-            }
-            
+        }
+    
+            std::cerr << "getUserComponent: No matching component found" << std::endl;
             return sol::nil;
         }
 

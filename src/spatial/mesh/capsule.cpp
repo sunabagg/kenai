@@ -11,6 +11,9 @@ void sunaba::spatial::mesh::bindCapsule(sol::state& lua) {
         "radius", sol::property(&Capsule::getRadius, &Capsule::setRadius),
         "getFromEntity", [](Entity* entity) {
             return entity->getComponentByT<Capsule>();
+        },
+        "cast", [](Component* component) { 
+            return static_cast<Capsule*>(component); 
         }
     );
 }

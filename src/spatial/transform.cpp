@@ -49,6 +49,9 @@ namespace sunaba::spatial {
             "translateObjectLocal", &SpatialTransform::translateObjectLocal,
             "getFromEntity", [](Entity* entity) { 
                 return entity->getComponentByT<SpatialTransform>();
+             },
+             "cast", [](Component* component) { 
+                return static_cast<SpatialTransform*>(component); 
              }
         );
 

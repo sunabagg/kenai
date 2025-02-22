@@ -19,7 +19,8 @@ void sunaba::core::bindSceneSystem(sol::state& lua)
         "onFree", &Scene::onFree,
         "find", &Scene::find,
         "getEntityCount", &Scene::getEntityCount,
-        "getEntity", &Scene::getEntity);
+        "getEntity", &Scene::getEntity
+    );
     lua.new_usertype<Entity>(
         "Entity", 
         sol::constructors<Entity()>(),
@@ -51,7 +52,8 @@ void sunaba::core::bindSceneSystem(sol::state& lua)
         "onFree", &Entity::onFree,
         "find", &Entity::find,
         "getChildCount", &Entity::getChildCount,
-        "getChild", &Entity::getChild);
+        "getChild", &Entity::getChild
+    );
     lua.new_usertype<Component>(
         "Component", 
         sol::base_classes, sol::bases<BaseObject>(),
@@ -71,7 +73,8 @@ void sunaba::core::bindSceneSystem(sol::state& lua)
         "onPhysicsUpdate", &Component::onPhysicsUpdate,
         "onFree", &Component::onFree,
         "setScriptType", &Component::setScriptType,
-        "setScriptInstance", &Component::setScriptInstance);
+        "setScriptInstance", &Component::setScriptInstance
+    );
 }
 
 // hacky way to get around the fact that 

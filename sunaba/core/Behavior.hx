@@ -55,46 +55,46 @@ class Behavior {
             trace("Entity is null, using this.component.entity");
         }
 
-        var compType : Class<Component> = cast type;
-        var isComponent : Bool = cast untyped __lua__("type(type) == 'userdata'") == true;
-        if (compType != null) {
-            trace("Checking for Component: " + Type.getClassName(type));
-            var component = entity.getComponentByName(Type.getClassName(type));
-            if (component != null) {
-                trace("Component found: " + Type.getClassName(type));
-                var tComponent : T = cast component;
-                if (tComponent != null) {
-                    trace("Component type match: " + Type.getClassName(type));
-                    return tComponent;
-                }
-                else {
-                    trace("Component type mismatch: " + Type.getClassName(type));
-                }
-            }
-            else {
-                trace("Component not found: " + Type.getClassName(type));
-            }
-        }
-        
         var behaviorType : Class<Behavior> = cast type;
-        if (behaviorType != null) {
-            trace("Checking for Behavior: " + Type.getClassName(type));
+        if (ObjectUtils.typeInheritsFrom(type, Behavior)) {
+            //trace("Checking for Behavior: " + Type.getClassName(type));
             var behavior : Behavior = entity.getUserComponent(behaviorType);
             if (behavior != null) {
-                trace("Behavior found: " + Type.getClassName(type));
+                //trace("Behavior found: " + Type.getClassName(type));
                 var tBehavior : T = cast behavior;
                 if (tBehavior != null) {
-                    trace("Behavior type match: " + Type.getClassName(type));
+                    //trace("Behavior type match: " + Type.getClassName(type));
                     return tBehavior;
                 }
                 else {
-                    trace("Behavior type mismatch: " + Type.getClassName(type));
+                    //trace("Behavior type mismatch: " + Type.getClassName(type));
                 }
             }
             else {
-                trace("Behavior not found: " + Type.getClassName(type));
+                //trace("Behavior not found: " + Type.getClassName(type));
+            }
+        } else {
+            var typeName = untyped __lua__("type.__name");
+            ///trace("Checking for Component: " + typeName);
+            
+            var component = entity.getComponentByName(typeName);
+            if (component != null) {
+                //trace("Component found: " + typeName);
+                var tComponent : T = ObjectUtils.castObjectAs(type, component);
+                if (tComponent != null) {
+                    trace("Component type match: " + typeName);
+                    return tComponent;
+                }
+                else {
+                    //trace("Component type mismatch: " + typeName);
+                }
+            }
+            else {
+                //trace("Component not found: " + typeName);
             }
         }
+        
+        
 
         trace("Component or Behavior not found: " + Type.getClassName(type));
 

@@ -13,6 +13,9 @@ void sunaba::spatial::mesh::bindSphere(sol::state& lua) {
         "getFromEntity", [](Entity* entity) {
             Component* component = entity->getComponentByT<Sphere>();
             return static_cast<Sphere*>(component);
+        },
+        "cast", [](Component* component) { 
+            return static_cast<Sphere*>(component); 
         }
     );
 }

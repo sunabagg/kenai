@@ -18,6 +18,9 @@ void sunaba::spatial::mesh::bindMeshRenderer(sol::state& lua) {
         "setBlendShapeValue", &MeshRenderer::setBlendShapeValue,
         "getFromEntity", [](Entity* entity) {
             return entity->getComponentByT<MeshRenderer>();
+        },
+        "cast", [](Component* component) { 
+            return static_cast<MeshRenderer*>(component); 
         }
     );
 }
