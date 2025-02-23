@@ -262,6 +262,15 @@ namespace sunaba::spatial
             }
         }
     };
+
+    class SpatialTransformReference : public ComponentReference, public NativeReference<SpatialTransform>
+    {
+    public:
+        using NativeReference<SpatialTransform>::NativeReference;
+
+        SpatialTransformReference() : NativeReference<SpatialTransform>(new SpatialTransform()) {}
+        SpatialTransformReference(SpatialTransform* p_ptr) : ComponentReference(p_ptr) {}
+    }; 
 }
 
 #endif // TRANSFORM_H
