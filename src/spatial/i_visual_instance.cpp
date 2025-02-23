@@ -1,20 +1,46 @@
 #include "i_visual_instance.h"
 
 void sunaba::spatial::bindVisualInstance(sol::state& lua) {
-    lua.new_usertype<IVisualInstance>(
+    lua.new_usertype<IVisualInstanceReference>(
         "IVisualInstance",
-        sol::constructors<IVisualInstance()>(),
+        sol::constructors<IVisualInstanceReference()>(),
         sol::base_classes, sol::bases<Component>(),
-        sol::meta_function::garbage_collect, sol::destructor([](IVisualInstance* i) {  }),
-        "layerMask", sol::property(&IVisualInstance::getLayerMask, &IVisualInstance::setLayerMask),
-        "sortingOffset", sol::property(&IVisualInstance::getSortingOffset, &IVisualInstance::setSortingOffset),
-        "sortingUseAabbCenter", sol::property(&IVisualInstance::getSortingUseAabbCenter, &IVisualInstance::setSortingUseAabbCenter),
-        "getAabb", &IVisualInstance::getAabb,
-        "onGetAabb", &IVisualInstance::onGetAabb,
-        "getLayerMaskValue", &IVisualInstance::getLayerMaskValue,
-        "setLayerMaskValue", &IVisualInstance::setLayerMaskValue,
-        "cast", [](Component* component) { 
-            return static_cast<IVisualInstance*>(component); 
+        "layerMask", sol::property([](IVisualInstanceReference& v) {
+            return NativeReference<IVisualInstance>(v)->getLayerMask();
+        }, [](IVisualInstanceReference& v, int mask) {
+            NativeReference<IVisualInstance>(v)->setLayerMask(mask);
+        }),
+        "sortingOffset", sol::property([](IVisualInstanceReference& v) {
+            return NativeReference<IVisualInstance>(v)->getSortingOffset();
+        }, [](IVisualInstanceReference& v, float offset) {
+            NativeReference<IVisualInstance>(v)->setSortingOffset(offset);
+        }),
+        "sortingUseAabbCenter", sol::property([](IVisualInstanceReference& v) {
+            return NativeReference<IVisualInstance>(v)->getSortingUseAabbCenter();
+        }, [](IVisualInstanceReference& v, bool use) {
+            NativeReference<IVisualInstance>(v)->setSortingUseAabbCenter(use);
+        }),
+        "getAabb", [](IVisualInstanceReference& v) {
+            return NativeReference<IVisualInstance>(v)->getAabb();
+        },
+        "onGetAabb", [](IVisualInstanceReference& v) {
+            return NativeReference<IVisualInstance>(v)->onGetAabb();
+        },
+        "getLayerMaskValue", [](IVisualInstanceReference& v, int layer) {
+            return NativeReference<IVisualInstance>(v)->getLayerMaskValue(layer);
+        },
+        "setLayerMaskValue", [](IVisualInstanceReference& v, int layer, bool value) {
+            NativeReference<IVisualInstance>(v)->setLayerMaskValue(layer, value);
+        },
+        "getFromEntity", [](EntityReference& e) {
+            return new IVisualInstanceReference(
+                NativeReference<Entity>(e)->getComponentByT<IVisualInstance>()
+            );
+        },
+        "cast", [](ComponentReference& cr) {
+            return IVisualInstanceReference(
+                static_cast<IVisualInstance*>(NativeReference<Component>(cr).ptr)
+            );
         }
     );
 }

@@ -55,6 +55,15 @@ namespace sunaba::spatial
             visualInstance->set_layer_mask_value(layer, value);
         }
     };
+
+    class IVisualInstanceReference : public ComponentReference, public NativeReference<IVisualInstance>
+    {
+    public:
+        using NativeReference<IVisualInstance>::NativeReference;
+
+        IVisualInstanceReference() : NativeReference<IVisualInstance>(new IVisualInstance()) {}
+        IVisualInstanceReference(IVisualInstance* p_ptr) : ComponentReference(p_ptr) {}
+    };
 }
 
 #endif // I_VISUAL_INSTANCE_H
