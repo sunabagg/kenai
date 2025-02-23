@@ -11,6 +11,8 @@ namespace sunaba::core
 {
     //static void generateBaseObjectUsertype(lua_State* L);
 
+    // A base class for all objects in the engine. This class is used to store a reference to the object in Lua,
+    // and to make sure that the object is not freed while it is still being used.
     class BaseObject {
     public:
         virtual void onNotification( int p_what ) {}
@@ -22,14 +24,44 @@ namespace sunaba::core
         virtual void onFree() {}
         
         void free() { 
-            this->onFree();
-            freed = true;
+            if (!freed) {
+                delete this;
+            }
         }
 
         virtual ~BaseObject() {
-            if (!freed) {
-                free();
+            this->onFree();
+            freed = true;
+        }
+    };
+
+    // A reference to a native object. This is used to store a reference to a native object in Lua,
+    // and to make sure that the object is not freed while it is still being used.
+    template<typename T>
+    class NativeReference {
+    public:
+        T* ptr = nullptr;
+
+        NativeReference() : ptr(new T()) {}
+
+        NativeReference(T* p_ptr) : ptr(p_ptr) {}
+
+        ~NativeReference() {
+            if (ptr != nullptr) {
+                ptr = nullptr;
             }
+        }
+
+        T* operator->() {
+            return ptr;
+        }
+
+        T& operator*() {
+            return *ptr;
+        }
+
+        bool isNull() {
+            return ptr == nullptr;
         }
     };
 }
