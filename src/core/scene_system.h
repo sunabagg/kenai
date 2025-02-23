@@ -16,6 +16,7 @@
 #include <godot_cpp/classes/main_loop.hpp>
 #include <godot_cpp/classes/viewport.hpp>
 #include <godot_cpp/classes/node.hpp>
+#include <godot_cpp/variant/utility_functions.hpp>
 
 #include "base_object.h"
 
@@ -436,18 +437,24 @@ namespace sunaba::core
         void update(double delta) {
             for (auto& component : components) {
                 if (component.second == nullptr) {
-                    std::cerr << "Warning: Null component detected." << std::endl;
+                    godot::UtilityFunctions::printerr("Null component detected", __FILE__, __LINE__, false);
                     continue;
                 }
                 if (!component.second) {
-                    std::cerr << "Error: Invalid component pointer detected." << std::endl;
+                    godot::UtilityFunctions::printerr("Invalid component pointer detected", __FILE__, __LINE__, false);
                     continue;
                 }
                 if (component.second->freed == true) {
-                    std::cerr << "Error: Component has been freed." << std::endl;
+                    godot::UtilityFunctions::printerr("Component has been freed", __FILE__, __LINE__, false);
                     continue;
                 }
-                component.second->onUpdate(delta);
+                try {
+                    component.second->onUpdate(delta);
+                } catch (const std::exception& e) {
+                    godot::UtilityFunctions::printerr("Exception during onUpdate", __FILE__, __LINE__, false);
+                } catch (...) {
+                    godot::UtilityFunctions::printerr("Unknown exception during onUpdate", __FILE__, __LINE__, false);
+                }
             }
             for (auto& child : children) {
                 child->update(delta);
@@ -457,18 +464,25 @@ namespace sunaba::core
         void physicsUpdate(double delta) {
             for (auto& component : components) {
                 if (component.second == nullptr) {
-                    std::cerr << "Warning: Null component detected." << std::endl;
+                    godot::UtilityFunctions::printerr("Null component detected", __FILE__, __LINE__, false);
                     continue;
                 }
                 if (!component.second) {
-                    std::cerr << "Error: Invalid component pointer detected." << std::endl;
+                    godot::UtilityFunctions::printerr("Invalid component pointer detected", __FILE__, __LINE__, false);
                     continue;
                 }
                 if (component.second->freed == true) {
-                    std::cerr << "Error: Component has been freed." << std::endl;
+                    godot::UtilityFunctions::printerr("Component has been freed", __FILE__, __LINE__, false);
                     continue;
                 }
-                component.second->onPhysicsUpdate(delta);
+                try {
+                    component.second->onPhysicsUpdate(delta);
+                }
+                catch (const std::exception& e) {
+                    godot::UtilityFunctions::printerr("Exception during onPhysicsUpdate", __FILE__, __LINE__, false);
+                } catch (...) {
+                    godot::UtilityFunctions::printerr("Unknown exception during onPhysicsUpdate", __FILE__, __LINE__, false);
+                }
             }
             for (auto& child : children) {
                 child->physicsUpdate(delta);
