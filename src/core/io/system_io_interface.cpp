@@ -10,11 +10,11 @@ using namespace sunaba::core;
 
 namespace sunaba::core::io {
     void bindSystemIoInterface(sol::state& lua) {
-        lua.new_usertype<SystemIoInterface>(
+        lua.new_usertype<SystemIoInterfaceReference>(
             "SystemIoInterface",
             sol::no_constructor,
-            sol::base_classes, sol::bases<IoInterface>(),
-            "getFileUrl", &SystemIoInterface::getFileUrl
+            sol::base_classes, sol::bases<IoInterfaceReference>(),
+            "getFileUrl", [](SystemIoInterfaceReference self, const std::string &path) { return NativeReference<SystemIoInterface>(self)->getFileUrl(path); }
         );
     }
     

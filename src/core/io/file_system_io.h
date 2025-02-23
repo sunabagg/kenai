@@ -26,5 +26,13 @@ namespace sunaba::core::io {
         std::string getFileUrl(const std::string &path) const override;
         std::string getFilePath(const std::string &path) const override;
     };
+
+    class FileSystemIoReference : public SystemIoInterfaceReference, public NativeReference<FileSystemIo> {
+    public:
+        using NativeReference<FileSystemIo>::NativeReference;
+
+        FileSystemIoReference() : NativeReference<FileSystemIo>(new FileSystemIo()) {}
+        FileSystemIoReference(FileSystemIo* p_ptr) : SystemIoInterfaceReference(p_ptr) {}
+    };
 }
 #endif //FILE_SYSTEM_IO_H

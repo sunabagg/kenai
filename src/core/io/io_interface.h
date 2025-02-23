@@ -73,6 +73,15 @@ namespace sunaba::core::io {
 
         IoInterface() {}
     };
+
+    class IoInterfaceReference : public BaseReference, public NativeReference<IoInterface> {
+    public:
+        using NativeReference<IoInterface>::NativeReference;
+
+        IoInterfaceReference() : NativeReference<IoInterface>(new IoInterface()) {}
+
+        IoInterfaceReference(IoInterface* ptr) : NativeReference<IoInterface>(ptr) {}
+    };
 }
 
 #endif //IO_INTERFACE_H

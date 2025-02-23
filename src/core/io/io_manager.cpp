@@ -8,13 +8,13 @@ using namespace sunaba::core;
 
 namespace sunaba::core::io {
     void bindIoManager(sol::state& lua) {
-        lua.new_usertype<IoManager>(
+        lua.new_usertype<IoManagerReference>(
             "IoManager",
-            sol::constructors<IoManager()>(),
-            sol::base_classes, sol::bases<IoInterface>(),
-            "add", &IoManager::add,
-            "remove", &IoManager::remove,
-            "getFileUrl", &IoManager::getFileUrl
+            sol::constructors<IoManagerReference()>(),
+            sol::base_classes, sol::bases<IoInterfaceReference>(),
+            "add", [](IoManagerReference self, IoInterfaceReference io) { NativeReference<IoManager>(self)->add(NativeReference<IoInterface>(io).ptr); },
+            "remove", [](IoManagerReference self, IoInterfaceReference io) { NativeReference<IoManager>(self)->remove(NativeReference<IoInterface>(io).ptr); },
+            "getFileUrl", [](IoManagerReference self, const std::string &path, const std::string &base_url) { return NativeReference<IoManager>(self)->getFileUrl(path, base_url); }
         );
     }
 

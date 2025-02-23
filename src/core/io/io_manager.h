@@ -39,6 +39,14 @@ namespace sunaba::core::io {
         IoManager() {}
         ~IoManager() {}
     };
+
+    class IoManagerReference : public IoInterfaceReference, public NativeReference<IoManager> {
+    public:
+        using NativeReference<IoManager>::NativeReference;
+
+        IoManagerReference() : NativeReference<IoManager>(new IoManager()) {}
+        IoManagerReference(IoManager* p_ptr) : IoInterfaceReference(p_ptr) {}
+    };
 }
 
 #endif

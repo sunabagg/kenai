@@ -23,8 +23,15 @@ namespace sunaba::core::io {
 
         SystemIoInterface() {}        
         ~SystemIoInterface() {}
-    };;
-    
+    };
+
+    class SystemIoInterfaceReference : public IoInterfaceReference, public NativeReference<SystemIoInterface> {
+    public:
+        using NativeReference<SystemIoInterface>::NativeReference;
+
+        SystemIoInterfaceReference() : NativeReference<SystemIoInterface>(new SystemIoInterface()) {}
+        SystemIoInterfaceReference(SystemIoInterface* p_ptr) : IoInterfaceReference(p_ptr) {}
+    };
 }
 
 #endif
