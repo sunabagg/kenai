@@ -620,17 +620,17 @@ namespace sunaba::core
         Scene() : root(memnew(godot::Node)) {};
     };
 
-    class SceneReference : public NativeReferenceBase, public NativeReference<Scene> {
+    class SceneReference : public BaseReference, public NativeReference<Scene> {
     public:
         using NativeReference<Scene>::NativeReference;
     };
 
-    class EntityReference : public NativeReferenceBase, public NativeReference<Entity> {
+    class EntityReference : public BaseReference, public NativeReference<Entity> {
     public:
         using NativeReference<Entity>::NativeReference;
     };
 
-    class ComponentReference : public NativeReferenceBase, public NativeReference<Component> {
+    class ComponentReference : public BaseReference, public NativeReference<Component> {
     public:
         using NativeReference<Component>::NativeReference;
     };

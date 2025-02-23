@@ -4,17 +4,17 @@ using namespace sunaba::core;
 
 void sunaba::core::bindSceneSystem(sol::state& lua)
 {
-    lua.new_usertype<NativeReferenceBase>(
+    lua.new_usertype<BaseReference>(
         "BaseObject", 
-        sol::constructors<NativeReferenceBase()>(), 
-        "free", [](NativeReferenceBase& b) { 
+        sol::constructors<BaseReference()>(), 
+        "free", [](BaseReference& b) { 
             b->free(); 
         }
     );
     lua.new_usertype<SceneReference>(
         "Scene", 
         sol::no_constructor,
-        sol::base_classes, sol::bases<NativeReferenceBase>(),
+        sol::base_classes, sol::bases<BaseReference>(),
         "addEntity", [](SceneReference& s, EntityReference& e) { 
             NativeReference<Scene>(s).ptr->addEntity(NativeReference<Entity>(e).ptr); 
         },
@@ -39,7 +39,7 @@ void sunaba::core::bindSceneSystem(sol::state& lua)
     lua.new_usertype<EntityReference>(
         "Entity", 
         sol::constructors<EntityReference()>(),
-        sol::base_classes, sol::bases<NativeReferenceBase>(),
+        sol::base_classes, sol::bases<BaseReference>(),
         "name",sol::property( 
             [](EntityReference& e) { 
                 return NativeReference<Entity>(e)->name; 
@@ -117,7 +117,7 @@ void sunaba::core::bindSceneSystem(sol::state& lua)
     );
     lua.new_usertype<ComponentReference>(
         "Component", 
-        sol::base_classes, sol::bases<NativeReferenceBase>(),
+        sol::base_classes, sol::bases<BaseReference>(),
         "entity", sol::property( 
             [](ComponentReference& c) { 
                 return NativeReference<Component>(c)->entity; 
