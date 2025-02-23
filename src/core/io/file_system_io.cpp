@@ -7,18 +7,18 @@ using namespace sunaba::core;
 
 namespace sunaba::core::io {
     void bindFileSystemIo(sol::state& lua) {
-        lua.new_usertype<NativeReference<FileSystemIo>>(
+        lua.new_usertype<FileSystemIoReference>(
             "FileSystemIo",
             sol::no_constructor,
-            sol::base_classes, sol::bases<NativeReference<SystemIoInterface>>(),
+            sol::base_classes, sol::bases<SystemIoInterfaceReference>(),
             "basePath", sol::property(
-                [](NativeReference<FileSystemIo>* self) { return self->basePath; }
+                [](FileSystemIoReference self) { return NativeReference<FileSystemIo>(self)->basePath; }
             ),
             "altPath", sol::property(
-                [](NativeReference<FileSystemIo> self) { return self->altPath; }
+                [](FileSystemIoReference self) { return NativeReference<FileSystemIo>(self)->altPath; }
             ),
             "altPath2", sol::property(
-                [](NativeReference<FileSystemIo> self) { return self->altPath2; }
+                [](FileSystemIoReference self) { return NativeReference<FileSystemIo>(self)->altPath2; }
             )
         );
     }
