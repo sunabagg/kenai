@@ -4,7 +4,7 @@ void sunaba::spatial::bindVisualInstance(sol::state& lua) {
     lua.new_usertype<IVisualInstanceReference>(
         "IVisualInstance",
         sol::constructors<IVisualInstanceReference()>(),
-        sol::base_classes, sol::bases<Component>(),
+        sol::base_classes, sol::bases<ComponentReference>(),
         "layerMask", sol::property([](IVisualInstanceReference& v) {
             return NativeReference<IVisualInstance>(v)->getLayerMask();
         }, [](IVisualInstanceReference& v, int mask) {
