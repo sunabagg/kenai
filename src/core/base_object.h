@@ -64,6 +64,11 @@ namespace sunaba::core
             return ptr == nullptr;
         }
     };
+
+    class NativeReferenceBase : public NativeReference<BaseObject> { 
+    public:
+        using NativeReference<BaseObject>::NativeReference;
+    };
 }
 
 #endif //NH_OBJECT_H
