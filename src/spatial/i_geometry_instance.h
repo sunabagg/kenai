@@ -121,6 +121,15 @@ namespace sunaba::spatial
             geometryInstance->set_visibility_range_fade_mode(static_cast<GeometryInstance3D::VisibilityRangeFadeMode>(mode));
         }
     };
+
+    class IGeometryInstanceReference : public IVisualInstanceReference, public NativeReference<IGeometryInstance>
+    {
+    public:
+        using NativeReference<IGeometryInstance>::NativeReference;
+
+        IGeometryInstanceReference() : NativeReference<IGeometryInstance>(new IGeometryInstance()) {}
+        IGeometryInstanceReference(IGeometryInstance* p_ptr) : IVisualInstanceReference(p_ptr) {}
+    };
 }
 
 #endif
