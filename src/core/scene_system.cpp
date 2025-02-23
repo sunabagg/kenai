@@ -4,81 +4,136 @@ using namespace sunaba::core;
 
 void sunaba::core::bindSceneSystem(sol::state& lua)
 {
-    lua.new_usertype<BaseObject>(
-        "BaseObject", 
-        sol::constructors<BaseObject()>(), 
-        sol::meta_function::garbage_collect, sol::destructor([](BaseObject* b) {  }),
-        "onFree", &BaseObject::onFree,
-        "free", &BaseObject::free
+    lua.new_usertype<NativeReference<BaseObject>>(
+        "NativeReference", 
+        sol::constructors<NativeReference<BaseObject*>()>(), 
+        "free", [](NativeReference<BaseObject> b) { 
+            b->free(); 
+        }
     );
-    lua.new_usertype<Scene>(
+    lua.new_usertype<NativeReference<Scene>>(
         "Scene", 
-        sol::base_classes, sol::bases<BaseObject>(),
-        sol::meta_function::garbage_collect, sol::destructor([](Scene* s) {  }),
-        "addEntity", &Scene::addEntity, 
-        "hasEntity", &Scene::hasEntity, 
-        "removeEntity", &Scene::removeEntity, 
-        "onFree", &Scene::onFree,
-        "find", &Scene::find,
-        "getEntityCount", &Scene::getEntityCount,
-        "getEntity", &Scene::getEntity
+        sol::no_constructor,
+        sol::base_classes, sol::bases<NativeReference<BaseObject>>(),
+        "addEntity", [](NativeReference<Scene> s, NativeReference<Entity> e) { 
+            s->addEntity(e.ptr); 
+        },
+        "hasEntity", [](NativeReference<Scene> s, NativeReference<Entity> e) { 
+            return s->hasEntity(e.ptr); 
+        },
+        "removeEntity", [](NativeReference<Scene> s, NativeReference<Entity> e) { 
+            s->removeEntity(e.ptr); 
+        },
+        "find", [](NativeReference<Scene> s, std::string path) { 
+            return s->find(path); 
+        },
+        "getEntityCount", [](NativeReference<Scene> s) { 
+            return s->entities.size(); 
+        },
+        "getEntity", [](NativeReference<Scene> s, int index) { 
+            return new NativeReference<Entity>(
+                s->getEntity(index)
+            ); 
+        }
     );
-    lua.new_usertype<Entity>(
+    lua.new_usertype<NativeReference<Entity>>(
         "Entity", 
-        sol::constructors<Entity()>(),
-        sol::base_classes, sol::bases<BaseObject>(),
-        sol::meta_function::garbage_collect, sol::destructor([](Entity* e) {  }),
+        sol::constructors<NativeReference<Entity>()>(),
+        sol::base_classes, sol::bases<NativeReference<BaseObject>>(),
         "name",sol::property( 
-            [](Entity* e) { 
+            [](NativeReference<Entity> e) { 
                 return e->name; 
             }, 
-            [](Entity* e, std::string name) { 
+            [](NativeReference<Entity> e, std::string name) { 
                 e->name = name;  
                 if (e->getNode() != nullptr) 
                     e->getNode()->set_name(name.c_str()); 
             } 
         ),
-        "addComponent", &Entity::addComponent,
-        "hasComponent", &Entity::hasComponent,
-        "hasComponentByName", &Entity::hasComponentByName,
-        "removeComponent", &Entity::removeComponent,
-        "removeUserComponent", &Entity::removeUserComponent,
-        "removeComponentByName", &Entity::removeComponentByName,
-        "getComponent", &Entity::getComponent,
-        "getUserComponent", &Entity::getUserComponent,
-        "getComponentByName", &Entity::getComponentByName,
-        "getComponentsByType", &Entity::getComponentsByType,
-        "getUserComponentsByType", &Entity::getUserComponentsByType,
-        "addChild", &Entity::addChild,
-        "removeChild", &Entity::removeChild,
-        "hasChild", &Entity::hasChild,
-        "onFree", &Entity::onFree,
-        "find", &Entity::find,
-        "getChildCount", &Entity::getChildCount,
-        "getChild", &Entity::getChild
+        "addComponent", [](NativeReference<Entity> e, NativeReference<Component> c, std::string name) { 
+            e->addComponent(c.ptr, name); 
+        },
+        "hasComponent", [](NativeReference<Entity> e, sol::table type) { 
+            return e->hasComponent(type); 
+        },
+        "hasComponentByName", [](NativeReference<Entity> e, std::string name) { 
+            return e->hasComponentByName(name); 
+        },
+        "removeComponent", [](NativeReference<Entity> e, NativeReference<Component> c) { 
+            e->removeComponent(c.ptr); 
+        },
+        "removeUserComponent", [](NativeReference<Entity> e, sol::table type) { 
+            e->removeUserComponent(type); 
+        },
+        "removeComponentByName", [](NativeReference<Entity> e, std::string name) { 
+            e->removeComponentByName(name); 
+        },
+        "getComponent", [](NativeReference<Entity> e, sol::table type) { 
+            return new NativeReference<Component>(
+                e->getComponent(type)
+            ); 
+        },
+        "getUserComponent", [](NativeReference<Entity> e, sol::table type) { 
+            return e->getUserComponent(type); 
+        },
+        "getComponentByName", [](NativeReference<Entity> e, std::string name) { 
+            return new NativeReference<Component>(
+                e->getComponentByName(name)
+            ); 
+        },
+        "getComponentsByType", [](NativeReference<Entity> e, sol::table type) { 
+            auto v = e->getComponentsByType(type); 
+            std::vector<NativeReference<Component>> components;
+            for (auto& c : v) {
+                components.push_back(NativeReference<Component>(c));
+            }
+            return components;
+        },
+        "getUserComponentsByType", [](NativeReference<Entity> e, sol::table type) { 
+            return e->getUserComponentsByType(type); 
+        },
+        "addChild", [](NativeReference<Entity> e, NativeReference<Entity> child) { 
+            e->addChild(child.ptr); 
+        },
+        "removeChild", [](NativeReference<Entity> e, NativeReference<Entity> child) { 
+            e->removeChild(child.ptr); 
+        },
+        "hasChild", [](NativeReference<Entity> e, NativeReference<Entity> child) { 
+            return e->hasChild(child.ptr); 
+        },
+        "find", [](NativeReference<Entity> e, std::string path) { 
+            return new NativeReference<Entity>(
+                e->find(path)
+            ); 
+        },
+        "getChildCount", [](NativeReference<Entity> e) { 
+            return e->children.size(); 
+        },
+        "getChild", [](NativeReference<Entity> e, int index) { 
+            return new NativeReference<Entity>(
+                e->getChild(index)
+            ); 
+        }
     );
-    lua.new_usertype<Component>(
+    lua.new_usertype<NativeReference<Component>>(
         "Component", 
-        sol::base_classes, sol::bases<BaseObject>(),
-        sol::meta_function::garbage_collect, sol::destructor([](Component* c) {  
-        }),
+        sol::base_classes, sol::bases<NativeReference<BaseObject>>(),
         "entity", sol::property( 
-            [](Component* c) { 
+            [](NativeReference<Component> c) { 
                 return c->entity; 
             }
         ),
         "scene", sol::property( 
-            [](Component* c) { 
+            [](NativeReference<Component> c) { 
                 return c->entity->scene; 
             }
         ),
-        "onInit", &Component::onInit,
-        "onReady", &Component::onReady, 
-        "onUpdate", &Component::onUpdate,    
-        "onPhysicsUpdate", &Component::onPhysicsUpdate,
-        "onFree", &Component::onFree,
-        "setScriptType", &Component::setScriptType,
-        "setScriptInstance", &Component::setScriptInstance
+        "setScriptType", [](NativeReference<Component> c, sol::table type) { 
+            c->setScriptType(type); 
+        },
+        "setScriptInstance", [](NativeReference<Component> c, sol::table instance) { 
+            c->setScriptInstance(instance); 
+        }
     );
 }
 
