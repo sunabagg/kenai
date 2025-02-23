@@ -68,6 +68,9 @@ namespace sunaba::core
     class BaseReference : public NativeReference<BaseObject> { 
     public:
         using NativeReference<BaseObject>::NativeReference;
+
+        BaseReference() : NativeReference<BaseObject>(new BaseObject()) {}
+        BaseReference(BaseObject* ptr) : NativeReference<BaseObject>(ptr) {}
     };
 }
 

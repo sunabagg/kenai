@@ -623,16 +623,25 @@ namespace sunaba::core
     class SceneReference : public BaseReference, public NativeReference<Scene> {
     public:
         using NativeReference<Scene>::NativeReference;
+
+        SceneReference() : NativeReference<Scene>(new Scene()) {}
+        SceneReference(Scene* ptr) : NativeReference<Scene>(ptr) {}
     };
 
     class EntityReference : public BaseReference, public NativeReference<Entity> {
     public:
         using NativeReference<Entity>::NativeReference;
+
+        EntityReference() : NativeReference<Entity>(new Entity()) {}
+        EntityReference(Entity* ptr) : NativeReference<Entity>(ptr) {}
     };
 
     class ComponentReference : public BaseReference, public NativeReference<Component> {
     public:
         using NativeReference<Component>::NativeReference;
+
+        ComponentReference() : NativeReference<Component>(new Component()) {}
+        ComponentReference(Component* ptr) : NativeReference<Component>(ptr) {}
     };
 }
 
