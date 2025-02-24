@@ -239,6 +239,17 @@ namespace sunaba::core
             }
         };
 
+        template<typename T>
+        void addComponentT(T* component, std::string n) {
+            component->entity = this;
+            component->scene = this->scene;
+            component->onInit();
+            components[n] = component;
+            if (started) {
+                component->onReady();
+            }
+        };
+
         void enterTree() {
             for (auto& component : components) {
                 component.second->onEnterTree();

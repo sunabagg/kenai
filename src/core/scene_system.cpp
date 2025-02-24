@@ -133,6 +133,27 @@ void sunaba::core::bindSceneSystem(sol::state& lua)
         },
         "setScriptInstance", [](ComponentReference& c, sol::table instance) { 
             NativeReference<Component>(c)->setScriptInstance(instance); 
+        },
+        "onInit", [](ComponentReference& c) { 
+            NativeReference<Component>(c)->onInit(); 
+        },
+        "onReady", [](ComponentReference& c) { 
+            NativeReference<Component>(c)->onReady(); 
+        },
+        "onEnterTree", [](ComponentReference& c) { 
+            NativeReference<Component>(c)->onEnterTree(); 
+        },
+        "onExitTree", [](ComponentReference& c) { 
+            NativeReference<Component>(c)->onExitTree(); 
+        },
+        "onUpdate", [](ComponentReference& c, double delta) { 
+            NativeReference<Component>(c)->onUpdate(delta); 
+        },
+        "onPhysicsUpdate", [](ComponentReference& c, double delta) { 
+            NativeReference<Component>(c)->onPhysicsUpdate(delta); 
+        },
+        "onFree", [](ComponentReference& c) { 
+            NativeReference<Component>(c)->onFree(); 
         }
     );
 }
