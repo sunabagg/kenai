@@ -173,10 +173,11 @@ namespace sunaba::core
         void removeFromScene();
 
         bool started = false;
+
+        std::vector<Entity*> children;
     public:
         std::string name;
         std::unordered_map<std::string, Component*> components;
-        std::vector<Entity*> children;
         Entity* parent;
         
         Scene* scene;
