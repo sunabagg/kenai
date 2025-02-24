@@ -202,8 +202,10 @@ __lua_UserData = _hx_e()
 __lua_Thread = _hx_e()
 __sunaba_core__Basis_Basis_Impl_ = _hx_e()
 __sunaba_core_Behavior = _hx_e()
+__sunaba_core_GlobalObjectStack = _hx_e()
 __sunaba_core_ObjectUtils = _hx_e()
 __sunaba_core__Quaternion_Quaternion_Impl_ = _hx_e()
+__sunaba_core_StackHandle = _hx_e()
 __sunaba_core__Vector2_Vector2_Impl_ = _hx_e()
 __sunaba_core__Vector3_Vector3_Impl_ = _hx_e()
 __support_files_test3_src_RotateComponent = _hx_e()
@@ -601,6 +603,24 @@ Main.main = function()
   entity4:addComponent(rotateComponent.component, "RotateComponent");
   scene:addEntity(entity4);
   e4transform.position = __sunaba_core__Vector3_Vector3_Impl_._new(0, 0, -1);
+  __sunaba_core_GlobalObjectStack.initSingleton();
+  local globalObjectStack = __sunaba_core_GlobalObjectStack.getSingleton();
+  globalObjectStack.stack:push(__sunaba_core_StackHandle.new(scene));
+  globalObjectStack.stack:push(__sunaba_core_StackHandle.new(entity1));
+  globalObjectStack.stack:push(__sunaba_core_StackHandle.new(child1));
+  globalObjectStack.stack:push(__sunaba_core_StackHandle.new(entity2));
+  globalObjectStack.stack:push(__sunaba_core_StackHandle.new(entity3));
+  globalObjectStack.stack:push(__sunaba_core_StackHandle.new(entity4));
+  globalObjectStack.stack:push(__sunaba_core_StackHandle.new(e1transform));
+  globalObjectStack.stack:push(__sunaba_core_StackHandle.new(c1transform));
+  globalObjectStack.stack:push(__sunaba_core_StackHandle.new(e2transform));
+  globalObjectStack.stack:push(__sunaba_core_StackHandle.new(e3transform));
+  globalObjectStack.stack:push(__sunaba_core_StackHandle.new(camera));
+  globalObjectStack.stack:push(__sunaba_core_StackHandle.new(e4transform));
+  globalObjectStack.stack:push(__sunaba_core_StackHandle.new(e4mesh));
+  globalObjectStack.stack:push(__sunaba_core_StackHandle.new(e4box));
+  globalObjectStack.stack:push(__sunaba_core_StackHandle.new(rotateComponent.component));
+  globalObjectStack.stack:push(__sunaba_core_StackHandle.new(rotateComponent));
   local _hx_status, _hx_result = pcall(function() 
   
       Main.printScene(scene);
@@ -1513,6 +1533,26 @@ end
 
 __sunaba_core_Behavior.prototype.__class__ =  __sunaba_core_Behavior
 
+__sunaba_core_GlobalObjectStack.new = function() 
+  local self = _hx_new(__sunaba_core_GlobalObjectStack.prototype)
+  __sunaba_core_GlobalObjectStack.super(self)
+  return self
+end
+__sunaba_core_GlobalObjectStack.super = function(self) 
+  self.stack = _hx_tab_array({}, 0);
+end
+__sunaba_core_GlobalObjectStack.__name__ = "sunaba.core.GlobalObjectStack"
+__sunaba_core_GlobalObjectStack.getSingleton = function() 
+  do return _G.globalObjectStack end;
+end
+__sunaba_core_GlobalObjectStack.initSingleton = function() 
+  local singleton = __sunaba_core_GlobalObjectStack.new();
+  _G.globalObjectStack = singleton;
+end
+__sunaba_core_GlobalObjectStack.prototype = _hx_e();
+
+__sunaba_core_GlobalObjectStack.prototype.__class__ =  __sunaba_core_GlobalObjectStack
+
 __sunaba_core_ObjectUtils.new = {}
 __sunaba_core_ObjectUtils.__name__ = "sunaba.core.ObjectUtils"
 __sunaba_core_ObjectUtils.castObjectAs_getComponent_T = function(_type,object) 
@@ -1739,6 +1779,19 @@ end
 __sunaba_core__Quaternion_Quaternion_Impl_.toString = function(v) 
   do return v.tostring() end;
 end
+
+__sunaba_core_StackHandle.new = function(object) 
+  local self = _hx_new(__sunaba_core_StackHandle.prototype)
+  __sunaba_core_StackHandle.super(self,object)
+  return self
+end
+__sunaba_core_StackHandle.super = function(self,object) 
+  self.object = object;
+end
+__sunaba_core_StackHandle.__name__ = "sunaba.core.StackHandle"
+__sunaba_core_StackHandle.prototype = _hx_e();
+
+__sunaba_core_StackHandle.prototype.__class__ =  __sunaba_core_StackHandle
 
 __sunaba_core__Vector2_Vector2_Impl_.new = {}
 __sunaba_core__Vector2_Vector2_Impl_.__name__ = "sunaba.core._Vector2.Vector2_Impl_"
