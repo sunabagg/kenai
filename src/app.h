@@ -31,7 +31,7 @@ namespace sunaba
         void _process(double delta) override;
         void start( const String &path );
 
-        sunaba::core::Scene* createScene();
+        sunaba::core::SceneReference createScene();
     };
 }
 

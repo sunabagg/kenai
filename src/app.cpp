@@ -151,10 +151,10 @@ void App::_process(double delta) {
     global_state.collect_garbage();
 }
 
-Scene* App::createScene() {
+SceneReference App::createScene() {
     auto sceneNode = memnew( SceneNode );
     auto scene = sceneNode->getScene();
     add_child(sceneNode);
     scene->viewport = get_viewport();
-    return scene;
+    return SceneReference(scene);
 }
