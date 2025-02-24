@@ -8,6 +8,10 @@ cmake-build-release/*
 cmake-build-relwithdebinfo/*
 sunaba-build/*
 sunaba-install/*
+sunaba-build-web/*
+sunaba-install-web/*
+sunaba-web-build/*
+sunaba-web-install/*
 out/*
 .vs/*
 vcpkg_installed/*

@@ -9,6 +9,11 @@ cmake_minimum_required ( VERSION 2.8 )
 include ( cmake/dist.cmake )
 include ( lua )
 
+if (EMSCRIPTEN)
+    set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wno-error=macro-redefined")
+    set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wno-error=implicit-function-declaration")
+endif()
+
 ## CONFIGURATION
 # Default configuration (we assume POSIX by default)
 set ( LUA_PATH "LUA_PATH" CACHE STRING "Environment variable to use as package.path." )

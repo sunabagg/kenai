@@ -107,12 +107,20 @@ Everything in the `support_files` directory is copied into your extension, so if
 
 Here's an example of how to build & install a release version (use the terminal to run the following commands in the parent directory of this repo):
 
-#### Not MSVC
+#### Not MSVC or Emscripten
 
 ```sh
 $ cmake -B sunaba-build -DCMAKE_BUILD_TYPE=Release -DCMAKE_INSTALL_PREFIX=sunaba-install sunaba
 $ cmake --build sunaba-build --parallel
 $ cmake --install sunaba-build
+```
+
+#### Emscripten
+
+```sh
+$ emcmake cmake -B sunaba-build-web -S . -DCMAKE_BUILD_TYPE=Release -DCMAKE_INSTALL_PREFIX=sunaba-install-web
+$ cmake --build sunaba-build-web --parallel
+$ cmake --install sunaba-build-web
 ```
 
 #### MSVC

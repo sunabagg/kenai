@@ -75,6 +75,10 @@ static void setprogdir (lua_State *L);
   #include <sys/sysctl.h>
 #endif
 
+#if defined(__EMSCRIPTEN__)
+#define getpid() 1  // Dummy implementation for Emscripten
+#endif
+
 static void setprogdir(lua_State *L) {
   char progdir[_PATH_MAX + 1];
   char *lb;

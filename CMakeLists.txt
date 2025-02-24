@@ -138,7 +138,31 @@ endif()
 set( GODOT_CPP_SYSTEM_HEADERS ON CACHE BOOL "" FORCE )
 
 add_subdirectory( extern/godot-cpp )
-if ( NOT MSVC )
+if (EMSCRIPTEN)
+    target_compile_options( ${PROJECT_NAME}
+        PUBLIC
+        -sSIDE_MODULE=2#not sure if this had some effect
+        -sSUPPORT_LONGJMP=emscripten#fixed exception handling related errors
+        -flto=full#fixed lto errors
+        -pthread#fixed shared memory errors
+        #removed -fno-exceptions
+    )
+
+    target_link_options( ${PROJECT_NAME}
+        INTERFACE
+        -sWASM_BIGINT
+        -sSUPPORT_LONGJMP=emscripten#same stuff here
+        -fvisibility=hidden
+        -shared
+        -flto=full
+        -pthread
+    )
+
+    set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wno-error=macro-redefined")
+    set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wno-error=implicit-function-declaration")
+endif()
+
+if ( GCC OR CLANG )
     # Add this before the add_subdirectory( extern/quickjs ) line
     set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wno-error=pedantic -Wno-error=cast-function-type")
 
@@ -156,7 +180,8 @@ if ( NOT MSVC )
     set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wno-error=comment")
     set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wno-error=array-bounds")
     set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -g")
-else ()
+endif()
+if ( MSVC )
     # Add this line to disable treating warnings as errors
     set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} /wd4244")
 
@@ -234,12 +259,6 @@ if (USE_LUAJIT)
     endif()
 else()
     add_subdirectory( extern/lua-5.1.5 )
-    
-    if ( NOT MSVC)
-        target_compile_options(liblua_static PRIVATE -include ${CMAKE_SOURCE_DIR}/extern/lua-5.1.5/include/lua51_prefix.h)
-    else()
-        target_include_directories(liblua_static PRIVATE ${CMAKE_SOURCE_DIR}/extern/lua-5.1.5/include/lua51_prefix.h)
-    endif ()
 endif()
 
 # For anyone on MSVC having issues with 'lua51.lib' copy it to the build directory,
@@ -257,8 +276,7 @@ else() #
     include_directories ( ${CMAKE_SOURCE_DIR}/extern/lua-5.1.5/src )
 endif()
 
-find_path(PORTABLE_FILE_DIALOGS_INCLUDE_DIRS "portable-file-dialogs.h")
-target_include_directories(${PROJECT_NAME} PRIVATE ${PORTABLE_FILE_DIALOGS_INCLUDE_DIRS})
+target_include_directories(${PROJECT_NAME} PRIVATE extern/portable-file-dialogs )
 
 # Find the sol2 package
 add_subdirectory( extern/sol2 )
