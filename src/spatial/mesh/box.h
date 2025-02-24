@@ -66,6 +66,14 @@ namespace sunaba::spatial::mesh {
            
         }
     };
+
+    class BoxReference : public ComponentReference, public NativeReference<Box> {
+    public:
+        using NativeReference<Box>::NativeReference;
+
+        BoxReference() : NativeReference<Box>(new Box()) {}
+        BoxReference(Box* p_ptr) : ComponentReference(p_ptr) {}
+    };
 }
 
 #endif // BOX_H
