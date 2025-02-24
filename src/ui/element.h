@@ -58,6 +58,15 @@ namespace sunaba::ui {
             return findE(name_array, 0);
         }
 
+        template<typename T>
+        T* findT(const std::string& name) {
+            Element* found = find(name);
+            if (found != nullptr) {
+                return static_cast<T*>(found);
+            }
+            return nullptr;
+        }
+
         Element() {
             node = new Node();
             node->set_name("Element");
