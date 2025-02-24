@@ -60,5 +60,13 @@ namespace sunaba::spatial::mesh {
             }
         }
     };
+
+    class CapsuleReference : public ComponentReference, public NativeReference<Capsule> {
+    public:
+        using NativeReference<Capsule>::NativeReference;
+
+        CapsuleReference() : NativeReference<Capsule>(new Capsule()) {}
+        CapsuleReference(Capsule* p_ptr) : ComponentReference(p_ptr) {}
+    };
 }
 #endif // CAPSULE_H
