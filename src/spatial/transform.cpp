@@ -78,7 +78,7 @@ namespace sunaba::spatial {
                 return NativeReference<SpatialTransform>(s)->isTopLevel();
             }),
             "forceUpdate", [](SpatialTransformReference& s) {
-                NativeReference<SpatialTransform>(s)->forceUpdate();
+                NativeReference<SpatialTransform>(s)->forceUpdate(); 
             },
             "getParent", [](SpatialTransformReference& s) {
                 return NativeReference<SpatialTransform>(s)->getParentTransform();
