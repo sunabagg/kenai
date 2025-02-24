@@ -132,6 +132,30 @@ namespace sunaba::ui {
         void setZIndex(int index) {
             canvas_item->set_z_index(index);
         }
+
+        void drawAnimationSlice(float animationLength, float sliceBegin, float sliceEnd, float offset = 0.0f) {
+            canvas_item->draw_animation_slice(animationLength, sliceBegin, sliceEnd, offset);
+        }
+
+        void drawArc(Vector2 center, float radius, float startAngle, float endAngle, int pointCount, Color color, float width = 1.0f, bool antiAliased = false) {
+            canvas_item->draw_arc(center, radius, startAngle, endAngle, pointCount, color, width, antiAliased);
+        }
+        
+        void drawCircle(Vector2 center, float radius, Color color, float width = 1.0f, bool antiAliased = false) {
+            canvas_item->draw_circle(center, radius, color, width, antiAliased);
+        }
+
+        /*void drawColoredPolygon(const std::vector<Vector2>& points,  Color color, const std::vector<Vector2> uvs, ) {
+            PackedVector2Array pointArray;
+            for (const auto& point : points) {
+                pointArray.push_back(point);
+            }
+            PackedVector2Array uvArray;
+            for (const auto& uv : uvs) {
+                uvArray.push_back(uv);
+            }
+            canvas_item->draw_colored_polygon(pointArray, radius, color, uvArray);
+        }*/
     };
 }
 
