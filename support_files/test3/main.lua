@@ -202,6 +202,7 @@ __lua_UserData = _hx_e()
 __lua_Thread = _hx_e()
 __sunaba_core__Basis_Basis_Impl_ = _hx_e()
 __sunaba_core_Behavior = _hx_e()
+__sunaba_core_ComponentBinder = _hx_e()
 __sunaba_core_ObjectUtils = _hx_e()
 __sunaba_core__Quaternion_Quaternion_Impl_ = _hx_e()
 __sunaba_core__Vector2_Vector2_Impl_ = _hx_e()
@@ -565,24 +566,32 @@ Main.main = function()
   local entity1 = Entity.new();
   entity1.name = "Entity1";
   local e1transform = SpatialTransform.new();
+  e1transform:setScriptType(SpatialTransform);
+  e1transform:setScriptInstance(e1transform);
   entity1:addComponent(e1transform, __sunaba_core_ObjectUtils.getName(SpatialTransform));
   scene:addEntity(entity1);
   e1transform.position = __sunaba_core__Vector3_Vector3_Impl_._new(1, 2, 3);
   local child1 = Entity.new();
   child1.name = "Child1";
   local c1transform = SpatialTransform.new();
+  c1transform:setScriptType(SpatialTransform);
+  c1transform:setScriptInstance(c1transform);
   child1:addComponent(c1transform, __sunaba_core_ObjectUtils.getName(SpatialTransform));
   entity1:addChild(child1);
   c1transform.position = __sunaba_core__Vector3_Vector3_Impl_._new(4, 5, 6);
   local entity2 = Entity.new();
   entity2.name = "Entity2";
   local e2transform = SpatialTransform.new();
+  e2transform:setScriptType(SpatialTransform);
+  e2transform:setScriptInstance(e2transform);
   entity2:addComponent(e2transform, __sunaba_core_ObjectUtils.getName(SpatialTransform));
   scene:addEntity(entity2);
   e2transform.position = __sunaba_core__Vector3_Vector3_Impl_._new(7, 8, 9);
   local entity3 = Entity.new();
   entity3.name = "Camera";
   local e3transform = SpatialTransform.new();
+  e3transform:setScriptType(SpatialTransform);
+  e3transform:setScriptInstance(e3transform);
   entity3:addComponent(e3transform, __sunaba_core_ObjectUtils.getName(SpatialTransform));
   local camera = Camera.new();
   entity3:addComponent(camera, __sunaba_core_ObjectUtils.getName(Camera));
@@ -591,10 +600,16 @@ Main.main = function()
   local entity4 = Entity.new();
   entity4.name = "Box";
   local e4transform = SpatialTransform.new();
+  e4transform:setScriptType(SpatialTransform);
+  e4transform:setScriptInstance(e4transform);
   entity4:addComponent(e4transform, __sunaba_core_ObjectUtils.getName(SpatialTransform));
   local e4mesh = MeshRenderer.new();
+  e4mesh:setScriptType(MeshRenderer);
+  e4mesh:setScriptInstance(e4mesh);
   entity4:addComponent(e4mesh, __sunaba_core_ObjectUtils.getName(MeshRenderer));
   local e4box = Box.new();
+  e4box:setScriptType(Box);
+  e4box:setScriptInstance(e4box);
   entity4:addComponent(e4box, __sunaba_core_ObjectUtils.getName(Box));
   e4box.size = __sunaba_core__Vector3_Vector3_Impl_._new(1, 1, 1);
   local rotateComponent = __support_files_test3_src_RotateComponent.new();
@@ -1422,7 +1437,7 @@ __sunaba_core_Behavior.prototype = _hx_e();
 __sunaba_core_Behavior.prototype.getComponent_sunaba_spatial_SpatialTransform = function(self,type,entity) 
   if (entity == nil) then 
     entity = self.component.entity;
-    __haxe_Log.trace("Entity is null, using this.component.entity", _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="sunaba/core/Behavior.hx",lineNumber=55,className="sunaba.core.Behavior",methodName="getComponent"}));
+    __haxe_Log.trace("Entity is null, using this.component.entity", _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="sunaba/core/Behavior.hx",lineNumber=59,className="sunaba.core.Behavior",methodName="getComponent"}));
   end;
   local behaviorType = type;
   if (__sunaba_core_ObjectUtils.typeInheritsFrom(type, __sunaba_core_Behavior)) then 
@@ -1447,11 +1462,15 @@ __sunaba_core_Behavior.prototype.getComponent_sunaba_spatial_SpatialTransform = 
 end
 __sunaba_core_Behavior.prototype.onInit = function(self) 
 end
+__sunaba_core_Behavior.prototype.onEnterTree = function(self) 
+end
 __sunaba_core_Behavior.prototype.onReady = function(self) 
 end
 __sunaba_core_Behavior.prototype.onUpdate = function(self,deltaTime) 
 end
 __sunaba_core_Behavior.prototype.onPhysicsUpdate = function(self,delatTime) 
+end
+__sunaba_core_Behavior.prototype.onExitTree = function(self) 
 end
 __sunaba_core_Behavior.prototype.getComponentNG = function(self,type,entity) 
   if (entity == nil) then 
@@ -1512,6 +1531,37 @@ __sunaba_core_Behavior.prototype.removeComponent = function(self,type,entity)
 end
 
 __sunaba_core_Behavior.prototype.__class__ =  __sunaba_core_Behavior
+
+__sunaba_core_ComponentBinder.new = function(c) 
+  local self = _hx_new(__sunaba_core_ComponentBinder.prototype)
+  __sunaba_core_ComponentBinder.super(self,c)
+  return self
+end
+__sunaba_core_ComponentBinder.super = function(self,c) 
+  self.component = c;
+end
+__sunaba_core_ComponentBinder.__name__ = "sunaba.core.ComponentBinder"
+__sunaba_core_ComponentBinder.prototype = _hx_e();
+__sunaba_core_ComponentBinder.prototype.onInit = function(self) 
+  self.component:onInit();
+end
+__sunaba_core_ComponentBinder.prototype.onEnterTree = function(self) 
+  self.component:onEnterTree();
+end
+__sunaba_core_ComponentBinder.prototype.onReady = function(self) 
+  self.component:onReady();
+end
+__sunaba_core_ComponentBinder.prototype.onUpdate = function(self,deltaTime) 
+  self.component:onUpdate(deltaTime);
+end
+__sunaba_core_ComponentBinder.prototype.onPhysicsUpdate = function(self,deltaTime) 
+  self.component:onPhysicsUpdate(deltaTime);
+end
+__sunaba_core_ComponentBinder.prototype.onExitTree = function(self) 
+  self.component:onExitTree();
+end
+
+__sunaba_core_ComponentBinder.prototype.__class__ =  __sunaba_core_ComponentBinder
 
 __sunaba_core_ObjectUtils.new = {}
 __sunaba_core_ObjectUtils.__name__ = "sunaba.core.ObjectUtils"

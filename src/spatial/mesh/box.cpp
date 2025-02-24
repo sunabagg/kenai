@@ -25,6 +25,12 @@ void sunaba::spatial::mesh::bindBox(sol::state& lua) {
         }, [](BoxReference& b, int width) {
             NativeReference<Box>(b)->setSubdivideWidth(width);
         }),
+        "onInit", [](BoxReference& b) {
+            return NativeReference<Box>(b)->onInit();
+        },
+        "onFree", [](BoxReference& b) {
+            return NativeReference<Box>(b)->onFree();
+        },
         "getFromEntity", [](EntityReference& e) {
             return new BoxReference(
                 NativeReference<Entity>(e)->getComponentByT<Box>()

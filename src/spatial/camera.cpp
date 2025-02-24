@@ -113,6 +113,12 @@ namespace sunaba::spatial
             "unprojectPosition", [](CameraReference& c, Vector3 position) {
                 return NativeReference<Camera>(c)->unprojectPosition(position);
             },
+            "onInit", [](CameraReference& c) {
+                NativeReference<Camera>(c)->onInit();
+            },
+            "onReady", [](CameraReference& c) {
+                NativeReference<Camera>(c)->onReady();
+            },
             "getFromEntity", [](EntityReference& e) {
                 return new CameraReference(
                     NativeReference<Entity>(e)->getComponentByT<Camera>()

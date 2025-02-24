@@ -154,6 +154,12 @@ namespace sunaba::spatial {
                     NativeReference<Entity>(entity)->getComponentByT<SpatialTransform>()
                 );
              },
+             "onInit", [](SpatialTransformReference& s) { 
+                NativeReference<SpatialTransform>(s)->onInit(); 
+             },
+            "onFree", [](SpatialTransformReference& s) { 
+                NativeReference<SpatialTransform>(s)->onFree(); 
+            },
              "cast", [](ComponentReference component) { 
                 return SpatialTransformReference(
                     static_cast<SpatialTransform*>(NativeReference<Component>(component).ptr)

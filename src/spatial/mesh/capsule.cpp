@@ -25,6 +25,12 @@ void sunaba::spatial::mesh::bindCapsule(sol::state& lua) {
         }, [](CapsuleReference& c, float radius) {
             NativeReference<Capsule>(c)->setRadius(radius);
         }),
+        "onInit", [](CapsuleReference& c) {
+            return NativeReference<Capsule>(c)->onInit();
+        },
+        "onFree", [](CapsuleReference& c) {
+            return NativeReference<Capsule>(c)->onFree();
+        },
         "getFromEntity", [](EntityReference& e) {
             return new CapsuleReference(
                 NativeReference<Entity>(e)->getComponentByT<Capsule>()

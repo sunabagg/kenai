@@ -32,6 +32,12 @@ void sunaba::spatial::mesh::bindMeshRenderer(sol::state& lua) {
         "setBlendShapeValue", [](MeshRendererReference& m, int index, float value) {
             return NativeReference<MeshRenderer>(m)->setBlendShapeValue(index, value);
         },
+        "onInit", [](MeshRendererReference& m) {
+            return NativeReference<MeshRenderer>(m)->onInit();
+        },
+        "onFree", [](MeshRendererReference& m) {
+            return NativeReference<MeshRenderer>(m)->onFree();
+        },
         "getFromEntity", [](EntityReference& e) {
             return new MeshRendererReference(
                 NativeReference<Entity>(e)->getComponentByT<MeshRenderer>()

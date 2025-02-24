@@ -18,11 +18,15 @@ class Behavior {
 
     public function onInit() : Void {}
 
+    public function onEnterTree() : Void {}
+
     public function onReady() : Void {}
 
     public function onUpdate(deltaTime : Float) : Void {}
 
     public function onPhysicsUpdate(delatTime : Float) : Void {}
+
+    public function onExitTree() : Void {}
 
     public function getComponentNG(type : Any, entity : Entity = null) {
         if (entity == null) {
@@ -128,6 +132,8 @@ class Behavior {
         var compType : Class<Component> = cast type;
         if (compType != null) {
             var component : Component = Type.createInstance(compType, []);
+            component.setScriptType(type);
+            component.setScriptInstance(new ComponentBinder(component));
             this.component.entity.addComponent(component, Type.getClassName(compType));
             return cast component;
         }

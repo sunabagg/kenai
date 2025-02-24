@@ -30,6 +30,12 @@ void sunaba::spatial::mesh::bindSphere(sol::state& lua) {
         }, [](SphereReference& s, float radius) {
             NativeReference<Sphere>(s)->setRadius(radius);
         }),
+        "onInit", [](SphereReference& s) {
+            NativeReference<Sphere>(s)->onInit();
+        },
+        "onFree", [](SphereReference& s) {
+            NativeReference<Sphere>(s)->onFree();
+        },
         "getFromEntity", [](EntityReference& e) {
             return new SphereReference(
                 NativeReference<Entity>(e)->getComponentByT<Sphere>()
