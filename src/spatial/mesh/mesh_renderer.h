@@ -86,6 +86,15 @@ namespace sunaba::spatial::mesh
             }
         }
     };
+
+    class MeshRendererReference : public ComponentReference, public NativeReference<MeshRenderer>
+    {
+    public:
+        using NativeReference<MeshRenderer>::NativeReference;
+
+        MeshRendererReference() : NativeReference<MeshRenderer>(new MeshRenderer()) {}
+        MeshRendererReference(MeshRenderer* p_ptr) : NativeReference<MeshRenderer>(p_ptr) {}
+    };
 }
 
 
