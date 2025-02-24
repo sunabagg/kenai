@@ -181,6 +181,14 @@ namespace sunaba::spatial {
             }
         }
     };
+
+    class CameraReference : public ComponentReference, public NativeReference<Camera> {
+    public:
+        using NativeReference<Camera>::NativeReference;
+
+        CameraReference() : NativeReference<Camera>(new Camera()) {}
+        CameraReference(Camera* p_ptr) : ComponentReference(p_ptr) {}
+    };
 }
 
 #endif
