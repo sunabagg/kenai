@@ -66,6 +66,14 @@ namespace sunaba::spatial::mesh {
             sphereMesh = nullptr;
         }
     };
+
+    class SphereReference : public ComponentReference, public NativeReference<Sphere> {
+    public:
+        using NativeReference<Sphere>::NativeReference;
+
+        SphereReference() : NativeReference<Sphere>(new Sphere()) {}
+        SphereReference(Sphere* p_ptr) : ComponentReference(p_ptr) {}
+    };
 }
 
 #endif
