@@ -87,7 +87,7 @@ namespace sunaba::spatial::mesh
         }
     };
 
-    class MeshRendererReference : public ComponentReference, public NativeReference<MeshRenderer>
+    class MeshRendererReference : public IGeometryInstanceReference, public NativeReference<MeshRenderer>
     {
     public:
         using NativeReference<MeshRenderer>::NativeReference;
