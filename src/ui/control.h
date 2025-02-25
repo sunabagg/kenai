@@ -14,12 +14,14 @@ namespace sunaba::ui {
     private:
         ControlNode* control = nullptr; // Pointer to the Control instance
     protected:
+        Element* shortcutContextElement = nullptr; // Pointer to the shortcut context element
+    public:
+
         // Constructor with Node* parameter
         Control(ControlNode* p_node) : CanvasItem(p_node), control(p_node) {
             onInit();
         }
-    
-    public:
+
         // Constructor with no parameters
         Control() : CanvasItem(new ControlNode()) {
             control = static_cast<ControlNode*>(getNode());
@@ -235,6 +237,61 @@ namespace sunaba::ui {
 
         void setOffsetTop(float offset_top) {
             control->set_offset(godot::Side::SIDE_TOP, offset_top);
+        }
+
+        Vector2 getPivotOffset() {
+            return control->get_pivot_offset();
+        }
+
+        void setPivotOffset(Vector2 offset) {
+            control->set_pivot_offset(offset);
+        }
+
+        Vector2 getPosition() {
+            return control->get_position();
+        }
+
+        void setPosition(Vector2 position) {
+            control->set_position(position);
+        }
+
+        float getRotation() {
+            return control->get_rotation();
+        }
+
+        void setRotation(float rotation) {
+            control->set_rotation(rotation);
+        }
+
+        float getRotationDegrees() {
+            return control->get_rotation_degrees();
+        }
+
+        void setRotationDegrees(float rotation) {
+            control->set_rotation_degrees(rotation);
+        }
+
+        Vector2 getScale() {
+            return control->get_scale();
+        }
+
+        void setScale(Vector2 scale) {
+            control->set_scale(scale);
+        }
+
+        Element* getShortcutContextElement() {
+            if (!shortcutContextElement) {
+                shortcutContextElement = new Element(control->get_shortcut_context());
+            }
+            
+            return shortcutContextElement;
+        }
+
+        
+
+        void setShortcutContextElement(Element* element) {
+            shortcutContextElement = element;
+            control->set_shortcut_context(element->getNode());
         }
     };
 }

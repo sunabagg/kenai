@@ -19,11 +19,6 @@ namespace sunaba::ui {
         std::vector<Element*> children; // List of child elements
         Element* parent = nullptr; // Pointer to the parent element
     protected:
-        // Protected constructor to prevent direct instantiation
-        Element(Node* p_node) : node(p_node) {
-            onInit();
-        }
-
         void setParent(Element* p_parent) {
             parent = p_parent;
             if (node != nullptr && p_parent != nullptr && p_parent->getNode() != nullptr) {
@@ -32,6 +27,11 @@ namespace sunaba::ui {
             }
         }
     public:
+        // Protected constructor to prevent direct instantiation
+        Element(Node* p_node) : node(p_node) {
+            onInit();
+        }
+
         Element* findE(PackedStringArray & p_array, int p_index) {
             if (p_index >= 0 && p_index < p_array.size()) {
                 String name = p_array[p_index];
