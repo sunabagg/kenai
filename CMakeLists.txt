@@ -218,12 +218,8 @@ if ( MSVC )
     set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} /wd4238")
 
     set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} /wd4239")
-    #C4459
+
     set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} /wd4101")
-
-    set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} /wd4459")
-
-    set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} /wd4127")
 
     # sets the fsanitize flags
     #set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} /fsanitize=address")
@@ -303,22 +299,21 @@ target_include_directories(${PROJECT_NAME} PRIVATE extern/portable-file-dialogs 
 # Find the sol2 package
 add_subdirectory( extern/sol2 )
 
-include_directories( ${CMAKE_SOURCE_DIR}/extern/hx-lua-simdjson/src )
-
-add_library( hxsimdjson STATIC 
+set(SIMDJSON_SOURCES
     extern/hx-lua-simdjson/src/hxluasimdjson.cpp
-    extern/hx-lua-simdjson/src/simdjson.cpp 
+    extern/hx-lua-simdjson/src/simdjson.cpp
 )
 
-# Find pthread (needed for simdjson)
-find_package(Threads REQUIRED)
+include_directories( ${CMAKE_SOURCE_DIR}/extern/hx-lua-simdjson/src )
+
+add_library( hxsimdjson STATIC ${SIMDJSON_SOURCES} )
+
 
 # Link the libraries
 if (USE_LUAJIT)
     target_link_libraries( hxsimdjson
         PRIVATE
             ${LUAJIT_LIBRARIES}
-            Threads::Threads
     )
     target_link_libraries(${PROJECT_NAME}
             PRIVATE
@@ -332,7 +327,6 @@ else()
     target_link_libraries( hxsimdjson
         PRIVATE
             liblua_static
-            Threads::Threads
     )
     target_link_libraries(${PROJECT_NAME}
             PRIVATE

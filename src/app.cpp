@@ -14,9 +14,7 @@
 #include "core/io/file_system_io.h"
 #include "core/io/io_index.h"
 #include "spatial/bind_spatial_classes.h"
-//#include <hxluasimdjson.h>
-#include <hxluasimdjson.cpp>
-#include <simdjson.cpp>
+#include <hxluasimdjson.h>
 
 using namespace sunaba;
 using namespace sunaba::core;
@@ -127,6 +125,13 @@ void App::start( const String &path) {
 
     // Register hx-lua-simdjson module
     global_state.require("hx_lua_simdjson", luaopen_hxsimdjson, false);
+
+    // Parse JSON using hx-lua-simdjson
+    global_state.script(R"(
+        local json = require("hx_lua_simdjson")
+        local result = json.parse('{"key": "value"}')
+        print("Parsed JSON key:", result.key)
+    )");
 
     ioManager = new IoManager();
     IoIndex::bindIoManger(global_state, ioManager);
