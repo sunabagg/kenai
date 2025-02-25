@@ -93,6 +93,62 @@ namespace sunaba::ui {
             control->set_focus_mode(static_cast<ControlNode::FocusMode>(mode));
         }
 
+        std::string getFocusNeighborBottom() {
+            return String(control->get_focus_neighbor(godot::Side::SIDE_BOTTOM).get_concatenated_names()).utf8().get_data();
+        }
+
+        void setFocusNeighborBottom(std::string name) {
+            control->set_focus_neighbor(godot::Side::SIDE_BOTTOM, NodePath(name.c_str()));
+        }
+
+        std::string getFocusNeighborLeft() {
+            return String(control->get_focus_neighbor(godot::Side::SIDE_LEFT).get_concatenated_names()).utf8().get_data();
+        }
+
+        void setFocusNeighborLeft(std::string name) {
+            control->set_focus_neighbor(godot::Side::SIDE_LEFT, NodePath(name.c_str()));
+        }
+
+        std::string getFocusNeighborRight() {
+            return String(control->get_focus_neighbor(godot::Side::SIDE_RIGHT).get_concatenated_names()).utf8().get_data();
+        }
+
+        void setFocusNeighborRight(std::string name) {
+            control->set_focus_neighbor(godot::Side::SIDE_RIGHT, NodePath(name.c_str()));
+        }
+
+        std::string getFocusNeighborTop() {
+            return String(control->get_focus_neighbor(godot::Side::SIDE_TOP).get_concatenated_names()).utf8().get_data();
+        }
+
+        void setFocusNeighborTop(std::string name) {
+            control->set_focus_neighbor(godot::Side::SIDE_TOP, NodePath(name.c_str()));
+        }
+
+        std::string getFoucsNext() {
+            return String(control->get_focus_next().get_concatenated_names()).utf8().get_data();
+        }
+
+        void setFocusNext(std::string name) {
+            control->set_focus_next(NodePath(name.c_str()));
+        }
+        
+        std::string getFocusPrevious() {
+            return String(control->get_focus_previous().get_concatenated_names()).utf8().get_data();
+        }
+
+        void setFocusPrevious(std::string name) {
+            control->set_focus_previous(NodePath(name.c_str()));
+        }
+
+        Vector2 getGlobalPosition() {
+            return control->get_global_position();
+        }
+
+        void setGlobalPosition(Vector2 position) {
+            control->set_global_position(position);
+        }
+
         
     };
 }
