@@ -68,6 +68,32 @@ namespace sunaba::ui {
         void setAnchorTop(float anchor_top) {
             control->set_anchor(godot::Side::SIDE_TOP, anchor_top);
         }
+
+        bool isClipContentsEnabled() {
+            return control->is_clipping_contents();
+        }
+
+        void setClipContents(bool enabled) {
+            control->set_clip_contents(enabled);
+        }
+
+        Vector2 getCustomMinimumSize() {
+            return control->get_custom_minimum_size();
+        }
+
+        void setCustomMinimumSize(Vector2 size) {
+            control->set_custom_minimum_size(size);
+        }
+
+        int getFocusMode() {
+            return control->get_focus_mode();
+        }
+
+        void setFocusMode(int mode) {
+            control->set_focus_mode(static_cast<ControlNode::FocusMode>(mode));
+        }
+
+        
     };
 }
 
