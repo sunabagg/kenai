@@ -338,6 +338,18 @@ namespace sunaba::ui {
         
         void setTooltipText(std::string text) {
             control->set_tooltip_text(text.c_str());
+        } 
+
+        void acceptEvent() {
+            control->accept_event();
+        }
+
+        void beginBulkThemeOverride() {
+            control->begin_bulk_theme_override();
+        }
+
+        void endBulkThemeOverride() {
+            control->end_bulk_theme_override();
         }
     };
 }
