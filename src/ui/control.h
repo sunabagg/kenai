@@ -36,6 +36,38 @@ namespace sunaba::ui {
             control = p_node;
             setNode(control);
         }
+
+        float getAnchorBottom() {
+            return control->get_anchor(godot::Side::SIDE_BOTTOM);
+        }
+
+        void setAnchorBottom(float anchor_bottom) {
+            control->set_anchor(godot::Side::SIDE_BOTTOM, anchor_bottom);
+        }
+
+        float getAnchorLeft() {
+            return control->get_anchor(godot::Side::SIDE_LEFT);
+        }
+
+        void setAnchorLeft(float anchor_left) {
+            control->set_anchor(godot::Side::SIDE_LEFT, anchor_left);
+        }
+
+        float getAnchorRight() {
+            return control->get_anchor(godot::Side::SIDE_RIGHT);
+        }
+
+        void setAnchorRight(float anchor_right) {
+            control->set_anchor(godot::Side::SIDE_RIGHT, anchor_right);
+        }
+
+        float getAnchorTop() {
+            return control->get_anchor(godot::Side::SIDE_TOP);
+        }
+
+        void setAnchorTop(float anchor_top) {
+            control->set_anchor(godot::Side::SIDE_TOP, anchor_top);
+        }
     };
 }
 
