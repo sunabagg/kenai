@@ -291,6 +291,54 @@ namespace sunaba::ui {
             shortcutContextElement = element;
             control->set_shortcut_context(element->getNode());
         }
+
+        Vector2 getSize() {
+            return control->get_size();
+        }
+
+        void setSize(Vector2 size) {
+            control->set_size(size);
+        }
+
+        int getSizeFlagsHorizontal() {
+            return control->get_h_size_flags();
+        }
+
+        void setSizeFlagsHorizontal(int flags) {
+            control->set_h_size_flags(static_cast<ControlNode::SizeFlags>(flags));
+        }
+
+        int getSizeFlagsVertical() {
+            return control->get_v_size_flags();
+        }
+
+        void setSizeFlagsVertical(int flags) {
+            control->set_v_size_flags(static_cast<ControlNode::SizeFlags>(flags));
+        }
+
+        float getSizeFlagsStretchRatio() {
+            return control->get_stretch_ratio();
+        }
+
+        void setSizeFlagsStretchRatio(float ratio) {
+            control->set_stretch_ratio(ratio);
+        }
+
+        std::string getThemeTypeVariation() {
+            return String(control->get_theme_type_variation()).utf8().get_data();
+        }
+
+        void setThemeTypeVariation(std::string name) {
+            control->set_theme_type_variation(name.c_str());
+        }
+
+        std::string getTooltipText() {
+            return String(control->get_tooltip_text()).utf8().get_data();
+        }
+        
+        void setTooltipText(std::string text) {
+            control->set_tooltip_text(text.c_str());
+        }
     };
 }
 
