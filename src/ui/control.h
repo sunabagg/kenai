@@ -149,7 +149,21 @@ namespace sunaba::ui {
             control->set_global_position(position);
         }
 
-        
+        int getGrowHorizontal() {
+            return control->get_h_grow_direction();
+        }
+
+        void setGrowHorizontal(int direction) {
+            control->set_h_grow_direction(static_cast<ControlNode::GrowDirection>(direction));
+        }
+
+        int getGrowVertical() {
+            return control->get_v_grow_direction();
+        }
+
+        void setGrowVertical(int direction) {
+            control->set_v_grow_direction(static_cast<ControlNode::GrowDirection>(direction));
+        }
     };
 }
 
