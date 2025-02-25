@@ -287,8 +287,6 @@ namespace sunaba::ui {
             return shortcutContextElement;
         }
 
-        
-
         void setShortcutContextElement(Element* element) {
             shortcutContextElement = element;
             control->set_shortcut_context(element->getNode());
