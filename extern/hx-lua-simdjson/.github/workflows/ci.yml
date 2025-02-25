@@ -1,0 +1,66 @@
+name: CI
+
+on: [push, pull_request]
+
+jobs:
+  lua:
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [linux, macos, macos-arm64]
+        lua: [lua=5.1, lua=5.2, lua=5.3, lua=5.4, luajit=2.0, luajit=2.1]
+        include:
+        - os: linux
+          runner: ubuntu-22.04
+        - os: macos
+          runner: macos-13
+        - os: macos-arm64
+          runner: macos-14
+        exclude:
+        - os: macos-arm64
+          lua: luajit=2.0
+    name: ${{ matrix.os }} (${{ matrix.lua }})
+    runs-on: ${{ matrix.runner }}
+    steps:
+      # Checks-out the repository under $GITHUB_WORKSPACE.
+      - uses: actions/checkout@v4
+      - name: Install Lua (${{ matrix.lua }})
+        run: |
+          pip install hererocks
+          hererocks lua_install -r^ --${{ matrix.lua }}
+        env:
+          MACOSX_DEPLOYMENT_TARGET: 11.0
+      - name: Build lua-simdjson
+        run: |
+          source lua_install/bin/activate
+          luarocks make
+      # - name: Run tests
+      #   run: |
+      #     source lua_install/bin/activate
+      #     luarocks install lua-cjson2
+      #     luarocks install busted
+      #     busted --verbose
+
+  windows:
+    strategy:
+      fail-fast: false
+      matrix:
+        lua: [lua=5.1, lua=5.2, lua=5.3, lua=5.4, luajit=2.0, luajit=2.1]
+    runs-on: windows-2022
+    steps:
+      # Checks-out the repository under $GITHUB_WORKSPACE.
+      - uses: actions/checkout@v4
+      - name: Install Lua (${{ matrix.lua }})
+        run: |
+          pip install hererocks
+          hererocks lua_install -r@3a142ce --${{ matrix.lua }}
+      - name: Build lua-simdjson
+        run: |
+          .\lua_install\bin\activate
+          luarocks make
+      # - name: Run tests
+      #   run: |
+      #     .\lua_install\bin\activate
+      #     luarocks install lua-cjson2
+      #     luarocks install busted
+      #     busted --verbose
