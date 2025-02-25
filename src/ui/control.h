@@ -164,6 +164,14 @@ namespace sunaba::ui {
         void setGrowVertical(int direction) {
             control->set_v_grow_direction(static_cast<ControlNode::GrowDirection>(direction));
         }
+
+        int getLayoutDirection() {
+            return control->get_layout_direction();
+        }
+
+        void setLayoutDirection(int direction) {
+            control->set_layout_direction(static_cast<ControlNode::LayoutDirection>(direction));
+        }
     };
 }
 
