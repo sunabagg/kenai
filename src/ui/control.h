@@ -204,6 +204,38 @@ namespace sunaba::ui {
         void setForcePassScrollEvents(bool enabled) {
             control->set_force_pass_scroll_events(enabled);
         }
+
+        float getOffsetBottom() {
+            return control->get_offset(godot::Side::SIDE_BOTTOM);
+        }
+
+        void setOffsetBottom(float offset_bottom) {
+            control->set_offset(godot::Side::SIDE_BOTTOM, offset_bottom);
+        }
+
+        float getOffsetLeft() {
+            return control->get_offset(godot::Side::SIDE_LEFT);
+        }
+
+        void setOffsetLeft(float offset_left) {
+            control->set_offset(godot::Side::SIDE_LEFT, offset_left);
+        }
+
+        float getOffsetRight() {
+            return control->get_offset(godot::Side::SIDE_RIGHT);
+        }
+
+        void setOffsetRight(float offset_right) {
+            control->set_offset(godot::Side::SIDE_RIGHT, offset_right);
+        }
+
+        float getOffsetTop() {
+            return control->get_offset(godot::Side::SIDE_TOP);
+        }
+
+        void setOffsetTop(float offset_top) {
+            control->set_offset(godot::Side::SIDE_TOP, offset_top);
+        }
     };
 }
 
