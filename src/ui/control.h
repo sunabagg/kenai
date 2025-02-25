@@ -279,7 +279,7 @@ namespace sunaba::ui {
             control->set_scale(scale);
         }
 
-        Element* getShortcutContextElement() {
+        Element* getShortcutContext() {
             if (!shortcutContextElement) {
                 shortcutContextElement = new Element(control->get_shortcut_context());
             }
@@ -287,7 +287,7 @@ namespace sunaba::ui {
             return shortcutContextElement;
         }
 
-        void setShortcutContextElement(Element* element) {
+        void setShortcutContext(Element* element) {
             shortcutContextElement = element;
             control->set_shortcut_context(element->getNode());
         }
