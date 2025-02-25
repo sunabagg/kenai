@@ -1,0 +1,6 @@
+test/
+*.so
+*.dll
+*.o
+*.d
+*.src.rock
