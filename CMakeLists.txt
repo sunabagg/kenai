@@ -299,41 +299,21 @@ target_include_directories(${PROJECT_NAME} PRIVATE extern/portable-file-dialogs 
 # Find the sol2 package
 add_subdirectory( extern/sol2 )
 
-set(SIMDJSON_SOURCES
-    extern/hx-lua-simdjson/src/hxluasimdjson.cpp
-    extern/hx-lua-simdjson/src/simdjson.cpp
-)
-
-include_directories( ${CMAKE_SOURCE_DIR}/extern/hx-lua-simdjson/src )
-
-add_library( hxsimdjson STATIC ${SIMDJSON_SOURCES} )
-
-
 # Link the libraries
 if (USE_LUAJIT)
-    target_link_libraries( hxsimdjson
-        PRIVATE
-            ${LUAJIT_LIBRARIES}
-    )
     target_link_libraries(${PROJECT_NAME}
             PRIVATE
             godot-cpp
             ${LUAJIT_LIBRARIES}
             sol2
-            hxsimdjson
             #Luau.Compiler Luau.VM
     )
 else()
-    target_link_libraries( hxsimdjson
-        PRIVATE
-            liblua_static
-    )
     target_link_libraries(${PROJECT_NAME}
             PRIVATE
             godot-cpp
             liblua_static
             sol2
-            hxsimdjson
             #Luau.Compiler Luau.VM
     )
 endif()
