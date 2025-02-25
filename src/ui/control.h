@@ -172,6 +172,38 @@ namespace sunaba::ui {
         void setLayoutDirection(int direction) {
             control->set_layout_direction(static_cast<ControlNode::LayoutDirection>(direction));
         }
+
+        bool isLocalizeNumericalSystemEnabled() {
+            return control->is_localizing_numeral_system();
+        }
+
+        void setLocalizeNumericalSystem(bool enabled) {
+            control->set_localize_numeral_system(enabled);
+        }
+
+        int getDefaultCursorShape() {
+            return control->get_default_cursor_shape();
+        }
+
+        void setDefaultCursorShape(int shape) {
+            control->set_default_cursor_shape(static_cast<ControlNode::CursorShape>(shape));
+        }
+
+        int getMouseFilter() {
+            return control->get_mouse_filter();
+        }
+
+        void setMouseFilter(int filter) {
+            control->set_mouse_filter(static_cast<ControlNode::MouseFilter>(filter));
+        }
+
+        bool isForcePassScrollEventsEnabled() {
+            return control->is_force_pass_scroll_events();
+        }
+
+        void setForcePassScrollEvents(bool enabled) {
+            control->set_force_pass_scroll_events(enabled);
+        }
     };
 }
 
