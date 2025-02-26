@@ -12,6 +12,8 @@ target_sources(${PROJECT_NAME} PRIVATE
         bind_core_classes.h
         bind_core_classes.cpp
         string_utils.h
+        resource.h
+        resource.cpp
 )
 
 add_subdirectory(io)
