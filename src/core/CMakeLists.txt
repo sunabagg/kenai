@@ -14,6 +14,8 @@ target_sources(${PROJECT_NAME} PRIVATE
         string_utils.h
         resource.h
         resource.cpp
+        texture.h
+        texture.cpp
 )
 
 add_subdirectory(io)
