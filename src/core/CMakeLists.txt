@@ -1,4 +1,6 @@
 target_sources(${PROJECT_NAME} PRIVATE
+        convert_godot_lua.h
+        convert_godot_lua.cpp
         base_object.h
         base_object.cpp
         scene_system.h
@@ -16,6 +18,10 @@ target_sources(${PROJECT_NAME} PRIVATE
         resource.cpp
         texture.h
         texture.cpp
+        image.h
+        image.cpp
+        texture2d.h
+        texture2d.cpp
 )
 
 add_subdirectory(io)
