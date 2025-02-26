@@ -17,7 +17,8 @@ namespace sunaba::core {
     GodotResource* resource = nullptr; // Pointer to the Resource instance
     public:
         // Constructor with Ref<GodotResource> parameter
-        Resource(GodotResource* res) : resource(res) {
+        Resource(GodotResource* res) {
+            setResource(res);
         }
 
         // Constructor with no parameters
