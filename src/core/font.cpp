@@ -29,6 +29,6 @@ void sunaba::core::bindFont(sol::state &lua) {
         "hasChar", &sunaba::core::Font::hasChar,
         "isLanguageSupported", &sunaba::core::Font::isLanguageSupported,
         "isScriptSupported", &sunaba::core::Font::isScriptSupported,
-        "setCacheCapacity", &sunaba::core::Font::setCacheCapacity,
+        "setCacheCapacity", &sunaba::core::Font::setCacheCapacity
     );
 }

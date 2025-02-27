@@ -52,8 +52,9 @@ namespace sunaba::core {
             imageTexture->set_image(image->getImage());
         }
 
-        static ImageTexture* createFromImage(Image* image, bool generateMipmaps = false) {
-            return new ImageTexture(GodotImageTexture::create_from_image(image->getImage(), generateMipmaps));
+        static ImageTexture* createFromImage(Image* image) {
+            auto imgtxt = GodotImageTexture::create_from_image(Ref<GodotImage>(image->getImage()));
+            return new ImageTexture(imgtxt.ptr());
         }
 
         int getFormat() {
