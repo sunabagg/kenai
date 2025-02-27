@@ -24,6 +24,8 @@ target_sources(${PROJECT_NAME} PRIVATE
         texture2d.cpp
         image_texture.h
         image_texture.cpp
+        font.h
+        font.cpp
 )
 
 add_subdirectory(io)
