@@ -38,7 +38,7 @@ namespace sunaba::core {
         void setTexture2D(GodotTexture2D* tex) {
             texture2D = tex;
             texture2D->reference();
-            setResource(texture2D);
+            setTexture(texture2D);
         }
 
         Resource* createPlaceholder() {
