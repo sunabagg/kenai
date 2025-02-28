@@ -40,6 +40,8 @@ target_sources(${PROJECT_NAME} PRIVATE
         shader.cpp
         texture_layered.h
         texture_layered.cpp
+        texture_layered_rd.h
+        texture_layered_rd.cpp
 )
 
 add_subdirectory(io)
