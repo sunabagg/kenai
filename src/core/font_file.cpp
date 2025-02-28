@@ -129,6 +129,9 @@ void sunaba::core::bindFontFile(sol::state &lua) {
         "setTextureImage", &sunaba::core::FontFile::setTextureImage,
         "setTextureOffsets", &sunaba::core::FontFile::setTextureOffsets,
         "setTransform", &sunaba::core::FontFile::setTransform,
-        "setVariationCoordinates", &sunaba::core::FontFile::setVariationCoordinates
+        "setVariationCoordinates", &sunaba::core::FontFile::setVariationCoordinates,
+        "cast", [](Resource* instance) {
+            return new FontFile(static_cast<GodotFontFile*>(instance->getResource()));
+        }
     );
 }

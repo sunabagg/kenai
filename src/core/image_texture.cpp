@@ -9,6 +9,9 @@ void sunaba::core::bindImageTexture(sol::state &lua) {
             &sunaba::core::ImageTexture::setImage
         ),
         "createFromImage", &sunaba::core::ImageTexture::createFromImage,
-        "getFormat", &sunaba::core::ImageTexture::getFormat
+        "getFormat", &sunaba::core::ImageTexture::getFormat,
+        "cast", [](Resource* instance) {
+            return new ImageTexture(static_cast<GodotImageTexture*>(instance->getResource()));
+        }
     );
 }

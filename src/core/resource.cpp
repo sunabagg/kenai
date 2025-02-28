@@ -5,6 +5,9 @@ void sunaba::core::bindResource(sol::state &lua) {
         sol::constructors<sunaba::core::Resource()>(),
         sol::base_classes, sol::bases<sunaba::core::BaseObject>(),
         "duplicate", &sunaba::core::Resource::duplicate,
-        "emitChanged", &sunaba::core::Resource::emitChanged
+        "emitChanged", &sunaba::core::Resource::emitChanged,
+        "cast", [](Resource* instance) {
+            return new Resource(static_cast<GodotResource*>(instance->getResource()));
+        }
     );
 }

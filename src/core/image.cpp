@@ -58,6 +58,9 @@ void sunaba::core::bindImage(sol::state &lua) {
         "setPixel", &sunaba::core::Image::setPixel,
         "setPixelv", &sunaba::core::Image::setPixelv,
         "shrinkX2", &sunaba::core::Image::shrinkX2,
-        "srgbToLinear", &sunaba::core::Image::srgbToLinear
+        "srgbToLinear", &sunaba::core::Image::srgbToLinear,
+        "cast", [](Resource* instance) {
+            return new Image(static_cast<GodotImage*>(instance->getResource()));
+        }
     );
 }
