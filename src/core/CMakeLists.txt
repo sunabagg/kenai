@@ -36,6 +36,8 @@ target_sources(${PROJECT_NAME} PRIVATE
         animated_texture.cpp
         shader_include.h
         shader_include.cpp
+        shader.h
+        shader.cpp
 )
 
 add_subdirectory(io)
