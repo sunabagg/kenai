@@ -30,6 +30,8 @@ target_sources(${PROJECT_NAME} PRIVATE
         font_file.cpp
         font_variation.h
         font_variation.cpp
+        bit_map.h
+        bit_map.cpp
 )
 
 add_subdirectory(io)
