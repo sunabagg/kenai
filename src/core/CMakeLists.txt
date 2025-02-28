@@ -26,7 +26,8 @@ target_sources(${PROJECT_NAME} PRIVATE
         image_texture.cpp
         font.h
         font.cpp
-        #font_file.h
+        font_file.h
+        font_file.cpp
 )
 
 add_subdirectory(io)
