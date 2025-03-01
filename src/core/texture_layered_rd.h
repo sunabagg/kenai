@@ -40,6 +40,7 @@ namespace sunaba::core {
             setTextureLayered(textureLayeredRD);
         }
     };
+    
 }
 
 #endif // TEXTURE_LAYERED_RD_H

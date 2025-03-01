@@ -41,4 +41,4 @@ namespace sunaba::core {
         }
     };  
 }
-#endif
+#endif // TEXTURE_CUBEMAP_RD_H
