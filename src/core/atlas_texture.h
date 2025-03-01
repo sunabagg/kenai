@@ -46,11 +46,11 @@ namespace sunaba::core {
         }
 
         void setAtlas(Texture2D* atlas) {
-            atlasTexture->set_atlas(atlas->getTexture());
+            atlasTexture->set_atlas(Ref<GodotTexture2D>(atlas->getTexture2D()));
         }
 
         bool getFilterClip() {
-            return atlasTexture->is_filter_clip();
+            return atlasTexture->has_filter_clip();
         }
 
         void setFilterClip(bool filter) {
