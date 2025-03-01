@@ -44,6 +44,8 @@ target_sources(${PROJECT_NAME} PRIVATE
         texture_layered_rd.cpp
         texture_cubemap_rd.h
         texture_cubemap_rd.cpp
+        texture_cubemap_array_rd.h
+        texture_cubemap_array_rd.cpp
 )
 
 add_subdirectory(io)
