@@ -81,6 +81,19 @@ namespace sunaba::core {
             }
             return messageList;
         }
+
+        std::string getPluralMessage(std::string srcMessage, std::string srcPluralMessage, int n, std::string context) {
+            return String(translation->get_plural_message(String(srcMessage.c_str()), String(srcPluralMessage.c_str()), n, String(context.c_str()))).utf8().get_data();
+        }
+
+        std::vector<std::string> getTranslatedMessageList() {
+            std::vector<std::string> translatedMessageList;
+            PackedStringArray psa = translation->get_translated_message_list();
+            for (int i = 0; i < psa.size(); i++) {
+                translatedMessageList.push_back(String(psa[i]).utf8().get_data());
+            }
+            return translatedMessageList;
+        }
     };
 }
 
