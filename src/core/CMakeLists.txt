@@ -50,6 +50,8 @@ target_sources(${PROJECT_NAME} PRIVATE
         atlas_texture.cpp
         label_settings.h
         label_settings.cpp
+        texture2drd.h
+        texture2drd.cpp
 )
 
 add_subdirectory(io)
