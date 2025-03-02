@@ -48,6 +48,8 @@ target_sources(${PROJECT_NAME} PRIVATE
         texture_cubemap_array_rd.cpp
         atlas_texture.h
         atlas_texture.cpp
+        label_settings.h
+        label_settings.cpp
 )
 
 add_subdirectory(io)
