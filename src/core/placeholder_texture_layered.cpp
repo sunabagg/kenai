@@ -1,0 +1,19 @@
+#include "placeholder_texture_layered.h"
+
+void sunaba::core::bindPlaceholderTextureLayered(sol::state &lua) {
+    lua.new_usertype<sunaba::core::PlaceholderTextureLayered>("PlaceholderTextureLayered",
+        sol::constructors<sunaba::core::PlaceholderTextureLayered()>(),
+        sol::base_classes, sol::bases<sunaba::core::TextureLayered>(),
+        "layers", sol::property(
+            &sunaba::core::PlaceholderTextureLayered::getLayers,
+            &sunaba::core::PlaceholderTextureLayered::setLayers
+        ),
+        "size", sol::property(
+            &sunaba::core::PlaceholderTextureLayered::getSize,
+            &sunaba::core::PlaceholderTextureLayered::setSize
+        ),
+        "cast", [](Resource* instance) {
+            return new PlaceholderTextureLayered(static_cast<GodotPlaceholderTextureLayered*>(instance->getResource()));
+        }
+    );
+}

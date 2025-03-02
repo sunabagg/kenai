@@ -54,6 +54,8 @@ target_sources(${PROJECT_NAME} PRIVATE
         texture2drd.cpp
         placeholder_texture2d.h
         placeholder_texture2d.cpp
+        placeholder_texture_layered.h
+        placeholder_texture_layered.cpp
 )
 
 add_subdirectory(io)
