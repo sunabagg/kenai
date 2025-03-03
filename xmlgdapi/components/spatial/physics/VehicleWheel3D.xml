@@ -12,6 +12,16 @@
 			<description>
 			</description>
 		</method>
+		<method name="get_contact_normal" qualifiers="const">
+			<return type="Vector3" />
+			<description>
+			</description>
+		</method>
+		<method name="get_contact_point" qualifiers="const">
+			<return type="Vector3" />
+			<description>
+			</description>
+		</method>
 		<method name="get_rpm" qualifiers="const">
 			<return type="float" />
 			<description>

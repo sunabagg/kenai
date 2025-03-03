@@ -17,6 +17,16 @@
 			<description>
 			</description>
 		</method>
+		<method name="get_audio_listener_2d" qualifiers="const">
+			<return type="AudioListener2D" />
+			<description>
+			</description>
+		</method>
+		<method name="get_audio_listener_3d" qualifiers="const">
+			<return type="AudioListener3D" />
+			<description>
+			</description>
+		</method>
 		<method name="get_camera_2d" qualifiers="const">
 			<return type="Camera2D" />
 			<description>
@@ -66,6 +76,11 @@
 			<description>
 			</description>
 		</method>
+		<method name="get_stretch_transform" qualifiers="const">
+			<return type="Transform2D" />
+			<description>
+			</description>
+		</method>
 		<method name="get_texture" qualifiers="const">
 			<return type="ViewportTexture" />
 			<description>
@@ -78,6 +93,11 @@
 		</method>
 		<method name="get_visible_rect" qualifiers="const">
 			<return type="Rect2" />
+			<description>
+			</description>
+		</method>
+		<method name="gui_cancel_drag">
+			<return type="void" />
 			<description>
 			</description>
 		</method>
@@ -113,6 +133,16 @@
 		</method>
 		<method name="is_input_handled" qualifiers="const">
 			<return type="bool" />
+			<description>
+			</description>
+		</method>
+		<method name="notify_mouse_entered">
+			<return type="void" />
+			<description>
+			</description>
+		</method>
+		<method name="notify_mouse_exited">
+			<return type="void" />
 			<description>
 			</description>
 		</method>
@@ -168,6 +198,8 @@
 		</method>
 	</methods>
 	<members>
+		<member name="anisotropic_filtering_level" type="int" setter="set_anisotropic_filtering_level" getter="get_anisotropic_filtering_level" enum="Viewport.AnisotropicFiltering" default="2">
+		</member>
 		<member name="audio_listener_enable_2d" type="bool" setter="set_as_audio_listener_2d" getter="is_audio_listener_2d" default="false">
 		</member>
 		<member name="audio_listener_enable_3d" type="bool" setter="set_as_audio_listener_3d" getter="is_audio_listener_3d" default="false">
@@ -204,6 +236,7 @@
 		</member>
 		<member name="own_world_3d" type="bool" setter="set_use_own_world_3d" getter="is_using_own_world_3d" default="false">
 		</member>
+		<member name="physics_interpolation_mode" type="int" setter="set_physics_interpolation_mode" getter="get_physics_interpolation_mode" overrides="Node" enum="Node.PhysicsInterpolationMode" default="1" />
 		<member name="physics_object_picking" type="bool" setter="set_physics_object_picking" getter="get_physics_object_picking" default="false">
 		</member>
 		<member name="physics_object_picking_first_only" type="bool" setter="set_physics_object_picking_first_only" getter="get_physics_object_picking_first_only" default="false">
@@ -295,7 +328,11 @@
 		</constant>
 		<constant name="SCALING_3D_MODE_FSR2" value="2" enum="Scaling3DMode">
 		</constant>
-		<constant name="SCALING_3D_MODE_MAX" value="3" enum="Scaling3DMode">
+		<constant name="SCALING_3D_MODE_METALFX_SPATIAL" value="3" enum="Scaling3DMode">
+		</constant>
+		<constant name="SCALING_3D_MODE_METALFX_TEMPORAL" value="4" enum="Scaling3DMode">
+		</constant>
+		<constant name="SCALING_3D_MODE_MAX" value="5" enum="Scaling3DMode">
 		</constant>
 		<constant name="MSAA_DISABLED" value="0" enum="MSAA">
 		</constant>
@@ -306,6 +343,18 @@
 		<constant name="MSAA_8X" value="3" enum="MSAA">
 		</constant>
 		<constant name="MSAA_MAX" value="4" enum="MSAA">
+		</constant>
+		<constant name="ANISOTROPY_DISABLED" value="0" enum="AnisotropicFiltering">
+		</constant>
+		<constant name="ANISOTROPY_2X" value="1" enum="AnisotropicFiltering">
+		</constant>
+		<constant name="ANISOTROPY_4X" value="2" enum="AnisotropicFiltering">
+		</constant>
+		<constant name="ANISOTROPY_8X" value="3" enum="AnisotropicFiltering">
+		</constant>
+		<constant name="ANISOTROPY_16X" value="4" enum="AnisotropicFiltering">
+		</constant>
+		<constant name="ANISOTROPY_MAX" value="5" enum="AnisotropicFiltering">
 		</constant>
 		<constant name="SCREEN_SPACE_AA_DISABLED" value="0" enum="ScreenSpaceAA">
 		</constant>

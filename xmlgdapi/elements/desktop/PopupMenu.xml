@@ -513,6 +513,8 @@
 		</member>
 		<member name="system_menu_id" type="int" setter="set_system_menu" getter="get_system_menu" enum="NativeMenu.SystemMenus" default="0">
 		</member>
+		<member name="transparent" type="bool" setter="set_flag" getter="get_flag" overrides="Window" default="true" />
+		<member name="transparent_bg" type="bool" setter="set_transparent_background" getter="has_transparent_background" overrides="Viewport" default="true" />
 	</members>
 	<signals>
 		<signal name="id_focused">

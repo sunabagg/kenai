@@ -7,6 +7,11 @@
 	<tutorials>
 	</tutorials>
 	<methods>
+		<method name="get_android_surface">
+			<return type="JavaObject" />
+			<description>
+			</description>
+		</method>
 		<method name="intersects_ray" qualifiers="const">
 			<return type="Vector2" />
 			<param index="0" name="origin" type="Vector3" />
@@ -23,11 +28,15 @@
 	<members>
 		<member name="alpha_blend" type="bool" setter="set_alpha_blend" getter="get_alpha_blend" default="false">
 		</member>
+		<member name="android_surface_size" type="Vector2i" setter="set_android_surface_size" getter="get_android_surface_size" default="Vector2i(1024, 1024)">
+		</member>
 		<member name="enable_hole_punch" type="bool" setter="set_enable_hole_punch" getter="get_enable_hole_punch" default="false">
 		</member>
 		<member name="layer_viewport" type="SubViewport" setter="set_layer_viewport" getter="get_layer_viewport">
 		</member>
 		<member name="sort_order" type="int" setter="set_sort_order" getter="get_sort_order" default="1">
+		</member>
+		<member name="use_android_surface" type="bool" setter="set_use_android_surface" getter="get_use_android_surface" default="false">
 		</member>
 	</members>
 </class>

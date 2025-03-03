@@ -22,6 +22,11 @@
 			<description>
 			</description>
 		</method>
+		<method name="clear_filename_filter">
+			<return type="void" />
+			<description>
+			</description>
+		</method>
 		<method name="clear_filters">
 			<return type="void" />
 			<description>
@@ -104,16 +109,20 @@
 		<member name="dialog_hide_on_ok" type="bool" setter="set_hide_on_ok" getter="get_hide_on_ok" overrides="AcceptDialog" default="false" />
 		<member name="file_mode" type="int" setter="set_file_mode" getter="get_file_mode" enum="FileDialog.FileMode" default="4">
 		</member>
+		<member name="filename_filter" type="String" setter="set_filename_filter" getter="get_filename_filter" default="&quot;&quot;">
+		</member>
 		<member name="filters" type="PackedStringArray" setter="set_filters" getter="get_filters" default="PackedStringArray()">
 		</member>
 		<member name="mode_overrides_title" type="bool" setter="set_mode_overrides_title" getter="is_mode_overriding_title" default="true">
 		</member>
+		<member name="ok_button_text" type="String" setter="set_ok_button_text" getter="get_ok_button_text" overrides="AcceptDialog" default="&quot;Save&quot;" />
 		<member name="option_count" type="int" setter="set_option_count" getter="get_option_count" default="0">
 		</member>
 		<member name="root_subfolder" type="String" setter="set_root_subfolder" getter="get_root_subfolder" default="&quot;&quot;">
 		</member>
 		<member name="show_hidden_files" type="bool" setter="set_show_hidden_files" getter="is_showing_hidden_files" default="false">
 		</member>
+		<member name="size" type="Vector2i" setter="set_size" getter="get_size" overrides="Window" default="Vector2i(640, 360)" />
 		<member name="title" type="String" setter="set_title" getter="get_title" overrides="Window" default="&quot;Save a File&quot;" />
 		<member name="use_native_dialog" type="bool" setter="set_use_native_dialog" getter="get_use_native_dialog" default="false">
 		</member>
@@ -126,6 +135,11 @@
 		</signal>
 		<signal name="file_selected">
 			<param index="0" name="path" type="String" />
+			<description>
+			</description>
+		</signal>
+		<signal name="filename_filter_changed">
+			<param index="0" name="filter" type="String" />
 			<description>
 			</description>
 		</signal>
@@ -173,6 +187,8 @@
 		<theme_item name="parent_folder" data_type="icon" type="Texture2D">
 		</theme_item>
 		<theme_item name="reload" data_type="icon" type="Texture2D">
+		</theme_item>
+		<theme_item name="toggle_filename_filter" data_type="icon" type="Texture2D">
 		</theme_item>
 		<theme_item name="toggle_hidden" data_type="icon" type="Texture2D">
 		</theme_item>
