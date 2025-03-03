@@ -239,6 +239,8 @@
 		</member>
 		<member name="allow_search" type="bool" setter="set_allow_search" getter="get_allow_search" default="true">
 		</member>
+		<member name="auto_tooltip" type="bool" setter="set_auto_tooltip" getter="is_auto_tooltip_enabled" default="true">
+		</member>
 		<member name="clip_contents" type="bool" setter="set_clip_contents" getter="is_clipping_contents" overrides="Control" default="true" />
 		<member name="column_titles_visible" type="bool" setter="set_column_titles_visible" getter="are_column_titles_visible" default="false">
 		</member>
@@ -365,6 +367,10 @@
 		</theme_item>
 		<theme_item name="font_disabled_color" data_type="color" type="Color" default="Color(0.875, 0.875, 0.875, 0.5)">
 		</theme_item>
+		<theme_item name="font_hovered_color" data_type="color" type="Color" default="Color(0.95, 0.95, 0.95, 1)">
+		</theme_item>
+		<theme_item name="font_hovered_dimmed_color" data_type="color" type="Color" default="Color(0.875, 0.875, 0.875, 1)">
+		</theme_item>
 		<theme_item name="font_outline_color" data_type="color" type="Color" default="Color(0, 0, 0, 1)">
 		</theme_item>
 		<theme_item name="font_selected_color" data_type="color" type="Color" default="Color(1, 1, 1, 1)">
@@ -455,6 +461,8 @@
 		</theme_item>
 		<theme_item name="updown" data_type="icon" type="Texture2D">
 		</theme_item>
+		<theme_item name="button_hover" data_type="style" type="StyleBox">
+		</theme_item>
 		<theme_item name="button_pressed" data_type="style" type="StyleBox">
 		</theme_item>
 		<theme_item name="cursor" data_type="style" type="StyleBox">
@@ -468,6 +476,10 @@
 		<theme_item name="custom_button_pressed" data_type="style" type="StyleBox">
 		</theme_item>
 		<theme_item name="focus" data_type="style" type="StyleBox">
+		</theme_item>
+		<theme_item name="hovered" data_type="style" type="StyleBox">
+		</theme_item>
+		<theme_item name="hovered_dimmed" data_type="style" type="StyleBox">
 		</theme_item>
 		<theme_item name="panel" data_type="style" type="StyleBox">
 		</theme_item>

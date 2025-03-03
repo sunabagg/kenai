@@ -77,6 +77,12 @@
 			<description>
 			</description>
 		</method>
+		<method name="get_line_range">
+			<return type="Vector2i" />
+			<param index="0" name="line" type="int" />
+			<description>
+			</description>
+		</method>
 		<method name="get_menu" qualifiers="const">
 			<return type="PopupMenu" />
 			<description>
@@ -105,6 +111,11 @@
 		</method>
 		<method name="get_selection_from" qualifiers="const">
 			<return type="int" />
+			<description>
+			</description>
+		</method>
+		<method name="get_selection_line_offset" qualifiers="const">
+			<return type="float" />
 			<description>
 			</description>
 		</method>
@@ -142,6 +153,11 @@
 		<method name="invalidate_paragraph">
 			<return type="bool" />
 			<param index="0" name="paragraph" type="int" />
+			<description>
+			</description>
+		</method>
+		<method name="is_finished" qualifiers="const">
+			<return type="bool" />
 			<description>
 			</description>
 		</method>
@@ -299,6 +315,7 @@
 			<return type="void" />
 			<param index="0" name="data" type="Variant" />
 			<param index="1" name="underline_mode" type="int" enum="RichTextLabel.MetaUnderline" default="1" />
+			<param index="2" name="tooltip" type="String" default="&quot;&quot;" />
 			<description>
 			</description>
 		</method>
@@ -413,6 +430,7 @@
 			<param index="0" name="column" type="int" />
 			<param index="1" name="expand" type="bool" />
 			<param index="2" name="ratio" type="int" default="1" />
+			<param index="3" name="shrink" type="bool" default="true" />
 			<description>
 			</description>
 		</method>
@@ -451,6 +469,10 @@
 		</member>
 		<member name="hint_underlined" type="bool" setter="set_hint_underline" getter="is_hint_underlined" default="true">
 		</member>
+		<member name="horizontal_alignment" type="int" setter="set_horizontal_alignment" getter="get_horizontal_alignment" enum="HorizontalAlignment" default="0">
+		</member>
+		<member name="justification_flags" type="int" setter="set_justification_flags" getter="get_justification_flags" enum="TextServer.JustificationFlag" is_bitfield="true" default="163">
+		</member>
 		<member name="language" type="String" setter="set_language" getter="get_language" default="&quot;&quot;">
 		</member>
 		<member name="meta_underlined" type="bool" setter="set_meta_underline" getter="is_meta_underlined" default="true">
@@ -471,11 +493,15 @@
 		</member>
 		<member name="tab_size" type="int" setter="set_tab_size" getter="get_tab_size" default="4">
 		</member>
+		<member name="tab_stops" type="PackedFloat32Array" setter="set_tab_stops" getter="get_tab_stops" default="PackedFloat32Array()">
+		</member>
 		<member name="text" type="String" setter="set_text" getter="get_text" default="&quot;&quot;">
 		</member>
 		<member name="text_direction" type="int" setter="set_text_direction" getter="get_text_direction" enum="Control.TextDirection" default="0">
 		</member>
 		<member name="threaded" type="bool" setter="set_threaded" getter="is_threaded" default="false">
+		</member>
+		<member name="vertical_alignment" type="int" setter="set_vertical_alignment" getter="get_vertical_alignment" enum="VerticalAlignment" default="0">
 		</member>
 		<member name="visible_characters" type="int" setter="set_visible_characters" getter="get_visible_characters" default="-1">
 		</member>

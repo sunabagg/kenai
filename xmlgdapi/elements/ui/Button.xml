@@ -65,6 +65,8 @@
 		</theme_item>
 		<theme_item name="icon_max_width" data_type="constant" type="int" default="0">
 		</theme_item>
+		<theme_item name="line_spacing" data_type="constant" type="int" default="0">
+		</theme_item>
 		<theme_item name="outline_size" data_type="constant" type="int" default="0">
 		</theme_item>
 		<theme_item name="font" data_type="font" type="Font">

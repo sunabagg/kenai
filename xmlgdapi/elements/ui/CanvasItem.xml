@@ -359,6 +359,12 @@
 			<description>
 			</description>
 		</method>
+		<method name="get_instance_shader_parameter" qualifiers="const">
+			<return type="Variant" />
+			<param index="0" name="name" type="StringName" />
+			<description>
+			</description>
+		</method>
 		<method name="get_local_mouse_position" qualifiers="const">
 			<return type="Vector2" />
 			<description>
@@ -417,7 +423,7 @@
 		</method>
 		<method name="make_canvas_position_local" qualifiers="const">
 			<return type="Vector2" />
-			<param index="0" name="screen_point" type="Vector2" />
+			<param index="0" name="viewport_point" type="Vector2" />
 			<description>
 			</description>
 		</method>
@@ -434,6 +440,13 @@
 		</method>
 		<method name="queue_redraw">
 			<return type="void" />
+			<description>
+			</description>
+		</method>
+		<method name="set_instance_shader_parameter">
+			<return type="void" />
+			<param index="0" name="name" type="StringName" />
+			<param index="1" name="value" type="Variant" />
 			<description>
 			</description>
 		</method>

@@ -475,6 +475,8 @@
 		</member>
 		<member name="symbol_lookup_on_click" type="bool" setter="set_symbol_lookup_on_click_enabled" getter="is_symbol_lookup_on_click_enabled" default="false">
 		</member>
+		<member name="symbol_tooltip_on_hover" type="bool" setter="set_symbol_tooltip_on_hover_enabled" getter="is_symbol_tooltip_on_hover_enabled" default="false">
+		</member>
 		<member name="text_direction" type="int" setter="set_text_direction" getter="get_text_direction" overrides="TextEdit" enum="Control.TextDirection" default="1" />
 	</members>
 	<signals>
@@ -484,6 +486,13 @@
 			</description>
 		</signal>
 		<signal name="code_completion_requested">
+			<description>
+			</description>
+		</signal>
+		<signal name="symbol_hovered">
+			<param index="0" name="symbol" type="String" />
+			<param index="1" name="line" type="int" />
+			<param index="2" name="column" type="int" />
 			<description>
 			</description>
 		</signal>
@@ -570,6 +579,8 @@
 		<theme_item name="can_fold" data_type="icon" type="Texture2D">
 		</theme_item>
 		<theme_item name="can_fold_code_region" data_type="icon" type="Texture2D">
+		</theme_item>
+		<theme_item name="completion_color_bg" data_type="icon" type="Texture2D">
 		</theme_item>
 		<theme_item name="executing_line" data_type="icon" type="Texture2D">
 		</theme_item>
