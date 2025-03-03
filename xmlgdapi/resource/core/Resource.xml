@@ -7,8 +7,19 @@
 	<tutorials>
 	</tutorials>
 	<methods>
-		<method name="_get_rid" qualifiers="virtual">
+		<method name="_get_rid" qualifiers="virtual const">
 			<return type="RID" />
+			<description>
+			</description>
+		</method>
+		<method name="_reset_state" qualifiers="virtual">
+			<return type="void" />
+			<description>
+			</description>
+		</method>
+		<method name="_set_path_cache" qualifiers="virtual const">
+			<return type="void" />
+			<param index="0" name="path" type="String" />
 			<description>
 			</description>
 		</method>
@@ -33,6 +44,12 @@
 			<description>
 			</description>
 		</method>
+		<method name="get_id_for_path" qualifiers="const">
+			<return type="String" />
+			<param index="0" name="path" type="String" />
+			<description>
+			</description>
+		</method>
 		<method name="get_local_scene" qualifiers="const">
 			<return type="Node" />
 			<description>
@@ -40,6 +57,29 @@
 		</method>
 		<method name="get_rid" qualifiers="const">
 			<return type="RID" />
+			<description>
+			</description>
+		</method>
+		<method name="is_built_in" qualifiers="const">
+			<return type="bool" />
+			<description>
+			</description>
+		</method>
+		<method name="reset_state">
+			<return type="void" />
+			<description>
+			</description>
+		</method>
+		<method name="set_id_for_path">
+			<return type="void" />
+			<param index="0" name="path" type="String" />
+			<param index="1" name="id" type="String" />
+			<description>
+			</description>
+		</method>
+		<method name="set_path_cache">
+			<return type="void" />
+			<param index="0" name="path" type="String" />
 			<description>
 			</description>
 		</method>

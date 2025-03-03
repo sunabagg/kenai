@@ -59,7 +59,7 @@
 		</member>
 		<member name="light_size" type="float" setter="set_param" getter="get_param" default="0.0">
 		</member>
-		<member name="light_specular" type="float" setter="set_param" getter="get_param" default="0.5">
+		<member name="light_specular" type="float" setter="set_param" getter="get_param" default="1.0">
 		</member>
 		<member name="light_temperature" type="float" setter="set_temperature" getter="get_temperature">
 		</member>
@@ -68,6 +68,8 @@
 		<member name="shadow_bias" type="float" setter="set_param" getter="get_param" default="0.1">
 		</member>
 		<member name="shadow_blur" type="float" setter="set_param" getter="get_param" default="1.0">
+		</member>
+		<member name="shadow_caster_mask" type="int" setter="set_shadow_caster_mask" getter="get_shadow_caster_mask" default="4294967295">
 		</member>
 		<member name="shadow_enabled" type="bool" setter="set_shadow" getter="has_shadow" default="false">
 		</member>

@@ -2,6 +2,10 @@
 
 cmake_minimum_required( VERSION 3.22 )
 
+set( GODOT_CPP_SYSTEM_HEADERS ON CACHE BOOL "" FORCE )
+
+add_subdirectory( extern/godot-cpp )
+
 message( STATUS "Using CMake ${CMAKE_VERSION}" )
 
 # Require out-of-source builds
@@ -135,9 +139,6 @@ if ( NOT EXISTS "${CMAKE_CURRENT_LIST_DIR}/extern/godot-cpp/Makefile" )
     )
 endif()
 
-set( GODOT_CPP_SYSTEM_HEADERS ON CACHE BOOL "" FORCE )
-
-add_subdirectory( extern/godot-cpp )
 if (EMSCRIPTEN)
     target_compile_options( ${PROJECT_NAME}
         PUBLIC
@@ -234,10 +235,10 @@ if ( MSVC )
     target_compile_options(${PROJECT_NAME} PRIVATE /bigobj)
 endif ()
 
-set_target_properties( godot-cpp
-    PROPERTIES
-        CXX_VISIBILITY_PRESET hidden    # visibility needs to be the same as the main library
-)
+#set_target_properties( godot-cpp
+#    PROPERTIES
+#        CXX_VISIBILITY_PRESET hidden    # visibility needs to be the same as the main library
+#)
 
 # Set the CMAKE_PREFIX_PATH to include the Vcpkg installed directory
 set(CMAKE_PREFIX_PATH "${CMAKE_PREFIX_PATH};${CMAKE_SOURCE_DIR}/vcpkg_installed/x64-windows")
@@ -313,33 +314,68 @@ add_library( hxsimdjson STATIC
 # Find pthread (needed for simdjson)
 find_package(Threads REQUIRED)
 
+#include_directories( ${CMAKE_BINARY_DIR}/extern/godot-cpp/gen/include )
+#include_directories( ${CMAKE_BINARY_DIR}/extern/godot-cpp/gen/src )
+#include_directories( ${CMAKE_SOURCE_DIR}/extern/godot-cpp/include )
+#include_directories( ${CMAKE_SOURCE_DIR}/extern/godot-cpp/src )
+
+if (CMAKE_BUILD_TYPE STREQUAL "Debug")
+    message(STATUS "Debug build")
+    # Add debug-specific settings here
+else()
+    message(STATUS "Non-debug build")
+    # Add non-debug-specific settings here
+endif()
+
 # Link the libraries
 if (USE_LUAJIT)
     target_link_libraries( hxsimdjson
-        PRIVATE
-            ${LUAJIT_LIBRARIES}
-            Threads::Threads
+    PRIVATE
+        ${LUAJIT_LIBRARIES}
+        Threads::Threads
     )
-    target_link_libraries(${PROJECT_NAME}
+    if (CMAKE_BUILD_TYPE STREQUAL "Debug")
+        target_link_libraries(${PROJECT_NAME}
             PRIVATE
-            godot-cpp
+            godot-cpp::template_debug
             ${LUAJIT_LIBRARIES}
             sol2
             hxsimdjson
             #Luau.Compiler Luau.VM
-    )
+        )
+    else()
+        target_link_libraries(${PROJECT_NAME}
+        PRIVATE
+            godot-cpp::template_release
+            ${LUAJIT_LIBRARIES}
+            sol2
+            hxsimdjson
+            #Luau.Compiler Luau.VM
+        )
+    endif()
 else()
     target_link_libraries( hxsimdjson
         PRIVATE
             liblua_static
             Threads::Threads
     )
-    target_link_libraries(${PROJECT_NAME}
+    if (CMAKE_BUILD_TYPE STREQUAL "Debug")
+        target_link_libraries(${PROJECT_NAME}
             PRIVATE
-            godot-cpp
+            godot-cpp::template_debug
             liblua_static
             sol2
             hxsimdjson
             #Luau.Compiler Luau.VM
-    )
+        )
+    else()
+        target_link_libraries(${PROJECT_NAME}
+        PRIVATE
+            godot-cpp::template_release
+            liblua_static
+            sol2
+            hxsimdjson
+            #Luau.Compiler Luau.VM
+        )
+    endif()
 endif()

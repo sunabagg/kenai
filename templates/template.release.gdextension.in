@@ -1,6 +1,6 @@
 [configuration]
 entry_symbol = "GDExtensionInit"
-compatibility_minimum = 4.3
+compatibility_minimum = 4.4
 reloadable=true
 
 [icons]

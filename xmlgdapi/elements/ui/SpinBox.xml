@@ -37,7 +37,67 @@
 		</member>
 	</members>
 	<theme_items>
+		<theme_item name="down_disabled_icon_modulate" data_type="color" type="Color" default="Color(0.875, 0.875, 0.875, 0.5)">
+		</theme_item>
+		<theme_item name="down_hover_icon_modulate" data_type="color" type="Color" default="Color(0.95, 0.95, 0.95, 1)">
+		</theme_item>
+		<theme_item name="down_icon_modulate" data_type="color" type="Color" default="Color(0.875, 0.875, 0.875, 1)">
+		</theme_item>
+		<theme_item name="down_pressed_icon_modulate" data_type="color" type="Color" default="Color(0.95, 0.95, 0.95, 1)">
+		</theme_item>
+		<theme_item name="up_disabled_icon_modulate" data_type="color" type="Color" default="Color(0.875, 0.875, 0.875, 0.5)">
+		</theme_item>
+		<theme_item name="up_hover_icon_modulate" data_type="color" type="Color" default="Color(0.95, 0.95, 0.95, 1)">
+		</theme_item>
+		<theme_item name="up_icon_modulate" data_type="color" type="Color" default="Color(0.875, 0.875, 0.875, 1)">
+		</theme_item>
+		<theme_item name="up_pressed_icon_modulate" data_type="color" type="Color" default="Color(0.95, 0.95, 0.95, 1)">
+		</theme_item>
+		<theme_item name="buttons_vertical_separation" data_type="constant" type="int" default="0">
+		</theme_item>
+		<theme_item name="buttons_width" data_type="constant" type="int" default="16">
+		</theme_item>
+		<theme_item name="field_and_buttons_separation" data_type="constant" type="int" default="2">
+		</theme_item>
+		<theme_item name="set_min_buttons_width_from_icons" data_type="constant" type="int" default="1">
+		</theme_item>
+		<theme_item name="down" data_type="icon" type="Texture2D">
+		</theme_item>
+		<theme_item name="down_disabled" data_type="icon" type="Texture2D">
+		</theme_item>
+		<theme_item name="down_hover" data_type="icon" type="Texture2D">
+		</theme_item>
+		<theme_item name="down_pressed" data_type="icon" type="Texture2D">
+		</theme_item>
+		<theme_item name="up" data_type="icon" type="Texture2D">
+		</theme_item>
+		<theme_item name="up_disabled" data_type="icon" type="Texture2D">
+		</theme_item>
+		<theme_item name="up_hover" data_type="icon" type="Texture2D">
+		</theme_item>
+		<theme_item name="up_pressed" data_type="icon" type="Texture2D">
+		</theme_item>
 		<theme_item name="updown" data_type="icon" type="Texture2D">
+		</theme_item>
+		<theme_item name="down_background" data_type="style" type="StyleBox">
+		</theme_item>
+		<theme_item name="down_background_disabled" data_type="style" type="StyleBox">
+		</theme_item>
+		<theme_item name="down_background_hovered" data_type="style" type="StyleBox">
+		</theme_item>
+		<theme_item name="down_background_pressed" data_type="style" type="StyleBox">
+		</theme_item>
+		<theme_item name="field_and_buttons_separator" data_type="style" type="StyleBox">
+		</theme_item>
+		<theme_item name="up_background" data_type="style" type="StyleBox">
+		</theme_item>
+		<theme_item name="up_background_disabled" data_type="style" type="StyleBox">
+		</theme_item>
+		<theme_item name="up_background_hovered" data_type="style" type="StyleBox">
+		</theme_item>
+		<theme_item name="up_background_pressed" data_type="style" type="StyleBox">
+		</theme_item>
+		<theme_item name="up_down_buttons_separator" data_type="style" type="StyleBox">
 		</theme_item>
 	</theme_items>
 </class>

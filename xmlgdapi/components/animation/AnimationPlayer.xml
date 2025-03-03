@@ -57,6 +57,21 @@
 			<description>
 			</description>
 		</method>
+		<method name="get_section_end_time" qualifiers="const">
+			<return type="float" />
+			<description>
+			</description>
+		</method>
+		<method name="get_section_start_time" qualifiers="const">
+			<return type="float" />
+			<description>
+			</description>
+		</method>
+		<method name="has_section" qualifiers="const">
+			<return type="bool" />
+			<description>
+			</description>
+		</method>
 		<method name="is_playing" qualifiers="const">
 			<return type="bool" />
 			<description>
@@ -83,6 +98,46 @@
 			<description>
 			</description>
 		</method>
+		<method name="play_section">
+			<return type="void" />
+			<param index="0" name="name" type="StringName" default="&amp;&quot;&quot;" />
+			<param index="1" name="start_time" type="float" default="-1" />
+			<param index="2" name="end_time" type="float" default="-1" />
+			<param index="3" name="custom_blend" type="float" default="-1" />
+			<param index="4" name="custom_speed" type="float" default="1.0" />
+			<param index="5" name="from_end" type="bool" default="false" />
+			<description>
+			</description>
+		</method>
+		<method name="play_section_backwards">
+			<return type="void" />
+			<param index="0" name="name" type="StringName" default="&amp;&quot;&quot;" />
+			<param index="1" name="start_time" type="float" default="-1" />
+			<param index="2" name="end_time" type="float" default="-1" />
+			<param index="3" name="custom_blend" type="float" default="-1" />
+			<description>
+			</description>
+		</method>
+		<method name="play_section_with_markers">
+			<return type="void" />
+			<param index="0" name="name" type="StringName" default="&amp;&quot;&quot;" />
+			<param index="1" name="start_marker" type="StringName" default="&amp;&quot;&quot;" />
+			<param index="2" name="end_marker" type="StringName" default="&amp;&quot;&quot;" />
+			<param index="3" name="custom_blend" type="float" default="-1" />
+			<param index="4" name="custom_speed" type="float" default="1.0" />
+			<param index="5" name="from_end" type="bool" default="false" />
+			<description>
+			</description>
+		</method>
+		<method name="play_section_with_markers_backwards">
+			<return type="void" />
+			<param index="0" name="name" type="StringName" default="&amp;&quot;&quot;" />
+			<param index="1" name="start_marker" type="StringName" default="&amp;&quot;&quot;" />
+			<param index="2" name="end_marker" type="StringName" default="&amp;&quot;&quot;" />
+			<param index="3" name="custom_blend" type="float" default="-1" />
+			<description>
+			</description>
+		</method>
 		<method name="play_with_capture">
 			<return type="void" />
 			<param index="0" name="name" type="StringName" default="&amp;&quot;&quot;" />
@@ -98,6 +153,11 @@
 		<method name="queue">
 			<return type="void" />
 			<param index="0" name="name" type="StringName" />
+			<description>
+			</description>
+		</method>
+		<method name="reset_section">
+			<return type="void" />
 			<description>
 			</description>
 		</method>
@@ -132,6 +192,20 @@
 		<method name="set_root">
 			<return type="void" />
 			<param index="0" name="path" type="NodePath" />
+			<description>
+			</description>
+		</method>
+		<method name="set_section">
+			<return type="void" />
+			<param index="0" name="start_time" type="float" default="-1" />
+			<param index="1" name="end_time" type="float" default="-1" />
+			<description>
+			</description>
+		</method>
+		<method name="set_section_with_markers">
+			<return type="void" />
+			<param index="0" name="start_marker" type="StringName" default="&amp;&quot;&quot;" />
+			<param index="1" name="end_marker" type="StringName" default="&amp;&quot;&quot;" />
 			<description>
 			</description>
 		</method>

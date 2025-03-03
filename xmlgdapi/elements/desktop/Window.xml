@@ -440,6 +440,17 @@
 			<description>
 			</description>
 		</method>
+		<method name="start_drag">
+			<return type="void" />
+			<description>
+			</description>
+		</method>
+		<method name="start_resize">
+			<return type="void" />
+			<param index="0" name="edge" type="int" enum="DisplayServer.WindowResizeEdge" />
+			<description>
+			</description>
+		</method>
 	</methods>
 	<members>
 		<member name="always_on_top" type="bool" setter="set_flag" getter="get_flag" default="false">
@@ -459,6 +470,8 @@
 		<member name="content_scale_stretch" type="int" setter="set_content_scale_stretch" getter="get_content_scale_stretch" enum="Window.ContentScaleStretch" default="0">
 		</member>
 		<member name="current_screen" type="int" setter="set_current_screen" getter="get_current_screen">
+		</member>
+		<member name="exclude_from_capture" type="bool" setter="set_flag" getter="get_flag" default="false">
 		</member>
 		<member name="exclusive" type="bool" setter="set_exclusive" getter="is_exclusive" default="false">
 		</member>
@@ -483,6 +496,8 @@
 		<member name="popup_window" type="bool" setter="set_flag" getter="get_flag" default="false">
 		</member>
 		<member name="position" type="Vector2i" setter="set_position" getter="get_position" default="Vector2i(0, 0)">
+		</member>
+		<member name="sharp_corners" type="bool" setter="set_flag" getter="get_flag" default="false">
 		</member>
 		<member name="size" type="Vector2i" setter="set_size" getter="get_size" default="Vector2i(100, 100)">
 		</member>
@@ -549,6 +564,10 @@
 			<description>
 			</description>
 		</signal>
+		<signal name="title_changed">
+			<description>
+			</description>
+		</signal>
 		<signal name="titlebar_changed">
 			<description>
 			</description>
@@ -594,7 +613,11 @@
 		</constant>
 		<constant name="FLAG_MOUSE_PASSTHROUGH" value="7" enum="Flags">
 		</constant>
-		<constant name="FLAG_MAX" value="8" enum="Flags">
+		<constant name="FLAG_SHARP_CORNERS" value="8" enum="Flags">
+		</constant>
+		<constant name="FLAG_EXCLUDE_FROM_CAPTURE" value="9" enum="Flags">
+		</constant>
+		<constant name="FLAG_MAX" value="10" enum="Flags">
 		</constant>
 		<constant name="CONTENT_SCALE_MODE_DISABLED" value="0" enum="ContentScaleMode">
 		</constant>
@@ -618,11 +641,17 @@
 		</constant>
 		<constant name="LAYOUT_DIRECTION_INHERITED" value="0" enum="LayoutDirection">
 		</constant>
-		<constant name="LAYOUT_DIRECTION_LOCALE" value="1" enum="LayoutDirection">
+		<constant name="LAYOUT_DIRECTION_APPLICATION_LOCALE" value="1" enum="LayoutDirection">
 		</constant>
 		<constant name="LAYOUT_DIRECTION_LTR" value="2" enum="LayoutDirection">
 		</constant>
 		<constant name="LAYOUT_DIRECTION_RTL" value="3" enum="LayoutDirection">
+		</constant>
+		<constant name="LAYOUT_DIRECTION_SYSTEM_LOCALE" value="4" enum="LayoutDirection">
+		</constant>
+		<constant name="LAYOUT_DIRECTION_MAX" value="5" enum="LayoutDirection">
+		</constant>
+		<constant name="LAYOUT_DIRECTION_LOCALE" value="1" enum="LayoutDirection">
 		</constant>
 		<constant name="WINDOW_INITIAL_POSITION_ABSOLUTE" value="0" enum="WindowInitialPosition">
 		</constant>

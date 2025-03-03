@@ -81,6 +81,7 @@
 			<param index="1" name="from_port" type="int" />
 			<param index="2" name="to_node" type="StringName" />
 			<param index="3" name="to_port" type="int" />
+			<param index="4" name="keep_alive" type="bool" default="false" />
 			<description>
 			</description>
 		</method>
@@ -117,15 +118,17 @@
 			<description>
 			</description>
 		</method>
+		<method name="get_connection_count">
+			<return type="int" />
+			<param index="0" name="from_node" type="StringName" />
+			<param index="1" name="from_port" type="int" />
+			<description>
+			</description>
+		</method>
 		<method name="get_connection_line" qualifiers="const">
 			<return type="PackedVector2Array" />
 			<param index="0" name="from_node" type="Vector2" />
 			<param index="1" name="to_node" type="Vector2" />
-			<description>
-			</description>
-		</method>
-		<method name="get_connection_list" qualifiers="const">
-			<return type="Dictionary[]" />
 			<description>
 			</description>
 		</method>
@@ -205,6 +208,8 @@
 		<member name="connection_lines_curvature" type="float" setter="set_connection_lines_curvature" getter="get_connection_lines_curvature" default="0.5">
 		</member>
 		<member name="connection_lines_thickness" type="float" setter="set_connection_lines_thickness" getter="get_connection_lines_thickness" default="4.0">
+		</member>
+		<member name="connections" type="Dictionary[]" setter="set_connections" getter="get_connection_list" default="[]">
 		</member>
 		<member name="focus_mode" type="int" setter="set_focus_mode" getter="get_focus_mode" overrides="Control" enum="Control.FocusMode" default="2" />
 		<member name="grid_pattern" type="int" setter="set_grid_pattern" getter="get_grid_pattern" enum="GraphEdit.GridPattern" default="0">
@@ -290,6 +295,10 @@
 			<description>
 			</description>
 		</signal>
+		<signal name="cut_nodes_request">
+			<description>
+			</description>
+		</signal>
 		<signal name="delete_nodes_request">
 			<param index="0" name="nodes" type="StringName[]" />
 			<description>
@@ -313,7 +322,7 @@
 		</signal>
 		<signal name="frame_rect_changed">
 			<param index="0" name="frame" type="GraphFrame" />
-			<param index="1" name="new_rect" type="Vector2" />
+			<param index="1" name="new_rect" type="Rect2" />
 			<description>
 			</description>
 		</signal>
@@ -374,6 +383,8 @@
 		<theme_item name="selection_fill" data_type="color" type="Color" default="Color(1, 1, 1, 0.3)">
 		</theme_item>
 		<theme_item name="selection_stroke" data_type="color" type="Color" default="Color(1, 1, 1, 0.8)">
+		</theme_item>
+		<theme_item name="connection_hover_thickness" data_type="constant" type="int" default="0">
 		</theme_item>
 		<theme_item name="port_hotzone_inner_extent" data_type="constant" type="int" default="22">
 		</theme_item>

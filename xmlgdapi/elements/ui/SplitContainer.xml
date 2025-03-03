@@ -12,11 +12,26 @@
 			<description>
 			</description>
 		</method>
+		<method name="get_drag_area_control">
+			<return type="Control" />
+			<description>
+			</description>
+		</method>
 	</methods>
 	<members>
 		<member name="collapsed" type="bool" setter="set_collapsed" getter="is_collapsed" default="false">
 		</member>
+		<member name="drag_area_highlight_in_editor" type="bool" setter="set_drag_area_highlight_in_editor" getter="is_drag_area_highlight_in_editor_enabled" default="false">
+		</member>
+		<member name="drag_area_margin_begin" type="int" setter="set_drag_area_margin_begin" getter="get_drag_area_margin_begin" default="0">
+		</member>
+		<member name="drag_area_margin_end" type="int" setter="set_drag_area_margin_end" getter="get_drag_area_margin_end" default="0">
+		</member>
+		<member name="drag_area_offset" type="int" setter="set_drag_area_offset" getter="get_drag_area_offset" default="0">
+		</member>
 		<member name="dragger_visibility" type="int" setter="set_dragger_visibility" getter="get_dragger_visibility" enum="SplitContainer.DraggerVisibility" default="0">
+		</member>
+		<member name="dragging_enabled" type="bool" setter="set_dragging_enabled" getter="is_dragging_enabled" default="true">
 		</member>
 		<member name="split_offset" type="int" setter="set_split_offset" getter="get_split_offset" default="0">
 		</member>
@@ -24,6 +39,14 @@
 		</member>
 	</members>
 	<signals>
+		<signal name="drag_ended">
+			<description>
+			</description>
+		</signal>
+		<signal name="drag_started">
+			<description>
+			</description>
+		</signal>
 		<signal name="dragged">
 			<param index="0" name="offset" type="int" />
 			<description>
@@ -50,6 +73,8 @@
 		<theme_item name="h_grabber" data_type="icon" type="Texture2D">
 		</theme_item>
 		<theme_item name="v_grabber" data_type="icon" type="Texture2D">
+		</theme_item>
+		<theme_item name="split_bar_background" data_type="style" type="StyleBox">
 		</theme_item>
 	</theme_items>
 </class>

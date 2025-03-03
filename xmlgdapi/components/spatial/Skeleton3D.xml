@@ -80,6 +80,19 @@
 			<description>
 			</description>
 		</method>
+		<method name="get_bone_meta" qualifiers="const">
+			<return type="Variant" />
+			<param index="0" name="bone_idx" type="int" />
+			<param index="1" name="key" type="StringName" />
+			<description>
+			</description>
+		</method>
+		<method name="get_bone_meta_list" qualifiers="const">
+			<return type="StringName[]" />
+			<param index="0" name="bone_idx" type="int" />
+			<description>
+			</description>
+		</method>
 		<method name="get_bone_name" qualifiers="const">
 			<return type="String" />
 			<param index="0" name="bone_idx" type="int" />
@@ -134,6 +147,13 @@
 		</method>
 		<method name="get_version" qualifiers="const">
 			<return type="int" />
+			<description>
+			</description>
+		</method>
+		<method name="has_bone_meta" qualifiers="const">
+			<return type="bool" />
+			<param index="0" name="bone_idx" type="int" />
+			<param index="1" name="key" type="StringName" />
 			<description>
 			</description>
 		</method>
@@ -208,6 +228,14 @@
 			<param index="1" name="pose" type="Transform3D" />
 			<param index="2" name="amount" type="float" />
 			<param index="3" name="persistent" type="bool" default="false" />
+			<description>
+			</description>
+		</method>
+		<method name="set_bone_meta">
+			<return type="void" />
+			<param index="0" name="bone_idx" type="int" />
+			<param index="1" name="key" type="StringName" />
+			<param index="2" name="value" type="Variant" />
 			<description>
 			</description>
 		</method>
@@ -288,6 +316,10 @@
 			</description>
 		</signal>
 		<signal name="pose_updated">
+			<description>
+			</description>
+		</signal>
+		<signal name="rest_updated">
 			<description>
 			</description>
 		</signal>

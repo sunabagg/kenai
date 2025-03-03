@@ -50,8 +50,9 @@ namespace sunaba::core {
             shader->set_code(code);
         }
 
-        Texture2D* getDefaultTextureParameter(const StringName &name, int32_t index = 0) {
-            return new Texture2D(shader->get_default_texture_parameter(name, index).ptr());
+        Texture2D* getDefaultTextureParameter(const std::string &name, int32_t index = 0) {
+            Ref<godot::Texture2D> gdtxt2d = shader->get_default_texture_parameter(name.c_str(), index);
+            return new Texture2D(gdtxt2d.ptr());
         }
 
         int getMode() const {

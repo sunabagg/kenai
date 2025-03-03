@@ -118,7 +118,7 @@
 		</member>
 		<member name="collision_mask" type="int" setter="set_collision_mask" getter="get_collision_mask" default="1">
 		</member>
-		<member name="collision_result" type="Array" setter="" getter="_get_collision_result" default="[]">
+		<member name="collision_result" type="Array" setter="" getter="get_collision_result" default="[]">
 		</member>
 		<member name="debug_shape_custom_color" type="Color" setter="set_debug_shape_custom_color" getter="get_debug_shape_custom_color" default="Color(0, 0, 0, 1)">
 		</member>

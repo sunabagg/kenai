@@ -23,6 +23,11 @@
 			<description>
 			</description>
 		</method>
+		<method name="get_navigation_map" qualifiers="const">
+			<return type="RID" />
+			<description>
+			</description>
+		</method>
 		<method name="get_rid" qualifiers="const">
 			<return type="RID" />
 			<description>
@@ -44,6 +49,12 @@
 			<return type="void" />
 			<param index="0" name="layer_number" type="int" />
 			<param index="1" name="value" type="bool" />
+			<description>
+			</description>
+		</method>
+		<method name="set_navigation_map">
+			<return type="void" />
+			<param index="0" name="navigation_map" type="RID" />
 			<description>
 			</description>
 		</method>

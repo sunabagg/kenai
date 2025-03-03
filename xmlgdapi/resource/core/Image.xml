@@ -265,6 +265,11 @@
 			<description>
 			</description>
 		</method>
+		<method name="linear_to_srgb">
+			<return type="void" />
+			<description>
+			</description>
+		</method>
 		<method name="load">
 			<return type="int" enum="Error" />
 			<param index="0" name="path" type="String" />
