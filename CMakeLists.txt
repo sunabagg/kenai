@@ -314,38 +314,68 @@ add_library( hxsimdjson STATIC
 # Find pthread (needed for simdjson)
 find_package(Threads REQUIRED)
 
-include_directories( ${CMAKE_BINARY_DIR}/extern/godot-cpp/gen/include )
-include_directories( ${CMAKE_BINARY_DIR}/extern/godot-cpp/gen/src )
-include_directories( ${CMAKE_SOURCE_DIR}/extern/godot-cpp/include )
-include_directories( ${CMAKE_SOURCE_DIR}/extern/godot-cpp/src )
+#include_directories( ${CMAKE_BINARY_DIR}/extern/godot-cpp/gen/include )
+#include_directories( ${CMAKE_BINARY_DIR}/extern/godot-cpp/gen/src )
+#include_directories( ${CMAKE_SOURCE_DIR}/extern/godot-cpp/include )
+#include_directories( ${CMAKE_SOURCE_DIR}/extern/godot-cpp/src )
+
+if (CMAKE_BUILD_TYPE STREQUAL "Debug")
+    message(STATUS "Debug build")
+    # Add debug-specific settings here
+else()
+    message(STATUS "Non-debug build")
+    # Add non-debug-specific settings here
+endif()
 
 # Link the libraries
 if (USE_LUAJIT)
     target_link_libraries( hxsimdjson
-        PRIVATE
-            ${LUAJIT_LIBRARIES}
-            Threads::Threads
+    PRIVATE
+        ${LUAJIT_LIBRARIES}
+        Threads::Threads
     )
-    target_link_libraries(${PROJECT_NAME}
+    if (CMAKE_BUILD_TYPE STREQUAL "Debug")
+        target_link_libraries(${PROJECT_NAME}
             PRIVATE
-            godot-cpp
+            godot-cpp::template_debug
             ${LUAJIT_LIBRARIES}
             sol2
             hxsimdjson
             #Luau.Compiler Luau.VM
-    )
+        )
+    else()
+        target_link_libraries(${PROJECT_NAME}
+        PRIVATE
+            godot-cpp::template_release
+            ${LUAJIT_LIBRARIES}
+            sol2
+            hxsimdjson
+            #Luau.Compiler Luau.VM
+        )
+    endif()
 else()
     target_link_libraries( hxsimdjson
         PRIVATE
             liblua_static
             Threads::Threads
     )
-    target_link_libraries(${PROJECT_NAME}
+    if (CMAKE_BUILD_TYPE STREQUAL "Debug")
+        target_link_libraries(${PROJECT_NAME}
             PRIVATE
-            godot-cpp
+            godot-cpp::template_debug
             liblua_static
             sol2
             hxsimdjson
             #Luau.Compiler Luau.VM
-    )
+        )
+    else()
+        target_link_libraries(${PROJECT_NAME}
+        PRIVATE
+            godot-cpp::template_release
+            liblua_static
+            sol2
+            hxsimdjson
+            #Luau.Compiler Luau.VM
+        )
+    endif()
 endif()
