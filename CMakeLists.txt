@@ -234,10 +234,10 @@ if ( MSVC )
     target_compile_options(${PROJECT_NAME} PRIVATE /bigobj)
 endif ()
 
-set_target_properties( godot-cpp
-    PROPERTIES
-        CXX_VISIBILITY_PRESET hidden    # visibility needs to be the same as the main library
-)
+#set_target_properties( godot-cpp
+#    PROPERTIES
+#        CXX_VISIBILITY_PRESET hidden    # visibility needs to be the same as the main library
+#)
 
 # Set the CMAKE_PREFIX_PATH to include the Vcpkg installed directory
 set(CMAKE_PREFIX_PATH "${CMAKE_PREFIX_PATH};${CMAKE_SOURCE_DIR}/vcpkg_installed/x64-windows")
