@@ -2,6 +2,10 @@
 
 cmake_minimum_required( VERSION 3.22 )
 
+set( GODOT_CPP_SYSTEM_HEADERS ON CACHE BOOL "" FORCE )
+
+add_subdirectory( extern/godot-cpp )
+
 message( STATUS "Using CMake ${CMAKE_VERSION}" )
 
 # Require out-of-source builds
@@ -135,9 +139,6 @@ if ( NOT EXISTS "${CMAKE_CURRENT_LIST_DIR}/extern/godot-cpp/Makefile" )
     )
 endif()
 
-set( GODOT_CPP_SYSTEM_HEADERS ON CACHE BOOL "" FORCE )
-
-add_subdirectory( extern/godot-cpp )
 if (EMSCRIPTEN)
     target_compile_options( ${PROJECT_NAME}
         PUBLIC
@@ -312,6 +313,11 @@ add_library( hxsimdjson STATIC
 
 # Find pthread (needed for simdjson)
 find_package(Threads REQUIRED)
+
+include_directories( ${CMAKE_BINARY_DIR}/extern/godot-cpp/gen/include )
+include_directories( ${CMAKE_BINARY_DIR}/extern/godot-cpp/gen/src )
+include_directories( ${CMAKE_SOURCE_DIR}/extern/godot-cpp/include )
+include_directories( ${CMAKE_SOURCE_DIR}/extern/godot-cpp/src )
 
 # Link the libraries
 if (USE_LUAJIT)
