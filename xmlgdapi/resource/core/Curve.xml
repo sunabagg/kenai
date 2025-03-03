@@ -32,6 +32,11 @@
 			<description>
 			</description>
 		</method>
+		<method name="get_domain_range" qualifiers="const">
+			<return type="float" />
+			<description>
+			</description>
+		</method>
 		<method name="get_point_left_mode" qualifiers="const">
 			<return type="int" enum="Curve.TangentMode" />
 			<param index="0" name="index" type="int" />
@@ -59,6 +64,11 @@
 		<method name="get_point_right_tangent" qualifiers="const">
 			<return type="float" />
 			<param index="0" name="index" type="int" />
+			<description>
+			</description>
+		</method>
+		<method name="get_value_range" qualifiers="const">
+			<return type="float" />
 			<description>
 			</description>
 		</method>
@@ -126,7 +136,11 @@
 	<members>
 		<member name="bake_resolution" type="int" setter="set_bake_resolution" getter="get_bake_resolution" default="100">
 		</member>
+		<member name="max_domain" type="float" setter="set_max_domain" getter="get_max_domain" default="1.0">
+		</member>
 		<member name="max_value" type="float" setter="set_max_value" getter="get_max_value" default="1.0">
+		</member>
+		<member name="min_domain" type="float" setter="set_min_domain" getter="get_min_domain" default="0.0">
 		</member>
 		<member name="min_value" type="float" setter="set_min_value" getter="get_min_value" default="0.0">
 		</member>
@@ -134,6 +148,10 @@
 		</member>
 	</members>
 	<signals>
+		<signal name="domain_changed">
+			<description>
+			</description>
+		</signal>
 		<signal name="range_changed">
 			<description>
 			</description>

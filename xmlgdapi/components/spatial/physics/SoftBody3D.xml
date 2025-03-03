@@ -72,6 +72,7 @@
 			<param index="0" name="point_index" type="int" />
 			<param index="1" name="pinned" type="bool" />
 			<param index="2" name="attachment_path" type="NodePath" default="NodePath(&quot;&quot;)" />
+			<param index="3" name="insert_at" type="int" default="-1" />
 			<description>
 			</description>
 		</method>

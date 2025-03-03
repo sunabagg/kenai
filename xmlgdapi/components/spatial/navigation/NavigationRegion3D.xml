@@ -13,6 +13,11 @@
 			<description>
 			</description>
 		</method>
+		<method name="get_bounds" qualifiers="const">
+			<return type="AABB" />
+			<description>
+			</description>
+		</method>
 		<method name="get_navigation_layer_value" qualifiers="const">
 			<return type="bool" />
 			<param index="0" name="layer_number" type="int" />

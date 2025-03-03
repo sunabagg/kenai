@@ -256,6 +256,8 @@
 		</constant>
 		<constant name="TONE_MAPPER_ACES" value="3" enum="ToneMapper">
 		</constant>
+		<constant name="TONE_MAPPER_AGX" value="4" enum="ToneMapper">
+		</constant>
 		<constant name="GLOW_BLEND_MODE_ADDITIVE" value="0" enum="GlowBlendMode">
 		</constant>
 		<constant name="GLOW_BLEND_MODE_SCREEN" value="1" enum="GlowBlendMode">

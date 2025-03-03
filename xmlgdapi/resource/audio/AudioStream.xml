@@ -7,6 +7,11 @@
 	<tutorials>
 	</tutorials>
 	<methods>
+		<method name="_get_bar_beats" qualifiers="virtual const">
+			<return type="int" />
+			<description>
+			</description>
+		</method>
 		<method name="_get_beat_count" qualifiers="virtual const">
 			<return type="int" />
 			<description>
@@ -29,6 +34,11 @@
 		</method>
 		<method name="_get_stream_name" qualifiers="virtual const">
 			<return type="String" />
+			<description>
+			</description>
+		</method>
+		<method name="_has_loop" qualifiers="virtual const">
+			<return type="bool" />
 			<description>
 			</description>
 		</method>

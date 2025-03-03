@@ -9,7 +9,7 @@
 	<methods>
 		<method name="load_from_buffer" qualifiers="static">
 			<return type="AudioStreamOggVorbis" />
-			<param index="0" name="buffer" type="PackedByteArray" />
+			<param index="0" name="stream_data" type="PackedByteArray" />
 			<description>
 			</description>
 		</method>

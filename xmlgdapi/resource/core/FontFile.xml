@@ -519,6 +519,8 @@
 		</member>
 		<member name="hinting" type="int" setter="set_hinting" getter="get_hinting" enum="TextServer.Hinting" default="1">
 		</member>
+		<member name="keep_rounding_remainders" type="bool" setter="set_keep_rounding_remainders" getter="get_keep_rounding_remainders" default="true">
+		</member>
 		<member name="msdf_pixel_range" type="int" setter="set_msdf_pixel_range" getter="get_msdf_pixel_range" default="16">
 		</member>
 		<member name="msdf_size" type="int" setter="set_msdf_size" getter="get_msdf_size" default="48">

@@ -65,14 +65,53 @@
 			<description>
 			</description>
 		</method>
+		<method name="get_loop_count" qualifiers="const">
+			<return type="int" />
+			<description>
+			</description>
+		</method>
+		<method name="get_playback_position" qualifiers="const">
+			<return type="float" />
+			<description>
+			</description>
+		</method>
 		<method name="get_sample_playback" qualifiers="const">
 			<return type="AudioSamplePlayback" />
+			<description>
+			</description>
+		</method>
+		<method name="is_playing" qualifiers="const">
+			<return type="bool" />
+			<description>
+			</description>
+		</method>
+		<method name="mix_audio">
+			<return type="PackedVector2Array" />
+			<param index="0" name="rate_scale" type="float" />
+			<param index="1" name="frames" type="int" />
+			<description>
+			</description>
+		</method>
+		<method name="seek">
+			<return type="void" />
+			<param index="0" name="time" type="float" default="0.0" />
 			<description>
 			</description>
 		</method>
 		<method name="set_sample_playback">
 			<return type="void" />
 			<param index="0" name="playback_sample" type="AudioSamplePlayback" />
+			<description>
+			</description>
+		</method>
+		<method name="start">
+			<return type="void" />
+			<param index="0" name="from_pos" type="float" default="0.0" />
+			<description>
+			</description>
+		</method>
+		<method name="stop">
+			<return type="void" />
 			<description>
 			</description>
 		</method>

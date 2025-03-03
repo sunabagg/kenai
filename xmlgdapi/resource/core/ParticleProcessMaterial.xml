@@ -144,6 +144,8 @@
 		</member>
 		<member name="emission_ring_axis" type="Vector3" setter="set_emission_ring_axis" getter="get_emission_ring_axis">
 		</member>
+		<member name="emission_ring_cone_angle" type="float" setter="set_emission_ring_cone_angle" getter="get_emission_ring_cone_angle">
+		</member>
 		<member name="emission_ring_height" type="float" setter="set_emission_ring_height" getter="get_emission_ring_height">
 		</member>
 		<member name="emission_ring_inner_radius" type="float" setter="set_emission_ring_inner_radius" getter="get_emission_ring_inner_radius">
@@ -226,6 +228,8 @@
 		</member>
 		<member name="sub_emitter_amount_at_end" type="int" setter="set_sub_emitter_amount_at_end" getter="get_sub_emitter_amount_at_end">
 		</member>
+		<member name="sub_emitter_amount_at_start" type="int" setter="set_sub_emitter_amount_at_start" getter="get_sub_emitter_amount_at_start">
+		</member>
 		<member name="sub_emitter_frequency" type="float" setter="set_sub_emitter_frequency" getter="get_sub_emitter_frequency">
 		</member>
 		<member name="sub_emitter_keep_velocity" type="bool" setter="set_sub_emitter_keep_velocity" getter="get_sub_emitter_keep_velocity" default="false">
@@ -263,6 +267,12 @@
 		<member name="velocity_pivot" type="Vector3" setter="set_velocity_pivot" getter="get_velocity_pivot" default="Vector3(0, 0, 0)">
 		</member>
 	</members>
+	<signals>
+		<signal name="emission_shape_changed">
+			<description>
+			</description>
+		</signal>
+	</signals>
 	<constants>
 		<constant name="PARAM_INITIAL_LINEAR_VELOCITY" value="0" enum="Parameter">
 		</constant>
@@ -336,7 +346,9 @@
 		</constant>
 		<constant name="SUB_EMITTER_AT_COLLISION" value="3" enum="SubEmitterMode">
 		</constant>
-		<constant name="SUB_EMITTER_MAX" value="4" enum="SubEmitterMode">
+		<constant name="SUB_EMITTER_AT_START" value="4" enum="SubEmitterMode">
+		</constant>
+		<constant name="SUB_EMITTER_MAX" value="5" enum="SubEmitterMode">
 		</constant>
 		<constant name="COLLISION_DISABLED" value="0" enum="CollisionMode">
 		</constant>

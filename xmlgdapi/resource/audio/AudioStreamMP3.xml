@@ -6,6 +6,20 @@
 	</description>
 	<tutorials>
 	</tutorials>
+	<methods>
+		<method name="load_from_buffer" qualifiers="static">
+			<return type="AudioStreamMP3" />
+			<param index="0" name="stream_data" type="PackedByteArray" />
+			<description>
+			</description>
+		</method>
+		<method name="load_from_file" qualifiers="static">
+			<return type="AudioStreamMP3" />
+			<param index="0" name="path" type="String" />
+			<description>
+			</description>
+		</method>
+	</methods>
 	<members>
 		<member name="bar_beats" type="int" setter="set_bar_beats" getter="get_bar_beats" default="4">
 		</member>

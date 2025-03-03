@@ -13,6 +13,8 @@
 		</member>
 		<member name="ambient_mode" type="int" setter="set_ambient_mode" getter="get_ambient_mode" enum="ReflectionProbe.AmbientMode" default="1">
 		</member>
+		<member name="blend_distance" type="float" setter="set_blend_distance" getter="get_blend_distance" default="1.0">
+		</member>
 		<member name="box_projection" type="bool" setter="set_enable_box_projection" getter="is_box_projection_enabled" default="false">
 		</member>
 		<member name="cull_mask" type="int" setter="set_cull_mask" getter="get_cull_mask" default="1048575">

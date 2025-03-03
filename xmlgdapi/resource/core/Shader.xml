@@ -8,7 +8,7 @@
 	</tutorials>
 	<methods>
 		<method name="get_default_texture_parameter" qualifiers="const">
-			<return type="Texture2D" />
+			<return type="Texture" />
 			<param index="0" name="name" type="StringName" />
 			<param index="1" name="index" type="int" default="0" />
 			<description>
@@ -25,10 +25,15 @@
 			<description>
 			</description>
 		</method>
+		<method name="inspect_native_shader_code">
+			<return type="void" />
+			<description>
+			</description>
+		</method>
 		<method name="set_default_texture_parameter">
 			<return type="void" />
 			<param index="0" name="name" type="StringName" />
-			<param index="1" name="texture" type="Texture2D" />
+			<param index="1" name="texture" type="Texture" />
 			<param index="2" name="index" type="int" default="0" />
 			<description>
 			</description>
