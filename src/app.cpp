@@ -14,10 +14,13 @@
 #include "core/io/file_system_io.h"
 #include "core/io/io_index.h"
 #include "spatial/bind_spatial_classes.h"
+#ifdef _WIN32
+#include <hxluasimdjson.cpp>
+#include <simdjson.cpp>
+#else
 #include <hxluasimdjson.h>
-//#include <hxluasimdjson.cpp>
 #include <simdjson.h>
-//#include <simdjson.cpp>
+#endif
 #include <sol/sol.hpp>
 
 using namespace sunaba;
