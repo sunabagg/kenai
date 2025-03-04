@@ -30,8 +30,19 @@
             "request": "launch",
             "program": "godot",
             "args": [
-                "--path",
-                "${workspaceRoot}sunaba-build/sunaba",
+                "--verbose"
+            ],
+            "cwd": "${command:cmake.buildDirectory}/sunaba",
+            "preLaunchTask": "CMake: build",
+            "internalConsoleOptions": "openOnSessionStart",
+            "visualizerFile": "${workspaceFolder}/.vscode/godot.natvis"
+        },
+        {
+            "name": "macOS/Linux Launch (Local)",
+            "type": "cppdbg",
+            "request": "launch",
+            "program": "/home/mintkat/Applications/godot/godot",
+            "args": [
                 "--verbose"
             ],
             "cwd": "${command:cmake.buildDirectory}/sunaba",
@@ -39,5 +50,6 @@
             "internalConsoleOptions": "openOnSessionStart",
             "visualizerFile": "${workspaceFolder}/.vscode/godot.natvis"
         }
+
     ]
 }
