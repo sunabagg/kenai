@@ -42,8 +42,8 @@ namespace sunaba::core {
             setResource(shader);
         }
 
-        String getCode() const {
-            return shader->get_code();
+        std::string getCode() const {
+            return shader->get_code().utf8().get_data();
         }
         
         void setCode(const std::string& code) {
@@ -68,8 +68,8 @@ namespace sunaba::core {
             return table;
         }
 
-        void setDefaultTextureParameter(const StringName &name, Texture2D* texture, int32_t index = 0) {
-            shader->set_default_texture_parameter(name, texture->getTexture2D(), index);
+        void setDefaultTextureParameter(const std::string &name, Texture2D* texture, int32_t index = 0) {
+            shader->set_default_texture_parameter(name.c_str(), texture->getTexture2D(), index);
         }
     };
 }

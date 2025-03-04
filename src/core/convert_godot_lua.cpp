@@ -63,7 +63,7 @@ namespace sunaba::core {
                 break;
     
             case Variant::STRING_NAME:
-                sol::stack::push(lua_state, String(StringName(value)).utf8().get_data());
+                sol::stack::push(lua_state, std::string(String(StringName(value)).utf8().get_data()));
                 break;
             
             default:

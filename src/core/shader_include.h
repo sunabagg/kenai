@@ -44,8 +44,8 @@ namespace sunaba::core {
             shaderInclude->set_code(code.c_str());
         }
 
-        String getCode() const {
-            return shaderInclude->get_code();
+        std::string getCode() const {
+            return shaderInclude->get_code().utf8().get_data();
         }
     };
 }
