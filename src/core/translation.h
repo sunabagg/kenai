@@ -45,15 +45,15 @@ namespace sunaba::core {
             return translation->get_locale().utf8().get_data();
         }
 
-        void setLocale(std::string locale) {
+        void setLocale(const std::string& locale) {
             translation->set_locale(String(locale.c_str()));
         }
 
-        void addMessage(std::string srcMessage, std::string xlatedMessage, int n, std::string context = "") {
+        void addMessage(const std::string& srcMessage, const std::string& xlatedMessage, int n, const std::string& context = "") {
             translation->add_message(String(srcMessage.c_str()), String(xlatedMessage.c_str()), String(context.c_str()));
         }
 
-        void addPluralMessage(std::string srcMessage, std::vector<std::string> xlatedMessages, int n, std::string context = "") {
+        void addPluralMessage(const std::string& srcMessage, const std::vector<std::string> xlatedMessages, int n, const std::string& context = "") {
             PackedStringArray xlatedMessagesPSA;
             for (const auto& msg : xlatedMessages) {
                 xlatedMessagesPSA.push_back(String(msg.c_str()));
@@ -61,11 +61,11 @@ namespace sunaba::core {
             translation->add_plural_message(String(srcMessage.c_str()), xlatedMessagesPSA, String(context.c_str()));
         }
 
-        void eraseMessage(std::string srcMessage, std::string context) {
+        void eraseMessage(const std::string& srcMessage, const std::string& context) {
             translation->erase_message(String(srcMessage.c_str()), String(context.c_str()));
         }
 
-        std::string getMessage(std::string srcMessage, std::string context) {
+        std::string getMessage(const std::string& srcMessage, const std::string& context) {
             return String(translation->get_message(String(srcMessage.c_str()), String(context.c_str()))).utf8().get_data();
         }
 
@@ -82,7 +82,7 @@ namespace sunaba::core {
             return messageList;
         }
 
-        std::string getPluralMessage(std::string srcMessage, std::string srcPluralMessage, int n, std::string context) {
+        std::string getPluralMessage(const std::string& srcMessage, const std::string& srcPluralMessage, int n, const std::string& context) {
             return String(translation->get_plural_message(String(srcMessage.c_str()), String(srcPluralMessage.c_str()), n, String(context.c_str()))).utf8().get_data();
         }
 

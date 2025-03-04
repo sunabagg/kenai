@@ -97,7 +97,7 @@ namespace sunaba::core {
             return fontFile->get_font_name().utf8().get_data();
         }
 
-        void setFontName(std::string name) {
+        void setFontName(const std::string& name) {
             fontFile->set_font_name(name.c_str());
         }
 

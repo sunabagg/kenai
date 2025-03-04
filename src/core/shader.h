@@ -46,8 +46,8 @@ namespace sunaba::core {
             return shader->get_code();
         }
         
-        void setCode(const String &code) {
-            shader->set_code(code);
+        void setCode(const std::string& code) {
+            shader->set_code(code.c_str());
         }
 
         Texture2D* getDefaultTextureParameter(const std::string &name, int32_t index = 0) {

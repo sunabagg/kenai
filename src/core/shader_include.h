@@ -40,8 +40,8 @@ namespace sunaba::core {
             setResource(shaderInclude);
         }
 
-        void setCode(const String &code) {
-            shaderInclude->set_code(code);
+        void setCode(const std::string& code) {
+            shaderInclude->set_code(code.c_str());
         }
 
         String getCode() const {

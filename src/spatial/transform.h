@@ -7,7 +7,6 @@
 #include <godot_cpp/classes/scene_tree.hpp>
 #include <vector>
 #include <sol/sol.hpp>
-#include "../core/safe_refcount.h"
 //#include <godot_cpp/templates/safe_refcount.hpp>
 #include <godot_cpp/templates/self_list.hpp>
 

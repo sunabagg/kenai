@@ -5,7 +5,7 @@
       "name": "default",
       "inherits": "vcpkg",
       "environment": {
-        "VCPKG_ROOT": "C:\\Users\\mintkat\\vcpkg"
+        "VCPKG_ROOT": "C:\\Users\\mintkat\\vcpkg",
         "LUAJIT_LIBRARIES": "C:\\Users\\mintkat\\luajit\\src\\lua51.lib"
       }
     }

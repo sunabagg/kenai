@@ -238,6 +238,7 @@ if ( __COMPILER_GNU OR GCC OR CLANG )
         -fpermissive
         -fexceptions
         -ftemplate-backtrace-limit=0
+            -D_GLIBCXX_USE_CXX11_ABI=1
     )
 endif()
 
