@@ -4,6 +4,7 @@
 #include "byte.h"
 
 #include <godot_cpp/variant/packed_byte_array.hpp>
+#include <godot_cpp/variant/utility_functions.hpp>
 #include <vector>
 
 using namespace godot;
@@ -35,11 +36,11 @@ namespace sunaba::core::io {
         BinaryData(const sol::table & table) {
             for (const auto& byte : table) {
                 if (!byte.first.is<int>()) {
-                    throw std::invalid_argument("Invalid index in table");
+                    UtilityFunctions::printerr("Invalid index in table");
                 }
                 int index = byte.first.as<int>();
                 if (index < 0) {
-                    throw std::out_of_range("Index out of range");
+                    UtilityFunctions::printerr("Index out of range");
                 }
                 if (byte.second.is<Byte>()) {
                     this->data[index] = byte.second.as<Byte*>();
@@ -52,7 +53,7 @@ namespace sunaba::core::io {
                 } else if (byte.second.is<uint8_t>()) {
                     this->data[index] = new Byte(byte.second.as<uint8_t>());
                 } else {
-                    throw std::invalid_argument("Invalid type in table");
+                    UtilityFunctions::printerr("Invalid type in table");
                 }
             }
         }
@@ -63,14 +64,14 @@ namespace sunaba::core::io {
 
         Byte* get(int index) const {
             if (index < 0 || index >= data.size()) {
-                throw std::out_of_range("Index out of range");
+                UtilityFunctions::printerr("Index out of range");
             }
             return data[index];
         }
 
         void set(int index, Byte* byte) {
             if (index < 0 || index >= data.size()) {
-                throw std::out_of_range("Index out of range");
+                UtilityFunctions::printerr("Index out of range");
             }
             data[index] = byte;
         }
@@ -85,14 +86,14 @@ namespace sunaba::core::io {
 
         void insert(int index, Byte* byte) {
             if (index < 0 || index > data.size()) {
-                throw std::out_of_range("Index out of range");
+                UtilityFunctions::printerr("Index out of range");
             }
             data.insert(data.begin() + index, byte);
         }
 
         void removeAt(int index) {
             if (index < 0 || index >= data.size()) {
-                throw std::out_of_range("Index out of range");
+                UtilityFunctions::printerr("Index out of range");
             }
             data.erase(data.begin() + index);
         }

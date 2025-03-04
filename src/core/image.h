@@ -239,10 +239,10 @@ namespace sunaba::core {
                     return image->load_ktx_from_buffer(data);
                 }
                 else {
-                    throw std::runtime_error("Unsupported image format: " + path);
+                    UtilityFunctions::printerr("Unsupported image format: " + String(path.c_str()));
                 }
             } else {
-                throw std::runtime_error("Failed to load image from path: " + path);
+                UtilityFunctions::printerr("Failed to load image from path: " + String(path.c_str()));
             }
             return Error::FAILED;
         }
@@ -321,7 +321,7 @@ namespace sunaba::core {
                 ioManager->saveBytes(path, dataPBA);
                 return Error::OK;
             } else {
-                throw std::runtime_error("Unsupported image format: " + path);
+                UtilityFunctions::printerr("Unsupported image format: " + String(path.c_str()));
             }
             return Error::FAILED;
         }
@@ -339,7 +339,7 @@ namespace sunaba::core {
                 ioManager->saveBytes(path, dataPBA);
                 return Error::OK;
             } else {
-                throw std::runtime_error("Unsupported image format: " + path);
+                UtilityFunctions::printerr("Unsupported image format: " + String(path.c_str()));
             }
             return Error::FAILED;
         }
@@ -357,7 +357,7 @@ namespace sunaba::core {
                 ioManager->saveBytes(path, dataPBA);
                 return Error::OK;
             } else {
-                throw std::runtime_error("Unsupported image format: " + path);
+                UtilityFunctions::printerr("Unsupported image format: " + String(path.c_str()));
             }
             return Error::FAILED;
         }
@@ -375,7 +375,7 @@ namespace sunaba::core {
                 ioManager->saveBytes(path, dataPBA);
                 return Error::OK;
             } else {
-                throw std::runtime_error("Unsupported image format: " + path);
+                UtilityFunctions::printerr("Unsupported image format: " + String(path.c_str()));
             }
             return Error::FAILED;
         }

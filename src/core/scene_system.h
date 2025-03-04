@@ -449,13 +449,7 @@ namespace sunaba::core
                     godot::UtilityFunctions::printerr("Component has been freed", __FILE__, __LINE__, false);
                     continue;
                 }
-                try {
-                    component.second->onUpdate(delta);
-                } catch (const std::exception& e) {
-                    godot::UtilityFunctions::printerr("Exception during onUpdate", __FILE__, __LINE__, false);
-                } catch (...) {
-                    godot::UtilityFunctions::printerr("Unknown exception during onUpdate", __FILE__, __LINE__, false);
-                }
+                component.second->onUpdate(delta);
             }
             for (auto& child : children) {
                 child->update(delta);
@@ -476,14 +470,7 @@ namespace sunaba::core
                     godot::UtilityFunctions::printerr("Component has been freed", __FILE__, __LINE__, false);
                     continue;
                 }
-                try {
-                    component.second->onPhysicsUpdate(delta);
-                }
-                catch (const std::exception& e) {
-                    godot::UtilityFunctions::printerr("Exception during onPhysicsUpdate", __FILE__, __LINE__, false);
-                } catch (...) {
-                    godot::UtilityFunctions::printerr("Unknown exception during onPhysicsUpdate", __FILE__, __LINE__, false);
-                }
+                component.second->onPhysicsUpdate(delta);
             }
             for (auto& child : children) {
                 child->physicsUpdate(delta);

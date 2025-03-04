@@ -5,16 +5,16 @@ using namespace godot;
 namespace sunaba::core {
     template<typename ref_t>
     Variant to_variant(const sol::basic_object<ref_t>& object) {
-        if (object.is<bool>()) {
+        if (object.template is<bool>()) {
             return object.template as<bool>();
         }
-        else if (object.is<std::string>()) {
+        else if (object.template is<std::string>()) {
             return String(object.template as<std::string>().c_str());
         }
-        else if (object.is<int64_t>()) {
+        else if (object.template is<int64_t>()) {
             return object.template as<int64_t>();
         }
-        else if (object.is<double>()) {
+        else if (object.template is<double>()) {
             return object.template as<double>();
         }
         else {
@@ -59,11 +59,11 @@ namespace sunaba::core {
                 break;
     
             case Variant::STRING:
-                sol::stack::push(lua_state, (String) value);
+                sol::stack::push(lua_state, String(value).utf8().get_data());
                 break;
     
             case Variant::STRING_NAME:
-                sol::stack::push(lua_state, (StringName) value);
+                sol::stack::push(lua_state, String(StringName(value)).utf8().get_data());
                 break;
             
             default:

@@ -4,6 +4,26 @@ cmake_minimum_required( VERSION 3.22 )
 
 set( GODOT_CPP_SYSTEM_HEADERS ON CACHE BOOL "" FORCE )
 
+if ( __COMPILER_GNU OR GCC OR CLANG )
+    # Add this before the add_subdirectory( extern/quickjs ) line
+    set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wno-error=pedantic -Wno-error=cast-function-type")
+
+
+    # Add this line to disable treating warnings as errors
+    set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wno-error=duplicated-branches")
+    set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wno-error=shadow")
+    set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wno-error=deprecated-declarations")
+    set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wno-error=unused-function")
+    set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wno-error=missing-field-initializers")
+    set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wno-error=return-type")
+    set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wno-error=address")
+    set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wno-error=pedantic")
+    set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wno-error=sign-compare")
+    set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wno-error=comment")
+    set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wno-error=array-bounds")
+    set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -g")
+endif()
+
 add_subdirectory( extern/godot-cpp )
 
 message( STATUS "Using CMake ${CMAKE_VERSION}" )
@@ -94,9 +114,6 @@ add_custom_command(
             ${BUILD_OUTPUT_DIR}
 )
 
-# Warnings
-include( CompilerWarnings )
-
 # Create and include version info file from git
 include( GitVersionInfo )
 
@@ -161,7 +178,7 @@ if (EMSCRIPTEN)
 
     set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wno-error=macro-redefined")
     set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wno-error=implicit-function-declaration")
-    set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wno-error=unkn own-warning-option")
+    set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wno-error=unknown-warning-option")
 
     # Add this before the add_subdirectory( extern/quickjs ) line
     set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wno-error=pedantic -Wno-error=cast-function-type")
@@ -181,14 +198,17 @@ if (EMSCRIPTEN)
     set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wno-error=array-bounds")
 endif()
 
-if ( GCC OR CLANG )
+set( GODOT_CPP_SYSTEM_HEADERS ON CACHE BOOL "" FORCE )
+
+if ( __COMPILER_GNU OR GCC OR CLANG )
     # Add this before the add_subdirectory( extern/quickjs ) line
     set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wno-error=pedantic -Wno-error=cast-function-type")
+    
+
 
     # Add this line to disable treating warnings as errors
     set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wno-error=duplicated-branches")
     set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wno-error=shadow")
-    set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wno-dev")
     set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wno-error=deprecated-declarations")
     set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wno-error=unused-function")
     set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wno-error=missing-field-initializers")
@@ -199,7 +219,28 @@ if ( GCC OR CLANG )
     set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wno-error=comment")
     set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wno-error=array-bounds")
     set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -g")
+
+    target_compile_options( ${PROJECT_NAME}
+        PUBLIC
+        -Wno-error=pedantic
+        -Wno-error=cast-function-type
+        -Wno-error=duplicated-branches
+        -Wno-error=shadow
+        -Wno-error=deprecated-declarations
+        -Wno-error=unused-function
+        -Wno-error=missing-field-initializers
+        -Wno-error=return-type
+        -Wno-error=address
+        -Wno-error=pedantic
+        -Wno-error=sign-compare
+        -Wno-error=comment
+        -Wno-error=array-bounds
+        -fpermissive
+        -fexceptions
+        -ftemplate-backtrace-limit=0
+    )
 endif()
+
 if ( MSVC )
     # Add this line to disable treating warnings as errors
     set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} /wd4244")

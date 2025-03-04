@@ -14,9 +14,11 @@
 #include "core/io/file_system_io.h"
 #include "core/io/io_index.h"
 #include "spatial/bind_spatial_classes.h"
-//#include <hxluasimdjson.h>
-#include <hxluasimdjson.cpp>
-#include <simdjson.cpp>
+#include <hxluasimdjson.h>
+//#include <hxluasimdjson.cpp>
+#include <simdjson.h>
+//#include <simdjson.cpp>
+#include <sol/sol.hpp>
 
 using namespace sunaba;
 using namespace sunaba::core;
@@ -142,16 +144,11 @@ void App::start( const String &path) {
         return createScene();
     });
 
-    try {
+    //sol::error *e = nullptr;
 
-        std::string script = ioManager->loadText("app://main.lua");
-        //UtilityFunctions::print(script.c_str());
-        global_state.script(script);
-    }
-    catch (const sol::error &e) {
-        UtilityFunctions::print(e.what());
-        pfd::message::message("Error", e.what(), pfd::choice::ok, pfd::icon::error).result();
-    }
+    std::string script = ioManager->loadText("app://main.lua");
+    //UtilityFunctions::print(script.c_str());
+    global_state.script(script);
 }
 
 void App::_process(double delta) {
