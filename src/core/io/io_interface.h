@@ -29,7 +29,7 @@ namespace sunaba::core::io {
 
         virtual std::string loadText(const std::string &path) const { return ""; }
 
-        virtual void saveText(const std::string &path, std::string &text) const {}
+        virtual void saveText(const std::string &path, const std::string &text) const {}
 
         virtual PackedByteArray loadBytes(const std::string &path) const { return PackedByteArray(); }
 

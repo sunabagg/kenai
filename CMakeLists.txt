@@ -361,6 +361,28 @@ find_package(Threads REQUIRED)
 #include_directories( ${CMAKE_SOURCE_DIR}/extern/godot-cpp/include )
 #include_directories( ${CMAKE_SOURCE_DIR}/extern/godot-cpp/src )
 
+target_compile_options( hxsimdjson
+        PUBLIC
+        -Wno-error=pedantic
+        -Wno-error=cast-function-type
+        -Wno-error=duplicated-branches
+        -Wno-error=shadow
+        -Wno-error=deprecated-declarations
+        -Wno-error=unused-function
+        -Wno-error=missing-field-initializers
+        -Wno-error=return-type
+        -Wno-error=address
+        -Wno-error=pedantic
+        -Wno-error=sign-compare
+        -Wno-error=comment
+        -Wno-error=array-bounds
+        -fpermissive
+        -fexceptions
+        -ftemplate-backtrace-limit=0
+        -D_GLIBCXX_USE_CXX11_ABI=1
+        -fPIC
+    )
+
 if (CMAKE_BUILD_TYPE STREQUAL "Debug")
     message(STATUS "Debug build")
     # Add debug-specific settings here

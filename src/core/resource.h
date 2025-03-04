@@ -38,7 +38,7 @@ namespace sunaba::core {
             resource->reference();
         }
 
-        Resource* duplicate(bool subresources = false) {
+        Resource* duplicate(const bool subresources = false) {
             return new Resource(resource->duplicate(subresources).ptr());
         }
 

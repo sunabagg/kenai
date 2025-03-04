@@ -63,7 +63,7 @@ namespace sunaba::core::io {
         return "";
     }
 
-    void IoManager::saveText(const std::string &path, std::string &text) const {
+    void IoManager::saveText(const std::string &path, const std::string &text) const {
         for (auto& io : interfaces) {
             if (StringUtils::beginsWith(path, io->pathUrl)) {
                 io->saveText(path, text);

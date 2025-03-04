@@ -49,11 +49,11 @@ namespace sunaba::core {
             translation->set_locale(String(locale.c_str()));
         }
 
-        void addMessage(const std::string& srcMessage, const std::string& xlatedMessage, int n, const std::string& context = "") {
+        void addMessage(const std::string& srcMessage, const std::string& xlatedMessage, const int n, const std::string& context = "") {
             translation->add_message(String(srcMessage.c_str()), String(xlatedMessage.c_str()), String(context.c_str()));
         }
 
-        void addPluralMessage(const std::string& srcMessage, const std::vector<std::string> xlatedMessages, int n, const std::string& context = "") {
+        void addPluralMessage(const std::string& srcMessage, const std::vector<std::string> xlatedMessages, const int n, const std::string& context = "") {
             PackedStringArray xlatedMessagesPSA;
             for (const auto& msg : xlatedMessages) {
                 xlatedMessagesPSA.push_back(String(msg.c_str()));
@@ -82,7 +82,7 @@ namespace sunaba::core {
             return messageList;
         }
 
-        std::string getPluralMessage(const std::string& srcMessage, const std::string& srcPluralMessage, int n, const std::string& context) {
+        std::string getPluralMessage(const std::string& srcMessage, const std::string& srcPluralMessage, const int n, const std::string& context) {
             return String(translation->get_plural_message(String(srcMessage.c_str()), String(srcPluralMessage.c_str()), n, String(context.c_str()))).utf8().get_data();
         }
 

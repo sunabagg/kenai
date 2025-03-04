@@ -29,7 +29,7 @@ namespace sunaba::core::io {
         return text;
     }
 
-    void SystemIoInterface::saveText(const std::string &path, std::string &text) const {
+    void SystemIoInterface::saveText(const std::string &path, const std::string &text) const {
         std::string realPath = getFilePath(path);
         Ref<FileAccess> file = FileAccess::open(realPath.c_str(), FileAccess::WRITE);
         if (file == nullptr) {
