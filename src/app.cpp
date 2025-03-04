@@ -14,7 +14,7 @@
 #include "core/io/file_system_io.h"
 #include "core/io/io_index.h"
 #include "spatial/bind_spatial_classes.h"
-#ifdef _WIN32
+#ifdef _WIN32 // hack fix for MSVC. TODO: this is dumb
 #include <hxluasimdjson.cpp>
 #include <simdjson.cpp>
 #else
