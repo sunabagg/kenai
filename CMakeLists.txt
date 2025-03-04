@@ -361,8 +361,9 @@ find_package(Threads REQUIRED)
 #include_directories( ${CMAKE_SOURCE_DIR}/extern/godot-cpp/include )
 #include_directories( ${CMAKE_SOURCE_DIR}/extern/godot-cpp/src )
 
-target_compile_options( hxsimdjson
-        PUBLIC
+if (__COMPILER_GNU OR GCC OR CLANG)
+    target_compile_options( hxsimdjson
+    PUBLIC
         -Wno-error=pedantic
         -Wno-error=cast-function-type
         -Wno-error=duplicated-branches
@@ -382,6 +383,7 @@ target_compile_options( hxsimdjson
         -D_GLIBCXX_USE_CXX11_ABI=1
         -fPIC
     )
+endif()
 
 if (CMAKE_BUILD_TYPE STREQUAL "Debug")
     message(STATUS "Debug build")
