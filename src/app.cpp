@@ -18,8 +18,8 @@
 #include <hxluasimdjson.cpp>
 #include <simdjson.cpp>
 #else
-#include <hxluasimdjson.h>
-#include <simdjson.h>
+//#include <hxluasimdjson.h>
+//#include <simdjson.h>
 #endif
 #include <sol/sol.hpp>
 
@@ -129,10 +129,10 @@ void App::start( const String &path) {
 
     sunaba::core::bindCoreClasses(global_state);
     sunaba::spatial::bindSpatialClasses(global_state);
-
+#ifdef _WIN32
     // Register hx-lua-simdjson module
     global_state.require("hx_lua_simdjson", luaopen_hxsimdjson, false);
-
+#endif
     ioManager = new IoManager();
     IoIndex::bindIoManger(global_state, ioManager);
     auto fsio = FileSystemIo::create(path.utf8().get_data(), "app://");

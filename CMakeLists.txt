@@ -408,7 +408,7 @@ if (USE_LUAJIT)
             godot-cpp::template_debug
             ${LUAJIT_LIBRARIES}
             sol2
-            hxsimdjson
+            #hxsimdjson
             #Luau.Compiler Luau.VM
         )
     else()
@@ -417,7 +417,7 @@ if (USE_LUAJIT)
             godot-cpp::template_release
             ${LUAJIT_LIBRARIES}
             sol2
-            hxsimdjson
+            #hxsimdjson
             #Luau.Compiler Luau.VM
         )
     endif()
@@ -433,7 +433,7 @@ else()
             godot-cpp::template_debug
             liblua_static
             sol2
-            hxsimdjson
+            #hxsimdjson
             #Luau.Compiler Luau.VM
         )
     else()
@@ -442,7 +442,7 @@ else()
             godot-cpp::template_release
             liblua_static
             sol2
-            hxsimdjson
+            #hxsimdjson
             #Luau.Compiler Luau.VM
         )
     endif()
