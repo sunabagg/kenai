@@ -60,6 +60,7 @@ target_sources(${PROJECT_NAME} PRIVATE
         placeholder_texture2d_array.cpp
         translation.h
         translation.cpp
+        material.h
 )
 
 add_subdirectory(io)
