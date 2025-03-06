@@ -387,6 +387,59 @@ if (__COMPILER_GNU OR GCC OR CLANG)
     )
 endif()
 
+set(V8_MONOLITH_PATH "${CMAKE_SOURCE_DIR}/extern/v8/windows_x86_64_release/libv8_monolith.lib")
+
+set(V8_LIB_FOUND FALSE)
+
+if (WIN32)
+    if (${LIB_ARCH} STREQUAL "x86_64")
+        set(V8_MONOLITH_PATH "${CMAKE_SOURCE_DIR}/extern/v8/windows_x86_64_release/v8_monolith.lib")
+        set(V8_LIB_FOUND TRUE)
+    elseif( ${LIB_ARCH} STREQUAL "arm64")
+        set(V8_MONOLITH_PATH "${CMAKE_SOURCE_DIR}/extern/v8/windows_arm64_release/v8_monolith.lib")
+        set(V8_LIB_FOUND TRUE)
+    endif()
+elseif(LINUX)
+    if (${LIB_ARCH} STREQUAL "x86_64")
+        set(V8_MONOLITH_PATH "${CMAKE_SOURCE_DIR}/extern/v8/linux_x86_64_release/libv8_monolith.a")
+        set(V8_LIB_FOUND TRUE)
+    else(${LIB_ARCH} STREQUAL "arm64")
+        set(V8_MONOLITH_PATH "${CMAKE_SOURCE_DIR}/extern/v8/linux_arm64_release/libv8_monolith.a")
+        set(V8_LIB_FOUND TRUE)
+    endif()
+elseif(APPLE)
+    if (IOS)
+        if (${LIB_ARCH} STREQUAL "arm64")    
+            set(V8_MONOLITH_PATH "${CMAKE_SOURCE_DIR}/extern/v8/ios_arm64_release/libv8_monolith.a")
+            set(V8_LIB_FOUND TRUE)
+        elseif(${LIB_ARCH} STREQUAL "x86_64")
+            set(V8_MONOLITH_PATH "${CMAKE_SOURCE_DIR}/extern/v8/ios_x86_64_release/libv8_monolith.a")
+            set(V8_LIB_FOUND TRUE)
+        endif()
+    else()
+        if (${LIB_ARCH} STREQUAL "arm64")
+            set(V8_MONOLITH_PATH "${CMAKE_SOURCE_DIR}/extern/v8/macos_arm64_release/libv8_monolith.a")
+            set(V8_LIB_FOUND TRUE)
+        elseif(${LIB_ARCH} STREQUAL "x86_64")
+            set(V8_MONOLITH_PATH "${CMAKE_SOURCE_DIR}/extern/v8/macos_x86_64_release/libv8_monolith.a")
+            set(V8_LIB_FOUND TRUE)
+        endif()
+    endif()
+elseif(ANDROID)
+    if (${LIB_ARCH} STREQUAL "arm64")
+        set(V8_MONOLITH_PATH "${CMAKE_SOURCE_DIR}/extern/v8/android_arm64_release/libv8_monolith.a")
+        set(V8_LIB_FOUND TRUE)
+    elseif(${LIB_ARCH} STREQUAL "arm32")
+        set(V8_MONOLITH_PATH "${CMAKE_SOURCE_DIR}/extern/v8/android_arm_release/libv8_monolith.a")
+        set(V8_LIB_FOUND TRUE)
+    elseif(${LIB_ARCH} STREQUAL "x86_64")
+        set(V8_MONOLITH_PATH "${CMAKE_SOURCE_DIR}/extern/v8/android_x86_64_release/libv8_monolith.a")
+        set(V8_LIB_FOUND TRUE)
+    endif()
+endif()
+
+include_directories(${CMAKE_SOURCE_DIR}/extern/v8/include)
+
 if (CMAKE_BUILD_TYPE STREQUAL "Debug")
     message(STATUS "Debug build")
     # Add debug-specific settings here
@@ -408,6 +461,7 @@ if (USE_LUAJIT)
             godot-cpp::template_debug
             ${LUAJIT_LIBRARIES}
             sol2
+            ${V8_LIB_PATH}
             #hxsimdjson
             #Luau.Compiler Luau.VM
         )
@@ -417,6 +471,7 @@ if (USE_LUAJIT)
             godot-cpp::template_release
             ${LUAJIT_LIBRARIES}
             sol2
+            ${V8_LIB_PATH}
             #hxsimdjson
             #Luau.Compiler Luau.VM
         )
@@ -433,6 +488,7 @@ else()
             godot-cpp::template_debug
             liblua_static
             sol2
+            ${V8_LIB_PATH}
             #hxsimdjson
             #Luau.Compiler Luau.VM
         )
@@ -442,6 +498,7 @@ else()
             godot-cpp::template_release
             liblua_static
             sol2
+            ${V8_LIB_PATH}
             #hxsimdjson
             #Luau.Compiler Luau.VM
         )
