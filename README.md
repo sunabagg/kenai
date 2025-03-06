@@ -8,7 +8,7 @@ To use this locally on your machine, you will need the following:
 
 - **[CMake](https://cmake.org/)** v3.22+
 - C++ Compiler with at least **C++17** support (any recent compiler)
-- Python
+- Python 3
 - (optional) **[ccache](https://ccache.dev/)** for faster rebuilds
 - (optional) **[clang-format](https://clang.llvm.org/docs/ClangFormat.html)** for linting and automatic code formatting (CI uses clang-format version 15)
 
