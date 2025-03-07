@@ -72,6 +72,8 @@ target_sources(${PROJECT_NAME} PRIVATE
         noise.cpp
         gradient.h
         gradient.cpp
+        noise_texture2d.h
+        noise_texture2d.cpp
 )
 
 add_subdirectory(io)
