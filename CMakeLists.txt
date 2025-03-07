@@ -319,7 +319,7 @@ if (USE_LUAJIT)
         # Include directories for LuaJit
         include_directories(${LUAJIT_INCLUDE_DIRS})
     else()
-        # Fallback: Manually specify the LuaJit paths
+        # Fallback to Lua 5.1.5
         set(USE_LUAJIT OFF)
         add_subdirectory( extern/lua-5.1.5 )
     endif()
