@@ -68,6 +68,8 @@ target_sources(${PROJECT_NAME} PRIVATE
         system_font.cpp
         shader_material.h
         shader_material.cpp
+        noise.h
+        noise.cpp
 )
 
 add_subdirectory(io)
