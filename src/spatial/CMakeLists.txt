@@ -9,6 +9,8 @@ target_sources(${PROJECT_NAME} PRIVATE
         i_geometry_instance.cpp
         bind_spatial_classes.h
         bind_spatial_classes.cpp
+        fog_material.h
+        fog_material.cpp
 )
 
 add_subdirectory( mesh )
