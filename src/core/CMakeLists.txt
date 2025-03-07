@@ -70,6 +70,8 @@ target_sources(${PROJECT_NAME} PRIVATE
         shader_material.cpp
         noise.h
         noise.cpp
+        gradient.h
+        gradient.cpp
 )
 
 add_subdirectory(io)
