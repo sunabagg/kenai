@@ -321,6 +321,7 @@ if (USE_LUAJIT)
     else()
         # Fallback: Manually specify the LuaJit paths
         set(USE_LUAJIT OFF)
+        add_subdirectory( extern/lua-5.1.5 )
     endif()
 else()
     add_subdirectory( extern/lua-5.1.5 )
