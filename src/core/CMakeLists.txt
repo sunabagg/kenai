@@ -61,6 +61,7 @@ target_sources(${PROJECT_NAME} PRIVATE
         translation.h
         translation.cpp
         material.h
+        material.cpp
 )
 
 add_subdirectory(io)
