@@ -64,6 +64,8 @@ target_sources(${PROJECT_NAME} PRIVATE
         material.cpp
         canvas_item_material.h
         canvas_item_material.cpp
+        system_font.h
+        system_font.cpp
 )
 
 add_subdirectory(io)
