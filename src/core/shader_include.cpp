@@ -9,7 +9,7 @@ void sunaba::core::bindShaderInclude(sol::state &lua) {
             &sunaba::core::ShaderInclude::setCode
         ),
         "cast", [](Resource* instance) {
-            return new ShaderInclude(static_cast<GodotShaderInclude*>(instance->getResource()));
+            return new ShaderInclude(dynamic_cast<GodotShaderInclude*>(instance->getResource()));
         }
     );
 }

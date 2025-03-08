@@ -21,7 +21,7 @@ void sunaba::spatial::mesh::bindMeshRenderer(sol::state& lua) {
             return entity->getComponentByT<MeshRenderer>();
         },
         "cast", [](Component* component) { 
-            return static_cast<MeshRenderer*>(component); 
+            return dynamic_cast<MeshRenderer*>(component); 
         }
     );
 }

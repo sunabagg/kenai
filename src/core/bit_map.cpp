@@ -18,7 +18,7 @@ void sunaba::core::bindBitMap(sol::state &lua) {
         "setBitRect", &sunaba::core::BitMap::setBitRect,
         "setBitv", &sunaba::core::BitMap::setBitv,
         "cast", [](Resource* instance) {
-            return new BitMap(static_cast<GodotBitMap*>(instance->getResource()));
+            return new BitMap(dynamic_cast<GodotBitMap*>(instance->getResource()));
         }
     );
 }

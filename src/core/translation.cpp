@@ -17,7 +17,7 @@ void sunaba::core::bindTranslation(sol::state &lua) {
         "getPluralMessage", &sunaba::core::Translation::getPluralMessage,
         "getTranslatedMessageList", &sunaba::core::Translation::getTranslatedMessageList,
         "cast", [](Resource* instance) {
-            return new Translation(static_cast<GodotTranslation*>(instance->getResource()));
+            return new Translation(dynamic_cast<GodotTranslation*>(instance->getResource()));
         }
     );
 }

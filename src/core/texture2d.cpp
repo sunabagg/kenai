@@ -11,7 +11,7 @@ void sunaba::core::bindTexture2D(sol::state &lua) {
         "getWidth", &sunaba::core::Texture2D::getWidth,
         "hasAlpha", &sunaba::core::Texture2D::hasAlpha,
         "cast", [](Resource* instance) {
-            return new Texture2D(static_cast<GodotTexture2D*>(instance->getResource()));
+            return new Texture2D(dynamic_cast<GodotTexture2D*>(instance->getResource()));
         }
     );
 }

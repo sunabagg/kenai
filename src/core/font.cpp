@@ -31,7 +31,7 @@ void sunaba::core::bindFont(sol::state &lua) {
         "isScriptSupported", &sunaba::core::Font::isScriptSupported,
         "setCacheCapacity", &sunaba::core::Font::setCacheCapacity,
         "cast", [](Resource* instance) {
-            return new Font(static_cast<GodotFont*>(instance->getResource()));
+            return new Font(dynamic_cast<GodotFont*>(instance->getResource()));
         }
     );
 }

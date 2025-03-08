@@ -14,7 +14,7 @@ void sunaba::spatial::mesh::bindBox(sol::state& lua) {
             return entity->getComponentByT<Box>();
         },
         "cast", [](Component* component) { 
-            return static_cast<Box*>(component); 
+            return dynamic_cast<Box*>(component); 
         }
     );
 }

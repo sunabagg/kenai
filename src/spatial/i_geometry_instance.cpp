@@ -18,7 +18,7 @@ void sunaba::spatial::bindGeometryInstance(sol::state& lua) {
         "visibilityRangeEndMargin", sol::property(&IGeometryInstance::getVisibilityRangeEndMargin, &IGeometryInstance::setVisibilityRangeEndMargin),
         "visibilityRangeFadeMode", sol::property(&IGeometryInstance::getVisibilityRangeFadeMode, &IGeometryInstance::setVisibilityRangeFadeMode),
         "cast",[](Component* component) { 
-            return static_cast<IGeometryInstance*>(component); 
+            return dynamic_cast<IGeometryInstance*>(component); 
         }
     ); 
 }

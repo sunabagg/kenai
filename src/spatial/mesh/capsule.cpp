@@ -14,7 +14,7 @@ void sunaba::spatial::mesh::bindCapsule(sol::state& lua) {
             return entity->getComponentByT<Capsule>();
         },
         "cast", [](Component* component) { 
-            return static_cast<Capsule*>(component); 
+            return dynamic_cast<Capsule*>(component); 
         }
     );
 }

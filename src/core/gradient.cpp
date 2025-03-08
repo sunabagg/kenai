@@ -18,7 +18,7 @@ void sunaba::core::bindGradient(sol::state_view& lua) {
             "setColor", &Gradient::setColor,
             "setOffset", &Gradient::setOffset,
             "cast", [](Resource* instance) {
-                return new Gradient(static_cast<GodotGradient*>(instance->getResource()));
+                return new Gradient(dynamic_cast<GodotGradient*>(instance->getResource()));
             }
     );
 }

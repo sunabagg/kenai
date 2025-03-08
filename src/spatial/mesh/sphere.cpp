@@ -13,10 +13,10 @@ void sunaba::spatial::mesh::bindSphere(sol::state& lua) {
         "radius", sol::property(&Sphere::getRadius, &Sphere::setRadius),
         "getFromEntity", [](Entity* entity) {
             Component* component = entity->getComponentByT<Sphere>();
-            return static_cast<Sphere*>(component);
+            return dynamic_cast<Sphere*>(component);
         },
         "cast", [](Component* component) { 
-            return static_cast<Sphere*>(component); 
+            return dynamic_cast<Sphere*>(component); 
         }
     );
 }

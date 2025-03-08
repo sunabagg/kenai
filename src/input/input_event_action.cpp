@@ -9,7 +9,7 @@ void sunaba::input::bindInputEventAction(sol::state_view& lua) {
         "pressed", sol::property(&InputEventAction::isPressed, &InputEventAction::setPressed),
         "strength", sol::property(&InputEventAction::getStrength, &InputEventAction::setStrength),
         "cast", [](sunaba::core::Resource* instance) {
-            return new InputEventAction(static_cast<GodotInputEventAction*>(instance->getResource()));
+            return new InputEventAction(dynamic_cast<GodotInputEventAction*>(instance->getResource()));
         }
     );
 }

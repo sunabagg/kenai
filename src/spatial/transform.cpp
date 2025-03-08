@@ -52,7 +52,7 @@ namespace sunaba::spatial {
                 return entity->getComponentByT<SpatialTransform>();
              },
              "cast", [](Component* component) { 
-                return static_cast<SpatialTransform*>(component); 
+                return dynamic_cast<SpatialTransform*>(component); 
              }
         );
 

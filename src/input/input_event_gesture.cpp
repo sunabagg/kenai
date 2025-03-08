@@ -6,7 +6,7 @@ void sunaba::input::bindInputEventGesture(sol::state_view& lua) {
         sol::base_classes, sol::bases<sunaba::input::InputEvent>(),
         "position", sol::property(&InputEventGesture::getPosition, &InputEventGesture::setPosition),
         "cast", [](sunaba::core::Resource* instance) {
-            return new InputEventGesture(static_cast<GodotInputEventGesture*>(instance->getResource()));
+            return new InputEventGesture(dynamic_cast<GodotInputEventGesture*>(instance->getResource()));
         }
     );
 }

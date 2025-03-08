@@ -42,7 +42,7 @@ namespace sunaba::spatial
                 return entity->getComponentByT<Camera>();
             },
             "cast", [](Component* component) { 
-                return static_cast<Camera*>(component); 
+                return dynamic_cast<Camera*>(component); 
             }
         );
 

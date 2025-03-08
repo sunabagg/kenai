@@ -5,7 +5,7 @@ void sunaba::core::bindTextureLayeredRD(sol::state &lua) {
         sol::constructors<sunaba::core::TextureLayeredRD()>(),
         sol::base_classes, sol::bases<sunaba::core::TextureLayered>(),
         "cast", [](Resource* instance) {
-            return new TextureLayeredRD(static_cast<GodotTextureLayeredRD*>(instance->getResource()));
+            return new TextureLayeredRD(dynamic_cast<GodotTextureLayeredRD*>(instance->getResource()));
         }
     );
 }

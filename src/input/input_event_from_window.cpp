@@ -6,7 +6,7 @@ void sunaba::input::bindInputEventFromWindow(sol::state_view& lua) {
         sol::base_classes, sol::bases<sunaba::input::InputEvent>(),
         "windowId", sol::property(&InputEventFromWindow::getWindowId, &InputEventFromWindow::setWindowId),
         "cast", [](sunaba::core::Resource* instance) {
-            return new InputEventFromWindow(static_cast<GodotInputEventFromWindow*>(instance->getResource()));
+            return new InputEventFromWindow(dynamic_cast<GodotInputEventFromWindow*>(instance->getResource()));
         }
     );
 }
