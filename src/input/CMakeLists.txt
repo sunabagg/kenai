@@ -11,6 +11,8 @@ target_sources(${PROJECT_NAME} PRIVATE
         input_event_joypad_button.cpp
         input_event_joypad_motion.h
         input_event_joypad_motion.cpp
+        input_event_key.h
+        input_event_key.cpp
 )
 
 target_include_directories( ${PROJECT_NAME}
