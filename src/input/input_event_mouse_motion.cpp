@@ -1,0 +1,18 @@
+#include "input_event_mouse_motion.h"
+
+void sunaba::input::bindInputEventMouseMotion(sol::state_view& lua) {
+    lua.new_usertype<InputEventMouseMotion>("InputEventMouseMotion",
+        sol::constructors<InputEventMouseMotion(), InputEventMouseMotion(GodotInputEventMouseMotion*)>(),
+        sol::base_classes, sol::bases<sunaba::input::InputEvent>(),
+        "penInverted", sol::property(&InputEventMouseMotion::getPenInverted, &InputEventMouseMotion::setPenInverted),
+        "pressure", sol::property(&InputEventMouseMotion::getPressure, &InputEventMouseMotion::setPressure),
+        "relative", sol::property(&InputEventMouseMotion::getRelative, &InputEventMouseMotion::setRelative),
+        "screenRelative", sol::property(&InputEventMouseMotion::getScreenRelative, &InputEventMouseMotion::setScreenRelative),
+        "screenVelocity", sol::property(&InputEventMouseMotion::getScreenVelocity, &InputEventMouseMotion::setScreenVelocity),
+        "tilt", sol::property(&InputEventMouseMotion::getTilt, &InputEventMouseMotion::setTilt),
+        "velocity", sol::property(&InputEventMouseMotion::getVelocity, &InputEventMouseMotion::setVelocity),
+        "cast", [](sunaba::core::Resource* instance) {
+            return new InputEventMouseMotion(dynamic_cast<GodotInputEventMouseMotion*>(instance->getResource()));
+        }
+    );
+}
