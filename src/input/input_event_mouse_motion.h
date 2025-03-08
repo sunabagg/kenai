@@ -7,7 +7,7 @@
 
 #define GodotInputEventMouseMotion godot::InputEventMouseMotion
 
-#include "input_event.h"
+#include "input_event_mouse.h"
 
 using namespace godot;
 using namespace sunaba::core;
@@ -15,7 +15,7 @@ using namespace sunaba::core;
 namespace sunaba::input {
     void bindInputEventMouseMotion(sol::state_view& lua);
 
-    class InputEventMouseMotion : public sunaba::input::InputEvent {
+    class InputEventMouseMotion : public sunaba::input::InputEventMouse {
     private:
         GodotInputEventMouseMotion* event;
     public:
@@ -34,7 +34,7 @@ namespace sunaba::input {
         void setInputEventMouseMotion(GodotInputEventMouseMotion* e) {
             event = e;
             event->reference();
-            setInputEvent(e);
+            setInputEventMouse(e);
         }
 
         bool getPenInverted() {
