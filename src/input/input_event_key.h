@@ -35,7 +35,7 @@ namespace sunaba::input {
         void setInputEventKey(GodotInputEventKey* e) {
             event = e;
             event->reference();
-            setInputEvent(e);
+            setInputEventWithModifiers(e);
         }
 
         bool isEcho() {
