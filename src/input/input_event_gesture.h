@@ -7,7 +7,7 @@
 
 #define GodotInputEventGesture godot::InputEventGesture
 
-#include "input_event.h"
+#include "input_event_with_modifiers.h"
 
 using namespace godot;
 using namespace sunaba::core;
@@ -15,7 +15,7 @@ using namespace sunaba::core;
 namespace sunaba::input {
     void bindInputEventGesture(sol::state_view& lua);
 
-    class InputEventGesture : public sunaba::input::InputEvent {
+    class InputEventGesture : public sunaba::input::InputEventWithModifiers {
     private:
         GodotInputEventGesture* event;
     public:
@@ -34,7 +34,7 @@ namespace sunaba::input {
         void setInputEventGesture(GodotInputEventGesture* e) {
             event = e;
             event->reference();
-            setInputEvent(e);
+            setInputEventWithModifiers(e);
         }
 
         Vector2 getPosition() {
