@@ -19,5 +19,8 @@ void sunaba::core::bindSystemFont(sol::state_view& lua) {
         "msdfSize", sol::property(&SystemFont::getMsdfSize),
         "multichannelSignedDistanceField", sol::property(&SystemFont::getMultichannelSignedDistanceField, &SystemFont::setMultichannelSignedDistanceField),
         "oversampling", sol::property(&SystemFont::getOversampling, &SystemFont::setOversampling),
-        "subpixelPositioning", sol::property(&SystemFont::getSubpixelPositioning, &SystemFont::setSubpixelPositioning));
+        "subpixelPositioning", sol::property(&SystemFont::getSubpixelPositioning, &SystemFont::setSubpixelPositioning),
+        "cast", [](Resource* instance) {
+            return new SystemFont(static_cast<GodotSystemFont*>(instance->getResource()));
+        });
 }
