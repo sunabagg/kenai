@@ -19,6 +19,8 @@ target_sources(${PROJECT_NAME} PRIVATE
         input_event_midi.cpp
         input_event_mouse.h
         input_event_mouse.cpp
+        input_event_mouse_button.h
+        input_event_mouse_button.cpp
 )
 
 target_include_directories( ${PROJECT_NAME}
