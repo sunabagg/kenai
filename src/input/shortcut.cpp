@@ -9,7 +9,7 @@ void sunaba::input::bindShortcut(sol::state& lua) {
         "hasValidEvent", &Shortcut::hasValidEvent,
         "matchesEvent", &Shortcut::matchesEvent,
         "cast", [](sunaba::core::Resource* instance) {
-            return new Shortcut(dynamic_cast<GodotShortcut*>(instance->getResource()));
+            return new Shortcut(Object::cast_to<GodotShortcut*>(instance->getResource()));
         }
     );
 }
