@@ -8,7 +8,7 @@ void sunaba::input::bindInputEventMouse(sol::state_view& lua) {
         "globalPosition", sol::property(&InputEventMouse::getGlobalPosition, &InputEventMouse::setGlobalPosition),
         "position", sol::property(&InputEventMouse::getPosition, &InputEventMouse::setPosition),
         "cast", [](sunaba::core::Resource* instance) {
-            return new InputEventMouse(Object::cast_to<GodotInputEventMouse*>(instance->getResource()));
+            return new InputEventMouse(godot::Object::cast_to<GodotInputEventMouse>(instance->getResource()));
         }
     );
 }

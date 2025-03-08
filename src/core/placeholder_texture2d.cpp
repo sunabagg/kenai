@@ -9,7 +9,7 @@ void sunaba::core::bindPlaceholderTexture2D(sol::state &lua) {
             &sunaba::core::PlaceholderTexture2D::setSize
         ),
         "cast", [](Resource* instance) {
-            return new PlaceholderTexture2D(Object::cast_to<GodotPlaceholderTexture2D*>(instance->getResource()));
+            return new PlaceholderTexture2D(godot::Object::cast_to<GodotPlaceholderTexture2D>(instance->getResource()));
         }
     );
 }

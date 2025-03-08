@@ -17,7 +17,7 @@ void sunaba::core::bindFontVariation(sol::state &lua) {
         "variationTransform", sol::property(&FontVariation::getVariationTransform, &FontVariation::setVariationTransform),
         "setSpacing", &FontVariation::setSpacing,
         "cast", [](Resource* instance) {
-            return new FontVariation(Object::cast_to<GodotFontVariation*>(instance->getResource()));
+            return new FontVariation(godot::Object::cast_to<GodotFontVariation>(instance->getResource()));
         }
     );
 }

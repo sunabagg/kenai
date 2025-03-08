@@ -17,7 +17,7 @@ void sunaba::core::bindNoiseTexture2D(sol::state_view& lua) {
         "seamlessBlendSkirt", sol::property(&NoiseTexture2D::getSeamlessBlendSkirt, &NoiseTexture2D::setSeamlessBlendSkirt),
         "width", sol::property(&NoiseTexture2D::getWidth, &NoiseTexture2D::setWidth),
         "cast", [](Resource* instance) {
-            return new NoiseTexture2D(Object::cast_to<GodotNoiseTexture2D*>(instance->getResource()));
+            return new NoiseTexture2D(godot::Object::cast_to<GodotNoiseTexture2D>(instance->getResource()));
         }
     );
 }

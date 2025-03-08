@@ -8,7 +8,7 @@ void sunaba::input::bindInputEventJoypadButton(sol::state_view& lua) {
         "pressed", sol::property(&InputEventJoypadButton::isPressed, &InputEventJoypadButton::setPressed),
         "pressure", sol::property(&InputEventJoypadButton::getPressure, &InputEventJoypadButton::setPressure),
         "cast", [](sunaba::core::Resource* instance) {
-            return new InputEventJoypadButton(Object::cast_to<GodotInputEventJoypadButton*>(instance->getResource()));
+            return new InputEventJoypadButton(godot::Object::cast_to<GodotInputEventJoypadButton>(instance->getResource()));
         }
     );
 }

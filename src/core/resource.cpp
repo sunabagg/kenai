@@ -8,7 +8,7 @@ void sunaba::core::bindResource(sol::state &lua) {
         "emitChanged", &sunaba::core::Resource::emitChanged,
         "isNull", &sunaba::core::Resource::isNull,
         "cast", [](Resource* instance) {
-            return new Resource(Object::cast_to<GodotResource*>(instance->getResource()));
+            return new Resource(godot::Object::cast_to<GodotResource>(instance->getResource()));
         }
     );
 }

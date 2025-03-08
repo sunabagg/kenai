@@ -10,7 +10,7 @@ void sunaba::input::bindInputEventWithModifiers(sol::state_view& lua) {
         "metaPressed", sol::property(&InputEventWithModifiers::isMetaPressed, &InputEventWithModifiers::setMetaPressed),
         "shiftPressed", sol::property(&InputEventWithModifiers::isShiftPressed, &InputEventWithModifiers::setShiftPressed),
         "cast", [](sunaba::core::Resource* instance) {
-            return new InputEventWithModifiers(Object::cast_to<GodotInputEventWithModifiers*>(instance->getResource()));
+            return new InputEventWithModifiers(godot::Object::cast_to<GodotInputEventWithModifiers>(instance->getResource()));
         }
     );
 }

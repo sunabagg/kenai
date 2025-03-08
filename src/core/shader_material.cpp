@@ -24,7 +24,7 @@ void sunaba::core::bindShaderMaterial(sol::state_view& lua) {
             "getShaderTextureParam", &ShaderMaterial::getShaderTextureParam,
             "setShaderTextureParam", &ShaderMaterial::setShaderTextureParam,
             "cast", [](Resource* instance) {
-                return new ShaderMaterial(Object::cast_to<GodotShaderMaterial*>(instance->getResource()));
+                return new ShaderMaterial(godot::Object::cast_to<GodotShaderMaterial>(instance->getResource()));
             }
     );
 }

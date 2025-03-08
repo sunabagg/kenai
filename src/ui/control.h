@@ -24,7 +24,7 @@ namespace sunaba::ui {
 
         // Constructor with no parameters
         Control() : CanvasItem(new ControlNode()) {
-            control = static_cast<ControlNode*>(getNode());
+            control = static_cast<ControlNode>(getNode());
             onInit();
         }
 

@@ -130,7 +130,7 @@ namespace sunaba::core {
                 return nullptr;
             }
 
-            GodotTexture* tex = Object::cast_to<GodotTexture>(obj);
+            GodotTexture* tex = godot::Object::cast_to<GodotTexture>(obj);
             if (tex == nullptr) {
                 return nullptr;
             }

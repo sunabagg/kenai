@@ -76,3 +76,7 @@ namespace sunaba::input {
         void setPressed(bool pressed) {
             event->set_pressed(pressed);
         }
+    };
+}
+
+#endif // INPUT_EVENT_SCREEN_TOUCH_H

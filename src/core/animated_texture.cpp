@@ -29,7 +29,7 @@ void sunaba::core::bindAnimatedTexture(sol::state &lua) {
         "setFrameDuration", &sunaba::core::AnimatedTexture::setFrameDuration,
         "setFrameTexture", &sunaba::core::AnimatedTexture::setFrameTexture,
         "cast", [](Resource* instance) {
-            return new AnimatedTexture(Object::cast_to<GodotAnimatedTexture*>(instance->getResource()));
+            return new AnimatedTexture(godot::Object::cast_to<GodotAnimatedTexture>(instance->getResource()));
         }
     );
 }

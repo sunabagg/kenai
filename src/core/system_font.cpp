@@ -21,6 +21,6 @@ void sunaba::core::bindSystemFont(sol::state_view& lua) {
         "oversampling", sol::property(&SystemFont::getOversampling, &SystemFont::setOversampling),
         "subpixelPositioning", sol::property(&SystemFont::getSubpixelPositioning, &SystemFont::setSubpixelPositioning),
         "cast", [](Resource* instance) {
-            return new SystemFont(Object::cast_to<GodotSystemFont*>(instance->getResource()));
+            return new SystemFont(godot::Object::cast_to<GodotSystemFont>(instance->getResource()));
         });
 }

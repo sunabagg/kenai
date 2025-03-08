@@ -8,7 +8,7 @@ void sunaba::input::bindInputEventScreenDrag(sol::state_view& lua) {
         "penInverted", sol::property(&InputEventScreenDrag::getPenInverted, &InputEventScreenDrag::setPenInverted),
         "position", sol::property(&InputEventScreenDrag::getPosition, &InputEventScreenDrag::setPosition),
         "cast", [](sunaba::core::Resource* instance) {
-            return new InputEventScreenDrag(Object::cast_to<GodotInputEventScreenDrag*>(instance->getResource()));
+            return new InputEventScreenDrag(godot::Object::cast_to<GodotInputEventScreenDrag>(instance->getResource()));
         }
     );
 }

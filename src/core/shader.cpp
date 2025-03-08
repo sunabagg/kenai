@@ -12,7 +12,7 @@ void sunaba::core::bindShader(sol::state& lua) {
         "getMode", &sunaba::core::Shader::getMode,
         "getShaderUniformList", &sunaba::core::Shader::getShaderUniformList,
         "cast", [](Resource* instance) {
-            return new Shader(Object::cast_to<GodotShader*>(instance->getResource()));
+            return new Shader(godot::Object::cast_to<GodotShader>(instance->getResource()));
         }
     );
 }

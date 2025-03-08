@@ -43,7 +43,7 @@ namespace sunaba::core {
         }
 
         void setBlendMode(int mode) {
-            canvasItemMaterial->set_blend_mode(Object::cast_to<GodotCanvasItemMaterial::BlendMode>(mode));
+            canvasItemMaterial->set_blend_mode(static_cast<GodotCanvasItemMaterial::BlendMode>(mode));
         }
 
         int getLightMode() {
@@ -51,7 +51,7 @@ namespace sunaba::core {
         }
 
         void setLightMode(int mode) {
-            canvasItemMaterial->set_light_mode(Object::cast_to<GodotCanvasItemMaterial::LightMode>(mode));
+            canvasItemMaterial->set_light_mode(static_cast<GodotCanvasItemMaterial::LightMode>(mode));
         }
 
         int getParticlesAnimHFrames() {

@@ -73,11 +73,11 @@ namespace sunaba::core {
         }
 
         int compress(int mode, int source = 0, int astcFormat = 0) {
-            return image->compress(Object::cast_to<GodotImage::CompressMode>(mode), Object::cast_to<GodotImage::CompressSource>(source), Object::cast_to<GodotImage::ASTCFormat>(astcFormat));
+            return image->compress(static_cast<GodotImage::CompressMode>(mode), static_cast<GodotImage::CompressSource>(source), static_cast<GodotImage::ASTCFormat>(astcFormat));
         }
         
         int compressFromChannels(int mode, int channels, int astcFormat = 0) {
-            return image->compress_from_channels(Object::cast_to<GodotImage::CompressMode>(mode), Object::cast_to<GodotImage::UsedChannels>(channels), Object::cast_to<GodotImage::ASTCFormat>(astcFormat));
+            return image->compress_from_channels(static_cast<GodotImage::CompressMode>(mode), static_cast<GodotImage::UsedChannels>(channels), static_cast<GodotImage::ASTCFormat>(astcFormat));
         }
 
         sol::table computeImageMetrics(sol::state_view lua_state, Image comparedImage, bool useLuma)
@@ -89,7 +89,7 @@ namespace sunaba::core {
         }
 
         void convert(int format) {
-            image->convert(Object::cast_to<GodotImage::Format>(format));
+            image->convert(static_cast<GodotImage::Format>(format));
         }
 
         void copyFrom(Image* src) {
@@ -97,15 +97,15 @@ namespace sunaba::core {
         }
 
         static Image* create(int width, int height, int format, bool mipmaps = false) {
-            return new Image(GodotImage::create(width, height, mipmaps, Object::cast_to<GodotImage::Format>(format)).ptr());
+            return new Image(GodotImage::create(width, height, mipmaps, static_cast<GodotImage::Format>(format)).ptr());
         }
 
         static Image* createEmpty(int width, int height, int format, bool mipmaps = false) {
-            return new Image(GodotImage::create_empty(width, height, mipmaps, Object::cast_to<GodotImage::Format>(format)).ptr());
+            return new Image(GodotImage::create_empty(width, height, mipmaps, static_cast<GodotImage::Format>(format)).ptr());
         }
 
         static Image* createFromData(int width, int height, int format, BinaryData* data, bool mipmaps = false) {
-            return new Image(GodotImage::create_from_data(width, height, mipmaps, Object::cast_to<GodotImage::Format>(format), data->toPackedByteArray()).ptr());
+            return new Image(GodotImage::create_from_data(width, height, mipmaps, static_cast<GodotImage::Format>(format), data->toPackedByteArray()).ptr());
         }
 
         void crop(int width, int height) {
@@ -121,7 +121,7 @@ namespace sunaba::core {
         }
 
         int detectUsedChannels(int source = 0) {
-            return image->detect_used_channels(Object::cast_to<GodotImage::CompressSource>(source));
+            return image->detect_used_channels(static_cast<GodotImage::CompressSource>(source));
         }
 
         void fill(Color color) {
@@ -294,11 +294,11 @@ namespace sunaba::core {
         }
 
         void resize(int width, int height, int interpolation = 1) {
-            image->resize(width, height, Object::cast_to<GodotImage::Interpolation>(interpolation));
+            image->resize(width, height, static_cast<GodotImage::Interpolation>(interpolation));
         }
 
         void resizeToPo2(bool square = false, int interpolation = 1) {
-            image->resize_to_po2(square, Object::cast_to<GodotImage::Interpolation>(interpolation));
+            image->resize_to_po2(square, static_cast<GodotImage::Interpolation>(interpolation));
         }
 
         Image* rgbeToSrgb() {
@@ -386,7 +386,7 @@ namespace sunaba::core {
         }
 
         void setData(int width, int height, bool useMipmaps, int format, BinaryData* data) {
-            image->set_data(width, height, useMipmaps, Object::cast_to<GodotImage::Format>(format), data->toPackedByteArray());
+            image->set_data(width, height, useMipmaps, static_cast<GodotImage::Format>(format), data->toPackedByteArray());
         }
 
         void setPixel(int x, int y, Color color) {

@@ -44,7 +44,7 @@ namespace sunaba::input {
             Array godotEvents = _godotShortcut->get_events();
             for (int i = 0; i < godotEvents.size(); i++) {
                 InputEvent* event = new InputEvent(
-                    Object::cast_to<GodotInputEvent>(
+                    godot::Object::cast_to<GodotInputEvent>(
                         godotEvents[i]
                     )
                 );

@@ -13,7 +13,7 @@ void sunaba::core::bindPlaceholderTextureLayered(sol::state &lua) {
             &sunaba::core::PlaceholderTextureLayered::setSize
         ),
         "cast", [](Resource* instance) {
-            return new PlaceholderTextureLayered(Object::cast_to<GodotPlaceholderTextureLayered*>(instance->getResource()));
+            return new PlaceholderTextureLayered(godot::Object::cast_to<GodotPlaceholderTextureLayered>(instance->getResource()));
         }
     );
 }
