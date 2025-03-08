@@ -7,7 +7,7 @@
 
 #define GodotInputEventMouse godot::InputEventMouse
 
-#include "input_event.h"
+#include "input_event_with_modifiers.h"
 
 using namespace godot;
 using namespace sunaba::core;
@@ -15,7 +15,7 @@ using namespace sunaba::core;
 namespace sunaba::input {
     void bindInputEventMouse(sol::state_view& lua);
 
-    class InputEventMouse : public sunaba::input::InputEvent {
+    class InputEventMouse : public sunaba::input::InputEventWithModifiers {
     private:
         GodotInputEventMouse* event;
     public:
