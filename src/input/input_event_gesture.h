@@ -1,0 +1,50 @@
+#ifndef INPUT_EVENT_GESTURE_H
+#define INPUT_EVENT_GESTURE_H
+
+#include <godot_cpp/classes/input_event_gesture.hpp>
+#include <godot_cpp/variant/variant.hpp>
+#include <sol/sol.hpp>
+
+#define GodotInputEventGesture godot::InputEventGesture
+
+#include "input_event.h"
+
+using namespace godot;
+using namespace sunaba::core;
+
+namespace sunaba::input {
+    void bindInputEventGesture(sol::state_view& lua);
+
+    class InputEventGesture : public sunaba::input::InputEvent {
+    private:
+        GodotInputEventGesture* event;
+    public:
+        InputEventGesture(GodotInputEventGesture* e) {
+            setInputEventGesture(e);
+        }
+
+        InputEventGesture() {
+            setInputEventGesture(memnew(GodotInputEventGesture));
+        }
+
+        GodotInputEventGesture* getInputEventGesture() const {
+            return event;
+        }
+
+        void setInputEventGesture(GodotInputEventGesture* e) {
+            event = e;
+            event->reference();
+            setInputEvent(e);
+        }
+
+        Vector2 getPosition() {
+            return event->get_position();
+        }
+
+        void setPosition(const Vector2& position) {
+            event->set_position(position);
+        }
+    };
+}
+
+#endif // INPUT_EVENT_GESTURE_H
