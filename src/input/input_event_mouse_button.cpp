@@ -10,7 +10,7 @@ void sunaba::input::bindInputEventMouseButton(sol::state_view& lua) {
         "factor", sol::property(&InputEventMouseButton::getFactor, &InputEventMouseButton::setFactor),
         "pressed", sol::property(&InputEventMouseButton::isPressed, &InputEventMouseButton::setPressed),
         "cast", [](sunaba::core::Resource* instance) {
-            return new InputEventMouseButton(dynamic_cast<GodotInputEventMouseButton*>(instance->getResource()));
+            return new InputEventMouseButton(Object::cast_to<GodotInputEventMouseButton*>(instance->getResource()));
         }
     );
 }

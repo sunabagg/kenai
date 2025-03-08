@@ -5,7 +5,7 @@ void sunaba::core::bindTextureCubemapRD(sol::state &lua) {
         sol::constructors<sunaba::core::TextureCubemapRD()>(),
         sol::base_classes, sol::bases<sunaba::core::BaseObject, sunaba::core::Resource, sunaba::core::Texture, sunaba::core::TextureLayered, sunaba::core::TextureLayeredRD>(),
         "cast", [](sunaba::core::Resource* instance) {
-            return new TextureCubemapRD(dynamic_cast<GodotTextureCubemapRD*>(instance->getResource()));
+            return new TextureCubemapRD(Object::cast_to<GodotTextureCubemapRD*>(instance->getResource()));
         }
     );
 }

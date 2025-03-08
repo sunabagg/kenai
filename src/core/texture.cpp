@@ -5,7 +5,7 @@ void sunaba::core::bindTexture(sol::state &lua) {
         sol::constructors<sunaba::core::Texture()>(),
         sol::base_classes, sol::bases<sunaba::core::BaseObject, sunaba::core::Resource>(),
         "cast", [](Resource* instance) {
-            return new Texture(dynamic_cast<GodotTexture*>(instance->getResource()));
+            return new Texture(Object::cast_to<GodotTexture*>(instance->getResource()));
         }
     );
 }

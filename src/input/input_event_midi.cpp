@@ -13,7 +13,7 @@ void sunaba::input::bindInputEventMidi(sol::state_view& lua) {
         "pressure", sol::property(&InputEventMidi::getPressure, &InputEventMidi::setPressure),
         "velocity", sol::property(&InputEventMidi::getVelocity, &InputEventMidi::setVelocity),
         "cast", [](sunaba::core::Resource* instance) {
-            return new InputEventMidi(dynamic_cast<GodotInputEventMidi*>(instance->getResource()));
+            return new InputEventMidi(Object::cast_to<GodotInputEventMidi*>(instance->getResource()));
         }
     );
 }

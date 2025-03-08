@@ -5,7 +5,7 @@ void sunaba::core::bindPlaceholderTexture2DArray(sol::state &lua) {
         sol::constructors<sunaba::core::PlaceholderTexture2DArray()>(),
         sol::base_classes, sol::bases<sunaba::core::BaseObject, sunaba::core::Resource, sunaba::core::Texture, sunaba::core::TextureLayered, sunaba::core::PlaceholderTextureLayered>(),
         "cast", [](Resource* instance) {
-            return new PlaceholderTexture2DArray(dynamic_cast<GodotPlaceholderTexture2DArray*>(instance->getResource()));
+            return new PlaceholderTexture2DArray(Object::cast_to<GodotPlaceholderTexture2DArray*>(instance->getResource()));
         }
     );
 }

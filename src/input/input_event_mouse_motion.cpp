@@ -12,7 +12,7 @@ void sunaba::input::bindInputEventMouseMotion(sol::state_view& lua) {
         "tilt", sol::property(&InputEventMouseMotion::getTilt, &InputEventMouseMotion::setTilt),
         "velocity", sol::property(&InputEventMouseMotion::getVelocity, &InputEventMouseMotion::setVelocity),
         "cast", [](sunaba::core::Resource* instance) {
-            return new InputEventMouseMotion(dynamic_cast<GodotInputEventMouseMotion*>(instance->getResource()));
+            return new InputEventMouseMotion(Object::cast_to<GodotInputEventMouseMotion*>(instance->getResource()));
         }
     );
 }

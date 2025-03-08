@@ -17,7 +17,7 @@ void sunaba::input::bindInputEventKey(sol::state_view& lua) {
         "getKeycodeWithModifiers", &InputEventKey::getKeycodeWithModifiers,
         "getPhysicalKeycodeWithModifiers", &InputEventKey::getPhysicalKeycodeWithModifiers,
         "cast", [](sunaba::core::Resource* instance) {
-            return new InputEventKey(dynamic_cast<GodotInputEventKey*>(instance->getResource()));
+            return new InputEventKey(Object::cast_to<GodotInputEventKey*>(instance->getResource()));
         }
     );
 }

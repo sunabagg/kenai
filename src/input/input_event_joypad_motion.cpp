@@ -7,7 +7,7 @@ void sunaba::input::bindInputEventJoypadMotion(sol::state_view& lua) {
         "axis", sol::property(&InputEventJoypadMotion::getAxis, &InputEventJoypadMotion::setAxis),
         "axisValue", sol::property(&InputEventJoypadMotion::getAxisValue, &InputEventJoypadMotion::setAxisValue),
         "cast", [](sunaba::core::Resource* instance) {
-            return new InputEventJoypadMotion(dynamic_cast<GodotInputEventJoypadMotion*>(instance->getResource()));
+            return new InputEventJoypadMotion(Object::cast_to<GodotInputEventJoypadMotion*>(instance->getResource()));
         }
     );
 }

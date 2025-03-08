@@ -11,7 +11,7 @@ void sunaba::core::bindTextureLayered(sol::state &lua) {
         "getLayers", &sunaba::core::TextureLayered::getLayers,
         "getWidth", &sunaba::core::TextureLayered::getWidth,
         "cast", [](Resource* instance) {
-            return new TextureLayered(dynamic_cast<GodotTextureLayered*>(instance->getResource()));
+            return new TextureLayered(Object::cast_to<GodotTextureLayered*>(instance->getResource()));
         }
     );
 }
