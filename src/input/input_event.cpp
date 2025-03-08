@@ -19,7 +19,7 @@ void sunaba::input::bindInputEvent(sol::state_view& lua) {
         "isReleased", &InputEvent::isReleased,
         "xformedBy", &InputEvent::xformedBy,
         "cast", [](sunaba::core::Resource* instance) {
-            return new InputEvent(dynamic_cast<GodotInputEvent*>(instance->getResource()));
+            return new InputEvent(Object::cast_to<GodotInputEvent*>(instance->getResource()));
         }
     );
 }
