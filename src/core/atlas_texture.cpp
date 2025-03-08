@@ -21,7 +21,7 @@ void sunaba::core::bindAtlasTexture(sol::state &lua) {
             &sunaba::core::AtlasTexture::setRegion
         ),
         "cast", [](Resource* instance) {
-            return new AtlasTexture(dynamic_cast<GodotAtlasTexture*>(instance->getResource()));
+            return new AtlasTexture(Object::cast_to<GodotAtlasTexture*>(instance->getResource()));
         }
     );
 }
