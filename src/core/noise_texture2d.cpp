@@ -1,6 +1,6 @@
 #include "noise_texture2d.h"
 
-void sunaba::core::bindNoiseTexture2D(sol::state& lua) {
+void sunaba::core::bindNoiseTexture2D(sol::state_view& lua) {
     lua.new_usertype<NoiseTexture2D>("NoiseTexture2D",
         sol::constructors<NoiseTexture2D(), NoiseTexture2D(GodotNoiseTexture2D*)>(),
         sol::base_classes, sol::bases<sunaba::core::Texture2D>(),
