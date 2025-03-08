@@ -3,7 +3,7 @@
 void sunaba::input::bindInputEventMouseButton(sol::state_view& lua) {
     lua.new_usertype<InputEventMouseButton>("InputEventMouseButton",
         sol::constructors<InputEventMouseButton(), InputEventMouseButton(GodotInputEventMouseButton*)>(),
-        sol::base_classes, sol::bases<sunaba::core::BaseObject, sunaba::core::Resource, sunaba::input::InputEvent>(),
+        sol::base_classes, sol::bases<sunaba::core::BaseObject, sunaba::core::Resource, sunaba::input::InputEvent, sunaba::input::InputEventFromWindow, sunaba::input::InputEventWithModifiers, sunaba::input::InputEventMouse>(),
         "buttonIndex", sol::property(&InputEventMouseButton::getButtonIndex, &InputEventMouseButton::setButtonIndex),
         "canceled", sol::property(&InputEventMouseButton::isCanceled, &InputEventMouseButton::setCanceled),
         "doubleclick", sol::property(&InputEventMouseButton::isDoubleclick, &InputEventMouseButton::setDoubleclick),
