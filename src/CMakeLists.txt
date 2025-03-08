@@ -6,6 +6,7 @@ target_sources( ${PROJECT_NAME}
  )
 
 add_subdirectory( core )
+add_subdirectory( input )
 add_subdirectory( spatial )
 add_subdirectory( tests )
 add_subdirectory( ui )
