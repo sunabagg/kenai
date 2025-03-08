@@ -34,7 +34,7 @@ namespace sunaba::input {
         void setInputEventMouse(GodotInputEventMouse* e) {
             event = e;
             event->reference();
-            setInputEvent(e);
+            setInputEventWithModifiers(e);
         }
 
         int getButtonMask() {
