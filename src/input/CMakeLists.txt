@@ -27,6 +27,8 @@ target_sources(${PROJECT_NAME} PRIVATE
         input_event_mouse_motion.cpp
         input_event_pan_gesture.h
         input_event_pan_gesture.cpp
+        input_event_screen_drag.h
+        input_event_screen_drag.cpp
         
 )
 
