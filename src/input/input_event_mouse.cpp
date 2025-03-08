@@ -1,0 +1,14 @@
+#include "input_event_mouse.h"
+
+void sunaba::input::bindInputEventMouse(sol::state_view& lua) {
+    lua.new_usertype<InputEventMouse>("InputEventMouse",
+        sol::constructors<InputEventMouse(), InputEventMouse(GodotInputEventMouse*)>(),
+        sol::base_classes, sol::bases<sunaba::input::InputEvent>(),
+        "buttonMask", sol::property(&InputEventMouse::getButtonMask, &InputEventMouse::setButtonMask),
+        "globalPosition", sol::property(&InputEventMouse::getGlobalPosition, &InputEventMouse::setGlobalPosition),
+        "position", sol::property(&InputEventMouse::getPosition, &InputEventMouse::setPosition),
+        "cast", [](sunaba::core::Resource* instance) {
+            return new InputEventMouse(dynamic_cast<GodotInputEventMouse*>(instance->getResource()));
+        }
+    );
+}
