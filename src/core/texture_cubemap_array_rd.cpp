@@ -3,7 +3,7 @@
 void sunaba::core::bindTextureCubemapArrayRD(sol::state &lua) {
     lua.new_usertype<sunaba::core::TextureCubemapArrayRD>("TextureCubemapArrayRD",
         sol::constructors<sunaba::core::TextureCubemapArrayRD()>(),
-        sol::base_classes, sol::bases<sunaba::core::TextureLayeredRD>(),
+        sol::base_classes, sol::bases<sunaba::core::BaseObject, sunaba::core::Resource, sunaba::core::Texture, sunaba::core::TextureLayered, sunaba::core::TextureLayeredRD>(),
         "cast", [](sunaba::core::Resource* instance) {
             return new TextureCubemapArrayRD(dynamic_cast<GodotTextureCubemapArrayRD*>(instance->getResource()));
         }
