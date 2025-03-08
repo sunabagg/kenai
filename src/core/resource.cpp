@@ -6,6 +6,7 @@ void sunaba::core::bindResource(sol::state &lua) {
         sol::base_classes, sol::bases<sunaba::core::BaseObject>(),
         "duplicate", &sunaba::core::Resource::duplicate,
         "emitChanged", &sunaba::core::Resource::emitChanged,
+        "isNull", &sunaba::core::Resource::isNull,
         "cast", [](Resource* instance) {
             return new Resource(dynamic_cast<GodotResource*>(instance->getResource()));
         }

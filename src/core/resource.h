@@ -45,6 +45,10 @@ namespace sunaba::core {
         void emitChanged() {
             resource->emit_changed();
         }
+
+        bool isNull() {
+            return resource == nullptr;
+        }
     };
 }
 
