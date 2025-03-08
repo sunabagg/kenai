@@ -1,0 +1,12 @@
+#include "shortcut.h"
+
+void sunaba::input::bindShortcut(sol::state& lua) {
+    lua.new_usertype<Shortcut>("Shortcut",
+        sol::constructors<Shortcut()>(),
+        sol::base_classes, sol::bases<sunaba::core::BaseObject, sunaba::core::Resource>(),
+        "events", sol::property(&Shortcut::getEvents, &Shortcut::setEvents),
+        "getAsText", &Shortcut::getAsText,
+        "hasValidEvent", &Shortcut::hasValidEvent,
+        "matchesEvent", &Shortcut::matchesEvent
+    );
+}

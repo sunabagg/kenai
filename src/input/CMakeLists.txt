@@ -31,7 +31,8 @@ target_sources(${PROJECT_NAME} PRIVATE
         input_event_screen_drag.cpp
         input_event_screen_touch.h
         input_event_screen_touch.cpp
-        
+        shortcut.h
+        shortcut.cpp
 )
 
 target_include_directories( ${PROJECT_NAME}
