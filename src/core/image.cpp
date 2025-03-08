@@ -60,7 +60,7 @@ void sunaba::core::bindImage(sol::state &lua) {
         "shrinkX2", &sunaba::core::Image::shrinkX2,
         "srgbToLinear", &sunaba::core::Image::srgbToLinear,
         "cast", [](Resource* instance) {
-            return new Image(dynamic_cast<GodotImage*>(instance->getResource()));
+            return new Image(Object::cast_to<GodotImage*>(instance->getResource()));
         }
     );
 }
