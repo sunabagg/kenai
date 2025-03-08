@@ -3,7 +3,7 @@
 void sunaba::core::bindNoiseTexture2D(sol::state_view& lua) {
     lua.new_usertype<NoiseTexture2D>("NoiseTexture2D",
         sol::constructors<NoiseTexture2D(), NoiseTexture2D(GodotNoiseTexture2D*)>(),
-        sol::base_classes, sol::bases<sunaba::core::Texture2D>(),
+        sol::base_classes, sol::bases<sunaba::core::BaseObject, sunaba::core::Resource, sunaba::core::Texture, sunaba::core::Texture2D>(),
         "normalMap", sol::property(&NoiseTexture2D::isAsNormalMap, &NoiseTexture2D::setAsNormalMap),
         "bumpStrength", sol::property(&NoiseTexture2D::getBumpStrength, &NoiseTexture2D::setBumpStrength),
         "colorRamp", sol::property(&NoiseTexture2D::getColorRamp, &NoiseTexture2D::setColorRamp),
