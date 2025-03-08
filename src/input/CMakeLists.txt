@@ -13,6 +13,8 @@ target_sources(${PROJECT_NAME} PRIVATE
         input_event_joypad_motion.cpp
         input_event_key.h
         input_event_key.cpp
+        input_event_magnify_gesture.h
+        input_event_magnify_gesture.cpp
 )
 
 target_include_directories( ${PROJECT_NAME}
