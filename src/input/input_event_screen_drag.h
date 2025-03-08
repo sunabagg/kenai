@@ -34,7 +34,7 @@ namespace sunaba::input {
         void setInputEventScreenDrag(GodotInputEventScreenDrag* e) {
             event = e;
             event->reference();
-            setInputEvent(e);
+            setInputEventFromWindow(e);
         }
 
         int getIndex() {
