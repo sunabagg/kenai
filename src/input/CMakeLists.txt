@@ -23,6 +23,8 @@ target_sources(${PROJECT_NAME} PRIVATE
         input_event_mouse_button.cpp
         input_event_mouse_motion.h
         input_event_mouse_motion.cpp
+        input_event_pan_gesture.h
+        input_event_pan_gesture.cpp
 )
 
 target_include_directories( ${PROJECT_NAME}
