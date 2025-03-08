@@ -3,7 +3,7 @@
 void sunaba::core::bindFontFile(sol::state &lua) {
     lua.new_usertype<sunaba::core::FontFile>("FontFile",
         sol::constructors<sunaba::core::FontFile()>(),
-        sol::base_classes, sol::bases<sunaba::core::Font>(),
+        sol::base_classes, sol::bases<sunaba::core::BaseObject, sunaba::core::Resource, sunaba::core::Font>(),
 
         "allowSystemFallback", sol::property(
             &sunaba::core::FontFile::getAllowSystemFallback,
