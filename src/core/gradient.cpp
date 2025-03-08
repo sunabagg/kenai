@@ -3,7 +3,7 @@
 void sunaba::core::bindGradient(sol::state_view& lua) {
         lua.new_usertype<Gradient>("Gradient",
             sol::constructors<Gradient(), Gradient(GodotGradient*)>(),
-            sol::base_classes, sol::bases<sunaba::core::Resource>(),
+            sol::base_classes, sol::bases<sunaba::core::BaseObject, sunaba::core::Resource>(),
             "colors", sol::property(&Gradient::getColors, &Gradient::setColors),
             "interpolationColorSpace", sol::property(&Gradient::getInterpolationColorSpace, &Gradient::setInterpolationColorSpace),
             "interpolationMode", sol::property(&Gradient::getInterpolationMode, &Gradient::setInterpolationMode),
