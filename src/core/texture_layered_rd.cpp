@@ -3,7 +3,7 @@
 void sunaba::core::bindTextureLayeredRD(sol::state &lua) {
     lua.new_usertype<sunaba::core::TextureLayeredRD>("TextureLayeredRD",
         sol::constructors<sunaba::core::TextureLayeredRD()>(),
-        sol::base_classes, sol::bases<sunaba::core::TextureLayered>(),
+        sol::base_classes, sol::bases<sunaba::core::BaseObject, sunaba::core::Resource, sunaba::core::Texture, sunaba::core::TextureLayered>(),
         "cast", [](Resource* instance) {
             return new TextureLayeredRD(dynamic_cast<GodotTextureLayeredRD*>(instance->getResource()));
         }

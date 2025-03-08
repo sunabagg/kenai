@@ -3,7 +3,7 @@
 void sunaba::input::bindInputEventMouseMotion(sol::state_view& lua) {
     lua.new_usertype<InputEventMouseMotion>("InputEventMouseMotion",
         sol::constructors<InputEventMouseMotion(), InputEventMouseMotion(GodotInputEventMouseMotion*)>(),
-        sol::base_classes, sol::bases<sunaba::input::InputEvent>(),
+        sol::base_classes, sol::bases<sunaba::core::BaseObject, sunaba::core::Resource, sunaba::input::InputEvent>(),
         "penInverted", sol::property(&InputEventMouseMotion::getPenInverted, &InputEventMouseMotion::setPenInverted),
         "pressure", sol::property(&InputEventMouseMotion::getPressure, &InputEventMouseMotion::setPressure),
         "relative", sol::property(&InputEventMouseMotion::getRelative, &InputEventMouseMotion::setRelative),

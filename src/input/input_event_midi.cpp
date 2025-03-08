@@ -3,7 +3,7 @@
 void sunaba::input::bindInputEventMidi(sol::state_view& lua) {
     lua.new_usertype<InputEventMidi>("InputEventMidi",
         sol::constructors<InputEventMidi(), InputEventMidi(GodotInputEventMidi*)>(),
-        sol::base_classes, sol::bases<sunaba::input::InputEvent>(),
+        sol::base_classes, sol::bases<sunaba::core::BaseObject, sunaba::core::Resource, sunaba::input::InputEvent>(),
         "channel", sol::property(&InputEventMidi::getChannel, &InputEventMidi::setChannel),
         "controllerNumber", sol::property(&InputEventMidi::getControllerNumber, &InputEventMidi::setControllerNumber),
         "controllerValue", sol::property(&InputEventMidi::getControllerValue, &InputEventMidi::setControllerValue),

@@ -3,7 +3,7 @@
 void sunaba::core::bindTexture2D(sol::state &lua) {
     lua.new_usertype<sunaba::core::Texture2D>("Texture2D",
         sol::constructors<sunaba::core::Texture2D()>(),
-        sol::base_classes, sol::bases<sunaba::core::Texture>(),
+        sol::base_classes, sol::bases<sunaba::core::BaseObject, sunaba::core::Resource, sunaba::core::Texture>(),
         "createPlaceholder", &sunaba::core::Texture2D::createPlaceholder,
         "getHeight", &sunaba::core::Texture2D::getHeight,
         "getImage", &sunaba::core::Texture2D::getImage,
