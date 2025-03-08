@@ -11,8 +11,9 @@
 #include "../core/convert_godot_lua.h"
 
 using namespace godot;
+using namespace sunaba::core;
 
-namespace sunaba::core {
+namespace sunaba::input {
     void bindInputEvent(sol::state_view& lua);
 
     class InputEvent : public sunaba::core::Resource {

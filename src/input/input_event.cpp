@@ -1,6 +1,6 @@
 #include "input_event.h"
 
-void sunaba::core::bindInputEvent(sol::state_view& lua) {
+void sunaba::input::bindInputEvent(sol::state_view& lua) {
     lua.new_usertype<InputEvent>("InputEvent",
         sol::constructors<InputEvent(), InputEvent(GodotInputEvent*)>(),
         sol::base_classes, sol::bases<sunaba::core::Resource>(),
@@ -18,7 +18,7 @@ void sunaba::core::bindInputEvent(sol::state_view& lua) {
         "isPressed", &InputEvent::isPressed,
         "isReleased", &InputEvent::isReleased,
         "xformedBy", &InputEvent::xformedBy,
-        "cast", [](Resource* instance) {
+        "cast", [](sunaba::core::Resource* instance) {
             return new InputEvent(static_cast<GodotInputEvent*>(instance->getResource()));
         }
     );
