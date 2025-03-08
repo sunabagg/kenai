@@ -3,7 +3,7 @@
 void sunaba::core::bindShader(sol::state& lua) {
     lua.new_usertype<sunaba::core::Shader>("Shader",
         sol::constructors<sunaba::core::Shader()>(),
-        sol::base_classes, sol::bases<sunaba::core::Resource>(),
+        sol::base_classes, sol::bases<sunaba::core::BaseObject, sunaba::core::Resource>(),
         "code", sol::property(
             &sunaba::core::Shader::getCode,
             &sunaba::core::Shader::setCode
