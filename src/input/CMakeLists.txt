@@ -1,6 +1,8 @@
 target_sources(${PROJECT_NAME} PRIVATE
         input_event.h
         input_event.cpp
+        input_event_with_modifiers.h
+        input_event_with_modifiers.cpp
         input_event_action.h
         input_event_action.cpp
         input_event_from_window.h
@@ -25,6 +27,7 @@ target_sources(${PROJECT_NAME} PRIVATE
         input_event_mouse_motion.cpp
         input_event_pan_gesture.h
         input_event_pan_gesture.cpp
+        
 )
 
 target_include_directories( ${PROJECT_NAME}
