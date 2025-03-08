@@ -9,6 +9,8 @@ target_sources(${PROJECT_NAME} PRIVATE
         input_event_gesture.cpp
         input_event_joypad_button.h
         input_event_joypad_button.cpp
+        input_event_joypad_motion.h
+        input_event_joypad_motion.cpp
 )
 
 target_include_directories( ${PROJECT_NAME}
