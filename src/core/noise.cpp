@@ -10,6 +10,9 @@ void sunaba::core::bindNoise(sol::state_view& lua) {
             "getNoise2d", &Noise::getNoise2d,
             "getNoise3d", &Noise::getNoise3d,
             "getSeamlessImage", &Noise::getSeamlessImage,
-            "getSeamlessImage3d", &Noise::getSeamlessImage3d
+            "getSeamlessImage3d", &Noise::getSeamlessImage3d,
+            "cast", [](Resource* instance) {
+                return new Noise(static_cast<GodotNoise*>(instance->getResource()));
+            }
     );
 }
