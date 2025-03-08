@@ -59,7 +59,7 @@ namespace sunaba::core {
         }
 
         void setInterpolationColorSpace(int color_space) {
-            gradient->set_interpolation_color_space(static_cast<GodotGradient::ColorSpace>(color_space));
+            gradient->set_interpolation_color_space(Object::cast_to<GodotGradient::ColorSpace>(color_space));
         }
 
         int getInterpolationMode() {
@@ -67,7 +67,7 @@ namespace sunaba::core {
         }
 
         void setInterpolationMode(int mode) {
-            gradient->set_interpolation_mode(static_cast<GodotGradient::InterpolationMode>(mode));
+            gradient->set_interpolation_mode(Object::cast_to<GodotGradient::InterpolationMode>(mode));
         }
 
         std::vector<float> getOffsets() {
