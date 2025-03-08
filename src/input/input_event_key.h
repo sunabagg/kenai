@@ -8,7 +8,7 @@
 
 #define GodotInputEventKey godot::InputEventKey
 
-#include "input_event.h"
+#include "input_event_with_modifiers.h"
 
 using namespace godot;
 using namespace sunaba::core;
@@ -16,7 +16,7 @@ using namespace sunaba::core;
 namespace sunaba::input {
     void bindInputEventKey(sol::state_view& lua);
 
-    class InputEventKey : public sunaba::input::InputEvent {
+    class InputEventKey : public sunaba::input::InputEventWithModifiers {
     private:
         GodotInputEventKey* event;
     public:
