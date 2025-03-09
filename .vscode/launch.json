@@ -28,14 +28,15 @@
             "name": "macOS/Linux Launch",
             "type": "cppdbg",
             "request": "launch",
-            "program": "godot",
+            "program": "${env:GODOT4}",
             "args": [
                 "--verbose"
             ],
             "cwd": "${command:cmake.buildDirectory}/sunaba",
             "preLaunchTask": "CMake: build",
             "internalConsoleOptions": "openOnSessionStart",
-            "visualizerFile": "${workspaceFolder}/.vscode/godot.natvis"
+            "visualizerFile": "${workspaceFolder}/.vscode/godot.natvis",
+            "envFile": "${workspaceFolder}/.env"
         },
         {
             "name": "macOS/Linux Launch (Local)",
