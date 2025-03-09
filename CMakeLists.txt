@@ -388,6 +388,8 @@ if (__COMPILER_GNU OR GCC OR CLANG)
     )
 endif()
 
+include_directories( ${CMAKE_BINARY_DIR}/extern/godot-cpp/gen/include )
+
 if (CMAKE_BUILD_TYPE STREQUAL "Debug")
     message(STATUS "Debug build")
     # Add debug-specific settings here
