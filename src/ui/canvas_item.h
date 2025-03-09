@@ -15,13 +15,13 @@ namespace sunaba::ui {
         CanvasItemNode* canvas_item = nullptr; // Pointer to the CanvasItem instance
     public:
         // Constructor with Node* parameter
-        CanvasItem(CanvasItemNode* p_node) : Element(p_node), canvas_item(p_node) {
-            onInit();
+        CanvasItem(CanvasItemNode* p_node) {
+            setCanvasItem(p_node);
         }
     
         // Constructor with no parameters
-        CanvasItem() : Element(memnew(CanvasItemNode)) {
-            canvas_item = Object::cast_to<CanvasItemNode>(getNode());
+        CanvasItem() {
+            setCanvasItem(memnew(CanvasItemNode));
             onInit();
         }
 
