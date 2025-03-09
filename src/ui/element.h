@@ -27,10 +27,6 @@ namespace sunaba::ui {
             }
         }
     public:
-        Element() : node(memnew(Node)) {
-            node->set_name("Element");
-            onInit();
-        }
 
         // Protected constructor to prevent direct instantiation
         Element(Node* p_node) : node(p_node) {
@@ -73,7 +69,7 @@ namespace sunaba::ui {
         }
 
         Element() {
-            node = new Node();
+            node = memnew(Node);
             node->set_name("Element");
             onInit();
         }
