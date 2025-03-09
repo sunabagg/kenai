@@ -16,7 +16,7 @@ using namespace sunaba::core;
 namespace sunaba::ui {
     void bindStyleBox(sol::state &lua);
 
-    class StyleBox : public Resource {
+    class StyleBox : public sunaba::core::Resource {
     private:
         GodotStyleBox* style_box = nullptr; // Pointer to the StyleBox instance
     public:
