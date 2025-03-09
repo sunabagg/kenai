@@ -20,8 +20,8 @@ namespace sunaba::ui {
         }
     
         // Constructor with no parameters
-        CanvasItem() : Element(new CanvasItemNode()) {
-            canvas_item = static_cast<CanvasItemNode>(getNode());
+        CanvasItem() : Element(memnew(CanvasItemNode)) {
+            canvas_item = Object::cast_to<CanvasItemNode>(getNode());
             onInit();
         }
 
