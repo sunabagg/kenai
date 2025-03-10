@@ -7,6 +7,8 @@ target_sources(${PROJECT_NAME} PRIVATE
         style_box_empty.cpp
         style_box_flat.h
         style_box_flat.cpp
+        style_box_line.h
+        style_box_line.cpp
         canvas_item.h
         control.h
 )
