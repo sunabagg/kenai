@@ -13,7 +13,7 @@ using namespace godot;
 using namespace sunaba::core;
 
 namespace sunaba::ui {
-    void bindStyleBoxFlat(sol::state &lua);
+    void bindStyleBoxFlat(sol::state_view &lua);
 
     class StyleBoxFlat : public StyleBox {
     private:
