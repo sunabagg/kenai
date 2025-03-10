@@ -17,8 +17,8 @@ void sunaba::ui::bindStyleBox(sol::state &lua) {
         "getOffset", &StyleBox::getOffset,
         "setContentMargin", &StyleBox::setContentMargin,
         "setContentMarginAll", &StyleBox::setContentMarginAll,
-        "cast", [](Resource* p_resource) {
-            return new StyleBox(godot::Object::cast_to<GodotStyleBox>(p_resource.getResource()));
+        "cast", [](sunaba::core::Resource* p_resource) {
+            return new StyleBox(godot::Object::cast_to<GodotStyleBox>(p_resource->getResource()));
         }
     );
 }
