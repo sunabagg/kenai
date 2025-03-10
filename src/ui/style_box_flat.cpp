@@ -2,7 +2,7 @@
 
 void sunaba::ui::bindStyleBoxFlat(sol::state_view& lua) {
     lua.new_usertype<StyleBoxFlat>("StyleBoxFlat",
-        sol::constructors<StyleBoxFlat(), StyleBoxFlat(GodotStyleBoxFlat*)>(),
+        sol::constructors<StyleBoxFlat()>(),
         sol::base_classes, sol::bases<sunaba::core::BaseObject, sunaba::core::Resource, sunaba::ui::StyleBox>(),
         "antiAliasing", sol::property(&StyleBoxFlat::getAntiAliasing, &StyleBoxFlat::setAntiAliasing),
         "antiAliasingSize", sol::property(&StyleBoxFlat::getAntiAliasingSize, &StyleBoxFlat::setAntiAliasingSize),
