@@ -7,19 +7,14 @@
 namespace sunaba::core
 {
     
-    const JSClassDef BaseObject::baseObjectJsClass = {
-        "BaseObject",
-        .finalizer = jsBaseObjectFinalizer,
+    JSClassDef BaseObject::baseObjectJsClass = {
+        "BaseObject"  
     };
 
-    void jsBaseObjectFinalizer(JSContext* rt, JSValue value ) {
-        BaseObject* baseObj = (BaseObject*)JS_GetOpaque(value, BaseObject::baseObjectClassID);
-        if (baseObj) {
-            if (baseObj->hasBeenFreed()) {
-                delete baseObj;
-            }
-        }
-    }
+
+    JSClassID BaseObject::baseObjectClassID = JS_INVALID_CLASS_ID;
+
+    
 
     JSValue jsBaseObjectConstructor(JSContext* ctx, JSValueConst newTarget,  int argc, JSValueConst* argv) {
         if (argc != 0) return JS_EXCEPTION;
@@ -48,6 +43,7 @@ namespace sunaba::core
 
     void registerBaseObject(JSRuntime* rt, JSContext* ctx) {
         JS_NewClassID(rt, &BaseObject::baseObjectClassID);
+        BaseObject::baseObjectJsClass.finalizer = jsBaseObjectFinalizer;
         JS_NewClass(rt, BaseObject::baseObjectClassID, &BaseObject::baseObjectJsClass);
 
         JSValue proto = JS_NewObject(ctx);
