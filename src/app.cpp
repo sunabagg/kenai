@@ -23,8 +23,6 @@
 #endif
 #include <sol/sol.hpp>
 
-#include <quickjs.h>
-
 using namespace sunaba;
 using namespace sunaba::core;
 using namespace sunaba::core::io;
@@ -40,11 +38,15 @@ void free_global_state(App* app) {
 }
 
 App::App() {
+    rt = JS_NewRuntime();
+    ctx = JS_NewContext(rt);
 }
 
 App::~App() {
     global_state.collect_garbage();
     IoIndex::unbindIoManager(global_state);
+    JS_FreeContext(ctx);
+    JS_FreeRuntime(rt);
     //UtilityFunctions::print("App destructor");
 }
 
@@ -155,9 +157,6 @@ void App::start( const String &path) {
     //UtilityFunctions::print(script.c_str());
     global_state.script(script);
 
-    JSRuntime *rt = JS_NewRuntime();
-    JSContext *ctx = JS_NewContext(rt);
-
     const char *sc = "'Hello from QuickJS-NG'";
     JSValue result = JS_Eval(ctx, sc, strlen(sc), "<input>", JS_EVAL_TYPE_GLOBAL);
 
@@ -168,8 +167,6 @@ void App::start( const String &path) {
     }
 
     JS_FreeValue(ctx, result);
-    JS_FreeContext(ctx);
-    JS_FreeRuntime(rt);
 }
 
 void App::_process(double delta) {

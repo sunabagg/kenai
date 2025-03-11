@@ -7,6 +7,7 @@
 
 #include <godot_cpp/classes/node.hpp>
 #include <sol/state.hpp>
+#include <quickjs.h>
 
 #include "core/scene_system.h"
 #include "core/io/io_manager.h"
@@ -22,6 +23,9 @@ namespace sunaba
     public:
         App();
         ~App();
+
+        JSRuntime *rt;
+        JSContext *ctx;
 
         sol::state global_state;
 
