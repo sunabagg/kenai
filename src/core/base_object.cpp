@@ -4,6 +4,15 @@
 
 #include "base_object.h"
 
+namespace sunaba::core
+{
+    
+    const JSClassDef BaseObject::baseObjectJsClass = {
+        "BaseObject",
+        .finalizer = jsBaseObjectFinalizer,
+    };
+}
+
 using namespace sunaba::core;
 
 void BaseObject::notification(const int p_notification, bool p_reversed)
@@ -14,4 +23,6 @@ void BaseObject::notification(const int p_notification, bool p_reversed)
     else {
         onNotification(-p_notification);
     }
+
+
 }

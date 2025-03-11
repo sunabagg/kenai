@@ -6,10 +6,15 @@
 #define NH_OBJECT_H
 
 #include <lua.h>
+#include <quickjs.h>
 
 namespace sunaba::core
 {
     //static void generateBaseObjectUsertype(lua_State* L);
+
+    void registerBaseObject(JSContext* ctx);
+    void jsBaseObjectFinalizer(JSRuntime* rt, JSValue val) {}
+    JSValue jsBaseObjectConstructor(JSContext* ctx, JSValueConst newTarget,  int argc, JSValueConst* argv);
 
     class BaseObject {
     public:
@@ -18,6 +23,10 @@ namespace sunaba::core
         void notification(const int p_notification, bool p_reversed = false);
 
         bool freed = false;
+
+        static JSClassID baseObjectClassID;
+
+        static const JSClassDef baseObjectJsClass;
 
         virtual void onFree() {}
         
