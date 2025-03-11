@@ -390,6 +390,8 @@ endif()
 
 include_directories( ${CMAKE_BINARY_DIR}/extern/godot-cpp/gen/include )
 
+add_subdirectory( extern/quickjs-ng )
+
 if (CMAKE_BUILD_TYPE STREQUAL "Debug")
     message(STATUS "Debug build")
     # Add debug-specific settings here
@@ -411,6 +413,7 @@ if (USE_LUAJIT)
             godot-cpp::template_debug
             ${LUAJIT_LIBRARIES}
             sol2
+            qjs
             #hxsimdjson
             #Luau.Compiler Luau.VM
         )
@@ -420,6 +423,7 @@ if (USE_LUAJIT)
             godot-cpp::template_release
             ${LUAJIT_LIBRARIES}
             sol2
+            qjs
             #hxsimdjson
             #Luau.Compiler Luau.VM
         )
@@ -436,6 +440,7 @@ else()
             godot-cpp::template_debug
             liblua_static
             sol2
+            qjs
             #hxsimdjson
             #Luau.Compiler Luau.VM
         )
@@ -445,6 +450,7 @@ else()
             godot-cpp::template_release
             liblua_static
             sol2
+            qjs
             #hxsimdjson
             #Luau.Compiler Luau.VM
         )
