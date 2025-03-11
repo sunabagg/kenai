@@ -29,6 +29,9 @@ void sunaba::ui::bindStyleBoxFlat(sol::state_view& lua) {
         "shadowColor", sol::property(&StyleBoxFlat::getShadowColor, &StyleBoxFlat::setShadowColor),
         "shadowSize", sol::property(&StyleBoxFlat::getShadowSize, &StyleBoxFlat::setShadowSize),
         "shadowOffset", sol::property(&StyleBoxFlat::getShadowOffset, &StyleBoxFlat::setShadowOffset),
-        "skew", sol::property(&StyleBoxFlat::GetSkew, &StyleBoxFlat::SetSkew)
+        "skew", sol::property(&StyleBoxFlat::GetSkew, &StyleBoxFlat::SetSkew),
+        "cast", [](sunaba::core::Resource* p_resource) {
+            return new StyleBoxFlat(godot::Object::cast_to<GodotStyleBoxFlat>(p_resource->getResource()));
+        }
     );
 }
