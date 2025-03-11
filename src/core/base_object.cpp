@@ -69,7 +69,7 @@ namespace sunaba::core
         JS_SetConstructor(ctx, constructor, proto);
         JS_SetClassProto(ctx, BaseObject::baseObjectClassID, proto);
 
-        
+        JS_SetPropertyStr(ctx, JS_GetGlobalObject(ctx), "BaseObject", constructor);
     }
 }
 

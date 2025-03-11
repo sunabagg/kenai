@@ -18,9 +18,8 @@ namespace sunaba::core
     JSValue jsBaseObjectFreeFunc(JSContext* ctx, JSValueConst this_val, int argc, JSValueConst* argv);
 
     class BaseObject {
-    private:
-        bool freed = false;
     public:
+        bool freed = false;
         virtual void onNotification( int p_what ) {}
 
         void notification(const int p_notification, bool p_reversed = false);
