@@ -1,6 +1,6 @@
 {
     "name" : "sunaba",
-    "classPath": "",
+    "classPath": "src-api",
     "dependencies": {
     }
 }

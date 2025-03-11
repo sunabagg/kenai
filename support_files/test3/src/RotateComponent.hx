@@ -1,4 +1,4 @@
-package support_files.test3.src;
+package;
 
 import sunaba.core.Behavior;
 import sunaba.spatial.SpatialTransform;

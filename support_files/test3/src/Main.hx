@@ -3,7 +3,7 @@ import sunaba.spatial.Camera;
 import sunaba.spatial.SpatialTransform;
 import sunaba.spatial.mesh.MeshRenderer;
 import sunaba.spatial.mesh.Box;
-import support_files.test3.src.RotateComponent;
+import RotateComponent;
 
 class Main {
     public static function main() {
