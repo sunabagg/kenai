@@ -23,6 +23,8 @@
 #endif
 #include <sol/sol.hpp>
 
+#include <quickjs.h>
+
 using namespace sunaba;
 using namespace sunaba::core;
 using namespace sunaba::core::io;
@@ -152,6 +154,22 @@ void App::start( const String &path) {
     std::string script = ioManager->loadText("app://main.lua");
     //UtilityFunctions::print(script.c_str());
     global_state.script(script);
+
+    JSRuntime *rt = JS_NewRuntime();
+    JSContext *ctx = JS_NewContext(rt);
+
+    const char *sc = "'Hello from QuickJS-NG'";
+    JSValue result = JS_Eval(ctx, sc, strlen(sc), "<input>", JS_EVAL_TYPE_GLOBAL);
+
+    auto result_str = JS_ToCString(ctx, result);
+    if (result_str) {
+        UtilityFunctions::print(result_str);
+        JS_FreeCString(ctx, result_str);
+    }
+
+    JS_FreeValue(ctx, result);
+    JS_FreeContext(ctx);
+    JS_FreeRuntime(rt);
 }
 
 void App::_process(double delta) {
