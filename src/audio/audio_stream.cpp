@@ -7,5 +7,12 @@ void sunaba::audio::bindAudioStream(sol::state_view& lua) {
         "canBeSampled", &AudioStream::canBeSampled,
         "getLength", &AudioStream::getLength,
         "isMetaStream", &AudioStream::isMetaStream,
-        "isMonophonic", &AudioStream::isMonophonic);
+        "isMonophonic", &AudioStream::isMonophonic,
+        "cast", [](sunaba::core::Resource* resource) { 
+            return new AudioStream(
+                Object::cast_to<GodotAudioStream>(
+                    resource->getResource()
+                )
+            ); 
+        });
 }

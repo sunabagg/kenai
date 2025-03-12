@@ -3,5 +3,12 @@
 void sunaba::audio::bindAudioStreamMicrophone(sol::state_view& lua) {
     lua.new_usertype<AudioStreamMicrophone>("AudioStreamMicrophone",
         sol::constructors<AudioStreamMicrophone()>(),
-        sol::base_classes, sol::bases<sunaba::core::BaseObject, sunaba::core::Resource, AudioStream>());
+        sol::base_classes, sol::bases<sunaba::core::BaseObject, sunaba::core::Resource, AudioStream>(),
+        "cast", [](sunaba::core::Resource* resource) { 
+            return new AudioStreamMicrophone(
+                Object::cast_to<GodotAudioStreamMicrophone>(
+                    resource->getResource()
+                )
+            ); 
+        });
 }
