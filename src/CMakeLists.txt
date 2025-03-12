@@ -10,6 +10,7 @@ add_subdirectory( input )
 add_subdirectory( spatial )
 add_subdirectory( tests )
 add_subdirectory( ui )
+add_subdirectory( audio )
 
 target_include_directories( ${PROJECT_NAME}
     PRIVATE
