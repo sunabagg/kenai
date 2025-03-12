@@ -11,6 +11,8 @@ target_sources(${PROJECT_NAME} PRIVATE
         audio_stream_polyphonic.cpp
         audio_stream_randomizer.h
         audio_stream_randomizer.cpp
+        audio_stream_synchronized.h
+        audio_stream_synchronized.cpp
 )
 
 target_include_directories( ${PROJECT_NAME}
