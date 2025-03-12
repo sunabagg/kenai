@@ -11,6 +11,8 @@ target_sources(${PROJECT_NAME} PRIVATE
         style_box_line.cpp
         style_box_texture.h
         style_box_texture.cpp
+        theme.h
+        theme.cpp
         canvas_item.h
         control.h
 )
