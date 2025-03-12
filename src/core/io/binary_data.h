@@ -63,14 +63,14 @@ namespace sunaba::core::io {
         }
 
         Byte* get(int index) const {
-            if (index < 0 || index >= data.size()) {
+            if (index < 0 || index >= static_cast<int>(data.size())) {
                 UtilityFunctions::printerr("Index out of range");
             }
             return data[index];
         }
 
         void set(int index, Byte* byte) {
-            if (index < 0 || index >= data.size()) {
+            if (index < 0 || index >= static_cast<int>(data.size())) {
                 UtilityFunctions::printerr("Index out of range");
             }
             data[index] = byte;
@@ -85,14 +85,14 @@ namespace sunaba::core::io {
         }
 
         void insert(int index, Byte* byte) {
-            if (index < 0 || index > data.size()) {
+            if (index < 0 || index > static_cast<int>(data.size())) {
                 UtilityFunctions::printerr("Index out of range");
             }
             data.insert(data.begin() + index, byte);
         }
 
         void removeAt(int index) {
-            if (index < 0 || index >= data.size()) {
+            if (index < 0 || index >= static_cast<int>(data.size())) {
                 UtilityFunctions::printerr("Index out of range");
             }
             data.erase(data.begin() + index);

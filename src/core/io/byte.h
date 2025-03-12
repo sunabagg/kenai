@@ -12,7 +12,7 @@ namespace sunaba::core::io {
 
         Byte() : data(nullptr) {}
 
-        Byte(uint8_t d) : data(&d) {}
+        Byte(uint8_t* d) : data(d) {}
 
         Byte(double value) {
             data = new uint8_t[sizeof(double)];
