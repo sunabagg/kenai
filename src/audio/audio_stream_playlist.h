@@ -74,7 +74,7 @@ namespace sunaba::audio {
         }
 
         AudioStream* getListStream(int index) {
-            return new AudioStream(audioStreamPlaylist->get_list_stream(index));
+            return new AudioStream(audioStreamPlaylist->get_list_stream(index).ptr());
         }
 
         void setListStream(int index, AudioStream* stream) {
@@ -82,3 +82,5 @@ namespace sunaba::audio {
         }
     };
 }
+
+#endif // AUDIO_STREAM_PLAYLIST_H

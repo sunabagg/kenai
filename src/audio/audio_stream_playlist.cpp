@@ -16,6 +16,6 @@ void sunaba::audio::bindAudioStreamPlaylist(sol::state_view& lua) {
         "shuffle", sol::property(&AudioStreamPlaylist::getShuffle, &AudioStreamPlaylist::setShuffle),
         "streamCount", sol::property(&AudioStreamPlaylist::getStreamCount),
         "getListStream", &AudioStreamPlaylist::getListStream,
-        "setListStream", &AudioStreamPlaylist::setListStream,
+        "setListStream", &AudioStreamPlaylist::setListStream
     );
 }
