@@ -151,7 +151,19 @@ void App::start( const String &path) {
 
     std::string script = ioManager->loadText("app://main.lua");
     //UtilityFunctions::print(script.c_str());
-    global_state.script(script);
+    //global_state.script(script);
+    sol::protected_function_result result = global_state.safe_script(script, sol::script_pass_on_error);
+    
+    if ( !result.valid() ) {
+        sol::error err = result;
+        UtilityFunctions::print( String( "Error: " ) + err.what() );
+        auto msgBox = pfd::message(
+            "Error", err.what(), pfd::choice::ok, pfd::icon::error
+        );
+        msgBox.result();
+    } else {
+        //UtilityFunctions::print("Script executed successfully");
+    }
 }
 
 void App::_process(double delta) {
