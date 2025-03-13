@@ -11,6 +11,8 @@ target_sources(${PROJECT_NAME} PRIVATE
         bind_spatial_classes.cpp
         fog_material.h
         fog_material.cpp
+        base_material3d.h
+        base_material3d.cpp
 )
 
 add_subdirectory( mesh )
