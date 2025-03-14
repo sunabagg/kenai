@@ -221,6 +221,13 @@ namespace sunaba::spatial {
             );
         }
 
+        void setBacklightTexture(sunaba::core::Texture2D* texture) {
+            material->set_texture(
+                GodotBaseMaterial3D::TextureParam::TEXTURE_BACKLIGHT,
+                texture->getTexture2D()
+            );
+        }
+
         bool getBillboardKeepScale() {
             return material->get_flag(GodotBaseMaterial3D::FLAG_BILLBOARD_KEEP_SCALE);
         }
@@ -1124,7 +1131,7 @@ namespace sunaba::spatial {
         void setFlag(int flag, bool enable) {
             material->set_flag(static_cast<GodotBaseMaterial3D::Flags>(flag), enable);
         }
-        
+
         void setTexture(int param, sunaba::core::Texture2D* texture) {
             material->set_texture(
                 static_cast<GodotBaseMaterial3D::TextureParam>(param),
