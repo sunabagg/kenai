@@ -607,7 +607,530 @@ namespace sunaba::spatial {
             material->set_specular(value);
         }
 
+        sunaba::core::Texture2D* getMetallicTexture() {
+            return new sunaba::core::Texture2D(
+                material->get_texture(
+                    GodotBaseMaterial3D::TextureParam::TEXTURE_METALLIC
+                ).ptr()
+            );
+        }
 
+        void setMetallicTexture(sunaba::core::Texture2D* texture) {
+            material->set_texture(
+                GodotBaseMaterial3D::TextureParam::TEXTURE_METALLIC,
+                texture->getTexture2D()
+            );
+        }
+
+        int getMetalicTextureChannel() {
+            return material->get_metallic_texture_channel();
+        }
+
+        void setMetalicTextureChannel(int channel) {
+            material->set_metallic_texture_channel(static_cast<GodotBaseMaterial3D::TextureChannel>(channel));
+        }
+
+        float getMsdfOutlineSize() {
+            return material->get_msdf_outline_size();
+        }
+
+        void setMsdfOutlineSize(float size) {
+            material->set_msdf_outline_size(size);
+        }
+
+        float getMsdfPixelRange() {
+            return material->get_msdf_pixel_range();
+        }
+
+        void setMsdfPixelRange(float range) {
+            material->set_msdf_pixel_range(range);
+        }
+
+        bool getNoDepthTest() {
+            return material->get_flag(GodotBaseMaterial3D::FLAG_DISABLE_DEPTH_TEST);
+        }
+
+        void setNoDepthTest(bool enable) {
+            material->set_flag(GodotBaseMaterial3D::FLAG_DISABLE_DEPTH_TEST, enable);
+        }
+
+        bool getNormalEnabled() {
+            return material->get_feature(GodotBaseMaterial3D::FEATURE_NORMAL_MAPPING);
+        }
+
+        void setNormalEnabled(bool enable) {
+            material->set_feature(GodotBaseMaterial3D::FEATURE_NORMAL_MAPPING, enable);
+        }
+
+        float getNormalScale() {
+            return material->get_normal_scale();
+        }
+
+        void setNormalScale(float scale) {
+            material->set_normal_scale(scale);
+        }
+
+        sunaba::core::Texture2D* getNormalTexture() {
+            return new sunaba::core::Texture2D(
+                material->get_texture(
+                    GodotBaseMaterial3D::TextureParam::TEXTURE_NORMAL
+                ).ptr()
+            );
+        }
+
+        void setNormalTexture(sunaba::core::Texture2D* texture) {
+            material->set_texture(
+                GodotBaseMaterial3D::TextureParam::TEXTURE_NORMAL,
+                texture->getTexture2D()
+            );
+        }
+
+        sunaba::core::Texture2D* getOrmTexture() {
+            return new sunaba::core::Texture2D(
+                material->get_texture(
+                    GodotBaseMaterial3D::TextureParam::TEXTURE_ORM
+                ).ptr()
+            );
+        }
+
+        void setOrmTexture(sunaba::core::Texture2D* texture) {
+            material->set_texture(
+                GodotBaseMaterial3D::TextureParam::TEXTURE_ORM,
+                texture->getTexture2D()
+            );
+        }
+
+        int getParticlesAnimHFrames() {
+            return material->get_particles_anim_h_frames();
+        }
+
+        void setParticlesAnimHFrames(int frames) {
+            material->set_particles_anim_h_frames(frames);
+        }
+
+        bool getParticlesAnimLoop() {
+            return material->get_particles_anim_loop();
+        }
+
+        void setParticlesAnimLoop(bool enable) {
+            material->set_particles_anim_loop(enable);
+        }
+
+        int getParticlesAnimVFrames() {
+            return material->get_particles_anim_v_frames();
+        }
+
+        void setParticlesAnimVFrames(int frames) {
+            material->set_particles_anim_v_frames(frames);
+        }
+
+        float getPointSize() {
+            return material->get_point_size();
+        }
+
+        void setPointSize(float size) {
+            material->set_point_size(size);
+        }
+
+        float getProximityFadeDistance() {
+            return material->get_proximity_fade_distance();
+        }
+
+        void setProximityFadeDistance(float distance) {
+            material->set_proximity_fade_distance(distance);
+        }
+
+        bool getProximityFadeEnabled() {
+            return material->is_proximity_fade_enabled();
+        }
+
+        void setProximityFadeEnabled(bool enable) {
+            material->set_proximity_fade_enabled(enable);
+        }
+
+        bool getRefractionEnabled() {
+            return material->get_feature(GodotBaseMaterial3D::FEATURE_REFRACTION);
+        }
+
+        void setRefractionEnabled(bool enable) {
+            material->set_feature(GodotBaseMaterial3D::FEATURE_REFRACTION, enable);
+        }
+
+        float getRefractionScale() {
+            return material->get_refraction();
+        }
+
+        void setRefractionScale(float scale) {
+            material->set_refraction(scale);
+        }
+
+        sunaba::core::Texture2D* getRefractionTexture() {
+            return new sunaba::core::Texture2D(
+                material->get_texture(
+                    GodotBaseMaterial3D::TextureParam::TEXTURE_REFRACTION
+                ).ptr()
+            );
+        }
+
+        void setRefractionTexture(sunaba::core::Texture2D* texture) {
+            material->set_texture(
+                GodotBaseMaterial3D::TextureParam::TEXTURE_REFRACTION,
+                texture->getTexture2D()
+            );
+        }
+
+        int getRefactionTextureChannel() {
+            return material->get_refraction_texture_channel();
+        }
+
+        void setRefactionTextureChannel(int channel) {
+            material->set_refraction_texture_channel(static_cast<GodotBaseMaterial3D::TextureChannel>(channel));
+        }
+
+        float getRim() {
+            return material->get_rim();
+        }
+
+        void setRim(float value) {
+            material->set_rim(value);
+        }
+
+        bool getRimEnabled() {
+            return material->get_feature(GodotBaseMaterial3D::FEATURE_RIM);
+        }
+
+        void setRimEnabled(bool enable) {
+            material->set_feature(GodotBaseMaterial3D::FEATURE_RIM, enable);
+        }
+
+        sunaba::core::Texture2D* getRimTexture() {
+            return new sunaba::core::Texture2D(
+                material->get_texture(
+                    GodotBaseMaterial3D::TextureParam::TEXTURE_RIM
+                ).ptr()
+            );
+        }
+
+        void setRimTexture(sunaba::core::Texture2D* texture) {
+            material->set_texture(
+                GodotBaseMaterial3D::TextureParam::TEXTURE_RIM,
+                texture->getTexture2D()
+            );
+        }
+
+        float getRimTint() {
+            return material->get_rim_tint();
+        }
+
+        void setRimTint(float value) {
+            material->set_rim_tint(value);
+        }
+
+        float getRoughness() {
+            return material->get_roughness();
+        }
+
+        void setRoughness(float value) {
+            material->set_roughness(value);
+        }
+
+        sunaba::core::Texture2D* getRoughnessTexture() {
+            return new sunaba::core::Texture2D(
+                material->get_texture(
+                    GodotBaseMaterial3D::TextureParam::TEXTURE_ROUGHNESS
+                ).ptr()
+            );
+        }
+
+        void setRoughnessTexture(sunaba::core::Texture2D* texture) {
+            material->set_texture(
+                GodotBaseMaterial3D::TextureParam::TEXTURE_ROUGHNESS,
+                texture->getTexture2D()
+            );
+        }
+
+        int getRoughnessTextureChannel() {
+            return material->get_roughness_texture_channel();
+        }
+
+        void setRoughnessTextureChannel(int channel) {
+            material->set_roughness_texture_channel(static_cast<GodotBaseMaterial3D::TextureChannel>(channel));
+        }
+
+        int getShadingMode() {
+            return material->get_shading_mode();
+        }
+
+        void setShadingMode(int mode) {
+            material->set_shading_mode(static_cast<GodotBaseMaterial3D::ShadingMode>(mode));
+        }
+
+        bool getShadowToOpacity() {
+            return material->get_flag(GodotBaseMaterial3D::FLAG_USE_SHADOW_TO_OPACITY);
+        }
+
+        void setShadowToOpacity(bool enable) {
+            material->set_flag(GodotBaseMaterial3D::FLAG_USE_SHADOW_TO_OPACITY, enable);
+        }
+
+        int getSpecularMode() {
+            return material->get_specular_mode();
+        }
+
+        void setSpecularMode(int mode) {
+            material->set_specular_mode(static_cast<GodotBaseMaterial3D::SpecularMode>(mode));
+        }
+
+        bool getSubsurfScatterEnabled() {
+            return material->get_feature(GodotBaseMaterial3D::FEATURE_SUBSURFACE_SCATTERING);
+        }
+
+        void setSubsurfScatterEnabled(bool enable) {
+            material->set_feature(GodotBaseMaterial3D::FEATURE_SUBSURFACE_SCATTERING, enable);
+        }
+
+        bool getSubsurfScatterSkinMode() {
+            return material->get_flag(GodotBaseMaterial3D::FLAG_SUBSURFACE_MODE_SKIN);
+        }
+
+        void setSubsurfScatterSkinMode(bool enable) {
+            material->set_flag(GodotBaseMaterial3D::FLAG_SUBSURFACE_MODE_SKIN, enable);
+        }
+
+        float getSubsurfScatterStrength() {
+            return material->get_subsurface_scattering_strength();
+        }
+
+        void setSubsurfScatterStrength(float value) {
+            material->set_subsurface_scattering_strength(value);
+        }
+
+        sunaba::core::Texture2D* getSubsurfScatterTexture() {
+            return new sunaba::core::Texture2D(
+                material->get_texture(
+                    GodotBaseMaterial3D::TextureParam::TEXTURE_SUBSURFACE_SCATTERING
+                ).ptr()
+            );
+        }
+
+        void setSubsurfScatterTexture(sunaba::core::Texture2D* texture) {
+            material->set_texture(
+                GodotBaseMaterial3D::TextureParam::TEXTURE_SUBSURFACE_SCATTERING,
+                texture->getTexture2D()
+            );
+        }
+
+        float getSubsurfScatterTransmittanceBoost() {
+            return material->get_transmittance_boost();
+        }
+
+        void setSubsurfScatterTransmittanceBoost(float value) {
+            material->set_transmittance_boost(value);
+        }
+
+        Color getSubsurfScatterTransmittanceColor() {
+            return material->get_transmittance_color();
+        }
+
+        void setSubsurfScatterTransmittanceColor(Color color) {
+            material->set_transmittance_color(color);
+        }
+
+        float getSubsurfScatterTransmittanceDepth() {
+            return material->get_transmittance_depth();
+        }
+
+        void setSubsurfScatterTransmittanceDepth(float value) {
+            material->set_transmittance_depth(value);
+        }
+
+        bool getSubsurfScatterTransmittanceEnabled() {
+            return material->get_feature(GodotBaseMaterial3D::FEATURE_SUBSURFACE_TRANSMITTANCE);
+        }
+
+        void setSubsurfScatterTransmittanceEnabled(bool enable) {
+            material->set_feature(GodotBaseMaterial3D::FEATURE_SUBSURFACE_TRANSMITTANCE, enable);
+        }
+
+        sunaba::core::Texture2D* getSubsurfScatterTransmittanceTexture() {
+            return new sunaba::core::Texture2D(
+                material->get_texture(
+                    GodotBaseMaterial3D::TextureParam::TEXTURE_SUBSURFACE_TRANSMITTANCE
+                ).ptr()
+            );
+        }
+
+        void setSubsurfScatterTransmittanceTexture(sunaba::core::Texture2D* texture) {
+            material->set_texture(
+                GodotBaseMaterial3D::TextureParam::TEXTURE_SUBSURFACE_TRANSMITTANCE,
+                texture->getTexture2D()
+            );
+        }
+
+        int getTextureFilter() {
+            return material->get_texture_filter();
+        }
+
+        void setTextureFilter(int filter) {
+            material->set_texture_filter(static_cast<GodotBaseMaterial3D::TextureFilter>(filter));
+        }
+
+        bool getTextureRepeat() {
+            return material->get_flag(GodotBaseMaterial3D::FLAG_USE_TEXTURE_REPEAT);
+        }
+
+        void setTextureRepeat(bool enable) {
+            material->set_flag(GodotBaseMaterial3D::FLAG_USE_TEXTURE_REPEAT, enable);
+        }
+
+        int getTransparency() {
+            return material->get_transparency();
+        }
+
+        void setTransparency(int mode) {
+            material->set_transparency(static_cast<GodotBaseMaterial3D::Transparency>(mode));
+        }
+
+        bool getUseParticleTrails() {
+            return material->get_flag(GodotBaseMaterial3D::FLAG_PARTICLE_TRAILS_MODE);
+        }
+
+        void setUseParticleTrails(bool enable) {
+            material->set_flag(GodotBaseMaterial3D::FLAG_PARTICLE_TRAILS_MODE, enable);
+        }
+
+        bool usePointSize() {
+            return material->get_flag(GodotBaseMaterial3D::FLAG_USE_POINT_SIZE);
+        }
+
+        void setUsePointSize(bool enable) {
+            material->set_flag(GodotBaseMaterial3D::FLAG_USE_POINT_SIZE, enable);
+        }
+
+        Vector3 getUv1Offset() {
+            return material->get_uv1_offset();
+        }
+
+        void setUv1Offset(Vector3 offset) {
+            material->set_uv1_offset(offset);
+        }
+
+        Vector3 getUv1Scale() {
+            return material->get_uv1_scale();
+        }
+
+        void setUv1Scale(Vector3 scale) {
+            material->set_uv1_scale(scale);
+        }
+
+        bool getUv1Triplanar() {
+            return material->get_flag(GodotBaseMaterial3D::FLAG_UV1_USE_TRIPLANAR);
+        }
+
+        void setUv1Triplanar(bool enable) {
+            material->set_flag(GodotBaseMaterial3D::FLAG_UV1_USE_TRIPLANAR, enable);
+        }
+
+        float getUv1TriplanarSharpness() {
+            return material->get_uv1_triplanar_blend_sharpness();
+        }
+
+        void setUv1TriplanarSharpness(float sharpness) {
+            material->set_uv1_triplanar_blend_sharpness(sharpness);
+        }
+
+        bool getUv1WorldTriplanar() {
+            return material->get_flag(GodotBaseMaterial3D::FLAG_UV1_USE_WORLD_TRIPLANAR);
+        }
+
+        void setUv1WorldTriplanar(bool enable) {
+            material->set_flag(GodotBaseMaterial3D::FLAG_UV1_USE_WORLD_TRIPLANAR, enable);
+        }
+
+        Vector3 getUv2Offset() {
+            return material->get_uv2_offset();
+        }
+
+        void setUv2Offset(Vector3 offset) {
+            material->set_uv2_offset(offset);
+        }
+
+        Vector3 getUv2Scale() {
+            return material->get_uv2_scale();
+        }
+
+        void setUv2Scale(Vector3 scale) {
+            material->set_uv2_scale(scale);
+        }
+
+        bool getUv2Triplanar() {
+            return material->get_flag(GodotBaseMaterial3D::FLAG_UV2_USE_TRIPLANAR);
+        }
+
+        void setUv2Triplanar(bool enable) {
+            material->set_flag(GodotBaseMaterial3D::FLAG_UV2_USE_TRIPLANAR, enable);
+        }
+
+        float getUv2TriplanarSharpness() {
+            return material->get_uv2_triplanar_blend_sharpness();
+        }
+
+        void setUv2TriplanarSharpness(float sharpness) {
+            material->set_uv2_triplanar_blend_sharpness(sharpness);
+        }
+
+        bool getUv2WorldTriplanar() {
+            return material->get_flag(GodotBaseMaterial3D::FLAG_UV2_USE_WORLD_TRIPLANAR);
+        }
+
+        void setUv2WorldTriplanar(bool enable) {
+            material->set_flag(GodotBaseMaterial3D::FLAG_UV2_USE_WORLD_TRIPLANAR, enable);
+        }
+
+        bool getVertexColorIsSrgb() {
+            return material->get_flag(GodotBaseMaterial3D::FLAG_SRGB_VERTEX_COLOR);
+        }
+
+        void setVertexColorIsSrgb(bool enable) {
+            material->set_flag(GodotBaseMaterial3D::FLAG_SRGB_VERTEX_COLOR, enable);
+        }
+
+        bool getVertexColorUseAsAlbedo() {
+            return material->get_flag(GodotBaseMaterial3D::FLAG_ALBEDO_FROM_VERTEX_COLOR);
+        }
+
+        void setVertexColorUseAsAlbedo(bool enable) {
+            material->set_flag(GodotBaseMaterial3D::FLAG_ALBEDO_FROM_VERTEX_COLOR, enable);
+        }
+
+        bool getFeature(int feature) {
+            return material->get_feature(static_cast<GodotBaseMaterial3D::Feature>(feature));
+        }
+
+        bool getFlag(int flag) {
+            return material->get_flag(static_cast<GodotBaseMaterial3D::Flags>(flag));
+        }
+
+        sunaba::core::Texture2D* getTexture(int param) {
+            return new sunaba::core::Texture2D(
+                material->get_texture(static_cast<GodotBaseMaterial3D::TextureParam>(param)).ptr()
+            );
+        }
+
+        void setFeature(int feature, bool enable) {
+            material->set_feature(static_cast<GodotBaseMaterial3D::Feature>(feature), enable);
+        }
+
+        void setFlag(int flag, bool enable) {
+            material->set_flag(static_cast<GodotBaseMaterial3D::Flags>(flag), enable);
+        }
+        
+        void setTexture(int param, sunaba::core::Texture2D* texture) {
+            material->set_texture(
+                static_cast<GodotBaseMaterial3D::TextureParam>(param),
+                texture->getTexture2D()
+            );
+        }
     };
 }
 
