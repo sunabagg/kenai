@@ -65,3 +65,5 @@ namespace sunaba::spatial {
         }
     };
 }
+
+#endif // PANORAMA_SKY_MATERIAL_H
