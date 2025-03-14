@@ -2,7 +2,6 @@
 
 void sunaba::spatial::bindBaseMaterial3D(sol::state_view& lua) {
     lua.new_usertype<sunaba::spatial::BaseMaterial3D>("BaseMaterial3D",
-        sol::base_classes, sol::bases<sunaba::core::Material>(),
         sol::constructors<BaseMaterial3D()>(),
         sol::base_classes, sol::bases<sunaba::core::BaseObject, sunaba::core::Resource, sunaba::core::Material>(),
         "albedoColor", sol::property(&BaseMaterial3D::getAlbedoColor, &BaseMaterial3D::setAlbedoColor),
