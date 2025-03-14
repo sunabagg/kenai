@@ -33,6 +33,8 @@ target_sources(${PROJECT_NAME} PRIVATE
         polygon_occluder3d.cpp
         box_occluder3d.h
         box_occluder3d.cpp
+        procedural_sky_material.h
+        procedural_sky_material.cpp
 )
 
 add_subdirectory( mesh )
