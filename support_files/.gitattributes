@@ -2,3 +2,4 @@
 * text=auto eol=lf
 
 extern/** linguist-vendored
+extern/** linguist-detectable=false
