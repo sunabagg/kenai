@@ -34,7 +34,7 @@ namespace sunaba::core {
         void setImageTextureLayered(GodotImageTextureLayered* t) {
             texture = t;
             texture->reference();
-            setTexture(texture);
+            setTextureLayered(texture);
         }
 
         int createFromImages(std::vector<Image> images) {
