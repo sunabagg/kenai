@@ -21,6 +21,8 @@ target_sources(${PROJECT_NAME} PRIVATE
         curve3d.cpp
         occluder3d.h
         occluder3d.cpp
+        orm_material3d.h
+        orm_material3d.cpp
 )
 
 add_subdirectory( mesh )
