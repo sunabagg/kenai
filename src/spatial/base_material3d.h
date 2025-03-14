@@ -400,11 +400,11 @@ namespace sunaba::spatial {
             material->set_flag(GodotBaseMaterial3D::FLAG_DISABLE_FOG, enable);
         }
 
-        bool getDisableRecieveShadows() {
+        bool getDisableReceiveShadows() {
             return material->get_flag(GodotBaseMaterial3D::FLAG_DONT_RECEIVE_SHADOWS);
         }
 
-        void setDisableRecieveShadows(bool enable) {
+        void setDisableReceiveShadows(bool enable) {
             material->set_flag(GodotBaseMaterial3D::FLAG_DONT_RECEIVE_SHADOWS, enable);
         }
 
@@ -424,7 +424,7 @@ namespace sunaba::spatial {
             material->set_distance_fade_min_distance(distance);
         }
 
-        int getdinstanceFadeMode() {
+        int getDistanceFadeMode() {
             return material->get_distance_fade();
         }
 
@@ -606,11 +606,11 @@ namespace sunaba::spatial {
             material->set_metallic(value);
         }
 
-        float getMetalicSpecular() {
+        float getMetallicSpecular() {
             return material->get_specular();
         }
 
-        void setMetalicSpecular(float value) {
+        void setMetallicSpecular(float value) {
             material->set_specular(value);
         }
 
