@@ -56,3 +56,5 @@ namespace sunaba::spatial {
         }
     };
 }
+
+#endif // OCCLUDER3D_H
