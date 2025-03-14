@@ -629,11 +629,11 @@ namespace sunaba::spatial {
             );
         }
 
-        int getMetalicTextureChannel() {
+        int getMetallicTextureChannel() {
             return material->get_metallic_texture_channel();
         }
 
-        void setMetalicTextureChannel(int channel) {
+        void setMetallicTextureChannel(int channel) {
             material->set_metallic_texture_channel(static_cast<GodotBaseMaterial3D::TextureChannel>(channel));
         }
 
