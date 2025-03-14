@@ -786,11 +786,11 @@ namespace sunaba::spatial {
             );
         }
 
-        int getRefactionTextureChannel() {
+        int getRefractionTextureChannel() {
             return material->get_refraction_texture_channel();
         }
 
-        void setRefactionTextureChannel(int channel) {
+        void setRefractionTextureChannel(int channel) {
             material->set_refraction_texture_channel(static_cast<GodotBaseMaterial3D::TextureChannel>(channel));
         }
 
