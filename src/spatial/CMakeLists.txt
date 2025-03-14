@@ -15,6 +15,8 @@ target_sources(${PROJECT_NAME} PRIVATE
         base_material3d.cpp
         cubemap.h
         cubemap.cpp
+        cubemap_array.h
+        cubemap_array.cpp
 )
 
 add_subdirectory( mesh )
