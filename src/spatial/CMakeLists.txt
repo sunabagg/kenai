@@ -27,8 +27,8 @@ target_sources(${PROJECT_NAME} PRIVATE
         panorama_sky_material.cpp
         physical_sky_material.h
         physical_sky_material.cpp
-        array_occluder3d.h
-        array_occluder3d.cpp
+        polygon_occluder3d.h
+        polygon_occluder3d.cpp
         box_occluder3d.h
         box_occluder3d.cpp
 )
