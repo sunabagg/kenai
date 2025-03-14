@@ -38,7 +38,7 @@ namespace sunaba::core {
         }
 
         int createFromImages(std::vector<Image> images) {
-            TypedArray<Image> refsArr;
+            TypedArray<GodotImage> refsArr;
             for (int i = 0; i < images.size(); i++) {
                 refsArr.push_back(images[i].getImage());
             }
