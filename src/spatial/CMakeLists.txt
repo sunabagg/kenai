@@ -25,6 +25,8 @@ target_sources(${PROJECT_NAME} PRIVATE
         orm_material3d.cpp
         panorama_sky_material.h
         panorama_sky_material.cpp
+        physical_sky_material.h
+        physical_sky_material.cpp
 )
 
 add_subdirectory( mesh )
