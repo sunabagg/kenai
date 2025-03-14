@@ -2,7 +2,6 @@
 
 void sunaba::spatial::bindCurve3D(sol::state_view& lua) {
     lua.new_usertype<sunaba::spatial::Curve3D>("Curve3D",
-        sol::base_classes, sol::bases<sunaba::core::Resource>(),
         sol::constructors<Curve3D()>(),
         sol::base_classes, sol::bases<sunaba::core::BaseObject, sunaba::core::Resource>(),
         "bakeInterval", sol::property(&Curve3D::getBakeInterval, &Curve3D::setBakeInterval),
