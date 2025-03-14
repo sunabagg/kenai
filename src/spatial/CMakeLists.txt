@@ -13,6 +13,8 @@ target_sources(${PROJECT_NAME} PRIVATE
         fog_material.cpp
         base_material3d.h
         base_material3d.cpp
+        cubemap.h
+        cubemap.cpp
 )
 
 add_subdirectory( mesh )
