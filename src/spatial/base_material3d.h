@@ -1006,7 +1006,7 @@ namespace sunaba::spatial {
             material->set_flag(GodotBaseMaterial3D::FLAG_PARTICLE_TRAILS_MODE, enable);
         }
 
-        bool usePointSize() {
+        bool getUsePointSize() {
             return material->get_flag(GodotBaseMaterial3D::FLAG_USE_POINT_SIZE);
         }
 
