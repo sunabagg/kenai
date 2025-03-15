@@ -39,3 +39,5 @@ namespace sunaba::spatial {
         }
     };
 }
+
+#endif // TEXTURE3DRD_H
