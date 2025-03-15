@@ -7,14 +7,20 @@
 
 #define GodotSkeletonProfile godot::SkeletonProfile
 
+#include "../core/base_object.h"
 #include "skeleton_profile.h"
 
 using namespace godot;
 
+#define BaseObject sunaba::core::BaseObject
+
 namespace sunaba::spatial {
     void bindSkeletonProfileHumanoid(sol::state_view& lua);
 
-    class SkeletonProfileHumanoid : public SkeletonProfile {
+    // class multi-inherits from SkeletonProfile and BaseObject even though it doesn't need to
+    // but GCC has forced my hand and won't stop bitching unless we do this stupid fucking workaround
+    // stupid fucking incompetent GNU fuckwads
+    class SkeletonProfileHumanoid : public SkeletonProfile, public BaseObject {
     private:
         GodotSkeletonProfile* skeletonProfile = nullptr;
     public:

@@ -14,7 +14,6 @@ using namespace godot;
 using namespace sunaba::core;
 
 #define Texture sunaba::core::Texture
-#define Resource sunaba::core::Resource
 
 namespace sunaba::spatial {
     void bindTexture3D(sol::state_view& lua);
@@ -41,8 +40,8 @@ namespace sunaba::spatial {
             setTexture(texture);
         }
 
-        Resource* createPlaceholder() {
-            return new Resource(
+        sunaba::core::Resource* createPlaceholder() {
+            return new sunaba::core::Resource(
                 texture->create_placeholder().ptr()
             );
         }
