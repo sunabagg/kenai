@@ -1,5 +1,5 @@
-#ifndef SKELETON_PROFILE_H
-#define SKELETON_PROFILE_H
+#ifndef SKELETON_PROFILE_HUMANOID_H
+#define SKELETON_PROFILE_HUMANOID_H
 
 #include <godot_cpp/classes/skeleton_profile.hpp>
 #include <godot_cpp/variant/variant.hpp>
@@ -75,4 +75,4 @@ namespace sunaba::spatial {
     };
 }
 
-#endif // SKELETON_PROFILE_H
+#endif // SKELETON_PROFILE_HUMANOID_H
