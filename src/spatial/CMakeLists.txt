@@ -51,6 +51,8 @@ target_sources(${PROJECT_NAME} PRIVATE
         standard_material3d.cpp
         texture3d.h
         texture3d.cpp
+        texture3drd.h
+        texture3drd.cpp
 )
 
 add_subdirectory( mesh )
