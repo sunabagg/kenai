@@ -43,6 +43,8 @@ target_sources(${PROJECT_NAME} PRIVATE
         skeleton_profile_humanoid.cpp
         skin.h
         skin.cpp
+        sky.h
+        sky.cpp
 )
 
 add_subdirectory( mesh )
