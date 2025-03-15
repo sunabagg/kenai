@@ -1,14 +1,4 @@
 target_sources(${PROJECT_NAME} PRIVATE
-        transform.h
-        transform.cpp
-        camera.h
-        camera.cpp
-        i_visual_instance.h
-        i_visual_instance.cpp
-        i_geometry_instance.h
-        i_geometry_instance.cpp
-        bind_spatial_classes.h
-        bind_spatial_classes.cpp
         fog_material.h
         fog_material.cpp
         base_material3d.h
@@ -61,6 +51,16 @@ target_sources(${PROJECT_NAME} PRIVATE
         camera_attributes_practical.cpp
         world3d.h
         world3d.cpp
+        transform.h
+        transform.cpp
+        camera.h
+        camera.cpp
+        i_visual_instance.h
+        i_visual_instance.cpp
+        i_geometry_instance.h
+        i_geometry_instance.cpp
+        bind_spatial_classes.h
+        bind_spatial_classes.cpp
 )
 
 add_subdirectory( mesh )
