@@ -76,6 +76,8 @@ target_sources(${PROJECT_NAME} PRIVATE
         noise_texture2d.cpp
         image_texture_layered.h
         image_texture_layered.cpp
+        environment.h
+        environment.cpp
 )
 
 add_subdirectory(io)
