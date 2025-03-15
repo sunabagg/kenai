@@ -47,6 +47,8 @@ target_sources(${PROJECT_NAME} PRIVATE
         sky.cpp
         sphere_occluder3d.h
         sphere_occluder3d.cpp
+        standard_material3d.h
+        standard_material3d.cpp
 )
 
 add_subdirectory( mesh )
