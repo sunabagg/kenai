@@ -59,6 +59,8 @@ target_sources(${PROJECT_NAME} PRIVATE
         camera_attributes_physical.cpp
         camera_attributes_practical.h
         camera_attributes_practical.cpp
+        world3d.h
+        world3d.cpp
 )
 
 add_subdirectory( mesh )
