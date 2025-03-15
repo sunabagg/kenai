@@ -53,6 +53,8 @@ target_sources(${PROJECT_NAME} PRIVATE
         texture3d.cpp
         texture3drd.h
         texture3drd.cpp
+        camera_attributes.h
+        camera_attributes.cpp
 )
 
 add_subdirectory( mesh )
