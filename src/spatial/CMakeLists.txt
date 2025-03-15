@@ -37,6 +37,8 @@ target_sources(${PROJECT_NAME} PRIVATE
         procedural_sky_material.cpp
         quad_occluder3d.h
         quad_occluder3d.cpp
+        skeleton_profile.h
+        skeleton_profile.cpp
 )
 
 add_subdirectory( mesh )
