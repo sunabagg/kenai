@@ -49,6 +49,8 @@ target_sources(${PROJECT_NAME} PRIVATE
         sphere_occluder3d.cpp
         standard_material3d.h
         standard_material3d.cpp
+        texture3d.h
+        texture3d.cpp
 )
 
 add_subdirectory( mesh )
