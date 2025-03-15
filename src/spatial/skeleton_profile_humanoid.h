@@ -19,7 +19,6 @@ namespace sunaba::spatial {
 
     // class multi-inherits from SkeletonProfile and BaseObject even though it doesn't need to
     // but GCC has forced my hand and won't stop bitching unless we do this stupid fucking workaround
-    // stupid fucking incompetent GNU dickheads
     class SkeletonProfileHumanoid : public SkeletonProfile, public BaseObject {
     private:
         GodotSkeletonProfile* skeletonProfile = nullptr;
