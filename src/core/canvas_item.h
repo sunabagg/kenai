@@ -296,6 +296,82 @@ namespace sunaba::core {
                 static_cast<TextServer::Orientation>(orientation)
             );
         }
+
+        void drawPolygon(std::vector<Vector2> points, std::vector<Color> colors, std::vector<Vector2> uvs = {}, Texture2D* texture = nullptr) {
+            PackedVector2Array pointsArray;
+            for (const Vector2& point : points) {
+                pointsArray.push_back(point);
+            }
+            PackedColorArray colorsArray;
+            for (const Color& color : colors) {
+                colorsArray.push_back(color);
+            }
+            PackedVector2Array uvsArray;
+            if (texture != nullptr) {
+                for (const Vector2& uv : uvs) {
+                    uvsArray.push_back(uv);
+                }
+            }
+            Ref<GodotTexture2D> textureRef;
+            if (texture != nullptr) {
+                textureRef = texture->getTexture();
+            }
+            canvas_item->draw_polygon(pointsArray, colorsArray, uvsArray, textureRef);
+        }
+
+        void drawPolyline(std::vector<Vector2> points, Color color, float width = -1.0, bool antialiased = false) {
+            PackedVector2Array pointsArray;
+            for (const Vector2& point : points) {
+                pointsArray.push_back(point);
+            }
+            canvas_item->draw_polyline(pointsArray, color, width, antialiased);
+        }
+
+        void drawPolylineColors(std::vector<Vector2> points, std::vector<Color> colors, float width = -1.0, bool antialiased = false) {
+            PackedVector2Array pointsArray;
+            for (const Vector2& point : points) {
+                pointsArray.push_back(point);
+            }
+            PackedColorArray colorsArray;
+            for (const Color& color : colors) {
+                colorsArray.push_back(color);
+            }
+            canvas_item->draw_polyline_colors(pointsArray, colorsArray, width, antialiased);
+        }
+
+        void drawPrimitive(std::vector<Vector2> points, std::vector<Color> colors, std::vector<Vector2> uvs = {}, Texture2D* texture = nullptr) {
+            PackedVector2Array pointsArray;
+            for (const Vector2& point : points) {
+                pointsArray.push_back(point);
+            }
+            PackedColorArray colorsArray;
+            for (const Color& color : colors) {
+                colorsArray.push_back(color);
+            }
+            PackedVector2Array uvsArray;
+            if (texture != nullptr) {
+                for (const Vector2& uv : uvs) {
+                    uvsArray.push_back(uv);
+                }
+            }
+            Ref<GodotTexture2D> textureRef;
+            if (texture != nullptr) {
+                textureRef = texture->getTexture();
+            }
+            canvas_item->draw_primitive(pointsArray, colorsArray, uvsArray, textureRef);
+        }
+
+        void drawRect(Rect2 rect, Color color, bool filled = true, float width = 1.0, bool antiAliased = false) {
+            canvas_item->draw_rect(rect, color, filled, width, antiAliased);
+        }
+
+        void drawSetTransform(Vector2 pos, float rotation = 0.0, Vector2 scale = Vector2(1, 1)) {
+            canvas_item->draw_set_transform(pos, rotation, scale);
+        }
+
+        void drawSetTransformMatrix(Transform2D xform) {
+            canvas_item->draw_set_transform_matrix(xform);
+        }
     };
 }
 
