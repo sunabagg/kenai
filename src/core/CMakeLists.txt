@@ -80,6 +80,7 @@ target_sources(${PROJECT_NAME} PRIVATE
         environment.cpp
         element.h
         element.cpp
+        proxy_db.h
         canvas_item.h
 )
 

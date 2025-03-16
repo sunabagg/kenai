@@ -6,6 +6,7 @@
 
 #include "../core/base_object.h"
 #include "../input/input_event.h"
+#include "proxy_db.h"
 
 using namespace sunaba::core;
 using namespace godot;
@@ -221,6 +222,7 @@ namespace sunaba::core {
         void setNode(NodeProxy* p_node) {
             node = p_node;
             node->element = this;
+            ProxyDb::addElement(node, this);
         }
 
         Node* getNode() {
