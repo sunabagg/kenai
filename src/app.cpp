@@ -12,7 +12,9 @@
 #include "core/scene_node.h"
 #include "core/bind_core_classes.h"
 #include "core/io/file_system_io.h"
+#include "core/resource.h"
 #include "core/io/io_index.h"
+#include "input/bind_input_classes.h"
 #include "spatial/bind_spatial_classes.h"
 #ifdef _WIN32 // hack fix for MSVC. TODO: this is dumb
 #include <hxluasimdjson.cpp>
@@ -126,7 +128,8 @@ void App::start( const String &path) {
     };
 
     //UtilityFunctions::print("Hello, World!");
-
+    //sunaba::core::
+    sunaba::input::bindInputClasses(global_state);
     sunaba::core::bindCoreClasses(global_state);
     sunaba::spatial::bindSpatialClasses(global_state);
 #ifdef _WIN32
