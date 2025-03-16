@@ -14,6 +14,8 @@ using namespace godot;
 namespace sunaba::core {
     void bindElement(sol::state &lua);
 
+    class Element; // Forward declaration
+
     class NodeProxy : public Node {
     GDCLASS(NodeProxy, Node)
     public:

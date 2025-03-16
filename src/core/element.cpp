@@ -28,55 +28,55 @@ void sunaba::core::bindElement(sol::state &lua) {
 }
 
 void sunaba::core::NodeProxy::_enter_tree() {
-    if (element != nullptr) {
-        element->enterTree();
+    if (this->element != nullptr) {
+        this->element->enterTree();
     }
 }
 
 void sunaba::core::NodeProxy::_exit_tree() {
-    if (element != nullptr) {
-        element->exitTree();
+    if (this->element != nullptr) {
+        this->element->exitTree();
     }
 }
 
 void sunaba::core::NodeProxy::_ready() {
-    if (element != nullptr) {
-        element->ready();
+    if (this->element != nullptr) {
+        this->element->ready();
     }
 }
 
 void sunaba::core::NodeProxy::_process(double delta) {
-    if (element != nullptr) {
-        element->process(delta);
+    if (this->element != nullptr) {
+        this->element->process(delta);
     }
 }
 
 void sunaba::core::NodeProxy::_physics_process(double delta) {
-    if (element != nullptr) {
-        element->physicsProcess(delta);
+    if (this->element != nullptr) {
+        this->element->physicsProcess(delta);
     }
 }
 
 void sunaba::core::NodeProxy::_input(const Ref<InputEvent>& event) {
-    if (element != nullptr) {
-        element->input(event);
+    if (this->element != nullptr) {
+        this->element->input(event);
     }
 }
 
 void sunaba::core::NodeProxy::_unhandled_input(const Ref<InputEvent>& event) {
-    if (element != nullptr) {
-        element->unhandledInput(event);
+    if (this->element != nullptr) {
+        this->element->unhandledInput(event);
     }
 }
 
 void sunaba::core::NodeProxy::_unhandled_key_input(const Ref<InputEvent>& event) {
-    if (element != nullptr) {
-        element->unhandledKeyInput(event);
+    if (this->element != nullptr) {
+        this->element->unhandledKeyInput(event);
     }
 }
 
 void sunaba::core::NodeProxy::_shortcut_input(const Ref<InputEvent>& event) {
-    if (element != nullptr) {
-        element->shortcutInput(event);
+    if (this->element != nullptr) {
+        this->element->shortcutInput(event);
     }
 }

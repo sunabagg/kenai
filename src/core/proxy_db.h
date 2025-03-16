@@ -7,10 +7,10 @@
 #include <sol/sol.hpp>
 #include <unordered_map>
 
-#include "element.h"
-
 namespace sunaba::core
 {
+    class Element;
+    
     class ProxyDb
     {
     private:
