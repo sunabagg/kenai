@@ -203,6 +203,48 @@ namespace sunaba::core {
             }
             canvas_item->draw_colored_polygon(pointsArray, color, uvsArray, textureRef);
         }
+
+        void drawDashedLine(Vector2 from, Vector2 to, Color color, float width = -1.0, float dash = 2.0, bool aligned = true, bool antialiased = false) {
+            canvas_item->draw_dashed_line(from, to, color, width, dash, aligned, antialiased);
+        }
+
+        void drawEndAnimation() {
+            canvas_item->draw_end_animation();
+        }
+
+        void drawLcdTextureRectRegion(Texture2D* texture, Rect2 rect, Rect2 srcRect, Color modulate = Color(1, 1, 1, 1)) {
+            Ref<GodotTexture2D> textureRef = Ref<GodotTexture2D>(texture->getTexture());
+            canvas_item->draw_lcd_texture_rect_region(textureRef, rect, srcRect, modulate);
+        }
+
+        void drawLine(Vector2 from, Vector2 to, Color color, float width = -1.0, bool antialiased = false) {
+            canvas_item->draw_line(from, to, color, width, antialiased);
+        }
+
+        void drawMsdfTextureRectRegion(Texture2D* texture, Rect2 rect, Rect2 srcRect, Color modulate = Color(1, 1, 1, 1), float outline = 0.0, float pixelRange = 4.0, float scale = 1.0) {
+            Ref<GodotTexture2D> textureRef = Ref<GodotTexture2D>(texture->getTexture());
+            canvas_item->draw_msdf_texture_rect_region(textureRef, rect, srcRect, modulate, outline, pixelRange, scale);
+        }
+
+        void drawMultiline(std::vector<Vector2> points, Color color, float width = -1.0, bool antialiased = false) {
+            PackedVector2Array pointsArray;
+            for (const Vector2& point : points) {
+                pointsArray.push_back(point);
+            }
+            canvas_item->draw_multiline(pointsArray, color, width, antialiased);
+        }
+
+        void drawMultilineColors(std::vector<Vector2> points, std::vector<Color> colors, float width = -1.0, bool antialiased = false) {
+            PackedVector2Array pointsArray;
+            for (const Vector2& point : points) {
+                pointsArray.push_back(point);
+            }
+            PackedColorArray colorsArray;
+            for (const Color& color : colors) {
+                colorsArray.push_back(color);
+            }
+            canvas_item->draw_multiline_colors(pointsArray, colorsArray, width, antialiased);
+        }
     };
 }
 
