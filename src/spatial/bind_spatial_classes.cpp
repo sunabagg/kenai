@@ -29,7 +29,7 @@
 #include "texture3d.h"
 #include "texture3drd.h"
 #include "../core/environment.h"
-//#include "world3d.h"
+#include "world3d.h"
 
 void sunaba::spatial::bindSpatialClasses(sol::state& lua) {
     /*bindOccluder3D(lua);
