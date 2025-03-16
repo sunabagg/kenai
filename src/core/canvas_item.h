@@ -9,6 +9,7 @@
 #include "material.h"
 #include "font.h"
 #include "texture2d.h"
+#include "style_box.h"
 
 namespace sunaba::core {
     void bindCanvasItem(sol::state &lua);
@@ -390,6 +391,40 @@ namespace sunaba::core {
                 static_cast<TextServer::Direction>(direction), 
                 static_cast<TextServer::Orientation>(orientation)
             );
+        }
+
+        void drawStringOutline(Font* font, Vector2 pos, std::string text, int alignment = 0, float width = -1, int fontSize = 16, int size = 1, Color modulate = Color(1, 1, 1, 1), std::vector<int> justificationFlags = {3}, int direction = 0, int orientation = 0) {
+            BitField<TextServer::JustificationFlag> justificationFlagsBitField = NULL;
+            for (int flag : justificationFlags) {
+                justificationFlagsBitField = static_cast<TextServer::JustificationFlag>(static_cast<int>(justificationFlagsBitField) | flag);
+            }
+            canvas_item->draw_string_outline(
+                font->getFont(), 
+                pos, 
+                text.c_str(), 
+                static_cast<HorizontalAlignment>(alignment), 
+                width, 
+                fontSize, 
+                size, 
+                modulate, 
+                justificationFlagsBitField, 
+                static_cast<TextServer::Direction>(direction), 
+                static_cast<TextServer::Orientation>(orientation)
+            );
+        }
+
+        void drawStyleBox(StyleBox* styleBox, Rect2 rect) {
+            canvas_item->draw_style_box(styleBox->getStyleBox(), rect);
+        }
+
+        void drawTexture(Texture2D* texture, Vector2 position, Color modulate = Color(1, 1, 1, 1)) {
+            Ref<GodotTexture2D> textureRef = Ref<GodotTexture2D>(texture->getTexture());
+            canvas_item->draw_texture(textureRef, position, modulate);
+        }
+
+        void drawTextureRect(Texture2D* texture, Rect2 rect, bool tile, Color modulate = Color(1, 1, 1, 1), bool transpose = false) {
+            Ref<GodotTexture2D> textureRef = Ref<GodotTexture2D>(texture->getTexture());
+            canvas_item->draw_texture_rect(textureRef, rect, tile, modulate, transpose);
         }
     };
 }
