@@ -7,6 +7,7 @@
 
 #include "element.h"
 #include "material.h"
+#include "font.h"
 
 namespace sunaba::core {
     void bindCanvasItem(sol::state &lua);
@@ -171,22 +172,18 @@ namespace sunaba::core {
         void drawArc(Vector2 center, float radius, float startAngle, float endAngle, int pointCount, Color color, float width = 1.0f, bool antiAliased = false) {
             canvas_item->draw_arc(center, radius, startAngle, endAngle, pointCount, color, width, antiAliased);
         }
+
+        void drawChar(Font* font, Vector2 pos, std::string chr, int fontSize = 16, Color modulate = Color(1, 1, 1, 1)) {
+            canvas_item->draw_char(font->getFont(), pos, chr.c_str(), fontSize, modulate);
+        }
+
+        void drawCharOutline(Font* font, Vector2 pos, std::string chr, int fontSize = 16, int size = -1, Color modulate = Color(1, 1, 1, 1)) {
+            canvas_item->draw_char_outline(font->getFont(), pos, chr.c_str(), fontSize, size, modulate);
+        }
         
         void drawCircle(Vector2 center, float radius, Color color, float width = 1.0f, bool antiAliased = false) {
             canvas_item->draw_circle(center, radius, color, width, antiAliased);
         }
-
-        /*void drawColoredPolygon(const std::vector<Vector2>& points,  Color color, const std::vector<Vector2> uvs, ) {
-            PackedVector2Array pointArray;
-            for (const auto& point : points) {
-                pointArray.push_back(point);
-            }
-            PackedVector2Array uvArray;
-            for (const auto& uv : uvs) {
-                uvArray.push_back(uv);
-            }
-            canvas_item->draw_colored_polygon(pointArray, radius, color, uvArray);
-        }*/
     };
 }
 
