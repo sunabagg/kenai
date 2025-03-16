@@ -78,6 +78,9 @@ target_sources(${PROJECT_NAME} PRIVATE
         image_texture_layered.cpp
         environment.h
         environment.cpp
+        element.h
+        element.cpp
+        canvas_item.h
 )
 
 add_subdirectory(io)
