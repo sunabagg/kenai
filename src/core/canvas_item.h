@@ -8,7 +8,16 @@
 #include "element.h"
 
 namespace sunaba::ui {
-    void bindElement(sol::state &lua);
+    void bindCanvasItem(sol::state &lua);
+
+    class CanvasItem;
+
+    class CanvasItemProxy : public CanvasItemNode, public NodeProxy {
+        public:
+            CanvasItem* canvas_item_element = nullptr;
+
+            void _draw() override;
+    };
 
     class CanvasItem : public Element {
     private:
