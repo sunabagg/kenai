@@ -81,7 +81,8 @@ target_sources(${PROJECT_NAME} PRIVATE
         element.h
         element.cpp
         proxy_db.h
-        canvas_item.h
+        proxy_db.cpp
+        #canvas_item.h
 )
 
 add_subdirectory(io)

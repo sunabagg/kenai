@@ -6,6 +6,7 @@
 #define CanvasItemNode godot::CanvasItem
 
 #include "element.h"
+#include "material.h"
 
 namespace sunaba::core {
     void bindCanvasItem(sol::state &lua);
@@ -51,12 +52,28 @@ namespace sunaba::core {
             setNode(canvas_item);
         }
 
+        int getClipChildren() {
+            return canvas_item->get_clip_children_mode();
+        }
+
+        void setClipChildren(int enabled) {
+            canvas_item->set_clip_children_mode(static_cast<CanvasItemNode::ClipChildrenMode>(enabled));
+        }
+
         int getLightMask() {
             return canvas_item->get_light_mask();
         }
 
         void setLightMask(int mask) {
             canvas_item->set_light_mask(mask);
+        }
+
+        Material* getMaterial() {
+            return new Material(canvas_item->get_material().ptr());
+        }
+
+        void setMaterial(Material* material) {
+            canvas_item->set_material(material->getMaterial());
         }
 
         Color getModulate() {
