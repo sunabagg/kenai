@@ -32,31 +32,31 @@
 #include "world3d.h"
 
 void sunaba::spatial::bindSpatialClasses(sol::state& lua) {
-    //bindOccluder3D(lua);
-    //bindArrayOccluder3D(lua);
-    //bindBaseMaterial3D(lua);
-    //bindBoxOccluder3D(lua);
-    //bindCameraAttributes(lua);
-    //bindCameraAttributesPhysical(lua);
-    //bindCameraAttributesPractical(lua);
-    //bindCubemap(lua);
-    //bindCubemapArray(lua);
-    //bindCurve3D(lua);
-    //bindFogMaterial(lua);
-    //bindOrmMaterial3D(lua);
-    //bindPanoramaSkyMaterial(lua);
-    //bindPhysicalSkyMaterial(lua);
-    //bindProceduralSkyMaterial(lua);
-    //bindQuadOccluder3D(lua);
-    //bindSkeletonProfile(lua);
-    //bindSkeletonProfileHumanoid(lua);
-    //bindSkin(lua);
-    //bindSphereOccluder3D(lua);
-    //bindStandardMaterial3D(lua);
-    //bindTexture3D(lua);
-    //bindTexture3DRD(lua);
-    //core::bindEnvironment(lua);
-    //bindWorld3D(lua);
+    bindOccluder3D(lua);
+    bindArrayOccluder3D(lua);
+    bindBaseMaterial3D(lua);
+    bindBoxOccluder3D(lua);
+    bindCameraAttributes(lua);
+    bindCameraAttributesPhysical(lua);
+    bindCameraAttributesPractical(lua);
+    bindCubemap(lua);
+    bindCubemapArray(lua);
+    bindCurve3D(lua);
+    bindFogMaterial(lua);
+    bindOrmMaterial3D(lua);
+    bindPanoramaSkyMaterial(lua);
+    bindPhysicalSkyMaterial(lua);
+    bindProceduralSkyMaterial(lua);
+    bindQuadOccluder3D(lua);
+    bindSkeletonProfile(lua);
+    bindSkeletonProfileHumanoid(lua);
+    bindSkin(lua);
+    bindSphereOccluder3D(lua);
+    bindStandardMaterial3D(lua);
+    bindTexture3D(lua);
+    bindTexture3DRD(lua);
+    core::bindEnvironment(lua);
+    bindWorld3D(lua);
     
     bindSpatialTransform(lua);
     bindCamera(lua);
