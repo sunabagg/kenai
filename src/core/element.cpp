@@ -3,7 +3,7 @@
 using namespace sunaba::core;
 using namespace godot;
 
-void sunaba::ui::bindElement(sol::state &lua) {
+void sunaba::core::bindElement(sol::state &lua) {
     lua.new_usertype<Element>(
         "Element",
         sol::constructors<Element()>(), // Constructor with Node* parameter
@@ -25,4 +25,58 @@ void sunaba::ui::bindElement(sol::state &lua) {
         "removeChild", &Element::removeChild,
         "getChildren", &Element::getChildren
     );
+}
+
+void sunaba::core::NodeProxy::_enter_tree() {
+    if (element != nullptr) {
+        element->enterTree();
+    }
+}
+
+void sunaba::core::NodeProxy::_exit_tree() {
+    if (element != nullptr) {
+        element->exitTree();
+    }
+}
+
+void sunaba::core::NodeProxy::_ready() {
+    if (element != nullptr) {
+        element->ready();
+    }
+}
+
+void sunaba::core::NodeProxy::_process(double delta) {
+    if (element != nullptr) {
+        element->process(delta);
+    }
+}
+
+void sunaba::core::NodeProxy::_physics_process(double delta) {
+    if (element != nullptr) {
+        element->physicsProcess(delta);
+    }
+}
+
+void sunaba::core::NodeProxy::_input(const Ref<InputEvent>& event) {
+    if (element != nullptr) {
+        element->input(event);
+    }
+}
+
+void sunaba::core::NodeProxy::_unhandled_input(const Ref<InputEvent>& event) {
+    if (element != nullptr) {
+        element->unhandledInput(event);
+    }
+}
+
+void sunaba::core::NodeProxy::_unhandled_key_input(const Ref<InputEvent>& event) {
+    if (element != nullptr) {
+        element->unhandledKeyInput(event);
+    }
+}
+
+void sunaba::core::NodeProxy::_shortcut_input(const Ref<InputEvent>& event) {
+    if (element != nullptr) {
+        element->shortcutInput(event);
+    }
 }
