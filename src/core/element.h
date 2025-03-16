@@ -17,7 +17,6 @@ namespace sunaba::core {
     class Element; // Forward declaration
 
     class NodeProxy : public Node {
-    GDCLASS(NodeProxy, Node)
     public:
         Element* element = nullptr;
 
