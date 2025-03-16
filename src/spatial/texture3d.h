@@ -13,12 +13,11 @@
 using namespace godot;
 using namespace sunaba::core;
 
-#define Texture sunaba::core::Texture
 
 namespace sunaba::spatial {
     void bindTexture3D(sol::state_view& lua);
 
-    class Texture3D : public Texture {
+    class Texture3D : public sunaba::core::Texture {
     private:
         GodotTexture3D* texture = nullptr;
     public:

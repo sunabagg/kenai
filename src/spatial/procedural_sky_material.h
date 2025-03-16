@@ -10,8 +10,6 @@
 #include "../core/material.h"
 #include "../core/texture2d.h"
 
-#define Texture2D sunaba::core::Texture2D
-
 using namespace godot;
 using namespace sunaba::core;
 
@@ -81,13 +79,13 @@ namespace sunaba::spatial {
             proceduralSkyMaterial->set_ground_horizon_color(color);
         }
 
-        Texture2D* getSkyCover() {
-            return new Texture2D(
+        sunaba::core::Texture2D* getSkyCover() {
+            return new sunaba::core::Texture2D(
                 proceduralSkyMaterial->get_sky_cover().ptr()
             );
         }
 
-        void setSkyCover(Texture2D* texture) {
+        void setSkyCover(sunaba::core::Texture2D* texture) {
             proceduralSkyMaterial->set_sky_cover(texture->getTexture2D());
         }
 

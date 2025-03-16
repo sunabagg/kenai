@@ -3,7 +3,7 @@
 void sunaba::spatial::bindTexture3D(sol::state_view& lua) {
     lua.new_usertype<sunaba::spatial::Texture3D>("Texture3D",
         sol::constructors<Texture3D()>(),
-        sol::base_classes, sol::bases<sunaba::core::BaseObject, sunaba::core::Resource, Texture>(),
+        sol::base_classes, sol::bases<sunaba::core::BaseObject, sunaba::core::Resource, sunaba::core::Texture>(),
         "createPlaceholder", &Texture3D::createPlaceholder,
         "getData", &Texture3D::getData,
         "getDepth", &Texture3D::getDepth,

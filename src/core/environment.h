@@ -9,11 +9,11 @@
 
 #include "resource.h"
 #include "texture.h"
+#include <godot_cpp/classes/texture.hpp>
 #include "../spatial/sky.h"
 
 using namespace godot; 
 
-#define Sky sunaba::spatial::Sky
 namespace sunaba::core {
     void bindEnvironment(sol::state_view& lua);
 
@@ -47,12 +47,12 @@ namespace sunaba::core {
             environment->set_adjustment_brightness(brightness);
         }
 
-        Texture* getAdjustmentColorCorrection() {
-            return new Texture(environment->get_adjustment_color_correction().ptr());
+        sunaba::core::Texture* getAdjustmentColorCorrection() {
+            return new sunaba::core::Texture(environment->get_adjustment_color_correction().ptr());
         }
 
-        void setAdjustmentColorCorrection(Texture* texture) {
-            environment->set_adjustment_color_correction(texture->getTexture());
+        void setAdjustmentColorCorrection(sunaba::core::Texture* texture) {
+            environment->set_adjustment_color_correction(Ref<GodotTexture>(texture->getTexture()));
         }
 
         float getAdjustmentContrast() {
@@ -380,7 +380,7 @@ namespace sunaba::core {
         }
 
         void setGlowMap(Texture* texture) {
-            environment->set_glow_map(texture->getTexture());
+            environment->set_glow_map(Ref<GodotTexture>(texture->getTexture()));
         }
 
         bool getGlowMapStrength() {
@@ -511,11 +511,11 @@ namespace sunaba::core {
             environment->set_sdfgi_y_scale(static_cast<GodotEnvironment::SDFGIYScale>(scale));
         }
 
-        Sky* getSky() {
-            return new Sky(environment->get_sky().ptr());
+        sunaba::spatial::Sky* getSky() {
+            return new sunaba::spatial::Sky(environment->get_sky().ptr());
         }
 
-        void setSky(Sky* sky) {
+        void setSky(sunaba::spatial::Sky* sky) {
             environment->set_sky(sky->getSky());
         }
 

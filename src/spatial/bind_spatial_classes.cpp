@@ -5,7 +5,7 @@
 #include "i_visual_instance.h"
 #include "i_geometry_instance.h"
 #include "mesh/bind_mesh_classes.h"
-/*#include "occluder3d.h"
+#include "occluder3d.h"
 #include "array_occluder3d.h"
 #include "base_material3d.h"
 #include "box_occluder3d.h"
@@ -23,12 +23,13 @@
 #include "quad_occluder3d.h"
 #include "skeleton_profile.h"
 #include "skeleton_profile_humanoid.h"
+#include "skin.h"
 #include "sphere_occluder3d.h"
 #include "standard_material3d.h"
 #include "texture3d.h"
 #include "texture3drd.h"
 #include "../core/environment.h"
-#include "world3d.h"*/
+//#include "world3d.h"
 
 void sunaba::spatial::bindSpatialClasses(sol::state& lua) {
     /*bindOccluder3D(lua);
@@ -49,6 +50,7 @@ void sunaba::spatial::bindSpatialClasses(sol::state& lua) {
     bindQuadOccluder3D(lua);
     bindSkeletonProfile(lua);
     bindSkeletonProfileHumanoid(lua);
+    bindSkin(lua);
     bindSphereOccluder3D(lua);
     bindStandardMaterial3D(lua);
     bindTexture3D(lua);

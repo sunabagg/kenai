@@ -13,8 +13,6 @@
 using namespace godot;
 using namespace sunaba::core;
 
-#define Texture2D sunaba::core::Texture2D
-
 namespace sunaba::spatial {
     void bindPhysicalSkyMaterial(sol::state_view& lua);
 
@@ -80,13 +78,13 @@ namespace sunaba::spatial {
             material->set_mie_eccentricity(eccentricity);
         }
 
-        Texture2D* getNightSky() {
-            return new Texture2D(
+        sunaba::core::Texture2D* getNightSky() {
+            return new sunaba::core::Texture2D(
                 material->get_night_sky().ptr()
             );
         }
 
-        void setNightSky(Texture2D* texture) {
+        void setNightSky(sunaba::core::Texture2D* texture) {
             material->set_night_sky(texture->getTexture2D());
         }
 
