@@ -21,18 +21,18 @@ namespace sunaba::spatial {
         GodotSkeletonProfile* skeletonProfile = nullptr;
     public:
         SkeletonProfileHumanoid() {
-            setSkeletonProfile(memnew(GodotSkeletonProfile));
+            setSkeletonProfileHumanoid(memnew(GodotSkeletonProfile));
         }
 
         SkeletonProfileHumanoid(GodotSkeletonProfile* sp) {
-            setSkeletonProfile(sp);
+            setSkeletonProfileHumanoid(sp);
         }
 
         GodotSkeletonProfile* getSkeletonProfile() {
             return skeletonProfile;
         }
 
-        void setSkeletonProfile(GodotSkeletonProfile* sp) {
+        void setSkeletonProfileHumanoid(GodotSkeletonProfile* sp) {
             skeletonProfile = sp;
             skeletonProfile->reference();
             setSkeletonProfile(skeletonProfile);
