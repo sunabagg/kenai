@@ -34,7 +34,7 @@ $ cmake --install sunaba-build
 
 ```sh
 $ emcmake cmake -B sunaba-build-web -S . -DCMAKE_BUILD_TYPE=Release -DCMAKE_INSTALL_PREFIX=sunaba-install-web
-$ cmake --build sunaba-build-web --parallel
+$ cmake --build sunaba-build-web
 $ cmake --install sunaba-build-web
 ```
 
