@@ -6,7 +6,7 @@
 
 #include "../core/base_object.h"
 #include "../input/input_event.h"
-#include "proxy_db.h"
+
 
 using namespace sunaba::core;
 using namespace godot;
@@ -58,6 +58,8 @@ namespace sunaba::core {
             setNode(p_node);
             onInit();
         }
+
+        void setProxyDb(Node* p_node);
 
         void enterTree() {
             if (scriptInstance != sol::nil) {
@@ -223,12 +225,12 @@ namespace sunaba::core {
         void setNode(NodeProxy* p_node) {
             node = p_node;
             p_node->element = this;
-            ProxyDb::addElement(node, this);
+            setProxyDb(node);
         }
 
         void setNode(Node* p_node) {
             node = p_node;
-            ProxyDb::addElement(node, this);
+            setProxyDb(node);
         }
 
         Node* getNode() {

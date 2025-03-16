@@ -1,4 +1,5 @@
 #include "element.h"
+#include "proxy_db.h"
 
 using namespace sunaba::core;
 using namespace godot;
@@ -25,6 +26,11 @@ void sunaba::core::bindElement(sol::state &lua) {
         "removeChild", &Element::removeChild,
         "getChildren", &Element::getChildren
     );
+}
+
+void sunaba::core::Element::setProxyDb(Node* p_node) {
+    node = p_node;
+    ProxyDb::addElement(node, this);
 }
 
 void sunaba::core::NodeProxy::_enter_tree() {
