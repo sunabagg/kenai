@@ -34,7 +34,7 @@ namespace sunaba::core {
     
     class Element : public BaseObject {    
     private:
-        NodeProxy* node = nullptr; // Pointer to the Node instance
+        Node* node = nullptr; // Pointer to the Node instance
 
         std::vector<Element*> children; // List of child elements
         Element* parent = nullptr; // Pointer to the parent element
@@ -55,7 +55,7 @@ namespace sunaba::core {
         }
 
         // Protected constructor to prevent direct instantiation
-        Element(NodeProxy* p_node) {
+        Element(Node* p_node) {
             setNode(p_node);
             onInit();
         }
@@ -223,7 +223,12 @@ namespace sunaba::core {
 
         void setNode(NodeProxy* p_node) {
             node = p_node;
-            node->element = this;
+            p_node->element = this;
+            ProxyDb::addElement(node, this);
+        }
+
+        void setNode(Node* p_node) {
+            node = p_node;
             ProxyDb::addElement(node, this);
         }
 
