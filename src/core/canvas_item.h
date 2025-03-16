@@ -8,6 +8,7 @@
 #include "element.h"
 #include "material.h"
 #include "font.h"
+#include "texture2d.h"
 
 namespace sunaba::core {
     void bindCanvasItem(sol::state &lua);
@@ -183,6 +184,24 @@ namespace sunaba::core {
         
         void drawCircle(Vector2 center, float radius, Color color, float width = 1.0f, bool antiAliased = false) {
             canvas_item->draw_circle(center, radius, color, width, antiAliased);
+        }
+
+        void drawColoredPolygon(std::vector<Vector2> points, Color color, std::vector<Vector2> uvs = {}, Texture2D* texture = nullptr) {
+            PackedVector2Array pointsArray;
+            for (const Vector2& point : points) {
+                pointsArray.push_back(point);
+            }
+            PackedVector2Array uvsArray;
+            if (texture != nullptr) {
+                for (const Vector2& uv : uvs) {
+                    uvsArray.push_back(uv);
+                }
+            }
+            Ref<GodotTexture2D> textureRef;
+            if (texture != nullptr) {
+                textureRef = texture->getTexture();
+            }
+            canvas_item->draw_colored_polygon(pointsArray, color, uvsArray, textureRef);
         }
     };
 }
