@@ -5,16 +5,16 @@
 #include <godot_cpp/variant/utility_functions.hpp>
 #include <godot_cpp/variant/variant.hpp>
 #include <sol/sol.hpp>
-#include <unordered_map>
+#include <map>
+
+#include "element.h"
 
 namespace sunaba::core
 {
-    class Element;
-    
     class ProxyDb
     {
     private:
-        static std::unordered_map<Node*, Element*> elements;
+        static std::map<Node*, Element*> elements;
     public:
         static void addElement(Node* node, Element* element) {
             elements[node] = element;
