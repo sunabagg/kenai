@@ -16,7 +16,7 @@ using namespace godot;
 namespace sunaba::spatial {
     void bindWorld3D(sol::state_view& lua);
 
-    class World3D : public Resource {
+    class World3D : public sunaba::core::Resource {
     private:
         GodotWorld3D* world = nullptr;
     public:

@@ -14,12 +14,11 @@ using namespace godot;
 using namespace sunaba::core;
 
 #define Material sunaba::core::Material
-#define Resource sunaba::core::Resource
 
 namespace sunaba::spatial {
     void bindSky(sol::state_view& lua);
 
-    class Sky : public Resource {
+    class Sky : public sunaba::core::Resource {
     private:
         GodotSky* sky = nullptr;
     public:

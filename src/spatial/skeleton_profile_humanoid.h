@@ -12,14 +12,11 @@
 
 using namespace godot;
 
-#define BaseObject sunaba::core::BaseObject
 
 namespace sunaba::spatial {
     void bindSkeletonProfileHumanoid(sol::state_view& lua);
 
-    // class multi-inherits from SkeletonProfile and BaseObject even though it doesn't need to
-    // but GCC has forced my hand and won't stop bitching unless we do this stupid fucking workaround
-    class SkeletonProfileHumanoid : public SkeletonProfile, public BaseObject {
+    class SkeletonProfileHumanoid : public SkeletonProfile {
     private:
         GodotSkeletonProfile* skeletonProfile = nullptr;
     public:

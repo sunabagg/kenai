@@ -11,7 +11,6 @@
 #include "../core/texture2d.h"
 
 #define Texture2D sunaba::core::Texture2D
-#define Resource sunaba::core::Resource
 
 using namespace godot;
 using namespace sunaba::core;
@@ -19,7 +18,7 @@ using namespace sunaba::core;
 namespace sunaba::spatial {
     void bindSkeletonProfile(sol::state_view& lua);
 
-    class SkeletonProfile : public Resource {
+    class SkeletonProfile : public sunaba::core::Resource {
     private:
         GodotSkeletonProfile* skeletonProfile = nullptr;
     public:
