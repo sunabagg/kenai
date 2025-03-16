@@ -7,14 +7,14 @@
 
 #include "element.h"
 
-namespace sunaba::ui {
+namespace sunaba::core {
     void bindCanvasItem(sol::state &lua);
 
     class CanvasItem;
 
     class CanvasItemProxy : public CanvasItemNode, public NodeProxy {
         public:
-            CanvasItem* canvas_item_element = nullptr;
+            sunaba::core::CanvasItem* canvas_item_element = nullptr;
 
             void _draw() override;
     };
@@ -42,6 +42,12 @@ namespace sunaba::ui {
         // Setter for the CanvasItem node
         void setCanvasItem(CanvasItemNode* p_node) {
             canvas_item = p_node;
+            setNode(canvas_item);
+        }
+
+        void setCanvasItem(CanvasItemProxy* p_node) {
+            canvas_item = p_node;
+            p_node->canvas_item_element = this;
             setNode(canvas_item);
         }
 
