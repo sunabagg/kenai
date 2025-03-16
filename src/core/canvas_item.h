@@ -372,6 +372,25 @@ namespace sunaba::core {
         void drawSetTransformMatrix(Transform2D xform) {
             canvas_item->draw_set_transform_matrix(xform);
         }
+
+        void drawString(Font* font, Vector2 pos, std::string text, int alignment = 0, float width = -1, int fontSize = 16, Color modulate = Color(1, 1, 1, 1), std::vector<int> justificationFlags = {3}, int direction = 0, int orientation = 0) {
+            BitField<TextServer::JustificationFlag> justificationFlagsBitField = NULL;
+            for (int flag : justificationFlags) {
+                justificationFlagsBitField = static_cast<TextServer::JustificationFlag>(static_cast<int>(justificationFlagsBitField) | flag);
+            }
+            canvas_item->draw_string(
+                font->getFont(), 
+                pos, 
+                text.c_str(), 
+                static_cast<HorizontalAlignment>(alignment), 
+                width, 
+                fontSize, 
+                modulate, 
+                justificationFlagsBitField, 
+                static_cast<TextServer::Direction>(direction), 
+                static_cast<TextServer::Orientation>(orientation)
+            );
+        }
     };
 }
 
