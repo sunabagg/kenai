@@ -6,6 +6,7 @@ import sunaba.core.NativeVector3;
 import sunaba.core.Component;
 import sunaba.core.Vector2;
 import sunaba.core.Vector3;
+import sunaba.core.Entity;
 import sunaba.native.spatial.CameraNative;
 
 class Camera extends Component {
@@ -187,7 +188,7 @@ class Camera extends Component {
     public static function getFromEntity(entity: Entity): Camera {
         return Camera.fromInstance(
             CameraNative.getFromEntity(
-                entity.entityInstance
+                entity.entInstance
             )
         );
     }
