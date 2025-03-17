@@ -2,7 +2,7 @@ package sunaba.core.io;
 
 @:native("BinaryData")
 // BinaryData is a class that represents a binary data buffer.
-class BinaryData {
+extern class BinaryData {
     public function new();
 
     @:native("new")
