@@ -10,6 +10,7 @@
 #include "font.h"
 #include "texture2d.h"
 #include "../ui/style_box.h"
+#include "../input/input_event.h"
 
 namespace sunaba::core {
     void bindCanvasItem(sol::state &lua);
@@ -494,6 +495,30 @@ namespace sunaba::core {
 
         Vector2 makeCanvasPositionLocal(Vector2 pos) {
             return canvas_item->make_canvas_position_local(pos);
+        }
+
+        sunaba::input::InputEvent* makeInputLocal(sunaba::input::InputEvent* event) {
+            return new sunaba::input::InputEvent(canvas_item->make_input_local(event->getEvent()));
+        }
+
+        void moveToFront() {
+            canvas_item->move_to_front();
+        }
+
+        void queueRedraw() {
+            canvas_item->queue_redraw();
+        }
+
+        void setNotifyLocalTransform(bool enable) {
+            canvas_item->set_notify_local_transform(enable);
+        }
+
+        void setNotifyTransform(bool enable) {
+            canvas_item->set_notify_transform(enable);
+        }
+
+        void show() {
+            canvas_item->show();
         }
     };
 }
