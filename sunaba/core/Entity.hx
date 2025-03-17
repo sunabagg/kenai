@@ -91,7 +91,7 @@ class Entity extends BaseObject {
 abstract EntityAbstract(Entity) from Entity to Entity {
     @:from
     public static function fromBaseObject(obj : BaseObject) : EntityAbstract {
-        return cast obj;
+        return Entity.fromInstance(cast obj.instance);
     }
 
     @:from
