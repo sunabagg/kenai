@@ -1,6 +1,6 @@
 package sunaba.native.spatial.mesh;
 
-import sunaba.core.Vector3
+import sunaba.core.Vector3;
 import sunaba.native.core.ComponentNative;
 import sunaba.native.core.EntityNative;
 
