@@ -38,7 +38,7 @@ class BaseObject {
 abstract BaseObjectAbstract(BaseObject) from BaseObject to BaseObject {
     @:from
     public static function fromBaseObject(obj : BaseObject) : BaseObjectAbstract {
-        return cast obj;
+        return BaseObject.fromInstance(obj.instance);
     }
 
     @:from
