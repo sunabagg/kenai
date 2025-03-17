@@ -32,6 +32,10 @@ namespace sunaba::core {
         CanvasItem(CanvasItemNode* p_node) {
             setCanvasItem(p_node);
         }
+
+        CanvasItem(CanvasItemProxy* p_node) {
+            setCanvasItem(p_node);
+        }
     
         // Constructor with no parameters
         CanvasItem() {
