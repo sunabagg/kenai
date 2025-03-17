@@ -114,7 +114,7 @@ class IGeometryInstance extends IVisualInstance {
 abstract IGeometryInstanceAbstract(IGeometryInstance) from IGeometryInstance to IGeometryInstance {
     @:from
     public static function fromBaseObject(obj : BaseObject) : IGeometryInstanceAbstract {
-        return cast obj;
+        return IGeometryInstance.fromInstance(cast obj.instance);
     }
 
     @:from
