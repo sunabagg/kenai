@@ -9,7 +9,7 @@
 #include "material.h"
 #include "font.h"
 #include "texture2d.h"
-#include "style_box.h"
+#include "../ui/style_box.h"
 
 namespace sunaba::core {
     void bindCanvasItem(sol::state &lua);
@@ -413,7 +413,7 @@ namespace sunaba::core {
             );
         }
 
-        void drawStyleBox(StyleBox* styleBox, Rect2 rect) {
+        void drawStyleBox(sunaba::ui::StyleBox* styleBox, Rect2 rect) {
             canvas_item->draw_style_box(styleBox->getStyleBox(), rect);
         }
 
@@ -425,6 +425,75 @@ namespace sunaba::core {
         void drawTextureRect(Texture2D* texture, Rect2 rect, bool tile, Color modulate = Color(1, 1, 1, 1), bool transpose = false) {
             Ref<GodotTexture2D> textureRef = Ref<GodotTexture2D>(texture->getTexture());
             canvas_item->draw_texture_rect(textureRef, rect, tile, modulate, transpose);
+        }
+
+        void drawTextureRectRegion(Texture2D* texture, Rect2 rect, Rect2 srcRect, Color modulate = Color(1, 1, 1, 1), bool transpose = false, bool clipUv = true) {
+            Ref<GodotTexture2D> textureRef = Ref<GodotTexture2D>(texture->getTexture());
+            canvas_item->draw_texture_rect_region(textureRef, rect, srcRect, modulate, transpose, clipUv);
+        }
+
+        void forceUpdateTransform() {
+            canvas_item->force_update_transform();
+        }
+
+        Transform2D getCanvasTransform() {
+            return canvas_item->get_canvas_transform();
+        }
+
+        Vector2 getGlobalMousePosition() {
+            return canvas_item->get_global_mouse_position();
+        }
+
+        Transform2D getGlobalTransform() {
+            return canvas_item->get_global_transform();
+        }
+
+        Transform2D getGlobalTransformWithCanvas() {
+            return canvas_item->get_global_transform_with_canvas();
+        }
+
+        Vector2 getLocalMousePosition() {
+            return canvas_item->get_local_mouse_position();
+        }
+
+        Transform2D getScreenTransform() {
+            return canvas_item->get_screen_transform();
+        }
+
+        Transform2D getTransform() {
+            return canvas_item->get_transform();
+        }
+
+        Rect2 getViewportRect() {
+            return canvas_item->get_viewport_rect();
+        }
+
+        Transform2D getViewportTransform() {
+            return canvas_item->get_viewport_transform();
+        }
+
+        bool getVisibilityLayerBit(int bit) {
+            return canvas_item->get_visibility_layer_bit(bit);
+        }
+
+        void hide() {
+            canvas_item->hide();
+        }
+
+        bool isLocalTransformNotificationEnabled() {
+            return canvas_item->is_local_transform_notification_enabled();
+        }
+
+        bool isTransformNotificationEnabled() {
+            return canvas_item->is_transform_notification_enabled();
+        }
+
+        bool isVisibleInTree() {
+            return canvas_item->is_visible_in_tree();
+        }
+
+        Vector2 makeCanvasPositionLocal(Vector2 pos) {
+            return canvas_item->make_canvas_position_local(pos);
         }
     };
 }
