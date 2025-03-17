@@ -25,7 +25,7 @@ extern class EntityNative extends BaseObjectNative {
 
     public function getComponentsByType(type : Class<ComponentNative>) : Array<ComponentNative>;
 
-    public function getUserComponentsByType(type : Class<ComponentNative>) : Array<Component>;
+    public function getUserComponentsByType(type : Class<Component>) : Array<Component>;
 
     public function addChild(child: EntityNative): Void;
 
