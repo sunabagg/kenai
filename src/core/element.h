@@ -37,7 +37,7 @@ namespace sunaba::core {
 
         std::vector<Element*> children; // List of child elements
         Element* parent = nullptr; // Pointer to the parent element
-        sol::table scriptInstance = sol::nil;
+        
     protected:
         void setParent(Element* p_parent) {
             parent = p_parent;
@@ -47,6 +47,8 @@ namespace sunaba::core {
             }
         }
     public:
+        sol::table scriptInstance = sol::nil;
+
         Element() {
             setNode(memnew(NodeProxy));
             node->set_name("Element");
