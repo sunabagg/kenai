@@ -8,12 +8,14 @@ class Entity extends BaseObject {
         return cast instance;
     }
     public function new() {
+        super();
+        instance.free();
         instance = new EntityNative();
         if (instance == null) {
             throw "Entity.new() returned null";
         }
         pushToStack();
-        entInstance = instance;
+        entInstance = cast instance;
     }
     public static function fromInstance(instance: EntityNative): Entity {
         if (instance == null) {
@@ -48,20 +50,16 @@ class Entity extends BaseObject {
         entInstance.removeComponent(comp.compInstance);
     }
 
-    public function getUserComponent(type: Class<Component>): Component {
-        return Component.fromInstance(entInstance.getUserComponent(type));
+    public function getComponent(type: Class<Component>): Component {
+        return entInstance.getUserComponent(type);
     }
 
     public function getComponentByName(name : String) : Component {
-        return Component.fromInstance(entInstance.getComponentByName(name));
+        return entInstance.getComponentByName(name);
     }
 
     public function getComponentsByType(type : Class<Component>, ) : Array<Component> {
-        var arr = entInstance.getUserComponentsByType(type);
-        var result = new Array<Component>();
-        for (comp in arr) {
-            result.push(comp);
-        }
+        var result = entInstance.getUserComponentsByType(type);
         return result;
     }
 
@@ -92,8 +90,8 @@ class Entity extends BaseObject {
 
 abstract EntityAbstract(Entity) from Entity to Entity {
     @:from
-    public static function fromEntity(ent : Entity) : EntityAbstract {
-        return cast ent;
+    public static function fromBaseObject(obj : BaseObject) : EntityAbstract {
+        return cast obj;
     }
 
     @:from
