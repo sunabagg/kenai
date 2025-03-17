@@ -1,5 +1,6 @@
 package sunaba.spatial;
 
+import sunaba.core.BaseObject;
 import sunaba.core.NativeVector2;
 import sunaba.core.NativeVector3;
 import sunaba.core.Component;
@@ -194,8 +195,8 @@ class Camera extends Component {
 
 abstract CameraAbstract(Camera) from Camera to Camera {
     @:from
-    public static function fromCamera(camera: Camera): CameraAbstract {
-        return cast camera;
+    public static function fromBaseObject(obj : BaseObject): CameraAbstract {
+        return Camera.fromInstance(cast obj.instance);
     }
 
     @:from
