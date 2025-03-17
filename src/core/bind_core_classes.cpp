@@ -31,6 +31,8 @@
 #include "shader_include.h"
 #include "shader_material.h"
 #include "translation.h"
+#include "element.h"
+#include "canvas_item.h"
 
 void sunaba::core::bindCoreClasses(sol::state& lua) {
     sunaba::core::io::bindBinaryClasses(lua);
@@ -63,4 +65,7 @@ void sunaba::core::bindCoreClasses(sol::state& lua) {
     bindShaderInclude(lua);
     bindShaderMaterial(lua);
     bindTranslation(lua);
+
+    bindElement(lua);
+    bindCanvasItem(lua);
 }
