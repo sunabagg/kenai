@@ -14,7 +14,6 @@ class Component extends BaseObject {
         if (instance == null) {
             throw "Component.new() returned null";
         }
-        compInstance = cast instance;
         var type = Type.getClass(this);
         if (type == null) {
             throw "Behavior must be a class";
