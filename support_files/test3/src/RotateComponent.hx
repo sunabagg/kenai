@@ -1,10 +1,10 @@
-package;
+package support_files.test3.src;
 
-import sunaba.core.Behavior;
+import sunaba.core.Component;
 import sunaba.spatial.SpatialTransform;
 import haxe.Exception;
 
-class RotateComponent extends Behavior {
+class RotateComponent extends Component {
     public var transform : SpatialTransform;
     public override function onInit() {
         transform = getComponent(SpatialTransform);
