@@ -4,8 +4,8 @@ import sunaba.native.spatial.IVisualInstanceNative;
 import sunaba.core.Component;
 
 class IVisualInstance extends Component {
-    public var ivsInstance(get, default) : IVisualInstanceNative;
-    public function get_ivsInstance() : IVisualInstanceNative {
+    public var iviInstance(get, default) : IVisualInstanceNative;
+    public function get_iviInstance() : IVisualInstanceNative {
         return cast instance;
     }
 
@@ -17,7 +17,7 @@ class IVisualInstance extends Component {
             throw "IVisualInstance.new() returned null";
         }
 
-        ivsInstance.setScriptInstance(this);
+        iviInstance.setScriptInstance(this);
         pushToStack();
     }
 
@@ -32,34 +32,34 @@ class IVisualInstance extends Component {
 
     public  var layerMask(get, set) : Int;
     public function get_layerMask() : Int {
-        return ivsInstance.layerMask;
+        return iviInstance.layerMask;
     }
     public function set_layerMask(value : Int) : Void {
-        ivsInstance.layerMask = value;
+        iviInstance.layerMask = value;
     }
 
     public var sortingOffset(get, set) : Float;
     public function get_sortingOffset() : Float {
-        return ivsInstance.sortingOffset;
+        return iviInstance.sortingOffset;
     }
     public function set_sortingOffset(value : Float) : Void {
-        ivsInstance.sortingOffset = value;
+        iviInstance.sortingOffset = value;
     }
 
     public var sortingUseAabbCenter(get, set) : Bool;
     public function get_sortingUseAabbCenter() : Bool {
-        return ivsInstance.sortingUseAabbCenter;
+        return iviInstance.sortingUseAabbCenter;
     }
     public function set_sortingUseAabbCenter(value : Bool) : Void {
-        ivsInstance.sortingUseAabbCenter = value;
+        iviInstance.sortingUseAabbCenter = value;
     }
 
     public function getLayerMaskValue(layer : Int) : Bool {
-        return ivsInstance.getLayerMaskValue(layer);
+        return iviInstance.getLayerMaskValue(layer);
     }
 
     public function setLayerMaskValue(layer : Int, value : Bool) : Void {
-        ivsInstance.setLayerMaskValue(layer, value);
+        iviInstance.setLayerMaskValue(layer, value);
     }
 }
 
