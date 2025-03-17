@@ -23,9 +23,9 @@ extern class EntityNative extends BaseObjectNative {
 
     public function getComponentByName(name : String) : Component;
 
-    public function getComponentsByType(type : Class<ComponentNative>) : Array<ComponentNative>;
+    public function getComponentsByType(type : Class<ComponentNative>) : lua.Table<Int, ComponentNative>;
 
-    public function getUserComponentsByType(type : Class<Component>) : Array<Component>;
+    public function getUserComponentsByType(type : Class<Component>) : lua.Table<Int, Component>;
 
     public function addChild(child: EntityNative): Void;
 

@@ -1,5 +1,6 @@
 package sunaba.core;
 
+import lua.Table;
 import sunaba.native.core.EntityNative;
 
 class Entity extends BaseObject {
@@ -60,7 +61,7 @@ class Entity extends BaseObject {
 
     public function getComponentsByType(type : Class<Component>, ) : Array<Component> {
         var result = entInstance.getUserComponentsByType(type);
-        return result;
+        return Table.toArray(result);
     }
 
     public function addChild(child : Entity) : Void {
