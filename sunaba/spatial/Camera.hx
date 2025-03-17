@@ -39,96 +39,108 @@ class Camera extends Component {
     public function get_cullMask(): Int {
         return cameraInstance.cullMask;
     }
-    public function set_cullMask(value: Int): Void {
+    public function set_cullMask(value: Int): Int {
         cameraInstance.cullMask = value;
+        return value;
     }
 
     public var current(get, set): Bool;
     public function get_current(): Bool {
         return cameraInstance.current;
     }
-    public function set_current(value: Bool): Void {
+    public function set_current(value: Bool): Bool {
         cameraInstance.current = value;
+        return value;
     }
 
     public var dopplerTracking(get, set): Int;
     public function get_dopplerTracking(): Int {
         return cameraInstance.dopplerTracking;
     }
-    public function set_dopplerTracking(value: Int): Void {
+    public function set_dopplerTracking(value: Int): Int {
         cameraInstance.dopplerTracking = value;
+        return value;
     }
 
     public var far(get, set): Float;
     public function get_far(): Float {
         return cameraInstance.far;
     }
-    public function set_far(value: Float): Void {
+    public function set_far(value: Float): Float {
         cameraInstance.far = value;
+        return value;
     }
 
     public var fov(get, set): Float;
     public function get_fov(): Float {
         return cameraInstance.fov;
     }
-    public function set_fov(value: Float): Void {
+    public function set_fov(value: Float): Float {
         cameraInstance.fov = value;
+        return value;
     }
 
     public var frustumOffset(get, set): Vector2;
     public function get_frustumOffset(): Vector2 {
         return cameraInstance.frustumOffset;
     }
-    public function set_frustumOffset(value: Vector2): Void {
+    public function set_frustumOffset(value: Vector2): Vector2 {
         cameraInstance.frustumOffset = value;
+        return value;
     }
 
     public var hOffset(get, set): Float;
     public function get_hOffset(): Float {
         return cameraInstance.hOffset;
     }
-    public function set_hOffset(value: Float): Void {
+    public function set_hOffset(value: Float): Float {
         cameraInstance.hOffset = value;
+        return value;
     }
 
     public var keepAspect(get, set): Float;
     public function get_keepAspect(): Float {
         return cameraInstance.keepAspect;
     }
-    public function set_keepAspect(value: Float): Void {
+    public function set_keepAspect(value: Float): Float {
         cameraInstance.keepAspect = value;
+        return value;
     }
 
     public var near(get, set): Float;
     public function get_near(): Float {
         return cameraInstance.near;
     }
-    public function set_near(value: Float): Void {
+    public function set_near(value: Float): Float {
         cameraInstance.near = value;
+        return value;
     }
 
     public var projection(get, set): Int;
     public function get_projection(): Int {
         return cameraInstance.projection;
     }
-    public function set_projection(value: Int): Void {
+    public function set_projection(value: Int): Int {
         cameraInstance.projection = value;
+        return value;
     }
 
     public var size(get, set): Float;
     public function get_size(): Float {
         return cameraInstance.size;
     }
-    public function set_size(value: Float): Void {
+    public function set_size(value: Float): Float {
         cameraInstance.size = value;
+        return value;
     }
 
     public var vOffset(get, set): Float;
     public function get_vOffset(): Float {
         return cameraInstance.vOffset;
     }
-    public function set_vOffset(value: Float): Void {
+    public function set_vOffset(value: Float): Float {
         cameraInstance.vOffset = value;
+        return value;
     }
 
     public function clearCurrent(): Void {
