@@ -168,7 +168,7 @@ class Component extends BaseObject {
 abstract ComponentAbstract(Component) from Component to Component {
     @:from
     public static function fromBaseObject(obj : BaseObject) : ComponentAbstract {
-        return cast obj;
+        return Component.fromInstance(cast obj.instance);
     }
 
     @:from
