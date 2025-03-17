@@ -186,8 +186,6 @@ local Array = _hx_e()
 local Main = _hx_e()
 local Math = _hx_e()
 local Reflect = _hx_e()
-__sunaba_core_Behavior = _hx_e()
-local RotateComponent = _hx_e()
 local String = _hx_e()
 local Std = _hx_e()
 local Type = _hx_e()
@@ -201,14 +199,37 @@ __haxe_iterators_ArrayIterator = _hx_e()
 __haxe_iterators_ArrayKeyValueIterator = _hx_e()
 __lua_Boot = _hx_e()
 __lua_UserData = _hx_e()
+__lua_PairTools = _hx_e()
 __lua_Thread = _hx_e()
+__sunaba_core_BaseObject = _hx_e()
+__sunaba_core__BaseObject_BaseObjectAbstract_Impl_ = _hx_e()
 __sunaba_core__Basis_Basis_Impl_ = _hx_e()
+__sunaba_core_Component = _hx_e()
+__sunaba_core__Component_ComponentAbstract_Impl_ = _hx_e()
+__sunaba_core_Entity = _hx_e()
+__sunaba_core__Entity_EntityAbstract_Impl_ = _hx_e()
 __sunaba_core_GlobalObjectStack = _hx_e()
 __sunaba_core_ObjectUtils = _hx_e()
 __sunaba_core__Quaternion_Quaternion_Impl_ = _hx_e()
+__sunaba_core_Scene = _hx_e()
+__sunaba_core__Scene_SceneAbstract_Impl_ = _hx_e()
 __sunaba_core_StackHandle = _hx_e()
 __sunaba_core__Vector2_Vector2_Impl_ = _hx_e()
 __sunaba_core__Vector3_Vector3_Impl_ = _hx_e()
+local IGeometryInstance = _hx_e()
+__sunaba_spatial_Camera = _hx_e()
+__sunaba_spatial__Camera_CameraAbstract_Impl_ = _hx_e()
+__sunaba_spatial_IVisualInstance = _hx_e()
+__sunaba_spatial_IGeometryInstance = _hx_e()
+__sunaba_spatial__IGeometryInstance_IGeometryInstanceAbstract_Impl_ = _hx_e()
+__sunaba_spatial__IVisualInstance_IVisualInstanceAbstract_Impl_ = _hx_e()
+__sunaba_spatial_SpatialTransform = _hx_e()
+__sunaba_spatial__SpatialTransform_SpatialTransformAbstract_Impl_ = _hx_e()
+__sunaba_spatial_mesh_Box = _hx_e()
+__sunaba_spatial_mesh__Box_BoxAbstract_Impl_ = _hx_e()
+__sunaba_spatial_mesh_MeshRenderer = _hx_e()
+__sunaba_spatial_mesh__MeshRenderer_MeshRendererAbstract_Impl_ = _hx_e()
+__support_files_test3_src_RotateComponent = _hx_e()
 
 local _hx_bind, _hx_bit, _hx_staticToInstance, _hx_funcToField, _hx_maxn, _hx_print, _hx_apply_self, _hx_box_mr, _hx_bit_clamp, _hx_table, _hx_bit_raw
 local _hx_pcall_default = {};
@@ -563,64 +584,47 @@ Array.prototype.__class__ =  Array
 Main.new = {}
 Main.__name__ = "Main"
 Main.main = function() 
-  local scene = createScene();
-  local entity1 = Entity.new();
-  entity1.name = "Entity1";
-  local e1transform = SpatialTransform.new();
-  entity1:addComponent(e1transform, __sunaba_core_ObjectUtils.getName(SpatialTransform));
-  scene:addEntity(entity1);
-  e1transform.position = __sunaba_core__Vector3_Vector3_Impl_._new(1, 2, 3);
-  local child1 = Entity.new();
-  child1.name = "Child1";
-  local c1transform = SpatialTransform.new();
-  child1:addComponent(c1transform, __sunaba_core_ObjectUtils.getName(SpatialTransform));
-  entity1:addChild(child1);
-  c1transform.position = __sunaba_core__Vector3_Vector3_Impl_._new(4, 5, 6);
-  local entity2 = Entity.new();
-  entity2.name = "Entity2";
-  local e2transform = SpatialTransform.new();
-  entity2:addComponent(e2transform, __sunaba_core_ObjectUtils.getName(SpatialTransform));
-  scene:addEntity(entity2);
-  e2transform.position = __sunaba_core__Vector3_Vector3_Impl_._new(7, 8, 9);
-  local entity3 = Entity.new();
-  entity3.name = "Camera";
-  local e3transform = SpatialTransform.new();
-  entity3:addComponent(e3transform, __sunaba_core_ObjectUtils.getName(SpatialTransform));
-  local camera = Camera.new();
-  entity3:addComponent(camera, __sunaba_core_ObjectUtils.getName(Camera));
-  scene:addEntity(entity3);
-  e3transform.position = __sunaba_core__Vector3_Vector3_Impl_._new(0, 0, 1);
-  local entity4 = Entity.new();
-  entity4.name = "Box";
-  local e4transform = SpatialTransform.new();
-  entity4:addComponent(e4transform, __sunaba_core_ObjectUtils.getName(SpatialTransform));
-  local e4mesh = MeshRenderer.new();
-  entity4:addComponent(e4mesh, __sunaba_core_ObjectUtils.getName(MeshRenderer));
-  local e4box = Box.new();
-  entity4:addComponent(e4box, __sunaba_core_ObjectUtils.getName(Box));
-  e4box.size = __sunaba_core__Vector3_Vector3_Impl_._new(1, 1, 1);
-  local rotateComponent = RotateComponent.new();
-  entity4:addComponent(rotateComponent.component, "RotateComponent");
-  scene:addEntity(entity4);
-  e4transform.position = __sunaba_core__Vector3_Vector3_Impl_._new(0, 0, -1);
   __sunaba_core_GlobalObjectStack.initSingleton();
-  local globalObjectStack = __sunaba_core_GlobalObjectStack.getSingleton();
-  globalObjectStack.stack:push(__sunaba_core_StackHandle.new(scene));
-  globalObjectStack.stack:push(__sunaba_core_StackHandle.new(entity1));
-  globalObjectStack.stack:push(__sunaba_core_StackHandle.new(child1));
-  globalObjectStack.stack:push(__sunaba_core_StackHandle.new(entity2));
-  globalObjectStack.stack:push(__sunaba_core_StackHandle.new(entity3));
-  globalObjectStack.stack:push(__sunaba_core_StackHandle.new(entity4));
-  globalObjectStack.stack:push(__sunaba_core_StackHandle.new(e1transform));
-  globalObjectStack.stack:push(__sunaba_core_StackHandle.new(c1transform));
-  globalObjectStack.stack:push(__sunaba_core_StackHandle.new(e2transform));
-  globalObjectStack.stack:push(__sunaba_core_StackHandle.new(e3transform));
-  globalObjectStack.stack:push(__sunaba_core_StackHandle.new(camera));
-  globalObjectStack.stack:push(__sunaba_core_StackHandle.new(e4transform));
-  globalObjectStack.stack:push(__sunaba_core_StackHandle.new(e4mesh));
-  globalObjectStack.stack:push(__sunaba_core_StackHandle.new(e4box));
-  globalObjectStack.stack:push(__sunaba_core_StackHandle.new(rotateComponent.component));
-  globalObjectStack.stack:push(__sunaba_core_StackHandle.new(rotateComponent));
+  local scene = __sunaba_core_Scene.new();
+  local entity1 = __sunaba_core_Entity.new();
+  entity1:set_name("Entity1");
+  local e1transform = __sunaba_spatial_SpatialTransform.new();
+  entity1:addComponent(e1transform, __sunaba_spatial_SpatialTransform.__name__);
+  scene:addEntity(entity1);
+  e1transform:set_position(__sunaba_core__Vector3_Vector3_Impl_._new(1, 2, 3));
+  local child1 = __sunaba_core_Entity.new();
+  child1:set_name("Child1");
+  local c1transform = __sunaba_spatial_SpatialTransform.new();
+  child1:addComponent(c1transform, __sunaba_spatial_SpatialTransform.__name__);
+  entity1:addChild(child1);
+  c1transform:set_position(__sunaba_core__Vector3_Vector3_Impl_._new(4, 5, 6));
+  local entity2 = __sunaba_core_Entity.new();
+  entity2:set_name("Entity2");
+  local e2transform = __sunaba_spatial_SpatialTransform.new();
+  entity2:addComponent(e2transform, __sunaba_spatial_SpatialTransform.__name__);
+  scene:addEntity(entity2);
+  e2transform:set_position(__sunaba_core__Vector3_Vector3_Impl_._new(7, 8, 9));
+  local entity3 = __sunaba_core_Entity.new();
+  entity3:set_name("Camera");
+  local e3transform = __sunaba_spatial_SpatialTransform.new();
+  entity3:addComponent(e3transform, __sunaba_spatial_SpatialTransform.__name__);
+  local camera = __sunaba_spatial_Camera.new();
+  entity3:addComponent(camera, __sunaba_spatial_Camera.__name__);
+  scene:addEntity(entity3);
+  e3transform:set_position(__sunaba_core__Vector3_Vector3_Impl_._new(0, 0, 1));
+  local entity4 = __sunaba_core_Entity.new();
+  entity4:set_name("Box");
+  local e4transform = __sunaba_spatial_SpatialTransform.new();
+  entity4:addComponent(e4transform, __sunaba_spatial_SpatialTransform.__name__);
+  local e4mesh = __sunaba_spatial_mesh_MeshRenderer.new();
+  entity4:addComponent(e4mesh, __sunaba_spatial_mesh_MeshRenderer.__name__);
+  local e4box = __sunaba_spatial_mesh_Box.new();
+  entity4:addComponent(e4box, __sunaba_spatial_mesh_Box.__name__);
+  e4box:set_size(__sunaba_core__Vector3_Vector3_Impl_._new(1, 1, 1));
+  local rotateComponent = __support_files_test3_src_RotateComponent.new();
+  entity4:addComponent(rotateComponent, "RotateComponent");
+  scene:addEntity(entity4);
+  e4transform:set_position(__sunaba_core__Vector3_Vector3_Impl_._new(0, 0, -1));
   local _hx_status, _hx_result = pcall(function() 
   
       Main.printScene(scene);
@@ -631,6 +635,7 @@ Main.main = function()
     local _g = _hx_result;
     local e = __haxe_Exception.caught(_g):unwrap();
     _G.print(Std.string(Std.string(Std.string(Std.string("Error: ") .. Std.string(Std.string(e))) .. Std.string(" : ")) .. Std.string(Std.string(e.stack))));
+    _G.error(__haxe_Exception.thrown(e),0);
   elseif _hx_result ~= _hx_pcall_default then
     return _hx_result
   end;
@@ -639,15 +644,15 @@ Main.printEntity = function(entity,indent)
   if (indent == nil) then 
     indent = "    ";
   end;
-  _G.print(Std.string(Std.string(Std.string(indent) .. Std.string("Entity: ")) .. Std.string(entity.name)));
-  local spatialTransform = SpatialTransform.getFromEntity(entity);
+  _G.print(Std.string(Std.string(Std.string(indent) .. Std.string("Entity: ")) .. Std.string(entity:get_name())));
+  local spatialTransform = entity:getComponent(__sunaba_spatial_SpatialTransform);
   if (spatialTransform ~= nil) then 
     local position = spatialTransform.position;
     local rotation = spatialTransform.rotation;
     local scale = spatialTransform.scale;
     local global = spatialTransform.global;
-    _G.print(Std.string(Std.string(Std.string(Std.string(Std.string(Std.string(Std.string(indent) .. Std.string("    Transform: ")) .. Std.string((__sunaba_core__Vector3_Vector3_Impl_.fieldRead(position, "toString"))())) .. Std.string(", ")) .. Std.string((__sunaba_core__Vector3_Vector3_Impl_.fieldRead(rotation, "toString"))())) .. Std.string(", ")) .. Std.string((__sunaba_core__Vector3_Vector3_Impl_.fieldRead(scale, "toString"))())));
-    _G.print(Std.string(Std.string(Std.string(indent) .. Std.string("    GlobalTransform: ")) .. Std.string(global:tostring())));
+    _G.print(Std.string(Std.string(Std.string(Std.string(Std.string(Std.string(Std.string(indent) .. Std.string("    Transform: ")) .. Std.string(_hx_wrap_if_string_field(position,'toString')(position))) .. Std.string(", ")) .. Std.string(_hx_wrap_if_string_field(rotation,'toString')(rotation))) .. Std.string(", ")) .. Std.string(_hx_wrap_if_string_field(scale,'toString')(scale))));
+    _G.print(Std.string(Std.string(Std.string(indent) .. Std.string("    GlobalTransform: ")) .. Std.string(_hx_wrap_if_string_field(global,'toString')(global))));
   end;
   local _g = 0;
   local _g1 = entity:getChildCount();
@@ -716,139 +721,6 @@ Reflect.field = function(o,field)
     end;
   end;
 end
-
-__sunaba_core_Behavior.new = function() 
-  local self = _hx_new(__sunaba_core_Behavior.prototype)
-  __sunaba_core_Behavior.super(self)
-  return self
-end
-__sunaba_core_Behavior.super = function(self) 
-  local type = Type.getClass(self);
-  if (type == nil) then 
-    _G.error(__haxe_Exception.thrown("Behavior must be a class"),0);
-  end;
-  local comp = Component.new();
-  self.component = comp;
-  comp:setScriptType(type);
-  comp:setScriptInstance(self);
-end
-__sunaba_core_Behavior.__name__ = "sunaba.core.Behavior"
-__sunaba_core_Behavior.prototype = _hx_e();
-__sunaba_core_Behavior.prototype.getComponent_sunaba_spatial_SpatialTransform = function(self,type,entity) 
-  if (entity == nil) then 
-    entity = self.component.entity;
-    __haxe_Log.trace("Entity is null, using this.component.entity", _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="sunaba/core/Behavior.hx",lineNumber=55,className="sunaba.core.Behavior",methodName="getComponent"}));
-  end;
-  local behaviorType = type;
-  if (__sunaba_core_ObjectUtils.typeInheritsFrom(type, __sunaba_core_Behavior)) then 
-    local behavior = entity:getUserComponent(behaviorType);
-    if (behavior ~= nil) then 
-      local tBehavior = behavior;
-      if (tBehavior ~= nil) then 
-        do return tBehavior end;
-      end;
-    end;
-  else
-    local typeName = type.__name;
-    local component = entity:getComponentByName(typeName);
-    if (component ~= nil) then 
-      local tComponent = __sunaba_core_ObjectUtils.castObjectAs_getComponent_T(type, component);
-      if (tComponent ~= nil) then 
-        do return tComponent end;
-      end;
-    end;
-  end;
-  do return nil end
-end
-__sunaba_core_Behavior.prototype.onInit = function(self) 
-end
-__sunaba_core_Behavior.prototype.onReady = function(self) 
-end
-__sunaba_core_Behavior.prototype.onUpdate = function(self,deltaTime) 
-end
-__sunaba_core_Behavior.prototype.onPhysicsUpdate = function(self,delatTime) 
-end
-__sunaba_core_Behavior.prototype.getComponentNG = function(self,type,entity) 
-  if (entity == nil) then 
-    entity = self.component.entity;
-  end;
-  local compType = type;
-  if (compType ~= nil) then 
-    local component = entity:getComponent(compType);
-    if (component ~= nil) then 
-      do return component end;
-    end;
-  end;
-  local behaviorType = type;
-  if (behaviorType ~= nil) then 
-    local behavior = entity:getUserComponent(behaviorType);
-    if (behavior ~= nil) then 
-      do return behavior end;
-    end;
-  end;
-  do return nil end
-end
-__sunaba_core_Behavior.prototype.addComponentNG = function(self,type,entity) 
-  local compType = type;
-  if (compType ~= nil) then 
-    local component = Type.createInstance(compType, _hx_tab_array({}, 0));
-    self.component.entity:addComponent(component, compType.__name__);
-    do return component end;
-  end;
-  local behaviorType = type;
-  if (behaviorType ~= nil) then 
-    local behavior = Type.createInstance(behaviorType, _hx_tab_array({}, 0));
-    local behaviorComp = behavior.component;
-    if (behaviorComp ~= nil) then 
-      self.component.entity:addComponent(behaviorComp, behaviorType.__name__);
-      do return behavior end;
-    end;
-  end;
-  _G.error(__haxe_Exception.thrown("Invalid Component"),0);
-end
-__sunaba_core_Behavior.prototype.removeComponent = function(self,type,entity) 
-  if (entity == nil) then 
-    entity = self.component.entity;
-  end;
-  local compType = type;
-  if (compType ~= nil) then 
-    local component = entity:getComponent(compType);
-    if (component ~= nil) then 
-      entity:removeComponent(component);
-    end;
-  end;
-  local behaviorType = type;
-  if (behaviorType ~= nil) then 
-    local behavior = entity:getUserComponent(behaviorType);
-    if (behavior ~= nil) then 
-      entity:removeUserComponent(behavior);
-    end;
-  end;
-end
-
-__sunaba_core_Behavior.prototype.__class__ =  __sunaba_core_Behavior
-
-RotateComponent.new = function() 
-  local self = _hx_new(RotateComponent.prototype)
-  RotateComponent.super(self)
-  return self
-end
-RotateComponent.super = function(self) 
-  __sunaba_core_Behavior.super(self);
-end
-RotateComponent.__name__ = "RotateComponent"
-RotateComponent.prototype = _hx_e();
-RotateComponent.prototype.onInit = function(self) 
-  self.transform = self:getComponent_sunaba_spatial_SpatialTransform(SpatialTransform);
-end
-RotateComponent.prototype.onUpdate = function(self,deltaTime) 
-  local rotation = -0.5 * deltaTime;
-  self.transform:rotateY(rotation);
-end
-
-RotateComponent.prototype.__class__ =  RotateComponent
-RotateComponent.__super__ = __sunaba_core_Behavior
-setmetatable(RotateComponent.prototype,{__index=__sunaba_core_Behavior.prototype})
 
 String.new = function(string) 
   local self = _hx_new(String.prototype)
@@ -1380,8 +1252,59 @@ end
 __lua_UserData.new = {}
 __lua_UserData.__name__ = "lua.UserData"
 
+__lua_PairTools.new = {}
+__lua_PairTools.__name__ = "lua.PairTools"
+__lua_PairTools.copy = function(table1) 
+  local ret = ({});
+  for k,v in _G.pairs(table1) do ret[k] = v end;
+  do return ret end;
+end
+
 __lua_Thread.new = {}
 __lua_Thread.__name__ = "lua.Thread"
+
+__sunaba_core_BaseObject.new = function() 
+  local self = _hx_new(__sunaba_core_BaseObject.prototype)
+  __sunaba_core_BaseObject.super(self)
+  return self
+end
+__sunaba_core_BaseObject.super = function(self) 
+  self.instance = BaseObject.new();
+  if (self.instance == nil) then 
+    _G.error(__haxe_Exception.thrown("BaseObject.new() returned null"),0);
+  end;
+  self:pushToStack();
+end
+__sunaba_core_BaseObject.__name__ = "sunaba.core.BaseObject"
+__sunaba_core_BaseObject.fromInstance = function(instance) 
+  if (instance == nil) then 
+    _G.error(__haxe_Exception.thrown("BaseObject.fromInstance() received null instance"),0);
+  end;
+  local obj = __sunaba_core_BaseObject.new();
+  obj.instance = instance;
+  do return obj end;
+end
+__sunaba_core_BaseObject.prototype = _hx_e();
+__sunaba_core_BaseObject.prototype.pushToStack = function(self) 
+  local stack = __sunaba_core_GlobalObjectStack.getSingleton().stack;
+  stack:push(__sunaba_core_StackHandle.new(self));
+end
+__sunaba_core_BaseObject.prototype.onFree = function(self) 
+end
+__sunaba_core_BaseObject.prototype.free = function(self) 
+  self.instance:free();
+end
+
+__sunaba_core_BaseObject.prototype.__class__ =  __sunaba_core_BaseObject
+
+__sunaba_core__BaseObject_BaseObjectAbstract_Impl_.new = {}
+__sunaba_core__BaseObject_BaseObjectAbstract_Impl_.__name__ = "sunaba.core._BaseObject.BaseObjectAbstract_Impl_"
+__sunaba_core__BaseObject_BaseObjectAbstract_Impl_.fromBaseObject = function(obj) 
+  do return __sunaba_core_BaseObject.fromInstance(obj.instance) end;
+end
+__sunaba_core__BaseObject_BaseObjectAbstract_Impl_.fromInstance = function(instance) 
+  do return __sunaba_core_BaseObject.fromInstance(instance) end;
+end
 
 __sunaba_core__Basis_Basis_Impl_.new = {}
 __sunaba_core__Basis_Basis_Impl_.__name__ = "sunaba.core._Basis.Basis_Impl_"
@@ -1555,6 +1478,237 @@ __sunaba_core__Basis_Basis_Impl_.toString = function(v)
   do return v.tostring() end;
 end
 
+__sunaba_core_Component.new = function() 
+  local self = _hx_new(__sunaba_core_Component.prototype)
+  __sunaba_core_Component.super(self)
+  return self
+end
+__sunaba_core_Component.super = function(self) 
+  __sunaba_core_BaseObject.super(self);
+  self.instance:free();
+  self.instance = Component.new();
+  if (self.instance == nil) then 
+    _G.error(__haxe_Exception.thrown("Component.new() returned null"),0);
+  end;
+  local type = Type.getClass(self);
+  if (type == nil) then 
+    _G.error(__haxe_Exception.thrown("Behavior must be a class"),0);
+  end;
+  self:get_compInstance():setScriptType(type);
+  self:get_compInstance():setScriptInstance(self);
+  self:pushToStack();
+end
+__sunaba_core_Component.__name__ = "sunaba.core.Component"
+__sunaba_core_Component.fromInstance = function(instance) 
+  if (instance == nil) then 
+    _G.error(__haxe_Exception.thrown("Component.fromInstance() received null instance"),0);
+  end;
+  local obj = __sunaba_core_Component.new();
+  obj.instance = instance;
+  do return obj end;
+end
+__sunaba_core_Component.prototype = _hx_e();
+__sunaba_core_Component.prototype.getComponent_sunaba_spatial_SpatialTransform = function(self,type,entity) 
+  if (entity == nil) then 
+    entity = self:get_entity();
+    __haxe_Log.trace("Entity is null, using this.component.entity", _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="sunaba/core/Component.hx",lineNumber=91,className="sunaba.core.Component",methodName="getComponent"}));
+  end;
+  local behaviorType = type;
+  if (__sunaba_core_ObjectUtils.typeInheritsFrom(type, __sunaba_core_Component)) then 
+    local behavior = entity:getComponent(behaviorType);
+    if (behavior ~= nil) then 
+      local tBehavior = behavior;
+      if (tBehavior ~= nil) then 
+        do return tBehavior end;
+      end;
+    end;
+  end;
+  do return nil end
+end
+__sunaba_core_Component.prototype.get_compInstance = function(self) 
+  do return self.instance end
+end
+__sunaba_core_Component.prototype.get_entity = function(self) 
+  do return __sunaba_core_Entity.fromInstance(self:get_compInstance().entity) end
+end
+__sunaba_core_Component.prototype.get_scene = function(self) 
+  do return __sunaba_core_Scene.fromInstance(self:get_compInstance().scene) end
+end
+__sunaba_core_Component.prototype.init = function(self) 
+  self:onInit();
+end
+__sunaba_core_Component.prototype.ready = function(self) 
+  self:onReady();
+end
+__sunaba_core_Component.prototype.update = function(self,deltaTime) 
+  self:onUpdate(deltaTime);
+end
+__sunaba_core_Component.prototype.physicsUpdate = function(self,delatTime) 
+  self:onPhysicsUpdate(delatTime);
+end
+__sunaba_core_Component.prototype.onInit = function(self) 
+end
+__sunaba_core_Component.prototype.onReady = function(self) 
+end
+__sunaba_core_Component.prototype.onUpdate = function(self,deltaTime) 
+end
+__sunaba_core_Component.prototype.onPhysicsUpdate = function(self,delatTime) 
+end
+__sunaba_core_Component.prototype.getComponentNG = function(self,type,entity) 
+  if (entity == nil) then 
+    entity = self:get_entity();
+  end;
+  local compType = type;
+  if (compType ~= nil) then 
+    local component = entity:getComponent(compType);
+    if (component ~= nil) then 
+      do return component end;
+    end;
+  end;
+  do return nil end
+end
+__sunaba_core_Component.prototype.addComponentNG = function(self,type,entity) 
+  if (entity == nil) then 
+    entity = self:get_entity();
+  end;
+  local compType = type;
+  if (compType ~= nil) then 
+    local component = Type.createInstance(compType, _hx_tab_array({}, 0));
+    entity:addComponent(component, compType.__name__);
+    do return component end;
+  end;
+  _G.error(__haxe_Exception.thrown("Invalid Component"),0);
+end
+__sunaba_core_Component.prototype.removeComponent = function(self,type,entity) 
+  if (entity == nil) then 
+    entity = self:get_entity();
+  end;
+  local compType = type;
+  if (compType ~= nil) then 
+    local component = entity:getComponent(compType);
+    if (component ~= nil) then 
+      entity:removeComponent(component);
+    end;
+  end;
+end
+
+__sunaba_core_Component.prototype.__class__ =  __sunaba_core_Component
+__sunaba_core_Component.__super__ = __sunaba_core_BaseObject
+setmetatable(__sunaba_core_Component.prototype,{__index=__sunaba_core_BaseObject.prototype})
+
+__sunaba_core__Component_ComponentAbstract_Impl_.new = {}
+__sunaba_core__Component_ComponentAbstract_Impl_.__name__ = "sunaba.core._Component.ComponentAbstract_Impl_"
+__sunaba_core__Component_ComponentAbstract_Impl_.fromBaseObject = function(obj) 
+  do return __sunaba_core_Component.fromInstance(obj.instance) end;
+end
+__sunaba_core__Component_ComponentAbstract_Impl_.fromInstance = function(instance) 
+  do return __sunaba_core_Component.fromInstance(instance) end;
+end
+
+__sunaba_core_Entity.new = function() 
+  local self = _hx_new(__sunaba_core_Entity.prototype)
+  __sunaba_core_Entity.super(self)
+  return self
+end
+__sunaba_core_Entity.super = function(self) 
+  __sunaba_core_BaseObject.super(self);
+  self.instance:free();
+  self.instance = Entity.new();
+  if (self.instance == nil) then 
+    _G.error(__haxe_Exception.thrown("Entity.new() returned null"),0);
+  end;
+  self:pushToStack();
+  self.entInstance = self.instance;
+end
+__sunaba_core_Entity.__name__ = "sunaba.core.Entity"
+__sunaba_core_Entity.fromInstance = function(instance) 
+  if (instance == nil) then 
+    _G.error(__haxe_Exception.thrown("Entity.fromInstance() received null instance"),0);
+  end;
+  local obj = __sunaba_core_Entity.new();
+  obj.instance = instance;
+  do return obj end;
+end
+__sunaba_core_Entity.prototype = _hx_e();
+__sunaba_core_Entity.prototype.get_entInstance = function(self) 
+  do return self.instance end
+end
+__sunaba_core_Entity.prototype.get_name = function(self) 
+  do return self:get_entInstance().name end
+end
+__sunaba_core_Entity.prototype.set_name = function(self,value) 
+  self:get_entInstance().name = value;
+  do return value end
+end
+__sunaba_core_Entity.prototype.addComponent = function(self,comp,name) 
+  self:get_entInstance():addComponent(comp:get_compInstance(), name);
+end
+__sunaba_core_Entity.prototype.hasComponent = function(self,comp) 
+  do return self:get_entInstance():hasComponent(comp) end
+end
+__sunaba_core_Entity.prototype.hasComponentByName = function(self,name) 
+  do return self:get_entInstance():hasComponentByName(name) end
+end
+__sunaba_core_Entity.prototype.removeComponent = function(self,comp) 
+  self:get_entInstance():removeComponent(comp:get_compInstance());
+end
+__sunaba_core_Entity.prototype.getComponent = function(self,type) 
+  do return self:get_entInstance():getUserComponent(type) end
+end
+__sunaba_core_Entity.prototype.getComponentByName = function(self,name) 
+  do return self:get_entInstance():getComponentByName(name) end
+end
+__sunaba_core_Entity.prototype.getComponentsByType = function(self,type) 
+  local result = self:get_entInstance():getUserComponentsByType(type);
+  local length = nil;
+  local tab = __lua_PairTools.copy(result);
+  local length = length;
+  if (length == nil) then 
+    length = _hx_table.maxn(tab);
+    if (length > 0) then 
+      local head = tab[1];
+      _G.table.remove(tab, 1);
+      tab[0] = head;
+      do return _hx_tab_array(tab, length) end;
+    else
+      do return _hx_tab_array({}, 0) end;
+    end;
+  else
+    do return _hx_tab_array(tab, length) end;
+  end;
+end
+__sunaba_core_Entity.prototype.addChild = function(self,child) 
+  self:get_entInstance():addChild(child:get_entInstance());
+end
+__sunaba_core_Entity.prototype.removeChild = function(self,child) 
+  self:get_entInstance():removeChild(child:get_entInstance());
+end
+__sunaba_core_Entity.prototype.hasChild = function(self,child) 
+  do return self:get_entInstance():hasChild(child:get_entInstance()) end
+end
+__sunaba_core_Entity.prototype.find = function(self,path) 
+  do return __sunaba_core_Entity.fromInstance(self:get_entInstance():find(path)) end
+end
+__sunaba_core_Entity.prototype.getChildCount = function(self) 
+  do return self:get_entInstance():getChildCount() end
+end
+__sunaba_core_Entity.prototype.getChild = function(self,index) 
+  do return __sunaba_core_Entity.fromInstance(self:get_entInstance():getChild(index)) end
+end
+
+__sunaba_core_Entity.prototype.__class__ =  __sunaba_core_Entity
+__sunaba_core_Entity.__super__ = __sunaba_core_BaseObject
+setmetatable(__sunaba_core_Entity.prototype,{__index=__sunaba_core_BaseObject.prototype})
+
+__sunaba_core__Entity_EntityAbstract_Impl_.new = {}
+__sunaba_core__Entity_EntityAbstract_Impl_.__name__ = "sunaba.core._Entity.EntityAbstract_Impl_"
+__sunaba_core__Entity_EntityAbstract_Impl_.fromBaseObject = function(obj) 
+  do return __sunaba_core_Entity.fromInstance(obj.instance) end;
+end
+__sunaba_core__Entity_EntityAbstract_Impl_.fromInstance = function(instance) 
+  do return __sunaba_core_Entity.fromInstance(instance) end;
+end
+
 __sunaba_core_GlobalObjectStack.new = function() 
   local self = _hx_new(__sunaba_core_GlobalObjectStack.prototype)
   __sunaba_core_GlobalObjectStack.super(self)
@@ -1585,13 +1739,6 @@ __sunaba_core_GlobalObjectStack.prototype.__class__ =  __sunaba_core_GlobalObjec
 
 __sunaba_core_ObjectUtils.new = {}
 __sunaba_core_ObjectUtils.__name__ = "sunaba.core.ObjectUtils"
-__sunaba_core_ObjectUtils.castObjectAs_getComponent_T = function(_type,object) 
-  local obj = _type.cast(object);
-  if (obj == nil) then 
-    _G.error(__haxe_Exception.thrown(Std.string("Object is not of type ") .. Std.string(Std.string(_type))),0);
-  end;
-  do return obj end;
-end
 __sunaba_core_ObjectUtils.getName = function(object) 
   do return object.__name end;
 end
@@ -1808,6 +1955,65 @@ __sunaba_core__Quaternion_Quaternion_Impl_.gte = function(this1,rhs)
 end
 __sunaba_core__Quaternion_Quaternion_Impl_.toString = function(v) 
   do return v.tostring() end;
+end
+
+__sunaba_core_Scene.new = function() 
+  local self = _hx_new(__sunaba_core_Scene.prototype)
+  __sunaba_core_Scene.super(self)
+  return self
+end
+__sunaba_core_Scene.super = function(self) 
+  __sunaba_core_BaseObject.super(self);
+  self.instance:free();
+  self.instance = createScene();
+  if (self.instance == nil) then 
+    _G.error(__haxe_Exception.thrown("Scene.new() returned null"),0);
+  end;
+  self:pushToStack();
+end
+__sunaba_core_Scene.__name__ = "sunaba.core.Scene"
+__sunaba_core_Scene.fromInstance = function(instance) 
+  if (instance == nil) then 
+    _G.error(__haxe_Exception.thrown("Scene.fromInstance() received null instance"),0);
+  end;
+  local obj = __sunaba_core_Scene.new();
+  obj.instance = instance;
+  do return obj end;
+end
+__sunaba_core_Scene.prototype = _hx_e();
+__sunaba_core_Scene.prototype.get_scnInstance = function(self) 
+  do return self.instance end
+end
+__sunaba_core_Scene.prototype.addEntity = function(self,ent) 
+  self:get_scnInstance():addEntity(ent:get_entInstance());
+end
+__sunaba_core_Scene.prototype.removeEntity = function(self,ent) 
+  self:get_scnInstance():removeEntity(ent:get_entInstance());
+end
+__sunaba_core_Scene.prototype.hasEntity = function(self,ent) 
+  do return self:get_scnInstance():hasEntity(ent:get_entInstance()) end
+end
+__sunaba_core_Scene.prototype.getEntityCount = function(self) 
+  do return self:get_scnInstance():getEntityCount() end
+end
+__sunaba_core_Scene.prototype.find = function(self,path) 
+  do return __sunaba_core_Entity.fromInstance(self:get_scnInstance():find(path)) end
+end
+__sunaba_core_Scene.prototype.getEntity = function(self,index) 
+  do return __sunaba_core_Entity.fromInstance(self:get_scnInstance():getEntity(index)) end
+end
+
+__sunaba_core_Scene.prototype.__class__ =  __sunaba_core_Scene
+__sunaba_core_Scene.__super__ = __sunaba_core_BaseObject
+setmetatable(__sunaba_core_Scene.prototype,{__index=__sunaba_core_BaseObject.prototype})
+
+__sunaba_core__Scene_SceneAbstract_Impl_.new = {}
+__sunaba_core__Scene_SceneAbstract_Impl_.__name__ = "sunaba.core._Scene.SceneAbstract_Impl_"
+__sunaba_core__Scene_SceneAbstract_Impl_.fromObj = function(scene) 
+  do return __sunaba_core_Scene.fromInstance(scene.instance) end;
+end
+__sunaba_core__Scene_SceneAbstract_Impl_.fromInstance = function(instance) 
+  do return __sunaba_core_Scene.fromInstance(instance) end;
 end
 
 __sunaba_core_StackHandle.new = function(object) 
@@ -2151,6 +2357,742 @@ end
 __sunaba_core__Vector3_Vector3_Impl_.toString = function(v) 
   do return v.tostring() end;
 end
+
+IGeometryInstance.new = function() 
+  local self = _hx_new(IGeometryInstance.prototype)
+  IGeometryInstance.super(self)
+  return self
+end
+IGeometryInstance.super = function(self) 
+  IVisualInstance.super(self);
+end
+IGeometryInstance.__name__ = "IGeometryInstance"
+IGeometryInstance.prototype = _hx_e();
+
+IGeometryInstance.prototype.__class__ =  IGeometryInstance
+IGeometryInstance.__super__ = IVisualInstance
+setmetatable(IGeometryInstance.prototype,{__index=IVisualInstance.prototype})
+
+__sunaba_spatial_Camera.new = function() 
+  local self = _hx_new(__sunaba_spatial_Camera.prototype)
+  __sunaba_spatial_Camera.super(self)
+  return self
+end
+__sunaba_spatial_Camera.super = function(self) 
+  __sunaba_core_Component.super(self);
+  self.instance:free();
+  self.instance = Camera.new();
+  if (self.instance == nil) then 
+    _G.error(__haxe_Exception.thrown("Camera.new() returned null"),0);
+  end;
+  self:get_cameraInstance():setScriptInstance(self);
+  self:pushToStack();
+end
+__sunaba_spatial_Camera.__name__ = "sunaba.spatial.Camera"
+__sunaba_spatial_Camera.fromInstance = function(instance) 
+  if (instance == nil) then 
+    _G.error(__haxe_Exception.thrown("Camera.fromInstance() received null instance"),0);
+  end;
+  local obj = __sunaba_spatial_Camera.new();
+  obj.instance = instance;
+  do return obj end;
+end
+__sunaba_spatial_Camera.getFromEntity = function(entity) 
+  do return __sunaba_spatial_Camera.fromInstance(Camera.getFromEntity(entity:get_entInstance())) end;
+end
+__sunaba_spatial_Camera.prototype = _hx_e();
+__sunaba_spatial_Camera.prototype.get_cameraInstance = function(self) 
+  do return self.instance end
+end
+__sunaba_spatial_Camera.prototype.get_cullMask = function(self) 
+  do return self:get_cameraInstance().cullMask end
+end
+__sunaba_spatial_Camera.prototype.set_cullMask = function(self,value) 
+  self:get_cameraInstance().cullMask = value;
+  do return value end
+end
+__sunaba_spatial_Camera.prototype.get_current = function(self) 
+  do return self:get_cameraInstance().current end
+end
+__sunaba_spatial_Camera.prototype.set_current = function(self,value) 
+  self:get_cameraInstance().current = value;
+  do return value end
+end
+__sunaba_spatial_Camera.prototype.get_dopplerTracking = function(self) 
+  do return self:get_cameraInstance().dopplerTracking end
+end
+__sunaba_spatial_Camera.prototype.set_dopplerTracking = function(self,value) 
+  self:get_cameraInstance().dopplerTracking = value;
+  do return value end
+end
+__sunaba_spatial_Camera.prototype.get_far = function(self) 
+  do return self:get_cameraInstance().far end
+end
+__sunaba_spatial_Camera.prototype.set_far = function(self,value) 
+  self:get_cameraInstance().far = value;
+  do return value end
+end
+__sunaba_spatial_Camera.prototype.get_fov = function(self) 
+  do return self:get_cameraInstance().fov end
+end
+__sunaba_spatial_Camera.prototype.set_fov = function(self,value) 
+  self:get_cameraInstance().fov = value;
+  do return value end
+end
+__sunaba_spatial_Camera.prototype.get_frustumOffset = function(self) 
+  do return self:get_cameraInstance().frustumOffset end
+end
+__sunaba_spatial_Camera.prototype.set_frustumOffset = function(self,value) 
+  self:get_cameraInstance().frustumOffset = value;
+  do return value end
+end
+__sunaba_spatial_Camera.prototype.get_hOffset = function(self) 
+  do return self:get_cameraInstance().hOffset end
+end
+__sunaba_spatial_Camera.prototype.set_hOffset = function(self,value) 
+  self:get_cameraInstance().hOffset = value;
+  do return value end
+end
+__sunaba_spatial_Camera.prototype.get_keepAspect = function(self) 
+  do return self:get_cameraInstance().keepAspect end
+end
+__sunaba_spatial_Camera.prototype.set_keepAspect = function(self,value) 
+  self:get_cameraInstance().keepAspect = value;
+  do return value end
+end
+__sunaba_spatial_Camera.prototype.get_near = function(self) 
+  do return self:get_cameraInstance().near end
+end
+__sunaba_spatial_Camera.prototype.set_near = function(self,value) 
+  self:get_cameraInstance().near = value;
+  do return value end
+end
+__sunaba_spatial_Camera.prototype.get_projection = function(self) 
+  do return self:get_cameraInstance().projection end
+end
+__sunaba_spatial_Camera.prototype.set_projection = function(self,value) 
+  self:get_cameraInstance().projection = value;
+  do return value end
+end
+__sunaba_spatial_Camera.prototype.get_size = function(self) 
+  do return self:get_cameraInstance().size end
+end
+__sunaba_spatial_Camera.prototype.set_size = function(self,value) 
+  self:get_cameraInstance().size = value;
+  do return value end
+end
+__sunaba_spatial_Camera.prototype.get_vOffset = function(self) 
+  do return self:get_cameraInstance().vOffset end
+end
+__sunaba_spatial_Camera.prototype.set_vOffset = function(self,value) 
+  self:get_cameraInstance().vOffset = value;
+  do return value end
+end
+__sunaba_spatial_Camera.prototype.clearCurrent = function(self) 
+  self:get_cameraInstance():clearCurrent();
+end
+__sunaba_spatial_Camera.prototype.getCullMaskValue = function(self,index) 
+  do return self:get_cameraInstance():getCullMaskValue(index) end
+end
+__sunaba_spatial_Camera.prototype.isPositionBehind = function(self,position) 
+  do return self:get_cameraInstance():isPositionBehind(position) end
+end
+__sunaba_spatial_Camera.prototype.makeCurrent = function(self) 
+  self:get_cameraInstance():makeCurrent();
+end
+__sunaba_spatial_Camera.prototype.projectLocalRayNormal = function(self,screenPoint) 
+  do return self:get_cameraInstance():projectLocalRayNormal(screenPoint) end
+end
+__sunaba_spatial_Camera.prototype.projectPosition = function(self,screenPoint,zDepth) 
+  do return self:get_cameraInstance():projectPosition(screenPoint, zDepth) end
+end
+__sunaba_spatial_Camera.prototype.projectRayNormal = function(self,screenPoint) 
+  do return self:get_cameraInstance():projectRayNormal(screenPoint) end
+end
+__sunaba_spatial_Camera.prototype.projectRayOrigin = function(self,screenPoint) 
+  do return self:get_cameraInstance():projectRayOrigin(screenPoint) end
+end
+__sunaba_spatial_Camera.prototype.setCullMaskValue = function(self,index,value) 
+  self:get_cameraInstance():setCullMaskValue(index, value);
+end
+__sunaba_spatial_Camera.prototype.setFrustum = function(self,size,offset,zNear,zFar) 
+  self:get_cameraInstance():setFrustum(size, offset, zNear, zFar);
+end
+__sunaba_spatial_Camera.prototype.setOrthagonal = function(self,size,zNear,zFar) 
+  self:get_cameraInstance():setOrthagonal(size, zNear, zFar);
+end
+__sunaba_spatial_Camera.prototype.setPerspective = function(self,fov,zNear,zFar) 
+  self:get_cameraInstance():setPerspective(fov, zNear, zFar);
+end
+__sunaba_spatial_Camera.prototype.unprojectPosition = function(self,position) 
+  do return self:get_cameraInstance():unprojectPosition(position) end
+end
+
+__sunaba_spatial_Camera.prototype.__class__ =  __sunaba_spatial_Camera
+__sunaba_spatial_Camera.__super__ = __sunaba_core_Component
+setmetatable(__sunaba_spatial_Camera.prototype,{__index=__sunaba_core_Component.prototype})
+
+__sunaba_spatial__Camera_CameraAbstract_Impl_.new = {}
+__sunaba_spatial__Camera_CameraAbstract_Impl_.__name__ = "sunaba.spatial._Camera.CameraAbstract_Impl_"
+__sunaba_spatial__Camera_CameraAbstract_Impl_.fromBaseObject = function(obj) 
+  do return __sunaba_spatial_Camera.fromInstance(obj.instance) end;
+end
+__sunaba_spatial__Camera_CameraAbstract_Impl_.fromInstance = function(instance) 
+  do return __sunaba_spatial_Camera.fromInstance(instance) end;
+end
+
+__sunaba_spatial_IVisualInstance.new = function() 
+  local self = _hx_new(__sunaba_spatial_IVisualInstance.prototype)
+  __sunaba_spatial_IVisualInstance.super(self)
+  return self
+end
+__sunaba_spatial_IVisualInstance.super = function(self) 
+  __sunaba_core_Component.super(self);
+  self.instance:free();
+  self.instance = IVisualInstance.new();
+  if (self.instance == nil) then 
+    _G.error(__haxe_Exception.thrown("IVisualInstance.new() returned null"),0);
+  end;
+  self:get_iviInstance():setScriptInstance(self);
+  self:pushToStack();
+end
+__sunaba_spatial_IVisualInstance.__name__ = "sunaba.spatial.IVisualInstance"
+__sunaba_spatial_IVisualInstance.fromInstance = function(instance) 
+  if (instance == nil) then 
+    _G.error(__haxe_Exception.thrown("IVisualInstance.fromInstance() received null instance"),0);
+  end;
+  local obj = __sunaba_spatial_IVisualInstance.new();
+  obj.instance = instance;
+  do return obj end;
+end
+__sunaba_spatial_IVisualInstance.prototype = _hx_e();
+__sunaba_spatial_IVisualInstance.prototype.get_iviInstance = function(self) 
+  do return self.instance end
+end
+__sunaba_spatial_IVisualInstance.prototype.get_layerMask = function(self) 
+  do return self:get_iviInstance().layerMask end
+end
+__sunaba_spatial_IVisualInstance.prototype.set_layerMask = function(self,value) 
+  self:get_iviInstance().layerMask = value;
+  do return value end
+end
+__sunaba_spatial_IVisualInstance.prototype.get_sortingOffset = function(self) 
+  do return self:get_iviInstance().sortingOffset end
+end
+__sunaba_spatial_IVisualInstance.prototype.set_sortingOffset = function(self,value) 
+  self:get_iviInstance().sortingOffset = value;
+  do return value end
+end
+__sunaba_spatial_IVisualInstance.prototype.get_sortingUseAabbCenter = function(self) 
+  do return self:get_iviInstance().sortingUseAabbCenter end
+end
+__sunaba_spatial_IVisualInstance.prototype.set_sortingUseAabbCenter = function(self,value) 
+  self:get_iviInstance().sortingUseAabbCenter = value;
+  do return value end
+end
+__sunaba_spatial_IVisualInstance.prototype.getLayerMaskValue = function(self,layer) 
+  do return self:get_iviInstance():getLayerMaskValue(layer) end
+end
+__sunaba_spatial_IVisualInstance.prototype.setLayerMaskValue = function(self,layer,value) 
+  self:get_iviInstance():setLayerMaskValue(layer, value);
+end
+
+__sunaba_spatial_IVisualInstance.prototype.__class__ =  __sunaba_spatial_IVisualInstance
+__sunaba_spatial_IVisualInstance.__super__ = __sunaba_core_Component
+setmetatable(__sunaba_spatial_IVisualInstance.prototype,{__index=__sunaba_core_Component.prototype})
+
+__sunaba_spatial_IGeometryInstance.new = function() 
+  local self = _hx_new(__sunaba_spatial_IGeometryInstance.prototype)
+  __sunaba_spatial_IGeometryInstance.super(self)
+  return self
+end
+__sunaba_spatial_IGeometryInstance.super = function(self) 
+  __sunaba_spatial_IVisualInstance.super(self);
+  self.instance:free();
+  self.instance = IGeometryInstance.new();
+  if (self.instance == nil) then 
+    _G.error(__haxe_Exception.thrown("IGeometryInstance.new() returned null"),0);
+  end;
+  self:get_igiInstance():setScriptInstance(self);
+  self:pushToStack();
+end
+__sunaba_spatial_IGeometryInstance.__name__ = "sunaba.spatial.IGeometryInstance"
+__sunaba_spatial_IGeometryInstance.fromInstance = function(instance) 
+  if (instance == nil) then 
+    _G.error(__haxe_Exception.thrown("IGeometryInstance.fromInstance() received null instance"),0);
+  end;
+  local obj = __sunaba_spatial_IGeometryInstance.new();
+  obj.instance = instance;
+  do return obj end;
+end
+__sunaba_spatial_IGeometryInstance.prototype = _hx_e();
+__sunaba_spatial_IGeometryInstance.prototype.get_igiInstance = function(self) 
+  do return self.instance end
+end
+__sunaba_spatial_IGeometryInstance.prototype.get_castShadow = function(self) 
+  do return self:get_igiInstance().castShadow end
+end
+__sunaba_spatial_IGeometryInstance.prototype.set_castShadow = function(self,value) 
+  self:get_igiInstance().castShadow = value;
+  do return value end
+end
+__sunaba_spatial_IGeometryInstance.prototype.get_giMode = function(self) 
+  do return self:get_igiInstance().giMode end
+end
+__sunaba_spatial_IGeometryInstance.prototype.set_giMode = function(self,value) 
+  self:get_igiInstance().giMode = value;
+  do return value end
+end
+__sunaba_spatial_IGeometryInstance.prototype.get_lightmapScale = function(self) 
+  do return self:get_igiInstance().lightmapScale end
+end
+__sunaba_spatial_IGeometryInstance.prototype.set_lightmapScale = function(self,value) 
+  self:get_igiInstance().lightmapScale = value;
+  do return value end
+end
+__sunaba_spatial_IGeometryInstance.prototype.get_lodBias = function(self) 
+  do return self:get_igiInstance().lodBias end
+end
+__sunaba_spatial_IGeometryInstance.prototype.set_lodBias = function(self,value) 
+  self:get_igiInstance().lodBias = value;
+  do return value end
+end
+__sunaba_spatial_IGeometryInstance.prototype.get_transparancy = function(self) 
+  do return self:get_igiInstance().transparancy end
+end
+__sunaba_spatial_IGeometryInstance.prototype.set_transparancy = function(self,value) 
+  self:get_igiInstance().transparancy = value;
+  do return value end
+end
+__sunaba_spatial_IGeometryInstance.prototype.get_visibilityRangeBegin = function(self) 
+  do return self:get_igiInstance().visibilityRangeBegin end
+end
+__sunaba_spatial_IGeometryInstance.prototype.set_visibilityRangeBegin = function(self,value) 
+  self:get_igiInstance().visibilityRangeBegin = value;
+  do return value end
+end
+__sunaba_spatial_IGeometryInstance.prototype.get_visibilityRangeEnd = function(self) 
+  do return self:get_igiInstance().visibilityRangeEnd end
+end
+__sunaba_spatial_IGeometryInstance.prototype.set_visibilityRangeEnd = function(self,value) 
+  self:get_igiInstance().visibilityRangeEnd = value;
+  do return value end
+end
+__sunaba_spatial_IGeometryInstance.prototype.get_visibilityRangeBeginMargin = function(self) 
+  do return self:get_igiInstance().visibilityRangeBeginMargin end
+end
+__sunaba_spatial_IGeometryInstance.prototype.set_visibilityRangeBeginMargin = function(self,value) 
+  self:get_igiInstance().visibilityRangeBeginMargin = value;
+  do return value end
+end
+__sunaba_spatial_IGeometryInstance.prototype.get_visibilityRangeEndMargin = function(self) 
+  do return self:get_igiInstance().visibilityRangeEndMargin end
+end
+__sunaba_spatial_IGeometryInstance.prototype.set_visibilityRangeEndMargin = function(self,value) 
+  self:get_igiInstance().visibilityRangeEndMargin = value;
+  do return value end
+end
+__sunaba_spatial_IGeometryInstance.prototype.get_visibilityRangeFadeMode = function(self) 
+  do return self:get_igiInstance().visibilityRangeFadeMode end
+end
+__sunaba_spatial_IGeometryInstance.prototype.set_visibilityRangeFadeMode = function(self,value) 
+  self:get_igiInstance().visibilityRangeFadeMode = value;
+  do return value end
+end
+
+__sunaba_spatial_IGeometryInstance.prototype.__class__ =  __sunaba_spatial_IGeometryInstance
+__sunaba_spatial_IGeometryInstance.__super__ = __sunaba_spatial_IVisualInstance
+setmetatable(__sunaba_spatial_IGeometryInstance.prototype,{__index=__sunaba_spatial_IVisualInstance.prototype})
+
+__sunaba_spatial__IGeometryInstance_IGeometryInstanceAbstract_Impl_.new = {}
+__sunaba_spatial__IGeometryInstance_IGeometryInstanceAbstract_Impl_.__name__ = "sunaba.spatial._IGeometryInstance.IGeometryInstanceAbstract_Impl_"
+__sunaba_spatial__IGeometryInstance_IGeometryInstanceAbstract_Impl_.fromBaseObject = function(obj) 
+  do return __sunaba_spatial_IGeometryInstance.fromInstance(obj.instance) end;
+end
+__sunaba_spatial__IGeometryInstance_IGeometryInstanceAbstract_Impl_.fromInstance = function(instance) 
+  do return __sunaba_spatial_IGeometryInstance.fromInstance(instance) end;
+end
+
+__sunaba_spatial__IVisualInstance_IVisualInstanceAbstract_Impl_.new = {}
+__sunaba_spatial__IVisualInstance_IVisualInstanceAbstract_Impl_.__name__ = "sunaba.spatial._IVisualInstance.IVisualInstanceAbstract_Impl_"
+__sunaba_spatial__IVisualInstance_IVisualInstanceAbstract_Impl_.fromBaseObject = function(ivs) 
+  do return ivs end;
+end
+__sunaba_spatial__IVisualInstance_IVisualInstanceAbstract_Impl_.fromInstance = function(instance) 
+  do return __sunaba_spatial_IVisualInstance.fromInstance(instance) end;
+end
+
+__sunaba_spatial_SpatialTransform.new = function() 
+  local self = _hx_new(__sunaba_spatial_SpatialTransform.prototype)
+  __sunaba_spatial_SpatialTransform.super(self)
+  return self
+end
+__sunaba_spatial_SpatialTransform.super = function(self) 
+  __sunaba_core_Component.super(self);
+  self.instance:free();
+  self.instance = SpatialTransform.new();
+  if (self.instance == nil) then 
+    _G.error(__haxe_Exception.thrown("SpatialTransform.new() returned null"),0);
+  end;
+  self:get_stInstance():setScriptInstance(self);
+  self:pushToStack();
+end
+__sunaba_spatial_SpatialTransform.__name__ = "sunaba.spatial.SpatialTransform"
+__sunaba_spatial_SpatialTransform.fromInstance = function(instance) 
+  if (instance == nil) then 
+    _G.error(__haxe_Exception.thrown("SpatialTransform.fromInstance() received null instance"),0);
+  end;
+  local obj = __sunaba_spatial_SpatialTransform.new();
+  obj.instance = instance;
+  do return obj end;
+end
+__sunaba_spatial_SpatialTransform.prototype = _hx_e();
+__sunaba_spatial_SpatialTransform.prototype.get_stInstance = function(self) 
+  do return self.instance end
+end
+__sunaba_spatial_SpatialTransform.prototype.get_basis = function(self) 
+  do return self:get_stInstance().basis end
+end
+__sunaba_spatial_SpatialTransform.prototype.set_basis = function(self,value) 
+  self:get_stInstance().basis = value;
+  do return value end
+end
+__sunaba_spatial_SpatialTransform.prototype.get_position = function(self) 
+  do return self:get_stInstance().position end
+end
+__sunaba_spatial_SpatialTransform.prototype.set_position = function(self,value) 
+  self:get_stInstance().position = value;
+  do return value end
+end
+__sunaba_spatial_SpatialTransform.prototype.get_rotation = function(self) 
+  do return self:get_stInstance().rotation end
+end
+__sunaba_spatial_SpatialTransform.prototype.set_rotation = function(self,value) 
+  self:get_stInstance().rotation = value;
+  do return value end
+end
+__sunaba_spatial_SpatialTransform.prototype.get_rotationDegrees = function(self) 
+  do return self:get_stInstance().rotationDegrees end
+end
+__sunaba_spatial_SpatialTransform.prototype.set_rotationDegrees = function(self,value) 
+  self:get_stInstance().rotationDegrees = value;
+  do return value end
+end
+__sunaba_spatial_SpatialTransform.prototype.get_scale = function(self) 
+  do return self:get_stInstance().scale end
+end
+__sunaba_spatial_SpatialTransform.prototype.set_scale = function(self,value) 
+  self:get_stInstance().scale = value;
+  do return value end
+end
+__sunaba_spatial_SpatialTransform.prototype.get_quaternion = function(self) 
+  do return self:get_stInstance().quaternion end
+end
+__sunaba_spatial_SpatialTransform.prototype.set_quaternion = function(self,value) 
+  self:get_stInstance().quaternion = value;
+  do return value end
+end
+__sunaba_spatial_SpatialTransform.prototype.get_rotationOrder = function(self) 
+  do return self:get_stInstance().rotationOrder end
+end
+__sunaba_spatial_SpatialTransform.prototype.set_rotationOrder = function(self,value) 
+  self:get_stInstance().rotationOrder = value;
+  do return value end
+end
+__sunaba_spatial_SpatialTransform.prototype.get_globalPosition = function(self) 
+  do return self:get_stInstance().globalPosition end
+end
+__sunaba_spatial_SpatialTransform.prototype.set_globalPosition = function(self,pos) 
+  self:get_stInstance().globalPosition = pos;
+  do return pos end
+end
+__sunaba_spatial_SpatialTransform.prototype.get_globalRotation = function(self) 
+  do return self:get_stInstance().globalRotation end
+end
+__sunaba_spatial_SpatialTransform.prototype.set_globalRotation = function(self,rot) 
+  self:get_stInstance().globalRotation = rot;
+  do return rot end
+end
+__sunaba_spatial_SpatialTransform.prototype.get_globalRotationDegrees = function(self) 
+  do return self:get_stInstance().globalRotationDegrees end
+end
+__sunaba_spatial_SpatialTransform.prototype.set_globalRotationDegrees = function(self,rot) 
+  self:get_stInstance().globalRotationDegrees = rot;
+  do return rot end
+end
+__sunaba_spatial_SpatialTransform.prototype.get_globalBasis = function(self) 
+  do return self:get_stInstance().globalBasis end
+end
+__sunaba_spatial_SpatialTransform.prototype.set_globalBasis = function(self,basis) 
+  self:get_stInstance().globalBasis = basis;
+  do return basis end
+end
+__sunaba_spatial_SpatialTransform.prototype.get_global = function(self) 
+  do return self:get_stInstance().global end
+end
+__sunaba_spatial_SpatialTransform.prototype.set_global = function(self,value) 
+  self:get_stInstance().global = value;
+  do return value end
+end
+__sunaba_spatial_SpatialTransform.prototype.get_local = function(self) 
+  do return self:get_stInstance()["local"] end
+end
+__sunaba_spatial_SpatialTransform.prototype.set_local = function(self,value) 
+  self:get_stInstance()["local"] = value;
+  do return value end
+end
+__sunaba_spatial_SpatialTransform.prototype.isTopLevel = function(self) 
+  do return self:get_stInstance():isTopLevel() end
+end
+__sunaba_spatial_SpatialTransform.prototype.forceUpdate = function(self) 
+  self:get_stInstance():forceUpdate();
+end
+__sunaba_spatial_SpatialTransform.prototype.getParent = function(self) 
+  do return __sunaba_spatial_SpatialTransform.fromInstance(self:get_stInstance():getParent()) end
+end
+__sunaba_spatial_SpatialTransform.prototype.globalRotate = function(self,axis,angle) 
+  self:get_stInstance():globalRotate(axis, angle);
+end
+__sunaba_spatial_SpatialTransform.prototype.globalTranslate = function(self,translation) 
+  self:get_stInstance():globalTranslate(translation);
+end
+__sunaba_spatial_SpatialTransform.prototype.globalScale = function(self,scale) 
+  self:get_stInstance():globalScale(scale);
+end
+__sunaba_spatial_SpatialTransform.prototype.hide = function(self) 
+  self:get_stInstance():hide();
+end
+__sunaba_spatial_SpatialTransform.prototype.isScaleDisabled = function(self) 
+  do return self:get_stInstance():isScaleDisabled() end
+end
+__sunaba_spatial_SpatialTransform.prototype.isVisible = function(self) 
+  do return self:get_stInstance():isVisible() end
+end
+__sunaba_spatial_SpatialTransform.prototype.lookAt = function(self,target,up,useModelFront) 
+  if (useModelFront == nil) then 
+    useModelFront = false;
+  end;
+  self:get_stInstance():lookAt(target, up, useModelFront);
+end
+__sunaba_spatial_SpatialTransform.prototype.lookAtFromPosition = function(self,position,target,up,useModelFront) 
+  if (useModelFront == nil) then 
+    useModelFront = false;
+  end;
+  self:get_stInstance():lookAtFromPosition(position, target, up, useModelFront);
+end
+__sunaba_spatial_SpatialTransform.prototype.orthonormalize = function(self) 
+  self:get_stInstance():orthonormalize();
+end
+__sunaba_spatial_SpatialTransform.prototype.rotate = function(self,axis,angle) 
+  self:get_stInstance():rotate(axis, angle);
+end
+__sunaba_spatial_SpatialTransform.prototype.rotateObjectLocal = function(self,axis,angle) 
+  self:get_stInstance():rotateObjectLocal(axis, angle);
+end
+__sunaba_spatial_SpatialTransform.prototype.rotateX = function(self,angle) 
+  self:get_stInstance():rotateX(angle);
+end
+__sunaba_spatial_SpatialTransform.prototype.rotateY = function(self,angle) 
+  self:get_stInstance():rotateY(angle);
+end
+__sunaba_spatial_SpatialTransform.prototype.rotateZ = function(self,angle) 
+  self:get_stInstance():rotateZ(angle);
+end
+__sunaba_spatial_SpatialTransform.prototype.scaleObjectLocal = function(self,scale) 
+  self:get_stInstance():scaleObjectLocal(scale);
+end
+__sunaba_spatial_SpatialTransform.prototype.setDisableScale = function(self,disable) 
+  self:get_stInstance():setDisableScale(disable);
+end
+__sunaba_spatial_SpatialTransform.prototype.setIdentity = function(self) 
+  self:get_stInstance():setIdentity();
+end
+__sunaba_spatial_SpatialTransform.prototype.show = function(self) 
+  self:get_stInstance():show();
+end
+__sunaba_spatial_SpatialTransform.prototype.toGlobal = function(self,position) 
+  do return self:get_stInstance():toGlobal(position) end
+end
+__sunaba_spatial_SpatialTransform.prototype.toLocal = function(self,position) 
+  do return self:get_stInstance():toLocal(position) end
+end
+__sunaba_spatial_SpatialTransform.prototype.translate = function(self,offset) 
+  self:get_stInstance():translate(offset);
+end
+__sunaba_spatial_SpatialTransform.prototype.translateObjectLocal = function(self,offset) 
+  self:get_stInstance():translateObjectLocal(offset);
+end
+
+__sunaba_spatial_SpatialTransform.prototype.__class__ =  __sunaba_spatial_SpatialTransform
+__sunaba_spatial_SpatialTransform.__super__ = __sunaba_core_Component
+setmetatable(__sunaba_spatial_SpatialTransform.prototype,{__index=__sunaba_core_Component.prototype})
+
+__sunaba_spatial__SpatialTransform_SpatialTransformAbstract_Impl_.new = {}
+__sunaba_spatial__SpatialTransform_SpatialTransformAbstract_Impl_.__name__ = "sunaba.spatial._SpatialTransform.SpatialTransformAbstract_Impl_"
+__sunaba_spatial__SpatialTransform_SpatialTransformAbstract_Impl_.fromBaseObject = function(baseObj) 
+  do return __sunaba_spatial_SpatialTransform.fromInstance(baseObj.instance) end;
+end
+__sunaba_spatial__SpatialTransform_SpatialTransformAbstract_Impl_.fromInstance = function(instance) 
+  do return __sunaba_spatial_SpatialTransform.fromInstance(instance) end;
+end
+
+__sunaba_spatial_mesh_Box.new = function() 
+  local self = _hx_new(__sunaba_spatial_mesh_Box.prototype)
+  __sunaba_spatial_mesh_Box.super(self)
+  return self
+end
+__sunaba_spatial_mesh_Box.super = function(self) 
+  __sunaba_core_Component.super(self);
+  self.instance:free();
+  self.instance = Box.new();
+  if (self.instance == nil) then 
+    _G.error(__haxe_Exception.thrown("Box.new() returned null"),0);
+  end;
+  self:get_boxInstance():setScriptInstance(self);
+  self:pushToStack();
+end
+__sunaba_spatial_mesh_Box.__name__ = "sunaba.spatial.mesh.Box"
+__sunaba_spatial_mesh_Box.fromInstance = function(instance) 
+  if (instance == nil) then 
+    _G.error(__haxe_Exception.thrown("Box.fromInstance() received null instance"),0);
+  end;
+  local obj = __sunaba_spatial_mesh_Box.new();
+  obj.instance = instance;
+  do return obj end;
+end
+__sunaba_spatial_mesh_Box.prototype = _hx_e();
+__sunaba_spatial_mesh_Box.prototype.get_boxInstance = function(self) 
+  do return self.instance end
+end
+__sunaba_spatial_mesh_Box.prototype.get_size = function(self) 
+  do return self:get_boxInstance().size end
+end
+__sunaba_spatial_mesh_Box.prototype.set_size = function(self,value) 
+  self:get_boxInstance().size = value;
+  do return value end
+end
+__sunaba_spatial_mesh_Box.prototype.get_subdivideDepth = function(self) 
+  do return self:get_boxInstance().subdivideDepth end
+end
+__sunaba_spatial_mesh_Box.prototype.set_subdivideDepth = function(self,value) 
+  self:get_boxInstance().subdivideDepth = value;
+  do return value end
+end
+__sunaba_spatial_mesh_Box.prototype.get_subdivideWidth = function(self) 
+  do return self:get_boxInstance().subdivideWidth end
+end
+__sunaba_spatial_mesh_Box.prototype.set_subdivideWidth = function(self,value) 
+  self:get_boxInstance().subdivideWidth = value;
+  do return value end
+end
+__sunaba_spatial_mesh_Box.prototype.get_subdivideHeight = function(self) 
+  do return self:get_boxInstance().subdivideHeight end
+end
+__sunaba_spatial_mesh_Box.prototype.set_subdivideHeight = function(self,value) 
+  self:get_boxInstance().subdivideHeight = value;
+  do return value end
+end
+
+__sunaba_spatial_mesh_Box.prototype.__class__ =  __sunaba_spatial_mesh_Box
+__sunaba_spatial_mesh_Box.__super__ = __sunaba_core_Component
+setmetatable(__sunaba_spatial_mesh_Box.prototype,{__index=__sunaba_core_Component.prototype})
+
+__sunaba_spatial_mesh__Box_BoxAbstract_Impl_.new = {}
+__sunaba_spatial_mesh__Box_BoxAbstract_Impl_.__name__ = "sunaba.spatial.mesh._Box.BoxAbstract_Impl_"
+__sunaba_spatial_mesh__Box_BoxAbstract_Impl_.fromBaseObject = function(obj) 
+  do return __sunaba_spatial_mesh_Box.fromInstance(obj.instance) end;
+end
+__sunaba_spatial_mesh__Box_BoxAbstract_Impl_.fromComponent = function(comp) 
+  do return __sunaba_spatial_mesh_Box.fromInstance(comp.instance) end;
+end
+
+__sunaba_spatial_mesh_MeshRenderer.new = function() 
+  local self = _hx_new(__sunaba_spatial_mesh_MeshRenderer.prototype)
+  __sunaba_spatial_mesh_MeshRenderer.super(self)
+  return self
+end
+__sunaba_spatial_mesh_MeshRenderer.super = function(self) 
+  __sunaba_spatial_IGeometryInstance.super(self);
+  self.instance:free();
+  self.instance = MeshRenderer.new();
+  if (self.instance == nil) then 
+    _G.error(__haxe_Exception.thrown("MeshRenderer.new() returned null"),0);
+  end;
+  self:get_mrInstance():setScriptInstance(self);
+  self:pushToStack();
+end
+__sunaba_spatial_mesh_MeshRenderer.__name__ = "sunaba.spatial.mesh.MeshRenderer"
+__sunaba_spatial_mesh_MeshRenderer.fromInstance = function(instance) 
+  if (instance == nil) then 
+    _G.error(__haxe_Exception.thrown("MeshRenderer.fromInstance() received null instance"),0);
+  end;
+  local obj = __sunaba_spatial_mesh_MeshRenderer.new();
+  obj.instance = instance;
+  do return obj end;
+end
+__sunaba_spatial_mesh_MeshRenderer.prototype = _hx_e();
+__sunaba_spatial_mesh_MeshRenderer.prototype.get_mrInstance = function(self) 
+  do return self.instance end
+end
+__sunaba_spatial_mesh_MeshRenderer.prototype.createConvexCollision = function(self) 
+  self:get_mrInstance():createConvexCollision();
+end
+__sunaba_spatial_mesh_MeshRenderer.prototype.createDebugTangents = function(self) 
+  self:get_mrInstance():createDebugTangents();
+end
+__sunaba_spatial_mesh_MeshRenderer.prototype.createTrimeshCollision = function(self) 
+  self:get_mrInstance():createTrimeshCollision();
+end
+__sunaba_spatial_mesh_MeshRenderer.prototype.findBlendShapeByName = function(self,name) 
+  do return self:get_mrInstance():findBlendShapeByName(name) end
+end
+__sunaba_spatial_mesh_MeshRenderer.prototype.getBlendShapeCount = function(self) 
+  do return self:get_mrInstance():getBlendShapeCount() end
+end
+__sunaba_spatial_mesh_MeshRenderer.prototype.getBlendShapeValue = function(self,index) 
+  do return self:get_mrInstance():getBlendShapeValue(index) end
+end
+__sunaba_spatial_mesh_MeshRenderer.prototype.getSurfaceOverrideCount = function(self) 
+  do return self:get_mrInstance():getSurfaceOverrideCount() end
+end
+__sunaba_spatial_mesh_MeshRenderer.prototype.setBlendShapeValue = function(self,index,value) 
+  self:get_mrInstance():setBlendShapeValue(index, value);
+end
+
+__sunaba_spatial_mesh_MeshRenderer.prototype.__class__ =  __sunaba_spatial_mesh_MeshRenderer
+__sunaba_spatial_mesh_MeshRenderer.__super__ = __sunaba_spatial_IGeometryInstance
+setmetatable(__sunaba_spatial_mesh_MeshRenderer.prototype,{__index=__sunaba_spatial_IGeometryInstance.prototype})
+
+__sunaba_spatial_mesh__MeshRenderer_MeshRendererAbstract_Impl_.new = {}
+__sunaba_spatial_mesh__MeshRenderer_MeshRendererAbstract_Impl_.__name__ = "sunaba.spatial.mesh._MeshRenderer.MeshRendererAbstract_Impl_"
+__sunaba_spatial_mesh__MeshRenderer_MeshRendererAbstract_Impl_.fromBaseObject = function(obj) 
+  do return __sunaba_spatial_mesh_MeshRenderer.fromInstance(obj.instance) end;
+end
+__sunaba_spatial_mesh__MeshRenderer_MeshRendererAbstract_Impl_.fromInstance = function(instance) 
+  do return __sunaba_spatial_mesh_MeshRenderer.fromInstance(instance) end;
+end
+
+__support_files_test3_src_RotateComponent.new = function() 
+  local self = _hx_new(__support_files_test3_src_RotateComponent.prototype)
+  __support_files_test3_src_RotateComponent.super(self)
+  return self
+end
+__support_files_test3_src_RotateComponent.super = function(self) 
+  __sunaba_core_Component.super(self);
+end
+__support_files_test3_src_RotateComponent.__name__ = "support_files.test3.src.RotateComponent"
+__support_files_test3_src_RotateComponent.prototype = _hx_e();
+__support_files_test3_src_RotateComponent.prototype.onInit = function(self) 
+  self.transform = self:getComponent_sunaba_spatial_SpatialTransform(__sunaba_spatial_SpatialTransform);
+end
+__support_files_test3_src_RotateComponent.prototype.onUpdate = function(self,deltaTime) 
+  local rotation = -0.5 * deltaTime;
+  self.transform:rotateY(rotation);
+end
+
+__support_files_test3_src_RotateComponent.prototype.__class__ =  __support_files_test3_src_RotateComponent
+__support_files_test3_src_RotateComponent.__super__ = __sunaba_core_Component
+setmetatable(__support_files_test3_src_RotateComponent.prototype,{__index=__sunaba_core_Component.prototype})
 if _hx_bit_raw then
     _hx_bit_clamp = function(v)
     if v <= 2147483647 and v >= -2147483648 then

@@ -11,7 +11,7 @@ class Scene extends BaseObject {
     public function new() {
         super();
         instance.free();
-        instance = new SceneNative();
+        instance = cast untyped __lua__("createScene()");
         if (instance == null) {
             throw "Scene.new() returned null";
         }
