@@ -40,104 +40,117 @@ class SpatialTransform extends Component {
     public function get_basis(): Basis {
         return stInstance.basis;
     }
-    public function set_basis(value: Basis): Void {
+    public function set_basis(value: Basis): Basis {
         stInstance.basis = value;
+        return value;
     }
 
     public var position(get, set): Vector3;
     public function get_position(): Vector3 {
         return stInstance.position;
     }
-    public function set_position(value: Vector3): Void {
+    public function set_position(value: Vector3): Vector3 {
         stInstance.position = value;
+        return value;
     }
 
     public var rotation(get, set): Vector3;
     public function get_rotation(): Vector3 {
         return stInstance.rotation;
     }
-    public function set_rotation(value: Vector3): Void {
+    public function set_rotation(value: Vector3): Vector3 {
         stInstance.rotation = value;
+        return value;
     }
 
     public var rotationDegrees(get, set): Vector3;
     public function get_rotationDegrees(): Vector3 {
         return stInstance.rotationDegrees;
     }
-    public function set_rotationDegrees(value: Vector3): Void {
+    public function set_rotationDegrees(value: Vector3): Vector3 {
         stInstance.rotationDegrees = value;
+        return value;
     }
 
     public var scale(get, set): Vector3;
     public function get_scale(): Vector3 {
         return stInstance.scale;
     }
-    public function set_scale(value: Vector3): Void {
+    public function set_scale(value: Vector3): Vector3 {
         stInstance.scale = value;
+        return value;
     }
 
     public var quaternion(get, set): Quaternion;
     public function get_quaternion(): Quaternion {
         return stInstance.quaternion;
     }
-    public function set_quaternion(value: Quaternion): Void {
+    public function set_quaternion(value: Quaternion): Quaternion {
         stInstance.quaternion = value;
+        return value;
     }
 
     public var rotationOrder(get, set): Int;
     public function get_rotationOrder(): Int {
         return stInstance.rotationOrder;
     }
-    public function set_rotationOrder(value: Int): Void {
+    public function set_rotationOrder(value: Int): Int {
         stInstance.rotationOrder = value;
+        return value;
     }
 
     public var globalPosition(get, set): Vector3;
     public function get_globalPosition(): Vector3 {
         return stInstance.globalPosition;
     }
-    public function set_globalPosition(pos: Vector3): Void {
+    public function set_globalPosition(pos: Vector3): Vector3 {
         stInstance.globalPosition = pos;
+        return pos;
     }
 
     public var globalRotation(get, set): Vector3;
     public function get_globalRotation(): Vector3 {
         return stInstance.globalRotation;
     }
-    public function set_globalRotation(rot: Vector3): Void {
+    public function set_globalRotation(rot: Vector3): Vector3 {
         stInstance.globalRotation = rot;
+        return rot;
     }
 
     public var globalRotationDegrees(get, set): Vector3;
     public function get_globalRotationDegrees(): Vector3 {
         return stInstance.globalRotationDegrees;
     }
-    public function set_globalRotationDegrees(rot: Vector3): Void {
+    public function set_globalRotationDegrees(rot: Vector3): Vector3 {
         stInstance.globalRotationDegrees = rot;
+        return rot;
     }
 
     public var globalBasis(get, set): Basis;
     public function get_globalBasis(): Basis {
         return stInstance.globalBasis;
     }
-    public function set_globalBasis(basis: Basis): Void {
+    public function set_globalBasis(basis: Basis): Basis {
         stInstance.globalBasis = basis;
+        return basis;
     }
 
     public var global(get, set): Transform3D;
     public function get_global(): Transform3D {
         return stInstance.global;
     }
-    public function set_global(value: Transform3D): Void {
+    public function set_global(value: Transform3D): Transform3D {
         stInstance.global = value;
+        return value;
     }
 
     public var local(get, set): Transform3D;
     public function get_local(): Transform3D {
         return stInstance.local;
     }
-    public function set_local(value: Transform3D): Void {
+    public function set_local(value: Transform3D): Transform3D {
         stInstance.local = value;
+        return value;
     }
 
     public function isTopLevel(): Bool {
