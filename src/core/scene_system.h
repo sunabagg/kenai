@@ -95,28 +95,28 @@ namespace sunaba::core
 
         virtual void onInit() {
             if (scriptInstance == sol::nil) return;
-            auto func = scriptInstance["onInit"].get<sol::function>();
+            auto func = scriptInstance["init"].get<sol::function>();
             if (!func) return;
             func(scriptInstance);
         }
 
         virtual void onEnterTree() {
             if (scriptInstance == sol::nil) return;
-            auto func = scriptInstance["onEnterTree"].get<sol::function>();
+            auto func = scriptInstance["enterTree"].get<sol::function>();
             if (!func) return;
             func(scriptInstance);
         }
 
         virtual void onReady() {
             if (scriptInstance == sol::nil) return;
-            auto func = scriptInstance["onReady"].get<sol::function>();
+            auto func = scriptInstance["ready"].get<sol::function>();
             if (!func) return;
             func(scriptInstance);
         }
 
         virtual void onUpdate(double delta) {
             if (scriptInstance == sol::nil) return;
-            auto func = scriptInstance["onUpdate"].get<sol::function>();
+            auto func = scriptInstance["update"].get<sol::function>();
             if (!func) return;
             
             sol::object deltaObj = sol::make_object(scriptInstance.lua_state(), delta);
@@ -125,7 +125,7 @@ namespace sunaba::core
 
         virtual void onPhysicsUpdate(double delta) {
             if (scriptInstance == sol::nil) return;
-            auto func = scriptInstance["onPhysicsUpdate"].get<sol::function>();
+            auto func = scriptInstance["physicsUpdate"].get<sol::function>();
             if (!func) return;
             
             sol::object deltaObj = sol::make_object(scriptInstance.lua_state(), delta);
@@ -134,7 +134,7 @@ namespace sunaba::core
 
         virtual void onExitTree() {
             if (scriptInstance == sol::nil) return;
-            auto func = scriptInstance["onExitTree"].get<sol::function>();
+            auto func = scriptInstance["exitTree"].get<sol::function>();
             if (!func) return;
             func(scriptInstance);
         }
