@@ -20,12 +20,6 @@ class Camera extends Component {
         if (instance == null) {
             throw "Camera.new() returned null";
         }
-        var type = Type.getClass(this);
-        if (type == null) {
-            throw "Behavior must be a class";
-        }
-        cameraInstance.setScriptType(type);
-
         cameraInstance.setScriptInstance(this);
         pushToStack();
     }
