@@ -51,3 +51,15 @@ class Scene extends BaseObject {
         return Entity.fromInstance(scnInstance.getEntity(index));
     }
 }
+
+abstract SceneAbstract(Scene) from Scene to Scene {
+    @:from
+    public static function fromScene(scene : Scene) : SceneAbstract {
+        return cast scene;
+    }
+
+    @:from
+    public static function fromInstance(instance: SceneNative) : SceneAbstract {
+        return Scene.fromInstance(instance);
+    }
+}
