@@ -54,8 +54,8 @@ class Scene extends BaseObject {
 
 abstract SceneAbstract(Scene) from Scene to Scene {
     @:from
-    public static function fromScene(scene : Scene) : SceneAbstract {
-        return cast scene;
+    public static function fromObj(scene : BaseObject) : SceneAbstract {
+        return Scene.fromInstance(cast scene.instance);
     }
 
     @:from
