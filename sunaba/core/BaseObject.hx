@@ -10,6 +10,10 @@ class BaseObject {
         if (instance == null) {
             throw "BaseObject.new() returned null";
         }
+        pushToStack();
+    }
+
+    public function pushToStack() {
         var stack = GlobalObjectStack.getSingleton().stack;
         stack.push(new StackHandle(this));
     }
