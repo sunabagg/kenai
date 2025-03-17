@@ -31,8 +31,9 @@ class Entity extends BaseObject {
     public function get_name(): String {
         return entInstance.name;
     }
-    public function set_name(value: String): Void {
+    public function set_name(value: String): String {
         entInstance.name = value;
+        return value;
     }
 
 
