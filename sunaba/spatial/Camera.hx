@@ -197,3 +197,15 @@ class Camera extends Component {
         );
     }
 }
+
+abstract CameraAbstract(Camera) from Camera to Camera {
+    @:from
+    public static function fromCamera(camera: Camera): CameraAbstract {
+        return cast camera;
+    }
+
+    @:from
+    public static function fromInstance(instance: CameraNative): CameraAbstract {
+        return Camera.fromInstance(instance);
+    }
+}
