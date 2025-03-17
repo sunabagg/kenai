@@ -1,6 +1,7 @@
 {
     "name" : "sunaba",
     "classPath": "",
+    "tags" : ["lua"],
     "dependencies": {
     }
 }
