@@ -44,36 +44,28 @@ class Component extends BaseObject {
         return Scene.fromInstance(compInstance.scene);
     }*/
 
-    @:native("onInit")
     public function init() : Void {
         onInit();
     }
 
-    @:native("onReady")
     public function ready() : Void {
         onReady();
     }
 
-    @:native("onUpdate")
     public function update(deltaTime : Float) : Void {
         onUpdate(deltaTime);
     }
 
-    @:native("onPhysicsUpdate")
     public function physicsUpdate(delatTime : Float) : Void {
         onPhysicsUpdate(delatTime);
     }
     
-    @:native("__onInit")
     public function onInit() : Void {}
 
-    @:native("__onReady")
     public function onReady() : Void {}
 
-    @:native("__onUpdate")
     public function onUpdate(deltaTime : Float) : Void {}
 
-    @:native("__onPhysicsUpdate")
     public function onPhysicsUpdate(delatTime : Float) : Void {}
 
     public function getComponentNG(type : Any, entity : Entity = null) {
