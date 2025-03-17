@@ -3,6 +3,7 @@ package sunaba.spatial.mesh;
 import sunaba.core.Vector3;
 import sunaba.core.Component;
 import sunaba.native.spatial.mesh.BoxNative;
+import sunaba.core.BaseObject;
 
 class Box extends Component {
     public var boxInstance(get, default) : BoxNative;
@@ -35,32 +36,36 @@ class Box extends Component {
     public function get_size() : Vector3 {
         return boxInstance.size;
     }
-    public function set_size(value : Vector3) : Void {
+    public function set_size(value : Vector3) : Vector3 {
         boxInstance.size = value;
+        return value;
     }
 
     public var subdivideDepth(get, set) : Int;
     public function get_subdivideDepth() : Int {
         return boxInstance.subdivideDepth;
     }
-    public function set_subdivideDepth(value : Int) : Void {
+    public function set_subdivideDepth(value : Int) : Int {
         boxInstance.subdivideDepth = value;
+        return value;
     }
 
     public var subdivideWidth(get, set) : Int;
     public function get_subdivideWidth() : Int {
         return boxInstance.subdivideWidth;
     }
-    public function set_subdivideWidth(value : Int) : Void {
+    public function set_subdivideWidth(value : Int) : Int {
         boxInstance.subdivideWidth = value;
+        return value;
     }
 
     public var subdivideHeight(get, set) : Int;
     public function get_subdivideHeight() : Int {
         return boxInstance.subdivideHeight;
     }
-    public function set_subdivideHeight(value : Int) : Void {
+    public function set_subdivideHeight(value : Int) : Int {
         boxInstance.subdivideHeight = value;
+        return value;
     }
 }
 
