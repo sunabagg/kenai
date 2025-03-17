@@ -35,24 +35,27 @@ class IVisualInstance extends Component {
     public function get_layerMask() : Int {
         return iviInstance.layerMask;
     }
-    public function set_layerMask(value : Int) : Void {
+    public function set_layerMask(value : Int) : Int {
         iviInstance.layerMask = value;
+        return value;
     }
 
     public var sortingOffset(get, set) : Float;
     public function get_sortingOffset() : Float {
         return iviInstance.sortingOffset;
     }
-    public function set_sortingOffset(value : Float) : Void {
+    public function set_sortingOffset(value : Float) : Float {
         iviInstance.sortingOffset = value;
+        return value;
     }
 
     public var sortingUseAabbCenter(get, set) : Bool;
     public function get_sortingUseAabbCenter() : Bool {
         return iviInstance.sortingUseAabbCenter;
     }
-    public function set_sortingUseAabbCenter(value : Bool) : Void {
+    public function set_sortingUseAabbCenter(value : Bool) : Bool {
         iviInstance.sortingUseAabbCenter = value;
+        return value;
     }
 
     public function getLayerMaskValue(layer : Int) : Bool {
