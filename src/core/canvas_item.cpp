@@ -97,6 +97,35 @@ namespace sunaba::core {
             "drawTexture", &CanvasItem::drawTexture,
             "drawTextureRect", &CanvasItem::drawTextureRect,
             "drawTextureRectRegion", &CanvasItem::drawTextureRectRegion,
+            "forceUpdateTransform", &CanvasItem::forceUpdateTransform,
+            "getCanvasTransform", &CanvasItem::getCanvasTransform,
+            "getGlobalMousePosition", &CanvasItem::getGlobalMousePosition,
+            "getGlobalTransform", &CanvasItem::getGlobalTransform,
+            "getGlobalTransformWithCanvas", &CanvasItem::getGlobalTransformWithCanvas,
+            "getLocalMousePosition", &CanvasItem::getLocalMousePosition,
+            "getScreenTransform", &CanvasItem::getScreenTransform,
+            "getTransform", &CanvasItem::getTransform,
+            "getViewportRect", &CanvasItem::getViewportRect,
+            "getViewportTransform", &CanvasItem::getViewportTransform,
+            "getVisibilityLayerBit", &CanvasItem::getVisibilityLayerBit,
+            "hide", &CanvasItem::hide,
+            "isLocalTransformNotificationEnabled", &CanvasItem::isLocalTransformNotificationEnabled,
+            "isTransformNotificationEnabled", &CanvasItem::isTransformNotificationEnabled,
+            "isVisibleInTree", &CanvasItem::isVisibleInTree,
+            "makeCanvasPositionLocal", &CanvasItem::makeCanvasPositionLocal,
+            "makeInputLocal", &CanvasItem::makeInputLocal,
+            "moveToFront", &CanvasItem::moveToFront,
+            "queueRedraw", &CanvasItem::queueRedraw,
+            "setNotifyLocalTransform", &CanvasItem::setNotifyLocalTransform,
+            "setNotifyTransform", &CanvasItem::setNotifyTransform,
+            "show", &CanvasItem::show,
+            "cast", [](Element* e) {
+                CanvasItemNode* canvas_item = Object::cast_to<CanvasItemNode>(e->getNode());
+                if (canvas_item == nullptr) {
+                    return new CanvasItem(canvas_item);
+                }
+                return static_cast<CanvasItem*>(nullptr);
+            }
         );
     }
 }
