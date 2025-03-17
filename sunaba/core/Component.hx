@@ -8,19 +8,22 @@ class Component extends BaseObject {
         return cast instance;
     }
     public function new() {
+        super();
+        instance.free();
         instance = new ComponentNative();
         if (instance == null) {
             throw "Component.new() returned null";
         }
+        compInstance = cast instance;
         var type = Type.getClass(this);
         if (type == null) {
             throw "Behavior must be a class";
         }
-        comp.setScriptType(type);
+        compInstance.setScriptType(type);
 
-        comp.setScriptInstance(this);
+        compInstance.setScriptInstance(this);
         pushToStack();
-        compInstance = instance;
+        
     }
 
     public static function fromInstance(instance : ComponentNative) : Component {
@@ -31,12 +34,12 @@ class Component extends BaseObject {
         obj.instance = instance;
         return obj;
     }
-    /*
+    
     public var entity(get, default) : Entity;
     public function get_entity() : Entity {
         return Entity.fromInstance(compInstance.entity);
     }
-
+    /*
     public var scene(get, default) : Scene;
     public function get_scene() : Scene {
         return Scene.fromInstance(compInstance.scene);
@@ -76,7 +79,7 @@ class Component extends BaseObject {
 
     public function getComponentNG(type : Any, entity : Entity = null) {
         if (entity == null) {
-            entity = this.component.entity;
+            entity = this.entity;
         }
 
         var compType : Class<Component> = cast type;
@@ -86,14 +89,6 @@ class Component extends BaseObject {
                 return cast component;
             }
         }
-        
-        var behaviorType : Class<Behavior> = cast type;
-        if (behaviorType != null) {
-            var behavior : Behavior = entity.getUserComponent(behaviorType);
-            if (behavior != null) {
-                return cast behavior;
-            }
-        }
 
         return null;
     }
@@ -101,14 +96,14 @@ class Component extends BaseObject {
     @:generic
     public function getComponent<T>(type : Class<T>, entity : Entity = null) : T {
         if (entity == null) {
-            entity = this.component.entity;
+            entity = this.entity;
             trace("Entity is null, using this.component.entity");
         }
 
-        var behaviorType : Class<Behavior> = cast type;
-        if (ObjectUtils.typeInheritsFrom(type, Behavior)) {
+        var behaviorType : Class<Component> = cast type;
+        if (ObjectUtils.typeInheritsFrom(type, Component)) {
             //trace("Checking for Behavior: " + Type.getClassName(type));
-            var behavior : Behavior = entity.getUserComponent(behaviorType);
+            var behavior : Component = entity.getComponent(behaviorType);
             if (behavior != null) {
                 //trace("Behavior found: " + Type.getClassName(type));
                 var tBehavior : T = cast behavior;
@@ -123,27 +118,7 @@ class Component extends BaseObject {
             else {
                 //trace("Behavior not found: " + Type.getClassName(type));
             }
-        } else {
-            var typeName = untyped __lua__("type.__name");
-            ///trace("Checking for Component: " + typeName);
-            
-            var component = entity.getComponentByName(typeName);
-            if (component != null) {
-                //trace("Component found: " + typeName);
-                var tComponent : T = ObjectUtils.castObjectAs(type, component);
-                if (tComponent != null) {
-                    //trace("Component type match: " + typeName);
-                    return tComponent;
-                }
-                else {
-                    //trace("Component type mismatch: " + typeName);
-                }
-            }
-            else {
-                //trace("Component not found: " + typeName);
-            }
-        }
-        
+        } 
         
 
         //trace("Component or Behavior not found: " + Type.getClassName(type));
@@ -152,21 +127,15 @@ class Component extends BaseObject {
     }
     
     public function addComponentNG(type : Any, entity : Entity = null) {
+        if (entity == null) {
+            entity = this.entity;
+        }
+
         var compType : Class<Component> = cast type;
         if (compType != null) {
             var component : Component = Type.createInstance(compType, []);
-            this.component.entity.addComponent(component, Type.getClassName(compType));
+            entity.addComponent(component, Type.getClassName(compType));
             return cast component;
-        }
-
-        var behaviorType : Class<Behavior> = cast type;
-        if (behaviorType != null) {
-            var behavior = Type.createInstance(behaviorType, []);
-            var behaviorComp : Component = cast untyped behavior.component;
-            if (behaviorComp != null) {
-                this.component.entity.addComponent(behaviorComp, Type.getClassName(behaviorType));
-                return cast behavior;
-            }
         }
         
         throw "Invalid Component";
@@ -175,21 +144,15 @@ class Component extends BaseObject {
 
     @:generic
     public function addComponent<T>(type : Class<T>, entity : Entity = null) : T {
+        if (entity == null) {
+            entity = this.entity;
+        }
+        
         var compType : Class<Component> = cast type;
         if (compType != null) {
             var component : Component = Type.createInstance(compType, []);
-            this.component.entity.addComponent(component, Type.getClassName(compType));
+            entity.addComponent(component, Type.getClassName(compType));
             return cast component;
-        }
-
-        var behaviorType : Class<Behavior> = cast type;
-        if (behaviorType != null) {
-            var behavior = Type.createInstance(behaviorType, []);
-            var behaviorComp : Component = cast untyped behavior.component;
-            if (behaviorComp != null) {
-                this.component.entity.addComponent(behaviorComp, Type.getClassName(behaviorType));
-                return cast behavior;
-            }
         }
         
         throw "Invalid Component";
@@ -198,7 +161,7 @@ class Component extends BaseObject {
 
     public function removeComponent(type : Class<Any>, entity : Entity = null) : Void {
         if (entity == null) {
-            entity = this.component.entity;
+            entity = this.entity;
         }
 
         var compType : Class<Component> = cast type;
@@ -206,14 +169,6 @@ class Component extends BaseObject {
             var component : Component = cast entity.getComponent(compType);
             if (component != null) {
                 entity.removeComponent(component);
-            }
-        }
-
-        var behaviorType : Class<Behavior> = cast type;
-        if (behaviorType != null) {
-            var behavior : Behavior = cast entity.getUserComponent(behaviorType);
-            if (behavior != null) {
-                entity.removeUserComponent(behavior);
             }
         }
     }
