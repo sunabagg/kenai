@@ -498,7 +498,7 @@ namespace sunaba::core {
         }
 
         sunaba::input::InputEvent* makeInputLocal(sunaba::input::InputEvent* event) {
-            return new sunaba::input::InputEvent(canvas_item->make_input_local(event->getEvent()));
+            return new sunaba::input::InputEvent(canvas_item->make_input_local(event->getInputEvent()).ptr());
         }
 
         void moveToFront() {
@@ -519,6 +519,15 @@ namespace sunaba::core {
 
         void show() {
             canvas_item->show();
+        }
+
+        void draw() {
+            if (scriptInstance != sol::nil) {
+                auto func = scriptInstance["draw"].get<sol::function>();
+                if (func) {
+                    func(scriptInstance);
+                }
+            }
         }
     };
 }
