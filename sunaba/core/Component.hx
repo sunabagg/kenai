@@ -38,11 +38,11 @@ class Component extends BaseObject {
     public function get_entity() : Entity {
         return Entity.fromInstance(compInstance.entity);
     }
-    /*
+    
     public var scene(get, default) : Scene;
     public function get_scene() : Scene {
         return Scene.fromInstance(compInstance.scene);
-    }*/
+    }
 
     public function init() : Void {
         onInit();
