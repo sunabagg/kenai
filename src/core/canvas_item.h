@@ -96,6 +96,14 @@ namespace sunaba::core {
             canvas_item->set_self_modulate(color);
         }
 
+        bool getShowBehindParent() {
+            return canvas_item->is_draw_behind_parent_enabled();
+        }
+
+        void setShowBehindParent(bool show) {
+            canvas_item->set_draw_behind_parent(show);
+        }
+
         int getTextureFilter() {
             return canvas_item->get_texture_filter();
         }
