@@ -144,7 +144,7 @@ namespace sunaba::core {
             canvas_item->set_visible(visible);
         }
 
-        bool ySortEnabled() {
+        bool getYSortEnabled() {
             return canvas_item->is_y_sort_enabled();
         }
 
