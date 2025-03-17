@@ -1,5 +1,6 @@
 package sunaba.spatial;
 
+import sunaba.core.BaseObject;
 import sunaba.native.spatial.IVisualInstanceNative;
 import sunaba.core.Component;
 
@@ -65,7 +66,7 @@ class IVisualInstance extends Component {
 
 abstract IVisualInstanceAbstract(IVisualInstance) from IVisualInstance to IVisualInstance {
     @:from
-    public static function fromIVisualInstance(ivs : IVisualInstance) : IVisualInstanceAbstract {
+    public static function fromBaseObject(ivs : BaseObject) : IVisualInstanceAbstract {
         return cast ivs;
     }
 
