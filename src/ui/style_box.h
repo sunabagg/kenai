@@ -8,7 +8,6 @@
 #define GodotStyleBox godot::StyleBox
 
 #include "../core/resource.h"
-#include "canvas_item.h"
 
 using namespace godot;
 using namespace sunaba::core;
