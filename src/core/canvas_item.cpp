@@ -14,64 +14,64 @@ namespace sunaba::core {
             sol::base_classes, sol::bases<Element>(),
             sol::meta_function::garbage_collect, sol::destructor([](CanvasItem* c) { }),
             "clipChildren", sol::property(
-                CanvasItem::getClipChildren,
-                CanvasItem::setClipChildren
+                &CanvasItem::getClipChildren,
+                &CanvasItem::setClipChildren
             ),
             "lightMask", sol::property(
-                CanvasItem::getLightMask,
-                CanvasItem::setLightMask
+                &CanvasItem::getLightMask,
+                &CanvasItem::setLightMask
             ),
             "material", sol::property(
-                CanvasItem::getMaterial,
-                CanvasItem::setMaterial
+                &CanvasItem::getMaterial,
+                &CanvasItem::setMaterial
             ),
             "modulate", sol::property(
-                CanvasItem::getModulate,
-                CanvasItem::setModulate
+                &CanvasItem::getModulate,
+                &CanvasItem::setModulate
             ),
             "selfModulate", sol::property(
-                CanvasItem::getSelfModulate,
-                CanvasItem::setSelfModulate
+                &CanvasItem::getSelfModulate,
+                &CanvasItem::setSelfModulate
             ),
             "showBehindParent", sol::property(
-                CanvasItem::getShowBehindParent,
-                CanvasItem::setShowBehindParent
+                &CanvasItem::getShowBehindParent,
+                &CanvasItem::setShowBehindParent
             ),
             "textureFilter", sol::property(
-                CanvasItem::getTextureFilter,
-                CanvasItem::setTextureFilter
+                &CanvasItem::getTextureFilter,
+                &CanvasItem::setTextureFilter
             ),
             "textureRepeat", sol::property(
-                CanvasItem::getTextureRepeat,
-                CanvasItem::setTextureRepeat
+                &CanvasItem::getTextureRepeat,
+                &CanvasItem::setTextureRepeat
             ),
             "topLevel", sol::property(
-                CanvasItem::isTopLevel,
-                CanvasItem::setTopLevel
+                &CanvasItem::isTopLevel,
+                &CanvasItem::setTopLevel
             ),
             "useParentMaterial", sol::property(
-                CanvasItem::getUsesParentMaterial,
-                CanvasItem::setUseParentMaterial
+                &CanvasItem::getUsesParentMaterial,
+                &CanvasItem::setUseParentMaterial
             ),
             "visibilityLayer", sol::property(
-                CanvasItem::getVisibilityLayer,
-                CanvasItem::setVisibilityLayer
+                &CanvasItem::getVisibilityLayer,
+                &CanvasItem::setVisibilityLayer
             ),
             "visible", sol::property(
-                CanvasItem::isVisible,
-                CanvasItem::setVisible
+                &CanvasItem::isVisible,
+                &CanvasItem::setVisible
             ),
             "ySortEnabled", sol::property(
-                CanvasItem::getYSortEnabled,
-                CanvasItem::setYSortEnabled
+                &CanvasItem::getYSortEnabled,
+                &CanvasItem::setYSortEnabled
             ),
             "zAsRelative", sol::property(
-                CanvasItem::isZAsRelative,
-                CanvasItem::setZAsRelative
+                &CanvasItem::isZAsRelative,
+                &CanvasItem::setZAsRelative
             ),
             "zIndex", sol::property(
-                CanvasItem::getZIndex,
-                CanvasItem::setZIndex
+                &CanvasItem::getZIndex,
+                &CanvasItem::setZIndex
             ),
             "drawAnimationSlice", &CanvasItem::drawAnimationSlice,
             "drawArc", &CanvasItem::drawArc,
