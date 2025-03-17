@@ -22,6 +22,15 @@ class Component extends BaseObject {
         pushToStack();
         compInstance = instance;
     }
+
+    public static function fromInstance(instance : ComponentNative) : Component {
+        if (instance == null) {
+            throw "Component.fromInstance() received null instance";
+        }
+        var obj = new Component();
+        obj.instance = instance;
+        return obj;
+    }
     /*
     public var entity(get, default) : Entity;
     public function get_entity() : Entity {
