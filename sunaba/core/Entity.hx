@@ -89,3 +89,15 @@ class Entity extends BaseObject {
         return Entity.fromInstance(entInstance.getChild(index));
     }
 }
+
+abstract EntityAbstract(Entity) from Entity to Entity {
+    @:from
+    public static function fromEntity(ent : Entity) : EntityAbstract {
+        return cast ent;
+    }
+
+    @:from
+    public static function fromInstance(instance : EntityNative) : EntityAbstract {
+        return Entity.fromInstance(instance);
+    }
+}
