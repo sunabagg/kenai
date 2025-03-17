@@ -3,10 +3,12 @@ import sunaba.spatial.Camera;
 import sunaba.spatial.SpatialTransform;
 import sunaba.spatial.mesh.MeshRenderer;
 import sunaba.spatial.mesh.Box;
-import RotateComponent;
+import support_files.test3.src.RotateComponent;
 
 class Main {
     public static function main() {
+        GlobalObjectStack.initSingleton();
+
         var scene : Scene = untyped __lua__("createScene()");
         var entity1 = new Entity();
         entity1.name = "Entity1";
@@ -44,29 +46,9 @@ class Main {
         entity4.addComponent(e4box, ObjectUtils.getName(Box));
         e4box.size = new Vector3(1, 1, 1);
         var rotateComponent = new RotateComponent();
-        entity4.addComponent(rotateComponent.component, "RotateComponent");
+        entity4.addComponent(rotateComponent, "RotateComponent");
         scene.addEntity(entity4);
         e4transform.position = new Vector3(0, 0, -1);
-
-        GlobalObjectStack.initSingleton();
-
-        var globalObjectStack = GlobalObjectStack.getSingleton();
-        globalObjectStack.stack.push(new StackHandle(scene));
-        globalObjectStack.stack.push(new StackHandle(entity1));
-        globalObjectStack.stack.push(new StackHandle(child1));
-        globalObjectStack.stack.push(new StackHandle(entity2));
-        globalObjectStack.stack.push(new StackHandle(entity3));
-        globalObjectStack.stack.push(new StackHandle(entity4));
-        globalObjectStack.stack.push(new StackHandle(e1transform));
-        globalObjectStack.stack.push(new StackHandle(c1transform));
-        globalObjectStack.stack.push(new StackHandle(e2transform));
-        globalObjectStack.stack.push(new StackHandle(e3transform));
-        globalObjectStack.stack.push(new StackHandle(camera));
-        globalObjectStack.stack.push(new StackHandle(e4transform));
-        globalObjectStack.stack.push(new StackHandle(e4mesh));
-        globalObjectStack.stack.push(new StackHandle(e4box));
-        globalObjectStack.stack.push(new StackHandle(rotateComponent.component));
-        globalObjectStack.stack.push(new StackHandle(rotateComponent));
 
         try {
             printScene(scene);
@@ -78,7 +60,7 @@ class Main {
 
     public static function printEntity(entity : Entity, indent : String = "    ") : Void {
         Sys.println(indent + "Entity: " + entity.name);
-        var spatialTransform = SpatialTransform.getFromEntity(entity);
+        var spatialTransform = cast entity.getComponent(SpatialTransform);
         if (spatialTransform != null) {
             var position = spatialTransform.position;
             var rotation = spatialTransform.rotation;
