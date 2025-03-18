@@ -185,7 +185,6 @@ local Enum = _hx_e();
 local Array = _hx_e()
 local Main = _hx_e()
 local Math = _hx_e()
-local Reflect = _hx_e()
 __sunaba_core_Behavior = _hx_e()
 local RotateComponent = _hx_e()
 local String = _hx_e()
@@ -202,13 +201,9 @@ __haxe_iterators_ArrayKeyValueIterator = _hx_e()
 __lua_Boot = _hx_e()
 __lua_UserData = _hx_e()
 __lua_Thread = _hx_e()
-__sunaba_core__Basis_Basis_Impl_ = _hx_e()
 __sunaba_core_GlobalObjectStack = _hx_e()
 __sunaba_core_ObjectUtils = _hx_e()
-__sunaba_core__Quaternion_Quaternion_Impl_ = _hx_e()
 __sunaba_core_StackHandle = _hx_e()
-__sunaba_core__Vector2_Vector2_Impl_ = _hx_e()
-__sunaba_core__Vector3_Vector3_Impl_ = _hx_e()
 
 local _hx_bind, _hx_bit, _hx_staticToInstance, _hx_funcToField, _hx_maxn, _hx_print, _hx_apply_self, _hx_box_mr, _hx_bit_clamp, _hx_table, _hx_bit_raw
 local _hx_pcall_default = {};
@@ -569,19 +564,19 @@ Main.main = function()
   local e1transform = SpatialTransform.new();
   entity1:addComponent(e1transform, __sunaba_core_ObjectUtils.getName(SpatialTransform));
   scene:addEntity(entity1);
-  e1transform.position = __sunaba_core__Vector3_Vector3_Impl_._new(1, 2, 3);
+  e1transform.position = Vector3.new(1, 2, 3);
   local child1 = Entity.new();
   child1.name = "Child1";
   local c1transform = SpatialTransform.new();
   child1:addComponent(c1transform, __sunaba_core_ObjectUtils.getName(SpatialTransform));
   entity1:addChild(child1);
-  c1transform.position = __sunaba_core__Vector3_Vector3_Impl_._new(4, 5, 6);
+  c1transform.position = Vector3.new(4, 5, 6);
   local entity2 = Entity.new();
   entity2.name = "Entity2";
   local e2transform = SpatialTransform.new();
   entity2:addComponent(e2transform, __sunaba_core_ObjectUtils.getName(SpatialTransform));
   scene:addEntity(entity2);
-  e2transform.position = __sunaba_core__Vector3_Vector3_Impl_._new(7, 8, 9);
+  e2transform.position = Vector3.new(7, 8, 9);
   local entity3 = Entity.new();
   entity3.name = "Camera";
   local e3transform = SpatialTransform.new();
@@ -589,7 +584,7 @@ Main.main = function()
   local camera = Camera.new();
   entity3:addComponent(camera, __sunaba_core_ObjectUtils.getName(Camera));
   scene:addEntity(entity3);
-  e3transform.position = __sunaba_core__Vector3_Vector3_Impl_._new(0, 0, 1);
+  e3transform.position = Vector3.new(0, 0, 1);
   local entity4 = Entity.new();
   entity4.name = "Box";
   local e4transform = SpatialTransform.new();
@@ -598,11 +593,11 @@ Main.main = function()
   entity4:addComponent(e4mesh, __sunaba_core_ObjectUtils.getName(MeshRenderer));
   local e4box = Box.new();
   entity4:addComponent(e4box, __sunaba_core_ObjectUtils.getName(Box));
-  e4box.size = __sunaba_core__Vector3_Vector3_Impl_._new(1, 1, 1);
+  e4box.size = Vector3.new(1, 1, 1);
   local rotateComponent = RotateComponent.new();
   entity4:addComponent(rotateComponent.component, "RotateComponent");
   scene:addEntity(entity4);
-  e4transform.position = __sunaba_core__Vector3_Vector3_Impl_._new(0, 0, -1);
+  e4transform.position = Vector3.new(0, 0, -1);
   __sunaba_core_GlobalObjectStack.initSingleton();
   local globalObjectStack = __sunaba_core_GlobalObjectStack.getSingleton();
   globalObjectStack.stack:push(__sunaba_core_StackHandle.new(scene));
@@ -646,7 +641,7 @@ Main.printEntity = function(entity,indent)
     local rotation = spatialTransform.rotation;
     local scale = spatialTransform.scale;
     local global = spatialTransform.global;
-    _G.print(Std.string(Std.string(Std.string(Std.string(Std.string(Std.string(Std.string(indent) .. Std.string("    Transform: ")) .. Std.string((__sunaba_core__Vector3_Vector3_Impl_.fieldRead(position, "toString"))())) .. Std.string(", ")) .. Std.string((__sunaba_core__Vector3_Vector3_Impl_.fieldRead(rotation, "toString"))())) .. Std.string(", ")) .. Std.string((__sunaba_core__Vector3_Vector3_Impl_.fieldRead(scale, "toString"))())));
+    _G.print(Std.string(Std.string(Std.string(Std.string(Std.string(Std.string(Std.string(indent) .. Std.string("    Transform: ")) .. Std.string(position:tostring())) .. Std.string(", ")) .. Std.string(rotation:tostring())) .. Std.string(", ")) .. Std.string(scale:tostring())));
     _G.print(Std.string(Std.string(Std.string(indent) .. Std.string("    GlobalTransform: ")) .. Std.string(global:tostring())));
   end;
   local _g = 0;
@@ -689,31 +684,6 @@ Math.min = function(a,b)
     do return (0/0) end;
   else
     do return _G.math.min(a, b) end;
-  end;
-end
-
-Reflect.new = {}
-Reflect.__name__ = "Reflect"
-Reflect.field = function(o,field) 
-  if (_G.type(o) == "string") then 
-    if (field == "length") then 
-      do return _hx_wrap_if_string_field(o,'length') end;
-    else
-      do return String.prototype[field] end;
-    end;
-  else
-    local _hx_status, _hx_result = pcall(function() 
-    
-        do return o[field] end;
-      return _hx_pcall_default
-    end)
-    if not _hx_status and _hx_result == "_hx_pcall_break" then
-    elseif not _hx_status then 
-      local _g = _hx_result;
-      do return nil end;
-    elseif _hx_result ~= _hx_pcall_default then
-      return _hx_result
-    end;
   end;
 end
 
@@ -1383,178 +1353,6 @@ __lua_UserData.__name__ = "lua.UserData"
 __lua_Thread.new = {}
 __lua_Thread.__name__ = "lua.Thread"
 
-__sunaba_core__Basis_Basis_Impl_.new = {}
-__sunaba_core__Basis_Basis_Impl_.__name__ = "sunaba.core._Basis.Basis_Impl_"
-__sunaba_core__Basis_Basis_Impl_._new = function(x,y,z) 
-  do return Basis.new(x, y, z) end;
-end
-__sunaba_core__Basis_Basis_Impl_.fieldRead = function(this1,name) 
-  if (name == "toString") then 
-    do return function() 
-      local v = this1;
-      do return v.tostring() end;
-    end end;
-  else
-    local o = this1;
-    if ((function() 
-      local _hx_1
-      if ((_G.type(o) == "function") and not ((function() 
-        local _hx_2
-        if (_G.type(o) ~= "table") then 
-        _hx_2 = false; else 
-        _hx_2 = o.__name__; end
-        return _hx_2
-      end )() or (function() 
-        local _hx_3
-        if (_G.type(o) ~= "table") then 
-        _hx_3 = false; else 
-        _hx_3 = o.__ename__; end
-        return _hx_3
-      end )())) then 
-      _hx_1 = false; elseif ((_G.type(o) == "string") and ((String.prototype[name] ~= nil) or (name == "length"))) then 
-      _hx_1 = true; elseif (o.__fields__ ~= nil) then 
-      _hx_1 = o.__fields__[name] ~= nil; else 
-      _hx_1 = o[name] ~= nil; end
-      return _hx_1
-    end )()) then 
-      do return Reflect.field(this1, name) end;
-    else
-      _G.error(__haxe_Exception.thrown("Invalid field"),0);
-    end;
-  end;
-end
-__sunaba_core__Basis_Basis_Impl_.fieldWrite = function(this1,name,value) 
-  local o = this1;
-  if ((function() 
-    local _hx_1
-    if ((_G.type(o) == "function") and not ((function() 
-      local _hx_2
-      if (_G.type(o) ~= "table") then 
-      _hx_2 = false; else 
-      _hx_2 = o.__name__; end
-      return _hx_2
-    end )() or (function() 
-      local _hx_3
-      if (_G.type(o) ~= "table") then 
-      _hx_3 = false; else 
-      _hx_3 = o.__ename__; end
-      return _hx_3
-    end )())) then 
-    _hx_1 = false; elseif ((_G.type(o) == "string") and ((String.prototype[name] ~= nil) or (name == "length"))) then 
-    _hx_1 = true; elseif (o.__fields__ ~= nil) then 
-    _hx_1 = o.__fields__[name] ~= nil; else 
-    _hx_1 = o[name] ~= nil; end
-    return _hx_1
-  end )()) then 
-    this1[name] = value;
-  else
-    _G.error(__haxe_Exception.thrown("Invalid field"),0);
-  end;
-end
-__sunaba_core__Basis_Basis_Impl_.arrayRead = function(this1,n) 
-  local rowsTable = this1.rows;
-  if (n == 0) then 
-    do return rowsTable[0] end;
-  else
-    if (n == 1) then 
-      do return rowsTable[1] end;
-    else
-      if (n == 2) then 
-        do return rowsTable[2] end;
-      else
-        if (n == "x") then 
-          do return rowsTable[0] end;
-        else
-          if (n == "y") then 
-            do return rowsTable[1] end;
-          else
-            if (n == "z") then 
-              do return rowsTable[2] end;
-            else
-              _G.error(__haxe_Exception.thrown("Invalid index"),0);
-            end;
-          end;
-        end;
-      end;
-    end;
-  end;
-end
-__sunaba_core__Basis_Basis_Impl_.arrayWrite = function(this1,n,value) 
-  local rowsTable = this1.rows;
-  if (n == 0) then 
-    rowsTable[0] = value;
-  else
-    if (n == 1) then 
-      rowsTable[1] = value;
-    else
-      if (n == 2) then 
-        rowsTable[2] = value;
-      else
-        if (n == "x") then 
-          rowsTable[0] = value;
-        else
-          if (n == "y") then 
-            rowsTable[1] = value;
-          else
-            if (n == "z") then 
-              rowsTable[2] = value;
-            else
-              _G.error(__haxe_Exception.thrown("Invalid index"),0);
-            end;
-          end;
-        end;
-      end;
-    end;
-  end;
-end
-__sunaba_core__Basis_Basis_Impl_.add = function(this1,rhs) 
-  local lhs = this1;
-  do return lhs + rhs end;
-end
-__sunaba_core__Basis_Basis_Impl_.sub = function(this1,rhs) 
-  local lhs = this1;
-  do return lhs - rhs end;
-end
-__sunaba_core__Basis_Basis_Impl_.mul = function(this1,rhs) 
-  local lhs = this1;
-  do return lhs * rhs end;
-end
-__sunaba_core__Basis_Basis_Impl_.div = function(this1,rhs) 
-  local lhs = this1;
-  do return lhs / rhs end;
-end
-__sunaba_core__Basis_Basis_Impl_.mod = function(this1,rhs) 
-  local lhs = this1;
-  do return lhs % rhs end;
-end
-__sunaba_core__Basis_Basis_Impl_.eq = function(this1,rhs) 
-  local lhs = this1;
-  do return lhs == rhs end;
-end
-__sunaba_core__Basis_Basis_Impl_.neq = function(this1,rhs) 
-  local lhs = this1;
-  do return lhs ~= rhs end;
-end
-__sunaba_core__Basis_Basis_Impl_.lt = function(this1,rhs) 
-  local lhs = this1;
-  do return lhs < rhs end;
-end
-__sunaba_core__Basis_Basis_Impl_.lte = function(this1,rhs) 
-  local lhs = this1;
-  do return lhs <= rhs end;
-end
-__sunaba_core__Basis_Basis_Impl_.gt = function(this1,rhs) 
-  local lhs = this1;
-  do return lhs > rhs end;
-end
-__sunaba_core__Basis_Basis_Impl_.gte = function(this1,rhs) 
-  local lhs = this1;
-  do return lhs >= rhs end;
-end
-__sunaba_core__Basis_Basis_Impl_.toString = function(v) 
-  do return v.tostring() end;
-end
-
 __sunaba_core_GlobalObjectStack.new = function() 
   local self = _hx_new(__sunaba_core_GlobalObjectStack.prototype)
   __sunaba_core_GlobalObjectStack.super(self)
@@ -1627,189 +1425,6 @@ __sunaba_core_ObjectUtils.typeInheritsFrom = function(type1,type2)
   do return false end;
 end
 
-__sunaba_core__Quaternion_Quaternion_Impl_.new = {}
-__sunaba_core__Quaternion_Quaternion_Impl_.__name__ = "sunaba.core._Quaternion.Quaternion_Impl_"
-__sunaba_core__Quaternion_Quaternion_Impl_._new = function(x,y,z,w) 
-  if (w == nil) then 
-    w = 0;
-  end;
-  if (z == nil) then 
-    z = 0;
-  end;
-  if (y == nil) then 
-    y = 0;
-  end;
-  if (x == nil) then 
-    x = 0;
-  end;
-  do return Quaternion.new(x, y, z, w) end;
-end
-__sunaba_core__Quaternion_Quaternion_Impl_.fieldRead = function(this1,name) 
-  if (name == "toString") then 
-    do return function() 
-      local v = this1;
-      do return v.tostring() end;
-    end end;
-  else
-    local o = this1;
-    if ((function() 
-      local _hx_1
-      if ((_G.type(o) == "function") and not ((function() 
-        local _hx_2
-        if (_G.type(o) ~= "table") then 
-        _hx_2 = false; else 
-        _hx_2 = o.__name__; end
-        return _hx_2
-      end )() or (function() 
-        local _hx_3
-        if (_G.type(o) ~= "table") then 
-        _hx_3 = false; else 
-        _hx_3 = o.__ename__; end
-        return _hx_3
-      end )())) then 
-      _hx_1 = false; elseif ((_G.type(o) == "string") and ((String.prototype[name] ~= nil) or (name == "length"))) then 
-      _hx_1 = true; elseif (o.__fields__ ~= nil) then 
-      _hx_1 = o.__fields__[name] ~= nil; else 
-      _hx_1 = o[name] ~= nil; end
-      return _hx_1
-    end )()) then 
-      do return Reflect.field(this1, name) end;
-    else
-      _G.error(__haxe_Exception.thrown("Invalid field"),0);
-    end;
-  end;
-end
-__sunaba_core__Quaternion_Quaternion_Impl_.fieldWrite = function(this1,name,value) 
-  local o = this1;
-  if ((function() 
-    local _hx_1
-    if ((_G.type(o) == "function") and not ((function() 
-      local _hx_2
-      if (_G.type(o) ~= "table") then 
-      _hx_2 = false; else 
-      _hx_2 = o.__name__; end
-      return _hx_2
-    end )() or (function() 
-      local _hx_3
-      if (_G.type(o) ~= "table") then 
-      _hx_3 = false; else 
-      _hx_3 = o.__ename__; end
-      return _hx_3
-    end )())) then 
-    _hx_1 = false; elseif ((_G.type(o) == "string") and ((String.prototype[name] ~= nil) or (name == "length"))) then 
-    _hx_1 = true; elseif (o.__fields__ ~= nil) then 
-    _hx_1 = o.__fields__[name] ~= nil; else 
-    _hx_1 = o[name] ~= nil; end
-    return _hx_1
-  end )()) then 
-    this1[name] = value;
-  else
-    _G.error(__haxe_Exception.thrown("Invalid field"),0);
-  end;
-end
-__sunaba_core__Quaternion_Quaternion_Impl_.arrayRead = function(this1,n) 
-  if (n == 0) then 
-    do return this1.x end;
-  end;
-  if (n == 1) then 
-    do return this1.y end;
-  end;
-  if (n == 2) then 
-    do return this1.z end;
-  end;
-  if (n == "x") then 
-    do return this1.x end;
-  end;
-  if (n == "y") then 
-    do return this1.y end;
-  end;
-  if (n == "z") then 
-    do return this1.z end;
-  end;
-  if (n == "w") then 
-    do return this1.w end;
-  end;
-  _G.error(__haxe_Exception.thrown("Invalid index"),0);
-end
-__sunaba_core__Quaternion_Quaternion_Impl_.arrayWrite = function(this1,n,value) 
-  if (n == 0) then 
-    this1.x = value;
-  else
-    if (n == 1) then 
-      this1.y = value;
-    else
-      if (n == 2) then 
-        this1.z = value;
-      else
-        if (n == "x") then 
-          this1.x = value;
-        else
-          if (n == "y") then 
-            this1.y = value;
-          else
-            if (n == "z") then 
-              this1.z = value;
-            else
-              if (n == "w") then 
-                this1.w = value;
-              else
-                _G.error(__haxe_Exception.thrown("Invalid index"),0);
-              end;
-            end;
-          end;
-        end;
-      end;
-    end;
-  end;
-end
-__sunaba_core__Quaternion_Quaternion_Impl_.add = function(this1,rhs) 
-  local lhs = this1;
-  do return lhs + rhs end;
-end
-__sunaba_core__Quaternion_Quaternion_Impl_.sub = function(this1,rhs) 
-  local lhs = this1;
-  do return lhs - rhs end;
-end
-__sunaba_core__Quaternion_Quaternion_Impl_.mul = function(this1,rhs) 
-  local lhs = this1;
-  do return lhs * rhs end;
-end
-__sunaba_core__Quaternion_Quaternion_Impl_.div = function(this1,rhs) 
-  local lhs = this1;
-  do return lhs / rhs end;
-end
-__sunaba_core__Quaternion_Quaternion_Impl_.mod = function(this1,rhs) 
-  local lhs = this1;
-  do return lhs % rhs end;
-end
-__sunaba_core__Quaternion_Quaternion_Impl_.eq = function(this1,rhs) 
-  local lhs = this1;
-  do return lhs == rhs end;
-end
-__sunaba_core__Quaternion_Quaternion_Impl_.neq = function(this1,rhs) 
-  local lhs = this1;
-  do return lhs ~= rhs end;
-end
-__sunaba_core__Quaternion_Quaternion_Impl_.lt = function(this1,rhs) 
-  local lhs = this1;
-  do return lhs < rhs end;
-end
-__sunaba_core__Quaternion_Quaternion_Impl_.lte = function(this1,rhs) 
-  local lhs = this1;
-  do return lhs <= rhs end;
-end
-__sunaba_core__Quaternion_Quaternion_Impl_.gt = function(this1,rhs) 
-  local lhs = this1;
-  do return lhs > rhs end;
-end
-__sunaba_core__Quaternion_Quaternion_Impl_.gte = function(this1,rhs) 
-  local lhs = this1;
-  do return lhs >= rhs end;
-end
-__sunaba_core__Quaternion_Quaternion_Impl_.toString = function(v) 
-  do return v.tostring() end;
-end
-
 __sunaba_core_StackHandle.new = function(object) 
   local self = _hx_new(__sunaba_core_StackHandle.prototype)
   __sunaba_core_StackHandle.super(self,object)
@@ -1822,335 +1437,6 @@ __sunaba_core_StackHandle.__name__ = "sunaba.core.StackHandle"
 __sunaba_core_StackHandle.prototype = _hx_e();
 
 __sunaba_core_StackHandle.prototype.__class__ =  __sunaba_core_StackHandle
-
-__sunaba_core__Vector2_Vector2_Impl_.new = {}
-__sunaba_core__Vector2_Vector2_Impl_.__name__ = "sunaba.core._Vector2.Vector2_Impl_"
-__sunaba_core__Vector2_Vector2_Impl_._new = function(x,y) 
-  if (y == nil) then 
-    y = 0;
-  end;
-  if (x == nil) then 
-    x = 0;
-  end;
-  do return Vector2.new(x, y) end;
-end
-__sunaba_core__Vector2_Vector2_Impl_.fieldRead = function(this1,name) 
-  if (name == "toString") then 
-    do return function() 
-      local v = this1;
-      do return Std.string(Std.string(Std.string(Std.string("(") .. Std.string(v.x)) .. Std.string(", ")) .. Std.string(v.y)) .. Std.string(")") end;
-    end end;
-  else
-    local o = this1;
-    if ((function() 
-      local _hx_1
-      if ((_G.type(o) == "function") and not ((function() 
-        local _hx_2
-        if (_G.type(o) ~= "table") then 
-        _hx_2 = false; else 
-        _hx_2 = o.__name__; end
-        return _hx_2
-      end )() or (function() 
-        local _hx_3
-        if (_G.type(o) ~= "table") then 
-        _hx_3 = false; else 
-        _hx_3 = o.__ename__; end
-        return _hx_3
-      end )())) then 
-      _hx_1 = false; elseif ((_G.type(o) == "string") and ((String.prototype[name] ~= nil) or (name == "length"))) then 
-      _hx_1 = true; elseif (o.__fields__ ~= nil) then 
-      _hx_1 = o.__fields__[name] ~= nil; else 
-      _hx_1 = o[name] ~= nil; end
-      return _hx_1
-    end )()) then 
-      do return Reflect.field(this1, name) end;
-    else
-      _G.error(__haxe_Exception.thrown("Invalid field"),0);
-    end;
-  end;
-end
-__sunaba_core__Vector2_Vector2_Impl_.fieldWrite = function(this1,name,value) 
-  local o = this1;
-  if ((function() 
-    local _hx_1
-    if ((_G.type(o) == "function") and not ((function() 
-      local _hx_2
-      if (_G.type(o) ~= "table") then 
-      _hx_2 = false; else 
-      _hx_2 = o.__name__; end
-      return _hx_2
-    end )() or (function() 
-      local _hx_3
-      if (_G.type(o) ~= "table") then 
-      _hx_3 = false; else 
-      _hx_3 = o.__ename__; end
-      return _hx_3
-    end )())) then 
-    _hx_1 = false; elseif ((_G.type(o) == "string") and ((String.prototype[name] ~= nil) or (name == "length"))) then 
-    _hx_1 = true; elseif (o.__fields__ ~= nil) then 
-    _hx_1 = o.__fields__[name] ~= nil; else 
-    _hx_1 = o[name] ~= nil; end
-    return _hx_1
-  end )()) then 
-    this1[name] = value;
-  else
-    _G.error(__haxe_Exception.thrown("Invalid field"),0);
-  end;
-end
-__sunaba_core__Vector2_Vector2_Impl_.arrayRead = function(this1,n) 
-  if (n == 0) then 
-    do return this1.x end;
-  end;
-  if (n == 1) then 
-    do return this1.y end;
-  end;
-  if (n == "x") then 
-    do return this1.x end;
-  end;
-  if (n == "y") then 
-    do return this1.y end;
-  end;
-  _G.error(__haxe_Exception.thrown("Invalid index"),0);
-end
-__sunaba_core__Vector2_Vector2_Impl_.arrayWrite = function(this1,n,value) 
-  if (n == 0) then 
-    this1.x = value;
-  else
-    if (n == 1) then 
-      this1.y = value;
-    else
-      if (n == "x") then 
-        this1.x = value;
-      else
-        if (n == "y") then 
-          this1.y = value;
-        else
-          _G.error(__haxe_Exception.thrown("Invalid index"),0);
-        end;
-      end;
-    end;
-  end;
-end
-__sunaba_core__Vector2_Vector2_Impl_.add = function(this1,rhs) 
-  local lhs = this1;
-  do return lhs + rhs end;
-end
-__sunaba_core__Vector2_Vector2_Impl_.sub = function(this1,rhs) 
-  local lhs = this1;
-  do return lhs - rhs end;
-end
-__sunaba_core__Vector2_Vector2_Impl_.mul = function(this1,rhs) 
-  local lhs = this1;
-  do return lhs * rhs end;
-end
-__sunaba_core__Vector2_Vector2_Impl_.div = function(this1,rhs) 
-  local lhs = this1;
-  do return lhs / rhs end;
-end
-__sunaba_core__Vector2_Vector2_Impl_.mod = function(this1,rhs) 
-  local lhs = this1;
-  do return lhs % rhs end;
-end
-__sunaba_core__Vector2_Vector2_Impl_.eq = function(this1,rhs) 
-  local lhs = this1;
-  do return lhs == rhs end;
-end
-__sunaba_core__Vector2_Vector2_Impl_.neq = function(this1,rhs) 
-  local lhs = this1;
-  do return lhs ~= rhs end;
-end
-__sunaba_core__Vector2_Vector2_Impl_.lt = function(this1,rhs) 
-  local lhs = this1;
-  do return lhs < rhs end;
-end
-__sunaba_core__Vector2_Vector2_Impl_.lte = function(this1,rhs) 
-  local lhs = this1;
-  do return lhs <= rhs end;
-end
-__sunaba_core__Vector2_Vector2_Impl_.gt = function(this1,rhs) 
-  local lhs = this1;
-  do return lhs > rhs end;
-end
-__sunaba_core__Vector2_Vector2_Impl_.gte = function(this1,rhs) 
-  local lhs = this1;
-  do return lhs >= rhs end;
-end
-__sunaba_core__Vector2_Vector2_Impl_.toString = function(v) 
-  do return v.tostring() end;
-end
-
-__sunaba_core__Vector3_Vector3_Impl_.new = {}
-__sunaba_core__Vector3_Vector3_Impl_.__name__ = "sunaba.core._Vector3.Vector3_Impl_"
-__sunaba_core__Vector3_Vector3_Impl_._new = function(x,y,z) 
-  if (z == nil) then 
-    z = 0;
-  end;
-  if (y == nil) then 
-    y = 0;
-  end;
-  if (x == nil) then 
-    x = 0;
-  end;
-  do return Vector3.new(x, y, z) end;
-end
-__sunaba_core__Vector3_Vector3_Impl_.fieldRead = function(this1,name) 
-  if (name == "toString") then 
-    do return function() 
-      local v = this1;
-      do return Std.string(Std.string(Std.string(Std.string(Std.string(Std.string("(") .. Std.string(v.x)) .. Std.string(", ")) .. Std.string(v.y)) .. Std.string(", ")) .. Std.string(v.z)) .. Std.string(")") end;
-    end end;
-  else
-    local o = this1;
-    if ((function() 
-      local _hx_1
-      if ((_G.type(o) == "function") and not ((function() 
-        local _hx_2
-        if (_G.type(o) ~= "table") then 
-        _hx_2 = false; else 
-        _hx_2 = o.__name__; end
-        return _hx_2
-      end )() or (function() 
-        local _hx_3
-        if (_G.type(o) ~= "table") then 
-        _hx_3 = false; else 
-        _hx_3 = o.__ename__; end
-        return _hx_3
-      end )())) then 
-      _hx_1 = false; elseif ((_G.type(o) == "string") and ((String.prototype[name] ~= nil) or (name == "length"))) then 
-      _hx_1 = true; elseif (o.__fields__ ~= nil) then 
-      _hx_1 = o.__fields__[name] ~= nil; else 
-      _hx_1 = o[name] ~= nil; end
-      return _hx_1
-    end )()) then 
-      do return Reflect.field(this1, name) end;
-    else
-      _G.error(__haxe_Exception.thrown("Invalid field"),0);
-    end;
-  end;
-end
-__sunaba_core__Vector3_Vector3_Impl_.fieldWrite = function(this1,name,value) 
-  local o = this1;
-  if ((function() 
-    local _hx_1
-    if ((_G.type(o) == "function") and not ((function() 
-      local _hx_2
-      if (_G.type(o) ~= "table") then 
-      _hx_2 = false; else 
-      _hx_2 = o.__name__; end
-      return _hx_2
-    end )() or (function() 
-      local _hx_3
-      if (_G.type(o) ~= "table") then 
-      _hx_3 = false; else 
-      _hx_3 = o.__ename__; end
-      return _hx_3
-    end )())) then 
-    _hx_1 = false; elseif ((_G.type(o) == "string") and ((String.prototype[name] ~= nil) or (name == "length"))) then 
-    _hx_1 = true; elseif (o.__fields__ ~= nil) then 
-    _hx_1 = o.__fields__[name] ~= nil; else 
-    _hx_1 = o[name] ~= nil; end
-    return _hx_1
-  end )()) then 
-    this1[name] = value;
-  else
-    _G.error(__haxe_Exception.thrown("Invalid field"),0);
-  end;
-end
-__sunaba_core__Vector3_Vector3_Impl_.arrayRead = function(this1,n) 
-  if (n == 0) then 
-    do return this1.x end;
-  end;
-  if (n == 1) then 
-    do return this1.y end;
-  end;
-  if (n == 2) then 
-    do return this1.z end;
-  end;
-  if (n == "x") then 
-    do return this1.x end;
-  end;
-  if (n == "y") then 
-    do return this1.y end;
-  end;
-  if (n == "z") then 
-    do return this1.z end;
-  end;
-  _G.error(__haxe_Exception.thrown("Invalid index"),0);
-end
-__sunaba_core__Vector3_Vector3_Impl_.arrayWrite = function(this1,n,value) 
-  if (n == 0) then 
-    this1.x = value;
-  else
-    if (n == 1) then 
-      this1.y = value;
-    else
-      if (n == 2) then 
-        this1.z = value;
-      else
-        if (n == "x") then 
-          this1.x = value;
-        else
-          if (n == "y") then 
-            this1.y = value;
-          else
-            if (n == "z") then 
-              this1.z = value;
-            else
-              _G.error(__haxe_Exception.thrown("Invalid index"),0);
-            end;
-          end;
-        end;
-      end;
-    end;
-  end;
-end
-__sunaba_core__Vector3_Vector3_Impl_.add = function(this1,rhs) 
-  local lhs = this1;
-  do return lhs + rhs end;
-end
-__sunaba_core__Vector3_Vector3_Impl_.sub = function(this1,rhs) 
-  local lhs = this1;
-  do return lhs - rhs end;
-end
-__sunaba_core__Vector3_Vector3_Impl_.mul = function(this1,rhs) 
-  local lhs = this1;
-  do return lhs * rhs end;
-end
-__sunaba_core__Vector3_Vector3_Impl_.div = function(this1,rhs) 
-  local lhs = this1;
-  do return lhs / rhs end;
-end
-__sunaba_core__Vector3_Vector3_Impl_.mod = function(this1,rhs) 
-  local lhs = this1;
-  do return lhs % rhs end;
-end
-__sunaba_core__Vector3_Vector3_Impl_.eq = function(this1,rhs) 
-  local lhs = this1;
-  do return lhs == rhs end;
-end
-__sunaba_core__Vector3_Vector3_Impl_.neq = function(this1,rhs) 
-  local lhs = this1;
-  do return lhs ~= rhs end;
-end
-__sunaba_core__Vector3_Vector3_Impl_.lt = function(this1,rhs) 
-  local lhs = this1;
-  do return lhs < rhs end;
-end
-__sunaba_core__Vector3_Vector3_Impl_.lte = function(this1,rhs) 
-  local lhs = this1;
-  do return lhs <= rhs end;
-end
-__sunaba_core__Vector3_Vector3_Impl_.gt = function(this1,rhs) 
-  local lhs = this1;
-  do return lhs > rhs end;
-end
-__sunaba_core__Vector3_Vector3_Impl_.gte = function(this1,rhs) 
-  local lhs = this1;
-  do return lhs >= rhs end;
-end
-__sunaba_core__Vector3_Vector3_Impl_.toString = function(v) 
-  do return v.tostring() end;
-end
 if _hx_bit_raw then
     _hx_bit_clamp = function(v)
     if v <= 2147483647 and v >= -2147483648 then
@@ -2208,18 +1494,6 @@ _hx_table.maxn = _G.table.maxn or function(t)
   end
   return maxn
 end;
-
-_hx_wrap_if_string_field = function(o, fld)
-  if _G.type(o) == 'string' then
-    if fld == 'length' then
-      return _G.string.len(o)
-    else
-      return String.prototype[fld]
-    end
-  else
-    return o[fld]
-  end
-end
 
 function _hx_handle_error(obj)
   local message = tostring(obj)
