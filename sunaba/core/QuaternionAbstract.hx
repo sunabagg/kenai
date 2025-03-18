@@ -1,8 +1,8 @@
 package sunaba.core;
 
-abstract Basis(NativeBasis) from NativeBasis {
-    public function new(x : NativeVector3, y : NativeVector3, z : NativeVector3) {
-        this = new NativeBasis(x, y, z);
+abstract QuaternionAbstract(NativeQuaternion) from NativeQuaternion to NativeQuaternion {
+    public function new(x : Float = 0, y : Float = 0, z : Float = 0, w : Float = 0) {
+        this = new NativeQuaternion(x, y, z, w);
     }
 
     @:op(a.b) 
@@ -30,96 +30,95 @@ abstract Basis(NativeBasis) from NativeBasis {
     
     @:op([]) 
     public function arrayRead(n:Dynamic) {
-        var rowsTable = this.rows;
-        if (n == 0) return rowsTable[0];
-        else if (n == 1) return rowsTable[1];
-        else if (n == 2) return rowsTable[2];
-        else if (n == 'x') return rowsTable[0];
-        else if (n == 'y') return rowsTable[1];
-        else if (n == 'z') return rowsTable[2];
-        else
+        if (n == 0) return this.x;
+        if (n == 1) return this.y;
+        if (n == 2) return this.z;
+        if (n == 'x') return this.x;
+        if (n == 'y') return this.y;
+        if (n == 'z') return this.z; 
+        if (n == 'w') return this.w; 
         throw 'Invalid index';
     }
         
     @:op([]) 
-    public function arrayWrite(n:Dynamic, value:NativeVector3) {
-        var rowsTable = this.rows;
-        if (n == 0) rowsTable[0] = value;
-        else if (n == 1) rowsTable[1] = value;
-        else if (n == 2) rowsTable[2] = value;
-        else if (n == 'x') rowsTable[0] = value;
-        else if (n == 'y') rowsTable[1] = value;
-        else if (n == 'z') rowsTable[2] = value;
+    public function arrayWrite(n:Dynamic, value:Float) {
+        if (n == 0) this.x = value;
+        else if (n == 1) this.y = value;
+        else if (n == 2) this.z = value;
+        else if (n == 'x') this.x = value;
+        else if (n == 'y') this.y = value;
+        else if (n == 'z') this.z = value;
+        else if (n == 'w') this.w = value;
         else throw 'Invalid index';
     }
     
     @:op(A + B)
-    public function add(rhs: Any) : Basis {
+    public function add(rhs: Any) : Quaternion {
         var lhs = this;
         return untyped __lua__('lhs + rhs');
     }
     
     @:op(A - B)
-    public function sub(rhs: Any) : Basis {
+    public function sub(rhs: Any) : Quaternion {
         var lhs = this;
         return untyped __lua__('lhs - rhs');
     }
     
     @:op(A * B)
-    public function mul(rhs: Any) : Basis {
+    public function mul(rhs: Any) : Quaternion {
         var lhs = this;
         return untyped __lua__('lhs * rhs');
     }
     
     @:op(A / B)
-    public function div(rhs: Any) : Basis {
+    public function div(rhs: Any) : Quaternion {
         var lhs = this;
         return untyped __lua__('lhs / rhs');
     }
     
     @:op(A % B)
-    public function mod(rhs: Any) : Basis {
+    public function mod(rhs: Any) : Quaternion {
         var lhs = this;
         return untyped __lua__('lhs % rhs');
     }
     
     @:op(A == B)
-    public function eq(rhs: NativeBasis) : Bool {
+    public function eq(rhs: NativeQuaternion) : Bool {
         var lhs = this;
         return untyped __lua__('lhs == rhs');
     }
     
     @:op(A != B)
-    public function neq(rhs: NativeBasis) : Bool {
+    public function neq(rhs: NativeQuaternion) : Bool {
         var lhs = this;
         return untyped __lua__('lhs ~= rhs');
     }
     
     @:op(A < B)
-    public function lt(rhs: NativeBasis) : Bool {
+    public function lt(rhs: NativeQuaternion) : Bool {
         var lhs = this;
         return untyped __lua__('lhs < rhs');
     }
     
     @:op(A <= B)
-    public function lte(rhs: NativeBasis) : Bool {
+    public function lte(rhs: NativeQuaternion) : Bool {
         var lhs = this;
         return untyped __lua__('lhs <= rhs');
     }
     
     @:op(A > B)
-    public function gt(rhs: NativeBasis) : Bool {
+    public function gt(rhs: NativeQuaternion) : Bool {
         var lhs = this;
         return untyped __lua__('lhs > rhs');
     }
     
     @:op(A >= B)
-    public function gte(rhs: NativeBasis) : Bool {
+    public function gte(rhs: NativeQuaternion) : Bool {
         var lhs = this;
         return untyped __lua__('lhs >= rhs');
     }
 
-    public static function toString(v:NativeBasis) {
+    public static function toString(v:NativeQuaternion) {
         return untyped __lua__('v.tostring()');
     }
 }
