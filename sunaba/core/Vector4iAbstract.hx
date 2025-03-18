@@ -1,8 +1,8 @@
 package sunaba.core;
 
-abstract Vector4(NativeVector4) from NativeVector4 {
-    public function new(x : Float = 0, y : Float = 0, z : Float = 0, w : Float = 0) {
-        this = new NativeVector4(x, y, z, w);
+abstract Vector4iAbstract(NativeVector4i) from NativeVector4i to NativeVector4i {
+    public function new(x : Int = 0, y : Int = 0, z : Int = 0, w : Int = 0) {
+        this = new NativeVector4i(x, y, z, w);
     }
 
     @:op(a.b) public function fieldRead(name:String) : Dynamic
@@ -10,7 +10,7 @@ abstract Vector4(NativeVector4) from NativeVector4 {
         if (name == "toString") {
             return function() : String {
                 var v = this;
-                return "(" + v.x + ", " + v.y + ", " + v.z + ", " + v.w + ")";
+                return "<" + v.x + ", " + v.y + ", " + v.z + ", " + v.w + ">";
             }
         } else if (name == "native") {
             return this;
@@ -49,7 +49,7 @@ abstract Vector4(NativeVector4) from NativeVector4 {
         throw "Invalid index";
     }
 
-    @:op([]) public function arrayWrite(n:Dynamic, value:Float) {
+    @:op([]) public function arrayWrite(n:Dynamic, value:Int) {
         if (n == 0) this.x = value;
         else if (n == 1) this.y = value;
         else if (n == 2) this.z = value;
@@ -62,72 +62,72 @@ abstract Vector4(NativeVector4) from NativeVector4 {
     }
 
     @:op(A + B)
-    public function add(rhs: Any) : Vector4 {
+    public function add(rhs: Any) : Vector4i {
         var lhs = this;
         return untyped __lua__('lhs + rhs');
     }
     
     @:op(A - B)
-    public function sub(rhs: Any) : Vector4 {
+    public function sub(rhs: Any) : Vector4i {
         var lhs = this;
         return untyped __lua__('lhs - rhs');
     }
     
     @:op(A * B)
-    public function mul(rhs: Any) : Vector4 {
+    public function mul(rhs: Any) : Vector4i {
         var lhs = this;
         return untyped __lua__('lhs * rhs');
     }
     
     @:op(A / B)
-    public function div(rhs: Any) : Vector4 {
+    public function div(rhs: Any) : Vector4i {
         var lhs = this;
         return untyped __lua__('lhs / rhs');
     }
     
     @:op(A % B)
-    public function mod(rhs: Any) : Vector4 {
+    public function mod(rhs: Any) : Vector4i {
         var lhs = this;
         return untyped __lua__('lhs % rhs');
     }
     
     @:op(A == B)
-    public function eq(rhs: NativeVector4) : Bool {
+    public function eq(rhs: NativeVector4i) : Bool {
         var lhs = this;
         return untyped __lua__('lhs == rhs');
     }
     
     @:op(A != B)
-    public function neq(rhs: NativeVector4) : Bool {
+    public function neq(rhs: NativeVector4i) : Bool {
         var lhs = this;
         return untyped __lua__('lhs ~= rhs');
     }
     
     @:op(A < B)
-    public function lt(rhs: NativeVector4) : Bool {
+    public function lt(rhs: NativeVector4i) : Bool {
         var lhs = this;
         return untyped __lua__('lhs < rhs');
     }
     
     @:op(A <= B)
-    public function lte(rhs: NativeVector4) : Bool {
+    public function lte(rhs: NativeVector4i) : Bool {
         var lhs = this;
         return untyped __lua__('lhs <= rhs');
     }
     
     @:op(A > B)
-    public function gt(rhs: NativeVector4) : Bool {
+    public function gt(rhs: NativeVector4i) : Bool {
         var lhs = this;
         return untyped __lua__('lhs > rhs');
     }
     
     @:op(A >= B)
-    public function gte(rhs: NativeVector4) : Bool {
+    public function gte(rhs: NativeVector4i) : Bool {
         var lhs = this;
         return untyped __lua__('lhs >= rhs');
     }
 
-    public static function toString(v:NativeVector4) {
+    public static function toString(v:NativeVector4i) {
         return untyped __lua__('v.tostring()');
     }
 }

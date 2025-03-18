@@ -1,6 +1,6 @@
 package sunaba.core;
 
-abstract Vector2(NativeVector2) from NativeVector2 to NativeVector2 {
+abstract Vector2Abstract(NativeVector2) from NativeVector2 to NativeVector2 {
     public function new(x : Float = 0, y : Float = 0) {
         this = new NativeVector2(x, y);
     }
