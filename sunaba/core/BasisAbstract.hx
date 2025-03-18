@@ -1,8 +1,8 @@
 package sunaba.core;
 
-abstract BasisAbstract(NativeBasis) from NativeBasis {
-    public function new(x : NativeVector3, y : NativeVector3, z : NativeVector3) {
-        this = new NativeBasis(x, y, z);
+abstract BasisAbstract(Basis) from Basis {
+    public function new(x : Vector3, y : Vector3, z : Vector3) {
+        this = new Basis(x, y, z);
     }
 
     @:op(a.b) 
@@ -42,7 +42,7 @@ abstract BasisAbstract(NativeBasis) from NativeBasis {
     }
         
     @:op([]) 
-    public function arrayWrite(n:Dynamic, value:NativeVector3) {
+    public function arrayWrite(n:Dynamic, value:Vector3) {
         var rowsTable = this.rows;
         if (n == 0) rowsTable[0] = value;
         else if (n == 1) rowsTable[1] = value;
@@ -84,42 +84,42 @@ abstract BasisAbstract(NativeBasis) from NativeBasis {
     }
     
     @:op(A == B)
-    public function eq(rhs: NativeBasis) : Bool {
+    public function eq(rhs: Basis) : Bool {
         var lhs = this;
         return untyped __lua__('lhs == rhs');
     }
     
     @:op(A != B)
-    public function neq(rhs: NativeBasis) : Bool {
+    public function neq(rhs: Basis) : Bool {
         var lhs = this;
         return untyped __lua__('lhs ~= rhs');
     }
     
     @:op(A < B)
-    public function lt(rhs: NativeBasis) : Bool {
+    public function lt(rhs: Basis) : Bool {
         var lhs = this;
         return untyped __lua__('lhs < rhs');
     }
     
     @:op(A <= B)
-    public function lte(rhs: NativeBasis) : Bool {
+    public function lte(rhs: Basis) : Bool {
         var lhs = this;
         return untyped __lua__('lhs <= rhs');
     }
     
     @:op(A > B)
-    public function gt(rhs: NativeBasis) : Bool {
+    public function gt(rhs: Basis) : Bool {
         var lhs = this;
         return untyped __lua__('lhs > rhs');
     }
     
     @:op(A >= B)
-    public function gte(rhs: NativeBasis) : Bool {
+    public function gte(rhs: Basis) : Bool {
         var lhs = this;
         return untyped __lua__('lhs >= rhs');
     }
 
-    public static function toString(v:NativeBasis) {
+    public static function toString(v:Basis) {
         return untyped __lua__('v.tostring()');
     }
 }

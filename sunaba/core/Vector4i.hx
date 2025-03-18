@@ -1,7 +1,7 @@
 package sunaba.core;
 
 @:native("Vector4i")
-extern class NativeVector4i {
+extern class Vector4i {
     public var x : Int;
     public var y : Int;
     public var z : Int;
@@ -10,12 +10,12 @@ extern class NativeVector4i {
     @:native("new")
     public static function zero() : Vector4i;
     public function abs() : Vector4i;
-    public function clamp(min : NativeVector4i, max : NativeVector4i) : Vector4i;
+    public function clamp(min : Vector4i, max : Vector4i) : Vector4i;
     public function length() : Float;
     public function lengthSquared() : Int;
-    public function max(vector4i : NativeVector4i) : Vector4i;
+    public function max(vector4i : Vector4i) : Vector4i;
     public function maxAxisIndex() : Int;
-    public function min(vector4i : NativeVector4i) : Vector4i;
+    public function min(vector4i : Vector4i) : Vector4i;
     public function minAxisIndex() : Int;
     public function sign() : Vector4i;
     @:native("tostring")

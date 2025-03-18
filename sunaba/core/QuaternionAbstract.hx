@@ -1,8 +1,8 @@
 package sunaba.core;
 
-abstract QuaternionAbstract(NativeQuaternion) from NativeQuaternion to NativeQuaternion {
+abstract QuaternionAbstract(Quaternion) from Quaternion to Quaternion {
     public function new(x : Float = 0, y : Float = 0, z : Float = 0, w : Float = 0) {
-        this = new NativeQuaternion(x, y, z, w);
+        this = new Quaternion(x, y, z, w);
     }
 
     @:op(a.b) 
@@ -83,42 +83,42 @@ abstract QuaternionAbstract(NativeQuaternion) from NativeQuaternion to NativeQua
     }
     
     @:op(A == B)
-    public function eq(rhs: NativeQuaternion) : Bool {
+    public function eq(rhs: Quaternion) : Bool {
         var lhs = this;
         return untyped __lua__('lhs == rhs');
     }
     
     @:op(A != B)
-    public function neq(rhs: NativeQuaternion) : Bool {
+    public function neq(rhs: Quaternion) : Bool {
         var lhs = this;
         return untyped __lua__('lhs ~= rhs');
     }
     
     @:op(A < B)
-    public function lt(rhs: NativeQuaternion) : Bool {
+    public function lt(rhs: Quaternion) : Bool {
         var lhs = this;
         return untyped __lua__('lhs < rhs');
     }
     
     @:op(A <= B)
-    public function lte(rhs: NativeQuaternion) : Bool {
+    public function lte(rhs: Quaternion) : Bool {
         var lhs = this;
         return untyped __lua__('lhs <= rhs');
     }
     
     @:op(A > B)
-    public function gt(rhs: NativeQuaternion) : Bool {
+    public function gt(rhs: Quaternion) : Bool {
         var lhs = this;
         return untyped __lua__('lhs > rhs');
     }
     
     @:op(A >= B)
-    public function gte(rhs: NativeQuaternion) : Bool {
+    public function gte(rhs: Quaternion) : Bool {
         var lhs = this;
         return untyped __lua__('lhs >= rhs');
     }
 
-    public static function toString(v:NativeQuaternion) {
+    public static function toString(v:Quaternion) {
         return untyped __lua__('v.tostring()');
     }
 }

@@ -1,8 +1,8 @@
 package sunaba.core;
 
-abstract Vector4iAbstract(NativeVector4i) from NativeVector4i to NativeVector4i {
+abstract Vector4iAbstract(Vector4i) from Vector4i to Vector4i {
     public function new(x : Int = 0, y : Int = 0, z : Int = 0, w : Int = 0) {
-        this = new NativeVector4i(x, y, z, w);
+        this = new Vector4i(x, y, z, w);
     }
 
     @:op(a.b) public function fieldRead(name:String) : Dynamic
@@ -92,42 +92,42 @@ abstract Vector4iAbstract(NativeVector4i) from NativeVector4i to NativeVector4i 
     }
     
     @:op(A == B)
-    public function eq(rhs: NativeVector4i) : Bool {
+    public function eq(rhs: Vector4i) : Bool {
         var lhs = this;
         return untyped __lua__('lhs == rhs');
     }
     
     @:op(A != B)
-    public function neq(rhs: NativeVector4i) : Bool {
+    public function neq(rhs: Vector4i) : Bool {
         var lhs = this;
         return untyped __lua__('lhs ~= rhs');
     }
     
     @:op(A < B)
-    public function lt(rhs: NativeVector4i) : Bool {
+    public function lt(rhs: Vector4i) : Bool {
         var lhs = this;
         return untyped __lua__('lhs < rhs');
     }
     
     @:op(A <= B)
-    public function lte(rhs: NativeVector4i) : Bool {
+    public function lte(rhs: Vector4i) : Bool {
         var lhs = this;
         return untyped __lua__('lhs <= rhs');
     }
     
     @:op(A > B)
-    public function gt(rhs: NativeVector4i) : Bool {
+    public function gt(rhs: Vector4i) : Bool {
         var lhs = this;
         return untyped __lua__('lhs > rhs');
     }
     
     @:op(A >= B)
-    public function gte(rhs: NativeVector4i) : Bool {
+    public function gte(rhs: Vector4i) : Bool {
         var lhs = this;
         return untyped __lua__('lhs >= rhs');
     }
 
-    public static function toString(v:NativeVector4i) {
+    public static function toString(v:Vector4i) {
         return untyped __lua__('v.tostring()');
     }
 }
