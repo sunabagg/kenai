@@ -2,11 +2,11 @@ package sunaba.core.io;
 
 @:native("BinaryData")
 // BinaryData is a class that represents a binary data buffer.
-class BinaryData {
+extern class BinaryData {
     public function new();
 
     @:native("new")
-    public static function fromTable(table : lua.Table<Int, Float>) : BinaryData;
+    public static function fromTable(table : Array<Float>) : BinaryData;
 
     public function size() : Int;
 
