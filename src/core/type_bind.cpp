@@ -128,6 +128,14 @@ void sunaba::core::bind_base_types(sol::state& lua) {
             Rect2i(int, int, int, int)>(),
             "position", &Rect2i::position, 
             "size", &Rect2i::size,
+            "end", sol::property(
+                [](Rect2i& self) {
+                    return self.get_end();
+                },
+                [](Rect2i& self, Vector2i value) {
+                    self.set_end(value);
+                }
+            ),
             "abs", &Rect2i::abs,
             "encloses", &Rect2i::encloses,
             "expand", &Rect2i::expand,
