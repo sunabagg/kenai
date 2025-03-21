@@ -14,7 +14,7 @@ void sunaba::core::bindImage(sol::state &lua) {
         "flipX", &sunaba::core::Image::flipX,
         "flipY", &sunaba::core::Image::flipY,
         "generateMipmaps", &sunaba::core::Image::generateMipmaps,
-        //"getData", &sunaba::core::Image::getData,
+        "getData", &sunaba::core::Image::getData,
         "getDataSize", &sunaba::core::Image::getDataSize,
         "getFormat", &sunaba::core::Image::getFormat,
         "getHeight", &sunaba::core::Image::getHeight,
