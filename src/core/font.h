@@ -72,7 +72,7 @@ namespace sunaba::core {
             return font->get_descent(fontSize);
         }
 
-        float getFaceCount() {
+        int getFaceCount() {
             return font->get_face_count();
         }
 
