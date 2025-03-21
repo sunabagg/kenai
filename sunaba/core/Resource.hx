@@ -5,5 +5,12 @@ extern class Resource extends BaseObject {
     public function emitChanged() : Void;
     public function isNull() : Bool;
     @:native("cast")
-    public function castFrom(type: Dynamic) : Resource;
+    public static function castFrom(type: Dynamic) : Resource;
+}
+
+abstract ResourceAbstarct(Resource) from Resource to Resource {
+    @:from
+    public static function fromResource(resource: Resource) : ResourceAbstarct {
+        return Resource.castFrom(resource);
+    } 
 }
