@@ -257,7 +257,7 @@ namespace sunaba::core {
             return img;
         }
 
-        int loadJpgFromBuffer(BinaryData* data) {
+        int loadJpegFromBuffer(BinaryData* data) {
             return image->load_jpg_from_buffer(data->toPackedByteArray());
         }
 

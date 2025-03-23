@@ -33,7 +33,7 @@ void sunaba::core::bindImage(sol::state &lua) {
         "load", &sunaba::core::Image::load,
         "loadBmpFromBuffer", &sunaba::core::Image::loadBmpFromBuffer,
         "loadFromFile", &sunaba::core::Image::loadFromFile,
-        "loadJpgFromBuffer", &sunaba::core::Image::loadJpgFromBuffer,
+        "loadJpegFromBuffer", &sunaba::core::Image::loadJpegFromBuffer,
         "loadKtxFromBuffer", &sunaba::core::Image::loadKtxFromBuffer,
         "loadPngFromBuffer", &sunaba::core::Image::loadPngFromBuffer,
         "loadSvgFromBuffer", &sunaba::core::Image::loadSvgFromBuffer,
