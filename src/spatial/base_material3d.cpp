@@ -126,7 +126,7 @@ void sunaba::spatial::bindBaseMaterial3D(sol::state_view& lua) {
         "getTexture", &BaseMaterial3D::getTexture,
         "setFeature", &BaseMaterial3D::setFeature,
         "setFlag", &BaseMaterial3D::setFlag,
-        "setTexture", &BaseMaterial3D::setTexture,
+        //"setTexture", &BaseMaterial3D::setTexture,
         "cast", [](sunaba::core::Resource* res) {
             return new BaseMaterial3D(
                 Object::cast_to<GodotBaseMaterial3D>(res->getResource())
