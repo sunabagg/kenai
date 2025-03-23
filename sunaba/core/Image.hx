@@ -46,5 +46,14 @@ extern class Image extends Resource {
     public function load(path : String) : Int;
     public function loadBmpFromBuffer(buffer : BinaryData) : Int;
     public static function loadFromFile(path : String) : Image;
-    
+    public function loadJpegFromBuffer(buffer : BinaryData) : Int;
+    public function loadKtxFromBuffer(buffer : BinaryData) : Int;
+    public function loadPngFromBuffer(buffer : BinaryData) : Int;
+    public function loadSvgtFromBuffer(buffer : BinaryData) : Int;
+    public function loadSvgFromString(str : String) : Int;
+    public function loadTgaFromBuffer(buffer : BinaryData) : Int;
+    public function loadWebpFromBuffer(buffer : BinaryData) : Int;
+    public function normalMapToXY() : Void;
+    public function premultiplyAlpha() : Void;
+    public function resize(width : Int, height : Int, interpolation : Int = 1) : Void;
 }
