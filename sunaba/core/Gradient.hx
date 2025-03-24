@@ -21,6 +21,10 @@ extern class Gradient extends Resource {
 abstract GradientAbstract(Gradient) from Gradient to Gradient {
     @:from
     public static function fromResource(resource: Resource) : GradientAbstract {
-        return Gradient.castFrom(resource);
+        var gradient = Gradient.castFrom(resource);
+        if (gradient.isNull()) {
+            return null;
+        }
+        return gradient;
     } 
 }
