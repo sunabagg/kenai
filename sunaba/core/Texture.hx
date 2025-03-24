@@ -2,6 +2,7 @@ package sunaba.core;
 
 @:native("Texture")
 extern class Texture extends Resource {
+    @:native("cast")
     public static function castFrom(type: Dynamic) : Texture;
 }
 
