@@ -24,6 +24,7 @@ extern class Font extends Resource {
     public function isLanguageSupported(lang : String) : Bool;
     public function isScriptSupported(script : String) : Bool;
     public function setCacheCapacity(singleline : Int, multiline : Int) : Void;
+    @:native("cast")
     public static function castFrom(type: Dynamic) : Font;
 }
 
