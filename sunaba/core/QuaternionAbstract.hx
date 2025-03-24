@@ -118,6 +118,30 @@ abstract QuaternionAbstract(Quaternion) from Quaternion to Quaternion {
         return untyped __lua__('lhs >= rhs');
     }
 
+    @:op(A += B)
+    public function addAssign(rhs: Any) : Quaternion {
+        var lhs = this;
+        return untyped __lua__('lhs += rhs');
+    }
+
+    @:op(A -= B)
+    public function subAssign(rhs: Any) : Quaternion {
+        var lhs = this;
+        return untyped __lua__('lhs -= rhs');
+    }
+
+    @:op(A *= B)
+    public function mulAssign(rhs: Any) : Quaternion {
+        var lhs = this;
+        return untyped __lua__('lhs *= rhs');
+    }
+
+    @:op(A /= B)
+    public function divAssign(rhs: Any) : Quaternion {
+        var lhs = this;
+        return untyped __lua__('lhs /= rhs');
+    }
+
     public static function toString(v:Quaternion) {
         return untyped __lua__('v.tostring()');
     }
