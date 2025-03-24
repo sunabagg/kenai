@@ -8,6 +8,7 @@ extern class Texture2D extends Texture {
     public function getSize() : Vector2;
     public function getWidth() : Int;
     public function hasAlpha() : Bool;
+    @:native("cast")
     public static function castFrom(type: Dynamic) : Texture2D;
 }
 
