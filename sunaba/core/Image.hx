@@ -69,4 +69,8 @@ extern class Image extends Resource {
     public function saveWebp(path : String, lossy : Bool = false, quality : Float = 0.75) : Int;
     public function saveWebpToBuffer(lossy : Bool = false, quality : Float = 0.75) : BinaryData;
     public function setData(width : Int, height : Int, useMipmaps : Bool, format : Int, data : BinaryData) : Void;
+    public function setPixel(x : Int, y : Int, color : Color) : Void;
+    public function setPixelv(p : Vector2, color : Color) : Void;
+    public function shrinkX2() : Void;
+    public function srgbToLinear() : Void;
 }
