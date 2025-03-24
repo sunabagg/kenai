@@ -30,6 +30,10 @@ extern class Font extends Resource {
 abstract FontAbstract(Font) from Font to Font {
     @:from
     public static function fromResource(resource : Resource) : FontAbstract {
-        return Font.castFrom(resource);
+        var font = Font.castFrom(resource);
+        if (font.isNull()) {
+            return null;
+        }
+        return font;
     } 
 }
