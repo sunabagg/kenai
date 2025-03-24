@@ -12,6 +12,10 @@ extern class Resource extends BaseObject {
 abstract ResourceAbstarct(Resource) from Resource to Resource {
     @:from
     public static function fromResource(resource: Resource) : ResourceAbstarct {
-        return Resource.castFrom(resource);
+        var res = Resource.castFrom(resource);
+        if (res.isNull()) {
+            return null;
+        }
+        return res;
     } 
 }
