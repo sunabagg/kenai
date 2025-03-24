@@ -87,4 +87,17 @@ extern class FontFile extends Font {
     public function setTextureImage(cacheIndex : Int, size : Vector2i, textureIndex : Int, image : Image) : Void;
     public function setTextureOffsets(cacheIndex : Int, size : Vector2i, textureIndex : Int, offsets : Array<Vector2i>) : Void;
     public function setVariationCoordinates(cacheIndex : Int, coordinates : Map<Any, Any>) : Void;
+    @:native("cast")
+    public static function castFrom(type: Dynamic) : FontFile;
+}
+
+abstract FontFileAbstract(FontFile) from FontFile to FontFile {
+    @:from
+    public static function fromResource(resource : Resource) : FontFileAbstract {
+        var font = FontFile.castFrom(resource);
+        if (font.isNull()) {
+            return null;
+        }
+        return font;
+    } 
 }
