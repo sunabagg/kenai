@@ -119,6 +119,30 @@ abstract BasisAbstract(Basis) from Basis {
         return untyped __lua__('lhs >= rhs');
     }
 
+    @:op(A += B)
+    public function addAssign(rhs: Basis) : Basis {
+        var lhs = this;
+        return untyped __lua__('lhs += rhs');
+    }
+
+    @:op(A -= B)
+    public function subAssign(rhs: Basis) : Basis {
+        var lhs = this;
+        return untyped __lua__('lhs -= rhs');
+    }
+
+    @:op(A *= B)
+    public function mulAssign(rhs: Basis) : Basis {
+        var lhs = this;
+        return untyped __lua__('lhs *= rhs');
+    }
+
+    @:op(A /= B)
+    public function divAssign(rhs: Basis) : Basis {
+        var lhs = this;
+        return untyped __lua__('lhs /= rhs');
+    }
+
     public static function toString(v:Basis) {
         return untyped __lua__('v.tostring()');
     }
