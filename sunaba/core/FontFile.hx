@@ -58,4 +58,18 @@ extern class FontFile extends Font {
     public function getVariationCoordinates(cacheIndex : Int) : Map<Any, Any>;
     public function loadBitmapFont(path : String) : Int;
     public function loadDynamicFont(path : String) : Int;
+    public function removeCache(cacheIndex : Int) : Void;
+    public function removeGlyphs(cacheIndex : Int, size : Vector2i, glyphIndex : Int) : Void;
+    public function removeKerning(cacheIndex : Int, size : Int, glyphPair : Vector2i) : Void;
+    public function removeLanguageSupportOverride(lang : String) : Void;
+    public function removeScriptSupportOverride(script : String) : Void;
+    public function removeSizeCache(cacheIndex : Int, size : Vector2i) : Void;
+    public function removeTexture(cacheIndex : Int, size : Vector2i, textureIndex : Int) : Void;
+    public function renderGlyph(cacheIndex : Int, size : Vector2i, glyphIndex : Int) : Void;
+    public function renderRange(cacheIndex : Int, size : Vector2i, start : Int, end : Int) : Void;
+    public function setCacheAscent(cacheIndex : Int, size : Int, ascent : Float) : Void;
+    public function setCacheDescent(cacheIndex : Int, size : Int, descent : Float) : Void;
+    public function setCacheScale(cacheIndex : Int, size : Int, scale : Float) : Void;
+    public function setCacheUnderlinePosition(cacheIndex : Int, size : Int, underlinePosition : Float) : Void;
+    public function setCacheUnderlineThickness(cacheIndex : Int, size : Int, underlineThickness : Float) : Void;
 }
