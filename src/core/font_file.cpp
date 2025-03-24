@@ -10,8 +10,8 @@ void sunaba::core::bindFontFile(sol::state &lua) {
             &sunaba::core::FontFile::setAllowSystemFallback
         ),
         "antialiasing", sol::property(
-            &sunaba::core::FontFile::getAntialising,
-            &sunaba::core::FontFile::setAntialising
+            &sunaba::core::FontFile::getAntialiasing,
+            &sunaba::core::FontFile::setAntialiasing
         ),
         "data", sol::property(
             &sunaba::core::FontFile::getData,

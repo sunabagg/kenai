@@ -53,11 +53,11 @@ namespace sunaba::core {
             fontFile->set_allow_system_fallback(allow);
         }
 
-        int getAntialising() {
+        int getAntialiasing() {
             return fontFile->get_antialiasing();
         }
 
-        void setAntialising(int antialiasing) {
+        void setAntialiasing(int antialiasing) {
             fontFile->set_antialiasing(static_cast<TextServer::FontAntialiasing>(antialiasing));
         }
 
