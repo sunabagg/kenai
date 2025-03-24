@@ -83,4 +83,8 @@ extern class FontFile extends Font {
     public function setGlyphUvRect(cacheIndex : Int, size : Vector2i, glyphIndex : Int, uvRect : Rect2) : Void;
     public function setKerning(cacheIndex : Int, size : Int, glyphPair : Vector2i, kerning : Vector2) : Void;
     public function setLanguageSupportOverride(lang : String, supported : Bool) : Void;
+    public function setScriptSupportOverride(script : String, supported : Bool) : Void;
+    public function setTextureImage(cacheIndex : Int, size : Vector2i, textureIndex : Int, image : Image) : Void;
+    public function setTextureOffsets(cacheIndex : Int, size : Vector2i, textureIndex : Int, offsets : Array<Vector2i>) : Void;
+    public function setVariationCoordinates(cacheIndex : Int, coordinates : Map<Any, Any>) : Void;
 }
