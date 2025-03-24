@@ -7,6 +7,7 @@ extern class ImageTexture extends Texture2D {
     public function getFormat() : Int;
     public function setSizeOverride(size: Vector2) : Void;
     public function update(image: Image) : Void;
+    @:native("cast")
     public static function castFrom(type: Dynamic) : ImageTexture;
 }
 
