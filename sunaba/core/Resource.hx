@@ -1,5 +1,6 @@
 package sunaba.core;
 
+@:native("Resource")
 extern class Resource extends BaseObject {
     public function duplicate() : Resource;
     public function emitChanged() : Void;
