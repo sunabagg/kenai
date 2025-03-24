@@ -20,6 +20,10 @@ extern class BitMap extends Resource {
 abstract BitMapAbstract(BitMap) from BitMap to BitMap {
     @:from
     public static function fromResource(resource: Resource) : BitMapAbstract {
-        return BitMap.castFrom(resource);
+        var bmp = BitMap.castFrom(resource);
+        if (bmp.isNull()) {
+            return null;
+        }
+        return bmp;
     } 
 }
