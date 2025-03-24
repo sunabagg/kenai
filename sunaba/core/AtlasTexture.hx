@@ -6,6 +6,7 @@ extern class AtlasTexture extends Texture {
     public var filterClip: Bool;
     public var margin: Rect2;
     public var region: Rect2;
+    @:native("cast")
     public static function castFrom(type: Dynamic) : AtlasTexture;
 }
 
