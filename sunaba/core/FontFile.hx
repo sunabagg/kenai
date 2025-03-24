@@ -1,0 +1,61 @@
+package sunaba.core;
+
+import sunaba.core.io.BinaryData;
+
+@:native("FontFile")
+extern class FontFile extends Font {
+    public var allowSystemFallback: Bool;
+    public var antialiasing: Bool;
+    public var data : BinaryData;
+    public var disableEmbeddedBitmaps: Bool;
+    public var fixedSize: Bool;
+    public var fixedSizeScaleMode: Int;
+    public var fontName: String;
+    public var fontStretch: Int;
+    public var fontStyle: Int;
+    public var fontWeight: Int;
+    public var forceAutohinter: Bool;
+    public var generateMipmaps: Bool;
+    public var hinting: Int;
+    public var msdfPixelRange: Int;
+    public var msdfSize: Int;
+    public var multichannelSignedDistanceField: Bool;
+    public var opentypeFeatureOverrides: Map<Any, Any>;
+    public var oversampling: Float;
+    public var styleName: String;
+    public var subpixelPositioning: Int;
+    public function clearCache() : Void;
+    public function clearGlyphs(cacheIndex : Int, size : Vector2i) : Void;
+    public function clearKerningMap(cacheIndex: Int, size: Int) : Void;
+    public function clearSizeCache(cacheIndex : Int) : Void;
+    public function clearTextures(cacheIndex: Int, size: Vector2i) : Void;
+    public function getCacheAscent(cacheIndex : Int, size : Int) : Float;
+    public function getCacheCount() : Int;
+    public function getCacheDescent(cacheIndex : Int, size : Int) : Float;
+    public function getCacheScale(cacheIndex : Int, size : Int) : Float;
+    public function getCacheUnderlinePosition(cacheIndex : Int, size : Int) : Float;
+    public function getCacheUnderlineThickness(cacheIndex : Int, size : Int) : Float;
+    public function getCharFromGlyphIndex(size : Int, glyphIndex : Int) : Int;
+    public function getEmbolden(cacheIndex : Int) : Float;
+    public function getExtraBaselineOffset(cacheIndex : Int) : Float;
+    public function getExtraSpacing(cacheIndex : Int, spacing : Int) : Int;
+    public function getFaceIndex(cacheIndex : Int) : Int;
+    public function getGlyphAdvance(cacheIndex : Int, size : Int, glyphIndex : Int) : Vector2;
+    public function getGlyphIndex(size : Int, chr : Int, variationSelecttor: Int) : Int;
+    public function getGlyphList(cacheIndex : Int, size : Vector2i) : Array<Int>;
+    public function getGlyphOffset(cacheIndex : Int, size : Vector2i, glyphIndex : Int) : Vector2;
+    public function getGlyphSize(cacheIndex : Int, size : Vector2i, glyphIndex : Int) : Vector2;
+    public function getGlyphTextureIndex(cacheIndex : Int, size : Vector2i, glyphIndex : Int) : Int;
+    public function getGlyphUvRect(cacheIndex : Int, size : Vector2i, glyphIndex : Int) : Rect2;
+    public function getKerning(cacheIndex : Int, size : Int, glyphPair : Vector2i) : Vector2;
+    public function getKerningList(cacheIndex : Int, size : Vector2i) : Array<Vector2i>;
+    public function getLanguageSupportOverride(lang : String) : Bool;
+    public function getScriptSupportOverride(script : String) : Bool;
+    public function getScriptSupportOverrides() : Array<String>;
+    public function getSizeCacheList(cacheIndex: Int): Array<Vector2i>;
+    public function getTextureCount(cacheIndex : Int, size : Vector2i) : Int;
+    public function getTextureImage(cacheIndex : Int, size : Vector2i, textureIndex : Int) : Image;
+    public function getVariationCoordinates(cacheIndex : Int) : Map<Any, Any>;
+    public function loadBitmapFont(path : String) : Int;
+    public function loadDynamicFont(path : String) : Int;
+}
