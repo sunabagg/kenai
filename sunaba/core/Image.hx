@@ -2,6 +2,7 @@ package sunaba.core;
 
 import sunaba.core.io.BinaryData;
 
+@:native("Image")
 extern class Image extends Resource {
     public function adjustBcs(brightness : Float, contrast : Float, saturation : Float) : Void;
     public function blendRect(src : Image, rect: Rect2i, dst : Vector2i) : Void;
@@ -73,4 +74,12 @@ extern class Image extends Resource {
     public function setPixelv(p : Vector2, color : Color) : Void;
     public function shrinkX2() : Void;
     public function srgbToLinear() : Void;
+    public static function castFrom(res : Resource) : Image;
+}
+
+abstract ImageAbstarct(Image) from Image to Image {
+    @:from
+    public static function fromResource(resource: Resource) : ImageAbstarct {
+        return Image.castFrom(resource);
+    } 
 }
