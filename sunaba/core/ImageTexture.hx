@@ -13,6 +13,10 @@ extern class ImageTexture extends Texture2D {
 abstract ImageTextureAbstract(ImageTexture) from ImageTexture to ImageTexture {
     @:from
     public static function fromResource(resource: Resource) : ImageTextureAbstract {
-        return ImageTexture.castFrom(resource);
+        var imgTxt = ImageTexture.castFrom(resource);
+        if (imgTxt.isNull()) {
+            return null;
+        }
+        return imgTxt;
     } 
 }
