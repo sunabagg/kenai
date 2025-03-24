@@ -33,8 +33,8 @@ extern class Image extends Resource {
     public function getHeight() : Int;
     public function getMipmapCount() : Int;
     public function getMipmapOffset(level : Int) : Int;
-    //public function getPixel(x : Int, y : Int) : Color;
-    //public function getPixelv(p : Vector2) : Color;
+    public function getPixel(x : Int, y : Int) : Color;
+    public function getPixelv(p : Vector2) : Color;
     public function getRegion(rect : Rect2i) : Image;
     public function getSize() : Vector2i;
     public function getUsedRect() : Rect2i;
