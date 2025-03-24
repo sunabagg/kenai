@@ -15,6 +15,7 @@ extern class Gradient extends Resource {
     public function sample(point: Float) : Color;
     public function setColor(point: Int, color: Color) : Void;
     public function setOffset(point: Int, offset: Float) : Void;
+    @:native("cast")
     public static function castFrom(type: Dynamic) : Gradient;
 }
 
