@@ -13,7 +13,7 @@ extern class NoiseTexture2D extends Texture2D {
     public var normalize: Bool;
     public var seamless: Bool;
     public var seamlessBlendSkirt: Float;
-    public function width: Int;
+    public var width: Int;
     @:native("cast")
     public static function castFrom(type: Dynamic) : NoiseTexture2D;
 }
