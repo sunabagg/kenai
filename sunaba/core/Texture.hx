@@ -8,6 +8,10 @@ extern class Texture extends Resource {
 abstract TextureAbstract(Texture) from Texture to Texture {
     @:from
     public static function fromResource(resource: Resource) : TextureAbstract {
-        return Texture.castFrom(resource);
+        var txt = Texture.castFrom(resource);
+        if (txt.isNull()) {
+            return null;
+        }
+        return txt;
     } 
 }
