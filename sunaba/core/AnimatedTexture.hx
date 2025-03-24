@@ -11,6 +11,7 @@ extern class AnimatedTexture extends Texture2D {
     public function getFrameTexture(frame: Int) : Texture2D;
     public function setFrameDuration(frame: Int, duration: Float) : Void;
     public function setFrameTexture(frame: Int, texture: Texture2D) : Void;
+    @:native("cast")
     public static function castFrom(type: Dynamic) : AnimatedTexture;
 }
 
