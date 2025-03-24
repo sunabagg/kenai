@@ -20,6 +20,10 @@ void sunaba::core::bindAnimatedTexture(sol::state &lua) {
             &sunaba::core::AnimatedTexture::getFrames, 
             &sunaba::core::AnimatedTexture::setFrames
         ),
+        "pause", sol::property(
+            &sunaba::core::AnimatedTexture::getPause,
+            &sunaba::core::AnimatedTexture::setPause
+        ),
         "speedScale", sol::property(
             &sunaba::core::AnimatedTexture::getSpeedScale, 
             &sunaba::core::AnimatedTexture::setSpeedScale
