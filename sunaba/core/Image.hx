@@ -80,6 +80,10 @@ extern class Image extends Resource {
 abstract ImageAbstarct(Image) from Image to Image {
     @:from
     public static function fromResource(resource: Resource) : ImageAbstarct {
-        return Image.castFrom(resource);
+        var img = Image.castFrom(resource);
+        if (img.isNull()) {
+            return null;
+        }
+        return img;
     } 
 }
