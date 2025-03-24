@@ -331,7 +331,7 @@ namespace sunaba::core {
             return new BinaryData(dataPBA);
         }
 
-        int saveJpg(sol::state_view lua_state, std::string path, int quality = 100) {
+        int saveJpeg(sol::state_view lua_state, std::string path, int quality = 100) {
             auto ioManager = IoIndex::getIoManager(lua_state);
             PackedByteArray dataPBA = image->save_jpg_to_buffer(quality);
             auto pathStr = String(path.c_str());
@@ -344,7 +344,7 @@ namespace sunaba::core {
             return Error::FAILED;
         }
 
-        BinaryData* saveJpgToBuffer(int quality = 100) {
+        BinaryData* saveJpegToBuffer(int quality = 100) {
             PackedByteArray dataPBA = image->save_jpg_to_buffer(quality);
             return new BinaryData(dataPBA);
         }
