@@ -56,4 +56,17 @@ extern class Image extends Resource {
     public function normalMapToXY() : Void;
     public function premultiplyAlpha() : Void;
     public function resize(width : Int, height : Int, interpolation : Int = 1) : Void;
+    public function resizeToPo2(square : Bool = false, interpolation : Int = 1) : Void;
+    public function rgbeToSrgb() : Image;
+    public function rotate90(direction : Int) : Void;
+    public function rotate180() : Void;
+    public function saveRxr(path : String, grayscale : Bool = false) : Int;
+    public function saveRxrToBuffer(grayscale : Bool = false) : BinaryData;
+    public function saveJpeg(path : String, quality : Int = 100) : Int;
+    public function saveJpegToBuffer(quality : Int = 100) : BinaryData;
+    public function savePng(path : String) : Int;
+    public function savePngToBuffer() : BinaryData;
+    public function saveWebp(path : String, lossy : Bool = false, quality : Float = 0.75) : Int;
+    public function saveWebpToBuffer(lossy : Bool = false, quality : Float = 0.75) : BinaryData;
+    public function setData(width : Int, height : Int, useMipmaps : Bool, format : Int, data : BinaryData) : Void;
 }
