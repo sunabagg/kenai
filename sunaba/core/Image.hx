@@ -74,6 +74,7 @@ extern class Image extends Resource {
     public function setPixelv(p : Vector2, color : Color) : Void;
     public function shrinkX2() : Void;
     public function srgbToLinear() : Void;
+    @:native("cast")
     public static function castFrom(res : Resource) : Image;
 }
 
