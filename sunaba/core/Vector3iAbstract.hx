@@ -121,6 +121,30 @@ abstract Vector3iAbstract(Vector3i) from Vector3i to Vector3i {
         return untyped __lua__('lhs >= rhs');
     }
 
+    @:op(A += B)
+    public function addAssign(rhs: Any) : Vector3i {
+        var lhs = this;
+        return untyped __lua__('lhs += rhs');
+    }
+
+    @:op(A -= B)
+    public function subAssign(rhs: Any) : Vector3i {
+        var lhs = this;
+        return untyped __lua__('lhs -= rhs');
+    }
+
+    @:op(A *= B)
+    public function mulAssign(rhs: Any) : Vector3i {
+        var lhs = this;
+        return untyped __lua__('lhs *= rhs');
+    }
+
+    @:op(A /= B)
+    public function divAssign(rhs: Any) : Vector3i {
+        var lhs = this;
+        return untyped __lua__('lhs /= rhs');
+    }
+
     public static function toString(v:Vector3i) {
         return untyped __lua__('v.tostring()');
     }
