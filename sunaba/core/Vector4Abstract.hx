@@ -127,6 +127,30 @@ abstract Vector4Abstract(Vector4) from Vector4 {
         return untyped __lua__('lhs >= rhs');
     }
 
+    @:op(A += B)
+    public function addAssign(rhs: Vector4) {
+        var lhs = this;
+        return untyped __lua__('lhs += rhs');
+    }
+
+    @:op(A -= B)
+    public function subAssign(rhs: Vector4) {
+        var lhs = this;
+        return untyped __lua__('lhs -= rhs');
+    }
+
+    @:op(A *= B)
+    public function mulAssign(rhs: Vector4) {
+        var lhs = this;
+        return untyped __lua__('lhs *= rhs');
+    }
+
+    @:op(A /= B)
+    public function divAssign(rhs: Vector4) {
+        var lhs = this;
+        return untyped __lua__('lhs /= rhs');
+    }
+
     public static function toString(v:Vector4) {
         return untyped __lua__('v.tostring()');
     }
