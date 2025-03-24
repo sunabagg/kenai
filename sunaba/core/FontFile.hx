@@ -72,4 +72,15 @@ extern class FontFile extends Font {
     public function setCacheScale(cacheIndex : Int, size : Int, scale : Float) : Void;
     public function setCacheUnderlinePosition(cacheIndex : Int, size : Int, underlinePosition : Float) : Void;
     public function setCacheUnderlineThickness(cacheIndex : Int, size : Int, underlineThickness : Float) : Void;
+    public function setEmbolden(cacheIndex : Int, embolden : Float) : Void;
+    public function setExtraBaselineOffset(cacheIndex : Int, offset : Float) : Void;
+    public function setExtraSpacing(cacheIndex : Int, spacing : Int, value : Int) : Void;
+    public function setFaceIndex(cacheIndex : Int, faceIndex : Int) : Void;
+    public function setGlyphAdvance(cacheIndex : Int, size : Int, glyphIndex : Int, advance : Vector2) : Void;
+    public function setGlyphOffset(cacheIndex : Int, size : Int, glyphIndex : Int, offset : Vector2) : Void;
+    public function setGlyphSize(cacheIndex : Int, size : Vector2i, glyph : Int, glSize : Vector2) : Void;
+    public function setGlyphTextureIndex(cacheIndex : Int, size : Vector2i, glyphIndex : Int, textureIndex : Int) : Void;
+    public function setGlyphUvRect(cacheIndex : Int, size : Vector2i, glyphIndex : Int, uvRect : Rect2) : Void;
+    public function setKerning(cacheIndex : Int, size : Int, glyphPair : Vector2i, kerning : Vector2) : Void;
+    public function setLanguageSupportOverride(lang : String, supported : Bool) : Void;
 }
