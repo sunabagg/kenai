@@ -14,6 +14,10 @@ extern class Texture2D extends Texture {
 abstract Texture2DAbstract(Texture2D) from Texture2D to Texture2D {
     @:from
     public static function fromResource(resource: Resource) : Texture2DAbstract {
-        return Texture2D.castFrom(resource);
+        var txt = Texture2D.castFrom(resource);
+        if (txt.isNull()) {
+            return null;
+        }
+        return txt;
     } 
 }
