@@ -15,6 +15,8 @@ extern class BitMap extends Resource {
     public function setBit(x : Int, y : Int, bit : Bool) : Void;
     public function setBitRect(rect : Rect2i, bit : Bool) : Void;
     public function setBitv(p : Vector2i, bit : Bool) : Void;
+    @:native("cast")
+    public static function castFrom(type: Dynamic) : BitMap;
 }
 
 abstract BitMapAbstract(BitMap) from BitMap to BitMap {
