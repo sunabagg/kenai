@@ -244,29 +244,29 @@ endif()
 
 if ( MSVC )
     # Add this line to disable treating warnings as errors
-    set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} /wd4244")
+    #set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} /wd4244")
 
-    set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} /wd4005")
+    #set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} /wd4005")
 
-    set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} /wd4002")
+    #set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} /wd4002")
 
-    set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} /wd4458")
+    #set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} /wd4458")
 
-    set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} /wd4700")
+    #set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} /wd4700")
 
-    set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} /wd4505")
+    #set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} /wd4505")
 
-    set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} /wd4715")
+    #set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} /wd4715")
 
-    set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} /wd4238")
+    #set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} /wd4238")
 
-    set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} /wd4239")
+    #set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} /wd4239")
     #C4459
-    set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} /wd4101")
+    #set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} /wd4101")
 
-    set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} /wd4459")
+    #set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} /wd4459")
 
-    set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} /wd4127")
+    #set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} /wd4127")
 
     # sets the fsanitize flags
     #set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} /fsanitize=address")
