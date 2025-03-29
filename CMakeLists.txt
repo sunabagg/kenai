@@ -200,7 +200,7 @@ endif()
 
 set( GODOT_CPP_SYSTEM_HEADERS ON CACHE BOOL "" FORCE )
 
-if ( __COMPILER_GNU OR GCC OR CLANG )
+if ( __COMPILER_GNU OR GCC OR CLANG OR APPLE )
     # Add this before the add_subdirectory( extern/quickjs ) line
     set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wno-error=pedantic -Wno-error=cast-function-type")
     
@@ -354,6 +354,11 @@ add_library( hxsimdjson STATIC
     extern/hx-lua-simdjson/src/hxluasimdjson.cpp
     extern/hx-lua-simdjson/src/simdjson.h
     extern/hx-lua-simdjson/src/simdjson.cpp 
+)
+
+target_compile_features( hxsimdjson
+    PRIVATE
+        cxx_std_17
 )
 
 # Find pthread (needed for simdjson)
