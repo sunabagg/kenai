@@ -534,7 +534,7 @@ namespace sunaba::core {
         }
 
         void draw() {
-            if (scriptInstance != sol::nil) {
+            if (scriptInstance != sol::lua_nil) {
                 auto func = scriptInstance["draw"].get<sol::function>();
                 if (func) {
                     func(scriptInstance);

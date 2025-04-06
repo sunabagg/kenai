@@ -74,7 +74,7 @@ void sunaba::core::bind_class_to_lua(sol::state& lua, const String& class_name) 
             return sol::make_object(lua, value);
         }
 
-        return sol::make_object(lua, sol::nil_t());
+        return sol::make_object(lua, sol::lua_nil_t());
     };
 
     auto new_indexFunc = [class_name](Object *obj, sol::stack_object key, sol::stack_object value, sol::this_state L) {

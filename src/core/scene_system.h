@@ -31,9 +31,9 @@ namespace sunaba::core
     class Component : public BaseObject
     {
     private:    
-        sol::table scriptType = sol::nil;
+        sol::table scriptType = sol::lua_nil;
 
-        sol::table scriptInstance = sol::nil;
+        sol::table scriptInstance = sol::lua_nil;
     public:
         enum {
 		    // You can make your own, but don't use the same numbers as other notifications in other nodes.
@@ -94,28 +94,28 @@ namespace sunaba::core
         virtual ~Component() = default;
 
         virtual void onInit() {
-            if (scriptInstance == sol::nil) return;
+            if (scriptInstance == sol::lua_nil) return;
             auto func = scriptInstance["onInit"].get<sol::function>();
             if (!func) return;
             func(scriptInstance);
         }
 
         virtual void onEnterTree() {
-            if (scriptInstance == sol::nil) return;
+            if (scriptInstance == sol::lua_nil) return;
             auto func = scriptInstance["onEnterTree"].get<sol::function>();
             if (!func) return;
             func(scriptInstance);
         }
 
         virtual void onReady() {
-            if (scriptInstance == sol::nil) return;
+            if (scriptInstance == sol::lua_nil) return;
             auto func = scriptInstance["onReady"].get<sol::function>();
             if (!func) return;
             func(scriptInstance);
         }
 
         virtual void onUpdate(double delta) {
-            if (scriptInstance == sol::nil) return;
+            if (scriptInstance == sol::lua_nil) return;
             auto func = scriptInstance["onUpdate"].get<sol::function>();
             if (!func) return;
             
@@ -124,7 +124,7 @@ namespace sunaba::core
         }
 
         virtual void onPhysicsUpdate(double delta) {
-            if (scriptInstance == sol::nil) return;
+            if (scriptInstance == sol::lua_nil) return;
             auto func = scriptInstance["onPhysicsUpdate"].get<sol::function>();
             if (!func) return;
             
@@ -133,7 +133,7 @@ namespace sunaba::core
         }
 
         virtual void onExitTree() {
-            if (scriptInstance == sol::nil) return;
+            if (scriptInstance == sol::lua_nil) return;
             auto func = scriptInstance["onExitTree"].get<sol::function>();
             if (!func) return;
             func(scriptInstance);
@@ -312,7 +312,7 @@ namespace sunaba::core
             for (auto& comp : components) {
                 std::cout << "getUserComponent: Checking component " << comp.first << std::endl;
                 auto scriptType = comp.second->getScriptType();
-                if (scriptType == sol::nil) {
+                if (scriptType == sol::lua_nil) {
                     continue;
                 }
                 if (scriptType == type) {
@@ -322,7 +322,7 @@ namespace sunaba::core
         }
     
             std::cerr << "getUserComponent: No matching component found" << std::endl;
-            return sol::nil;
+            return sol::lua_nil;
         }
 
         Component* getComponent(sol::userdata type) {

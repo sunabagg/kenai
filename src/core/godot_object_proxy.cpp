@@ -42,6 +42,6 @@ sol::object GodotObjectProxy::get(sol::stack_object key, sol::this_state L) {
             return sol::make_object(L, value);
         }
 
-        return sol::nil;
+        return sol::lua_nil;
     }
 }

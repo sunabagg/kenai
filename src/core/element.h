@@ -47,7 +47,7 @@ namespace sunaba::core {
             }
         }
     public:
-        sol::table scriptInstance = sol::nil;
+        sol::table scriptInstance = sol::lua_nil;
 
         Element() {
             setNode(memnew(NodeProxy));
@@ -64,7 +64,7 @@ namespace sunaba::core {
         void setProxyDb(Node* p_node);
 
         void enterTree() {
-            if (scriptInstance != sol::nil) {
+            if (scriptInstance != sol::lua_nil) {
                 auto func = scriptInstance["enterTree"].get<sol::function>();
                 if (func) {
                     func(scriptInstance);
@@ -73,7 +73,7 @@ namespace sunaba::core {
         }
 
         void exitTree() {
-            if (scriptInstance != sol::nil) {
+            if (scriptInstance != sol::lua_nil) {
                 auto func = scriptInstance["exitTree"].get<sol::function>();
                 if (func) {
                     func(scriptInstance);
@@ -82,7 +82,7 @@ namespace sunaba::core {
         }
 
         void ready() {
-            if (scriptInstance != sol::nil) {
+            if (scriptInstance != sol::lua_nil) {
                 auto func = scriptInstance["ready"].get<sol::function>();
                 if (func) {
                     func(scriptInstance);
@@ -91,7 +91,7 @@ namespace sunaba::core {
         }
 
         void process(double delta) {
-            if (scriptInstance != sol::nil) {
+            if (scriptInstance != sol::lua_nil) {
                 auto func = scriptInstance["process"].get<sol::function>();
                 if (func) {
                     sol::object deltaObj = sol::make_object(scriptInstance.lua_state(), delta);
@@ -101,7 +101,7 @@ namespace sunaba::core {
         }
 
         void physicsProcess(double delta) {
-            if (scriptInstance != sol::nil) {
+            if (scriptInstance != sol::lua_nil) {
                 auto func = scriptInstance["physicsProcess"].get<sol::function>();
                 if (func) {
                     sol::object deltaObj = sol::make_object(scriptInstance.lua_state(), delta);
@@ -111,7 +111,7 @@ namespace sunaba::core {
         }
 
         void input(const Ref<InputEvent>& event) {
-            if (scriptInstance != sol::nil) {
+            if (scriptInstance != sol::lua_nil) {
                 auto func = scriptInstance["input"].get<sol::function>();
                 if (func) {
                     sunaba::input::InputEvent* eventObj = new sunaba::input::InputEvent(event.ptr());
@@ -121,7 +121,7 @@ namespace sunaba::core {
         }
 
         void unhandledInput(const Ref<InputEvent>& event) {
-            if (scriptInstance != sol::nil) {
+            if (scriptInstance != sol::lua_nil) {
                 auto func = scriptInstance["unhandledInput"].get<sol::function>();
                 if (func) {
                     sunaba::input::InputEvent* eventObj = new sunaba::input::InputEvent(event.ptr());
@@ -131,7 +131,7 @@ namespace sunaba::core {
         }
 
         void unhandledKeyInput(const Ref<InputEvent>& event) {
-            if (scriptInstance != sol::nil) {
+            if (scriptInstance != sol::lua_nil) {
                 auto func = scriptInstance["unhandledKeyInput"].get<sol::function>();
                 if (func) {
                     sunaba::input::InputEvent* eventObj = new sunaba::input::InputEvent(event.ptr());
@@ -141,7 +141,7 @@ namespace sunaba::core {
         }
 
         void shortcutInput(const Ref<InputEvent>& event) {
-            if (scriptInstance != sol::nil) {
+            if (scriptInstance != sol::lua_nil) {
                 auto func = scriptInstance["shortcutInput"].get<sol::function>();
                 if (func) {
                     sunaba::input::InputEvent* eventObj = new sunaba::input::InputEvent(event.ptr());

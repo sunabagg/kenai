@@ -43,7 +43,7 @@ namespace sunaba::core {
     sol::stack_object to_lua(lua_State *lua_state, const Variant& value) {
         switch (value.get_type()) {
             case Variant::NIL:
-                sol::stack::push(lua_state, sol::nil);
+                sol::stack::push(lua_state, sol::lua_nil);
                 break;
     
             case Variant::BOOL:
