@@ -108,6 +108,10 @@ namespace sunaba::core {
             return font->is_force_autohinter();
         }
 
+        void setForceAutohinter(bool force) {
+            font->set_force_autohinter(force);
+        }
+
         bool getGenerateMipmaps() const {
             return font->get_generate_mipmaps();
         }

@@ -11,7 +11,7 @@ void sunaba::core::bindSystemFont(sol::state_view& lua) {
         "fontNames", sol::property(&SystemFont::getFontNames, &SystemFont::setFontNames),
         "fontStretch", sol::property(&SystemFont::getFontStretch, &SystemFont::setFontStretch),
         "fontWeight", sol::property(&SystemFont::getFontWeight, &SystemFont::setFontWeight),
-        "forceAutohinter", sol::property(&SystemFont::getForceAutohinter),
+        "forceAutohinter", sol::property(&SystemFont::getForceAutohinter, &SystemFont::setForceAutohinter),
         "generateMipmaps", sol::property(&SystemFont::getGenerateMipmaps, &SystemFont::setGenerateMipmaps),
         "hinting", sol::property(&SystemFont::getHinting, &SystemFont::setHinting),
         "keepRoundingRemainders", sol::property(&SystemFont::getKeepRoundingRemainders),
