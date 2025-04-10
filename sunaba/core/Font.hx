@@ -1,5 +1,6 @@
 package sunaba.core;
 
+@:native("Font")
 extern class Font extends Resource {
     public var fallbacks: Array<Font>;
     public function getAscent(fontSize : Int) : Float;
