@@ -22,7 +22,7 @@
 
 # # # # sol2
 # # # Required minimum version statement
-cmake_minimum_required(VERSION 3.16.0)
+cmake_minimum_required(VERSION 3.26.0)
 # # # Project Include - file that is included after project declaration is finished
 set(CMAKE_PROJECT_INCLUDE "${CMAKE_CURRENT_SOURCE_DIR}/cmake/Includes/Project.cmake")
 
@@ -105,7 +105,7 @@ target_include_directories(sol2 ${sol2-system-include}
 configure_package_config_file(
 	cmake/sol2-config.cmake.in
 	"${CMAKE_CURRENT_BINARY_DIR}/cmake/sol2-config.cmake"
-	INSTALL_DESTINATION lib/cmake/sol2
+	INSTALL_DESTINATION ${CMAKE_INSTALL_DATADIR}/cmake/sol2
 	NO_CHECK_REQUIRED_COMPONENTS_MACRO)
 
 write_basic_package_version_file(
@@ -120,8 +120,9 @@ if(SOL2_ENABLE_INSTALL)
 		EXPORT sol2)
 
 	install(EXPORT sol2
+		NAMESPACE sol2::
 		FILE sol2-targets.cmake
-		DESTINATION "${CMAKE_INSTALL_LIBDIR}/cmake/sol2")
+		DESTINATION "${CMAKE_INSTALL_DATADIR}/cmake/sol2")
 
 	install(DIRECTORY include/sol
 		DESTINATION "${CMAKE_INSTALL_INCLUDEDIR}")
@@ -129,7 +130,7 @@ if(SOL2_ENABLE_INSTALL)
 	install(FILES
 		"${CMAKE_CURRENT_BINARY_DIR}/cmake/sol2-config.cmake"
 		"${CMAKE_CURRENT_BINARY_DIR}/cmake/sol2-config-version.cmake"
-		DESTINATION "${CMAKE_INSTALL_LIBDIR}/cmake/sol2")
+		DESTINATION "${CMAKE_INSTALL_DATADIR}/cmake/sol2")
 endif()
 
 # # # sol2 Library - Single header target

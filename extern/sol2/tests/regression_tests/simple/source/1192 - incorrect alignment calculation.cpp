@@ -37,7 +37,7 @@ inline namespace sol2_regression_test_1192 {
 	};
 } // namespace sol2_regression_test_1192
 
-TEST_CASE("Test for Issue #1192 - alignment test should not fail for strangely-aligned / over-aligned objects", "[sol2][regression][Issue-1192]") {
+TEST_CASE("issue #1192 - alignment test should not fail for strangely-aligned / over-aligned objects", "[sol2][regression][issue1192]") {
 	sol::state lua;
 
 	static_assert(sizeof(Test) == 8);

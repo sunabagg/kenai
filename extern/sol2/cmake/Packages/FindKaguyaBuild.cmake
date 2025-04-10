@@ -45,6 +45,7 @@ ExternalProject_Add(KAGUYA_BUILD_SOURCE
 	GIT_SHALLOW TRUE
 	GIT_SUBMODULES ""
 	GIT_REPOSITORY https://github.com/satoren/kaguya.git
+	GIT_TAG main
 	PREFIX ${kaguya_build_toplevel}
 	SOURCE_DIR ${kaguya_build_toplevel}
 	DOWNLOAD_DIR ${kaguya_build_toplevel}
@@ -60,7 +61,7 @@ ExternalProject_Add(KAGUYA_BUILD_SOURCE
 add_library(${kaguya_lib} INTERFACE)
 add_dependencies(${kaguya_lib} KAGUYA_BUILD_SOURCE)
 target_include_directories(${kaguya_lib} INTERFACE ${kaguya_include_dirs})
-target_link_libraries(${kaguya_lib} INTERFACE ${LUA_LIBRARIES})
+target_link_libraries(${kaguya_lib} INTERFACE Lua::Lua)
 if (NOT MSVC)
 	target_compile_options(${kaguya_lib} INTERFACE
 		-Wno-noexcept-type -Wno-ignored-qualifiers -Wno-unused-parameter)

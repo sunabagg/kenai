@@ -39,7 +39,7 @@ function(find_lua_build LUA_VERSION)
 	else()
 		set(LUA_BUILD_LIBNAME lua-${LUA_VERSION})
 	endif()
-	set(LUA_BUILD_TOPLEVEL "${CMAKE_BINARY_DIR}/vendor/${LUA_BUILD_LIBNAME}")
+	set(LUA_BUILD_TOPLEVEL "${CMAKE_BINARY_DIR}/_deps/${LUA_BUILD_LIBNAME}")
 	set(LUA_BUILD_INSTALL_DIR "${LUA_BUILD_TOPLEVEL}")
 	# # Misc needed variables
 	set(LUA_BUILD_LIBRARY_DESCRIPTION "The base name of the library to build either the static or the dynamic library")
@@ -88,7 +88,7 @@ function(find_lua_build LUA_VERSION)
 	endif()
 
 	# # Export variables to the parent scope
-	set(LUA_LIBRARIES ${LUA_LIBRARIES} PARENT_SCOPE)
+	set(LUA_LIBRARIES Lua::Lua PARENT_SCOPE)
 	set(LUA_INTERPRETER ${LUA_INTERPRETER} PARENT_SCOPE)
 	set(LUA_INCLUDE_DIRS ${LUA_INCLUDE_DIRS} PARENT_SCOPE)
 	set(LUA_VERSION_STRING ${LUA_VERSION_STRING} PARENT_SCOPE)

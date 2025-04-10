@@ -22,9 +22,9 @@
 
 # # # # sol3, single
 # # # Required minimum version statement
-cmake_minimum_required(VERSION 3.15.0)
+cmake_minimum_required(VERSION 3.26.0)
 
-find_package(PythonInterp 3 REQUIRED)
+find_package(Python3 REQUIRED)
 
 # to generate, need all of the existing header files
 file(GLOB sol2_generated_header_sources ${CMAKE_CURRENT_SOURCE_DIR}/../include/**/*.*)
@@ -34,10 +34,10 @@ add_custom_command(
 	COMMAND ${CMAKE_COMMAND} -E make_directory "${CMAKE_CURRENT_BINARY_DIR}/include/sol"
 	COMMAND ${PYTHON_EXECUTABLE} "${CMAKE_CURRENT_SOURCE_DIR}/single.py" --input "${CMAKE_CURRENT_SOURCE_DIR}/../include" --output "${CMAKE_CURRENT_BINARY_DIR}/include/sol/sol.hpp"
 	DEPENDS "${CMAKE_CURRENT_SOURCE_DIR}/single.py" "${sol2_generated_header_sources}"
-	OUTPUT "${CMAKE_CURRENT_BINARY_DIR}/include/sol/sol.hpp" "${CMAKE_CURRENT_BINARY_DIR}/include/sol/forward.hpp")
+	OUTPUT "${CMAKE_CURRENT_BINARY_DIR}/include/sol/sol.hpp" "${CMAKE_CURRENT_BINARY_DIR}/include/sol/forward.hpp" "${CMAKE_CURRENT_BINARY_DIR}/include/sol/config.hpp")
 add_custom_target(sol2_single_header_generator ALL
 	DEPENDS "${CMAKE_CURRENT_SOURCE_DIR}/single.py"
-	"${CMAKE_CURRENT_BINARY_DIR}/include/sol/sol.hpp" "${CMAKE_CURRENT_BINARY_DIR}/include/sol/forward.hpp" 
+	"${CMAKE_CURRENT_BINARY_DIR}/include/sol/sol.hpp" "${CMAKE_CURRENT_BINARY_DIR}/include/sol/forward.hpp"  "${CMAKE_CURRENT_BINARY_DIR}/include/sol/config.hpp"
 	"${sol2_generated_header_sources}")
 
 # # # sol3 generated single header library
