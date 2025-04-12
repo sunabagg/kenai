@@ -3,7 +3,7 @@ package sunaba.input;
 import sunaba.core.Vector2;
 
 @:native("InputEventMouseMotion")
-extern class InputEventMouseMotion extends InputEventWithModifiers {
+extern class InputEventMouseMotion extends InputEventMouse {
     public var penInverted: Bool;
     public var pressure: Float;
     public var relative: Vector2;
