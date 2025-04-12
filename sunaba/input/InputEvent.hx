@@ -18,4 +18,17 @@ extern class InputEvent extends Resource {
     public function isPressed(): Bool;
     public function isReleased(): Bool;
     //public function xformedBy()
+    @:native("cast")
+    public static function castFrom(res: Dynamic): InputEvent;
 }
+
+abstract InputEventAbstract(InputEvent) from InputEvent to InputEvent {
+    @:from
+    public static function fromResource(resource: Resource) : InputEventAbstract {
+        var inputEvent = InputEvent.castFrom(resource);
+        if (inputEvent.isNull()) {
+            return null;
+        }
+        return inputEvent;
+    } 
+} // end package sunaba.core
