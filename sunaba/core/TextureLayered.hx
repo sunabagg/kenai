@@ -1,6 +1,6 @@
 package sunaba.core;
 
-@::native("TextureLayered")
+@:native("TextureLayered")
 extern class TextureLayered extends Texture {
     public function getFormat(): Int;
     public function getHeight(): Int;
@@ -22,5 +22,4 @@ abstract TextureLayeredAbstract(TextureLayered) from TextureLayered to TextureLa
         }
         return textureLayered;
     } 
-}
 } // end package sunaba.core
