@@ -1,5 +1,7 @@
 package sunaba.spatial;
 
+import sunaba.core.Resource;
+
 @:native("CameraAttributes")
 extern class CameraAttributes extends Resource {
     public var autoExposureEnabled: Bool;
