@@ -12,6 +12,7 @@ void sunaba::spatial::bindCameraAttributesPhysical(sol::state_view& lua) {
         "frustumNear", sol::property(&CameraAttributesPhysical::getFrustumNear, &CameraAttributesPhysical::setFrustumNear),
         "frustomFocalLength", sol::property(&CameraAttributesPhysical::getFrustumFocalLength, &CameraAttributesPhysical::setFrustumFocalLength),
         "frustumFocusDistance", sol::property(&CameraAttributesPhysical::getFrustumFocusDistance, &CameraAttributesPhysical::setFrustumFocusDistance),
+        "getFov", &CameraAttributesPhysical::getFov,
         "cast", [](sunaba::core::Resource* res) {
             return new CameraAttributesPhysical(Object::cast_to<GodotCameraAttributesPhysical>(res->getResource()));
         }
