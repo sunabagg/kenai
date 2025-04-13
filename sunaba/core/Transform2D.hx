@@ -33,5 +33,6 @@ extern class Transform2D {
     public function scaledLocal(scale: Vector2): Transform2D;
     public function translated(translation: Vector2): Transform2D;
     public function translatedLocal(translation: Vector2): Transform2D;
+    @:native("tostring")
     public function toString() : String;
 }
