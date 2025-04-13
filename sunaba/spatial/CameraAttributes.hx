@@ -5,8 +5,8 @@ extern class CameraAttributes extends Resource {
     public var autoExposureEnabled: Bool;
     public var autoExposureScale: Float;
     public var autoExposureSpeed: Float;
-    public var autoExposureMultiplier: Float;
-    public var autoExposureSensitivity: Float;
+    public var exposureMultiplier: Float;
+    public var exposureSensitivity: Float;
     @:native("cast")
     public function castFrom(res: Dynamic): CameraAttributes;
 }
