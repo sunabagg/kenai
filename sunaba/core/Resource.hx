@@ -5,6 +5,7 @@ extern class Resource extends BaseObject {
     public function duplicate() : Resource;
     public function emitChanged() : Void;
     public function isNull() : Bool;
+    public function new();
     @:native("cast")
     public static function castFrom(type: Dynamic) : Resource;
 }
