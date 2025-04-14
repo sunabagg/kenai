@@ -8,15 +8,15 @@ extern class Color {
     public var a : Float;
     public function new();
     @:native("new")
-    public static function rgba(r : Float, g : Float, b : Float, a : Float);
+    public static function rgba(r : Float, g : Float, b : Float, a : Float): Color;
     @:native("new")
-    public static function rgb(r : Float, g : Float, b : Float);
+    public static function rgb(r : Float, g : Float, b : Float): Color;
     @:native("new")
-    public static function fromColorAndAlpha(color : Color, a : Float);
+    public static function fromColorAndAlpha(color : Color, a : Float): Color;
     @:native("new")
-    public static function code(code : String, a : Float = 1.0);
+    public static function code(code : String, a : Float = 1.0): Color;
     public function blend(ove : Color) : Color;
-    public function clamp(min : Color = Color.rgb(0, 0, 0), max : Color = Color.rgb(1, 1, 1)) : Color;
+    public function clamp(min : Color = null, max : Color = null) : Color;
     public function darkened(amount : Float) : Color;
     @:native("fromHSV")
     public static function hsv(h : Float, s : Float, v : Float, alpha : Float = 1.0) : Color;
