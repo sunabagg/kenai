@@ -18,5 +18,5 @@ extern class Vector2i {
     public function minAxisIndex() : Int;
     public function sign() : Vector2i;
     @:native("tostring")
-    public function toString();
+    public function toString(): String;
 }
