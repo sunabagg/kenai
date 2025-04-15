@@ -63,4 +63,14 @@ extern class Environment extends Resource {
     public var dynamicGiYScale: Float;
     public var sky: Sky;
     public var skyCustomFov: Float;
+    public var skyRotation: Vector3;
+    public var ssaoAoChannelAffect: Float;
+    public var ssaoDetail: Float;
+    public var ssaoEnabled: Bool;
+    public var ssaoHorizon: Float;
+    public var ssaoIntensity: Float;
+    public var ssaoLightAffect: Float;
+    public var ssaoPower: Float;
+    public var ssaoRadius: Float;
+    public var ssaoSharpness: Float;
 }
