@@ -100,4 +100,17 @@ extern class Environment extends Resource {
     public var volumetricFogTemporalReprojectionEnabled: Bool;
     public function getGlowLevel(idx: Int): Float;
     public function setGlowLevel(idx: Int, level: Float): Void;
+    @:native("cast")
+    public static function castFrom(type: Dynamic): Environment;
 }
+
+abstract EnvironmentAbstract(Environment) from Environment to Environment {
+    @:from
+    public static function fromResource(resource: Resource): EnvironmentAbstract {
+        var environment = Environment.castFrom(resource);
+        if (environment.isNull()) {
+            return null;
+        }
+        return environment;
+    } 
+} // end package sunaba.core
