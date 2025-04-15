@@ -15,4 +15,21 @@ extern class Environment extends Resource {
     public var backgroundCanvasMaxLayer: Int;
     public var backgroundColor: Color;
     public var backgroundEnergyMultiplier: Float;
+    public var backgroundIntensity: Float;
+    public var backgroundMode: Int;
+    public var fogArialPerspective: Float;
+    public var fogDensity: Float;
+    public var fogDepthBegin: Float;
+    public var fogDepthCurve: Float;
+    public var fogDepthEnd: Float;
+    public var fogEnabled: Bool;
+    public var fogHeight: Float;
+    public var fogHeightDensity: Float;
+    public var fogLightColor: Color;
+    public var fogLightEnergy: Float;
+    public var fogMode: Int;
+    public var fogSkyAffect: Bool;
+    public var fogSunScatter: Float;
+    public var glowBlendMode: Int;
+    public var glowBloom: Float;
 }
