@@ -73,4 +73,15 @@ extern class Environment extends Resource {
     public var ssaoPower: Float;
     public var ssaoRadius: Float;
     public var ssaoSharpness: Float;
+    public var ssilEnabled: Bool;
+    public var ssilIntensity: Float;
+    public var ssilNormalRejection: Float;
+    public var ssilRadius: Float;
+    public var ssilSharpness: Float;
+    public var ssrDepthTolerance: Float;
+    public var ssrEnabled: Bool;
+    public var ssrFadeIn: Float;
+    public var ssrFadeOut: Float;
+    public var ssrMaxSteps: Int;
+    
 }
