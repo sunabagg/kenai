@@ -83,5 +83,21 @@ extern class Environment extends Resource {
     public var ssrFadeIn: Float;
     public var ssrFadeOut: Float;
     public var ssrMaxSteps: Int;
-    
+    public var tonemapExposure: Float;
+    public var tonemapMode: Int;
+    public var tonemapWhite: Float;
+    public var volumetricFogAlbedo: Color;
+    public var volumetricFogAmbientInject: Float;
+    public var volumetricFogAnisotropy: Float;
+    public var volumetricFogDensity: Float;
+    public var volumetricFogDetailSpread: Float;
+    public var volumetricFogEmission: Color;
+    public var volumetricFogEnabled: Bool;
+    public var volumetricFogGiInject: Float;
+    public var volumetricFogLength: Float;
+    public var volumetricFogSkyAffect: Float;
+    public var volumetricFogTemporalReprojectionAmount: Float;
+    public var volumetricFogTemporalReprojectionEnabled: Bool;
+    public function getGlowLevel(idx: Int): Float;
+    public function setGlowLevel(idx: Int, level: Float): Void;
 }
