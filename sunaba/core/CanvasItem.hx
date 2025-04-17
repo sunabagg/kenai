@@ -1,6 +1,7 @@
 package sunaba.core;
 
 import sunaba.ui.StyleBox;
+import sunaba.input.InputEvent;
 
 @:native("Element")
 extern class CanvasItem extends Element {
@@ -45,4 +46,34 @@ extern class CanvasItem extends Element {
     public function drawStyleBox(styleBox: StyleBox, rect: Rect2): Void;
     public function drawTexture(texture: Texture2D, pos: Vector2, modulate: Color = null): Void;
     public function drawTextureRectRegion(texture: Texture2D, rect: Rect2, srcRect: Rect2, modulate: Color = null, transpose: Bool = false, clipUv: Bool = true): Void;
+    public function forceUpdateTransform(): Void;
+    public function getCanvasTransform(): Transform2D;
+    public function getGlobalMousePosition(): Vector2;
+    public function getGlobalTransform(): Transform2D;
+    public function getGlobalTransformWithCanvas(): Transform2D;
+    public function getLocalMousePosition(): Vector2;
+    public function getScreenTransform(): Transform2D;
+    public function getTransform(): Transform2D;
+    public function getViewportRect(): Rect2;
+    public function getViewportTransform(): Transform2D;
+    public function getVisibilityLayerBit(bit: Int): Bool;
+    public function hide(): Void;
+    public function isLocalTransformNotificationEnabled(): Bool;
+    public function isVisibleInTree(): Bool;
+    public function makeCanvasPositionLocal(position: Vector2): Vector2;
+    public function makeInputLocal(event: InputEvent): InputEvent;
+    public function moveToFront(): Void;
+    public function queueRedraw(): Void;
+    public function setNotifyLocalTransform(enable: Bool): Void;
+    public function setNotifyTransform(enable: Bool): Void;
+    public function show(): Void;
+    @:native("cast")
+    public static function toCanvasItem(obj: Dynamic): CanvasItem;
+}
+
+abstract CanvasItemAbstract(CanvasItem) from CanvasItem to CanvasItem {
+    @:from
+    public static function fromCanvasItem(obj: Element): CanvasItemAbstract {
+        return CanvasItem.toCanvasItem(obj);
+    }
 }
