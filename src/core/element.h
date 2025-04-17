@@ -193,6 +193,9 @@ namespace sunaba::core {
             if (child != nullptr) {
                 children.push_back(child);
                 child->setParent(this);
+                if (node != nullptr) {
+                    node->add_child(child->getNode());
+                }
             }
         }
 
@@ -207,6 +210,9 @@ namespace sunaba::core {
             if (it != children.end()) {
                 children.erase(it);
                 child->setParent(nullptr);
+                if (node != nullptr) {
+                    node->remove_child(child->getNode());
+                }
             }
         }
 
