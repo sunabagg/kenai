@@ -1,5 +1,7 @@
 package sunaba.core;
 
+import sunaba.ui.StyleBox;
+
 @:native("Element")
 extern class CanvasItem extends Element {
     public var clipChildren: Int;
@@ -21,9 +23,9 @@ extern class CanvasItem extends Element {
     public function drawArc(center: Vector2, radius: Float, startAngle: Float, endAngle: Float, pointCount: Int, color: Color, width: Float = 1.0, antialis: Bool = false): Void;
     public function drawChar(font: Font, pos: Vector2, chr: String, fontSize: Int = 16, modulate: Color = null): Void;
     public function drawCharOutline(font: Font, pos: Vector2, chr: String, fontSize: Int = 16, size: Int = -1, modulate: Color = null): Void;
-    public function drawCircle(center: Vector2, radius: Float, color: Color, width: Float 1.0, antialis: Bool = false): Void;
+    public function drawCircle(center: Vector2, radius: Float, color: Color, width: Float = 1.0, antialis: Bool = false): Void;
     public function drawColoredPolygon(points: Array<Vector2>, color: Color, uvs: Array<Vector2> = null, texture: Texture2D = null): Void;
-    public function drawDashedLine(from: Vector2, to: Vector2, color: Color, width: Float = -1.0 dash: Float = 2.0, aligned: Bool = true, antialis: Bool = false): Void;
+    public function drawDashedLine(from: Vector2, to: Vector2, color: Color, width: Float = -1.0, dash: Float = 2.0, aligned: Bool = true, antialis: Bool = false): Void;
     public function drawEndAnimation(): Void;
     public function drawLcdTextureRectRegion(texture: Texture2D, rect: Rect2, srcRect: Rect2, modulate: Color = null): Void;
     public function drawLine(from: Vector2, to: Vector2, color: Color, width: Float = -1.0, antialis: Bool = false): Void;
@@ -36,4 +38,11 @@ extern class CanvasItem extends Element {
     public function darwPolylineColors(points: Array<Vector2>, colors: Array<Color>, width: Float = -1.0, antialis: Bool = false): Void;
     public function drawPrimitive(points: Array<Vector2>, colors: Array<Color>, uvs: Array<Vector2> = null, texture: Texture2D = null): Void;
     public function drawRect(rect: Rect2, color: Color, filled: Bool = true, width: Float = 1.0, antialis: Bool = false): Void;
+    public function drawSetTransform(pos: Vector2, rotation: Float = 0.0, scale: Vector2 = null): Void;
+    public function drawSetTransformMatrix(xform: Transform2D): Void;
+    public function drawString(font: Font, pos: Vector2, text: String, alignment: Int = 0, width: FLoat = -1, fontSize: Int = 16, modulate: Color = null, justificationFlags: Array<Int> = null, direction: Int = 0, orientation: Int = 0): Void;
+    public function drawStringOutline(font: Font, pos: Vector2, text: String, alignment: Int = 0, width: Float = -1, fontSize: Int = 16, size: Int = 1, modulate: Color = null, justificationFlags: Array<Int> = null, direction: Int = 0, orientation: Int = 0): Void;
+    public function drawStyleBox(styleBox: StyleBox, rect: Rect2): Void;
+    public function drawTexture(texture: Texture2D, pos: Vector2, modulate: Color = null): Void;
+    public function drawTextureRectRegion(texture: Texture2D, rect: Rect2, srcRect: Rect2, modulate: Color = null, transpose: Bool = false, clipUv: Bool = true): Void;
 }
