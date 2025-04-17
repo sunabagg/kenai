@@ -270,6 +270,10 @@ namespace sunaba::core {
             }
             children.clear();
         }
+
+        bool isNull() {
+            return node == nullptr;
+        }
     };
 }
 

@@ -25,6 +25,7 @@ void sunaba::core::bindElement(sol::state &lua) {
         "addChild", &Element::addChild,
         "removeChild", &Element::removeChild,
         "getChildren", &Element::getChildren,
+        "isNull", &Element::isNull,
         "cast", [](Element* e) {
             return new Element(Object::cast_to<Node>(e->getNode()));
         }
