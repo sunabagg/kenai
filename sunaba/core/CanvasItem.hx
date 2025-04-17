@@ -17,4 +17,23 @@ extern class CanvasItem extends Element {
     public var ySortEnabled: Bool;
     public var zAsRelative: Bool;
     public var zIndex: Int;
+    public function drawAnimationSlice(animationLength: Float, sliceBegin: Float, sliceEnd: Float, offset: Float = 0.0): Void;
+    public function drawArc(center: Vector2, radius: Float, startAngle: Float, endAngle: Float, pointCount: Int, color: Color, width: Float = 1.0, antialis: Bool = false): Void;
+    public function drawChar(font: Font, pos: Vector2, chr: String, fontSize: Int = 16, modulate: Color = null): Void;
+    public function drawCharOutline(font: Font, pos: Vector2, chr: String, fontSize: Int = 16, size: Int = -1, modulate: Color = null): Void;
+    public function drawCircle(center: Vector2, radius: Float, color: Color, width: Float 1.0, antialis: Bool = false): Void;
+    public function drawColoredPolygon(points: Array<Vector2>, color: Color, uvs: Array<Vector2> = null, texture: Texture2D = null): Void;
+    public function drawDashedLine(from: Vector2, to: Vector2, color: Color, width: Float = -1.0 dash: Float = 2.0, aligned: Bool = true, antialis: Bool = false): Void;
+    public function drawEndAnimation(): Void;
+    public function drawLcdTextureRectRegion(texture: Texture2D, rect: Rect2, srcRect: Rect2, modulate: Color = null): Void;
+    public function drawLine(from: Vector2, to: Vector2, color: Color, width: Float = -1.0, antialis: Bool = false): Void;
+    public function drawMsdfTextureRegion(texture: Texture2D, rect: Rect2, srcRect: Rect2, modulate: Color = null, outline: Float = 0.0, pxelRange: Float = 4.0, scale: Float = 1.0): Void;
+    public function drawMultiline(points: Array<Vector2>, colors: Colors, width: Float = -1.0, antialis: Bool = false): Void;
+    public function drawMultilineColors(points: Array<Vector2>, colors: Array<Color>, width: Float = -1.0, antialis: Bool = false): Void;
+    public function drawMultilineString(font: Font, pos: Vector2, text: String, alignment: Int = 0, width: Float = -1, fontSize: Int = 16, maxLines: Int = -1, modulate: Color = null, brkFlags: Array<Int> = null, justificationFlags: Array<Int> = null, direction: Int = 0, orientation: Int = 0): Void;
+    public function drawMultilineStringOutline(font: Font, pos: Vector2, text: String, alignment: Int = 0, width: Float = -1, fontSize: Int = 16, maxLines: Int = -1, size: Int = 1, modulate: Color = null, brkFlags: Array<Int> = null, justificationFlags: Array<Int> = null, direction: Int = 0, orientation: Int = 0): Void;
+    public function drawPolygon(points: Array<Vector2>, colors: Array<Color>, uvs: Array<Vector2> = null, texture: Texture2D = null): Void;
+    public function darwPolylineColors(points: Array<Vector2>, colors: Array<Color>, width: Float = -1.0, antialis: Bool = false): Void;
+    public function drawPrimitive(points: Array<Vector2>, colors: Array<Color>, uvs: Array<Vector2> = null, texture: Texture2D = null): Void;
+    public function drawRect(rect: Rect2, color: Color, filled: Bool = true, width: Float = 1.0, antialis: Bool = false): Void;
 }
