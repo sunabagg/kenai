@@ -11,6 +11,7 @@ extern class Element extends BaseObject {
     public function addSibling(sibling: Element): Void;
     public function removeChild(child: Element): Void;
     public function getChildren(): Array<Element>;
+    public function isNull(): Bool;
     @:native("cast")
     public static function castElement(): Element;
 }
@@ -18,6 +19,10 @@ extern class Element extends BaseObject {
 abstract ElementAbstract(Element) from Element to Element {
     @:from
     public static function fromElement(element: Element): ElementAbstract {
-        return Element.castElement(element);
+        var element = Element.castElement(element);
+        if (element.isNull()) {
+            return null;
+        }
+        return element;
     }
 }
