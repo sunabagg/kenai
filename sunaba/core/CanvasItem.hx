@@ -73,7 +73,11 @@ extern class CanvasItem extends Element {
 
 abstract CanvasItemAbstract(CanvasItem) from CanvasItem to CanvasItem {
     @:from
-    public static function fromCanvasItem(obj: Element): CanvasItemAbstract {
-        return CanvasItem.toCanvasItem(obj);
+    public static function fromElement(element: Element): CanvasItemAbstract {
+        var cItem = CanvasItem.toCanvasItem(element);
+        if (cItem.isNull()) {
+            return null;
+        }
+        return cItem;
     }
 }
