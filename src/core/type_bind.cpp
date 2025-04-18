@@ -2,6 +2,7 @@
 // Created by mintkat on 2/1/25.
 //
 #include "lua_bind.h"
+#include "io/binary_data.h"
 
 #include <godot_cpp/core/class_db.hpp>
 #include <godot_cpp/variant/utility_functions.hpp>
@@ -19,6 +20,8 @@ void sunaba::core::bind_base_types(sol::state& lua) {
             Variant(), 
             Variant(int), 
             Variant(float), 
+            Variant(long), 
+            Variant(double), 
             Variant(char*), 
             Variant(Vector2), 
             Variant(Vector2i), 
@@ -32,7 +35,60 @@ void sunaba::core::bind_base_types(sol::state& lua) {
             Variant(Vector4i),
             Variant(Plane),
             Variant(Quaternion),
-            Variant(AABB)>());
+            Variant(AABB),
+            Variant(Projection),
+            Variant(Array),
+            Variant(Dictionary)>(),
+        "fromByteArray", [](const io::BinaryData& data) { return Variant(data.toPackedByteArray()); },
+        "fromIntArray", [](const std::vector<int>& data) { 
+            PackedInt32Array packed_data;
+            for (const auto& item : data) {
+                packed_data.append(item);
+            }
+            return Variant(packed_data);
+         },
+         "fromIntArray64", [](const std::vector<int64_t>& data) { 
+            PackedInt64Array packed_data;
+            for (const auto& item : data) {
+                packed_data.append(item);
+            }
+            return Variant(packed_data);
+         },
+         "fromFloatArray", [](const std::vector<float>& data) { 
+            PackedFloat32Array packed_data;
+            for (const auto& item : data) {
+                packed_data.append(item);
+            }
+            return Variant(packed_data);
+         },
+         "fromFloatArray64", [](const std::vector<double>& data) { 
+            PackedFloat64Array packed_data;
+            for (const auto& item : data) {
+                packed_data.append(item);
+            }
+            return Variant(packed_data);
+         },
+         "fromStringArray", [](const std::vector<String>& data) { 
+            PackedStringArray packed_data;
+            for (const auto& item : data) {
+                packed_data.append(item);
+            }
+            return Variant(packed_data);
+         },
+        "fromVector2Array", [](const std::vector<Vector2>& data) { 
+            PackedVector2Array packed_data;
+            for (const auto& item : data) {
+                packed_data.append(item);
+            }
+            return Variant(packed_data);
+        },
+        "fromVector3Array", [](const std::vector<Vector3>& data) { 
+            PackedVector3Array packed_data;
+            for (const auto& item : data) {
+                packed_data.append(item);
+            }
+            return Variant(packed_data);
+        },
 
     lua.new_usertype<Vector2>(
         "Vector2",
