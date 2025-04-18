@@ -57,7 +57,7 @@ namespace sunaba::core {
         void setCanvasItem(CanvasItemProxy* p_node) {
             canvas_item = p_node;
             p_node->canvas_item_element = this;
-            setNode(canvas_item);
+            setNode(p_node);
         }
 
         int getClipChildren() {
