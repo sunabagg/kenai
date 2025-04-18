@@ -14,6 +14,26 @@ using namespace godot;
 using namespace sunaba::core;
 
 void sunaba::core::bind_base_types(sol::state& lua) {
+    lua.new_usertype<Variant>("Variant",
+        sol::constructors<
+            Variant(), 
+            Variant(int), 
+            Variant(float), 
+            Variant(char*), 
+            Variant(Vector2), 
+            Variant(Vector2i), 
+            Variant(Rect2), 
+            Variant(Rect2i),
+            Variant(Basis),
+            Variant(Vector3),
+            Variant(Vector3i),
+            Variant(Transform2D),
+            Variant(Vector4),
+            Variant(Vector4i),
+            Variant(Plane),
+            Variant(Quaternion),
+            Variant(AABB)>());
+
     lua.new_usertype<Vector2>(
         "Vector2",
         sol::constructors<Vector2(), Vector2(float, float)>(),
