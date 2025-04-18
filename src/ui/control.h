@@ -36,6 +36,44 @@ namespace sunaba::ui {
 
             TypedArray<Vector3i> _structured_text_parser(const Array &args, const String &text) const override;
     };
+
+    class Control : public sunaba::core::CanvasItem {
+        private:
+            ControlNode* control = nullptr; // Pointer to the Control instance
+        public:
+            // Constructor with Node* parameter
+            Control(ControlNode* p_node) {
+                setControl(p_node);
+            }
+
+            Control(ControlProxy* p_node) {
+                setControl(p_node);
+            }
+        
+            // Constructor with no parameters
+            Control() {
+                setControl(memnew(ControlNode));
+                onInit();
+            }
+
+            // Getter for the Control node
+            ControlNode* getControl() {
+                return control;
+            }
+
+            // Setter for the Control node
+            void setControl(ControlNode* p_node) {
+                control = p_node;
+                setCanvasItem(control);
+            }
+
+            void setControl(ControlProxy* p_node) {
+                control = p_node;
+                p_node->control_element = this;
+                setCanvasItem(p_node);
+            }
+
+    };
 }
 
 #endif // CONTROL_H
