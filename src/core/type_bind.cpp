@@ -91,7 +91,7 @@ void sunaba::core::bind_base_types(sol::state& lua) {
         },
         "getType", &Variant::get_type,
         "getTypeName", &Variant::get_type_name,
-        "asString", &Variant::operator String,
+        "asString", [](const Variant& v) { return std::string((v.operator String()).utf8().get_data()); },
         "asInt", &Variant::operator int,
         "asFloat", &Variant::operator float,
         "asBool", &Variant::operator bool,
