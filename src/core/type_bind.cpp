@@ -89,6 +89,87 @@ void sunaba::core::bind_base_types(sol::state& lua) {
             }
             return Variant(packed_data);
         },
+        "getType", &Variant::get_type,
+        "getTypeName", &Variant::get_type_name,
+        "asString", &Variant::operator String,
+        "asInt", &Variant::operator int,
+        "asFloat", &Variant::operator float,
+        "asBool", &Variant::operator bool,
+        "asVector2", &Variant::operator Vector2,
+        "asVector2i", &Variant::operator Vector2i,
+        "asRect2", &Variant::operator Rect2,
+        "asRect2i", &Variant::operator Rect2i,
+        "asBasis", &Variant::operator Basis,
+        "asVector3", &Variant::operator Vector3,
+        "asVector3i", &Variant::operator Vector3i,
+        "asTransform2D", &Variant::operator Transform2D,
+        "asVector4", &Variant::operator Vector4,
+        "asVector4i", &Variant::operator Vector4i,
+        "asPlane", &Variant::operator Plane,
+        "asQuaternion", &Variant::operator Quaternion,
+        "asAABB", &Variant::operator godot::AABB,
+        "asProjection", &Variant::operator Projection,
+        "asArray", &Variant::operator Array,
+        "asDictionary", &Variant::operator Dictionary,
+        "asByteArray", [](const Variant& v) { return io::BinaryData(v); },
+        "asIntArray", [](const Variant& v) { 
+            PackedInt32Array packed_data = v;
+            std::vector<int> data;
+            for (int i = 0; i < packed_data.size(); ++i) {
+                data.push_back(packed_data[i]);
+            }
+            return data;
+        },
+        "asIntArray64", [](const Variant& v) { 
+            PackedInt64Array packed_data = v;
+            std::vector<int64_t> data;
+            for (int i = 0; i < packed_data.size(); ++i) {
+                data.push_back(packed_data[i]);
+            }
+            return data;
+        },
+        "asFloatArray", [](const Variant& v) { 
+            PackedFloat32Array packed_data = v;
+            std::vector<float> data;
+            for (int i = 0; i < packed_data.size(); ++i) {
+                data.push_back(packed_data[i]);
+            }
+            return data;
+        },
+        "asFloatArray64", [](const Variant& v) { 
+            PackedFloat64Array packed_data = v;
+            std::vector<double> data;
+            for (int i = 0; i < packed_data.size(); ++i) {
+                data.push_back(packed_data[i]);
+            }
+            return data;
+        },
+        "asStringArray", [](const Variant& v) { 
+            PackedStringArray packed_data = v;
+            std::vector<String> data;
+            for (int i = 0; i < packed_data.size(); ++i) {
+                data.push_back(packed_data[i]);
+            }
+            return data;
+        },
+        "asVector2Array", [](const Variant& v) { 
+            PackedVector2Array packed_data = v;
+            std::vector<Vector2> data;
+            for (int i = 0; i < packed_data.size(); ++i) {
+                data.push_back(packed_data[i]);
+            }
+            return data;
+        },
+        "asVector3Array", [](const Variant& v) { 
+            PackedVector3Array packed_data = v;
+            std::vector<Vector3> data;
+            for (int i = 0; i < packed_data.size(); ++i) {
+                data.push_back(packed_data[i]);
+            }
+            return data;
+        },
+        "tostring", [](const Variant& v) { return std::string((v.operator String()).utf8().get_data()); }
+    );
 
     lua.new_usertype<Vector2>(
         "Vector2",
