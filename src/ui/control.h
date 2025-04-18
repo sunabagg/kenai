@@ -434,6 +434,21 @@ namespace sunaba::ui {
                 control->begin_bulk_theme_override();
             }
 
+            void endBulkThemeOveride() {
+                control->end_bulk_theme_override();
+            }
+
+            Control* findNextValidFocus() {
+                return new Control(control->find_next_valid_focus());
+            }
+
+            Control* findPrevValidFocus() {
+                return new Control(control->find_prev_valid_focus());
+            }
+
+            Control* findValidFocusNeighbor(int slide) {
+                return new Control(control->find_valid_focus_neighbor(static_cast<godot::Side>(slide)));
+            }
     };
 }
 
