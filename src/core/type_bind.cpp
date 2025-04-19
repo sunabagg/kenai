@@ -317,7 +317,7 @@ void sunaba::core::bind_base_types(sol::state& lua) {
                 return { sol::lua_nil, sol::lua_nil };
             });
         },
-        sol::meta_function::index, [](Dictionary& dict, const Variant& key) { return dict.get(key); },
+        sol::meta_function::index, [](Dictionary& dict, const Variant& key) { return dict[key]; },
         sol::meta_function::new_index, [](Dictionary& dict, const Variant& key, const Variant& value) {
             dict.set(key, value);
         },
