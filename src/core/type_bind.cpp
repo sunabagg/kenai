@@ -214,7 +214,20 @@ void sunaba::core::bind_base_types(sol::state& lua) {
         "slice", &Array::slice,
         "sort", &Array::sort,
         "sort_custom", &Array::sort_custom,
-        sol::meta_function::index, [](Array& arr, int index) { return arr[index]; }
+        sol::meta_function::index, [](Array& arr, int index) { return arr[index]; },
+        sol::meta_function::new_index, [](Array& arr, int index, const Variant& value) {
+            arr.set(index, value);
+        },
+        sol::meta_function::length, &Array::size,
+        "__pairs", [](Array& arr) {
+            return sol::as_function([&arr, i = 0](sol::this_state& lua) mutable -> std::tuple<sol::object, sol::object> {
+            if (i < arr.size()) {
+                return { sol::make_object(lua, i), sol::make_object(lua, arr[i++]) };
+            } else {
+                return { sol::lua_nil, sol::lua_nil };
+            }
+            });
+        }
     );
 
     lua.new_usertype<Vector2>(
