@@ -220,14 +220,27 @@ void sunaba::core::bind_base_types(sol::state& lua) {
         },
         sol::meta_function::length, &Array::size,
         "__pairs", [](Array& arr) {
-            return sol::as_function([&arr, i = 0](sol::this_state& lua) mutable -> std::tuple<sol::object, sol::object> {
+            return sol::as_function([&arr, i = 0](sol::this_state& s) mutable -> std::tuple<sol::object, sol::object> {
             if (i < arr.size()) {
-                return { sol::make_object(lua, i), sol::make_object(lua, arr[i++]) };
+                return { sol::make_object(s, i), sol::make_object(s, arr[i++]) };
             } else {
                 return { sol::lua_nil, sol::lua_nil };
             }
             });
+        },
+        "__ipairs", [](Array& arr) {
+            return sol::as_function([](sol::this_state& s, Array& a, int i) -> std::tuple<sol::object, sol::object> {
+                i++;
+                if (i <= a.size()) {
+                    return { sol::make_object(s, i), sol::make_object(s, a[i - 1]) };
+                }
+                return { sol::lua_nil, sol::lua_nil };
+            });
+        },
+        sol::meta_function::to_string, [](const Array& arr) {
+            return "<Array size=" + std::to_string(arr.size()) + ">";
         }
+        
     );
 
     lua.new_usertype<Vector2>(
