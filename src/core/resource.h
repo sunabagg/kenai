@@ -28,7 +28,7 @@ namespace sunaba::core {
         }
 
         // Getter for the Resource node
-        GodotResource* getResource() {
+        GodotResource* getResource() const {
             return resource;
         }
 

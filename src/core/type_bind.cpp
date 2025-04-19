@@ -3,6 +3,8 @@
 //
 #include "lua_bind.h"
 #include "io/binary_data.h"
+#include "resource.h"
+#include "element.h"
 
 #include <godot_cpp/core/class_db.hpp>
 #include <godot_cpp/variant/utility_functions.hpp>
@@ -89,6 +91,19 @@ void sunaba::core::bind_base_types(sol::state& lua) {
             }
             return Variant(packed_data);
         },
+        "fromElement", [](const Element* e) { 
+            godot::Node* n = e->getNode();
+            if (n) {
+                return Variant(n);
+            } else {
+                return Variant();
+            }
+         },
+        "fromResource", [](const Resource* resource) { 
+            godot::Resource* res = resource->getResource();
+            godot::Ref<godot::Resource> ref = godot::Ref<godot::Resource>(res);
+            return Variant(ref);
+         },
         "getType", &Variant::get_type,
         "getTypeName", &Variant::get_type_name,
         "asString", [](const Variant& v) { return std::string((v.operator String()).utf8().get_data()); },
@@ -168,6 +183,24 @@ void sunaba::core::bind_base_types(sol::state& lua) {
             }
             return data;
         },
+        "asElement", [](const Variant& v) { 
+            godot::Object* obj = v.operator Object*();
+            Node* n = Object::cast_to<Node>(obj);
+            if (n) {
+                return Element(n);
+            } else {
+                return Element();
+            }
+         },
+        "asResource", [](const Variant& v) { 
+            Object* obj = v.operator Object*();
+            Ref<godot::Resource> res = Object::cast_to<godot::Resource>(obj);
+            if (res.ptr()) {
+                return Resource(res.ptr());
+            } else {
+                return Resource();
+            }
+         },
         "tostring", [](const Variant& v) { return std::string((v.operator String()).utf8().get_data()); }
     );
 
@@ -241,6 +274,19 @@ void sunaba::core::bind_base_types(sol::state& lua) {
             return "<Array size=" + std::to_string(arr.size()) + ">";
         }
         
+    );
+
+    lua.new_usertype<Dictionary>("Dictionary",
+        sol::constructors<Dictionary()>(),
+        "assign", &Dictionary::assign,
+        "clear", &Dictionary::clear,
+        "duplicate", &Dictionary::duplicate,
+        "erase", &Dictionary::erase,
+        "findKey", &Dictionary::find_key,
+        "get", &Dictionary::get,
+        "getOrAdd", &Dictionary::get_or_add,
+        "has", &Dictionary::has,
+        "hasAll", &Dictionary::has_all,
     );
 
     lua.new_usertype<Vector2>(
