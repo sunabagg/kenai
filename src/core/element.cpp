@@ -126,3 +126,9 @@ void sunaba::core::NodeProxy::onReplacingBy(Node* node) {
         this->element->renamed->emit(args);
     }
 }
+
+void sunaba::core::NodeProxy::onTreeEntered() {
+    if (this->element != nullptr) {
+        this->element->treeEntered->emit(Array());
+    }
+}
