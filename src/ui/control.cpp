@@ -62,7 +62,9 @@ namespace sunaba::ui {
     }
 
     void bind_control(sol::state& lua) {
-        //lua.new_usertype<Control>("Control",
-        //);
+        lua.new_usertype<Control>("Control",
+            sol::constructors<Control()>(),
+            sol::base_classes, sol::bases<BaseObject, Element, sunaba::core::CanvasItem>(),
+        );
     }
 }
