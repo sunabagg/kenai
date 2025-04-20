@@ -670,6 +670,10 @@ namespace sunaba::ui {
             void setDragPreview(Control* preview) {
                 control->set_drag_preview(preview->getControl());
             }
+
+            void setEnd(Vector2 end) {
+                control->set_end(end);
+            }
     };
 }
 
