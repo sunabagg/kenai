@@ -654,6 +654,10 @@ namespace sunaba::ui {
             void setAnchorAndOffset(int side, float anchor, float offset, bool pushOppositeAnchor = false) {
                 control->set_anchor_and_offset(static_cast<godot::Side>(side), anchor, offset, pushOppositeAnchor);
             }
+
+            void setAnchorsAndOffsetsPreset(int preset, int resizeMode = 0, int margin = 0) {
+                control->set_anchors_and_offsets_preset(static_cast<godot::Control::LayoutPreset>(preset), static_cast<godot::Control::LayoutPresetMode>(resizeMode), margin);
+            }
     };
 }
 
