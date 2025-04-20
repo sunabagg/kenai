@@ -666,6 +666,10 @@ namespace sunaba::ui {
             void setBegin(Vector2 begin) {
                 control->set_begin(begin);
             }
+            
+            void setDragPreview(Control* preview) {
+                control->set_drag_preview(preview->getControl());
+            }
     };
 }
 
