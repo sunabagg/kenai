@@ -448,6 +448,16 @@ namespace sunaba::ui {
                 }
             }
 
+            void guiInput(Ref<InputEvent> event) {
+                if (scriptInstance != sol::lua_nil) {
+                    auto func = scriptInstance["guiInput"].get<sol::function>();
+                    if (func) {
+                        sunaba::input::InputEvent* eventObj = new sunaba::input::InputEvent(event.ptr());
+                        func(scriptInstance, eventObj);
+                    }
+                }
+            }
+
             void acceptEvent() {
                 control->accept_event();
             }
