@@ -606,6 +606,10 @@ namespace sunaba::ui {
             bool hasThemeStyleboxOverride(std::string name) {
                 return control->has_theme_stylebox_override(name.c_str());
             }
+
+            bool isDragSuccessful() {
+                return control->is_drag_successful();
+            }
     };
 }
 
