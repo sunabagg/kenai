@@ -550,6 +550,10 @@ namespace sunaba::ui {
             void grabClickFocus() {
                 control->grab_click_focus();
             }
+
+            void grabFocus() {
+                control->grab_focus();
+            }
     };
 }
 
