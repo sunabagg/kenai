@@ -449,6 +449,10 @@ namespace sunaba::ui {
             Control* findValidFocusNeighbor(int slide) {
                 return new Control(control->find_valid_focus_neighbor(static_cast<godot::Side>(slide)));
             }
+
+            void forceDrag(Variant &data, Control* preview) {
+                control->force_drag(data, preview->getControl());
+            }
     };
 }
 
