@@ -24,4 +24,5 @@ extern class Control extends CanvasItem {
     public var growVertical:Bool;
     public var layoutDirection:Float;
     public var localizingNumeralSystem:Bool;
+    public var mouseFilter:Int;
 }
