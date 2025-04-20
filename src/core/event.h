@@ -116,6 +116,14 @@ namespace sunaba::core {
             }
             event->emit(args_array);
         }
+    protected:
+        static void _bind_methods() {
+            ClassDB::bind_vararg_method(
+                METHOD_FLAGS_DEFAULT,
+                "callEvent",
+                &EventBridge::callEvent
+            );
+        }
     }
 }
 
