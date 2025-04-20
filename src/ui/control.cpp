@@ -256,6 +256,7 @@ namespace sunaba::ui {
             "getRect", &Control::getRect,
             "getScreenPosition", &Control::getScreenPosition,
             "getThemeColor", &Control::getThemeColor,
+            "getThemeConstant", &Control::getThemeConstant,
         );
     }
 }
