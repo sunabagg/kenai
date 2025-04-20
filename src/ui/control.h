@@ -453,6 +453,10 @@ namespace sunaba::ui {
             void forceDrag(Variant &data, Control* preview) {
                 control->force_drag(data, preview->getControl());
             }
+
+            float getAnchor(int side) {
+                return control->get_anchor(static_cast<godot::Side>(side));
+            }
     };
 }
 
