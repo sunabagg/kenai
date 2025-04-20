@@ -173,6 +173,10 @@ namespace sunaba::ui {
                 &Control::getPhysicsInterpolationMode,
                 &Control::setPhysicsInterpolationMode
             ),
+            "pivotOffset", sol::property(
+                &Control::getPivotOffset,
+                &Control::setPivotOffset
+            ),
         );
     }
 }
