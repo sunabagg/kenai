@@ -485,6 +485,10 @@ namespace sunaba::ui {
             Vector2 getMinimumSize() {
                 return control->get_minimum_size();
             }
+
+            float getOffset(int side) {
+                return control->get_offset(static_cast<godot::Side>(side));
+            }
     };
 }
 
