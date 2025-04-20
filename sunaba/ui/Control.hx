@@ -115,4 +115,5 @@ extern class Control extends CanvasItem {
     public function setEnd(position:Vector2):Void;
     public function setFocusNeighbor(side:Int, neighbor:String):Void;
     public function setGlobalPosition(position:Vector2):Void;
+    public function setOffset(side:Int, offset:Float):Void;
 }
