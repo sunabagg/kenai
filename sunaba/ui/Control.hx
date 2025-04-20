@@ -66,4 +66,5 @@ extern class Control extends CanvasItem {
     public function getAnchor(side:Int):Vector2;
     public function getCombinedMinimumSize():Vector2;
     public function getCursorShape(position:Vector2):Int;
+    public function getEnd():Vector2;
 }
