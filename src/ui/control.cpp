@@ -267,7 +267,7 @@ namespace sunaba::ui {
             "getTooltip", &Control::getTooltip,
             "grabClickFocus", &Control::grabClickFocus,
             "grabFocus", &Control::grabFocus,
-            "hadFocus", &Control::hadFocus,
+            "hasFocus", &Control::hasFocus,
         );
     }
 }
