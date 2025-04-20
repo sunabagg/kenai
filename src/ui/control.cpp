@@ -293,6 +293,7 @@ namespace sunaba::ui {
             "setAnchorsAndOffsetsPreset", &Control::setAnchorsAndOffsetsPreset,
             "setAnchorsPreset", &Control::setAnchorsPreset,
             "setBegin", &Control::setBegin,
+            "setDragPreview", &Control::setDragPreview,
         );
     }
 }
