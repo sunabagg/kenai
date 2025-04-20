@@ -11,5 +11,8 @@ extern class Event extends BaseObject {
 }
 
 abstract EventAbstract(Event) from Event to Event {
-    @:op()
+    @:op(a())
+    public function callNoArgs() {
+        this.emit();
+    }
 }
