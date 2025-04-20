@@ -63,7 +63,7 @@ extern class Variant {
     public static function fromElement(value:Element): Variant;
     public static function fromResource(value:Resource): Variant;
     public function getType():Int;
-    public function getTypeName():String;
+    public static function getTypeName(type: Int):String;
     public function asString():String;
     public function asInt32():Int32;
     public function asInt64():Int64;
