@@ -682,6 +682,10 @@ namespace sunaba::ui {
             void setGlobalPosition(Vector2 position, bool keepOffset = false) {
                 control->set_global_position(position, keepOffset);
             }
+
+            void setOffset(int side, float value) {
+                control->set_offset(static_cast<godot::Side>(side), value);
+            }
     };
 }
 
