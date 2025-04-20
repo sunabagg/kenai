@@ -70,7 +70,7 @@ namespace sunaba::core {
         Event* replacingBy;
         Event* treeEntered;
         Event* treeExited;
-        Event* treeExitingEvent;
+        Event* treeExiting;
 
         Element() {
             setNode(memnew(NodeProxy));
