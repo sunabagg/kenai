@@ -13,6 +13,12 @@ namespace sunaba::core {
         }
     }
 
+    void CanvasItemProxy::hidden() {
+        if (canvas_item_element != nullptr) {
+            canvas_item_element->hidden->emit(Array());
+        }
+    }
+
     void bindCanvasItem(sol::state& lua) {
         lua.new_usertype<CanvasItem>(
             "CanvasItem",
