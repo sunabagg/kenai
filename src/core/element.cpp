@@ -132,3 +132,9 @@ void sunaba::core::NodeProxy::onTreeEntered() {
         this->element->treeEntered->emit(Array());
     }
 }
+
+void sunaba::core::NodeProxy::onTreeExited() {
+    if (this->element != nullptr) {
+        this->element->treeExited->emit(Array());
+    }
+}
