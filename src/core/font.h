@@ -96,12 +96,12 @@ namespace sunaba::core {
             return font->get_multiline_string_size(text.c_str(), static_cast<HorizontalAlignment>(alignment), width, fontSize, maxLines, brkFlags, justificationFlags, static_cast<TextServer::Direction>(direction), static_cast<TextServer::Orientation>(orientation));
         }
 
-        sol::table getOpentypeFeatures(sol::state_view lua_state) {
-            return to_table(lua_state, font->get_opentype_features());
+        Dictionary getOpentypeFeatures() {
+            return font->get_opentype_features();
         }
 
-        sol::table getOtNameStrings(sol::state_view lua_state) {
-            return to_table(lua_state, font->get_ot_name_strings());
+        Dictionary getOtNameStrings() {
+            return font->get_ot_name_strings();
         }
 
         int getSpacing(int spacing) {
@@ -116,12 +116,12 @@ namespace sunaba::core {
             return String(font->get_supported_chars()).utf8().get_data();
         }
 
-        sol::table getSupportedFeatureList(sol::state_view lua_state) {
-            return to_table(lua_state, font->get_supported_feature_list());
+        Dictionary getSupportedFeatureList(sol::state_view lua_state) {
+            return font->get_supported_feature_list();
         }
 
-        sol::table getSupportedVariationList(sol::state_view lua_state) {
-            return to_table(lua_state, font->get_supported_variation_list());
+        Dictionary getSupportedVariationList(sol::state_view lua_state) {
+            return font->get_supported_variation_list();
         }
 
         float getUnderlinePosition(int fontSize = 16) {
