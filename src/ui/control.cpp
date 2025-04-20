@@ -253,6 +253,7 @@ namespace sunaba::ui {
             "getOffset", &Control::getOffset,
             "getParentAreaSize", &Control::getParentAreaSize,
             "getParentControl", &Control::getParentControl,
+            "getRect", &Control::getRect,
         );
     }
 }
