@@ -21,4 +21,5 @@ extern class Control extends CanvasItem {
     public var focusPrevious: String;
     public var globalPosition: Vector2;
     public var growHorizontal:Bool;
+    public var growVertical:Bool;
 }
