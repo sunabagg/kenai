@@ -242,6 +242,7 @@ namespace sunaba::ui {
             "findPrevValidFocus", &Control::findPrevValidFocus,
             "findValidFocusNeighbor", &Control::findValidFocusNeighbor,
             "forceDrag", &Control::forceDrag,
+            "getAnchor", &Control::getAnchor,
             "getDragData", &Control::getDragData,
         );
     }
