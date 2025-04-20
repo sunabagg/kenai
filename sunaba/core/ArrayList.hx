@@ -56,4 +56,20 @@ abstract ArrayListAbstract(ArrayList) from ArrayList to ArrayList {
             callback(this.get(i));
         }
     }
+
+    public function toArray(): Array<Variant> {
+        var result = new Array<Variant>(this.size());
+        for (i in 0...this.size()) {
+            result[i] = this.get(i);
+        }
+        return result;
+    }
+
+    public static function fromArray(array: Array<Variant>): ArrayList {
+        var result = new ArrayList();
+        for (item in array) {
+            result.append(item);
+        }
+        return result;
+    }
 }
