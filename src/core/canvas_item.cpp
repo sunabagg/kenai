@@ -9,7 +9,7 @@ namespace sunaba::core {
 
     void CanvasItemProxy::draw() {
         if (canvas_item_element != nullptr) {
-            canvas_item_element-->draw->emit(Array());
+            canvas_item_element->draw->emit(Array());
         }
     }
 
