@@ -109,7 +109,7 @@ namespace sunaba::core {
         EventBridge() {
             event = new Event();
         }
-        void callEvent(const godot::Variant* args, GDExtensionInt arg_count, GDExtensionCallError &error) {
+        void callEvent(const godot::Variant** args, GDExtensionInt arg_count, GDExtensionCallError &error) {
             Array args_array;
             for (int i = 0; i < arg_count; ++i) {
                 args_array.append(args[i]);
