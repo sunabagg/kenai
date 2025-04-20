@@ -73,6 +73,38 @@ namespace sunaba::core {
                 &CanvasItem::getZIndex,
                 &CanvasItem::setZIndex
             ),
+            "draw", sol::property(
+                [](CanvasItem* c) {
+                    return c->darw;
+                },
+                [](CanvasItem* c, Event* event) {
+                    c->darw = event;
+                }
+            ),
+            "hidden", sol::property(
+                [](CanvasItem* c) {
+                    return c->hidden;
+                },
+                [](CanvasItem* c, Event* event) {
+                    c->hidden = event;
+                }
+            ),
+            "itemRectChanged", sol::property(
+                [](CanvasItem* c) {
+                    return c->itemRectChanged;
+                },
+                [](CanvasItem* c, Event* event) {
+                    c->itemRectChanged = event;
+                }
+            ),
+            "visibilityChanged", sol::property(
+                [](CanvasItem* c) {
+                    return c->visibilityChanged;
+                },
+                [](CanvasItem* c, Event* event) {
+                    c->visibilityChanged = event;
+                }
+            ),
             "drawAnimationSlice", &CanvasItem::drawAnimationSlice,
             "drawArc", &CanvasItem::drawArc,
             "drawChar", &CanvasItem::drawChar,
