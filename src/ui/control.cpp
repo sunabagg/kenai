@@ -281,6 +281,7 @@ namespace sunaba::ui {
             "isDragSuccessful", &Control::isDragSuccessful,
             "isLayoutRtl", &Control::isLayoutRtl,
             "releaseFocus", &Control::releaseFocus,
+            "removeThemeColorOverride", &Control::removeThemeColorOverride,
         );
     }
 }
