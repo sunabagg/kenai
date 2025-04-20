@@ -400,6 +400,16 @@ namespace sunaba::ui {
                 control->set_tooltip_text(String(text.c_str()));
             }
 
+            bool canDropData(Vector2 position, Variant data) {
+                if (scriptInstance != sol::lua_nil) {
+                    auto func = scriptInstance["canDropData"].get<sol::function>();
+                    if (func) {
+                        auto result = func(scriptInstance, position, data);
+                        return result.get<bool>();
+                    }
+                }
+            }
+
             void acceptEvent() {
                 control->accept_event();
             }
