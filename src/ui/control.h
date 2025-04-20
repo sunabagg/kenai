@@ -489,6 +489,10 @@ namespace sunaba::ui {
             float getOffset(int side) {
                 return control->get_offset(static_cast<godot::Side>(side));
             }
+
+            Vector2 getParentAreaMinimumSize() {
+                return control->get_parent_area_minimum_size();
+            }
     };
 }
 
