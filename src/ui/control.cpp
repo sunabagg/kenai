@@ -177,6 +177,10 @@ namespace sunaba::ui {
                 &Control::getPivotOffset,
                 &Control::setPivotOffset
             ),
+            "position", sol::property(
+                &Control::getPosition,
+                &Control::setPosition
+            ),
         );
     }
 }
