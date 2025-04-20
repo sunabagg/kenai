@@ -64,7 +64,7 @@ namespace sunaba::core {
         sol::table scriptInstance = sol::lua_nil;
 
         Event* childEnteredTree;
-        Event* childExitedTreeEvent;
+        Event* childExitedTree;
         Event* childOrderChangedEvent;
         Event* renamedEvent;
         Event* replacingByEvent;
