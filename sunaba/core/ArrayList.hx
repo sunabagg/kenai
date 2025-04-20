@@ -39,3 +39,21 @@ extern class ArrayList {
     public function slice(begin: Int, end: Int, step: Int = 1, deep: Bool = false) : ArrayList;
     public function sort(): Void;
 }
+
+abstract ArrayListAbstract(ArrayList) from ArrayList to ArrayList {
+    @:op([])
+    public function get(index: Int): Variant {
+        return this.get(index);
+    }
+
+    @:op([])
+    public function set(index: Int, value: Variant): Void {
+        this.set(index, value);
+    }
+
+    public function forEach(callback: Dynamic): Void {
+        for (i in 0...this.size()) {
+            callback(this.get(i));
+        }
+    }
+}
