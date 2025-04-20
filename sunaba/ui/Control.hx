@@ -83,5 +83,6 @@ extern class Control extends CanvasItem {
     public function getTooltip():String;
     public function grabClickFocus():Void;
     public function grabFocus():Void;
+    public function hasFocus():Bool;
     
 }
