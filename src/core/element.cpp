@@ -20,9 +20,12 @@ void sunaba::core::bindElement(sol::state &lua) {
                     e->getNode()->set_name(name.c_str());
             }
         ),
-        "childEnteredTree", sol::readonly_property(
+        "childEnteredTree", sol:property(
             [](Element* e) {
                 return e->childEnteredTree;
+            },
+            [](Element* e, Event* event) {
+                e->childEnteredTree = event;
             }
         ),
         "childExitedTree", sol::readonly_property(
