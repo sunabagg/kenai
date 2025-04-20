@@ -185,6 +185,10 @@ namespace sunaba::ui {
                 &Control::getRotation,
                 &Control::setRotation
             ),
+            "rotationDegrees", sol::property(
+                &Control::getRotationDegrees,
+                &Control::setRotationDegrees
+            ),
         );
     }
 }
