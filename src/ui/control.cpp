@@ -291,6 +291,7 @@ namespace sunaba::ui {
             "setAnchor", &Control::setAnchor,
             "setAnchorAndOffset", &Control::setAnchorAndOffset,
             "setAnchorsAndOffsetsPreset", &Control::setAnchorsAndOffsetsPreset,
+            "setAnchorsPreset", &Control::setAnchorsPreset,
         );
     }
 }
