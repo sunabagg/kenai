@@ -19,14 +19,7 @@ namespace sunaba::core {
 
     class CanvasItemProxy : public CanvasItemNode, public NodeProxy {
         public:
-            sunaba::core::CanvasItem* canvas_item_element = nullptr;
-
-            static void bindCanvasItemMethods() {
-                ClassDB::bind_method(D_METHOD("draw"), &CanvasItemProxy::_draw);
-                ClassDB::bind_method(D_METHOD("hidden"), &CanvasItemProxy::hidden);
-                ClassDB::bind_method(D_METHOD("itemRectChanged"), &CanvasItemProxy::itemRectChanged);
-                ClassDB::bind_method(D_METHOD("visibilityChanged"), &CanvasItemProxy::visibilityChanged);
-            }   
+            sunaba::core::CanvasItem* canvas_item_element = nullptr;  
 
             void draw();
             void hidden();
@@ -34,17 +27,6 @@ namespace sunaba::core {
             void visibilityChanged();
 
             void _draw() override;
-
-
-    };
-
-    class CanvasItemProxyBridge : public CanvasItemProxy {
-        GDCLASS(CanvasItemProxyBridge, CanvasItemNode); // Macro to register the class with Godot
-        protected:
-            static void _bind_methods() {
-                bindElementMethods();
-                bindCanvasItemMethods();
-            }
     };
 
     class CanvasItem : public Element {
@@ -62,7 +44,7 @@ namespace sunaba::core {
     
         // Constructor with no parameters
         CanvasItem() {
-            setCanvasItem(memnew(CanvasItemProxyBridge));
+            setCanvasItem(memnew(CanvasItemProxy));
             onInit();
         }
 
