@@ -18,9 +18,6 @@ namespace sunaba::core {
     class Element; // Forward declaration
 
     class NodeProxy : public Node {
-        GDCLASS(NodeProxy, Node); // Macro to register the class with Godot
-    protected:
-        static void _bind_methods();
     public:
         Element* element = nullptr;
 
@@ -64,6 +61,14 @@ namespace sunaba::core {
         void _unhandled_key_input(const Ref<InputEvent>& event) override;
         void _shortcut_input(const Ref<InputEvent>& event) override;
     };
+
+    class NodeProxyBridge : public NodeProxy {
+        GDCLASS(NodeProxyBridge, Node); // Macro to register the class with Godot
+        protected:
+            static void _bind_methods() {
+                bindElementMethods();
+            }
+    };
     
     class Element : public BaseObject {    
     private:
@@ -93,7 +98,7 @@ namespace sunaba::core {
         Event* treeExiting;
 
         Element() {
-            setNode(memnew(NodeProxy));
+            setNode(memnew(NodeProxyBridge));
             node->set_name("Element");
             onInit();
         }

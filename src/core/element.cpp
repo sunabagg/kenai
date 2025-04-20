@@ -209,10 +209,6 @@ void sunaba::core::NodeProxy::onTreeExiting() {
     }
 }
 
-void sunaba::core::NodeProxy::_bind_methods() {
-    sunaba::core::NodeProxy::bindElementMethods();
-}
-
 void sunaba::core::NodeProxy::bindElementMethods() {
     ClassDB::bind_method(D_METHOD("onChildEnteredTree"), &NodeProxy::onChildEnteredTree);
     ClassDB::bind_method(D_METHOD("onChildExitedTree"), &NodeProxy::onChildExitedTree);
