@@ -57,4 +57,5 @@ extern class Control extends CanvasItem {
     public function addThemeFontSizeOverride(name:String, size:Float):Void;
     public function addThemeIconOverride(name:String, icon:Texture2D):Void;
     public function addThemeStyleboxOverride(name:String, stylebox:StyleBox):Void;
+    public function beginBulkThemeOverride():Void;
 }
