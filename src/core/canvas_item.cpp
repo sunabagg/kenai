@@ -25,6 +25,12 @@ namespace sunaba::core {
         }
     }
 
+    void CanvasItemProxy::visibilityChanged() {
+        if (canvas_item_element != nullptr) {
+            canvas_item_element->visibilityChanged->emit(Array());
+        }
+    }
+
     void bindCanvasItem(sol::state& lua) {
         lua.new_usertype<CanvasItem>(
             "CanvasItem",
