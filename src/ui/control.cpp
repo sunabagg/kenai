@@ -295,6 +295,7 @@ namespace sunaba::ui {
             "setBegin", &Control::setBegin,
             "setDragPreview", &Control::setDragPreview,
             "setEnd", &Control::setEnd,
+            "setFocusNeighbor", &Control::setFocusNeighbor,
         );
     }
 }
