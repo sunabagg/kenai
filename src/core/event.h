@@ -98,6 +98,14 @@ namespace sunaba::core {
                 }
             }
 
+            void clear() {
+                for (auto listener : listeners) {
+                    delete listener; // Assuming listeners are dynamically allocated
+                }
+                listeners.clear();
+                lua_listeners.clear();
+            }
+
             static Event* createFromSignal(godot::Signal signal);
     };
 
