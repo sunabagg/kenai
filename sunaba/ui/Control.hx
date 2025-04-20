@@ -29,4 +29,5 @@ extern class Control extends CanvasItem {
     public var offsetBottom:Float;
     public var offsetLeft:Float;
     public var offsetRight:Float;
+    public var offsetTop:Float;
 }
