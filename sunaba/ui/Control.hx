@@ -122,5 +122,16 @@ extern class Control extends CanvasItem {
     public function updateMinimumSize():Void;
     public function warpMouse(position:Vector2):Void;
     @:native("cast")
-    public function castToControl():Control;
+    public function toControl(obj:Dynamic):Control;
+}
+
+abstract ControlAbstract(Control) from Control to Control {
+    @:from
+    public static function fromElement(element: Element): ControlAbstract {
+        var cItem = Control.toControl(element);
+        if (cItem.isNull()) {
+            return null;
+        }
+        return cItem;
+    }
 }
