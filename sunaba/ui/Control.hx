@@ -84,5 +84,6 @@ extern class Control extends CanvasItem {
     public function grabClickFocus():Void;
     public function grabFocus():Void;
     public function hasFocus():Bool;
+    public function hasThemeColor(name:String,?type:String):Bool;
     
 }
