@@ -461,6 +461,10 @@ namespace sunaba::ui {
             Vector2 getBegin() {
                 return control->get_begin();
             }
+
+            Vector2 getCombinedMinimumSize() {
+                return control->get_combined_minimum_size();
+            }
     };
 }
 
