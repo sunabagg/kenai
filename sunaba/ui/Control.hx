@@ -82,5 +82,6 @@ extern class Control extends CanvasItem {
     public function getThemeStylebox(name:String):StyleBox;
     public function getTooltip():String;
     public function grabClickFocus():Void;
+    public function grabFocus():Void;
     
 }
