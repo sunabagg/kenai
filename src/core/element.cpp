@@ -148,3 +148,14 @@ void sunaba::core::NodeProxy::onTreeExiting() {
 void sunaba::core::NodeProxy::_bind_methods() {
     sunaba::core::NodeProxy::bindElementMethods();
 }
+
+void sunaba::core::NodeProxy::bindElementMethods() {
+    ClassDB::bind_method(D_METHOD("onChildEnteredTree"), &NodeProxy::onChildEnteredTree);
+    ClassDB::bind_method(D_METHOD("onChildExitedTree"), &NodeProxy::onChildExitedTree);
+    ClassDB::bind_method(D_METHOD("onChildOrderChanged"), &NodeProxy::onChildOrderChanged);
+    ClassDB::bind_method(D_METHOD("onRenamed"), &NodeProxy::onRenamed);
+    ClassDB::bind_method(D_METHOD("onReplacingBy"), &NodeProxy::onReplacingBy);
+    ClassDB::bind_method(D_METHOD("onTreeEntered"), &NodeProxy::onTreeEntered);
+    ClassDB::bind_method(D_METHOD("onTreeExited"), &NodeProxy::onTreeExited);
+    ClassDB::bind_method(D_METHOD("onTreeExiting"), &NodeProxy::onTreeExiting);
+}
