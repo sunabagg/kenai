@@ -254,6 +254,7 @@ namespace sunaba::ui {
             "getParentAreaSize", &Control::getParentAreaSize,
             "getParentControl", &Control::getParentControl,
             "getRect", &Control::getRect,
+            "getScreenPosition", &Control::getScreenPosition,
         );
     }
 }
