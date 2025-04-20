@@ -255,6 +255,7 @@ namespace sunaba::ui {
             "getParentControl", &Control::getParentControl,
             "getRect", &Control::getRect,
             "getScreenPosition", &Control::getScreenPosition,
+            "getThemeColor", &Control::getThemeColor,
         );
     }
 }
