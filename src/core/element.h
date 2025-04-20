@@ -6,6 +6,7 @@
 
 #include "base_object.h"
 #include "../input/input_event.h"
+#include "event.h"
 
 
 using namespace sunaba::core;
