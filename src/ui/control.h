@@ -192,10 +192,6 @@ namespace sunaba::ui {
                 return control->get_global_position();
             }
 
-            void setGlobalPosition(Vector2 position) {
-                control->set_global_position(position);
-            }
-
             int getGrowHorizontal() {
                 return control->get_h_grow_direction();
             }

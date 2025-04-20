@@ -65,6 +65,110 @@ namespace sunaba::ui {
         lua.new_usertype<Control>("Control",
             sol::constructors<Control()>(),
             sol::base_classes, sol::bases<BaseObject, Element, sunaba::core::CanvasItem>(),
+            "anchorBottonm", sol::property(
+                &Control::getAnchorBottom,
+                &Control::setAnchorBottom
+            ),
+            "anchorLeft", sol::property(
+                &Control::getAnchorLeft,
+                &Control::setAnchorLeft
+            ),
+            "anchorRight", sol::property(
+                &Control::getAnchorRight,
+                &Control::setAnchorRight
+            ),
+            "anchorTop", sol::property(
+                &Control::getAnchorTop,
+                &Control::setAnchorTop
+            ),
+            "autoTranslate", sol::property(
+                &Control::isAutoTranslating,
+                &Control::setAutoTranslate
+            ),
+            "clippingContents", sol::property(
+                &Control::isClippingContents,
+                &Control::setClipContents
+            ),
+            "customMinimumSize", sol::property(
+                &Control::getCustomMinimumSize,
+                &Control::setCustomMinimumSize
+            ),
+            "focusMode", sol::property(
+                &Control::getFocusMode,
+                &Control::setFocusMode
+            ),
+            "focusNeighborBottom", sol::property(
+                &Control::getFocusNeighborBottom,
+                &Control::setFocusNeighborBottom
+            ),
+            "focusNeighborLeft", sol::property(
+                &Control::getFocusNeighborLeft,
+                &Control::setFocusNeighborLeft
+            ),
+            "focusNeighborRight", sol::property(
+                &Control::getFocusNeighborRight,
+                &Control::setFocusNeighborRight
+            ),
+            "focusNeighborTop", sol::property(
+                &Control::getFocusNeighborTop,
+                &Control::setFocusNeighborTop
+            ),
+            "focusNext", sol::property(
+                &Control::getFocusNext,
+                &Control::setFocusNext
+            ),
+            "focusPrevious", sol::property(
+                &Control::getFocusPrevious,
+                &Control::setFocusPrevious
+            ),
+            "globalPosition", sol::property(
+                &Control::getGlobalPosition,
+                &Control::setGlobalPosition
+            ),
+            "growHorizontal", sol::property(
+                &Control::getGrowHorizontal,
+                &Control::setGrowHorizontal
+            ),
+            "growVertical", sol::property(
+                &Control::getGrowVertical,
+                &Control::setGrowVertical
+            ),
+            "layoutDirection", sol::property(
+                &Control::getLayoutDirection,
+                &Control::setLayoutDirection
+            ),
+            "localizeNumeralSystem", sol::property(
+                &Control::isLocalizingNumeralSystem,
+                &Control::setLocalizeNumeralSystem
+            ),
+            "mouseDefaultCursorShape", sol::property(
+                &Control::getMouseDefaultCursorShape,
+                &Control::setMouseDefaultCursorShape
+            ),
+            "mouseFilter", sol::property(
+                &Control::getMouseFilter,
+                &Control::setMouseFilter
+            ),
+            "mouseForcePassScrollEvents", sol::property(
+                &Control::getMouseForcePassScrollEvents,
+                &Control::setMouseForcePassScrollEvents
+            ),
+            "offsetBottom", sol::property(
+                &Control::getOffsetBottom,
+                &Control::setOffsetBottom
+            ),
+            "offsetLeft", sol::property(
+                &Control::getOffsetLeft,
+                &Control::setOffsetLeft
+            ),
+            "offsetRight", sol::property(
+                &Control::getOffsetRight,
+                &Control::setOffsetRight
+            ),
+            "offsetTop", sol::property(
+                &Control::getOffsetTop,
+                &Control::setOffsetTop
+            ),
         );
     }
 }
