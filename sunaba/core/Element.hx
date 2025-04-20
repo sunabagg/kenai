@@ -10,7 +10,7 @@ extern class Element extends BaseObject {
     public function addChild(child: Element): Void;
     public function addSibling(sibling: Element): Void;
     public function removeChild(child: Element): Void;
-    public function getChildren(): Array<Element>;
+    public function getChildren(): lua.Table<Int, Element>;
     public function isNull(): Bool;
     @:native("cast")
     public static function castElement(): Element;
