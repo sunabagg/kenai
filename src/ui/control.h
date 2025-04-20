@@ -477,6 +477,10 @@ namespace sunaba::ui {
             std::string getFocusNeighbor(int side) {
                 return String(control->get_focus_neighbor(static_cast<godot::Side>(side))).utf8().get_data();
             }
+
+            Rect2 getGlobalRect() {
+                return control->get_global_rect();
+            }
     };
 }
 
