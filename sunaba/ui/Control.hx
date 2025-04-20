@@ -120,4 +120,5 @@ extern class Control extends CanvasItem {
     public function setPosition(position:Vector2, ?keepOffset:Bool):Void;
     public function setSize(size:Vector2, ?keepOffsets:Bool):Void;
     public function updateMinimumSize():Void;
+    public function warpMouse(position:Vector2):Void;
 }
