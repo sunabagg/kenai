@@ -248,6 +248,7 @@ namespace sunaba::ui {
             "getCursorShape", &Control::getCursorShape,
             "getEnd", &Control::getEnd,
             "getFocusNeighbor", &Control::getFocusNeighbor,
+            "getGlobalRect", &Control::getGlobalRect,
         );
     }
 }
