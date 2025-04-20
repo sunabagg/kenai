@@ -501,6 +501,10 @@ namespace sunaba::ui {
             Rect2 getRect() {
                 return control->get_rect();
             }
+
+            Vector2 getScreenPosition() {
+                return control->get_screen_position();
+            }
     };
 }
 
