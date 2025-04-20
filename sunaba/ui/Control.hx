@@ -34,4 +34,5 @@ extern class Control extends CanvasItem {
     public var pivotOffset:Vector2;
     public var position:Vector2;
     public var rotation:Vector2;
+    public var rotationDegrees:Float;
 }
