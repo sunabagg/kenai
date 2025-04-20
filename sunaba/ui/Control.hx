@@ -49,5 +49,5 @@ extern class Control extends CanvasItem {
     public var toolTipText:String;
     public function acceptEvent():Void;
     public function addThemeColorOverride(name:String, color:Color):Void;
-    public function addThemeConstantOverride(name:String, constant:Variant):Void
+    public function addThemeConstantOverride(name:String, constant:Variant):Void;
 }
