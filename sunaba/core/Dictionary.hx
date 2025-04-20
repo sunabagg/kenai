@@ -25,6 +25,29 @@ extern class Dictionary {
     public function values() : ArrayList;
 }
 
+class DictionaryIterator = {
+    public var index: Int;
+    public var dict: Dictionary;
+    public function new(dict: Dictionary) {
+        this.index = 0;
+        this.dict = dict;
+    }
+
+    public function hasNext(): Bool {
+        return this.index < this.dict.size();
+    }
+
+    public function next(): Variant {
+        if (this.hasNext()) {
+            var key = this.dict.keys().get(this.index);
+            this.index++;
+            return key;
+        } else {
+            throw "No more elements in the dictionary.";
+        }
+    }
+}
+
 abstract DictionaryAbstract(Dictionary) from Dictionary to Dictionary {
     @:op([])
     public inline function get(key: Variant): Variant {
@@ -52,5 +75,9 @@ abstract DictionaryAbstract(Dictionary) from Dictionary to Dictionary {
             var key = keys[i];
             func(key, this.get(key));
         }
+    }
+
+    public function iterator(): DictionaryIterator {
+        return new DictionaryIterator(this);
     }
 }
