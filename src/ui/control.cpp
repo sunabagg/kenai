@@ -237,6 +237,7 @@ namespace sunaba::ui {
             "addThemeStyleboxOverride", &Control::addThemeStyleboxOverride,
             "addThemeIconOverride", &Control::addThemeIconOverride,
             "beginBulkThemeOveride", &Control::beginBulkThemeOveride,
+            "endBulkThemeOveride", &Control::endBulkThemeOveride,
         );
     }
 }
