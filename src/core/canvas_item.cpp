@@ -3,7 +3,7 @@
 namespace sunaba::core {
     void CanvasItemProxy::_draw() {
         if (canvas_item_element != nullptr) {
-            canvas_item_element->draw();
+            canvas_item_element->_draw();
         }
     }
 
