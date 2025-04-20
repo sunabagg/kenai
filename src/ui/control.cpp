@@ -302,6 +302,7 @@ namespace sunaba::ui {
             "setPosition", &Control::setPosition,
             "setSize", &Control::setSize,
             "updateMinimumSize", &Control::updateMinimumSize,
+            "warpMouse", &Control::warpMouse,
         );
     }
 }
