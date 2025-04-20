@@ -7,6 +7,7 @@ import sunaba.core.Variant;
 import sunaba.core.Color;
 import sunaba.core.Font;
 import sunaba.core.Texture2D;
+import sunaba.core.Rect2;
 
 @:native("Control")
 extern class Control extends CanvasItem {
@@ -68,4 +69,5 @@ extern class Control extends CanvasItem {
     public function getCursorShape(position:Vector2):Int;
     public function getEnd():Vector2;
     public function getFocusNeighbor(side:Int):String;
+    public function getGlobalRect():Rect2;
 }
