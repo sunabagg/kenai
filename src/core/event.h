@@ -76,8 +76,13 @@ namespace sunaba::core {
                     callCppListener(listemer, args);
                 }
 
-                for (auto lua_listener : lua_listeners) {
-                    callLuaListener(lua_listener, args);
+                for (sol::function lua_listener : lua_listeners) {
+                    sol::state_view lua_state = sol::state_view(lua_listener.lua_state());
+                    sol::table 
+                    for (int i = 0; i < args.size(); ++i) {
+                        lua_args[i + 1] = args[i]; // Lua tables are 1-indexed
+                    }
+                    callLuaListener(lua_listener, sol::as_args(lua_args));
                 }
             }
 
