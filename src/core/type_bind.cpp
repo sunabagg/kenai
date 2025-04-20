@@ -244,7 +244,6 @@ void sunaba::core::bind_base_types(sol::state& lua) {
         "size", &Array::size,
         "slice", &Array::slice,
         "sort", &Array::sort,
-        "sortCustom", &Array::sort_custom,
         sol::meta_function::index, [](Array& arr, int index) { return arr[index]; },
         sol::meta_function::new_index, [](Array& arr, int index, const Variant& value) {
             arr.set(index, value);
