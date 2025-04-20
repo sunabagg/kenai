@@ -618,6 +618,10 @@ namespace sunaba::ui {
             void releaseFocus() {
                 control->release_focus();
             }
+
+            void removeThemeColorOverride(std::string name) {
+                control->remove_theme_color_override(name.c_str());
+            }
     };
 }
 
