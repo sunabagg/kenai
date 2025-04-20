@@ -221,6 +221,10 @@ namespace sunaba::ui {
                 &Control::getThemeTypeVariation,
                 &Control::setThemeTypeVariation
             ),
+            "toolTipAutoTranslateMode", sol::property(
+                &Control::getToolTipAutoTranslateMode,
+                &Control::setToolTipAutoTranslateMode
+            ),
         );
     }
 }
