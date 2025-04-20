@@ -22,7 +22,7 @@ namespace sunaba::core {
         Element* element = nullptr;
         
         NodeProxy() {
-            auto childEnteredTreeCallable = Callable(this, "onChildEnteredTree");   
+            /*auto childEnteredTreeCallable = Callable(this, "onChildEnteredTree");   
             connect("child_entered_tree", childEnteredTreeCallable);
             auto childExitedTreeCallable = Callable(this, "onChildExitedTree");
             connect("child_exited_tree", childExitedTreeCallable);
@@ -37,7 +37,7 @@ namespace sunaba::core {
             auto treeExitedCallable = Callable(this, "onTreeExited");
             connect("tree_exited", treeExitedCallable);
             auto treeExitingCallable = Callable(this, "onTreeExiting");
-            connect("tree_exiting", treeExitingCallable);
+            connect("tree_exiting", treeExitingCallable);*/
         }
 
         void onChildEnteredTree(Node* child);
