@@ -269,6 +269,7 @@ namespace sunaba::ui {
             "grabFocus", &Control::grabFocus,
             "hasFocus", &Control::hasFocus,
             "hasThemeColor", &Control::hasThemeColor,
+            "hasThemeColorOverride", &Control::hasThemeColorOverride,
         );
     }
 }
