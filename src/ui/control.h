@@ -614,6 +614,10 @@ namespace sunaba::ui {
             bool isLayoutRtl() {
                 return control->is_layout_rtl();
             }
+
+            void releaseFocus() {
+                control->release_focus();
+            }
     };
 }
 
