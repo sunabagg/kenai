@@ -260,6 +260,7 @@ namespace sunaba::ui {
             "getThemeDefaultBaseScale", &Control::getThemeDefaultBaseScale,
             "getThemeDefaultFont", &Control::getThemeDefaultFont,
             "getThemeDefaultFontSize", &Control::getThemeDefaultFontSize,
+            "getThemeFont", &Control::getThemeFont,
         );
     }
 }
