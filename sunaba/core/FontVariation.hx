@@ -4,14 +4,14 @@ package sunaba.core;
 extern class FontVariation extends Font {
     public var baseFont: Font;
     public var baselineOffset: Float;
-    public var opentypeFeatures: Map<Any, Any>;
+    public var opentypeFeatures: Dictionary;
     public var spacingBottom : Int;
     public var spacingGlyph : Int;
     public var spacingSpace : Int;
     public var spacingTop : Int;
     public var variationEmbolden : Float;
     public var variationFaceIndex : Float;
-    public var variationOpentype : Map<Any, Any>;
+    public var variationOpentype : Dictionary;
     public function setSpaing(spacing : Int, value : Int) : Void;
     @:native("cast")
     public static function castFrom(type: Dynamic) : FontVariation;
