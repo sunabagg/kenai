@@ -52,9 +52,12 @@ void sunaba::core::bindElement(sol::state &lua) {
                 e->renamed = event;
             }
         ),
-        "replacingBy", sol::readonly_property(
+        "replacingBy", sol::property(
             [](Element* e) {
                 return e->replacingBy;
+            },
+            [](Element* e, Event* event) {
+                e->replacingBy = event;
             }
         ),
         "treeEntered", sol::readonly_property(
