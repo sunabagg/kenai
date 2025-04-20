@@ -35,7 +35,11 @@ void sunaba::core::bindElement(sol::state &lua) {
                 return e->childOrderChanged;
             }
         ),
-        "renamed", &Element::renamed,
+        "renamed", sol::readonly_property(
+            [](Element* e) {
+                return e->renamed;
+            }
+        ),
         "replacingBy", &Element::replacingBy,
         "treeEntered", &Element::treeEntered,
         "treeExited", &Element::treeExited,
