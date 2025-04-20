@@ -169,6 +169,10 @@ namespace sunaba::ui {
                 &Control::getOffsetTop,
                 &Control::setOffsetTop
             ),
+            "physicsInterpolationMode", sol::property(
+                &Control::getPhysicsInterpolationMode,
+                &Control::setPhysicsInterpolationMode
+            ),
         );
     }
 }
