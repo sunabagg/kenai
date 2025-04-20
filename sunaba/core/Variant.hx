@@ -4,19 +4,18 @@ import sunaba.core.io.BinaryData;
 import lua.Table;
 import haxe.Int32;
 import haxe.Int64;
-import haxe.
 
 @:native("Variant")
 extern class Variant {
     public function new();
     @:native("new")
-    public static function fromInt(value:Int32):Variant;
+    public static function fromInt32(value:Int32):Variant;
     @:native("new")
     public static function fromInt64(value:Int64):Variant;
     @:native("new")
-    public static function fromSingle(vale:Single):Variant;
+    public static function fromFloat32(vale:Single):Variant;
     @:native("new")
-    public static function fromFloat(value:Single):Variant;
+    public static function fromFloat64(value:Single):Variant;
     @:native("new")
     public static function fromString(value:String):Variant;
     @:native("new")
@@ -66,10 +65,10 @@ extern class Variant {
     public function getType():Int;
     public function getTypeName():String;
     public function asString():String;
-    public function asInt():Int32;
+    public function asInt32():Int32;
     public function asInt64():Int64;
-    public function asSingle():Single;
-    public function asFloat():Float;
+    public function asFloat32():Single;
+    public function asFloat64():Float;
     public function asBool():Bool;
     public function asVector2():Vector2;
     public function asVector3():Vector3;
@@ -112,11 +111,11 @@ abstract VariantAbstract(Variant) from Variant to Variant {
     }
     @:from
     public static function fromInt(value:Int):VariantAbstract {
-        return Variant.fromInt(value);
+        return Variant.fromInt64(value);
     }
     @:to
-    public static function toInt(value:VariantAbstract):Int {
-        return value.asInt();
+    public static function toInt(value:VariantAbstract):Int64 {
+        return value.asInt64();
     }
     @:from
     public static function fromInt64(value:Int64):VariantAbstract {
@@ -126,29 +125,29 @@ abstract VariantAbstract(Variant) from Variant to Variant {
     public static function toInt64(value:VariantAbstract):Int64 {
         return value.asInt64();
     }
+    @:from
+    public static function fromInt32(value:Int32):VariantAbstract {
+        return Variant.fromInt32(value);
+    }
     @:to
     public static function toInt32(value:VariantAbstract):Int32 {
         return value.asInt64().toInt32();
     }
+    @:from
+    public static function fromFloat32(value:Single):VariantAbstract {
+        return Variant.fromFloat32(value);
+    }
     @:to
-    public static function toInt64(value:VariantAbstract):Int64 {
-        return value.asInt64();
+    public static function toFloat32(value:VariantAbstract):Single {
+        return value.asFloat32();
     }
     @:from
-    public static function fromSingle(value:Single):VariantAbstract {
-        return Variant.fromSingle(value);
+    public static function fromFloat64(value:Float):VariantAbstract {
+        return Variant.fromFloat64(value);
     }
     @:to
-    public static function toSingle(value:VariantAbstract):Single {
-        return value.asSingle();
-    }
-    @:from
-    public static function fromFloat(value:Float):VariantAbstract {
-        return Variant.fromFloat(value);
-    }
-    @:to
-    public static function toFloat(value:VariantAbstract):Float {
-        return value.asFloat();
+    public static function toFloat64(value:VariantAbstract):Float {
+        return value.asFloat64();
     }
     @:from
     public static function fromBool(value:Bool):VariantAbstract {
