@@ -513,6 +513,10 @@ namespace sunaba::ui {
             int getThemeConstant(std::string name, std::string type) {
                 return control->get_theme_constant(name.c_str(), type.c_str());
             }
+
+            float getThemeDefaultBaseScale() {
+                return control->get_theme_default_base_scale();
+            }
     };
 }
 
