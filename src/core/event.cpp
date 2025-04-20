@@ -1,5 +1,7 @@
 #include "event.h"
 
+using namespace godot;
+
 void sunaba::core::bindEvent(sol::state &lua) {
     lua.new_usertype<sunaba::core::Event>("Event",
         sol::constructors<sunaba::core::Event()>(),
@@ -8,4 +10,11 @@ void sunaba::core::bindEvent(sol::state &lua) {
         "disconnect", &sunaba::core::Event::disconnectLua,
         "emit", &sunaba::core::Event::emitLua
     );
+}
+
+sunaba::core::Event* sunaba::core::Event::createFromSignal(godot::Signal signal) {
+    EventBridge* eventBridge = memnew(EventBridge);
+    Callable callable(eventBridge, "callEvent");
+    signal.connect(callable);
+    return eventBridge->event;
 }
