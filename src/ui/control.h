@@ -554,6 +554,10 @@ namespace sunaba::ui {
             void grabFocus() {
                 control->grab_focus();
             }
+
+            bool hasFocus() {
+                return control->has_focus();
+            }
     };
 }
 
