@@ -247,6 +247,7 @@ namespace sunaba::ui {
             "getCombinedMinimumSize", &Control::getCombinedMinimumSize,
             "getCursorShape", &Control::getCursorShape,
             "getEnd", &Control::getEnd,
+            "getFocusNeighbor", &Control::getFocusNeighbor,
         );
     }
 }
