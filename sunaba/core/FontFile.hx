@@ -20,7 +20,7 @@ extern class FontFile extends Font {
     public var msdfPixelRange: Int;
     public var msdfSize: Int;
     public var multichannelSignedDistanceField: Bool;
-    public var opentypeFeatureOverrides: Map<Any, Any>;
+    public var opentypeFeatureOverrides: Dictionary;
     public var oversampling: Float;
     public var styleName: String;
     public var subpixelPositioning: Int;
