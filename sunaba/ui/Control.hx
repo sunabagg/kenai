@@ -119,4 +119,5 @@ extern class Control extends CanvasItem {
     public function setOffsetsPreset(preset:Int, ?resizeMode:Int, ?margin:Int):Void;
     public function setPosition(position:Vector2, ?keepOffset:Bool):Void;
     public function setSize(size:Vector2, ?keepOffsets:Bool):Void;
+    public function updateMinimumSize():Void;
 }
