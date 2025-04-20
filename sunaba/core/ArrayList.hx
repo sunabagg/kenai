@@ -1,6 +1,6 @@
 package sunaba.core;
 
-@:native("Array")
+@:native("ArrayList")
 extern class ArrayList {
     public function new();
     public function append(value : Variant) : Void;
