@@ -4,6 +4,8 @@ import sunaba.core.CanvasItem;
 import sunaba.core.Vector2;
 import sunaba.core.Element;
 import sunaba.core.Variant;
+import sunaba.core.Color;
+import sunaba.core.Font;
 
 @:native("Control")
 extern class Control extends CanvasItem {
@@ -50,4 +52,5 @@ extern class Control extends CanvasItem {
     public function acceptEvent():Void;
     public function addThemeColorOverride(name:String, color:Color):Void;
     public function addThemeConstantOverride(name:String, constant:Variant):Void;
+    public function addThemeFontOverride(name:String, font:Font):Void;
 }
