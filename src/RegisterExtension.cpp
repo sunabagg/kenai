@@ -7,6 +7,7 @@
 #include "godot_cpp/godot.hpp"
 
 #include "core/scene_node.h"
+#include "core/event.h"
 #include "tests/scene_test.h"
 #include "app.h"
 
@@ -30,6 +31,7 @@ namespace
         godot::ClassDB::register_class<sunaba::App>();
         godot::ClassDB::register_class<sunaba::tests::SceneTest>();
         godot::ClassDB::register_class<sunaba::core::SceneNode>();
+        godot::ClassDB::register_class<sunaba::core::EventBridge>();
     }
 
     /// @brief Called by Godot to let us do any cleanup.
