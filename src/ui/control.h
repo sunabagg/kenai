@@ -674,6 +674,10 @@ namespace sunaba::ui {
             void setEnd(Vector2 end) {
                 control->set_end(end);
             }
+
+            void setFocusNeighbor(int side, std::string name) {
+                control->set_focus_neighbor(static_cast<godot::Side>(side), String(name.c_str()));
+            }
     };
 }
 
