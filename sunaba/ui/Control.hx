@@ -97,4 +97,5 @@ extern class Control extends CanvasItem {
     public function hasThemeStylebox(name:String,?type:String):Bool;
     public function hasThemeStyleboxOverride(name:String):Bool;
     public function isDragSuccessful():Bool;
+    public function isLayoutRtl():Bool;
 }
