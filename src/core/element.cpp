@@ -44,9 +44,12 @@ void sunaba::core::bindElement(sol::state &lua) {
                 e->childOrderChanged = event;
             }
         ),
-        "renamed", sol::readonly_property(
+        "renamed", sol::property(
             [](Element* e) {
                 return e->renamed;
+            },
+            [](Element* e, Event* event) {
+                e->renamed = event;
             }
         ),
         "replacingBy", sol::readonly_property(
