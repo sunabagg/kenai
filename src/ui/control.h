@@ -622,6 +622,10 @@ namespace sunaba::ui {
             void removeThemeColorOverride(std::string name) {
                 control->remove_theme_color_override(name.c_str());
             }
+
+            void removeThemeConstantOverride(std::string name) {
+                control->remove_theme_constant_override(name.c_str());
+            }
     };
 }
 
