@@ -20,4 +20,9 @@ abstract EventAbstract(Event) from Event to Event {
     public function call(...args: Variant) {
         this.emit(args);
     }
+
+    @op(A += B)
+    public function add(func: Function): Void {
+        this.connect(func);
+    }
 }
