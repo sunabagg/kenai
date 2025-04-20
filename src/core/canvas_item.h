@@ -180,6 +180,8 @@ namespace sunaba::core {
             canvas_item->set_z_index(index);
         }
 
+        Event* darw;
+
         void drawAnimationSlice(float animationLength, float sliceBegin, float sliceEnd, float offset = 0.0f) {
             canvas_item->draw_animation_slice(animationLength, sliceBegin, sliceEnd, offset);
         }
@@ -533,7 +535,7 @@ namespace sunaba::core {
             canvas_item->show();
         }
 
-        void draw() {
+        void _draw() {
             if (scriptInstance != sol::lua_nil) {
                 auto func = scriptInstance["draw"].get<sol::function>();
                 if (func) {
