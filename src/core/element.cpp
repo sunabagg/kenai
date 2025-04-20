@@ -106,3 +106,9 @@ void sunaba::core::NodeProxy::onChildExitedTree(Node* child) {
         this->element->childExitedTree->emit(args);
     }
 }
+
+void sunaba::core::NodeProxy::onChildOrderChanged() {
+    if (this->element != nullptr) {
+        this->element->childOrderChanged->emit(Array());
+    }
+}
