@@ -57,11 +57,11 @@ namespace sunaba::core {
             fontVariation->set_baseline_offset(offset);
         }
 
-        Dictionary getOpentypeFeatures(sol::state_view lua_state) {
+        Dictionary getOpentypeFeatures() {
             return fontVariation->get_opentype_features();
         }
 
-        void setOpentypeFeatures(sol::state_view lua_state, Dictionary features) {
+        void setOpentypeFeatures(Dictionary features) {
             fontVariation->set_opentype_features(features);
         }
 
@@ -113,11 +113,11 @@ namespace sunaba::core {
             fontVariation->set_variation_face_index(faceIndex);
         }
 
-        Dictionary getVariationOpentype(sol::state_view lua_state) {
+        Dictionary getVariationOpentype() {
             return fontVariation->get_variation_opentype();
         }
 
-        void setVariationOpentype(sol::state_view lua_state, Dictionary variationOpentype) {
+        void setVariationOpentype(Dictionary variationOpentype) {
             fontVariation->set_variation_opentype(variationOpentype);
         }
 
