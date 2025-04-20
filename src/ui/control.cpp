@@ -258,6 +258,7 @@ namespace sunaba::ui {
             "getThemeColor", &Control::getThemeColor,
             "getThemeConstant", &Control::getThemeConstant,
             "getThemeDefaultBaseScale", &Control::getThemeDefaultBaseScale,
+            "getThemeDefaultFont", &Control::getThemeDefaultFont,
         );
     }
 }
