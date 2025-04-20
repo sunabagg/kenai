@@ -22,6 +22,7 @@ void sunaba::core::bind_base_types(sol::state& lua) {
             Variant(), 
             Variant(int), 
             Variant(float), 
+            Variant(bool),
             Variant(long), 
             Variant(double), 
             Variant(char*), 
