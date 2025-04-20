@@ -9,4 +9,5 @@ extern class Control extends CanvasItem {
     public var anchorRight:Float;
     public var anchorTop:Float;
     public var autoTranslate:Bool;
+    public var clippingContents:Bool;
 }
