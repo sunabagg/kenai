@@ -244,6 +244,7 @@ namespace sunaba::ui {
             "forceDrag", &Control::forceDrag,
             "getAnchor", &Control::getAnchor,
             "getBegin", &Control::getBegin,
+            "getCombinedMinimumSize", &Control::getCombinedMinimumSize,
             "getDragData", &Control::getDragData,
         );
     }
