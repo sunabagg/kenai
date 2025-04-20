@@ -110,4 +110,5 @@ extern class Control extends CanvasItem {
     public function setAnchorAndOffset(side:Int, anchor:Float, offset:Float, ?pushOppositeAnchor:Bool):Void;
     public function setAnchorsAndOffsetsPreset(preset:Int, ?resizeMode:Int, margin:Int):Void;
     public function setAnchorsPreset(preset:Int, ?keepOffsets:Bool):Void;
+    public function setBegin(position:Vector2):Void;
 }
