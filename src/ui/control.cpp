@@ -282,6 +282,7 @@ namespace sunaba::ui {
             "isLayoutRtl", &Control::isLayoutRtl,
             "releaseFocus", &Control::releaseFocus,
             "removeThemeColorOverride", &Control::removeThemeColorOverride,
+            "removeThemeConstantOverride", &Control::removeThemeConstantOverride,
         );
     }
 }
