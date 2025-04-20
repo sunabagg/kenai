@@ -106,5 +106,6 @@ extern class Control extends CanvasItem {
     public function removeThemeIconOverride(name:String):Void;
     public function removeThemeStyleboxOverride(name:String):Void;
     public function resetSize():Void;
-    public function setAnchor(side:Int, offset:Float):Void;
+    public function setAnchor(side:Int, anchor:Float, ?keepOffset:Bool, ?pushOppositeAnchor:Bool):Void;
+    public function setAnchorAndOffset(side:Int, anchor:Float, offset:Float):Void;
 }
