@@ -473,6 +473,10 @@ namespace sunaba::ui {
             Vector2 getEnd() {
                 return control->get_end();
             }
+
+            std::string getFocusNeighbor(int side) {
+                return String(control->get_focus_neighbor(static_cast<godot::Side>(side))).utf8().get_data();
+            }
     };
 }
 
