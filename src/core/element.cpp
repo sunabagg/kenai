@@ -20,6 +20,7 @@ void sunaba::core::bindElement(sol::state &lua) {
                     e->getNode()->set_name(name.c_str());
             }
         ),
+        "childEnteredTree", &Element::childEnteredTree,
         "find", &Element::find,
         "getParent", &Element::getParent,
         "addChild", &Element::addChild,
