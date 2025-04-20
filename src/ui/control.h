@@ -558,6 +558,10 @@ namespace sunaba::ui {
             bool hasFocus() {
                 return control->has_focus();
             }
+
+            bool hasThemeColor(std::string name, std::string type = String(StringName("&amp;&quot;&quot;")).utf8().get_data()) {
+                return control->has_theme_color(name.c_str(), type.c_str());
+            }
     };
 }
 
