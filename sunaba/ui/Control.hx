@@ -8,4 +8,5 @@ extern class Control extends CanvasItem {
     public var anchorLeft:Float;
     public var anchorRight:Float;
     public var anchorTop:Float;
+    public var autoTranslate:Bool;
 }
