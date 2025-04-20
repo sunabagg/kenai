@@ -481,6 +481,10 @@ namespace sunaba::ui {
             Rect2 getGlobalRect() {
                 return control->get_global_rect();
             }
+
+            Vector2 getMinimumSize() {
+                return control->get_minimum_size();
+            }
     };
 }
 
