@@ -10,4 +10,5 @@ extern class Control extends CanvasItem {
     public var anchorTop:Float;
     public var autoTranslate:Bool;
     public var clippingContents:Bool;
+    public var customMinimumSize: Vector2;
 }
