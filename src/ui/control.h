@@ -686,6 +686,10 @@ namespace sunaba::ui {
             void setOffset(int side, float value) {
                 control->set_offset(static_cast<godot::Side>(side), value);
             }
+
+            void setOffsetsPreset(int preset, int resizeMode = 0, int margin = 0) {
+                control->set_offsets_preset(static_cast<godot::Control::LayoutPreset>(preset), static_cast<godot::Control::LayoutPresetMode>(resizeMode), margin);
+            }
     };
 }
 
