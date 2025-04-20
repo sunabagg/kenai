@@ -29,7 +29,8 @@ namespace sunaba::core {
         NodeProxy() {
             auto childEnteredTreeCallable = Callable(this, "onChildEnteredTree");   
             connect("child_entered_tree", childEnteredTreeCallable);
-            
+            auto childExitedTreeCallable = Callable(this, "onChildExitedTree");
+            connect("child_exited_tree", childExitedTreeCallable);
         }
 
         void onChildEnteredTree(Node* child);
