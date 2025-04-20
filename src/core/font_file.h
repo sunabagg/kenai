@@ -173,11 +173,11 @@ namespace sunaba::core {
             fontFile->set_multichannel_signed_distance_field(multichannel);
         }
 
-        Dictionary getOpentypeFeatureOverrides(sol::state_view lua_state) {
+        Dictionary getOpentypeFeatureOverrides() {
             return fontFile->get_opentype_feature_overrides();
         }
 
-        void setOpentypeFeatureOverrides(sol::state_view lua_state, Dictionary features) {
+        void setOpentypeFeatureOverrides(Dictionary features) {
             fontFile->set_opentype_feature_overrides(features);
         }
 
@@ -371,7 +371,7 @@ namespace sunaba::core {
             return fontFile->get_transform(cacheIndex);
         }
 
-        Dictionary getVariationCoordinates(sol::state_view lua_state, int cacheIndex) {
+        Dictionary getVariationCoordinates(int cacheIndex) {
             return fontFile->get_variation_coordinates(cacheIndex);
         }
 
