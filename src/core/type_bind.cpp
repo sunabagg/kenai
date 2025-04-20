@@ -212,7 +212,6 @@ void sunaba::core::bind_base_types(sol::state& lua) {
         "assign", &Array::assign,
         "back", &Array::back,
         "bsearch", &Array::bsearch,
-        "bsearchCustom", &Array::bsearch_custom,
         "clear", &Array::clear,
         "count", &Array::count,
         "duplicate", &Array::duplicate,
