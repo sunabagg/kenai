@@ -35,7 +35,7 @@ namespace sunaba::ui {
 
             bool _has_point(const Vector2 &point) const override;
 
-            Object* _make_custom_tooltip(const String &for_text) const override;
+            //Object* _make_custom_tooltip(const String &for_text) const override;
 
             TypedArray<Vector3i> _structured_text_parser(const Array &args, const String &text) const override;
     };
@@ -464,6 +464,16 @@ namespace sunaba::ui {
                     if (func) {
                         auto result = func(scriptInstance, point);
                         return result.get<bool>();
+                    }
+                }
+            }
+
+            TypedArray<Vector3i> structuredTextParser(const Array &args, const String &text) {
+                if (scriptInstance != sol::lua_nil) {
+                    auto func = scriptInstance["structuredTextParser"].get<sol::function>();
+                    if (func) {
+                        auto result = func(scriptInstance, args, text);
+                        return result.get<TypedArray<Vector3i>>();
                     }
                 }
             }
