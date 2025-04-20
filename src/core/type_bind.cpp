@@ -219,7 +219,6 @@ void sunaba::core::bind_base_types(sol::state& lua) {
         "fill", &Array::fill,
         "filter", &Array::filter,
         "find", &Array::find,
-        "findCustom", &Array::find_custom,
         "front", &Array::front,
         "get", &Array::get,
         "has", &Array::has,
