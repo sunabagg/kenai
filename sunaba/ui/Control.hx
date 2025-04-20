@@ -114,4 +114,5 @@ extern class Control extends CanvasItem {
     public function setDragPreview(preview:Control):Void;
     public function setEnd(position:Vector2):Void;
     public function setFocusNeighbor(side:Int, neighbor:String):Void;
+    public function setGlobalPosition(position:Vector2):Void;
 }
