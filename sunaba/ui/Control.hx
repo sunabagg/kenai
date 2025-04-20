@@ -44,6 +44,6 @@ extern class Control extends CanvasItem {
     public var sizeFlagsVertical:Int;
     public var theme:Theme;
     public var themeTypeVariation:String;
-    public var tooltipAutoTranslateMode:Int;
+    public var toolTipAutoTranslateMode:Int;
     public var toolTipText:String;
 }
