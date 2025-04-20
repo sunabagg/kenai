@@ -1,13 +1,19 @@
 #ifndef EVENT_H
 #define EVENT_H
 
+#include <godot_cpp/core/method_bind.hpp>
+#include <godot_cpp/core/class_db.hpp>
 #include <godot_cpp/variant/signal.hpp>
 #include <godot_cpp/variant/array.hpp>
 #include <godot_cpp/variant/variant.hpp>
+#include <godot_cpp/classes/object.hpp>
+#include <godot_cpp/godot.hpp>
 #include <sol/sol.hpp>
 #include <vector>
 
 #include "base_object.h"
+
+using namespace godot;
 
 namespace sunaba::core {
 
@@ -91,8 +97,25 @@ namespace sunaba::core {
                 }
             }
 
-
+            static Event* createFromSignal(godot::Signal signal);
     };
+
+    class EventBridge : public godot::Object {
+        GDCLASS(EventBridge, godot::Object);
+    public:
+        Event* event = nullptr;
+
+        EventBridge(Event* p_event) {
+            event = p_event;
+        }
+        void callEvent(const godot::Variant* args, GDExtensionInt arg_count, GDExtensionCallError &error) {
+            Array args_array;
+            for (int i = 0; i < arg_count; ++i) {
+                args_array.append(args[i]);
+            }
+            event->emit(args_array);
+        }
+    }
 }
 
 #endif // EVENT_H
