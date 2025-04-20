@@ -16,6 +16,7 @@
 using namespace godot;
 
 namespace sunaba::core {
+    void bindEvent(sol::state &lua);
 
     class Event : public BaseObject {
         private:
