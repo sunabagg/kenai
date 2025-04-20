@@ -15,9 +15,9 @@ namespace sunaba::core {
     class StlFunctionWrapper : public Object {
         GDCLASS(StlFunctionWrapper, Object);
     private:
-        std::function<Variant(const godot::Variant**, GDExtensionInt&, GDExtensionCallError&)> cpp_function;
+        std::function<Variant(const godot::Variant**, GDExtensionInt, GDExtensionCallError)> cpp_function;
     public:
-        void set_cpp_function(std::function<Variant(Variant**, GDExtensionInt&, GDExtensionCallError&)> func) {
+        void set_cpp_function(std::function<Variant(const Variant**, GDExtensionInt, GDExtensionCallError)> func) {
             cpp_function = func;
         }
         Variant invoke_cpp_function(const godot::Variant** args, GDExtensionInt& arg_count, GDExtensionCallError &error) {
@@ -29,8 +29,14 @@ namespace sunaba::core {
             }
         }
         static void _bind_methods() {
-            ClassDB::bind_method(D_METHOD("invoke_cpp_function", "args"), &StlFunctionWrapper::invoke_cpp_function);
+            ClassDB::bind_vararg_method(
+                METHOD_FLAGS_DEFAULT,
+                "invoke_cpp_function",
+                &StlFunctionWrapper::invoke_cpp_function,
+                MethodInfo(Variant::Type::NIL, "callEvent") // Add method info for clarity
+            );
         }
     };
+}
 
 #endif // CPP_FUNC_WRAPPER_H
