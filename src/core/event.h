@@ -23,9 +23,9 @@ namespace sunaba::core {
                 func(args);
             }
 
-            void callLuaListener(sol::function listener, sol::variadic_args args) {
+            void callLuaListener(sol::function listener, sol::table args) {
                 // Call the Lua listener function with the provided arguments
-                listener(args);
+                listener(sol::as_args(args));
             }
 
             public:
@@ -67,7 +67,12 @@ namespace sunaba::core {
                     callCppListener(listemer, args_array);
                 }
                 for (auto lua_listener : lua_listeners) {
-                    callLuaListener(lua_listener, args);
+                    sol::state_view lua_state = sol::state_view(lua_listener.lua_state());
+                    sol::table lua_args = lua_state.create_table(args.size(), 0);
+                    for (int i = 0; i < args.size(); ++i) {
+                        lua_args[i + 1] = args[i]; // Lua tables are 1-indexed
+                    }
+                    callLuaListener(lua_listener, lua_args);
                 }
             }
 
@@ -78,11 +83,11 @@ namespace sunaba::core {
 
                 for (sol::function lua_listener : lua_listeners) {
                     sol::state_view lua_state = sol::state_view(lua_listener.lua_state());
-                    sol::table 
+                    sol::table lua_args = lua_state.create_table(args.size(), 0);
                     for (int i = 0; i < args.size(); ++i) {
                         lua_args[i + 1] = args[i]; // Lua tables are 1-indexed
                     }
-                    callLuaListener(lua_listener, sol::as_args(lua_args));
+                    callLuaListener(lua_listener, lua_args);
                 }
             }
 
