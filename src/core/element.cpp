@@ -112,3 +112,9 @@ void sunaba::core::NodeProxy::onChildOrderChanged() {
         this->element->childOrderChanged->emit(Array());
     }
 }
+
+void sunaba::core::NodeProxy::onRenamed() {
+    if (this->element != nullptr) {
+        this->element->renamed->emit(Array());
+    }
+}
