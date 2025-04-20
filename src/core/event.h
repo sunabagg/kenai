@@ -70,6 +70,13 @@ namespace sunaba::core {
             }
 
             void emitLua(sol::variadic_args args) {
+                for (auto listemer: listeners) {
+                    godot::Array args_array;
+                    for (auto arg : args) {
+                        args_array.append(arg.as<godot::Variant>());
+                    }
+                    callCppListener(listemer, args_array);
+                }
                 for (auto lua_listener : lua_listeners) {
                     callLuaListener(lua_listener, args);
                 }
@@ -77,7 +84,11 @@ namespace sunaba::core {
 
             void emitGodot(godot::Array args) {
                 for (auto listemer: listeners) {
+                    callCppListener(listemer, args);
+                }
 
+                for (auto lua_listener : lua_listeners) {
+                    callLuaListener(lua_listener, args);
                 }
             }
 
