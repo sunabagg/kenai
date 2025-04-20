@@ -28,4 +28,5 @@ extern class Control extends CanvasItem {
     public var mouseForcePassScrollEvents:Bool;
     public var offsetBottom:Float;
     public var offsetLeft:Float;
+    public var offsetRight:Float;
 }
