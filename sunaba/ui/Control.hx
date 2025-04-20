@@ -2,6 +2,7 @@ package sunaba.ui;
 
 import sunaba.core.CanvasItem;
 import sunaba.core.Vector2;
+import sunaba.core.Element;
 
 @:native("Control")
 extern class Control extends CanvasItem {
@@ -36,4 +37,5 @@ extern class Control extends CanvasItem {
     public var rotation:Float;
     public var rotationDegrees:Float;
     public var scale:Vector2;
+    public var shortcutContext:Element;
 }
