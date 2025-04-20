@@ -88,9 +88,9 @@ extern class Variant {
     //public function asArrayList():ArrayList;
     public function asByteArray():BinaryData;
     public function asIntArray():Table<Int, Int>;
-    public function asIntArray64():Array<Int>;
+    public function asIntArray64():lua.Table<Int, Int>;
     public function asFloatArray():Table<Int, Float>;
-    public function asFloatArray64():Array<Float>;
+    public function asFloatArray64():lua.Table<Int, Float>;
     public function asStringArray():Table<Int, String>;
     public function asVector2Array():Table<Int, Vector2>;
     public function asVector3Array():Table<Int, Vector3>;
@@ -303,7 +303,7 @@ abstract VariantAbstract(Variant) from Variant to Variant {
     }
     */
     @:from
-    public static function fromIntArray64(value:Array<Int>):VariantAbstract {
+    public static function fromIntArray64(value:lua.Table<Int, Int>):VariantAbstract {
         return Variant.fromIntArray64(value);
     }
     @:to
