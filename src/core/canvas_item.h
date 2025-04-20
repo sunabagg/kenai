@@ -199,7 +199,7 @@ namespace sunaba::core {
             canvas_item->set_z_index(index);
         }
 
-        Event* darw;
+        Event* draw;
         Event* hidden;
         Event* itemRectChanged;
         Event* visibilityChanged;

@@ -81,10 +81,10 @@ namespace sunaba::core {
             ),
             "draw", sol::property(
                 [](CanvasItem* c) {
-                    return c->darw;
+                    return c->draw;
                 },
                 [](CanvasItem* c, Event* event) {
-                    c->darw = event;
+                    c->draw = event;
                 }
             ),
             "hidden", sol::property(
