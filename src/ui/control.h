@@ -582,6 +582,10 @@ namespace sunaba::ui {
             bool hasThemeFontOverride(std::string name) {
                 return control->has_theme_font_override(name.c_str());
             }
+
+            bool hasThemeFontSize(std::string name, std::string type = String(StringName("&amp;&quot;&quot;")).utf8().get_data()) {
+                return control->has_theme_font_size(name.c_str(), type.c_str());
+            }
     };
 }
 
