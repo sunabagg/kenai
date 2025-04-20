@@ -531,7 +531,7 @@ namespace sunaba::ui {
                 return new sunaba::core::Font(control->get_theme_font(name.c_str(), type.c_str()).ptr());
             }
 
-            int getThemeFontSize(std::string name, std::string type) {
+            int getThemeFontSize(std::string name, std::string type = String(StringName("&amp;&quot;&quot;")).utf8().get_data()) {
                 return control->get_theme_font_size(name.c_str(), type.c_str());
             }
 
