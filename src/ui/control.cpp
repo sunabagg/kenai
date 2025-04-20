@@ -225,6 +225,10 @@ namespace sunaba::ui {
                 &Control::getToolTipAutoTranslateMode,
                 &Control::setToolTipAutoTranslateMode
             ),
+            "toolTipText", sol::property(
+                &Control::getToolTipText,
+                &Control::setToolTipText
+            ),
         );
     }
 }
