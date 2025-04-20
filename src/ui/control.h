@@ -465,6 +465,10 @@ namespace sunaba::ui {
             Vector2 getCombinedMinimumSize() {
                 return control->get_combined_minimum_size();
             }
+
+            int getCursorShape(Vector2 position) {
+                return control->get_cursor_shape(position);
+            }
     };
 }
 
