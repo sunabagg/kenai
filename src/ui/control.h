@@ -702,6 +702,10 @@ namespace sunaba::ui {
             void updateMinimumSize() {
                 control->update_minimum_size();
             }
+
+            void warpMouse(Vector2 position) {
+                control->warp_mouse(position);
+            }
     };
 }
 
