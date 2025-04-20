@@ -252,6 +252,7 @@ namespace sunaba::ui {
             "getMinimumSize", &Control::getMinimumSize,
             "getOffset", &Control::getOffset,
             "getParentAreaSize", &Control::getParentAreaSize,
+            "getParentControl", &Control::getParentControl,
         );
     }
 }
