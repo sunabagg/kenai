@@ -694,6 +694,10 @@ namespace sunaba::ui {
             void setPosition(Vector2 position, bool keepOffset = false) {
                 control->set_position(position, keepOffset);
             }
+
+            void setSize(Vector2 size, bool keepOffsets = false) {
+                control->set_size(size, keepOffsets);
+            }
     };
 }
 
