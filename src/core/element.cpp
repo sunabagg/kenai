@@ -76,7 +76,14 @@ void sunaba::core::bindElement(sol::state &lua) {
                 e->treeExited = event;
             }
         ),
-        "treeExiting", &Element::treeExiting,
+        "treeExiting", sol::property(
+            [](Element* e) {
+                return e->treeExiting;
+            },
+            [](Element* e, Event* event) {
+                e->treeExiting = event;
+            }
+        ),
         "find", &Element::find,
         "getParent", &Element::getParent,
         "addChild", &Element::addChild,
