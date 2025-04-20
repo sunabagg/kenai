@@ -490,8 +490,8 @@ namespace sunaba::ui {
                 return control->get_offset(static_cast<godot::Side>(side));
             }
 
-            Vector2 getParentAreaMinimumSize() {
-                return control->get_parent_area_minimum_size();
+            Vector2 getParentAreaSize() {
+                return control->get_parent_area_size();
             }
     };
 }
