@@ -419,6 +419,15 @@ namespace sunaba::ui {
                 }
             }
 
+            Variant getDragData(Vector2 position) {
+                if (scriptInstance != sol::lua_nil) {
+                    auto func = scriptInstance["getDragData"].get<sol::function>();
+                    if (func) {
+                        return func(scriptInstance, position);
+                    }
+                }
+            }
+
             void acceptEvent() {
                 control->accept_event();
             }
