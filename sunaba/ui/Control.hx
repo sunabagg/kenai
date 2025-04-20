@@ -38,4 +38,5 @@ extern class Control extends CanvasItem {
     public var rotationDegrees:Float;
     public var scale:Vector2;
     public var shortcutContext:Element;
+    public var size:Vector2;
 }
