@@ -13,4 +13,5 @@ extern class Control extends CanvasItem {
     public var clippingContents:Bool;
     public var customMinimumSize: Vector2;
     public var focusMode:Bool;
+    public var focusNeighborBottom: String;
 }
