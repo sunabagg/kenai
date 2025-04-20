@@ -11,7 +11,7 @@ namespace sunaba::core {
         lua.new_usertype<CanvasItem>(
             "CanvasItem",
             sol::constructors<CanvasItem()>(),
-            sol::base_classes, sol::bases<Element>(),
+            sol::base_classes,  sol::bases<BaseObject, Element>(),
             sol::meta_function::garbage_collect, sol::destructor([](CanvasItem* c) { }),
             "clipChildren", sol::property(
                 &CanvasItem::getClipChildren,
