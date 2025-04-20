@@ -288,6 +288,7 @@ namespace sunaba::ui {
             "removeThemeIconOverride", &Control::removeThemeIconOverride,
             "removeThemeStyleboxOverride", &Control::removeThemeStyleboxOverride,
             "resetSize", &Control::resetSize,
+            "setAnchor", &Control::setAnchor,
         );
     }
 }
