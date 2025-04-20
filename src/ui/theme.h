@@ -385,8 +385,8 @@ namespace sunaba::ui {
             theme->set_stylebox(name.c_str(), type.c_str(), godot::Ref<GodotStyleBox>(styleBox->getStyleBox()));
         }
 
-        void setThemeItem(int dataType, const std::string& name, const std::string& type, const sol::object& value) {
-            theme->set_theme_item(static_cast<GodotTheme::DataType>(dataType), name.c_str(), type.c_str(), sunaba::core::to_variant(value));
+        void setThemeItem(int dataType, const std::string& name, const std::string& type, const Variant& value) {
+            theme->set_theme_item(static_cast<GodotTheme::DataType>(dataType), name.c_str(), type.c_str(), value);
         }
 
         void setTypeVariation(const std::string& themeType, const std::string* baseType) {
