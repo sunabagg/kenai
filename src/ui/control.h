@@ -538,6 +538,10 @@ namespace sunaba::ui {
             sunaba::core::Texture2D* getThemeIcon(std::string name, std::string type) {
                 return new sunaba::core::Texture2D(control->get_theme_icon(name.c_str(), type.c_str()).ptr());
             }
+
+            StyleBox * getThemeStylebox(std::string name, std::string type) {
+                return new StyleBox(control->get_theme_stylebox(name.c_str(), type.c_str()).ptr());
+            }
     };
 }
 
