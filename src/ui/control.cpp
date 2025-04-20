@@ -300,6 +300,7 @@ namespace sunaba::ui {
             "setOffset", &Control::setOffset,
             "setOffsetsPreset", &Control::setOffsetsPreset,
             "setPosition", &Control::setPosition,
+            "setSize", &Control::setSize,
         );
     }
 }
