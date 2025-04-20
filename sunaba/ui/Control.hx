@@ -108,7 +108,7 @@ extern class Control extends CanvasItem {
     public function resetSize():Void;
     public function setAnchor(side:Int, anchor:Float, ?keepOffset:Bool, ?pushOppositeAnchor:Bool):Void;
     public function setAnchorAndOffset(side:Int, anchor:Float, offset:Float, ?pushOppositeAnchor:Bool):Void;
-    public function setAnchorsAndOffsetsPreset(preset:Int, ?resizeMode:Int, margin:Int):Void;
+    // public function setAnchorsAndOffsetsPreset(preset:Int, ?resizeMode:Int, margin:Int):Void;
     public function setAnchorsPreset(preset:Int, ?keepOffsets:Bool):Void;
     public function setBegin(position:Vector2):Void;
     public function setDragPreview(preview:Control):Void;
@@ -116,4 +116,5 @@ extern class Control extends CanvasItem {
     public function setFocusNeighbor(side:Int, neighbor:String):Void;
     public function setGlobalPosition(position:Vector2):Void;
     public function setOffset(side:Int, offset:Float):Void;
+    public function setOffsetsPreset(preset:Int, ?resizeMode:Int, ?margin:Int):Void;
 }
