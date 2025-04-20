@@ -193,6 +193,10 @@ namespace sunaba::ui {
                 &Control::getScale,
                 &Control::setScale
             ),
+            "shortcutContext", sol::property(
+                &Control::getShortcutContext,
+                &Control::setShortcutContext
+            ),
         );
     }
 }
