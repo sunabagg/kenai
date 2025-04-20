@@ -100,4 +100,5 @@ extern class Control extends CanvasItem {
     public function isLayoutRtl():Bool;
     public function releaseFocus():Void;
     public function removeThemeColorOverride(name:String):Void;
+    public function removeThemeConstantOverride(name:String):Void;
 }
