@@ -14,4 +14,5 @@ extern class Control extends CanvasItem {
     public var customMinimumSize: Vector2;
     public var focusMode:Bool;
     public var focusNeighborBottom: String;
+    public var focusNeighborLeft: String;
 }
