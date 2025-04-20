@@ -457,6 +457,10 @@ namespace sunaba::ui {
             float getAnchor(int side) {
                 return control->get_anchor(static_cast<godot::Side>(side));
             }
+
+            Vector2 getBegin() {
+                return control->get_begin();
+            }
     };
 }
 
