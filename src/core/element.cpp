@@ -144,3 +144,7 @@ void sunaba::core::NodeProxy::onTreeExiting() {
         this->element->treeExiting->emit(Array());
     }
 }
+
+void sunaba::core::NodeProxy::_bind_methods() {
+    sunaba::core::NodeProxy::bindElementMethods();
+}
