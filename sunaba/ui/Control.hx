@@ -22,4 +22,5 @@ extern class Control extends CanvasItem {
     public var globalPosition: Vector2;
     public var growHorizontal:Bool;
     public var growVertical:Bool;
+    public var layoutDirection:Float;
 }
