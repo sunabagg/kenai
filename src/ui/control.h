@@ -517,6 +517,10 @@ namespace sunaba::ui {
             float getThemeDefaultBaseScale() {
                 return control->get_theme_default_base_scale();
             }
+
+            sunaba::core::Font* getThemeDefaultFont() {
+                return new sunaba::core::Font(control->get_theme_default_font().ptr());
+            }
     };
 }
 
