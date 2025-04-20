@@ -90,3 +90,11 @@ void sunaba::core::NodeProxy::_shortcut_input(const Ref<InputEvent>& event) {
         this->element->shortcutInput(event);
     }
 }
+
+void sunaba::core::NodeProxy::onChildEnteredTree(Node* child) {
+    if (this->element != nullptr) {
+        Array args;
+        args.append(new Element(child));
+        this->element->childEnteredTree->emit(args)
+    }
+}
