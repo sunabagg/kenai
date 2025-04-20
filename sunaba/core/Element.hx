@@ -5,6 +5,7 @@ extern class Element extends BaseObject {
     public var scriptInstance: ScriptInstance;
     public var name: String;
     public var childEnteredTree: Event;
+    public var childExitingTree: Event;
     public function new();
     public function fine(path: String): Element;
     public function getParent(): Element;
