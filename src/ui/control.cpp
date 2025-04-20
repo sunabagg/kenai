@@ -278,6 +278,7 @@ namespace sunaba::ui {
             "hasThemeIconOverride", &Control::hasThemeIconOverride,
             "hasThemeStylebox", &Control::hasThemeStylebox,
             "hasThemeStyleboxOverride", &Control::hasThemeStyleboxOverride,
+            "isDragSuccessful", &Control::isDragSuccessful,
         );
     }
 }
