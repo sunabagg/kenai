@@ -493,6 +493,10 @@ namespace sunaba::ui {
             Vector2 getParentAreaSize() {
                 return control->get_parent_area_size();
             }
+
+            Control* getParentControl() {
+                return new Control(control->get_parent_control());
+            }
     };
 }
 
