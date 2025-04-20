@@ -245,6 +245,7 @@ namespace sunaba::ui {
             "getAnchor", &Control::getAnchor,
             "getBegin", &Control::getBegin,
             "getCombinedMinimumSize", &Control::getCombinedMinimumSize,
+            "getCursorShape", &Control::getCursorShape,
             "getDragData", &Control::getDragData,
         );
     }
