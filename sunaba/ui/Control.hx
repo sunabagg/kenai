@@ -40,4 +40,5 @@ extern class Control extends CanvasItem {
     public var shortcutContext:Element;
     public var size:Vector2;
     public var sizeFlagsHorizontal:Int;
+    public var sizeFlagsStretchRatio:Float;
 }
