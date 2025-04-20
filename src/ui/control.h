@@ -507,7 +507,7 @@ namespace sunaba::ui {
                 return control->get_screen_position();
             }
 
-            Color getThemeColor(std::string name, std::string type) {
+            Color getThemeColor(std::string name, std::string type = String(StringName("&amp;&quot;&quot;")).utf8().get_data()) {
                 return control->get_theme_color(name.c_str(), type.c_str());
             }
 
