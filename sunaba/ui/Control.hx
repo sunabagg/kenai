@@ -72,4 +72,5 @@ extern class Control extends CanvasItem {
     public function getGlobalRect():Rect2;
     public function getScreenPosition():Vector2;
     public function getThemeColor(name:String):Color;
+    public function getThemeConstant(name:String):Variant;
 }
