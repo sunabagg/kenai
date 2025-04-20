@@ -546,6 +546,10 @@ namespace sunaba::ui {
             std::string getTooltip() {
                 return String(control->get_tooltip()).utf8().get_data();
             }
+
+            void grabClickFocus() {
+                control->grab_click_focus();
+            }
     };
 }
 
