@@ -535,7 +535,7 @@ namespace sunaba::ui {
                 return control->get_theme_font_size(name.c_str(), type.c_str());
             }
 
-            sunaba::core::Texture2D* getThemeIcon(std::string name, std::string type) {
+            sunaba::core::Texture2D* getThemeIcon(std::string name, std::string type = String(StringName("&amp;&quot;&quot;")).utf8().get_data()) {
                 return new sunaba::core::Texture2D(control->get_theme_icon(name.c_str(), type.c_str()).ptr());
             }
 
