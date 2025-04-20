@@ -610,6 +610,10 @@ namespace sunaba::ui {
             bool isDragSuccessful() {
                 return control->is_drag_successful();
             }
+
+            bool isLayoutRtl() {
+                return control->is_layout_rtl();
+            }
     };
 }
 
