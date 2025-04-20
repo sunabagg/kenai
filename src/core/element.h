@@ -20,9 +20,7 @@ namespace sunaba::core {
     class NodeProxy : public Node {
     public:
         Element* element = nullptr;
-
-        static void bindElementMethods();
-
+        
         NodeProxy() {
             auto childEnteredTreeCallable = Callable(this, "onChildEnteredTree");   
             connect("child_entered_tree", childEnteredTreeCallable);
