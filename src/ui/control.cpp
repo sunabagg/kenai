@@ -238,6 +238,7 @@ namespace sunaba::ui {
             "addThemeIconOverride", &Control::addThemeIconOverride,
             "beginBulkThemeOveride", &Control::beginBulkThemeOveride,
             "endBulkThemeOveride", &Control::endBulkThemeOveride,
+            "findNextValidFocus", &Control::findNextValidFocus,
         );
     }
 }
