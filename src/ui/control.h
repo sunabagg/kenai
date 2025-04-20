@@ -598,6 +598,10 @@ namespace sunaba::ui {
             bool hasThemeIconOverride(std::string name) {
                 return control->has_theme_icon_override(name.c_str());
             }
+
+            bool hasThemeStylebox(std::string name, std::string type = String(StringName("&amp;&quot;&quot;")).utf8().get_data()) {
+                return control->has_theme_stylebox(name.c_str(), type.c_str());
+            }
     };
 }
 
