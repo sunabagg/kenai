@@ -12,7 +12,7 @@ extern class Image extends Resource {
     public function bumpMapToNormalMap(bumpScale : Float = 1.0) : Void;
     public function clearMipmaps() : Void;
     public function compress(mode : Int, source : Int = 0, astcFormat : Int = 0) : Int;
-    public function computeImageMetrics(comparedImage : Image, useLuma : Bool) : Map<Dynamic, Dynamic>;
+    public function computeImageMetrics(comparedImage : Image, useLuma : Bool) : Dictionary;
     public function convert(format : Int) : Void;
     public function copyFrom(src : Image) : Void;
     public static function create(width : Int, height : Int, format : Int, mipmaps : Bool = false) : Image;

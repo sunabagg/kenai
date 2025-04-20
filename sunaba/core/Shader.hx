@@ -5,7 +5,7 @@ extern class Shader extends Resource {
     public var code: String;
     public function getDefaultTextureParameter(name: String, index: Int = 0): Texture2D;
     public function getMode(): Int;
-    public function getShaderUniformLis() : Array<Any>;
+    public function getShaderUniformLis() : ArrayList;
     public function setDefaultTextureParameter(name: String, texture: Texture2D, index: Int = 0): Void;
     @:native("cast")
     public static function castFrom(type: Dynamic) : Shader;

@@ -57,15 +57,12 @@ namespace sunaba::core {
             fontVariation->set_baseline_offset(offset);
         }
 
-        sol::table getOpentypeFeatures(sol::state_view lua_state) {
-            auto features = fontVariation->get_opentype_features();
-            sol::table table = to_table(lua_state, features);
-            return table;
+        Dictionary getOpentypeFeatures() {
+            return fontVariation->get_opentype_features();
         }
 
-        void setOpentypeFeatures(sol::state_view lua_state, sol::table features) {
-            Dictionary featureDict = to_dictionary(features);
-            fontVariation->set_opentype_features(featureDict);
+        void setOpentypeFeatures(Dictionary features) {
+            fontVariation->set_opentype_features(features);
         }
 
         int getSpacingBottom() {
@@ -116,15 +113,12 @@ namespace sunaba::core {
             fontVariation->set_variation_face_index(faceIndex);
         }
 
-        sol::table getVariationOpentype(sol::state_view lua_state) {
-            auto variationOpentype = fontVariation->get_variation_opentype();
-            sol::table table = to_table(lua_state, variationOpentype);
-            return table;
+        Dictionary getVariationOpentype() {
+            return fontVariation->get_variation_opentype();
         }
 
-        void setVariationOpentype(sol::state_view lua_state, sol::table variationOpentype) {
-            Dictionary variationOpentypeDict = to_dictionary(variationOpentype);
-            fontVariation->set_variation_opentype(variationOpentypeDict);
+        void setVariationOpentype(Dictionary variationOpentype) {
+            fontVariation->set_variation_opentype(variationOpentype);
         }
 
         Transform2D getVariationTransform() {

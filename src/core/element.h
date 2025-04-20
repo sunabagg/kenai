@@ -241,7 +241,7 @@ namespace sunaba::core {
             setProxyDb(node);
         }
 
-        Node* getNode() {
+        Node* getNode() const {
             return node;
         }
 

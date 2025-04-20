@@ -388,7 +388,7 @@ namespace sunaba::ui {
             }
 
             void setToolTipAutoTranslateMode(int mode) {
-                control->set_tooltip_auto_translate_mode(static_cast<godot::Control::ToolTipAutoTranslateMode>(mode));
+                control->set_tooltip_auto_translate_mode(static_cast<godot::Control::AutoTranslateMode>(mode));
             }
 
             std::string getToolTipText() {

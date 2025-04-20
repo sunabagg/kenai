@@ -12,13 +12,13 @@ extern class Font extends Resource {
     public function getFontWeight() : Int;
     public function getHeight(fontSize : Int) : Float;
     public function getMultilineStringSize(text : String, alignment : Float = 0.0, width : Float = -1.0, fontSize : Float = 16, maxLines: Int = -1, brkFlags : Int = 3, justificationFlags : Int = 3, direction : Int = 0, orientation : Int = 0) : Vector2;
-    public function getOpentypeFeatures() : Map<Dynamic, Dynamic>;
-    public function getOtNameStrings() : Map<Dynamic, Dynamic>;
+    public function getOpentypeFeatures() : Dictionary;
+    public function getOtNameStrings() : Dictionary;
     public function getSpacing(spacing : Int) : Int;
     public function getStringSize(text : String, alignment : Int = 0, width : Float = 0, fontSize : Int = 16, justificationFlags : Int = 3, direction : Int = 0, orientation : Int = 0) : Vector2;
     public function getSupportedChars() : String;
-    public function getSupportedFeatureList() : Map<Dynamic, Dynamic>;
-    public function getSupportedVariationList() : Map<Dynamic, Dynamic>;
+    public function getSupportedFeatureList() : Dictionary;
+    public function getSupportedVariationList() : Dictionary;
     public function getUnderlinePosition(fontSize : Int) : Float;
     public function getUnderlineThickness(fontSize : Int) : Float;
     public function hasChar(chr : Int) : Bool;

@@ -173,15 +173,12 @@ namespace sunaba::core {
             fontFile->set_multichannel_signed_distance_field(multichannel);
         }
 
-        sol::table getOpentypeFeatureOverrides(sol::state_view lua_state) {
-            auto features = fontFile->get_opentype_feature_overrides();
-            sol::table table = to_table(lua_state, features);
-            return table;
+        Dictionary getOpentypeFeatureOverrides() {
+            return fontFile->get_opentype_feature_overrides();
         }
 
-        void setOpentypeFeatureOverrides(sol::state_view lua_state, sol::table features) {
-            Dictionary featureDict = to_dictionary(features);
-            fontFile->set_opentype_feature_overrides(featureDict);
+        void setOpentypeFeatureOverrides(Dictionary features) {
+            fontFile->set_opentype_feature_overrides(features);
         }
 
         float getOversampling() {
@@ -374,10 +371,8 @@ namespace sunaba::core {
             return fontFile->get_transform(cacheIndex);
         }
 
-        sol::table getVariationCoordinates(sol::state_view lua_state, int cacheIndex) {
-            auto coordinates = fontFile->get_variation_coordinates(cacheIndex);
-            sol::table table = to_table(lua_state, coordinates);
-            return table;
+        Dictionary getVariationCoordinates(int cacheIndex) {
+            return fontFile->get_variation_coordinates(cacheIndex);
         }
 
         int loadBitmapFont(sol::state_view lua_state, std::string path) {
@@ -520,9 +515,8 @@ namespace sunaba::core {
             fontFile->set_transform(cacheIndex, transform);
         }
 
-        void setVariationCoordinates(int cacheIndex, sol::table coordinates) {
-            Dictionary coords = to_dictionary(coordinates);
-            fontFile->set_variation_coordinates(cacheIndex, coords);
+        void setVariationCoordinates(int cacheIndex, Dictionary coordinates) {
+            fontFile->set_variation_coordinates(cacheIndex, coordinates);
         }
     };
 }

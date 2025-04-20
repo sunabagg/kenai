@@ -10,6 +10,7 @@ target_sources(${PROJECT_NAME} PRIVATE
         lua_bind.h
         lua_bind.cpp
         type_bind.cpp
+        sol_gdstr.h
         lua_function_wrapper.h
         bind_core_classes.h
         bind_core_classes.cpp

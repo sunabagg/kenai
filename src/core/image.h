@@ -80,12 +80,10 @@ namespace sunaba::core {
             return image->compress_from_channels(static_cast<GodotImage::CompressMode>(mode), static_cast<GodotImage::UsedChannels>(channels), static_cast<GodotImage::ASTCFormat>(astcFormat));
         }
 
-        sol::table computeImageMetrics(sol::state_view lua_state, Image comparedImage, bool useLuma)
+        Dictionary computeImageMetrics(Image comparedImage, bool useLuma)
         {
             Dictionary metrics = image->compute_image_metrics(comparedImage.getImage(), useLuma);
-            sol::table result = to_table(lua_state, metrics);
-
-            return result; 
+            return metrics; 
         }
 
         void convert(int format) {

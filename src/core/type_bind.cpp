@@ -2,6 +2,9 @@
 // Created by mintkat on 2/1/25.
 //
 #include "lua_bind.h"
+#include "io/binary_data.h"
+#include "resource.h"
+#include "element.h"
 
 #include <godot_cpp/core/class_db.hpp>
 #include <godot_cpp/variant/utility_functions.hpp>
@@ -14,6 +17,313 @@ using namespace godot;
 using namespace sunaba::core;
 
 void sunaba::core::bind_base_types(sol::state& lua) {
+    lua.new_usertype<Variant>("Variant",
+        sol::constructors<
+            Variant(), 
+            Variant(int), 
+            Variant(float), 
+            Variant(bool),
+            Variant(long), 
+            Variant(double), 
+            Variant(char*), 
+            Variant(Vector2), 
+            Variant(Vector2i), 
+            Variant(Rect2), 
+            Variant(Rect2i),
+            Variant(Basis),
+            Variant(Vector3),
+            Variant(Vector3i),
+            Variant(Transform2D),
+            Variant(Vector4),
+            Variant(Vector4i),
+            Variant(Plane),
+            Variant(Quaternion),
+            Variant(AABB),
+            Variant(Projection),
+            Variant(Array),
+            Variant(Dictionary)>(),
+        "fromByteArray", [](const io::BinaryData& data) { return Variant(data.toPackedByteArray()); },
+        "fromIntArray", [](const std::vector<int>& data) { 
+            PackedInt32Array packed_data;
+            for (const auto& item : data) {
+                packed_data.append(item);
+            }
+            return Variant(packed_data);
+         },
+         "fromIntArray64", [](const std::vector<int64_t>& data) { 
+            PackedInt64Array packed_data;
+            for (const auto& item : data) {
+                packed_data.append(item);
+            }
+            return Variant(packed_data);
+         },
+         "fromFloatArray", [](const std::vector<float>& data) { 
+            PackedFloat32Array packed_data;
+            for (const auto& item : data) {
+                packed_data.append(item);
+            }
+            return Variant(packed_data);
+         },
+         "fromFloatArray64", [](const std::vector<double>& data) { 
+            PackedFloat64Array packed_data;
+            for (const auto& item : data) {
+                packed_data.append(item);
+            }
+            return Variant(packed_data);
+         },
+         "fromStringArray", [](const std::vector<String>& data) { 
+            PackedStringArray packed_data;
+            for (const auto& item : data) {
+                packed_data.append(item);
+            }
+            return Variant(packed_data);
+         },
+        "fromVector2Array", [](const std::vector<Vector2>& data) { 
+            PackedVector2Array packed_data;
+            for (const auto& item : data) {
+                packed_data.append(item);
+            }
+            return Variant(packed_data);
+        },
+        "fromVector3Array", [](const std::vector<Vector3>& data) { 
+            PackedVector3Array packed_data;
+            for (const auto& item : data) {
+                packed_data.append(item);
+            }
+            return Variant(packed_data);
+        },
+        "fromElement", [](const Element* e) { 
+            godot::Node* n = e->getNode();
+            if (n) {
+                return Variant(n);
+            } else {
+                return Variant();
+            }
+         },
+        "fromResource", [](const Resource* resource) { 
+            godot::Resource* res = resource->getResource();
+            godot::Ref<godot::Resource> ref = godot::Ref<godot::Resource>(res);
+            return Variant(ref);
+         },
+        "getType", &Variant::get_type,
+        "getTypeName", &Variant::get_type_name,
+        "asString", [](const Variant& v) { return std::string((v.operator String()).utf8().get_data()); },
+        "asInt", &Variant::operator int,
+        "asFloat", &Variant::operator float,
+        "asBool", &Variant::operator bool,
+        "asVector2", &Variant::operator Vector2,
+        "asVector2i", &Variant::operator Vector2i,
+        "asRect2", &Variant::operator Rect2,
+        "asRect2i", &Variant::operator Rect2i,
+        "asBasis", &Variant::operator Basis,
+        "asVector3", &Variant::operator Vector3,
+        "asVector3i", &Variant::operator Vector3i,
+        "asTransform2D", &Variant::operator Transform2D,
+        "asVector4", &Variant::operator Vector4,
+        "asVector4i", &Variant::operator Vector4i,
+        "asPlane", &Variant::operator Plane,
+        "asQuaternion", &Variant::operator Quaternion,
+        "asAABB", &Variant::operator godot::AABB,
+        "asProjection", &Variant::operator Projection,
+        "asArray", &Variant::operator Array,
+        "asDictionary", &Variant::operator Dictionary,
+        "asByteArray", [](const Variant& v) { return io::BinaryData(v); },
+        "asIntArray", [](const Variant& v) { 
+            PackedInt32Array packed_data = v;
+            std::vector<int> data;
+            for (int i = 0; i < packed_data.size(); ++i) {
+                data.push_back(packed_data[i]);
+            }
+            return data;
+        },
+        "asIntArray64", [](const Variant& v) { 
+            PackedInt64Array packed_data = v;
+            std::vector<int64_t> data;
+            for (int i = 0; i < packed_data.size(); ++i) {
+                data.push_back(packed_data[i]);
+            }
+            return data;
+        },
+        "asFloatArray", [](const Variant& v) { 
+            PackedFloat32Array packed_data = v;
+            std::vector<float> data;
+            for (int i = 0; i < packed_data.size(); ++i) {
+                data.push_back(packed_data[i]);
+            }
+            return data;
+        },
+        "asFloatArray64", [](const Variant& v) { 
+            PackedFloat64Array packed_data = v;
+            std::vector<double> data;
+            for (int i = 0; i < packed_data.size(); ++i) {
+                data.push_back(packed_data[i]);
+            }
+            return data;
+        },
+        "asStringArray", [](const Variant& v) { 
+            PackedStringArray packed_data = v;
+            std::vector<String> data;
+            for (int i = 0; i < packed_data.size(); ++i) {
+                data.push_back(packed_data[i]);
+            }
+            return data;
+        },
+        "asVector2Array", [](const Variant& v) { 
+            PackedVector2Array packed_data = v;
+            std::vector<Vector2> data;
+            for (int i = 0; i < packed_data.size(); ++i) {
+                data.push_back(packed_data[i]);
+            }
+            return data;
+        },
+        "asVector3Array", [](const Variant& v) { 
+            PackedVector3Array packed_data = v;
+            std::vector<Vector3> data;
+            for (int i = 0; i < packed_data.size(); ++i) {
+                data.push_back(packed_data[i]);
+            }
+            return data;
+        },
+        "asElement", [](const Variant& v) { 
+            godot::Object* obj = v.operator Object*();
+            Node* n = Object::cast_to<Node>(obj);
+            if (n) {
+                return Element(n);
+            } else {
+                return Element();
+            }
+         },
+        "asResource", [](const Variant& v) { 
+            Object* obj = v.operator Object*();
+            Ref<godot::Resource> res = Object::cast_to<godot::Resource>(obj);
+            if (res.ptr()) {
+                return Resource(res.ptr());
+            } else {
+                return Resource();
+            }
+         },
+        "tostring", [](const Variant& v) { return std::string((v.operator String()).utf8().get_data()); }
+    );
+
+    lua.new_usertype<Array>("ArrayList",
+        sol::constructors<Array()>(),
+        "append", &Array::append,
+        "appendArray", &Array::append_array,
+        "assign", &Array::assign,
+        "back", &Array::back,
+        "bsearch", &Array::bsearch,
+        "clear", &Array::clear,
+        "count", &Array::count,
+        "duplicate", &Array::duplicate,
+        "erase", &Array::erase,
+        "fill", &Array::fill,
+        "filter", &Array::filter,
+        "find", &Array::find,
+        "front", &Array::front,
+        "get", &Array::get,
+        "has", &Array::has,
+        "hash", &Array::hash,
+        "insert", &Array::insert,
+        "isEmpty", &Array::is_empty,
+        "isReadOnly", &Array::is_read_only,
+        "makeReadOnly", &Array::make_read_only,
+        "max", &Array::max,
+        "min", &Array::min,
+        "pickRandom", &Array::pick_random,
+        "popAt", &Array::pop_at,
+        "popBack", &Array::pop_back,
+        "popFront", &Array::pop_front,
+        "pushBack", &Array::push_back,
+        "pushFront", &Array::push_front,
+        "removeAt", &Array::remove_at,
+        "resize", &Array::resize,
+        "reverse", &Array::reverse,
+        "rfind", &Array::rfind,
+        "set", &Array::set,
+        "shuffle", &Array::shuffle,
+        "size", &Array::size,
+        "slice", &Array::slice,
+        "sort", &Array::sort,
+        sol::meta_function::index, [](Array& arr, int index) { return arr[index]; },
+        sol::meta_function::new_index, [](Array& arr, int index, const Variant& value) {
+            arr.set(index, value);
+        },
+        sol::meta_function::length, &Array::size,
+        "__pairs", [](Array& arr) {
+            return sol::as_function([&arr, i = 0](sol::this_state& s) mutable -> std::tuple<sol::object, sol::object> {
+            if (i < arr.size()) {
+                return { sol::make_object(s, i), sol::make_object(s, arr[i++]) };
+            } else {
+                return { sol::lua_nil, sol::lua_nil };
+            }
+            });
+        },
+        "__ipairs", [](Array& arr) {
+            return sol::as_function([](sol::this_state& s, Array& a, int i) -> std::tuple<sol::object, sol::object> {
+                i++;
+                if (i <= a.size()) {
+                    return { sol::make_object(s, i), sol::make_object(s, a[i - 1]) };
+                }
+                return { sol::lua_nil, sol::lua_nil };
+            });
+        },
+        sol::meta_function::to_string, [](const Array& arr) {
+            return "<Array size=" + std::to_string(arr.size()) + ">";
+        }
+        
+    );
+
+    lua.new_usertype<Dictionary>("Dictionary",
+        sol::constructors<Dictionary()>(),
+        "assign", &Dictionary::assign,
+        "clear", &Dictionary::clear,
+        "duplicate", &Dictionary::duplicate,
+        "erase", &Dictionary::erase,
+        "findKey", &Dictionary::find_key,
+        "get", &Dictionary::get,
+        "getOrAdd", &Dictionary::get_or_add,
+        "has", &Dictionary::has,
+        "hasAll", &Dictionary::has_all,
+        "hash", &Dictionary::hash,
+        "isEmpty", &Dictionary::is_empty,
+        "isReadOnly", &Dictionary::is_read_only,
+        "keys", &Dictionary::keys,
+        "makeReadOnly", &Dictionary::make_read_only,
+        "merge", &Dictionary::merge,
+        "merged", &Dictionary::merged,
+        "recursiveEqual", &Dictionary::recursive_equal,
+        "set", &Dictionary::set,
+        "size", &Dictionary::size,
+        "sort", &Dictionary::sort,
+        "values", &Dictionary::values,
+        "__pairs", [](Dictionary& dict) {
+            return sol::as_function([&dict, i = 0](sol::this_state& s) mutable -> std::tuple<sol::object, sol::object> {
+            if (i < dict.size()) {
+                return { sol::make_object(s, dict.keys()[i]), sol::make_object(s, dict.values()[i++]) };
+            } else {
+                return { sol::lua_nil, sol::lua_nil };
+            }
+            });
+        },
+        "__ipairs", [](Dictionary& dict) {
+            return sol::as_function([](sol::this_state& s, Dictionary& d, int i) -> std::tuple<sol::object, sol::object> {
+                i++;
+                if (i <= d.size()) {
+                    return { sol::make_object(s, d.keys()[i - 1]), sol::make_object(s, d.values()[i - 1]) };
+                }
+                return { sol::lua_nil, sol::lua_nil };
+            });
+        },
+        sol::meta_function::index, [](Dictionary& dict, const Variant& key) { return dict[key]; },
+        sol::meta_function::new_index, [](Dictionary& dict, const Variant& key, const Variant& value) {
+            dict.set(key, value);
+        },
+        sol::meta_function::length, &Dictionary::size,
+        sol::meta_function::to_string, [](const Dictionary& dict) {
+            return "<Dictionary size=" + std::to_string(dict.size()) + ">";
+        }
+    );
+
     lua.new_usertype<Vector2>(
         "Vector2",
         sol::constructors<Vector2(), Vector2(float, float)>(),
