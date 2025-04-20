@@ -239,7 +239,6 @@ void sunaba::core::bind_base_types(sol::state& lua) {
         "resize", &Array::resize,
         "reverse", &Array::reverse,
         "rfind", &Array::rfind,
-        "rfindCustom", &Array::rfind_custom,
         "set", &Array::set,
         "shuffle", &Array::shuffle,
         "size", &Array::size,
