@@ -18,11 +18,6 @@ namespace sunaba::core {
     class CanvasItem;
 
     class CanvasItemProxy : public CanvasItemNode, public NodeProxy {
-        GDCLASS(CanvasItemProxy, CanvasItemNode); // Macro to register the class with Godot
-        protected:
-            static void _bind_methods() {
-                bindElementMethods();
-            }
         public:
             sunaba::core::CanvasItem* canvas_item_element = nullptr;
 
@@ -43,6 +38,15 @@ namespace sunaba::core {
 
     };
 
+    class CanvasItemProxyBridge : public CanvasItemProxy {
+        GDCLASS(CanvasItemProxyBridge, CanvasItemNode); // Macro to register the class with Godot
+        protected:
+            static void _bind_methods() {
+                bindElementMethods();
+                bindCanvasItemMethods();
+            }
+    };
+
     class CanvasItem : public Element {
     private:
         CanvasItemNode* canvas_item = nullptr; // Pointer to the CanvasItem instance
@@ -58,7 +62,7 @@ namespace sunaba::core {
     
         // Constructor with no parameters
         CanvasItem() {
-            setCanvasItem(memnew(CanvasItemNode));
+            setCanvasItem(memnew(CanvasItemProxyBridge));
             onInit();
         }
 
