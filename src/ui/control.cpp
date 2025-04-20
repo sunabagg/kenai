@@ -241,6 +241,7 @@ namespace sunaba::ui {
             "findNextValidFocus", &Control::findNextValidFocus,
             "findPrevValidFocus", &Control::findPrevValidFocus,
             "findValidFocusNeighbor", &Control::findValidFocusNeighbor,
+            "forceDrag", &Control::forceDrag,
             "getDragData", &Control::getDragData,
         );
     }
