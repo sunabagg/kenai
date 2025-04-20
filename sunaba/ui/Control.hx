@@ -104,4 +104,5 @@ extern class Control extends CanvasItem {
     public function removeThemeFontOverride(name:String):Void;
     public function removeThemeFontSizeOverride(name:String):Void;
     public function removeThemeIconOverride(name:String):Void;
+    public function removeThemeStyleboxOverride(name:String):Void;
 }
