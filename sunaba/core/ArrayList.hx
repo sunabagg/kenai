@@ -40,6 +40,29 @@ extern class ArrayList {
     public function sort(): Void;
 }
 
+class ArrayListIterator = {
+    public var index: Int;
+    public var array: ArrayList;
+    public function new(array: ArrayList) {
+        this.index = 0;
+        this.array = array;
+    }
+
+    public function hasNext(): Bool {
+        return this.index < this.array.size();
+    }
+
+    public function next(): Variant {
+        if (this.hasNext()) {
+            var value = this.array.get(this.index);
+            this.index++;
+            return value;
+        } else {
+            throw "No more elements in the iterator";
+        }
+    }
+}
+
 abstract ArrayListAbstract(ArrayList) from ArrayList to ArrayList {
     @:op([])
     public inline function get(index: Int): Variant {
@@ -81,5 +104,9 @@ abstract ArrayListAbstract(ArrayList) from ArrayList to ArrayList {
             result.append(item);
         }
         return result;
+    }
+
+    public function iterator(): ArrayListIterator {
+        return new ArrayListIterator(this);
     }
 }
