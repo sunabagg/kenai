@@ -7,4 +7,5 @@ extern class Control extends CanvasItem {
     public var anchorBottom:Float;
     public var anchorLeft:Float;
     public var anchorRight:Float;
+    public var anchorTop:Float;
 }
