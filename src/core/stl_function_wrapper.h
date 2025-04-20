@@ -15,14 +15,18 @@ namespace sunaba::core {
     class StlFunctionWrapper : public Object {
         GDCLASS(StlFunctionWrapper, Object);
     private:
-        std::function<Variant(const godot::Variant**, GDExtensionInt, GDExtensionCallError)> cpp_function;
+        std::function<Variant(std::vector<Variant>)> cpp_function;
     public:
-        void set_cpp_function(std::function<Variant(const Variant**, GDExtensionInt, GDExtensionCallError)> func) {
+        void set_cpp_function(std::function<Variant(std::vector<Variant>)> func) {
             cpp_function = func;
         }
         Variant invoke_cpp_function(const godot::Variant** args, GDExtensionInt& arg_count, GDExtensionCallError &error) {
             if (cpp_function) {
-                return cpp_function(args, arg_count, error);
+                std::vector<Variant> args_vector;
+                for (int i = 0; i < arg_count; ++i) {
+                    args_vector.push_back(args[i]);
+                }
+                return cpp_function(args_vector);
             } else {
                 error.error = GDEXTENSION_CALL_ERROR_INVALID_METHOD;
                 return Variant();
