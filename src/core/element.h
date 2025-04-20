@@ -66,7 +66,7 @@ namespace sunaba::core {
         Event* childEnteredTree;
         Event* childExitedTree;
         Event* childOrderChanged;
-        Event* renamedEvent;
+        Event* renamed;
         Event* replacingByEvent;
         Event* treeEnteredEvent;
         Event* treeExitedEvent;
