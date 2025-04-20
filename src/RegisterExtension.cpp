@@ -8,6 +8,7 @@
 
 #include "core/scene_node.h"
 #include "core/event.h"
+#include "core/base_object_proxy.h"
 #include "tests/scene_test.h"
 #include "app.h"
 
@@ -32,6 +33,7 @@ namespace
         godot::ClassDB::register_class<sunaba::tests::SceneTest>();
         godot::ClassDB::register_class<sunaba::core::SceneNode>();
         godot::ClassDB::register_class<sunaba::core::EventBridge>();
+        godot::ClassDB::register_class<sunaba::core::BaseObjectProxy>();
     }
 
     /// @brief Called by Godot to let us do any cleanup.
