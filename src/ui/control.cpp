@@ -213,6 +213,10 @@ namespace sunaba::ui {
                 &Control::getSizeFlagsVertical,
                 &Control::setSizeFlagsVertical
             ),
+            "theme", sol::property(
+                &Control::getTheme,
+                &Control::setTheme
+            ),
         );
     }
 }
