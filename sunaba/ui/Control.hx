@@ -64,7 +64,7 @@ extern class Control extends CanvasItem {
     public function findPrevValidFocus():Control;
     public function findValidFocusNeighbor(side: Int):Control;
     public function forceDrag(data:Variant,preview:Control):Void;
-    public function getAnchor(side:Int):Vector2;
+    public function getAnchor(side:Int):Float;
     public function getCombinedMinimumSize():Vector2;
     public function getCursorShape(position:Vector2):Int;
     public function getEnd():Vector2;
