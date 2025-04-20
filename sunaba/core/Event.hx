@@ -8,6 +8,7 @@ extern class Event extends BaseObject {
     public function connect(func: Function): Void;
     public function disconnect(func: Function): Void;
     public function emit(...args: Variant): Void;
+    public function clear(): Void;
 }
 
 abstract EventAbstract(Event) from Event to Event {
