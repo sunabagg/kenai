@@ -26,4 +26,5 @@ extern class Control extends CanvasItem {
     public var localizingNumeralSystem:Bool;
     public var mouseFilter:Int;
     public var mouseForcePassScrollEvents:Bool;
+    public var offsetBottom:Float;
 }
