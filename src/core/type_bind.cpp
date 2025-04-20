@@ -5,6 +5,7 @@
 #include "io/binary_data.h"
 #include "resource.h"
 #include "element.h"
+#include "base_object_proxy.h"
 
 #include <godot_cpp/core/class_db.hpp>
 #include <godot_cpp/variant/utility_functions.hpp>
