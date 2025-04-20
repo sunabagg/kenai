@@ -25,4 +25,9 @@ abstract EventAbstract(Event) from Event to Event {
     public function add(func: Function): Void {
         this.connect(func);
     }
+
+    @op(A -= B)
+    public function remove(func: Function): Void {
+        this.disconnect(func);
+    }
 }
