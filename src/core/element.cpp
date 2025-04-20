@@ -95,6 +95,6 @@ void sunaba::core::NodeProxy::onChildEnteredTree(Node* child) {
     if (this->element != nullptr) {
         Array args;
         args.append(new Element(child));
-        this->element->childEnteredTree->emit(args)
+        this->element->childEnteredTree->emit(args);
     }
 }
