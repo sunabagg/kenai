@@ -2,7 +2,7 @@ package sunaba.input;
 
 @:native("InputEventShortcut")
 extern class InputEventShortcut extends InputEventWithModifiers {
-    public var events: Array<InputEvent>;
+    public var events: lua.Table<Int, InputEvent>;
     public function getAsText(): String;
     public function hasValidEvent(): Bool;
     public function matchesEvent(event: InputEvent): Bool;
