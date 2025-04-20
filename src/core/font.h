@@ -116,11 +116,11 @@ namespace sunaba::core {
             return String(font->get_supported_chars()).utf8().get_data();
         }
 
-        Dictionary getSupportedFeatureList(sol::state_view lua_state) {
+        Dictionary getSupportedFeatureList() {
             return font->get_supported_feature_list();
         }
 
-        Dictionary getSupportedVariationList(sol::state_view lua_state) {
+        Dictionary getSupportedVariationList() {
             return font->get_supported_variation_list();
         }
 
