@@ -542,6 +542,10 @@ namespace sunaba::ui {
             StyleBox* getThemeStylebox(std::string name, std::string type = String(StringName("&amp;&quot;&quot;")).utf8().get_data()) {
                 return new StyleBox(control->get_theme_stylebox(name.c_str(), type.c_str()).ptr());
             }
+
+            std::string getTooltip() {
+                return String(control->get_tooltip()).utf8().get_data();
+            }
     };
 }
 
