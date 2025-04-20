@@ -469,6 +469,10 @@ namespace sunaba::ui {
             int getCursorShape(Vector2 position) {
                 return control->get_cursor_shape(position);
             }
+
+            Vector2 getEnd() {
+                return control->get_end();
+            }
     };
 }
 
