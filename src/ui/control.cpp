@@ -217,6 +217,10 @@ namespace sunaba::ui {
                 &Control::getTheme,
                 &Control::setTheme
             ),
+            "themeTypeVariation", sol::property(
+                &Control::getThemeTypeVariation,
+                &Control::setThemeTypeVariation
+            ),
         );
     }
 }
