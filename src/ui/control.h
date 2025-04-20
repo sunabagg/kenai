@@ -650,6 +650,10 @@ namespace sunaba::ui {
             void setAnchor(int side, float value, bool keepOffset = false, bool pushOppositeAnchor = false) {
                 control->set_anchor(static_cast<godot::Side>(side), value, keepOffset, pushOppositeAnchor);
             }
+
+            void setAnchorAndOffset(int side, float anchor, float offset, bool pushOppositeAnchor = false) {
+                control->set_anchor_and_offset(static_cast<godot::Side>(side), anchor, offset, pushOppositeAnchor);
+            }
     };
 }
 
