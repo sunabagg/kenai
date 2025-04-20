@@ -45,4 +45,5 @@ extern class Control extends CanvasItem {
     public var theme:Theme;
     public var themeTypeVariation:String;
     public var tooltipAutoTranslateMode:Int;
+    public var toolTipText:String;
 }
