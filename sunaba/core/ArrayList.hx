@@ -42,22 +42,32 @@ extern class ArrayList {
 
 abstract ArrayListAbstract(ArrayList) from ArrayList to ArrayList {
     @:op([])
-    public function get(index: Int): Variant {
+    public inline function get(index: Int): Variant {
         return this.get(index);
     }
 
     @:op([])
-    public function set(index: Int, value: Variant): Void {
+    public inline function set(index: Int, value: Variant): Void {
         this.set(index, value);
     }
 
-    public function forEach(callback: Variant->Void): Void {
+    @:arrayAccess
+    public inline function getArray(index: Int): Variant {
+        return this.get(index);
+    }
+
+    @:arrayAccess
+    public inline function setArray(index: Int, value: Variant): Void {
+        this.set(index, value);
+    }
+
+    public inline function forEach(callback: Variant->Void): Void {
         for (i in 0...this.size()) {
             callback(this.get(i));
         }
     }
 
-    public function toArray(): Array<Variant> {
+    public inline function toArray(): Array<Variant> {
         var result = new Array<Variant>(this.size());
         for (i in 0...this.size()) {
             result[i] = this.get(i);
