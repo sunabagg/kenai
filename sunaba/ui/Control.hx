@@ -59,7 +59,7 @@ extern class Control extends CanvasItem {
     public function addThemeStyleboxOverride(name:String, stylebox:StyleBox):Void;
     public function beginBulkThemeOverride():Void;
     public function endBulkThemeOverride():Void;
-    public function findNextValidFocus():Void;
+    public function findNextValidFocus():Control;
     public function findPrevValidFocus():Control;
     public function findValidFocusNeighbor(side: Int):Control;
 }
