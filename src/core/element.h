@@ -63,6 +63,15 @@ namespace sunaba::core {
     public:
         sol::table scriptInstance = sol::lua_nil;
 
+        Event* childEnteredTreeEvent;
+        Event* childExitedTreeEvent;
+        Event* childOrderChangedEvent;
+        Event* renamedEvent;
+        Event* replacingByEvent;
+        Event* treeEnteredEvent;
+        Event* treeExitedEvent;
+        Event* treeExitingEvent;
+
         Element() {
             setNode(memnew(NodeProxy));
             node->set_name("Element");
