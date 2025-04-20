@@ -9,6 +9,7 @@
 
 #include "../core/canvas_item.h"
 #include "../core/font.h"
+#include "../core/texture2d.h"
 #include "theme.h"
 
 namespace sunaba::ui {
@@ -532,6 +533,10 @@ namespace sunaba::ui {
 
             int getThemeFontSize(std::string name, std::string type) {
                 return control->get_theme_font_size(name.c_str(), type.c_str());
+            }
+
+            sunaba::core::Texture2D* getThemeIcon(std::string name, std::string type) {
+                return new sunaba::core::Texture2D(control->get_theme_icon(name.c_str(), type.c_str()).ptr());
             }
     };
 }
