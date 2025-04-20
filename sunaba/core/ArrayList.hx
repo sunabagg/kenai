@@ -1,0 +1,41 @@
+package sunaba.core;
+
+@:native("Array")
+extern class ArrayList {
+    public function new();
+    public function append(value : Variant) : Void;
+    public function appendArray(array : ArrayList) : Void;
+    public function assign(array : ArrayList) : Void;
+    public function back() : Variant;
+    public function bsearch(value : Variant, before: Bool = true) : Int;
+    public function clear() : Void;
+    public function count() : Int;
+    public function duplicate(deep: Bool = false) : ArrayList;
+    public function erase(value : Variant) : Void;
+    public function fill(value : Variant) : Void;
+    public function front() : Variant;
+    public function get(index : Int) : Variant;
+    public function has(value : Variant) : Bool;
+    public function hash() : Int;
+    public function insert(index : Int, value : Variant) : Void;
+    public function isEmpty() : Bool;
+    public function isReadOnly() : Bool;
+    public function makeReadOnly() : Void;
+    public function max() : Variant;
+    public function min() : Variant;
+    public function pickRandom() : Variant;
+    public function popAt(index : Int) : Variant;
+    public function popBack() : Variant;
+    public function popFront() : Variant;
+    public function pushBack(value : Variant) : Void;
+    public function pushFront(value : Variant) : Void;
+    public function removeAt(index : Int) : Void;
+    public function resize(size : Int) : Void;
+    public function reverse() : Void;
+    public function rfind(what: Variant, from: Int = -1) : Int;
+    public function set(index : Int, value : Variant) : Void;
+    public function shuffle() : Void;
+    public function size() : Int;
+    public function slice(begin: Int, end: Int, step: Int = 1, deep: Bool = false) : ArrayList;
+    public function sort(): Void;
+}
