@@ -22,6 +22,7 @@ void sunaba::core::bindElement(sol::state &lua) {
         ),
         "childEnteredTree", &Element::childEnteredTree,
         "childExitedTree", &Element::childExitedTree,
+        "childOrderChanged", &Element::childOrderChanged,
         "find", &Element::find,
         "getParent", &Element::getParent,
         "addChild", &Element::addChild,
