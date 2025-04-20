@@ -18,8 +18,13 @@ namespace sunaba::core {
     class Element; // Forward declaration
 
     class NodeProxy : public Node {
+        GDCLASS(NodeProxy, Node); // Macro to register the class with Godot
+    protected:
+        static void _bind_methods();
     public:
         Element* element = nullptr;
+
+        static void bindMethodsElement();
 
         NodeProxy() {
 
