@@ -8,6 +8,8 @@ extern class Element extends BaseObject {
     public var childExitingTree: Event;
     public var childOrderChanged: Event;
     public var renamed: Event;
+    public var replacingBy: Event;
+    public var treeEntered: Event;
     public function new();
     public function fine(path: String): Element;
     public function getParent(): Element;
