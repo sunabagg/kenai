@@ -86,4 +86,5 @@ extern class Control extends CanvasItem {
     public function hasFocus():Bool;
     public function hasThemeColor(name:String,?type:String):Bool;
     public function hasThemeColorOverride(name:String):Bool;
+    public function hasThemeConstant(name:String,?type:String):Bool;
 }
