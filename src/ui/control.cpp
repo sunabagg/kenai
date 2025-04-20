@@ -209,6 +209,10 @@ namespace sunaba::ui {
                 &Control::getSizeFlagsStretchRatio,
                 &Control::setSizeFlagsStretchRatio
             ),
+            "sizeFlagsVertical", sol::property(
+                &Control::getSizeFlagsVertical,
+                &Control::setSizeFlagsVertical
+            ),
         );
     }
 }
