@@ -121,7 +121,8 @@ namespace sunaba::core {
             ClassDB::bind_vararg_method(
                 METHOD_FLAGS_DEFAULT,
                 "callEvent",
-                &EventBridge::callEvent
+                &EventBridge::callEvent,
+                MethodInfo(Variant::Type::NIL, "callEvent") // Add method info for clarity
             );
         }
     };
