@@ -658,6 +658,10 @@ namespace sunaba::ui {
             void setAnchorsAndOffsetsPreset(int preset, int resizeMode = 0, int margin = 0) {
                 control->set_anchors_and_offsets_preset(static_cast<godot::Control::LayoutPreset>(preset), static_cast<godot::Control::LayoutPresetMode>(resizeMode), margin);
             }
+
+            void setAnchorsPreset(int preset, bool keepOffsets = false) {
+                control->set_anchors_preset(static_cast<godot::Control::LayoutPreset>(preset), keepOffsets);
+            }
     };
 }
 
