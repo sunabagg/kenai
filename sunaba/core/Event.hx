@@ -15,4 +15,9 @@ abstract EventAbstract(Event) from Event to Event {
     public function callNoArgs() {
         this.emit();
     }
+
+    @:op(a())
+    public function call(...args: Variant) {
+        this.emit(args);
+    }
 }
