@@ -93,4 +93,5 @@ extern class Control extends CanvasItem {
     public function hasThemeFontSize(name:String,?type:String):Bool;
     public function hasThemeFontSizeOverride(name:String):Bool;
     public function hasThemeIcon(name:String,?type:String):Bool;
+    public function hasThemeIconOverride(name:String):Bool;
 }
