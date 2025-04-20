@@ -4,7 +4,7 @@
 #include <godot_cpp/classes/node.hpp>
 #include <sol/sol.hpp>
 
-#include "../core/base_object.h"
+#include "base_object.h"
 #include "../input/input_event.h"
 
 
