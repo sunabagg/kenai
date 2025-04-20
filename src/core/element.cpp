@@ -36,9 +36,12 @@ void sunaba::core::bindElement(sol::state &lua) {
                 e->childExitedTree = event;
             }
         ),
-        "childOrderChanged", sol::readonly_property(
+        "childOrderChanged", sol::property(
             [](Element* e) {
                 return e->childOrderChanged;
+            },
+            [](Element* e, Event* event) {
+                e->childOrderChanged = event;
             }
         ),
         "renamed", sol::readonly_property(
