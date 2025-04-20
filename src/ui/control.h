@@ -642,6 +642,10 @@ namespace sunaba::ui {
             void removeThemeStyleboxOverride(std::string name) {
                 control->remove_theme_stylebox_override(name.c_str());
             }
+
+            void resetSize() {
+                control->reset_size();
+            }
     };
 }
 
