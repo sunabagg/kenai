@@ -33,6 +33,6 @@ extern class Control extends CanvasItem {
     public var physicsInterpolationMode:Int;
     public var pivotOffset:Vector2;
     public var position:Vector2;
-    public var rotation:Vector2;
+    public var rotation:Float;
     public var rotationDegrees:Float;
 }
