@@ -646,6 +646,10 @@ namespace sunaba::ui {
             void resetSize() {
                 control->reset_size();
             }
+
+            void setAnchor(int side, float value, bool keepOffset = false, bool pushOppositeAnchor = false) {
+                control->set_anchor(static_cast<godot::Side>(side), value, keepOffset, pushOppositeAnchor);
+            }
     };
 }
 
