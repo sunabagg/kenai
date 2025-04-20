@@ -274,6 +274,7 @@ namespace sunaba::ui {
             "hasThemeConstantOverride", &Control::hasThemeConstantOverride,
             "hasThemeFont", &Control::hasThemeFont,
             "hasThemeFontOverride", &Control::hasThemeFontOverride,
+            "hasThemeIcon", &Control::hasThemeIcon,
         );
     }
 }
