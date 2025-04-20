@@ -124,7 +124,7 @@ namespace sunaba::core {
                 &EventBridge::callEvent
             );
         }
-    }
+    };
 }
 
 #endif // EVENT_H
