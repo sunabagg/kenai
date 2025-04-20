@@ -458,6 +458,16 @@ namespace sunaba::ui {
                 }
             }
 
+            bool hasPoint(Vector2 point) {
+                if (scriptInstance != sol::lua_nil) {
+                    auto func = scriptInstance["hasPoint"].get<sol::function>();
+                    if (func) {
+                        auto result = func(scriptInstance, point);
+                        return result.get<bool>();
+                    }
+                }
+            }
+
             void acceptEvent() {
                 control->accept_event();
             }
