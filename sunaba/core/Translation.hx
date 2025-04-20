@@ -8,9 +8,9 @@ extern class Translation extends Resource {
     public function eraseMessage(srcMsg: String, context: String): Void;
     public function getMessage(srcMsg: String, context: String = ""): String;
     public function getMessageCount(): Int;
-    public function getMessageList(): Array<String>;
+    public function getMessageList(): lua.Table<Int, String>;
     public function getPluralMessage(srcMsg: String, srcPluralMsg: String, n: Int, context: String): String;
-    public function getTRanslatedMessageList(): Array<String>;
+    public function getTRanslatedMessageList(): lua.Table<Int, String>;
     @:native("cast")
     public static function castFrom(type: Dynamic) : Translation;
 }
