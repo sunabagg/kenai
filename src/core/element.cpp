@@ -98,3 +98,11 @@ void sunaba::core::NodeProxy::onChildEnteredTree(Node* child) {
         this->element->childEnteredTree->emit(args);
     }
 }
+
+void sunaba::core::NodeProxy::onChildExitedTree(Node* child) {
+    if (this->element != nullptr) {
+        Array args;
+        args.append(new Element(child));
+        this->element->childExitedTree->emit(args);
+    }
+}
