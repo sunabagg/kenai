@@ -690,6 +690,10 @@ namespace sunaba::ui {
             void setOffsetsPreset(int preset, int resizeMode = 0, int margin = 0) {
                 control->set_offsets_preset(static_cast<godot::Control::LayoutPreset>(preset), static_cast<godot::Control::LayoutPresetMode>(resizeMode), margin);
             }
+
+            void setPosition(Vector2 position, bool keepOffset = false) {
+                control->set_position(position, keepOffset);
+            }
     };
 }
 
