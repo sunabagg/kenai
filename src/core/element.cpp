@@ -118,3 +118,11 @@ void sunaba::core::NodeProxy::onRenamed() {
         this->element->renamed->emit(Array());
     }
 }
+
+void sunaba::core::NodeProxy::onReplacingBy(Node* node) {
+    if (this->element != nullptr) {
+        Array args;
+        args.append(new Element(node));
+        this->element->renamed->emit(args);
+    }
+}
