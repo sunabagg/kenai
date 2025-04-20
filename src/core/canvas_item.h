@@ -182,6 +182,7 @@ namespace sunaba::core {
 
         Event* darw;
         Event* hidden;
+        Event* itemRectChanged;
 
         void drawAnimationSlice(float animationLength, float sliceBegin, float sliceEnd, float offset = 0.0f) {
             canvas_item->draw_animation_slice(animationLength, sliceBegin, sliceEnd, offset);
