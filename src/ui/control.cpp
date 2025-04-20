@@ -239,6 +239,7 @@ namespace sunaba::ui {
             "beginBulkThemeOveride", &Control::beginBulkThemeOveride,
             "endBulkThemeOveride", &Control::endBulkThemeOveride,
             "findNextValidFocus", &Control::findNextValidFocus,
+            "findPrevValidFocus", &Control::findPrevValidFocus,
             "getDragData", &Control::getDragData,
         );
     }
