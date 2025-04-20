@@ -251,6 +251,7 @@ namespace sunaba::ui {
             "getGlobalRect", &Control::getGlobalRect,
             "getMinimumSize", &Control::getMinimumSize,
             "getOffset", &Control::getOffset,
+            "getParentAreaSize", &Control::getParentAreaSize,
         );
     }
 }
