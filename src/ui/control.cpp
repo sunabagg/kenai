@@ -283,6 +283,7 @@ namespace sunaba::ui {
             "releaseFocus", &Control::releaseFocus,
             "removeThemeColorOverride", &Control::removeThemeColorOverride,
             "removeThemeConstantOverride", &Control::removeThemeConstantOverride,
+            "removeThemeFontOverride", &Control::removeThemeFontOverride,
         );
     }
 }
