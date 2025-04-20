@@ -71,4 +71,5 @@ extern class Control extends CanvasItem {
     public function getFocusNeighbor(side:Int):String;
     public function getGlobalRect():Rect2;
     public function getScreenPosition():Vector2;
+    public function getThemeColor(name:String):Color;
 }
