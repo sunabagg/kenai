@@ -19,4 +19,5 @@ extern class Control extends CanvasItem {
     public var focusNeighborTop: String;
     public var focusNext: String;
     public var focusPrevious: String;
+    public var globalPosition: Vector2;
 }
