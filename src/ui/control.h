@@ -563,6 +563,10 @@ namespace sunaba::ui {
                 return control->has_theme_color(name.c_str(), type.c_str());
             }
 
+            bool hasThemeColorOverride(std::string name) {
+                return control->has_theme_color_override(name.c_str());
+            }
+
             bool hasThemeConstant(std::string name, std::string type = String(StringName("&amp;&quot;&quot;")).utf8().get_data()) {
                 return control->has_theme_constant(name.c_str(), type.c_str());
             }
