@@ -264,6 +264,7 @@ namespace sunaba::ui {
             "getThemeFontSize", &Control::getThemeFontSize,
             "getThemeIcon", &Control::getThemeIcon,
             "getThemeStylebox", &Control::getThemeStylebox,
+            "getTooltip", &Control::getTooltip,
         );
     }
 }
