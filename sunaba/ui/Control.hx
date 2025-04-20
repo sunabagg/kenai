@@ -60,4 +60,5 @@ extern class Control extends CanvasItem {
     public function beginBulkThemeOverride():Void;
     public function endBulkThemeOverride():Void;
     public function findNextValidFocus():Void;
+    public function findPrevValidFocus():Void;
 }
