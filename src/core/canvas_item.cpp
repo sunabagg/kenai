@@ -19,6 +19,12 @@ namespace sunaba::core {
         }
     }
 
+    void CanvasItemProxy::itemRectChanged() {
+        if (canvas_item_element != nullptr) {
+            canvas_item_element->itemRectChanged->emit(Array());
+        }
+    }
+
     void bindCanvasItem(sol::state& lua) {
         lua.new_usertype<CanvasItem>(
             "CanvasItem",
