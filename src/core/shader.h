@@ -59,13 +59,8 @@ namespace sunaba::core {
             return shader->get_mode();
         }
 
-        sol::table getShaderUniformList() {
-            auto list = shader->get_shader_uniform_list();
-            sol::table table;
-            for (int i = 0; i < list.size(); ++i) {
-                table[i + 1] = list[i];
-            }
-            return table;
+        Array getShaderUniformList() {
+            return shader->get_shader_uniform_list();
         }
 
         void setDefaultTextureParameter(const std::string &name, Texture2D* texture, int32_t index = 0) {
