@@ -270,6 +270,7 @@ namespace sunaba::ui {
             "hasFocus", &Control::hasFocus,
             "hasThemeColor", &Control::hasThemeColor,
             "hasThemeColorOverride", &Control::hasThemeColorOverride,
+            "hasThemeConstant", &Control::hasThemeConstant,
         );
     }
 }
