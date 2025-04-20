@@ -77,5 +77,6 @@ extern class Control extends CanvasItem {
     public function getThemeDefaultFont():Font;
     public function getThemeDefaultFontSize():Float;
     public function getThemeFont(name:String):Font;
+    public function getThemeFontSize(name:String):Float;
     
 }
