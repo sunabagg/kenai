@@ -1,6 +1,7 @@
 package sunaba.ui;
 
 import sunaba.core.CanvasItem;
+import sunaba.core.Vector2;
 
 @:native("Control")
 extern class Control extends CanvasItem {
