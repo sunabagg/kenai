@@ -205,7 +205,7 @@ void sunaba::core::bind_base_types(sol::state& lua) {
         "tostring", [](const Variant& v) { return std::string((v.operator String()).utf8().get_data()); }
     );
 
-    lua.new_usertype<Array>("Array",
+    lua.new_usertype<Array>("ArrayList",
         sol::constructors<Array()>(),
         "append", &Array::append,
         "appendArray", &Array::append_array,
