@@ -286,6 +286,7 @@ namespace sunaba::ui {
             "removeThemeFontOverride", &Control::removeThemeFontOverride,
             "removeThemeFontSizeOverride", &Control::removeThemeFontSizeOverride,
             "removeThemeIconOverride", &Control::removeThemeIconOverride,
+            "removeThemeStyleboxOverride", &Control::removeThemeStyleboxOverride,
         );
     }
 }
