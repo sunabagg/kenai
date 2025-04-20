@@ -280,6 +280,7 @@ namespace sunaba::ui {
             "hasThemeStyleboxOverride", &Control::hasThemeStyleboxOverride,
             "isDragSuccessful", &Control::isDragSuccessful,
             "isLayoutRtl", &Control::isLayoutRtl,
+            "releaseFocus", &Control::releaseFocus,
         );
     }
 }
