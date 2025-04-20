@@ -511,7 +511,7 @@ namespace sunaba::ui {
                 return control->get_theme_color(name.c_str(), type.c_str());
             }
 
-            int getThemeConstant(std::string name, std::string type) {
+            int getThemeConstant(std::string name, std::string type = String(StringName("&amp;&quot;&quot;")).utf8().get_data()) {
                 return control->get_theme_constant(name.c_str(), type.c_str());
             }
 
@@ -527,7 +527,7 @@ namespace sunaba::ui {
                 return control->get_theme_default_font_size();
             }
 
-            sunaba::core::Font* getThemeFont(std::string name, std::string type) {
+            sunaba::core::Font* getThemeFont(std::string name, std::string type = String(StringName("&amp;&quot;&quot;")).utf8().get_data()) {
                 return new sunaba::core::Font(control->get_theme_font(name.c_str(), type.c_str()).ptr());
             }
 
