@@ -229,6 +229,13 @@ namespace sunaba::ui {
                 &Control::getToolTipText,
                 &Control::setToolTipText
             ),
+            "acceptEvent", &Control::acceptEvent,
+            "addThemeColorOverride", &Control::addThemeColorOverride,
+            "addThemeConstantOverride", &Control::addThemeConstantOverride,
+            "addThemeFontOverride", &Control::addThemeFontOverride,
+            "addThemeFontSizeOverride", &Control::addThemeFontSizeOverride,
+            "addThemeStyleboxOverride", &Control::addThemeStyleboxOverride,
+            "addThemeIconOverride", &Control::addThemeIconOverride,
         );
     }
 }
