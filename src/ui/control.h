@@ -497,6 +497,10 @@ namespace sunaba::ui {
             Control* getParentControl() {
                 return new Control(control->get_parent_control());
             }
+
+            Rect2 getRect() {
+                return control->get_rect();
+            }
     };
 }
 
