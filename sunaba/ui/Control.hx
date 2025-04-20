@@ -41,4 +41,6 @@ extern class Control extends CanvasItem {
     public var size:Vector2;
     public var sizeFlagsHorizontal:Int;
     public var sizeFlagsStretchRatio:Float;
+    public var sizeFlagsVertical:Int;
+    public var theme:Theme;
 }
