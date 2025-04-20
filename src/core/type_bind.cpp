@@ -106,7 +106,7 @@ void sunaba::core::bind_base_types(sol::state& lua) {
             godot::Ref<godot::Resource> ref = godot::Ref<godot::Resource>(res);
             return Variant(ref);
          },
-         "fromObject", [](const BaseObject* obj) { 
+         "fromObject", [](BaseObject* obj) { 
             BaseObjectProxy* proxy = memnew(BaseObjectProxy);
             proxy->base_object = obj;
             return Variant(proxy);
@@ -207,6 +207,16 @@ void sunaba::core::bind_base_types(sol::state& lua) {
             } else {
                 return Resource();
             }
+         },
+        "asObject", [](const Variant& v) { 
+            Object* gdobj = v.operator Object*();
+            if (gdobj) {
+                BaseObjectProxy* proxy  = Object::cast_to<BaseObjectProxy>(gdobj);
+                if (proxy) {
+                    return proxy->base_object;
+                }
+            }
+            return static_cast<sunaba::core::BaseObject*>(nullptr);
          },
         "tostring", [](const Variant& v) { return std::string((v.operator String()).utf8().get_data()); }
     );
