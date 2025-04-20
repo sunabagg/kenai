@@ -6,7 +6,7 @@ extern class SystemFont extends Font {
     public var antialiasing: Bool;
     public var disableEmbeddedBitmaps: Bool;
     public var fontItalic: Bool;
-    public var fontNames: Array<String>;
+    public var fontNames: lua.Table<Int, String>;
     public var fontStretch: Int;
     public var fontWeight: Int;
     public var forceAutohinter: Bool;
