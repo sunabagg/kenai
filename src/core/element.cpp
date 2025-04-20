@@ -26,6 +26,7 @@ void sunaba::core::bindElement(sol::state &lua) {
         "renamed", &Element::renamed,
         "replacingBy", &Element::replacingBy,
         "treeEntered", &Element::treeEntered,
+        "treeExited", &Element::treeExited,
         "find", &Element::find,
         "getParent", &Element::getParent,
         "addChild", &Element::addChild,
