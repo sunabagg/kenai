@@ -662,6 +662,10 @@ namespace sunaba::ui {
             void setAnchorsPreset(int preset, bool keepOffsets = false) {
                 control->set_anchors_preset(static_cast<godot::Control::LayoutPreset>(preset), keepOffsets);
             }
+
+            void setBegin(Vector2 begin) {
+                control->set_begin(begin);
+            }
     };
 }
 
