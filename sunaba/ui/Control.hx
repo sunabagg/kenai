@@ -4,5 +4,5 @@ import sunaba.core.CanvasItem;
 
 @:native("Control")
 extern class Control extends CanvasItem {
-    
+    public var anchorBottom:Float;
 }
