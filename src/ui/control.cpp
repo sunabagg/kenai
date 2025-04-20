@@ -266,6 +266,7 @@ namespace sunaba::ui {
             "getThemeStylebox", &Control::getThemeStylebox,
             "getTooltip", &Control::getTooltip,
             "grabClickFocus", &Control::grabClickFocus,
+            "grabFocus", &Control::grabFocus,
         );
     }
 }
