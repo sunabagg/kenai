@@ -80,5 +80,6 @@ extern class Control extends CanvasItem {
     public function getThemeFontSize(name:String):Float;
     public function getThemeIcon(name:String):Texture2D;
     public function getThemeStylebox(name:String):StyleBox;
+    public function getTooltip():String;
     
 }
