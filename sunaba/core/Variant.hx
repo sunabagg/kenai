@@ -48,9 +48,9 @@ extern class Variant {
     //public static function fromArrayList(value:ArrayList):Variant;
     public static function fromByteArray(value:BinaryData):Variant;
     public static function fromIntArray(value:Table<Int, Int>): Variant;
-    public static function fromIntArray64(value:Array<Int>): Variant;
+    public static function fromIntArray64(value:Table<Int, Int>): Variant;
     public static function fromFloatArray(value:Table<Int, Float>): Variant;
-    public static function fromFloatArray64(value:Array<Float>): Variant;
+    public static function fromFloatArray64(value:Table<Int, Float>): Variant;
     public static function fromStringArray(value:Table<Int, String>): Variant;
     public static function fromVector2Array(value:Table<Int, Vector2>): Variant;
     public static function fromVector3Array(value:Table<Int, Vector3>): Variant;
@@ -261,21 +261,21 @@ abstract VariantAbstract(Variant) from Variant to Variant {
     public static function toByteArray(value:VariantAbstract):BinaryData {
         return value.asByteArray();
     }
-    @:from
+    /*@:from
     public static function fromIntArray(value:Table<Int, Int>):VariantAbstract {
         return Variant.fromIntArray(value);
     }
-    /*@:to
+    @:to
     public static function toIntArray(value:VariantAbstract):Table<Int, Int> {
         return value.asIntArray();
     }
+    */
     @:from
     public static function fromIntArray64(value:Array<Int>):VariantAbstract {
         return Variant.fromIntArray64(value);
     }
-    */
     @:to
-    public static function toIntArray64(value:VariantAbstract):Array<Int> {
+    public static function toIntArray64(value:VariantAbstract):Table<Int, Int> {
         return value.asIntArray64();
     }
     /*@:from
@@ -287,11 +287,11 @@ abstract VariantAbstract(Variant) from Variant to Variant {
         return value.asFloatArray();
     }*/
     @:from
-    public static function fromFloatArray64(value:Array<Float>):VariantAbstract {
+    public static function fromFloatArray64(value:Table<Int, Float>):VariantAbstract {
         return Variant.fromFloatArray64(value);
     }
     @:to
-    public static function toFloatArray64(value:VariantAbstract):Array<Float> {
+    public static function toFloatArray64(value:VariantAbstract):Table<Int, Float> {
         return value.asFloatArray64();
     }
     @:from
