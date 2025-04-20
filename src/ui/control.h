@@ -410,6 +410,15 @@ namespace sunaba::ui {
                 }
             }
 
+            void dropData(Vector2 position, Variant data) {
+                if (scriptInstance != sol::lua_nil) {
+                    auto func = scriptInstance["dropData"].get<sol::function>();
+                    if (func) {
+                        func(scriptInstance, position, data);
+                    }
+                }
+            }
+
             void acceptEvent() {
                 control->accept_event();
             }
