@@ -300,10 +300,6 @@ namespace sunaba::ui {
                 return control->get_position();
             }
 
-            void setPosition(Vector2 position) {
-                control->set_position(position);
-            }
-
             float getRotation() {
                 return control->get_rotation();
             }
