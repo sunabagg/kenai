@@ -33,6 +33,8 @@ namespace sunaba::core {
             connect("child_exited_tree", childExitedTreeCallable);
             auto childOrderChangedCallable = Callable(this, "onChildOrderChanged");
             connect("child_order_changed", childOrderChangedCallable);
+            auto renamedCallable = Callable(this, "onRenamed");
+            connect("renamed", renamedCallable);
         }
 
         void onChildEnteredTree(Node* child);
