@@ -298,6 +298,7 @@ namespace sunaba::ui {
             "setFocusNeighbor", &Control::setFocusNeighbor,
             "setGlobalPosition", &Control::setGlobalPosition,
             "setOffset", &Control::setOffset,
+            "setOffsetsPreset", &Control::setOffsetsPreset,
         );
     }
 }
