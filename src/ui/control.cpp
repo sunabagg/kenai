@@ -250,6 +250,7 @@ namespace sunaba::ui {
             "getFocusNeighbor", &Control::getFocusNeighbor,
             "getGlobalRect", &Control::getGlobalRect,
             "getMinimumSize", &Control::getMinimumSize,
+            "getOffset", &Control::getOffset,
         );
     }
 }
