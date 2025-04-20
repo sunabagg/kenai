@@ -106,8 +106,8 @@ namespace sunaba::core {
     public:
         Event* event = nullptr;
 
-        EventBridge(Event* p_event) {
-            event = p_event;
+        EventBridge() {
+            event = new Event();
         }
         void callEvent(const godot::Variant* args, GDExtensionInt arg_count, GDExtensionCallError &error) {
             Array args_array;
