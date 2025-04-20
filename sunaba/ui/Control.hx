@@ -49,4 +49,5 @@ extern class Control extends CanvasItem {
     public function acceptEvent():Void;
     public function addThemeColorOverride(name:String, color:Color):Void;
     public function addThemeConstantOverride(name:String, constant:Float):Void;
+    public function addThemeConstantOverride(name:String, constant:Int):Void;
 }
