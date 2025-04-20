@@ -51,7 +51,7 @@ abstract ArrayListAbstract(ArrayList) from ArrayList to ArrayList {
         this.set(index, value);
     }
 
-    public function forEach(callback: Dynamic): Void {
+    public function forEach(callback: Variant->Void): Void {
         for (i in 0...this.size()) {
             callback(this.get(i));
         }
