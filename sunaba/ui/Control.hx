@@ -111,4 +111,5 @@ extern class Control extends CanvasItem {
     public function setAnchorsAndOffsetsPreset(preset:Int, ?resizeMode:Int, margin:Int):Void;
     public function setAnchorsPreset(preset:Int, ?keepOffsets:Bool):Void;
     public function setBegin(position:Vector2):Void;
+    public function setDragPreview(preview:Control):Void;
 }
