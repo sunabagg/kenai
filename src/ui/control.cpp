@@ -249,6 +249,7 @@ namespace sunaba::ui {
             "getEnd", &Control::getEnd,
             "getFocusNeighbor", &Control::getFocusNeighbor,
             "getGlobalRect", &Control::getGlobalRect,
+            "getMinimumSize", &Control::getMinimumSize,
         );
     }
 }
