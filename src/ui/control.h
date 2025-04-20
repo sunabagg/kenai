@@ -698,6 +698,10 @@ namespace sunaba::ui {
             void setSize(Vector2 size, bool keepOffsets = false) {
                 control->set_size(size, keepOffsets);
             }
+
+            void updateMinimumSize() {
+                control->update_minimum_size();
+            }
     };
 }
 
