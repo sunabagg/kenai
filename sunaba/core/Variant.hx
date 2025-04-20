@@ -2,14 +2,21 @@ package sunaba.core;
 
 import sunaba.core.io.BinaryData;
 import lua.Table;
+import haxe.Int32;
+import haxe.Int64;
+import haxe.
 
 @:native("Variant")
 extern class Variant {
     public function new();
     @:native("new")
-    public static function fromInt(value:Int):Variant;
+    public static function fromInt(value:Int32):Variant;
     @:native("new")
-    public static function fromFloat(value:Float):Variant;
+    public static function fromInt64(value:Int64):Variant;
+    @:native("new")
+    public static function fromSingle(vale:Single):Variant;
+    @:native("new")
+    public static function fromFloat(value:Single):Variant;
     @:native("new")
     public static function fromString(value:String):Variant;
     @:native("new")
@@ -59,7 +66,9 @@ extern class Variant {
     public function getType():Int;
     public function getTypeName():String;
     public function asString():String;
-    public function asInt():Int;
+    public function asInt():Int32;
+    public function asInt64():Int64;
+    public function asSingle():Single;
     public function asFloat():Float;
     public function asBool():Bool;
     public function asVector2():Vector2;
@@ -108,6 +117,30 @@ abstract VariantAbstract(Variant) from Variant to Variant {
     @:to
     public static function toInt(value:VariantAbstract):Int {
         return value.asInt();
+    }
+    @:from
+    public static function fromInt64(value:Int64):VariantAbstract {
+        return Variant.fromInt64(value);
+    }
+    @:to
+    public static function toInt64(value:VariantAbstract):Int64 {
+        return value.asInt64();
+    }
+    @:to
+    public static function toInt32(value:VariantAbstract):Int32 {
+        return value.asInt64().toInt32();
+    }
+    @:to
+    public static function toInt64(value:VariantAbstract):Int64 {
+        return value.asInt64();
+    }
+    @:from
+    public static function fromSingle(value:Single):VariantAbstract {
+        return Variant.fromSingle(value);
+    }
+    @:to
+    public static function toSingle(value:VariantAbstract):Single {
+        return value.asSingle();
     }
     @:from
     public static function fromFloat(value:Float):VariantAbstract {
