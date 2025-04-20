@@ -8,7 +8,8 @@ void sunaba::core::bindEvent(sol::state &lua) {
         sol::base_classes, sol::bases<sunaba::core::BaseObject>(),
         "connect", &sunaba::core::Event::connectLua,
         "disconnect", &sunaba::core::Event::disconnectLua,
-        "emit", &sunaba::core::Event::emitLua
+        "emit", &sunaba::core::Event::emitLua,
+        "clear", &sunaba::core::Event::clear
     );
 }
 
