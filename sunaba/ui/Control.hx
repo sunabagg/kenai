@@ -3,6 +3,7 @@ package sunaba.ui;
 import sunaba.core.CanvasItem;
 import sunaba.core.Vector2;
 import sunaba.core.Element;
+import sunaba.core.Variant;
 
 @:native("Control")
 extern class Control extends CanvasItem {
@@ -48,6 +49,5 @@ extern class Control extends CanvasItem {
     public var toolTipText:String;
     public function acceptEvent():Void;
     public function addThemeColorOverride(name:String, color:Color):Void;
-    public function addThemeConstantOverride(name:String, constant:Float):Void;
-    public function addThemeConstantOverride(name:String, constant:Int):Void;
+    public function addThemeConstantOverride(name:String, constant:Variant):Void
 }
