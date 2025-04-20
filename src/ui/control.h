@@ -328,6 +328,10 @@ namespace sunaba::ui {
                 return new Element(control->get_shortcut_context());
             }
 
+            void setShortcutContext(Element* context) {
+                control->set_shortcut_context(context->getNode());
+            }
+
             Vector2 getSize() {
                 return control->get_size();
             }
