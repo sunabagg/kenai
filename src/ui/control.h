@@ -336,10 +336,6 @@ namespace sunaba::ui {
                 return control->get_size();
             }
 
-            void setSize(Vector2 size) {
-                control->set_size(size);
-            }
-
             int getSizeFlagsHorizontal() {
                 return control->get_h_size_flags();
             }
