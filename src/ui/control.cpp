@@ -201,6 +201,10 @@ namespace sunaba::ui {
                 &Control::getSize,
                 &Control::setSize
             ),
+            "sizeFlagsHorizontal", sol::property(
+                &Control::getSizeFlagsHorizontal,
+                &Control::setSizeFlagsHorizontal
+            ),
         );
     }
 }
