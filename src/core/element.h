@@ -24,7 +24,7 @@ namespace sunaba::core {
     public:
         Element* element = nullptr;
 
-        static void bindMethodsElement();
+        static void bindElementMethods();
 
         NodeProxy() {
 
