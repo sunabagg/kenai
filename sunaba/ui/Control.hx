@@ -16,4 +16,5 @@ extern class Control extends CanvasItem {
     public var focusNeighborBottom: String;
     public var focusNeighborLeft: String;
     public var focusNeighborRight: String;
+    public var focusNeighborTop: String;
 }
