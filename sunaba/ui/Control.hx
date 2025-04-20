@@ -6,4 +6,5 @@ import sunaba.core.CanvasItem;
 extern class Control extends CanvasItem {
     public var anchorBottom:Float;
     public var anchorLeft:Float;
+    public var anchorRight:Float;
 }
