@@ -33,12 +33,14 @@
 #include "translation.h"
 #include "element.h"
 #include "canvas_item.h"
+#include "event.h"
 
 void sunaba::core::bindCoreClasses(sol::state& lua) {
     sunaba::core::io::bindBinaryClasses(lua);
     bind_base_types(lua);
     bindSceneSystem(lua);
     sunaba::core::io::bindIoClasses(lua);
+    bindEvent(lua);
 
     bindResource(lua);
     bindFont(lua);
