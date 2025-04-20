@@ -290,6 +290,7 @@ namespace sunaba::ui {
             "resetSize", &Control::resetSize,
             "setAnchor", &Control::setAnchor,
             "setAnchorAndOffset", &Control::setAnchorAndOffset,
+            "setAnchorsAndOffsetsPreset", &Control::setAnchorsAndOffsetsPreset,
         );
     }
 }
