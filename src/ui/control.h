@@ -521,6 +521,10 @@ namespace sunaba::ui {
             sunaba::core::Font* getThemeDefaultFont() {
                 return new sunaba::core::Font(control->get_theme_default_font().ptr());
             }
+
+            int getThemeDefaultFontSize() {
+                return control->get_theme_default_font_size();
+            }
     };
 }
 
