@@ -299,6 +299,7 @@ namespace sunaba::ui {
             "setGlobalPosition", &Control::setGlobalPosition,
             "setOffset", &Control::setOffset,
             "setOffsetsPreset", &Control::setOffsetsPreset,
+            "setPosition", &Control::setPosition,
         );
     }
 }
