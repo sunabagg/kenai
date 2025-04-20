@@ -634,6 +634,10 @@ namespace sunaba::ui {
             void removeThemeFontSizeOverride(std::string name) {
                 control->remove_theme_font_size_override(name.c_str());
             }
+
+            void removeThemeIconOverride(std::string name) {
+                control->remove_theme_icon_override(name.c_str());
+            }
     };
 }
 
