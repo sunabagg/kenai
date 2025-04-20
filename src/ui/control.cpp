@@ -29,7 +29,7 @@ namespace sunaba::ui {
 
     String ControlProxy::_get_tooltip(const Vector2 &at_position) const {
         if (control_element != nullptr) {
-            return control_element->getTooltip(at_position).c_str();
+            return control_element->_getTooltip(at_position).c_str();
         }
         return String();
     }

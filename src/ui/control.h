@@ -430,7 +430,7 @@ namespace sunaba::ui {
                 }
             }
 
-            std::string getTooltip(Vector2 position) {
+            std::string _getTooltip(Vector2 position) {
                 if (scriptInstance != sol::lua_nil) {
                     auto func = scriptInstance["getTooltip"].get<sol::function>();
                     if (func) {
