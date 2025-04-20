@@ -638,6 +638,10 @@ namespace sunaba::ui {
             void removeThemeIconOverride(std::string name) {
                 control->remove_theme_icon_override(name.c_str());
             }
+
+            void removeThemeStyleboxOverride(std::string name) {
+                control->remove_theme_stylebox_override(name.c_str());
+            }
     };
 }
 
