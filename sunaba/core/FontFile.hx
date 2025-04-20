@@ -86,7 +86,7 @@ extern class FontFile extends Font {
     public function setScriptSupportOverride(script : String, supported : Bool) : Void;
     public function setTextureImage(cacheIndex : Int, size : Vector2i, textureIndex : Int, image : Image) : Void;
     public function setTextureOffsets(cacheIndex : Int, size : Vector2i, textureIndex : Int, offsets : Array<Vector2i>) : Void;
-    public function setVariationCoordinates(cacheIndex : Int, coordinates : Map<Any, Any>) : Void;
+    public function setVariationCoordinates(cacheIndex : Int, coordinates : Dictionary) : Void;
     @:native("cast")
     public static function castFrom(type: Dynamic) : FontFile;
 }
