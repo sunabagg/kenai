@@ -73,7 +73,7 @@ extern class Theme extends Resource {
     public function setFontSize(name: String, type: String, size: Float): Void;
     public function setIcon(name: String, type: String, icon: Texture2D): Void;
     public function setStyleBox(name: String, type: String, styleBox: StyleBox): Void;
-    public function setThemeItem(name: String, type: String, item: Resource): Void;
+    public function setThemeItem(name: String, type: String, item: Variant): Void;
     public function setTypeVariation(themeType: String, baseType: String): Void;
     @:native("cast")
     public function castFrom(res: Dynamic): Theme;
