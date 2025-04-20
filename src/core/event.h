@@ -13,7 +13,7 @@ namespace sunaba::core {
 
     class Event : public BaseObject {
         private:
-            std::vector<std::function<void(godot::Array)>> listeners;
+            std::vector<std::function<void(godot::Array)>*> listeners;
             std::vector<sol::function> lua_listeners;
 
             void callCppListener(void* listener, godot::Array args) {
@@ -36,7 +36,7 @@ namespace sunaba::core {
                 }
             }
 
-            void connect(std::function<void(godot::Array)> listener) {
+            void connect(std::function<void(godot::Array)>* listener) {
                 listeners.push_back(listener);
             }
 
@@ -44,7 +44,7 @@ namespace sunaba::core {
                 lua_listeners.push_back(listener);
             }
 
-            void disconnect(std::function<void(godot::Array)> listener) {
+            void disconnect(std::function<void(godot::Array)>* listener) {
                 auto it = std::remove(listeners.begin(), listeners.end(), listener);
                 if (it != listeners.end()) {
                     listeners.erase(it, listeners.end());
