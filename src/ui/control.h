@@ -505,6 +505,10 @@ namespace sunaba::ui {
             Vector2 getScreenPosition() {
                 return control->get_screen_position();
             }
+
+            Color getThemeColor(std::string name, std::string type) {
+                return control->get_theme_color(name.c_str(), type.c_str());
+            }
     };
 }
 
