@@ -1,5 +1,6 @@
 #include "element.h"
 #include "proxy_db.h"
+#include "stl_function_wrapper.h"
 
 using namespace sunaba::core;
 using namespace godot;
@@ -94,6 +95,17 @@ void sunaba::core::bindElement(sol::state &lua) {
             return new Element(Object::cast_to<Node>(e->getNode()));
         }
     );
+}
+
+void sunaba::core::NodeProxy::onInit() {
+    std::function<Variant(std::vector<Variant>)> childEntertedTreeFunc = 
+        [this](std::vector<Variant> args) {
+            Node* child = Object::cast_to<Node>(args[0].operator Object*());
+            this->onChildEnteredTree(child);
+            return Variant();
+        };
+    Callable childEnteredTreeCallable = StlFunctionWrapper::create_callable_from_cpp_function(childEntertedTreeFunc);
+    this->connect("child_entered_tree", childEnteredTreeCallable);
 }
 
 void sunaba::core::Element::setProxyDb(Node* p_node) {
