@@ -294,6 +294,10 @@ namespace sunaba::ui {
                 [](Control* c) { return c->focusEnteredEvent; },
                 [](Control* c, Event* e) { c->focusEnteredEvent = e; }
             ),
+            "focusExited", sol::property(
+                [](Control* c) { return c->focusExitedEvent; },
+                [](Control* c, Event* e) { c->focusExitedEvent = e; }
+            ),
             
             "acceptEvent", &Control::acceptEvent,
             "addThemeColorOverride", &Control::addThemeColorOverride,
