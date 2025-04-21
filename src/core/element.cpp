@@ -106,6 +106,14 @@ void sunaba::core::NodeProxy::onInit() {
         };
     Callable childEnteredTreeCallable = StlFunctionWrapper::create_callable_from_cpp_function(childEntertedTreeFunc);
     this->connect("child_entered_tree", childEnteredTreeCallable);
+    std::function<Variant(std::vector<Variant>)> childExitedTreeFunc = 
+        [this](std::vector<Variant> args) {
+            Node* child = Object::cast_to<Node>(args[0].operator Object*());
+            this->onChildExitedTree(child);
+            return Variant();
+        };
+    Callable childExitedTreeCallable = StlFunctionWrapper::create_callable_from_cpp_function(childExitedTreeFunc);
+    this->connect("child_exited_tree", childExitedTreeCallable);
 }
 
 void sunaba::core::Element::setProxyDb(Node* p_node) {
