@@ -202,12 +202,14 @@ namespace sunaba::ui {
             // Setter for the Control node
             void setControl(ControlNode* p_node) {
                 control = p_node;
+                connectControlSignals();
                 setCanvasItem(control);
             }
 
             void setControl(ControlProxy* p_node) {
                 control = p_node;
                 p_node->element = this;
+                connectControlSignals();
                 setCanvasItem(p_node);
             }
 
