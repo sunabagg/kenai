@@ -1,6 +1,115 @@
 #include "canvas_item.h"
 
 namespace sunaba::core {
+    
+    void sunaba::core::CanvasItemProxy::_enter_tree() {
+        if (this->element != nullptr) {
+            this->element->enterTree();
+        }
+    }
+    
+    void sunaba::core::CanvasItemProxy::_exit_tree() {
+        if (this->element != nullptr) {
+            this->element->exitTree();
+        }
+    }
+    
+    void sunaba::core::CanvasItemProxy::_ready() {
+        if (this->element != nullptr) {
+            this->element->ready();
+        }
+    }
+    
+    void sunaba::core::CanvasItemProxy::_process(double delta) {
+        if (this->element != nullptr) {
+            this->element->process(delta);
+        }
+    }
+    
+    void sunaba::core::CanvasItemProxy::_physics_process(double delta) {
+        if (this->element != nullptr) {
+            this->element->physicsProcess(delta);
+        }
+    }
+    
+    void sunaba::core::CanvasItemProxy::_input(const Ref<InputEvent>& event) {
+        if (this->element != nullptr) {
+            this->element->input(event);
+        }
+    }
+    
+    void sunaba::core::CanvasItemProxy::_unhandled_input(const Ref<InputEvent>& event) {
+        if (this->element != nullptr) {
+            this->element->unhandledInput(event);
+        }
+    }
+    
+    void sunaba::core::CanvasItemProxy::_unhandled_key_input(const Ref<InputEvent>& event) {
+        if (this->element != nullptr) {
+            this->element->unhandledKeyInput(event);
+        }
+    }
+    
+    void sunaba::core::CanvasItemProxy::_shortcut_input(const Ref<InputEvent>& event) {
+        if (this->element != nullptr) {
+            this->element->shortcutInput(event);
+        }
+    }
+    
+    void sunaba::core::CanvasItemProxy::onChildEnteredTree(Node* child) {
+        if (this->element != nullptr) {
+            Array args;
+            args.append(new Element(child));
+            this->element->childEnteredTree->emit(args);
+        }
+    }
+    
+    void sunaba::core::CanvasItemProxy::onChildExitedTree(Node* child) {
+        if (this->element != nullptr) {
+            Array args;
+            args.append(new Element(child));
+            this->element->childExitedTree->emit(args);
+        }
+    }
+    
+    void sunaba::core::CanvasItemProxy::onChildOrderChanged() {
+        if (this->element != nullptr) {
+            this->element->childOrderChanged->emit(Array());
+        }
+    }
+    
+    void sunaba::core::CanvasItemProxy::onRenamed() {
+        if (this->element != nullptr) {
+            this->element->renamed->emit(Array());
+        }
+    }
+    
+    void sunaba::core::CanvasItemProxy::onReplacingBy(Node* node) {
+        if (this->element != nullptr) {
+            Array args;
+            args.append(new Element(node));
+            this->element->renamed->emit(args);
+        }
+    }
+    
+    void sunaba::core::CanvasItemProxy::onTreeEntered() {
+        if (this->element != nullptr) {
+            this->element->treeEntered->emit(Array());
+        }
+    }
+    
+    void sunaba::core::CanvasItemProxy::onTreeExited() {
+        if (this->element != nullptr) {
+            this->element->treeExited->emit(Array());
+        }
+    }
+    
+    void sunaba::core::CanvasItemProxy::onTreeExiting() {
+        if (this->element != nullptr) {
+            this->element->treeExiting->emit(Array());
+        }
+    }
+
     void CanvasItemProxy::_draw() {
         if (element != nullptr) {
             element->_draw();
@@ -187,112 +296,5 @@ namespace sunaba::core {
                 return static_cast<CanvasItem*>(nullptr);
             }
         );
-    }
-    void sunaba::core::CanvasItemProxy::_enter_tree() {
-        if (this->element != nullptr) {
-            this->element->enterTree();
-        }
-    }
-    
-    void sunaba::core::CanvasItemProxy::_exit_tree() {
-        if (this->element != nullptr) {
-            this->element->exitTree();
-        }
-    }
-    
-    void sunaba::core::CanvasItemProxy::_ready() {
-        if (this->element != nullptr) {
-            this->element->ready();
-        }
-    }
-    
-    void sunaba::core::CanvasItemProxy::_process(double delta) {
-        if (this->element != nullptr) {
-            this->element->process(delta);
-        }
-    }
-    
-    void sunaba::core::CanvasItemProxy::_physics_process(double delta) {
-        if (this->element != nullptr) {
-            this->element->physicsProcess(delta);
-        }
-    }
-    
-    void sunaba::core::CanvasItemProxy::_input(const Ref<InputEvent>& event) {
-        if (this->element != nullptr) {
-            this->element->input(event);
-        }
-    }
-    
-    void sunaba::core::CanvasItemProxy::_unhandled_input(const Ref<InputEvent>& event) {
-        if (this->element != nullptr) {
-            this->element->unhandledInput(event);
-        }
-    }
-    
-    void sunaba::core::CanvasItemProxy::_unhandled_key_input(const Ref<InputEvent>& event) {
-        if (this->element != nullptr) {
-            this->element->unhandledKeyInput(event);
-        }
-    }
-    
-    void sunaba::core::CanvasItemProxy::_shortcut_input(const Ref<InputEvent>& event) {
-        if (this->element != nullptr) {
-            this->element->shortcutInput(event);
-        }
-    }
-    
-    void sunaba::core::CanvasItemProxy::onChildEnteredTree(Node* child) {
-        if (this->element != nullptr) {
-            Array args;
-            args.append(new Element(child));
-            this->element->childEnteredTree->emit(args);
-        }
-    }
-    
-    void sunaba::core::CanvasItemProxy::onChildExitedTree(Node* child) {
-        if (this->element != nullptr) {
-            Array args;
-            args.append(new Element(child));
-            this->element->childExitedTree->emit(args);
-        }
-    }
-    
-    void sunaba::core::CanvasItemProxy::onChildOrderChanged() {
-        if (this->element != nullptr) {
-            this->element->childOrderChanged->emit(Array());
-        }
-    }
-    
-    void sunaba::core::CanvasItemProxy::onRenamed() {
-        if (this->element != nullptr) {
-            this->element->renamed->emit(Array());
-        }
-    }
-    
-    void sunaba::core::CanvasItemProxy::onReplacingBy(Node* node) {
-        if (this->element != nullptr) {
-            Array args;
-            args.append(new Element(node));
-            this->element->renamed->emit(args);
-        }
-    }
-    
-    void sunaba::core::CanvasItemProxy::onTreeEntered() {
-        if (this->element != nullptr) {
-            this->element->treeEntered->emit(Array());
-        }
-    }
-    
-    void sunaba::core::CanvasItemProxy::onTreeExited() {
-        if (this->element != nullptr) {
-            this->element->treeExited->emit(Array());
-        }
-    }
-    
-    void sunaba::core::CanvasItemProxy::onTreeExiting() {
-        if (this->element != nullptr) {
-            this->element->treeExiting->emit(Array());
-        }
     }
 }
