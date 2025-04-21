@@ -12,6 +12,7 @@ target_sources(${PROJECT_NAME} PRIVATE
         theme.h
         theme.cpp
         control.h
+        control.cpp
 )
 
 target_include_directories( ${PROJECT_NAME}
