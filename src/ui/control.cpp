@@ -310,6 +310,10 @@ namespace sunaba::ui {
                 [](Control* c) { return c->mouseEnteredEvent; },
                 [](Control* c, Event* e) { c->mouseEnteredEvent = e; }
             ),
+            "mouseExited", sol::property(
+                [](Control* c) { return c->mouseExitedEvent; },
+                [](Control* c, Event* e) { c->mouseExitedEvent = e; }
+            ),
             "acceptEvent", &Control::acceptEvent,
             "addThemeColorOverride", &Control::addThemeColorOverride,
             "addThemeConstantOverride", &Control::addThemeConstantOverride,
