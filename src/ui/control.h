@@ -73,6 +73,19 @@ namespace sunaba::ui {
                 };
                 Callable focusEnteredCallable = StlFunctionWrapper::create_callable_from_cpp_function(focusEnteredFunc);
                 this->control->connect("focus_entered", focusEnteredCallable);
+                std::function<Variant(std::vector<Variant>)> focusExitedFunc =
+                [this](std::vector<Variant> av) {
+                    Array args;
+                    for (int i = 0; i < av.size(); ++i) {
+                        args.append(av[i]);
+                    }
+                    if (this->focusExited != nullptr) {
+                        this->focusExited->emit(args);
+                    }
+                    return Variant();
+                };
+                Callable focusExitedCallable = StlFunctionWrapper::create_callable_from_cpp_function(focusExitedFunc);
+                this->control->connect("focus_exited", focusExitedCallable);
             }
         public:
             // Constructor with Node* parameter
