@@ -1,7 +1,7 @@
 #include "canvas_item.h"
 
 namespace sunaba::core {
-    
+
     void sunaba::core::CanvasItemProxy::_enter_tree() {
         if (this->element != nullptr) {
             this->element->enterTree();
@@ -53,60 +53,6 @@ namespace sunaba::core {
     void sunaba::core::CanvasItemProxy::_shortcut_input(const Ref<InputEvent>& event) {
         if (this->element != nullptr) {
             this->element->shortcutInput(event);
-        }
-    }
-    
-    void sunaba::core::CanvasItemProxy::onChildEnteredTree(Node* child) {
-        if (this->element != nullptr) {
-            Array args;
-            args.append(new Element(child));
-            this->element->childEnteredTree->emit(args);
-        }
-    }
-    
-    void sunaba::core::CanvasItemProxy::onChildExitedTree(Node* child) {
-        if (this->element != nullptr) {
-            Array args;
-            args.append(new Element(child));
-            this->element->childExitedTree->emit(args);
-        }
-    }
-    
-    void sunaba::core::CanvasItemProxy::onChildOrderChanged() {
-        if (this->element != nullptr) {
-            this->element->childOrderChanged->emit(Array());
-        }
-    }
-    
-    void sunaba::core::CanvasItemProxy::onRenamed() {
-        if (this->element != nullptr) {
-            this->element->renamed->emit(Array());
-        }
-    }
-    
-    void sunaba::core::CanvasItemProxy::onReplacingBy(Node* node) {
-        if (this->element != nullptr) {
-            Array args;
-            args.append(new Element(node));
-            this->element->renamed->emit(args);
-        }
-    }
-    
-    void sunaba::core::CanvasItemProxy::onTreeEntered() {
-        if (this->element != nullptr) {
-            this->element->treeEntered->emit(Array());
-        }
-    }
-    
-    void sunaba::core::CanvasItemProxy::onTreeExited() {
-        if (this->element != nullptr) {
-            this->element->treeExited->emit(Array());
-        }
-    }
-    
-    void sunaba::core::CanvasItemProxy::onTreeExiting() {
-        if (this->element != nullptr) {
-            this->element->treeExiting->emit(Array());
         }
     }
 

@@ -24,15 +24,6 @@ namespace sunaba::core {
                 // Initialize the NodeProxy instance
             }
     
-            void onChildEnteredTree(Node* child);
-            void onChildExitedTree(Node* child);
-            void onChildOrderChanged();
-            void onRenamed();
-            void onReplacingBy(Node* node);
-            void onTreeEntered();
-            void onTreeExited();
-            void onTreeExiting();
-    
             void _enter_tree() override;
             void _exit_tree() override;
             void _ready() override ;
