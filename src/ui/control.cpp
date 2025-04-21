@@ -302,6 +302,10 @@ namespace sunaba::ui {
                 [](Control* c) { return c->guiInputEvent; },
                 [](Control* c, Event* e) { c->guiInputEvent = e; }
             ),
+            "minimumSizeChanged", sol::property(
+                [](Control* c) { return c->minimumSizeChangedEvent; },
+                [](Control* c, Event* e) { c->minimumSizeChangedEvent = e; }
+            ),
             "acceptEvent", &Control::acceptEvent,
             "addThemeColorOverride", &Control::addThemeColorOverride,
             "addThemeConstantOverride", &Control::addThemeConstantOverride,
