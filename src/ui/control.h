@@ -151,6 +151,19 @@ namespace sunaba::ui {
                 };
                 Callable resizedCallable = StlFunctionWrapper::create_callable_from_cpp_function(resizedFunc);
                 this->control->connect("resized", resizedCallable);
+                std::function<Variant(std::vector<Variant>)> sizeFlagsChangedFunc =
+                [this](std::vector<Variant> av) {
+                    Array args;
+                    for (int i = 0; i < av.size(); ++i) {
+                        args.append(av[i]);
+                    }
+                    if (this->sizeFlagsChanged != nullptr) {
+                        this->sizeFlagsChanged->emit(args);
+                    }
+                    return Variant();
+                };
+                Callable sizeFlagsChangedCallable = StlFunctionWrapper::create_callable_from_cpp_function(sizeFlagsChangedFunc);
+                this->control->connect("size_flags_changed", sizeFlagsChangedCallable);
             }
         public:
             // Constructor with Node* parameter
