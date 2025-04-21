@@ -161,7 +161,7 @@ namespace sunaba::ui {
 
     Vector2 ControlProxy::_get_minimum_size() const {
         if (element != nullptr) {
-            return element->getMinimumSize();
+            return element->_getMinimumSize();
         }
         return Vector2();
     }

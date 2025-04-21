@@ -450,7 +450,7 @@ namespace sunaba::ui {
                 }
             }
 
-            Vector2 getMinimumSize() {
+            Vector2 _getMinimumSize() {
                 if (scriptInstance != sol::lua_nil) {
                     auto func = scriptInstance["getMinimumSize"].get<sol::function>();
                     if (func) {
