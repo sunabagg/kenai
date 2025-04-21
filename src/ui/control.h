@@ -59,6 +59,22 @@ namespace sunaba::ui {
     class Control : public sunaba::core::CanvasItem {
         private:
             ControlNode* control = nullptr; // Pointer to the Control instance
+            void connectControlSignals() {
+                // Connect signals specific to Control
+                std::function<Variant(std::vector<Variant>)> drawFunc =
+                [this](std::vector<Variant> av) {
+                    Array args;
+                    for (int i = 0; i < av.size(); ++i) {
+                        args.append(av[i]);
+                    }
+                    if (this->draw != nullptr) {
+                        this->draw->emit(args);
+                    }
+                    return Variant();
+                };
+                Callable drawCallable = StlFunctionWrapper::create_callable_from_cpp_function(drawFunc);
+                this->control->connect("draw", drawCallable);
+            }
         public:
             // Constructor with Node* parameter
             Control(ControlNode* p_node) {
