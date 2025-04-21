@@ -415,6 +415,7 @@ namespace sunaba::ui {
             Event* mouseEntered;
             Event* mouseExited;
             Event* resized;
+            Event* sizeFlagsChanged;
 
             bool canDropData(Vector2 position, Variant data) {
                 if (scriptInstance != sol::lua_nil) {
