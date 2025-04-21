@@ -115,8 +115,8 @@
         "rhs": "Darwin"
       },
       "cacheVariables": {
-        "CMAKE_CXX_COMPILER": "g++",
-        "CMAKE_C_COMPILER": "gcc",
+        "CMAKE_CXX_COMPILER": "clang++",
+        "CMAKE_C_COMPILER": "clang",
         "CMAKE_BUILD_TYPE": "Debug"
       }
     },
