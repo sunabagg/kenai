@@ -73,6 +73,16 @@ namespace sunaba::core {
             };
             Callable childExitedTreeCallable = StlFunctionWrapper::create_callable_from_cpp_function(childExitedTreeFunc);
             this->node->connect("child_exited_tree", childExitedTreeCallable);
+            std::function<Variant(std::vector<Variant>)> childOrderChangedFunc =
+            [this](std::vector<Variant> args) {
+                Array argsArray;
+                if (this->childOrderChanged != nullptr) {
+                    this->childOrderChanged->emit(argsArray);
+                }
+                return Variant();
+            };
+            Callable childOrderChangedCallable = StlFunctionWrapper::create_callable_from_cpp_function(childOrderChangedFunc);
+            this->node->connect("child_order_changed", childOrderChangedCallable);
         }
         
     protected:
