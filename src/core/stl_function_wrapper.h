@@ -40,6 +40,13 @@ namespace sunaba::core {
                 MethodInfo(Variant::Type::NIL, "callEvent") // Add method info for clarity
             );
         }
+
+        static Callable create_callable_from_cpp_function(std::function<Variant(std::vector<Variant>)> func) {
+            StlFunctionWrapper* wrapper = memnew(StlFunctionWrapper);
+            wrapper->set_cpp_function(func);
+            Callable callable(wrapper, "invoke_cpp_function");
+            return callable;
+        }
     };
 }
 
