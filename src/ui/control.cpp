@@ -54,88 +54,10 @@ namespace sunaba::ui {
             this->element->shortcutInput(event);
         }
     }
-    
-    void sunaba::ui::ControlProxy::onChildEnteredTree(Node* child) {
-        if (this->element != nullptr) {
-            Array args;
-            args.append(new Element(child));
-            this->element->childEnteredTree->emit(args);
-        }
-    }
-    
-    void sunaba::ui::ControlProxy::onChildExitedTree(Node* child) {
-        if (this->element != nullptr) {
-            Array args;
-            args.append(new Element(child));
-            this->element->childExitedTree->emit(args);
-        }
-    }
-    
-    void sunaba::ui::ControlProxy::onChildOrderChanged() {
-        if (this->element != nullptr) {
-            this->element->childOrderChanged->emit(Array());
-        }
-    }
-    
-    void sunaba::ui::ControlProxy::onRenamed() {
-        if (this->element != nullptr) {
-            this->element->renamed->emit(Array());
-        }
-    }
-    
-    void sunaba::ui::ControlProxy::onReplacingBy(Node* node) {
-        if (this->element != nullptr) {
-            Array args;
-            args.append(new Element(node));
-            this->element->renamed->emit(args);
-        }
-    }
-    
-    void sunaba::ui::ControlProxy::onTreeEntered() {
-        if (this->element != nullptr) {
-            this->element->treeEntered->emit(Array());
-        }
-    }
-    
-    void sunaba::ui::ControlProxy::onTreeExited() {
-        if (this->element != nullptr) {
-            this->element->treeExited->emit(Array());
-        }
-    }
-    
-    void sunaba::ui::ControlProxy::onTreeExiting() {
-        if (this->element != nullptr) {
-            this->element->treeExiting->emit(Array());
-        }
-    }
 
     void ControlProxy::_draw() {
         if (element != nullptr) {
             element->_draw();
-        }
-    }
-
-    void ControlProxy::draw() {
-        if (element != nullptr) {
-            element->draw->emit(Array());
-        }
-    }
-
-    void ControlProxy::hidden() {
-        if (element != nullptr) {
-            element->hidden->emit(Array());
-        }
-    }
-
-    void ControlProxy::itemRectChanged() {
-        if (element != nullptr) {
-            element->itemRectChanged->emit(Array());
-        }
-    }
-
-    void ControlProxy::visibilityChanged() {
-        if (element != nullptr) {
-            element->visibilityChanged->emit(Array());
         }
     }
 
