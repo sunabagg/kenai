@@ -21,9 +21,7 @@ namespace sunaba::core {
     public:
         Element* element = nullptr;
         
-        virtual void onInit() {
-            // Initialize the NodeProxy instance
-        }
+        virtual void onInit();
 
         void onChildEnteredTree(Node* child);
         void onChildExitedTree(Node* child);
