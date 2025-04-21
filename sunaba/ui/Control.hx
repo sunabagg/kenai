@@ -60,6 +60,7 @@ extern class Control extends CanvasItem {
     public var mouseExited: Event;
     public var resized: Event;
     public var sizeFlagsChanged: Event;
+    public var themeChanged: Event;
     public function acceptEvent():Void;
     public function addThemeColorOverride(name:String, color:Color):Void;
     public function addThemeConstantOverride(name:String, constant:Variant):Void;
