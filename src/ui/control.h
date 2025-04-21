@@ -138,6 +138,19 @@ namespace sunaba::ui {
                 };
                 Callable mouseExitedCallable = StlFunctionWrapper::create_callable_from_cpp_function(mouseExitedFunc);
                 this->control->connect("mouse_exited", mouseExitedCallable);
+                std::function<Variant(std::vector<Variant>)> resizedFunc =
+                [this](std::vector<Variant> av) {
+                    Array args;
+                    for (int i = 0; i < av.size(); ++i) {
+                        args.append(av[i]);
+                    }
+                    if (this->resized != nullptr) {
+                        this->resized->emit(args);
+                    }
+                    return Variant();
+                };
+                Callable resizedCallable = StlFunctionWrapper::create_callable_from_cpp_function(resizedFunc);
+                this->control->connect("resized", resizedCallable);
             }
         public:
             // Constructor with Node* parameter
