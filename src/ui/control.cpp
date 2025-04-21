@@ -298,7 +298,10 @@ namespace sunaba::ui {
                 [](Control* c) { return c->focusExitedEvent; },
                 [](Control* c, Event* e) { c->focusExitedEvent = e; }
             ),
-            
+            "guiInput", sol::property(
+                [](Control* c) { return c->guiInputEvent; },
+                [](Control* c, Event* e) { c->guiInputEvent = e; }
+            ),
             "acceptEvent", &Control::acceptEvent,
             "addThemeColorOverride", &Control::addThemeColorOverride,
             "addThemeConstantOverride", &Control::addThemeConstantOverride,
