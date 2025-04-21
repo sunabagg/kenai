@@ -109,31 +109,31 @@ namespace sunaba::ui {
         }
     }
 
-    void CanvasItemProxy::_draw() {
+    void ControlProxy::_draw() {
         if (element != nullptr) {
             element->_draw();
         }
     }
 
-    void CanvasItemProxy::draw() {
+    void ControlProxy::draw() {
         if (element != nullptr) {
             element->draw->emit(Array());
         }
     }
 
-    void CanvasItemProxy::hidden() {
+    void ControlProxy::hidden() {
         if (element != nullptr) {
             element->hidden->emit(Array());
         }
     }
 
-    void CanvasItemProxy::itemRectChanged() {
+    void ControlProxy::itemRectChanged() {
         if (element != nullptr) {
             element->itemRectChanged->emit(Array());
         }
     }
 
-    void CanvasItemProxy::visibilityChanged() {
+    void ControlProxy::visibilityChanged() {
         if (element != nullptr) {
             element->visibilityChanged->emit(Array());
         }
