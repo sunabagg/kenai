@@ -17,9 +17,31 @@ namespace sunaba::core {
 
     class CanvasItem;
 
-    class CanvasItemProxy : public CanvasItemNode, public NodeProxy {
+    class CanvasItemProxy : public CanvasItemNode {
         public:
-            sunaba::core::CanvasItem* canvas_item_element = nullptr;  
+            sunaba::core::CanvasItem* element = nullptr;  
+            void onInit() {
+                // Initialize the NodeProxy instance
+            }
+    
+            void onChildEnteredTree(Node* child);
+            void onChildExitedTree(Node* child);
+            void onChildOrderChanged();
+            void onRenamed();
+            void onReplacingBy(Node* node);
+            void onTreeEntered();
+            void onTreeExited();
+            void onTreeExiting();
+    
+            void _enter_tree() override;
+            void _exit_tree() override;
+            void _ready() override ;
+            void _process(double delta) override;
+            void _physics_process(double delta) override;
+            void _input(const Ref<InputEvent>& event) override;
+            void _unhandled_input(const Ref<InputEvent>& event) override;
+            void _unhandled_key_input(const Ref<InputEvent>& event) override;
+            void _shortcut_input(const Ref<InputEvent>& event) override;
 
             void draw();
             void hidden();
@@ -27,6 +49,10 @@ namespace sunaba::core {
             void visibilityChanged();
 
             void _draw() override;
+
+            CanvasItemNode* getCanvasItem() {
+                return this;
+            }
     };
 
     class CanvasItem : public Element {
@@ -44,7 +70,8 @@ namespace sunaba::core {
     
         // Constructor with no parameters
         CanvasItem() {
-            setCanvasItem(memnew(CanvasItemProxy));
+            CanvasItemProxy* cip = memnew(CanvasItemProxy);
+            //setCanvasItem(cip);
             onInit();
         }
 
@@ -60,9 +87,9 @@ namespace sunaba::core {
         }
 
         void setCanvasItem(CanvasItemProxy* p_node) {
-            canvas_item = p_node;
-            p_node->canvas_item_element = this;
-            setNode(p_node);
+            canvas_item = p_node->getCanvasItem();
+            p_node->element = this;
+            setNode(Object::cast_to<Node>(canvas_item));
         }
 
         int getClipChildren() {

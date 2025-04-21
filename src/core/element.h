@@ -21,23 +21,8 @@ namespace sunaba::core {
     public:
         Element* element = nullptr;
         
-        NodeProxy() {
-            /*auto childEnteredTreeCallable = Callable(this, "onChildEnteredTree");   
-            connect("child_entered_tree", childEnteredTreeCallable);
-            auto childExitedTreeCallable = Callable(this, "onChildExitedTree");
-            connect("child_exited_tree", childExitedTreeCallable);
-            auto childOrderChangedCallable = Callable(this, "onChildOrderChanged");
-            connect("child_order_changed", childOrderChangedCallable);
-            auto renamedCallable = Callable(this, "onRenamed");
-            connect("renamed", renamedCallable);
-            auto replacingByCallable = Callable(this, "onReplacingBy");
-            connect("replacing_by", replacingByCallable);
-            auto treeEnteredCallable = Callable(this, "onTreeEntered");
-            connect("tree_entered", treeEnteredCallable);
-            auto treeExitedCallable = Callable(this, "onTreeExited");
-            connect("tree_exited", treeExitedCallable);
-            auto treeExitingCallable = Callable(this, "onTreeExiting");
-            connect("tree_exiting", treeExitingCallable);*/
+        virtual void onInit() {
+            // Initialize the NodeProxy instance
         }
 
         void onChildEnteredTree(Node* child);
@@ -270,6 +255,7 @@ namespace sunaba::core {
 
         void setNode(NodeProxy* p_node) {
             node = p_node;
+            p_node->onInit();
             p_node->element = this;
             setProxyDb(node);
         }
