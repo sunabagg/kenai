@@ -71,6 +71,8 @@ namespace sunaba::core {
                 }
                 return Variant();
             };
+            Callable childExitedTreeCallable = StlFunctionWrapper::create_callable_from_cpp_function(childExitedTreeFunc);
+            this->node->connect("child_exited_tree", childExitedTreeCallable);
         }
         
     protected:
