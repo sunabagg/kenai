@@ -74,6 +74,20 @@ namespace sunaba::core {
             };
             Callable hiddenCallable = StlFunctionWrapper::create_callable_from_cpp_function(hiddenFunc);
             this->canvas_item->connect("hidden", hiddenCallable);
+            std::function<Variant(std::vector<Variant>)> itemRectChangedFunc =
+            [this](std::vector<Variant> av) {
+                Array args;
+                for (int i = 0; i < av.size(); ++i) {
+                    args.append(av[i]);
+                }
+                if (this->itemRectChanged != nullptr) {
+                    this->itemRectChanged->emit(args);
+                }
+                return Variant();
+            };
+            Callable itemRectChangedCallable = StlFunctionWrapper::create_callable_from_cpp_function(itemRectChangedFunc);
+            this->canvas_item->connect("item_rect_changed", itemRectChangedCallable);
+            
         }
     public:
         // Constructor with Node* parameter
