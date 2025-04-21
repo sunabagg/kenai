@@ -12,6 +12,9 @@
 #include "../core/texture2d.h"
 #include "theme.h"
 
+#include "../core/stl_function_wrapper.h"
+#define StlFunctionWrapper sunaba::core::StlFunctionWrapper
+
 namespace sunaba::ui {
     void bindControl(sol::state &lua);
 
