@@ -60,59 +60,19 @@ namespace sunaba::ui {
         private:
             ControlNode* control = nullptr; // Pointer to the Control instance
             void connectControlSignals() {
-                // Connect signals specific to Control
-                std::function<Variant(std::vector<Variant>)> drawFunc =
+                // Connect signals specific to Controlstd::function<Variant(std::vector<Variant>)> focusEnteredFunc =
                 [this](std::vector<Variant> av) {
                     Array args;
                     for (int i = 0; i < av.size(); ++i) {
                         args.append(av[i]);
                     }
-                    if (this->draw != nullptr) {
-                        this->draw->emit(args);
+                    if (this->focusEntered != nullptr) {
+                        this->focusEntered->emit(args);
                     }
                     return Variant();
                 };
-                Callable drawCallable = StlFunctionWrapper::create_callable_from_cpp_function(drawFunc);
-                this->control->connect("draw", drawCallable);
-                std::function<Variant(std::vector<Variant>)> hiddenFunc =
-                [this](std::vector<Variant> av) {
-                    Array args;
-                    for (int i = 0; i < av.size(); ++i) {
-                        args.append(av[i]);
-                    }
-                    if (this->hidden != nullptr) {
-                        this->hidden->emit(args);
-                    }
-                    return Variant();
-                };
-                Callable hiddenCallable = StlFunctionWrapper::create_callable_from_cpp_function(hiddenFunc);
-                this->control->connect("hidden", hiddenCallable);
-                std::function<Variant(std::vector<Variant>)> itemRectChangedFunc =
-                [this](std::vector<Variant> av) {
-                    Array args;
-                    for (int i = 0; i < av.size(); ++i) {
-                        args.append(av[i]);
-                    }
-                    if (this->itemRectChanged != nullptr) {
-                        this->itemRectChanged->emit(args);
-                    }
-                    return Variant();
-                };
-                Callable itemRectChangedCallable = StlFunctionWrapper::create_callable_from_cpp_function(itemRectChangedFunc);
-                this->control->connect("item_rect_changed", itemRectChangedCallable);
-                std::function<Variant(std::vector<Variant>)> visibilityChangedFunc =
-                [this](std::vector<Variant> av) {
-                    Array args;
-                    for (int i = 0; i < av.size(); ++i) {
-                        args.append(av[i]);
-                    }
-                    if (this->visibilityChanged != nullptr) {
-                        this->visibilityChanged->emit(args);
-                    }
-                    return Variant();
-                };
-                Callable visibilityChangedCallable = StlFunctionWrapper::create_callable_from_cpp_function(visibilityChangedFunc);
-                this->control->connect("visibility_changed", visibilityChangedCallable);
+                Callable focusEnteredCallable = StlFunctionWrapper::create_callable_from_cpp_function(focusEnteredFunc);
+                this->control->connect("focus_entered", focusEnteredCallable);
             }
         public:
             // Constructor with Node* parameter
