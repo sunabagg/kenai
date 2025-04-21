@@ -17,9 +17,39 @@ namespace sunaba::ui {
 
     class Control;
 
-    class ControlProxy : public ControlNode, public CanvasItemProxy {
+    class ControlProxy : public ControlNode {
         public:
-            sunaba::ui::Control* control_element = nullptr;
+            sunaba::ui::Control* element = nullptr;
+
+            void onInit() {
+                // Initialize the NodeProxy instance
+            }
+    
+            void onChildEnteredTree(Node* child);
+            void onChildExitedTree(Node* child);
+            void onChildOrderChanged();
+            void onRenamed();
+            void onReplacingBy(Node* node);
+            void onTreeEntered();
+            void onTreeExited();
+            void onTreeExiting();
+    
+            void _enter_tree() override;
+            void _exit_tree() override;
+            void _ready() override ;
+            void _process(double delta) override;
+            void _physics_process(double delta) override;
+            void _input(const Ref<InputEvent>& event) override;
+            void _unhandled_input(const Ref<InputEvent>& event) override;
+            void _unhandled_key_input(const Ref<InputEvent>& event) override;
+            void _shortcut_input(const Ref<InputEvent>& event) override;
+
+            void draw();
+            void hidden();
+            void itemRectChanged();
+            void visibilityChanged();
+
+            void _draw() override;
 
             bool _can_drop_data(const Vector2& at_position, const Variant &data) const override;
 
@@ -72,7 +102,7 @@ namespace sunaba::ui {
 
             void setControl(ControlProxy* p_node) {
                 control = p_node;
-                p_node->control_element = this;
+                p_node->element = this;
                 setCanvasItem(p_node);
             }
 

@@ -1,48 +1,187 @@
 #include "control.h"
 namespace sunaba::ui {
+
+    void sunaba::ui::ControlProxy::_enter_tree() {
+        if (this->element != nullptr) {
+            this->element->enterTree();
+        }
+    }
+    
+    void sunaba::ui::ControlProxy::_exit_tree() {
+        if (this->element != nullptr) {
+            this->element->exitTree();
+        }
+    }
+    
+    void sunaba::ui::ControlProxy::_ready() {
+        if (this->element != nullptr) {
+            this->element->ready();
+        }
+    }
+    
+    void sunaba::ui::ControlProxy::_process(double delta) {
+        if (this->element != nullptr) {
+            this->element->process(delta);
+        }
+    }
+    
+    void sunaba::ui::ControlProxy::_physics_process(double delta) {
+        if (this->element != nullptr) {
+            this->element->physicsProcess(delta);
+        }
+    }
+    
+    void sunaba::ui::ControlProxy::_input(const Ref<InputEvent>& event) {
+        if (this->element != nullptr) {
+            this->element->input(event);
+        }
+    }
+    
+    void sunaba::ui::ControlProxy::_unhandled_input(const Ref<InputEvent>& event) {
+        if (this->element != nullptr) {
+            this->element->unhandledInput(event);
+        }
+    }
+    
+    void sunaba::ui::ControlProxy::_unhandled_key_input(const Ref<InputEvent>& event) {
+        if (this->element != nullptr) {
+            this->element->unhandledKeyInput(event);
+        }
+    }
+    
+    void sunaba::ui::ControlProxy::_shortcut_input(const Ref<InputEvent>& event) {
+        if (this->element != nullptr) {
+            this->element->shortcutInput(event);
+        }
+    }
+    
+    void sunaba::ui::ControlProxy::onChildEnteredTree(Node* child) {
+        if (this->element != nullptr) {
+            Array args;
+            args.append(new Element(child));
+            this->element->childEnteredTree->emit(args);
+        }
+    }
+    
+    void sunaba::ui::ControlProxy::onChildExitedTree(Node* child) {
+        if (this->element != nullptr) {
+            Array args;
+            args.append(new Element(child));
+            this->element->childExitedTree->emit(args);
+        }
+    }
+    
+    void sunaba::ui::ControlProxy::onChildOrderChanged() {
+        if (this->element != nullptr) {
+            this->element->childOrderChanged->emit(Array());
+        }
+    }
+    
+    void sunaba::ui::ControlProxy::onRenamed() {
+        if (this->element != nullptr) {
+            this->element->renamed->emit(Array());
+        }
+    }
+    
+    void sunaba::ui::ControlProxy::onReplacingBy(Node* node) {
+        if (this->element != nullptr) {
+            Array args;
+            args.append(new Element(node));
+            this->element->renamed->emit(args);
+        }
+    }
+    
+    void sunaba::ui::ControlProxy::onTreeEntered() {
+        if (this->element != nullptr) {
+            this->element->treeEntered->emit(Array());
+        }
+    }
+    
+    void sunaba::ui::ControlProxy::onTreeExited() {
+        if (this->element != nullptr) {
+            this->element->treeExited->emit(Array());
+        }
+    }
+    
+    void sunaba::ui::ControlProxy::onTreeExiting() {
+        if (this->element != nullptr) {
+            this->element->treeExiting->emit(Array());
+        }
+    }
+
+    void CanvasItemProxy::_draw() {
+        if (element != nullptr) {
+            element->_draw();
+        }
+    }
+
+    void CanvasItemProxy::draw() {
+        if (element != nullptr) {
+            element->draw->emit(Array());
+        }
+    }
+
+    void CanvasItemProxy::hidden() {
+        if (element != nullptr) {
+            element->hidden->emit(Array());
+        }
+    }
+
+    void CanvasItemProxy::itemRectChanged() {
+        if (element != nullptr) {
+            element->itemRectChanged->emit(Array());
+        }
+    }
+
+    void CanvasItemProxy::visibilityChanged() {
+        if (element != nullptr) {
+            element->visibilityChanged->emit(Array());
+        }
+    }
+
     bool ControlProxy::_can_drop_data(const Vector2& at_position, const Variant &data) const {
-        if (control_element != nullptr) {
-            return control_element->canDropData(at_position, data);
+        if (element != nullptr) {
+            return element->canDropData(at_position, data);
         }
         return false;
     }
 
     void ControlProxy::_drop_data(const Vector2 &at_position, const Variant &data) {
-        if (control_element != nullptr) {
-            control_element->dropData(at_position, data);
+        if (element != nullptr) {
+            element->dropData(at_position, data);
         }
     }
 
     Variant ControlProxy::_get_drag_data(const Vector2 &at_position) {
-        if (control_element != nullptr) {
-            return control_element->getDragData(at_position);
+        if (element != nullptr) {
+            return element->getDragData(at_position);
         }
         return Variant();
     }
 
     Vector2 ControlProxy::_get_minimum_size() const {
-        if (control_element != nullptr) {
-            return control_element->getMinimumSize();
+        if (element != nullptr) {
+            return element->getMinimumSize();
         }
         return Vector2();
     }
 
     String ControlProxy::_get_tooltip(const Vector2 &at_position) const {
-        if (control_element != nullptr) {
-            return control_element->_getTooltip(at_position).c_str();
+        if (element != nullptr) {
+            return element->_getTooltip(at_position).c_str();
         }
         return String();
     }
 
     void ControlProxy::_gui_input(const Ref<InputEvent> &event) {
-        if (control_element != nullptr) {
-            control_element->guiInput(event);
+        if (element != nullptr) {
+            element->guiInput(event);
         }
     }
 
     bool ControlProxy::_has_point(const Vector2 &point) const {
-        if (control_element != nullptr) {
-            return control_element->hasPoint(point);
+        if (element != nullptr) {
+            return element->hasPoint(point);
         }
         return false;
     }
@@ -55,8 +194,8 @@ namespace sunaba::ui {
     //}
 
     TypedArray<Vector3i> ControlProxy::_structured_text_parser(const Array &args, const String &text) const {
-        if (control_element != nullptr) {
-            return control_element->structuredTextParser(args, text);
+        if (element != nullptr) {
+            return element->structuredTextParser(args, text);
         }
         return TypedArray<Vector3i>();
     }
