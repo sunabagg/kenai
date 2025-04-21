@@ -20,16 +20,9 @@ namespace sunaba::core {
 
     class Event : public BaseObject {
         private:
-            std::vector<std::function<void(godot::Array)>*> listeners;
+            std::vector<std::function<void(godot::Array)>> listeners;
             std::vector<sol::function> lua_listeners;
-
-            void callCppListener(void* listener, godot::Array args) {
-                // Call the C++ listener function with the provided arguments
-                // Assuming listener is a function pointer or a callable object
-                auto func = static_cast<void(*)(godot::Array)>(listener);
-                func(args);
-            }
-
+            
             void callLuaListener(sol::function listener, sol::table args) {
                 // Call the Lua listener function with the provided arguments
                 listener(sol::as_args(args));
@@ -38,12 +31,10 @@ namespace sunaba::core {
             public:
             Event() = default;
             ~Event() {
-                for (auto listener : listeners) {
-                    delete listener; // Assuming listeners are dynamically allocated
-                }
+                clear();
             }
 
-            void connect(std::function<void(godot::Array)>* listener) {
+            void connect(std::function<void(godot::Array)> listener) {
                 listeners.push_back(listener);
             }
 
@@ -71,7 +62,7 @@ namespace sunaba::core {
                     for (auto arg : args) {
                         args_array.append(arg.as<godot::Variant>());
                     }
-                    callCppListener(listemer, args_array);
+                    listemer(args_array);
                 }
                 for (auto lua_listener : lua_listeners) {
                     sol::state_view lua_state = sol::state_view(lua_listener.lua_state());
@@ -84,8 +75,8 @@ namespace sunaba::core {
             }
 
             void emit(godot::Array args) {
-                for (auto listemer: listeners) {
-                    callCppListener(listemer, args);
+                for (std::function<void(godot::Array)> listemer: listeners) {
+                    listemer(args);
                 }
 
                 for (sol::function lua_listener : lua_listeners) {
@@ -99,9 +90,6 @@ namespace sunaba::core {
             }
 
             void clear() {
-                for (auto listener : listeners) {
-                    delete listener; // Assuming listeners are dynamically allocated
-                }
                 listeners.clear();
                 lua_listeners.clear();
             }
