@@ -20,8 +20,6 @@ namespace sunaba::core {
     class NodeProxy : public Node {
     public:
         Element* element = nullptr;
-        
-        void onInit();
 
         void onChildEnteredTree(Node* child);
         void onChildExitedTree(Node* child);
@@ -49,6 +47,21 @@ namespace sunaba::core {
 
         std::vector<Element*> children; // List of child elements
         Element* parent = nullptr; // Pointer to the parent element
+
+        void connectElementSignals() {
+            std::function<Variant(std::vector<Variant>)> childEntertedTreeFunc = 
+            [this](std::vector<Variant> args) {
+                Node* child = Object::cast_to<Node>(args[0].operator Object*());
+                Array argsArray;
+                argsArray.append(new Element(child));
+                if (this->childEnteredTree != nullptr) {
+                    this->childEnteredTree->emit(argsArray);
+                }
+                return Variant();
+            };
+        Callable childEnteredTreeCallable = StlFunctionWrapper::create_callable_from_cpp_function(childEntertedTreeFunc);
+        this->node->connect("child_entered_tree", childEnteredTreeCallable);
+        }
         
     protected:
         void setParent(Element* p_parent) {
