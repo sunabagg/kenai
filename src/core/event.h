@@ -22,7 +22,7 @@ namespace sunaba::core {
         private:
             std::vector<std::function<void(godot::Array)>> listeners;
             std::vector<sol::function> lua_listeners;
-            
+
             void callLuaListener(sol::function listener, sol::table args) {
                 // Call the Lua listener function with the provided arguments
                 listener(sol::as_args(args));
@@ -42,7 +42,7 @@ namespace sunaba::core {
                 lua_listeners.push_back(listener);
             }
 
-            void disconnect(std::function<void(godot::Array)>* listener) {
+            void disconnect(std::function<void(godot::Array)> listener) {
                 auto it = std::remove(listeners.begin(), listeners.end(), listener);
                 if (it != listeners.end()) {
                     listeners.erase(it, listeners.end());
