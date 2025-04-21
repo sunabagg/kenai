@@ -412,6 +412,7 @@ namespace sunaba::ui {
             Event* focusExited;
             Event* guiInput;
             Event* minimumSizeChanged;
+            Event* mouseEntered;
 
             bool canDropData(Vector2 position, Variant data) {
                 if (scriptInstance != sol::lua_nil) {
