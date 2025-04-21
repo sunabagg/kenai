@@ -11,6 +11,7 @@
 #include "texture2d.h"
 #include "../ui/style_box.h"
 #include "../input/input_event.h"
+#include "stl_function_wrapper.h"
 
 namespace sunaba::core {
     void bindCanvasItem(sol::state &lua);
@@ -45,6 +46,22 @@ namespace sunaba::core {
     class CanvasItem : public Element {
     private:
         CanvasItemNode* canvas_item = nullptr; // Pointer to the CanvasItem instance
+
+        void connectCanvasItemSignals() {
+            std::function<Variant(std::vector<Variant>)> drawFunc = 
+            [this](std::vector<Variant> av) {
+                Array args;
+                for (int i = 0; i < av.size(); ++i) {
+                    args.append(av[i]);
+                }
+                if (this->draw != nullptr) {
+                    this->draw->emit(args);
+                }
+                return Variant();
+            };
+            Callable drawCallable = StlFunctionWrapper::create_callable_from_cpp_function(drawFunc);
+            this->canvas_item->connect("draw", drawCallable);
+        }
     public:
         // Constructor with Node* parameter
         CanvasItem(CanvasItemNode* p_node) {
