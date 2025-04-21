@@ -64,6 +64,7 @@ namespace sunaba::ui {
             ControlNode* control = nullptr; // Pointer to the Control instance
             void connectControlSignals() {
                 // Connect signals specific to Controlstd::function<Variant(std::vector<Variant>)> focusEnteredFunc =
+                std::function<Variant(std::vector<Variant>)> focusEnteredFunc =
                 [this](std::vector<Variant> av) {
                     Array args;
                     for (int i = 0; i < av.size(); ++i) {
