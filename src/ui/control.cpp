@@ -318,6 +318,14 @@ namespace sunaba::ui {
                 [](Control* c) { return c->resizedEvent; },
                 [](Control* c, Event* e) { c->resizedEvent = e; }
             ),
+            "sizeFlagsChanged", sol::property(
+                [](Control* c) { return c->sizeFlagsChangedEvent; },
+                [](Control* c, Event* e) { c->sizeFlagsChangedEvent = e; }
+            ),
+            "themeChanged", sol::property(
+                [](Control* c) { return c->themeChangedEvent; },
+                [](Control* c, Event* e) { c->themeChangedEvent = e; }
+            ),
             "acceptEvent", &Control::acceptEvent,
             "addThemeColorOverride", &Control::addThemeColorOverride,
             "addThemeConstantOverride", &Control::addThemeConstantOverride,
