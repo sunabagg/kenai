@@ -331,13 +331,14 @@ namespace sunaba::core {
 
         void setNode(NodeProxy* p_node) {
             node = p_node;
-            p_node->onInit();
+            connectElementSignals();
             p_node->element = this;
             setProxyDb(node);
         }
 
         void setNode(Node* p_node) {
             node = p_node;
+            connectElementSignals();
             setProxyDb(node);
         }
 
