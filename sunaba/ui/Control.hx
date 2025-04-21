@@ -8,6 +8,7 @@ import sunaba.core.Color;
 import sunaba.core.Font;
 import sunaba.core.Texture2D;
 import sunaba.core.Rect2;
+import sunaba.core.Event;
 
 @:native("Control")
 extern class Control extends CanvasItem {
