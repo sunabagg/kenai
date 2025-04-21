@@ -290,6 +290,11 @@ namespace sunaba::ui {
                 &Control::getToolTipText,
                 &Control::setToolTipText
             ),
+            "focusEntered", sol::property(
+                [](Control* c) { return c->focusEnteredEvent; },
+                [](Control* c, Event* e) { c->focusEnteredEvent = e; }
+            ),
+            
             "acceptEvent", &Control::acceptEvent,
             "addThemeColorOverride", &Control::addThemeColorOverride,
             "addThemeConstantOverride", &Control::addThemeConstantOverride,
