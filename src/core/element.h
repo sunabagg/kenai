@@ -115,6 +115,16 @@ namespace sunaba::core {
             };
             Callable treeEnteredCallable = StlFunctionWrapper::create_callable_from_cpp_function(treeEnteredFunc);
             this->node->connect("tree_entered", treeEnteredCallable);
+            std::function<Variant(std::vector<Variant>)> treeExitedFunc =
+            [this](std::vector<Variant> args) {
+                Array argsArray;
+                if (this->treeExited != nullptr) {
+                    this->treeExited->emit(argsArray);
+                }
+                return Variant();
+            };
+            Callable treeExitedCallable = StlFunctionWrapper::create_callable_from_cpp_function(treeExitedFunc);
+            this->node->connect("tree_exited", treeExitedCallable);
         }
         
     protected:
