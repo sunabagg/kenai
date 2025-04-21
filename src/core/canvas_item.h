@@ -21,9 +21,6 @@ namespace sunaba::core {
     class CanvasItemProxy : public CanvasItemNode {
         public:
             sunaba::core::CanvasItem* element = nullptr;  
-            void onInit() {
-                // Initialize the NodeProxy instance
-            }
     
             void _enter_tree() override;
             void _exit_tree() override;
@@ -34,11 +31,6 @@ namespace sunaba::core {
             void _unhandled_input(const Ref<InputEvent>& event) override;
             void _unhandled_key_input(const Ref<InputEvent>& event) override;
             void _shortcut_input(const Ref<InputEvent>& event) override;
-
-            void draw();
-            void hidden();
-            void itemRectChanged();
-            void visibilityChanged();
 
             void _draw() override;
     };
@@ -126,12 +118,14 @@ namespace sunaba::core {
         // Setter for the CanvasItem node
         void setCanvasItem(CanvasItemNode* p_node) {
             canvas_item = p_node;
+            connectCanvasItemSignals();
             setNode(canvas_item);
         }
 
         void setCanvasItem(CanvasItemProxy* p_node) {
             canvas_item = p_node;
             p_node->element = this;
+            connectCanvasItemSignals();
             setNode(Object::cast_to<Node>(canvas_item));
         }
 
