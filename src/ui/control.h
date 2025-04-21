@@ -112,6 +112,19 @@ namespace sunaba::ui {
                 };
                 Callable minimumSizeChangedCallable = StlFunctionWrapper::create_callable_from_cpp_function(minimumSizeChangedFunc);
                 this->control->connect("minimum_size_changed", minimumSizeChangedCallable);
+                std::function<Variant(std::vector<Variant>)> mouseEnteredFunc =
+                [this](std::vector<Variant> av) {
+                    Array args;
+                    for (int i = 0; i < av.size(); ++i) {
+                        args.append(av[i]);
+                    }
+                    if (this->mouseEntered != nullptr) {
+                        this->mouseEntered->emit(args);
+                    }
+                    return Variant();
+                };
+                Callable mouseEnteredCallable = StlFunctionWrapper::create_callable_from_cpp_function(mouseEnteredFunc);
+                this->control->connect("mouse_entered", mouseEnteredCallable);
             }
         public:
             // Constructor with Node* parameter
