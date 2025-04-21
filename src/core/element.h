@@ -8,6 +8,7 @@
 #include "../input/input_event.h"
 #include "event.h"
 
+#include "stl_function_wrapper.h"
 
 using namespace sunaba::core;
 using namespace godot;
