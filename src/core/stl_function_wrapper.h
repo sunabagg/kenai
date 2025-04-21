@@ -20,7 +20,7 @@ namespace sunaba::core {
         void set_cpp_function(std::function<Variant(std::vector<Variant>)> func) {
             cpp_function = func;
         }
-        Variant invoke_cpp_function(const godot::Variant** args, GDExtensionInt& arg_count, GDExtensionCallError &error) {
+        Variant invoke_cpp_function(const Variant **args, GDExtensionInt arg_count, GDExtensionCallError &error) {
             if (cpp_function) {
                 std::vector<Variant> args_vector;
                 for (int i = 0; i < arg_count; ++i) {
@@ -37,7 +37,7 @@ namespace sunaba::core {
                 METHOD_FLAGS_DEFAULT,
                 "invoke_cpp_function",
                 &StlFunctionWrapper::invoke_cpp_function,
-                MethodInfo(Variant::Type::NIL, "callEvent") // Add method info for clarity
+                MethodInfo(Variant::Type::NIL, "invoke_cpp_function") // Add method info for clarity
             );
         }
 
