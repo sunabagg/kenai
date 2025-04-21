@@ -61,6 +61,19 @@ namespace sunaba::core {
             };
             Callable drawCallable = StlFunctionWrapper::create_callable_from_cpp_function(drawFunc);
             this->canvas_item->connect("draw", drawCallable);
+            std::function<Variant(std::vector<Variant>)> hiddenFunc =
+            [this](std::vector<Variant> av) {
+                Array args;
+                for (int i = 0; i < av.size(); ++i) {
+                    args.append(av[i]);
+                }
+                if (this->hidden != nullptr) {
+                    this->hidden->emit(args);
+                }
+                return Variant();
+            };
+            Callable hiddenCallable = StlFunctionWrapper::create_callable_from_cpp_function(hiddenFunc);
+            this->canvas_item->connect("hidden", hiddenCallable);
         }
     public:
         // Constructor with Node* parameter
