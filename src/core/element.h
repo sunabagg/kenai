@@ -83,6 +83,16 @@ namespace sunaba::core {
             };
             Callable childOrderChangedCallable = StlFunctionWrapper::create_callable_from_cpp_function(childOrderChangedFunc);
             this->node->connect("child_order_changed", childOrderChangedCallable);
+            std::function<Variant(std::vector<Variant>)> renamedFunc =
+            [this](std::vector<Variant> args) {
+                Array argsArray;
+                if (this->renamed != nullptr) {
+                    this->renamed->emit(argsArray);
+                }
+                return Variant();
+            };
+            Callable renamedCallable = StlFunctionWrapper::create_callable_from_cpp_function(renamedFunc);
+            this->node->connect("renamed", renamedCallable);
         }
         
     protected:
