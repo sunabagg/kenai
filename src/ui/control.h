@@ -70,8 +70,8 @@ namespace sunaba::ui {
                     for (int i = 0; i < av.size(); ++i) {
                         args.append(av[i]);
                     }
-                    if (this->focusEntered != nullptr) {
-                        this->focusEntered->emit(args);
+                    if (this->focusEnteredEvent != nullptr) {
+                        this->focusEnteredEvent->emit(args);
                     }
                     return Variant();
                 };
@@ -83,8 +83,8 @@ namespace sunaba::ui {
                     for (int i = 0; i < av.size(); ++i) {
                         args.append(av[i]);
                     }
-                    if (this->focusExited != nullptr) {
-                        this->focusExited->emit(args);
+                    if (this->focusExitedEvent != nullptr) {
+                        this->focusExitedEvent->emit(args);
                     }
                     return Variant();
                 };
@@ -96,8 +96,8 @@ namespace sunaba::ui {
                     for (int i = 0; i < av.size(); ++i) {
                         args.append(av[i]);
                     }
-                    if (this->guiInput != nullptr) {
-                        this->guiInput->emit(args);
+                    if (this->guiInputEvent != nullptr) {
+                        this->guiInputEvent->emit(args);
                     }
                     return Variant();
                 };
@@ -109,8 +109,8 @@ namespace sunaba::ui {
                     for (int i = 0; i < av.size(); ++i) {
                         args.append(av[i]);
                     }
-                    if (this->minimumSizeChanged != nullptr) {
-                        this->minimumSizeChanged->emit(args);
+                    if (this->minimumSizeChangedEvent != nullptr) {
+                        this->minimumSizeChangedEvent->emit(args);
                     }
                     return Variant();
                 };
@@ -122,8 +122,8 @@ namespace sunaba::ui {
                     for (int i = 0; i < av.size(); ++i) {
                         args.append(av[i]);
                     }
-                    if (this->mouseEntered != nullptr) {
-                        this->mouseEntered->emit(args);
+                    if (this->mouseEnteredEvent != nullptr) {
+                        this->mouseEnteredEvent->emit(args);
                     }
                     return Variant();
                 };
@@ -135,8 +135,8 @@ namespace sunaba::ui {
                     for (int i = 0; i < av.size(); ++i) {
                         args.append(av[i]);
                     }
-                    if (this->mouseExited != nullptr) {
-                        this->mouseExited->emit(args);
+                    if (this->mouseExitedEvent != nullptr) {
+                        this->mouseExitedEvent->emit(args);
                     }
                     return Variant();
                 };
@@ -148,8 +148,8 @@ namespace sunaba::ui {
                     for (int i = 0; i < av.size(); ++i) {
                         args.append(av[i]);
                     }
-                    if (this->resized != nullptr) {
-                        this->resized->emit(args);
+                    if (this->resizedEvent != nullptr) {
+                        this->resizedEvent->emit(args);
                     }
                     return Variant();
                 };
@@ -161,8 +161,8 @@ namespace sunaba::ui {
                     for (int i = 0; i < av.size(); ++i) {
                         args.append(av[i]);
                     }
-                    if (this->sizeFlagsChanged != nullptr) {
-                        this->sizeFlagsChanged->emit(args);
+                    if (this->sizeFlagsChangedEvent != nullptr) {
+                        this->sizeFlagsChangedEvent->emit(args);
                     }
                     return Variant();
                 };
@@ -174,8 +174,8 @@ namespace sunaba::ui {
                     for (int i = 0; i < av.size(); ++i) {
                         args.append(av[i]);
                     }
-                    if (this->themeChanged != nullptr) {
-                        this->themeChanged->emit(args);
+                    if (this->themeChangedEvent != nullptr) {
+                        this->themeChangedEvent->emit(args);
                     }
                     return Variant();
                 };
