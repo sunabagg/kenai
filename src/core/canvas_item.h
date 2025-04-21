@@ -49,10 +49,6 @@ namespace sunaba::core {
             void visibilityChanged();
 
             void _draw() override;
-
-            CanvasItemNode* getCanvasItem() {
-                return this;
-            }
     };
 
     class CanvasItem : public Element {
@@ -87,7 +83,7 @@ namespace sunaba::core {
         }
 
         void setCanvasItem(CanvasItemProxy* p_node) {
-            canvas_item = p_node->getCanvasItem();
+            canvas_item = p_node;
             p_node->element = this;
             setNode(Object::cast_to<Node>(canvas_item));
         }
