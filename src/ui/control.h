@@ -408,6 +408,8 @@ namespace sunaba::ui {
                 control->set_tooltip_text(String(text.c_str()));
             }
 
+            Event* focusEntered;
+
             bool canDropData(Vector2 position, Variant data) {
                 if (scriptInstance != sol::lua_nil) {
                     auto func = scriptInstance["canDropData"].get<sol::function>();
