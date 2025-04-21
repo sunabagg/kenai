@@ -99,6 +99,19 @@ namespace sunaba::ui {
                 };
                 Callable guiInputCallable = StlFunctionWrapper::create_callable_from_cpp_function(guiInputFunc);
                 this->control->connect("gui_input", guiInputCallable);
+                std::function<Variant(std::vector<Variant>)> minimumSizeChangedFunc =
+                [this](std::vector<Variant> av) {
+                    Array args;
+                    for (int i = 0; i < av.size(); ++i) {
+                        args.append(av[i]);
+                    }
+                    if (this->minimumSizeChanged != nullptr) {
+                        this->minimumSizeChanged->emit(args);
+                    }
+                    return Variant();
+                };
+                Callable minimumSizeChangedCallable = StlFunctionWrapper::create_callable_from_cpp_function(minimumSizeChangedFunc);
+                this->control->connect("minimum_size_changed", minimumSizeChangedCallable);
             }
         public:
             // Constructor with Node* parameter
