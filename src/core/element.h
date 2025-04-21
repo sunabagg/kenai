@@ -105,6 +105,16 @@ namespace sunaba::core {
             };
             Callable replacingByCallable = StlFunctionWrapper::create_callable_from_cpp_function(replacingByFunc);
             this->node->connect("replacing_by", replacingByCallable);
+            std::function<Variant(std::vector<Variant>)> treeEnteredFunc =
+            [this](std::vector<Variant> args) {
+                Array argsArray;
+                if (this->treeEntered != nullptr) {
+                    this->treeEntered->emit(argsArray);
+                }
+                return Variant();
+            };
+            Callable treeEnteredCallable = StlFunctionWrapper::create_callable_from_cpp_function(treeEnteredFunc);
+            this->node->connect("tree_entered", treeEnteredCallable);
         }
         
     protected:
