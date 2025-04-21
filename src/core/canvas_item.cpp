@@ -62,30 +62,6 @@ namespace sunaba::core {
         }
     }
 
-    void CanvasItemProxy::draw() {
-        if (element != nullptr) {
-            element->draw->emit(Array());
-        }
-    }
-
-    void CanvasItemProxy::hidden() {
-        if (element != nullptr) {
-            element->hidden->emit(Array());
-        }
-    }
-
-    void CanvasItemProxy::itemRectChanged() {
-        if (element != nullptr) {
-            element->itemRectChanged->emit(Array());
-        }
-    }
-
-    void CanvasItemProxy::visibilityChanged() {
-        if (element != nullptr) {
-            element->visibilityChanged->emit(Array());
-        }
-    }
-
     void bindCanvasItem(sol::state& lua) {
         lua.new_usertype<CanvasItem>(
             "CanvasItem",
