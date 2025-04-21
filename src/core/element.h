@@ -21,7 +21,7 @@ namespace sunaba::core {
     public:
         Element* element = nullptr;
         
-        virtual void onInit();
+        void onInit();
 
         void onChildEnteredTree(Node* child);
         void onChildExitedTree(Node* child);
