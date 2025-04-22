@@ -43,10 +43,14 @@ namespace sunaba::core {
             }
 
             void disconnect(std::function<void(godot::Array)> listener) {
-                auto it = std::remove(listeners.begin(), listeners.end(), listener);
-                if (it != listeners.end()) {
-                    listeners.erase(it, listeners.end());
-                }
+                listeners.erase(
+                    std::remove_if(listeners.begin(), listeners.end(),
+                        [&listener](const std::function<void(godot::Array)>& existing_listener) {
+                            // Compare the target of the function pointers
+                            return listener.target_type() == existing_listener.target_type() &&
+                                   listener.target<void(godot::Array)>() == existing_listener.target<void(godot::Array)>();
+                        }),
+                    listeners.end());
             }
 
             void disconnectLua(sol::function listener) {
