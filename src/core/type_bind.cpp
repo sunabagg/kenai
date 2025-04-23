@@ -319,7 +319,7 @@ void sunaba::core::bind_base_types(sol::state& lua) {
         "sort", &Dictionary::sort,
         "values", &Dictionary::values,
         "__pairs", [](Dictionary& dict) {
-            return sol::as_function([&dict, i = 0](sol::this_state& s) mutable -> std::tuple<sol::object, sol::object> {
+            return sol::as_function([&dict, i = 0](sol::this_state s) mutable -> std::tuple<sol::object, sol::object> {
             if (i < dict.size()) {
                 return { sol::make_object(s, dict.keys()[i]), sol::make_object(s, dict.values()[i++]) };
             } else {
