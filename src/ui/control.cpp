@@ -126,7 +126,7 @@ namespace sunaba::ui {
         lua.new_usertype<Control>("Control",
             sol::constructors<Control()>(),
             sol::base_classes, sol::bases<BaseObject, Element, sunaba::core::CanvasItem>(),
-            "anchorBottonm", sol::property(
+            /*"anchorBottonm", sol::property(
                 &Control::getAnchorBottom,
                 &Control::setAnchorBottom
             ),
@@ -141,7 +141,7 @@ namespace sunaba::ui {
             "anchorTop", sol::property(
                 &Control::getAnchorTop,
                 &Control::setAnchorTop
-            ),
+            ),*/
             "autoTranslate", sol::property(
                 &Control::isAutoTranslating,
                 &Control::setAutoTranslate
@@ -213,7 +213,7 @@ namespace sunaba::ui {
             "mouseForcePassScrollEvents", sol::property(
                 &Control::getMouseForcePassScrollEvents,
                 &Control::setMouseForcePassScrollEvents
-            ),
+            ),/*
             "offsetBottom", sol::property(
                 &Control::getOffsetBottom,
                 &Control::setOffsetBottom
@@ -229,7 +229,7 @@ namespace sunaba::ui {
             "offsetTop", sol::property(
                 &Control::getOffsetTop,
                 &Control::setOffsetTop
-            ),
+            ),*/
             "physicsInterpolationMode", sol::property(
                 &Control::getPhysicsInterpolationMode,
                 &Control::setPhysicsInterpolationMode
