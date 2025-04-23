@@ -123,7 +123,7 @@ namespace sunaba::ui {
     }
 
     void bind_control(sol::state& lua) {
-        lua.new_usertype<Control>("Control",
+        auto ut = lua.new_usertype<Control>("Control",
             sol::constructors<Control()>(),
             sol::base_classes, sol::bases<BaseObject, Element, sunaba::core::CanvasItem>(),
             /*"anchorBottonm", sol::property(
@@ -407,6 +407,39 @@ namespace sunaba::ui {
                 }
                 return static_cast<Control*>(nullptr);
             }
+        );
+
+        ut["anchorTop"] = sol::property(
+            &Control::getAnchorBottom,
+            &Control::setAnchorBottom
+        );
+        ut["anchorBottom"] = sol::property(
+            &Control::getAnchorTop,
+            &Control::setAnchorTop
+        );
+        ut["anchorLeft"] = sol::property(
+            &Control::getAnchorLeft,
+            &Control::setAnchorLeft
+        );
+        ut["anchorRight"] = sol::property(
+            &Control::getAnchorRight,
+            &Control::setAnchorRight
+        );
+        ut["offsetTop"] = sol::property(
+            &Control::getOffsetBottom,
+            &Control::setOffsetBottom
+        );
+        ut["offsetBottom"] = sol::property(
+            &Control::getOffsetTop,
+            &Control::setOffsetTop
+        );
+        ut["offsetLeft"] = sol::property(
+            &Control::getOffsetLeft,
+            &Control::setOffsetLeft
+        );
+        ut["offsetRight"] = sol::property(
+            &Control::getOffsetRight,
+            &Control::setOffsetRight
         );
     }
 }
