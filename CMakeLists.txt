@@ -304,7 +304,7 @@ set(CMAKE_PREFIX_PATH "${CMAKE_PREFIX_PATH};${CMAKE_SOURCE_DIR}/vcpkg_installed/
 
 option(USE_LUAJIT "Use LuaJIT" ON)
 
-if (EMSCRIPTEN)
+if (EMSCRIPTEN OR APPLE)
     set(USE_LUAJIT OFF)
 endif()
 
