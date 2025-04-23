@@ -111,6 +111,9 @@ void sunaba::core::bind_base_types(sol::state& lua) {
             proxy->base_object = obj;
             return Variant(proxy);
          },
+         "fromInt64", [](int64_t value) { 
+            return Variant(value); 
+         },
         "getType", &Variant::get_type,
         "getTypeName", &Variant::get_type_name,
         "asString", [](const Variant& v) { return std::string((v.operator String()).utf8().get_data()); },
