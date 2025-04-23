@@ -50,6 +50,19 @@
             "preLaunchTask": "CMake: build",
             "internalConsoleOptions": "openOnSessionStart",
             "visualizerFile": "${workspaceFolder}/.vscode/godot.natvis"
+        },
+        {
+            "name": "macOS Launch (Local)",
+            "type": "cppdbg",
+            "request": "launch",
+            "program": "/Applications/Godot.app/Contents/MacOS/Godot",
+            "args": [
+                "--verbose"
+            ],
+            "cwd": "${command:cmake.buildDirectory}/sunaba",
+            "preLaunchTask": "CMake: build",
+            "internalConsoleOptions": "openOnSessionStart",
+            "visualizerFile": "${workspaceFolder}/.vscode/godot.natvis"
         }
 
     ]
