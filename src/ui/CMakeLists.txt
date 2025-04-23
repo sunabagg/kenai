@@ -13,6 +13,8 @@ target_sources(${PROJECT_NAME} PRIVATE
         theme.cpp
         control.h
         control.cpp
+        bind_ui_classes.h
+        bind_ui_classes.cpp
 )
 
 target_include_directories( ${PROJECT_NAME}
