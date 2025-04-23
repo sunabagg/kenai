@@ -409,6 +409,7 @@ namespace sunaba::ui {
             }
         );
 
+        // stupid hack fix
         ut["anchorTop"] = sol::property(
             &Control::getAnchorBottom,
             &Control::setAnchorBottom
