@@ -328,7 +328,7 @@ void sunaba::core::bind_base_types(sol::state& lua) {
             });
         },
         "__ipairs", [](Dictionary& dict) {
-            return sol::as_function([](sol::this_state& s, Dictionary& d, int i) -> std::tuple<sol::object, sol::object> {
+            return sol::as_function([](sol::this_state s, Dictionary& d, int i) -> std::tuple<sol::object, sol::object> {
                 i++;
                 if (i <= d.size()) {
                     return { sol::make_object(s, d.keys()[i - 1]), sol::make_object(s, d.values()[i - 1]) };
