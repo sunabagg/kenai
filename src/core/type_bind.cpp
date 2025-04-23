@@ -272,12 +272,12 @@ void sunaba::core::bind_base_types(sol::state& lua) {
         },
         sol::meta_function::length, &Array::size,
         "__pairs", [](Array& arr) {
-            return sol::as_function([&arr, i = 0](sol::this_state& s) mutable -> std::tuple<sol::object, sol::object> {
-            if (i < arr.size()) {
-                return { sol::make_object(s, i), sol::make_object(s, arr[i++]) };
-            } else {
-                return { sol::lua_nil, sol::lua_nil };
-            }
+            return sol::as_function([&arr, i = 0](sol::this_state s) mutable -> std::tuple<sol::object, sol::object> {
+                if (i < arr.size()) {
+                    return { sol::make_object(s, i), sol::make_object(s, arr[i++]) };
+                } else {
+                    return { sol::lua_nil, sol::lua_nil };
+                }
             });
         },
         "__ipairs", [](Array& arr) {
