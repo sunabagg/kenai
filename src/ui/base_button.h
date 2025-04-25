@@ -163,6 +163,14 @@ namespace sunaba::ui {
             void setShortcutFeedback(bool enabled) {
                 base_button->set_shortcut_feedback(enabled);
             }
+
+            bool getToggleMode() {
+                return base_button->is_toggle_mode();
+            }
+
+            void setToggleMode(bool enabled) {
+                base_button->set_toggle_mode(enabled);
+            }
         };
 }
 
