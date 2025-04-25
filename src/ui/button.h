@@ -164,6 +164,14 @@ namespace sunaba::ui {
             void setTextDirection(int direction) {
                 button->set_text_direction(static_cast<godot::Control::TextDirection>(direction));
             }
+
+            int getTextOverrunBehavior() {
+                return button->get_text_overrun_behavior();
+            }
+
+            void setTextOverrunBehavior(int behavior) {
+                button->set_text_overrun_behavior(static_cast<godot::TextServer::OverrunBehavior>(behavior));
+            }
     };
 }
 
