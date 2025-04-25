@@ -15,7 +15,7 @@ namespace sunaba::ui {
     class ButtonProxy : public BaseButtonNode {
         public:
             sunaba::ui::Button* element = nullptr;
-            
+
             void _enter_tree() override;
             void _exit_tree() override;
             void _ready() override ;
@@ -49,6 +49,34 @@ namespace sunaba::ui {
             void _pressed() override;
 
             void _toggled(bool p_toggled_on) override;
+    };
+
+    class Button : public sunaba::ui::BaseButton {
+        private:
+            ButtonNode* button = nullptr;
+
+        public:
+            // Constructor with Node* parameter
+            Button(ButtonNode* p_node) {
+                setButton(p_node);
+            }
+
+            // Constructor with no parameters
+            Button() {
+                setButton(memnew(ButtonProxy));
+            }
+
+            // Getter for the Button node
+            ButtonNode* getButton() {
+                return button;
+            }
+
+            // Setter for the Button node
+            void setButton(ButtonNode* p_node) {
+                button = p_node;
+                setBaseButton(button);
+                setCanvasItem(button);
+            }
     };
 }
 
