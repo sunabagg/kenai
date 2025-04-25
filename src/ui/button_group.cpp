@@ -7,7 +7,7 @@ void sunaba::ui::bindButtonGroup(sol::state &lua) {
 
     lua.new_usertype<ButtonGroup>("ButtonGroup",
         sol::constructors<ButtonGroup()>(),
-        sol::base_classes, sol::bases<sunaba::core::Resource>(),
+        sol::base_classes, sol::bases<sunaba::core::BaseObject, sunaba::core::Resource>(),
         "allowUnpress", sol::property(
             &ButtonGroup::isAllowUnpress,
             &ButtonGroup::setAllowUnpress
