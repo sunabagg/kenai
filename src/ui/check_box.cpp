@@ -133,4 +133,22 @@ namespace sunaba::ui {
             this->element->toggled(p_toggled_on);
         }
     }
+
+    void bindCheckBox(sol::state &lua) {
+        lua.new_usertype<CheckBox>("CheckBox",
+            sol::constructors<CheckBox()>(),
+            sol::base_classes, sol::bases<sunaba::core::BaseObject, Element, sunaba::core::CanvasItem, Control, BaseButton>(),
+            "alignment", sol::property(
+                &CheckBox::getAlignment,
+                &CheckBox::setAlignment
+            ),
+            "toggleMode", sol::property(
+                &CheckBox::getToggleMode,
+                &CheckBox::setToggleMode
+            ),
+            "cast", [](sunaba::core::Resource* p_resource) {
+                return new CheckBox(godot::Object::cast_to<CheckBoxNode>(p_resource->getResource()));
+            }
+        );
+    }
 }
