@@ -106,6 +106,14 @@ namespace sunaba::ui {
             void setClipText(bool enabled) {
                 button->set_clip_text(enabled);
             }
+
+            bool isExpandIcon() {
+                return button->is_expand_icon();
+            }
+
+            void setExpandIcon(bool enabled) {
+                button->set_expand_icon(enabled);
+            }
     };
 }
 
