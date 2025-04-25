@@ -147,6 +147,21 @@ namespace sunaba::ui {
                     }
                 }
             }
+
+            PackedInt32Array getAllowedSizeFlagsVertical() const {
+                if (scriptInstance != sol::lua_nil) {
+                    auto func = scriptInstance["getAllowedSizeFlagsVertical"].get<sol::function>();
+                    if (func) {
+                        auto result = func(scriptInstance);
+                        std::vector<int> vec = result.get<std::vector<int>>();
+                        PackedInt32Array arr;
+                        for (int i = 0; i < vec.size(); ++i) {
+                            arr.push_back(vec[i]);
+                        }
+                        return arr;
+                    }
+                }
+            }
     };
 }
 
