@@ -254,6 +254,12 @@ namespace sunaba::ui {
                 pressedEvent = event;
             }
             Event* toggledEvent;
+            Event* getToggledEvent() {
+                return toggledEvent;
+            }
+            void setToggledEvent(Event* event) {
+                toggledEvent = event;
+            }
 
             int getDrawMode() {
                 return base_button->get_draw_mode();
