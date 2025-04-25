@@ -90,6 +90,14 @@ namespace sunaba::ui {
             void setAlignment(int alignment) {
                 button->set_text_alignment(static_cast<godot::HorizontalAlignment>(alignment));
             }
+
+            int getAutowrapMode() {
+                return button->get_autowrap_mode();
+            }
+
+            void setAutowrapMode(int mode) {
+                button->set_autowrap_mode(static_cast<godot::TextServer::AutowrapMode>(mode));
+            }
     };
 }
 
