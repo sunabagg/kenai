@@ -59,6 +59,54 @@ namespace sunaba::ui {
 
             void _toggled(bool p_toggled_on) override;
     };
+
+    class BaseButton : public sunaba::ui::Control {
+        private:
+            BaseButtonNode* base_button = nullptr;
+        
+        public:
+            // Constructor with Node* parameter
+            BaseButton(BaseButtonNode* p_node) {
+                setBaseButton(p_node);
+            }
+
+            BaseButton(BaseButtonProxy* p_node) {
+                setBaseButton(p_node);
+            }
+
+            // Constructor with no parameters
+            BaseButton() {
+                setBaseButton(memnew(BaseButtonNode));
+                onInit();
+            }
+
+            // Getter for the BaseButton node
+            BaseButtonNode* getBaseButton() {
+                return base_button;
+            }
+
+            // Setter for the BaseButton node
+            void setBaseButton(BaseButtonNode* p_node) {
+                base_button = p_node;
+                //connectBaseButtonSignals();
+                setCanvasItem(base_button);
+            }
+
+            void setBaseButton(BaseButtonProxy* p_node) {
+                base_button = p_node;
+                p_node->element = this;
+                //connectBaseButtonSignals();
+                setCanvasItem(p_node);
+            }
+
+            int getActionMode() {
+                return base_button->get_action_mode();
+            }
+
+            void setActionMode(int mode) {
+                base_button->set_action_mode(static_cast<godot::BaseButton::ActionMode>(mode));
+            }
+        };
 }
 
 #endif // BASE_BUTTON_H
