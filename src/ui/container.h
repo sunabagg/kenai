@@ -126,6 +126,10 @@ namespace sunaba::ui {
                 sortChildrenEvent = event;
             }
 
+            void fitChildInRect(Control* child, const Rect2& rect) {
+                container->fit_child_in_rect(child->getControl(), rect);
+            }
+
     };
 }
 
