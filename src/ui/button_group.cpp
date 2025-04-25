@@ -38,3 +38,11 @@ std::vector<sunaba::ui::BaseButton*> sunaba::ui::ButtonGroup::getButtons() {
     }
     return buttons;
 }
+
+sunaba::ui::BaseButton* sunaba::ui::ButtonGroup::getPressedButton() {
+    Object* obj = button_group->get_pressed_button();
+    if (obj != nullptr) {
+        return Object::cast_to<sunaba::ui::BaseButton>(obj);
+    }
+    return nullptr;
+}
