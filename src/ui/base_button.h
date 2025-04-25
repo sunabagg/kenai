@@ -139,7 +139,7 @@ namespace sunaba::ui {
 
             // Constructor with no parameters
             BaseButton() {
-                setBaseButton(memnew(BaseButtonNode));
+                setBaseButton(memnew(BaseButtonProxy));
                 onInit();
             }
 
