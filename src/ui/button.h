@@ -172,6 +172,14 @@ namespace sunaba::ui {
             void setTextOverrunBehavior(int behavior) {
                 button->set_text_overrun_behavior(static_cast<godot::TextServer::OverrunBehavior>(behavior));
             }
+
+            int getVerticalIconAlignment() {
+                return button->get_vertical_icon_alignment();
+            }
+
+            void setVerticalIconAlignment(int alignment) {
+                button->set_vertical_icon_alignment(static_cast<godot::VerticalAlignment>(alignment));
+            }
     };
 }
 
