@@ -130,6 +130,9 @@ namespace sunaba::ui {
                 container->fit_child_in_rect(child->getControl(), rect);
             }
 
+            void queueSort() {
+                container->queue_sort();
+            }
     };
 }
 
