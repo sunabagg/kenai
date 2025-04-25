@@ -185,6 +185,10 @@ namespace sunaba::ui {
             bool isHovered() {
                 return base_button->is_hovered();
             }
+
+            void setPressedNoSignal(bool pressed) {
+                base_button->set_pressed_no_signal(pressed);
+            }
         };
 }
 
