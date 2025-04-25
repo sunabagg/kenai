@@ -132,6 +132,14 @@ namespace sunaba::ui {
                 Ref<godot::Texture2D> textureRef = Ref<godot::Texture2D>(texture->getTexture());
                 button->set_button_icon(textureRef);
             }
+
+            int getIconAlignment() {
+                return button->get_icon_alignment();
+            }
+
+            void setIconAlignment(int alignment) {
+                button->set_icon_alignment(static_cast<godot::HorizontalAlignment>(alignment));
+            }
     };
 }
 
