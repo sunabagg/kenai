@@ -118,6 +118,14 @@ namespace sunaba::ui {
             void setRatio(float ratio) {
                 container->set_ratio(ratio);
             }
+
+            int getStretchMode() {
+                return container->get_stretch_mode();
+            }
+
+            void setStretchMode(int mode) {
+                container->set_stretch_mode(static_cast<AspectRatioContainerNode::StretchMode>(mode));
+            }
     };
 }
 
