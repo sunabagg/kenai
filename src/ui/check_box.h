@@ -45,6 +45,10 @@ namespace sunaba::ui {
             //Object* _make_custom_tooltip(const String &for_text) const override;
 
             TypedArray<Vector3i> _structured_text_parser(const Array &args, const String &text) const override;
+    
+            void _pressed() override;
+
+            void _toggled(bool p_toggled_on) override;
     };
 
     class CheckBox : public sunaba::ui::BaseButton {
