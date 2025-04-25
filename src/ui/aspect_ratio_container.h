@@ -100,7 +100,7 @@ namespace sunaba::ui {
             }
 
             void setAlignmentHorizontal(int alignment) {
-                container->set_alignment_horizontal(static_cast<AspectRatioContainer::AlignmentMode>(alignment));
+                container->set_alignment_horizontal(static_cast<AspectRatioContainerNode::AlignmentMode>(alignment));
             }
     };
 }
