@@ -156,6 +156,14 @@ namespace sunaba::ui {
             void setText(std::string text) {
                 button->set_text(String(text.c_str()));
             }
+
+            int getTextDirection() {
+                return button->get_text_direction();
+            }
+
+            void setTextDirection(int direction) {
+                button->set_text_direction(static_cast<godot::Control::TextDirection>(direction));
+            }
     };
 }
 
