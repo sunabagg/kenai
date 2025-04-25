@@ -39,6 +39,18 @@ namespace sunaba::ui {
             button_group = p_node;
             setResource(button_group);
         }
+
+        bool isAllowUnpress() {
+            return button_group->is_allow_unpress();
+        }
+
+        void setAllowUnpress(bool p_enabled) {
+            button_group->set_allow_unpress(p_enabled);
+        }
+
+        std::vector<BaseButton*> getButtons();
+
+        BaseButton* getPressedButton();
     };
 }
 
