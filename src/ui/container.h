@@ -133,6 +133,20 @@ namespace sunaba::ui {
             void queueSort() {
                 container->queue_sort();
             }
+            PackedInt32Array getAllowedSizeFlagsHorizontal() const {
+                if (scriptInstance != sol::lua_nil) {
+                    auto func = scriptInstance["getAllowedSizeFlagsHorizontal"].get<sol::function>();
+                    if (func) {
+                        auto result = func(scriptInstance);
+                        std::vector<int> vec = result.get<std::vector<int>>();
+                        PackedInt32Array arr;
+                        for (int i = 0; i < vec.size(); ++i) {
+                            arr.push_back(vec[i]);
+                        }
+                        return arr;
+                    }
+                }
+            }
     };
 }
 
