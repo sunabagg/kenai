@@ -98,6 +98,14 @@ namespace sunaba::ui {
             void setAutowrapMode(int mode) {
                 button->set_autowrap_mode(static_cast<godot::TextServer::AutowrapMode>(mode));
             }
+
+            bool getClipText() {
+                return button->get_clip_text();
+            }
+
+            void setClipText(bool enabled) {
+                button->set_clip_text(enabled);
+            }
     };
 }
 
