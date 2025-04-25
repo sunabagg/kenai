@@ -194,7 +194,7 @@ namespace sunaba::ui {
         
             // Constructor with no parameters
             Control() {
-                setControl(memnew(ControlNode));
+                setControl(memnew(ControlProxy));
                 onInit();
             }
 
