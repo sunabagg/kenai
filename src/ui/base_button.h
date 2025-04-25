@@ -233,6 +233,12 @@ namespace sunaba::ui {
             }
 
             Event* buttonDown;
+            Event* getButtonDown() {
+                return buttonDown;
+            }
+            void setButtonDown(Event* event) {
+                buttonDown = event;
+            }
             Event* buttonUp;
             Event* pressedEvent;
             Event* toggledEvent;
