@@ -106,6 +106,26 @@ namespace sunaba::ui {
             void setMouseFilter(int filter) {
                 container->set_mouse_filter(static_cast<godot::Control::MouseFilter>(filter));
             }
+
+            Event* preSortChildrenEvent;
+            
+            Event* getPreSortChildrenEvent() {
+                return preSortChildrenEvent;
+            }
+            void setPreSortChildrenEvent(Event* event) {
+                preSortChildrenEvent = event;
+            }
+            
+            Event* sortChildrenEvent;
+
+            Event* getSortChildrenEvent() {
+                return sortChildrenEvent;
+            }
+
+            void setSortChildrenEvent(Event* event) {
+                sortChildrenEvent = event;
+            }
+
     };
 }
 
