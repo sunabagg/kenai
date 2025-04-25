@@ -87,6 +87,14 @@ namespace sunaba::ui {
             void setAlignment(int alignment) {
                 check_box->set_text_alignment(static_cast<godot::HorizontalAlignment>(alignment));
             }
+
+            bool isToggleMode() {
+                return check_box->is_toggle_mode();
+            }
+
+            void setToggleMode(bool enabled) {
+                check_box->set_toggle_mode(enabled);
+            }
     };
 }
 
