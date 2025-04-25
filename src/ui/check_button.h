@@ -79,6 +79,14 @@ namespace sunaba::ui {
                 p_node->element = this;
                 setBaseButton(p_node);
             }
+
+            int getAlignment() {
+                return check_button->get_text_alignment();
+            }
+
+            void setAlignment(int alignment) {
+                check_button->set_text_alignment(static_cast<godot::HorizontalAlignment>(alignment));
+            }
     };
 }
 
