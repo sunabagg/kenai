@@ -177,6 +177,10 @@ namespace sunaba::ui {
             Event* buttonUp;
             Event* pressedEvent;
             Event* toggledEvent;
+
+            int getDrawMode() {
+                return base_button->get_draw_mode();
+            }
         };
 }
 
