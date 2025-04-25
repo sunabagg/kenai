@@ -98,6 +98,14 @@ namespace sunaba::ui {
                 connectContainerSignals();
                 setControl(container);
             }
+
+            int getMouseFilter() {
+                return container->get_mouse_filter();
+            }
+
+            void setMouseFilter(int filter) {
+                container->set_mouse_filter(static_cast<godot::Control::MouseFilter>(filter));
+            }
     };
 }
 
