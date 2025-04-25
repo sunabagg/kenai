@@ -81,11 +81,11 @@ namespace sunaba::ui {
             }
 
             int getAlignment() {
-                return check_box->get_alignment();
+                return check_box->get_text_alignment();
             }
 
             void setAlignment(int alignment) {
-                check_box->set_alignment(static_cast<godot::HorizontalAlignment>(alignment));
+                check_box->set_text_alignment(static_cast<godot::HorizontalAlignment>(alignment));
             }
     };
 }
