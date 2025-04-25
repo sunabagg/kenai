@@ -61,6 +61,40 @@ namespace sunaba::ui {
 
             PackedInt32Array _get_allowed_size_flags_vertical() const override;
     };
+
+    class AspectRatioContainer : public Container {
+        private:
+            AspectRatioContainerNode* container = nullptr; // Pointer to the AspectRatioContainer instance
+
+            void connectContainerSignals() {
+                // Connect signals from the container to the element
+                // Example: container->connect("signal_name", this, "method_name");
+            }
+        public:
+            AspectRatioContainer() {
+                setContainer(memnew(AspectRatioContainerProxy));
+            }
+
+            AspectRatioContainer(AspectRatioContainerNode* container) {
+                setContainer(container);
+            }
+
+            AspectRatioContainerNode* getContainer() {
+                return container;
+            }
+
+            void setContainer(AspectRatioContainerNode* container) {
+                this->container = container;
+                connectContainerSignals();
+                setControl(container);
+            }
+            void setContainer(AspectRatioContainerProxy* container) {
+                this->container = container;
+                container->element = this;
+                connectContainerSignals();
+                setControl(container);
+            }
+    };
 }
 
 #endif // !ASPECT_RATIO_CONTAINER_H
