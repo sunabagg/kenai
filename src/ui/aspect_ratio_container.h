@@ -110,6 +110,14 @@ namespace sunaba::ui {
             void setAlignmentVertical(int alignment) {
                 container->set_alignment_vertical(static_cast<AspectRatioContainerNode::AlignmentMode>(alignment));
             }
+
+            float getRatio() {
+                return container->get_ratio();
+            }
+
+            void setRatio(float ratio) {
+                container->set_ratio(ratio);
+            }
     };
 }
 
