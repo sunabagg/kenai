@@ -60,6 +60,13 @@ namespace sunaba::ui {
             "getDrawMode", &BaseButton::getDrawMode,
             "isHovered", &BaseButton::isHovered,
             "setPressedNoEvent", &BaseButton::setPressedNoEvent,
+            "cast", [](Element* e) {
+                BaseButtonNode* base_button = Object::cast_to<BaseButtonNode>(e->getNode());
+                if (base_button == nullptr) {
+                    return new BaseButton(base_button);
+                }
+                return static_cast<BaseButton*>(nullptr);
+            }
         );
     }
 }
