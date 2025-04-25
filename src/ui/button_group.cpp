@@ -1,4 +1,5 @@
 #include "button_group.h"
+#include "base_button.h"
 
 void sunaba::ui::bindButtonGroup(sol::state &lua) {
     using namespace sol;
@@ -21,4 +22,19 @@ void sunaba::ui::bindButtonGroup(sol::state &lua) {
             return new ButtonGroup(godot::Object::cast_to<GodotButtonGroup>(p_resource->getResource()));
         }
     );
+}
+
+std::vector<sunaba::ui::BaseButton*> sunaba::ui::ButtonGroup::getButtons() {
+    std::vector<sunaba::ui::BaseButton*> buttons;
+    auto buttonList = button_group->get_buttons();
+    for (int i = 0; i < buttonList.size(); ++i) {
+        Object* obj = buttonList[i];
+        if (obj != nullptr) {
+            sunaba::ui::BaseButton* button = Object::cast_to<sunaba::ui::BaseButton>(obj);
+            if (button != nullptr) {
+                buttons.push_back(button);
+            }
+        }
+    }
+    return buttons;
 }
