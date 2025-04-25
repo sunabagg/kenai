@@ -156,7 +156,7 @@ namespace sunaba::ui {
             void setBaseButton(BaseButtonProxy* p_node) {
                 base_button = p_node;
                 p_node->element = this;
-                //connectBaseButtonSignals();
+                connectBaseButtonSignals();
                 setCanvasItem(p_node);
             }
 
