@@ -9,6 +9,7 @@
 
 #include "control.h"
 #include "../input/shortcut.h"
+#include "../core/event.h"
 
 #include "../core/stl_function_wrapper.h"
 #define StlFunctionWrapper sunaba::core::StlFunctionWrapper
@@ -171,6 +172,11 @@ namespace sunaba::ui {
             void setToggleMode(bool enabled) {
                 base_button->set_toggle_mode(enabled);
             }
+
+            Event* buttonDown;
+            Event* buttonUp;
+            Event* pressedEvent;
+            Event* toggledEvent;
         };
 }
 
