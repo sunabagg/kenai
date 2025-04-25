@@ -181,6 +181,10 @@ namespace sunaba::ui {
             int getDrawMode() {
                 return base_button->get_draw_mode();
             }
+
+            bool isHovered() {
+                return base_button->is_hovered();
+            }
         };
 }
 
