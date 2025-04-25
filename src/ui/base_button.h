@@ -272,6 +272,24 @@ namespace sunaba::ui {
             void setPressedNoEvent(bool pressed) {
                 base_button->set_pressed_no_signal(pressed);
             }
+
+            void pressed() {
+                if (scriptInstance != sol::lua_nil) {
+                    auto func = scriptInstance["pressed"].get<sol::function>();
+                    if (func) {
+                        func(scriptInstance);
+                    }
+                }
+            }
+
+            void toggled(bool toggled) {
+                if (scriptInstance != sol::lua_nil) {
+                    auto func = scriptInstance["toggled"].get<sol::function>();
+                    if (func) {
+                        func(scriptInstance, toggled);
+                    }
+                }
+            }
         };
 }
 
