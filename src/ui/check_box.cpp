@@ -137,7 +137,7 @@ namespace sunaba::ui {
     void bindCheckBox(sol::state &lua) {
         lua.new_usertype<CheckBox>("CheckBox",
             sol::constructors<CheckBox()>(),
-            sol::base_classes, sol::bases<sunaba::core::BaseObject, Element, sunaba::core::CanvasItem, Control, BaseButton>(),
+            sol::base_classes, sol::bases<sunaba::core::BaseObject, Element, sunaba::core::CanvasItem, Control, BaseButton, Button>(),
             "alignment", sol::property(
                 &CheckBox::getAlignment,
                 &CheckBox::setAlignment

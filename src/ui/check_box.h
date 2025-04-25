@@ -7,7 +7,7 @@
 
 #define CheckBoxNode godot::CheckBox
 
-#include "base_button.h"
+#include "button.h"
 
 namespace sunaba::ui {
     class CheckBox;
@@ -51,7 +51,7 @@ namespace sunaba::ui {
             void _toggled(bool p_toggled_on) override;
     };
 
-    class CheckBox : public sunaba::ui::BaseButton {
+    class CheckBox : public sunaba::ui::Button {
         private:
             CheckBoxNode* check_box = nullptr;
 
