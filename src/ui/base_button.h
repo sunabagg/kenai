@@ -269,7 +269,7 @@ namespace sunaba::ui {
                 return base_button->is_hovered();
             }
 
-            void setPressedNoSignal(bool pressed) {
+            void setPressedNoEvent(bool pressed) {
                 base_button->set_pressed_no_signal(pressed);
             }
         };
