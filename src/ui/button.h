@@ -114,6 +114,14 @@ namespace sunaba::ui {
             void setExpandIcon(bool enabled) {
                 button->set_expand_icon(enabled);
             }
+
+            bool isFlat() {
+                return button->is_flat();
+            }
+
+            void setFlat(bool enabled) {
+                button->set_flat(enabled);
+            }
     };
 }
 
