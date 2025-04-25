@@ -79,6 +79,14 @@ namespace sunaba::ui {
                 p_node->element = this;
                 setBaseButton(p_node);
             }
+
+            int getAlignment() {
+                return check_box->get_alignment();
+            }
+
+            void setAlignment(int alignment) {
+                check_box->set_alignment(static_cast<godot::HorizontalAlignment>(alignment));
+            }
     };
 }
 
