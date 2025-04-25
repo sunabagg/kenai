@@ -60,7 +60,6 @@ namespace sunaba::ui {
             PackedInt32Array _get_allowed_size_flags_horizontal() const override;
 
             PackedInt32Array _get_allowed_size_flags_vertical() const override;
-
     };
 }
 
