@@ -12,7 +12,7 @@
 namespace sunaba::ui {
     class Button;
 
-    class ButtonProxy : public BaseButtonNode {
+    class ButtonProxy : public ButtonNode {
         public:
             sunaba::ui::Button* element = nullptr;
 
@@ -75,7 +75,12 @@ namespace sunaba::ui {
             void setButton(ButtonNode* p_node) {
                 button = p_node;
                 setBaseButton(button);
-                setCanvasItem(button);
+            }
+
+            void setButton(ButtonProxy* p_node) {
+                button = p_node;
+                p_node->element = this;
+                setBaseButton(button);
             }
     };
 }
