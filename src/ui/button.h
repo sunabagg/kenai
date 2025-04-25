@@ -84,11 +84,11 @@ namespace sunaba::ui {
             }
 
             int getAlignment() {
-                return button->get_alignment();
+                return button->get_text_alignment();
             }
 
             void setAlignment(int alignment) {
-                button->set_alignment(static_cast<godot::HorizontalAlignment>(alignment));
+                button->set_text_alignment(static_cast<godot::HorizontalAlignment>(alignment));
             }
     };
 }
