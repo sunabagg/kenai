@@ -8,6 +8,7 @@
 #define BaseButtonNode godot::BaseButton
 
 #include "control.h"
+#include "../input/shortcut.h"
 
 #include "../core/stl_function_wrapper.h"
 #define StlFunctionWrapper sunaba::core::StlFunctionWrapper
@@ -105,6 +106,54 @@ namespace sunaba::ui {
 
             void setActionMode(int mode) {
                 base_button->set_action_mode(static_cast<godot::BaseButton::ActionMode>(mode));
+            }
+
+            int getButtonMask() {
+                return base_button->get_button_mask();
+            }
+
+            void setButtonMask(int mask) {
+                base_button->set_button_mask(static_cast<godot::BitField<godot::MouseButtonMask>>(mask));
+            }
+
+            bool getButtonPressed() {
+                return base_button->is_pressed();
+            }
+
+            void setButtonPressed(bool pressed) {
+                base_button->set_pressed(pressed);
+            }
+
+            bool getDisabled() {
+                return base_button->is_disabled();
+            }
+
+            void setDisabled(bool disabled) {
+                base_button->set_disabled(disabled);
+            }
+
+            int getFocusMode() {
+                return base_button->get_focus_mode();
+            }
+
+            void setFocusMode(int mode) {
+                base_button->set_focus_mode(static_cast<godot::Control::FocusMode>(mode));
+            }
+
+            bool getKeepPressedOutside() {
+                return base_button->is_keep_pressed_outside();
+            }
+            
+            void setKeepPressedOutside(bool enabled) {
+                base_button->set_keep_pressed_outside(enabled);
+            }
+
+            sunaba::input::Shortcut* getShortcut() {
+                return new sunaba::input::Shortcut(base_button->get_shortcut().ptr());
+            }
+
+            void setShortcut(sunaba::input::Shortcut* shortcut) {
+                base_button->set_shortcut(shortcut->getShortcut());
             }
         };
 }
