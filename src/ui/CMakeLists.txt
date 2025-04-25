@@ -13,6 +13,10 @@ target_sources(${PROJECT_NAME} PRIVATE
         theme.cpp
         control.h
         control.cpp
+        base_button.h
+        base_button.cpp
+        button_group.h
+        button_group.cpp
         bind_ui_classes.h
         bind_ui_classes.cpp
 )
