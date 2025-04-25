@@ -8,6 +8,7 @@
 #define ButtonNode godot::Button
 
 #include "base_button.h"
+#include "../core/texture2d.h"
 
 namespace sunaba::ui {
     class Button;
@@ -121,6 +122,15 @@ namespace sunaba::ui {
 
             void setFlat(bool enabled) {
                 button->set_flat(enabled);
+            }
+
+            sunaba::core::Texture2D* getIcon() {
+                return new sunaba::core::Texture2D(button->get_button_icon().ptr());
+            }
+
+            void setIcon(sunaba::core::Texture2D* texture) {
+                Ref<godot::Texture2D> textureRef = Ref<godot::Texture2D>(texture->getTexture());
+                button->set_button_icon(textureRef);
             }
     };
 }
