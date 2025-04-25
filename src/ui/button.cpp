@@ -7,7 +7,7 @@ namespace sunaba::ui {
 
         lua.new_usertype<Button>("Button",
             sol::constructors<Button()>(),
-            sol::base_classes, sol::bases<sunaba::ui::BaseButton>(),
+            sol::base_classes, sol::bases<BaseObject, Element, sunaba::core::CanvasItem, sunaba::ui::Control, sunaba::ui::BaseButton>(),
             "alignment", sol::property(
                 &Button::getAlignment,
                 &Button::setAlignment
