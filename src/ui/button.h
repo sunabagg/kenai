@@ -140,6 +140,14 @@ namespace sunaba::ui {
             void setIconAlignment(int alignment) {
                 button->set_icon_alignment(static_cast<godot::HorizontalAlignment>(alignment));
             }
+
+            std::string getLanguage() {
+                return String(button->get_language()).utf8().get_data();
+            }
+
+            void setLanguage(std::string language) {
+                button->set_language(String(language.c_str()));
+            }
     };
 }
 
