@@ -19,6 +19,8 @@ namespace sunaba::ui {
 
     class BaseButton;
 
+    class ButtonGroup;
+
      class BaseButtonProxy : public BaseButtonNode {
         public:
             sunaba::ui::BaseButton* element = nullptr;
