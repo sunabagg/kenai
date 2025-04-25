@@ -8,6 +8,10 @@
 #define GodotButtonGroup godot::ButtonGroup
 
 #include "../core/resource.h"
+#include "../core/event.h"
+#include "../core/stl_function_wrapper.h"
+
+using namespace sunaba::core;
 
 namespace sunaba::ui {
 
@@ -18,6 +22,23 @@ namespace sunaba::ui {
     class ButtonGroup : public sunaba::core::Resource {
     private:
         GodotButtonGroup* button_group = nullptr; // Pointer to the ButtonGroup instance
+
+        void connectButtonGroupSignals() {
+            // Connect signals specific to ButtonGroup
+            std::function<Variant(std::vector<Variant>)> pressedFunc =
+                [this](std::vector<Variant> av) {
+                    Array args;
+                    for (int i = 0; i < av.size(); ++i) {
+                        args.append(av[i]);
+                    }
+                    if (this->pressed != nullptr) {
+                        this->pressed->emit(args);
+                    }
+                    return Variant();
+                };
+            Callable pressedCallable = StlFunctionWrapper::create_callable_from_cpp_function(pressedFunc);
+            button_group->connect("pressed", pressedCallable);
+        }
     public:
         // Constructor with Node* parameter
         ButtonGroup(GodotButtonGroup* p_node) {
@@ -47,6 +68,8 @@ namespace sunaba::ui {
         void setAllowUnpress(bool p_enabled) {
             button_group->set_allow_unpress(p_enabled);
         }
+
+        Event* pressed;
 
         std::vector<BaseButton*> getButtons();
 
