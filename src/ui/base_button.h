@@ -155,6 +155,14 @@ namespace sunaba::ui {
             void setShortcut(sunaba::input::Shortcut* shortcut) {
                 base_button->set_shortcut(shortcut->getShortcut());
             }
+
+            bool getShortcutFeedback() {
+                return base_button->is_shortcut_feedback();
+            }
+
+            void setShortcutFeedback(bool enabled) {
+                base_button->set_shortcut_feedback(enabled);
+            }
         };
 }
 
