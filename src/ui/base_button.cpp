@@ -56,67 +56,67 @@ namespace sunaba::ui {
         }
     }
 
-    void ControlProxy::_draw() {
+    void BaseButtonProxy::_draw() {
         if (element != nullptr) {
             element->_draw();
         }
     }
 
-    bool ControlProxy::_can_drop_data(const Vector2& at_position, const Variant &data) const {
+    bool BaseButtonProxy::_can_drop_data(const Vector2& at_position, const Variant &data) const {
         if (element != nullptr) {
             return element->canDropData(at_position, data);
         }
         return false;
     }
 
-    void ControlProxy::_drop_data(const Vector2 &at_position, const Variant &data) {
+    void BaseButtonProxy::_drop_data(const Vector2 &at_position, const Variant &data) {
         if (element != nullptr) {
             element->dropData(at_position, data);
         }
     }
 
-    Variant ControlProxy::_get_drag_data(const Vector2 &at_position) {
+    Variant BaseButtonProxy::_get_drag_data(const Vector2 &at_position) {
         if (element != nullptr) {
             return element->getDragData(at_position);
         }
         return Variant();
     }
 
-    Vector2 ControlProxy::_get_minimum_size() const {
+    Vector2 BaseButtonProxy::_get_minimum_size() const {
         if (element != nullptr) {
             return element->_getMinimumSize();
         }
         return Vector2();
     }
 
-    String ControlProxy::_get_tooltip(const Vector2 &at_position) const {
+    String BaseButtonProxy::_get_tooltip(const Vector2 &at_position) const {
         if (element != nullptr) {
             return element->_getTooltip(at_position).c_str();
         }
         return String();
     }
 
-    void ControlProxy::_gui_input(const Ref<InputEvent> &event) {
+    void BaseButtonProxy::_gui_input(const Ref<InputEvent> &event) {
         if (element != nullptr) {
             element->guiInput(event);
         }
     }
 
-    bool ControlProxy::_has_point(const Vector2 &point) const {
+    bool BaseButtonProxy::_has_point(const Vector2 &point) const {
         if (element != nullptr) {
             return element->hasPoint(point);
         }
         return false;
     }
 
-    //Object* ControlProxy::_make_custom_tooltip(const String &for_text) const {
+    //Object* BaseButtonProxy::_make_custom_tooltip(const String &for_text) const {
     //    if (control_element != nullptr) {
     //        return control_element->makeCustomTooltip(for_text);
     //    }
     //    return nullptr;
     //}
 
-    TypedArray<Vector3i> ControlProxy::_structured_text_parser(const Array &args, const String &text) const {
+    TypedArray<Vector3i> BaseButtonProxy::_structured_text_parser(const Array &args, const String &text) const {
         if (element != nullptr) {
             return element->structuredTextParser(args, text);
         }
