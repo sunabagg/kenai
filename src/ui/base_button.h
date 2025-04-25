@@ -170,6 +170,9 @@ namespace sunaba::ui {
                 base_button->set_action_mode(static_cast<godot::BaseButton::ActionMode>(mode));
             }
 
+            ButtonGroup* getButtonGroup();
+            void setButtonGroup(ButtonGroup* group);
+
             int getButtonMask() {
                 return base_button->get_button_mask();
             }

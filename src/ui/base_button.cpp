@@ -1,4 +1,5 @@
 #include "base_button.h"
+#include "button_group.h"
 
 namespace sunaba::ui {
     void BaseButtonProxy::_enter_tree() {
@@ -134,6 +135,14 @@ namespace sunaba::ui {
         }
     }
 
+    ButtonGroup* BaseButton::getButtonGroup() {
+        return new ButtonGroup(base_button->get_button_group().ptr());
+    }
+
+    void BaseButton::setButtonGroup(ButtonGroup* group) {
+        base_button->set_button_group(group->getButtonGroup());
+    }
+
     void bindBaseButton(sol::state &lua) {
         lua.new_usertype<BaseButton>("BaseButton",
             sol::constructors<BaseButton(), BaseButton(BaseButtonNode*)>(),
@@ -141,6 +150,10 @@ namespace sunaba::ui {
             "actionMode", sol::property(
                 &BaseButton::getActionMode,
                 &BaseButton::setActionMode
+            ),
+            "buttonGroup", sol::property(
+                &BaseButton::getButtonGroup,
+                &BaseButton::setButtonGroup
             ),
             "buttonMask", sol::property(
                 &BaseButton::getButtonMask,
