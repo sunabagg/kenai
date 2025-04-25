@@ -146,7 +146,7 @@ namespace sunaba::ui {
     void bindBaseButton(sol::state &lua) {
         lua.new_usertype<BaseButton>("BaseButton",
             sol::constructors<BaseButton(), BaseButton(BaseButtonNode*)>(),
-            sol::base_classes, sol::bases<Control>(),
+            sol::base_classes, sol::bases<BaseObject, Element, sunaba::core::CanvasItem, Control>(),
             "actionMode", sol::property(
                 &BaseButton::getActionMode,
                 &BaseButton::setActionMode
