@@ -17,7 +17,7 @@ using namespace sunaba::core;
 namespace sunaba::ui {
     void bindContainer(sol::state &lua);
 
-    class ConatiContainerner;
+    class Container;
 
     class ContainerProxy : public ContainerNode {
         public:
