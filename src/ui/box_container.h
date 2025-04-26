@@ -87,17 +87,17 @@ namespace sunaba::ui {
                 return container;
             }
 
-            void setContainer(BoxContainerNode* container) {
+            void setBoxContainer(BoxContainerNode* container) {
                 this->container = container;
                 connectContainerSignals();
-                setControl(container);
+                setContainer(container);
             }
             
-            void setContainer(BoxContainerProxy* container) {
+            void setBoxContainer(BoxContainerProxy* container) {
                 this->container = container;
                 container->element = this;
                 connectContainerSignals();
-                setControl(container);
+                setContainer(container);
             }
 
             int getAlignment() const {
