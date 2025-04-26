@@ -30,8 +30,8 @@ std::vector<sunaba::ui::BaseButton*> sunaba::ui::ButtonGroup::getButtons() {
     for (int i = 0; i < buttonList.size(); ++i) {
         Object* obj = buttonList[i];
         if (obj != nullptr) {
-            sunaba::ui::BaseButton* button = Object::cast_to<sunaba::ui::BaseButton>(obj);
-            if (button != nullptr) {
+            sunaba::ui::BaseButton* button = new sunaba::ui::BaseButton(Object::cast_to<BaseButtonNode>(obj));
+            if (button->getNode() != nullptr) {
                 buttons.push_back(button);
             }
         }
@@ -42,7 +42,7 @@ std::vector<sunaba::ui::BaseButton*> sunaba::ui::ButtonGroup::getButtons() {
 sunaba::ui::BaseButton* sunaba::ui::ButtonGroup::getPressedButton() {
     Object* obj = button_group->get_pressed_button();
     if (obj != nullptr) {
-        return Object::cast_to<sunaba::ui::BaseButton>(obj);
+        return new sunaba::ui::BaseButton(Object::cast_to<BaseButtonNode>(obj));
     }
     return nullptr;
 }
