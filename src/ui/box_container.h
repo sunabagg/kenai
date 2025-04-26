@@ -99,6 +99,14 @@ namespace sunaba::ui {
                 connectContainerSignals();
                 setControl(container);
             }
+
+            int getAlignment() const {
+                return container->get_alignment();
+            }
+
+            void setAlignment(int alignment) {
+                container->set_alignment(static_cast<BoxContainerNode::AlignmentMode>(alignment));
+            }
     };
 }
 
