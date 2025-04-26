@@ -72,11 +72,11 @@ namespace sunaba::ui {
             }
         public:
             BoxContainer() {
-                setContainer(memnew(BoxContainerProxy));
+                setBoxContainer(memnew(BoxContainerProxy));
             }
 
             BoxContainer(BoxContainerNode* container) {
-                setContainer(container);
+                setBoxContainer(container);
             }
 
             ~BoxContainer() {
