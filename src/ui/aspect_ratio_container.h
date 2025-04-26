@@ -17,11 +17,11 @@ using namespace sunaba::core;
 namespace sunaba::ui {
     void bindAspectRatioContainer(sol::state &lua);
 
-    class AspectRatioConatiner;
+    class AspectRatioContainer;
 
     class AspectRatioContainerProxy : public AspectRatioContainerNode {
         public:
-            sunaba::ui::AspectRatioConatiner* element = nullptr;
+            sunaba::ui::AspectRatioContainer* element = nullptr;
 
             void onInit() {
                 // Initialize the NodeProxy instance
