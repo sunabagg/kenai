@@ -72,27 +72,27 @@ namespace sunaba::ui {
             }
         public:
             AspectRatioContainer() {
-                setContainer(memnew(AspectRatioContainerProxy));
+                setARContainer(memnew(AspectRatioContainerProxy));
             }
 
             AspectRatioContainer(AspectRatioContainerNode* container) {
-                setContainer(container);
+                setARContainer(container);
             }
 
             AspectRatioContainerNode* getContainer() {
                 return container;
             }
 
-            void setContainer(AspectRatioContainerNode* container) {
+            void setARContainer(AspectRatioContainerNode* container) {
                 this->container = container;
                 connectContainerSignals();
-                setControl(container);
+                setContainer(container);
             }
-            void setContainer(AspectRatioContainerProxy* container) {
+            void setARContainer(AspectRatioContainerProxy* container) {
                 this->container = container;
                 container->element = this;
                 connectContainerSignals();
-                setControl(container);
+                setContainer(container);
             }
 
             int getAlignmentHorizontal() {
