@@ -25,6 +25,8 @@ target_sources(${PROJECT_NAME} PRIVATE
         check_button.cpp
         container.h
         container.cpp
+        aspect_ratio_container.h
+        aspect_ratio_container.cpp
         bind_ui_classes.h
         bind_ui_classes.cpp
 )
