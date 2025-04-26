@@ -19,6 +19,8 @@ target_sources(${PROJECT_NAME} PRIVATE
         button_group.cpp
         button.h
         button.cpp
+        check_box.h
+        check_box.cpp
         bind_ui_classes.h
         bind_ui_classes.cpp
 )
