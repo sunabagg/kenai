@@ -107,6 +107,14 @@ namespace sunaba::ui {
             void setAlignment(int alignment) {
                 container->set_alignment(static_cast<BoxContainerNode::AlignmentMode>(alignment));
             }
+
+            bool isVertical() const {
+                return container->is_vertical();
+            }
+
+            void setVertical(bool vertical) {
+                container->set_vertical(vertical);
+            }
     };
 }
 
