@@ -115,6 +115,10 @@ namespace sunaba::ui {
             void setVertical(bool vertical) {
                 container->set_vertical(vertical);
             }
+
+            Control* addSpacer(bool begin) {
+                return new Control(container->add_spacer(begin));
+            }
     };
 }
 
