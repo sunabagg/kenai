@@ -100,6 +100,12 @@ namespace sunaba::ui {
     //    }
     //    return nullptr;
     //}
+    TypedArray<Vector3i> ContainerProxy::_structured_text_parser(const Array &args, const String &text) const {
+        if (element != nullptr) {
+            return element->structuredTextParser(args, text);
+        }
+        return TypedArray<Vector3i>();
+    }
     PackedInt32Array ContainerProxy::_get_allowed_size_flags_horizontal() const {
         if (element != nullptr) {
             return element->getAllowedSizeFlagsHorizontal();
