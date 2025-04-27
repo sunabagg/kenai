@@ -13,7 +13,10 @@ config_version=5
 config/name="Sunaba"
 run/main_scene="res://App.tscn"
 config/features=PackedStringArray("4.4", "GL Compatibility")
-config/icon="res://icon.svg"
+boot_splash/bg_color=Color(1, 1, 1, 1)
+boot_splash/fullsize=false
+boot_splash/image="uid://tqi54djfy3ia"
+config/icon="uid://bcnaj1jhop8y"
 
 [dotnet]
 
