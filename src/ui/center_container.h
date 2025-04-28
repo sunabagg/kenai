@@ -100,6 +100,14 @@ namespace sunaba::ui {
                 connectCenterContainerSignals();
                 setContainer(p_node);
             }
+
+            bool isUsingTopLeft() const {
+                return centerContainer->is_using_top_left();
+            }
+
+            void setUseTopLeft(bool p_enable) {
+                centerContainer->set_use_top_left(p_enable);
+            }
     };
 }
 #endif // !CENTER_CONTAINER_H
