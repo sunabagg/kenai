@@ -151,7 +151,7 @@ namespace sunaba::ui {
             ),
             "cast", [](Element* e) {
                 AspectRatioContainerNode* control = Object::cast_to<AspectRatioContainerNode>(e->getNode());
-                if (control == nullptr) {
+                if (control != nullptr) {
                     return new AspectRatioContainer(control);
                 }
                 return static_cast<AspectRatioContainer*>(nullptr);
