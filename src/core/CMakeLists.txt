@@ -14,6 +14,22 @@ target_sources(${PROJECT_NAME} PRIVATE
         lua_bind.h
         lua_bind.cpp
         type_bind.cpp
+        bind_varaint.cpp
+        bind_array_list.cpp
+        bind_dictionary.cpp
+        bind_vector2.cpp
+        bind_rect2.cpp
+        bind_vector2i.cpp
+        bind_rect2i.cpp
+        bind_vector3.cpp
+        bind_vector3i.cpp
+        bind_vector4.cpp
+        bind_vector4i.cpp
+        bind_quaternion.cpp
+        bind_basis.cpp
+        bind_transform3d.cpp
+        bind_aabb.cpp
+        bind_color.cpp
         sol_gdstr.h
         lua_function_wrapper.h
         bind_core_classes.h
