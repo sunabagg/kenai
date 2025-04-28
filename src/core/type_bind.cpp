@@ -24,46 +24,10 @@ void sunaba::core::bind_base_types(sol::state& lua) {
     bind_rect2i(lua);
     bind_vector3(lua);
     bind_vector3i(lua);
+    bind_vector4(lua);
     
     
     
-    lua.new_usertype<godot::Vector4>(
-        "Vector4",
-        sol::constructors<Vector4(), Vector4(float, float, float, float)>(),
-        "x", &Vector4::x,
-        "y", &Vector4::y,
-        "z", &Vector4::z,
-        "w", &Vector4::w,
-        "abs", &Vector4::abs,
-        "ceil", &Vector4::ceil,
-        "clamp", &Vector4::clamp,
-        "cubicInterpolate", &Vector4::cubic_interpolate,
-        "cubicInterpolateInTime", &Vector4::cubic_interpolate_in_time,
-        "directionTo", &Vector4::direction_to,
-        "distanceSquaredTo", &Vector4::distance_squared_to,
-        "distanceTo", &Vector4::distance_to,
-        "dot", &Vector4::dot,
-        "floor", &Vector4::floor,
-        "inverse", &Vector4::inverse,
-        "isEqualApprox", &Vector4::is_equal_approx,
-        //"isFinite", &Vector4::is_finite,
-        "isNormalized", &Vector4::is_normalized,
-        "isZeroApprox", &Vector4::is_zero_approx,
-        "length", &Vector4::length,
-        "lengthSquared", &Vector4::length_squared,
-        "lerp", &Vector4::lerp,
-        "max", &Vector4::max,
-        "maxAxisIndex", &Vector4::max_axis_index,
-        "min", &Vector4::min,
-        "minAxisIndex", &Vector4::min_axis_index,
-        "normalized", &Vector4::normalized,
-        "posmod", &Vector4::posmod,
-        "posmodv", &Vector4::posmodv,
-        "round", &Vector4::round,
-        "sign", &Vector4::sign,
-        "snapped", &Vector4::snapped,
-        "tostring", [](const Vector4& v) { return std::string((v.operator String()).utf8().get_data()); }
-    );
 
     lua.new_usertype<godot::Vector4i>(
         "Vector4i",
