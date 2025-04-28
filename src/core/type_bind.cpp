@@ -27,112 +27,18 @@ void sunaba::core::bind_base_types(sol::state& lua) {
     bind_vector4(lua);
     bind_vector4i(lua);
     bind_quaternion(lua);
-    
+    bind_transform3d(lua);
+    bind_aabb(lua);
 
     
 
     
 
-    lua.new_usertype<godot::Basis>(
-        "Basis",
-        sol::constructors<Basis(), Basis(Vector3, Vector3, Vector3)>(),
-        "rows" , sol::property(
-            [](Basis& self) { 
-                auto rows = self.rows;
-                std::vector<Vector3> vecs;
-                vecs.push_back(rows[0]);
-                vecs.push_back(rows[1]);
-                vecs.push_back(rows[2]);
-                return vecs;
-            }, 
-            [](Basis& self, const std::vector<Vector3>& value) { 
-                self.rows[0] = value[0];
-                self.rows[1] = value[1];
-                self.rows[2] = value[2];
-            }
-        ),
-        "determinant", &Basis::determinant,
-        "fromEuler", &Basis::from_euler,
-        "fromScale", &Basis::from_scale,
-        "getEuler", &Basis::get_euler,
-        "getRotationQuaternion", &Basis::get_rotation_quaternion,
-        "getScale", &Basis::get_scale,
-        "inverse", &Basis::inverse,
-        //"isConformal", &Basis::is_conformal,
-        "isEqualApprox", &Basis::is_equal_approx,
-        //"isFinite", &Basis::is_finite,
-        "lookingAt", &Basis::looking_at,
-        "orthonormalized", &Basis::orthonormalized,
-        //"rotated", &Basis::rotated,
-        "scaled", &Basis::scaled,
-        "slerp", &Basis::slerp,
-        "tdotx", &Basis::tdotx,
-        "tdoty", &Basis::tdoty,
-        "tdotz", &Basis::tdotz,
-        "transposed", &Basis::transposed,
-        "tostring", [](const Basis& b) { return std::string((b.operator String()).utf8().get_data()); }
-    );
+    
 
-    lua.new_usertype<godot::Transform3D>(
-        "Transform3D",
-        sol::constructors<Transform3D(), Transform3D(Basis, Vector3)>(),
-        "basis", &Transform3D::basis,
-        "origin", &Transform3D::origin,
-        "affineInverse", &Transform3D::affine_inverse,
-        "interpolateWith", &Transform3D::interpolate_with,
-        "isEqualApprox", &Transform3D::is_equal_approx,
-        //"isFinite", &Transform3D::is_finite,
-        "lookingAt", &Transform3D::looking_at,
-        "orthonormalized", &Transform3D::orthonormalized,
-        "rotated", &Transform3D::rotated,
-        "rotatedLocal", &Transform3D::rotated_local,
-        "scaled", &Transform3D::scaled,
-        "scaledLocal", &Transform3D::scaled_local,
-        "translated", &Transform3D::translated,
-        "translatedLocal", &Transform3D::translated_local,
-        "tostring", [](const Transform3D& t) { return std::string((t.operator String()).utf8().get_data()); }
-    );
+    
 
-    lua.new_usertype<godot::AABB>(
-        "AABB",
-        sol::constructors<
-            AABB(), 
-            AABB(Vector3, Vector3)>(),
-        "end", sol::property(
-            [](AABB& self) { 
-                return self.get_end(); 
-            }, 
-            [](AABB& self, Vector3 value) { 
-                self.set_end(value); 
-            }
-        ),
-        "position", &AABB::position,
-        "size", &AABB::size,
-        "abs", &AABB::abs,
-        "encloses", &AABB::encloses,
-        "getCenter", &AABB::get_center,
-        "getEndpoint", &AABB::get_endpoint,
-        "getLongestAxis", &AABB::get_longest_axis,
-        "getLongestAxisIndex", &AABB::get_longest_axis_index,
-        "getLongestAxisSize", &AABB::get_longest_axis_size, 
-        "getShortestAxis", &AABB::get_shortest_axis,
-        "getShortestAxisIndex", &AABB::get_shortest_axis_index,
-        "getShortestAxisSize", &AABB::get_shortest_axis_size,
-        "getSupport", &AABB::get_support,
-        "getVolume", &AABB::get_volume,
-        "grow", &AABB::grow,
-        "hasPoint", &AABB::has_point,
-        "hasSurface", &AABB::has_surface,
-        "hasVolume", &AABB::has_volume,
-        "intersection", &AABB::intersection,
-        "intersects", &AABB::intersects,
-        "intersectsPlane", &AABB::intersects_plane,
-        "intersectsRay", &AABB::intersects_ray,
-        "isEqualApprox", &AABB::is_equal_approx,
-        //"isFinite", &AABB::is_finite,
-        "merge", &AABB::merge,
-        "tostring", [](const AABB& a) { return std::string((a.operator String()).utf8().get_data()); }
-    );
+    
 
     lua.new_usertype<godot::Color>(
         "Color",
