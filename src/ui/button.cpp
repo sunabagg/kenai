@@ -189,8 +189,12 @@ namespace sunaba::ui {
                 &Button::getVerticalIconAlignment,
                 &Button::setVerticalIconAlignment
             ),
-            "cast", [](sunaba::core::Resource* p_resource) {
-                return new Button(godot::Object::cast_to<ButtonNode>(p_resource->getResource()));
+            "cast", [](sunaba::core::Element* e) {
+                ButtonNode* base_button = Object::cast_to<ButtonNode>(e->getNode());
+                if (base_button == nullptr) {
+                    return new Button(base_button);
+                }
+                return static_cast<Button*>(nullptr);
             }
         );
     }
