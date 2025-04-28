@@ -2,10 +2,7 @@
 // Created by mintkat on 2/1/25.
 //
 #include "lua_bind.h"
-#include "io/binary_data.h"
-#include "resource.h"
-#include "element.h"
-#include "base_object_proxy.h"
+
 
 #include <godot_cpp/core/class_db.hpp>
 #include <godot_cpp/variant/utility_functions.hpp>
@@ -21,111 +18,14 @@ void sunaba::core::bind_base_types(sol::state& lua) {
     bind_varaint(lua);
     bind_array_list(lua);
     bind_dictionary(lua);
-
-    lua.new_usertype<Vector2>(
-        "Vector2",
-        sol::constructors<Vector2(), Vector2(float, float)>(),
-        "x", &Vector2::x,
-        "y", &Vector2::y,
-        "normalize", &Vector2::normalize,
-        "normalized", &Vector2::normalized,
-        "isNormalized", &Vector2::is_normalized,
-        "length", &Vector2::length,
-        "lengthSquared", &Vector2::length_squared,
-        "limitLength", &Vector2::limit_length,
-        "min", &Vector2::min,
-        "max", &Vector2::max,
-        "distanceTo", &Vector2::distance_to,
-        "distanceSquaredTo", &Vector2::distance_squared_to,
-        "angleTo", &Vector2::angle_to,
-        "angleToPoint", &Vector2::angle_to_point,
-        "dot", &Vector2::dot,
-        "posmod", &Vector2::posmod,
-        "posmodv", &Vector2::posmodv,
-        "project", &Vector2::project,
-        "planeProject", &Vector2::plane_project,
-        "lerp", &Vector2::lerp,
-        "slerp", &Vector2::slerp,
-        "cubicInterpolate", &Vector2::cubic_interpolate,
-        "cubicInterpolateInTime", &Vector2::cubic_interpolate_in_time,
-        "bezierInterpolate", &Vector2::bezier_interpolate,
-        "moveToward", &Vector2::move_toward,
-        "slide", &Vector2::slide,
-        "bounce", &Vector2::bounce,
-        "reflect", &Vector2::reflect,
-        "isEqualApprox", &Vector2::is_equal_approx,
-        "isZeroApprox", &Vector2::is_zero_approx,
-        "angle", &Vector2::angle,
-        "abs", &Vector2::abs,
-        "rotated", &Vector2::rotated,
-        "orthogonal", &Vector2::orthogonal,
-        "sign", &Vector2::sign,
-        "floor", &Vector2::floor,
-        "ceil", &Vector2::ceil,
-        "round", &Vector2::round,
-        "snapped", &Vector2::snapped,
-        "clamp", &Vector2::clamp,
-        "aspect", &Vector2::aspect,
-        "tostring", [](const Vector2& v) { return std::string((v.operator String()).utf8().get_data()); }
-        );
+    bind_vector2(lua);
+    bind_rect2(lua);
+    bind_vector2i(lua);
     
-    lua.new_usertype<Rect2>(
-        "Rect2",
-        sol::constructors<
-            Rect2(), 
-            Rect2(Rect2i),
-            Rect2(Vector2, Vector2), 
-            Rect2(float, float, float, float)>(),
-            "end", sol::property(
-                [](Rect2& self) { 
-                    return self.get_end(); 
-                }, 
-                [](Rect2& self, Vector2 value) { 
-                    self.set_end(value); 
-                }
-            ),
-            "position", &Rect2::position,
-            "size", &Rect2::size,
-            "abs", &Rect2::abs,
-            "encloses", &Rect2::encloses,
-            "expand", &Rect2::expand,
-            "getArea", &Rect2::get_area,
-            "getCenter", &Rect2::get_center,
-            "grow", &Rect2::grow,
-            "growIndividual", &Rect2::grow_individual,
-            "growSide", &Rect2::grow_side,
-            "hasArea", &Rect2::has_area,
-            "hasPoint", &Rect2::has_point,
-            "intersection", &Rect2::intersection,
-            "intersects", &Rect2::intersects,
-            "isEqualApprox", &Rect2::is_equal_approx,
-            //"isFinite", &Rect2::is_finite,
-            "merge", &Rect2::merge,
-            "tostring", [](const Rect2& r) { return std::string((r.operator String()).utf8().get_data()); }
-    );
+    
+    
 
-    lua.new_usertype<godot::Vector2i>(
-        "Vector2i", 
-        sol::constructors<
-            Vector2i(), 
-            Vector2i(int, int)>(), 
-            "x", &Vector2i::x, 
-            "y", &Vector2i::y,
-            "abs", &Vector2i::abs,
-            "aspect", &Vector2i::aspect,
-            "clamp", &Vector2i::clamp,
-            //"distanceSquaredTo", &Vector2i::distance_squared_to,
-            //"distanceTo", &Vector2i::distance_to,
-            "length", &Vector2i::length,
-            "lengthSquared", &Vector2i::length_squared,
-            "max", &Vector2i::max,
-            "maxAxisIndex", &Vector2i::max_axis_index,
-            "min", &Vector2i::min,
-            "minAxisIndex", &Vector2i::min_axis_index,
-            "sign", &Vector2i::sign,
-            "tostring", [](const Vector2i& v) { return std::string((v.operator String()).utf8().get_data()); }
-            //"snapped", &Vector2i::snapped
-    );
+    
 
     lua.new_usertype<godot::Rect2i>(
         "Rect2i", 
