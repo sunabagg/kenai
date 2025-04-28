@@ -131,7 +131,7 @@ namespace sunaba::ui {
             "queueSort", &Container::queueSort,
             "cast", [](Element* e) {
                 ContainerNode* container = Object::cast_to<ContainerNode>(e->getNode());
-                if (container == nullptr) {
+                if (container != nullptr) {
                     return new Container(container);
                 }
                 return static_cast<Container*>(nullptr);
