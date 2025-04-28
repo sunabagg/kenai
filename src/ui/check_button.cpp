@@ -129,8 +129,12 @@ namespace sunaba::ui {
                 &CheckButton::getToggleMode,
                 &CheckButton::setToggleMode
             ),
-            "cast", [](sunaba::core::Resource* p_resource) {
-                return new CheckButton(godot::Object::cast_to<CheckButtonNode>(p_resource->getResource()));
+            "cast", [](sunaba::core::Element* e) {
+                CheckButtonNode* base_button = Object::cast_to<CheckButtonNode>(e->getNode());
+                if (base_button == nullptr) {
+                    return new CheckButton(base_button);
+                }
+                return static_cast<CheckButton*>(nullptr);
             }
         );
     }
