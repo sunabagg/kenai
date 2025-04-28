@@ -142,7 +142,7 @@ namespace sunaba::ui {
                 if (node != nullptr) {
                     return new CenterContainer(node);
                 }
-                return nullptr;
+                return static_cast<CenterContainer*>(nullptr);
             }
         );
     }
