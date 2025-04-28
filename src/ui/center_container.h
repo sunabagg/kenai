@@ -64,41 +64,41 @@ namespace sunaba::ui {
 
     class CenterContainer : public Container {
         private:
-            CenterContainerNode* control = nullptr; // Pointer to the CenterContainer instance
+            CenterContainerNode* centerContainer = nullptr; // Pointer to the CenterContainer instance
 
-            void connectControlSignals() {
+            void connectCenterContainerSignals() {
                 // Connect signals from the control node to the element
                 // Example: control->connect("signal_name", this, "method_name");
-            }
+            } 
         public:
             CenterContainer(CenterContainerNode* p_node) {
-                setControl(p_node);
+                setCenterContainer(p_node);
             }
 
             CenterContainer(CenterContainerProxy* p_node) {
-                setControl(p_node);
+                setCenterContainer(p_node);
             }
 
             CenterContainer() {
-                setControl(memnew(CenterContainerProxy));
+                setCenterContainer(memnew(CenterContainerProxy));
                 onInit();
             }
 
-            CenterContainerNode* getControl() {
-                return control;
+            CenterContainerNode* getCenterContainer() {
+                return centerContainer;
             }
 
-            void setControl(CenterContainerNode* p_node) {
-                control = p_node;
-                connectControlSignals();
-                setCanvasItem(control);
+            void setCenterContainer(CenterContainerNode* p_node) {
+                centerContainer = p_node;
+                connectCenterContainerSignals();
+                setContainer(p_node);
             }
 
-            void setControl(CenterContainerProxy* p_node) {
-                control = p_node;
+            void setCenterContainer(CenterContainerProxy* p_node) {
+                centerContainer = p_node;
                 p_node->element = this;
-                connectControlSignals();
-                setCanvasItem(p_node);
+                connectCenterContainerSignals();
+                setContainer(p_node);
             }
     };
 }
