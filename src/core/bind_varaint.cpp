@@ -1,4 +1,14 @@
 #include "lua_bind.h"
+#include "io/binary_data.h"
+#include "resource.h"
+#include "element.h"
+#include "base_object_proxy.h"
+
+#include <godot_cpp/core/class_db.hpp>
+#include <godot_cpp/variant/utility_functions.hpp>
+#include <godot_cpp/classes/json.hpp>
+#include <godot_cpp/variant/variant.hpp>
+#include <godot_cpp/variant/basis.hpp>
 
 void sunaba::core::bind_varaint(sol::state& lua) {
     lua.new_usertype<Variant>("Variant",
