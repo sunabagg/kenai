@@ -190,9 +190,9 @@ namespace sunaba::ui {
                 &Button::setVerticalIconAlignment
             ),
             "cast", [](sunaba::core::Element* e) {
-                ButtonNode* base_button = Object::cast_to<ButtonNode>(e->getNode());
-                if (base_button == nullptr) {
-                    return new Button(base_button);
+                ButtonNode* button = Object::cast_to<ButtonNode>(e->getNode());
+                if (button == nullptr) {
+                    return new Button(button);
                 }
                 return static_cast<Button*>(nullptr);
             }
