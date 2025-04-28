@@ -349,20 +349,20 @@ add_subdirectory( extern/sol2 )
 
 include_directories( ${CMAKE_SOURCE_DIR}/extern/hx-lua-simdjson/src )
 
-add_library( hxsimdjson STATIC 
-    extern/hx-lua-simdjson/src/hxluasimdjson.h
-    extern/hx-lua-simdjson/src/hxluasimdjson.cpp
-    extern/hx-lua-simdjson/src/simdjson.h
-    extern/hx-lua-simdjson/src/simdjson.cpp 
-)
+#add_library( hxsimdjson STATIC 
+#    extern/hx-lua-simdjson/src/hxluasimdjson.h
+#    extern/hx-lua-simdjson/src/hxluasimdjson.cpp
+#    extern/hx-lua-simdjson/src/simdjson.h
+#    extern/hx-lua-simdjson/src/simdjson.cpp 
+#)
 
-target_compile_features( hxsimdjson
-    PRIVATE
-        cxx_std_17
-)
+#target_compile_features( hxsimdjson
+#    PRIVATE
+#        cxx_std_17
+#)
 
 # Find pthread (needed for simdjson)
-find_package(Threads REQUIRED)
+#find_package(Threads REQUIRED)
 
 #include_directories( ${CMAKE_BINARY_DIR}/extern/godot-cpp/gen/include )
 #include_directories( ${CMAKE_BINARY_DIR}/extern/godot-cpp/gen/src )
@@ -370,27 +370,27 @@ find_package(Threads REQUIRED)
 #include_directories( ${CMAKE_SOURCE_DIR}/extern/godot-cpp/src )
 
 if (__COMPILER_GNU OR GCC OR CLANG)
-    target_compile_options( hxsimdjson
-    PUBLIC
-        -Wno-error=pedantic
-        -Wno-error=cast-function-type
-        -Wno-error=duplicated-branches
-        -Wno-error=shadow
-        -Wno-error=deprecated-declarations
-        -Wno-error=unused-function
-        -Wno-error=missing-field-initializers
-        -Wno-error=return-type
-        -Wno-error=address
-        -Wno-error=pedantic
-        -Wno-error=sign-compare
-        -Wno-error=comment
-        -Wno-error=array-bounds
-        -fpermissive
-        -fexceptions
-        -ftemplate-backtrace-limit=0
-        -D_GLIBCXX_USE_CXX11_ABI=1
-        -fPIC
-    )
+    #target_compile_options( hxsimdjson
+    #PUBLIC
+    #    -Wno-error=pedantic
+    #    -Wno-error=cast-function-type
+    #    -Wno-error=duplicated-branches
+    #    -Wno-error=shadow
+    #    -Wno-error=deprecated-declarations
+    #    -Wno-error=unused-function
+    #    -Wno-error=missing-field-initializers
+    #    -Wno-error=return-type
+    #    -Wno-error=address
+    #    -Wno-error=pedantic
+    #    -Wno-error=sign-compare
+    #    -Wno-error=comment
+    #    -Wno-error=array-bounds
+    #    -fpermissive
+    #    -fexceptions
+    #    -ftemplate-backtrace-limit=0
+    #    -D_GLIBCXX_USE_CXX11_ABI=1
+    #    -fPIC
+    #)
 endif()
 
 include_directories( ${CMAKE_BINARY_DIR}/extern/godot-cpp/gen/include )
@@ -405,11 +405,11 @@ endif()
 
 # Link the libraries
 if (USE_LUAJIT)
-    target_link_libraries( hxsimdjson
-        PRIVATE
-            ${LUAJIT_LIBRARIES}
-            Threads::Threads
-    )
+    #target_link_libraries( hxsimdjson
+    #    PRIVATE
+    #        ${LUAJIT_LIBRARIES}
+    #        Threads::Threads
+    #)
     target_link_libraries(${PROJECT_NAME}
         PRIVATE
             godot-cpp
@@ -419,11 +419,11 @@ if (USE_LUAJIT)
             #Luau.Compiler Luau.VM
     )
 else()
-    target_link_libraries( hxsimdjson
-        PRIVATE
-            liblua_static
-            Threads::Threads
-    )
+    #target_link_libraries( hxsimdjson
+    #    PRIVATE
+    #        liblua_static
+    #        Threads::Threads
+    #)
     target_link_libraries(${PROJECT_NAME}
         PRIVATE
             godot-cpp
