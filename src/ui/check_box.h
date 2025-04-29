@@ -64,6 +64,7 @@ namespace sunaba::ui {
             // Constructor with no parameters
             CheckBox() {
                 setCheckBox(memnew(CheckBoxProxy));
+                onInit();
             }
 
             // Getter for the CheckBox node
