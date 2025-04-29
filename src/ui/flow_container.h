@@ -75,7 +75,6 @@ namespace sunaba::ui {
 
             FlowContainer(FlowContainerNode* container) {
                 setFlowContainer(container);
-                onInit();
             }
 
             FlowContainerNode* getContainer() {
