@@ -78,7 +78,6 @@ namespace sunaba::ui {
 
             BoxContainer(BoxContainerNode* container) {
                 setBoxContainer(container);
-                onInit();
             }
 
             BoxContainerNode* getContainer() {
