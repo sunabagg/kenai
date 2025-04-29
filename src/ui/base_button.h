@@ -131,12 +131,10 @@ namespace sunaba::ui {
             // Constructor with Node* parameter
             BaseButton(BaseButtonNode* p_node) {
                 setBaseButton(p_node);
-                onInit();
             }
 
             BaseButton(BaseButtonProxy* p_node) {
                 setBaseButton(p_node);
-                onInit();
             }
 
             // Constructor with no parameters
