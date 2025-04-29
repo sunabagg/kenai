@@ -109,6 +109,14 @@ namespace sunaba::ui {
             void setLastWrapAlignment(int alignment) {
                 flowContainer->set_last_wrap_alignment(static_cast<godot::FlowContainer::LastWrapAlignmentMode>(alignment));
             }
+
+            bool getReverseFill() {
+                return flowContainer->is_reverse_fill();
+            }
+
+            void setReverseFill(bool reverse_fill) {
+                flowContainer->set_reverse_fill(reverse_fill);
+            }
     };
 }
 
