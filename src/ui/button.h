@@ -60,11 +60,13 @@ namespace sunaba::ui {
             // Constructor with Node* parameter
             Button(ButtonNode* p_node) {
                 setButton(p_node);
+                onInit();
             }
 
             // Constructor with no parameters
             Button() {
                 setButton(memnew(ButtonProxy));
+                onInit();
             }
 
             // Getter for the Button node
