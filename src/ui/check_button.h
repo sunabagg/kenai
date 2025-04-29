@@ -56,13 +56,11 @@ namespace sunaba::ui {
             // Constructor with Node* parameter
             CheckButton(CheckButtonNode* p_node) {
                 setCheckButton(p_node);
-                onInit();
             }
 
             // Constructor with no parameters
             CheckButton() {
                 setCheckButton(memnew(CheckButtonProxy));
-                onInit();
             }
 
             // Getter for the CheckButton node
