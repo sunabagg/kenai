@@ -59,6 +59,7 @@ namespace sunaba::ui {
             // Constructor with Node* parameter
             CheckBox(CheckBoxNode* p_node) {
                 setCheckBox(p_node);
+                onInit();
             }
 
             // Constructor with no parameters
