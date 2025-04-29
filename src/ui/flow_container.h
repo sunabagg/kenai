@@ -93,6 +93,14 @@ namespace sunaba::ui {
                 connectContainerSignals();
                 setContainer(container);
             }
+
+            int getAlignment() {
+                return flowContainer->get_alignment();
+            }
+
+            void setAlignment(int alignment) {
+                flowContainer->set_alignment(static_cast<godot::FlowContainer::AlignmentMode>(alignment));
+            }
     };
 }
 
