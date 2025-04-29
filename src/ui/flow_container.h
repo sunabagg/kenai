@@ -125,6 +125,10 @@ namespace sunaba::ui {
             void setVertical(bool vertical) {
                 flowContainer->set_vertical(vertical);
             }
+
+            int getLineCount() {
+                return flowContainer->get_line_count();
+            }
     };
 }
 
