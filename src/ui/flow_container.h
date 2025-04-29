@@ -117,6 +117,14 @@ namespace sunaba::ui {
             void setReverseFill(bool reverse_fill) {
                 flowContainer->set_reverse_fill(reverse_fill);
             }
+
+            bool getVertical() {
+                return flowContainer->is_vertical();
+            }
+
+            void setVertical(bool vertical) {
+                flowContainer->set_vertical(vertical);
+            }
     };
 }
 
