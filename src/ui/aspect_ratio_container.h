@@ -78,7 +78,6 @@ namespace sunaba::ui {
 
             AspectRatioContainer(AspectRatioContainerNode* container) {
                 setARContainer(container);
-                onInit();
             }
 
             AspectRatioContainerNode* getContainer() {
