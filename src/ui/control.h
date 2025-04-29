@@ -186,10 +186,12 @@ namespace sunaba::ui {
             // Constructor with Node* parameter
             Control(ControlNode* p_node) {
                 setControl(p_node);
+                onInit();
             }
 
             Control(ControlProxy* p_node) {
                 setControl(p_node);
+                onInit();
             }
         
             // Constructor with no parameters
