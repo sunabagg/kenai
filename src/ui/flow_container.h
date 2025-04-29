@@ -101,6 +101,14 @@ namespace sunaba::ui {
             void setAlignment(int alignment) {
                 flowContainer->set_alignment(static_cast<godot::FlowContainer::AlignmentMode>(alignment));
             }
+
+            int getLastWrapAlignment() {
+                return flowContainer->get_last_wrap_alignment();
+            }
+
+            void setLastWrapAlignment(int alignment) {
+                flowContainer->set_last_wrap_alignment(static_cast<godot::FlowContainer::LastWrapAlignmentMode>(alignment));
+            }
     };
 }
 
