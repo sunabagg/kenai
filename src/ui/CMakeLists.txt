@@ -31,6 +31,8 @@ target_sources(${PROJECT_NAME} PRIVATE
         box_container.cpp
         center_container.h
         center_container.cpp
+        flow_container.h
+        flow_container.cpp
         bind_ui_classes.h
         bind_ui_classes.cpp
 )
