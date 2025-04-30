@@ -170,6 +170,14 @@ namespace sunaba::ui {
             void setItemCount(int count) {
                 item_list->set_item_count(count);
             }
+
+            int getMaxColumns() {
+                return item_list->get_max_columns();
+            }
+
+            void setMaxColumns(int columns) {
+                item_list->set_max_columns(columns);
+            }
     };
 }
 
