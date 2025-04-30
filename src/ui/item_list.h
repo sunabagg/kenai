@@ -194,6 +194,14 @@ namespace sunaba::ui {
             void setSameColumnWidth(bool enable) {
                 item_list->set_same_column_width(enable);
             }
+
+            int getSelectMode() {
+                return item_list->get_select_mode();
+            }
+
+            void setSelectMode(int mode) {
+                item_list->set_select_mode(static_cast<godot::ItemList::SelectMode>(mode));
+            }
     };
 }
 
