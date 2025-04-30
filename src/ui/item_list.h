@@ -130,6 +130,14 @@ namespace sunaba::ui {
             void setFixedColumnWidth(int width) {
                 item_list->set_fixed_column_width(width);
             }
+
+            Vector2i getFixedIconSize() {
+                return item_list->get_fixed_icon_size();
+            }
+
+            void setFixedIconSize(Vector2i size) {
+                item_list->set_fixed_icon_size(size);
+            }
     };
 }
 
