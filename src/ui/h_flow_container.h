@@ -7,7 +7,7 @@
 
 #define HFlowContainerNode godot::HFlowContainer
 
-#include "container.h"
+#include "flow_container.h"
 
 using namespace godot;
 using namespace sunaba::core;
@@ -58,7 +58,7 @@ namespace sunaba::ui {
             PackedInt32Array _get_allowed_size_flags_vertical() const override;
         };
 
-    class HFlowContainer : public Container {
+    class HFlowContainer : public FlowContainer {
         private:
             HFlowContainerNode* hflow_container = nullptr; // Pointer to the HFlowContainer instance
 
