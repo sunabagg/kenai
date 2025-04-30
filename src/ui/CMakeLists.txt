@@ -37,6 +37,7 @@ target_sources(${PROJECT_NAME} PRIVATE
         bind_ui_classes.cpp
         grid_container.h
         grid_container.cpp
+        h_box_container.h
 )
 
 target_include_directories( ${PROJECT_NAME}
