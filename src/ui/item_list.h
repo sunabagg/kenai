@@ -178,6 +178,14 @@ namespace sunaba::ui {
             void setMaxColumns(int columns) {
                 item_list->set_max_columns(columns);
             }
+
+            int getMaxTextLines() {
+                return item_list->get_max_text_lines();
+            }
+
+            void setMaxTextLines(int lines) {
+                item_list->set_max_text_lines(lines);
+            }
     };
 }
 
