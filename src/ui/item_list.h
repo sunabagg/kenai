@@ -262,6 +262,14 @@ namespace sunaba::ui {
                 Ref<godot::Texture2D> textureRef = Ref<godot::Texture2D>(texture->getTexture());
                 return item_list->add_icon_item(textureRef, selectable);
             }
+
+            int addItem(std::string text, sunaba::core::Texture2D* icon = nullptr, bool selectable = true) {
+                Ref<godot::Texture2D> textureRef;
+                if (icon != nullptr) {
+                    textureRef = Ref<godot::Texture2D>(icon->getTexture());
+                }
+                return item_list->add_item(text.c_str(), textureRef, selectable);
+            }
     };
 }
 
