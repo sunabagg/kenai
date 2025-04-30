@@ -74,6 +74,14 @@ namespace sunaba::ui {
                 connectItemListSignals();
                 setControl(item_list);
             }
+
+            bool getAllowReselect() {
+                return item_list->get_allow_reselect();
+            }
+
+            void setAllowReselect(bool allow) {
+                item_list->set_allow_reselect(allow);
+            }
     };
 }
 
