@@ -162,6 +162,14 @@ namespace sunaba::ui {
             void setIconScale(float scale) {
                 item_list->set_icon_scale(scale);
             }
+
+            int getItemCount() {
+                return item_list->get_item_count();
+            }
+
+            void setItemCount(int count) {
+                item_list->set_item_count(count);
+            }
     };
 }
 
