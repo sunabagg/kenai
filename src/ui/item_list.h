@@ -221,7 +221,7 @@ namespace sunaba::ui {
                 item_list->set_wraparound_items(enable);
             }
 
-            
+            Event* emptyClickedEvent;
     };
 }
 
