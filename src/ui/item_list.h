@@ -8,6 +8,8 @@
 #define ItemListNode godot::ItemList
 
 #include "control.h"
+#include "../core/stl_function_wrapper.h"
+#include "../core/event.h"
 
 using namespace godot;
 using namespace sunaba::core;
@@ -218,6 +220,8 @@ namespace sunaba::ui {
             void setWraparoundItems(bool enable) {
                 item_list->set_wraparound_items(enable);
             }
+
+            
     };
 }
 
