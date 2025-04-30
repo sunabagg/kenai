@@ -242,6 +242,7 @@ namespace sunaba::ui {
             void setItemClickedEvent(Event* event) {
                 itemClickedEvent = event;
             }
+            Event* itemSelectedEvent;
     };
 }
 
