@@ -98,6 +98,14 @@ namespace sunaba::ui {
             void setAllowSearch(bool allow) {
                 item_list->set_allow_search(allow);
             }
+
+            bool getAutoHeight() {
+                return item_list->has_auto_height();
+            }
+
+            void setAutoHeight(bool enable) {
+                item_list->set_auto_height(enable);
+            }
     };
 }
 
