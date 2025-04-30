@@ -154,6 +154,14 @@ namespace sunaba::ui {
             void setIconMode(int mode) {
                 item_list->set_icon_mode(static_cast<godot::ItemList::IconMode>(mode));
             }
+
+            float getIconScale() {
+                return item_list->get_icon_scale();
+            }
+
+            void setIconScale(float scale) {
+                item_list->set_icon_scale(scale);
+            }
     };
 }
 
