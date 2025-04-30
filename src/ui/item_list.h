@@ -250,6 +250,12 @@ namespace sunaba::ui {
                 itemSelectedEvent = event;
             }
             Event* multiSelectedEvent;
+            Event* getMultiSelectedEvent() {
+                return multiSelectedEvent;
+            }
+            void setMultiSelectedEvent(Event* event) {
+                multiSelectedEvent = event;
+            }
     };
 }
 
