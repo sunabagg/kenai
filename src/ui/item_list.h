@@ -138,6 +138,14 @@ namespace sunaba::ui {
             void setFixedIconSize(Vector2i size) {
                 item_list->set_fixed_icon_size(size);
             }
+
+            int getFocusMode() {
+                return item_list->get_focus_mode();
+            }
+
+            void setFocusMode(int mode) {
+                item_list->set_focus_mode(static_cast<godot::Control::FocusMode>(mode));
+            }
     };
 }
 
