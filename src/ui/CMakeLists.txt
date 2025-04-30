@@ -35,6 +35,7 @@ target_sources(${PROJECT_NAME} PRIVATE
         flow_container.cpp
         bind_ui_classes.h
         bind_ui_classes.cpp
+        grid_container.h
 )
 
 target_include_directories( ${PROJECT_NAME}
