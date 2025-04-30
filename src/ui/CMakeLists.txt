@@ -38,6 +38,7 @@ target_sources(${PROJECT_NAME} PRIVATE
         grid_container.h
         grid_container.cpp
         h_box_container.h
+        h_box_container.cpp
 )
 
 target_include_directories( ${PROJECT_NAME}
