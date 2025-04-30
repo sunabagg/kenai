@@ -82,6 +82,14 @@ namespace sunaba::ui {
             void setAllowReselect(bool allow) {
                 item_list->set_allow_reselect(allow);
             }
+
+            bool getAllowRmbSelect() {
+                return item_list->get_allow_rmb_select();
+            }
+
+            void setAllowRmbSelect(bool allow) {
+                item_list->set_allow_rmb_select(allow);
+            }
     };
 }
 
