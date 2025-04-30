@@ -7,7 +7,7 @@
 
 #define HBoxContainerNode godot::HBoxContainer
 
-#include "container.h"
+#include "box_container.h"
 
 using namespace godot;
 using namespace sunaba::core;
@@ -51,7 +51,7 @@ namespace sunaba::ui {
             PackedInt32Array _get_allowed_size_flags_vertical() const override;
     };
 
-    class HBoxContainer : public Container {
+    class HBoxContainer : public BoxContainer {
         private:
             HBoxContainerNode* hbox_container = nullptr; // Pointer to the HBoxContainer instance
 
