@@ -132,7 +132,7 @@ namespace sunaba::ui {
     void bindHFlowContainer(sol::state& lua) {
         lua.new_usertype<HFlowContainer>("HFlowContainer",
             sol::constructors<HFlowContainer()>(),
-            sol::base_classes, sol::bases<BaseObject, Element, sunaba::core::CanvasItem, Control, Container>(),
+            sol::base_classes, sol::bases<BaseObject, Element, sunaba::core::CanvasItem, Control, Container, FlowContainer>(),
             "cast", [](Element* element) {
                 HFlowContainerNode* node = Object::cast_to<HFlowContainerNode>(element->getNode());
                 if (node != nullptr) {
