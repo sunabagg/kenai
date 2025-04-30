@@ -106,6 +106,14 @@ namespace sunaba::ui {
             void setAutoHeight(bool enable) {
                 item_list->set_auto_height(enable);
             }
+
+            bool getAutoWidth() {
+                return item_list->has_auto_width();
+            }
+
+            void setAutoWidth(bool enable) {
+                item_list->set_auto_width(enable);
+            }
     };
 }
 
