@@ -229,6 +229,12 @@ namespace sunaba::ui {
                 emptyClickedEvent = event;
             }
             Event* itemActivatedEvent;
+            Event* getItemActivatedEvent() {
+                return itemActivatedEvent;
+            }
+            void setItemActivatedEvent(Event* event) {
+                itemActivatedEvent = event;
+            }
     };
 }
 
