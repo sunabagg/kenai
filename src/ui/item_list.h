@@ -122,6 +122,14 @@ namespace sunaba::ui {
             void setClipContents(bool enable) {
                 item_list->set_clip_contents(enable);
             }
+
+            int getFixedColumnWidth() {
+                return item_list->get_fixed_column_width();
+            }
+
+            void setFixedColumnWidth(int width) {
+                item_list->set_fixed_column_width(width);
+            }
     };
 }
 
