@@ -132,7 +132,7 @@ namespace sunaba::ui {
     void bindHBoxContainer(sol::state &lua) {
         lua.new_usertype<HBoxContainer>("HBoxContainer",
             sol::constructors<HBoxContainer()>(),
-            sol::base_classes, sol::bases<BaseObject, Element, sunaba::core::CanvasItem, Control, Container>(),
+            sol::base_classes, sol::bases<BaseObject, Element, sunaba::core::CanvasItem, Control, Container, BoxContainer>(),
             "cast", [](Element* element) {
                 HBoxContainerNode* node = Object::cast_to<HBoxContainerNode>(element->getNode());
                 if (node != nullptr) {
