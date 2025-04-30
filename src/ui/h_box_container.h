@@ -77,14 +77,14 @@ namespace sunaba::ui {
             void setHBoxContainer(HBoxContainerNode* container) {
                 hbox_container = container;
                 connectHBoxContainerSignals();
-                setContainer(container);
+                setBoxContainer(container);
             }
                 
             void setHBoxContainer(HBoxContainerProxy* container) {
                 hbox_container = container;
                 container->element = this;
                 connectHBoxContainerSignals();
-                setContainer(container);
+                setBoxContainer(container);
             }
     };
 }
