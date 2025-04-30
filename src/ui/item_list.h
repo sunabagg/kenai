@@ -146,6 +146,14 @@ namespace sunaba::ui {
             void setFocusMode(int mode) {
                 item_list->set_focus_mode(static_cast<godot::Control::FocusMode>(mode));
             }
+
+            int getIconMode() {
+                return item_list->get_icon_mode();
+            }
+
+            void setIconMode(int mode) {
+                item_list->set_icon_mode(static_cast<godot::ItemList::IconMode>(mode));
+            }
     };
 }
 
