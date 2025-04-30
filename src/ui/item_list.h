@@ -114,6 +114,14 @@ namespace sunaba::ui {
             void setAutoWidth(bool enable) {
                 item_list->set_auto_width(enable);
             }
+
+            bool getClipContents() {
+                return item_list->is_clipping_contents();
+            }
+
+            void setClipContents(bool enable) {
+                item_list->set_clip_contents(enable);
+            }
     };
 }
 
