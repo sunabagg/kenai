@@ -87,14 +87,14 @@ namespace sunaba::ui {
             void setHFlowContainer(HFlowContainerNode* container) {
                 this->hflow_container = container;
                 connectHFlowContainerSignals();
-                setContainer(container);
+                setFlowContainer(container);
             }
 
             void setHFlowContainer(HFlowContainerProxy* container) {
                 this->hflow_container = container;
                 container->element = this;
                 connectHFlowContainerSignals();
-                setContainer(container);
+                setFlowContainer(container);
             }
     };
 }
