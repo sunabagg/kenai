@@ -210,6 +210,14 @@ namespace sunaba::ui {
             void setTextOverrunBehavior(int behavior) {
                 item_list->set_text_overrun_behavior(static_cast<godot::TextServer::OverrunBehavior>(behavior));
             }
+
+            bool getWraparoundItems() {
+                return item_list->has_wraparound_items();
+            }
+
+            void setWraparoundItems(bool enable) {
+                item_list->set_wraparound_items(enable);
+            }
     };
 }
 
