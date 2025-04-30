@@ -186,6 +186,14 @@ namespace sunaba::ui {
             void setMaxTextLines(int lines) {
                 item_list->set_max_text_lines(lines);
             }
+
+            bool getSameColumnWidth() {
+                return item_list->is_same_column_width();
+            }
+
+            void setSameColumnWidth(bool enable) {
+                item_list->set_same_column_width(enable);
+            }
     };
 }
 
