@@ -92,6 +92,14 @@ namespace sunaba::ui {
                 connectGridContainerSignals();
                 setControl(grid_container);
             }
+
+            int getColumns() {
+                return grid_container->get_columns();
+            }
+
+            void setColumns(int columns) {
+                grid_container->set_columns(columns);
+            }
     };
 }
 
