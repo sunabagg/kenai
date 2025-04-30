@@ -202,6 +202,14 @@ namespace sunaba::ui {
             void setSelectMode(int mode) {
                 item_list->set_select_mode(static_cast<godot::ItemList::SelectMode>(mode));
             }
+
+            int getTextOverrunBehavior() {
+                return item_list->get_text_overrun_behavior();
+            }
+
+            void setTextOverrunBehavior(int behavior) {
+                item_list->set_text_overrun_behavior(static_cast<godot::TextServer::OverrunBehavior>(behavior));
+            }
     };
 }
 
