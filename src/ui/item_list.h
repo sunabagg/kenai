@@ -10,6 +10,7 @@
 #include "control.h"
 #include "../core/stl_function_wrapper.h"
 #include "../core/event.h"
+#include "../core/texture2d.h"
 
 using namespace godot;
 using namespace sunaba::core;
@@ -255,6 +256,11 @@ namespace sunaba::ui {
             }
             void setMultiSelectedEvent(Event* event) {
                 multiSelectedEvent = event;
+            }
+
+            int addIconItem(sunaba::core::Texture2D* texture, bool selectable = true) {
+                Ref<godot::Texture2D> textureRef = Ref<godot::Texture2D>(texture->getTexture());
+                return item_list->add_icon_item(textureRef, selectable);
             }
     };
 }
