@@ -90,6 +90,14 @@ namespace sunaba::ui {
             void setAllowRmbSelect(bool allow) {
                 item_list->set_allow_rmb_select(allow);
             }
+
+            bool getAllowSearch() {
+                return item_list->get_allow_search();
+            }
+
+            void setAllowSearch(bool allow) {
+                item_list->set_allow_search(allow);
+            }
     };
 }
 
