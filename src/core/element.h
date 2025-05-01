@@ -318,7 +318,6 @@ namespace sunaba::core {
                 node->queue_free();
                 node = nullptr;
             }
-            children.clear();
         }
 
         bool isNull() {
