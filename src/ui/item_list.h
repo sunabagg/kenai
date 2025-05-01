@@ -449,6 +449,10 @@ namespace sunaba::ui {
             void setItemTooltip(int index, std::string tooltip) {
                 item_list->set_item_tooltip(index, tooltip.c_str());
             }
+
+            void setItemTooltipEnabled(int index, bool enable) {
+                item_list->set_item_tooltip_enabled(index, enable);
+            }
     };
 }
 
