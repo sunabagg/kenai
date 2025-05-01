@@ -128,15 +128,6 @@ namespace sunaba::core {
             Callable treeExitingCallable = StlFunctionWrapper::create_callable_from_cpp_function(treeExitingFunc);
             this->node->connect("tree_exiting", treeExitingCallable);
         }
-        
-    protected:
-        void setParent(Element* p_parent) {
-            parent = p_parent;
-            if (node != nullptr && p_parent != nullptr && p_parent->getNode() != nullptr) {
-                // Add this node as a child of the parent node
-                node->add_child(p_parent->getNode());
-            }
-        }
     public:
         sol::table scriptInstance = sol::lua_nil;
 
