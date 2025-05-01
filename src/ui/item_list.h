@@ -327,6 +327,10 @@ namespace sunaba::ui {
             std::string getItemLanguage(int index) {
                 return item_list->get_item_language(index).utf8().get_data();
             }
+
+            Variant getItemMetadata(int index) {
+                return item_list->get_item_metadata(index);
+            }
     };
 }
 
