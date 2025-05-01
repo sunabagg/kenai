@@ -278,6 +278,10 @@ namespace sunaba::ui {
             void deselect(int index) {
                 item_list->deselect(index);
             }
+
+            void deselectAll() {
+                item_list->deselect_all();
+            }
     };
 }
 
