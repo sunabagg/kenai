@@ -298,6 +298,10 @@ namespace sunaba::ui {
             int getItemAtPosition(Vector2 position, bool exact = false) {
                 return item_list->get_item_at_position(position, exact);
             }
+
+            int getItemAutoTranslateMode(int index) {
+                return item_list->get_item_auto_translate_mode(index);
+            }
     };
 }
 
