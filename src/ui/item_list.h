@@ -294,7 +294,10 @@ namespace sunaba::ui {
             //HScrollBar* getHScrollBar() {
             //    return new HScrollBar(item_list->get_h_scroll_bar());
             //}
-            
+
+            int getItemAtPosition(Vector2 position, bool exact = false) {
+                return item_list->get_item_at_position(position, exact);
+            }
     };
 }
 
