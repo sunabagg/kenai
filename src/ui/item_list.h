@@ -282,6 +282,10 @@ namespace sunaba::ui {
             void deselectAll() {
                 item_list->deselect_all();
             }
+
+            void ensureCurrentIsVisible() {
+                item_list->ensure_current_is_visible();
+            }
     };
 }
 
