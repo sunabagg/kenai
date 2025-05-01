@@ -417,6 +417,10 @@ namespace sunaba::ui {
             void setItemIconModulate(int index, Color color) {
                 item_list->set_item_icon_modulate(index, color);
             }
+
+            void setItemIconRegion(int index, Rect2 rect) {
+                item_list->set_item_icon_region(index, rect);
+            }
     };
 }
 
