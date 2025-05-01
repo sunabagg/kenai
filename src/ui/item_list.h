@@ -453,6 +453,10 @@ namespace sunaba::ui {
             void setItemTooltipEnabled(int index, bool enable) {
                 item_list->set_item_tooltip_enabled(index, enable);
             }
+
+            void sortItemsByText() {
+                item_list->sort_items_by_text();
+            }
     };
 }
 
