@@ -384,6 +384,10 @@ namespace sunaba::ui {
             void moveItem(int fromIndex, int toIndex) {
                 item_list->move_item(fromIndex, toIndex);
             }
+
+            void removeItem(int index) {
+                item_list->remove_item(index);
+            }
     };
 }
 
