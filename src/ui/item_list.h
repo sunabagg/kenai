@@ -335,6 +335,10 @@ namespace sunaba::ui {
             std::string getItemText(int index) {
                 return item_list->get_item_text(index).utf8().get_data();
             }
+
+            int getItemTextDirection(int index) {
+                return item_list->get_item_text_direction(index);
+            }
     };
 }
 
