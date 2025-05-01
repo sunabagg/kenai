@@ -323,6 +323,10 @@ namespace sunaba::ui {
             Rect2 getItemIconRegion(int index) {
                 return item_list->get_item_icon_region(index);
             }
+
+            std::string getItemLanguage(int index) {
+                return item_list->get_item_language(index).utf8().get_data();
+            }
     };
 }
 
