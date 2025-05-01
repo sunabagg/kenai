@@ -343,6 +343,15 @@ namespace sunaba::ui {
             std::string getItemTooltip(int index) {
                 return item_list->get_item_tooltip(index).utf8().get_data();
             }
+
+            std::vector<int> getSelectedItems() {
+                PackedInt32Array selectedItems = item_list->get_selected_items();
+                std::vector<int> result;
+                for (int i = 0; i < selectedItems.size(); i++) {
+                    result.push_back(selectedItems[i]);
+                }
+                return result;
+            }
     };
 }
 
