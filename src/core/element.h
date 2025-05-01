@@ -237,26 +237,6 @@ namespace sunaba::core {
             }
         }
 
-        Element* findE(PackedStringArray & p_array, int p_index) {
-            if (p_index >= 0 && p_index < p_array.size()) {
-                String name = p_array[p_index];
-                for (Element* child : children) {
-                    if (child != nullptr) {
-                        if (child->getName().c_str() == name) {
-                            return child;
-                        } else {
-                            Element* found = child->findE(p_array, p_index + 1);
-                            if (found != nullptr) {
-                                return found;
-                            }
-                        }
-                    }
-                    
-                }
-            }
-            return nullptr;
-        }
-        
         Element* find(const std::string& name) {
             NodePath path = NodePath(name.c_str());
             auto node = getNode()->get_node<Node>(path);
