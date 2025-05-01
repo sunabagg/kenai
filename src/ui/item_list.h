@@ -53,6 +53,17 @@ namespace sunaba::ui {
             void connectItemListSignals() {
                 // Connect signals from the item list to the element
                 // Example: item_list->connect("signal_name", this, "method_name");
+                std::function<Variant(std::vector<Variant>)> emptyClickedFunc = 
+                [this](std::vector<Variant> args) {
+                    Array argsArray;
+                    argsArray.append(args[0]);
+                    if (this->emptyClickedEvent != nullptr) {
+                        this->emptyClickedEvent->emit(argsArray);
+                    }
+                    return Variant();
+                };
+                Callable emptyClickedCallable = StlFunctionWrapper::create_callable_from_cpp_function(emptyClickedFunc);
+                this->item_list->connect("empty_clicked", emptyClickedCallable);
             }
 
         public:
