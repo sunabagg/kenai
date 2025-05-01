@@ -425,6 +425,10 @@ namespace sunaba::ui {
             void setItemIconTransposed(int index, bool transposed) {
                 item_list->set_item_icon_transposed(index, transposed);
             }
+
+            void setItemLanguage(int index, std::string language) {
+                item_list->set_item_language(index, language.c_str());
+            }
     };
 }
 
