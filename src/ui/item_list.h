@@ -274,6 +274,10 @@ namespace sunaba::ui {
             void clear() {
                 item_list->clear();
             }
+
+            void deselect(int index) {
+                item_list->deselect(index);
+            }
     };
 }
 
