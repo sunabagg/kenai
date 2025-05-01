@@ -360,6 +360,10 @@ namespace sunaba::ui {
             bool isAnythingSelected() {
                 return item_list->is_anything_selected();
             }
+
+            bool isItemDisabled(int index) {
+                return item_list->is_item_disabled(index);
+            }
     };
 }
 
