@@ -310,6 +310,11 @@ namespace sunaba::ui {
             Color getItemCustomFgColor(int index) {
                 return item_list->get_item_custom_fg_color(index);
             }
+
+            sunaba::core::Texture2D* getItemIcon(int index) {
+                Ref<godot::Texture2D> textureRef = item_list->get_item_icon(index);
+                return new sunaba::core::Texture2D(textureRef.ptr());
+            }
     };
 }
 
