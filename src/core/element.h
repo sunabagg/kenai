@@ -304,10 +304,13 @@ namespace sunaba::core {
         }
 
         std::vector<Element*> getChildren() {
+            auto childrenNodes = node->get_children();
             std::vector<Element*> result;
-            for (Element* child : children) {
-                if (child != nullptr) {
-                    result.push_back(child);
+            for (int i = 0; i < childrenNodes.size(); ++i) {
+                Node* childNode = Object::cast_to<Node>(childrenNodes[i].operator Object*());
+                if (childNode != nullptr) {
+                    Element* childElement = new Element(childNode);
+                    result.push_back(childElement);
                 }
             }
             return result;
