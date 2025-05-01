@@ -445,6 +445,10 @@ namespace sunaba::ui {
             void setItemTextDirection(int index, int direction) {
                 item_list->set_item_text_direction(index, static_cast<godot::Control::TextDirection>(direction));
             }
+
+            void setItemTooltip(int index, std::string tooltip) {
+                item_list->set_item_tooltip(index, tooltip.c_str());
+            }
     };
 }
 
