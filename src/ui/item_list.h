@@ -404,6 +404,10 @@ namespace sunaba::ui {
                 return item_list->get_item_metadata(index);
             }
 
+            Rect2 getItemRect(int index) {
+                return item_list->get_item_rect(index);
+            }
+
             std::string getItemText(int index) {
                 return item_list->get_item_text(index).utf8().get_data();
             }
