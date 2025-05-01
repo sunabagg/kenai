@@ -271,28 +271,20 @@ namespace sunaba::core {
         }
         
         Element* find(const std::string& name) {
-            String name_str = String(name.c_str());
-            PackedStringArray name_array = name_str.split("/");
-            return findE(name_array, 0);
-        }
-
-        template<typename T>
-        T* findT(const std::string& name) {
-            Element* found = find(name);
-            if (found != nullptr) {
-                return static_cast<T*>(found);
+            NodePath path = NodePath(name.c_str());
+            auto node = getNode()->get_node<Node>(path);
+            if (node != nullptr) {
+                return new Element(node);
             }
             return nullptr;
         }
 
         Element* getParent() {
-            return parent;
+            return new Element(getNode()->get_parent());
         }
 
         void addChild(Element* child) {
             if (child != nullptr) {
-                children.push_back(child);
-                child->setParent(this);
                 if (node != nullptr) {
                     node->add_child(child->getNode());
                 }
@@ -306,13 +298,8 @@ namespace sunaba::core {
         }
 
         void removeChild(Element* child) {
-            auto it = std::find(children.begin(), children.end(), child);
-            if (it != children.end()) {
-                children.erase(it);
-                child->setParent(nullptr);
-                if (node != nullptr) {
-                    node->remove_child(child->getNode());
-                }
+            if (node != nullptr) {
+                node->remove_child(child->getNode());
             }
         }
 
