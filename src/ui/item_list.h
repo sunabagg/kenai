@@ -388,6 +388,10 @@ namespace sunaba::ui {
             void removeItem(int index) {
                 item_list->remove_item(index);
             }
+
+            void select(int index, bool single = true) {
+                item_list->select(index, single);
+            }
     };
 }
 
