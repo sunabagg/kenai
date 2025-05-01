@@ -306,6 +306,10 @@ namespace sunaba::ui {
             Color getItemCustomBgColor(int index) {
                 return item_list->get_item_custom_bg_color(index);
             }
+
+            Color getItemCustomFgColor(int index) {
+                return item_list->get_item_custom_fg_color(index);
+            }
     };
 }
 
