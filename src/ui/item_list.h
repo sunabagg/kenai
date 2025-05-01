@@ -408,6 +408,11 @@ namespace sunaba::ui {
             void setItemDisabled(int index, bool disabled) {
                 item_list->set_item_disabled(index, disabled);
             }
+
+            void setItemIcon(int index, sunaba::core::Texture2D* texture) {
+                Ref<godot::Texture2D> textureRef = Ref<godot::Texture2D>(texture->getTexture());
+                item_list->set_item_icon(index, textureRef);
+            }
     };
 }
 
