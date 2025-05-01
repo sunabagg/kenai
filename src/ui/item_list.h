@@ -400,6 +400,10 @@ namespace sunaba::ui {
             void setItemCustomBgColor(int index, Color color) {
                 item_list->set_item_custom_bg_color(index, color);
             }
+
+            void setItemCustomFgColor(int index, Color color) {
+                item_list->set_item_custom_fg_color(index, color);
+            }
     };
 }
 
