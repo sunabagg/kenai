@@ -302,6 +302,10 @@ namespace sunaba::ui {
             int getItemAutoTranslateMode(int index) {
                 return item_list->get_item_auto_translate_mode(index);
             }
+
+            Color getItemCustomBgColor(int index) {
+                return item_list->get_item_custom_bg_color(index);
+            }
     };
 }
 
