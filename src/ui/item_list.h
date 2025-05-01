@@ -421,6 +421,10 @@ namespace sunaba::ui {
             void setItemIconRegion(int index, Rect2 rect) {
                 item_list->set_item_icon_region(index, rect);
             }
+
+            void setItemIconTransposed(int index, bool transposed) {
+                item_list->set_item_icon_transposed(index, transposed);
+            }
     };
 }
 
