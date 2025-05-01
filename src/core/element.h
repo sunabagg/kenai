@@ -36,10 +36,6 @@ namespace sunaba::core {
     class Element : public BaseObject {    
     private:
         Node* node = nullptr; // Pointer to the Node instance
-
-        std::vector<Element*> children; // List of child elements
-        Element* parent = nullptr; // Pointer to the parent element
-
         void connectElementSignals() {
             std::function<Variant(std::vector<Variant>)> childEntertedTreeFunc = 
             [this](std::vector<Variant> args) {
