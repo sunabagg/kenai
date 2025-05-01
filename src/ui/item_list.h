@@ -319,6 +319,10 @@ namespace sunaba::ui {
             Color getItemIconModulate(int index) {
                 return item_list->get_item_icon_modulate(index);
             }
+
+            Rect2 getItemIconRegion(int index) {
+                return item_list->get_item_icon_region(index);
+            }
     };
 }
 
