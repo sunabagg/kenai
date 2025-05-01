@@ -95,6 +95,12 @@ namespace sunaba::ui {
         return String();
     }
 
+    void FlowContainerProxy::_gui_input(const Ref<InputEvent>& event) {
+        if (element != nullptr) {
+            element->guiInput(event);
+        }
+    }
+
     bool FlowContainerProxy::_has_point(const Vector2 &point) const {
         if (element != nullptr) {
             return element->hasPoint(point);
