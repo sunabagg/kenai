@@ -364,6 +364,10 @@ namespace sunaba::ui {
             bool isItemDisabled(int index) {
                 return item_list->is_item_disabled(index);
             }
+
+            bool isItemIconTransposed(int index) {
+                return item_list->is_item_icon_transposed(index);
+            }
     };
 }
 
