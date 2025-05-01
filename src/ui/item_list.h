@@ -100,7 +100,18 @@ namespace sunaba::ui {
                 };
                 Callable itemSelectedCallable = StlFunctionWrapper::create_callable_from_cpp_function(itemSelectedFunc);
                 this->item_list->connect("item_selected", itemSelectedCallable);
-                
+
+                std::function<Variant(std::vector<Variant>)> multiSelectedFunc =
+                [this](std::vector<Variant> args) {
+                    Array argsArray;
+                    argsArray.append(args[0]);
+                    if (this->multiSelectedEvent != nullptr) {
+                        this->multiSelectedEvent->emit(argsArray);
+                    }
+                    return Variant();
+                };
+                Callable multiSelectedCallable = StlFunctionWrapper::create_callable_from_cpp_function(multiSelectedFunc);
+                this->item_list->connect("multi_selected", multiSelectedCallable);
             }
 
         public:
