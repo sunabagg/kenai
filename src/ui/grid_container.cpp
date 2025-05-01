@@ -95,6 +95,12 @@ namespace sunaba::ui {
         return String();
     }
 
+    void GridContainerProxy::_gui_input(const Ref<InputEvent>& event) {
+        if (element != nullptr) {
+            element->guiInput(event);
+        }
+    }
+
     bool GridContainerProxy::_has_point(const Vector2 &point) const {
         if (element != nullptr) {
             return element->hasPoint(point);
