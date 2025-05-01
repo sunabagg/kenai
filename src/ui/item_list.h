@@ -376,6 +376,10 @@ namespace sunaba::ui {
             bool isItemTooltipEnabled(int index) {
                 return item_list->is_item_tooltip_enabled(index);
             }
+
+            bool isSelected(int index) {
+                return item_list->is_selected(index);
+            }
     };
 }
 
