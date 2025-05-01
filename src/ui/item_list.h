@@ -429,6 +429,10 @@ namespace sunaba::ui {
             void setItemLanguage(int index, std::string language) {
                 item_list->set_item_language(index, language.c_str());
             }
+
+            void setItemMetadata(int index, Variant metadata) {
+                item_list->set_item_metadata(index, metadata);
+            }
     };
 }
 
