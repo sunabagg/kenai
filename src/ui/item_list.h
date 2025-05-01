@@ -290,6 +290,11 @@ namespace sunaba::ui {
             void forceUpdateListSize() {
                 item_list->force_update_list_size();
             }
+
+            //HScrollBar* getHScrollBar() {
+            //    return new HScrollBar(item_list->get_h_scroll_bar());
+            //}
+            
     };
 }
 
