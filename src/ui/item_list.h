@@ -380,6 +380,10 @@ namespace sunaba::ui {
             bool isSelected(int index) {
                 return item_list->is_selected(index);
             }
+
+            void moveItem(int fromIndex, int toIndex) {
+                item_list->move_item(fromIndex, toIndex);
+            }
     };
 }
 
