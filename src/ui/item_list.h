@@ -368,6 +368,10 @@ namespace sunaba::ui {
             bool isItemIconTransposed(int index) {
                 return item_list->is_item_icon_transposed(index);
             }
+
+            bool isItemSelectable(int index) {
+                return item_list->is_item_selectable(index);
+            }
     };
 }
 
