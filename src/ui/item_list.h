@@ -270,6 +270,10 @@ namespace sunaba::ui {
                 }
                 return item_list->add_item(text.c_str(), textureRef, selectable);
             }
+
+            void clear() {
+                item_list->clear();
+            }
     };
 }
 
