@@ -351,15 +351,6 @@ namespace sunaba::core {
                 node->queue_free();
                 node = nullptr;
             }
-            if (parent != nullptr) {
-                parent->removeChild(this);
-                parent = nullptr;
-            }
-            for (Element* child : children) {
-                if (child != nullptr) {
-                    child->onFree();
-                }
-            }
             children.clear();
         }
 
