@@ -396,6 +396,10 @@ namespace sunaba::ui {
             void setItemAutoTranslateMode(int index, int mode) {
                 item_list->set_item_auto_translate_mode(index, static_cast<godot::Node::AutoTranslateMode>(mode));
             }
+
+            void setItemCustomBgColor(int index, Color color) {
+                item_list->set_item_custom_bg_color(index, color);
+            }
     };
 }
 
