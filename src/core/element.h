@@ -259,6 +259,7 @@ namespace sunaba::core {
         }
 
         void addSibling(Element* sibling) {
+            auto parent = getParent();
             if (sibling != nullptr && parent != nullptr) {
                 parent->addChild(sibling);
             }
