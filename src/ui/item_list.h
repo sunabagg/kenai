@@ -392,6 +392,10 @@ namespace sunaba::ui {
             void select(int index, bool single = true) {
                 item_list->select(index, single);
             }
+
+            void setItemAutoTranslateMode(int index, int mode) {
+                item_list->set_item_auto_translate_mode(index, static_cast<godot::Node::AutoTranslateMode>(mode));
+            }
     };
 }
 
