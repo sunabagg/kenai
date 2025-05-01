@@ -41,6 +41,7 @@ target_sources(${PROJECT_NAME} PRIVATE
         h_box_container.cpp
         h_flow_container.h
         h_flow_container.cpp
+        item_list.h
 )
 
 target_include_directories( ${PROJECT_NAME}
