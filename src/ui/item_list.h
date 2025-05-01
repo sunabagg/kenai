@@ -437,6 +437,10 @@ namespace sunaba::ui {
             void setItemSelectable(int index, bool selectable) {
                 item_list->set_item_selectable(index, selectable);
             }
+
+            void setItemText(int index, std::string text) {
+                item_list->set_item_text(index, text.c_str());
+            }
     };
 }
 
