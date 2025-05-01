@@ -352,6 +352,10 @@ namespace sunaba::ui {
                 }
                 return result;
             }
+
+            //VScrollBar* getVScrollBar() {
+            //    return new VScrollBar(item_list->get_v_scroll_bar());
+            //}
     };
 }
 
