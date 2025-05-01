@@ -76,6 +76,18 @@ namespace sunaba::ui {
                 };
                 Callable itemActivatedCallable = StlFunctionWrapper::create_callable_from_cpp_function(itemActivatedFunc);
                 this->item_list->connect("item_activated", itemActivatedCallable);
+
+                std::function<Variant(std::vector<Variant>)> itemClickedFunc =
+                [this](std::vector<Variant> args) {
+                    Array argsArray;
+                    argsArray.append(args[0]);
+                    if (this->itemClickedEvent != nullptr) {
+                        this->itemClickedEvent->emit(argsArray);
+                    }
+                    return Variant();
+                };
+                Callable itemClickedCallable = StlFunctionWrapper::create_callable_from_cpp_function(itemClickedFunc);
+                this->item_list->connect("item_clicked", itemClickedCallable);
             }
 
         public:
