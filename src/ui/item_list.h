@@ -133,6 +133,10 @@ namespace sunaba::ui {
                 onInit();
             }
 
+            ItemList(ItemListNode* item_list) {
+                setItemList(item_list);
+            }
+
             ItemListNode* getItemList() {
                 return item_list;
             }
