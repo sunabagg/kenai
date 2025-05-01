@@ -404,6 +404,10 @@ namespace sunaba::ui {
             void setItemCustomFgColor(int index, Color color) {
                 item_list->set_item_custom_fg_color(index, color);
             }
+
+            void setItemDisabled(int index, bool disabled) {
+                item_list->set_item_disabled(index, disabled);
+            }
     };
 }
 
