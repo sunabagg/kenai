@@ -315,6 +315,10 @@ namespace sunaba::ui {
                 Ref<godot::Texture2D> textureRef = item_list->get_item_icon(index);
                 return new sunaba::core::Texture2D(textureRef.ptr());
             }
+
+            Color getItemIconModulate(int index) {
+                return item_list->get_item_icon_modulate(index);
+            }
     };
 }
 
