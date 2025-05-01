@@ -433,6 +433,10 @@ namespace sunaba::ui {
             void setItemMetadata(int index, Variant metadata) {
                 item_list->set_item_metadata(index, metadata);
             }
+
+            void setItemSelectable(int index, bool selectable) {
+                item_list->set_item_selectable(index, selectable);
+            }
     };
 }
 
