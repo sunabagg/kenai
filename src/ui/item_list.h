@@ -286,6 +286,10 @@ namespace sunaba::ui {
             void ensureCurrentIsVisible() {
                 item_list->ensure_current_is_visible();
             }
+
+            void forceUpdateListSize() {
+                item_list->force_update_list_size();
+            }
     };
 }
 
