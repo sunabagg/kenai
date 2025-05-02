@@ -140,6 +140,10 @@ namespace sunaba::ui {
             void setText(std::string text) {
                 link_button->set_text(String(text.c_str()));
             }
+            
+            int getTextDirection() {
+                return link_button->get_text_direction();
+            }
     };
 }
 
