@@ -171,6 +171,14 @@ namespace sunaba::ui {
             void setDragAndDropSelectionEnabled(bool enabled) {
                 line_edit_node->set_drag_and_drop_selection_enabled(enabled);
             }
+
+            bool getDrawControlChars() {
+                return line_edit_node->is_draw_control_chars_enabled();
+            }
+
+            void setDrawControlChars(bool enabled) {
+                line_edit_node->set_draw_control_chars(enabled);
+            }
     };
 }
 
