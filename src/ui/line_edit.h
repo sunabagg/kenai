@@ -227,6 +227,14 @@ namespace sunaba::ui {
             void setKeepEditingOnTextSubmit(bool enabled) {
                 line_edit_node->set_keep_editing_on_text_submit(enabled);
             }
+
+            std::string getLanguage() {
+                return String(line_edit_node->get_language()).utf8().get_data();
+            }
+
+            void setLanguage(std::string language) {
+                line_edit_node->set_language(String(language.c_str()));
+            }
     };
 }
 
