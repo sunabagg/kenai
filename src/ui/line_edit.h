@@ -340,6 +340,14 @@ namespace sunaba::ui {
             void setText(std::string text) {
                 line_edit_node->set_text(String(text.c_str()));
             }
+
+            int getTextDirection() {
+                return line_edit_node->get_text_direction();
+            }
+
+            void setTextDirection(int direction) {
+                line_edit_node->set_text_direction(static_cast<godot::Control::TextDirection>(direction));
+            }
     };
 }
 
