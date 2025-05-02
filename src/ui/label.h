@@ -251,6 +251,14 @@ namespace sunaba::ui {
             void setVisibleCharacters(int characters) {
                 label_node->set_visible_characters(characters);
             }
+
+            int getVisibleCharactersBehavior() {
+                return label_node->get_visible_characters_behavior();
+            }
+
+            void setVisibleCharactersBehavior(int behavior) {
+                label_node->set_visible_characters_behavior(static_cast<godot::TextServer::VisibleCharactersBehavior>(behavior));
+            }
     };
 }
 
