@@ -195,6 +195,14 @@ namespace sunaba::ui {
             void setEmojiMenuEnabled(bool enabled) {
                 line_edit_node->set_emoji_menu_enabled(enabled);
             }
+
+            bool getExpandToTextLength() {
+                return line_edit_node->is_expand_to_text_length_enabled();
+            }
+
+            void setExpandToTextLength(bool enabled) {
+                line_edit_node->set_expand_to_text_length_enabled(enabled);
+            }
     };
 }
 
