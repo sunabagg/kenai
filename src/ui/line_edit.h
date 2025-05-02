@@ -276,6 +276,14 @@ namespace sunaba::ui {
             void setRightIcon(sunaba::core::Texture2D* icon) {
                 line_edit_node->set_right_icon(Ref<godot::Texture2D>(icon->getTexture()));
             }
+
+            bool getSecret() {
+                return line_edit_node->is_secret();
+            }
+
+            void setSecret(bool enabled) {
+                line_edit_node->set_secret(enabled);
+            }
     };
 }
 
