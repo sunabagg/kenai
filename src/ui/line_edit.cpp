@@ -139,6 +139,7 @@ namespace sunaba::ui {
             "language", sol::property(&LineEdit::getLanguage, &LineEdit::setLanguage),
             "maxLength", sol::property(&LineEdit::getMaxLength, &LineEdit::setMaxLength),
             "middleMousePasteEnabled", sol::property(&LineEdit::getMiddleMousePasteEnabled, &LineEdit::setMiddleMousePasteEnabled),
+            "mouseDefaultCursorShape", sol::property(&LineEdit::getMouseDefaultCursorShape, &LineEdit::setMouseDefaultCursorShape),
         );
     }
 }
