@@ -99,6 +99,14 @@ namespace sunaba::ui {
             void setAlignment(int alignment) {
                 line_edit_node->set_horizontal_alignment(static_cast<godot::HorizontalAlignment>(alignment));
             }
+
+            bool getCaretBlink() {
+                return line_edit_node->is_caret_blink_enabled();
+            }
+
+            void setCaretBlink(bool enabled) {
+                line_edit_node->set_caret_blink_enabled(enabled);
+            }
     };
 }
 
