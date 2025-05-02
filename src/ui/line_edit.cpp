@@ -153,6 +153,7 @@ namespace sunaba::ui {
             "textDirection", sol::property(&LineEdit::getTextDirection, &LineEdit::setTextDirection),
             "virtualKeyboardEnabled", sol::property(&LineEdit::getVirtualKeyboardEnabled, &LineEdit::setVirtualKeyboardEnabled),
             "virtualKeyboardType", sol::property(&LineEdit::getVirtualKeyboardType, &LineEdit::setVirtualKeyboardType),
+            "editingToggled", sol::property(&LineEdit::getEditingToggledEvent, &LineEdit::setEditingToggledEvent),
         );
     }
 }
