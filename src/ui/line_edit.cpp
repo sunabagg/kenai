@@ -151,6 +151,7 @@ namespace sunaba::ui {
             "structuredTextBidiOverrideOptions", sol::property(&LineEdit::getStructuredTextBidiOverrideOptions, &LineEdit::setStructuredTextBidiOverrideOptions),
             "text", sol::property(&LineEdit::getText, &LineEdit::setText),
             "textDirection", sol::property(&LineEdit::getTextDirection, &LineEdit::setTextDirection),
+            "virtualKeyboardEnabled", sol::property(&LineEdit::getVirtualKeyboardEnabled, &LineEdit::setVirtualKeyboardEnabled),
         );
     }
 }
