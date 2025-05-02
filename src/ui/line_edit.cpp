@@ -178,6 +178,7 @@ namespace sunaba::ui {
             "isMenuVisible", &LineEdit::isMenuVisible,
             "menuOption", &LineEdit::menuOption,
             "select", &LineEdit::select,
+            "selectAll", &LineEdit::selectAll,
         );
     }
 }
