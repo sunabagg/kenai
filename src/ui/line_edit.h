@@ -131,6 +131,14 @@ namespace sunaba::ui {
             void setCaretForceDisplayed(bool enabled) {
                 line_edit_node->set_caret_force_displayed(enabled);
             }
+
+            bool getCaretMidGrapheme() {
+                return line_edit_node->is_caret_mid_grapheme_enabled();
+            }
+
+            void setCaretMidGrapheme(bool enabled) {
+                line_edit_node->set_caret_mid_grapheme_enabled(enabled);
+            }
     };
 }
 
