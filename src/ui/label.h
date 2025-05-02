@@ -185,6 +185,23 @@ namespace sunaba::ui {
 
             void setStructuredTextBidiOverrideOptions(Array options) {
                 label_node->set_structured_text_bidi_override_options(options);
+            } 
+
+            std::vector<float> getTabStops() {
+                PackedFloat32Array tabStops = label_node->get_tab_stops();
+                std::vector<float> result;
+                for (int i = 0; i < tabStops.size(); i++) {
+                    result.push_back(tabStops[i]);
+                }
+                return result;
+            }
+
+            void setTabStops(std::vector<float> stops) {
+                PackedFloat32Array tabStops;
+                for (size_t i = 0; i < stops.size(); i++) {
+                    tabStops.push_back(stops[i]);
+                }
+                label_node->set_tab_stops(tabStops);
             }
     };
 }
