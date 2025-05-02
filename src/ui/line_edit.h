@@ -235,6 +235,14 @@ namespace sunaba::ui {
             void setLanguage(std::string language) {
                 line_edit_node->set_language(String(language.c_str()));
             }
+
+            int getMaxLength() {
+                return line_edit_node->get_max_length();
+            }
+
+            void setMaxLength(int length) {
+                line_edit_node->set_max_length(length);
+            }
     };
 }
 
