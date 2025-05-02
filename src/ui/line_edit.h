@@ -308,6 +308,14 @@ namespace sunaba::ui {
             void setSelectingEnabled(bool enabled) {
                 line_edit_node->set_selecting_enabled(enabled);
             }
+
+            bool getShortcutKeysEnabled() {
+                return line_edit_node->is_shortcut_keys_enabled();
+            }
+
+            void setShortcutKeysEnabled(bool enabled) {
+                line_edit_node->set_shortcut_keys_enabled(enabled);
+            }
     };
 }
 
