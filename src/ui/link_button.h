@@ -148,6 +148,10 @@ namespace sunaba::ui {
             void setTextDirection(int direction) {
                 link_button->set_text_direction(static_cast<godot::Control::TextDirection>(direction));
             }
+
+            int getUnderline() {
+                return link_button->get_underline_mode();
+            }
     };
 }
 
