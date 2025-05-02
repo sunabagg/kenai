@@ -227,6 +227,14 @@ namespace sunaba::ui {
             void setTextOverrunBehavior(int behavior) {
                 label_node->set_text_overrun_behavior(static_cast<godot::TextServer::OverrunBehavior>(behavior));
             }
+
+            bool getUppercase() {
+                return label_node->is_uppercase();
+            }
+
+            void setUppercase(bool enable) {
+                label_node->set_uppercase(enable);
+            }
     };
 }
 
