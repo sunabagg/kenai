@@ -275,6 +275,10 @@ namespace sunaba::ui {
             int getLineCount() {
                 return label_node->get_line_count();
             }
+
+            int getLineHeight(int line = -1) {
+                return label_node->get_line_height(line);
+            }
     };
 }
 
