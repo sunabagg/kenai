@@ -444,6 +444,10 @@ namespace sunaba::ui {
             void select(int from = 0, int to = -1) {
                 line_edit_node->select(from, to);
             }
+
+            void selectAll() {
+                line_edit_node->select_all();
+            }
     };
 }
 
