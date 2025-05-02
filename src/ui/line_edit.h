@@ -384,6 +384,10 @@ namespace sunaba::ui {
             void deleteText(int from_column, int to_column) {
                 line_edit_node->delete_text(from_column, to_column);
             }
+
+            void deselect() {
+                line_edit_node->deselect();
+            }
     };
 }
 
