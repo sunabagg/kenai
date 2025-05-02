@@ -148,6 +148,7 @@ namespace sunaba::ui {
             "selectingEnabled", sol::property(&LineEdit::getSelectingEnabled, &LineEdit::setSelectingEnabled),
             "shortcutKeysEnabled", sol::property(&LineEdit::getShortcutKeysEnabled, &LineEdit::setShortcutKeysEnabled),
             "structuredTextBidiOverride", sol::property(&LineEdit::getStructuredTextBidiOverride, &LineEdit::setStructuredTextBidiOverride),
+            "structuredTextBidiOverrideOptions", sol::property(&LineEdit::getStructuredTextBidiOverrideOptions, &LineEdit::setStructuredTextBidiOverrideOptions),
         );
     }
 }
