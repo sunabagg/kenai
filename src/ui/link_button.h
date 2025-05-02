@@ -132,6 +132,10 @@ namespace sunaba::ui {
             void setStructuredTextBidiOverrideOptions(const Array &args) {
                 link_button->set_structured_text_bidi_override_options(args);
             }
+
+            std::string getText() {
+                return String(link_button->get_text()).utf8().get_data();
+            }
     };
 }
 
