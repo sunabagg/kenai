@@ -365,6 +365,8 @@ namespace sunaba::ui {
                 line_edit_node->set_virtual_keyboard_type(static_cast<godot::LineEdit::VirtualKeyboardType>(type));
             }
 
+            Event* editingToggledEvent;
+
             void applyIme() {
                 line_edit_node->apply_ime();
             }
