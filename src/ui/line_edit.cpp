@@ -169,6 +169,7 @@ namespace sunaba::ui {
             "getSelectedText", &LineEdit::getSelectedText,
             "getSelectionFromColumn", &LineEdit::getSelectionFromColumn,
             "getSelectionToColumn", &LineEdit::getSelectionToColumn,
+            "hasImeText", &LineEdit::hasImeText,
         );
     }
 }
