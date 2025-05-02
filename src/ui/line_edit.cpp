@@ -163,6 +163,7 @@ namespace sunaba::ui {
             "deleteCharAtCaret", &LineEdit::deleteCharAtCaret,
             "deleteText", &LineEdit::deleteText,
             "deselect", &LineEdit::deselect,
+            "edit", &LineEdit::edit,
         );
     }
 }
