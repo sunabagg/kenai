@@ -380,6 +380,10 @@ namespace sunaba::ui {
             void deleteCharAtCaret() {
                 line_edit_node->delete_char_at_caret();
             }
+
+            void deleteText(int from_column, int to_column) {
+                line_edit_node->delete_text(from_column, to_column);
+            }
     };
 }
 
