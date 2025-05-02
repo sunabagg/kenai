@@ -92,6 +92,10 @@ namespace sunaba::ui {
                 connectLinkButtonSignals();
                 setCanvasItem(p_node);
             }
+
+            int getFocusMode() {
+                return link_button->get_focus_mode();
+            }
     };
 }
 
