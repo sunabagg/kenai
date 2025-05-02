@@ -143,6 +143,7 @@ namespace sunaba::ui {
             "placeholderText", sol::property(&LineEdit::getPlaceholderText, &LineEdit::setPlaceholderText),
             "rightIcon", sol::property(&LineEdit::getRightIcon, &LineEdit::setRightIcon),
             "secret", sol::property(&LineEdit::getSecret, &LineEdit::setSecret),
+            "secretCharacter", sol::property(&LineEdit::getSecretCharacter, &LineEdit::setSecretCharacter),
         );
     }
 }
