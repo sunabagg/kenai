@@ -162,6 +162,7 @@ namespace sunaba::ui {
             "clear", &LineEdit::clear,
             "deleteCharAtCaret", &LineEdit::deleteCharAtCaret,
             "deleteText", &LineEdit::deleteText,
+            "deselect", &LineEdit::deselect,
         );
     }
 }
