@@ -136,6 +136,7 @@ namespace sunaba::ui {
             "flat", sol::property(&LineEdit::getFlat, &LineEdit::setFlat),
             "focusMode", sol::property(&LineEdit::getFocusMode, &LineEdit::setFocusMode),
             "keepEditingOnTextSubmit", sol::property(&LineEdit::getKeepEditingOnTextSubmit, &LineEdit::setKeepEditingOnTextSubmit),
+            "language", sol::property(&LineEdit::getLanguage, &LineEdit::setLanguage),
         );
     }
 }
