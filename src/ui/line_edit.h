@@ -211,6 +211,14 @@ namespace sunaba::ui {
             void setFlat(bool enabled) {
                 line_edit_node->set_flat(enabled);
             }
+
+            int getFocusMode() {
+                return line_edit_node->get_focus_mode();
+            }
+
+            void setFocusMode(int mode) {
+                line_edit_node->set_focus_mode(static_cast<godot::Control::FocusMode>(mode));
+            }
     };
 }
 
