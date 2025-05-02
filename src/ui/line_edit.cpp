@@ -128,6 +128,7 @@ namespace sunaba::ui {
             "clearButtonEnabled", sol::property(&LineEdit::getClearButtonEnabled, &LineEdit::setClearButtonEnabled),
             "contextMenuEnabled", sol::property(&LineEdit::getContextMenuEnabled, &LineEdit::setContextMenuEnabled),
             "deselectOnFocusLossEnabled", sol::property(&LineEdit::getDeselectOnFocusLossEnabled, &LineEdit::setDeselectOnFocusLossEnabled),
+            "dragAndDropSelectionEnabled", sol::property(&LineEdit::getDragAndDropSelectionEnabled, &LineEdit::setDragAndDropSelectionEnabled),
         );
     }
 }
