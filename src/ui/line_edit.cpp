@@ -167,6 +167,7 @@ namespace sunaba::ui {
             //"getMenu", &LineEdit::getMenu,
             "getScrollOffset", &LineEdit::getScrollOffset,
             "getSelectedText", &LineEdit::getSelectedText,
+            "getSelectionFromColumn", &LineEdit::getSelectionFromColumn,
         );
     }
 }
