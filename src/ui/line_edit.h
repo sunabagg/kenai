@@ -91,6 +91,14 @@ namespace sunaba::ui {
             LineEditNode* getLineEditNode() {
                 return line_edit_node;
             }
+
+            int getAlignment() {
+                return line_edit_node->get_horizontal_alignment();
+            }
+
+            void setAlignment(int alignment) {
+                line_edit_node->set_horizontal_alignment(static_cast<godot::HorizontalAlignment>(alignment));
+            }
     };
 }
 
