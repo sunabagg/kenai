@@ -392,6 +392,14 @@ namespace sunaba::ui {
             void edit() {
                 line_edit_node->edit();
             }
+
+            //PopupMenu* getMenu() {
+            //    return new PopupMenu(line_edit_node->get_menu());
+            //}
+
+            float getScrollOffset() {
+                return line_edit_node->get_scroll_offset();
+            }
     };
 }
 
