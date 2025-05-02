@@ -292,6 +292,14 @@ namespace sunaba::ui {
             void setSecretCharacter(std::string character) {
                 line_edit_node->set_secret_character(String(character.c_str()));
             }
+
+            bool getSelectAllOnFocus() {
+                return line_edit_node->is_select_all_on_focus();
+            }
+
+            void setSelectAllOnFocus(bool enabled) {
+                line_edit_node->set_select_all_on_focus(enabled);
+            }
     };
 }
 
