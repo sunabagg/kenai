@@ -428,6 +428,10 @@ namespace sunaba::ui {
             void insertTextAtCaret(std::string text) {
                 line_edit_node->insert_text_at_caret(String(text.c_str()));
             }
+
+            bool isEditing() {
+                return line_edit_node->is_editing();
+            }
     };
 }
 
