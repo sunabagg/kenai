@@ -146,6 +146,14 @@ namespace sunaba::ui {
             void setMaxLinesVisible(int lines) {
                 label_node->set_max_lines_visible(lines);
             }
+
+            int getMouseFilter() {
+                return label_node->get_mouse_filter();
+            }
+
+            void setMouseFilter(int filter) {
+                label_node->set_mouse_filter(static_cast<godot::Control::MouseFilter>(filter));
+            }
     };
 }
 
