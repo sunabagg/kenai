@@ -141,6 +141,7 @@ namespace sunaba::ui {
             "middleMousePasteEnabled", sol::property(&LineEdit::getMiddleMousePasteEnabled, &LineEdit::setMiddleMousePasteEnabled),
             "mouseDefaultCursorShape", sol::property(&LineEdit::getMouseDefaultCursorShape, &LineEdit::setMouseDefaultCursorShape),
             "placeholderText", sol::property(&LineEdit::getPlaceholderText, &LineEdit::setPlaceholderText),
+            "rightIcon", sol::property(&LineEdit::getRightIcon, &LineEdit::setRightIcon),
         );
     }
 }
