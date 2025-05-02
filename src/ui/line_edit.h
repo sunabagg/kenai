@@ -432,6 +432,10 @@ namespace sunaba::ui {
             bool isEditing() {
                 return line_edit_node->is_editing();
             }
+
+            bool isMenuVisible() {
+                return line_edit_node->is_menu_visible();
+            }
     };
 }
 
