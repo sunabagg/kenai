@@ -124,6 +124,10 @@ namespace sunaba::ui {
             void setStructuredTextBidiOverride(int override) {
                 link_button->set_structured_text_bidi_override(static_cast<godot::TextServer::StructuredTextParser>(override));
             }
+
+            Array getStructuredTextBidiOverrideOptions() {
+                return link_button->get_structured_text_bidi_override_options();
+            }
     };
 }
 
