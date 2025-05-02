@@ -440,6 +440,10 @@ namespace sunaba::ui {
             void menuOption(int option) {
                 line_edit_node->menu_option(option);
             }
+
+            void select(int from = 0, int to = -1) {
+                line_edit_node->select(from, to);
+            }
     };
 }
 
