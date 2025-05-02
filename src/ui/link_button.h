@@ -116,6 +116,10 @@ namespace sunaba::ui {
             void setMouseDefaultCursorShape(int shape) {
                 link_button->set_default_cursor_shape(static_cast<godot::Control::CursorShape>(shape));
             }
+
+            int getStructuredTextBidiOverride() {
+                return link_button->get_structured_text_bidi_override();
+            }
     };
 }
 
