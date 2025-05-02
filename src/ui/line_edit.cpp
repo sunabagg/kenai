@@ -154,6 +154,7 @@ namespace sunaba::ui {
             "virtualKeyboardEnabled", sol::property(&LineEdit::getVirtualKeyboardEnabled, &LineEdit::setVirtualKeyboardEnabled),
             "virtualKeyboardType", sol::property(&LineEdit::getVirtualKeyboardType, &LineEdit::setVirtualKeyboardType),
             "editingToggled", sol::property(&LineEdit::getEditingToggledEvent, &LineEdit::setEditingToggledEvent),
+            "textChangeRejected", sol::property(&LineEdit::getTextChangeRejectedEvent, &LineEdit::setTextChangeRejectedEvent),
         );
     }
 }
