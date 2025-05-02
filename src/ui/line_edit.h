@@ -356,6 +356,14 @@ namespace sunaba::ui {
             void setVirtualKeyboardEnabled(bool enabled) {
                 line_edit_node->set_virtual_keyboard_enabled(enabled);
             }
+
+            int getVirtualKeyboardType() {
+                return line_edit_node->get_virtual_keyboard_type();
+            }
+
+            void setVirtualKeyboardType(int type) {
+                line_edit_node->set_virtual_keyboard_type(static_cast<godot::LineEdit::VirtualKeyboardType>(type));
+            }
     };
 }
 
