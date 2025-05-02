@@ -284,6 +284,14 @@ namespace sunaba::ui {
             void setSecret(bool enabled) {
                 line_edit_node->set_secret(enabled);
             }
+
+            std::string getSecretCharacter() {
+                return String(line_edit_node->get_secret_character()).utf8().get_data();
+            }
+
+            void setSecretCharacter(std::string character) {
+                line_edit_node->set_secret_character(String(character.c_str()));
+            }
     };
 }
 
