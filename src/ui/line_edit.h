@@ -420,6 +420,10 @@ namespace sunaba::ui {
             bool hasSelection() {
                 return line_edit_node->has_selection();
             }
+
+            bool hasUndo() {
+                return line_edit_node->has_undo();
+            }
     };
 }
 
