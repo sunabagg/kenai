@@ -104,6 +104,10 @@ namespace sunaba::ui {
             std::string getLanguage() {
                 return String(link_button->get_language()).utf8().get_data();
             }
+
+            void setLanguage(std::string language) {
+                link_button->set_language(String(language.c_str()));
+            }
     };
 }
 
