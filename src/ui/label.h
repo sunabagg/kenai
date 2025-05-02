@@ -283,6 +283,10 @@ namespace sunaba::ui {
             int getTotalCharacterCount() {
                 return label_node->get_total_character_count();
             }
+
+            int getVisibleLineCount() {
+                return label_node->get_visible_line_count();
+            }
     };
 }
 
