@@ -158,6 +158,7 @@ namespace sunaba::ui {
             "textChanged", sol::property(&LineEdit::getTextChangedEvent, &LineEdit::setTextChangedEvent),
             "textSubmitted", sol::property(&LineEdit::getTextSubmittedEvent, &LineEdit::setTextSubmittedEvent),
             "applyIme", &LineEdit::applyIme,
+            "cancelIme", &LineEdit::cancelIme,
         );
     }
 }
