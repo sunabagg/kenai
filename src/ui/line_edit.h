@@ -179,6 +179,14 @@ namespace sunaba::ui {
             void setDrawControlChars(bool enabled) {
                 line_edit_node->set_draw_control_chars(enabled);
             }
+
+            bool getEditable() {
+                return line_edit_node->is_editable();
+            }
+
+            void setEditable(bool enabled) {
+                line_edit_node->set_editable(enabled);
+            }
     };
 }
 
