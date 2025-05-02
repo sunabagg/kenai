@@ -211,6 +211,14 @@ namespace sunaba::ui {
             void setText(std::string text) {
                 label_node->set_text(String(text.c_str()));
             }
+
+            int getTextDirection() {
+                return label_node->get_text_direction();
+            }
+
+            void setTextDirection(int direction) {
+                label_node->set_text_direction(static_cast<godot::Control::TextDirection>(direction));
+            }
     };
 }
 
