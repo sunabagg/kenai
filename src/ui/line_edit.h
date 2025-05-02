@@ -300,6 +300,14 @@ namespace sunaba::ui {
             void setSelectAllOnFocus(bool enabled) {
                 line_edit_node->set_select_all_on_focus(enabled);
             }
+
+            bool getSelectingEnabled() {
+                return line_edit_node->is_selecting_enabled();
+            }
+
+            void setSelectingEnabled(bool enabled) {
+                line_edit_node->set_selecting_enabled(enabled);
+            }
     };
 }
 
