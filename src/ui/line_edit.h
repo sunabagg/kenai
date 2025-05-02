@@ -448,6 +448,10 @@ namespace sunaba::ui {
             void selectAll() {
                 line_edit_node->select_all();
             }
+
+            void unedit() {
+                line_edit_node->unedit();
+            }
     };
 }
 
