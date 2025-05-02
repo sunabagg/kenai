@@ -348,6 +348,14 @@ namespace sunaba::ui {
             void setTextDirection(int direction) {
                 line_edit_node->set_text_direction(static_cast<godot::Control::TextDirection>(direction));
             }
+
+            bool getVirtualKeyboardEnabled() {
+                return line_edit_node->is_virtual_keyboard_enabled();
+            }
+
+            void setVirtualKeyboardEnabled(bool enabled) {
+                line_edit_node->set_virtual_keyboard_enabled(enabled);
+            }
     };
 }
 
