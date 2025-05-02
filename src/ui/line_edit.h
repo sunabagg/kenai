@@ -380,6 +380,9 @@ namespace sunaba::ui {
                 textChangeRejectedEvent = event;
             }
             Event* textChangedEvent;
+            Event* getTextChangedEvent() {
+                return textChangedEvent;
+            }
 
             void applyIme() {
                 line_edit_node->apply_ime();
