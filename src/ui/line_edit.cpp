@@ -135,6 +135,7 @@ namespace sunaba::ui {
             "expandToTextLength", sol::property(&LineEdit::getExpandToTextLength, &LineEdit::setExpandToTextLength),
             "flat", sol::property(&LineEdit::getFlat, &LineEdit::setFlat),
             "focusMode", sol::property(&LineEdit::getFocusMode, &LineEdit::setFocusMode),
+            "keepEditingOnTextSubmit", sol::property(&LineEdit::getKeepEditingOnTextSubmit, &LineEdit::setKeepEditingOnTextSubmit),
         );
     }
 }
