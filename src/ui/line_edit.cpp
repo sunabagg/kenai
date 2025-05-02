@@ -146,6 +146,7 @@ namespace sunaba::ui {
             "secretCharacter", sol::property(&LineEdit::getSecretCharacter, &LineEdit::setSecretCharacter),
             "selectAllOnFocusEnabled", sol::property(&LineEdit::getSelectAllOnFocus, &LineEdit::setSelectAllOnFocus),
             "selectingEnabled", sol::property(&LineEdit::getSelectingEnabled, &LineEdit::setSelectingEnabled),
+            "shortcutKeysEnabled", sol::property(&LineEdit::getShortcutKeysEnabled, &LineEdit::setShortcutKeysEnabled),
         );
     }
 }
