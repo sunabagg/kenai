@@ -235,6 +235,14 @@ namespace sunaba::ui {
             void setUppercase(bool enable) {
                 label_node->set_uppercase(enable);
             }
+
+            int getVerticalAlignment() {
+                return label_node->get_vertical_alignment();
+            }
+
+            void setVerticalAlignment(int alignment) {
+                label_node->set_vertical_alignment(static_cast<godot::VerticalAlignment>(alignment));
+            }
     };
 }
 
