@@ -259,6 +259,14 @@ namespace sunaba::ui {
             void setVisibleCharactersBehavior(int behavior) {
                 label_node->set_visible_characters_behavior(static_cast<godot::TextServer::VisibleCharactersBehavior>(behavior));
             }
+
+            float getVisibleRatio() {
+                return label_node->get_visible_ratio();
+            }
+
+            void setVisibleRatio(float ratio) {
+                label_node->set_visible_ratio(ratio);
+            }
     };
 }
 
