@@ -160,6 +160,10 @@ namespace sunaba::ui {
             std::string getUri() {
                 return String(link_button->get_uri()).utf8().get_data();
             }
+
+            void setUri(std::string uri) {
+                link_button->set_uri(String(uri.c_str()));
+            }
     };
 }
 
