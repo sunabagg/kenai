@@ -152,6 +152,10 @@ namespace sunaba::ui {
             int getUnderline() {
                 return link_button->get_underline_mode();
             }
+
+            void setUnderline(int mode) {
+                link_button->set_underline_mode(static_cast<godot::LinkButton::UnderlineMode>(mode));
+            }
     };
 }
 
