@@ -243,6 +243,14 @@ namespace sunaba::ui {
             void setMaxLength(int length) {
                 line_edit_node->set_max_length(length);
             }
+
+            bool getMiddleMousePasteEnabled() {
+                return line_edit_node->is_middle_mouse_paste_enabled();
+            }
+
+            void setMiddleMousePasteEnabled(bool enabled) {
+                line_edit_node->set_middle_mouse_paste_enabled(enabled);
+            }
     };
 }
 
