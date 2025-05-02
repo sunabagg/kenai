@@ -172,6 +172,7 @@ namespace sunaba::ui {
             "hasImeText", &LineEdit::hasImeText,
             "hasRedo", &LineEdit::hasRedo,
             "hasSelection", &LineEdit::hasSelection,
+            "hasUndo", &LineEdit::hasUndo,
         );
     }
 }
