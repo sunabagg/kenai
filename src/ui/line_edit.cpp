@@ -161,6 +161,7 @@ namespace sunaba::ui {
             "cancelIme", &LineEdit::cancelIme,
             "clear", &LineEdit::clear,
             "deleteCharAtCaret", &LineEdit::deleteCharAtCaret,
+            "deleteText", &LineEdit::deleteText,
         );
     }
 }
