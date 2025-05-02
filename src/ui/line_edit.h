@@ -219,6 +219,14 @@ namespace sunaba::ui {
             void setFocusMode(int mode) {
                 line_edit_node->set_focus_mode(static_cast<godot::Control::FocusMode>(mode));
             }
+
+            bool getKeepEditingOnTextSubmit() {
+                return line_edit_node->is_editing_kept_on_text_submit();
+            }
+
+            void setKeepEditingOnTextSubmit(bool enabled) {
+                line_edit_node->set_keep_editing_on_text_submit(enabled);
+            }
     };
 }
 
