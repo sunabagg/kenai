@@ -130,6 +130,7 @@ namespace sunaba::ui {
             "deselectOnFocusLossEnabled", sol::property(&LineEdit::getDeselectOnFocusLossEnabled, &LineEdit::setDeselectOnFocusLossEnabled),
             "dragAndDropSelectionEnabled", sol::property(&LineEdit::getDragAndDropSelectionEnabled, &LineEdit::setDragAndDropSelectionEnabled),
             "drawControlChars", sol::property(&LineEdit::getDrawControlChars, &LineEdit::setDrawControlChars),
+            "editable", sol::property(&LineEdit::isEditable, &LineEdit::setEditable),
         );
     }
 }
