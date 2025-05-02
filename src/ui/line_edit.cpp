@@ -175,6 +175,7 @@ namespace sunaba::ui {
             "hasUndo", &LineEdit::hasUndo,
             "insertTextAtCaret", &LineEdit::insertTextAtCaret,
             "isEditing", &LineEdit::isEditing,
+            "isMenuVisible", &LineEdit::isMenuVisible,
         );
     }
 }
