@@ -123,6 +123,14 @@ namespace sunaba::ui {
             void setCaretColumn(int column) {
                 line_edit_node->set_caret_column(column);
             }
+
+            bool getCaretForceDisplayed() {
+                return line_edit_node->is_caret_force_displayed();
+            }
+
+            void setCaretForceDisplayed(bool enabled) {
+                line_edit_node->set_caret_force_displayed(enabled);
+            }
     };
 }
 
