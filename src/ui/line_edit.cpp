@@ -138,6 +138,7 @@ namespace sunaba::ui {
             "keepEditingOnTextSubmit", sol::property(&LineEdit::getKeepEditingOnTextSubmit, &LineEdit::setKeepEditingOnTextSubmit),
             "language", sol::property(&LineEdit::getLanguage, &LineEdit::setLanguage),
             "maxLength", sol::property(&LineEdit::getMaxLength, &LineEdit::setMaxLength),
+            "middleMousePasteEnabled", sol::property(&LineEdit::getMiddleMousePasteEnabled, &LineEdit::setMiddleMousePasteEnabled),
         );
     }
 }
