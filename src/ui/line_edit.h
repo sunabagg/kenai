@@ -376,6 +376,10 @@ namespace sunaba::ui {
             void clear() {
                 line_edit_node->clear();
             }
+
+            void deleteCharAtCaret() {
+                line_edit_node->delete_char_at_caret();
+            }
     };
 }
 
