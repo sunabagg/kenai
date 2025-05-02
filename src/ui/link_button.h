@@ -112,6 +112,10 @@ namespace sunaba::ui {
             int getMouseDefaultCursorShape() {
                 return link_button->get_default_cursor_shape();
             }
+
+            void setMouseDefaultCursorShape(int shape) {
+                link_button->set_default_cursor_shape(static_cast<godot::Control::CursorShape>(shape));
+            }
     };
 }
 
