@@ -124,6 +124,7 @@ namespace sunaba::ui {
             "carentBlinkInterval", sol::property(&LineEdit::getCaretBlinkInterval, &LineEdit::setCaretBlinkInterval),
             "caretColumn", sol::property(&LineEdit::getCaretColumn, &LineEdit::setCaretColumn),
             "caretForceDisplayed", sol::property(&LineEdit::getCaretForceDisplayed, &LineEdit::setCaretForceDisplayed),
+            "caretMidGrapheme", sol::property(&LineEdit::getCaretMidGrapheme, &LineEdit::setCaretMidGrapheme),
         );
     }
 }
