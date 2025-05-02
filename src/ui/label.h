@@ -162,6 +162,14 @@ namespace sunaba::ui {
             void setParagraphSeparator(std::string separator) {
                 label_node->set_paragraph_separator(String(separator.c_str()));
             }
+
+            int getSizeFlagsVertical() {
+                return label_node->get_v_size_flags();
+            }
+
+            void setSizeFlagsVertical(int flags) {
+                label_node->set_v_size_flags(static_cast<godot::Control::SizeFlags>(flags));
+            }
     };
 }
 
