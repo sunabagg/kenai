@@ -400,6 +400,10 @@ namespace sunaba::ui {
             float getScrollOffset() {
                 return line_edit_node->get_scroll_offset();
             }
+
+            std::string getSelectedText() {
+                return String(line_edit_node->get_selected_text()).utf8().get_data();
+            }
     };
 }
 
