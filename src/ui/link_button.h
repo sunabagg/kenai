@@ -156,6 +156,10 @@ namespace sunaba::ui {
             void setUnderline(int mode) {
                 link_button->set_underline_mode(static_cast<godot::LinkButton::UnderlineMode>(mode));
             }
+
+            std::string getUri() {
+                return String(link_button->get_uri()).utf8().get_data();
+            }
     };
 }
 
