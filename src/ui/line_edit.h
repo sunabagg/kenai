@@ -424,6 +424,10 @@ namespace sunaba::ui {
             bool hasUndo() {
                 return line_edit_node->has_undo();
             }
+
+            void insertTextAtCaret(std::string text) {
+                line_edit_node->insert_text_at_caret(String(text.c_str()));
+            }
     };
 }
 
