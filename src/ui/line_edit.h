@@ -364,6 +364,10 @@ namespace sunaba::ui {
             void setVirtualKeyboardType(int type) {
                 line_edit_node->set_virtual_keyboard_type(static_cast<godot::LineEdit::VirtualKeyboardType>(type));
             }
+
+            void applyIme() {
+                line_edit_node->apply_ime();
+            }
     };
 }
 
