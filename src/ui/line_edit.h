@@ -372,6 +372,10 @@ namespace sunaba::ui {
             void cancelIme() {
                 line_edit_node->cancel_ime();
             }
+
+            void clear() {
+                line_edit_node->clear();
+            }
     };
 }
 
