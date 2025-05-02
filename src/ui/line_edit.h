@@ -155,6 +155,14 @@ namespace sunaba::ui {
             void setContextMenuEnabled(bool enabled) {
                 line_edit_node->set_context_menu_enabled(enabled);
             }
+
+            bool getDeselectOnFocusLossEnabled() {
+                return line_edit_node->is_deselect_on_focus_loss_enabled();
+            }
+
+            void setDeselectOnFocusLossEnabled(bool enabled) {
+                line_edit_node->set_deselect_on_focus_loss_enabled(enabled);
+            }
     };
 }
 
