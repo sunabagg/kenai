@@ -170,6 +170,14 @@ namespace sunaba::ui {
             void setSizeFlagsVertical(int flags) {
                 label_node->set_v_size_flags(static_cast<godot::Control::SizeFlags>(flags));
             }
+
+            int getStructuredTextBidiOverride() {
+                return label_node->get_structured_text_bidi_override();
+            }
+
+            void setStructuredTextBidiOverride(int override) {
+                label_node->set_structured_text_bidi_override(static_cast<godot::TextServer::StructuredTextParser>(override));
+            }
     };
 }
 
