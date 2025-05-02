@@ -268,6 +268,14 @@ namespace sunaba::ui {
             void setPlaceholderText(std::string text) {
                 line_edit_node->set_placeholder(String(text.c_str()));
             }
+
+            sunaba::core::Texture2D* getRightIcon() {
+                return new sunaba::core::Texture2D(line_edit_node->get_right_icon().ptr());
+            }
+
+            void setRightIcon(sunaba::core::Texture2D* icon) {
+                line_edit_node->set_right_icon(Ref<godot::Texture2D>(icon->getTexture()));
+            }
     };
 }
 
