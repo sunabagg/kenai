@@ -133,6 +133,7 @@ namespace sunaba::ui {
             "editable", sol::property(&LineEdit::getEditable, &LineEdit::setEditable),
             "emojiMenuEnabled", sol::property(&LineEdit::getEmojiMenuEnabled, &LineEdit::setEmojiMenuEnabled),
             "expandToTextLength", sol::property(&LineEdit::getExpandToTextLength, &LineEdit::setExpandToTextLength),
+            "flat", sol::property(&LineEdit::getFlat, &LineEdit::setFlat),
         );
     }
 }
