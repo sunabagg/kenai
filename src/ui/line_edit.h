@@ -416,6 +416,10 @@ namespace sunaba::ui {
             bool hasRedo() {
                 return line_edit_node->has_redo();
             }
+
+            bool hasSelection() {
+                return line_edit_node->has_selection();
+            }
     };
 }
 
