@@ -168,6 +168,7 @@ namespace sunaba::ui {
             "getScrollOffset", &LineEdit::getScrollOffset,
             "getSelectedText", &LineEdit::getSelectedText,
             "getSelectionFromColumn", &LineEdit::getSelectionFromColumn,
+            "getSelectionToColumn", &LineEdit::getSelectionToColumn,
         );
     }
 }
