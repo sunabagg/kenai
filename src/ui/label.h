@@ -72,7 +72,13 @@ namespace sunaba::ui {
                 setControl(label_node);
             }
 
+            int getAutowrapMode() {
+                return label_node->get_autowrap_mode();
+            }
 
+            void setAutowrapMode(int mode) {
+                label_node->set_autowrap_mode(static_cast<godot::TextServer::AutowrapMode>(mode));
+            }
     };
 }
 
