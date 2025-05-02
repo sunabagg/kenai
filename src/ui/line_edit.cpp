@@ -120,6 +120,7 @@ namespace sunaba::ui {
             sol::constructors<LineEdit()>(),
             sol::base_classes, sol::bases<BaseObject, Element, sunaba::core::CanvasItem, Control>(),
             "alignment", sol::property(&LineEdit::getAlignment, &LineEdit::setAlignment),
+            "caretBlink", sol::property(&LineEdit::getCaretBlink, &LineEdit::setCaretBlink),
         );
     }
 }
