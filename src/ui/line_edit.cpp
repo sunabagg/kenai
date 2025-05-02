@@ -159,6 +159,7 @@ namespace sunaba::ui {
             "textSubmitted", sol::property(&LineEdit::getTextSubmittedEvent, &LineEdit::setTextSubmittedEvent),
             "applyIme", &LineEdit::applyIme,
             "cancelIme", &LineEdit::cancelIme,
+            "clear", &LineEdit::clear,
         );
     }
 }
