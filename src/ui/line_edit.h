@@ -173,7 +173,7 @@ namespace sunaba::ui {
             }
 
             bool getDrawControlChars() {
-                return line_edit_node->is_draw_control_chars_enabled();
+                return line_edit_node->get_draw_control_chars();
             }
 
             void setDrawControlChars(bool enabled) {
