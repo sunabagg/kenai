@@ -408,6 +408,10 @@ namespace sunaba::ui {
             int getSelectionFromColumn() {
                 return line_edit_node->get_selection_from_column();
             }
+
+            bool hasImeText() {
+                return line_edit_node->has_ime_text();
+            }
     };
 }
 
