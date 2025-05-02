@@ -267,6 +267,10 @@ namespace sunaba::ui {
             void setVisibleRatio(float ratio) {
                 label_node->set_visible_ratio(ratio);
             }
+
+            Rect2 getCharacterBounds(int position) {
+                return label_node->get_character_bounds(position);
+            }
     };
 }
 
