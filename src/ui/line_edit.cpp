@@ -131,6 +131,7 @@ namespace sunaba::ui {
             "dragAndDropSelectionEnabled", sol::property(&LineEdit::getDragAndDropSelectionEnabled, &LineEdit::setDragAndDropSelectionEnabled),
             "drawControlChars", sol::property(&LineEdit::getDrawControlChars, &LineEdit::setDrawControlChars),
             "editable", sol::property(&LineEdit::getEditable, &LineEdit::setEditable),
+            "emojiMenuEnabled", sol::property(&LineEdit::getEmojiMenuEnabled, &LineEdit::setEmojiMenuEnabled),
         );
     }
 }
