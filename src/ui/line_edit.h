@@ -332,6 +332,14 @@ namespace sunaba::ui {
             void setStructuredTextBidiOverrideOptions(const Array &args) {
                 line_edit_node->set_structured_text_bidi_override_options(args);
             }
+
+            std::string getText() {
+                return String(line_edit_node->get_text()).utf8().get_data();
+            }
+
+            void setText(std::string text) {
+                line_edit_node->set_text(String(text.c_str()));
+            }
     };
 }
 
