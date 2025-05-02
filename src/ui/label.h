@@ -13,6 +13,8 @@
 namespace sunaba::ui {
     void bindLabel(sol::state &lua);
 
+    class Label;
+
     class LabelProxy : public LabelNode {
         public:
             sunaba::ui::Label* element = nullptr;
