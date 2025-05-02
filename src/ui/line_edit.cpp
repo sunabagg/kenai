@@ -164,6 +164,8 @@ namespace sunaba::ui {
             "deleteText", &LineEdit::deleteText,
             "deselect", &LineEdit::deselect,
             "edit", &LineEdit::edit,
+            //"getMenu", &LineEdit::getMenu,
+            "getScrollOffset", &LineEdit::getScrollOffset,
         );
     }
 }
