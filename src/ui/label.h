@@ -138,6 +138,14 @@ namespace sunaba::ui {
             void setLinesSkipped(int lines) {
                 label_node->set_lines_skipped(lines);
             }
+
+            int getMaxLinesVisible() {
+                return label_node->get_max_lines_visible();
+            }
+
+            void setMaxLinesVisible(int lines) {
+                label_node->set_max_lines_visible(lines);
+            }
     };
 }
 
