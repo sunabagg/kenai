@@ -45,6 +45,8 @@ target_sources(${PROJECT_NAME} PRIVATE
         item_list.cpp
         label.h
         label.cpp
+        line_edit.h
+        line_edit.cpp
 )
 
 target_include_directories( ${PROJECT_NAME}
