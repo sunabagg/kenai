@@ -103,6 +103,14 @@ namespace sunaba::ui {
             void setHorizontalAlignment(int alignment) {
                 label_node->set_horizontal_alignment(static_cast<godot::HorizontalAlignment>(alignment));
             }
+
+            int getJustificationFlags() {
+                return label_node->get_justification_flags();
+            }
+
+            void setJustificationFlags(int flags) {
+                label_node->set_justification_flags(static_cast<godot::BitField<godot::TextServer::JustificationFlag>>(flags));
+            }
     };
 }
 
