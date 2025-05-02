@@ -203,6 +203,14 @@ namespace sunaba::ui {
                 }
                 label_node->set_tab_stops(tabStops);
             }
+
+            std::string getText() {
+                return label_node->get_text().utf8().get_data();
+            }
+
+            void setText(std::string text) {
+                label_node->set_text(String(text.c_str()));
+            }
     };
 }
 
