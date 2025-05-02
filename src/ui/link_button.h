@@ -100,6 +100,10 @@ namespace sunaba::ui {
             void setFocusMode(int mode) {
                 link_button->set_focus_mode(static_cast<godot::Control::FocusMode>(mode));
             }
+
+            std::string getLanguage() {
+                return String(link_button->get_language()).utf8().get_data();
+            }
     };
 }
 
