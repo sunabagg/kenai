@@ -390,6 +390,9 @@ namespace sunaba::ui {
             Event* getTextSubmittedEvent() {
                 return textSubmittedEvent;
             }
+            void setTextSubmittedEvent(Event* event) {
+                textSubmittedEvent = event;
+            }
 
             void applyIme() {
                 line_edit_node->apply_ime();
