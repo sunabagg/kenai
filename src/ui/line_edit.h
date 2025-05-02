@@ -316,6 +316,14 @@ namespace sunaba::ui {
             void setShortcutKeysEnabled(bool enabled) {
                 line_edit_node->set_shortcut_keys_enabled(enabled);
             }
+
+            int getStructureTextBidiOverride() {
+                return line_edit_node->get_structure_text_bidi_override();
+            }
+
+            void setStructureTextBidiOverride(int override) {
+                line_edit_node->set_structure_text_bidi_override(static_cast<godot::TextServer::StructuredTextParser>(override));
+            }
     };
 }
 
