@@ -187,6 +187,14 @@ namespace sunaba::ui {
             void setEditable(bool enabled) {
                 line_edit_node->set_editable(enabled);
             }
+
+            bool getEmojiMenuEnabled() {
+                return line_edit_node->is_emoji_menu_enabled();
+            }
+
+            void setEmojiMenuEnabled(bool enabled) {
+                line_edit_node->set_emoji_menu_enabled(enabled);
+            }
     };
 }
 
