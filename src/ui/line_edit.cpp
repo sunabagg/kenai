@@ -126,6 +126,7 @@ namespace sunaba::ui {
             "caretForceDisplayed", sol::property(&LineEdit::getCaretForceDisplayed, &LineEdit::setCaretForceDisplayed),
             "caretMidGrapheme", sol::property(&LineEdit::getCaretMidGrapheme, &LineEdit::setCaretMidGrapheme),
             "clearButtonEnabled", sol::property(&LineEdit::getClearButtonEnabled, &LineEdit::setClearButtonEnabled),
+            "contextMenuEnabled", sol::property(&LineEdit::getContextMenuEnabled, &LineEdit::setContextMenuEnabled),
         );
     }
 }
