@@ -139,6 +139,14 @@ namespace sunaba::ui {
             void setCaretMidGrapheme(bool enabled) {
                 line_edit_node->set_caret_mid_grapheme_enabled(enabled);
             }
+
+            bool getClearButtonEnabled() {
+                return line_edit_node->is_clear_button_enabled();
+            }
+
+            void setClearButtonEnabled(bool enabled) {
+                line_edit_node->set_clear_button_enabled(enabled);
+            }
     };
 }
 
