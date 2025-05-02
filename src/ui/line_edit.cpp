@@ -144,6 +144,7 @@ namespace sunaba::ui {
             "rightIcon", sol::property(&LineEdit::getRightIcon, &LineEdit::setRightIcon),
             "secret", sol::property(&LineEdit::getSecret, &LineEdit::setSecret),
             "secretCharacter", sol::property(&LineEdit::getSecretCharacter, &LineEdit::setSecretCharacter),
+            "selectAllOnFocusEnabled", sol::property(&LineEdit::getSelectAllOnFocus, &LineEdit::setSelectAllOnFocus),
         );
     }
 }
