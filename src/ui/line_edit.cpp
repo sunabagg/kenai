@@ -114,4 +114,10 @@ namespace sunaba::ui {
         }
         return TypedArray<Vector3i>();
     }
+
+    void bindLineEdit(sol::state& lua) {
+        lua.new_usertype<LineEdit>("LineEdit",
+            sol::constructors<LineEdit()>(),
+        );
+    }
 }
