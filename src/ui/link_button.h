@@ -144,6 +144,10 @@ namespace sunaba::ui {
             int getTextDirection() {
                 return link_button->get_text_direction();
             }
+
+            void setTextDirection(int direction) {
+                link_button->set_text_direction(static_cast<godot::Control::TextDirection>(direction));
+            }
     };
 }
 
