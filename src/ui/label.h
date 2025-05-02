@@ -271,6 +271,10 @@ namespace sunaba::ui {
             Rect2 getCharacterBounds(int position) {
                 return label_node->get_character_bounds(position);
             }
+
+            int getLineCount() {
+                return label_node->get_line_count();
+            }
     };
 }
 
