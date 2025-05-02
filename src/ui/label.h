@@ -243,6 +243,14 @@ namespace sunaba::ui {
             void setVerticalAlignment(int alignment) {
                 label_node->set_vertical_alignment(static_cast<godot::VerticalAlignment>(alignment));
             }
+
+            int getVisibleCharacters() {
+                return label_node->get_visible_characters();
+            }
+
+            void setVisibleCharacters(int characters) {
+                label_node->set_visible_characters(characters);
+            }
     };
 }
 
