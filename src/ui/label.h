@@ -95,6 +95,14 @@ namespace sunaba::ui {
             void setEllipsisChar(std::string character) {
                 label_node->set_ellipsis_char(String(character.c_str()));
             }
+
+            int getHorizontalAlignment() {
+                return label_node->get_horizontal_alignment();
+            }
+
+            void setHorizontalAlignment(int alignment) {
+                label_node->set_horizontal_alignment(static_cast<godot::HorizontalAlignment>(alignment));
+            }
     };
 }
 
