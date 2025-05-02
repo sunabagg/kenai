@@ -134,6 +134,7 @@ namespace sunaba::ui {
             "emojiMenuEnabled", sol::property(&LineEdit::getEmojiMenuEnabled, &LineEdit::setEmojiMenuEnabled),
             "expandToTextLength", sol::property(&LineEdit::getExpandToTextLength, &LineEdit::setExpandToTextLength),
             "flat", sol::property(&LineEdit::getFlat, &LineEdit::setFlat),
+            "focusMode", sol::property(&LineEdit::getFocusMode, &LineEdit::setFocusMode),
         );
     }
 }
