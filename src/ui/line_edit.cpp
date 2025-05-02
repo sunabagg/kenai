@@ -118,6 +118,7 @@ namespace sunaba::ui {
     void bindLineEdit(sol::state& lua) {
         lua.new_usertype<LineEdit>("LineEdit",
             sol::constructors<LineEdit()>(),
+            sol::base_classes, sol::bases<BaseObject, Element, sunaba::core::CanvasItem, Control>(),
         );
     }
 }
