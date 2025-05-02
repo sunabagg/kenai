@@ -154,6 +154,14 @@ namespace sunaba::ui {
             void setMouseFilter(int filter) {
                 label_node->set_mouse_filter(static_cast<godot::Control::MouseFilter>(filter));
             }
+
+            std::string getParagraphSeparator() {
+                return label_node->get_paragraph_separator().utf8().get_data();
+            }
+
+            void setParagraphSeparator(std::string separator) {
+                label_node->set_paragraph_separator(String(separator.c_str()));
+            }
     };
 }
 
