@@ -171,6 +171,7 @@ namespace sunaba::ui {
             "getSelectionToColumn", &LineEdit::getSelectionToColumn,
             "hasImeText", &LineEdit::hasImeText,
             "hasRedo", &LineEdit::hasRedo,
+            "hasSelection", &LineEdit::hasSelection,
         );
     }
 }
