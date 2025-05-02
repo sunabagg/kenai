@@ -368,6 +368,10 @@ namespace sunaba::ui {
             void applyIme() {
                 line_edit_node->apply_ime();
             }
+
+            void cancelIme() {
+                line_edit_node->cancel_ime();
+            }
     };
 }
 
