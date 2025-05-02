@@ -87,6 +87,14 @@ namespace sunaba::ui {
             void setClipText(bool enable) {
                 label_node->set_clip_text(enable);
             }
+
+            std::string getEllipsisChar() {
+                return label_node->get_ellipsis_char().utf8().get_data();
+            }
+
+            void setEllipsisChar(std::string character) {
+                label_node->set_ellipsis_char(String(character.c_str()));
+            }
     };
 }
 
