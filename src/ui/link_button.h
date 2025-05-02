@@ -108,6 +108,10 @@ namespace sunaba::ui {
             void setLanguage(std::string language) {
                 link_button->set_language(String(language.c_str()));
             }
+
+            int getMouseDefaultCursorShape() {
+                return link_button->get_default_cursor_shape();
+            }
     };
 }
 
