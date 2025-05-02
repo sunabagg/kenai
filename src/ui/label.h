@@ -130,6 +130,14 @@ namespace sunaba::ui {
             void setLanguage(std::string language) {
                 label_node->set_language(String(language.c_str()));
             }
+
+            int getLinesSkipped() {
+                return label_node->get_lines_skipped();
+            }
+
+            void setLinesSkipped(int lines) {
+                label_node->set_lines_skipped(lines);
+            }
     };
 }
 
