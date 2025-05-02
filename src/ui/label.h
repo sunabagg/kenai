@@ -79,6 +79,14 @@ namespace sunaba::ui {
             void setAutowrapMode(int mode) {
                 label_node->set_autowrap_mode(static_cast<godot::TextServer::AutowrapMode>(mode));
             }
+
+            bool getClipText() {
+                return label_node->is_clipping_text();
+            }
+
+            void setClipText(bool enable) {
+                label_node->set_clip_text(enable);
+            }
     };
 }
 
