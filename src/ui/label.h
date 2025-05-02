@@ -122,6 +122,14 @@ namespace sunaba::ui {
                 Ref<godot::LabelSettings> settingsRef = Ref<godot::LabelSettings>(settings->getLabelSettings());
                 label_node->set_label_settings(settingsRef);
             }
+
+            std::string getLanguage() {
+                return label_node->get_language().utf8().get_data();
+            }
+
+            void setLanguage(std::string language) {
+                label_node->set_language(String(language.c_str()));
+            }
     };
 }
 
