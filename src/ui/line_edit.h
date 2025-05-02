@@ -147,6 +147,14 @@ namespace sunaba::ui {
             void setClearButtonEnabled(bool enabled) {
                 line_edit_node->set_clear_button_enabled(enabled);
             }
+
+            bool getContextMenuEnabled() {
+                return line_edit_node->is_context_menu_enabled();
+            }
+
+            void setContextMenuEnabled(bool enabled) {
+                line_edit_node->set_context_menu_enabled(enabled);
+            }
     };
 }
 
