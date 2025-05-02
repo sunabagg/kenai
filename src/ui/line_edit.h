@@ -251,6 +251,14 @@ namespace sunaba::ui {
             void setMiddleMousePasteEnabled(bool enabled) {
                 line_edit_node->set_middle_mouse_paste_enabled(enabled);
             }
+
+            int getMouseDefaultCursorShape() {
+                return line_edit_node->get_default_cursor_shape();
+            }
+
+            void setMouseDefaultCursorShape(int shape) {
+                line_edit_node->set_default_cursor_shape(static_cast<godot::Control::CursorShape>(shape));
+            }
     };
 }
 
