@@ -404,6 +404,10 @@ namespace sunaba::ui {
             std::string getSelectedText() {
                 return String(line_edit_node->get_selected_text()).utf8().get_data();
             }
+
+            int getSelectionFromColumn() {
+                return line_edit_node->get_selection_from_column();
+            }
     };
 }
 
