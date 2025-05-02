@@ -8,6 +8,7 @@
 #define LabelNode godot::Label
 
 #include "control.h"
+#include "../core/label_settings.h"
 
 namespace sunaba::ui {
     void bindLabel(sol::state &lua);
@@ -110,6 +111,16 @@ namespace sunaba::ui {
 
             void setJustificationFlags(int flags) {
                 label_node->set_justification_flags(static_cast<godot::BitField<godot::TextServer::JustificationFlag>>(flags));
+            }
+
+            sunaba::core::LabelSettings* getLabelSettings() {
+                Ref<godot::LabelSettings> settings = label_node->get_label_settings();
+                return new sunaba::core::LabelSettings(settings.ptr());
+            }
+
+            void setLabelSettings(sunaba::core::LabelSettings* settings) {
+                Ref<godot::LabelSettings> settingsRef = Ref<godot::LabelSettings>(settings->getLabelSettings());
+                label_node->set_label_settings(settingsRef);
             }
     };
 }
