@@ -180,6 +180,13 @@ namespace sunaba::ui {
             "select", &LineEdit::select,
             "selectAll", &LineEdit::selectAll,
             "unedit", &LineEdit::unedit,
+            "cast", [](Element* e) {
+                LineEditNode* control = Object::cast_to<LineEditNode>(e->getNode());
+                if (control != nullptr) {
+                    return new LineEdit(control);
+                }
+                return static_cast<LineEdit*>(nullptr);
+            }
         );
     }
 }
