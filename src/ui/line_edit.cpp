@@ -1,5 +1,63 @@
 #include "line_edit.h"
 
 namespace sunaba::ui {
-    
+    void LineEditProxy::_enter_tree() {
+        if (this->element != nullptr) {
+            this->element->enterTree();
+        }
+    }
+
+    void LineEditProxy::_exit_tree() {
+        if (this->element != nullptr) {
+            this->element->exitTree();
+        }
+    }
+
+    void LineEditProxy::_ready() {
+        if (this->element != nullptr) {
+            this->element->ready();
+        }
+    }
+
+    void LineEditProxy::_process(double delta) {
+        if (this->element != nullptr) {
+            this->element->process(delta);
+        }
+    }
+
+    void LineEditProxy::_physics_process(double delta) {
+        if (this->element != nullptr) {
+            this->element->physicsProcess(delta);
+        }
+    }
+
+    void LineEditProxy::_input(const Ref<InputEvent>& event) {
+        if (this->element != nullptr) {
+            this->element->input(event);
+        }
+    }
+
+    void LineEditProxy::_unhandled_input(const Ref<InputEvent>& event) {
+        if (this->element != nullptr) {
+            this->element->unhandledInput(event);
+        }
+    }
+
+    void LineEditProxy::_unhandled_key_input(const Ref<InputEvent>& event) {
+        if (this->element != nullptr) {
+            this->element->unhandledKeyInput(event);
+        }
+    }
+
+    void LineEditProxy::_shortcut_input(const Ref<InputEvent>& event) {
+        if (this->element != nullptr) {
+            this->element->shortcutInput(event);
+        }
+    }
+
+    void LineEditProxy::_draw() {
+        if (this->element != nullptr) {
+            this->element->_draw();
+        }
+    }
 }
