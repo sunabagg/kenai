@@ -150,6 +150,7 @@ namespace sunaba::ui {
             "structuredTextBidiOverride", sol::property(&LineEdit::getStructuredTextBidiOverride, &LineEdit::setStructuredTextBidiOverride),
             "structuredTextBidiOverrideOptions", sol::property(&LineEdit::getStructuredTextBidiOverrideOptions, &LineEdit::setStructuredTextBidiOverrideOptions),
             "text", sol::property(&LineEdit::getText, &LineEdit::setText),
+            "textDirection", sol::property(&LineEdit::getTextDirection, &LineEdit::setTextDirection),
         );
     }
 }
