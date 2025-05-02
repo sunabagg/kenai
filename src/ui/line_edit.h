@@ -203,6 +203,14 @@ namespace sunaba::ui {
             void setExpandToTextLength(bool enabled) {
                 line_edit_node->set_expand_to_text_length_enabled(enabled);
             }
+
+            bool getFlat() {
+                return line_edit_node->is_flat();
+            }
+
+            void setFlat(bool enabled) {
+                line_edit_node->set_flat(enabled);
+            }
     };
 }
 
