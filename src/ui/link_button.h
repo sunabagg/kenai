@@ -136,6 +136,10 @@ namespace sunaba::ui {
             std::string getText() {
                 return String(link_button->get_text()).utf8().get_data();
             }
+
+            void setText(std::string text) {
+                link_button->set_text(String(text.c_str()));
+            }
     };
 }
 
