@@ -142,6 +142,7 @@ namespace sunaba::ui {
             "mouseDefaultCursorShape", sol::property(&LineEdit::getMouseDefaultCursorShape, &LineEdit::setMouseDefaultCursorShape),
             "placeholderText", sol::property(&LineEdit::getPlaceholderText, &LineEdit::setPlaceholderText),
             "rightIcon", sol::property(&LineEdit::getRightIcon, &LineEdit::setRightIcon),
+            "secret", sol::property(&LineEdit::getSecret, &LineEdit::setSecret),
         );
     }
 }
