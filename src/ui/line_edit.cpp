@@ -179,6 +179,7 @@ namespace sunaba::ui {
             "menuOption", &LineEdit::menuOption,
             "select", &LineEdit::select,
             "selectAll", &LineEdit::selectAll,
+            "unedit", &LineEdit::unedit,
         );
     }
 }
