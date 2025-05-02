@@ -317,12 +317,12 @@ namespace sunaba::ui {
                 line_edit_node->set_shortcut_keys_enabled(enabled);
             }
 
-            int getStructureTextBidiOverride() {
-                return line_edit_node->get_structure_text_bidi_override();
+            int getStructuredTextBidiOverride() {
+                return line_edit_node->get_structured_text_bidi_override();
             }
 
-            void setStructureTextBidiOverride(int override) {
-                line_edit_node->set_structure_text_bidi_override(static_cast<godot::TextServer::StructuredTextParser>(override));
+            void setStructuredTextBidiOverride(int override) {
+                line_edit_node->set_structured_text_bidi_override(static_cast<godot::TextServer::StructuredTextParser>(override));
             }
     };
 }
