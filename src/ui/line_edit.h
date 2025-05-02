@@ -388,6 +388,10 @@ namespace sunaba::ui {
             void deselect() {
                 line_edit_node->deselect();
             }
+
+            void edit() {
+                line_edit_node->edit();
+            }
     };
 }
 
