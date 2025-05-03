@@ -103,6 +103,10 @@ namespace sunaba::core {
                 &Viewport::getGlobalCanvasTransform, 
                 &Viewport::setGlobalCanvasTransform
             ),
+            "guiDisableInput", sol::property(
+                &Viewport::getGuiDisableInput, 
+                &Viewport::setGuiDisableInput
+            ),
         );
     }
 }
