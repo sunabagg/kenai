@@ -196,6 +196,10 @@ namespace sunaba::core {
             int getMsaa2D() {
                 return viewport->get_msaa_2d();
             }
+
+            void setMsaa2D(int level) {
+                viewport->set_msaa_2d(static_cast<godot::Viewport::MSAA>(level));
+            }
     };
 }
 
