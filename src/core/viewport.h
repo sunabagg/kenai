@@ -423,7 +423,7 @@ namespace sunaba::core {
             }
 
             void setVrsTexture(Texture2D* texture) {
-                viewport->set_vrs_texture(texture->getTexture());
+                viewport->set_vrs_texture(Ref<godot::Texture2D>(texture->getTexture()));
             }
     };
 }
