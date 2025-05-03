@@ -138,6 +138,10 @@ namespace sunaba::ui {
                 &LinkButton::getFocusMode,
                 &LinkButton::setFocusMode
             ),
+            "language", sol::property(
+                &LinkButton::getLanguage,
+                &LinkButton::setLanguage
+            ),
         );
     }
 }
