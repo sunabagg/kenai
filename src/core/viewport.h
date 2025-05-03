@@ -489,6 +489,10 @@ namespace sunaba::core {
             Transform2D getFinalTransform() {
                 return viewport->get_final_transform();
             }
+
+            Vector2 getMousePosition() {
+                return viewport->get_mouse_position();
+            }
     };
 }
 
