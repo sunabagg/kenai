@@ -124,6 +124,10 @@ namespace sunaba::core {
             int getDebugDraw() {
                 return viewport->get_debug_draw();
             }
+
+            void setDebugDraw(int mode) {
+                viewport->set_debug_draw(static_cast<godot::Viewport::DebugDraw>(mode));
+            }
     };
 }
 
