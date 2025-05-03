@@ -164,6 +164,10 @@ namespace sunaba::core {
             bool getGuiEmbedSubwindows() {
                 return viewport->is_embedding_subwindows();
             }
+
+            void setGuiEmbedSubwindows(bool enable) {
+                viewport->set_embedding_subwindows(enable);
+            }
     };
 }
 
