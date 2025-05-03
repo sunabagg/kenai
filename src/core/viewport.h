@@ -116,6 +116,10 @@ namespace sunaba::core {
             Transform2D getCanvasTransform() {
                 return viewport->get_canvas_transform();
             }
+
+            void setCanvasTransform(const Transform2D& transform) {
+                viewport->set_canvas_transform(transform);
+            }
     };
 }
 
