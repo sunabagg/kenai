@@ -158,6 +158,10 @@ namespace sunaba::ui {
                 &LinkButton::getText,
                 &LinkButton::setText
             ),
+            "textDirection", sol::property(
+                &LinkButton::getTextDirection,
+                &LinkButton::setTextDirection
+            ),
         );
     }
 }
