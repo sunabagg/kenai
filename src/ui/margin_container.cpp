@@ -24,4 +24,10 @@ namespace sunaba::ui {
             element->process(delta);
         }
     }
+
+    void MarginContainerProxy::_physics_process(double delta) {
+        if (element != nullptr) {
+            element->physicsProcess(delta);
+        }
+    }
 }
