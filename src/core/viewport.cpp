@@ -87,6 +87,10 @@ namespace sunaba::core {
                 &Viewport::getCanvasTransform, 
                 &Viewport::setCanvasTransform
             ),
+            "debugDraw", sol::property(
+                &Viewport::getDebugDraw, 
+                &Viewport::setDebugDraw
+            ),
         );
     }
 }
