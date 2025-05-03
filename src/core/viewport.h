@@ -68,6 +68,10 @@ namespace sunaba::core {
             int getAnisotropicFilteringLevel() {
                 return viewport->get_anisotropic_filtering_level();
             }
+
+            void setAnisotropicFilteringLevel(int level) {
+                viewport->set_anisotropic_filtering_level(level);
+            }
     };
 }
 
