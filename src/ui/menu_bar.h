@@ -107,6 +107,10 @@ namespace sunaba::ui {
         int getStartIndex() {
             return menuBar->get_start_index();
         }
+
+        void setStartIndex(int32_t p_enabled) {
+            menuBar->set_start_index(p_enabled);
+        }
     };
 }
 
