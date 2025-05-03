@@ -128,6 +128,10 @@ namespace sunaba::core {
             void setDebugDraw(int mode) {
                 viewport->set_debug_draw(static_cast<godot::Viewport::DebugDraw>(mode));
             }
+
+            bool getDisable3D() {
+                return viewport->is_3d_disabled();
+            }
     };
 }
 
