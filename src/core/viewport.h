@@ -313,7 +313,7 @@ namespace sunaba::core {
                 viewport->set_scaling_3d_scale(scale);
             }
 
-            int getSCreenSpaceAA() {
+            int getScreenSpaceAA() {
                 return viewport->get_screen_space_aa();
             }
     };
