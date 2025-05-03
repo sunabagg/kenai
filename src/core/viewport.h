@@ -443,6 +443,7 @@ namespace sunaba::core {
             void setGuiFocusChangedEvent(Event* event) {
                 guiFocusChangedEvent = event;
             }
+            Event* sizeChangedEvent;
     };
 }
 
