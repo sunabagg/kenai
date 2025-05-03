@@ -146,6 +146,10 @@ namespace sunaba::ui {
                 &LinkButton::getMouseDefaultCursorShape,
                 &LinkButton::setMouseDefaultCursorShape
             ),
+            "structuredTextBidiOverride", sol::property(
+                &LinkButton::getStructuredTextBidiOverride,
+                &LinkButton::setStructuredTextBidiOverride
+            ),
         );
     }
 }
