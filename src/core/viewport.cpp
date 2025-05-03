@@ -131,6 +131,10 @@ namespace sunaba::core {
                 &Viewport::getMsaa3D, 
                 &Viewport::setMsaa3D
             ),
+            "ownWorld3D", sol::property(
+                &Viewport::getOwnWorld3D, 
+                &Viewport::setOwnWorld3D
+            ),
         );
     }
 }
