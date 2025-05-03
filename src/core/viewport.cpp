@@ -83,6 +83,10 @@ namespace sunaba::core {
                 &Viewport::getCanvasItemDefaultTextureRepeat, 
                 &Viewport::setCanvasItemDefaultTextureRepeat
             ),
+            "canvasTransform", sol::property(
+                &Viewport::getCanvasTransform, 
+                &Viewport::setCanvasTransform
+            ),
         );
     }
 }
