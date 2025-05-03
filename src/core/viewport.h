@@ -437,6 +437,9 @@ namespace sunaba::core {
             }
 
             Event* guiFocusChangedEvent;
+            Event* getGuiFocusChangedEvent() {
+                return guiFocusChangedEvent;
+            }
     };
 }
 
