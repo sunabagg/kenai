@@ -63,6 +63,10 @@ namespace sunaba::core {
                 &Viewport::getAnisotropicFilteringLevel, 
                 &Viewport::setAnisotropicFilteringLevel
             ),
+            "audioListener2D", sol::property(
+                &Viewport::getAudioListener2D, 
+                &Viewport::setAudioListener2D
+            ),
         );
     }
 }
