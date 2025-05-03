@@ -167,6 +167,10 @@ namespace sunaba::ui {
         void setMenuTitle(int32_t p_menu, const std::string &p_title) {
             menuBar->set_menu_title(p_menu, p_title.c_str());
         }
+
+        void setMenuTooltip(int32_t p_menu, const std::string &p_tooltip) {
+            menuBar->set_menu_tooltip(p_menu, p_tooltip.c_str());
+        }
     };
 }
 
