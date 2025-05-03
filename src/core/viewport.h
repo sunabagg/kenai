@@ -152,6 +152,10 @@ namespace sunaba::core {
             void setGlobalCanvasTransform(const Transform2D& transform) {
                 viewport->set_global_canvas_transform(transform);
             }
+
+            bool getGuiDisableInput() {
+                return viewport->is_input_disabled();
+            }
     };
 }
 
