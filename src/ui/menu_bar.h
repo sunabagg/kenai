@@ -127,6 +127,10 @@ namespace sunaba::ui {
         void setTextDirection(godot::Control::TextDirection p_direction) {
             menuBar->set_text_direction(p_direction);
         }
+
+        int getMenuCount() {
+            return menuBar->get_menu_count();
+        }
     };
 }
 
