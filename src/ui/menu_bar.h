@@ -151,6 +151,10 @@ namespace sunaba::ui {
         bool isMenuHidden(int32_t p_menu) {
             return menuBar->is_menu_hidden(p_menu);
         }
+
+        bool isNativeMenu() {
+            return menuBar->is_native_menu();
+        }
     };
 }
 
