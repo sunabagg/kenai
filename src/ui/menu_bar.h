@@ -79,6 +79,10 @@ namespace sunaba::ui {
             connectMenuBarSignals();
             setControl(menuBar);
         }
+
+        bool isFlat() {
+            return menuBar->is_flat();
+        }
     };
 }
 
