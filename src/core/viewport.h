@@ -521,6 +521,10 @@ namespace sunaba::core {
             Variant guiGetDragData() {
                 return viewport->gui_get_drag_data();
             }
+
+            Control* guiGetFocusOwner() {
+                return viewport->gui_get_focus_owner();
+            }
     };
 }
 
