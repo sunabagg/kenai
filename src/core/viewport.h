@@ -220,6 +220,10 @@ namespace sunaba::core {
             int getPhysicsInterpolationMode() {
                 return viewport->get_physics_interpolation_mode();
             }
+
+            void setPhysicsInterpolationMode(int mode) {
+                viewport->set_physics_interpolation_mode(static_cast<godot::Viewport::PhysicsInterpolationMode>(mode));
+            }
     };
 }
 
