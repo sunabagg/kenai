@@ -292,6 +292,10 @@ namespace sunaba::core {
             int getPositionalShadowAtlasSize() {
                 return viewport->get_positional_shadow_atlas_size();
             }
+
+            void setPositionalShadowAtlasSize(int size) {
+                viewport->set_positional_shadow_atlas_size(size);
+            }
     };
 }
 
