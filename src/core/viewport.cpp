@@ -48,4 +48,10 @@ namespace sunaba::core {
             this->element->unhandledKeyInput(event);
         }
     }
+
+    void ViewportProxy::_shortcut_input(const Ref<InputEvent>& event) {
+        if (this->element != nullptr) {
+            this->element->shortcutInput(event);
+        }
+    }
 }
