@@ -123,6 +123,10 @@ namespace sunaba::core {
                 &Viewport::getMeshLodThreshold, 
                 &Viewport::setMeshLodThreshold
             ),
+            "msaa2d", sol::property(
+                &Viewport::getMsaa2D, 
+                &Viewport::setMsaa2D
+            ),
         );
     }
 }
