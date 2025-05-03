@@ -554,6 +554,10 @@ namespace sunaba::core {
             void pushInput(sunaba::input::InputEvent* event, bool inLocalCoords = false) {
                 viewport->push_input(event->getInputEvent(), inLocalCoords);
             }
+
+            void pushTextInput(const std::string& text) {
+                viewport->push_text_input(text.c_str());
+            }
     };
 }
 
