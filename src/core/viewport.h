@@ -53,6 +53,7 @@ namespace sunaba::core {
                     }
                     return Variant();
                 };
+                Callable guiFocusChangedCallable = StlFunctionWrapper::create_callable_from_cpp_function(guiFocusChangedFunc);
             }
 
         public:
