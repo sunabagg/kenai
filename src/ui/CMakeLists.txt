@@ -49,6 +49,8 @@ target_sources(${PROJECT_NAME} PRIVATE
         line_edit.cpp
         link_button.h
         link_button.cpp
+        margin_container.h
+        margin_container.cpp
 )
 
 target_include_directories( ${PROJECT_NAME}
