@@ -163,7 +163,7 @@ namespace sunaba::ui {
                 &LinkButton::setTextDirection
             ),
             "underline", sol::property(
-                &LinkButton::isUnderline,
+                &LinkButton::getUnderline,
                 &LinkButton::setUnderline
             ),
         );
