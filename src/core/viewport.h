@@ -562,6 +562,10 @@ namespace sunaba::core {
             void pushUnhandledInput(sunaba::input::InputEvent* event, bool inLocalCoords = false) {
                 viewport->push_unhandled_input(event->getInputEvent(), inLocalCoords);
             }
+
+            void setCanvasCullMaskBit(int layer, bool enable) {
+                viewport->set_canvas_cull_mask_bit(layer, enable);
+            }
     };
 }
 
