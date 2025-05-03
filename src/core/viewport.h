@@ -55,6 +55,14 @@ namespace sunaba::core {
                 };
                 Callable guiFocusChangedCallable = StlFunctionWrapper::create_callable_from_cpp_function(guiFocusChangedFunc);
                 this->viewport->connect("gui_focus_changed", guiFocusChangedCallable);
+                std::function<Variant(std::vector<Variant>)> sizeChangedFunc =
+                [this](std::vector<Variant> args) {
+                    Array argsArray;
+                    if (this->sizeChangedEvent != nullptr) {
+                        this->sizeChangedEvent->emit(argsArray);
+                    }
+                    return Variant();
+                };
             }
 
         public:
