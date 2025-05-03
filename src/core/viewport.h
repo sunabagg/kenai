@@ -356,6 +356,10 @@ namespace sunaba::core {
             float getTextureMipmapBias() {
                 return viewport->get_texture_mipmap_bias();
             }
+
+            void setTextureMipmapBias(float bias) {
+                viewport->set_texture_mipmap_bias(bias);
+            }
     };
 }
 
