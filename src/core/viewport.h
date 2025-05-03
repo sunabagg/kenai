@@ -163,7 +163,7 @@ namespace sunaba::core {
                 viewport->set_disable_3d(disable);
             }
 
-            float getFSRSharpness() {
+            float getFsrSharpness() {
                 return viewport->get_fsr_sharpness();
             }
 
