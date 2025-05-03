@@ -159,6 +159,10 @@ namespace sunaba::ui {
         void setDisableShortcuts(bool p_disabled) {
             menuBar->set_disable_shortcuts(p_disabled);
         }
+
+        void setMenuDisabled(int32_t p_menu, bool p_disabled) {
+            menuBar->set_menu_disabled(p_menu, p_disabled);
+        }
     };
 }
 
