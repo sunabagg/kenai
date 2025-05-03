@@ -143,6 +143,10 @@ namespace sunaba::core {
                 &Viewport::getPhysicsObjectPicking, 
                 &Viewport::setPhysicsObjectPicking
             ),
+            "physicsObjectPickingFirstOnly", sol::property(
+                &Viewport::getPhysicsObjectPickingFirstOnly, 
+                &Viewport::setPhysicsObjectPickingFirstOnly
+            ),
         );
     }
 }
