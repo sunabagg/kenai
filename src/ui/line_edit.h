@@ -62,8 +62,6 @@ namespace sunaba::ui {
             LineEditNode* line_edit_node = nullptr;
 
             void connectLineEditSignals() {
-                // Connect signals specific to LineEdit
-                // Example: connect("text_changed", this, "_on_text_changed");
                 std::function<Variant(std::vector<Variant>)> textChangedFunc =
                 [this](std::vector<Variant> argsv) {
                     Array args;
@@ -92,6 +90,20 @@ namespace sunaba::ui {
                 };
                 Callable textSubmittedCallable = StlFunctionWrapper::create_callable_from_cpp_function(textSubmittedFunc);
                 line_edit_node->connect("text_submitted", textSubmittedCallable);
+                std::function<Variant(std::vector<Variant>)> caretPositionChangedFunc =
+                [this](std::vector<Variant> argsv) {
+                    Array args;
+                    for (int i = 0; i < argsv.size(); i++)
+                    {
+                        args.append(argsv[i]);
+                    }
+                    if (this->caretPositionChangedEvent != nullptr) {
+                        this->caretPositionChangedEvent->emit(args);
+                    }
+                    return Variant();
+                };
+                Callable caretPositionChangedCallable = StlFunctionWrapper::create_callable_from_cpp_function(caretPositionChangedFunc);
+                line_edit_node->connect("caret_position_changed", caretPositionChangedCallable);
             }
 
         public:
