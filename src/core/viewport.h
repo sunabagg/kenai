@@ -108,6 +108,10 @@ namespace sunaba::core {
             int getCanvasItemDefaultTextureRepeat() {
                 return viewport->get_default_canvas_item_texture_repeat();
             }
+
+            void setCanvasItemDefaultTextureRepeat(int repeat) {
+                viewport->set_default_canvas_item_texture_repeat(static_cast<godot::Viewport::DefaultCanvasItemTextureRepeat>(repeat));
+            }
     };
 }
 
