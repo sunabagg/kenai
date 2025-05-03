@@ -570,6 +570,10 @@ namespace sunaba::core {
             void setInputAsHandled() {
                 viewport->set_input_as_handled();
             }
+
+            void setPositionalShadowAtlasQuadrantSubdiv(int quadrant, int subdiv) {
+                viewport->set_positional_shadow_atlas_quadrant_subdiv(quadrant, static_cast<godot::Viewport::PositionalShadowAtlasQuadrantSubdiv>(subdiv));
+            }
     };
 }
 
