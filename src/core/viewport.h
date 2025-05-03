@@ -100,6 +100,10 @@ namespace sunaba::core {
             int getCanvasItemDefaultTextureFilter() {
                 return viewport->get_default_canvas_item_texture_filter();
             }
+
+            void setCanvasItemDefaultTextureFilter(int filter) {
+                viewport->set_default_canvas_item_texture_filter(static_cast<godot::Viewport::DefaultCanvasItemTextureFilter>(filter));
+            }
     };
 }
 
