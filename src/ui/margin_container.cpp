@@ -129,7 +129,7 @@ namespace sunaba::ui {
         return PackedInt32Array();
     }
 
-    void bindMarginContainer(sol::state &lua) {
+    void bindMarginContainer(sol::state &lua) { 
         lua.new_usertype<MarginContainer>("MarginContainer",
             sol::constructors<MarginContainer()>(),
             sol::base_classes, sol::bases<BaseObject, Element, sunaba::core::CanvasItem, Control, Container>(),
