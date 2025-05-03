@@ -36,4 +36,10 @@ namespace sunaba::core {
             this->element->input(event);
         }
     }
+
+    void ViewportProxy::_unhandled_input(const Ref<InputEvent>& event) {
+        if (this->element != nullptr) {
+            this->element->unhandledInput(event);
+        }
+    }
 }
