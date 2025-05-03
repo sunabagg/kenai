@@ -143,7 +143,10 @@ namespace sunaba::ui {
         std::string getMenuTooltip(int32_t p_menu) {
             return menuBar->get_menu_tooltip(p_menu).utf8().get_data();
         }
-        
+
+        bool isMenuDisabled(int32_t p_menu) {
+            return menuBar->is_menu_disabled(p_menu);
+        }
     };
 }
 
