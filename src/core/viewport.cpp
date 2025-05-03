@@ -115,6 +115,10 @@ namespace sunaba::core {
                 &Viewport::getGuiSnapControlsToPixels, 
                 &Viewport::setGuiSnapControlsToPixels
             ),
+            "handleInputLocally", sol::property(
+                &Viewport::getHandleInputLocally, 
+                &Viewport::setHandleInputLocally
+            ),
         );
     }
 }
