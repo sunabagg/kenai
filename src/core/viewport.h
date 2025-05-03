@@ -352,6 +352,10 @@ namespace sunaba::core {
             void setSnap2DVerticesToPixel(bool enable) {
                 viewport->set_snap_2d_vertices_to_pixel(enable);
             }
+
+            float getTextureMipmapBias() {
+                return viewport->get_texture_mipmap_bias();
+            }
     };
 }
 
