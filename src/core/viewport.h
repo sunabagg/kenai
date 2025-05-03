@@ -541,6 +541,10 @@ namespace sunaba::core {
             void guiReleaseFocus() {
                 viewport->gui_release_focus();
             }
+
+            bool isInputHandled() {
+                return viewport->is_input_handled();
+            }
     };
 }
 
