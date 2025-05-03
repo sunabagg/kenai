@@ -244,6 +244,10 @@ namespace sunaba::core {
             bool getPhysicsObjectPickingSort() {
                 return viewport->get_physics_object_picking_sort();
             }
+
+            void setPhysicsObjectPickingSort(bool enable) {
+                viewport->set_physics_object_picking_sort(enable);
+            }
     };
 }
 
