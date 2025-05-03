@@ -120,4 +120,10 @@ namespace sunaba::ui {
             element->pressed();
         }
     }
+
+    void LinkButtonProxy::_toggled(bool p_toggled_on) {
+        if (element != nullptr) {
+            element->toggled(p_toggled_on);
+        }
+    }
 }
