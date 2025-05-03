@@ -78,6 +78,20 @@ namespace sunaba::ui {
                 };
                 Callable textChangedCallable = StlFunctionWrapper::create_callable_from_cpp_function(textChangedFunc);
                 line_edit_node->connect("text_changed", textChangedCallable);
+                std::function<Variant(std::vector<Variant>)> textSubmittedFunc =
+                [this](std::vector<Variant> argsv) {
+                    Array args;
+                    for (int i = 0; i < argsv.size(); i++)
+                    {
+                        args.append(argsv[i]);
+                    }
+                    if (this->textSubmittedEvent != nullptr) {
+                        this->textSubmittedEvent->emit(args);
+                    }
+                    return Variant();
+                };
+                Callable textSubmittedCallable = StlFunctionWrapper::create_callable_from_cpp_function(textSubmittedFunc);
+                line_edit_node->connect("text_submitted", textSubmittedCallable);
             }
 
         public:
