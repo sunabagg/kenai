@@ -162,6 +162,10 @@ namespace sunaba::ui {
                 &LinkButton::getTextDirection,
                 &LinkButton::setTextDirection
             ),
+            "underline", sol::property(
+                &LinkButton::isUnderline,
+                &LinkButton::setUnderline
+            ),
         );
     }
 }
