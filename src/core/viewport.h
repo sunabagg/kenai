@@ -160,6 +160,7 @@ namespace sunaba::core {
             void setGuiDisableInput(bool disable) {
                 viewport->set_disable_input(disable);
             }
+            
     };
 }
 
