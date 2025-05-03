@@ -128,7 +128,7 @@ namespace sunaba::ui {
             "getMenuCount", &MenuBar::getMenuCount,
             // "getMenuPopup", &MenuBar::getMenuPopup,
             "getMenuTitle", &MenuBar::getMenuTitle,
-            
+            "getMenuTooltip", &MenuBar::getMenuTooltip,
         );
     }
 }
