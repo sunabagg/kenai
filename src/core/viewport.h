@@ -388,6 +388,10 @@ namespace sunaba::core {
             bool getUseOcclusionCulling() {
                 return viewport->is_using_occlusion_culling();
             }
+
+            void setUseOcclusionCulling(bool enable) {
+                viewport->set_use_occlusion_culling(enable);
+            }
     };
 }
 
