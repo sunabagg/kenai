@@ -476,6 +476,10 @@ namespace sunaba::core {
             sunaba::spatial::World3D* findWorld3D() {
                 return new sunaba::spatial::World3D(viewport->find_world_3d().ptr());
             }
+
+            bool getCanvasCullMaskBit(int layer) {
+                return viewport->get_canvas_cull_mask_bit(layer);
+            }
     };
 }
 
