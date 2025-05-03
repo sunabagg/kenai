@@ -88,6 +88,10 @@ namespace sunaba::core {
             void setAudioListenerEnable3D(bool enable) {
                 viewport->set_as_audio_listener_3d(enable);
             }
+
+            int getCanvasCullMask() {
+                return viewport->get_canvas_cull_mask();
+            }
     };
 }
 
