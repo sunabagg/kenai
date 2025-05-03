@@ -160,7 +160,10 @@ namespace sunaba::core {
             void setGuiDisableInput(bool disable) {
                 viewport->set_disable_input(disable);
             }
-            
+
+            bool getGuiEmbedSubwindows() {
+                return viewport->is_embedding_subwindows();
+            }
     };
 }
 
