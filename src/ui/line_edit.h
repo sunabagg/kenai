@@ -62,6 +62,20 @@ namespace sunaba::ui {
             LineEditNode* line_edit_node = nullptr;
 
             void connectLineEditSignals() {
+                std::function<Variant(std::vector<Variant>)> editingToggledFunc =
+                [this](std::vector<Variant> argsv) {
+                    Array args;
+                    for (int i = 0; i < argsv.size(); i++)
+                    {
+                        args.append(argsv[i]);
+                    }
+                    if (this->editingToggledEvent != nullptr) {
+                        this->editingToggledEvent->emit(args);
+                    }
+                    return Variant();
+                };
+                Callable editingToggledCallable = StlFunctionWrapper::create_callable_from_cpp_function(editingToggledFunc);
+                line_edit_node->connect("editing_toggled", editingToggledCallable);
                 std::function<Variant(std::vector<Variant>)> textChangeRejectedFunc =
                 [this](std::vector<Variant> argsv) {
                     Array args;
