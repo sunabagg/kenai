@@ -497,6 +497,10 @@ namespace sunaba::core {
             int getRenderInfo(int type, int info) {
                 return viewport->get_render_info(static_cast<godot::Viewport::RenderInfoType>(type), static_cast<godot::Viewport::RenderInfo>(info));
             }
+
+            Transform2D getScreenTransform() {
+                return viewport->get_screen_transform();
+            }
     };
 }
 
