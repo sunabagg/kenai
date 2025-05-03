@@ -111,6 +111,10 @@ namespace sunaba::core {
                 &Viewport::getGuiEmbedSubwindows, 
                 &Viewport::setGuiEmbedSubwindows
             ),
+            "guiSnapControlsToPixels", sol::property(
+                &Viewport::getGuiSnapControlsToPixels, 
+                &Viewport::setGuiSnapControlsToPixels
+            ),
         );
     }
 }
