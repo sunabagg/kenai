@@ -412,6 +412,10 @@ namespace sunaba::core {
             int getVrsMode() {
                 return viewport->get_vrs_mode();
             }
+
+            void setVrsMode(int mode) {
+                viewport->set_vrs_mode(static_cast<godot::Viewport::VRSMode>(mode));
+            }
     };
 }
 
