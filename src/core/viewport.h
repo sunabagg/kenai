@@ -472,6 +472,10 @@ namespace sunaba::core {
             void setSizeChangedEvent(Event* event) {
                 sizeChangedEvent = event;
             }
+
+            sunaba::spatial::World3D* findWorld3D() {
+                return new sunaba::spatial::World3D(viewport->find_world_3d().ptr());
+            }
     };
 }
 
