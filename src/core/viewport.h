@@ -320,6 +320,10 @@ namespace sunaba::core {
             void setScreenSpaceAA(int mode) {
                 viewport->set_screen_space_aa(static_cast<godot::Viewport::ScreenSpaceAA>(mode));
             }
+
+            int getSdfOversize() {
+                return viewport->get_sdf_oversize();
+            }
     };
 }
 
