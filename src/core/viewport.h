@@ -566,6 +566,10 @@ namespace sunaba::core {
             void setCanvasCullMaskBit(int layer, bool enable) {
                 viewport->set_canvas_cull_mask_bit(layer, enable);
             }
+
+            void setInputAsHandled() {
+                viewport->set_input_as_handled();
+            }
     };
 }
 
