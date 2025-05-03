@@ -513,6 +513,10 @@ namespace sunaba::core {
             Rect2 getVisibleRect() {
                 return viewport->get_visible_rect();
             }
+
+            void guiCancelDrag() {
+                viewport->gui_cancel_drag();
+            }
     };
 }
 
