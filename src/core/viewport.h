@@ -396,6 +396,10 @@ namespace sunaba::core {
             bool getUseTaa() {
                 return viewport->is_using_taa();
             }
+
+            void setUseTaa(bool enable) {
+                viewport->set_use_taa(enable);
+            }
     };
 }
 
