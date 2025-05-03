@@ -525,6 +525,10 @@ namespace sunaba::core {
             Control* guiGetFocusOwner() {
                 return viewport->gui_get_focus_owner();
             }
+
+            Control* guiGetHoveredControl() {
+                return viewport->gui_get_hovered_control();
+            }
     };
 }
 
