@@ -430,6 +430,10 @@ namespace sunaba::core {
             World3D* getWorld3D() {
                 return new World3D(viewport->get_world_3d().ptr());
             }
+
+            void setWorld3D(World3D* world) {
+                viewport->set_world_3d(Ref<godot::World3D>(world->getWorld()));
+            }
     };
 }
 
