@@ -127,6 +127,10 @@ namespace sunaba::core {
                 &Viewport::getMsaa2D, 
                 &Viewport::setMsaa2D
             ),
+            "msaa3d", sol::property(
+                &Viewport::getMsaa3D, 
+                &Viewport::setMsaa3D
+            ),
         );
     }
 }
