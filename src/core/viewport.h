@@ -501,6 +501,10 @@ namespace sunaba::core {
             Transform2D getScreenTransform() {
                 return viewport->get_screen_transform();
             }
+
+            Transform2D getStretchTransform() {
+                return viewport->get_stretch_transform();
+            }
     };
 }
 
