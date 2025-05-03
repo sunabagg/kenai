@@ -533,6 +533,10 @@ namespace sunaba::core {
             bool guiIsDragSuccessful() {
                 return viewport->gui_is_drag_successful();
             }
+
+            bool guiIsDragging() {
+                return viewport->gui_is_dragging();
+            }
     };
 }
 
