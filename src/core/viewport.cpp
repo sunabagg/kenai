@@ -79,6 +79,10 @@ namespace sunaba::core {
                 &Viewport::getCanvasItemDefaultTextureFilter, 
                 &Viewport::setCanvasItemDefaultTextureFilter
             ),
+            "canvasItemDefaultTextureRepeat", sol::property(
+                &Viewport::getCanvasItemDefaultTextureRepeat, 
+                &Viewport::setCanvasItemDefaultTextureRepeat
+            ),
         );
     }
 }
