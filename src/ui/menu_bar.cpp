@@ -130,6 +130,7 @@ namespace sunaba::ui {
             "getMenuTitle", &MenuBar::getMenuTitle,
             "getMenuTooltip", &MenuBar::getMenuTooltip,
             "isMenuDisabled", &MenuBar::isMenuDisabled,
+            "isMenuHidden", &MenuBar::isMenuHidden,
         );
     }
 }
