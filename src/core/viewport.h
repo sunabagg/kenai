@@ -328,6 +328,10 @@ namespace sunaba::core {
             void setSdfOversize(int oversize) {
                 viewport->set_sdf_oversize(static_cast<godot::Viewport::SDFOversize>(oversize));
             }
+
+            int getSdfScale() {
+                return viewport->get_sdf_scale();
+            }
     };
 }
 
