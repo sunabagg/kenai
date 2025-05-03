@@ -131,6 +131,12 @@ namespace sunaba::ui {
         int getMenuCount() {
             return menuBar->get_menu_count();
         }
+
+        //PopupMenu* getMenuPopup(int32_t p_menu) {
+        //    return new PopupMenu(menuBar->get_menu_popup(p_menu));
+        //}
+
+        
     };
 }
 
