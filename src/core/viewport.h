@@ -43,6 +43,7 @@ namespace sunaba::core {
             ViewportNode* viewport = nullptr; // Pointer to the Viewport instance
             void connectViewportSignals() {
                 // Connect signals specific to Viewport
+                std::function<Variant(std::vector<Variant>)> guiFocusChangedFunc =
             }
 
         public:
