@@ -155,6 +155,10 @@ namespace sunaba::ui {
         bool isNativeMenu() {
             return menuBar->is_native_menu();
         }
+
+        void setDisableShortcuts(bool p_disabled) {
+            menuBar->set_disable_shortcuts(p_disabled);
+        }
     };
 }
 
