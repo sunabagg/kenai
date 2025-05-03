@@ -364,6 +364,10 @@ namespace sunaba::core {
             bool getTransparentBg() {
                 return viewport->has_transparent_background();
             }
+
+            void setTransparentBg(bool enable) {
+                viewport->set_transparent_background(enable);
+            }
     };
 }
 
