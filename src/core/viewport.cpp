@@ -107,6 +107,10 @@ namespace sunaba::core {
                 &Viewport::getGuiDisableInput, 
                 &Viewport::setGuiDisableInput
             ),
+            "guiEmbedSubwindows", sol::property(
+                &Viewport::getGuiEmbedSubwindows, 
+                &Viewport::setGuiEmbedSubwindows
+            ),
         );
     }
 }
