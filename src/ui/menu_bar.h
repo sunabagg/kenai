@@ -103,6 +103,10 @@ namespace sunaba::ui {
         void setPreferGlobalMenu(bool p_enabled) {
             menuBar->set_prefer_global_menu(p_enabled);
         }
+
+        int getStartIndex() {
+            return menuBar->get_start_index();
+        }
     };
 }
 
