@@ -340,6 +340,10 @@ namespace sunaba::core {
             bool getSnap2DTransformsToPixel() {
                 return viewport->is_snap_2d_transforms_to_pixel_enabled();
             }
+
+            void setSnap2DTransformsToPixel(bool enable) {
+                viewport->set_snap_2d_transforms_to_pixel(enable);
+            }
     };
 }
 
