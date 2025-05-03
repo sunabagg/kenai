@@ -180,6 +180,10 @@ namespace sunaba::core {
             bool getHandleInputLocally() {
                 return viewport->is_handling_input_locally();
             }
+
+            void setHandleInputLocally(bool enable) {
+                viewport->set_handle_input_locally(enable);
+            }
     };
 }
 
