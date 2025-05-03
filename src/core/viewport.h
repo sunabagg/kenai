@@ -8,6 +8,7 @@
 #define ViewportNode godot::Viewport
 
 #include "element.h"
+#include "texture2d.h"
 
 using namespace godot;
 
