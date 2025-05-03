@@ -107,4 +107,18 @@ namespace sunaba::ui {
         }
         return false;
     }
+
+    TypedArray<Vector3i> MenuBarProxy::_structured_text_parser(const Array &args, const String &text) const {
+        if (element != nullptr) {
+            return element->structuredTextParser(args, text);
+        }
+        return TypedArray<Vector3i>();
+    }
+
+    void bindMenuBar(sol::state& lua) {
+        lua.new_usertype<MenuBar>("MenuBar",
+            sol::constructors<MenuBar()>(),
+            sol::base_classes, sol::bases<BaseObject, Element, sunaba::core::CanvasItem, sunaba::ui::Control>()
+        );
+    }
 }
