@@ -91,6 +91,10 @@ namespace sunaba::core {
                 &Viewport::getDebugDraw, 
                 &Viewport::setDebugDraw
             ),
+            "disable3D", sol::property(
+                &Viewport::getDisable3D, 
+                &Viewport::setDisable3D
+            ),
         );
     }
 }
