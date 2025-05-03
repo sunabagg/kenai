@@ -124,6 +124,7 @@ namespace sunaba::ui {
             "preferGlobalMenu", sol::property(&MenuBar::isPreferGlobalMenu, &MenuBar::setPreferGlobalMenu),
             "startIndex", sol::property(&MenuBar::getStartIndex, &MenuBar::setStartIndex),
             "switchOnHover", sol::property(&MenuBar::isSwitchOnHover, &MenuBar::setSwitchOnHover),
+            "textDirection", sol::property(&MenuBar::getTextDirection, &MenuBar::setTextDirection),
         );
     }
 }
