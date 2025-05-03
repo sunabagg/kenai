@@ -63,6 +63,21 @@ namespace sunaba::ui {
 
             void connectLineEditSignals() {
                 // Connect signals specific to LineEdit
+                // Example: connect("text_changed", this, "_on_text_changed");
+                std::function<Variant(std::vector<Variant>)> textChangedFunc =
+                [this](std::vector<Variant> argsv) {
+                    Array args;
+                    for (int i = 0; i < argsv.size(); i++)
+                    {
+                        args.append(argsv[i]);
+                    }
+                    if (this->textChangedEvent != nullptr) {
+                        this->textChangedEvent->emit(args);
+                    }
+                    return Variant();
+                };
+                Callable textChangedCallable = StlFunctionWrapper::create_callable_from_cpp_function(textChangedFunc);
+                line_edit_node->connect("text_changed", textChangedCallable);
             }
 
         public:
