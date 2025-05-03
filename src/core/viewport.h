@@ -336,6 +336,10 @@ namespace sunaba::core {
             void setSdfScale(int scale) {
                 viewport->set_sdf_scale(static_cast<godot::Viewport::SDFScale>(scale));
             }
+
+            bool getSnap2DTransformsToPixel() {
+                return viewport->is_snap_2d_transforms_to_pixel_enabled();
+            }
     };
 }
 
