@@ -134,6 +134,7 @@ namespace sunaba::ui {
             "isNativeMenu", &MenuBar::isNativeMenu,
             "setDisableShortcuts", &MenuBar::setDisableShortcuts,
             "setMenuDisabled", &MenuBar::setMenuDisabled,
+            "setMenuHidden", &MenuBar::setMenuHidden,
         );
     }
 }
