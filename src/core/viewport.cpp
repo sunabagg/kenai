@@ -95,6 +95,10 @@ namespace sunaba::core {
                 &Viewport::getDisable3D, 
                 &Viewport::setDisable3D
             ),
+            "fsrSharpness", sol::property(
+                &Viewport::getFsrSharpness, 
+                &Viewport::setFsrSharpness
+            ),
         );
     }
 }
