@@ -76,6 +76,10 @@ namespace sunaba::core {
             bool getAudioListenerEnable2D() {
                 return viewport->is_audio_listener_2d();
             }
+
+            void setAudioListenerEnable2D(bool enable) {
+                viewport->set_as_audio_listener_2d(enable);
+            }
     };
 }
 
