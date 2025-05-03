@@ -30,4 +30,10 @@ namespace sunaba::core {
             this->element->physicsProcess(delta);
         }
     }
+
+    void ViewportProxy::_input(const Ref<InputEvent>& event) {
+        if (this->element != nullptr) {
+            this->element->input(event);
+        }
+    }
 }
