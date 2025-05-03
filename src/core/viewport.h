@@ -11,6 +11,7 @@
 #include "event.h"
 #include "texture2d.h"
 #include "../spatial/world3d.h"
+#include "../input/input_event.h"
 
 using namespace godot;
 
@@ -548,6 +549,10 @@ namespace sunaba::core {
 
             void notifyMouseEntered() {
                 viewport->notify_mouse_entered();
+            }
+
+            void pushInput(sunaba::input::InputEvent* event, bool inLocalCoords = false) {
+                viewport->push_input(event->getInputEvent(), inLocalCoords);
             }
     };
 }
