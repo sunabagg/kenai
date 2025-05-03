@@ -8,6 +8,7 @@
 #define ViewportNode godot::Viewport
 
 #include "element.h"
+#include "event.h"
 #include "texture2d.h"
 #include "world3d.h"
 
@@ -434,6 +435,8 @@ namespace sunaba::core {
             void setWorld3D(World3D* world) {
                 viewport->set_world_3d(Ref<godot::World3D>(world->getWorld()));
             }
+
+
     };
 }
 
