@@ -120,6 +120,10 @@ namespace sunaba::core {
             void setCanvasTransform(const Transform2D& transform) {
                 viewport->set_canvas_transform(transform);
             }
+
+            int getDebugDraw() {
+                return viewport->get_debug_draw();
+            }
     };
 }
 
