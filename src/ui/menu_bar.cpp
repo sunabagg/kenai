@@ -126,6 +126,7 @@ namespace sunaba::ui {
             "switchOnHover", sol::property(&MenuBar::isSwitchOnHover, &MenuBar::setSwitchOnHover),
             "textDirection", sol::property(&MenuBar::getTextDirection, &MenuBar::setTextDirection),
             "getMenuCount", &MenuBar::getMenuCount,
+            // "getMenuPopup", &MenuBar::getMenuPopup,
         );
     }
 }
