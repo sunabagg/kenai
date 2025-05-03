@@ -392,6 +392,10 @@ namespace sunaba::core {
             void setUseOcclusionCulling(bool enable) {
                 viewport->set_use_occlusion_culling(enable);
             }
+
+            bool getUseTaa() {
+                return viewport->is_using_taa();
+            }
     };
 }
 
