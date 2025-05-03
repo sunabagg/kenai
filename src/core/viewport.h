@@ -168,6 +168,10 @@ namespace sunaba::core {
             void setGuiEmbedSubwindows(bool enable) {
                 viewport->set_embedding_subwindows(enable);
             }
+
+            bool getGuiSnapControlsToPixels() {
+                return viewport->is_snap_controls_to_pixels_enabled();
+            }
     };
 }
 
