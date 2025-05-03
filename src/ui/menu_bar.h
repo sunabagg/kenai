@@ -123,6 +123,10 @@ namespace sunaba::ui {
         int getTextDirection() {
             return menuBar->get_text_direction();
         }
+
+        void setTextDirection(Control::TextDirection p_direction) {
+            menuBar->set_text_direction(p_direction);
+        }
     };
 }
 
