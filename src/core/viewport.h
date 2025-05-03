@@ -480,6 +480,15 @@ namespace sunaba::core {
             bool getCanvasCullMaskBit(int layer) {
                 return viewport->get_canvas_cull_mask_bit(layer);
             }
+            
+
+            //std::vector<Window*> getEmbeddedSubwindows() {
+            //    return viewport->get_embedded_subwindows();
+            //}
+
+            Transform2D getFinalTransform() {
+                return viewport->get_final_transform();
+            }
     };
 }
 
