@@ -127,6 +127,8 @@ namespace sunaba::ui {
             "textDirection", sol::property(&MenuBar::getTextDirection, &MenuBar::setTextDirection),
             "getMenuCount", &MenuBar::getMenuCount,
             // "getMenuPopup", &MenuBar::getMenuPopup,
+            "getMenuTitle", &MenuBar::getMenuTitle,
+            
         );
     }
 }
