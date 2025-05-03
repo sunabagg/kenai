@@ -400,6 +400,14 @@ namespace sunaba::core {
             void setUseTaa(bool enable) {
                 viewport->set_use_taa(enable);
             }
+
+            bool getUseXr() {
+                return viewport->is_using_xr();
+            }
+
+            void setUseXr(bool enable) {
+                viewport->set_use_xr(enable);
+            }
     };
 }
 
