@@ -95,6 +95,10 @@ namespace sunaba::ui {
         void setLanguage(const String &p_language) {
             menuBar->set_language(p_language);
         }
+
+        bool isPreferGlobalMenu() {
+            return menuBar->is_prefer_global_menu();
+        }
     };
 }
 
