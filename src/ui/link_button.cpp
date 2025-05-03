@@ -94,4 +94,10 @@ namespace sunaba::ui {
         }
         return String();
     }
+
+    void LinkButtonProxy::_gui_input(const Ref<InputEvent>& event) {
+        if (element != nullptr) {
+            element->guiInput(event);
+        }
+    }
 }
