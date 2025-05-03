@@ -192,6 +192,10 @@ namespace sunaba::core {
             void setMeshLodThreshold(float threshold) {
                 viewport->set_mesh_lod_threshold(threshold);
             }
+
+            int getMsaa2D() {
+                return viewport->get_msaa_2d();
+            }
     };
 }
 
