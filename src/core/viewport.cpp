@@ -135,6 +135,10 @@ namespace sunaba::core {
                 &Viewport::getOwnWorld3D, 
                 &Viewport::setOwnWorld3D
             ),
+            "physicsInterpolationMode", sol::property(
+                &Viewport::getPhysicsInterpolationMode, 
+                &Viewport::setPhysicsInterpolationMode
+            ),
         );
     }
 }
