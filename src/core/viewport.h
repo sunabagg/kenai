@@ -558,6 +558,10 @@ namespace sunaba::core {
             void pushTextInput(const std::string& text) {
                 viewport->push_text_input(text.c_str());
             }
+
+            void pushUnhandledInput(sunaba::input::InputEvent* event, bool inLocalCoords = false) {
+                viewport->push_unhandled_input(event->getInputEvent(), inLocalCoords);
+            }
     };
 }
 
