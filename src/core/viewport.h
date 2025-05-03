@@ -184,6 +184,10 @@ namespace sunaba::core {
             void setHandleInputLocally(bool enable) {
                 viewport->set_handle_input_locally(enable);
             }
+
+            float getMeshLodThreshold() {
+                return viewport->get_mesh_lod_threshold();
+            }
     };
 }
 
