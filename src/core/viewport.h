@@ -493,6 +493,10 @@ namespace sunaba::core {
             Vector2 getMousePosition() {
                 return viewport->get_mouse_position();
             }
+
+            int getRenderInfo(int type, int info) {
+                return viewport->get_render_info(static_cast<godot::Viewport::RenderInfoType>(type), static_cast<godot::Viewport::RenderInfo>(info));
+            }
     };
 }
 
