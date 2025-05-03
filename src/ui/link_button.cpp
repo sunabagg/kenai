@@ -142,6 +142,10 @@ namespace sunaba::ui {
                 &LinkButton::getLanguage,
                 &LinkButton::setLanguage
             ),
+            "mouseDefaultCursorShape", sol::property(
+                &LinkButton::getMouseDefaultCursorShape,
+                &LinkButton::setMouseDefaultCursorShape
+            ),
         );
     }
 }
