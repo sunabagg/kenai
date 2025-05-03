@@ -119,6 +119,10 @@ namespace sunaba::ui {
         void setSwitchOnHover(bool p_enable) {
             menuBar->set_switch_on_hover(p_enable);
         }
+
+        int getTextDirection() {
+            return menuBar->get_text_direction();
+        }
     };
 }
 
