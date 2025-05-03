@@ -436,7 +436,7 @@ namespace sunaba::core {
                 viewport->set_world_3d(Ref<godot::World3D>(world->getWorld3D()));
             }
 
-
+            Event* guiFocusChangedEvent;
     };
 }
 
