@@ -75,6 +75,10 @@ namespace sunaba::core {
                 &Viewport::getCanvasCullMask, 
                 &Viewport::setCanvasCullMask
             ),
+            "canvasItemDefaultTextureFilter", sol::property(
+                &Viewport::getCanvasItemDefaultTextureFilter, 
+                &Viewport::setCanvasItemDefaultTextureFilter
+            ),
         );
     }
 }
