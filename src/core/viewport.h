@@ -384,6 +384,10 @@ namespace sunaba::core {
             void setUseHdr2D(bool enable) {
                 viewport->set_use_hdr_2d(enable);
             }
+
+            bool getUseOcclusionCulling() {
+                return viewport->is_using_occlusion_culling();
+            }
     };
 }
 
