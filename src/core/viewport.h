@@ -348,6 +348,10 @@ namespace sunaba::core {
             bool getSnap2DVerticesToPixel() {
                 return viewport->is_snap_2d_vertices_to_pixel_enabled();
             }
+
+            void setSnap2DVerticesToPixel(bool enable) {
+                viewport->set_snap_2d_vertices_to_pixel(enable);
+            }
     };
 }
 
