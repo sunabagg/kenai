@@ -421,6 +421,10 @@ namespace sunaba::core {
             Texture2D* getVrsTexture() {
                 return new Texture2D(viewport->get_vrs_texture().ptr());
             }
+
+            void setVrsTexture(Texture2D* texture) {
+                viewport->set_vrs_texture(texture->getTexture());
+            }
     };
 }
 
