@@ -208,6 +208,10 @@ namespace sunaba::core {
             void setMsaa3D(int level) {
                 viewport->set_msaa_3d(static_cast<godot::Viewport::MSAA>(level));
             }
+
+            bool getOwnWorld3D() {
+                return viewport->is_using_own_world_3d();
+            }
     };
 }
 
