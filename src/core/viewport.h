@@ -300,7 +300,10 @@ namespace sunaba::core {
             int getScaling3DMode() {
                 return viewport->get_scaling_3d_mode();
             }
-            
+
+            void setScaling3DMode(int mode) {
+                viewport->set_scaling_3d_mode(static_cast<godot::Viewport::Scaling3DMode>(mode));
+            }
     };
 }
 
