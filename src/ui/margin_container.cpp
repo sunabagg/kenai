@@ -94,4 +94,10 @@ namespace sunaba::ui {
         }
         return String();
     }
+
+    void MarginContainerProxy::_gui_input(const Ref<InputEvent>& event) {
+        if (element != nullptr) {
+            element->guiInput(event);
+        }
+    }
 }
