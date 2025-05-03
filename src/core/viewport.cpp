@@ -119,6 +119,10 @@ namespace sunaba::core {
                 &Viewport::getHandleInputLocally, 
                 &Viewport::setHandleInputLocally
             ),
+            "meshLodThreshold", sol::property(
+                &Viewport::getMeshLodThreshold, 
+                &Viewport::setMeshLodThreshold
+            ),
         );
     }
 }
