@@ -72,6 +72,10 @@ namespace sunaba::core {
             void setAnisotropicFilteringLevel(int level) {
                 viewport->set_anisotropic_filtering_level(static_cast<godot::Viewport::AnisotropicFiltering>(level));
             }
+
+            bool getAudioListenerEnable2D() {
+                return viewport->is_audio_listener_2d();
+            }
     };
 }
 
