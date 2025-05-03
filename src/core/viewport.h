@@ -144,6 +144,10 @@ namespace sunaba::core {
             void setFSRSharpness(float sharpness) {
                 viewport->set_fsr_sharpness(sharpness);
             }
+
+            Transform2D getGlobalCanvasTransform() {
+                return viewport->get_global_canvas_transform();
+            }
     };
 }
 
