@@ -1,5 +1,33 @@
 #include "viewport.h"
 
 namespace sunaba::core {
-    
+    void ViewportProxy::_enter_tree() {
+        if (this->element != nullptr) {
+            this->element->enterTree();
+        }
+    }
+
+    void ViewportProxy::_exit_tree() {
+        if (this->element != nullptr) {
+            this->element->exitTree();
+        }
+    }
+
+    void ViewportProxy::_ready() {
+        if (this->element != nullptr) {
+            this->element->ready();
+        }
+    }
+
+    void ViewportProxy::_process(double delta) {
+        if (this->element != nullptr) {
+            this->element->process(delta);
+        }
+    }
+
+    void ViewportProxy::_physics_process(double delta) {
+        if (this->element != nullptr) {
+            this->element->physicsProcess(delta);
+        }
+    }
 }
