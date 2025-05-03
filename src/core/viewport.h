@@ -260,6 +260,10 @@ namespace sunaba::core {
             int getPositionalShadowAtlasQuad0() {
                 return viewport->get_positional_shadow_atlas_quadrant_subdiv(0);
             }
+
+            void setPositionalShadowAtlasQuad0(int subdiv) {
+                viewport->set_positional_shadow_atlas_quadrant_subdiv(0, static_cast<godot::Viewport::PositionalShadowAtlasQuadrantSubdiv>(subdiv));
+            }
     };
 }
 
