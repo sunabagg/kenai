@@ -130,9 +130,6 @@ namespace sunaba::ui {
     }
 
     void bindMarginContainer(sol::state &lua) {
-        using namespace sol;
-        using namespace sunaba::ui;
-
         lua.new_usertype<MarginContainer>("MarginContainer",
             sol::constructors<MarginContainer()>(),
             sol::base_classes, sol::bases<BaseObject, Element, sunaba::core::CanvasItem, Control, Container>(),
