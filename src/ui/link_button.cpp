@@ -150,6 +150,10 @@ namespace sunaba::ui {
                 &LinkButton::getStructuredTextBidiOverride,
                 &LinkButton::setStructuredTextBidiOverride
             ),
+            "structuredTextBidiOverrideOptions", sol::property(
+                &LinkButton::getStructuredTextBidiOverrideOptions,
+                &LinkButton::setStructuredTextBidiOverrideOptions
+            ),
         );
     }
 }
