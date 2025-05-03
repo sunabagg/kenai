@@ -83,6 +83,10 @@ namespace sunaba::ui {
         bool isFlat() {
             return menuBar->is_flat();
         }
+
+        void setFlat(bool p_enabled) {
+            menuBar->set_flat(p_enabled);
+        }
     };
 }
 
