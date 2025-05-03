@@ -380,6 +380,10 @@ namespace sunaba::core {
             bool getUseHdr2D() {
                 return viewport->is_using_hdr_2d();
             }
+
+            void setUseHdr2D(bool enable) {
+                viewport->set_use_hdr_2d(enable);
+            }
     };
 }
 
