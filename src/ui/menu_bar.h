@@ -136,7 +136,9 @@ namespace sunaba::ui {
         //    return new PopupMenu(menuBar->get_menu_popup(p_menu));
         //}
 
-        
+        std::string getMenuTitle(int32_t p_menu) {
+            return menuBar->get_menu_title(p_menu).utf8().get_data();
+        }
     };
 }
 
