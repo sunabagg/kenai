@@ -140,6 +140,10 @@ namespace sunaba::core {
             float getFSRSharpness() {
                 return viewport->get_fsr_sharpness();
             }
+
+            void setFSRSharpness(float sharpness) {
+                viewport->set_fsr_sharpness(sharpness);
+            }
     };
 }
 
