@@ -248,6 +248,10 @@ namespace sunaba::core {
             void setPhysicsObjectPickingSort(bool enable) {
                 viewport->set_physics_object_picking_sort(enable);
             }
+
+            bool positionalShadowAtlas16Bits() {
+                return viewport->get_positional_shadow_atlas_16_bits();
+            }
     };
 }
 
