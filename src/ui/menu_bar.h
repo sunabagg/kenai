@@ -139,6 +139,10 @@ namespace sunaba::ui {
         std::string getMenuTitle(int32_t p_menu) {
             return menuBar->get_menu_title(p_menu).utf8().get_data();
         }
+
+        std::string getMenuTooltip(int32_t p_menu) {
+            return menuBar->get_menu_tooltip(p_menu).utf8().get_data();
+        }
     };
 }
 
