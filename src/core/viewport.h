@@ -372,6 +372,10 @@ namespace sunaba::core {
             bool getUseDebanding() {
                 return viewport->is_using_debanding();
             }
+
+            void setUseDebanding(bool enable) {
+                viewport->set_use_debanding(enable);
+            }
     };
 }
 
