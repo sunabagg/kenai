@@ -216,6 +216,10 @@ namespace sunaba::core {
             void setOwnWorld3D(bool enable) {
                 viewport->set_use_own_world_3d(enable);
             }
+
+            int getPhysicsInterpolationMode() {
+                return viewport->get_physics_interpolation_mode();
+            }
     };
 }
 
