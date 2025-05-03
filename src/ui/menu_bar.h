@@ -164,6 +164,10 @@ namespace sunaba::ui {
             menuBar->set_menu_disabled(p_menu, p_disabled);
         }
 
+        void setMenuHidden(int32_t p_menu, bool p_hidden) {
+            menuBar->set_menu_hidden(p_menu, p_hidden);
+        }
+
         void setMenuTitle(int32_t p_menu, const std::string &p_title) {
             menuBar->set_menu_title(p_menu, p_title.c_str());
         }
