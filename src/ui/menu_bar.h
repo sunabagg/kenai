@@ -99,6 +99,10 @@ namespace sunaba::ui {
         bool isPreferGlobalMenu() {
             return menuBar->is_prefer_global_menu();
         }
+
+        void setPreferGlobalMenu(bool p_enabled) {
+            menuBar->set_prefer_global_menu(p_enabled);
+        }
     };
 }
 
