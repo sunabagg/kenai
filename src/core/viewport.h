@@ -529,6 +529,10 @@ namespace sunaba::core {
             Control* guiGetHoveredControl() {
                 return viewport->gui_get_hovered_control();
             }
+
+            bool guiIsDragSuccessful() {
+                return viewport->gui_is_drag_successful();
+            }
     };
 }
 
