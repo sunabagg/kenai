@@ -120,6 +120,7 @@ namespace sunaba::ui {
             sol::constructors<MenuBar()>(),
             sol::base_classes, sol::bases<BaseObject, Element, sunaba::core::CanvasItem, sunaba::ui::Control>(),
             "flat", sol::property(&MenuBar::isFlat, &MenuBar::setFlat),
+            "language", sol::property(&MenuBar::getLanguage, &MenuBar::setLanguage),
         );
     }
 }
