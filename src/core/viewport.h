@@ -44,6 +44,15 @@ namespace sunaba::core {
             void connectViewportSignals() {
                 // Connect signals specific to Viewport
                 std::function<Variant(std::vector<Variant>)> guiFocusChangedFunc =
+                [this](std::vector<Variant> args) {
+                    Node* newFocus = Object::cast_to<Node>(args[0].operator Object*());
+                    Array argsArray;
+                    argsArray.append(new Element(newFocus));
+                    if (this->guiFocusChangedEvent != nullptr) {
+                        this->guiFocusChangedEvent->emit(argsArray);
+                    }
+                    return Variant();
+                };
             }
 
         public:
