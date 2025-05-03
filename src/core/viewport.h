@@ -132,6 +132,10 @@ namespace sunaba::core {
             bool getDisable3D() {
                 return viewport->is_3d_disabled();
             }
+
+            void setDisable3D(bool disable) {
+                viewport->set_disable_3d(disable);
+            }
     };
 }
 
