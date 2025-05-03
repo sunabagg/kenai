@@ -308,6 +308,10 @@ namespace sunaba::core {
             float getScaling3DScale() {
                 return viewport->get_scaling_3d_scale();
             }
+
+            void setScaling3DScale(float scale) {
+                viewport->set_scaling_3d_scale(scale);
+            }
     };
 }
 
