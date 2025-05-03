@@ -64,6 +64,10 @@ namespace sunaba::core {
                 connectViewportSignals();
                 setNode(viewport);
             }
+
+            int getAnisotropicFilteringLevel() {
+                return viewport->get_anisotropic_filtering_level();
+            }
     };
 }
 
