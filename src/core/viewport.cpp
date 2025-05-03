@@ -71,6 +71,10 @@ namespace sunaba::core {
                 &Viewport::getAudioListenerEnable3D, 
                 &Viewport::setAudioListenerEnable3D
             ),
+            "canvasCullMask", sol::property(
+                &Viewport::getCanvasCullMask, 
+                &Viewport::setCanvasCullMask
+            ),
         );
     }
 }
