@@ -224,6 +224,10 @@ namespace sunaba::core {
             void setPhysicsInterpolationMode(int mode) {
                 viewport->set_physics_interpolation_mode(static_cast<godot::Viewport::PhysicsInterpolationMode>(mode));
             }
+
+            bool getPhysicsObjectPicking() {
+                return viewport->get_physics_object_picking();
+            }
     };
 }
 
