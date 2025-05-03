@@ -332,6 +332,10 @@ namespace sunaba::core {
             int getSdfScale() {
                 return viewport->get_sdf_scale();
             }
+
+            void setSdfScale(int scale) {
+                viewport->set_sdf_scale(static_cast<godot::Viewport::SDFScale>(scale));
+            }
     };
 }
 
