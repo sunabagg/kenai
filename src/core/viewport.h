@@ -10,7 +10,7 @@
 #include "element.h"
 #include "event.h"
 #include "texture2d.h"
-#include "world3d.h"
+#include "../spatial/world3d.h"
 
 using namespace godot;
 
@@ -428,12 +428,12 @@ namespace sunaba::core {
                 viewport->set_vrs_texture(Ref<godot::Texture2D>(texture->getTexture()));
             }
 
-            World3D* getWorld3D() {
-                return new World3D(viewport->get_world_3d().ptr());
+            sunaba::spatial::World3D* getWorld3D() {
+                return new sunaba::spatial::World3D(viewport->get_world_3d().ptr());
             }
 
-            void setWorld3D(World3D* world) {
-                viewport->set_world_3d(Ref<godot::World3D>(world->getWorld()));
+            void setWorld3D(sunaba::spatial::World3D* world) {
+                viewport->set_world_3d(Ref<godot::World3D>(world->getWorld3D()));
             }
 
 
