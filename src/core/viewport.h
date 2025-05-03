@@ -252,6 +252,10 @@ namespace sunaba::core {
             bool getPositionalShadowAtlas16Bits() {
                 return viewport->get_positional_shadow_atlas_16_bits();
             }
+
+            void setPositionalShadowAtlas16Bits(bool enable) {
+                viewport->set_positional_shadow_atlas_16_bits(enable);
+            }
     };
 }
 
