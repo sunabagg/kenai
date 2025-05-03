@@ -91,6 +91,10 @@ namespace sunaba::ui {
         std::string getLanguage() {
             return menuBar->get_language().utf8().get_data();
         }
+
+        void setLanguage(const String &p_language) {
+            menuBar->set_language(p_language);
+        }
     };
 }
 
