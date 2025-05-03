@@ -408,6 +408,10 @@ namespace sunaba::core {
             void setUseXr(bool enable) {
                 viewport->set_use_xr(enable);
             }
+
+            int getVrsMode() {
+                return viewport->get_vrs_mode();
+            }
     };
 }
 
