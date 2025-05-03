@@ -166,6 +166,10 @@ namespace sunaba::ui {
                 &LinkButton::getUnderline,
                 &LinkButton::setUnderline
             ),
+            "uri", sol::property(
+                &LinkButton::getUri,
+                &LinkButton::setUri
+            ),
         );
     }
 }
