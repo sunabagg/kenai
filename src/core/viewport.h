@@ -537,6 +537,10 @@ namespace sunaba::core {
             bool guiIsDragging() {
                 return viewport->gui_is_dragging();
             }
+
+            void guiReleaseFocus() {
+                viewport->gui_release_focus();
+            }
     };
 }
 
