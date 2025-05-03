@@ -67,6 +67,10 @@ namespace sunaba::core {
                 &Viewport::getAudioListenerEnable2D, 
                 &Viewport::setAudioListenerEnable2D
             ),
+            "audioListenerEnable3D", sol::property(
+                &Viewport::getAudioListenerEnable3D, 
+                &Viewport::setAudioListenerEnable3D
+            ),
         );
     }
 }
