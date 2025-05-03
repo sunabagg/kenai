@@ -212,6 +212,10 @@ namespace sunaba::core {
             bool getOwnWorld3D() {
                 return viewport->is_using_own_world_3d();
             }
+
+            void setOwnWorld3D(bool enable) {
+                viewport->set_use_own_world_3d(enable);
+            }
     };
 }
 
