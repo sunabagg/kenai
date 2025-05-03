@@ -172,6 +172,10 @@ namespace sunaba::core {
             bool getGuiSnapControlsToPixels() {
                 return viewport->is_snap_controls_to_pixels_enabled();
             }
+
+            void setGuiSnapControlsToPixels(bool enable) {
+                viewport->set_snap_controls_to_pixels(enable);
+            }
     };
 }
 
