@@ -111,6 +111,10 @@ namespace sunaba::ui {
         void setStartIndex(int32_t p_enabled) {
             menuBar->set_start_index(p_enabled);
         }
+
+        bool isSwitchOnHover() {
+            return menuBar->is_switch_on_hover();
+        }
     };
 }
 
