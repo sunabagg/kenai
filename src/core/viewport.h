@@ -376,6 +376,10 @@ namespace sunaba::core {
             void setUseDebanding(bool enable) {
                 viewport->set_use_debanding(enable);
             }
+
+            bool getUseHdr2D() {
+                return viewport->is_using_hdr_2d();
+            }
     };
 }
 
