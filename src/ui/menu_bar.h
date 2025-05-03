@@ -87,6 +87,10 @@ namespace sunaba::ui {
         void setFlat(bool p_enabled) {
             menuBar->set_flat(p_enabled);
         }
+
+        std::string getLanguage() {
+            return menuBar->get_language().utf8().get_data();
+        }
     };
 }
 
