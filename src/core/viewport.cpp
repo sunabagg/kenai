@@ -139,6 +139,10 @@ namespace sunaba::core {
                 &Viewport::getPhysicsInterpolationMode, 
                 &Viewport::setPhysicsInterpolationMode
             ),
+            "physicsObjectPicking", sol::property(
+                &Viewport::getPhysicsObjectPicking, 
+                &Viewport::setPhysicsObjectPicking
+            ),
         );
     }
 }
