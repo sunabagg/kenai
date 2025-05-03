@@ -545,6 +545,10 @@ namespace sunaba::core {
             bool isInputHandled() {
                 return viewport->is_input_handled();
             }
+
+            void notifyMouseEntered() {
+                viewport->notify_mouse_entered();
+            }
     };
 }
 
