@@ -240,6 +240,10 @@ namespace sunaba::core {
             void setPhysicsObjectPickingFirstOnly(bool enable) {
                 viewport->set_physics_object_picking_first_only(enable);
             }
+
+            bool getPhysicsObjectPickingSort() {
+                return viewport->get_physics_object_picking_sort();
+            }
     };
 }
 
