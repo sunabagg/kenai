@@ -505,6 +505,14 @@ namespace sunaba::core {
             Transform2D getStretchTransform() {
                 return viewport->get_stretch_transform();
             }
+
+            //ViewportTexture* getTexture() {
+            //    return new ViewportTexture(viewport->get_texture().ptr());
+            //}
+
+            Rect2 getVisibleRect() {
+                return viewport->get_visible_rect();
+            }
     };
 }
 
