@@ -122,6 +122,7 @@ namespace sunaba::ui {
             "flat", sol::property(&MenuBar::isFlat, &MenuBar::setFlat),
             "language", sol::property(&MenuBar::getLanguage, &MenuBar::setLanguage),
             "preferGlobalMenu", sol::property(&MenuBar::isPreferGlobalMenu, &MenuBar::setPreferGlobalMenu),
+            "startIndex", sol::property(&MenuBar::getStartIndex, &MenuBar::setStartIndex),
         );
     }
 }
