@@ -228,6 +228,10 @@ namespace sunaba::core {
             bool getPhysicsObjectPicking() {
                 return viewport->get_physics_object_picking();
             }
+
+            void setPhysicsObjectPicking(bool enable) {
+                viewport->set_physics_object_picking(enable);
+            }
     };
 }
 
