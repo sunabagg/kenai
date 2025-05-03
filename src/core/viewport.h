@@ -92,6 +92,10 @@ namespace sunaba::core {
             int getCanvasCullMask() {
                 return viewport->get_canvas_cull_mask();
             }
+
+            void setCanvasCullMask(int mask) {
+                viewport->set_canvas_cull_mask(mask);
+            }
     };
 }
 
