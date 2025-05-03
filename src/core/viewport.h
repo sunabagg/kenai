@@ -447,6 +447,9 @@ namespace sunaba::core {
             Event* getSizeChangedEvent() {
                 return sizeChangedEvent;
             }
+            void setSizeChangedEvent(Event* event) {
+                sizeChangedEvent = event;
+            }
     };
 }
 
