@@ -105,6 +105,8 @@ target_sources(${PROJECT_NAME} PRIVATE
         proxy_db.cpp
         canvas_item.h
         canvas_item.cpp
+        viewport.h
+        viewport.cpp
 )
 
 add_subdirectory(io)
