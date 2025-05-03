@@ -96,6 +96,10 @@ namespace sunaba::core {
             void setCanvasCullMask(int mask) {
                 viewport->set_canvas_cull_mask(mask);
             }
+
+            int getCanvasItemDefaultTextureFilter() {
+                return viewport->get_default_canvas_item_texture_filter();
+            }
     };
 }
 
