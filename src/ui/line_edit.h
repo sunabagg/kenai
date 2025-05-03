@@ -62,6 +62,20 @@ namespace sunaba::ui {
             LineEditNode* line_edit_node = nullptr;
 
             void connectLineEditSignals() {
+                std::function<Variant(std::vector<Variant>)> textChangeRejectedFunc =
+                [this](std::vector<Variant> argsv) {
+                    Array args;
+                    for (int i = 0; i < argsv.size(); i++)
+                    {
+                        args.append(argsv[i]);
+                    }
+                    if (this->textChangeRejectedEvent != nullptr) {
+                        this->textChangeRejectedEvent->emit(args);
+                    }
+                    return Variant();
+                };
+                Callable textChangeRejectedCallable = StlFunctionWrapper::create_callable_from_cpp_function(textChangeRejectedFunc);
+                line_edit_node->connect("text_changed_rejected", textChangeRejectedCallable);
                 std::function<Variant(std::vector<Variant>)> textChangedFunc =
                 [this](std::vector<Variant> argsv) {
                     Array args;
