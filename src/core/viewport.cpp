@@ -59,7 +59,10 @@ namespace sunaba::core {
         lua.new_usertype<Viewport>("Viewport",
             sol::constructors<Viewport()>(),
             sol::base_classes, sol::bases<BaseObject, Element>(),
-            "anisotropicFilteringLevel", sol::property(&Viewport::getAnisotropicFilteringLevel, &Viewport::setAnisotropicFilteringLevel),
+            "anisotropicFilteringLevel", sol::property(
+                &Viewport::getAnisotropicFilteringLevel, 
+                &Viewport::setAnisotropicFilteringLevel
+            ),
         );
     }
 }
