@@ -99,6 +99,10 @@ namespace sunaba::core {
                 &Viewport::getFsrSharpness, 
                 &Viewport::setFsrSharpness
             ),
+            "globalCanvasTransform", sol::property(
+                &Viewport::getGlobalCanvasTransform, 
+                &Viewport::setGlobalCanvasTransform
+            ),
         );
     }
 }
