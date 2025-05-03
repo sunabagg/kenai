@@ -170,6 +170,13 @@ namespace sunaba::ui {
                 &LinkButton::getUri,
                 &LinkButton::setUri
             ),
+            "cast", [](Element* e) {
+                LinkButtonNode* control = Object::cast_to<LinkButtonNode>(e->getNode());
+                if (control != nullptr) {
+                    return new LinkButton(control);
+                }
+                return static_cast<LinkButton*>(nullptr);
+            }
         );
     }
 }
