@@ -578,6 +578,10 @@ namespace sunaba::core {
             void updateMouseCursorState() {
                 viewport->update_mouse_cursor_state();
             }
+
+            void warpMouse(const Vector2& position) {
+                viewport->warp_mouse(position);
+            }
     };
 }
 
