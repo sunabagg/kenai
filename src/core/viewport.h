@@ -368,6 +368,10 @@ namespace sunaba::core {
             void setTransparentBg(bool enable) {
                 viewport->set_transparent_background(enable);
             }
+
+            bool getUseDebanding() {
+                return viewport->is_using_debanding();
+            }
     };
 }
 
