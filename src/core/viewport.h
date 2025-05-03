@@ -63,6 +63,7 @@ namespace sunaba::core {
                     }
                     return Variant();
                 };
+                Callable sizeChangedCallable = StlFunctionWrapper::create_callable_from_cpp_function(sizeChangedFunc);
             }
 
         public:
