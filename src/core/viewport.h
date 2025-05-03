@@ -417,6 +417,10 @@ namespace sunaba::core {
             void setVrsMode(int mode) {
                 viewport->set_vrs_mode(static_cast<godot::Viewport::VRSMode>(mode));
             }
+
+            Texture2D* getVrsTexture() {
+                return new Texture2D(viewport->get_vrs_texture().ptr());
+            }
     };
 }
 
