@@ -574,6 +574,10 @@ namespace sunaba::core {
             void setPositionalShadowAtlasQuadrantSubdiv(int quadrant, int subdiv) {
                 viewport->set_positional_shadow_atlas_quadrant_subdiv(quadrant, static_cast<godot::Viewport::PositionalShadowAtlasQuadrantSubdiv>(subdiv));
             }
+
+            void updateMouseCursorState() {
+                viewport->update_mouse_cursor_state();
+            }
     };
 }
 
