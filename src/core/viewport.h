@@ -360,6 +360,10 @@ namespace sunaba::core {
             void setTextureMipmapBias(float bias) {
                 viewport->set_texture_mipmap_bias(bias);
             }
+
+            bool getTransparentBg() {
+                return viewport->has_transparent_background();
+            }
     };
 }
 
