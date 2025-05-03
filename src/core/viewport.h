@@ -316,6 +316,10 @@ namespace sunaba::core {
             int getScreenSpaceAA() {
                 return viewport->get_screen_space_aa();
             }
+
+            void setScreenSpaceAA(int mode) {
+                viewport->set_screen_space_aa(static_cast<godot::Viewport::ScreenSpaceAA>(mode));
+            }
     };
 }
 
