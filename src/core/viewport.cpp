@@ -54,4 +54,11 @@ namespace sunaba::core {
             this->element->shortcutInput(event);
         }
     }
+
+    void bindViewport(sol::state &lua) {
+        lua.new_usertype<Viewport>("Viewport",
+            sol::constructors<Viewport()>(),
+            sol::base_classes, sol::bases<BaseObject, Element>(),
+        );
+    }
 }
