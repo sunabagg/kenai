@@ -517,6 +517,10 @@ namespace sunaba::core {
             void guiCancelDrag() {
                 viewport->gui_cancel_drag();
             }
+
+            Variant guiGetDragData() {
+                return viewport->gui_get_drag_data();
+            }
     };
 }
 
