@@ -184,6 +184,10 @@ namespace sunaba::desktop {
             void setKeepTitleVisible(bool keep) {
                 window->set_keep_title_visible(keep);
             }
+
+            Vector2i getMaxSize() {
+                return window->get_max_size();
+            }
     };
 }
 
