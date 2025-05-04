@@ -634,6 +634,10 @@ namespace sunaba::desktop {
             void childControlsChanged() {
                 window->child_controls_changed();
             }
+
+            void endBulkThemeOverride() {
+                window->end_bulk_theme_override();
+            }
     };
 }
 
