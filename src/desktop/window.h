@@ -642,6 +642,10 @@ namespace sunaba::desktop {
             bool getFlag(int flag) {
                 return window->get_flag(static_cast<godot::Window::Flags>(flag));
             }
+
+            int get_layout_direction() {
+                return window->get_layout_direction();
+            }
     };
 }
 
