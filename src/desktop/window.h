@@ -368,6 +368,7 @@ namespace sunaba::desktop {
             void setDpiChangedEvent(Event* event) {
                 dpiChangedEvent = event;
             }
+            Event* filesDroppedEvent;
     };
 }
 
