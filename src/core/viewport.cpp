@@ -278,6 +278,7 @@ namespace sunaba::core {
             "setInputAsHandled", &Viewport::setInputAsHandled,
             "setPositionalShadowAtlasQuadrantSubdiv", &Viewport::setPositionalShadowAtlasQuadrantSubdiv,
             "updateMouseCursorState", &Viewport::updateMouseCursorState,
+            "warpMouse", &Viewport::warpMouse,
         );
     }
 }
