@@ -410,6 +410,7 @@ namespace sunaba::desktop {
             void setMouseExitedEvent(Event* event) {
                 mouseExited = event;
             }
+            Event* themeChangedEvent;
     };
 }
 
