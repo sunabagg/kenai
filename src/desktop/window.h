@@ -108,6 +108,10 @@ namespace sunaba::desktop {
             float getContentScaleFactor() {
                 return window->get_content_scale_factor();
             }
+
+            void setContentScaleFactor(float scale) {
+                window->set_content_scale_factor(scale);
+            }
     };
 }
 
