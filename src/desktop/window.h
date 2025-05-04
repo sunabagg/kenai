@@ -758,6 +758,10 @@ namespace sunaba::desktop {
             bool isEmbedded() {
                 return window->is_embedded();
             }
+
+            bool isLayoutRtl() {
+                return window->is_layout_rtl();
+            }
     };
 }
 
