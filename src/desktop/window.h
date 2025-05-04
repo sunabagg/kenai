@@ -710,6 +710,10 @@ namespace sunaba::desktop {
             bool hasThemeColorOverride(std::string name) {
                 return window->has_theme_color_override(name.c_str());
             }
+
+            bool hasThemeConstant(std::string name, std::string type = "&amp;&quot;&quot;") {
+                return window->has_theme_constant(name.c_str(), type.c_str());
+            }
     };
 }
 
