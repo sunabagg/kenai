@@ -646,6 +646,10 @@ namespace sunaba::desktop {
             int getLayoutDirection() {
                 return window->get_layout_direction();
             }
+
+            Vector2i getPositionWithDecorations() {
+                return window->get_position_with_decorations();
+            }
     };
 }
 
