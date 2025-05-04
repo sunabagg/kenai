@@ -253,6 +253,10 @@ namespace sunaba::desktop {
             bool getSharpCorners() {
                 return window->get_flag(godot::Window::Flags::FLAG_SHARP_CORNERS);
             }
+
+            void setSharpCorners(bool sharp) {
+                window->set_flag(godot::Window::Flags::FLAG_SHARP_CORNERS, sharp);
+            }
     };
 }
 
