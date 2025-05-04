@@ -200,6 +200,10 @@ namespace sunaba::desktop {
             void setMinSize(Vector2i size) {
                 window->set_min_size(size);
             }
+
+            int getMode() {
+                return window->get_mode();
+            }
     };
 }
 
