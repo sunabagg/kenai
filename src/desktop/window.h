@@ -192,6 +192,10 @@ namespace sunaba::desktop {
             void setMaxSize(Vector2i size) {
                 window->set_max_size(size);
             }
+
+            Vector2i getMinSize() {
+                return window->get_min_size();
+            }
     };
 }
 
