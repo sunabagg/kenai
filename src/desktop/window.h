@@ -216,6 +216,15 @@ namespace sunaba::desktop {
             void setMousePassthrough(bool passthrough) {
                 window->set_flag(godot::Window::Flags::FLAG_MOUSE_PASSTHROUGH, passthrough);
             }
+
+            std::vector<Vector2> getMousePassthroughPolygon() {
+                PackedVector2Array polygon = window->get_mouse_passthrough_polygon();
+                std::vector<Vector2> result;
+                for (int i = 0; i < polygon.size(); i++) {
+                    result.push_back(polygon[i]);
+                }
+                return result;
+            }
     };
 }
 
