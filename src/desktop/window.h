@@ -878,6 +878,10 @@ namespace sunaba::desktop {
             void startDrag() {
                 window->start_drag();
             }
+
+            void startRessize(int edge) {
+                window->start_resize(static_cast<godot::DisplayServer::WindowResizeEdge>(edge));
+            }
     };
 }
 
