@@ -140,6 +140,10 @@ namespace sunaba::desktop {
             void setCurrentScreen(int screen) {
                 window->set_current_screen(screen);
             }
+
+            bool getExcludeFromCapture() {
+                return window->get_flag(godot::Window::Flags::FLAG_EXCLUDE_FROM_CAPTURE);
+            }
     };
 }
 
