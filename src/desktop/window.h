@@ -814,6 +814,10 @@ namespace sunaba::desktop {
             void popupExclusiveOnParent(Element* fromElement, Rect2i parentRect) {
                 window->popup_exclusive_on_parent(fromElement->getNode(), parentRect);
             }
+
+            void popupOnParent(Rect2i parentRect) {
+                window->popup_on_parent(parentRect);
+            }
     };
 }
 
