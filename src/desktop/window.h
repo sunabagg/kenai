@@ -842,6 +842,10 @@ namespace sunaba::desktop {
             void removeThemeStyleBoxOverride(std::string name) {
                 window->remove_theme_stylebox_override(name.c_str());
             }
+
+            void requestAttention() {
+                window->request_attention();
+            }
     };
 }
 
