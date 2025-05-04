@@ -173,6 +173,14 @@ namespace sunaba::desktop {
                 };
                 Callable visibilityChangedCallable = StlFunctionWrapper::create_callable_from_cpp_function(visibilityChangedFunc);
                 this->window->connect("visibility_changed", visibilityChangedCallable);
+                std::function<Variant(std::vector<Variant>)> windowInputFunc =
+                [this](std::vector<Variant> args) {
+                    Array argsArray;
+                    if (this->windowInputEvent != nullptr) {
+                        this->windowInputEvent->emit(argsArray);
+                    }
+                    return Variant();
+                };
             }
 
         public:
