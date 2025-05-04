@@ -690,6 +690,10 @@ namespace sunaba::desktop {
             sunaba::ui::StyleBox* getThemeStyleBox(std::string name, std::string type = "&amp;&quot;&quot;") {
                 return new sunaba::ui::StyleBox(window->get_theme_stylebox(name.c_str(), type.c_str()).ptr());
             }
+
+            int getWindowId() {
+                return window->get_window_id();
+            }
     };
 }
 
