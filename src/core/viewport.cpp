@@ -269,6 +269,7 @@ namespace sunaba::core {
             "guiIsDragSuccessful", &Viewport::guiIsDragSuccessful,
             "guiIsDragging", &Viewport::guiIsDragging,
             "guiReleaseFocus", &Viewport::guiReleaseFocus,
+            "isInputHandled", &Viewport::isInputHandled,
         );
     }
 }
