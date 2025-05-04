@@ -156,6 +156,10 @@ namespace sunaba::desktop {
             void setExclusive(bool exclusive) {
                 window->set_exclusive(exclusive);
             }
+
+            bool getExtendToTitle() {
+                return window->get_flag(godot::Window::Flags::FLAG_EXTEND_TO_TITLE);
+            }
     };
 }
 
