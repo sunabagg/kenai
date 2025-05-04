@@ -439,6 +439,9 @@ namespace sunaba::desktop {
                 visibilityChangedEvent = event;
             }
             Event* windowInputEvent;
+            Event* getWindowInputEvent() {
+                return windowInputEvent;
+            }
     };
 }
 
