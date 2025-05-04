@@ -766,6 +766,10 @@ namespace sunaba::desktop {
             bool isMaximizeAllowed() {
                 return window->is_maximize_allowed();
             }
+
+            bool isUsingFontOversampling() {
+                return window->is_using_font_oversampling();
+            }
     };
 }
 
