@@ -874,6 +874,10 @@ namespace sunaba::desktop {
             void show() {
                 window->show();
             }
+
+            void startDrag() {
+                window->start_drag();
+            }
     };
 }
 
