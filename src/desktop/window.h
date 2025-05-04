@@ -212,6 +212,10 @@ namespace sunaba::desktop {
             bool getMousePassthrough() {
                 return window->get_flag(godot::Window::Flags::FLAG_MOUSE_PASSTHROUGH);
             }
+
+            void setMousePassthrough(bool passthrough) {
+                window->set_flag(godot::Window::Flags::FLAG_MOUSE_PASSTHROUGH, passthrough);
+            }
     };
 }
 
