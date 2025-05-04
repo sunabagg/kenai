@@ -195,6 +195,10 @@ namespace sunaba::core {
                 &Viewport::getSdfScale, 
                 &Viewport::setSdfScale
             ),
+            "snap2DTransformsToPixel", sol::property(
+                &Viewport::getSnap2DTransformsToPixel, 
+                &Viewport::setSnap2DTransformsToPixel
+            ),
         );
     }
 }
