@@ -112,6 +112,7 @@ namespace sunaba::desktop {
                     return Variant();
                 };
                 Callable goBackRequestedCallable = StlFunctionWrapper::create_callable_from_cpp_function(goBackRequestedFunc);
+                this->window->connect("go_back_requested", goBackRequestedCallable);
             }
 
         public:
