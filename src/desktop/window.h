@@ -650,6 +650,10 @@ namespace sunaba::desktop {
             Vector2i getPositionWithDecorations() {
                 return window->get_position_with_decorations();
             }
+
+            Vector2i getSizeWithDecorations() {
+                return window->get_size_with_decorations();
+            }
     };
 }
 
