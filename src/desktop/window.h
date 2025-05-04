@@ -798,6 +798,10 @@ namespace sunaba::desktop {
             void popupExclusive(Element* fromElement, Rect2i rect = Rect2i(0, 0, 0, 0)) {
                 window->popup_exclusive(fromElement->getNode(), rect);
             }
+
+            void popupExclusiveCentered(Element* fromElement, Vector2i minsize = Vector2i(0, 0)) {
+                window->popup_exclusive_centered(fromElement->getNode(), minsize);
+            }
     };
 }
 
