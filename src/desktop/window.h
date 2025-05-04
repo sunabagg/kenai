@@ -74,7 +74,7 @@ namespace sunaba::desktop {
             }
 
             bool getAlwaysOnTop() const {
-                return window->is_always_on_top();
+                return window->get_flag(godot::Window::Flags::FLAG_ALWAYS_ON_TOP);
             }
     };
 }
