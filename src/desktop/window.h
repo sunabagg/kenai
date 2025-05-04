@@ -442,6 +442,9 @@ namespace sunaba::desktop {
             Event* getWindowInputEvent() {
                 return windowInputEvent;
             }
+            void setWindowInputEvent(Event* event) {
+                windowInputEvent = event;
+            }
     };
 }
 
