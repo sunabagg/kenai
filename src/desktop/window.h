@@ -80,6 +80,10 @@ namespace sunaba::desktop {
             void setAlwaysOnTop(bool always_on_top) {
                 window->set_flag(godot::Window::Flags::FLAG_ALWAYS_ON_TOP, always_on_top);
             }
+
+            bool  getAutoTranslate() {
+                return window->is_auto_translating();
+            }
     };
 }
 
