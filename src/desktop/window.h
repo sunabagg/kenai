@@ -754,6 +754,10 @@ namespace sunaba::desktop {
             void hide() {
                 window->hide();
             }
+
+            bool isEmbedded() {
+                return window->is_embedded();
+            }
     };
 }
 
