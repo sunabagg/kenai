@@ -257,6 +257,7 @@ namespace sunaba::core {
             ),
             "findWorld3D", &Viewport::findWorld3D,
             "getCanvasCullMaskBit", &Viewport::getCanvasCullMaskBit,
+            "getFinalTransform", &Viewport::getFinalTransform,
         );
     }
 }
