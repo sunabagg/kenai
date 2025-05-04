@@ -278,6 +278,10 @@ namespace sunaba::desktop {
             std::string getThemeTypeVariation() {
                 return String(window->get_theme_type_variation()).utf8().get_data();
             }
+
+            void setThemeTypeVariation(std::string variation) {
+                window->set_theme_type_variation(String(variation.c_str()));
+            }
     };
 }
 
