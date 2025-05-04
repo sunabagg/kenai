@@ -181,6 +181,7 @@ namespace sunaba::desktop {
                     }
                     return Variant();
                 };
+                Callable windowInputCallable = StlFunctionWrapper::create_callable_from_cpp_function(windowInputFunc);
             }
 
         public:
