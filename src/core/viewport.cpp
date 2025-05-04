@@ -272,6 +272,7 @@ namespace sunaba::core {
             "isInputHandled", &Viewport::isInputHandled,
             "notifyMouseEntered", &Viewport::notifyMouseEntered,
             "pushInput", &Viewport::pushInput,
+            "pushTextInput", &Viewport::pushTextInput,
         );
     }
 }
