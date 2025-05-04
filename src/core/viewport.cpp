@@ -215,6 +215,10 @@ namespace sunaba::core {
                 &Viewport::getUseDebanding, 
                 &Viewport::setUseDebanding
             ),
+            "useHdr2D", sol::property(
+                &Viewport::getUseHdr2D, 
+                &Viewport::setUseHdr2D
+            ),
         );
     }
 }
