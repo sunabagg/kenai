@@ -786,6 +786,10 @@ namespace sunaba::desktop {
             void popupCentered(Vector2i minsize = Vector2i(0, 0)) {
                 window->popup_centered(minsize);
             }
+
+            void popupCenteredClamped(Vector2i minsize = Vector2i(0, 0), float fallbackRatio = 0.75f) {
+                window->popup_centered_clamped(minsize, fallbackRatio);
+            }
     };
 }
 
