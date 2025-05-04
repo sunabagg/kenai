@@ -414,6 +414,9 @@ namespace sunaba::desktop {
             Event* getThemeChangedEvent() {
                 return themeChangedEvent;
             }
+            void setThemeChangedEvent(Event* event) {
+                themeChangedEvent = event;
+            }
     };
 }
 
