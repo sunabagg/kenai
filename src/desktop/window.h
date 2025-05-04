@@ -659,7 +659,7 @@ namespace sunaba::desktop {
                 return window->get_theme_color(name.c_str(), type.c_str());
             }
 
-            int getThemeConstant(std::string name, std::string type) {
+            int getThemeConstant(std::string name, std::string type = "&amp;&quot;&quot;") {
                 return window->get_theme_constant(name.c_str(), type.c_str());
             }
 
