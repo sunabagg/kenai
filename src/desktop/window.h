@@ -322,6 +322,10 @@ namespace sunaba::desktop {
             void setUnfocusable(bool unfocusable) {
                 window->set_flag(godot::Window::Flags::FLAG_NO_FOCUS, unfocusable);
             }
+
+            bool getUnresizable() {
+                return window->get_flag(godot::Window::Flags::FLAG_RESIZE_DISABLED);
+            }
     };
 }
 
