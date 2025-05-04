@@ -261,6 +261,10 @@ namespace sunaba::desktop {
             Vector2i getSize() {
                 return window->get_size();
             }
+
+            void setSize(Vector2i size) {
+                window->set_size(size);
+            }
     };
 }
 
