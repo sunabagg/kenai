@@ -666,6 +666,10 @@ namespace sunaba::desktop {
             float getThemeDefaultBaseScale() {
                 return window->get_theme_default_base_scale();
             }
+
+            sunaba::core::Font* getThemeDefaultFont() {
+                return new sunaba::core::Font(window->get_theme_default_font().ptr());
+            }
     };
 }
 
