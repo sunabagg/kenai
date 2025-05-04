@@ -262,6 +262,7 @@ namespace sunaba::core {
             "getRenderInfo", &Viewport::getRenderInfo,
             "getScreenTransform", &Viewport::getScreenTransform,
             "getVisibleRect", &Viewport::getVisibleRect,
+            "guiCancelDrag", &Viewport::guiCancelDrag,
         );
     }
 }
