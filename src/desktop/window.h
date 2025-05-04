@@ -121,6 +121,7 @@ namespace sunaba::desktop {
                     }
                     return Variant();
                 };
+                Callable mouseEnteredCallable = StlFunctionWrapper::create_callable_from_cpp_function(mouseEnteredFunc);
             }
 
         public:
