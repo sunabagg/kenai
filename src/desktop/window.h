@@ -245,6 +245,10 @@ namespace sunaba::desktop {
             Vector2i getPosition() {
                 return window->get_position();
             }
+
+            void setPosition(Vector2i position) {
+                window->set_position(position);
+            }
     };
 }
 
