@@ -302,6 +302,10 @@ namespace sunaba::desktop {
             bool getTransientToFocused() {
                 return window->is_transient_to_focused();
             }
+
+            void setTransientToFocused(bool transient) {
+                window->set_transient_to_focused(transient);
+            }
     };
 }
 
