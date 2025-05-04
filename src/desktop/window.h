@@ -818,6 +818,10 @@ namespace sunaba::desktop {
             void popupOnParent(Rect2i parentRect) {
                 window->popup_on_parent(parentRect);
             }
+
+            void removeThemeColorOverride(std::string name) {
+                window->remove_theme_color_override(name.c_str());
+            }
     };
 }
 
