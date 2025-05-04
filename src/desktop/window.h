@@ -318,6 +318,10 @@ namespace sunaba::desktop {
             bool getUnfocusable() {
                 return window->get_flag(godot::Window::Flags::FLAG_NO_FOCUS);
             }
+
+            void setUnfocusable(bool unfocusable) {
+                window->set_flag(godot::Window::Flags::FLAG_NO_FOCUS, unfocusable);
+            }
     };
 }
 
