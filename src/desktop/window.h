@@ -858,6 +858,10 @@ namespace sunaba::desktop {
             void setImePosition(Vector2i position) {
                 window->set_ime_position(position);
             }
+
+            void setLayoutDirection(int direction) {
+                window->set_layout_direction(static_cast<godot::Window::LayoutDirection>(direction));
+            }
     };
 }
 
