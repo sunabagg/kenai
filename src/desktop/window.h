@@ -62,6 +62,7 @@ namespace sunaba::desktop {
                     return Variant();
                 };
                 Callable closeRequestedCallable = StlFunctionWrapper::create_callable_from_cpp_function(closeRequestedFunc);
+                this->window->connect("close_requested", closeRequestedCallable);
             }
 
         public:
