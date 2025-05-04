@@ -334,6 +334,10 @@ namespace sunaba::desktop {
             bool getVisible() {
                 return window->is_visible();
             }
+
+            void setVisible(bool visible) {
+                window->set_visible(visible);
+            }
     };
 }
 
