@@ -10,6 +10,7 @@
 #include "../core/viewport.h"
 #include "../ui/theme.h"
 #include "../core/font.h"
+#include "../core/texture2d.h"
 
 using namespace godot;
 using namespace sunaba::core;
@@ -612,6 +613,8 @@ namespace sunaba::desktop {
             void addThemeFontSizeOverride(std::string name, int size) {
                 window->add_theme_font_size_override(name.c_str(), size);
             }
+
+
     };
 }
 
