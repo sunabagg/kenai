@@ -88,6 +88,10 @@ namespace sunaba::desktop {
             void setAutoTranslate(bool auto_translate) {
                 window->set_auto_translate(auto_translate);
             }
+
+            bool getBorderless() {
+                return window->get_flag(godot::Window::Flags::FLAG_BORDERLESS);
+            }
     };
 }
 
