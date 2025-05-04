@@ -191,6 +191,10 @@ namespace sunaba::core {
                 &Viewport::getSdfOversize, 
                 &Viewport::setSdfOversize
             ),
+            "sdfScale", sol::property(
+                &Viewport::getSdfScale, 
+                &Viewport::setSdfScale
+            ),
         );
     }
 }
