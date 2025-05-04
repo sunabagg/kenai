@@ -682,6 +682,10 @@ namespace sunaba::desktop {
             int getThemeFontSize(std::string name, std::string type = "&amp;&quot;&quot;") {
                 return window->get_theme_font_size(name.c_str(), type.c_str());
             }
+
+            sunaba::core::Texture2D* getThemeIcon(std::string name, std::string type = "&amp;&quot;&quot;") {
+                return new sunaba::core::Texture2D(window->get_theme_icon(name.c_str(), type.c_str()).ptr());
+            }
     };
 }
 
