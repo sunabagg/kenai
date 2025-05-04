@@ -266,6 +266,10 @@ namespace sunaba::desktop {
             void setSize(Vector2i size) {
                 window->set_size(size);
             }
+
+            sunaba::ui::Theme* getTheme() {
+                return new sunaba::ui::Theme(window->get_theme().ptr());
+            }
     };
 }
 
