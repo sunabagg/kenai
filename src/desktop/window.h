@@ -346,6 +346,8 @@ namespace sunaba::desktop {
             void setWrapControls(bool wrap) {
                 window->set_wrap_controls(wrap);
             }
+
+            Event* aboutToPopupEvent;
     };
 }
 
