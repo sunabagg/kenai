@@ -294,6 +294,10 @@ namespace sunaba::desktop {
             bool getTransient() {
                 return window->is_transient();
             }
+
+            void setTransient(bool transient) {
+                window->set_transient(transient);
+            }
     };
 }
 
