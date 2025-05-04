@@ -455,6 +455,10 @@ namespace sunaba::core {
                 return viewport->get_vrs_update_mode();
             }
 
+            void setVrsUpdateMode(int mode) {
+                viewport->set_vrs_update_mode(static_cast<godot::Viewport::VRSUpdateMode>(mode));
+            }
+
             sunaba::spatial::World3D* getWorld3D() {
                 return new sunaba::spatial::World3D(viewport->get_world_3d().ptr());
             }
