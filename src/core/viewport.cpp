@@ -207,6 +207,10 @@ namespace sunaba::core {
                 &Viewport::getTextureMipmapBias, 
                 &Viewport::setTextureMipmapBias
             ),
+            "transparentBg", sol::property(
+                &Viewport::getTransparentBg, 
+                &Viewport::setTransparentBg
+            ),
         );
     }
 }
