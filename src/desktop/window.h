@@ -404,6 +404,9 @@ namespace sunaba::desktop {
                 mouseEntered = event;
             }
             Event* mouseExited;
+            Event* getMouseExitedEvent() {
+                return mouseExited;
+            }
     };
 }
 
