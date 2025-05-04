@@ -738,6 +738,10 @@ namespace sunaba::desktop {
             bool hasThemeIcon(std::string name, std::string type = "&amp;&quot;&quot;") {
                 return window->has_theme_icon(name.c_str(), type.c_str());
             }
+
+            bool hasThemeIconOverride(std::string name) {
+                return window->has_theme_icon_override(name.c_str());
+            }
     };
 }
 
