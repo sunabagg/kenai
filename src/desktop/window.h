@@ -128,6 +128,10 @@ namespace sunaba::desktop {
             void setContentScaleSize(Vector2i size) {
                 window->set_content_scale_size(size);
             }
+
+            int getContentScaleStretch() {
+                return window->get_content_scale_stretch();
+            }
     };
 }
 
