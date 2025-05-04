@@ -83,6 +83,14 @@ namespace sunaba::desktop {
                 };
                 Callable filesDroppedCallable = StlFunctionWrapper::create_callable_from_cpp_function(filesDroppedFunc);
                 this->window->connect("files_dropped", filesDroppedCallable);
+                std::function<Variant(std::vector<Variant>)> focusEnteredFunc =
+                [this](std::vector<Variant> args) {
+                    Array argsArray;
+                    if (this->focusEnteredEvent != nullptr) {
+                        this->focusEnteredEvent->emit(argsArray);
+                    }
+                    return Variant();
+                };
             }
 
         public:
