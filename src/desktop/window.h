@@ -596,7 +596,7 @@ namespace sunaba::desktop {
                         return window->get_contents_minimum_size();
                     }
                 }
-                return Vector2(0, 0);
+                return window->get_contents_minimum_size();
             }
 
             void addThemeColorOverride(std::string name, Color Color) {
