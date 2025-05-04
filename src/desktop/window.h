@@ -172,6 +172,10 @@ namespace sunaba::desktop {
             void setForceNative(bool force) {
                 window->set_force_native(force);
             }
+
+            int getInitialPosition() {
+                return window->get_initial_position();
+            }
     };
 }
 
