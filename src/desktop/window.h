@@ -438,6 +438,7 @@ namespace sunaba::desktop {
             void setVisibilityChangedEvent(Event* event) {
                 visibilityChangedEvent = event;
             }
+            Event* windowInputEvent;
     };
 }
 
