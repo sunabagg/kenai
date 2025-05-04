@@ -750,6 +750,10 @@ namespace sunaba::desktop {
             bool hasThemeStyleBoxOverride(std::string name) {
                 return window->has_theme_stylebox_override(name.c_str());
             }
+
+            void hide() {
+                window->hide();
+            }
     };
 }
 
