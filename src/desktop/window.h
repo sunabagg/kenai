@@ -225,6 +225,14 @@ namespace sunaba::desktop {
                 }
                 return result;
             }
+            
+            void setMousePassthroughPolygon(std::vector<Vector2> polygon) {
+                PackedVector2Array passtrough_polygon;
+                for (size_t i = 0; i < polygon.size(); i++) {
+                    passtrough_polygon.push_back(polygon[i]);
+                }
+                window->set_mouse_passthrough_polygon(passtrough_polygon);
+            }
     };
 }
 
