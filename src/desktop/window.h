@@ -810,6 +810,10 @@ namespace sunaba::desktop {
             void popupExclusiveCenteredRatio(Element* fromElement, float ratio = 0.8f) {
                 window->popup_exclusive_centered_ratio(fromElement->getNode(), ratio);
             }
+
+            void popupExclusiveOnParent(Element* fromElement, Rect2i parentRect) {
+                window->popup_exclusive_on_parent(fromElement->getNode(), parentRect);
+            }
     };
 }
 
