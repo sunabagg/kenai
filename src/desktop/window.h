@@ -82,6 +82,7 @@ namespace sunaba::desktop {
                     return Variant();
                 };
                 Callable filesDroppedCallable = StlFunctionWrapper::create_callable_from_cpp_function(filesDroppedFunc);
+                this->window->connect("files_dropped", filesDroppedCallable);
             }
 
         public:
