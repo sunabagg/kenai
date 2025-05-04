@@ -397,6 +397,9 @@ namespace sunaba::desktop {
                 goBackRequestedEvent = event;
             }
             Event* mouseEntered;
+            Event* getMouseEnteredEvent() {
+                return mouseEntered;
+            }
     };
 }
 
