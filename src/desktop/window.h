@@ -282,6 +282,10 @@ namespace sunaba::desktop {
             void setThemeTypeVariation(std::string variation) {
                 window->set_theme_type_variation(String(variation.c_str()));
             }
+
+            std::string getTitle() {
+                return String(window->get_title()).utf8().get_data();
+            }
     };
 }
 
