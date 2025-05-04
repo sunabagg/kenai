@@ -84,6 +84,10 @@ namespace sunaba::desktop {
             bool  getAutoTranslate() {
                 return window->is_auto_translating();
             }
+
+            void setAutoTranslate(bool auto_translate) {
+                window->set_auto_translate(auto_translate);
+            }
     };
 }
 
