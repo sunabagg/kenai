@@ -73,6 +73,14 @@ namespace sunaba::desktop {
                 };
                 Callable dpiChangedCallable = StlFunctionWrapper::create_callable_from_cpp_function(dpiChangedFunc);
                 this->window->connect("dpi_changed", dpiChangedCallable);
+                std::function<Variant(std::vector<Variant>)> filesDroppedFunc =
+                [this](std::vector<Variant> args) {
+                    Array argsArray;
+                    if (this->filesDroppedEvent != nullptr) {
+                        this->filesDroppedEvent->emit(argsArray);
+                    }
+                    return Variant();
+                };
             }
 
         public:
