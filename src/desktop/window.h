@@ -132,6 +132,10 @@ namespace sunaba::desktop {
             int getContentScaleStretch() {
                 return window->get_content_scale_stretch();
             }
+
+            int getCurrentScreen() {
+                return window->get_current_screen();
+            }
     };
 }
 
