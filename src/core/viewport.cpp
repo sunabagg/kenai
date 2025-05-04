@@ -279,6 +279,13 @@ namespace sunaba::core {
             "setPositionalShadowAtlasQuadrantSubdiv", &Viewport::setPositionalShadowAtlasQuadrantSubdiv,
             "updateMouseCursorState", &Viewport::updateMouseCursorState,
             "warpMouse", &Viewport::warpMouse,
+            "cast", [](Element* e) {
+                ViewportNode* viewport = Object::cast_to<ViewportNode>(e->getNode());
+                if (viewport != nullptr) {
+                    return new Viewport(viewport);
+                }
+                return static_cast<Viewport*>(nullptr);
+            }
         );
     }
 }
