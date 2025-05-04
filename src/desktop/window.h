@@ -274,6 +274,10 @@ namespace sunaba::desktop {
             void setTheme(sunaba::ui::Theme* theme) {
                 window->set_theme(Ref<godot::Theme>(theme->getTheme()));
             }
+
+            std::string getThemeTypeVariation() {
+                return String(window->get_theme_type_variation()).utf8().get_data();
+            }
     };
 }
 
