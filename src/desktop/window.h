@@ -306,6 +306,10 @@ namespace sunaba::desktop {
             void setTransientToFocused(bool transient) {
                 window->set_transient_to_focused(transient);
             }
+
+            bool getTransparent() {
+                return window->get_flag(godot::Window::Flags::FLAG_TRANSPARENT);
+            }
     };
 }
 
