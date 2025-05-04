@@ -275,6 +275,7 @@ namespace sunaba::core {
             "pushTextInput", &Viewport::pushTextInput,
             "pushUnhandledInput", &Viewport::pushUnhandledInput,
             "setCanvasCullMaskBit", &Viewport::setCanvasCullMaskBit,
+            "setInputAsHandled", &Viewport::setInputAsHandled,
         );
     }
 }
