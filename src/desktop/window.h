@@ -585,7 +585,7 @@ namespace sunaba::desktop {
                 windowInputEvent = event;
             }
 
-            
+
             Vector2 getContentsMinimumSize() {
                 if (scriptInstance != sol::lua_nil) {
                     auto func = scriptInstance["getContentsMinimumSize"].get<sol::function>();
@@ -594,6 +594,10 @@ namespace sunaba::desktop {
                     }
                 }
                 return Vector2(0, 0);
+            }
+
+            void addThemeColorOverride(std::string name, Color Color) {
+                window->add_theme_color_override(name.c_str(), Color);
             }
     };
 }
