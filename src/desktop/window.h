@@ -330,6 +330,10 @@ namespace sunaba::desktop {
             void setUnresizable(bool unresizable) {
                 window->set_flag(godot::Window::Flags::FLAG_RESIZE_DISABLED, unresizable);
             }
+
+            bool getVisible() {
+                return window->is_visible();
+            }
     };
 }
 
