@@ -259,6 +259,7 @@ namespace sunaba::core {
             "getCanvasCullMaskBit", &Viewport::getCanvasCullMaskBit,
             "getFinalTransform", &Viewport::getFinalTransform,
             "getMousePosition", &Viewport::getMousePosition,
+            "getRenderInfo", &Viewport::getRenderInfo,
         );
     }
 }
