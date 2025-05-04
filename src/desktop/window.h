@@ -114,6 +114,13 @@ namespace sunaba::desktop {
                 Callable goBackRequestedCallable = StlFunctionWrapper::create_callable_from_cpp_function(goBackRequestedFunc);
                 this->window->connect("go_back_requested", goBackRequestedCallable);
                 std::function<Variant(std::vector<Variant>)> mouseEnteredFunc =
+                [this](std::vector<Variant> args) {
+                    Array argsArray;
+                    if (this->mouseEnteredEvent != nullptr) {
+                        this->mouseEnteredEvent->emit(argsArray);
+                    }
+                    return Variant();
+                };
             }
 
         public:
