@@ -599,6 +599,10 @@ namespace sunaba::desktop {
             void addThemeColorOverride(std::string name, Color Color) {
                 window->add_theme_color_override(name.c_str(), Color);
             }
+
+            void addThemeConstantOverride(std::string name, int constant) {
+                window->add_theme_constant_override(name.c_str(), constant);
+            }
     };
 }
 
