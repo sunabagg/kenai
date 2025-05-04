@@ -11,6 +11,7 @@
 #include "../ui/theme.h"
 #include "../core/font.h"
 #include "../core/texture2d.h"
+#include "../ui/style_box.h"
 
 using namespace godot;
 using namespace sunaba::core;
@@ -618,7 +619,7 @@ namespace sunaba::desktop {
                 window->add_theme_icon_override(name.c_str(), Ref<godot::Texture2D>(icon->getTexture()));
             } 
 
-            void addThemeStyleBoxOverride(std::string name, sunaba::core::StyleBox* stylebox) {
+            void addThemeStyleBoxOverride(std::string name, sunaba::ui::StyleBox* stylebox) {
                 window->add_theme_stylebox_override(name.c_str(), Ref<godot::StyleBox>(stylebox->getStyleBox()));
             }
     };
