@@ -103,6 +103,14 @@ namespace sunaba::desktop {
                 };
                 Callable focusExitedCallable = StlFunctionWrapper::create_callable_from_cpp_function(focusExitedFunc);
                 this->window->connect("focus_exited", focusExitedCallable);
+                std::function<Variant(std::vector<Variant>)> goBackRequestedFunc =
+                [this](std::vector<Variant> args) {
+                    Array argsArray;
+                    if (this->goBackRequestedEvent != nullptr) {
+                        this->goBackRequestedEvent->emit(argsArray);
+                    }
+                    return Variant();
+                };
             }
 
         public:
