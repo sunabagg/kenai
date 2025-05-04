@@ -243,6 +243,10 @@ namespace sunaba::core {
                 &Viewport::getVrsUpdateMode, 
                 &Viewport::setVrsUpdateMode
             ),
+            "world3D", sol::property(
+                &Viewport::getWorld3D, 
+                &Viewport::setWorld3D
+            ),
         );
     }
 }
