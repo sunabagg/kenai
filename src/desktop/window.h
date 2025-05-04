@@ -92,6 +92,7 @@ namespace sunaba::desktop {
                     return Variant();
                 };
                 Callable focusEnteredCallable = StlFunctionWrapper::create_callable_from_cpp_function(focusEnteredFunc);
+                this->window->connect("focus_entered", focusEnteredCallable);
             }
 
         public:
