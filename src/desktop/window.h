@@ -698,6 +698,10 @@ namespace sunaba::desktop {
             void grabFocus() {
                 window->grab_focus();
             }
+
+            bool hasFocus() {
+                return window->has_focus();
+            }
     };
 }
 
