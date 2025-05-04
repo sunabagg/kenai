@@ -400,6 +400,9 @@ namespace sunaba::desktop {
             Event* getMouseEnteredEvent() {
                 return mouseEntered;
             }
+            void setMouseEnteredEvent(Event* event) {
+                mouseEntered = event;
+            }
     };
 }
 
