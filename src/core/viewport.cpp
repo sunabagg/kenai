@@ -211,6 +211,10 @@ namespace sunaba::core {
                 &Viewport::getTransparentBg, 
                 &Viewport::setTransparentBg
             ),
+            "useDebanding", sol::property(
+                &Viewport::getUseDebanding, 
+                &Viewport::setUseDebanding
+            ),
         );
     }
 }
