@@ -136,6 +136,10 @@ namespace sunaba::desktop {
             int getCurrentScreen() {
                 return window->get_current_screen();
             }
+
+            void setCurrentScreen(int screen) {
+                window->set_current_screen(screen);
+            }
     };
 }
 
