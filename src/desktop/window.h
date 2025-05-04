@@ -208,6 +208,10 @@ namespace sunaba::desktop {
             void setMode(int mode) {
                 window->set_mode(static_cast<godot::Window::Mode>(mode));
             }
+
+            bool getMousePassthrough() {
+                return window->get_flag(godot::Window::Flags::FLAG_MOUSE_PASSTHROUGH);
+            }
     };
 }
 
