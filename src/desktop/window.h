@@ -638,6 +638,10 @@ namespace sunaba::desktop {
             void endBulkThemeOverride() {
                 window->end_bulk_theme_override();
             }
+
+            bool getFlag(int flag) {
+                return window->get_flag(static_cast<godot::Window::Flags>(flag));
+            }
     };
 }
 
