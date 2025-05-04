@@ -630,6 +630,10 @@ namespace sunaba::desktop {
             bool canDraw() {
                 return window->can_draw();
             }
+
+            void childControlsChanged() {
+                window->child_controls_changed();
+            }
     };
 }
 
