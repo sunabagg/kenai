@@ -133,6 +133,14 @@ namespace sunaba::desktop {
                 };
                 Callable mouseExitedCallable = StlFunctionWrapper::create_callable_from_cpp_function(mouseExitedFunc);
                 this->window->connect("mouse_exited", mouseExitedCallable);
+                std::function<Variant(std::vector<Variant>)> themeChangedFunc =
+                [this](std::vector<Variant> args) {
+                    Array argsArray;
+                    if (this->themeChangedEvent != nullptr) {
+                        this->themeChangedEvent->emit(argsArray);
+                    }
+                    return Variant();
+                };
             }
 
         public:
