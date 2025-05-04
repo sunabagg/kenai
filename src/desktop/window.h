@@ -830,6 +830,10 @@ namespace sunaba::desktop {
             void removeThemeFontOverride(std::string name) {
                 window->remove_theme_font_override(name.c_str());
             }
+
+            void removeThemeFontSizeOverride(std::string name) {
+                window->remove_theme_font_size_override(name.c_str());
+            }
     };
 }
 
