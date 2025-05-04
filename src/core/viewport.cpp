@@ -183,6 +183,10 @@ namespace sunaba::core {
                 &Viewport::getScaling3DScale, 
                 &Viewport::setScaling3DScale
             ),
+            "screenSpaceAA", sol::property(
+                &Viewport::getScreenSpaceAA, 
+                &Viewport::setScreenSpaceAA
+            ),
         );
     }
 }
