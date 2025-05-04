@@ -316,7 +316,7 @@ namespace sunaba::desktop {
             }
 
             bool getUnfocusable() {
-                return window->get_flag(godot::Window::Flags::FLAG_UNFOCUSABLE);
+                return window->get_flag(godot::Window::Flags::FLAG_NO_FOCUS);
             }
     };
 }
