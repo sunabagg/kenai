@@ -204,6 +204,10 @@ namespace sunaba::desktop {
             int getMode() {
                 return window->get_mode();
             }
+
+            void setMode(int mode) {
+                window->set_mode(static_cast<godot::Window::Mode>(mode));
+            }
     };
 }
 
