@@ -372,6 +372,9 @@ namespace sunaba::desktop {
             Event* getFilesDroppedEvent() {
                 return filesDroppedEvent;
             }
+            void setFilesDroppedEvent(Event* event) {
+                filesDroppedEvent = event;
+            }
     };
 }
 
