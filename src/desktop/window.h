@@ -310,6 +310,10 @@ namespace sunaba::desktop {
             bool getTransparent() {
                 return window->get_flag(godot::Window::Flags::FLAG_TRANSPARENT);
             }
+
+            void setTransparent(bool transparent) {
+                window->set_flag(godot::Window::Flags::FLAG_TRANSPARENT, transparent);
+            }
     };
 }
 
