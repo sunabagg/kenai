@@ -770,6 +770,10 @@ namespace sunaba::desktop {
             bool isUsingFontOversampling() {
                 return window->is_using_font_oversampling();
             }
+
+            void moveToCenter() {
+                window->move_to_center();
+            }
     };
 }
 
