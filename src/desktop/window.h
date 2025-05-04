@@ -762,6 +762,10 @@ namespace sunaba::desktop {
             bool isLayoutRtl() {
                 return window->is_layout_rtl();
             }
+
+            bool isMaximizeAllowed() {
+                return window->is_maximize_allowed();
+            }
     };
 }
 
