@@ -802,6 +802,10 @@ namespace sunaba::desktop {
             void popupExclusiveCentered(Element* fromElement, Vector2i minsize = Vector2i(0, 0)) {
                 window->popup_exclusive_centered(fromElement->getNode(), minsize);
             }
+
+            void popupExclusiveCenteredClamped(Element* fromElement, Vector2i minsize = Vector2i(0, 0), float fallbackRatio = 0.75f) {
+                window->popup_exclusive_centered_clamped(fromElement->getNode(), minsize, fallbackRatio);
+            }
     };
 }
 
