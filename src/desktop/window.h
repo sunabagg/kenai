@@ -96,6 +96,10 @@ namespace sunaba::desktop {
             void setBorderless(bool borderless) {
                 window->set_flag(godot::Window::Flags::FLAG_BORDERLESS, borderless);
             }
+
+            int getContentScaleAspect() {
+                return window->get_content_scale_aspect();
+            }
     };
 }
 
