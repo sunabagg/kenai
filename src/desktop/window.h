@@ -870,6 +870,10 @@ namespace sunaba::desktop {
             void setUseFontOversampling(bool use) {
                 window->set_use_font_oversampling(use);
             }
+
+            void show() {
+                window->show();
+            }
     };
 }
 
