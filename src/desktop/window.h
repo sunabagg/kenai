@@ -326,6 +326,10 @@ namespace sunaba::desktop {
             bool getUnresizable() {
                 return window->get_flag(godot::Window::Flags::FLAG_RESIZE_DISABLED);
             }
+
+            void setUnresizable(bool unresizable) {
+                window->set_flag(godot::Window::Flags::FLAG_RESIZE_DISABLED, unresizable);
+            }
     };
 }
 
