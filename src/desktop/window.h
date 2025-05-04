@@ -658,6 +658,10 @@ namespace sunaba::desktop {
             Color getThemeColor(std::string name, std::string type) {
                 return window->get_theme_color(name.c_str(), type.c_str());
             }
+
+            int getThemeConstant(std::string name, std::string type) {
+                return window->get_theme_constant(name.c_str(), type.c_str());
+            }
     };
 }
 
