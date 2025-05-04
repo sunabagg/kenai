@@ -643,7 +643,7 @@ namespace sunaba::desktop {
                 return window->get_flag(static_cast<godot::Window::Flags>(flag));
             }
 
-            int get_layout_direction() {
+            int getLayoutDirection() {
                 return window->get_layout_direction();
             }
     };
