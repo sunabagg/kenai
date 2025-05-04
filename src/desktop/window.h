@@ -43,7 +43,7 @@ namespace sunaba::desktop {
         private:
             WindowNode* window = nullptr; // Pointer to the Window instance
             void connectWindowSignals() {
-                // Connect signals specific to Window
+                std::function<Variant(std::vector<Variant>)> aboutToPopupFunc =
             }
 
         public:
