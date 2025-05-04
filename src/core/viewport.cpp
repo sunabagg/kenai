@@ -203,6 +203,10 @@ namespace sunaba::core {
                 &Viewport::getSnap2DVerticesToPixel, 
                 &Viewport::setSnap2DVerticesToPixel
             ),
+            "textureMipmapBias", sol::property(
+                &Viewport::getTextureMipmapBias, 
+                &Viewport::setTextureMipmapBias
+            ),
         );
     }
 }
