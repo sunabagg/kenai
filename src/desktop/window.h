@@ -862,6 +862,10 @@ namespace sunaba::desktop {
             void setLayoutDirection(int direction) {
                 window->set_layout_direction(static_cast<godot::Window::LayoutDirection>(direction));
             }
+
+            void setUnparentWhenInvisible(bool unparent) {
+                window->set_unparent_when_invisible(unparent);
+            }
     };
 }
 
