@@ -694,6 +694,10 @@ namespace sunaba::desktop {
             int getWindowId() {
                 return window->get_window_id();
             }
+
+            void grabFocus() {
+                window->grab_focus();
+            }
     };
 }
 
