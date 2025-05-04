@@ -180,6 +180,10 @@ namespace sunaba::desktop {
             bool getKeepTitleVisible() {
                 return window->get_keep_title_visible();
             }
+
+            void setKeepTitleVisible(bool keep) {
+                window->set_keep_title_visible(keep);
+            }
     };
 }
 
