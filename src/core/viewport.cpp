@@ -261,6 +261,7 @@ namespace sunaba::core {
             "getMousePosition", &Viewport::getMousePosition,
             "getRenderInfo", &Viewport::getRenderInfo,
             "getScreenTransform", &Viewport::getScreenTransform,
+            "getVisibleRect", &Viewport::getVisibleRect,
         );
     }
 }
