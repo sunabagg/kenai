@@ -162,6 +162,7 @@ namespace sunaba::desktop {
                     return Variant();
                 };
                 Callable titlebarChangedCallable = StlFunctionWrapper::create_callable_from_cpp_function(titlebarChangedFunc);
+                this->window->connect("titlebar_changed", titlebarChangedCallable);
             }
 
         public:
