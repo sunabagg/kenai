@@ -152,6 +152,7 @@ namespace sunaba::desktop {
                     return Variant();
                 };
                 Callable titleChangedCallable = StlFunctionWrapper::create_callable_from_cpp_function(titleChangedFunc);
+                this->window->connect("title_changed", titleChangedCallable);
             }
 
         public:
