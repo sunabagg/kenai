@@ -290,6 +290,10 @@ namespace sunaba::desktop {
             void setTitle(std::string title) {
                 window->set_title(String(title.c_str()));
             }
+
+            bool getTransient() {
+                return window->is_transient();
+            }
     };
 }
 
