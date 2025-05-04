@@ -411,6 +411,9 @@ namespace sunaba::desktop {
                 mouseExited = event;
             }
             Event* themeChangedEvent;
+            Event* getThemeChangedEvent() {
+                return themeChangedEvent;
+            }
     };
 }
 
