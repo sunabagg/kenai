@@ -407,6 +407,9 @@ namespace sunaba::desktop {
             Event* getMouseExitedEvent() {
                 return mouseExited;
             }
+            void setMouseExitedEvent(Event* event) {
+                mouseExited = event;
+            }
     };
 }
 
