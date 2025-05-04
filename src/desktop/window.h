@@ -116,6 +116,10 @@ namespace sunaba::desktop {
             int getContentScaleMode() {
                 return window->get_content_scale_mode();
             }
+
+            void setContentScaleMode(int mode) {
+                window->set_content_scale_mode(static_cast<godot::Window::ContentScaleMode>(mode));
+            }
     };
 }
 
