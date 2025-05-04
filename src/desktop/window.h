@@ -123,6 +123,14 @@ namespace sunaba::desktop {
                 };
                 Callable mouseEnteredCallable = StlFunctionWrapper::create_callable_from_cpp_function(mouseEnteredFunc);
                 this->window->connect("mouse_entered", mouseEnteredCallable);
+                std::function<Variant(std::vector<Variant>)> mouseExitedFunc =
+                [this](std::vector<Variant> args) {
+                    Array argsArray;
+                    if (this->mouseExitedEvent != nullptr) {
+                        this->mouseExitedEvent->emit(argsArray);
+                    }
+                    return Variant();
+                };
             }
 
         public:
