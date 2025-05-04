@@ -778,6 +778,10 @@ namespace sunaba::desktop {
             void moveToForground() {
                 window->move_to_foreground();
             }
+
+            void popup(Rect2i rect = Rect2i(0, 0, 0, 0)) {
+                window->popup(rect);
+            }
     };
 }
 
