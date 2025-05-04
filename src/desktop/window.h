@@ -120,6 +120,10 @@ namespace sunaba::desktop {
             void setContentScaleMode(int mode) {
                 window->set_content_scale_mode(static_cast<godot::Window::ContentScaleMode>(mode));
             }
+
+            Vector2i getContentScaleSize() {
+                return window->get_content_scale_size();
+            }
     };
 }
 
