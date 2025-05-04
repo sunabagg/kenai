@@ -249,6 +249,10 @@ namespace sunaba::desktop {
             void setPosition(Vector2i position) {
                 window->set_position(position);
             }
+
+            bool getSharpCorners() {
+                return window->get_flag(godot::Window::Flags::FLAG_SHARP_CORNERS);
+            }
     };
 }
 
