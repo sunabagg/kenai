@@ -850,6 +850,10 @@ namespace sunaba::desktop {
             void resetSize() {
                 window->reset_size();
             }
+
+            void setFlag(int flag, bool value) {
+                window->set_flag(static_cast<godot::Window::Flags>(flag), value);
+            }
     };
 }
 
