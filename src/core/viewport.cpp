@@ -264,6 +264,7 @@ namespace sunaba::core {
             "getVisibleRect", &Viewport::getVisibleRect,
             "guiCancelDrag", &Viewport::guiCancelDrag,
             "guiGetDragData", &Viewport::guiGetDragData,
+            "guiGetFocusOwner", &Viewport::guiGetFocusOwner,
         );
     }
 }
