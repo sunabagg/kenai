@@ -223,6 +223,10 @@ namespace sunaba::core {
                 &Viewport::getUseOcclusionCulling, 
                 &Viewport::setUseOcclusionCulling
             ),
+            "useTaa", sol::property(
+                &Viewport::getUseTaa, 
+                &Viewport::setUseTaa
+            ),
         );
     }
 }
