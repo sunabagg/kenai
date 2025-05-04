@@ -854,6 +854,10 @@ namespace sunaba::desktop {
             void setFlag(int flag, bool value) {
                 window->set_flag(static_cast<godot::Window::Flags>(flag), value);
             }
+
+            void setImePosition(Vector2i position) {
+                window->set_ime_position(position);
+            }
     };
 }
 
