@@ -175,6 +175,10 @@ namespace sunaba::core {
                 &Viewport::getPositionalShadowAtlasSize, 
                 &Viewport::setPositionalShadowAtlasSize
             ),
+            "scaling3DMode", sol::property(
+                &Viewport::getScaling3DMode, 
+                &Viewport::setScaling3DMode
+            ),
         );
     }
 }
