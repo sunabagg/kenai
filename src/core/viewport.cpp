@@ -276,6 +276,7 @@ namespace sunaba::core {
             "pushUnhandledInput", &Viewport::pushUnhandledInput,
             "setCanvasCullMaskBit", &Viewport::setCanvasCullMaskBit,
             "setInputAsHandled", &Viewport::setInputAsHandled,
+            "setPositionalShadowAtlasQuadrantSubdiv", &Viewport::setPositionalShadowAtlasQuadrantSubdiv,
         );
     }
 }
