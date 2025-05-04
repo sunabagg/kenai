@@ -241,6 +241,10 @@ namespace sunaba::desktop {
             void setPopupWindow(bool popup) {
                 window->set_flag(godot::Window::Flags::FLAG_POPUP, popup);
             }
+
+            Vector2i getPosition() {
+                return window->get_position();
+            }
     };
 }
 
