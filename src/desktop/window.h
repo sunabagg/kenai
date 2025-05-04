@@ -8,6 +8,7 @@
 #define WindowNode godot::Window
 
 #include "../core/viewport.h"
+#include "../ui/theme.h"
 
 using namespace godot;
 using namespace sunaba::core;
