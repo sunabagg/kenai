@@ -144,6 +144,10 @@ namespace sunaba::desktop {
             bool getExcludeFromCapture() {
                 return window->get_flag(godot::Window::Flags::FLAG_EXCLUDE_FROM_CAPTURE);
             }
+
+            void setExcludeFromCapture(bool exclude) {
+                window->set_flag(godot::Window::Flags::FLAG_EXCLUDE_FROM_CAPTURE, exclude);
+            }
     };
 }
 
