@@ -72,6 +72,10 @@ namespace sunaba::desktop {
                 connectWindowSignals();
                 setViewport(window);
             }
+
+            bool getAlwaysOnTop() const {
+                return window->is_always_on_top();
+            }
     };
 }
 
