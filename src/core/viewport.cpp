@@ -255,6 +255,7 @@ namespace sunaba::core {
                 &Viewport::getSizeChangedEvent, 
                 &Viewport::setSizeChangedEvent
             ),
+            "findWorld3D", &Viewport::findWorld3D,
         );
     }
 }
