@@ -846,6 +846,10 @@ namespace sunaba::desktop {
             void requestAttention() {
                 window->request_attention();
             }
+
+            void resetSize() {
+                window->reset_size();
+            }
     };
 }
 
