@@ -435,6 +435,9 @@ namespace sunaba::desktop {
             Event* getVisibilityChangedEvent() {
                 return visibilityChangedEvent;
             }
+            void setVisibilityChangedEvent(Event* event) {
+                visibilityChangedEvent = event;
+            }
     };
 }
 
