@@ -34,6 +34,8 @@ namespace sunaba::desktop {
             void _unhandled_input(const Ref<InputEvent>& event) override;
             void _unhandled_key_input(const Ref<InputEvent>& event) override;
             void _shortcut_input(const Ref<InputEvent>& event) override;
+
+            Vector2 _get_contents_minimum_size() const override;
     };
 
     class Window : public sunaba::core::Viewport {
