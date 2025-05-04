@@ -52,6 +52,7 @@ namespace sunaba::desktop {
                     return Variant();
                 };
                 Callable aboutToPopupCallable = StlFunctionWrapper::create_callable_from_cpp_function(aboutToPopupFunc);
+                this->window->connect("about_to_popup", aboutToPopupCallable);
             }
 
         public:
