@@ -227,6 +227,10 @@ namespace sunaba::core {
                 &Viewport::getUseTaa, 
                 &Viewport::setUseTaa
             ),
+            "useXr", sol::property(
+                &Viewport::getUseXr, 
+                &Viewport::setUseXr
+            ),
         );
     }
 }
