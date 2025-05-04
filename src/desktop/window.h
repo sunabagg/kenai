@@ -432,6 +432,9 @@ namespace sunaba::desktop {
                 titlebarChangedEvent = event;
             }
             Event* visibilityChangedEvent;
+            Event* getVisibilityChangedEvent() {
+                return visibilityChangedEvent;
+            }
     };
 }
 
