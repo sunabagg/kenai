@@ -63,6 +63,14 @@ namespace sunaba::desktop {
                 };
                 Callable closeRequestedCallable = StlFunctionWrapper::create_callable_from_cpp_function(closeRequestedFunc);
                 this->window->connect("close_requested", closeRequestedCallable);
+                std::function<Variant(std::vector<Variant>)> dpiChangedFunc =
+                [this](std::vector<Variant> args) {
+                    Array argsArray;
+                    if (this->dpiChangedEvent != nullptr) {
+                        this->dpiChangedEvent->emit(argsArray);
+                    }
+                    return Variant();
+                };
             }
 
         public:
