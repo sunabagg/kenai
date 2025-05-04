@@ -153,6 +153,14 @@ namespace sunaba::desktop {
                 };
                 Callable titleChangedCallable = StlFunctionWrapper::create_callable_from_cpp_function(titleChangedFunc);
                 this->window->connect("title_changed", titleChangedCallable);
+                std::function<Variant(std::vector<Variant>)> titlebarChangedFunc =
+                [this](std::vector<Variant> args) {
+                    Array argsArray;
+                    if (this->titlebarChangedEvent != nullptr) {
+                        this->titlebarChangedEvent->emit(argsArray);
+                    }
+                    return Variant();
+                };
             }
 
         public:
