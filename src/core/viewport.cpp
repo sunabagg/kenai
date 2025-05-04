@@ -247,6 +247,10 @@ namespace sunaba::core {
                 &Viewport::getWorld3D, 
                 &Viewport::setWorld3D
             ),
+            "guiFocusChanged", sol::property(
+                &Viewport::getGuiFocusChangedEvent, 
+                &Viewport::setGuiFocusChangedEvent
+            ),
         );
     }
 }
