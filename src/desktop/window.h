@@ -257,6 +257,10 @@ namespace sunaba::desktop {
             void setSharpCorners(bool sharp) {
                 window->set_flag(godot::Window::Flags::FLAG_SHARP_CORNERS, sharp);
             }
+
+            Vector2i getSize() {
+                return window->get_size();
+            }
     };
 }
 
