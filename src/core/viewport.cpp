@@ -256,6 +256,7 @@ namespace sunaba::core {
                 &Viewport::setSizeChangedEvent
             ),
             "findWorld3D", &Viewport::findWorld3D,
+            "getCanvasCullMaskBit", &Viewport::getCanvasCullMaskBit,
         );
     }
 }
