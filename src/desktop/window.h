@@ -622,6 +622,10 @@ namespace sunaba::desktop {
             void addThemeStyleBoxOverride(std::string name, sunaba::ui::StyleBox* stylebox) {
                 window->add_theme_stylebox_override(name.c_str(), Ref<godot::StyleBox>(stylebox->getStyleBox()));
             }
+
+            void beginBulkThemeOverride() {
+                window->begin_bulk_theme_override();
+            }
     };
 }
 
