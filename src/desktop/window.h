@@ -614,7 +614,9 @@ namespace sunaba::desktop {
                 window->add_theme_font_size_override(name.c_str(), size);
             }
 
-
+            void addThemeIconOverride(std::string name, sunaba::core::Texture2D* icon) {
+                window->add_theme_icon_override(name.c_str(), Ref<godot::Texture2D>(icon->getTexture()));
+            }
     };
 }
 
