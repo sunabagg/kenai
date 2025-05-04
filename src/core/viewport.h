@@ -451,6 +451,10 @@ namespace sunaba::core {
                 viewport->set_vrs_texture(Ref<godot::Texture2D>(texture->getTexture()));
             }
 
+            int getVrsUpdateMode() {
+                return viewport->get_vrs_update_mode();
+            }
+
             sunaba::spatial::World3D* getWorld3D() {
                 return new sunaba::spatial::World3D(viewport->get_world_3d().ptr());
             }
