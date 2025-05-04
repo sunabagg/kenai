@@ -361,6 +361,7 @@ namespace sunaba::desktop {
             void setCloseRequestedEvent(Event* event) {
                 closeRequestedEvent = event;
             }
+            Event* dpiChangedEvent;
     };
 }
 
