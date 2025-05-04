@@ -654,6 +654,10 @@ namespace sunaba::desktop {
             Vector2i getSizeWithDecorations() {
                 return window->get_size_with_decorations();
             }
+
+            Color getThemeColor(std::string name, std::string type) {
+                return window->get_theme_color(name.c_str(), type.c_str());
+            }
     };
 }
 
