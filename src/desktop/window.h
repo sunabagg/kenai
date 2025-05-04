@@ -662,6 +662,10 @@ namespace sunaba::desktop {
             int getThemeConstant(std::string name, std::string type) {
                 return window->get_theme_constant(name.c_str(), type.c_str());
             }
+
+            float getThemeDefaultBaseScale() {
+                return window->get_theme_default_base_scale();
+            }
     };
 }
 
