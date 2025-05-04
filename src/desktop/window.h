@@ -9,6 +9,7 @@
 
 #include "../core/viewport.h"
 #include "../ui/theme.h"
+#include "../core/font.h"
 
 using namespace godot;
 using namespace sunaba::core;
@@ -602,6 +603,10 @@ namespace sunaba::desktop {
 
             void addThemeConstantOverride(std::string name, int constant) {
                 window->add_theme_constant_override(name.c_str(), constant);
+            }
+
+            void addThemeFontOverride(std::string name, sunaba::core::Font* font) {
+                window->add_theme_font_override(name.c_str(), font->getFont());
             }
     };
 }
