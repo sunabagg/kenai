@@ -260,6 +260,7 @@ namespace sunaba::core {
             "getFinalTransform", &Viewport::getFinalTransform,
             "getMousePosition", &Viewport::getMousePosition,
             "getRenderInfo", &Viewport::getRenderInfo,
+            "getScreenTransform", &Viewport::getScreenTransform,
         );
     }
 }
