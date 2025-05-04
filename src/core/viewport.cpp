@@ -277,6 +277,7 @@ namespace sunaba::core {
             "setCanvasCullMaskBit", &Viewport::setCanvasCullMaskBit,
             "setInputAsHandled", &Viewport::setInputAsHandled,
             "setPositionalShadowAtlasQuadrantSubdiv", &Viewport::setPositionalShadowAtlasQuadrantSubdiv,
+            "updateMouseCursorState", &Viewport::updateMouseCursorState,
         );
     }
 }
