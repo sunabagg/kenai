@@ -179,6 +179,10 @@ namespace sunaba::core {
                 &Viewport::getScaling3DMode, 
                 &Viewport::setScaling3DMode
             ),
+            "scaling3DScale", sol::property(
+                &Viewport::getScaling3DScale, 
+                &Viewport::setScaling3DScale
+            ),
         );
     }
 }
