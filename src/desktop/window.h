@@ -428,6 +428,9 @@ namespace sunaba::desktop {
             Event* getTitlebarChangedEvent() {
                 return titlebarChangedEvent;
             }
+            void setTitlebarChangedEvent(Event* event) {
+                titlebarChangedEvent = event;
+            }
     };
 }
 
