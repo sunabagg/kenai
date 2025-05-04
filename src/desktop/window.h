@@ -164,6 +164,10 @@ namespace sunaba::desktop {
             void setExtendToTitle(bool extend) {
                 window->set_flag(godot::Window::Flags::FLAG_EXTEND_TO_TITLE, extend);
             }
+
+            bool getForceNative() {
+                return window->get_force_native();
+            }
     };
 }
 
