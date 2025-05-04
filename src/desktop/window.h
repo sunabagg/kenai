@@ -342,6 +342,10 @@ namespace sunaba::desktop {
             bool getWrapControls() {
                 return window->is_wrapping_controls();
             }
+
+            void setWrapControls(bool wrap) {
+                window->set_wrap_controls(wrap);
+            }
     };
 }
 
