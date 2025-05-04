@@ -266,6 +266,7 @@ namespace sunaba::core {
             "guiGetDragData", &Viewport::guiGetDragData,
             "guiGetFocusOwner", &Viewport::guiGetFocusOwner,
             "guiGetHoveredControl", &Viewport::guiGetHoveredControl,
+            "guiIsDragSuccessful", &Viewport::guiIsDragSuccessful,
         );
     }
 }
