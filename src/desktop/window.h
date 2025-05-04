@@ -626,6 +626,10 @@ namespace sunaba::desktop {
             void beginBulkThemeOverride() {
                 window->begin_bulk_theme_override();
             }
+
+            bool canDraw() {
+                return window->can_draw();
+            }
     };
 }
 
