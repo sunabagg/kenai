@@ -838,6 +838,10 @@ namespace sunaba::desktop {
             void removeThemeIconOverride(std::string name) {
                 window->remove_theme_icon_override(name.c_str());
             }
+
+            void removeThemeStyleBoxOverride(std::string name) {
+                window->remove_theme_stylebox_override(name.c_str());
+            }
     };
 }
 
