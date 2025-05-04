@@ -231,6 +231,14 @@ namespace sunaba::core {
                 &Viewport::getUseXr, 
                 &Viewport::setUseXr
             ),
+            "vrsMode", sol::property(
+                &Viewport::getVrsMode, 
+                &Viewport::setVrsMode
+            ),
+            "vrsTexture", sol::property(
+                &Viewport::getVrsTexture, 
+                &Viewport::setVrsTexture
+            ),
         );
     }
 }
