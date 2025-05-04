@@ -584,6 +584,16 @@ namespace sunaba::desktop {
             void setWindowInputEvent(Event* event) {
                 windowInputEvent = event;
             }
+
+            Vector2 getContentsMinimumSize() {
+                if (scriptInstance != sol::lua_nil) {
+                    auto func = scriptInstance["getContentsMinimumSize"].get<sol::function>();
+                    if (func) {
+                        return window->get_contents_minimum_size();
+                    }
+                }
+                return Vector2(0, 0);
+            }
     };
 }
 
