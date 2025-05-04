@@ -187,6 +187,10 @@ namespace sunaba::core {
                 &Viewport::getScreenSpaceAA, 
                 &Viewport::setScreenSpaceAA
             ),
+            "sdfOversize", sol::property(
+                &Viewport::getSdfOversize, 
+                &Viewport::setSdfOversize
+            ),
         );
     }
 }
