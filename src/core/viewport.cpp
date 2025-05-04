@@ -271,6 +271,7 @@ namespace sunaba::core {
             "guiReleaseFocus", &Viewport::guiReleaseFocus,
             "isInputHandled", &Viewport::isInputHandled,
             "notifyMouseEntered", &Viewport::notifyMouseEntered,
+            "pushInput", &Viewport::pushInput,
         );
     }
 }
