@@ -866,6 +866,10 @@ namespace sunaba::desktop {
             void setUnparentWhenInvisible(bool unparent) {
                 window->set_unparent_when_invisible(unparent);
             }
+
+            void setUseFontOversampling(bool use) {
+                window->set_use_font_oversampling(use);
+            }
     };
 }
 
