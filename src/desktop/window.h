@@ -314,6 +314,10 @@ namespace sunaba::desktop {
             void setTransparent(bool transparent) {
                 window->set_flag(godot::Window::Flags::FLAG_TRANSPARENT, transparent);
             }
+
+            bool getUnfocusable() {
+                return window->get_flag(godot::Window::Flags::FLAG_UNFOCUSABLE);
+            }
     };
 }
 
