@@ -147,6 +147,14 @@ namespace sunaba::core {
                 &Viewport::getPhysicsObjectPickingFirstOnly, 
                 &Viewport::setPhysicsObjectPickingFirstOnly
             ),
+            "physicsObjectPickingSort", sol::property(
+                &Viewport::getPhysicsObjectPickingSort, 
+                &Viewport::setPhysicsObjectPickingSort
+            ),
+            "positionalShadowAtlas16Bits", sol::property(
+                &Viewport::getPositionalShadowAtlas16Bits, 
+                &Viewport::setPositionalShadowAtlas16Bits
+            ),
         );
     }
 }
