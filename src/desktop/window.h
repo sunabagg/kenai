@@ -490,12 +490,12 @@ namespace sunaba::desktop {
             void setMouseEnteredEvent(Event* event) {
                 mouseEnteredEvent = event;
             }
-            Event* mouseExited;
+            Event* mouseExitedEvent;
             Event* getMouseExitedEvent() {
-                return mouseExited;
+                return mouseExitedEvent;
             }
             void setMouseExitedEvent(Event* event) {
-                mouseExited = event;
+                mouseExitedEvent = event;
             }
             Event* themeChangedEvent;
             Event* getThemeChangedEvent() {
