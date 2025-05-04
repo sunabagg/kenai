@@ -172,6 +172,7 @@ namespace sunaba::desktop {
                     return Variant();
                 };
                 Callable visibilityChangedCallable = StlFunctionWrapper::create_callable_from_cpp_function(visibilityChangedFunc);
+                this->window->connect("visibility_changed", visibilityChangedCallable);
             }
 
         public:
