@@ -655,7 +655,7 @@ namespace sunaba::desktop {
                 return window->get_size_with_decorations();
             }
 
-            Color getThemeColor(std::string name, std::string type) {
+            Color getThemeColor(std::string name, std::string type = "&amp;&quot;&quot;") {
                 return window->get_theme_color(name.c_str(), type.c_str());
             }
 
