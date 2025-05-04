@@ -233,6 +233,10 @@ namespace sunaba::desktop {
                 }
                 window->set_mouse_passthrough_polygon(passtrough_polygon);
             }
+
+            void getPopupWindow() {
+                window->get_flag(godot::Window::Flags::FLAG_POPUP);
+            }
     };
 }
 
