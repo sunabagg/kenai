@@ -270,6 +270,10 @@ namespace sunaba::desktop {
             sunaba::ui::Theme* getTheme() {
                 return new sunaba::ui::Theme(window->get_theme().ptr());
             }
+
+            void setTheme(sunaba::ui::Theme* theme) {
+                window->set_theme(Ref<godot::Theme>(theme->getTheme()));
+            }
     };
 }
 
