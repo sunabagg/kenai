@@ -774,6 +774,10 @@ namespace sunaba::desktop {
             void moveToCenter() {
                 window->move_to_center();
             }
+
+            void moveToForground() {
+                window->move_to_foreground();
+            }
     };
 }
 
