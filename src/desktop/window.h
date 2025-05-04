@@ -730,6 +730,10 @@ namespace sunaba::desktop {
             bool hasThemeFontSize(std::string name, std::string type = "&amp;&quot;&quot;") {
                 return window->has_theme_font_size(name.c_str(), type.c_str());
             }
+
+            bool hasThemeFontSizeOverride(std::string name) {
+                return window->has_theme_font_size_override(name.c_str());
+            }
     };
 }
 
