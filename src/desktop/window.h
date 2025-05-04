@@ -678,6 +678,10 @@ namespace sunaba::desktop {
             sunaba::core::Font* getThemeFont(std::string name, std::string type = "&amp;&quot;&quot;") {
                 return new sunaba::core::Font(window->get_theme_font(name.c_str(), type.c_str()).ptr());
             }
+
+            int getThemeFontSize(std::string name, std::string type = "&amp;&quot;&quot;") {
+                return window->get_theme_font_size(name.c_str(), type.c_str());
+            }
     };
 }
 
