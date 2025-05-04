@@ -393,6 +393,9 @@ namespace sunaba::desktop {
             Event* getGoBackRequestedEvent() {
                 return goBackRequestedEvent;
             }
+            void setGoBackRequestedEvent(Event* event) {
+                goBackRequestedEvent = event;
+            }
     };
 }
 
