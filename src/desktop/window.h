@@ -383,6 +383,9 @@ namespace sunaba::desktop {
                 focusEnteredEvent = event;
             }
             Event* focusExitedEvent;
+            Event* getFocusExitedEvent() {
+                return focusExitedEvent;
+            }
     };
 }
 
