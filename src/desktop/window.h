@@ -71,6 +71,7 @@ namespace sunaba::desktop {
                     }
                     return Variant();
                 };
+                Callable dpiChangedCallable = StlFunctionWrapper::create_callable_from_cpp_function(dpiChangedFunc);
             }
 
         public:
