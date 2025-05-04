@@ -76,6 +76,10 @@ namespace sunaba::desktop {
             bool getAlwaysOnTop() const {
                 return window->get_flag(godot::Window::Flags::FLAG_ALWAYS_ON_TOP);
             }
+
+            void setAlwaysOnTop(bool always_on_top) {
+                window->set_flag(godot::Window::Flags::FLAG_ALWAYS_ON_TOP, always_on_top);
+            }
     };
 }
 
