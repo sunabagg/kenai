@@ -167,6 +167,10 @@ namespace sunaba::core {
                 &Viewport::getPositionalShadowAtlasQuad2, 
                 &Viewport::setPositionalShadowAtlasQuad2
             ),
+            "positionalShadowAtlasQuad3", sol::property(
+                &Viewport::getPositionalShadowAtlasQuad3, 
+                &Viewport::setPositionalShadowAtlasQuad3
+            ),
         );
     }
 }
