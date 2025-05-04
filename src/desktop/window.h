@@ -142,6 +142,7 @@ namespace sunaba::desktop {
                     return Variant();
                 };
                 Callable themeChangedCallable = StlFunctionWrapper::create_callable_from_cpp_function(themeChangedFunc);
+                this->window->connect("theme_changed", themeChangedCallable);
             }
 
         public:
