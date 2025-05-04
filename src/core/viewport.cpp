@@ -270,6 +270,7 @@ namespace sunaba::core {
             "guiIsDragging", &Viewport::guiIsDragging,
             "guiReleaseFocus", &Viewport::guiReleaseFocus,
             "isInputHandled", &Viewport::isInputHandled,
+            "notifyMouseEntered", &Viewport::notifyMouseEntered,
         );
     }
 }
