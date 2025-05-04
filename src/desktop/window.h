@@ -178,7 +178,7 @@ namespace sunaba::desktop {
             }
 
             bool getKeepTitleVisible() {
-                return window->get_flag(godot::Window::Flags::FLAG_KEEP_TITLE_VISIBLE);
+                return window->get_keep_title_visible();
             }
     };
 }
