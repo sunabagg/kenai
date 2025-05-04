@@ -358,6 +358,9 @@ namespace sunaba::desktop {
             Event* getCloseRequestedEvent() {
                 return closeRequestedEvent;
             }
+            void setCloseRequestedEvent(Event* event) {
+                closeRequestedEvent = event;
+            }
     };
 }
 
