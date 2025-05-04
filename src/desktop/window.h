@@ -473,12 +473,12 @@ namespace sunaba::desktop {
             void setGoBackRequestedEvent(Event* event) {
                 goBackRequestedEvent = event;
             }
-            Event* mouseEntered;
+            Event* mouseEnteredEvent;
             Event* getMouseEnteredEvent() {
-                return mouseEntered;
+                return mouseEnteredEvent;
             }
             void setMouseEnteredEvent(Event* event) {
-                mouseEntered = event;
+                mouseEnteredEvent = event;
             }
             Event* mouseExited;
             Event* getMouseExitedEvent() {
