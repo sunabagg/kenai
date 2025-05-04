@@ -104,6 +104,10 @@ namespace sunaba::desktop {
             void setContentScaleAspect(int aspect) {
                 window->set_content_scale_aspect(static_cast<godot::Window::ContentScaleAspect>(aspect));
             }
+
+            float getContentScaleFactor() {
+                return window->get_content_scale_factor();
+            }
     };
 }
 
