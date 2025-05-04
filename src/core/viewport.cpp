@@ -251,6 +251,10 @@ namespace sunaba::core {
                 &Viewport::getGuiFocusChangedEvent, 
                 &Viewport::setGuiFocusChangedEvent
             ),
+            "sizeChanged", sol::property(
+                &Viewport::getSizeChangedEvent, 
+                &Viewport::setSizeChangedEvent
+            ),
         );
     }
 }
