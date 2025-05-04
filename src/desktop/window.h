@@ -351,6 +351,9 @@ namespace sunaba::desktop {
             Event* getAboutToPopupEvent() {
                 return aboutToPopupEvent;
             }
+            void setAboutToPopupEvent(Event* event) {
+                aboutToPopupEvent = event;
+            }
     };
 }
 
