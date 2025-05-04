@@ -239,6 +239,10 @@ namespace sunaba::core {
                 &Viewport::getVrsTexture, 
                 &Viewport::setVrsTexture
             ),
+            "vrsUpdateMode", sol::property(
+                &Viewport::getVrsUpdateMode, 
+                &Viewport::setVrsUpdateMode
+            ),
         );
     }
 }
