@@ -403,6 +403,7 @@ namespace sunaba::desktop {
             void setMouseEnteredEvent(Event* event) {
                 mouseEntered = event;
             }
+            Event* mouseExited;
     };
 }
 
