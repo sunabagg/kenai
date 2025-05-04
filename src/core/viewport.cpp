@@ -219,6 +219,10 @@ namespace sunaba::core {
                 &Viewport::getUseHdr2D, 
                 &Viewport::setUseHdr2D
             ),
+            "useOcclusionCulling", sol::property(
+                &Viewport::getUseOcclusionCulling, 
+                &Viewport::setUseOcclusionCulling
+            ),
         );
     }
 }
