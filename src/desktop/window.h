@@ -338,6 +338,10 @@ namespace sunaba::desktop {
             void setVisible(bool visible) {
                 window->set_visible(visible);
             }
+
+            bool getWrapControls() {
+                return window->is_wrapping_controls();
+            }
     };
 }
 
