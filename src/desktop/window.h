@@ -670,6 +670,10 @@ namespace sunaba::desktop {
             sunaba::core::Font* getThemeDefaultFont() {
                 return new sunaba::core::Font(window->get_theme_default_font().ptr());
             }
+
+            int getThemeDefaultFontSize() {
+                return window->get_theme_default_font_size();
+            }
     };
 }
 
