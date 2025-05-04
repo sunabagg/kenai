@@ -286,6 +286,10 @@ namespace sunaba::desktop {
             std::string getTitle() {
                 return String(window->get_title()).utf8().get_data();
             }
+
+            void setTitle(std::string title) {
+                window->set_title(String(title.c_str()));
+            }
     };
 }
 
