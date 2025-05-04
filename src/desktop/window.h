@@ -152,6 +152,10 @@ namespace sunaba::desktop {
             bool getExclusive() {
                 return window->is_exclusive();
             }
+
+            void setExclusive(bool exclusive) {
+                window->set_exclusive(exclusive);
+            }
     };
 }
 
