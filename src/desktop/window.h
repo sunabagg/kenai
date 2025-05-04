@@ -176,6 +176,10 @@ namespace sunaba::desktop {
             int getInitialPosition() {
                 return window->get_initial_position();
             }
+
+            bool getKeepTitleVisible() {
+                return window->get_flag(godot::Window::Flags::FLAG_KEEP_TITLE_VISIBLE);
+            }
     };
 }
 
