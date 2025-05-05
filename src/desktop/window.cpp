@@ -317,6 +317,7 @@ namespace sunaba::desktop {
             "resetSize", &Window::resetSize,
             "setFlag", &Window::setFlag,
             "setImeActive", &Window::setImeActive,
+            "setImePosition", &Window::setImePosition,
         );
     }
 }
