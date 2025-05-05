@@ -300,6 +300,7 @@ namespace sunaba::desktop {
             "popup", &Window::popup,
             "popupCentered", &Window::popupCentered,
             "popupCenteredClamped", &Window::popupCenteredClamped,
+            "popupCenteredRatio", &Window::popupCenteredRatio,
         );
     }
 }
