@@ -24,4 +24,10 @@ namespace sunaba::desktop {
             this->element->process(delta);
         }
     }
+
+    void WindowProxy::_physics_process(double delta) {
+        if (this->element != nullptr) {
+            this->element->physicsProcess(delta);
+        }
+    }
 }
