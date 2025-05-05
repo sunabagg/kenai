@@ -67,6 +67,10 @@ namespace sunaba::desktop {
                 &Window::getAutoTranslate,
                 &Window::setAutoTranslate
             ),
+            "borderless", sol::property(
+                &Window::getBorderless,
+                &Window::setBorderless
+            ),
         );
     }
 }
