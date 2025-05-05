@@ -99,6 +99,10 @@ namespace sunaba::desktop {
                 &Window::getExcludeFromCapture,
                 &Window::setExcludeFromCapture
             ),
+            "exclusive", sol::property(
+                &Window::getExclusive,
+                &Window::setExclusive
+            ),
         );
     }
 }
