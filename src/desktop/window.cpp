@@ -309,6 +309,7 @@ namespace sunaba::desktop {
             "popupOnParent", &Window::popupOnParent,
             "removeThemeColorOverride", &Window::removeThemeColorOverride,
             "removeThemeConstantOverride", &Window::removeThemeConstantOverride,
+            "removeThemeFontOverride", &Window::removeThemeFontOverride,
         );
     }
 }
