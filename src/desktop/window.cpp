@@ -295,6 +295,7 @@ namespace sunaba::desktop {
             "isLayoutRtl", &Window::isLayoutRtl,
             "isMaximizeAllowed", &Window::isMaximizeAllowed,
             "isUsingFontOversampling", &Window::isUsingFontOversampling,
+            "moveToCenter", &Window::moveToCenter,
         );
     }
 }
