@@ -227,6 +227,10 @@ namespace sunaba::desktop {
                 &Window::getMouseEnteredEvent,
                 &Window::setMouseEnteredEvent
             ),
+            "mouseExited", sol::property(
+                &Window::getMouseExitedEvent,
+                &Window::setMouseExitedEvent
+            ),
         );
     }
 }
