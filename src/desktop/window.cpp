@@ -263,6 +263,7 @@ namespace sunaba::desktop {
             "childControlsChanged", &Window::childControlsChanged,
             "endBulkThemeOverride", &Window::endBulkThemeOverride,
             "getFlag", &Window::getFlag,
+            "getLayoutDirection", &Window::getLayoutDirection,
         );
     }
 }
