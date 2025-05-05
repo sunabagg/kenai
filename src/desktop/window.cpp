@@ -63,6 +63,10 @@ namespace sunaba::desktop {
                 &Window::getAlwaysOnTop,
                 &Window::setAlwaysOnTop
             ),
+            "autoTranslate", sol::property(
+                &Window::getAutoTranslate,
+                &Window::setAutoTranslate
+            ),
         );
     }
 }
