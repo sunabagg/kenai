@@ -107,6 +107,10 @@ namespace sunaba::desktop {
                 &Window::getExtendToTitle,
                 &Window::setExtendToTitle
             ),
+            "forceNative", sol::property(
+                &Window::getForceNative,
+                &Window::setForceNative
+            ),
         );
     }
 }
