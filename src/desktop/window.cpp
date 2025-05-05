@@ -219,6 +219,10 @@ namespace sunaba::desktop {
                 &Window::getFocusExitedEvent,
                 &Window::setFocusExitedEvent
             ),
+            "goBackRequested", sol::property(
+                &Window::getGoBackRequestedEvent,
+                &Window::setGoBackRequestedEvent
+            ),
         );
     }
 }
