@@ -323,6 +323,7 @@ namespace sunaba::desktop {
             "setUseFontOversampling", &Window::setUseFontOversampling,
             "show", &Window::show,
             "startDrag", &Window::startDrag,
+            "startResize", &Window::startResize,
         );
     }
 }
