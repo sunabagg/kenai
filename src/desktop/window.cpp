@@ -259,6 +259,7 @@ namespace sunaba::desktop {
             "addThemeIconOverride", &Window::addThemeIconOverride,
             "addThemeStyleBoxOverride", &Window::addThemeStyleBoxOverride,
             "beginBulkThemeOverride", &Window::beginBulkThemeOverride,
+            "canDraw", &Window::canDraw,
         );
     }
 }
