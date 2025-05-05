@@ -95,6 +95,10 @@ namespace sunaba::desktop {
                 &Window::getCurrentScreen,
                 &Window::setCurrentScreen
             ),
+            "excludeFromCapture", sol::property(
+                &Window::getExcludeFromCapture,
+                &Window::setExcludeFromCapture
+            ),
         );
     }
 }
