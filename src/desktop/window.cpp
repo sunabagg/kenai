@@ -288,6 +288,7 @@ namespace sunaba::desktop {
             "hasThemeFontSizeOverride", &Window::hasThemeFontSizeOverride,
             "hasThemeIcon", &Window::hasThemeIcon,
             "hasThemeIconOverride", &Window::hasThemeIconOverride,
+            "hasThemeStyleBox", &Window::hasThemeStyleBox,
         );
     }
 }
