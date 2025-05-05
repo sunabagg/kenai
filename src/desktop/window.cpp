@@ -42,4 +42,10 @@ namespace sunaba::desktop {
             this->element->unhandledInput(event);
         }
     }
+
+    void WindowProxy::_unhandled_key_input(const Ref<InputEvent>& event) {
+        if (this->element != nullptr) {
+            this->element->unhandledKeyInput(event);
+        }
+    }
 }
