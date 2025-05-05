@@ -198,7 +198,11 @@ namespace sunaba::desktop {
             "aboutToPopup", sol::property(
                 &Window::getAboutToPopupEvent,
                 &Window::setAboutToPopupEvent
-            )
+            ),
+            "closeRequested", sol::property(
+                &Window::getCloseRequestedEvent,
+                &Window::setCloseRequestedEvent
+            ),
         );
     }
 }
