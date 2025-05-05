@@ -305,6 +305,7 @@ namespace sunaba::desktop {
             "popupExclusiveCentered", &Window::popupExclusiveCentered,
             "popupExclusiveCenteredClamped", &Window::popupExclusiveCenteredClamped,
             "popupExclusiveCenteredRatio", &Window::popupExclusiveCenteredRatio,
+            "popupExclusiveOnParent", &Window::popupExclusiveOnParent,
         );
     }
 }
