@@ -260,6 +260,7 @@ namespace sunaba::desktop {
             "addThemeStyleBoxOverride", &Window::addThemeStyleBoxOverride,
             "beginBulkThemeOverride", &Window::beginBulkThemeOverride,
             "canDraw", &Window::canDraw,
+            "childControlsChanged", &Window::childControlsChanged,
         );
     }
 }
