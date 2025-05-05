@@ -54,4 +54,11 @@ namespace sunaba::desktop {
             this->element->shortcutInput(event);
         }
     }
+
+    void bindWindow(sol::state_view& lua) {
+        lua.new_usertype<Window>("Window",
+            sol::constructors<Window()>(),
+            sol::base_classes, sol::bases<BaseObject, Element, sunaba::core::Viewport>()
+        );
+    }
 }
