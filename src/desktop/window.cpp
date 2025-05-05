@@ -123,6 +123,10 @@ namespace sunaba::desktop {
                 &Window::getMaxSize,
                 &Window::setMaxSize
             ),
+            "minSize", sol::property(
+                &Window::getMinSize,
+                &Window::setMinSize
+            ),
         );
     }
 }
