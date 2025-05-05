@@ -91,6 +91,10 @@ namespace sunaba::desktop {
             void setTransient(bool transient) {
                 popup->set_transient(transient);
             }
+
+            bool getUnresizable() const {
+                return popup->get_flag(godot::Popup::Flags::FLAG_RESIZE_DISABLED);
+            }
     };
 }
 
