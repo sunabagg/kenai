@@ -83,6 +83,10 @@ namespace sunaba::desktop {
             void setPopupWindow(bool p_popup) {
                 popup->set_flag(godot::Popup::Flags::FLAG_POPUP, p_popup);
             }
+
+            bool getTransient() const {
+                return popup->is_transient();
+            }
     };
 }
 
