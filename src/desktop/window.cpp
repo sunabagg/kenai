@@ -294,6 +294,7 @@ namespace sunaba::desktop {
             "isEmbedded", &Window::isEmbedded,
             "isLayoutRtl", &Window::isLayoutRtl,
             "isMaximizeAllowed", &Window::isMaximizeAllowed,
+            "isUsingFontOversampling", &Window::isUsingFontOversampling,
         );
     }
 }
