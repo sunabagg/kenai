@@ -119,6 +119,10 @@ namespace sunaba::desktop {
                 &Window::getKeepTitleVisible,
                 &Window::setKeepTitleVisible
             ),
+            "maxSize", sol::property(
+                &Window::getMaxSize,
+                &Window::setMaxSize
+            ),
         );
     }
 }
