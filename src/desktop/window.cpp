@@ -207,6 +207,10 @@ namespace sunaba::desktop {
                 &Window::getDpiChangedEvent,
                 &Window::setDpiChangedEvent
             ),
+            "filesDropped", sol::property(
+                &Window::getFilesDroppedEvent,
+                &Window::setFilesDroppedEvent
+            ),
         );
     }
 }
