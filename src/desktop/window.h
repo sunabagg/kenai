@@ -859,6 +859,10 @@ namespace sunaba::desktop {
                 window->reset_size();
             }
 
+            void setImeActive(bool active) {
+                window->set_ime_active(active);
+            }
+
             void setFlag(int flag, bool value) {
                 window->set_flag(static_cast<godot::Window::Flags>(flag), value);
             }
