@@ -268,6 +268,7 @@ namespace sunaba::desktop {
             "getSizeWithDecorations", &Window::getSizeWithDecorations,
             "getThemeColor", &Window::getThemeColor,
             "getThemeConstant", &Window::getThemeConstant,
+            "getThemeDefaultBaseScale", &Window::getThemeDefaultBaseScale, 
         );
     }
 }
