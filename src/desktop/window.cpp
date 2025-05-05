@@ -279,6 +279,7 @@ namespace sunaba::desktop {
             "grabFocus", &Window::grabFocus,
             "hasFocus", &Window::hasFocus,
             "hasThemeColor", &Window::hasThemeColor,
+            "hasThemeColorOverride", &Window::hasThemeColorOverride,
         );
     }
 }
