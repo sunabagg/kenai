@@ -143,6 +143,10 @@ namespace sunaba::desktop {
                 &Window::getPopupWindow,
                 &Window::setPopupWindow
             ),
+            "position", sol::property(
+                &Window::getPosition,
+                &Window::setPosition
+            ),
         );
     }
 }
