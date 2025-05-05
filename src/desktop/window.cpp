@@ -270,6 +270,7 @@ namespace sunaba::desktop {
             "getThemeConstant", &Window::getThemeConstant,
             "getThemeDefaultBaseScale", &Window::getThemeDefaultBaseScale, 
             "getThemeDefaultFont", &Window::getThemeDefaultFont,
+            "getThemeDefaultFontSize", &Window::getThemeDefaultFontSize,
         );
     }
 }
