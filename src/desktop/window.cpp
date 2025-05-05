@@ -308,6 +308,7 @@ namespace sunaba::desktop {
             "popupExclusiveOnParent", &Window::popupExclusiveOnParent,
             "popupOnParent", &Window::popupOnParent,
             "removeThemeColorOverride", &Window::removeThemeColorOverride,
+            "removeThemeConstantOverride", &Window::removeThemeConstantOverride,
         );
     }
 }
