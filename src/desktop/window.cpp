@@ -203,6 +203,10 @@ namespace sunaba::desktop {
                 &Window::getCloseRequestedEvent,
                 &Window::setCloseRequestedEvent
             ),
+            "dpiChanged", sol::property(
+                &Window::getDpiChangedEvent,
+                &Window::setDpiChangedEvent
+            ),
         );
     }
 }
