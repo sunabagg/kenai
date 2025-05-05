@@ -91,6 +91,10 @@ namespace sunaba::desktop {
                 &Window::getContentScaleStretch,
                 &Window::setContentScaleStretch
             ),
+            "currentScreen", sol::property(
+                &Window::getCurrentScreen,
+                &Window::setCurrentScreen
+            ),
         );
     }
 }
