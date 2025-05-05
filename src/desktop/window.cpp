@@ -179,6 +179,10 @@ namespace sunaba::desktop {
                 &Window::getTransparent,
                 &Window::setTransparent
             ),
+            "unfocusable", sol::property(
+                &Window::getUnfocusable,
+                &Window::setUnfocusable
+            ),
         );
     }
 }
