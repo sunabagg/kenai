@@ -99,6 +99,10 @@ namespace sunaba::desktop {
             void setUnresizable(bool unresizable) {
                 popup->set_flag(godot::Popup::Flags::FLAG_RESIZE_DISABLED, unresizable);
             }
+
+            bool getWrapControls() const {
+                return popup->is_wrapping_controls();
+            }
     };
 }
 
