@@ -276,6 +276,10 @@ namespace sunaba::desktop {
                 return window->get_content_scale_stretch();
             }
 
+            void setContentScaleStretch(int stretch) {
+                window->set_content_scale_stretch(static_cast<godot::Window::ContentScaleStretch>(stretch));
+            }
+
             int getCurrentScreen() {
                 return window->get_current_screen();
             }
