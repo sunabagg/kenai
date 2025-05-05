@@ -314,6 +314,7 @@ namespace sunaba::desktop {
             "removeThemeIconOverride", &Window::removeThemeIconOverride,
             "removeThemeStyleBoxOverride", &Window::removeThemeStyleBoxOverride,
             "requestAttention", &Window::requestAttention,
+            "resetSize", &Window::resetSize,
         );
     }
 }
