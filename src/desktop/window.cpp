@@ -280,6 +280,7 @@ namespace sunaba::desktop {
             "hasFocus", &Window::hasFocus,
             "hasThemeColor", &Window::hasThemeColor,
             "hasThemeColorOverride", &Window::hasThemeColorOverride,
+            "hasThemeConstant", &Window::hasThemeConstant,
         );
     }
 }
