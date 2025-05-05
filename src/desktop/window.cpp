@@ -264,6 +264,7 @@ namespace sunaba::desktop {
             "endBulkThemeOverride", &Window::endBulkThemeOverride,
             "getFlag", &Window::getFlag,
             "getLayoutDirection", &Window::getLayoutDirection,
+            "getPositionWithDecorations", &Window::getPositionWithDecorations,
         );
     }
 }
