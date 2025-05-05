@@ -299,6 +299,7 @@ namespace sunaba::desktop {
             "moveToForground", &Window::moveToForground,
             "popup", &Window::popup,
             "popupCentered", &Window::popupCentered,
+            "popupCenteredClamped", &Window::popupCenteredClamped,
         );
     }
 }
