@@ -13,6 +13,46 @@ target_sources(${PROJECT_NAME} PRIVATE
         theme.cpp
         control.h
         control.cpp
+        base_button.h
+        base_button.cpp
+        button_group.h
+        button_group.cpp
+        button.h
+        button.cpp
+        check_box.h
+        check_box.cpp
+        check_button.h
+        check_button.cpp
+        container.h
+        container.cpp
+        aspect_ratio_container.h
+        aspect_ratio_container.cpp
+        box_container.h
+        box_container.cpp
+        center_container.h
+        center_container.cpp
+        flow_container.h
+        flow_container.cpp
+        bind_ui_classes.h
+        bind_ui_classes.cpp
+        grid_container.h
+        grid_container.cpp
+        h_box_container.h
+        h_box_container.cpp
+        h_flow_container.h
+        h_flow_container.cpp
+        item_list.h
+        item_list.cpp
+        label.h
+        label.cpp
+        line_edit.h
+        line_edit.cpp
+        link_button.h
+        link_button.cpp
+        margin_container.h
+        margin_container.cpp
+        menu_bar.h
+        menu_bar.cpp
 )
 
 target_include_directories( ${PROJECT_NAME}

@@ -36,10 +36,6 @@ namespace sunaba::core {
     class Element : public BaseObject {    
     private:
         Node* node = nullptr; // Pointer to the Node instance
-
-        std::vector<Element*> children; // List of child elements
-        Element* parent = nullptr; // Pointer to the parent element
-
         void connectElementSignals() {
             std::function<Variant(std::vector<Variant>)> childEntertedTreeFunc = 
             [this](std::vector<Variant> args) {
@@ -127,15 +123,6 @@ namespace sunaba::core {
             };
             Callable treeExitingCallable = StlFunctionWrapper::create_callable_from_cpp_function(treeExitingFunc);
             this->node->connect("tree_exiting", treeExitingCallable);
-        }
-        
-    protected:
-        void setParent(Element* p_parent) {
-            parent = p_parent;
-            if (node != nullptr && p_parent != nullptr && p_parent->getNode() != nullptr) {
-                // Add this node as a child of the parent node
-                node->add_child(p_parent->getNode());
-            }
         }
     public:
         sol::table scriptInstance = sol::lua_nil;
@@ -250,49 +237,21 @@ namespace sunaba::core {
             }
         }
 
-        Element* findE(PackedStringArray & p_array, int p_index) {
-            if (p_index >= 0 && p_index < p_array.size()) {
-                String name = p_array[p_index];
-                for (Element* child : children) {
-                    if (child != nullptr) {
-                        if (child->getName().c_str() == name) {
-                            return child;
-                        } else {
-                            Element* found = child->findE(p_array, p_index + 1);
-                            if (found != nullptr) {
-                                return found;
-                            }
-                        }
-                    }
-                    
-                }
-            }
-            return nullptr;
-        }
-        
         Element* find(const std::string& name) {
-            String name_str = String(name.c_str());
-            PackedStringArray name_array = name_str.split("/");
-            return findE(name_array, 0);
-        }
-
-        template<typename T>
-        T* findT(const std::string& name) {
-            Element* found = find(name);
-            if (found != nullptr) {
-                return static_cast<T*>(found);
+            NodePath path = NodePath(name.c_str());
+            auto node = getNode()->get_node<Node>(path);
+            if (node != nullptr) {
+                return new Element(node);
             }
             return nullptr;
         }
 
         Element* getParent() {
-            return parent;
+            return new Element(getNode()->get_parent());
         }
 
         void addChild(Element* child) {
             if (child != nullptr) {
-                children.push_back(child);
-                child->setParent(this);
                 if (node != nullptr) {
                     node->add_child(child->getNode());
                 }
@@ -300,27 +259,26 @@ namespace sunaba::core {
         }
 
         void addSibling(Element* sibling) {
+            auto parent = getParent();
             if (sibling != nullptr && parent != nullptr) {
                 parent->addChild(sibling);
             }
         }
 
         void removeChild(Element* child) {
-            auto it = std::find(children.begin(), children.end(), child);
-            if (it != children.end()) {
-                children.erase(it);
-                child->setParent(nullptr);
-                if (node != nullptr) {
-                    node->remove_child(child->getNode());
-                }
+            if (node != nullptr) {
+                node->remove_child(child->getNode());
             }
         }
 
         std::vector<Element*> getChildren() {
+            auto childrenNodes = node->get_children();
             std::vector<Element*> result;
-            for (Element* child : children) {
-                if (child != nullptr) {
-                    result.push_back(child);
+            for (int i = 0; i < childrenNodes.size(); ++i) {
+                Node* childNode = Object::cast_to<Node>(childrenNodes[i].operator Object*());
+                if (childNode != nullptr) {
+                    Element* childElement = new Element(childNode);
+                    result.push_back(childElement);
                 }
             }
             return result;
@@ -361,16 +319,6 @@ namespace sunaba::core {
                 node->queue_free();
                 node = nullptr;
             }
-            if (parent != nullptr) {
-                parent->removeChild(this);
-                parent = nullptr;
-            }
-            for (Element* child : children) {
-                if (child != nullptr) {
-                    child->onFree();
-                }
-            }
-            children.clear();
         }
 
         bool isNull() {

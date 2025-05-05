@@ -122,7 +122,7 @@ namespace sunaba::ui {
         return TypedArray<Vector3i>();
     }
 
-    void bind_control(sol::state& lua) {
+    void bindControl(sol::state& lua) {
         auto ut = lua.new_usertype<Control>("Control",
             sol::constructors<Control()>(),
             sol::base_classes, sol::bases<BaseObject, Element, sunaba::core::CanvasItem>(),
