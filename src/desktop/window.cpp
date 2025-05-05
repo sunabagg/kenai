@@ -291,6 +291,7 @@ namespace sunaba::desktop {
             "hasThemeStyleBox", &Window::hasThemeStyleBox,
             "hasThemeStyleBoxOverride", &Window::hasThemeStyleBoxOverride,
             "hide", &Window::hide,
+            "isEmbedded", &Window::isEmbedded,
         );
     }
 }
