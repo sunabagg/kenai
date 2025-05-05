@@ -269,6 +269,7 @@ namespace sunaba::desktop {
             "getThemeColor", &Window::getThemeColor,
             "getThemeConstant", &Window::getThemeConstant,
             "getThemeDefaultBaseScale", &Window::getThemeDefaultBaseScale, 
+            "getThemeDefaultFont", &Window::getThemeDefaultFont,
         );
     }
 }
