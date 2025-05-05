@@ -324,6 +324,10 @@ namespace sunaba::desktop {
                 return window->get_initial_position();
             }
 
+            void setInitialPosition(int position) {
+                window->set_initial_position(static_cast<godot::Window::WindowInitialPosition>(position));
+            }
+
             bool getKeepTitleVisible() {
                 return window->get_keep_title_visible();
             }
