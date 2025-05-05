@@ -273,7 +273,7 @@ namespace sunaba::desktop {
             "getThemeDefaultFontSize", &Window::getThemeDefaultFontSize,
             "getThemeFont", &Window::getThemeFont,
             "getThemeFontSize", &Window::getThemeFontSize,
-            "getTitlebarIcon", &Window::getTitlebarIcon,
+            "getThemeIcon", &Window::getThemeIcon,
         );
     }
 }
