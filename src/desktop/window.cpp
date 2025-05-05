@@ -71,6 +71,14 @@ namespace sunaba::desktop {
                 &Window::getBorderless,
                 &Window::setBorderless
             ),
+            "contentScaleAspect", sol::property(
+                &Window::getContentScaleAspect,
+                &Window::setContentScaleAspect
+            ),
+            "contentScaleFactor", sol::property(
+                &Window::getContentScaleFactor,
+                &Window::setContentScaleFactor
+            ),
         );
     }
 }
