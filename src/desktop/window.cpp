@@ -223,6 +223,10 @@ namespace sunaba::desktop {
                 &Window::getGoBackRequestedEvent,
                 &Window::setGoBackRequestedEvent
             ),
+            "mouseEntered", sol::property(
+                &Window::getMouseEnteredEvent,
+                &Window::setMouseEnteredEvent
+            ),
         );
     }
 }
