@@ -251,6 +251,7 @@ namespace sunaba::desktop {
                 &Window::getWindowInputEvent,
                 &Window::setWindowInputEvent
             ),
+            "getContentsMinimumSize", &Window::getContentsMinimumSize,
         );
     }
 }
