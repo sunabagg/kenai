@@ -87,6 +87,10 @@ namespace sunaba::desktop {
                 &Window::getContentScaleSize,
                 &Window::setContentScaleSize
             ),
+            "contentScaleStretch", sol::property(
+                &Window::getContentScaleStretch,
+                &Window::setContentScaleStretch
+            ),
         );
     }
 }
