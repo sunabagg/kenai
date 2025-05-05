@@ -282,6 +282,7 @@ namespace sunaba::desktop {
             "hasThemeColorOverride", &Window::hasThemeColorOverride,
             "hasThemeConstant", &Window::hasThemeConstant,
             "hasThemeConstantOverride", &Window::hasThemeConstantOverride,
+            "hasThemeFont", &Window::hasThemeFont,
             "hasThemeFontOverride", &Window::hasThemeFontOverride,
             "hasThemeFontSizeOverride", &Window::hasThemeFontSizeOverride,
             "hasThemeIconOverride", &Window::hasThemeIconOverride,
