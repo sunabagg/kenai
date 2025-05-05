@@ -175,6 +175,10 @@ namespace sunaba::desktop {
                 &Window::getTransientToFocused,
                 &Window::setTransientToFocused
             ),
+            "transparent", sol::property(
+                &Window::getTransparent,
+                &Window::setTransparent
+            ),
         );
     }
 }
