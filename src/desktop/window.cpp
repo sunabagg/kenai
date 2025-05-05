@@ -183,6 +183,10 @@ namespace sunaba::desktop {
                 &Window::getUnfocusable,
                 &Window::setUnfocusable
             ),
+            "unresizable", sol::property(
+                &Window::getUnresizable,
+                &Window::setUnresizable
+            ),
         );
     }
 }
