@@ -159,6 +159,10 @@ namespace sunaba::desktop {
                 &Window::getTheme,
                 &Window::setTheme
             ),
+            "themeTypeVariation", sol::property(
+                &Window::getThemeTypeVariation,
+                &Window::setThemeTypeVariation
+            ),
         );
     }
 }
