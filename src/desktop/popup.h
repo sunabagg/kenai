@@ -67,6 +67,10 @@ namespace sunaba::desktop {
                 connectPopupSignals();
                 setViewport(popup);
             }
+
+            bool getBorderless() const {
+                return popup->get_flag(godot::Popup::Flags::FLAG_BORDERLESS);
+            }
     };
 }
 
