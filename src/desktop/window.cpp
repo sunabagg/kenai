@@ -191,6 +191,10 @@ namespace sunaba::desktop {
                 &Window::getVisible,
                 &Window::setVisible
             ),
+            "wrapControls", sol::property(
+                &Window::getWrapControls,
+                &Window::setWrapControls
+            ),
         );
     }
 }
