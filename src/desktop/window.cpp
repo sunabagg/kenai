@@ -307,6 +307,7 @@ namespace sunaba::desktop {
             "popupExclusiveCenteredRatio", &Window::popupExclusiveCenteredRatio,
             "popupExclusiveOnParent", &Window::popupExclusiveOnParent,
             "popupOnParent", &Window::popupOnParent,
+            "removeThemeColorOverride", &Window::removeThemeColorOverride,
         );
     }
 }
