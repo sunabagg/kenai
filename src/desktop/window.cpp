@@ -167,6 +167,10 @@ namespace sunaba::desktop {
                 &Window::getTitle,
                 &Window::setTitle
             ),
+            "transient", sol::property(
+                &Window::getTransient,
+                &Window::setTransient
+            ),
         );
     }
 }
