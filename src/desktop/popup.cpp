@@ -83,6 +83,13 @@ namespace sunaba::desktop {
                 &Popup::getWrapControls,
                 &Popup::setWrapControls
             ),
+            "cast", [](Element* e) {
+                PopupNode* popup = Object::cast_to<PopupNode>(e->getNode());
+                if (popup != nullptr) {
+                    return new Popup(popup);
+                }
+                return static_cast<Popup*>(nullptr);
+            }
         );
     }
 }
