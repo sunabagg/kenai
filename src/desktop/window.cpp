@@ -231,6 +231,10 @@ namespace sunaba::desktop {
                 &Window::getMouseExitedEvent,
                 &Window::setMouseExitedEvent
             ),
+            "themeChanged", sol::property(
+                &Window::getThemeChangedEvent,
+                &Window::setThemeChangedEvent
+            ),
         );
     }
 }
