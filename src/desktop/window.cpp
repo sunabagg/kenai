@@ -139,6 +139,10 @@ namespace sunaba::desktop {
                 &Window::getMousePassthroughPolygon,
                 &Window::setMousePassthroughPolygon
             ),
+            "popupWindow", sol::property(
+                &Window::getPopupWindow,
+                &Window::setPopupWindow
+            ),
         );
     }
 }
