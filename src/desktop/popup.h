@@ -112,6 +112,9 @@ namespace sunaba::desktop {
             Event* getPopupHideEvent() {
                 return popupHideEvent;
             }
+            void setPopupHideEvent(Event* event) {
+                popupHideEvent = event;
+            }
     };
 }
 
