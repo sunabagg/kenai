@@ -30,4 +30,10 @@ namespace sunaba::desktop {
             this->element->physicsProcess(delta);
         }
     }
+
+    void PopupProxy::_input(const Ref<InputEvent>& event) {
+        if (this->element != nullptr) {
+            this->element->input(event);
+        }
+    }
 }
