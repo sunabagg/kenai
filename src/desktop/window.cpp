@@ -277,6 +277,7 @@ namespace sunaba::desktop {
             "getThemeStyleBox", &Window::getThemeStyleBox,
             "getWindowId", &Window::getWindowId,
             "grabFocus", &Window::grabFocus,
+            "hasFocus", &Window::hasFocus,
         );
     }
 }
