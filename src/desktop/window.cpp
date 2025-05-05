@@ -310,6 +310,7 @@ namespace sunaba::desktop {
             "removeThemeColorOverride", &Window::removeThemeColorOverride,
             "removeThemeConstantOverride", &Window::removeThemeConstantOverride,
             "removeThemeFontOverride", &Window::removeThemeFontOverride,
+            "removeThemeFontSizeOverride", &Window::removeThemeFontSizeOverride,
         );
     }
 }
