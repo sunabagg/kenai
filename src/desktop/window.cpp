@@ -267,6 +267,7 @@ namespace sunaba::desktop {
             "getPositionWithDecorations", &Window::getPositionWithDecorations,
             "getSizeWithDecorations", &Window::getSizeWithDecorations,
             "getThemeColor", &Window::getThemeColor,
+            "getThemeConstant", &Window::getThemeConstant,
         );
     }
 }
