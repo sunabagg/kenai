@@ -71,6 +71,10 @@ namespace sunaba::desktop {
                 &Popup::getTransient,
                 &Popup::setTransient
             ),
+            "unresizable", sol::property(
+                &Popup::getUnresizable,
+                &Popup::setUnresizable
+            ),
         );
     }
 }
