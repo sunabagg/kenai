@@ -275,6 +275,7 @@ namespace sunaba::desktop {
             "getThemeFontSize", &Window::getThemeFontSize,
             "getThemeIcon", &Window::getThemeIcon,
             "getThemeStyleBox", &Window::getThemeStyleBox,
+            "getWindowId", &Window::getWindowId,
         );
     }
 }
