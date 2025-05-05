@@ -239,6 +239,10 @@ namespace sunaba::desktop {
                 &Window::getTitleChangedEvent,
                 &Window::setTitleChangedEvent
             ),
+            "titlebarChanged", sol::property(
+                &Window::getTitlebarChangedEvent,
+                &Window::setTitlebarChangedEvent
+            ),
         );
     }
 }
