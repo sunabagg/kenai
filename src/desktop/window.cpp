@@ -127,6 +127,10 @@ namespace sunaba::desktop {
                 &Window::getMinSize,
                 &Window::setMinSize
             ),
+            "mode", sol::property(
+                &Window::getMode,
+                &Window::setMode
+            ),
         );
     }
 }
