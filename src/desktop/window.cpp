@@ -111,6 +111,10 @@ namespace sunaba::desktop {
                 &Window::getForceNative,
                 &Window::setForceNative
             ),
+            "initialPosition", sol::property(
+                &Window::getInitialPosition,
+                &Window::setInitialPosition
+            ),
         );
     }
 }
