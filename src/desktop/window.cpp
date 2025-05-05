@@ -258,7 +258,7 @@ namespace sunaba::desktop {
             "addTHemeFontSizeOverride", &Window::addThemeFontSizeOverride,
             "addThemeIconOverride", &Window::addThemeIconOverride,
             "addThemeStyleBoxOverride", &Window::addThemeStyleBoxOverride,
-            "beginBukThemeOverride", &Window::beginBukThemeOverride,
+            "beginBulkThemeOverride", &Window::beginBulkThemeOverride,
         );
     }
 }
