@@ -67,6 +67,10 @@ namespace sunaba::desktop {
                 &Popup::getPopupWindow,
                 &Popup::setPopupWindow
             ),
+            "transient", sol::property(
+                &Popup::getTransient,
+                &Popup::setTransient
+            ),
         );
     }
 }
