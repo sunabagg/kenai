@@ -262,6 +262,7 @@ namespace sunaba::desktop {
             "canDraw", &Window::canDraw,
             "childControlsChanged", &Window::childControlsChanged,
             "endBulkThemeOverride", &Window::endBulkThemeOverride,
+            "getFlag", &Window::getFlag,
         );
     }
 }
