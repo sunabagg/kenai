@@ -63,6 +63,10 @@ namespace sunaba::desktop {
                 &Popup::getBorderless,
                 &Popup::setBorderless
             ),
+            "popupWindow", sol::property(
+                &Popup::getPopupWindow,
+                &Popup::setPopupWindow
+            ),
         );
     }
 }
