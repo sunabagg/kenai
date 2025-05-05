@@ -115,6 +115,10 @@ namespace sunaba::desktop {
                 &Window::getInitialPosition,
                 &Window::setInitialPosition
             ),
+            "keepTitleVisible", sol::property(
+                &Window::getKeepTitleVisible,
+                &Window::setKeepTitleVisible
+            ),
         );
     }
 }
