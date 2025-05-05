@@ -131,6 +131,10 @@ namespace sunaba::desktop {
                 &Window::getMode,
                 &Window::setMode
             ),
+            "mousePassthrough", sol::property(
+                &Window::getMousePassthrough,
+                &Window::setMousePassthrough
+            ),
         );
     }
 }
