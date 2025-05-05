@@ -109,6 +109,9 @@ namespace sunaba::desktop {
             }
 
             Event* popupHideEvent;
+            Event* getPopupHideEvent() {
+                return popupHideEvent;
+            }
     };
 }
 
