@@ -320,6 +320,7 @@ namespace sunaba::desktop {
             "setImePosition", &Window::setImePosition,
             "setLayoutDirection", &Window::setLayoutDirection,
             "setUnparentWhenInvisible", &Window::setUnparentWhenInvisible,
+            "setUseFontOversampling", &Window::setUseFontOversampling,
         );
     }
 }
