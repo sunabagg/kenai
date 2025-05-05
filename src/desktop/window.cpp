@@ -318,6 +318,7 @@ namespace sunaba::desktop {
             "setFlag", &Window::setFlag,
             "setImeActive", &Window::setImeActive,
             "setImePosition", &Window::setImePosition,
+            "setLayoutDirection", &Window::setLayoutDirection,
         );
     }
 }
