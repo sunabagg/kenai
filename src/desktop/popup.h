@@ -103,6 +103,12 @@ namespace sunaba::desktop {
             bool getWrapControls() const {
                 return popup->is_wrapping_controls();
             }
+
+            void setWrapControls(bool wrap) {
+                popup->set_wrap_controls(wrap);
+            }
+
+            Event* popupHideEvent;
     };
 }
 
