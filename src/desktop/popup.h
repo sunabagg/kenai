@@ -87,6 +87,10 @@ namespace sunaba::desktop {
             bool getTransient() const {
                 return popup->is_transient();
             }
+
+            void setTransient(bool transient) {
+                popup->set_transient(transient);
+            }
     };
 }
 
