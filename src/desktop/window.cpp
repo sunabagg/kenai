@@ -18,4 +18,10 @@ namespace sunaba::desktop {
             this->element->ready();
         }
     }
+
+    void WindowProxy::_process(double delta) {
+        if (this->element != nullptr) {
+            this->element->process(delta);
+        }
+    }
 }
