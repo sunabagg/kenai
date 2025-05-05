@@ -211,6 +211,10 @@ namespace sunaba::desktop {
                 &Window::getFilesDroppedEvent,
                 &Window::setFilesDroppedEvent
             ),
+            "focusEntered", sol::property(
+                &Window::getFocusEnteredEvent,
+                &Window::setFocusEnteredEvent
+            ),
         );
     }
 }
