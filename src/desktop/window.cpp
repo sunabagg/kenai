@@ -322,6 +322,7 @@ namespace sunaba::desktop {
             "setUnparentWhenInvisible", &Window::setUnparentWhenInvisible,
             "setUseFontOversampling", &Window::setUseFontOversampling,
             "show", &Window::show,
+            "startDrag", &Window::startDrag,
         );
     }
 }
