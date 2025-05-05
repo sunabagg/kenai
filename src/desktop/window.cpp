@@ -313,6 +313,7 @@ namespace sunaba::desktop {
             "removeThemeFontSizeOverride", &Window::removeThemeFontSizeOverride,
             "removeThemeIconOverride", &Window::removeThemeIconOverride,
             "removeThemeStyleBoxOverride", &Window::removeThemeStyleBoxOverride,
+            "requestAttention", &Window::requestAttention,
         );
     }
 }
