@@ -296,6 +296,7 @@ namespace sunaba::desktop {
             "isMaximizeAllowed", &Window::isMaximizeAllowed,
             "isUsingFontOversampling", &Window::isUsingFontOversampling,
             "moveToCenter", &Window::moveToCenter,
+            "moveToForground", &Window::moveToForground,
         );
     }
 }
