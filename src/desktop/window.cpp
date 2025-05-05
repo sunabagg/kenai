@@ -195,6 +195,10 @@ namespace sunaba::desktop {
                 &Window::getWrapControls,
                 &Window::setWrapControls
             ),
+            "aboutToPopup", sol::property(
+                &Window::getAboutToPopupEvent,
+                &Window::setAboutToPopupEvent
+            )
         );
     }
 }
