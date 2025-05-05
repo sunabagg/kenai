@@ -265,6 +265,8 @@ namespace sunaba::desktop {
             "getFlag", &Window::getFlag,
             "getLayoutDirection", &Window::getLayoutDirection,
             "getPositionWithDecorations", &Window::getPositionWithDecorations,
+            "getSizeWithDecorations", &Window::getSizeWithDecorations,
+            "getThemeColor", &Window::getThemeColor,
         );
     }
 }
