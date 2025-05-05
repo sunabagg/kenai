@@ -215,6 +215,10 @@ namespace sunaba::desktop {
                 &Window::getFocusEnteredEvent,
                 &Window::setFocusEnteredEvent
             ),
+            "focusExited", sol::property(
+                &Window::getFocusExitedEvent,
+                &Window::setFocusExitedEvent
+            ),
         );
     }
 }
