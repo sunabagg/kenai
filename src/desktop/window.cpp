@@ -290,6 +290,7 @@ namespace sunaba::desktop {
             "hasThemeIconOverride", &Window::hasThemeIconOverride,
             "hasThemeStyleBox", &Window::hasThemeStyleBox,
             "hasThemeStyleBoxOverride", &Window::hasThemeStyleBoxOverride,
+            "hide", &Window::hide,
         );
     }
 }
