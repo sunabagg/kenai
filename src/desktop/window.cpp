@@ -297,6 +297,7 @@ namespace sunaba::desktop {
             "isUsingFontOversampling", &Window::isUsingFontOversampling,
             "moveToCenter", &Window::moveToCenter,
             "moveToForground", &Window::moveToForground,
+            "popup", &Window::popup,
         );
     }
 }
