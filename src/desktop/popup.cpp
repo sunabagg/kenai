@@ -59,6 +59,10 @@ namespace sunaba::desktop {
         lua.new_usertype<Popup>("Popup",
             sol::constructors<Popup()>(),
             sol::base_classes, sol::bases<BaseObject, Element, sunaba::core::Viewport, sunaba::desktop::Window>(),
+            "borderless", sol::property(
+                &Popup::getBorderless,
+                &Popup::setBorderless
+            ),
         );
     }
 }
