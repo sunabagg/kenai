@@ -151,6 +151,10 @@ namespace sunaba::desktop {
                 &Window::getSharpCorners,
                 &Window::setSharpCorners
             ),
+            "size", sol::property(
+                &Window::getSize,
+                &Window::setSize
+            ),
         );
     }
 }
