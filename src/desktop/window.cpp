@@ -255,6 +255,7 @@ namespace sunaba::desktop {
             "addThemeColorOverride", &Window::addThemeColorOverride,
             "addThemeConstantOverride", &Window::addThemeConstantOverride,
             "addThemeFontOverride", &Window::addThemeFontOverride,
+            "addTHemeFontSizeOverride", &Window::addThemeFontSizeOverride,
         );
     }
 }
