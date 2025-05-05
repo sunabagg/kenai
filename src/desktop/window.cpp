@@ -292,6 +292,7 @@ namespace sunaba::desktop {
             "hasThemeStyleBoxOverride", &Window::hasThemeStyleBoxOverride,
             "hide", &Window::hide,
             "isEmbedded", &Window::isEmbedded,
+            "isLayoutRtl", &Window::isLayoutRtl,
         );
     }
 }
