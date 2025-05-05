@@ -187,6 +187,10 @@ namespace sunaba::desktop {
                 &Window::getUnresizable,
                 &Window::setUnresizable
             ),
+            "visible", sol::property(
+                &Window::getVisible,
+                &Window::setVisible
+            ),
         );
     }
 }
