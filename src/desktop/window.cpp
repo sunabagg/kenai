@@ -247,6 +247,10 @@ namespace sunaba::desktop {
                 &Window::getVisibilityChangedEvent,
                 &Window::setVisibilityChangedEvent
             ),
+            "windowInput", sol::property(
+                &Window::getWindowInputEvent,
+                &Window::setWindowInputEvent
+            ),
         );
     }
 }
