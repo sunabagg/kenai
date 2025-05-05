@@ -315,6 +315,7 @@ namespace sunaba::desktop {
             "removeThemeStyleBoxOverride", &Window::removeThemeStyleBoxOverride,
             "requestAttention", &Window::requestAttention,
             "resetSize", &Window::resetSize,
+            "setFlag", &Window::setFlag,
         );
     }
 }
