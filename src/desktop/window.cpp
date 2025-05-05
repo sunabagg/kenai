@@ -324,6 +324,13 @@ namespace sunaba::desktop {
             "show", &Window::show,
             "startDrag", &Window::startDrag,
             "startResize", &Window::startResize,
+            "cast", [](Element* e) {
+                WindowNode* window = Object::cast_to<WindowNode>(e->getNode());
+                if (window != nullptr) {
+                    return new Window(window);
+                }
+                return static_cast<Window*>(nullptr);
+            }
         );
     }
 }
