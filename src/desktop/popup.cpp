@@ -54,4 +54,10 @@ namespace sunaba::desktop {
             this->element->shortcutInput(event);
         }
     }
+
+    void bindPopup(sol::state_view& lua) {
+        lua.new_usertype<Popup>("Popup",
+            sol::constructors<Popup()>()
+        );
+    }
 }
