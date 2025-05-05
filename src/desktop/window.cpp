@@ -155,6 +155,10 @@ namespace sunaba::desktop {
                 &Window::getSize,
                 &Window::setSize
             ),
+            "theme", sol::property(
+                &Window::getTheme,
+                &Window::setTheme
+            ),
         );
     }
 }
