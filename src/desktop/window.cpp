@@ -253,6 +253,7 @@ namespace sunaba::desktop {
             ),
             "getContentsMinimumSize", &Window::getContentsMinimumSize,
             "addThemeColorOverride", &Window::addThemeColorOverride,
+            "addThemeConstantOverride", &Window::addThemeConstantOverride,
         );
     }
 }
