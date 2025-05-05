@@ -171,6 +171,10 @@ namespace sunaba::desktop {
                 &Window::getTransient,
                 &Window::setTransient
             ),
+            "transientToFocused", sol::property(
+                &Window::getTransientToFocused,
+                &Window::setTransientToFocused
+            ),
         );
     }
 }
