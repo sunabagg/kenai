@@ -293,6 +293,7 @@ namespace sunaba::desktop {
             "hide", &Window::hide,
             "isEmbedded", &Window::isEmbedded,
             "isLayoutRtl", &Window::isLayoutRtl,
+            "isMaximizeAllowed", &Window::isMaximizeAllowed,
         );
     }
 }
