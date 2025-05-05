@@ -75,6 +75,10 @@ namespace sunaba::desktop {
                 &Popup::getUnresizable,
                 &Popup::setUnresizable
             ),
+            "visible", sol::property(
+                &Popup::getVisible,
+                &Popup::setVisible
+            ),
         );
     }
 }
