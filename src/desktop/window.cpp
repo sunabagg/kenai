@@ -103,6 +103,10 @@ namespace sunaba::desktop {
                 &Window::getExclusive,
                 &Window::setExclusive
             ),
+            "extendToTitle", sol::property(
+                &Window::getExtendToTitle,
+                &Window::setExtendToTitle
+            ),
         );
     }
 }
