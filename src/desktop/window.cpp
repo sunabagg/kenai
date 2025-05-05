@@ -321,6 +321,7 @@ namespace sunaba::desktop {
             "setLayoutDirection", &Window::setLayoutDirection,
             "setUnparentWhenInvisible", &Window::setUnparentWhenInvisible,
             "setUseFontOversampling", &Window::setUseFontOversampling,
+            "show", &Window::show,
         );
     }
 }
