@@ -319,6 +319,7 @@ namespace sunaba::desktop {
             "setImeActive", &Window::setImeActive,
             "setImePosition", &Window::setImePosition,
             "setLayoutDirection", &Window::setLayoutDirection,
+            "setUnparentWhenInvisible", &Window::setUnparentWhenInvisible,
         );
     }
 }
