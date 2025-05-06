@@ -54,4 +54,11 @@ namespace sunaba::desktop {
             this->element->shortcutInput(event);
         }
     }
+
+    Vector2 PopupPanelProxy::_get_contents_minimum_size() const {
+        if (this->element != nullptr) {
+            return this->element->getContentsMinimumSize();
+        }
+        return get_contents_minimum_size();
+    }
 }
