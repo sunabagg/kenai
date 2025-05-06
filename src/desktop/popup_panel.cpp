@@ -6,4 +6,10 @@ namespace sunaba::desktop {
             this->element->enterTree();
         }
     }
+
+    void PopupPanelProxy::_exit_tree() {
+        if (this->element != nullptr) {
+            this->element->exitTree();
+        }
+    }
 }
