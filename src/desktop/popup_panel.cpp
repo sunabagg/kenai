@@ -68,6 +68,13 @@ namespace sunaba::desktop {
             sol::base_classes, sol::bases<BaseObject, Element, sunaba::core::Viewport, Window, Popup>(),
             "transparent", sol::property(&PopupPanel::getTransparent, &PopupPanel::setTransparent),
             "transparentBg", sol::property(&PopupPanel::getTransparentBg, &PopupPanel::setTransparentBg),
+            "cast", [](Element* e) {
+                PopupPanelNode* node = Object::cast_to<PopupPanelNode>(e->getNode());
+                if (node != nullptr) {
+                    return new PopupPanel(node);
+                } 
+                return static_cast<PopupPanel*>(nullptr);
+            }
         );
     }
 }
