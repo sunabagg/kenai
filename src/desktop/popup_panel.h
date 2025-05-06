@@ -72,6 +72,10 @@ namespace sunaba::desktop {
                 connectPopupSignals();
                 setPopup(popup);
             }
+
+            bool getTransparent() const {
+                return popup->get_flag(godot::PopupPanel::Flags::FLAG_TRANSPARENT);
+            }
         };
 } // namespace sunaba::desktop
 
