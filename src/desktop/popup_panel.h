@@ -84,6 +84,10 @@ namespace sunaba::desktop {
             bool getTransparaentBg() const {
                 return popup->has_transparent_background();
             }
+
+            void setTransparentBg(bool transparent) {
+                popup->set_transparent_background(transparent);
+            }
         };
 } // namespace sunaba::desktop
 
