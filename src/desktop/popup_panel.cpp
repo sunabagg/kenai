@@ -59,6 +59,6 @@ namespace sunaba::desktop {
         if (this->element != nullptr) {
             return this->element->getContentsMinimumSize();
         }
-        return get_contents_minimum_size();
+        return PopupPanelNode::get_contents_minimum_size();
     }
 }
