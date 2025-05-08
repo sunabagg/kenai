@@ -261,6 +261,10 @@ namespace sunaba::desktop {
             int getItemAccelerator(int index) const {
                 return popup_menu->get_item_accelerator(index);
             }
+
+            sunaba::core::Texture2D* getItemIcon(int index) const {
+                return new sunaba::core::Texture2D(popup_menu->get_item_icon(index));
+            }
     };
 }
 
