@@ -77,6 +77,10 @@ namespace sunaba::desktop {
             bool getAllowSearch() const {
                 return popup_menu->get_allow_search();
             }
+
+            void setAllowSearch(bool allow_search) {
+                popup_menu->set_allow_search(allow_search);
+            }
     };
 }
 
