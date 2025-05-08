@@ -453,6 +453,10 @@ namespace sunaba::desktop {
             void setItemTooltip(int index, const std::string& tooltip) {
                 popup_menu->set_item_tooltip(index, tooltip.c_str());
             }
+
+            void toggleItemChecked(int index) {
+                popup_menu->toggle_item_checked(index);
+            }
     };
 }
 
