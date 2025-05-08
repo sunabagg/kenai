@@ -146,5 +146,6 @@ namespace sunaba::desktop {
             "setItemShortcutDisabled", &PopupMenu::setItemShortcutDisabled,
             "setItemSubmenu", &PopupMenu::setItemSubmenu,
             "setItemSubmenuNode", &PopupMenu::setItemSubmenuNode,
+            "setItemText", &PopupMenu::setItemText,
     }
 }
