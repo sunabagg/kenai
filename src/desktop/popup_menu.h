@@ -297,6 +297,10 @@ namespace sunaba::desktop {
             int getItemMultistateMax(int index) const {
                 return popup_menu->get_item_multistate_max(index);
             }
+
+            sunaba::input::Shortcut* getItemShortcut(int index) const {
+                return new sunaba::input::Shortcut(popup_menu->get_item_shortcut(index));
+            }
     };
 }
 
