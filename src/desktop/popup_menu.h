@@ -133,6 +133,10 @@ namespace sunaba::desktop {
             int getSystemMenuId() const {
                 return popup_menu->get_system_menu();
             }
+
+            void setSystemMenuId(int id) {
+                popup_menu->set_system_menu(id);
+            }
     };
 }
 
