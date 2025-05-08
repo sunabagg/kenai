@@ -125,5 +125,6 @@ namespace sunaba::desktop {
             "isNativeMenu", &PopupMenu::isNativeMenu,
             "isSystemMenu", &PopupMenu::isSystemMenu,
             "removeItem", &PopupMenu::removeItem,
+            "scrollToItem", &PopupMenu::scrollToItem,
     }
 }
