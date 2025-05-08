@@ -12,6 +12,7 @@
 #include "../core/event.h"
 #include "../input/input_event.h"
 #include "../input/shortcut.h"
+#include "../core/texture2d.h"
 
 using namespace godot;
 using namespace sunaba::core;
@@ -195,6 +196,10 @@ namespace sunaba::desktop {
 
             void addCheckShortcut(sunaba::input::Shortcut* shortcut, int id  = -1, bool global = false) {
                 popup_menu->add_check_shortcut(shortcut->getShortcut(), id, global);
+            }
+
+            void addIconCheckItem(sunaba::core::Texture2D* texture, std::string label, int id = -1, bool global = false) {
+                popup_menu->add_icon_check_item(texture->getTexture2D(), label.c_str(), id, global);
             }
     };
 }
