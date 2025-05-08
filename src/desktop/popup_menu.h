@@ -417,6 +417,10 @@ namespace sunaba::desktop {
             void setItemMetadata(int index, const Variant& metadata) {
                 popup_menu->set_item_metadata(index, metadata);
             }
+
+            void setItemMultistate(int index, int state) {
+                popup_menu->set_item_multistate(index, state);
+            }
     };
 }
 
