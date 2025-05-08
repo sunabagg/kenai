@@ -144,5 +144,6 @@ namespace sunaba::desktop {
             "setItemMultistateMax", &PopupMenu::setItemMultistateMax,
             "setItemShortcut", &PopupMenu::setItemShortcut,
             "setItemShortcutDisabled", &PopupMenu::setItemShortcutDisabled,
+            "setItemSubmenu", &PopupMenu::setItemSubmenu,
     }
 }
