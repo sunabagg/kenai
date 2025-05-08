@@ -353,6 +353,10 @@ namespace sunaba::desktop {
             bool isSystemMenu() const {
                 return popup_menu->is_system_menu();
             }
+
+            void removeItem(int index) {
+                popup_menu->remove_item(index);
+            }
     };
 }
 
