@@ -361,6 +361,10 @@ namespace sunaba::desktop {
             void scrollToItem(int index) {
                 popup_menu->scroll_to_item(index);
             }
+
+            void setFocusedItem(int index) {
+                popup_menu->set_focused_item(index);
+            }
     };
 }
 
