@@ -73,5 +73,6 @@ namespace sunaba::desktop {
             "itemCount", sol::property(&PopupMenu::getItemCount, &PopupMenu::setItemCount),
             "preferNativeMenu", sol::property(&PopupMenu::getPreferNativeMenu, &PopupMenu::setPreferNativeMenu),
             "submenuPopupDelay", sol::property(&PopupMenu::getSubmenuPopupDelay, &PopupMenu::setSubmenuPopupDelay),
+            "systemMenuId", sol::property(&PopupMenu::getSystemMenuId, &PopupMenu::setSystemMenuId),
     }
 }
