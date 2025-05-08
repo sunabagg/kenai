@@ -145,6 +145,10 @@ namespace sunaba::desktop {
             void setTransparent(bool transparent) {
                 popup_menu->set_flag(godot::Popup::Flags::FLAG_TRANSPARENT, transparent);
             }
+
+            bool getTransparentBg() {
+                return popup_menu->has_transparent_background();
+            }
     };
 }
 
