@@ -253,6 +253,10 @@ namespace sunaba::desktop {
             void clear(bool freeSubmenus = true) {
                 popup_menu->clear(freeSubmenus);
             }
+
+            int getFocusedItem() const {
+                return popup_menu->get_focused_item();
+            }
     };
 }
 
