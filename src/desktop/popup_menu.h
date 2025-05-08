@@ -426,8 +426,8 @@ namespace sunaba::desktop {
                 popup_menu->set_item_multistate_max(index, maxStates);
             }
 
-            void addItemShortcut(int index, sunaba::input::Shortcut* shortcut, bool global = false) {
-                popup_menu->add_item_shortcut(index, shortcut->getShortcut(), global);
+            void setItemShortcut(int index, sunaba::input::Shortcut* shortcut, bool global = false) {
+                popup_menu->set_item_shortcut(index, shortcut->getShortcut(), global);
             }
     };
 }
