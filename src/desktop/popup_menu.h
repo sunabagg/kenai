@@ -345,6 +345,10 @@ namespace sunaba::desktop {
             bool isItemShortcutDisabled(int index) const {
                 return popup_menu->is_item_shortcut_disabled(index);
             }
+
+            bool isNativeMenu() const {
+                return popup_menu->is_native_menu();
+            }
     };
 }
 
