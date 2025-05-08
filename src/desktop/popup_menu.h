@@ -157,12 +157,12 @@ namespace sunaba::desktop {
                 popup_menu->set_transparent_background(transparent_bg);
             }
 
-            Event* ifFocusedEvent;
-            Event* getIfFocusedEvent() {
-                return ifFocusedEvent;
+            Event* idFocusedEvent;
+            Event* getIdFocusedEvent() {
+                return idFocusedEvent;
             }
-            void setIfFocusedEvent(Event* event) {
-                ifFocusedEvent = event;
+            void setIdFocusedEvent(Event* event) {
+                idFocusedEvent = event;
             }
             Event* idPressedEvent;
             Event* getIdPressedEvent() {
