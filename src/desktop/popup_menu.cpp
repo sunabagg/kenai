@@ -126,5 +126,6 @@ namespace sunaba::desktop {
             "isSystemMenu", &PopupMenu::isSystemMenu,
             "removeItem", &PopupMenu::removeItem,
             "scrollToItem", &PopupMenu::scrollToItem,
+            "setFocusedItem", &PopupMenu::setFocusedItem,
     }
 }
