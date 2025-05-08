@@ -136,5 +136,6 @@ namespace sunaba::desktop {
             "setItemIcon", &PopupMenu::setItemIcon,
             "setItemIconMaxWidth", &PopupMenu::setItemIconMaxWidth,
             "setItemIconModulate", &PopupMenu::setItemIconModulate,
+            "setItemId", &PopupMenu::setItemId,
     }
 }
