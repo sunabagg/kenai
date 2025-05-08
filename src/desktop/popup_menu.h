@@ -217,6 +217,10 @@ namespace sunaba::desktop {
             void addIconRadioCheckShortcut(sunaba::core::Texture2D* texture, sunaba::input::Shortcut* shortcut, int id = -1, bool global = false) {
                 popup_menu->add_icon_radio_check_shortcut(texture->getTexture2D(), shortcut->getShortcut(), id, global);
             }
+
+            void addIconShortcut(sunaba::core::Texture2D* texture, sunaba::input::Shortcut* shortcut, int id = -1, bool global = false, bool allowEcho = false) {
+                popup_menu->add_icon_shortcut(texture->getTexture2D(), shortcut->getShortcut(), id, global, allowEcho);
+            }
     };
 }
 
