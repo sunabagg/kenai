@@ -172,6 +172,9 @@ namespace sunaba::desktop {
             Event* getIndexPressedEvent() {
                 return indexPressedEvent;
             }
+            void setIndexPressedEvent(Event* event) {
+                indexPressedEvent = event;
+            }
     };
 }
 
