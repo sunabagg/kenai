@@ -96,5 +96,6 @@ namespace sunaba::desktop {
             "addSeparator", &PopupMenu::addSeparator,
             "addShortcut", &PopupMenu::addShortcut,
             "addSubmenuItem", &PopupMenu::addSubmenuItem,
+            "addSubmenuNodeItem", &PopupMenu::addSubmenuNodeItem,
     }
 }
