@@ -409,6 +409,10 @@ namespace sunaba::desktop {
             void setItemIndent(int index, int indent) {
                 popup_menu->set_item_indent(index, indent);
             }
+
+            void setItemLanguage(int index, const std::string& language) {
+                popup_menu->set_item_language(index, language.c_str());
+            }
     };
 }
 
