@@ -449,6 +449,10 @@ namespace sunaba::desktop {
             void setItemTextDirection(int index, int direction) {
                 popup_menu->set_item_text_direction(index, static_cast<godot::Control::TextDirection>(direction));
             }
+
+            void setItemTooltip(int index, const std::string& tooltip) {
+                popup_menu->set_item_tooltip(index, tooltip.c_str());
+            }
     };
 }
 
