@@ -341,6 +341,10 @@ namespace sunaba::desktop {
             bool isItemSeparator(int index) const {
                 return popup_menu->is_item_separator(index);
             }
+
+            bool isItemShortcutDisabled(int index) const {
+                return popup_menu->is_item_shortcut_disabled(index);
+            }
     };
 }
 
