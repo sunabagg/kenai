@@ -81,6 +81,10 @@ namespace sunaba::desktop {
             void setAllowSearch(bool allow_search) {
                 popup_menu->set_allow_search(allow_search);
             }
+
+            bool getHideOnCheckableItemSelection() const {
+                return popup_menu->is_hide_on_checkable_item_selection();
+            }
     };
 }
 
