@@ -457,6 +457,10 @@ namespace sunaba::desktop {
             void toggleItemChecked(int index) {
                 popup_menu->toggle_item_checked(index);
             }
+
+            void toggleItemMultistate(int index) {
+                popup_menu->toggle_item_multistate(index);
+            }
     };
 }
 
