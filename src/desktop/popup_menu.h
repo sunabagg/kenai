@@ -357,6 +357,10 @@ namespace sunaba::desktop {
             void removeItem(int index) {
                 popup_menu->remove_item(index);
             }
+
+            void scrollToItem(int index) {
+                popup_menu->scroll_to_item(index);
+            }
     };
 }
 
