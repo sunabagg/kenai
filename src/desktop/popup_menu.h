@@ -73,6 +73,10 @@ namespace sunaba::desktop {
                 connectPopupMenuSignals();
                 setPopup(popup_menu);
             }
+
+            bool getAllowSearch() const {
+                return popup_menu->get_allow_search();
+            }
     };
 }
 
