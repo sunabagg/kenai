@@ -147,5 +147,6 @@ namespace sunaba::desktop {
             "setItemSubmenu", &PopupMenu::setItemSubmenu,
             "setItemSubmenuNode", &PopupMenu::setItemSubmenuNode,
             "setItemText", &PopupMenu::setItemText,
+            "setItemTextDirection", &PopupMenu::setItemTextDirection,
     }
 }
