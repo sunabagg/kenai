@@ -337,6 +337,10 @@ namespace sunaba::desktop {
             bool isItemRadioCheckable(int index) const {
                 return popup_menu->is_item_radio_checkable(index);
             }
+
+            bool isItemSeparator(int index) const {
+                return popup_menu->is_item_separator(index);
+            }
     };
 }
 
