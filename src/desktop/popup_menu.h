@@ -10,6 +10,7 @@
 #include "popup.h"
 #include "../core/stl_function_wrapper.h"
 #include "../core/event.h"
+#include "../input/input_event.h"
 
 using namespace godot;
 using namespace sunaba::core;
@@ -181,6 +182,10 @@ namespace sunaba::desktop {
             }
             void setMenuChangedEvent(Event* event) {
                 menuChangedEvent = event;
+            }
+
+            bool activateItemByEvent(sunaba::input::InputEvent* event, bool forGlobalOnly = false) {
+                return popup_menu->activate_item_by_event(event->getInputEvent(), forGlobalOnly);
             }
     };
 }
