@@ -134,5 +134,6 @@ namespace sunaba::desktop {
             "setItemChecked", &PopupMenu::setItemChecked,
             "setItemDisabled", &PopupMenu::setItemDisabled,
             "setItemIcon", &PopupMenu::setItemIcon,
+            "setItemIconMaxWidth", &PopupMenu::setItemIconMaxWidth,
     }
 }
