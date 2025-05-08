@@ -397,6 +397,10 @@ namespace sunaba::desktop {
             void setItemIconMaxWidth(int index, int width) {
                 popup_menu->set_item_icon_max_width(index, width);
             }
+
+            void setItemIconModulate(int index, const Color& modulate) {
+                popup_menu->set_item_icon_modulate(index, modulate);
+            }
     };
 }
 
