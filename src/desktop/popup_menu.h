@@ -381,6 +381,10 @@ namespace sunaba::desktop {
             void setItemAsSeparator(int index, bool enable) {
                 popup_menu->set_item_as_separator(index, enable);
             }
+
+            void setItemChecked(int index, bool checked) {
+                popup_menu->set_item_checked(index, checked);
+            }
     };
 }
 
