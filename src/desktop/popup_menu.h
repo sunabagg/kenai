@@ -125,6 +125,10 @@ namespace sunaba::desktop {
             float getSubmenuPopupDelay() const {
                 return popup_menu->get_submenu_popup_delay();
             }
+
+            void setSubmenuPopupDelay(float seconds) {
+                popup_menu->set_submenu_popup_delay(seconds);
+            }
     };
 }
 
