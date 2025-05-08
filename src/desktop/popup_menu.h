@@ -250,8 +250,8 @@ namespace sunaba::desktop {
                 popup_menu->add_submenu_node_item(label.c_str(), submenu->getPopupMenu(), id);
             }
 
-            void clear() {
-                popup_menu->clear();
+            void clear(bool freeSubmenus = true) {
+                popup_menu->clear(freeSubmenus);
             }
     };
 }
