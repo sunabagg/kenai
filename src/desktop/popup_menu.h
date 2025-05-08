@@ -365,6 +365,10 @@ namespace sunaba::desktop {
             void setFocusedItem(int index) {
                 popup_menu->set_focused_item(index);
             }
+
+            void setItemAccelerator(int index, int accel) {
+                popup_menu->set_item_accelerator(index, static_cast<godot::Key>(accel));
+            }
     };
 }
 
