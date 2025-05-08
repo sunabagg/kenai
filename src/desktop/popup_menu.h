@@ -113,6 +113,10 @@ namespace sunaba::desktop {
             void setItemCount(int count) {
                 popup_menu->set_item_count(count);
             }
+
+            bool getPreferNativeMenu() const {
+                return popup_menu->is_prefer_native_menu();
+            }
     };
 }
 
