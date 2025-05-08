@@ -313,6 +313,10 @@ namespace sunaba::desktop {
             std::string getItemText(int index) const {
                 return popup_menu->get_item_text(index).utf8().get_data();
             }
+
+            int getItemTextDirection(int index) const {
+                return popup_menu->get_item_text_direction(index);
+            }
     };
 }
 
