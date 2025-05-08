@@ -74,6 +74,9 @@ namespace sunaba::core {
                 onInit();
             }
 
+            Viewport(ViewportNode* viewport) {
+                setViewport(viewport);}
+
             ViewportNode* getViewport() {
                 return viewport;
             }
