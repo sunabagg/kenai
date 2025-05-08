@@ -429,6 +429,10 @@ namespace sunaba::desktop {
             void setItemShortcut(int index, sunaba::input::Shortcut* shortcut, bool global = false) {
                 popup_menu->set_item_shortcut(index, shortcut->getShortcut(), global);
             }
+
+            void setItemShortcutDisabled(int index, bool disabled) {
+                popup_menu->set_item_shortcut_disabled(index, disabled);
+            }
     };
 }
 
