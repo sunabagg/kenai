@@ -11,6 +11,7 @@
 #include "../core/stl_function_wrapper.h"
 #include "../core/event.h"
 #include "../input/input_event.h"
+#include "../input/shortcut.h"
 
 using namespace godot;
 using namespace sunaba::core;
@@ -190,6 +191,10 @@ namespace sunaba::desktop {
 
             void addCheckItem(const std::string& label, int id = -1, int accel = 0) {
                 popup_menu->add_check_item(label.c_str(), id, static_cast<godot::Key>(accel));
+            }
+
+            void addCheckShortcut(sunaba::input::Shortcut* shortcut, int id  = -1, bool global = false) {
+                popup_menu->add_check_shortcut(shortcut->getShortcut(), id, global);
             }
     };
 }
