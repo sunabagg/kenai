@@ -120,5 +120,6 @@ namespace sunaba::desktop {
             "isItemChecked", &PopupMenu::isItemChecked,
             "isItemDisabled", &PopupMenu::isItemDisabled,
             "isItemRadioCheckable", &PopupMenu::isItemRadioCheckable,
+            "isItemSeparator", &PopupMenu::isItemSeparator,
     }
 }
