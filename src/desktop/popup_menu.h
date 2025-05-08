@@ -117,6 +117,10 @@ namespace sunaba::desktop {
             bool getPreferNativeMenu() const {
                 return popup_menu->is_prefer_native_menu();
             }
+
+            void setPreferNativeMenu(bool prefer_native_menu) {
+                popup_menu->set_prefer_native_menu(prefer_native_menu);
+            }
     };
 }
 
