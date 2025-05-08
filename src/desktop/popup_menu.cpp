@@ -87,5 +87,6 @@ namespace sunaba::desktop {
             "addIconCheckShortcut", &PopupMenu::addIconCheckShortcut,
             "addIconItem", &PopupMenu::addIconItem,
             "addIconRadioCheckItem", &PopupMenu::addIconRadioCheckItem,
+            "addIconRadioCheckShortcut", &PopupMenu::addIconRadioCheckShortcut,
     }
 }
