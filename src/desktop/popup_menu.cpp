@@ -124,5 +124,6 @@ namespace sunaba::desktop {
             "isItemShortcutDisabled", &PopupMenu::isItemShortcutDisabled,
             "isNativeMenu", &PopupMenu::isNativeMenu,
             "isSystemMenu", &PopupMenu::isSystemMenu,
+            "removeItem", &PopupMenu::removeItem,
     }
 }
