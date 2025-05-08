@@ -205,6 +205,10 @@ namespace sunaba::desktop {
             void addIconCheckShortcut(sunaba::core::Texture2D* texture, sunaba::input::Shortcut* shortcut, int id = -1, bool global = false) {
                 popup_menu->add_icon_check_shortcut(texture->getTexture2D(), shortcut->getShortcut(), id, global);
             }
+
+            void addIconItem(sunaba::core::Texture2D* texture, std::string label, int id = -1, int accel = 0) {
+                popup_menu->add_icon_item(texture->getTexture2D(), label.c_str(), id, static_cast<godot::Key>(accel));
+            }
     };
 }
 
