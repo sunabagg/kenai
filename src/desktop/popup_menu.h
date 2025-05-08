@@ -325,6 +325,10 @@ namespace sunaba::desktop {
             bool isItemCheckable(int index) const {
                 return popup_menu->is_item_checkable(index);
             }
+
+            bool isItemChecked(int index) const {
+                return popup_menu->is_item_checked(index);
+            }
     };
 }
 
