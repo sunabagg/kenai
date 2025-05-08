@@ -65,5 +65,6 @@ namespace sunaba::desktop {
     void bindPopupMenu(sol::state& lua) {
         lua.new_usertype<PopupMenu>("PopupMenu",
             sol::constructors<PopupMenu()>(),
+            sol::base_classes, sol::bases<BaseObject, Element, sunaba::core::Viewport, Window, Popup>(),
     }
 }
