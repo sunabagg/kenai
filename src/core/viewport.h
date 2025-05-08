@@ -12,6 +12,7 @@
 #include "texture2d.h"
 #include "../spatial/world3d.h"
 #include "../input/input_event.h"
+#include "../ui/control.h"
 
 using namespace godot;
 
@@ -534,12 +535,12 @@ namespace sunaba::core {
                 return viewport->gui_get_drag_data();
             }
 
-            Control* guiGetFocusOwner() {
-                return viewport->gui_get_focus_owner();
+            sunaba::ui::Control* guiGetFocusOwner() {
+                return new sunaba::ui::Control(viewport->gui_get_focus_owner());
             }
 
-            Control* guiGetHoveredControl() {
-                return viewport->gui_get_hovered_control();
+            sunaba::ui::Control* guiGetHoveredControl() {
+                return new sunaba::ui::Control(viewport->gui_get_hovered_control());
             }
 
             bool guiIsDragSuccessful() {
