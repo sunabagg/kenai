@@ -385,6 +385,10 @@ namespace sunaba::desktop {
             void setItemChecked(int index, bool checked) {
                 popup_menu->set_item_checked(index, checked);
             }
+
+            void setItemDisabled(int index, bool disabled) {
+                popup_menu->set_item_disabled(index, disabled);
+            }
     };
 }
 
