@@ -242,6 +242,10 @@ namespace sunaba::desktop {
                 popup_menu->add_separator(label.c_str(), id);
             }
 
+            void addShortcut(sunaba::input::Shortcut* shortcut, int id = -1, bool global = false, bool allowEcho = false) {
+                popup_menu->add_shortcut(shortcut->getShortcut(), id, global, allowEcho);
+            }
+
             void addSubmenuItem(const std::string& label, const std::string& submenu, int id = -1) {
                 popup_menu->add_submenu_item(label.c_str(), submenu.c_str(), id);
             }
