@@ -109,5 +109,6 @@ namespace sunaba::desktop {
             "getItemLanguage", &PopupMenu::getItemLanguage,
             "getItemMetadata", &PopupMenu::getItemMetadata,
             "getItemMultistate", &PopupMenu::getItemMultistate,
+            "getItemMultistateMax", &PopupMenu::getItemMultistateMax,
     }
 }
