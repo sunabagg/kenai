@@ -229,6 +229,10 @@ namespace sunaba::desktop {
             void addMultistateItem(const std::string& label, int maxStates, int defaultState = 0, int id = -1, int accel = 0) {
                 popup_menu->add_multistate_item(label.c_str(), maxStates, defaultState, id, static_cast<godot::Key>(accel));
             }
+
+            void addRadioCheckItem(const std::string& label, int id = -1, int accel = 0) {
+                popup_menu->add_radio_check_item(label.c_str(), id, static_cast<godot::Key>(accel));
+            }
     };
 }
 
