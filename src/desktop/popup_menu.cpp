@@ -97,5 +97,6 @@ namespace sunaba::desktop {
             "addShortcut", &PopupMenu::addShortcut,
             "addSubmenuItem", &PopupMenu::addSubmenuItem,
             "addSubmenuNodeItem", &PopupMenu::addSubmenuNodeItem,
+            "clear", &PopupMenu::clear,
     }
 }
