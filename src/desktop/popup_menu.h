@@ -153,6 +153,8 @@ namespace sunaba::desktop {
             void setTransparentBg(bool transparent_bg) {
                 popup_menu->set_transparent_background(transparent_bg);
             }
+
+            Event* ifFocusedEvent;
     };
 }
 
