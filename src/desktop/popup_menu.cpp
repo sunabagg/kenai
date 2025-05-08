@@ -123,5 +123,6 @@ namespace sunaba::desktop {
             "isItemSeparator", &PopupMenu::isItemSeparator,
             "isItemShortcutDisabled", &PopupMenu::isItemShortcutDisabled,
             "isNativeMenu", &PopupMenu::isNativeMenu,
+            "isSystemMenu", &PopupMenu::isSystemMenu,
     }
 }
