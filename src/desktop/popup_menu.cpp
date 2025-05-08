@@ -111,5 +111,6 @@ namespace sunaba::desktop {
             "getItemMultistate", &PopupMenu::getItemMultistate,
             "getItemMultistateMax", &PopupMenu::getItemMultistateMax,
             "getItemShortcut", &PopupMenu::getItemShortcut,
+            "getItemSubmenu", &PopupMenu::getItemSubmenu,
     }
 }
