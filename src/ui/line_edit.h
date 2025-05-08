@@ -11,6 +11,7 @@
 #include "../core/stl_function_wrapper.h"
 #include "../core/event.h"
 #include "../core/texture2d.h"
+#include "../desktop/popup_menu.h"
 
 using namespace godot;
 using namespace sunaba::core;
@@ -477,8 +478,8 @@ namespace sunaba::ui {
                 line_edit_node->edit();
             }
 
-            sunaba::input::PopupMenu* getMenu() {
-                return new sunaba::input::PopupMenu(line_edit_node->get_menu());
+            sunaba::desktop::PopupMenu* getMenu() {
+                return new sunaba::desktop::PopupMenu(line_edit_node->get_menu());
             }
 
             float getScrollOffset() {
