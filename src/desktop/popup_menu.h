@@ -289,6 +289,10 @@ namespace sunaba::desktop {
             Variant getItemMetadata(int index) const {
                 return popup_menu->get_item_metadata(index);
             }
+
+            int getItemMultistate(int index) const {
+                return popup_menu->get_item_multistate(index);
+            }
     };
 }
 
