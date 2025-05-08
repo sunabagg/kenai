@@ -137,6 +137,10 @@ namespace sunaba::desktop {
             void setSystemMenuId(int id) {
                 popup_menu->set_system_menu(static_cast<NativeMenu::SystemMenus>(id));
             }
+
+            bool getTransparent() {
+                return popup_menu->get_flag(godot::Popup::Flags::FLAG_TRANSPARENT);
+            }
     };
 }
 
