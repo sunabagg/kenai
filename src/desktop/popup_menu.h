@@ -293,6 +293,10 @@ namespace sunaba::desktop {
             int getItemMultistate(int index) const {
                 return popup_menu->get_item_multistate(index);
             }
+
+            int getItemMultistateMax(int index) const {
+                return popup_menu->get_item_multistate_max(index);
+            }
     };
 }
 
