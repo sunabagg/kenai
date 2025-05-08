@@ -100,5 +100,6 @@ namespace sunaba::desktop {
             "clear", &PopupMenu::clear,
             "getFocusedItem", &PopupMenu::getFocusedItem,
             "getItemAccelerator", &PopupMenu::getItemAccelerator,
+            "getItemIcon", &PopupMenu::getItemIcon,
     }
 }
