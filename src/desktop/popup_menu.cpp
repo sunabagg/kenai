@@ -141,5 +141,6 @@ namespace sunaba::desktop {
             "setItemLanguage", &PopupMenu::setItemLanguage,
             "setItemMetadata", &PopupMenu::setItemMetadata,
             "setItemMultistate", &PopupMenu::setItemMultistate,
+            "setItemMultistateMax", &PopupMenu::setItemMultistateMax,
     }
 }
