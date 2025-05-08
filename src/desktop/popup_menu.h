@@ -270,6 +270,10 @@ namespace sunaba::desktop {
                 return new sunaba::core::Texture2D(popup_menu->get_item_icon(index));
             }
 
+            int getItemIconMaxWidth(int index) const {
+                return popup_menu->get_item_icon_max_width(index);
+            }
+
             Color getItemIconModulate(int index) const {
                 return popup_menu->get_item_icon_modulate(index);
             }
