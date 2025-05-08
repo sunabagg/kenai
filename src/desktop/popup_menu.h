@@ -373,6 +373,10 @@ namespace sunaba::desktop {
             void setItemAsCheckable(int index, bool enable) {
                 popup_menu->set_item_as_checkable(index, enable);
             }
+
+            void setItemAsRadioCheckable(int index, bool enable) {
+                popup_menu->set_item_as_radio_checkable(index, enable);
+            }
     };
 }
 
