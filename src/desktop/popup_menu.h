@@ -277,6 +277,10 @@ namespace sunaba::desktop {
             int getItemIndent(int index) const {
                 return popup_menu->get_item_indent(index);
             }
+
+            int getItemIndex(int id) const {
+                return popup_menu->get_item_index(id);
+            }
     };
 }
 
