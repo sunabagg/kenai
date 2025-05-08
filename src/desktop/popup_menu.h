@@ -105,6 +105,10 @@ namespace sunaba::desktop {
             void setHideOnStateItemSelection(bool hide_on_state_item_selection) {
                 popup_menu->set_hide_on_state_item_selection(hide_on_state_item_selection);
             }
+
+            int getItemCount() const {
+                return popup_menu->get_item_count();
+            }
     };
 }
 
