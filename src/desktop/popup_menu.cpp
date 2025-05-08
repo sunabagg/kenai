@@ -117,5 +117,6 @@ namespace sunaba::desktop {
             "getItemTextDirection", &PopupMenu::getItemTextDirection,
             "getItemTooltip", &PopupMenu::getItemTooltip,
             "isItemCheckable", &PopupMenu::isItemCheckable,
+            "isItemChecked", &PopupMenu::isItemChecked,
     }
 }
