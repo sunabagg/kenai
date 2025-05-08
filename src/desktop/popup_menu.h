@@ -162,6 +162,9 @@ namespace sunaba::desktop {
                 ifFocusedEvent = event;
             }
             Event* idPressedEvent;
+            Event* getIdPressedEvent() {
+                return idPressedEvent;
+            }
     };
 }
 
