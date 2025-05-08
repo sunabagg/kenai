@@ -301,6 +301,10 @@ namespace sunaba::desktop {
             sunaba::input::Shortcut* getItemShortcut(int index) const {
                 return new sunaba::input::Shortcut(popup_menu->get_item_shortcut(index));
             }
+
+            std::string getItemSubmenu(int index) const {
+                return popup_menu->get_item_submenu(index).utf8().get_data();
+            }
     };
 }
 
