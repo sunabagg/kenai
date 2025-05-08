@@ -133,5 +133,6 @@ namespace sunaba::desktop {
             "setItemAsSeparator", &PopupMenu::setItemAsSeparator,
             "setItemChecked", &PopupMenu::setItemChecked,
             "setItemDisabled", &PopupMenu::setItemDisabled,
+            "setItemIcon", &PopupMenu::setItemIcon,
     }
 }
