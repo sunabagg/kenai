@@ -104,5 +104,6 @@ namespace sunaba::desktop {
             "getItemIconMaxWidth", &PopupMenu::getItemIconMaxWidth,
             "getItemIconModulate", &PopupMenu::getItemIconModulate,
             "getItemId", &PopupMenu::getItemId,
+            "getItemIndent", &PopupMenu::getItemIndent,
     }
 }
