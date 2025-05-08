@@ -146,11 +146,12 @@ namespace sunaba::core {
         }
 
         Material* getMaterial() {
-            return new Material(canvas_item->get_material().ptr());
+            //return new Material(canvas_item->get_material().ptr());
+            return nullptr; // Placeholder, implement this method to return the correct Material instance
         }
 
         void setMaterial(Material* material) {
-            canvas_item->set_material(material->getMaterial());
+            //canvas_item->set_material(material->getMaterial());
         }
 
         Color getModulate() {
