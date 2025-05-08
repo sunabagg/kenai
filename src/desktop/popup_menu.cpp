@@ -71,5 +71,6 @@ namespace sunaba::desktop {
             "hideOnItemSelection", sol::property(&PopupMenu::getHideOnItemSelection, &PopupMenu::setHideOnItemSelection),
             "hideOnStateItemSelection", sol::property(&PopupMenu::getHideOnStateItemSelection, &PopupMenu::setHideOnStateItemSelection),
             "itemCount", sol::property(&PopupMenu::getItemCount, &PopupMenu::setItemCount),
+            "preferNativeMenu", sol::property(&PopupMenu::getPreferNativeMenu, &PopupMenu::setPreferNativeMenu),
     }
 }
