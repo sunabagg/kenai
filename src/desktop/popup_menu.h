@@ -241,6 +241,10 @@ namespace sunaba::desktop {
             void addSeparator(const std::string& label = "&quot;&quot;", int id = -1) {
                 popup_menu->add_separator(label.c_str(), id);
             }
+
+            void addSubMenuItem(const std::string& label, const std::string& submenu, int id = -1) {
+                popup_menu->add_submenu_item(label.c_str(), submenu.c_str(), id);
+            }
     };
 }
 
