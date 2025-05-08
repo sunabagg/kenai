@@ -405,6 +405,10 @@ namespace sunaba::desktop {
             void setItemId(int index, int id) {
                 popup_menu->set_item_id(index, id);
             }
+
+            void setItemIndent(int index, int indent) {
+                popup_menu->set_item_indent(index, indent);
+            }
     };
 }
 
