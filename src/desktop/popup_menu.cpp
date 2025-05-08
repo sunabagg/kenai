@@ -127,5 +127,6 @@ namespace sunaba::desktop {
             "removeItem", &PopupMenu::removeItem,
             "scrollToItem", &PopupMenu::scrollToItem,
             "setFocusedItem", &PopupMenu::setFocusedItem,
+            "setItemAccelerator", &PopupMenu::setItemAccelerator,
     }
 }
