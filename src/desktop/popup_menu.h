@@ -389,6 +389,10 @@ namespace sunaba::desktop {
             void setItemDisabled(int index, bool disabled) {
                 popup_menu->set_item_disabled(index, disabled);
             }
+
+            void setItemIcon(int index, sunaba::core::Texture2D* texture) {
+                popup_menu->set_item_icon(index, texture->getTexture2D());
+            }
     };
 }
 
