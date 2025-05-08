@@ -128,5 +128,6 @@ namespace sunaba::desktop {
             "scrollToItem", &PopupMenu::scrollToItem,
             "setFocusedItem", &PopupMenu::setFocusedItem,
             "setItemAccelerator", &PopupMenu::setItemAccelerator,
+            "setItemAsCheckable", &PopupMenu::setItemAsCheckable,
     }
 }
