@@ -179,6 +179,9 @@ namespace sunaba::desktop {
             Event* getMenuChangedEvent() {
                 return menuChangedEvent;
             }
+            void setMenuChangedEvent(Event* event) {
+                menuChangedEvent = event;
+            }
     };
 }
 
