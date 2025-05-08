@@ -149,5 +149,6 @@ namespace sunaba::desktop {
             "setItemText", &PopupMenu::setItemText,
             "setItemTextDirection", &PopupMenu::setItemTextDirection,
             "setItemTooltip", &PopupMenu::setItemTooltip,
+            "toggleItemChecked", &PopupMenu::toggleItemChecked,
     }
 }
