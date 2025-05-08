@@ -176,6 +176,9 @@ namespace sunaba::desktop {
                 indexPressedEvent = event;
             }
             Event* menuChangedEvent;
+            Event* getMenuChangedEvent() {
+                return menuChangedEvent;
+            }
     };
 }
 
