@@ -233,6 +233,10 @@ namespace sunaba::desktop {
             void addRadioCheckItem(const std::string& label, int id = -1, int accel = 0) {
                 popup_menu->add_radio_check_item(label.c_str(), id, static_cast<godot::Key>(accel));
             }
+
+            void addRadioCheckShortcut(sunaba::input::Shortcut* shortcut, int id = -1, bool global = false) {
+                popup_menu->add_radio_check_shortcut(shortcut->getShortcut(), id, global);
+            }
     };
 }
 
