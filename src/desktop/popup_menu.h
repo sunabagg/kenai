@@ -109,6 +109,10 @@ namespace sunaba::desktop {
             int getItemCount() const {
                 return popup_menu->get_item_count();
             }
+
+            void setItemCount(int count) {
+                popup_menu->set_item_count(count);
+            }
     };
 }
 
