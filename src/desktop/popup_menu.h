@@ -413,6 +413,10 @@ namespace sunaba::desktop {
             void setItemLanguage(int index, const std::string& language) {
                 popup_menu->set_item_language(index, language.c_str());
             }
+
+            void setItemMetadata(int index, const Variant& metadata) {
+                popup_menu->set_item_metadata(index, metadata);
+            }
     };
 }
 
