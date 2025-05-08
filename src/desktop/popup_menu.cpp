@@ -98,5 +98,6 @@ namespace sunaba::desktop {
             "addSubmenuItem", &PopupMenu::addSubmenuItem,
             "addSubmenuNodeItem", &PopupMenu::addSubmenuNodeItem,
             "clear", &PopupMenu::clear,
+            "getFocusedItem", &PopupMenu::getFocusedItem,
     }
 }
