@@ -69,5 +69,6 @@ namespace sunaba::desktop {
             "allowSearch", sol::property(&PopupMenu::getAllowSearch, &PopupMenu::setAllowSearch),
             "hideOnCheckableItemSelection", sol::property(&PopupMenu::getHideOnCheckableItemSelection, &PopupMenu::setHideOnCheckableItemSelection),
             "hideOnItemSelection", sol::property(&PopupMenu::getHideOnItemSelection, &PopupMenu::setHideOnItemSelection),
+            "hideOnStateItemSelection", sol::property(&PopupMenu::getHideOnStateItemSelection, &PopupMenu::setHideOnStateItemSelection),
     }
 }
