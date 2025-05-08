@@ -477,7 +477,7 @@ namespace sunaba::ui {
                 line_edit_node->edit();
             }
 
-            //PopupMenu* getMenu() {
+            PopupMenu* getMenu() {
             //    return new PopupMenu(line_edit_node->get_menu());
             //}
 
