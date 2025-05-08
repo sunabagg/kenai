@@ -321,6 +321,10 @@ namespace sunaba::desktop {
             std::string getItemTooltip(int index) const {
                 return popup_menu->get_item_tooltip(index).utf8().get_data();
             }
+
+            bool isItemCheckable(int index) const {
+                return popup_menu->is_item_checkable(index);
+            }
     };
 }
 
