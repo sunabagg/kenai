@@ -421,6 +421,10 @@ namespace sunaba::desktop {
             void setItemMultistate(int index, int state) {
                 popup_menu->set_item_multistate(index, state);
             }
+
+            void setItemMultistateMax(int index, int maxStates) {
+                popup_menu->set_item_multistate_max(index, maxStates);
+            }
     };
 }
 
