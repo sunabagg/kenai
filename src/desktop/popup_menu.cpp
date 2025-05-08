@@ -83,5 +83,6 @@ namespace sunaba::desktop {
             "activateItemByEvent", &PopupMenu::activateItemByEvent,
             "addCheckItem", &PopupMenu::addCheckItem,
             "addCheckShortcut", &PopupMenu::addCheckShortcut,
+            "addIconCheckItem", &PopupMenu::addIconCheckItem,
     }
 }
