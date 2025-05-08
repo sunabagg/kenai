@@ -101,5 +101,6 @@ namespace sunaba::desktop {
             "getFocusedItem", &PopupMenu::getFocusedItem,
             "getItemAccelerator", &PopupMenu::getItemAccelerator,
             "getItemIcon", &PopupMenu::getItemIcon,
+            "getItemIconMaxWidth", &PopupMenu::getItemIconMaxWidth,
     }
 }
