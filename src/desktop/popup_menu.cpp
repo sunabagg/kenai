@@ -107,5 +107,6 @@ namespace sunaba::desktop {
             "getItemIndent", &PopupMenu::getItemIndent,
             "getItemIndex", &PopupMenu::getItemIndex,
             "getItemLanguage", &PopupMenu::getItemLanguage,
+            "getItemMetadata", &PopupMenu::getItemMetadata,
     }
 }
