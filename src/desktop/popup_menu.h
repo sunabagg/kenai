@@ -333,6 +333,10 @@ namespace sunaba::desktop {
             bool isItemDisabled(int index) const {
                 return popup_menu->is_item_disabled(index);
             }
+
+            bool isItemRadioCheckable(int index) const {
+                return popup_menu->is_item_radio_checkable(index);
+            }
     };
 }
 
