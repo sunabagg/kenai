@@ -187,6 +187,10 @@ namespace sunaba::desktop {
             bool activateItemByEvent(sunaba::input::InputEvent* event, bool forGlobalOnly = false) {
                 return popup_menu->activate_item_by_event(event->getInputEvent(), forGlobalOnly);
             }
+
+            void addCheckItem(const std::string& label, int id = -1, int accel = 0) {
+                popup_menu->add_check_item(label.c_str(), id, static_cast<godot::Key>(accel));
+            }
     };
 }
 
