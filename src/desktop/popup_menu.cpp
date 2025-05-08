@@ -139,5 +139,6 @@ namespace sunaba::desktop {
             "setItemId", &PopupMenu::setItemId,
             "setItemIndent", &PopupMenu::setItemIndent,
             "setItemLanguage", &PopupMenu::setItemLanguage,
+            "setItemMetadata", &PopupMenu::setItemMetadata,
     }
 }
