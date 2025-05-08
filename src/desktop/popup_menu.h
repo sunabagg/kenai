@@ -208,6 +208,10 @@ namespace sunaba::desktop {
 
             void addIconItem(sunaba::core::Texture2D* texture, std::string label, int id = -1, int accel = 0) {
                 popup_menu->add_icon_item(texture->getTexture2D(), label.c_str(), id, static_cast<godot::Key>(accel));
+            } 
+
+            void addIconRadioCheckItem(sunaba::core::Texture2D* texture, std::string label, int id = -1, int accel = 0) {
+                popup_menu->add_icon_radio_check_item(texture->getTexture2D(), label.c_str(), id, static_cast<godot::Key>(accel));
             }
     };
 }
