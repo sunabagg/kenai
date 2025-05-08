@@ -246,7 +246,7 @@ namespace sunaba::desktop {
                 popup_menu->add_submenu_item(label.c_str(), submenu.c_str(), id);
             }
 
-            void addSUbmenuNodeItem(const std::string& label, PopupMenu* submenu, int id = -1) {
+            void addSubmenuNodeItem(const std::string& label, PopupMenu* submenu, int id = -1) {
                 popup_menu->add_submenu_node_item(label.c_str(), submenu->getPopupMenu(), id);
             }
     };
