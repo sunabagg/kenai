@@ -257,6 +257,10 @@ namespace sunaba::desktop {
             int getFocusedItem() const {
                 return popup_menu->get_focused_item();
             }
+
+            int getItemAccelerator(int index) const {
+                return popup_menu->get_item_accelerator(index);
+            }
     };
 }
 
