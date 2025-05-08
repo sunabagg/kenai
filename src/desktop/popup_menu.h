@@ -369,6 +369,10 @@ namespace sunaba::desktop {
             void setItemAccelerator(int index, int accel) {
                 popup_menu->set_item_accelerator(index, static_cast<godot::Key>(accel));
             }
+
+            void setItemAsCheckable(int index, bool enable) {
+                popup_menu->set_item_as_checkable(index, enable);
+            }
     };
 }
 
