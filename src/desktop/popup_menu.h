@@ -168,6 +168,7 @@ namespace sunaba::desktop {
             void setIdPressedEvent(Event* event) {
                 idPressedEvent = event;
             }
+            Event* indexPressedEvent;
     };
 }
 
