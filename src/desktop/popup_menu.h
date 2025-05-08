@@ -401,6 +401,10 @@ namespace sunaba::desktop {
             void setItemIconModulate(int index, const Color& modulate) {
                 popup_menu->set_item_icon_modulate(index, modulate);
             }
+
+            void setItemId(int index, int id) {
+                popup_menu->set_item_id(index, id);
+            }
     };
 }
 
