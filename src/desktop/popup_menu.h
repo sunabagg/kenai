@@ -155,6 +155,9 @@ namespace sunaba::desktop {
             }
 
             Event* ifFocusedEvent;
+            Event* getIfFocusedEvent() {
+                return ifFocusedEvent;
+            }
     };
 }
 
