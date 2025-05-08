@@ -85,6 +85,10 @@ namespace sunaba::desktop {
             bool getHideOnCheckableItemSelection() const {
                 return popup_menu->is_hide_on_checkable_item_selection();
             }
+
+            void setHideOnCheckableItemSelection(bool hide_on_checkable_item_selection) {
+                popup_menu->set_hide_on_checkable_item_selection(hide_on_checkable_item_selection);
+            }
     };
 }
 
