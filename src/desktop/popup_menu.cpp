@@ -81,5 +81,6 @@ namespace sunaba::desktop {
             "indexPressed", sol::property(&PopupMenu::getIndexPressedEvent, &PopupMenu::setIndexPressedEvent),
             "menuChanged", sol::property(&PopupMenu::getMenuChangedEvent, &PopupMenu::setMenuChangedEvent),
             "activateItemByEvent", &PopupMenu::activateItemByEvent,
+            "addCheckItem", &PopupMenu::addCheckItem,
     }
 }
