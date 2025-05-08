@@ -67,5 +67,6 @@ namespace sunaba::desktop {
             sol::constructors<PopupMenu()>(),
             sol::base_classes, sol::bases<BaseObject, Element, sunaba::core::Viewport, Window, Popup>(),
             "allowSearch", sol::property(&PopupMenu::getAllowSearch, &PopupMenu::setAllowSearch),
+            "hideOnCheckableItemSelection", sol::property(&PopupMenu::getHideOnCheckableItemSelection, &PopupMenu::setHideOnCheckableItemSelection),
     }
 }
