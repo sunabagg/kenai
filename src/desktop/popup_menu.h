@@ -121,6 +121,10 @@ namespace sunaba::desktop {
             void setPreferNativeMenu(bool prefer_native_menu) {
                 popup_menu->set_prefer_native_menu(prefer_native_menu);
             }
+
+            float getSubmenuPopupDelay() const {
+                return popup_menu->get_submenu_popup_delay();
+            }
     };
 }
 
