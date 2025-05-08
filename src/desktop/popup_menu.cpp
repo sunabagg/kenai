@@ -132,5 +132,6 @@ namespace sunaba::desktop {
             "setItemAsRadioCheckable", &PopupMenu::setItemAsRadioCheckable,
             "setItemAsSeparator", &PopupMenu::setItemAsSeparator,
             "setItemChecked", &PopupMenu::setItemChecked,
+            "setItemDisabled", &PopupMenu::setItemDisabled,
     }
 }
