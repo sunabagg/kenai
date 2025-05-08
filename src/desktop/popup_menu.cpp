@@ -92,5 +92,6 @@ namespace sunaba::desktop {
             "addItem", &PopupMenu::addItem,
             "addMultistateItem", &PopupMenu::addMultistateItem,
             "addRadioCheckItem", &PopupMenu::addRadioCheckItem,
+            "addRadioCheckShortcut", &PopupMenu::addRadioCheckShortcut,
     }
 }
