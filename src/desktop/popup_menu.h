@@ -349,6 +349,10 @@ namespace sunaba::desktop {
             bool isNativeMenu() const {
                 return popup_menu->is_native_menu();
             }
+
+            bool isSystemMenu() const {
+                return popup_menu->is_system_menu();
+            }
     };
 }
 
