@@ -129,5 +129,6 @@ namespace sunaba::desktop {
             "setFocusedItem", &PopupMenu::setFocusedItem,
             "setItemAccelerator", &PopupMenu::setItemAccelerator,
             "setItemAsCheckable", &PopupMenu::setItemAsCheckable,
+            "setItemAsRadioCheckable", &PopupMenu::setItemAsRadioCheckable,
     }
 }
