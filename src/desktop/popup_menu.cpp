@@ -75,5 +75,6 @@ namespace sunaba::desktop {
             "submenuPopupDelay", sol::property(&PopupMenu::getSubmenuPopupDelay, &PopupMenu::setSubmenuPopupDelay),
             "systemMenuId", sol::property(&PopupMenu::getSystemMenuId, &PopupMenu::setSystemMenuId),
             "transparent", sol::property(&PopupMenu::getTransparent, &PopupMenu::setTransparent),
+            "transparentBg", sol::property(&PopupMenu::getTransparentBg, &PopupMenu::setTransparentBg),
     }
 }
