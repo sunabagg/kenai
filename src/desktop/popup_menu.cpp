@@ -77,5 +77,6 @@ namespace sunaba::desktop {
             "transparent", sol::property(&PopupMenu::getTransparent, &PopupMenu::setTransparent),
             "transparentBg", sol::property(&PopupMenu::getTransparentBg, &PopupMenu::setTransparentBg),
             "idFocused", sol::property(&PopupMenu::getIdFocusedEvent, &PopupMenu::setIdFocusedEvent),
+            "idPressed", sol::property(&PopupMenu::getIdPressedEvent, &PopupMenu::setIdPressedEvent),
     }
 }
