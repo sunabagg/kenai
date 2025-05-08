@@ -105,5 +105,6 @@ namespace sunaba::desktop {
             "getItemIconModulate", &PopupMenu::getItemIconModulate,
             "getItemId", &PopupMenu::getItemId,
             "getItemIndent", &PopupMenu::getItemIndent,
+            "getItemIndex", &PopupMenu::getItemIndex,
     }
 }
