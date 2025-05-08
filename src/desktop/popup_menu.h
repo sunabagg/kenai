@@ -267,7 +267,7 @@ namespace sunaba::desktop {
             }
 
             sunaba::core::Texture2D* getItemIcon(int index) const {
-                return new sunaba::core::Texture2D(popup_menu->get_item_icon(index));
+                return new sunaba::core::Texture2D(popup_menu->get_item_icon(index).ptr());
             }
 
             int getItemIconMaxWidth(int index) const {
@@ -307,7 +307,7 @@ namespace sunaba::desktop {
             }
 
             sunaba::input::Shortcut* getItemShortcut(int index) const {
-                return new sunaba::input::Shortcut(popup_menu->get_item_shortcut(index));
+                return new sunaba::input::Shortcut(popup_menu->get_item_shortcut(index).ptr());
             }
 
             std::string getItemSubmenu(int index) const {
