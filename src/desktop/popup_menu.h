@@ -441,6 +441,10 @@ namespace sunaba::desktop {
             void setItemSubmenuNode(int index, PopupMenu* submenu) {
                 popup_menu->set_item_submenu_node(index, submenu->getPopupMenu());
             }
+
+            void setItemText(int index, const std::string& text) {
+                popup_menu->set_item_text(index, text.c_str());
+            }
     };
 }
 
