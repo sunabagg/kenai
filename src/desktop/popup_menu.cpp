@@ -61,4 +61,9 @@ namespace sunaba::desktop {
         }
         return PopupMenuNode::get_contents_minimum_size();
     }
+
+    void bindPopupMenu(sol::state& lua) {
+        lua.new_usertype<PopupMenu>("PopupMenu",
+            sol::constructors<PopupMenu()>(),
+    }
 }
