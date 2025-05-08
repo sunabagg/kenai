@@ -305,6 +305,10 @@ namespace sunaba::desktop {
             std::string getItemSubmenu(int index) const {
                 return popup_menu->get_item_submenu(index).utf8().get_data();
             }
+
+            PopupMenu* getItemSubmenuNode(int index) const {
+                return new PopupMenu(popup_menu->get_item_submenu_node(index));
+            }
     };
 }
 
