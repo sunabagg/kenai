@@ -8,6 +8,7 @@
 #define MenuBarNode godot::MenuBar
 
 #include "control.h"
+#include "../desktop/popup_menu.h"
 
 using namespace godot;
 using namespace sunaba::core;
@@ -132,9 +133,9 @@ namespace sunaba::ui {
             return menuBar->get_menu_count();
         }
 
-        //PopupMenu* getMenuPopup(int32_t p_menu) {
-        //    return new PopupMenu(menuBar->get_menu_popup(p_menu));
-        //}
+        sunaba::desktop::PopupMenu* getMenuPopup(int32_t p_menu) {
+            return new sunaba::desktop::PopupMenu(menuBar->get_menu_popup(p_menu));
+        }
 
         std::string getMenuTitle(int32_t p_menu) {
             return menuBar->get_menu_title(p_menu).utf8().get_data();
