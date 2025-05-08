@@ -285,6 +285,10 @@ namespace sunaba::desktop {
             std::string getItemLanguage(int index) const {
                 return popup_menu->get_item_language(index).utf8().get_data();
             }
+
+            Variant getItemMetadata(int index) const {
+                return popup_menu->get_item_metadata(index);
+            }
     };
 }
 
