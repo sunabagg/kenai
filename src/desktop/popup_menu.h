@@ -393,6 +393,10 @@ namespace sunaba::desktop {
             void setItemIcon(int index, sunaba::core::Texture2D* texture) {
                 popup_menu->set_item_icon(index, texture->getTexture2D());
             }
+
+            void setItemIconMaxWidth(int index, int width) {
+                popup_menu->set_item_icon_max_width(index, width);
+            }
     };
 }
 
