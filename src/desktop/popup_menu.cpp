@@ -79,5 +79,7 @@ namespace sunaba::desktop {
             "idFocused", sol::property(&PopupMenu::getIdFocusedEvent, &PopupMenu::setIdFocusedEvent),
             "idPressed", sol::property(&PopupMenu::getIdPressedEvent, &PopupMenu::setIdPressedEvent),
             "indexPressed", sol::property(&PopupMenu::getIndexPressedEvent, &PopupMenu::setIndexPressedEvent),
+            "menuChanged", sol::property(&PopupMenu::getMenuChangedEvent, &PopupMenu::setMenuChangedEvent),
+            "activateItemByEvent", &PopupMenu::activateItemByEvent,
     }
 }
