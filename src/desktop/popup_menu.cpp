@@ -115,5 +115,6 @@ namespace sunaba::desktop {
             "getItemSubmenuNode", &PopupMenu::getItemSubmenuNode,
             "getItemText", &PopupMenu::getItemText,
             "getItemTextDirection", &PopupMenu::getItemTextDirection,
+            "getItemTooltip", &PopupMenu::getItemTooltip,
     }
 }
