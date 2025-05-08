@@ -135,7 +135,7 @@ namespace sunaba::desktop {
             }
 
             void setSystemMenuId(int id) {
-                popup_menu->set_system_menu(id);
+                popup_menu->set_system_menu(static_cast<NativeMenu::SystemMenus>(id));
             }
     };
 }
