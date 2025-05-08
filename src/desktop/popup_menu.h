@@ -269,6 +269,10 @@ namespace sunaba::desktop {
             Color getItemIconModulate(int index) const {
                 return popup_menu->get_item_icon_modulate(index);
             }
+
+            int getItemId(int index) const {
+                return popup_menu->get_item_id(index);
+            }
     };
 }
 
