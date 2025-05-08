@@ -82,5 +82,6 @@ namespace sunaba::desktop {
             "menuChanged", sol::property(&PopupMenu::getMenuChangedEvent, &PopupMenu::setMenuChangedEvent),
             "activateItemByEvent", &PopupMenu::activateItemByEvent,
             "addCheckItem", &PopupMenu::addCheckItem,
+            "addCheckShortcut", &PopupMenu::addCheckShortcut,
     }
 }
