@@ -433,6 +433,10 @@ namespace sunaba::desktop {
             void setItemShortcutDisabled(int index, bool disabled) {
                 popup_menu->set_item_shortcut_disabled(index, disabled);
             }
+
+            void setItemSubmenu(int index, const std::string& submenu) {
+                popup_menu->set_item_submenu(index, submenu.c_str());
+            }
     };
 }
 
