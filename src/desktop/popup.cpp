@@ -55,6 +55,13 @@ namespace sunaba::desktop {
         }
     }
 
+    Vector2 PopupProxy::_get_contents_minimum_size() const {
+        if (this->element != nullptr) {
+            return this->element->getContentsMinimumSize();
+        }
+        return Vector2();
+    }
+
     void bindPopup(sol::state_view& lua) {
         lua.new_usertype<Popup>("Popup",
             sol::constructors<Popup()>(),
