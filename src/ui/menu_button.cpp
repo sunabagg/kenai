@@ -157,6 +157,10 @@ namespace sunaba::ui {
             "toggleMode", sol::property(
                 &MenuButton::isToggleMode,
                 &MenuButton::setToggleMode
+            ),
+            "aboutToPopup", sol::property(
+                &MenuButton::getAboutToPopupEvent,
+                &MenuButton::setAboutToPopupEvent
             )
         );
     }
