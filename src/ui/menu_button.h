@@ -143,6 +143,9 @@ namespace sunaba::ui {
             Event* getAboutToPopupEvent() {
                 return aboutToPopupEvent;
             }
+            void setAboutToPopupEvent(Event* event) {
+                aboutToPopupEvent = event;
+            }
     };
 } 
 
