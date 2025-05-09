@@ -53,6 +53,8 @@ target_sources(${PROJECT_NAME} PRIVATE
         margin_container.cpp
         menu_bar.h
         menu_bar.cpp
+        menu_button.h
+        menu_button.cpp
 )
 
 target_include_directories( ${PROJECT_NAME}
