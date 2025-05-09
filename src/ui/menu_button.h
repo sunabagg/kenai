@@ -102,6 +102,10 @@ namespace sunaba::ui {
             bool getFlat() {
                 return menu_button->is_flat();
             }
+
+            void setFlat(bool enabled) {
+                menu_button->set_flat(enabled);
+            }
     };
 } 
 
