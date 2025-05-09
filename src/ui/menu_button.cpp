@@ -12,4 +12,10 @@ namespace sunaba::ui {
             element->exitTree();
         }
     }
+
+    void MenuButtonProxy::_ready() {
+        if (element != nullptr) {
+            element->ready();
+        }
+    }
 }
