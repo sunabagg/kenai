@@ -126,4 +126,38 @@ namespace sunaba::ui {
             this->element->toggled(p_toggled_on);
         }
     }
+
+    void bindMenuButton(sol::state &lua) {
+        using namespace sol;
+        using namespace sunaba::ui;
+
+        lua.new_usertype<MenuButton>("MenuButton",
+            sol::constructors<MenuButton()>(),
+            sol::base_classes, sol::bases<BaseObject, Element, sunaba::core::CanvasItem, sunaba::ui::Control, sunaba::ui::BaseButton>(),
+            "actionMode", sol::property(
+                &MenuButton::getActionMode,
+                &MenuButton::setActionMode
+            ),
+            "flat", sol::property(
+                &MenuButton::getFlat,
+                &MenuButton::setFlat
+            ),
+            "focusMode", sol::property(
+                &MenuButton::getFocusMode,
+                &MenuButton::setFocusMode
+            ),
+            "itemCount", sol::property(
+                &MenuButton::getItemCount,
+                &MenuButton::setItemCount
+            ),
+            "switchOnHover", sol::property(
+                &MenuButton::isSwitchOnHover,
+                &MenuButton::setSwitchOnHover
+            ),
+            "toggleMode", sol::property(
+                &MenuButton::isToggleMode,
+                &MenuButton::setToggleMode
+            )
+        );
+    }
 }
