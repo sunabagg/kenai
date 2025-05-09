@@ -18,6 +18,8 @@ using namespace sunaba::core;
 namespace sunaba::ui {
     void bindMenuButton(sol::state& lua);
 
+    class MenuButton;
+
     class MenuButtonProxy : public MenuButtonNode {
         public:
             sunaba::ui::MenuButton* element = nullptr;
