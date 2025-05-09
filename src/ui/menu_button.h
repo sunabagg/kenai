@@ -94,6 +94,10 @@ namespace sunaba::ui {
             int getActionMode() {
                 return menu_button->get_action_mode();
             }
+
+            void setActionMode(int mode) {
+                menu_button->set_action_mode(static_cast<godot::MenuButton::ActionMode>(mode));
+            }
     };
 } 
 
