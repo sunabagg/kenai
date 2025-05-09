@@ -118,6 +118,10 @@ namespace sunaba::ui {
             int getItemCount() const {
                 return menu_button->get_item_count();
             }
+
+            void setItemCount(int32_t p_count) {
+                menu_button->set_item_count(p_count);
+            }
     };
 } 
 
