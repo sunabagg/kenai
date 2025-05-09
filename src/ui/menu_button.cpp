@@ -161,7 +161,8 @@ namespace sunaba::ui {
             "aboutToPopup", sol::property(
                 &MenuButton::getAboutToPopupEvent,
                 &MenuButton::setAboutToPopupEvent
-            )
+            ),
+            "getPopup", &MenuButton::getPopup,
         );
     }
 }
