@@ -114,6 +114,10 @@ namespace sunaba::ui {
             void setFocusMode(int mode) {
                 menu_button->set_focus_mode(static_cast<godot::Control::FocusMode>(mode));
             }
+
+            int getItemCount() const {
+                return menu_button->get_item_count();
+            }
     };
 } 
 
