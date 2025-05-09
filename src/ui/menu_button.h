@@ -126,6 +126,10 @@ namespace sunaba::ui {
             bool isSwitchOnHover() {
                 return menu_button->is_switch_on_hover();
             }
+
+            void setSwitchOnHover(bool enabled) {
+                menu_button->set_switch_on_hover(enabled);
+            }
     };
 } 
 
