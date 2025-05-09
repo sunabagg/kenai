@@ -6,4 +6,10 @@ namespace sunaba::ui {
             element->enterTree();
         }
     }
+
+    void MenuButtonProxy::_exit_tree() {
+        if (element != nullptr) {
+            element->exitTree();
+        }
+    }
 }
