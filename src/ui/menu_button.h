@@ -10,6 +10,7 @@
 #include "button.h"
 #include "../core/stl_function_wrapper.h"
 #include "../core/event.h"
+#include "../desktop/popup_menu.h"
 
 using namespace godot;
 using namespace sunaba::core;
@@ -145,6 +146,10 @@ namespace sunaba::ui {
             }
             void setAboutToPopupEvent(Event* event) {
                 aboutToPopupEvent = event;
+            }
+
+            sunaba::desktop::PopupMenu* getPopup() {
+                return new sunaba::desktop::PopupMenu(menu_button->get_popup());
             }
     };
 } 
