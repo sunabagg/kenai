@@ -13,8 +13,6 @@
 using namespace godot;
 using namespace sunaba::core;
 
-#define Material sunaba::core::Material
-
 namespace sunaba::spatial {
     void bindSky(sol::state_view& lua);
 
@@ -56,11 +54,11 @@ namespace sunaba::spatial {
             sky->set_radiance_size(static_cast<GodotSky::RadianceSize>(size));
         }
 
-        Material* getSkyMaterial() {
-            return new Material(sky->get_material().ptr());
+        sunaba::core::Material* getSkyMaterial() {
+            return new sunaba::core::Material(sky->get_material().ptr());
         }
 
-        void setSkyMaterial(Material* material) {
+        void setSkyMaterial(sunaba::core::Material* material) {
             sky->set_material(material->getMaterial());
         }
     };
