@@ -110,6 +110,10 @@ namespace sunaba::ui {
             int getFocusMode() {
                 return menu_button->get_focus_mode();
             }
+
+            void setFocusMode(int mode) {
+                menu_button->set_focus_mode(static_cast<godot::Control::FocusMode>(mode));
+            }
     };
 } 
 
