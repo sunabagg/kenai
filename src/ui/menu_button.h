@@ -155,6 +155,10 @@ namespace sunaba::ui {
             void setDisableShortcuts(bool p_disabled) {
                 menu_button->set_disable_shortcuts(p_disabled);
             }
+
+            void showPopup() {
+                menu_button->show_popup();
+            }
     };
 } 
 
