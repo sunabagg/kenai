@@ -120,4 +120,10 @@ namespace sunaba::ui {
             this->element->pressed();
         }
     }
+
+    void MenuButtonProxy::_toggled(bool p_toggled_on) {
+        if (this->element != nullptr) {
+            this->element->toggled(p_toggled_on);
+        }
+    }
 }
