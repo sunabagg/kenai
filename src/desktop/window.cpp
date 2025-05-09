@@ -59,7 +59,7 @@ namespace sunaba::desktop {
         if (this->element != nullptr) {
             return this->element->getContentsMinimumSize();
         }
-        return Vector2();
+        return WindowNode::_get_contents_minimum_size();
     }
 
     void bindWindow(sol::state_view& lua) {
