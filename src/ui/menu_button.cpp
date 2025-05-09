@@ -114,4 +114,10 @@ namespace sunaba::ui {
         }
         return TypedArray<Vector3i>();
     }
+
+    void MenuButtonProxy::_pressed() {
+        if (this->element != nullptr) {
+            this->element->pressed();
+        }
+    }
 }
