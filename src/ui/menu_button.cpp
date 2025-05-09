@@ -165,6 +165,9 @@ namespace sunaba::ui {
             "getPopup", &MenuButton::getPopup,
             "setDisableShortcuts", &MenuButton::setDisableShortcuts,
             "showPopup", &MenuButton::showPopup,
+            "cast", [](Element* e) {
+                return new MenuButton(Object::cast_to<MenuButtonNode>(e->getNode()));
+            }
         );
     }
 }
