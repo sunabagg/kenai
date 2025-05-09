@@ -122,6 +122,10 @@ namespace sunaba::ui {
             void setItemCount(int32_t p_count) {
                 menu_button->set_item_count(p_count);
             }
+
+            bool isSwitchOnHover() {
+                return menu_button->is_switch_on_hover();
+            }
     };
 } 
 
