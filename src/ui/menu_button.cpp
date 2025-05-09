@@ -1,5 +1,9 @@
 #include "menu_button.h"
 
 namespace sunaba::ui {
-    
+    void MenuButtonProxy::_enter_tree() {
+        if (element != nullptr) {
+            element->enterTree();
+        }
+    }
 }
