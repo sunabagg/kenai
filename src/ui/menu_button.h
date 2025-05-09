@@ -151,6 +151,10 @@ namespace sunaba::ui {
             sunaba::desktop::PopupMenu* getPopup() {
                 return new sunaba::desktop::PopupMenu(menu_button->get_popup());
             }
+
+            void setDisableShortcuts(bool p_disabled) {
+                menu_button->set_disable_shortcuts(p_disabled);
+            }
     };
 } 
 
