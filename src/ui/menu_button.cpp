@@ -163,6 +163,8 @@ namespace sunaba::ui {
                 &MenuButton::setAboutToPopupEvent
             ),
             "getPopup", &MenuButton::getPopup,
+            "setDisableShortcuts", &MenuButton::setDisableShortcuts,
+            "showPopup", &MenuButton::showPopup,
         );
     }
 }
