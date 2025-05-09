@@ -147,7 +147,7 @@ namespace sunaba::core {
 
         Material* getMaterial() {
             //return new Material(canvas_item->get_material().ptr());
-            return nullptr; // Placeholder, implement this method to return the correct Material instance
+            return new Material(nullptr); // Placeholder, implement this method to return the correct Material instance
         }
 
         void setMaterial(Material* material) {
