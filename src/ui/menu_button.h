@@ -98,6 +98,10 @@ namespace sunaba::ui {
             void setActionMode(int mode) {
                 menu_button->set_action_mode(static_cast<godot::MenuButton::ActionMode>(mode));
             }
+
+            bool getFlat() {
+                return menu_button->is_flat();
+            }
     };
 } 
 
