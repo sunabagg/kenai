@@ -59,7 +59,7 @@ namespace sunaba::desktop {
         if (this->element != nullptr) {
             return this->element->getContentsMinimumSize();
         }
-        return Vector2();
+        return PopupNode::_get_contents_minimum_size();
     }
 
     void bindPopup(sol::state_view& lua) {
