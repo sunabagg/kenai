@@ -59,6 +59,7 @@ namespace sunaba::ui {
             MenuButtonNode* menu_button = nullptr;
 
             void connectMenuButtonSignals() {
+
             }
 
         public:
@@ -88,6 +89,10 @@ namespace sunaba::ui {
                 p_node->element = this;
                 connectMenuButtonSignals();
                 setButton(menu_button);
+            }
+
+            int getActionMode() {
+                return menu_button->get_action_mode();
             }
     };
 } 
