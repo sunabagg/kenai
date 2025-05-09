@@ -106,6 +106,10 @@ namespace sunaba::ui {
             void setFlat(bool enabled) {
                 menu_button->set_flat(enabled);
             }
+
+            int getFocusMode() {
+                return menu_button->get_focus_mode();
+            }
     };
 } 
 
