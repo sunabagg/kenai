@@ -115,6 +115,10 @@ namespace sunaba::ui {
             void setAllowReselect(bool enabled) {
                 optionButton->set_allow_reselect(enabled);
             }
+
+            bool isFitToLongestItem() {
+                return optionButton->is_fit_to_longest_item();
+            }
     };
 }
 
