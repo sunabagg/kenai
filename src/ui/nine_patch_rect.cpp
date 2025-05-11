@@ -114,4 +114,11 @@ namespace sunaba::ui {
         }
         return TypedArray<Vector3i>();
     }
+
+    void bindNinePatchRect(sol::state &lua) {
+        lua.new_usertype<NinePatchRect>("NinePatchRect",
+            sol::constructors<NinePatchRect()>(),
+            sol::base_classes, sol::bases<BaseObject, Element, sunaba::core::CanvasItem, Control>()
+        );
+    }
 }
