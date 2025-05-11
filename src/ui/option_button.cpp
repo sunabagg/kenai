@@ -147,6 +147,10 @@ namespace sunaba::ui {
                 &OptionButton::isFitToLongestItem,
                 &OptionButton::setFitToLongestItem
             ),
+            "itemCount", sol::property(
+                &OptionButton::getItemCount,
+                &OptionButton::setItemCount
+            ),
         );
     }
 }
