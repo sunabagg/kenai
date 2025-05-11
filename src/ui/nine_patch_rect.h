@@ -171,7 +171,7 @@ namespace sunaba::ui {
             }
 
             void setTexture(sunaba::core::Texture2D* texture) {
-                ninePatchRect->set_texture(texture->getTexture());
+                ninePatchRect->set_texture(Ref<godot::Texture2D>(texture->getTexture()));
             }
 
             Event* textureChangedEvent;
