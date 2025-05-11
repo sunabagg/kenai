@@ -159,6 +159,10 @@ namespace sunaba::ui {
                 &OptionButton::isToggleMode,
                 &OptionButton::setToggleMode
             ),
+            "itemFocused", sol::property(
+                &OptionButton::getItemFocusedEvent,
+                &OptionButton::setItemFocusedEvent
+            ),
         );
     }
 }
