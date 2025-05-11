@@ -165,6 +165,13 @@ namespace sunaba::ui {
             ),
             "getPatchMargin", &NinePatchRect::getPatchMargin,
             "setPatchMargin", &NinePatchRect::setPatchMargin,
+            "cast", [](Element* e) {
+                NinePatchRectNode* ninePatchRect = Object::cast_to<NinePatchRectNode>(e->getNode());
+                if (ninePatchRect != nullptr) {
+                    return new NinePatchRect(ninePatchRect);
+                }
+                return static_cast<NinePatchRect*>(nullptr);
+            }
         );
     }
 }
