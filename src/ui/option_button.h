@@ -234,6 +234,10 @@ namespace sunaba::ui {
             void setDisableShortcuts(bool p_disabled) {
                 optionButton->set_disable_shortcuts(p_disabled);
             }
+
+            void setItemDisabled(int32_t p_idx, bool p_disabled) {
+                optionButton->set_item_disabled(p_idx, p_disabled);
+            }
     };
 }
 
