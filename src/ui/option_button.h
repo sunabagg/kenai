@@ -243,6 +243,10 @@ namespace sunaba::ui {
                 Ref<godot::Texture2D> textureRef = Ref<godot::Texture2D>(texture->getTexture());
                 optionButton->set_item_icon(p_idx, textureRef);
             }
+
+            void setItemId(int32_t p_idx, int32_t p_id) {
+                optionButton->set_item_id(p_idx, p_id);
+            }
     };
 }
 
