@@ -170,6 +170,10 @@ namespace sunaba::ui {
                 return new sunaba::core::Texture2D(ninePatchRect->get_texture().ptr());
             }
 
+            void setTexture(sunaba::core::Texture2D* texture) {
+                ninePatchRect->set_texture(texture->getTexture());
+            }
+
             Event* textureChangedEvent;
             Event* getTextureChangedEvent() {
                 return textureChangedEvent;
