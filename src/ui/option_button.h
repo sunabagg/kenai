@@ -134,6 +134,10 @@ namespace sunaba::ui {
                 optionButton->set_item_count(p_count);
             }
 
+            int getSelected() const {
+                return optionButton->get_selected();
+            }
+
             bool isToggleMode() {
                 return optionButton->is_toggle_mode();
             }
