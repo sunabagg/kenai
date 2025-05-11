@@ -131,6 +131,10 @@ namespace sunaba::ui {
                 &NinePatchRect::isDrawCenterEnabled,
                 &NinePatchRect::setDrawCenter
             ),
+            "mouseFilter", sol::property(
+                &NinePatchRect::getMouseFilter,
+                &NinePatchRect::setMouseFilter
+            ),
         );
     }
 }
