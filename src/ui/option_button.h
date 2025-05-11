@@ -222,6 +222,10 @@ namespace sunaba::ui {
             bool isItemDisabled(int32_t p_idx) const {
                 return optionButton->is_item_disabled(p_idx);
             }
+
+            void removeItem(int32_t p_idx) {
+                optionButton->remove_item(p_idx);
+            }
     };
 }
 
