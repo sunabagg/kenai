@@ -127,6 +127,10 @@ namespace sunaba::ui {
                 &NinePatchRect::getAxisStretchVertical,
                 &NinePatchRect::setAxisStretchVertical
             ),
+            "drawCenter", sol::property(
+                &NinePatchRect::isDrawCenterEnabled,
+                &NinePatchRect::setDrawCenter
+            ),
         );
     }
 }
