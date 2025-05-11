@@ -206,6 +206,10 @@ namespace sunaba::ui {
             int getSelectableItem(bool p_from_last = false) const {
                 return optionButton->get_selectable_item(p_from_last);
             }
+
+            int getSelectedId() const {
+                return optionButton->get_selected_id();
+            }
     };
 }
 
