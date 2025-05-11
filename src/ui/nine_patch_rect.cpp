@@ -155,6 +155,10 @@ namespace sunaba::ui {
                 &NinePatchRect::getRegionRect,
                 &NinePatchRect::setRegionRect
             ),
+            "texture", sol::property(
+                &NinePatchRect::getTexture,
+                &NinePatchRect::setTexture
+            ),
         );
     }
 }
