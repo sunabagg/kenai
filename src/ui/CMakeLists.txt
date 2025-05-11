@@ -59,6 +59,8 @@ target_sources(${PROJECT_NAME} PRIVATE
         nine_patch_rect.cpp
         option_button.h
         option_button.cpp
+        panel.h 
+        panel.cpp
 )
 
 target_include_directories( ${PROJECT_NAME}
