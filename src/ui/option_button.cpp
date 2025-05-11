@@ -163,6 +163,10 @@ namespace sunaba::ui {
                 &OptionButton::getItemFocusedEvent,
                 &OptionButton::setItemFocusedEvent
             ),
+            "itemSelected", sol::property(
+                &OptionButton::getItemSelectedEvent,
+                &OptionButton::setItemSelectedEvent
+            ),
         );
     }
 }
