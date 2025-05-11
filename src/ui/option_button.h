@@ -210,6 +210,10 @@ namespace sunaba::ui {
             int getSelectedId() const {
                 return optionButton->get_selected_id();
             }
+
+            Variant getSelectedMetadata() const {
+                return optionButton->get_selected_metadata();
+            }
     };
 }
 
