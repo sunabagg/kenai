@@ -167,6 +167,7 @@ namespace sunaba::ui {
                 &OptionButton::getItemSelectedEvent,
                 &OptionButton::setItemSelectedEvent
             ),
+            "addIconItem", &OptionButton::addIconItem,
         );
     }
 }
