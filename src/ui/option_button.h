@@ -193,6 +193,10 @@ namespace sunaba::ui {
             std::string getItemText(int32_t p_idx) const {
                 return String(optionButton->get_item_text(p_idx)).utf8().get_data();
             }
+
+            std::string getItemTooltip(int32_t p_idx) const {
+                return String(optionButton->get_item_tooltip(p_idx)).utf8().get_data();
+            }
     };
 }
 
