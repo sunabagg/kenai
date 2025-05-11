@@ -100,6 +100,10 @@ namespace sunaba::ui {
             void setAxisStretchVertical() {
                 ninePatchRect->set_v_axis_stretch_mode(static_cast<godot::NinePatchRect::AxisStretchMode>(1));
             }
+
+            bool isDrawCenterEnabled() {
+                return ninePatchRect->is_draw_center_enabled();
+            }
     };
 }
 
