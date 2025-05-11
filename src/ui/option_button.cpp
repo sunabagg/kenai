@@ -139,6 +139,10 @@ namespace sunaba::ui {
                 &OptionButton::getAlignment,
                 &OptionButton::setAlignment
             ),
+            "allowReselect", sol::property(
+                &OptionButton::getAllowReselect,
+                &OptionButton::setAllowReselect
+            ),
         );
     }
 }
