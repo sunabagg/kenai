@@ -132,6 +132,10 @@ namespace sunaba::ui {
             void setPatchMarginLeft(int value) {
                 ninePatchRect->set_patch_margin(SIDE_LEFT, value);
             }
+
+            int getPatchMarginRight() {
+                return ninePatchRect->get_patch_margin(SIDE_RIGHT);
+            }
     };
 }
 
