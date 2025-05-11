@@ -159,6 +159,10 @@ namespace sunaba::ui {
                 &NinePatchRect::getTexture,
                 &NinePatchRect::setTexture
             ),
+            "textureChanged", sol::property(
+                &NinePatchRect::getTextureChangedEvent,
+                &NinePatchRect::setTextureChangedEvent
+            ),
         );
     }
 }
