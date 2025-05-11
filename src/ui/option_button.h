@@ -251,6 +251,10 @@ namespace sunaba::ui {
             void setItemMetadata(int32_t p_idx, const Variant &p_metadata) {
                 optionButton->set_item_metadata(p_idx, p_metadata);
             }
+
+            void setItemText(int32_t p_idx, std::string text) {
+                optionButton->set_item_text(p_idx, String(text.c_str()));
+            }
     };
 }
 
