@@ -238,6 +238,11 @@ namespace sunaba::ui {
             void setItemDisabled(int32_t p_idx, bool p_disabled) {
                 optionButton->set_item_disabled(p_idx, p_disabled);
             }
+
+            void setItemIcon(int32_t p_idx, sunaba::core::Texture2D* texture) {
+                Ref<godot::Texture2D> textureRef = Ref<godot::Texture2D>(texture->getTexture());
+                optionButton->set_item_icon(p_idx, textureRef);
+            }
     };
 }
 
