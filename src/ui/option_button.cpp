@@ -173,6 +173,7 @@ namespace sunaba::ui {
             "clear", &OptionButton::clear,
             "getItemIcon", &OptionButton::getItemIcon,
             "getItemId", &OptionButton::getItemId,
+            "getItemIndex", &OptionButton::getItemIndex,
         );
     }
 }
