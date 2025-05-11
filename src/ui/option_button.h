@@ -247,6 +247,10 @@ namespace sunaba::ui {
             void setItemId(int32_t p_idx, int32_t p_id) {
                 optionButton->set_item_id(p_idx, p_id);
             }
+
+            void setItemMetadata(int32_t p_idx, const Variant &p_metadata) {
+                optionButton->set_item_metadata(p_idx, p_metadata);
+            }
     };
 }
 
