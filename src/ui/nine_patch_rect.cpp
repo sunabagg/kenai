@@ -163,6 +163,7 @@ namespace sunaba::ui {
                 &NinePatchRect::getTextureChangedEvent,
                 &NinePatchRect::setTextureChangedEvent
             ),
+            "getPatchMargin", &NinePatchRect::getPatchMargin,
         );
     }
 }
