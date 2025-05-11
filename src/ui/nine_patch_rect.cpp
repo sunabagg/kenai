@@ -151,6 +151,10 @@ namespace sunaba::ui {
                 &NinePatchRect::getPatchMarginTop,
                 &NinePatchRect::setPatchMarginTop
             ),
+            "regionRect", sol::property(
+                &NinePatchRect::getRegionRect,
+                &NinePatchRect::setRegionRect
+            ),
         );
     }
 }
