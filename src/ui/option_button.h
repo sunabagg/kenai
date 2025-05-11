@@ -181,6 +181,10 @@ namespace sunaba::ui {
             int getItemId(int32_t p_idx) const {
                 return optionButton->get_item_id(p_idx);
             }
+
+            int getItemIndex(int32_t p_id) const {
+                return optionButton->get_item_index(p_id);
+            }
     };
 }
 
