@@ -10,6 +10,7 @@
 #include "button.h"
 #include "../core/stl_function_wrapper.h"
 #include "../core/event.h"
+#include "../core/texture2d.h"
 
 using namespace godot;
 using namespace sunaba::core;
@@ -154,6 +155,11 @@ namespace sunaba::ui {
             }
             void setItemSelectedEvent(Event* event) {
                 itemSelectedEvent = event;
+            }
+
+            void addIconItem(sunaba::core::Texture2D* texture, std::string label, int32_t id = -1) {
+                Ref<godot::Texture2D> textureRef = Ref<godot::Texture2D>(texture->getTexture());
+                optionButton->add_icon_item(textureRef, String(label.c_str()), id);
             }
     };
 }
