@@ -230,6 +230,10 @@ namespace sunaba::ui {
             void select(int32_t p_idx) {
                 optionButton->select(p_idx);
             }
+
+            void setDisableShortcuts(bool p_disabled) {
+                optionButton->set_disable_shortcuts(p_disabled);
+            }
     };
 }
 
