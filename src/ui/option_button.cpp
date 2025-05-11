@@ -120,4 +120,17 @@ namespace sunaba::ui {
             element->pressed();
         }
     }
+
+    void OptionButtonProxy::_toggled(bool p_toggled_on) {
+        if (element != nullptr) {
+            element->toggled(p_toggled_on);
+        }
+    }
+
+    void bindOptionButton(sol::state& lua) {
+        lua.new_usertype<OptionButton>("OptionButton",
+            sol::constructors<OptionButton()>(),
+            sol::base_classes, sol::bases<BaseObject, Element, sunaba::core::CanvasItem, Control, BaseButton, Button>(),
+        );
+    }
 }
