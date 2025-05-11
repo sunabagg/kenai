@@ -123,6 +123,10 @@ namespace sunaba::ui {
                 &NinePatchRect::getAxisStretchHorizontal,
                 &NinePatchRect::setAxisStretchHorizontal
             ),
+            "axisStretchVertical", sol::property(
+                &NinePatchRect::getAxisStretchVertical,
+                &NinePatchRect::setAxisStretchVertical
+            ),
         );
     }
 }
