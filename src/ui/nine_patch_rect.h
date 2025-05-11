@@ -152,6 +152,10 @@ namespace sunaba::ui {
             Rect2 getRegionRect() {
                 return ninePatchRect->get_region_rect();
             }
+
+            void setRegionRect(Rect2 rect) {
+                ninePatchRect->set_region_rect(rect);
+            }
     };
 }
 
