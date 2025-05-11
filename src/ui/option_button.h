@@ -185,6 +185,10 @@ namespace sunaba::ui {
             int getItemIndex(int32_t p_id) const {
                 return optionButton->get_item_index(p_id);
             }
+
+            Variant getItemMetadata(int32_t p_idx) const {
+                return optionButton->get_item_metadata(p_idx);
+            }
     };
 }
 
