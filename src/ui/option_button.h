@@ -214,6 +214,10 @@ namespace sunaba::ui {
             Variant getSelectedMetadata() const {
                 return optionButton->get_selected_metadata();
             }
+
+            bool hasSelectableItems() const {
+                return optionButton->has_selectable_items();
+            }
     };
 }
 
