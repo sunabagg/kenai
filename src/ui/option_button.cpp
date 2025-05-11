@@ -54,4 +54,10 @@ namespace sunaba::ui {
             element->shortcutInput(event);
         }
     }
+
+    void OptionButtonProxy::_draw() {
+        if (element != nullptr) {
+            element->_draw();
+        }
+    }
 }
