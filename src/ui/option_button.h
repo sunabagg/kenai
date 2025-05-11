@@ -199,7 +199,9 @@ namespace sunaba::ui {
                 return String(optionButton->get_item_tooltip(p_idx)).utf8().get_data();
             }
 
-
+            sunaba::desktop::PopupMenu* getPopup() const {
+                return new sunaba::desktop::PopupMenu(optionButton->get_popup());
+            }
     };
 }
 
