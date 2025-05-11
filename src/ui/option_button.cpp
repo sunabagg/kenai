@@ -188,6 +188,7 @@ namespace sunaba::ui {
             "setItemDisabled", &OptionButton::setItemDisabled,
             "setItemIcon", &OptionButton::setItemIcon,
             "setItemId", &OptionButton::setItemId,
+            "setItemMetadata", &OptionButton::setItemMetadata,
         );
     }
 }
