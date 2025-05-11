@@ -92,6 +92,10 @@ namespace sunaba::ui {
                 connectNinePatchRectSignals();
                 setCanvasItem(ninePatchRect);
             }
+
+            int getAxisStretchHorizontal() {
+                return ninePatchRect->get_h_axis_stretch_mode();
+            }
     };
 }
 
