@@ -123,6 +123,10 @@ namespace sunaba::ui {
             void setFitToLongestItem(bool enabled) {
                 optionButton->set_fit_to_longest_item(enabled);
             }
+
+            int getItemCount() const {
+                return optionButton->get_item_count();
+            }
     };
 }
 
