@@ -148,6 +148,10 @@ namespace sunaba::ui {
             void setPatchMarginTop(int value) {
                 ninePatchRect->set_patch_margin(SIDE_TOP, value);
             }
+
+            Rect2 getRegionRect() {
+                return ninePatchRect->get_region_rect();
+            }
     };
 }
 
