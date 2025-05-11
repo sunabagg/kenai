@@ -57,6 +57,8 @@ target_sources(${PROJECT_NAME} PRIVATE
         menu_button.cpp
         nine_patch_rect.h
         nine_patch_rect.cpp
+        option_button.h
+        option_button.cpp
 )
 
 target_include_directories( ${PROJECT_NAME}
