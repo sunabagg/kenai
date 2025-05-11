@@ -161,6 +161,10 @@ namespace sunaba::ui {
                 Ref<godot::Texture2D> textureRef = Ref<godot::Texture2D>(texture->getTexture());
                 optionButton->add_icon_item(textureRef, String(label.c_str()), id);
             }
+
+            void addItem(std::string label, int32_t id = -1) {
+                optionButton->add_item(String(label.c_str()), id);
+            }
     };
 }
 
