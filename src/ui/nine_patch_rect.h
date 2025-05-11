@@ -10,6 +10,7 @@
 #include "control.h"
 #include "../core/stl_function_wrapper.h"
 #include "../core/event.h"
+#include "../core/texture2d.h"
 
 using namespace godot;
 using namespace sunaba::core;
