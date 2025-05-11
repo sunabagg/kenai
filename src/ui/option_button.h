@@ -127,6 +127,10 @@ namespace sunaba::ui {
             int getItemCount() const {
                 return optionButton->get_item_count();
             }
+
+            void setItemCount(int32_t p_count) {
+                optionButton->set_item_count(p_count);
+            }
     };
 }
 
