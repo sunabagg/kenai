@@ -135,6 +135,10 @@ namespace sunaba::ui {
             bool isToggleMode() {
                 return optionButton->is_toggle_mode();
             }
+
+            void setToggleMode(bool enabled) {
+                optionButton->set_toggle_mode(enabled);
+            }
     };
 }
 
