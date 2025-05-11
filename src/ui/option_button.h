@@ -259,6 +259,10 @@ namespace sunaba::ui {
             void setItemTooltip(int32_t p_idx, std::string text) {
                 optionButton->set_item_tooltip(p_idx, String(text.c_str()));
             }
+
+            void showPopup() {
+                optionButton->show_popup();
+            }
     };
 }
 
