@@ -119,6 +119,10 @@ namespace sunaba::ui {
             bool isFitToLongestItem() {
                 return optionButton->is_fit_to_longest_item();
             }
+
+            void setFitToLongestItem(bool enabled) {
+                optionButton->set_fit_to_longest_item(enabled);
+            }
     };
 }
 
