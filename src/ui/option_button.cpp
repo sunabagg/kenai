@@ -175,6 +175,7 @@ namespace sunaba::ui {
             "getItemId", &OptionButton::getItemId,
             "getItemIndex", &OptionButton::getItemIndex,
             "getItemMetadata", &OptionButton::getItemMetadata,
+            "getItemText", &OptionButton::getItemText,
         );
     }
 }
