@@ -202,6 +202,10 @@ namespace sunaba::ui {
             sunaba::desktop::PopupMenu* getPopup() const {
                 return new sunaba::desktop::PopupMenu(optionButton->get_popup());
             }
+
+            int getSelectableItem(bool p_from_last = false) const {
+                return optionButton->get_selectable_item(p_from_last);
+            }
     };
 }
 
