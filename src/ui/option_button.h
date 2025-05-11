@@ -177,6 +177,10 @@ namespace sunaba::ui {
             sunaba::core::Texture2D* getItemIcon(int32_t p_idx) const {
                 return new sunaba::core::Texture2D(optionButton->get_item_icon(p_idx).ptr());
             }
+
+            int getItemId(int32_t p_idx) const {
+                return optionButton->get_item_id(p_idx);
+            }
     };
 }
 
