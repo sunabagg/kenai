@@ -112,6 +112,14 @@ namespace sunaba::ui {
             int getMouseFilter() {
                 return ninePatchRect->get_mouse_filter();
             }
+
+            void setMouseFilter(int filter) {
+                ninePatchRect->set_mouse_filter(static_cast<godot::Control::MouseFilter>(filter));
+            }
+
+            int getPatchMarginBottom() {
+                return ninePatchRect->get_patch_margin(SIDE_BOTTOM);
+            }
     };
 }
 
