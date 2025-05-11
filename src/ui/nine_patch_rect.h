@@ -157,6 +157,10 @@ namespace sunaba::ui {
             void setRegionRect(Rect2 rect) {
                 ninePatchRect->set_region_rect(rect);
             }
+
+            sunaba::core::Texture2D* getTexture() {
+                return new sunaba::core::Texture2D(ninePatchRect->get_texture());
+            }
     };
 }
 
