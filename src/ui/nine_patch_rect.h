@@ -161,6 +161,8 @@ namespace sunaba::ui {
             sunaba::core::Texture2D* getTexture() {
                 return new sunaba::core::Texture2D(ninePatchRect->get_texture());
             }
+
+            Event* textureChangedEvent;
     };
 }
 
