@@ -189,6 +189,10 @@ namespace sunaba::ui {
             Variant getItemMetadata(int32_t p_idx) const {
                 return optionButton->get_item_metadata(p_idx);
             }
+
+            std::string getItemText(int32_t p_idx) const {
+                return String(optionButton->get_item_text(p_idx)).utf8().get_data();
+            }
     };
 }
 
