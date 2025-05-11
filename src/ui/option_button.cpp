@@ -183,6 +183,7 @@ namespace sunaba::ui {
             "getSelectedMetadata", &OptionButton::getSelectedMetadata,
             "isItemDisabled", &OptionButton::isItemDisabled,
             "removeItem", &OptionButton::removeItem,
+            "select", &OptionButton::select,
         );
     }
 }
