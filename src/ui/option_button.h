@@ -103,6 +103,10 @@ namespace sunaba::ui {
             int getAlignment() {
                 return optionButton->get_text_alignment();
             }
+
+            void setAlignment(int alignment) {
+                optionButton->set_text_alignment(static_cast<godot::HorizontalAlignment>(alignment));
+            }
     };
 }
 
