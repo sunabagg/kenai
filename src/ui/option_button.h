@@ -138,6 +138,10 @@ namespace sunaba::ui {
                 return optionButton->get_selected();
             }
 
+            void setSelected(int32_t p_idx) {
+                optionButton->set_selected(p_idx);
+            }
+
             bool isToggleMode() {
                 return optionButton->is_toggle_mode();
             }
