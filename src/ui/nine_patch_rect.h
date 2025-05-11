@@ -173,6 +173,10 @@ namespace sunaba::ui {
             int getPatchMargin(int side) {
                 return ninePatchRect->get_patch_margin(static_cast<godot::Side>(side));
             }
+
+            void setPatchMargin(int side, int value) {
+                ninePatchRect->set_patch_margin(static_cast<godot::Side>(side), value);
+            }
     };
 }
 
