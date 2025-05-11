@@ -255,6 +255,10 @@ namespace sunaba::ui {
             void setItemText(int32_t p_idx, std::string text) {
                 optionButton->set_item_text(p_idx, String(text.c_str()));
             }
+
+            void setItemTooltip(int32_t p_idx, std::string text) {
+                optionButton->set_item_tooltip(p_idx, String(text.c_str()));
+            }
     };
 }
 
