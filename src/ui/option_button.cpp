@@ -185,6 +185,7 @@ namespace sunaba::ui {
             "removeItem", &OptionButton::removeItem,
             "select", &OptionButton::select,
             "setDisableShortcuts", &OptionButton::setDisableShortcuts,
+            "setItemDisabled", &OptionButton::setItemDisabled,
         );
     }
 }
