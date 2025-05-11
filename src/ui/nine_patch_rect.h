@@ -166,6 +166,9 @@ namespace sunaba::ui {
             Event* getTextureChangedEvent() {
                 return textureChangedEvent;
             }
+            void setTextureChangedEvent(Event* event) {
+                textureChangedEvent = event;
+            }
     };
 }
 
