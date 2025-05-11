@@ -135,6 +135,10 @@ namespace sunaba::ui {
                 &OptionButton::getActionMode,
                 &OptionButton::setActionMode
             ),
+            "alignment", sol::property(
+                &OptionButton::getAlignment,
+                &OptionButton::setAlignment
+            ),
         );
     }
 }
