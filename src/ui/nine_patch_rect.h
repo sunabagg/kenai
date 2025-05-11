@@ -83,14 +83,14 @@ namespace sunaba::ui {
             void setNinePatchRect(NinePatchRectNode* ninePatchRect) {
                 this->ninePatchRect = ninePatchRect;
                 connectNinePatchRectSignals();
-                setCanvasItem(ninePatchRect);
+                setControl(ninePatchRect);
             }
 
             void setNinePatchRect(NinePatchRectProxy* ninePatchRect) {
                 this->ninePatchRect = ninePatchRect;
                 ninePatchRect->element = this;
                 connectNinePatchRectSignals();
-                setCanvasItem(ninePatchRect);
+                setControl(ninePatchRect);
             }
 
             int getAxisStretchHorizontal() {
