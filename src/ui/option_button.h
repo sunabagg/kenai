@@ -91,6 +91,10 @@ namespace sunaba::ui {
                 connectOptionButtonSignals();
                 setButton(optionButton);
             }
+
+            int getActionMode() {
+                return optionButton->get_action_mode();
+            }
     };
 }
 
