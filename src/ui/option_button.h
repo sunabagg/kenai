@@ -107,6 +107,10 @@ namespace sunaba::ui {
             void setAlignment(int alignment) {
                 optionButton->set_text_alignment(static_cast<godot::HorizontalAlignment>(alignment));
             }
+
+            bool getAllowReselect() {
+                return optionButton->get_allow_reselect();
+            }
     };
 }
 
