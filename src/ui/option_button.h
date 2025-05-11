@@ -99,6 +99,10 @@ namespace sunaba::ui {
             void setActionMode(int mode) {
                 optionButton->set_action_mode(static_cast<godot::OptionButton::ActionMode>(mode));
             }
+
+            int getAlignment() {
+                return optionButton->get_text_alignment();
+            }
     };
 }
 
