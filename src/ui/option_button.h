@@ -226,6 +226,10 @@ namespace sunaba::ui {
             void removeItem(int32_t p_idx) {
                 optionButton->remove_item(p_idx);
             }
+
+            void select(int32_t p_idx) {
+                optionButton->select(p_idx);
+            }
     };
 }
 
