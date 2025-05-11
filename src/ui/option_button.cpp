@@ -180,6 +180,7 @@ namespace sunaba::ui {
             "getPopup", &OptionButton::getPopup,
             "getSelectableItem", &OptionButton::getSelectableItem,
             "getSelectedId", &OptionButton::getSelectedId,
+            "getSelectedMetadata", &OptionButton::getSelectedMetadata,
         );
     }
 }
