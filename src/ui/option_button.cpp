@@ -179,6 +179,7 @@ namespace sunaba::ui {
             "getItemTooltip", &OptionButton::getItemTooltip,
             "getPopup", &OptionButton::getPopup,
             "getSelectableItem", &OptionButton::getSelectableItem,
+            "getSelectedId", &OptionButton::getSelectedId,
         );
     }
 }
