@@ -151,6 +151,10 @@ namespace sunaba::ui {
                 &OptionButton::getItemCount,
                 &OptionButton::setItemCount
             ),
+            "selected", sol::property(
+                &OptionButton::getSelected,
+                &OptionButton::setSelected
+            ),
         );
     }
 }
