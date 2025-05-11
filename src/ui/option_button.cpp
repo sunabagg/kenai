@@ -170,6 +170,7 @@ namespace sunaba::ui {
             "addIconItem", &OptionButton::addIconItem,
             "addItem", &OptionButton::addItem,
             "addSeparator", &OptionButton::addSeparator,
+            "clear", &OptionButton::clear,
         );
     }
 }
