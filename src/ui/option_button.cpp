@@ -143,6 +143,10 @@ namespace sunaba::ui {
                 &OptionButton::getAllowReselect,
                 &OptionButton::setAllowReselect
             ),
+            "fitToLongestItem", sol::property(
+                &OptionButton::isFitToLongestItem,
+                &OptionButton::setFitToLongestItem
+            ),
         );
     }
 }
