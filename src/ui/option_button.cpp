@@ -191,6 +191,7 @@ namespace sunaba::ui {
             "setItemMetadata", &OptionButton::setItemMetadata,
             "setItemText", &OptionButton::setItemText,
             "setItemTooltip", &OptionButton::setItemTooltip,
+            "showPopup", &OptionButton::showPopup,
         );
     }
 }
