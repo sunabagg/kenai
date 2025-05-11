@@ -169,6 +169,10 @@ namespace sunaba::ui {
             void setTextureChangedEvent(Event* event) {
                 textureChangedEvent = event;
             }
+
+            int getPatchMargin(int side) {
+                return ninePatchRect->get_patch_margin(static_cast<godot::Side>(side));
+            }
     };
 }
 
