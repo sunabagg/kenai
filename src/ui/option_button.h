@@ -147,6 +147,8 @@ namespace sunaba::ui {
             void setItemFocusedEvent(Event* event) {
                 itemFocusedEvent = event;
             }
+
+            Event* itemSelectedEvent;
     };
 }
 
