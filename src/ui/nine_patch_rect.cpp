@@ -135,6 +135,10 @@ namespace sunaba::ui {
                 &NinePatchRect::getMouseFilter,
                 &NinePatchRect::setMouseFilter
             ),
+            "patchMarginBottom", sol::property(
+                &NinePatchRect::getPatchMarginBottom,
+                &NinePatchRect::setPatchMarginBottom
+            ),
         );
     }
 }
