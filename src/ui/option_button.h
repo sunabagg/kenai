@@ -218,6 +218,10 @@ namespace sunaba::ui {
             bool hasSelectableItems() const {
                 return optionButton->has_selectable_items();
             }
+
+            bool isItemDisabled(int32_t p_idx) const {
+                return optionButton->is_item_disabled(p_idx);
+            }
     };
 }
 
