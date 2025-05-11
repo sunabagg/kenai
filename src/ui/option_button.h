@@ -165,6 +165,10 @@ namespace sunaba::ui {
             void addItem(std::string label, int32_t id = -1) {
                 optionButton->add_item(String(label.c_str()), id);
             }
+
+            void addSeparator(std::string text = "&quot;&quot;") {
+                optionButton->add_separator(String(text.c_str()));
+            }
     };
 }
 
