@@ -102,6 +102,10 @@ namespace sunaba::ui {
                 ninePatchRect->set_h_axis_stretch_mode(static_cast<godot::NinePatchRect::AxisStretchMode>(1));
             }
 
+            int getAxisStretchVertical() {
+                return ninePatchRect->get_v_axis_stretch_mode();
+            }
+
             void setAxisStretchVertical() {
                 ninePatchRect->set_v_axis_stretch_mode(static_cast<godot::NinePatchRect::AxisStretchMode>(1));
             }
