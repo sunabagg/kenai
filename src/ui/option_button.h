@@ -111,6 +111,10 @@ namespace sunaba::ui {
             bool getAllowReselect() {
                 return optionButton->get_allow_reselect();
             }
+
+            void setAllowReselect(bool enabled) {
+                optionButton->set_allow_reselect(enabled);
+            }
     };
 }
 
