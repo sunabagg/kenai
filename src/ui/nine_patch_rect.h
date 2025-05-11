@@ -104,6 +104,10 @@ namespace sunaba::ui {
             bool isDrawCenterEnabled() {
                 return ninePatchRect->is_draw_center_enabled();
             }
+
+            void setDrawCenter(bool enabled) {
+                ninePatchRect->set_draw_center(enabled);
+            }
     };
 }
 
