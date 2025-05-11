@@ -177,6 +177,7 @@ namespace sunaba::ui {
             "getItemMetadata", &OptionButton::getItemMetadata,
             "getItemText", &OptionButton::getItemText,
             "getItemTooltip", &OptionButton::getItemTooltip,
+            "getPopup", &OptionButton::getPopup,
         );
     }
 }
