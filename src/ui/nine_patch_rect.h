@@ -108,6 +108,10 @@ namespace sunaba::ui {
             void setDrawCenter(bool enabled) {
                 ninePatchRect->set_draw_center(enabled);
             }
+
+            int getMouseFilter() {
+                return ninePatchRect->get_mouse_filter();
+            }
     };
 }
 
