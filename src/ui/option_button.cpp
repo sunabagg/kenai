@@ -155,6 +155,10 @@ namespace sunaba::ui {
                 &OptionButton::getSelected,
                 &OptionButton::setSelected
             ),
+            "toggleMode", sol::property(
+                &OptionButton::isToggleMode,
+                &OptionButton::setToggleMode
+            ),
         );
     }
 }
