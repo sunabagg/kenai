@@ -139,6 +139,8 @@ namespace sunaba::ui {
             void setToggleMode(bool enabled) {
                 optionButton->set_toggle_mode(enabled);
             }
+
+            Event* itemFocusedEvent;
     };
 }
 
