@@ -143,6 +143,10 @@ namespace sunaba::ui {
                 &NinePatchRect::getPatchMarginLeft,
                 &NinePatchRect::setPatchMarginLeft
             ),
+            "patchMarginRight", sol::property(
+                &NinePatchRect::getPatchMarginRight,
+                &NinePatchRect::setPatchMarginRight
+            ),
         );
     }
 }
