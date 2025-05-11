@@ -181,6 +181,7 @@ namespace sunaba::ui {
             "getSelectableItem", &OptionButton::getSelectableItem,
             "getSelectedId", &OptionButton::getSelectedId,
             "getSelectedMetadata", &OptionButton::getSelectedMetadata,
+            "isItemDisabled", &OptionButton::isItemDisabled,
         );
     }
 }
