@@ -131,10 +131,7 @@ namespace sunaba::ui {
             "showPercentage", sol::property(&ProgressBar::getShowPercentage, &ProgressBar::setShowPercentage),
             "cast", [] (Element* element) {
                 ProgressBarNode* progressBar = Object::cast_to<ProgressBarNode>(element->getNode());
-                if (progressBar != nullptr) {
-                    return new ProgressBar(progressBar);
-                }
-                return static_cast<ProgressBar*>(nullptr);
+                return new ProgressBar(progressBar);
             },
     }
 }
