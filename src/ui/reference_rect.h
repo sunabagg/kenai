@@ -76,6 +76,10 @@ namespace sunaba::ui {
                 connectReferenceRectSignals();
                 setControl(p_node);
             }
+
+            Color getBorderColor() {
+                return referenceRect->get_border_color();
+            }
     };
 }
 #endif
