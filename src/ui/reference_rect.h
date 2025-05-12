@@ -67,14 +67,14 @@ namespace sunaba::ui {
             void setReferenceRect(ReferenceRectNode* p_node) {
                 referenceRect = p_node;
                 connectReferenceRectSignals();
-                setRange(p_node);
+                setControl(p_node);
             }
 
             void setReferenceRect(ReferenceRectProxy* p_node) {
                 referenceRect = p_node;
                 p_node->element = this;
                 connectReferenceRectSignals();
-                setRange(p_node);
+                setControl(p_node);
             }
     };
 }
