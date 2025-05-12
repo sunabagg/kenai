@@ -80,4 +80,18 @@ namespace sunaba::ui {
         }
         return Variant();
     }
+
+    Vector2 ProgressBarProxy::_get_minimum_size() const {
+        if (element != nullptr) {
+            return element->getMinimumSize();
+        }
+        return Vector2();
+    }
+
+    String ProgressBarProxy::_get_tooltip(const Vector2 &at_position) const {
+        if (element != nullptr) {
+            return element->_getTooltip(at_position).c_str();
+        }
+        return String();
+    }
 }
