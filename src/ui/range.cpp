@@ -137,6 +137,7 @@ namespace sunaba::ui {
             "step", sol::property(&Range::getStep, &Range::setStep),
             "value", sol::property(&Range::getValue, &Range::setValue),
             "changed", sol::property(&Range::getChangedEvent, &Range::setChangedEvent),
+            "valueChanged", sol::property(&Range::getValueChangedEvent, &Range::setValueChangedEvent),
         );
     }
 }
