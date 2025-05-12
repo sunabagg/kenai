@@ -120,4 +120,11 @@ namespace sunaba::ui {
             element->valueChanged(value);
         }
     }
+
+    void bindRange(sol::state &lua) {
+        lua.new_usertype<Range>("Range",
+            sol::constructors<Range()>(),
+            sol::base_classes, sol::bases<Control>(),
+        );
+    }
 }
