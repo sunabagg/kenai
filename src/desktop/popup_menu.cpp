@@ -153,10 +153,7 @@ namespace sunaba::desktop {
             "toggleItemMultistate", &PopupMenu::toggleItemMultistate,
             "cast", [](Element* e) {
                 PopupMenuNode* popup_menu = Object::cast_to<PopupMenuNode>(e->getNode());
-                if (popup_menu != nullptr) {
-                    return new PopupMenu(popup_menu);
-                }
-                return static_cast<PopupMenu*>(nullptr);
+                return new PopupMenu(popup_menu);
             }
         );
     }
