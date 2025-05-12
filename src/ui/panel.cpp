@@ -121,10 +121,7 @@ namespace sunaba::ui {
             sol::base_classes, sol::bases<BaseObject, Element, sunaba::core::CanvasItem, Control>(),
             "cast", [] (Element* element) {
                 PanelNode* node = Object::cast_to<PanelNode>(element->getNode());
-                if (node != nullptr) {
-                    return new Panel(node);
-                }
-                return static_cast<Panel*>(nullptr);
+                return new Panel(node);
             }
         );
     }
