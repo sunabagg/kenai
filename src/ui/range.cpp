@@ -132,6 +132,7 @@ namespace sunaba::ui {
             "minValue", sol::property(&Range::getMinValue, &Range::setMinValue),
             "page", sol::property(&Range::getPage, &Range::setPage),
             "ratio", sol::property(&Range::getRatio, &Range::setRatio),
+            "rounded", sol::property(&Range::getRounded, &Range::setRounded),
         );
     }
 }
