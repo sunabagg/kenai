@@ -148,10 +148,7 @@ namespace sunaba::ui {
             ),
             "cast", [](sunaba::core::Element* e) {
                 CheckBoxNode* checkBox = Object::cast_to<CheckBoxNode>(e->getNode());
-                if (checkBox == nullptr) {
-                    return new CheckBox(checkBox);
-                }
-                return static_cast<CheckBox*>(nullptr);
+                return new CheckBox(checkBox);
             }
         );
     }
