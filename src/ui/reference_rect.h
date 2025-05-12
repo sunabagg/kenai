@@ -88,6 +88,10 @@ namespace sunaba::ui {
             float getBorderWidth() {
                 return referenceRect->get_border_width();
             }
+
+            void setBorderWidth(float width) {
+                referenceRect->set_border_width(width);
+            }
     };
 }
 #endif
