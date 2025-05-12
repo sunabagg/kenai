@@ -95,6 +95,10 @@ namespace sunaba::ui {
             int getMouseFilter() const {
                 return panel_container->get_mouse_filter();
             }
+
+            void setMouseFilter(int filter) {
+                panel_container->set_mouse_filter(static_cast<godot::Control::MouseFilter>(filter));
+            }
     };
 }
 
