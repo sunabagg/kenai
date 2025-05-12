@@ -125,6 +125,7 @@ namespace sunaba::ui {
         lua.new_usertype<ScrollBar>("ScrollBar",
             sol::constructors<ScrollBar()>(),
             sol::base_classes, sol::bases<BaseObject, Element, sunaba::core::CanvasItem, Control, Range>(),
+            "customStep", sol::property(&ScrollBar::getCustomStep, &ScrollBar::setCustomStep),
         );
     }
 }
