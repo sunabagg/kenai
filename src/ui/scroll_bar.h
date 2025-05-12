@@ -84,6 +84,11 @@ namespace sunaba::ui {
                 connectScrollBarSignals();
                 setRange(p_node);
             }
+
+            float getCustomStep() {
+                return scrollBar->get_custom_step();
+            }
+            
     };
 }
 
