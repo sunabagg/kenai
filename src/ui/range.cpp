@@ -130,6 +130,7 @@ namespace sunaba::ui {
             "expEdit", sol::property(&Range::getExpEdit, &Range::setExpEdit),
             "maxValue", sol::property(&Range::getMaxValue, &Range::setMaxValue),
             "minValue", sol::property(&Range::getMinValue, &Range::setMinValue),
+            "page", sol::property(&Range::getPage, &Range::setPage),
         );
     }
 }
