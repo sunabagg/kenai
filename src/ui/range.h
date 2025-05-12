@@ -149,6 +149,10 @@ namespace sunaba::ui {
             int getSizeFlagsVertical() {
                 return range->get_v_size_flags();
             }
+
+            void setSizeFlagsVertical(int flags) {
+                range->set_v_size_flags(static_cast<godot::Control::SizeFlags>(flags));
+            }
     };
 }
 
