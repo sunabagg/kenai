@@ -171,6 +171,9 @@ namespace sunaba::ui {
             }
 
             Event* changedEvent;
+            Event* getChangedEvent() {
+                return changedEvent;
+            }
     };
 }
 
