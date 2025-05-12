@@ -128,6 +128,7 @@ namespace sunaba::ui {
             "allowGreater", sol::property(&Range::getAllowGreater, &Range::setAllowGreater),
             "allowLesser", sol::property(&Range::getAllowLesser, &Range::setAllowLesser),
             "expEdit", sol::property(&Range::getExpEdit, &Range::setExpEdit),
+            "maxValue", sol::property(&Range::getMaxValue, &Range::setMaxValue),
         );
     }
 }
