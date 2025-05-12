@@ -177,6 +177,7 @@ namespace sunaba::ui {
             void setChangedEvent(Event* event) {
                 changedEvent = event;
             }
+            Event* valueChangedEvent;
     };
 }
 
