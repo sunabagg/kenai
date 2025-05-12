@@ -117,6 +117,10 @@ namespace sunaba::ui {
             float getMinValue() {
                 return range->get_min();
             }
+
+            void setMinValue(float value) {
+                range->set_min(value);
+            }
     };
 }
 
