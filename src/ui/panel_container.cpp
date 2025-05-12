@@ -100,4 +100,11 @@ namespace sunaba::ui {
             this->element->guiInput(event);
         }
     }
+
+    bool PanelContainerProxy::_has_point(const Vector2 &point) const {
+        if (element != nullptr) {
+            return element->hasPoint(point);
+        }
+        return false;
+    }
 }
