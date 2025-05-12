@@ -129,6 +129,10 @@ namespace sunaba::ui {
             void setPage(float value) {
                 range->set_page(value);
             }
+
+            float getRatio() {
+                return range->get_as_ratio();
+            }
     };
 }
 
