@@ -60,6 +60,10 @@ namespace sunaba::ui {
                 onInit();
             }
 
+            ReferenceRect(ReferenceRectNode* p_node) {
+                setReferenceRect(p_node);
+            }
+
             ReferenceRectNode* getReferenceRect() {
                 return referenceRect;
             }
