@@ -131,10 +131,7 @@ namespace sunaba::ui {
             ),
             "cast", [](sunaba::core::Element* e) {
                 CheckButtonNode* check_button_node = Object::cast_to<CheckButtonNode>(e->getNode());
-                if (check_button_node == nullptr) {
-                    return new CheckButton(check_button_node);
-                }
-                return static_cast<CheckButton*>(nullptr);
+                return new CheckButton(check_button_node);
             }
         );
     }
