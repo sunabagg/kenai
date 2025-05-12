@@ -140,6 +140,7 @@ namespace sunaba::ui {
             "valueChanged", sol::property(&Range::getValueChangedEvent, &Range::setValueChangedEvent),
             "setValueNoSignal", &Range::setValueNoSignal,
             "share", &Range::share,
+            "unshare", &Range::unshare,
         );
     }
 }
