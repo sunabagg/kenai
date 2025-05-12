@@ -105,6 +105,10 @@ namespace sunaba::ui {
             void setExpEdit(bool exp) {
                 range->set_exp_ratio(exp);
             }
+
+            float getMaxValue() {
+                return range->get_max();
+            }
     };
 }
 
