@@ -169,6 +169,8 @@ namespace sunaba::ui {
             void setValue(float value) {
                 range->set_value(value);
             }
+
+            Event* changedEvent;
     };
 }
 
