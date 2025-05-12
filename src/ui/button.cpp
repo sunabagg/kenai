@@ -191,10 +191,7 @@ namespace sunaba::ui {
             ),
             "cast", [](sunaba::core::Element* e) {
                 ButtonNode* button = Object::cast_to<ButtonNode>(e->getNode());
-                if (button == nullptr) {
-                    return new Button(button);
-                }
-                return static_cast<Button*>(nullptr);
+                return new Button(button);
             }
         );
     }
