@@ -82,6 +82,10 @@ namespace sunaba::ui {
                 connectProgressBarSignals();
                 setRange(p_node);
             }
+
+            bool isEditorPreviewIndeterminate() {
+                return progressBar->is_editor_preview_indeterminate_enabled();
+            }
     };
 }
 
