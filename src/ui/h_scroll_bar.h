@@ -75,7 +75,7 @@ namespace sunaba::ui {
                 setScrollBar(p_node);
             }
 
-            void setScrollBar(HScrollBarProxy* p_node) {
+            void setHScrollBar(HScrollBarProxy* p_node) {
                 hScrollBar = p_node;
                 p_node->element = this;
                 connectHScrollBarSignals();
