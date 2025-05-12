@@ -145,6 +145,10 @@ namespace sunaba::ui {
             void setRounded(bool rounded) {
                 range->set_use_rounded_values(rounded);
             }
+
+            int getSizeFlagsVertical() {
+                return range->get_v_size_flags();
+            }
     };
 }
 
