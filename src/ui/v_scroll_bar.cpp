@@ -120,4 +120,10 @@ namespace sunaba::ui {
             element->valueChanged(value);
         }
     }
+
+    void bindVScrollBar(sol::state &lua) {
+        lua.new_usertype<VScrollBar>("VScrollBar",
+            sol::constructors<VScrollBar()>(),
+        );
+    }
 }
