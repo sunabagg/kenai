@@ -92,6 +92,10 @@ namespace sunaba::ui {
             void setCustomStep(float value) {
                 scrollBar->set_custom_step(value);
             }
+
+            float getStep() {
+                return scrollBar->get_step();
+            }
     };
 }
 
