@@ -110,6 +110,10 @@ namespace sunaba::ui {
             bool getShowPercentage() {
                 return progressBar->is_percentage_shown();
             }
+
+            void setShowPercentage(bool show) {
+                progressBar->set_show_percentage(show);
+            }
     };
 }
 
