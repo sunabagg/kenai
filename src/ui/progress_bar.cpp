@@ -132,6 +132,6 @@ namespace sunaba::ui {
             "cast", [] (Element* element) {
                 ProgressBarNode* progressBar = Object::cast_to<ProgressBarNode>(element->getNode());
                 return new ProgressBar(progressBar);
-            },
+            }
     }
 }
