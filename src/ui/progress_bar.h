@@ -98,6 +98,10 @@ namespace sunaba::ui {
             void setFillMode(int mode) {
                 progressBar->set_fill_mode(static_cast<ProgressBarNode::FillMode>(mode));
             }
+
+            bool getIndeterminate() {
+                return progressBar->is_indeterminate();
+            }
     };
 }
 
