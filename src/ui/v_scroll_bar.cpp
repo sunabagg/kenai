@@ -122,6 +122,9 @@ namespace sunaba::ui {
     }
 
     void bindVScrollBar(sol::state &lua) {
-        
+        lua.new_usertype<VScrollBar>("VScrollBar",
+            sol::constructors<VScrollBar()>(),
+            sol::base_classes, sol::bases<BaseObject, Element, sunaba::core::CanvasItem, Control, Range, ScrollBar>(),
+        );
     }
 }
