@@ -63,6 +63,7 @@ target_sources(${PROJECT_NAME} PRIVATE
         panel.cpp
         panel_container.h
         panel_container.cpp
+        range.h
 )
 
 target_include_directories( ${PROJECT_NAME}
