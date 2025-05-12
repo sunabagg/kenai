@@ -129,5 +129,12 @@ namespace sunaba::ui {
             "fillMode", sol::property(&ProgressBar::getFillMode, &ProgressBar::setFillMode),
             "indeterminate", sol::property(&ProgressBar::getIndeterminate, &ProgressBar::setIndeterminate),
             "showPercentage", sol::property(&ProgressBar::getShowPercentage, &ProgressBar::setShowPercentage),
+            "cast", [] (Element* element) {
+                ProgressBarNode* progressBar = Object::cast_to<ProgressBarNode>(element->getNode());
+                if (progressBar != nullptr) {
+                    return new ProgressBar(progressBar);
+                }
+                return static_cast<ProgressBar*>(nullptr);
+            },
     }
 }
