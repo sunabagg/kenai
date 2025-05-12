@@ -157,6 +157,10 @@ namespace sunaba::ui {
             float getStep() {
                 return range->get_step();
             }
+
+            void setStep(float value) {
+                range->set_step(value);
+            }
     };
 }
 
