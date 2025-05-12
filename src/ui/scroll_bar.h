@@ -100,6 +100,8 @@ namespace sunaba::ui {
             void setStep(float value) {
                 scrollBar->set_step(value);
             }
+
+            Event* scrollingEvent;
     };
 }
 
