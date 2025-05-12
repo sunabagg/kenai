@@ -143,10 +143,7 @@ namespace sunaba::ui {
             "unshare", &Range::unshare,
             "cast", [] (Element* element) {
                 RangeNode* range = godot::Object::cast_to<RangeNode>(element->getNode());
-                if (range != nullptr) {
-                    return new Range(range);
-                }
-                return static_cast<Range*>(nullptr);
+                return new Range(range);
             }
         );
     }
