@@ -103,7 +103,7 @@ namespace sunaba::ui {
             }
 
             void setExpEdit(bool exp) {
-                range->set_ratio_exp(exp);
+                range->set_exp_ratio(exp);
             }
     };
 }
