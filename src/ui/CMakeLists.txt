@@ -61,6 +61,8 @@ target_sources(${PROJECT_NAME} PRIVATE
         option_button.cpp
         panel.h 
         panel.cpp
+        panel_container.h
+        panel_container.cpp
 )
 
 target_include_directories( ${PROJECT_NAME}

@@ -128,4 +128,22 @@ namespace sunaba::ui {
         }
         return PackedInt32Array();
     }
+
+    void bindPanelContainer(sol::state &lua) {
+        lua.new_usertype<PanelContainer>("PanelContainer",
+            sol::constructors<PanelContainer()>(),
+            sol::base_classes, sol::bases<BaseObject, Element, sunaba::core::CanvasItem, Control, Container>(),
+            "mouseFilter", sol::property(
+                &PanelContainer::getMouseFilter,
+                &PanelContainer::setMouseFilter
+            ),
+            "cast", [](Element* e) {
+                PanelContainerNode* panel_container = Object::cast_to<PanelContainerNode>(e->getNode());
+                if (panel_container == nullptr) {
+                    return new PanelContainer(panel_container);
+                }
+                return static_cast<PanelContainer*>(nullptr);
+            }
+        );
+    }
 }
