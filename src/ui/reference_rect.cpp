@@ -114,4 +114,11 @@ namespace sunaba::ui {
         }
         return TypedArray<Vector3i>();
     }
+
+    void bindReferenceRect(sol::state& lua) {
+        lua.new_usertype<ReferenceRect>("ReferenceRect",
+            sol::constructors<ReferenceRect()>(),
+            sol::base_classes, sol::bases<BaseObject, Element, sunaba::core::CanvasItem, Control>(),
+        );
+    }
 }
