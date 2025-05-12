@@ -68,6 +68,7 @@ target_sources(${PROJECT_NAME} PRIVATE
         progress_bar.h
         progress_bar.cpp
         reference_rect.h
+        reference_rect.cpp
 )
 
 target_include_directories( ${PROJECT_NAME}
