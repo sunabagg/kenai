@@ -86,6 +86,10 @@ namespace sunaba::ui {
             bool isEditorPreviewIndeterminate() {
                 return progressBar->is_editor_preview_indeterminate_enabled();
             }
+
+            void setEditorPreviewIndeterminate(bool enabled) {
+                progressBar->set_editor_preview_indeterminate(enabled);
+            }
     };
 }
 
