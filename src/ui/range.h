@@ -93,6 +93,10 @@ namespace sunaba::ui {
             bool getAllowLesser() {
                 return range->is_lesser_allowed();
             }
+
+            void setAllowLesser(bool allow) {
+                range->set_allow_lesser(allow);
+            }
     };
 }
 
