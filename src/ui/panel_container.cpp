@@ -139,10 +139,7 @@ namespace sunaba::ui {
             ),
             "cast", [](Element* e) {
                 PanelContainerNode* panel_container = Object::cast_to<PanelContainerNode>(e->getNode());
-                if (panel_container == nullptr) {
-                    return new PanelContainer(panel_container);
-                }
-                return static_cast<PanelContainer*>(nullptr);
+                return new PanelContainer(panel_container);
             }
         );
     }
