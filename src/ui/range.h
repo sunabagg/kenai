@@ -141,6 +141,10 @@ namespace sunaba::ui {
             bool getRounded() {
                 return range->is_using_rounded_values();
             }
+
+            void setRounded(bool rounded) {
+                range->set_use_rounded_values(rounded);
+            }
     };
 }
 
