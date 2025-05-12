@@ -107,4 +107,10 @@ namespace sunaba::ui {
         }
         return false;
     }
+
+    void VScrollBarProxy::_value_changed(double value) {
+        if (element != nullptr) {
+            element->valueChanged(value);
+        }
+    }
 }
