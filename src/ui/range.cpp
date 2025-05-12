@@ -124,7 +124,7 @@ namespace sunaba::ui {
     void bindRange(sol::state &lua) {
         lua.new_usertype<Range>("Range",
             sol::constructors<Range()>(),
-            sol::base_classes, sol::bases<Control>(),
+            sol::base_classes, sol::bases<BaseObject, Element, sunaba::core::CanvasItem, Control>(),
         );
     }
 }
