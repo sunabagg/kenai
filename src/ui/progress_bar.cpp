@@ -128,5 +128,6 @@ namespace sunaba::ui {
             "editorPreviewIndeterminate", sol::property(&ProgressBar::isEditorPreviewIndeterminate, &ProgressBar::setEditorPreviewIndeterminate),
             "fillMode", sol::property(&ProgressBar::getFillMode, &ProgressBar::setFillMode),
             "indeterminate", sol::property(&ProgressBar::getIndeterminate, &ProgressBar::setIndeterminate),
+            "showPercentage", sol::property(&ProgressBar::isShowPercentage, &ProgressBar::setShowPercentage),
     }
 }
