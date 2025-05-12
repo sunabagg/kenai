@@ -120,4 +120,11 @@ namespace sunaba::ui {
             element->valueChanged(value);
         }
     }
+
+    void bindHScrollBar(sol::state &lua) {
+        lua.new_usertype<HScrollBar>("HScrollBar",
+            sol::constructors<HScrollBar()>(),
+            sol::base_classes, sol::bases<BaseObject, Element, sunaba::core::CanvasItem, Control, Range, ScrollBar>()
+        );
+    }
 }
