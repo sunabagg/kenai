@@ -165,6 +165,10 @@ namespace sunaba::ui {
             float getValue() {
                 return range->get_value();
             }
+
+            void setValue(float value) {
+                range->set_value(value);
+            }
     };
 }
 
