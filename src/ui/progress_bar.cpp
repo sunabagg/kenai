@@ -123,6 +123,7 @@ namespace sunaba::ui {
 
     void bindProgressBar(sol::state &lua) {
         lua.new_usertype<ProgressBar>("ProgressBar",
+            sol::constructors<ProgressBar()>(),
             sol::base_classes, sol::bases<BaseObject, Element, sunaba::core::CanvasItem, Control, Range>()
     }
 }
