@@ -90,6 +90,10 @@ namespace sunaba::ui {
             void setEditorPreviewIndeterminate(bool enabled) {
                 progressBar->set_editor_preview_indeterminate(enabled);
             }
+
+            int getFillMode() {
+                return progressBar->get_fill_mode();
+            }
     };
 }
 
