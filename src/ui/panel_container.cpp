@@ -94,4 +94,10 @@ namespace sunaba::ui {
         }
         return String();
     }
+
+    void PanelContainerProxy::_gui_input(const Ref<InputEvent> &event) {
+        if (this->element != nullptr) {
+            this->element->guiInput(event);
+        }
+    }
 }
