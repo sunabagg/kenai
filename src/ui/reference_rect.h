@@ -80,6 +80,10 @@ namespace sunaba::ui {
             Color getBorderColor() {
                 return referenceRect->get_border_color();
             }
+
+            void setBorderColor(Color color) {
+                referenceRect->set_border_color(color);
+            }
     };
 }
 #endif
