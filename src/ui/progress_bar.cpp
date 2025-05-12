@@ -48,4 +48,10 @@ namespace sunaba::ui {
             element->unhandledKeyInput(event);
         }
     }
+
+    void ProgressBarProxy::_shortcut_input(const Ref<InputEvent>& event) {
+        if (element != nullptr) {
+            element->shortcutInput(event);
+        }
+    }
 }
