@@ -133,6 +133,7 @@ namespace sunaba::ui {
             "page", sol::property(&Range::getPage, &Range::setPage),
             "ratio", sol::property(&Range::getRatio, &Range::setRatio),
             "rounded", sol::property(&Range::getRounded, &Range::setRounded),
+            "sizeFlagsVertical", sol::property(&Range::getSizeFlagsVertical, &Range::setSizeFlagsVertical),
         );
     }
 }
