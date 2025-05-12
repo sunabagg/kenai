@@ -124,7 +124,11 @@ namespace sunaba::ui {
     void bindHScrollBar(sol::state &lua) {
         lua.new_usertype<HScrollBar>("HScrollBar",
             sol::constructors<HScrollBar()>(),
-            sol::base_classes, sol::bases<BaseObject, Element, sunaba::core::CanvasItem, Control, Range, ScrollBar>()
+            sol::base_classes, sol::bases<BaseObject, Element, sunaba::core::CanvasItem, Control, Range, ScrollBar>(),
+            "cast", [] (Element* element) {
+                HScrollBarNode* hScrollBarNode = Object::cast_to<HScrollBarNode>(element->getNode());
+                return new HScrollBar(hScrollBarNode);
+            },
         );
     }
 }
