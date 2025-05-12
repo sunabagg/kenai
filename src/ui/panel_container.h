@@ -91,6 +91,10 @@ namespace sunaba::ui {
                 connectPanelContainerSignals();
                 setControl(panel_container);
             }
+
+            int getMouseFilter() const {
+                return panel_container->get_mouse_filter();
+            }
     };
 }
 
