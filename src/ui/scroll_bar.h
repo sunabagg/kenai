@@ -102,6 +102,9 @@ namespace sunaba::ui {
             }
 
             Event* scrollingEvent;
+            Event* getScrollingEvent() {
+                return scrollingEvent;
+            }
     };
 }
 
