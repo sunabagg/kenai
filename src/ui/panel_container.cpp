@@ -54,4 +54,17 @@ namespace sunaba::ui {
             this->element->shortcutInput(event);
         }
     }
+
+    void PanelContainerProxy::_draw() {
+        if (element != nullptr) {
+            element->_draw();
+        }
+    }
+
+    bool PanelContainerProxy::_can_drop_data(const Vector2& at_position, const Variant &data) const {
+        if (element != nullptr) {
+            return element->canDropData(at_position, data);
+        }
+        return false;
+    }
 }
