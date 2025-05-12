@@ -133,6 +133,10 @@ namespace sunaba::ui {
             float getRatio() {
                 return range->get_as_ratio();
             }
+
+            void setRatio(float value) {
+                range->set_as_ratio(value);
+            }
     };
 }
 
