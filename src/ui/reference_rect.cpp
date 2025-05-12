@@ -1,0 +1,27 @@
+#include "reference_rect.h"
+
+namespace sunaba::ui {
+    void ReferenceRectProxy::_enter_tree() {
+        if (element != nullptr) {
+            element->enterTree();
+        }
+    }
+    
+    void ReferenceRectProxy::_exit_tree() {
+        if (element != nullptr) {
+            element->exitTree();
+        }
+    }
+    
+    void ReferenceRectProxy::_ready() {
+        if (element != nullptr) {
+            element->ready();
+        }
+    }
+    
+    void ReferenceRectProxy::_process(double delta) {
+        if (element != nullptr) {
+            element->process(delta);
+        }
+    }
+}
