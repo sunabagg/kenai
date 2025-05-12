@@ -106,6 +106,10 @@ namespace sunaba::ui {
             void setIndeterminate(bool indeterminate) {
                 progressBar->set_indeterminate(indeterminate);
             }
+
+            bool getShowPercentage() {
+                return progressBar->is_percentage_shown();
+            }
     };
 }
 
