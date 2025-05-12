@@ -135,6 +135,7 @@ namespace sunaba::ui {
             "rounded", sol::property(&Range::getRounded, &Range::setRounded),
             "sizeFlagsVertical", sol::property(&Range::getSizeFlagsVertical, &Range::setSizeFlagsVertical),
             "step", sol::property(&Range::getStep, &Range::setStep),
+            "value", sol::property(&Range::getValue, &Range::setValue),
         );
     }
 }
