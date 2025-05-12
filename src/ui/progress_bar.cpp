@@ -126,5 +126,6 @@ namespace sunaba::ui {
             sol::constructors<ProgressBar()>(),
             sol::base_classes, sol::bases<BaseObject, Element, sunaba::core::CanvasItem, Control, Range>(),
             "editorPreviewIndeterminate", sol::property(&ProgressBar::isEditorPreviewIndeterminate, &ProgressBar::setEditorPreviewIndeterminate),
+            "fillMode", sol::property(&ProgressBar::getFillMode, &ProgressBar::setFillMode),
     }
 }
