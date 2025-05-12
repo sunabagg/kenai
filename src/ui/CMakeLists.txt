@@ -71,6 +71,7 @@ target_sources(${PROJECT_NAME} PRIVATE
         reference_rect.cpp
         scroll_bar.h
         scroll_bar.cpp
+        h_scroll_bar.h
 )
 
 target_include_directories( ${PROJECT_NAME}
