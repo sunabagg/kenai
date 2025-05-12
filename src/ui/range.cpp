@@ -125,6 +125,7 @@ namespace sunaba::ui {
         lua.new_usertype<Range>("Range",
             sol::constructors<Range()>(),
             sol::base_classes, sol::bases<BaseObject, Element, sunaba::core::CanvasItem, Control>(),
+            "allowGreater", sol::property(&Range::getAllowGreater, &Range::setAllowGreater),
         );
     }
 }
