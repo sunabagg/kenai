@@ -113,6 +113,10 @@ namespace sunaba::ui {
             void setMaxValue(float value) {
                 range->set_max(value);
             }
+
+            float getMinValue() {
+                return range->get_min();
+            }
     };
 }
 
