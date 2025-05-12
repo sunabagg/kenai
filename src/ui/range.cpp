@@ -136,6 +136,7 @@ namespace sunaba::ui {
             "sizeFlagsVertical", sol::property(&Range::getSizeFlagsVertical, &Range::setSizeFlagsVertical),
             "step", sol::property(&Range::getStep, &Range::setStep),
             "value", sol::property(&Range::getValue, &Range::setValue),
+            "changed", sol::property(&Range::getChangedEvent, &Range::setChangedEvent),
         );
     }
 }
