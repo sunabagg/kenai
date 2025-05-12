@@ -97,6 +97,10 @@ namespace sunaba::ui {
             void setAllowLesser(bool allow) {
                 range->set_allow_lesser(allow);
             }
+
+            bool getExpEdit() {
+                return range->is_ratio_exp();
+            }
     };
 }
 
