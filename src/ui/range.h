@@ -199,6 +199,10 @@ namespace sunaba::ui {
             void setValueNoSignal(double value) {
                 range->set_value_no_signal(value);
             }
+
+            void share(Element* with) {
+                range->share(with->getNode());
+            }
     };
 }
 
