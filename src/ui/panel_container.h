@@ -15,7 +15,7 @@ using namespace sunaba::ui;
 namespace sunaba::ui {
     void bindPanelContainer(sol::state& lua);
 
-    class PanelConatiner;
+    class PanelContainer;
 
     class PanelContainerProxy : public PanelContainerNode {
         public:
