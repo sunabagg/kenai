@@ -128,7 +128,7 @@ namespace sunaba::ui {
             "cast", [] (Element* element) {
                 VScrollBarNode* vScrollBarNode = Object::cast_to<VScrollBarNode>(element->getNode());
                 return new VScrollBar(vScrollBarNode);
-            },
+            }
         );
     }
 }
