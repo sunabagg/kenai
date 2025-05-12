@@ -102,6 +102,10 @@ namespace sunaba::ui {
             bool getIndeterminate() {
                 return progressBar->is_indeterminate();
             }
+
+            void setIndeterminate(bool indeterminate) {
+                progressBar->set_indeterminate(indeterminate);
+            }
     };
 }
 
