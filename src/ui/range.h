@@ -186,6 +186,15 @@ namespace sunaba::ui {
             void setValueChangedEvent(Event* event) {
                 valueChangedEvent = event;
             }
+
+            void valueChanged(double value) {
+                if (scriptInstance != sol::lua_nil) {
+                    auto func = scriptInstance["valueChanged"].get<sol::function>();
+                    if (func) {
+                        func(scriptInstance, value);
+                    }
+                }
+            }
     };
 }
 
