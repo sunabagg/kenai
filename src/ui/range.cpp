@@ -143,6 +143,9 @@ namespace sunaba::ui {
             "unshare", &Range::unshare,
             "cast", [] (Element* element) {
                 RangeNode* range = Object::cast_to<RangeNode>(element);
+                if (range != nullptr) {
+                    return new Range(range);
+                }
             },
         );
     }
