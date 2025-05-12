@@ -126,6 +126,7 @@ namespace sunaba::ui {
             sol::constructors<ScrollBar()>(),
             sol::base_classes, sol::bases<BaseObject, Element, sunaba::core::CanvasItem, Control, Range>(),
             "customStep", sol::property(&ScrollBar::getCustomStep, &ScrollBar::setCustomStep),
+            "step", sol::property(&ScrollBar::getStep, &ScrollBar::setStep),
         );
     }
 }
