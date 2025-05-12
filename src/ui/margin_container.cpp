@@ -135,10 +135,7 @@ namespace sunaba::ui {
             sol::base_classes, sol::bases<BaseObject, Element, sunaba::core::CanvasItem, Control, Container>(),
             "cast", [](Element* e) {
                 MarginContainerNode* node = Object::cast_to<MarginContainerNode>(e->getNode());
-                if (node != nullptr) {
-                    return new MarginContainer(node);
-                }
-                return static_cast<MarginContainer*>(nullptr);
+                return new MarginContainer(node);
             }
         );
     }
