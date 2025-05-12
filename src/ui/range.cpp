@@ -146,6 +146,7 @@ namespace sunaba::ui {
                 if (range != nullptr) {
                     return new Range(range);
                 }
+                return static_cast<Range*>(nullptr);
             },
         );
     }
