@@ -203,6 +203,10 @@ namespace sunaba::ui {
             void share(Element* with) {
                 range->share(with->getNode());
             }
+
+            void unshare() {
+                range->unshare();
+            }
     };
 }
 
