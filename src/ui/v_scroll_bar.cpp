@@ -108,6 +108,13 @@ namespace sunaba::ui {
         return false;
     }
 
+    TypedArray<Vector3i> VScrollBarProxy::_structured_text_parser(const Array &args, const String &text) const {
+        if (element != nullptr) {
+            return element->structuredTextParser(args, text);
+        }
+        return TypedArray<Vector3i>();
+    }
+
     void VScrollBarProxy::_value_changed(double value) {
         if (element != nullptr) {
             element->valueChanged(value);
