@@ -125,6 +125,10 @@ namespace sunaba::ui {
             float getPage() {
                 return range->get_page();
             }
+
+            void setPage(float value) {
+                range->set_page(value);
+            }
     };
 }
 
