@@ -119,6 +119,7 @@ namespace sunaba::ui {
         lua.new_usertype<ReferenceRect>("ReferenceRect",
             sol::constructors<ReferenceRect()>(),
             sol::base_classes, sol::bases<BaseObject, Element, sunaba::core::CanvasItem, Control>(),
+            "borderColor", sol::property(&ReferenceRect::getBorderColor, &ReferenceRect::setBorderColor),
         );
     }
 }
