@@ -92,10 +92,7 @@ namespace sunaba::desktop {
             ),
             "cast", [](Element* e) {
                 PopupNode* popup = Object::cast_to<PopupNode>(e->getNode());
-                if (popup != nullptr) {
-                    return new Popup(popup);
-                }
-                return static_cast<Popup*>(nullptr);
+                return new Popup(popup);
             }
         );
     }
