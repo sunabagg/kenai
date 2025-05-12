@@ -121,6 +121,9 @@ namespace sunaba::ui {
             sol::base_classes, sol::bases<BaseObject, Element, sunaba::core::CanvasItem, Control>(),
             "borderColor", sol::property(&ReferenceRect::getBorderColor, &ReferenceRect::setBorderColor),
             "borderWidth", sol::property(&ReferenceRect::getBorderWidth, &ReferenceRect::setBorderWidth),
+            "cast", [] (Element* element) {
+                return new ReferenceRect(static_cast<ReferenceRectNode*>(element));
+            },
         );
     }
 }
