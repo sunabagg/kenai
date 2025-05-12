@@ -81,6 +81,10 @@ namespace sunaba::ui {
                 connectRangeSignals();
                 setControl(r_node);
             }
+
+            bool getAllowGreater() {
+                return range->is_greater_allowed();
+            }
     };
 }
 
