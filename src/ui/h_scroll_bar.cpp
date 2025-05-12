@@ -87,4 +87,17 @@ namespace sunaba::ui {
         }
         return Vector2();
     }
+
+    String HScrollBarProxy::_get_tooltip(const Vector2 &at_position) const {
+        if (element != nullptr) {
+            return element->_getTooltip(at_position).c_str();
+        }
+        return String();
+    }
+
+    void HScrollBarProxy::_gui_input(const Ref<InputEvent> &event) {
+        if (element != nullptr) {
+            element->guiInput(event);
+        }
+    }
 }
