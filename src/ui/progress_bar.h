@@ -94,6 +94,10 @@ namespace sunaba::ui {
             int getFillMode() {
                 return progressBar->get_fill_mode();
             }
+
+            void setFillMode(int mode) {
+                progressBar->set_fill_mode(static_cast<ProgressBarNode::FillMode>(mode));
+            }
     };
 }
 
