@@ -45,6 +45,8 @@ namespace sunaba::ui {
             bool _has_point(const Vector2 &point) const override;
             //Object* _make_custom_tooltip(const String &for_text) const override;
             TypedArray<Vector3i> _structured_text_parser(const Array &args, const String &text) const override;
+
+            void _value_changed(double value) override;
     };
 
     class Range : public sunaba::ui::Control {
