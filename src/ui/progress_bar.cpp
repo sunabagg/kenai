@@ -125,6 +125,6 @@ namespace sunaba::ui {
         lua.new_usertype<ProgressBar>("ProgressBar",
             sol::constructors<ProgressBar()>(),
             sol::base_classes, sol::bases<BaseObject, Element, sunaba::core::CanvasItem, Control, Range>(),
-            "editorPreviewIndeterminate", &ProgressBar::editorPreviewIndeterminate,
+            "editorPreviewIndeterminate", sol::property(&ProgressBar::isEditorPreviewIndeterminate, &ProgressBar::setEditorPreviewIndeterminate),
     }
 }
