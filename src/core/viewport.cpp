@@ -281,10 +281,7 @@ namespace sunaba::core {
             "warpMouse", &Viewport::warpMouse,
             "cast", [](Element* e) {
                 ViewportNode* viewport = Object::cast_to<ViewportNode>(e->getNode());
-                if (viewport != nullptr) {
-                    return new Viewport(viewport);
-                }
-                return static_cast<Viewport*>(nullptr);
+                return new Viewport(viewport);
             }
         );
     }
