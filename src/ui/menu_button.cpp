@@ -167,10 +167,7 @@ namespace sunaba::ui {
             "showPopup", &MenuButton::showPopup,
             "cast", [](Element* e) {
                 MenuButtonNode* menuButton = Object::cast_to<MenuButtonNode>(e->getNode());
-                if (menuButton != nullptr) {
-                    return new MenuButton(menuButton);
-                }
-                return static_cast<MenuButton*>(nullptr);
+                return new MenuButton(menuButton);
             }
         );
     }
