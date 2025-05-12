@@ -402,10 +402,7 @@ namespace sunaba::ui {
             "warpMouse", &Control::warpMouse,
             "cast", [](Element* e) {
                 ControlNode* control = Object::cast_to<ControlNode>(e->getNode());
-                if (control == nullptr) {
-                    return new Control(control);
-                }
-                return static_cast<Control*>(nullptr);
+                return new Control(control);
             }
         );
 
