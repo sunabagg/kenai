@@ -137,6 +137,10 @@ namespace sunaba::ui {
             void setRatio(float value) {
                 range->set_as_ratio(value);
             }
+
+            bool getRounded() {
+                return range->is_using_rounded_values();
+            }
     };
 }
 
