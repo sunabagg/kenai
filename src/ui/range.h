@@ -85,6 +85,10 @@ namespace sunaba::ui {
             bool getAllowGreater() {
                 return range->is_greater_allowed();
             }
+
+            void setAllowGreater(bool allow) {
+                range->set_allow_greater(allow);
+            }
     };
 }
 
