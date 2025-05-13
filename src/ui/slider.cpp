@@ -133,6 +133,8 @@ namespace sunaba::ui {
             "ticksOnBorders", sol::property(&Slider::getTicksOnBorders, &Slider::setTicksOnBorders),
             "dragEnded", sol::property(&Slider::getDragEndedEvent, &Slider::setDragEndedEvent),
             "dragStarted", sol::property(&Slider::getDragStartedEvent, &Slider::setDragStartedEvent),
+            "cast", [] (Element* element) {
+            },
         );
     }
 }
