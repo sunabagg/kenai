@@ -76,6 +76,7 @@ namespace sunaba::ui {
                     }
                     return Variant();
                 };
+                Callable textureChangedCallable = StlFunctionWrapper::create_callable_from_cpp_function(textureChangedFunc);
             }
 
         public:
