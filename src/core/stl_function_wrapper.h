@@ -51,5 +51,6 @@ namespace sunaba::core {
 }
 
 #define SignalFunc std::function<Variant(std::vector<Variant>)>
+#define to_callable StlFunctionWrapper::create_callable_from_cpp_function
 
 #endif // CPP_FUNC_WRAPPER_H
