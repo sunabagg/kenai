@@ -68,6 +68,8 @@ namespace sunaba::ui {
                     }
                     return Variant();
                 };
+                Callable scrollEndedCallable = StlFunctionWrapper::create_callable_from_cpp_function(scrollEndedFunc);
+                scrollContainer->connect("scroll_ended", scrollEndedCallable);
             }
 
         public:
