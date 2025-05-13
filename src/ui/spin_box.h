@@ -106,6 +106,10 @@ namespace sunaba::ui {
             std::string getPrefix() const {
                 return spinBox->get_prefix().utf8().get_data();
             }
+
+            void setPrefix(const std::string& prefix) {
+                spinBox->set_prefix(String(prefix.c_str()));
+            }
     };
 }
 
