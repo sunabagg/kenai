@@ -50,4 +50,6 @@ namespace sunaba::core {
     };
 }
 
+
+#define SignalFunc std::function<Variant(std::vector<Variant>)>
 #endif // CPP_FUNC_WRAPPER_H
