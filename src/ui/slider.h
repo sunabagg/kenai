@@ -121,6 +121,10 @@ namespace sunaba::ui {
             float getStep() {
                 return slider->get_step();
             }
+
+            void setStep(float value) {
+                slider->set_step(value);
+            }
     };
 }
 
