@@ -134,6 +134,10 @@ namespace sunaba::ui {
             std::string getSuffix() const {
                 return spinBox->get_suffix().utf8().get_data();
             }
+
+            void setSuffix(const std::string& suffix) {
+                spinBox->set_suffix(String(suffix.c_str()));
+            }
     };
 }
 
