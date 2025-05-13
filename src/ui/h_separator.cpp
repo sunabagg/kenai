@@ -90,7 +90,7 @@ namespace sunaba::ui {
 
     String HSeparatorProxy::_get_tooltip(const Vector2 &at_position) const {
         if (element != nullptr) {
-            return element->getTooltip(at_position);
+            return element->_getTooltip(at_position).c_str();
         }
         return String();
     }
