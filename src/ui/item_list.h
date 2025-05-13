@@ -435,9 +435,9 @@ namespace sunaba::ui {
                 return result;
             }
 
-            //VScrollBar* getVScrollBar() {
-            //    return new VScrollBar(item_list->get_v_scroll_bar());
-            //}
+            VScrollBar* getVScrollBar() {
+                return new VScrollBar(item_list->get_v_scroll_bar());
+            }
 
             bool isAnythingSelected() {
                 return item_list->is_anything_selected();
