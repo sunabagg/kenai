@@ -54,6 +54,16 @@ namespace sunaba::ui {
             RangeNode* range = nullptr; // Pointer to the Range instance
             void connectRangeSignals() {
                 // Connect signals specific to Range
+                SignalFunc changedFunc =
+                [this](std::vector<Variant> av) {
+                    Array args;
+                    for (int i = 0; i < av.size(); ++i) {
+                        args.push_back(av[i]);
+                    }
+                    if (changedEvent != nullptr) {
+                        changedEvent->call(args);
+                    }
+                };
             }
 
         public:
