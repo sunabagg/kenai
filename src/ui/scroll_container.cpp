@@ -137,6 +137,7 @@ namespace sunaba::ui {
             "drawFocusBorder", sol::property(&ScrollContainer::getDrawFocusBorder, &ScrollContainer::setDrawFocusBorder),
             "followFocus", sol::property(&ScrollContainer::isFollowingFocus, &ScrollContainer::setFollowFocus),
             "horizontalScrollMode", sol::property(&ScrollContainer::getHorizontalScrollMode, &ScrollContainer::setHorizontalScrollMode),
+            "scrollDeadzone", sol::property(&ScrollContainer::getScrollDeadzone, &ScrollContainer::setScrollDeadzone),
         );
     }
 }
