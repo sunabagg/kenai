@@ -89,6 +89,7 @@ namespace sunaba::ui {
                     return Variant();
                 };
                 Callable itemSelectedCallable = to_callable(itemSelectedFunc);
+                optionButton->connect("item_selected", itemSelectedCallable);
             }
 
         public:
