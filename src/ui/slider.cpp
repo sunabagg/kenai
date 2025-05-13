@@ -123,7 +123,8 @@ namespace sunaba::ui {
 
     void bindSlider(sol::state& lua) {
         lua.new_usertype<Slider>("Slider",
-            sol::constructors<Slider()>()
+            sol::constructors<Slider()>(),
+            sol::base_classes, sol::bases<BaseObject, Element, sunaba::core::CanvasItem, Control, Range>(),
         );
     }
 }
