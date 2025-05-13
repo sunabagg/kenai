@@ -135,6 +135,7 @@ namespace sunaba::ui {
             "dragStarted", sol::property(&Slider::getDragStartedEvent, &Slider::setDragStartedEvent),
             "cast", [] (Element* element) {
                 SliderNode* slider = Object::cast_to<SliderNode>(element->getNode());
+                return new Slider(slider);
             }
         );
     }
