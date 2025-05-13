@@ -10,6 +10,8 @@
 #include "container.h"
 #include "../core/stl_function_wrapper.h"
 #include "../core/event.h"
+#include "h_scroll_bar.h"
+#include "v_scroll_bar.h"
 
 using namespace godot;
 using namespace sunaba::core;
@@ -184,6 +186,8 @@ namespace sunaba::ui {
             void ensureControlVisible(Control* control) {
                 scrollContainer->ensure_control_visible(control->getControl());
             }
+
+
     };
 }
 
