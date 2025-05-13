@@ -57,7 +57,17 @@ namespace sunaba::ui {
             ScrollContainerNode* scrollContainer = nullptr; // Pointer to the ScrollContainer instance
 
             void connectScrollContainerSignals() {
-                // Connect signals specific to ScrollContainer
+                SignalFunc scrollEndedFunc =
+                [this](std::vector<Variant> av) {
+                    Array args;
+                    for (int i = 0; i < av.size(); ++i) {
+                        args.append(av[i]);
+                    }
+                    if (this->scrollEndedEvent != nullptr) {
+                        this->scrollEndedEvent->emit(args);
+                    }
+                    return Variant();
+                };
             }
 
         public:
