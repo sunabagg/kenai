@@ -137,6 +137,12 @@ namespace sunaba::ui {
             bool getTicksOnBorders() {
                 return slider->get_ticks_on_borders();
             }
+
+            void setTicksOnBorders(bool ticks_on_borders) {
+                slider->set_ticks_on_borders(ticks_on_borders);
+            }
+
+            Event* dragEndedEvent;
     };
 }
 
