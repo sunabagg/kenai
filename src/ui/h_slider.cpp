@@ -30,4 +30,10 @@ namespace sunaba::ui {
             element->physicsProcess(delta);
         }
     }
+
+    void HSliderProxy::_input(const Ref<InputEvent>& event) {
+        if (element != nullptr) {
+            element->input(event);
+        }
+    }
 }
