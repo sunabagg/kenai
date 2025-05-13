@@ -126,7 +126,7 @@ namespace sunaba::ui {
             }
 
             int getScrollHorizontal() {
-                return scrollContainer->get_scroll_horizontal();
+                return scrollContainer->get_h_scroll();
             }
     };
 }
