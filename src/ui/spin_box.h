@@ -98,6 +98,14 @@ namespace sunaba::ui {
             bool isEditable() const {
                 return spinBox->is_editable();
             }
+
+            void setEditable(bool editable) {
+                spinBox->set_editable(editable);
+            }
+
+            std::string getPrefix() const {
+                return spinBox->get_prefix().utf8().get_data();
+            }
     };
 }
 
