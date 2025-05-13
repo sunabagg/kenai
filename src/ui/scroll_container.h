@@ -172,6 +172,8 @@ namespace sunaba::ui {
             void setScrollEndedEvent(Event* event) {
                 scrollEndedEvent = event;
             }
+
+            Event* scrollStartedEvent;
     };
 }
 
