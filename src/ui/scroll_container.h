@@ -108,6 +108,10 @@ namespace sunaba::ui {
             void setFollowFocus(bool value) {
                 scrollContainer->set_follow_focus(value);
             }
+
+            int getHorizontalScrollMode() {
+                return scrollContainer->get_horizontal_scroll_mode();
+            }
     };
 }
 
