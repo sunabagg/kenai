@@ -97,6 +97,10 @@ namespace sunaba::ui {
             bool isEditable() {
                 return slider->is_editable();
             }
+
+            void setEditable(bool editable) {
+                slider->set_editable(editable);
+            }
     };
 }
 
