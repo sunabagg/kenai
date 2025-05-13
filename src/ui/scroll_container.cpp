@@ -134,6 +134,7 @@ namespace sunaba::ui {
             sol::constructors<ScrollContainer()>(),
             sol::base_classes, sol::bases<BaseObject, Element, sunaba::core::CanvasItem, Control, Container>(),
             "clipContents", sol::property(&ScrollContainer::isClippingContents, &ScrollContainer::setClipContents),
+            "drawFocusBorder", sol::property(&ScrollContainer::getDrawFocusBorder, &ScrollContainer::setDrawFocusBorder),
         );
     }
 }
