@@ -109,6 +109,10 @@ namespace sunaba::ui {
             void setFocusMode(int mode) {
                 slider->set_focus_mode(static_cast<ControlNode::FocusMode>(mode));
             }
+
+            bool getScrollable() {
+                return slider->is_scrollable();
+            }
     };
 }
 
