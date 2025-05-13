@@ -138,6 +138,10 @@ namespace sunaba::ui {
             void setSuffix(const std::string& suffix) {
                 spinBox->set_suffix(String(suffix.c_str()));
             }
+
+            bool getUpdateOnTextChanged() const {
+                return spinBox->is_update_on_text_changed();
+            }
     };
 }
 
