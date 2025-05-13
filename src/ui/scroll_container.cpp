@@ -148,6 +148,8 @@ namespace sunaba::ui {
             "ensureControlVisible", &ScrollContainer::ensureControlVisible,
             "getHScrollBar", &ScrollContainer::getHScrollBar,
             "getVScrollBar", &ScrollContainer::getVScrollBar,
+            "cast", [] (Element* element) {
+            }
         );
     }
 }
