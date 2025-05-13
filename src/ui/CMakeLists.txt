@@ -89,6 +89,7 @@ target_sources(${PROJECT_NAME} PRIVATE
         h_slider.cpp
         v_slider.h
         v_slider.cpp
+        spin_box.h
 )
 
 target_include_directories( ${PROJECT_NAME}
