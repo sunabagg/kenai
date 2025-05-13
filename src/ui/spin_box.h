@@ -110,6 +110,10 @@ namespace sunaba::ui {
             void setPrefix(const std::string& prefix) {
                 spinBox->set_prefix(String(prefix.c_str()));
             }
+
+            bool selectAllOnFocus() const {
+                return spinBox->is_select_all_on_focus();
+            }
     };
 }
 
