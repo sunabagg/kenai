@@ -87,4 +87,11 @@ namespace sunaba::ui {
         }
         return Vector2();
     }
+
+    String HSeparatorProxy::_get_tooltip(const Vector2 &at_position) const {
+        if (element != nullptr) {
+            return element->getTooltip(at_position);
+        }
+        return String();
+    }
 }
