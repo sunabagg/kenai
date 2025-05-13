@@ -132,7 +132,7 @@ namespace sunaba::ui {
             "selectAllOnFocus", sol::property(&SpinBox::isSelectAllOnFocus, &SpinBox::setSelectAllOnFocus),
             "step", sol::property(&SpinBox::getStep, &SpinBox::setStep),
             "suffix", sol::property(&SpinBox::getSuffix, &SpinBox::setSuffix),
-            "updateOnTextChanged", sol::property(&SpinBox::isUpdateOnTextChanged, &SpinBox::setUpdateOnTextChanged),
+            "updateOnTextChanged", sol::property(&SpinBox::getUpdateOnTextChanged, &SpinBox::setUpdateOnTextChanged),
         );
     }
 }
