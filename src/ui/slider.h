@@ -101,6 +101,10 @@ namespace sunaba::ui {
             void setEditable(bool editable) {
                 slider->set_editable(editable);
             }
+
+            int getFocusMode() {
+                return slider->get_focus_mode();
+            }
     };
 }
 
