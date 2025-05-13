@@ -18,4 +18,10 @@ namespace sunaba::ui {
             element->ready();
         }
     }
+
+    void SliderProxy::_process(double delta) {
+        if (element != nullptr) {
+            element->process(delta);
+        }
+    }
 }
