@@ -138,6 +138,7 @@ namespace sunaba::ui {
             "followFocus", sol::property(&ScrollContainer::isFollowingFocus, &ScrollContainer::setFollowFocus),
             "horizontalScrollMode", sol::property(&ScrollContainer::getHorizontalScrollMode, &ScrollContainer::setHorizontalScrollMode),
             "scrollDeadzone", sol::property(&ScrollContainer::getScrollDeadzone, &ScrollContainer::setScrollDeadzone),
+            "scrollHorizontal", sol::property(&ScrollContainer::getScrollHorizontal, &ScrollContainer::setScrollHorizontal),
         );
     }
 }
