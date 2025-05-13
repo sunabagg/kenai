@@ -90,4 +90,12 @@ namespace sunaba::ui
         }
         return false;
     }
+
+    void SeparatorProxy::_drop_data(const Vector2 &at_position, const Variant &data)
+    {
+        if (element != nullptr)
+        {
+            element->dropData(at_position, data);
+        }
+    }
 } // namespace sunaba::ui
