@@ -114,4 +114,11 @@ namespace sunaba::ui {
         }
         return TypedArray<Vector3i>();
     }
+
+    void bindVSeparator(sol::state& lua) {
+        lua.new_usertype<VSeparator>("VSeparator",
+            sol::constructors<VSeparator()>(),
+            sol::base_classes, sol::bases<BaseObject, Element, sunaba::core::CanvasItem, Control, Separator>(),
+        );
+    }
 }
