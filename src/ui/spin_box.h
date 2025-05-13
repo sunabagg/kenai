@@ -130,6 +130,10 @@ namespace sunaba::ui {
             void setStep(float step) {
                 spinBox->set_step(step);
             }
+
+            std::string getSuffix() const {
+                return spinBox->get_suffix().utf8().get_data();
+            }
     };
 }
 
