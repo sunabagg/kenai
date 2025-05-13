@@ -96,6 +96,10 @@ namespace sunaba::ui {
             bool getDrawFocusBorder() {
                 return scrollContainer->get_draw_focus_border();
             }
+            
+            void setDrawFocusBorder(bool value) {
+                scrollContainer->set_draw_focus_border(value);
+            }
     };
 }
 
