@@ -133,6 +133,7 @@ namespace sunaba::ui {
         lua.new_usertype<ScrollContainer>("ScrollContainer",
             sol::constructors<ScrollContainer()>(),
             sol::base_classes, sol::bases<BaseObject, Element, sunaba::core::CanvasItem, Control, Container>(),
+            "clipContents", sol::property(&ScrollContainer::isClippingContents, &ScrollContainer::setClipContents),
         );
     }
 }
