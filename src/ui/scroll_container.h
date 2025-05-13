@@ -100,6 +100,10 @@ namespace sunaba::ui {
             void setDrawFocusBorder(bool value) {
                 scrollContainer->set_draw_focus_border(value);
             }
+
+            bool isFollowingFocus() {
+                return scrollContainer->is_following_focus();
+            }
     };
 }
 
