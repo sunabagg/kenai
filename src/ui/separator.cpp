@@ -41,4 +41,12 @@ namespace sunaba::ui
             element->physicsProcess(delta);
         }
     }
+
+    void SeparatorProxy::_input(const Ref<InputEvent>& event)
+    {
+        if (element != nullptr)
+        {
+            element->input(event);
+        }
+    }
 } // namespace sunaba::ui
