@@ -114,4 +114,7 @@ namespace sunaba::ui {
         }
         return TypedArray<Vector3i>();
     }
+
+    void bindHSeparator(sol::state& lua) {
+    }
 }
