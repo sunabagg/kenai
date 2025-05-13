@@ -90,6 +90,10 @@ namespace sunaba::ui {
             float getCustomArrowStep() const {
                 return spinBox->get_custom_arrow_step();
             }
+
+            void setCustomArrowStep(float step) {
+                spinBox->set_custom_arrow_step(step);
+            }
     };
 }
 
