@@ -70,6 +70,17 @@ namespace sunaba::ui {
                 };
                 Callable scrollEndedCallable = StlFunctionWrapper::create_callable_from_cpp_function(scrollEndedFunc);
                 scrollContainer->connect("scroll_ended", scrollEndedCallable);
+                SignalFunc scrollStartedFunc =
+                [this](std::vector<Variant> av) {
+                    Array args;
+                    for (int i = 0; i < av.size(); ++i) {
+                        args.append(av[i]);
+                    }
+                    if (this->scrollStartedEvent != nullptr) {
+                        this->scrollStartedEvent->emit(args);
+                    }
+                    return Variant();
+                };
             }
 
         public:
