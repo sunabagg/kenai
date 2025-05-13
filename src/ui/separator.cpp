@@ -9,4 +9,12 @@ namespace sunaba::ui
             element->enterTree();
         }
     }
+
+    void SeparatorProxy::_exit_tree()
+    {
+        if (element != nullptr)
+        {
+            element->exitTree();
+        }
+    }
 } // namespace sunaba::ui
