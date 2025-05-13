@@ -114,4 +114,21 @@ namespace sunaba::ui {
         }
         return TypedArray<Vector3i>();
     }
+
+    void VSliderProxy::_value_changed(double value) {
+        if (element != nullptr) {
+            element->valueChanged(value);
+        }
+    }
+
+    void bindVSlider(sol::state& lua) {
+        lua.new_usertype<VSlider>("VSlider",
+            sol::constructors<VSlider()>(),
+            sol::base_classes, sol::bases<BaseObject, Element, sunaba::core::CanvasItem, Control, Range, Slider>(),
+            "cast", [] (Element* element) {
+                VSliderNode* vSlider = Object::cast_to<VSliderNode>(element->getNode());
+                return new VSlider(vSlider);
+            }
+        );
+    }
 }
