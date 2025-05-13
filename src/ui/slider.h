@@ -125,6 +125,10 @@ namespace sunaba::ui {
             void setStep(float value) {
                 slider->set_step(value);
             }
+
+            int getTickCount() {
+                return slider->get_ticks();
+            }
     };
 }
 
