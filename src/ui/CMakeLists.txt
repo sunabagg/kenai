@@ -76,6 +76,7 @@ target_sources(${PROJECT_NAME} PRIVATE
         v_scroll_bar.h
         v_scroll_bar.cpp
         scroll_container.h
+        scroll_container.cpp
 )
 
 target_include_directories( ${PROJECT_NAME}
