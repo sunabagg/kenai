@@ -82,6 +82,10 @@ namespace sunaba::ui {
             int getAlignment() const {
                 return spinBox->get_horizontal_alignment();
             }
+
+            void setAlignment(int alignment) {
+                spinBox->set_horizontal_alignment(alignment);
+            }
     };
 }
 
