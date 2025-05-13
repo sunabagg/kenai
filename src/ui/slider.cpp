@@ -120,4 +120,10 @@ namespace sunaba::ui {
             element->valueChanged(value);
         }
     }
+
+    void bindSlider(sol::state& lua) {
+        lua.new_usertype<Slider>("Slider",
+            sol::constructors<Slider()>()
+        );
+    }
 }
