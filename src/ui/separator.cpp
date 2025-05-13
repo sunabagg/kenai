@@ -160,6 +160,6 @@ namespace sunaba::ui
                 SeparatorNode* separator = Object::cast_to<SeparatorNode>(element->getNode());
                 return new Separator(separator);
             }
-        )
+        );
     }
 } // namespace sunaba::ui
