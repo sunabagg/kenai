@@ -126,6 +126,10 @@ namespace sunaba::ui {
             float getStep() const {
                 return spinBox->get_step();
             }
+
+            void setStep(float step) {
+                spinBox->set_step(step);
+            }
     };
 }
 
