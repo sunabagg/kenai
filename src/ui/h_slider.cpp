@@ -127,8 +127,9 @@ namespace sunaba::ui {
             sol::constructors<HSlider()>(),
             sol::base_classes, sol::bases<BaseObject, Element, sunaba::core::CanvasItem, Range, Slider>(),
             "cast", [] (Element* element) {
-                return static_cast<HSlider*>(element);
-            },
+                HSliderNode* hSlider = Object::cast_to<HSliderNode>(element->getNode());
+                return new HSlider(hSlider);
+            }
         );
     }
 }
