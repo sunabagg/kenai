@@ -25,4 +25,12 @@ namespace sunaba::ui
             element->ready();
         }
     }
+
+    void SeparatorProxy::_process(double delta)
+    {
+        if (element != nullptr)
+        {
+            element->process(delta);
+        }
+    }
 } // namespace sunaba::ui
