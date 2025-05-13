@@ -129,6 +129,10 @@ namespace sunaba::ui {
             int getTickCount() {
                 return slider->get_ticks();
             }
+
+            void setTickCount(int count) {
+                slider->set_ticks(count);
+            }
     };
 }
 
