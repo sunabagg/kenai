@@ -133,6 +133,10 @@ namespace sunaba::ui {
             void setTickCount(int count) {
                 slider->set_ticks(count);
             }
+
+            bool getTicksOnBorders() {
+                return slider->is_ticks_on_borders();
+            }
     };
 }
 
