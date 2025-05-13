@@ -128,6 +128,7 @@ namespace sunaba::ui {
             "alignment", sol::property(&SpinBox::getAlignment, &SpinBox::setAlignment),
             "customArrowStep", sol::property(&SpinBox::getCustomArrowStep, &SpinBox::setCustomArrowStep),
             "editable", sol::property(&SpinBox::isEditable, &SpinBox::setEditable),
+            "prefix", sol::property(&SpinBox::getPrefix, &SpinBox::setPrefix),
         );
     }
 }
