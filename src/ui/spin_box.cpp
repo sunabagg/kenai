@@ -129,7 +129,7 @@ namespace sunaba::ui {
             "customArrowStep", sol::property(&SpinBox::getCustomArrowStep, &SpinBox::setCustomArrowStep),
             "editable", sol::property(&SpinBox::isEditable, &SpinBox::setEditable),
             "prefix", sol::property(&SpinBox::getPrefix, &SpinBox::setPrefix),
-            "selectOnFocus", sol::property(&SpinBox::isSelectOnFocus, &SpinBox::setSelectOnFocus),
+            "selectAllOnFocus", sol::property(&SpinBox::isSelectAllOnFocus, &SpinBox::setSelectAllOnFocus),
         );
     }
 }
