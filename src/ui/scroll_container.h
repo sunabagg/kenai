@@ -84,6 +84,10 @@ namespace sunaba::ui {
                 connectScrollContainerSignals();
                 setContainer(p_node);
             }
+
+            bool isClippingContents() {
+                return scrollContainer->is_clipping_contents();
+            }
     };
 }
 
