@@ -122,7 +122,8 @@ namespace sunaba::ui {
     }
 
     void bindSpinBox(sol::state &lua) {
-        lua.new_usertype<SpinBox>("SpinBox"
+        lua.new_usertype<SpinBox>("SpinBox",
+            sol::constructors<SpinBox()>(),
         );
     }
 }
