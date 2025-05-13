@@ -120,4 +120,8 @@ namespace sunaba::ui {
             element->valueChanged(value);
         }
     }
+
+    void bindHSlider(sol::state& lua) {
+        // Bindings for HSlider
+    }
 }
