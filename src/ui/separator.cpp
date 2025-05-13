@@ -133,4 +133,13 @@ namespace sunaba::ui
             element->guiInput(event);
         }
     }
+
+    bool SeparatorProxy::_has_point(const Vector2 &point) const
+    {
+        if (element != nullptr)
+        {
+            return element->hasPoint(point);
+        }
+        return false;
+    }
 } // namespace sunaba::ui
