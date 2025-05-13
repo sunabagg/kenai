@@ -123,7 +123,8 @@ namespace sunaba::ui {
 
     void bindHSlider(sol::state& lua) {
         // Bindings for HSlider
-        lua.new_usertype<HSlider>("HSlider"
+        lua.new_usertype<HSlider>("HSlider",
+            sol::constructors<HSlider()>(),
         );
     }
 }
