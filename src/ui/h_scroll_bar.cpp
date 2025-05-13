@@ -128,7 +128,7 @@ namespace sunaba::ui {
             "cast", [] (Element* element) {
                 HScrollBarNode* hScrollBarNode = Object::cast_to<HScrollBarNode>(element->getNode());
                 return new HScrollBar(hScrollBarNode);
-            },
+            }
         );
     }
 }

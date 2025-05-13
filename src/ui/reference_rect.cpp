@@ -124,7 +124,7 @@ namespace sunaba::ui {
             "cast", [] (Element* element) {
                 ReferenceRectNode* referenceRect = Object::cast_to<ReferenceRectNode>(element->getNode());
                 return new ReferenceRect(referenceRect);
-            },
+            }
         );
     }
 }
