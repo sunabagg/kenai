@@ -11,6 +11,7 @@
 #include "../core/stl_function_wrapper.h"
 #include "../core/event.h"
 #include "../core/texture2d.h"
+#include "../desktop/popup_menu.h"
 
 using namespace godot;
 using namespace sunaba::core;
@@ -62,7 +63,62 @@ namespace sunaba::ui {
             LineEditNode* line_edit_node = nullptr;
 
             void connectLineEditSignals() {
-                // Connect signals specific to LineEdit
+                std::function<Variant(std::vector<Variant>)> editingToggledFunc =
+                [this](std::vector<Variant> argsv) {
+                    Array args;
+                    for (int i = 0; i < argsv.size(); i++)
+                    {
+                        args.append(argsv[i]);
+                    }
+                    if (this->editingToggledEvent != nullptr) {
+                        this->editingToggledEvent->emit(args);
+                    }
+                    return Variant();
+                };
+                Callable editingToggledCallable = StlFunctionWrapper::create_callable_from_cpp_function(editingToggledFunc);
+                line_edit_node->connect("editing_toggled", editingToggledCallable);
+                std::function<Variant(std::vector<Variant>)> textChangeRejectedFunc =
+                [this](std::vector<Variant> argsv) {
+                    Array args;
+                    for (int i = 0; i < argsv.size(); i++)
+                    {
+                        args.append(argsv[i]);
+                    }
+                    if (this->textChangeRejectedEvent != nullptr) {
+                        this->textChangeRejectedEvent->emit(args);
+                    }
+                    return Variant();
+                };
+                Callable textChangeRejectedCallable = StlFunctionWrapper::create_callable_from_cpp_function(textChangeRejectedFunc);
+                line_edit_node->connect("text_changed_rejected", textChangeRejectedCallable);
+                std::function<Variant(std::vector<Variant>)> textChangedFunc =
+                [this](std::vector<Variant> argsv) {
+                    Array args;
+                    for (int i = 0; i < argsv.size(); i++)
+                    {
+                        args.append(argsv[i]);
+                    }
+                    if (this->textChangedEvent != nullptr) {
+                        this->textChangedEvent->emit(args);
+                    }
+                    return Variant();
+                };
+                Callable textChangedCallable = StlFunctionWrapper::create_callable_from_cpp_function(textChangedFunc);
+                line_edit_node->connect("text_changed", textChangedCallable);
+                std::function<Variant(std::vector<Variant>)> textSubmittedFunc =
+                [this](std::vector<Variant> argsv) {
+                    Array args;
+                    for (int i = 0; i < argsv.size(); i++)
+                    {
+                        args.append(argsv[i]);
+                    }
+                    if (this->textSubmittedEvent != nullptr) {
+                        this->textSubmittedEvent->emit(args);
+                    }
+                    return Variant();
+                };
+                Callable textSubmittedCallable = StlFunctionWrapper::create_callable_from_cpp_function(textSubmittedFunc);
+                line_edit_node->connect("text_submitted", textSubmittedCallable);
             }
 
         public:
@@ -422,9 +478,9 @@ namespace sunaba::ui {
                 line_edit_node->edit();
             }
 
-            //PopupMenu* getMenu() {
-            //    return new PopupMenu(line_edit_node->get_menu());
-            //}
+            sunaba::desktop::PopupMenu* getMenu() {
+                return new sunaba::desktop::PopupMenu(line_edit_node->get_menu());
+            }
 
             float getScrollOffset() {
                 return line_edit_node->get_scroll_offset();

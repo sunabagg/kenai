@@ -164,7 +164,7 @@ namespace sunaba::ui {
             "deleteText", &LineEdit::deleteText,
             "deselect", &LineEdit::deselect,
             "edit", &LineEdit::edit,
-            //"getMenu", &LineEdit::getMenu,
+            "getMenu", &LineEdit::getMenu,
             "getScrollOffset", &LineEdit::getScrollOffset,
             "getSelectedText", &LineEdit::getSelectedText,
             "getSelectionFromColumn", &LineEdit::getSelectionFromColumn,
@@ -182,10 +182,7 @@ namespace sunaba::ui {
             "unedit", &LineEdit::unedit,
             "cast", [](Element* e) {
                 LineEditNode* control = Object::cast_to<LineEditNode>(e->getNode());
-                if (control != nullptr) {
-                    return new LineEdit(control);
-                }
-                return static_cast<LineEdit*>(nullptr);
+                return new LineEdit(control);
             }
         );
     }

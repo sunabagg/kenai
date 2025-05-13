@@ -139,10 +139,7 @@ namespace sunaba::ui {
             ),
             "cast", [](Element* element) {
                 CenterContainerNode* node = Object::cast_to<CenterContainerNode>(element->getNode());
-                if (node != nullptr) {
-                    return new CenterContainer(node);
-                }
-                return static_cast<CenterContainer*>(nullptr);
+                return new CenterContainer(node);
             }
         );
     }

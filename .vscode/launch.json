@@ -62,7 +62,8 @@
             "cwd": "${command:cmake.buildDirectory}/sunaba",
             "preLaunchTask": "CMake: build",
             "internalConsoleOptions": "openOnSessionStart",
-            "visualizerFile": "${workspaceFolder}/.vscode/godot.natvis"
+            "visualizerFile": "${workspaceFolder}/.vscode/godot.natvis",
+            "miDebuggerPath": "/usr/bin/lldb",
         }
 
     ]

@@ -149,10 +149,7 @@ namespace sunaba::ui {
             "getVisibleLineCount", &Label::getVisibleLineCount,
             "cast", [](Element* element) {
                 LabelNode* labelNode = Object::cast_to<LabelNode>(element->getNode());
-                if (labelNode != nullptr) {
-                    return new Label(labelNode);
-                }
-                return static_cast<Label*>(nullptr);
+                return new Label(labelNode);
             }
         );
     }

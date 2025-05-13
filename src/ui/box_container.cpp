@@ -151,10 +151,7 @@ namespace sunaba::ui {
             "addSpacer", &BoxContainer::addSpacer,
             "cast", [](Element* e) {
                 BoxContainerNode* box = Object::cast_to<BoxContainerNode>(e->getNode());
-                if (box != nullptr) {
-                    return new BoxContainer(box);
-                }
-                return static_cast<BoxContainer*>(nullptr);
+                return new BoxContainer(box);
             }
         );
     }

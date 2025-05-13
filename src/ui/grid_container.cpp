@@ -136,10 +136,7 @@ namespace sunaba::ui {
             "columns", sol::property(&GridContainer::getColumns, &GridContainer::setColumns),
             "cast", [](Element* element) {
                 GridContainerNode* node = Object::cast_to<GridContainerNode>(element->getNode());
-                if (node != nullptr) {
-                    return new GridContainer(node);
-                }
-                return static_cast<GridContainer*>(nullptr);
+                return new GridContainer(node);
             }
         );
     }

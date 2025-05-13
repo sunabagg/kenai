@@ -208,10 +208,7 @@ namespace sunaba::ui {
             "setPressedNoEvent", &BaseButton::setPressedNoEvent,
             "cast", [](Element* e) {
                 BaseButtonNode* base_button = Object::cast_to<BaseButtonNode>(e->getNode());
-                if (base_button == nullptr) {
-                    return new BaseButton(base_button);
-                }
-                return static_cast<BaseButton*>(nullptr);
+                return new BaseButton(base_button);
             }
         );
     }

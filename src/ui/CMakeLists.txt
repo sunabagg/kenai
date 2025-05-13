@@ -47,6 +47,42 @@ target_sources(${PROJECT_NAME} PRIVATE
         label.cpp
         line_edit.h
         line_edit.cpp
+        link_button.h
+        link_button.cpp
+        margin_container.h
+        margin_container.cpp
+        menu_bar.h
+        menu_bar.cpp
+        menu_button.h
+        menu_button.cpp
+        nine_patch_rect.h
+        nine_patch_rect.cpp
+        option_button.h
+        option_button.cpp
+        panel.h 
+        panel.cpp
+        panel_container.h
+        panel_container.cpp
+        range.h
+        range.cpp
+        progress_bar.h
+        progress_bar.cpp
+        reference_rect.h
+        reference_rect.cpp
+        scroll_bar.h
+        scroll_bar.cpp
+        h_scroll_bar.h
+        h_scroll_bar.cpp
+        v_scroll_bar.h
+        v_scroll_bar.cpp
+        scroll_container.h
+        scroll_container.cpp
+        separator.h
+        separator.cpp
+        h_separator.h
+        h_separator.cpp
+        v_separator.h
+        v_separator.cpp
 )
 
 target_include_directories( ${PROJECT_NAME}

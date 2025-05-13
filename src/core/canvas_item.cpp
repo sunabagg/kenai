@@ -212,10 +212,7 @@ namespace sunaba::core {
             "show", &CanvasItem::show,
             "cast", [](Element* e) {
                 CanvasItemNode* canvas_item = Object::cast_to<CanvasItemNode>(e->getNode());
-                if (canvas_item == nullptr) {
-                    return new CanvasItem(canvas_item);
-                }
-                return static_cast<CanvasItem*>(nullptr);
+                return new CanvasItem(canvas_item);
             }
         );
     }

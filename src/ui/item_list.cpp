@@ -187,10 +187,7 @@ namespace sunaba::ui {
             "sortItemsByText", &ItemList::sortItemsByText,
             "cast", [](Element* element) {
                 ItemListNode* node = Object::cast_to<ItemListNode>(element->getNode());
-                if (node != nullptr) {
-                    return new ItemList(node);
-                }
-                return static_cast<ItemList*>(nullptr);
+                return new ItemList(node);
             }
         );
     }
