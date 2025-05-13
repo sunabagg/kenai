@@ -63,6 +63,7 @@ namespace sunaba::ui {
                     if (changedEvent != nullptr) {
                         changedEvent->emit(args);
                     }
+                    return Variant();
                 };
             }
 
