@@ -146,6 +146,10 @@ namespace sunaba::ui {
             void setUpdateOnTextChanged(bool update) {
                 spinBox->set_update_on_text_changed(update);
             }
+
+            void apply() {
+                spinBox->apply();
+            }
     };
 }
 
