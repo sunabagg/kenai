@@ -113,6 +113,10 @@ namespace sunaba::ui {
             bool getScrollable() {
                 return slider->is_scrollable();
             }
+
+            void setScrollable(bool scrollable) {
+                slider->set_scrollable(scrollable);
+            }
     };
 }
 
