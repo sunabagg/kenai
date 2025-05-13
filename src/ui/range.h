@@ -79,6 +79,7 @@ namespace sunaba::ui {
                     return Variant();
                 };
                 Callable valueChangedCallable = to_callable(valueChangedFunc);
+                range->connect("value_changed", valueChangedCallable);
             }
 
         public:
