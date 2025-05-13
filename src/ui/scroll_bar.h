@@ -66,6 +66,7 @@ namespace sunaba::ui {
                     return Variant();
                 };
                 Callable scrollingCallable = StlFunctionWrapper::create_callable_from_cpp_function(scrollingFunc);
+                scrollBar->connect("scrolling", scrollingCallable);
             }
 
         public:
