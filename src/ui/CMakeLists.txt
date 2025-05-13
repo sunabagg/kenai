@@ -81,6 +81,7 @@ target_sources(${PROJECT_NAME} PRIVATE
         separator.cpp
         h_separator.h
         h_separator.cpp
+        v_separator.h
 )
 
 target_include_directories( ${PROJECT_NAME}
