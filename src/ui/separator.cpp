@@ -65,4 +65,12 @@ namespace sunaba::ui
             element->unhandledKeyInput(event);
         }
     }
+
+    void SeparatorProxy::_shortcut_input(const Ref<InputEvent>& event)
+    {
+        if (element != nullptr)
+        {
+            element->shortcutInput(event);
+        }
+    }
 } // namespace sunaba::ui
