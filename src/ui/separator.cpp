@@ -153,6 +153,8 @@ namespace sunaba::ui
     }
 
     void bindSeparator(sol::state& lua) {
-        
+        lua.new_usertype<Separator>("Separator",
+            sol::constructors<Separator()>(),
+        )
     }
 } // namespace sunaba::ui
