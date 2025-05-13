@@ -116,6 +116,10 @@ namespace sunaba::ui {
                 return spinBox->is_select_all_on_focus();
             }
 
+            void setSelectAllOnFocus(bool select) {
+                spinBox->set_select_all_on_focus(select);
+            }
+
             int getSizeFlagsVertical() const {
                 return spinBox->get_v_size_flags();
             }
