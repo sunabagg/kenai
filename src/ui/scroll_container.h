@@ -180,6 +180,10 @@ namespace sunaba::ui {
             void setScrollStartedEvent(Event* event) {
                 scrollStartedEvent = event;
             }
+
+            void ensureControlVisible(Control* control) {
+                scrollContainer->ensure_control_visible(control->getControl());
+            }
     };
 }
 
