@@ -132,6 +132,10 @@ namespace sunaba::ui {
             void setScrollHorizontal(int value) {
                 scrollContainer->set_h_scroll(value);
             }
+
+            float getScrollHorizontalCustomStep() {
+                return scrollContainer->get_horizontal_custom_step();
+            }
     };
 }
 
