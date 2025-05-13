@@ -88,6 +88,7 @@ namespace sunaba::ui {
                     }
                     return Variant();
                 };
+                Callable itemSelectedCallable = to_callable(itemSelectedFunc);
             }
 
         public:
