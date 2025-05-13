@@ -114,4 +114,10 @@ namespace sunaba::ui {
         }
         return TypedArray<Vector3i>();
     }
+
+    void SliderProxy::_value_changed(double value) {
+        if (element != nullptr) {
+            element->valueChanged(value);
+        }
+    }
 }
