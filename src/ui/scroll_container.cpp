@@ -147,6 +147,7 @@ namespace sunaba::ui {
             "scrollStarted", sol::property(&ScrollContainer::getScrollStartedEvent, &ScrollContainer::setScrollStartedEvent),
             "ensureControlVisible", &ScrollContainer::ensureControlVisible,
             "getHScrollBar", &ScrollContainer::getHScrollBar,
+            "getVScrollBar", &ScrollContainer::getVScrollBar,
         );
     }
 }
