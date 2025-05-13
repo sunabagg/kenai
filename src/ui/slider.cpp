@@ -126,6 +126,7 @@ namespace sunaba::ui {
             sol::constructors<Slider()>(),
             sol::base_classes, sol::bases<BaseObject, Element, sunaba::core::CanvasItem, Control, Range>(),
             "editable", sol::property(&Slider::isEditable, &Slider::setEditable),
+            "focusMode", sol::property(&Slider::getFocusMode, &Slider::setFocusMode),
         );
     }
 }
