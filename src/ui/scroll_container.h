@@ -116,6 +116,10 @@ namespace sunaba::ui {
             void setHorizontalScrollMode(int mode) {
                 scrollContainer->set_horizontal_scroll_mode(static_cast<godot::ScrollContainer::ScrollMode>(mode));
             }
+
+            int getScrollDeadzone() {
+                return scrollContainer->get_deadzone();
+            }
     };
 }
 
