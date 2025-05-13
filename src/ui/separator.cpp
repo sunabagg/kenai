@@ -33,4 +33,12 @@ namespace sunaba::ui
             element->process(delta);
         }
     }
+
+    void SeparatorProxy::_physics_process(double delta)
+    {
+        if (element != nullptr)
+        {
+            element->physicsProcess(delta);
+        }
+    }
 } // namespace sunaba::ui
