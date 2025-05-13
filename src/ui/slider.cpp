@@ -128,6 +128,7 @@ namespace sunaba::ui {
             "editable", sol::property(&Slider::isEditable, &Slider::setEditable),
             "focusMode", sol::property(&Slider::getFocusMode, &Slider::setFocusMode),
             "scrollable", sol::property(&Slider::getScrollable, &Slider::setScrollable),
+            "step", sol::property(&Slider::getStep, &Slider::setStep),
         );
     }
 }
