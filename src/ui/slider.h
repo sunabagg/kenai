@@ -90,6 +90,7 @@ namespace sunaba::ui {
                     return Variant();
                 };
                 Callable dragStartedCallable = StlFunctionWrapper::create_callable_from_cpp_function(dragStartedFunc);
+                this->slider->connect("drag_started", dragStartedCallable);
             }
 
         public:
