@@ -36,4 +36,10 @@ namespace sunaba::ui {
             element->input(event);
         }
     }
+
+    void VSeparatorProxy::_unhandled_input(const Ref<InputEvent>& event) {
+        if (element != nullptr) {
+            element->unhandledInput(event);
+        }
+    }
 }
