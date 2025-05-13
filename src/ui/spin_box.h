@@ -94,6 +94,10 @@ namespace sunaba::ui {
             void setCustomArrowStep(float step) {
                 spinBox->set_custom_arrow_step(step);
             }
+
+            bool isEditable() const {
+                return spinBox->is_editable();
+            }
     };
 }
 
