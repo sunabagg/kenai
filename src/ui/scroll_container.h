@@ -166,6 +166,9 @@ namespace sunaba::ui {
             }
 
             Event* scrollEndedEvent;
+            Event* getScrollEndedEvent() {
+                return scrollEndedEvent;
+            }
     };
 }
 
