@@ -105,6 +105,10 @@ namespace sunaba::ui {
             int getFocusMode() {
                 return slider->get_focus_mode();
             }
+
+            void setFocusMode(int mode) {
+                slider->set_focus_mode(static_cast<ControlNode::FocusMode>(mode));
+            }
     };
 }
 
