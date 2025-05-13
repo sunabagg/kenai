@@ -133,6 +133,7 @@ namespace sunaba::ui {
             "step", sol::property(&SpinBox::getStep, &SpinBox::setStep),
             "suffix", sol::property(&SpinBox::getSuffix, &SpinBox::setSuffix),
             "updateOnTextChanged", sol::property(&SpinBox::getUpdateOnTextChanged, &SpinBox::setUpdateOnTextChanged),
+            "cast"
         );
     }
 }
