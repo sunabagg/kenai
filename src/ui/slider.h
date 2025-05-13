@@ -65,6 +65,17 @@ namespace sunaba::ui {
             SliderNode* slider = nullptr; // Pointer to the Slider instance
             void connectSliderSignals() {
                 // Connect signals specific to Slider
+                std::function<Variant(std::vector<Variant>)> dragEndedFunc =
+                [this](std::vector<Variant> av) {
+                    Array args;
+                    for (int i = 0; i < av.size(); ++i) {
+                        args.append(av[i]);
+                    }
+                    if (this->dragEndedEvent != nullptr) {
+                        this->dragEndedEvent->emit(args);
+                    }
+                    return Variant();
+                };
             }
 
         public:
