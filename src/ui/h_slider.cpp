@@ -125,6 +125,7 @@ namespace sunaba::ui {
         // Bindings for HSlider
         lua.new_usertype<HSlider>("HSlider",
             sol::constructors<HSlider()>(),
+            sol::base_classes, sol::bases<BaseObject, Element, sunaba::core::CanvasItem, Range, Slider>(),
         );
     }
 }
