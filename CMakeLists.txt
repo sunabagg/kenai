@@ -349,8 +349,6 @@ add_subdirectory( extern/sol2 )
 
 include_directories( ${CMAKE_SOURCE_DIR}/extern/hx-lua-simdjson/src )
 
-add_subdirectory( extern/quickjs )
-
 #add_library( hxsimdjson STATIC 
 #    extern/hx-lua-simdjson/src/hxluasimdjson.h
 #    extern/hx-lua-simdjson/src/hxluasimdjson.cpp
@@ -417,7 +415,6 @@ if (USE_LUAJIT)
             godot-cpp
             ${LUAJIT_LIBRARIES}
             sol2
-            qjs
             #hxsimdjson
             #Luau.Compiler Luau.VM
     )
@@ -432,7 +429,6 @@ else()
             godot-cpp
             liblua_static
             sol2
-            qjs
             #hxsimdjson
             #Luau.Compiler Luau.VM
     )
