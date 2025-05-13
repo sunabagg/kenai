@@ -140,7 +140,7 @@ namespace sunaba::ui {
             }
 
             bool getUpdateOnTextChanged() const {
-                return spinBox->is_update_on_text_changed();
+                return spinBox->get_update_on_text_changed();
             }
     };
 }
