@@ -86,6 +86,7 @@ target_sources(${PROJECT_NAME} PRIVATE
         slider.h
         slider.cpp
         h_slider.h
+        h_slider.cpp
 )
 
 target_include_directories( ${PROJECT_NAME}
