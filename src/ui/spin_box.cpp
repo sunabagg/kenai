@@ -135,6 +135,7 @@ namespace sunaba::ui {
             "updateOnTextChanged", sol::property(&SpinBox::getUpdateOnTextChanged, &SpinBox::setUpdateOnTextChanged),
             "cast", [] (Element* element) {
                 SpinBoxNode* spinBox = Object::cast_to<SpinBoxNode>(element->getNode());
+                return new SpinBox(spinBox);
             },
         );
     }
