@@ -116,5 +116,7 @@ namespace sunaba::ui {
     }
 
     void bindHSeparator(sol::state& lua) {
+        lua.new_usertype<HSeparator>("HSeparator",
+        );
     }
 }
