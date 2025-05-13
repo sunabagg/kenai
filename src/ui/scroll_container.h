@@ -187,7 +187,9 @@ namespace sunaba::ui {
                 scrollContainer->ensure_control_visible(control->getControl());
             }
 
-
+            HScrollBar* getHScrollBar() {
+                return new HScrollBar(scrollContainer->get_h_scroll_bar().ptr());
+            }
     };
 }
 
