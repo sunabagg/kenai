@@ -116,4 +116,13 @@ namespace sunaba::ui
         }
         return Vector2();
     }
+
+    String SeparatorProxy::_get_tooltip(const Vector2 &at_position) const
+    {
+        if (element != nullptr)
+        {
+            return element->_getTooltip(at_position).c_str();
+        }
+        return String();
+    }
 } // namespace sunaba::ui
