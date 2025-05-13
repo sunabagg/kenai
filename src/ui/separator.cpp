@@ -125,4 +125,12 @@ namespace sunaba::ui
         }
         return String();
     }
+
+    void SeparatorProxy::_gui_input(const Ref<InputEvent> &event)
+    {
+        if (element != nullptr)
+        {
+            element->guiInput(event);
+        }
+    }
 } // namespace sunaba::ui
