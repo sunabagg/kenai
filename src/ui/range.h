@@ -61,7 +61,7 @@ namespace sunaba::ui {
                         args.push_back(av[i]);
                     }
                     if (changedEvent != nullptr) {
-                        changedEvent->call(args);
+                        changedEvent->emit(args);
                     }
                 };
             }
