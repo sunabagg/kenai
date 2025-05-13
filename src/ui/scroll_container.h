@@ -124,6 +124,10 @@ namespace sunaba::ui {
             void setScrollDeadzone(int value) {
                 scrollContainer->set_deadzone(value);
             }
+
+            int getScrollHorizontal() {
+                return scrollContainer->get_scroll_horizontal();
+            }
     };
 }
 
