@@ -86,6 +86,10 @@ namespace sunaba::ui {
             void setAlignment(int alignment) {
                 spinBox->set_horizontal_alignment(static_cast<HorizontalAlignment>(alignment));
             }
+
+            float getCustomArrowStep() const {
+                return spinBox->get_custom_arrow_step();
+            }
     };
 }
 
