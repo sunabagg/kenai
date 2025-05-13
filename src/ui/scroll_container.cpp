@@ -136,6 +136,7 @@ namespace sunaba::ui {
             "clipContents", sol::property(&ScrollContainer::isClippingContents, &ScrollContainer::setClipContents),
             "drawFocusBorder", sol::property(&ScrollContainer::getDrawFocusBorder, &ScrollContainer::setDrawFocusBorder),
             "followFocus", sol::property(&ScrollContainer::isFollowingFocus, &ScrollContainer::setFollowFocus),
+            "horizontalScrollMode", sol::property(&ScrollContainer::getHorizontalScrollMode, &ScrollContainer::setHorizontalScrollMode),
         );
     }
 }
