@@ -75,6 +75,7 @@ namespace sunaba::ui {
                     }
                     return Variant();
                 };
+                Callable itemFocusedCallable = to_callable(itemFocusedFunc);
             }
 
         public:
