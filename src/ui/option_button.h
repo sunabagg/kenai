@@ -77,6 +77,17 @@ namespace sunaba::ui {
                 };
                 Callable itemFocusedCallable = to_callable(itemFocusedFunc);
                 optionButton->connect("item_focused", itemFocusedCallable);
+                SignalFunc itemSelectedFunc =
+                [this](std::vector<Variant> av) {
+                    Array args;
+                    for (int i = 0; i < av.size(); ++i) {
+                        args.append(av[i]);
+                    }
+                    if (this->itemSelectedEvent != nullptr) {
+                        this->itemSelectedEvent->emit(args);
+                    }
+                    return Variant();
+                };
             }
 
         public:
