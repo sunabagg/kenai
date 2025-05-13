@@ -65,6 +65,17 @@ namespace sunaba::ui {
 
             void connectNinePatchRectSignals() {
                 // Connect signals specific to NinePatchRect
+                SignalFunc textureChangedFunc =
+                [this](std::vector<Variant> av) {
+                    Array args;
+                    for (int i = 0; i < av.size(); ++i) {
+                        args.push_back(av[i]);
+                    }
+                    if (this->textureChangedEvent != nullptr) {
+                        this->textureChangedEvent->emit(args);
+                    }
+                    return Variant();
+                };
             }
 
         public:
