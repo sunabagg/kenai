@@ -164,6 +164,8 @@ namespace sunaba::ui {
             void setVerticalScrollMode(int mode) {
                 scrollContainer->set_vertical_scroll_mode(static_cast<godot::ScrollContainer::ScrollMode>(mode));
             }
+
+            Event* scrollEndedEvent;
     };
 }
 
