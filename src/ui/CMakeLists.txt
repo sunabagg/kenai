@@ -78,6 +78,7 @@ target_sources(${PROJECT_NAME} PRIVATE
         scroll_container.h
         scroll_container.cpp
         separator.h
+        separator.cpp
 )
 
 target_include_directories( ${PROJECT_NAME}
