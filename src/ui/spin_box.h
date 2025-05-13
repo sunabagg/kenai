@@ -8,6 +8,7 @@
 #define SpinBoxNode godot::SpinBox
 
 #include "range.h"
+#include "line_edit.h"
 
 using namespace godot;
 using namespace sunaba::core;
@@ -149,6 +150,10 @@ namespace sunaba::ui {
 
             void apply() {
                 spinBox->apply();
+            }
+
+            LineEdit* getLineEdit() {
+                return new LineEdit(spinBox->get_line_edit());
             }
     };
 }
