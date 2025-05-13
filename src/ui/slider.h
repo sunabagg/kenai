@@ -93,6 +93,10 @@ namespace sunaba::ui {
                 connectSliderSignals();
                 setControl(node);
             }
+
+            bool isEditable() {
+                return slider->is_editable();
+            }
     };
 }
 
