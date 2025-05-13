@@ -130,6 +130,7 @@ namespace sunaba::ui {
             "editable", sol::property(&SpinBox::isEditable, &SpinBox::setEditable),
             "prefix", sol::property(&SpinBox::getPrefix, &SpinBox::setPrefix),
             "selectAllOnFocus", sol::property(&SpinBox::isSelectAllOnFocus, &SpinBox::setSelectAllOnFocus),
+            "step", sol::property(&SpinBox::getStep, &SpinBox::setStep),
         );
     }
 }
