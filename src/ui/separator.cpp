@@ -107,4 +107,13 @@ namespace sunaba::ui
         }
         return Variant();
     }
+
+    Vector2 SeparatorProxy::_get_minimum_size() const
+    {
+        if (element != nullptr)
+        {
+            return element->getMinimumSize();
+        }
+        return Vector2();
+    }
 } // namespace sunaba::ui
