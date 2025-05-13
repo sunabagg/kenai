@@ -136,7 +136,7 @@ namespace sunaba::ui {
             "cast", [] (Element* element) {
                 SpinBoxNode* spinBox = Object::cast_to<SpinBoxNode>(element->getNode());
                 return new SpinBox(spinBox);
-            },
+            }
         );
     }
 }
