@@ -145,6 +145,7 @@ namespace sunaba::ui {
             "verticalScrollMode", sol::property(&ScrollContainer::getVerticalScrollMode, &ScrollContainer::setVerticalScrollMode),
             "scrollEnded", sol::property(&ScrollContainer::getScrollEndedEvent, &ScrollContainer::setScrollEndedEvent),
             "scrollStarted", sol::property(&ScrollContainer::getScrollStartedEvent, &ScrollContainer::setScrollStartedEvent),
+            "ensureControlVisible", &ScrollContainer::ensureControlVisible,
         );
     }
 }
