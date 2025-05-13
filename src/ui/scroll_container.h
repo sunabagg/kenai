@@ -188,7 +188,7 @@ namespace sunaba::ui {
             }
 
             HScrollBar* getHScrollBar() {
-                return new HScrollBar(scrollContainer->get_h_scroll_bar().ptr());
+                return new HScrollBar(scrollContainer->get_h_scroll_bar());
             }
     };
 }
