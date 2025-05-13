@@ -54,6 +54,17 @@ namespace sunaba::ui {
 
             void connectScrollBarSignals() {
                 // Connect signals specific to ScrollBar
+                SignalFunc scrollingFunc =
+                [this](std::vector<Variant> av) {
+                    Array args;
+                    for (int i = 0; i < av.size(); ++i) {
+                        args.append(av[i]);
+                    }
+                    if (this->scrollingEvent != nullptr) {
+                        this->scrollingEvent->emit(args);
+                    }
+                    return Variant();
+                };
             }
 
         public:
