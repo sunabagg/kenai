@@ -122,6 +122,10 @@ namespace sunaba::ui {
             void setSizeFlagsVertical(int flags) {
                 spinBox->set_v_size_flags(static_cast<ControlNode::SizeFlags>(flags));
             }
+
+            float getStep() const {
+                return spinBox->get_step();
+            }
     };
 }
 
