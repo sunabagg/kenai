@@ -190,6 +190,10 @@ namespace sunaba::ui {
             HScrollBar* getHScrollBar() {
                 return new HScrollBar(scrollContainer->get_h_scroll_bar());
             }
+
+            VScrollBar* getVScrollBar() {
+                return new VScrollBar(scrollContainer->get_v_scroll_bar());
+            }
     };
 }
 
