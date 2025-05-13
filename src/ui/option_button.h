@@ -64,6 +64,17 @@ namespace sunaba::ui {
 
             void connectOptionButtonSignals() {
                 // Connect signals specific to OptionButton
+                SignalFunc itemFocusedFunc =
+                [this](std::vector<Variant> av) {
+                    Array args;
+                    for (int i = 0; i < av.size(); ++i) {
+                        args.append(av[i]);
+                    }
+                    if (this->itemFocusedEvent != nullptr) {
+                        this->itemFocusedEvent->emit(args);
+                    }
+                    return Variant();
+                };
             }
 
         public:
