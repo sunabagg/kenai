@@ -174,6 +174,9 @@ namespace sunaba::ui {
             }
 
             Event* scrollStartedEvent;
+            Event* getScrollStartedEvent() {
+                return scrollStartedEvent;
+            }
     };
 }
 
