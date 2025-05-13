@@ -116,7 +116,7 @@ namespace sunaba::ui {
             }
 
             int getSizeFlagsVertical() const {
-                return spinBox->get_size_flags_vertical();
+                return spinBox->get_v_size_flags();
             }
     };
 }
