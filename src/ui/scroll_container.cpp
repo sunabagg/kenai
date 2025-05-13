@@ -140,6 +140,7 @@ namespace sunaba::ui {
             "scrollDeadzone", sol::property(&ScrollContainer::getScrollDeadzone, &ScrollContainer::setScrollDeadzone),
             "scrollHorizontal", sol::property(&ScrollContainer::getScrollHorizontal, &ScrollContainer::setScrollHorizontal),
             "scrollHorizontalCustomStep", sol::property(&ScrollContainer::getScrollHorizontalCustomStep, &ScrollContainer::setScrollHorizontalCustomStep),
+            "scrollVertical", sol::property(&ScrollContainer::getScrollVertical, &ScrollContainer::setScrollVertical),
         );
     }
 }
