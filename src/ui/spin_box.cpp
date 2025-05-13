@@ -131,6 +131,7 @@ namespace sunaba::ui {
             "prefix", sol::property(&SpinBox::getPrefix, &SpinBox::setPrefix),
             "selectAllOnFocus", sol::property(&SpinBox::isSelectAllOnFocus, &SpinBox::setSelectAllOnFocus),
             "step", sol::property(&SpinBox::getStep, &SpinBox::setStep),
+            "suffix", sol::property(&SpinBox::getSuffix, &SpinBox::setSuffix),
         );
     }
 }
