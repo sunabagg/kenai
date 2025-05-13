@@ -18,4 +18,10 @@ namespace sunaba::ui {
             element->ready();
         }
     }
+
+    void VSeparatorProxy::_process(double delta) {
+        if (element != nullptr) {
+            element->process(delta);
+        }
+    }
 }
