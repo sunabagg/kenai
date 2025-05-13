@@ -73,4 +73,12 @@ namespace sunaba::ui
             element->shortcutInput(event);
         }
     }
+
+    void SeparatorProxy::_draw()
+    {
+        if (element != nullptr)
+        {
+            element->_draw();
+        }
+    }
 } // namespace sunaba::ui
