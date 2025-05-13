@@ -88,6 +88,10 @@ namespace sunaba::ui {
             bool isClippingContents() {
                 return scrollContainer->is_clipping_contents();
             }
+
+            void setClipContents(bool value) {
+                scrollContainer->set_clip_contents(value);
+            }
     };
 }
 
