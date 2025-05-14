@@ -98,6 +98,10 @@ namespace sunaba::ui {
             bool getCollapsed() const {
                 return container->is_collapsed();
             }
+
+            void setCollapsed(bool collapsed) {
+                container->set_collapsed(collapsed);
+            }
     };
 }
 
