@@ -162,6 +162,10 @@ namespace sunaba::ui {
             bool isVertical() const {
                 return container->is_vertical();
             }
+
+            void setVertical(bool vertical) {
+                container->set_vertical(vertical);
+            }
     };
 }
 
