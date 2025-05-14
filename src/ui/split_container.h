@@ -102,6 +102,10 @@ namespace sunaba::ui {
             void setCollapsed(bool collapsed) {
                 container->set_collapsed(collapsed);
             }
+
+            bool getDragAreaHighlightInEditor() const {
+                return container->is_drag_area_highlight_in_editor_enabled();
+            }
     };
 }
 
