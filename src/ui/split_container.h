@@ -158,6 +158,10 @@ namespace sunaba::ui {
             void setSplitOffset(int offset) {
                 container->set_split_offset(offset);
             }
+
+            bool isVertical() const {
+                return container->is_vertical();
+            }
     };
 }
 
