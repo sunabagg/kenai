@@ -25,7 +25,7 @@
             "visualizerFile": "${workspaceFolder}/.vscode/godot.natvis"
         },
         {
-            "name": "macOS/Linux Launch",
+            "name": "Linux Launch",
             "type": "cppdbg",
             "request": "launch",
             "envFile": "${workspaceFolder}/.env",
@@ -40,7 +40,7 @@
         },
         {
             "name": "macOS Launch",
-            "type": "cppdbg",
+            "type": "lldb",
             "request": "launch",
             "envFile": "${workspaceFolder}/.env",
             "program": "${env:GODOT4}",
@@ -49,9 +49,7 @@
             ],
             "cwd": "${command:cmake.buildDirectory}/sunaba",
             "preLaunchTask": "CMake: build",
-            "internalConsoleOptions": "openOnSessionStart",
-            "visualizerFile": "${workspaceFolder}/.vscode/godot.natvis",
-            "miDebuggerPath": "/opt/homebrew/bin/gdb"
+            "internalConsoleOptions": "openOnSessionStart"
         },
         {
             "name": "Linux Launch (Local)",
