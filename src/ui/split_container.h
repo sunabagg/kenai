@@ -94,6 +94,10 @@ namespace sunaba::ui {
                 connectContainerSignals();
                 setContainer(container);
             }
+
+            bool getCollapsed() const {
+                return container->is_collapsed();
+            }
     };
 }
 
