@@ -18,6 +18,10 @@ boot_splash/fullsize=false
 boot_splash/image="uid://tqi54djfy3ia"
 config/icon="uid://bcnaj1jhop8y"
 
+[display]
+
+window/dpi/allow_hidpi=false
+
 [dotnet]
 
 project/assembly_name="Sunaba"
@@ -35,4 +39,3 @@ theme/custom_font="uid://bm2qptywwnt6s"
 
 renderer/rendering_method="gl_compatibility"
 renderer/rendering_method.mobile="gl_compatibility"
-environment/defaults/default_environment="uid://c6c7aarlwqbro"
