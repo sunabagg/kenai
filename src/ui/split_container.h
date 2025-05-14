@@ -126,6 +126,10 @@ namespace sunaba::ui {
             void setDragAreaMarginEnd(int margin) {
                 container->set_drag_area_margin_end(margin);
             }
+
+            int getDragAreaOffset() const {
+                return container->get_drag_area_offset();
+            }
     };
 }
 
