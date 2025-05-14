@@ -150,6 +150,10 @@ namespace sunaba::ui {
             void setDraggingEnabled(bool enabled) {
                 container->set_dragging_enabled(enabled);
             }
+
+            int getSplitOffset() const {
+                return container->get_split_offset();
+            }
     };
 }
 
