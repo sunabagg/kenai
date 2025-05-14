@@ -134,6 +134,10 @@ namespace sunaba::ui {
             void setDragAreaOffset(int offset) {
                 container->set_drag_area_offset(offset);
             }
+
+            int getDraggerVisibility() const {
+                return container->get_dragger_visibility();
+            }
     };
 }
 
