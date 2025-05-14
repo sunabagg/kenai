@@ -138,6 +138,10 @@ namespace sunaba::ui {
             int getDraggerVisibility() const {
                 return container->get_dragger_visibility();
             }
+
+            void setDraggerVisibility(int visibility) {
+                container->set_dragger_visibility(static_cast<SplitContainerNode::DraggerVisibility>(visibility));
+            }
     };
 }
 
