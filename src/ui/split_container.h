@@ -146,6 +146,10 @@ namespace sunaba::ui {
             bool getDraggingEnabled() const {
                 return container->is_dragging_enabled();
             }
+
+            void setDraggingEnabled(bool enabled) {
+                container->set_dragging_enabled(enabled);
+            }
     };
 }
 
