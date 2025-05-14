@@ -154,6 +154,10 @@ namespace sunaba::ui {
             int getSplitOffset() const {
                 return container->get_split_offset();
             }
+
+            void setSplitOffset(int offset) {
+                container->set_split_offset(offset);
+            }
     };
 }
 
