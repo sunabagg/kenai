@@ -106,6 +106,10 @@ namespace sunaba::ui {
             bool getDragAreaHighlightInEditor() const {
                 return container->is_drag_area_highlight_in_editor_enabled();
             }
+
+            void setDragAreaHighlightInEditor(bool highlight) {
+                container->set_drag_area_highlight_in_editor(highlight);
+            }
     };
 }
 
