@@ -130,6 +130,10 @@ namespace sunaba::ui {
             int getDragAreaOffset() const {
                 return container->get_drag_area_offset();
             }
+
+            void setDragAreaOffset(int offset) {
+                container->set_drag_area_offset(offset);
+            }
     };
 }
 
