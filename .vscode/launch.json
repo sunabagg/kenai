@@ -53,7 +53,7 @@
         },
         {
             "name": "macOS Launch (Local)",
-            "type": "cppdbg",
+            "type": "lldb",
             "request": "launch",
             "program": "/Applications/Godot.app/Contents/MacOS/Godot",
             "args": [
@@ -62,8 +62,6 @@
             "cwd": "${command:cmake.buildDirectory}/sunaba",
             "preLaunchTask": "CMake: build",
             "internalConsoleOptions": "openOnSessionStart",
-            "visualizerFile": "${workspaceFolder}/.vscode/godot.natvis",
-            "miDebuggerPath": "/usr/bin/lldb",
         }
 
     ]
