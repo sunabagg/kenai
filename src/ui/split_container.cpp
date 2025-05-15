@@ -135,6 +135,7 @@ namespace sunaba::ui {
             "clampSplitOffset", &SplitContainer::clampSplitOffset,
             "getDragAreaControl", &SplitContainer::getDragAreaControl,
             "cast", [](Element* element) {
+                SplitContainerNode* node = Object::cast_to<SplitContainerNode>(element->getNode());
             }
         );
     }
