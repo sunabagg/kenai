@@ -134,6 +134,8 @@ namespace sunaba::ui {
             "dragged", sol::property(&SplitContainer::getDraggedEvent, &SplitContainer::setDraggedEvent),
             "clampSplitOffset", &SplitContainer::clampSplitOffset,
             "getDragAreaControl", &SplitContainer::getDragAreaControl,
+            "cast", [](Element* element) {
+            }
         );
     }
 }
