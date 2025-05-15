@@ -54,4 +54,10 @@ namespace sunaba::ui {
             this->element->shortcutInput(event);
         }
     }
+
+    void VSplitContainerProxy::_draw() {
+        if (element != nullptr) {
+            element->_draw();
+        }
+    }
 }
