@@ -93,6 +93,8 @@ target_sources(${PROJECT_NAME} PRIVATE
         spin_box.cpp
         split_container.h
         split_container.cpp
+        h_split_container.h
+        h_split_container.cpp
 )
 
 target_include_directories( ${PROJECT_NAME}
