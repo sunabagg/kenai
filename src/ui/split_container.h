@@ -181,6 +181,7 @@ namespace sunaba::ui {
             void setDragStartedEvent(Event* event) {
                 dragStartedEvent = event;
             }
+            Event* draggedEvent;
     };
 }
 
