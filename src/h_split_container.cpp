@@ -131,7 +131,8 @@ namespace sunaba::ui {
 
     void bindHSplitContainer(sol::state& lua) {
         lua.new_usertype<HSplitContainer>("HSplitContainer",
-            sol::constructors<HSplitContainer()>()
+            sol::constructors<HSplitContainer()>(),
+            sol::base_classes, sol::bases<BaseObject, Element, sunaba::core::CanvasItem, Control, Container, SplitContainer>()
         );
     }
 }
