@@ -117,7 +117,7 @@ namespace sunaba::ui {
 
     PackedInt32Array VSplitContainerProxy::_get_allowed_size_flags_horizontal() const {
         if (element != nullptr) {
-            return element->_getAllowedSizeFlagsHorizontal();
+            return element->getAllowedSizeFlagsHorizontal();
         }
         return PackedInt32Array();
     }
