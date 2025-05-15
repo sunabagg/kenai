@@ -129,7 +129,9 @@ namespace sunaba::ui {
         return PackedInt32Array();
     }
 
-    void bindVSplitCOntainer(sol::state& lua) {
-        
+    void bindVSplitContainer(sol::state& lua) {
+        lua.new_usertype<VSplitContainer>("VSplitContainer",
+            sol::constructors<VSplitContainer()>()
+        );
     }
 }
