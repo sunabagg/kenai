@@ -80,4 +80,11 @@ namespace sunaba::ui {
         }
         return Variant();
     }
+
+    Vector2 SplitContainerProxy::_get_minimum_size() const {
+        if (element != nullptr) {
+            return element->_getMinimumSize();
+        }
+        return Vector2();
+    }
 }
