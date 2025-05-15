@@ -94,4 +94,11 @@ namespace sunaba::ui {
         }
         return String();
     }
+
+    TypedArray<Vector3i> SplitContainerProxy::_structured_text_parser(const Array& args, const String& text) const {
+        if (element != nullptr) {
+            return element->structuredTextParser(args, text);
+        }
+        return TypedArray<Vector3i>();
+    }
 }
