@@ -67,6 +67,17 @@ namespace sunaba::ui {
             void connectContainerSignals() {
                 // Connect signals from the container to the element
                 // Example: container->connect("signal_name", this, "method_name");
+                SignalFunc dragEndedFunc =
+                [this](std::vector<Variant> av) {
+                    Array args;
+                    for (int i = 0; i < av.size(); ++i) {
+                        args.append(av[i]);
+                    }
+                    if (this->dragEndedEvent != nullptr) {
+                        this->dragEndedEvent->emit(args);
+                    }
+                    return Variant();
+                };
             }
         public:
             SplitContainer() {
