@@ -124,6 +124,7 @@ namespace sunaba::ui {
             "dragAreaHighlightInEditor", sol::property(&SplitContainer::getDragAreaHighlightInEditor, &SplitContainer::setDragAreaHighlightInEditor),
             "dragAreaMarginBegin", sol::property(&SplitContainer::getDragAreaMarginBegin, &SplitContainer::setDragAreaMarginBegin),
             "dragAreaMarginEnd", sol::property(&SplitContainer::getDragAreaMarginEnd, &SplitContainer::setDragAreaMarginEnd),
+            "dragAreaOffset", sol::property(&SplitContainer::getDragAreaOffset, &SplitContainer::setDragAreaOffset),
         );
     }
 }
