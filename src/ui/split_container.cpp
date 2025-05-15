@@ -122,6 +122,7 @@ namespace sunaba::ui {
             sol::base_classes, sol::bases<BaseObject, Element, sunaba::core::CanvasItem, Control, Container>(),
             "collapsed", sol::property(&SplitContainer::getCollapsed, &SplitContainer::setCollapsed),
             "dragAreaHighlightInEditor", sol::property(&SplitContainer::getDragAreaHighlightInEditor, &SplitContainer::setDragAreaHighlightInEditor),
+            "dragAreaMarginBegin", sol::property(&SplitContainer::getDragAreaMarginBegin, &SplitContainer::setDragAreaMarginBegin),
         );
     }
 }
