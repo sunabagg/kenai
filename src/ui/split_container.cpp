@@ -129,6 +129,7 @@ namespace sunaba::ui {
             "draggingEnabled", sol::property(&SplitContainer::getDraggingEnabled, &SplitContainer::setDraggingEnabled),
             "splitOffset", sol::property(&SplitContainer::getSplitOffset, &SplitContainer::setSplitOffset),
             "vertical", sol::property(&SplitContainer::isVertical, &SplitContainer::setVertical),
+            "dragEnded", sol::property(&SplitContainer::getDragEndedEvent, &SplitContainer::setDragEndedEvent),
         );
     }
 }
