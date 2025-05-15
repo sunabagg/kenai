@@ -166,6 +166,8 @@ namespace sunaba::ui {
             void setVertical(bool vertical) {
                 container->set_vertical(vertical);
             }
+
+            Event* dragEndedEvent;
     };
 }
 
