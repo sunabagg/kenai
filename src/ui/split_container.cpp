@@ -120,6 +120,8 @@ namespace sunaba::ui {
         lua.new_usertype<SplitContainer>("SplitContainer",
             sol::constructors<SplitContainer()>(),
             sol::base_classes, sol::bases<BaseObject, Element, sunaba::core::CanvasItem, Control, Container>(),
+            "collapsed", sol::property(&SplitContainer::getCollapsed, &SplitContainer::setCollapsed),
+
         );
     }
 }
