@@ -136,6 +136,7 @@ namespace sunaba::ui {
             "getDragAreaControl", &SplitContainer::getDragAreaControl,
             "cast", [](Element* element) {
                 SplitContainerNode* node = Object::cast_to<SplitContainerNode>(element->getNode());
+                return new SplitContainer(node);
             }
         );
     }
