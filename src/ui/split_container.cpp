@@ -123,6 +123,7 @@ namespace sunaba::ui {
             "collapsed", sol::property(&SplitContainer::getCollapsed, &SplitContainer::setCollapsed),
             "dragAreaHighlightInEditor", sol::property(&SplitContainer::getDragAreaHighlightInEditor, &SplitContainer::setDragAreaHighlightInEditor),
             "dragAreaMarginBegin", sol::property(&SplitContainer::getDragAreaMarginBegin, &SplitContainer::setDragAreaMarginBegin),
+            "dragAreaMarginEnd", sol::property(&SplitContainer::getDragAreaMarginEnd, &SplitContainer::setDragAreaMarginEnd),
         );
     }
 }
