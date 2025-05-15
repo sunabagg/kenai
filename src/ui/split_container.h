@@ -231,6 +231,10 @@ namespace sunaba::ui {
             void clampSplitOffset() {
                 container->clamp_split_offset();
             }
+
+            Control* getDragAreaControl() {
+                return new Control(container->get_drag_area_control());
+            }
     };
 }
 
