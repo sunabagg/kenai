@@ -174,6 +174,7 @@ namespace sunaba::ui {
             void setDragEndedEvent(Event* event) {
                 dragEndedEvent = event;
             }
+            Event* dragStartedEvent;
     };
 }
 
