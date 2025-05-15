@@ -105,6 +105,7 @@ namespace sunaba::ui {
                     return Variant();
                 };
                 Callable draggedCallable = StlFunctionWrapper::create_callable_from_cpp_function(draggedFunc);
+                container->connect("dragged", draggedCallable);
             }
         public:
             SplitContainer() {
