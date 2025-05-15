@@ -12,4 +12,10 @@ namespace sunaba::ui {
             this->element->exitTree();
         }
     }
+
+    void SplitContainerProxy::_ready() {
+        if (this->element != nullptr) {
+            this->element->ready();
+        }
+    }
 }
