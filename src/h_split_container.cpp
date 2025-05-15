@@ -130,7 +130,8 @@ namespace sunaba::ui {
     }
 
     void bindHSplitContainer(sol::state& lua) {
-        lua.new_usertype<HSplitContainer>("HSplitContainer"
+        lua.new_usertype<HSplitContainer>("HSplitContainer",
+            sol::constructors<HSplitContainer()>()
         );
     }
 }
