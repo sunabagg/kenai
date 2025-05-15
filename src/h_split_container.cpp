@@ -128,4 +128,8 @@ namespace sunaba::ui {
         }
         return PackedInt32Array();
     }
+
+    void bindHSplitContainer(sol::state& lua) {
+        
+    }
 }
