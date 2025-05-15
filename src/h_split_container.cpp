@@ -103,7 +103,7 @@ namespace sunaba::ui {
 
     bool HSplitContainerProxy::_has_point(const Vector2 &point) const {
         if (element != nullptr) {
-            return element->_hasPoint(point);
+            return element->hasPoint(point);
         }
         return false;
     }
