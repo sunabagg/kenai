@@ -227,6 +227,10 @@ namespace sunaba::ui {
             void setDraggedEvent(Event* event) {
                 draggedEvent = event;
             }
+
+            void clampSplitOffset() {
+                container->clamp_split_offset();
+            }
     };
 }
 
