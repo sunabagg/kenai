@@ -79,6 +79,7 @@ namespace sunaba::ui {
                     return Variant();
                 };
                 Callable dragEndedCallable = StlFunctionWrapper::create_callable_from_cpp_function(dragEndedFunc);
+                container->connect("drag_ended", dragEndedCallable);
             }
         public:
             SplitContainer() {
