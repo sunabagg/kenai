@@ -136,7 +136,7 @@ namespace sunaba::ui {
             "cast", [](Element* element) {
                 VSplitContainerNode* node = Object::cast_to<VSplitContainerNode>(element->getNode());
                 return new VSplitContainer(node);
-            },
+            }
         );
     }
 }
