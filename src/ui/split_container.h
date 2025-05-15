@@ -80,6 +80,17 @@ namespace sunaba::ui {
                 };
                 Callable dragEndedCallable = StlFunctionWrapper::create_callable_from_cpp_function(dragEndedFunc);
                 container->connect("drag_ended", dragEndedCallable);
+                SignalFunc dragStartedFunc =
+                [this](std::vector<Variant> av) {
+                    Array args;
+                    for (int i = 0; i < av.size(); ++i) {
+                        args.append(av[i]);
+                    }
+                    if (this->dragStartedEvent != nullptr) {
+                        this->dragStartedEvent->emit(args);
+                    }
+                    return Variant();
+                };
             }
         public:
             SplitContainer() {
