@@ -95,6 +95,8 @@ target_sources(${PROJECT_NAME} PRIVATE
         split_container.cpp
         h_split_container.h
         h_split_container.cpp
+        v_split_container.h
+        v_split_container.cpp
 )
 
 target_include_directories( ${PROJECT_NAME}
