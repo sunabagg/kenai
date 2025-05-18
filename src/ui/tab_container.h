@@ -200,6 +200,8 @@ namespace sunaba::ui {
             void setPrePopupPressedEvent(Event* event) {
                 prePopupPressedEvent = event;
             }
+
+            Event* tabButtonPressedEvent;
     };
 }
 
