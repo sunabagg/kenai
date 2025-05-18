@@ -159,6 +159,10 @@ namespace sunaba::ui {
             bool getSelectWithRMB() {
                 return container->get_select_with_rmb();
             }
+
+            void setSelectWithRMB(bool enabled) {
+                container->set_select_with_rmb(enabled);
+            }
     };
 }
 
