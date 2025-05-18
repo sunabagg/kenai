@@ -125,6 +125,7 @@ namespace sunaba::ui {
     void bindTabBar(sol::state& lua) {
         lua.new_usertype<TabBar>("TabBar",
             sol::constructors<TabBar()>(),
+            soL::base_classes, sol::bases<BaseObject, Element, sunaba::core::CanvasItem, Control>(),
         );
     }
 } // namespace sunaba::ui
