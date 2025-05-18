@@ -119,6 +119,10 @@ namespace sunaba::ui {
             bool getDragToRearrangeEnabled() {
                 return container->get_drag_to_rearrange_enabled();
             }
+
+            void setDragToRearrangeEnabled(bool enabled) {
+                container->set_drag_to_rearrange_enabled(enabled);
+            }
     };
 }
 
