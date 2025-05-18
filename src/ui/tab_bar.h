@@ -95,6 +95,10 @@ namespace sunaba::ui {
             bool getClipTabs() {
                 return container->get_clip_tabs();
             }
+
+            void setClipTabs(bool clip) {
+                container->set_clip_tabs(clip);
+            }
     };
 }
 
