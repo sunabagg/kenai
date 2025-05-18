@@ -146,6 +146,10 @@ namespace sunaba::ui {
                 &SubViewportContainer::getStretch,
                 &SubViewportContainer::setStretch
             ),
+            "stretchShrink", sol::property(
+                &SubViewportContainer::getStretchShrink,
+                &SubViewportContainer::setStretchShrink
+            ),
         );
     }
 }
