@@ -212,6 +212,7 @@ namespace sunaba::ui {
             "getPreviousTab", &TabBar::getPreviousTab,
             "getTabButtonIcon", &TabBar::getTabButtonIcon,
             "getTabIcon", &TabBar::getTabIcon,
+            "getTabIconMaxWidth", &TabBar::getTabIconMaxWidth,
         );
     }
 } // namespace sunaba::ui
