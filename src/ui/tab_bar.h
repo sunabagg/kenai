@@ -76,6 +76,7 @@ namespace sunaba::ui {
                     return Variant();
                 };
                 Callable activeTabRearrangedCallable = StlFunctionWrapper::create_callable_from_cpp_function(activeTabRearrangedFunc);
+                container->connect("active_tab_rearranged", activeTabRearrangedCallable);
             }
 
         public:
