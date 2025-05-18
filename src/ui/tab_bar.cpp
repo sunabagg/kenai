@@ -234,6 +234,7 @@ namespace sunaba::ui {
             "setTabIconMaxWidth", &TabBar::setTabIconMaxWidth,
             "setTabLanguage", &TabBar::setTabLanguage,
             "setTabMetadata", &TabBar::setTabMetadata,
+            "setTabTextDirection", &TabBar::setTabTextDirection,
         );
     }
 } // namespace sunaba::ui
