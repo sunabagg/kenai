@@ -42,4 +42,10 @@ namespace sunaba::ui {
             element->unhandledInput(event);
         }
     }
+
+    void TabBarProxy::_unhandled_key_input(const Ref<InputEvent>& event) {
+        if (element) {
+            element->unhandledKeyInput(event);
+        }
+    }
 } // namespace sunaba::ui
