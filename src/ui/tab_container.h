@@ -184,6 +184,8 @@ namespace sunaba::ui {
             void setUseHiddenTabsForMinSize(bool enabled) {
                 container->set_use_hidden_tabs_for_min_size(enabled);
             }
+
+            Event* activeTabRearrangedEvent;
     };
 }
 
