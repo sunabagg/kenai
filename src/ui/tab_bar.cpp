@@ -220,6 +220,7 @@ namespace sunaba::ui {
             "getTabRect", &TabBar::getTabRect,
             "getTabTextDirection", &TabBar::getTabTextDirection,
             "getTabTitle", &TabBar::getTabTitle,
+            "getTabTooltip", &TabBar::getTabTooltip,
         );
     }
 } // namespace sunaba::ui
