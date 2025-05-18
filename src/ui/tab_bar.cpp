@@ -12,4 +12,10 @@ namespace sunaba::ui {
             element->exitTree();
         }
     }
+
+    void TabBarProxy::_ready() {
+        if (element) {
+            element->ready();
+        }
+    }
 } // namespace sunaba::ui
