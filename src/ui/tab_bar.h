@@ -163,6 +163,10 @@ namespace sunaba::ui {
             void setSelectWithRMB(bool enabled) {
                 container->set_select_with_rmb(enabled);
             }
+
+            int getTabAlignment() {
+                return container->get_tab_alignment();
+            }
     };
 }
 
