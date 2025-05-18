@@ -94,4 +94,10 @@ namespace sunaba::ui {
         }
         return String();
     }
+
+    void TabBarProxy::_gui_input(const Ref<InputEvent> &event) {
+        if (element) {
+            element->guiInput(event);
+        }
+    }
 } // namespace sunaba::ui
