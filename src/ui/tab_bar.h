@@ -131,6 +131,10 @@ namespace sunaba::ui {
             void setFocusMode(int mode) {
                 container->set_focus_mode(static_cast<godot::Control::FocusMode>(mode));
             }
+
+            int getMaxTabWidth() {
+                return container->get_max_tab_width();
+            }
     };
 }
 
