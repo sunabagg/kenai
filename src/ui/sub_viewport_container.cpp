@@ -128,4 +128,11 @@ namespace sunaba::ui {
         }
         return PackedInt32Array();
     }
+
+    bool SubViewportContainerProxy::_propagate_input_event(const Ref<InputEvent> &event) const {
+        if (this->element != nullptr) {
+            return this->element->propagateInputEvent(event);
+        }
+        return false;
+    }
 }
