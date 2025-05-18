@@ -183,6 +183,10 @@ namespace sunaba::ui {
             int getTabCount() {
                 return container->get_tab_count();
             }
+
+            void setTabCount(int count) {
+                container->set_tab_count(count);
+            }
     };
 }
 
