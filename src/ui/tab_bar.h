@@ -473,6 +473,10 @@ namespace sunaba::ui {
                         : Ref<godot::Texture2D>();
                 container->set_tab_button_icon(tab, iconRef);
             }
+
+            void setTabDisabled(int tab, bool disabled) {
+                container->set_tab_disabled(tab, disabled);
+            }
     };
 }
 
