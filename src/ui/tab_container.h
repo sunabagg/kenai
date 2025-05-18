@@ -249,6 +249,10 @@ namespace sunaba::ui {
             sunaba::desktop::Popup* getPopup() {
                 return new sunaba::desktop::Popup(container->get_popup());
             }
+
+            int getPreviousTab() {
+                return container->get_previous_tab();
+            }
     };
 }
 
