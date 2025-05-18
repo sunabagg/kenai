@@ -89,6 +89,7 @@ namespace sunaba::ui {
                     }
                     return Variant();
                 };
+                Callable tabButtonPressedCallable = StlFunctionWrapper::create_callable_from_cpp_function(tabButtonPressedFunc);
             }
 
         public:
