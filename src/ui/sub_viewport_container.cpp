@@ -121,4 +121,11 @@ namespace sunaba::ui {
         }
         return PackedInt32Array();
     }
+
+    PackedInt32Array SubViewportContainerProxy::_get_allowed_size_flags_vertical() const {
+        if (this->element != nullptr) {
+            return this->element->getAllowedSizeFlagsVertical();
+        }
+        return PackedInt32Array();
+    }
 }
