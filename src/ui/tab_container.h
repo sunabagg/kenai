@@ -253,6 +253,10 @@ namespace sunaba::ui {
             int getPreviousTab() {
                 return container->get_previous_tab();
             }
+
+            TabBar* getTabBar() {
+                return new TabBar(container->get_tab_bar());
+            }
     };
 }
 
