@@ -3,7 +3,7 @@
 namespace sunaba::ui {
     void TabBarProxy::_enter_tree() {
         if (element) {
-            element->onEnterTree();
+            element->enterTree();
         }
     }
 } // namespace sunaba::ui
