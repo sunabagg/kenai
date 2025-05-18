@@ -54,4 +54,10 @@ namespace sunaba::ui {
             element->shortcutInput(event);
         }
     }
+
+    void TabBarProxy::_draw() {
+        if (element) {
+            element->_draw();
+        }
+    }
 } // namespace sunaba::ui
