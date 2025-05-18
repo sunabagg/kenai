@@ -202,6 +202,10 @@ namespace sunaba::ui {
                 &TabBar::getTabRmbClickedEvent,
                 &TabBar::setTabRmbClickedEvent
             ),
+            "tabSelected", sol::property(
+                &TabBar::getTabSelectedEvent,
+                &TabBar::setTabSelectedEvent
+            ),
         );
     }
 } // namespace sunaba::ui
