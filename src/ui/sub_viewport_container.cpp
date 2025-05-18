@@ -141,6 +141,7 @@ namespace sunaba::ui {
             sol::constructors<SubViewportContainer()>(),
             sol::base_classes, sol::bases<BaseObject, Element, sunaba::core::CanvasItem, Control, Container>(),
             "focusMode", sol::property(&SubViewportContainer::getFocusMode, &SubViewportContainer::setFocusMode),
+            "mouseTarget", sol::property(&SubViewportContainer::getMouseTarget, &SubViewportContainer::setMouseTarget),
         );
     }
 }
