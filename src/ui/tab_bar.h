@@ -413,6 +413,10 @@ namespace sunaba::ui {
             std::string getTabLanguage(int tab) {
                 return String(container->get_tab_language(tab)).utf8().get_data();
             }
+
+            Variant getTabMetadata(int tab) {
+                return container->get_tab_metadata(tab);
+            }
     };
 }
 
