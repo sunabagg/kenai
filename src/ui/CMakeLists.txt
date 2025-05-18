@@ -99,6 +99,7 @@ target_sources(${PROJECT_NAME} PRIVATE
         v_split_container.cpp
         sub_viewport_container.h
         sub_viewport_container.cpp
+        tab_bar.h
 )
 
 target_include_directories( ${PROJECT_NAME}
