@@ -63,6 +63,17 @@ namespace sunaba::ui {
             TabBarNode* container = nullptr; // Pointer to the TabBar instance
             void connectContainerSignals() {
                 // Connect signals specific to TabBar
+                SignalFunc activeTabRearrangedFunc = 
+                [this] (std::vector<Variant> av) {
+                    Array args;
+                    for (int i = 0; i < av.size(); i++)
+                    {
+                        args.append(av[i]);
+                    }
+                    if (activeTabRearrangedEvent != nullptr) {
+                        activeTabRearrangedEvent->emit(args);
+                    }
+                };
             }
 
         public:
