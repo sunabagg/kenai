@@ -215,6 +215,7 @@ namespace sunaba::ui {
             "getTabIconMaxWidth", &TabBar::getTabIconMaxWidth,
             "getTabIdxAtPoint", &TabBar::getTabIdxAtPoint,
             "getTabLanguage", &TabBar::getTabLanguage,
+            "getTabMetadata", &TabBar::getTabMetadata,
         );
     }
 } // namespace sunaba::ui
