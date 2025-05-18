@@ -107,6 +107,10 @@ namespace sunaba::ui {
             void setCurrentTab(int tab) {
                 container->set_current_tab(tab);
             }
+
+            bool getDeselectEnabled() {
+                return container->get_deselect_enabled();
+            }
     };
 }
 
