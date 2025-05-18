@@ -180,6 +180,10 @@ namespace sunaba::ui {
             bool getUseHiddenTabsForMinSize() {
                 return container->get_use_hidden_tabs_for_min_size();
             }
+
+            void setUseHiddenTabsForMinSize(bool enabled) {
+                container->set_use_hidden_tabs_for_min_size(enabled);
+            }
     };
 }
 
