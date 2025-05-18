@@ -429,6 +429,10 @@ namespace sunaba::ui {
             int getTabTextDirection(int tab) {
                 return container->get_tab_text_direction(tab);
             }
+
+            std::string getTabTitle(int tab) {
+                return String(container->get_tab_title(tab)).utf8().get_data();
+            }
     };
 }
 
