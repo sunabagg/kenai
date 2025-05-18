@@ -210,6 +210,7 @@ namespace sunaba::ui {
             "clearTabs", &TabBar::clearTabs,
             "ensureTabVisible", &TabBar::ensureTabVisible,
             "getPreviousTab", &TabBar::getPreviousTab,
+            "getTabButtonIcon", &TabBar::getTabButtonIcon,
         );
     }
 } // namespace sunaba::ui
