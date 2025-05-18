@@ -497,6 +497,10 @@ namespace sunaba::ui {
             void setTabIconMaxWidth(int tab, int width) {
                 container->set_tab_icon_max_width(tab, width);
             }
+
+            void setTabLanguage(int tab, const std::string& language) {
+                container->set_tab_language(tab, language.c_str());
+            }
     };
 }
 
