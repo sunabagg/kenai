@@ -151,6 +151,10 @@ namespace sunaba::ui {
             bool getScrollingEnabled() {
                 return container->get_scrolling_enabled();
             }
+
+            void setScrollingEnabled(bool enabled) {
+                container->set_scrolling_enabled(enabled);
+            }
     };
 }
 
