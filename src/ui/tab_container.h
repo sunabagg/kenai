@@ -240,6 +240,10 @@ namespace sunaba::ui {
             void setTabSelectedEvent(Event* event) {
                 tabSelectedEvent = event;
             }
+
+            Control* getCurrentTabControl() {
+                return new Control(container->get_current_tab_control());
+            }
     };
 }
 
