@@ -477,6 +477,10 @@ namespace sunaba::ui {
             void setTabDisabled(int tab, bool disabled) {
                 container->set_tab_disabled(tab, disabled);
             }
+
+            void setTabHidden(int tab, bool hidden) {
+                container->set_tab_hidden(tab, hidden);
+            }
     };
 }
 
