@@ -8,6 +8,7 @@
 #define SubViewportContainerNode godot::SubViewportContainer
 
 #include "container.h"
+#include "../input/input_event.h"
 
 using namespace godot;
 using namespace sunaba::core;
@@ -123,7 +124,8 @@ namespace sunaba::ui {
                 if (scriptInstance != sol::lua_nil) {
                     auto func = scriptInstance["propegateInputEvent"].get<sol::function>();
                     if (func) {
-                        auto result = func(scriptInstance, event);
+                        sunaba::input::InputEvent* inputEvent = new sunaba::input::InputEvent(event);
+                        auto result = func(scriptInstance, inputEvent);
                         return result.get<bool>();
                     }
                 }
