@@ -174,6 +174,10 @@ namespace sunaba::ui {
                 &TabBar::getTabsRearrangeGroup,
                 &TabBar::setTabsRearrangeGroup
             ),
+            "activeTabRearranged", sol::property(
+                &TabBar::getActiveTabRearrangedEvent,
+                &TabBar::setActiveTabRearrangedEvent
+            ),
         );
     }
 } // namespace sunaba::ui
