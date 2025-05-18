@@ -144,6 +144,10 @@ namespace sunaba::ui {
             void setTabAlignment(int alignment) {
                 container->set_tab_alignment(static_cast<godot::TabBar::AlignmentMode>(alignment));
             }
+
+            int getTabFocusMode() {
+                return container->get_tab_focus_mode();
+            }
     };
 }
 
