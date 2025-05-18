@@ -393,6 +393,10 @@ namespace sunaba::ui {
             int getPreviousTab() {
                 return container->get_previous_tab();
             }
+
+            sunaba::core::Texture2D* getTabButtonIcon(int tab) {
+                return new sunaba::core::Texture2D(container->get_tab_button_icon(tab).ptr());
+            }
     };
 }
 
