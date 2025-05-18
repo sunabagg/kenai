@@ -173,6 +173,7 @@ namespace sunaba::ui {
                     }
                     return Variant();
                 };
+                Callable tabSelectedCallable = StlFunctionWrapper::create_callable_from_cpp_function(tabSelectedFunc);
             }
 
         public:
