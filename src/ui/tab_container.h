@@ -148,6 +148,10 @@ namespace sunaba::ui {
             int getTabFocusMode() {
                 return container->get_tab_focus_mode();
             }
+
+            void setTabFocusMode(int mode) {
+                container->set_tab_focus_mode(static_cast<godot::Control::FocusMode>(mode));
+            }
     };
 }
 
