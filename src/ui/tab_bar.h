@@ -377,6 +377,10 @@ namespace sunaba::ui {
                         : Ref<godot::Texture2D>();
                 container->add_tab(name.c_str(), iconRef);
             }
+
+            void clearTabs() {
+                container->clear_tabs();
+            }
     };
 }
 
