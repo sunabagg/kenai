@@ -381,6 +381,10 @@ namespace sunaba::ui {
             void clearTabs() {
                 container->clear_tabs();
             }
+
+            void ensureTabVisible(int tab) {
+                container->ensure_tab_visible(tab);
+            }
     };
 }
 
