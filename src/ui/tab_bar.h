@@ -367,8 +367,14 @@ namespace sunaba::ui {
             }
 
             void addTab(const std::string& name, sunaba::core::Texture2D* icon = nullptr) {
-                godot::Texture2D* iconTexture = icon != nullptr ? icon->getTexture2D() : nullptr;
-                Ref<godot::Texture2D> iconRef = iconTexture != nullptr ? Ref<godot::Texture2D>(iconTexture) : Ref<godot::Texture2D>();
+                godot::Texture2D* iconTexture = 
+                    icon != nullptr 
+                        ? icon->getTexture2D() 
+                        : nullptr;
+                Ref<godot::Texture2D> iconRef = 
+                    iconTexture != nullptr 
+                        ? Ref<godot::Texture2D>(iconTexture) 
+                        : Ref<godot::Texture2D>();
                 container->add_tab(name.c_str(), iconRef);
             }
     };
