@@ -100,4 +100,11 @@ namespace sunaba::ui {
             element->guiInput(event);
         }
     }
+
+    bool TabBarProxy::_has_point(const Vector2 &point) const {
+        if (element) {
+            return element->hasPoint(point);
+        }
+        return false;
+    }
 } // namespace sunaba::ui
