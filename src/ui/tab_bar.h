@@ -509,6 +509,10 @@ namespace sunaba::ui {
             void setTabTextDirection(int tab, int direction) {
                 container->set_tab_text_direction(tab, static_cast<godot::Control::TextDirection>(direction));
             }
+
+            void setTabTitle(int tab, const std::string& title) {
+                container->set_tab_title(tab, title.c_str());
+            }
     };
 }
 
