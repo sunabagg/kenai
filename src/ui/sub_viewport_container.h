@@ -102,6 +102,10 @@ namespace sunaba::ui {
             bool getStretch() {
                 return container->is_stretch_enabled();
             }
+
+            void setStretch(bool enabled) {
+                container->set_stretch(enabled);
+            }
     };
 }
 
