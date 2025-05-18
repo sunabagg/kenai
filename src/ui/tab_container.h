@@ -172,6 +172,10 @@ namespace sunaba::ui {
             bool getTabsVisible() {
                 return container->are_tabs_visible();
             }
+
+            void setTabsVisible(bool visible) {
+                container->set_tabs_visible(visible);
+            }
     };
 }
 
