@@ -146,6 +146,10 @@ namespace sunaba::ui {
                 &TabBar::getFocusMode,
                 &TabBar::setFocusMode
             ),
+            "maxTabWidth", sol::property(
+                &TabBar::getMaxTabWidth,
+                &TabBar::setMaxTabWidth
+            ),
         );
     }
 } // namespace sunaba::ui
