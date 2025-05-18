@@ -417,6 +417,10 @@ namespace sunaba::ui {
             Variant getTabMetadata(int tab) {
                 return container->get_tab_metadata(tab);
             }
+
+            int getTabOffset() {
+                return container->get_tab_offset();
+            }
     };
 }
 
