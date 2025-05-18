@@ -142,6 +142,10 @@ namespace sunaba::ui {
                 &TabBar::getDragToRearrangeEnabled,
                 &TabBar::setDragToRearrangeEnabled
             ),
+            "focusMode", sol::property(
+                &TabBar::getFocusMode,
+                &TabBar::setFocusMode
+            ),
         );
     }
 } // namespace sunaba::ui
