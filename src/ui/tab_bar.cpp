@@ -121,4 +121,8 @@ namespace sunaba::ui {
         }
         return TypedArray<Vector3i>();
     }
+
+    void bindTabBar(sol::state& lua) {
+        
+    }
 } // namespace sunaba::ui
