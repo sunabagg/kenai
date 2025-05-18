@@ -187,6 +187,10 @@ namespace sunaba::ui {
             void setTabCount(int count) {
                 container->set_tab_count(count);
             }
+
+            int getTabsRearrangeGroup() {
+                return container->get_tabs_rearrange_group();
+            }
     };
 }
 
