@@ -110,7 +110,7 @@ namespace sunaba::ui {
 
     TypedArray<Vector3i> SubViewportContainerProxy::_structured_text_parser(const Array &args, const String &text) const {
         if (this->element != nullptr) {
-            return this->element->_structuredTextParser(args, text);
+            return this->element->structuredTextParser(args, text);
         }
         return TypedArray<Vector3i>();
     }
