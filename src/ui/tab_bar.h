@@ -505,6 +505,10 @@ namespace sunaba::ui {
             void setTabMetadata(int tab, const Variant& metadata) {
                 container->set_tab_metadata(tab, metadata);
             }
+
+            void setTabTextDirection(int tab, int direction) {
+                container->set_tab_text_direction(tab, static_cast<godot::Control::TextDirection>(direction));
+            }
     };
 }
 
