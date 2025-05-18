@@ -226,6 +226,7 @@ namespace sunaba::ui {
             "moveTab", &TabBar::moveTab,
             "removeTab", &TabBar::removeTab,
             "selectNextAvailable", &TabBar::selectNextAvailable,
+            "selectPreviousAvailable", &TabBar::selectPreviousAvailable,
         );
     }
 } // namespace sunaba::ui
