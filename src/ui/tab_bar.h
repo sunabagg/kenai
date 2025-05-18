@@ -159,6 +159,7 @@ namespace sunaba::ui {
                     }
                     return Variant();
                 };
+                Callable tabRmbClickedCallable = StlFunctionWrapper::create_callable_from_cpp_function(tabRmbClickedFunc);
             }
 
         public:
