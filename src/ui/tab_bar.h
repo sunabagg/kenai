@@ -457,6 +457,10 @@ namespace sunaba::ui {
             bool selectNextAvailable() {
                 return container->select_next_available();
             }
+
+            bool selectPreviousAvailable() {
+                return container->select_previous_available();
+            }
     };
 }
 
