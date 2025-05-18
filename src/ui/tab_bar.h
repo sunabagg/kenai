@@ -91,6 +91,10 @@ namespace sunaba::ui {
                 connectContainerSignals();
                 setControl(container);
             }
+
+            bool getClipTabs() {
+                return container->get_clip_tabs();
+            }
     };
 }
 
