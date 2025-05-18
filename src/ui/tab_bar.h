@@ -155,6 +155,10 @@ namespace sunaba::ui {
             void setScrollingEnabled(bool enabled) {
                 container->set_scrolling_enabled(enabled);
             }
+
+            bool getSelectWithRMB() {
+                return container->get_select_with_rmb();
+            }
     };
 }
 
