@@ -123,6 +123,10 @@ namespace sunaba::ui {
             void setDragToRearrangeEnabled(bool enabled) {
                 container->set_drag_to_rearrange_enabled(enabled);
             }
+
+            int getFocusMode() {
+                return container->get_focus_mode();
+            }
     };
 }
 
