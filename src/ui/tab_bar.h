@@ -119,6 +119,18 @@ namespace sunaba::ui {
                 };
                 Callable tabClickedCallable = StlFunctionWrapper::create_callable_from_cpp_function(tabClickedFunc);
                 container->connect("tab_clicked", tabClickedCallable);
+                SignalFunc tabClosePressedFunc =
+                [this] (std::vector<Variant> av) {
+                    Array args;
+                    for (int i = 0; i < av.size(); i++)
+                    {
+                        args.append(av[i]);
+                    }
+                    if (tabClosePressedEvent != nullptr) {
+                        tabClosePressedEvent->emit(args);
+                    }
+                    return Variant();
+                };
             }
 
         public:
