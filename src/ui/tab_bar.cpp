@@ -217,6 +217,7 @@ namespace sunaba::ui {
             "getTabLanguage", &TabBar::getTabLanguage,
             "getTabMetadata", &TabBar::getTabMetadata,
             "getTabOffset", &TabBar::getTabOffset,
+            "getTabRect", &TabBar::getTabRect,
         );
     }
 } // namespace sunaba::ui
