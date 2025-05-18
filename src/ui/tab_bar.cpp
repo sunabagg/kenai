@@ -211,6 +211,7 @@ namespace sunaba::ui {
             "ensureTabVisible", &TabBar::ensureTabVisible,
             "getPreviousTab", &TabBar::getPreviousTab,
             "getTabButtonIcon", &TabBar::getTabButtonIcon,
+            "getTabIcon", &TabBar::getTabIcon,
         );
     }
 } // namespace sunaba::ui
