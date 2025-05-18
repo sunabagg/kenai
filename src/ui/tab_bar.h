@@ -409,6 +409,10 @@ namespace sunaba::ui {
             int getTabIdxAtPoint(const Vector2& point) {
                 return container->get_tab_idx_at_point(point);
             }
+
+            std::string getTabLanguage(int tab) {
+                return String(container->get_tab_language(tab)).utf8().get_data();
+            }
     };
 }
 
