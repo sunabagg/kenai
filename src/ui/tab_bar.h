@@ -10,6 +10,7 @@
 #include "control.h"
 #include "../core/stl_function_wrapper.h"
 #include "../core/event.h"
+#include "../core/texture2d.h"
 
 using namespace godot;
 using namespace sunaba::core;
@@ -363,6 +364,12 @@ namespace sunaba::ui {
             }
             void setTabSelectedEvent(Event* event) {
                 tabSelectedEvent = event;
+            }
+
+            void addTab(const std::string& name, sunaba::core::Texture2D* icon = nullptr) {
+                godot::Texture2D* iconTexture = icon != nullptr ? icon->getTexture2D() : nullptr;
+                Ref<godot::Texture2D> iconRef = iconTexture != nullptr ? Ref<godot::Texture2D>(iconTexture) : Ref<godot::Texture2D>();
+                container->add_tab(name.c_str(), iconRef);
             }
     };
 }
