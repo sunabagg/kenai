@@ -136,6 +136,10 @@ namespace sunaba::ui {
             void setDragToRearrangeEnabled(bool enabled) {
                 container->set_drag_to_rearrange_enabled(enabled);
             }
+
+            int getTabAlignment() {
+                return container->get_tab_alignment();
+            }
     };
 }
 
