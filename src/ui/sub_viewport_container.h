@@ -94,6 +94,10 @@ namespace sunaba::ui {
             bool getMouseTarget() {
                 return container->is_mouse_target_enabled();
             }
+
+            void setMouseTarget(bool enabled) {
+                container->set_mouse_target(enabled);
+            }
     };
 }
 
