@@ -130,6 +130,10 @@ namespace sunaba::ui {
                 &TabBar::getClipTabs,
                 &TabBar::setClipTabs
             ),
+            "currentTab", sol::property(
+                &TabBar::getCurrentTab,
+                &TabBar::setCurrentTab
+            ),
         );
     }
 } // namespace sunaba::ui
