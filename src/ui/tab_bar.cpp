@@ -206,6 +206,7 @@ namespace sunaba::ui {
                 &TabBar::getTabSelectedEvent,
                 &TabBar::setTabSelectedEvent
             ),
+            "addTab", &TabBar::addTab,
         );
     }
 } // namespace sunaba::ui
