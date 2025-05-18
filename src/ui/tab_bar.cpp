@@ -114,4 +114,11 @@ namespace sunaba::ui {
     //     }
     //     return nullptr;
     // }
+
+    TypedArray<Vector3i> TabBarProxy::_structured_text_parser(const Array &args, const String &text) const {
+        if (element) {
+            return element->_structured_text_parser(args, text);
+        }
+        return TypedArray<Vector3i>();
+    }
 } // namespace sunaba::ui
