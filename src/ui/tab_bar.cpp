@@ -6,4 +6,10 @@ namespace sunaba::ui {
             element->enterTree();
         }
     }
+
+    void TabBarProxy::_exit_tree() {
+        if (element) {
+            element->exitTree();
+        }
+    }
 } // namespace sunaba::ui
