@@ -106,6 +106,10 @@ namespace sunaba::ui {
             void setStretch(bool enabled) {
                 container->set_stretch(enabled);
             }
+
+            int getStretchShrink() {
+                return container->get_stretch_shrink();
+            }
     };
 }
 
