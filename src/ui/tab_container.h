@@ -112,6 +112,10 @@ namespace sunaba::ui {
             void setClipTabs(bool clip) {
                 container->set_clip_tabs(clip);
             }
+
+            int getCurrentTab() {
+                return container->get_current_tab();
+            }
     };
 }
 
