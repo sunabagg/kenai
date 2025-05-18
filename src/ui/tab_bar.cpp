@@ -223,6 +223,7 @@ namespace sunaba::ui {
             "getTabTooltip", &TabBar::getTabTooltip,
             "isTabDisabled", &TabBar::isTabDisabled,
             "isTabHidden", &TabBar::isTabHidden,
+            "moveTab", &TabBar::moveTab,
         );
     }
 } // namespace sunaba::ui
