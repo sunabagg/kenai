@@ -48,4 +48,10 @@ namespace sunaba::ui {
             element->unhandledKeyInput(event);
         }
     }
+
+    void TabBarProxy::_shortcut_input(const Ref<InputEvent>& event) {
+        if (element) {
+            element->shortcutInput(event);
+        }
+    }
 } // namespace sunaba::ui
