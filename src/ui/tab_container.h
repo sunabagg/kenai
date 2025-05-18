@@ -210,6 +210,9 @@ namespace sunaba::ui {
             }
 
             Event* tabChangedEvent;
+            Event* getTabChangedEvent() {
+                return tabChangedEvent;
+            }
     };
 }
 
