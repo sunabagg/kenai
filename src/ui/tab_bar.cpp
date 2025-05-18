@@ -150,6 +150,10 @@ namespace sunaba::ui {
                 &TabBar::getMaxTabWidth,
                 &TabBar::setMaxTabWidth
             ),
+            "scrollToSelected", sol::property(
+                &TabBar::getScrollToSelected,
+                &TabBar::setScrollToSelected
+            ),
         );
     }
 } // namespace sunaba::ui
