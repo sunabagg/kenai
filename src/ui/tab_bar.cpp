@@ -228,6 +228,7 @@ namespace sunaba::ui {
             "selectNextAvailable", &TabBar::selectNextAvailable,
             "selectPreviousAvailable", &TabBar::selectPreviousAvailable,
             "setTabButtonIcon", &TabBar::setTabButtonIcon,
+            "setTabDisabled", &TabBar::setTabDisabled,
         );
     }
 } // namespace sunaba::ui
