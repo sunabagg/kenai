@@ -24,4 +24,10 @@ namespace sunaba::ui {
             element->process(delta);
         }
     }
+
+    void TabBarProxy::_physics_process(double delta) {
+        if (element) {
+            element->physicsProcess(delta);
+        }
+    }
 } // namespace sunaba::ui
