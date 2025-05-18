@@ -104,6 +104,10 @@ namespace sunaba::ui {
             void setAllTabsInFront(bool is_front) {
                 container->set_all_tabs_in_front(is_front);
             }
+
+            bool getClipTabs() {
+                return container->get_clip_tabs();
+            }
     };
 }
 
