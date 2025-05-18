@@ -134,6 +134,10 @@ namespace sunaba::ui {
                 &TabBar::getCurrentTab,
                 &TabBar::setCurrentTab
             ),
+            "deselectEnabled", sol::property(
+                &TabBar::getDeselectEnabled,
+                &TabBar::setDeselectEnabled
+            ),
         );
     }
 } // namespace sunaba::ui
