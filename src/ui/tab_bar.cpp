@@ -239,6 +239,7 @@ namespace sunaba::ui {
             "setTabTooltip", &TabBar::setTabTooltip,
             "cast", [](Element* e) {
                 TabBarNode* node = Object::cast_to<TabBarNode>(e->getNode());
+                return new TabBar(node);
             }
         );
     }
