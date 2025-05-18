@@ -18,4 +18,10 @@ namespace sunaba::ui {
             this->element->ready();
         }
     }
+
+    void SubViewportContainerProxy::_process(double delta) {
+        if (this->element != nullptr) {
+            this->element->process(delta);
+        }
+    }
 }
