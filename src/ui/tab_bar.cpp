@@ -138,6 +138,10 @@ namespace sunaba::ui {
                 &TabBar::getDeselectEnabled,
                 &TabBar::setDeselectEnabled
             ),
+            "dragToRearrangeEnabled", sol::property(
+                &TabBar::getDragToRearrangeEnabled,
+                &TabBar::setDragToRearrangeEnabled
+            ),
         );
     }
 } // namespace sunaba::ui
