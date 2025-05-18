@@ -239,6 +239,9 @@ namespace sunaba::ui {
                 tabHoveredEvent = event;
             }
             Event& tabRmbClickedEvent;
+            Event* getTabRmbClickedEvent() {
+                return tabRmbClickedEvent;
+            }
     };
 }
 
