@@ -246,7 +246,9 @@ namespace sunaba::ui {
                 return new Control(container->get_current_tab_control());
             }
 
-
+            sunaba::desktop::Popup* getPopup() {
+                return new sunaba::desktop::Popup(container->get_popup());
+            }
     };
 }
 
