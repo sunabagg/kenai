@@ -153,7 +153,7 @@ namespace sunaba::ui {
             "cast", [](Element* element) {
                 SubViewportContainerNode* container = Object::cast_to<SubViewportContainerNode>(element->getNode());
                 return new SubViewportContainer(container);
-            },
+            }
         );
     }
 }
