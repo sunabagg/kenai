@@ -461,6 +461,18 @@ namespace sunaba::ui {
             bool selectPreviousAvailable() {
                 return container->select_previous_available();
             }
+
+            void setTabButtonIcon(int tab, sunaba::core::Texture2D* icon) {
+                godot::Texture2D* iconTexture = 
+                    icon != nullptr 
+                        ? icon->getTexture2D() 
+                        : nullptr;
+                Ref<godot::Texture2D> iconRef = 
+                    iconTexture != nullptr 
+                        ? Ref<godot::Texture2D>(iconTexture) 
+                        : Ref<godot::Texture2D>();
+                container->set_tab_button_icon(tab, iconRef);
+            }
     };
 }
 
