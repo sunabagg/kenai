@@ -160,7 +160,7 @@ namespace sunaba::ui {
                 return container->get_select_with_rmb();
             }
 
-            void setSelectWithRMB(bool enabled) {
+            void setSelectWithRmb(bool enabled) {
                 container->set_select_with_rmb(enabled);
             }
 
