@@ -225,6 +225,9 @@ namespace sunaba::ui {
                 tabClickedEvent = event;
             }
             Event* tabClosePressedEvent;
+            Event* getTabClosePressedEvent() {
+                return tabClosePressedEvent;
+            }
     };
 }
 
