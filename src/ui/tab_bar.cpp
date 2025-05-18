@@ -162,6 +162,10 @@ namespace sunaba::ui {
                 &TabBar::getTabAlignment,
                 &TabBar::setTabAlignment
             ),
+            "tabCloseDisplayPolicy", sol::property(
+                &TabBar::getTabCloseDisplayPolicy,
+                &TabBar::setTabCloseDisplayPolicy
+            ),
         );
     }
 } // namespace sunaba::ui
