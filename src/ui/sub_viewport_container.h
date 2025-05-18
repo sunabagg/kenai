@@ -124,7 +124,7 @@ namespace sunaba::ui {
                 if (scriptInstance != sol::lua_nil) {
                     auto func = scriptInstance["propagateInputEvent"].get<sol::function>();
                     if (func) {
-                        sunaba::input::InputEvent* inputEvent = new sunaba::input::InputEvent(event);
+                        sunaba::input::InputEvent* inputEvent = new sunaba::input::InputEvent(event.ptr());
                         auto result = func(scriptInstance, inputEvent);
                         return result.get<bool>();
                     }
