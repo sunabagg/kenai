@@ -47,6 +47,10 @@ namespace sunaba::ui {
             PackedInt32Array _get_allowed_size_flags_horizontal() const override;
             PackedInt32Array _get_allowed_size_flags_vertical() const override;
             bool _propagate_input_event(const Ref<InputEvent> &event) const override;
+
+            bool propagateInputEvent(const Ref<InputEvent>& event) {
+                return SubViewportContainerNode::_propagate_input_event(event);
+            }
     };
 
     class SubViewportContainer : public Container {
@@ -113,6 +117,21 @@ namespace sunaba::ui {
 
             void setStretchShrink(int shrink) {
                 container->set_stretch_shrink(shrink);
+            }
+
+            bool propegateInputEvent(const Ref<InputEvent>& event) {
+                if (scriptInstance != sol::lua_nil) {
+                    auto func = scriptInstance["propegateInputEvent"].get<sol::function>();
+                    if (func) {
+                        auto result = func(scriptInstance, event);
+                        return result.get<bool>();
+                    }
+                }
+                SubViewportContainerProxy* proxy = Object::cast_to<SubViewportContainerProxy>(container);
+                if (proxy != nullptr) {
+                    return proxy->propagateInputEvent(event);
+                }
+                return false;
             }
     };
 }
