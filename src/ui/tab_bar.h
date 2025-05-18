@@ -445,6 +445,10 @@ namespace sunaba::ui {
             bool isTabHidden(int tab) {
                 return container->is_tab_hidden(tab);
             }
+
+            void moveTab(int from, int to) {
+                container->move_tab(from, to);
+            }
     };
 }
 
