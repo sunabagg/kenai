@@ -194,6 +194,10 @@ namespace sunaba::ui {
                 &TabBar::getTabClosePressedEvent,
                 &TabBar::setTabClosePressedEvent
             ),
+            "tabHovered", sol::property(
+                &TabBar::getTabHoveredEvent,
+                &TabBar::setTabHoveredEvent
+            ),
         );
     }
 } // namespace sunaba::ui
