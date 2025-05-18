@@ -154,6 +154,10 @@ namespace sunaba::ui {
                 &TabBar::getScrollToSelected,
                 &TabBar::setScrollToSelected
             ),
+            "selectWithRmb", sol::property(
+                &TabBar::getSelectWithRmb,
+                &TabBar::setSelectWithRmb
+            ),
         );
     }
 } // namespace sunaba::ui
