@@ -104,6 +104,7 @@ namespace sunaba::ui {
                     return Variant();
                 };
                 Callable tabChangedCallable = StlFunctionWrapper::create_callable_from_cpp_function(tabChangedFunc);
+                container->connect("tab_changed", tabChangedCallable);
             }
 
         public:
