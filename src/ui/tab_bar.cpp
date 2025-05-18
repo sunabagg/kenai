@@ -190,6 +190,10 @@ namespace sunaba::ui {
                 &TabBar::getTabClickedEvent,
                 &TabBar::setTabClickedEvent
             ),
+            "tabClosePressed", sol::property(
+                &TabBar::getTabClosePressedEvent,
+                &TabBar::setTabClosePressedEvent
+            ),
         );
     }
 } // namespace sunaba::ui
