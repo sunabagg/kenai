@@ -115,6 +115,10 @@ namespace sunaba::ui {
             void setDeselectEnabled(bool enabled) {
                 container->set_deselect_enabled(enabled);
             }
+
+            bool getDragToRearrangeEnabled() {
+                return container->get_drag_to_rearrange_enabled();
+            }
     };
 }
 
