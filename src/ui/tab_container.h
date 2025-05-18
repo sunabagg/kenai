@@ -176,6 +176,10 @@ namespace sunaba::ui {
             void setTabsVisible(bool visible) {
                 container->set_tabs_visible(visible);
             }
+
+            bool getUseHiddenTabsForMinSize() {
+                return container->get_use_hidden_tabs_for_min_size();
+            }
     };
 }
 
