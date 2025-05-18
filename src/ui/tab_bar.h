@@ -139,6 +139,10 @@ namespace sunaba::ui {
             void setMaxTabWidth(int width) {
                 container->set_max_tab_width(width);
             }
+
+            bool getScrollToSelected() {
+                return container->get_scroll_to_selected();
+            }
     };
 }
 
