@@ -449,6 +449,10 @@ namespace sunaba::ui {
             void moveTab(int from, int to) {
                 container->move_tab(from, to);
             }
+
+            void removeTab(int tab) {
+                container->remove_tab(tab);
+            }
     };
 }
 
