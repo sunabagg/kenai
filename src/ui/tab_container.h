@@ -224,6 +224,8 @@ namespace sunaba::ui {
             void setTabClickedEvent(Event* event) {
                 tabClickedEvent = event;
             }
+
+            Event* tabHoveredEvent;
     };
 }
 
