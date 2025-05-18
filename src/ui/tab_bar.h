@@ -493,6 +493,10 @@ namespace sunaba::ui {
                         : Ref<godot::Texture2D>();
                 container->set_tab_icon(tab, iconRef);
             }
+
+            void setTabIconMaxWidth(int tab, int width) {
+                container->set_tab_icon_max_width(tab, width);
+            }
     };
 }
 
