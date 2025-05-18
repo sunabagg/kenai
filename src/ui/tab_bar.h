@@ -191,6 +191,10 @@ namespace sunaba::ui {
             int getTabsRearrangeGroup() {
                 return container->get_tabs_rearrange_group();
             }
+
+            void setTabsRearrangeGroup(int group) {
+                container->set_tabs_rearrange_group(group);
+            }
     };
 }
 
