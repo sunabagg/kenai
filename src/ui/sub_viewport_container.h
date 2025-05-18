@@ -98,6 +98,10 @@ namespace sunaba::ui {
             void setMouseTarget(bool enabled) {
                 container->set_mouse_target(enabled);
             }
+
+            bool getStretch() {
+                return container->is_stretch_enabled();
+            }
     };
 }
 
