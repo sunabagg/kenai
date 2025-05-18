@@ -160,6 +160,10 @@ namespace sunaba::ui {
             void setTabsPosition(int position) {
                 container->set_tabs_position(static_cast<godot::TabContainer::TabPosition>(position));
             }
+
+            int getTabsRearrangeGroup() {
+                return container->get_tabs_rearrange_group();
+            }
     };
 }
 
