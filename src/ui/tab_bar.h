@@ -77,6 +77,18 @@ namespace sunaba::ui {
                 };
                 Callable activeTabRearrangedCallable = StlFunctionWrapper::create_callable_from_cpp_function(activeTabRearrangedFunc);
                 container->connect("active_tab_rearranged", activeTabRearrangedCallable);
+                SignalFunc tabButtonPressedFunc =
+                [this] (std::vector<Variant> av) {
+                    Array args;
+                    for (int i = 0; i < av.size(); i++)
+                    {
+                        args.append(av[i]);
+                    }
+                    if (tabButtonPressedEvent != nullptr) {
+                        tabButtonPressedEvent->emit(args);
+                    }
+                    return Variant();
+                };
             }
 
         public:
