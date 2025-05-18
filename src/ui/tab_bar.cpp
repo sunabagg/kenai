@@ -208,6 +208,7 @@ namespace sunaba::ui {
             ),
             "addTab", &TabBar::addTab,
             "clearTabs", &TabBar::clearTabs,
+            "ensureTabVisible", &TabBar::ensureTabVisible,
         );
     }
 } // namespace sunaba::ui
