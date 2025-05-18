@@ -222,6 +222,7 @@ namespace sunaba::ui {
             "getTabTitle", &TabBar::getTabTitle,
             "getTabTooltip", &TabBar::getTabTooltip,
             "isTabDisabled", &TabBar::isTabDisabled,
+            "isTabHidden", &TabBar::isTabHidden,
         );
     }
 } // namespace sunaba::ui
