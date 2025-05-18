@@ -405,6 +405,10 @@ namespace sunaba::ui {
             int getTabIconMaxWidth(int tab) {
                 return container->get_tab_icon_max_width(tab);
             }
+
+            int getTabIdxAtPoint(const Vector2& point) {
+                return container->get_tab_idx_at_point(point);
+            }
     };
 }
 
