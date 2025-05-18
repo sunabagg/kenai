@@ -151,6 +151,7 @@ namespace sunaba::ui {
                 &SubViewportContainer::setStretchShrink
             ),
             "cast", [](Element* element) {
+                SubViewportContainerNode* container = Object::cast_to<SubViewportContainerNode>(element->getNode());
             },
         );
     }
