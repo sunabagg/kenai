@@ -100,6 +100,10 @@ namespace sunaba::ui {
             bool getAllTabsInFront() {
                 return container->is_all_tabs_in_front();
             }
+
+            void setAllTabsInFront(bool is_front) {
+                container->set_all_tabs_in_front(is_front);
+            }
     };
 }
 
