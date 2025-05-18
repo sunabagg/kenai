@@ -425,6 +425,10 @@ namespace sunaba::ui {
             Rect2 getTabRect(int tab) {
                 return container->get_tab_rect(tab);
             }
+
+            int getTabTextDirection(int tab) {
+                return container->get_tab_text_direction(tab);
+            }
     };
 }
 
