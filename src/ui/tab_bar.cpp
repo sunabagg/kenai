@@ -231,6 +231,7 @@ namespace sunaba::ui {
             "setTabDisabled", &TabBar::setTabDisabled,
             "setTabHidden", &TabBar::setTabHidden,
             "setTabIcon", &TabBar::setTabIcon,
+            "setTabIconMaxWidth", &TabBar::setTabIconMaxWidth,
         );
     }
 } // namespace sunaba::ui
