@@ -135,6 +135,10 @@ namespace sunaba::ui {
             int getMaxTabWidth() {
                 return container->get_max_tab_width();
             }
+
+            void setMaxTabWidth(int width) {
+                container->set_max_tab_width(width);
+            }
     };
 }
 
