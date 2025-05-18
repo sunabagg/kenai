@@ -135,4 +135,9 @@ namespace sunaba::ui {
         }
         return false;
     }
+
+    void bindSubViewportContainerProxy(sol::state& lua) {
+        lua.new_usertype<SubViewportContainer>("SubViewportContainer"
+        );
+    }
 }
