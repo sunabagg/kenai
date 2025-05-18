@@ -202,6 +202,9 @@ namespace sunaba::ui {
             }
 
             Event* tabButtonPressedEvent;
+            Event* getTabButtonPressedEvent() {
+                return tabButtonPressedEvent;
+            }
     };
 }
 
