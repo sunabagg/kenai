@@ -96,6 +96,10 @@ namespace sunaba::ui {
                 connectContainerSignals();
                 setContainer(container);
             }
+
+            bool getAllTabsInFront() {
+                return container->is_all_tabs_in_front();
+            }
     };
 }
 
