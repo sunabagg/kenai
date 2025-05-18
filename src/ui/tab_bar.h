@@ -217,6 +217,7 @@ namespace sunaba::ui {
             void setTabChangedEvent(Event* event) {
                 tabChangedEvent = event;
             }
+            Event* tabClickedEvent;
     };
 }
 
