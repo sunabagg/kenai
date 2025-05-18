@@ -174,6 +174,7 @@ namespace sunaba::ui {
                     return Variant();
                 };
                 Callable tabSelectedCallable = StlFunctionWrapper::create_callable_from_cpp_function(tabSelectedFunc);
+                container->connect("tab_selected", tabSelectedCallable);
             }
 
         public:
