@@ -166,6 +166,10 @@ namespace sunaba::ui {
                 &TabBar::getTabCloseDisplayPolicy,
                 &TabBar::setTabCloseDisplayPolicy
             ),
+            "tabCount", sol::property(
+                &TabBar::getTabCount,
+                &TabBar::setTabCount
+            ),
         );
     }
 } // namespace sunaba::ui
