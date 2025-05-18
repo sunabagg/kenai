@@ -421,6 +421,10 @@ namespace sunaba::ui {
             int getTabOffset() {
                 return container->get_tab_offset();
             }
+
+            Rect2 getTabRect(int tab) {
+                return container->get_tab_rect(tab);
+            }
     };
 }
 
