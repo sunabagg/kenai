@@ -237,7 +237,8 @@ namespace sunaba::ui {
             "setTabTextDirection", &TabBar::setTabTextDirection,
             "setTabTitle", &TabBar::setTabTitle,
             "setTabTooltip", &TabBar::setTabTooltip,
-            "cast"
+            "cast", [](Element* e) {
+            }
         );
     }
 } // namespace sunaba::ui
