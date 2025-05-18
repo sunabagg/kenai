@@ -143,6 +143,10 @@ namespace sunaba::ui {
             bool getScrollToSelected() {
                 return container->get_scroll_to_selected();
             }
+
+            void setScrollToSelected(bool enabled) {
+                container->set_scroll_to_selected(enabled);
+            }
     };
 }
 
