@@ -235,6 +235,7 @@ namespace sunaba::ui {
             "setTabLanguage", &TabBar::setTabLanguage,
             "setTabMetadata", &TabBar::setTabMetadata,
             "setTabTextDirection", &TabBar::setTabTextDirection,
+            "setTabTitle", &TabBar::setTabTitle,
         );
     }
 } // namespace sunaba::ui
