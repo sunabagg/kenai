@@ -132,6 +132,7 @@ namespace sunaba::ui {
                     return Variant();
                 };
                 Callable tabClosePressedCallable = StlFunctionWrapper::create_callable_from_cpp_function(tabClosePressedFunc);
+                container->connect("tab_close_pressed", tabClosePressedCallable);
             }
 
         public:
