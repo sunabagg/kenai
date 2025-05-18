@@ -242,6 +242,9 @@ namespace sunaba::ui {
             Event* getTabRmbClickedEvent() {
                 return tabRmbClickedEvent;
             }
+            void setTabRmbClickedEvent(Event* event) {
+                tabRmbClickedEvent = event;
+            }
     };
 }
 
