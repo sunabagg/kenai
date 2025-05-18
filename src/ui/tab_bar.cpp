@@ -186,6 +186,10 @@ namespace sunaba::ui {
                 &TabBar::getTabChangedEvent,
                 &TabBar::setTabChangedEvent
             ),
+            "tabClicked", sol::property(
+                &TabBar::getTabClickedEvent,
+                &TabBar::setTabClickedEvent
+            ),
         );
     }
 } // namespace sunaba::ui
