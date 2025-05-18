@@ -168,6 +168,10 @@ namespace sunaba::ui {
             void setTabsRearrangeGroup(int group) {
                 container->set_tabs_rearrange_group(group);
             }
+
+            bool getTabsVisible() {
+                return container->are_tabs_visible();
+            }
     };
 }
 
