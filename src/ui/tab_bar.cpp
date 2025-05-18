@@ -30,4 +30,10 @@ namespace sunaba::ui {
             element->physicsProcess(delta);
         }
     }
+
+    void TabBarProxy::_input(const Ref<InputEvent>& event) {
+        if (element) {
+            element->input(event);
+        }
+    }
 } // namespace sunaba::ui
