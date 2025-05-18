@@ -124,6 +124,10 @@ namespace sunaba::ui {
             bool getDeselectEnabled() {
                 return container->get_deselect_enabled();
             }
+
+            void setDeselectEnabled(bool enabled) {
+                container->set_deselect_enabled(enabled);
+            }
     };
 }
 
