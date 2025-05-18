@@ -203,6 +203,7 @@ namespace sunaba::ui {
             void setActiveTabRearrangedEvent(Event* event) {
                 activeTabRearrangedEvent = event;
             }
+            Event* tabButtonPressedEvent;
     };
 }
 
