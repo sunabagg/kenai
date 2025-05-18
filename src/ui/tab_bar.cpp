@@ -107,4 +107,11 @@ namespace sunaba::ui {
         }
         return false;
     }
+
+    //Object* TabBarProxy::_make_custom_tooltip(const String &for_text) const {
+    //     if (element) {
+    //         return element->makeCustomTooltip(for_text);
+    //     }
+    //     return nullptr;
+    // }
 } // namespace sunaba::ui
