@@ -453,6 +453,10 @@ namespace sunaba::ui {
             void removeTab(int tab) {
                 container->remove_tab(tab);
             }
+
+            bool selectNextAvailable() {
+                return container->select_next_available();
+            }
     };
 }
 
