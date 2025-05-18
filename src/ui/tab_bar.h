@@ -175,6 +175,10 @@ namespace sunaba::ui {
             int getTabCloseDisplayPolicy() {
                 return container->get_tab_close_display_policy();
             }
+
+            void setTabCloseDisplayPolicy(int policy) {
+                container->set_tab_close_display_policy(static_cast<godot::TabBar::CloseButtonDisplayPolicy>(policy));
+            }
     };
 }
 
