@@ -501,6 +501,10 @@ namespace sunaba::ui {
             void setTabLanguage(int tab, const std::string& language) {
                 container->set_tab_language(tab, language.c_str());
             }
+
+            void setTabMetadata(int tab, const Variant& metadata) {
+                container->set_tab_metadata(tab, metadata);
+            }
     };
 }
 
