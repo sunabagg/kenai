@@ -160,6 +160,7 @@ namespace sunaba::ui {
                     return Variant();
                 };
                 Callable tabRmbClickedCallable = StlFunctionWrapper::create_callable_from_cpp_function(tabRmbClickedFunc);
+                container->connect("tab_rmb_clicked", tabRmbClickedCallable);
             }
 
         public:
