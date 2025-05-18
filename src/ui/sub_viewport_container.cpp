@@ -150,6 +150,8 @@ namespace sunaba::ui {
                 &SubViewportContainer::getStretchShrink,
                 &SubViewportContainer::setStretchShrink
             ),
+            "cast", [](Element* element) {
+            },
         );
     }
 }
