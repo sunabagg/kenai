@@ -103,6 +103,10 @@ namespace sunaba::ui {
             int getCurrentTab() {
                 return container->get_current_tab();
             }
+
+            void setCurrentTab(int tab) {
+                container->set_current_tab(tab);
+            }
     };
 }
 
