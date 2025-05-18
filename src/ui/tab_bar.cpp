@@ -230,6 +230,7 @@ namespace sunaba::ui {
             "setTabButtonIcon", &TabBar::setTabButtonIcon,
             "setTabDisabled", &TabBar::setTabDisabled,
             "setTabHidden", &TabBar::setTabHidden,
+            "setTabIcon", &TabBar::setTabIcon,
         );
     }
 } // namespace sunaba::ui
