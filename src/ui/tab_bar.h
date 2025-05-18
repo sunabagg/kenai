@@ -389,6 +389,10 @@ namespace sunaba::ui {
             bool getOffsetButtonsVisible() {
                 return container->get_offset_buttons_visible();
             }
+
+            int getPreviousTab() {
+                return container->get_previous_tab();
+            }
     };
 }
 
