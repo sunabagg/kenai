@@ -207,6 +207,7 @@ namespace sunaba::ui {
                 &TabBar::setTabSelectedEvent
             ),
             "addTab", &TabBar::addTab,
+            "clearTabs", &TabBar::clearTabs,
         );
     }
 } // namespace sunaba::ui
