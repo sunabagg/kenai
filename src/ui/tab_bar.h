@@ -441,6 +441,10 @@ namespace sunaba::ui {
             bool isTabDisabled(int tab) {
                 return container->is_tab_disabled(tab);
             }
+
+            bool isTabHidden(int tab) {
+                return container->is_tab_hidden(tab);
+            }
     };
 }
 
