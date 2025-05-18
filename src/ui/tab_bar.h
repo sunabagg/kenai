@@ -197,6 +197,9 @@ namespace sunaba::ui {
             }
 
             Event* activeTabRearrangedEvent;
+            Event& getActiveTabRearrangedEvent() {
+                return activeTabRearrangedEvent;
+            }
     };
 }
 
