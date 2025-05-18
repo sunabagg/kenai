@@ -11,6 +11,7 @@
 #include "../core/stl_function_wrapper.h"
 #include "../core/event.h"
 #include "tab_bar.h"
+#include "../desktop/popup.h"
 
 using namespace godot;
 using namespace sunaba::core;
@@ -244,6 +245,8 @@ namespace sunaba::ui {
             Control* getCurrentTabControl() {
                 return new Control(container->get_current_tab_control());
             }
+
+
     };
 }
 
