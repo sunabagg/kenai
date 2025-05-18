@@ -158,6 +158,10 @@ namespace sunaba::ui {
                 &TabBar::getSelectWithRmb,
                 &TabBar::setSelectWithRmb
             ),
+            "tabAlignment", sol::property(
+                &TabBar::getTabAlignment,
+                &TabBar::setTabAlignment
+            ),
         );
     }
 } // namespace sunaba::ui
