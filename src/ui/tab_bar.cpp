@@ -224,6 +224,7 @@ namespace sunaba::ui {
             "isTabDisabled", &TabBar::isTabDisabled,
             "isTabHidden", &TabBar::isTabHidden,
             "moveTab", &TabBar::moveTab,
+            "removeTab", &TabBar::removeTab,
         );
     }
 } // namespace sunaba::ui
