@@ -18,4 +18,10 @@ namespace sunaba::ui {
             element->ready();
         }
     }
+
+    void TabBarProxy::_process(double delta) {
+        if (element) {
+            element->process(delta);
+        }
+    }
 } // namespace sunaba::ui
