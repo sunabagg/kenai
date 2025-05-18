@@ -197,6 +197,9 @@ namespace sunaba::ui {
             Event* getPrePopupPressedEvent() {
                 return prePopupPressedEvent;
             }
+            void setPrePopupPressedEvent(Event* event) {
+                prePopupPressedEvent = event;
+            }
     };
 }
 
