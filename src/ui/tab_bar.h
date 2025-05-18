@@ -73,6 +73,7 @@ namespace sunaba::ui {
                     if (activeTabRearrangedEvent != nullptr) {
                         activeTabRearrangedEvent->emit(args);
                     }
+                    return Variant();
                 };
             }
 
