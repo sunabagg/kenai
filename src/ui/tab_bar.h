@@ -146,6 +146,7 @@ namespace sunaba::ui {
                     return Variant();
                 };
                 Callable tabHoveredCallable = StlFunctionWrapper::create_callable_from_cpp_function(tabHoveredFunc);
+                container->connect("tab_hovered", tabHoveredCallable);
             }
 
         public:
