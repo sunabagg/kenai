@@ -90,6 +90,10 @@ namespace sunaba::ui {
             void setFocusMode(int mode) {
                 container->set_focus_mode(static_cast<godot::Control::FocusMode>(mode));
             }
+
+            bool getMouseTarget() {
+                return container->is_mouse_target_enabled();
+            }
     };
 }
 
