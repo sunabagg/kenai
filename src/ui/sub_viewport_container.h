@@ -120,9 +120,9 @@ namespace sunaba::ui {
                 container->set_stretch_shrink(shrink);
             }
 
-            bool propegateInputEvent(const Ref<InputEvent>& event) {
+            bool propagateInputEvent(const Ref<InputEvent>& event) {
                 if (scriptInstance != sol::lua_nil) {
-                    auto func = scriptInstance["propegateInputEvent"].get<sol::function>();
+                    auto func = scriptInstance["propagateInputEvent"].get<sol::function>();
                     if (func) {
                         sunaba::input::InputEvent* inputEvent = new sunaba::input::InputEvent(event);
                         auto result = func(scriptInstance, inputEvent);
