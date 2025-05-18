@@ -82,6 +82,10 @@ namespace sunaba::ui {
                 connectContainerSignals();
                 setControl(container);
             }
+
+            int getFocusMode() {
+                return container->get_focus_mode();
+            }
     };
 }
 
