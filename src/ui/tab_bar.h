@@ -147,6 +147,18 @@ namespace sunaba::ui {
                 };
                 Callable tabHoveredCallable = StlFunctionWrapper::create_callable_from_cpp_function(tabHoveredFunc);
                 container->connect("tab_hovered", tabHoveredCallable);
+                SignalFunc tabRmbClickedFunc =
+                [this] (std::vector<Variant> av) {
+                    Array args;
+                    for (int i = 0; i < av.size(); i++)
+                    {
+                        args.append(av[i]);
+                    }
+                    if (tabRmbClickedEvent != nullptr) {
+                        tabRmbClickedEvent->emit(args);
+                    }
+                    return Variant();
+                };
             }
 
         public:
