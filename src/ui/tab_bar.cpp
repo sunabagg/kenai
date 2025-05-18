@@ -67,4 +67,10 @@ namespace sunaba::ui {
         }
         return false;
     }
+
+    void TabBarProxy::_drop_data(const Vector2 &at_position, const Variant &data) {
+        if (element) {
+            element->dropData(at_position, data);
+        }
+    }
 } // namespace sunaba::ui
