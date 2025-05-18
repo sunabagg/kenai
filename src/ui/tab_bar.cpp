@@ -123,6 +123,6 @@ namespace sunaba::ui {
     }
 
     void bindTabBar(sol::state& lua) {
-        
+        lua.new_usertype<TabBar>("TabBar");
     }
 } // namespace sunaba::ui
