@@ -385,6 +385,10 @@ namespace sunaba::ui {
             void ensureTabVisible(int tab) {
                 container->ensure_tab_visible(tab);
             }
+
+            bool getOffsetButtonsVisible() {
+                return container->get_offset_buttons_visible();
+            }
     };
 }
 
