@@ -303,6 +303,10 @@ namespace sunaba::ui {
             void setMiddleMousePasteEnabled(bool enabled) {
                 text_edit->set_middle_mouse_paste_enabled(enabled);
             }
+
+            bool getMinimapDraw() {
+                return text_edit->is_drawing_minimap();
+            }
     };
 }
 
