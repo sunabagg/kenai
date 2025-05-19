@@ -263,6 +263,10 @@ namespace sunaba::ui {
             void setFocusMode(int mode) {
                 text_edit->set_focus_mode(static_cast<godot::Control::FocusMode>(mode));
             }
+
+            bool getHighlightAllOccurrences() {
+                return text_edit->is_highlight_all_occurrences_enabled();
+            }
     };
 }
 
