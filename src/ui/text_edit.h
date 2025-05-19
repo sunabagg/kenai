@@ -307,6 +307,10 @@ namespace sunaba::ui {
             bool getMinimapDraw() {
                 return text_edit->is_drawing_minimap();
             }
+
+            void setMinimapDraw(bool enabled) {
+                text_edit->set_draw_minimap(enabled);
+            }
     };
 }
 
