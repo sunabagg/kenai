@@ -136,6 +136,7 @@ namespace sunaba::ui {
             "allTabsInFront", sol::property(&TabContainer::getAllTabsInFront, &TabContainer::setAllTabsInFront),
             "clipTabs", sol::property(&TabContainer::getClipTabs, &TabContainer::setClipTabs),
             "currentTab", sol::property(&TabContainer::getCurrentTab, &TabContainer::setCurrentTab),
+            "deselectEnabled", sol::property(&TabContainer::getDeselectEnabled, &TabContainer::setDeselectEnabled),
         );
 
     }
