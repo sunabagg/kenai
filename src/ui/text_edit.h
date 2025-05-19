@@ -490,6 +490,9 @@ namespace sunaba::ui {
             }
 
             Event* gutterAddedEvent;
+            Event* getGutterAddedEvent() {
+                return gutterAddedEvent;
+            }
     };
 }
 
