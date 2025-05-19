@@ -468,6 +468,10 @@ namespace sunaba::ui {
             bool getVirtualKeyboardEnabled() {
                 return text_edit->is_virtual_keyboard_enabled();
             }
+
+            void setVirtualKeyboardEnabled(bool enabled) {
+                text_edit->set_virtual_keyboard_enabled(enabled);
+            }
     };
 }
 
