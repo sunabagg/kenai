@@ -357,6 +357,10 @@ namespace sunaba::ui {
             void setTabMetadata(int tab, Variant metadata) {
                 container->set_tab_metadata(tab, metadata);
             }
+
+            void setTabTitle(int tab, const std::string& title) {
+                container->set_tab_title(tab, String(title.c_str()));
+            }
     };
 }
 
