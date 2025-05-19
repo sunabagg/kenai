@@ -285,6 +285,10 @@ namespace sunaba::ui {
             int getTabIdxFromControl(Control* control) {
                 return container->get_tab_idx_from_control(control->getControl());
             }
+
+            Variant getTabMetadata(int tab) {
+                return container->get_tab_metadata(tab);
+            }
     };
 }
 
