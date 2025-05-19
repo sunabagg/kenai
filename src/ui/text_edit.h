@@ -271,6 +271,10 @@ namespace sunaba::ui {
             void setHighlightAllOccurrences(bool enabled) {
                 text_edit->set_highlight_all_occurrences(enabled);
             }
+
+            bool getHighlightCurrentLine() {
+                return text_edit->is_highlight_current_line_enabled();
+            }
     };
 }
 
