@@ -347,6 +347,10 @@ namespace sunaba::ui {
             bool getScrollFitContentWidth() {
                 return text_edit->is_fit_content_width_enabled();
             }
+
+            void setScrollFitContentWidth(bool enabled) {
+                text_edit->set_fit_content_width_enabled(enabled);
+            }
     };
 }
 
