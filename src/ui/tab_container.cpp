@@ -135,6 +135,7 @@ namespace sunaba::ui {
             sol::base_classes, sol::bases<BaseObject, Element, sunaba::core::CanvasItem, Control, Container>(),
             "allTabsInFront", sol::property(&TabContainer::getAllTabsInFront, &TabContainer::setAllTabsInFront),
             "clipTabs", sol::property(&TabContainer::getClipTabs, &TabContainer::setClipTabs),
+            "currentTab", sol::property(&TabContainer::getCurrentTab, &TabContainer::setCurrentTab),
         );
 
     }
