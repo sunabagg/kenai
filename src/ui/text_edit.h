@@ -520,6 +520,8 @@ namespace sunaba::ui {
             void setLinesEditedFromEvent(Event* event) {
                 linesEditedFromEvent = event;
             }
+
+            Event* textChangedEvent;
     };
 }
 
