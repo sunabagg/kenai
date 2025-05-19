@@ -265,6 +265,10 @@ namespace sunaba::ui {
             Control* getTabControl(int tab) {
                 return new Control(container->get_tab_control(tab));
             }
+
+            int getTabCount() {
+                return container->get_tab_count();
+            }
     };
 }
 
