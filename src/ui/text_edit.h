@@ -419,6 +419,10 @@ namespace sunaba::ui {
             Array getStructuredTextBidiOverrideOptions() {
                 return text_edit->get_structured_text_bidi_override_options();
             }
+
+            void setStructuredTextBidiOverrideOptions(Array options) {
+                text_edit->set_structured_text_bidi_override_options(options);
+            }
     };
 }
 
