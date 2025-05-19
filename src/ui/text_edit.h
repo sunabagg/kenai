@@ -127,6 +127,10 @@ namespace sunaba::ui {
             void setCaretBlinkInterval(float interval) {
                 text_edit->set_caret_blink_interval(interval);
             }
+
+            bool getCaretDrawWhenEditableDisabled() {
+                return text_edit->is_drawing_caret_when_editable_disabled();
+            }
     };
 }
 
