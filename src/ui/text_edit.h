@@ -478,7 +478,7 @@ namespace sunaba::ui {
             }
 
             void setWrapMode(int mode) {
-                text_edit->set_line_wrapping_mode(static_cast<godot::TextServer::LineWrappingMode>(mode));
+                text_edit->set_line_wrapping_mode(static_cast<godot::TextEdit::LineWrappingMode>(mode));
             }
 
             Event* caretChangedEvent;
