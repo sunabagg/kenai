@@ -399,6 +399,10 @@ namespace sunaba::ui {
             void setSelectingEnabled(bool enabled) {
                 text_edit->set_selecting_enabled(enabled);
             }
+
+            bool getShortcutKeysEnabled() {
+                return text_edit->is_shortcut_keys_enabled();
+            }
     };
 }
 
