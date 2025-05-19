@@ -171,6 +171,10 @@ namespace sunaba::ui {
             bool getClipContents() {
                 return text_edit->is_clipping_contents();
             }
+
+            void setClipContents(bool enabled) {
+                text_edit->set_clip_contents(enabled);
+            }
     };
 }
 
