@@ -147,6 +147,10 @@ namespace sunaba::ui {
             bool getCaretMoveOnRightClick() {
                 return text_edit->is_move_caret_on_right_click_enabled();
             }
+
+            void setCaretMoveOnRightClick(bool enabled) {
+                text_edit->set_move_caret_on_right_click_enabled(enabled);
+            }
     };
 }
 
