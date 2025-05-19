@@ -488,6 +488,8 @@ namespace sunaba::ui {
             void setCaretChangedEvent(Event* event) {
                 caretChangedEvent = event;
             }
+
+            Event* gutterAddedEvent;
     };
 }
 
