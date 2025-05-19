@@ -353,6 +353,10 @@ namespace sunaba::ui {
             void setTabIconMaxWidth(int tab, int width) {
                 container->set_tab_icon_max_width(tab, width);
             }
+
+            void setTabMetadata(int tab, Variant metadata) {
+                container->set_tab_metadata(tab, metadata);
+            }
     };
 }
 
