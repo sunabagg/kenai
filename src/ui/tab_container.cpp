@@ -141,6 +141,7 @@ namespace sunaba::ui {
             "tabAlignment", sol::property(&TabContainer::getTabAlignment, &TabContainer::setTabAlignment),
             "tabFocusMode", sol::property(&TabContainer::getTabFocusMode, &TabContainer::setTabFocusMode),
             "tabsPosition", sol::property(&TabContainer::getTabsPosition, &TabContainer::setTabsPosition),
+            "tabsRearrangeGroup", sol::property(&TabContainer::getTabsRearrangeGroup, &TabContainer::setTabsRearrangeGroup),
         );
 
     }
