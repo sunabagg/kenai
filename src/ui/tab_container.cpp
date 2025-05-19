@@ -153,7 +153,8 @@ namespace sunaba::ui {
             "tabSelected", sol::property(&TabContainer::getTabSelectedEvent, &TabContainer::setTabSelectedEvent),
             "getCurrentTabControl", &TabContainer::getCurrentTabControl,
             "getPopup", &TabContainer::getPopup,
-            "getPreviousTab", &TabContainer::getPreviousTab
+            "getPreviousTab", &TabContainer::getPreviousTab,
+            "getTabBar", &TabContainer::getTabBar,
         );
 
     }
