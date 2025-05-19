@@ -522,6 +522,9 @@ namespace sunaba::ui {
             }
 
             Event* textChangedEvent;
+            Event* getTextChangedEvent() {
+                return textChangedEvent;
+            }
     };
 }
 
