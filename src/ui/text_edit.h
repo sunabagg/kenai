@@ -407,6 +407,10 @@ namespace sunaba::ui {
             void setShortcutKeysEnabled(bool enabled) {
                 text_edit->set_shortcut_keys_enabled(enabled);
             }
+
+            int getStructuredTextBidiOverride() {
+                return text_edit->get_structured_text_bidi_override();
+            }
     };
 }
 
