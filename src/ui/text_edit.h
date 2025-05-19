@@ -119,6 +119,10 @@ namespace sunaba::ui {
             void setCaretBlink(bool enabled) {
                 text_edit->set_caret_blink_enabled(enabled);
             }
+
+            float getCaretBlinkInterval() {
+                return text_edit->get_caret_blink_interval();
+            }
     };
 }
 
