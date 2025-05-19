@@ -261,6 +261,10 @@ namespace sunaba::ui {
             sunaba::core::Texture2D* getTabButtonIcon(int tab) {
                 return new sunaba::core::Texture2D(container->get_tab_button_icon(tab).ptr());
             }
+
+            Control* getTabControl(int tab) {
+                return new Control(container->get_tab_control(tab));
+            }
     };
 }
 
