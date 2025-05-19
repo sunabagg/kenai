@@ -255,6 +255,10 @@ namespace sunaba::ui {
             void setEmptySelectionClipboardEnabled(bool enabled) {
                 text_edit->set_empty_selection_clipboard_enabled(enabled);
             }
+
+            int getFocusMode() {
+                return text_edit->get_focus_mode();
+            }
     };
 }
 
