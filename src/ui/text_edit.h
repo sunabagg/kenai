@@ -448,6 +448,10 @@ namespace sunaba::ui {
             void setTextDirection(int direction) {
                 text_edit->set_text_direction(static_cast<godot::Control::TextDirection>(direction));
             }
+
+            bool getUseCustomWordSeparators() {
+                return text_edit->is_custom_word_separators_enabled();
+            }
     };
 }
 
