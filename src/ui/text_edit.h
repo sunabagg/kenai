@@ -167,6 +167,10 @@ namespace sunaba::ui {
             void setCaretType(int type) {
                 text_edit->set_caret_type(static_cast<godot::TextEdit::CaretType>(type));
             }
+
+            bool getClipContents() {
+                return text_edit->is_clipping_contents();
+            }
     };
 }
 
