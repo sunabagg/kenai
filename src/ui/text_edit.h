@@ -231,6 +231,10 @@ namespace sunaba::ui {
             void setDrawTabs(bool enabled) {
                 text_edit->set_draw_tabs(enabled);
             }
+
+            bool getEditable() {
+                return text_edit->is_editable();
+            }
     };
 }
 
