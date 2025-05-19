@@ -247,6 +247,10 @@ namespace sunaba::ui {
             void setEmojiMenuEnabled(bool enabled) {
                 text_edit->set_emoji_menu_enabled(enabled);
             }
+
+            bool getEmptySelectionClipboardEnabled() {
+                return text_edit->is_empty_selection_clipboard_enabled();
+            }
     };
 }
 
