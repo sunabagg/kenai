@@ -163,6 +163,7 @@ namespace sunaba::ui {
             "getTabIdxAtPoint", &TabContainer::getTabIdxAtPoint,
             "getTabIdxFromControl", &TabContainer::getTabIdxFromControl,
             "getTabMetadata", &TabContainer::getTabMetadata,
+            "getTabTitle", &TabContainer::getTabTitle,
         );
 
     }
