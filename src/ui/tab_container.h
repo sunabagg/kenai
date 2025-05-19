@@ -273,6 +273,10 @@ namespace sunaba::ui {
             sunaba::core::Texture2D* getTabIcon(int tab) {
                 return new sunaba::core::Texture2D(container->get_tab_icon(tab).ptr());
             }
+
+            int getTabIconMaxWidth(int tab) {
+                return container->get_tab_icon_max_width(tab);
+            }
     };
 }
 
