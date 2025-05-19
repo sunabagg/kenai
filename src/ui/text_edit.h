@@ -64,6 +64,8 @@ namespace sunaba::ui {
             void _cut(int caret_index) override;
 
             void _handle_unicode_input(int unicode_char, int caret_index) override;
+
+            void _paste(int caret_index) override;
     };
 
     class TextEdit : public Control {
