@@ -128,4 +128,11 @@ namespace sunaba::ui {
         }
         return PackedInt32Array();
     }
+
+    void bindTabContainer(sol::state& lua) {
+        lua.new_usertype<TabContainer>("TabContainer",
+            sol::base_classes, sol::bases<Container>(),
+        );
+
+    }
 }
