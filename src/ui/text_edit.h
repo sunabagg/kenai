@@ -472,6 +472,10 @@ namespace sunaba::ui {
             void setVirtualKeyboardEnabled(bool enabled) {
                 text_edit->set_virtual_keyboard_enabled(enabled);
             }
+
+            int getWrapMode() {
+                return text_edit->get_line_wrapping_mode();
+            }
     };
 }
 
