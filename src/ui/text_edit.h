@@ -251,6 +251,10 @@ namespace sunaba::ui {
             bool getEmptySelectionClipboardEnabled() {
                 return text_edit->is_empty_selection_clipboard_enabled();
             }
+
+            void setEmptySelectionClipboardEnabled(bool enabled) {
+                text_edit->set_empty_selection_clipboard_enabled(enabled);
+            }
     };
 }
 
