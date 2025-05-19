@@ -315,6 +315,10 @@ namespace sunaba::ui {
             int getMinimapWidth() {
                 return text_edit->get_minimap_width();
             }
+
+            void setMinimapWidth(int width) {
+                text_edit->set_minimap_width(width);
+            }
     };
 }
 
