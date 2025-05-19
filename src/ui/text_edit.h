@@ -440,6 +440,10 @@ namespace sunaba::ui {
             void setText(std::string text) {
                 text_edit->set_text(String(text.c_str()));
             }
+
+            int getTextDirection() {
+                return text_edit->get_text_direction();
+            }
     };
 }
 
