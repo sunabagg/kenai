@@ -143,6 +143,10 @@ namespace sunaba::ui {
             void setCaretMidGrapheme(bool enabled) {
                 text_edit->set_caret_mid_grapheme_enabled(enabled);
             }
+
+            bool getCaretMoveOnRightClick() {
+                return text_edit->is_move_caret_on_right_click_enabled();
+            }
     };
 }
 
