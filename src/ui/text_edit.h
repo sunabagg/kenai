@@ -512,6 +512,8 @@ namespace sunaba::ui {
             void setGutterRemovedEvent(Event* event) {
                 gutterRemovedEvent = event;
             }
+
+            Event* linesEditedFromEvent;
     };
 }
 
