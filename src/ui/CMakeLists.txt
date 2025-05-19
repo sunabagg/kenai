@@ -103,6 +103,7 @@ target_sources(${PROJECT_NAME} PRIVATE
         tab_bar.cpp
         tab_container.h
         tab_container.cpp
+        text_edit.h
 )
 
 target_include_directories( ${PROJECT_NAME}
