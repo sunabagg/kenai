@@ -403,6 +403,10 @@ namespace sunaba::ui {
             bool getShortcutKeysEnabled() {
                 return text_edit->is_shortcut_keys_enabled();
             }
+
+            void setShortcutKeysEnabled(bool enabled) {
+                text_edit->set_shortcut_keys_enabled(enabled);
+            }
     };
 }
 
