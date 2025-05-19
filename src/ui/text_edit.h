@@ -506,6 +506,9 @@ namespace sunaba::ui {
             }
 
             Event* gutterRemovedEvent;
+            Event* getGutterRemovedEvent() {
+                return gutterRemovedEvent;
+            }
     };
 }
 
