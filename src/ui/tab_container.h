@@ -60,6 +60,8 @@ namespace sunaba::ui {
             TypedArray<Vector3i> _structured_text_parser(const Array &args, const String &text) const override;
 
             PackedInt32Array _get_allowed_size_flags_horizontal() const override;
+
+            PackedInt32Array _get_allowed_size_flags_vertical() const override;
     };
 
     class TabContainer : public Container {
