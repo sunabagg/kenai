@@ -143,6 +143,7 @@ namespace sunaba::ui {
             "tabsPosition", sol::property(&TabContainer::getTabsPosition, &TabContainer::setTabsPosition),
             "tabsRearrangeGroup", sol::property(&TabContainer::getTabsRearrangeGroup, &TabContainer::setTabsRearrangeGroup),
             "tabsVisible", sol::property(&TabContainer::getTabsVisible, &TabContainer::setTabsVisible),
+            "useHiddenTabsForMinSize", sol::property(&TabContainer::getUseHiddenTabsForMinSize, &TabContainer::setUseHiddenTabsForMinSize),
         );
 
     }
