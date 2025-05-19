@@ -235,6 +235,10 @@ namespace sunaba::ui {
             bool getEditable() {
                 return text_edit->is_editable();
             }
+
+            void setEditable(bool enabled) {
+                text_edit->set_editable(enabled);
+            }
     };
 }
 
