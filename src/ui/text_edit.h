@@ -295,6 +295,10 @@ namespace sunaba::ui {
             void setLanguage(std::string language) {
                 text_edit->set_language(String(language.c_str()));
             }
+
+            bool getMiddleMousePasteEnabled() {
+                return text_edit->is_middle_mouse_paste_enabled();
+            }
     };
 }
 
