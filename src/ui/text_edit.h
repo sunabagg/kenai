@@ -163,6 +163,10 @@ namespace sunaba::ui {
             int getCaretType() {
                 return text_edit->get_caret_type();
             }
+
+            void setCaretType(int type) {
+                text_edit->set_caret_type(static_cast<godot::TextEdit::CaretType>(type));
+            }
     };
 }
 
