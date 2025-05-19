@@ -164,6 +164,7 @@ namespace sunaba::ui {
             "getTabIdxFromControl", &TabContainer::getTabIdxFromControl,
             "getTabMetadata", &TabContainer::getTabMetadata,
             "getTabTitle", &TabContainer::getTabTitle,
+            "getTabTooltip", &TabContainer::getTabTooltip,
         );
 
     }
