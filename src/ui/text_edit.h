@@ -428,6 +428,10 @@ namespace sunaba::ui {
             SyntaxHighlighter* getSyntaxHighlighter() {
                 return new SyntaxHighlighter(text_edit->get_syntax_highlighter());
             }
+
+            void setSyntaxHighlighter(SyntaxHighlighter* highlighter) {
+                text_edit->set_syntax_highlighter(highlighter->getSyntaxHighlighter());
+            }
     };
 }
 
