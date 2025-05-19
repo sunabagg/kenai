@@ -267,6 +267,10 @@ namespace sunaba::ui {
             bool getHighlightAllOccurrences() {
                 return text_edit->is_highlight_all_occurrences_enabled();
             }
+
+            void setHighlightAllOccurrences(bool enabled) {
+                text_edit->set_highlight_all_occurrences(enabled);
+            }
     };
 }
 
