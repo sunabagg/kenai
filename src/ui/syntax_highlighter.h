@@ -15,6 +15,8 @@ using namespace sunaba::core;
 namespace sunaba::ui {
     void bindSyntaxHighlighter(sol::state &lua);
 
+    class TextEdit;
+
     class SyntaxHighlighter : public sunaba::core::Resource {
     private:
         GodotSyntaxHighlighter* syntax_highlighter = nullptr; // Pointer to the SyntaxHighlighter instance
@@ -47,6 +49,8 @@ namespace sunaba::ui {
         Dictionary getLineSyntaxHighlighting(int line) {
             return syntax_highlighter->get_line_syntax_highlighting(line);
         }
+
+        TextEdit* getTextEdit();
     };
 }
 
