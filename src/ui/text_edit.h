@@ -476,6 +476,10 @@ namespace sunaba::ui {
             int getWrapMode() {
                 return text_edit->get_line_wrapping_mode();
             }
+
+            void setWrapMode(int mode) {
+                text_edit->set_line_wrapping_mode(static_cast<godot::TextServer::LineWrappingMode>(mode));
+            }
     };
 }
 
