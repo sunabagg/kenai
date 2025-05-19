@@ -436,6 +436,10 @@ namespace sunaba::ui {
             std::string getText() {
                 return String(text_edit->get_text()).utf8().get_data();
             }
+
+            void setText(std::string text) {
+                text_edit->set_text(String(text.c_str()));
+            }
     };
 }
 
