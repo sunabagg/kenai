@@ -387,6 +387,10 @@ namespace sunaba::ui {
             float getScrollVertical() {
                 return text_edit->get_v_scroll();
             }
+
+            void setScrollVertical(float scroll) {
+                text_edit->set_v_scroll(scroll);
+            }
     };
 }
 
