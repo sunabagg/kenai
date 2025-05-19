@@ -179,7 +179,8 @@ namespace sunaba::ui {
             "setTabTitle", &TabContainer::setTabTitle,
             "setTabTooltip", &TabContainer::setTabTooltip,
             "cast", [](Element* e) {
-                
+                TabContainerNode* tab = Object::cast_to<TabContainerNode>(e->getNode());
+                return new TabContainer(tab);
             }
         );
 
