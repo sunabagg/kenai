@@ -187,6 +187,10 @@ namespace sunaba::ui {
             std::string getCustomWordSeparators() {
                 return String(text_edit->get_custom_word_separators()).utf8().get_data();
             }
+
+            void setCustomWordSeparators(std::string separators) {
+                text_edit->set_custom_word_separators(String(separators.c_str()));
+            }
     };
 }
 
