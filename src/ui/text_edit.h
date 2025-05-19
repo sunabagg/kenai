@@ -528,6 +528,8 @@ namespace sunaba::ui {
             void setTextChangedEvent(Event* event) {
                 textChangedEvent = event;
             }
+
+            Event* textSetEvent;
     };
 }
 
