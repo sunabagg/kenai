@@ -239,6 +239,10 @@ namespace sunaba::ui {
             void setEditable(bool enabled) {
                 text_edit->set_editable(enabled);
             }
+
+            bool getEmojiMenuEnabled() {
+                return text_edit->is_emoji_menu_enabled();
+            }
     };
 }
 
