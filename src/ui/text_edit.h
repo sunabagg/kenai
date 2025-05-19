@@ -504,6 +504,8 @@ namespace sunaba::ui {
             void setGutterClickedEvent(Event* event) {
                 gutterClickedEvent = event;
             }
+
+            Event* gutterRemovedEvent;
     };
 }
 
