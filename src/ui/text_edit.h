@@ -259,6 +259,10 @@ namespace sunaba::ui {
             int getFocusMode() {
                 return text_edit->get_focus_mode();
             }
+
+            void setFocusMode(int mode) {
+                text_edit->set_focus_mode(static_cast<godot::Control::FocusMode>(mode));
+            }
     };
 }
 
