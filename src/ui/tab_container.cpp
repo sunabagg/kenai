@@ -145,6 +145,7 @@ namespace sunaba::ui {
             "tabsVisible", sol::property(&TabContainer::getTabsVisible, &TabContainer::setTabsVisible),
             "useHiddenTabsForMinSize", sol::property(&TabContainer::getUseHiddenTabsForMinSize, &TabContainer::setUseHiddenTabsForMinSize),
             "activeTabRearranged", sol::property(&TabContainer::getActiveTabRearrangedEvent, &TabContainer::setActiveTabRearrangedEvent),
+            "prePopupPressed", sol::property(&TabContainer::getPrePopupPressedEvent, &TabContainer::setPrePopupPressedEvent),
         );
 
     }
