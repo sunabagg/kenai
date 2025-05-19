@@ -165,6 +165,7 @@ namespace sunaba::ui {
             "getTabMetadata", &TabContainer::getTabMetadata,
             "getTabTitle", &TabContainer::getTabTitle,
             "getTabTooltip", &TabContainer::getTabTooltip,
+            "isTabDisabled", &TabContainer::isTabDisabled,
         );
 
     }
