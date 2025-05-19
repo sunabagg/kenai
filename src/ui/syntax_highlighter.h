@@ -43,6 +43,10 @@ namespace sunaba::ui {
         void clearHighlightingCache() {
             syntax_highlighter->clear_highlighting_cache();
         }
+
+        Dictionary getLineSyntaxHighlighting(int line) {
+            return syntax_highlighter->get_line_syntax_highlighting(line);
+        }
     };
 }
 
