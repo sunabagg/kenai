@@ -148,6 +148,7 @@ namespace sunaba::ui {
             "prePopupPressed", sol::property(&TabContainer::getPrePopupPressedEvent, &TabContainer::setPrePopupPressedEvent),
             "tabButtonPressed", sol::property(&TabContainer::getTabButtonPressedEvent, &TabContainer::setTabButtonPressedEvent),
             "tabChanged", sol::property(&TabContainer::getTabChangedEvent, &TabContainer::setTabChangedEvent),
+            "tabClicked", sol::property(&TabContainer::getTabClickedEvent, &TabContainer::setTabClickedEvent),
         );
 
     }
