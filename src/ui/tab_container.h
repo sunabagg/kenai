@@ -59,8 +59,7 @@ namespace sunaba::ui {
 
             TypedArray<Vector3i> _structured_text_parser(const Array &args, const String &text) const override;
 
-        private:
-            sunaba::ui::TabBar* tab_bar = nullptr;
+            PackedInt32Array _get_allowed_size_flags_horizontal() const override;
     };
 
     class TabContainer : public Container {
