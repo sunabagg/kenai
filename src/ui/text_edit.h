@@ -219,6 +219,10 @@ namespace sunaba::ui {
             bool getDrawSpaces() {
                 return text_edit->is_drawing_spaces();
             }
+
+            void setDrawSpaces(bool enabled) {
+                text_edit->set_draw_spaces(enabled);
+            }
     };
 }
 
