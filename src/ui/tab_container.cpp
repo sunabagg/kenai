@@ -137,6 +137,7 @@ namespace sunaba::ui {
             "clipTabs", sol::property(&TabContainer::getClipTabs, &TabContainer::setClipTabs),
             "currentTab", sol::property(&TabContainer::getCurrentTab, &TabContainer::setCurrentTab),
             "deselectEnabled", sol::property(&TabContainer::getDeselectEnabled, &TabContainer::setDeselectEnabled),
+            "dragToRearrangeEnabled", sol::property(&TabContainer::getDragToRearrangeEnabled, &TabContainer::setDragToRearrangeEnabled),
         );
 
     }
