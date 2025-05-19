@@ -203,6 +203,10 @@ namespace sunaba::ui {
             bool getDragAndDropSelectionEnabled() {
                 return text_edit->is_drag_and_drop_selection_enabled();
             }
+
+            void setDragAndDropSelectionEnabled(bool enabled) {
+                text_edit->set_drag_and_drop_selection_enabled(enabled);
+            }
     };
 }
 
