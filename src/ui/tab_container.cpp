@@ -168,6 +168,7 @@ namespace sunaba::ui {
             "isTabDisabled", &TabContainer::isTabDisabled,
             "isTabHidden", &TabContainer::isTabHidden,
             "selectNextAvailable", &TabContainer::selectNextAvailable,
+            "selectPreviousAvailable", &TabContainer::selectPreviousAvailable,
         );
 
     }
