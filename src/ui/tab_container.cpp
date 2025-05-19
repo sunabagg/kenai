@@ -172,6 +172,7 @@ namespace sunaba::ui {
             "setPopup", &TabContainer::setPopup,
             "setTabButtonIcon", &TabContainer::setTabButtonIcon,
             "setTabDisabled", &TabContainer::setTabDisabled,
+            "setTabHidden", &TabContainer::setTabHidden,
         );
 
     }
