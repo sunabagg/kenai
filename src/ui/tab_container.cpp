@@ -140,6 +140,7 @@ namespace sunaba::ui {
             "dragToRearrangeEnabled", sol::property(&TabContainer::getDragToRearrangeEnabled, &TabContainer::setDragToRearrangeEnabled),
             "tabAlignment", sol::property(&TabContainer::getTabAlignment, &TabContainer::setTabAlignment),
             "tabFocusMode", sol::property(&TabContainer::getTabFocusMode, &TabContainer::setTabFocusMode),
+            "tabsPosition", sol::property(&TabContainer::getTabsPosition, &TabContainer::setTabsPosition),
         );
 
     }
