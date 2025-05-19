@@ -178,6 +178,9 @@ namespace sunaba::ui {
             "setTabMetadata", &TabContainer::setTabMetadata,
             "setTabTitle", &TabContainer::setTabTitle,
             "setTabTooltip", &TabContainer::setTabTooltip,
+            "cast", [](Element* e) {
+                
+            }
         );
 
     }
