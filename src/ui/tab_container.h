@@ -289,6 +289,10 @@ namespace sunaba::ui {
             Variant getTabMetadata(int tab) {
                 return container->get_tab_metadata(tab);
             }
+
+            std::string getTabTitle(int tab) {
+                return String(container->get_tab_title(tab)).utf8().get_data();
+            }
     };
 }
 
