@@ -337,6 +337,18 @@ namespace sunaba::ui {
             void setTabHidden(int tab, bool hidden) {
                 container->set_tab_hidden(tab, hidden);
             }
+
+            void setTabIcon(int tab, sunaba::core::Texture2D* icon) {
+                godot::Texture2D* iconTexture = 
+                    icon != nullptr 
+                        ? icon->getTexture2D() 
+                        : nullptr;
+                Ref<godot::Texture2D> iconRef = 
+                    iconTexture != nullptr 
+                        ? Ref<godot::Texture2D>(iconTexture) 
+                        : Ref<godot::Texture2D>();
+                container->set_tab_icon(tab, iconRef);
+            }
     };
 }
 
