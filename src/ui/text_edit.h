@@ -58,6 +58,8 @@ namespace sunaba::ui {
             TypedArray<Vector3i> _structured_text_parser(const Array &args, const String &text) const override;
 
             void _backspace(int caret_index) override;
+
+            void _copy(int caret_index) override;
     };
 
     class TextEdit : public Control {
