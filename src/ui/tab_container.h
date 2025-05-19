@@ -281,6 +281,10 @@ namespace sunaba::ui {
             int getTabIdxAtPoint(const Vector2& point) {
                 return container->get_tab_idx_at_point(point);
             }
+
+            int getTabIdxFromControl(Control* control) {
+                return container->get_tab_idx_from_control(control->getControl());
+            }
     };
 }
 
