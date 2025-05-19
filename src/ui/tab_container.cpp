@@ -155,6 +155,7 @@ namespace sunaba::ui {
             "getPopup", &TabContainer::getPopup,
             "getPreviousTab", &TabContainer::getPreviousTab,
             "getTabBar", &TabContainer::getTabBar,
+            "getTabButtonIcon", &TabContainer::getTabButtonIcon,
         );
 
     }
