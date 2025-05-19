@@ -171,6 +171,7 @@ namespace sunaba::ui {
             "selectPreviousAvailable", &TabContainer::selectPreviousAvailable,
             "setPopup", &TabContainer::setPopup,
             "setTabButtonIcon", &TabContainer::setTabButtonIcon,
+            "setTabDisabled", &TabContainer::setTabDisabled,
         );
 
     }
