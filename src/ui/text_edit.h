@@ -351,6 +351,10 @@ namespace sunaba::ui {
             void setScrollFitContentWidth(bool enabled) {
                 text_edit->set_fit_content_width_enabled(enabled);
             }
+
+            int getScrollHorizontal() {
+                return text_edit->get_scroll_horizontal();
+            }
     };
 }
 
