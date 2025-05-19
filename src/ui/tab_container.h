@@ -269,6 +269,10 @@ namespace sunaba::ui {
             int getTabCount() {
                 return container->get_tab_count();
             }
+
+            sunaba::core::Texture2D* getTabIcon(int tab) {
+                return new sunaba::core::Texture2D(container->get_tab_icon(tab).ptr());
+            }
     };
 }
 
