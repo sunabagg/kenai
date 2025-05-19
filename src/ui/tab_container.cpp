@@ -147,6 +147,7 @@ namespace sunaba::ui {
             "activeTabRearranged", sol::property(&TabContainer::getActiveTabRearrangedEvent, &TabContainer::setActiveTabRearrangedEvent),
             "prePopupPressed", sol::property(&TabContainer::getPrePopupPressedEvent, &TabContainer::setPrePopupPressedEvent),
             "tabButtonPressed", sol::property(&TabContainer::getTabButtonPressedEvent, &TabContainer::setTabButtonPressedEvent),
+            "tabChanged", sol::property(&TabContainer::getTabChangedEvent, &TabContainer::setTabChangedEvent),
         );
 
     }
