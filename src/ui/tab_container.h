@@ -313,6 +313,10 @@ namespace sunaba::ui {
             bool selectPreviousAvailable() {
                 return container->select_previous_available();
             }
+
+            void setPopup(Element* popup) {
+                container->set_popup(popup->getNode());
+            }
     };
 }
 
