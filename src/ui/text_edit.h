@@ -195,6 +195,10 @@ namespace sunaba::ui {
             bool getDeselectOnFocusLossEnabled() {
                 return text_edit->is_deselect_on_focus_loss_enabled();
             }
+
+            void setDeselectOnFocusLossEnabled(bool enabled) {
+                text_edit->set_deselect_on_focus_loss_enabled(enabled);
+            }
     };
 }
 
