@@ -131,7 +131,7 @@ namespace sunaba::ui {
 
     void bindTabContainer(sol::state& lua) {
         lua.new_usertype<TabContainer>("TabContainer",
-            sol::base_classes, sol::bases<Container>(),
+            sol::base_classes, sol::bases<BaseObject, Element, sunaba::core::CanvasItem, Control, Container>(),
         );
 
     }
