@@ -170,6 +170,7 @@ namespace sunaba::ui {
             "selectNextAvailable", &TabContainer::selectNextAvailable,
             "selectPreviousAvailable", &TabContainer::selectPreviousAvailable,
             "setPopup", &TabContainer::setPopup,
+            "setTabButtonIcon", &TabContainer::setTabButtonIcon,
         );
 
     }
