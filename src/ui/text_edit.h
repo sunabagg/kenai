@@ -493,6 +493,9 @@ namespace sunaba::ui {
             Event* getGutterAddedEvent() {
                 return gutterAddedEvent;
             }
+            void setGutterAddedEvent(Event* event) {
+                gutterAddedEvent = event;
+            }
     };
 }
 
