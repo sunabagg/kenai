@@ -363,6 +363,10 @@ namespace sunaba::ui {
             bool getScrollPastEndOfFile() {
                 return text_edit->is_scroll_past_end_of_file_enabled();
             }
+
+            void setScrollPastEndOfFile(bool enabled) {
+                text_edit->set_scroll_past_end_of_file_enabled(enabled);
+            }
     };
 }
 
