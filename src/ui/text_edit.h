@@ -175,6 +175,10 @@ namespace sunaba::ui {
             void setClipContents(bool enabled) {
                 text_edit->set_clip_contents(enabled);
             }
+
+            bool getContextMenuEnabled() {
+                return text_edit->is_context_menu_enabled();
+            }
     };
 }
 
