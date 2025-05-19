@@ -299,6 +299,10 @@ namespace sunaba::ui {
             bool getMiddleMousePasteEnabled() {
                 return text_edit->is_middle_mouse_paste_enabled();
             }
+            
+            void setMiddleMousePasteEnabled(bool enabled) {
+                text_edit->set_middle_mouse_paste_enabled(enabled);
+            }
     };
 }
 
