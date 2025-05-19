@@ -287,6 +287,10 @@ namespace sunaba::ui {
             void setIndentWrappedLines(bool enabled) {
                 text_edit->set_indent_wrapped_lines(enabled);
             }
+
+            std::string getLanguage() {
+                return String(text_edit->get_language()).utf8().get_data();
+            }
     };
 }
 
