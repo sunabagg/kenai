@@ -426,7 +426,7 @@ namespace sunaba::ui {
             }
 
             SyntaxHighlighter* getSyntaxHighlighter() {
-                return new SyntaxHighlighter(text_edit->get_syntax_highlighter());
+                return new SyntaxHighlighter(text_edit->get_syntax_highlighter().ptr());
             }
 
             void setSyntaxHighlighter(SyntaxHighlighter* highlighter) {
