@@ -432,6 +432,10 @@ namespace sunaba::ui {
             void setSyntaxHighlighter(SyntaxHighlighter* highlighter) {
                 text_edit->set_syntax_highlighter(highlighter->getSyntaxHighlighter());
             }
+
+            std::string getText() {
+                return String(text_edit->get_text()).utf8().get_data();
+            }
     };
 }
 
