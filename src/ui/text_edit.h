@@ -482,6 +482,9 @@ namespace sunaba::ui {
             }
 
             Event* caretChangedEvent;
+            Event* getCaretChangedEvent() {
+                return caretChangedEvent;
+            }
     };
 }
 
