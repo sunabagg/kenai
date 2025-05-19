@@ -139,6 +139,10 @@ namespace sunaba::ui {
             bool getCaretMidGrapheme() {
                 return text_edit->is_caret_mid_grapheme_enabled();
             }
+
+            void setCaretMidGrapheme(bool enabled) {
+                text_edit->set_caret_mid_grapheme_enabled(enabled);
+            }
     };
 }
 
