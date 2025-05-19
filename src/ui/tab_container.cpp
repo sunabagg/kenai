@@ -157,6 +157,7 @@ namespace sunaba::ui {
             "getTabBar", &TabContainer::getTabBar,
             "getTabButtonIcon", &TabContainer::getTabButtonIcon,
             "getTabControl", &TabContainer::getTabControl,
+            "getTabCount", &TabContainer::getTabCount,
         );
 
     }
