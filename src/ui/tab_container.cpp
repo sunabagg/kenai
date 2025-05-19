@@ -133,6 +133,7 @@ namespace sunaba::ui {
         lua.new_usertype<TabContainer>("TabContainer",
             sol::constructors<TabContainer()>(),
             sol::base_classes, sol::bases<BaseObject, Element, sunaba::core::CanvasItem, Control, Container>(),
+            "allTabsInFront", sol::property(&TabContainer::getAllTabsInFront, &TabContainer::setAllTabsInFront),
         );
 
     }
