@@ -177,6 +177,7 @@ namespace sunaba::ui {
             "setTabIconMaxWidth", &TabContainer::setTabIconMaxWidth,
             "setTabMetadata", &TabContainer::setTabMetadata,
             "setTabTitle", &TabContainer::setTabTitle,
+            "setTabTooltip", &TabContainer::setTabTooltip,
         );
 
     }
