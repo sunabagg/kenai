@@ -174,6 +174,7 @@ namespace sunaba::ui {
             "setTabDisabled", &TabContainer::setTabDisabled,
             "setTabHidden", &TabContainer::setTabHidden,
             "setTabIcon", &TabContainer::setTabIcon,
+            "setTabIconMaxWidth", &TabContainer::setTabIconMaxWidth,
         );
 
     }
