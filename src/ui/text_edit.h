@@ -329,7 +329,7 @@ namespace sunaba::ui {
             }
 
             std::string getPlaceholderText() {
-                return String(text_edit->get_placeholder_text()).utf8().get_data();
+                return String(text_edit->get_placeholder()).utf8().get_data();
             }
 
             void setPlaceholderText(std::string text) {
