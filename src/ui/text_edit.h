@@ -131,6 +131,10 @@ namespace sunaba::ui {
             bool getCaretDrawWhenEditableDisabled() {
                 return text_edit->is_drawing_caret_when_editable_disabled();
             }
+
+            void setCaretDrawWhenEditableDisabled(bool enabled) {
+                text_edit->set_draw_caret_when_editable_disabled(enabled);
+            }
     };
 }
 
