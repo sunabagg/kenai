@@ -496,6 +496,8 @@ namespace sunaba::ui {
             void setGutterAddedEvent(Event* event) {
                 gutterAddedEvent = event;
             }
+
+            Event* gutterClickedEvent;
     };
 }
 
