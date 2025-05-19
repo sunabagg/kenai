@@ -155,6 +155,10 @@ namespace sunaba::ui {
             bool getCaretMultiple() {
                 return text_edit->is_multiple_carets_enabled();
             }
+
+            void setCaretMultiple(bool enabled) {
+                text_edit->set_multiple_carets_enabled(enabled);
+            }
     };
 }
 
