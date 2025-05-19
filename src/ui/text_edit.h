@@ -283,6 +283,10 @@ namespace sunaba::ui {
             bool getIndentWrappedLines() {
                 return text_edit->is_indent_wrapped_lines();
             }
+
+            void setIndentWrappedLines(bool enabled) {
+                text_edit->set_indent_wrapped_lines(enabled);
+            }
     };
 }
 
