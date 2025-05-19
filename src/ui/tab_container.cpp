@@ -169,6 +169,7 @@ namespace sunaba::ui {
             "isTabHidden", &TabContainer::isTabHidden,
             "selectNextAvailable", &TabContainer::selectNextAvailable,
             "selectPreviousAvailable", &TabContainer::selectPreviousAvailable,
+            "setPopup", &TabContainer::setPopup,
         );
 
     }
