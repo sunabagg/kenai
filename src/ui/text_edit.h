@@ -111,6 +111,10 @@ namespace sunaba::ui {
             void setAutowrapMode(int mode) {
                 text_edit->set_autowrap_mode(static_cast<godot::TextServer::AutowrapMode>(mode));
             }
+
+            bool getCaretBlink() {
+                return text_edit->is_caret_blink_enabled();
+            }
     };
 }
 
