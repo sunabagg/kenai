@@ -291,6 +291,10 @@ namespace sunaba::ui {
             std::string getLanguage() {
                 return String(text_edit->get_language()).utf8().get_data();
             }
+
+            void setLanguage(std::string language) {
+                text_edit->set_language(String(language.c_str()));
+            }
     };
 }
 
