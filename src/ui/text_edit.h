@@ -379,6 +379,10 @@ namespace sunaba::ui {
             float getScrollVSScrollSpeed() {
                 return text_edit->get_v_scroll_speed();
             }
+
+            void setScrollVSScrollSpeed(float speed) {
+                text_edit->set_v_scroll_speed(speed);
+            }
     };
 }
 
