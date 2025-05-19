@@ -327,6 +327,10 @@ namespace sunaba::ui {
             void setMouseDefaultCursorShape(int shape) {
                 text_edit->set_default_cursor_shape(static_cast<godot::Control::CursorShape>(shape));
             }
+
+            std::string getPlaceholderText() {
+                return String(text_edit->get_placeholder_text()).utf8().get_data();
+            }
     };
 }
 
