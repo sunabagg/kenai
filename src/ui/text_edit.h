@@ -199,6 +199,10 @@ namespace sunaba::ui {
             void setDeselectOnFocusLossEnabled(bool enabled) {
                 text_edit->set_deselect_on_focus_loss_enabled(enabled);
             }
+
+            bool getDragAndDropSelectionEnabled() {
+                return text_edit->is_drag_and_drop_selection_enabled();
+            }
     };
 }
 
