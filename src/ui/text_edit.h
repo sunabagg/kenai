@@ -323,6 +323,10 @@ namespace sunaba::ui {
             int getMouseDefaultCursorShape() {
                 return text_edit->get_default_cursor_shape();
             }
+
+            void setMouseDefaultCursorShape(int shape) {
+                text_edit->set_default_cursor_shape(static_cast<godot::Control::CursorShape>(shape));
+            }
     };
 }
 
