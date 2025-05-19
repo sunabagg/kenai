@@ -395,6 +395,10 @@ namespace sunaba::ui {
             bool getSelectingEnabled() {
                 return text_edit->is_selecting_enabled();
             }
+
+            void setSelectingEnabled(bool enabled) {
+                text_edit->set_selecting_enabled(enabled);
+            }
     };
 }
 
