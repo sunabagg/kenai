@@ -191,6 +191,10 @@ namespace sunaba::ui {
             void setCustomWordSeparators(std::string separators) {
                 text_edit->set_custom_word_separators(String(separators.c_str()));
             }
+
+            bool getDeselectOnFocusLossEnabled() {
+                return text_edit->is_deselect_on_focus_loss_enabled();
+            }
     };
 }
 
