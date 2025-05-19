@@ -456,6 +456,10 @@ namespace sunaba::ui {
             void setUseCustomWordSeparators(bool enabled) {
                 text_edit->set_use_custom_word_separators(enabled);
             }
+
+            bool getUseDefaultWordSeparators() {
+                return text_edit->is_default_word_separators_enabled();
+            }
     };
 }
 
