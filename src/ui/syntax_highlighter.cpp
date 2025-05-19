@@ -2,6 +2,10 @@
 #include "text_edit.h"
 
 namespace sunaba::ui {
+    TextEdit* SyntaxHighlighter::getTextEdit() {
+        return new TextEdit(syntax_highlighter->get_text_edit());
+    }
+    
     void bindSyntaxHighlighter(sol::state &lua) {
         lua.new_usertype<SyntaxHighlighter>("SyntaxHighlighter",
             sol::constructors<SyntaxHighlighter()>(),
