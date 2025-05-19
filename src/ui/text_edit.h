@@ -391,6 +391,10 @@ namespace sunaba::ui {
             void setScrollVertical(float scroll) {
                 text_edit->set_v_scroll(scroll);
             }
+
+            bool getSelectingEnabled() {
+                return text_edit->is_selecting_enabled();
+            }
     };
 }
 
