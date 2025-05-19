@@ -179,6 +179,10 @@ namespace sunaba::ui {
             bool getContextMenuEnabled() {
                 return text_edit->is_context_menu_enabled();
             }
+
+            void setContextMenuEnabled(bool enabled) {
+                text_edit->set_context_menu_enabled(enabled);
+            }
     };
 }
 
