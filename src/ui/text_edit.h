@@ -371,6 +371,10 @@ namespace sunaba::ui {
             bool getScrollSmooth() {
                 return text_edit->is_smooth_scroll_enabled();
             }
+
+            void setScrollSmooth(bool enabled) {
+                text_edit->set_smooth_scroll_enabled(enabled);
+            }
     };
 }
 
