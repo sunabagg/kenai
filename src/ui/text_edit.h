@@ -107,6 +107,10 @@ namespace sunaba::ui {
             int getAutowrapMode() {
                 return text_edit->get_autowrap_mode();
             }
+
+            void setAutowrapMode(int mode) {
+                text_edit->set_autowrap_mode(static_cast<godot::TextServer::AutowrapMode>(mode));
+            }
     };
 }
 
