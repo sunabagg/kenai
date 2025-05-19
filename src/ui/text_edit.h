@@ -335,6 +335,10 @@ namespace sunaba::ui {
             void setPlaceholderText(std::string text) {
                 text_edit->set_placeholder(String(text.c_str()));
             }
+
+            bool getScrollFitContentHeight() {
+                return text_edit->is_fit_content_height_enabled();
+            }
     };
 }
 
