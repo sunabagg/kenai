@@ -60,6 +60,8 @@ namespace sunaba::ui {
             void _backspace(int caret_index) override;
 
             void _copy(int caret_index) override;
+
+            void _cut(int caret_index) override;
     };
 
     class TextEdit : public Control {
