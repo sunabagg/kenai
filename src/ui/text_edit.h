@@ -10,6 +10,7 @@
 #include "control.h"
 #include "../core/stl_function_wrapper.h"
 #include "../core/event.h"
+#include "syntax_highlighter.h"
 
 using namespace godot;
 using namespace sunaba::core;
@@ -422,6 +423,10 @@ namespace sunaba::ui {
 
             void setStructuredTextBidiOverrideOptions(Array options) {
                 text_edit->set_structured_text_bidi_override_options(options);
+            }
+
+            SyntaxHighlighter* getSyntaxHighlighter() {
+                return new SyntaxHighlighter(text_edit->get_syntax_highlighter());
             }
     };
 }
