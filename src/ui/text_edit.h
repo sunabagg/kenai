@@ -530,6 +530,9 @@ namespace sunaba::ui {
             }
 
             Event* textSetEvent;
+            Event* getTextSetEvent() {
+                return textSetEvent;
+            }
     };
 }
 
