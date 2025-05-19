@@ -51,6 +51,10 @@ namespace sunaba::ui {
         }
 
         TextEdit* getTextEdit();
+
+        void updateCache() {
+            syntax_highlighter->update_cache();
+        }
     };
 }
 
