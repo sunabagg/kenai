@@ -279,6 +279,10 @@ namespace sunaba::ui {
             void setHighlightCurrentLine(bool enabled) {
                 text_edit->set_highlight_current_line(enabled);
             }
+
+            bool getIndentWrappedLines() {
+                return text_edit->is_indent_wrapped_lines();
+            }
     };
 }
 
