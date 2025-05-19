@@ -305,6 +305,10 @@ namespace sunaba::ui {
             bool isTabHidden(int tab) {
                 return container->is_tab_hidden(tab);
             }
+
+            bool selectNextAvailable() {
+                return container->select_next_available();
+            }
     };
 }
 
