@@ -135,6 +135,10 @@ namespace sunaba::ui {
             void setCaretDrawWhenEditableDisabled(bool enabled) {
                 text_edit->set_draw_caret_when_editable_disabled(enabled);
             }
+
+            bool getCaretMidGrapheme() {
+                return text_edit->is_caret_mid_grapheme_enabled();
+            }
     };
 }
 
