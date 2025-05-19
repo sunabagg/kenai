@@ -339,6 +339,10 @@ namespace sunaba::ui {
             bool getScrollFitContentHeight() {
                 return text_edit->is_fit_content_height_enabled();
             }
+
+            void setScrollFitContentHeight(bool enabled) {
+                text_edit->set_fit_content_height_enabled(enabled);
+            }
     };
 }
 
