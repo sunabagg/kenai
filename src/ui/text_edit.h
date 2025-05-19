@@ -183,6 +183,10 @@ namespace sunaba::ui {
             void setContextMenuEnabled(bool enabled) {
                 text_edit->set_context_menu_enabled(enabled);
             }
+
+            std::string getCustomWordSeparators() {
+                return String(text_edit->get_custom_word_separators()).utf8().get_data();
+            }
     };
 }
 
