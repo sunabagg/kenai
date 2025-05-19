@@ -39,6 +39,10 @@ namespace sunaba::ui {
             syntax_highlighter = p_node;
             setResource(syntax_highlighter);
         }
+
+        void clearHighlightingCache() {
+            syntax_highlighter->clear_highlighting_cache();
+        }
     };
 }
 
