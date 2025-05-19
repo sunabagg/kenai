@@ -101,6 +101,7 @@ target_sources(${PROJECT_NAME} PRIVATE
         sub_viewport_container.cpp
         tab_bar.h
         tab_bar.cpp
+        tab_container.h
 )
 
 target_include_directories( ${PROJECT_NAME}
