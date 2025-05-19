@@ -353,7 +353,11 @@ namespace sunaba::ui {
             }
 
             int getScrollHorizontal() {
-                return text_edit->get_scroll_horizontal();
+                return text_edit->get_h_scroll();
+            }
+
+            void setScrollHorizontal(int scroll) {
+                text_edit->set_h_scroll(scroll);
             }
     };
 }
