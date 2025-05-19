@@ -517,6 +517,9 @@ namespace sunaba::ui {
             Event* getLinesEditedFromEvent() {
                 return linesEditedFromEvent;
             }
+            void setLinesEditedFromEvent(Event* event) {
+                linesEditedFromEvent = event;
+            }
     };
 }
 
