@@ -361,6 +361,10 @@ namespace sunaba::ui {
             void setTabTitle(int tab, const std::string& title) {
                 container->set_tab_title(tab, String(title.c_str()));
             }
+
+            void setTabTooltip(int tab, const std::string& tooltip) {
+                container->set_tab_tooltip(tab, String(tooltip.c_str()));
+            }
     };
 }
 
