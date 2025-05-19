@@ -367,6 +367,10 @@ namespace sunaba::ui {
             void setScrollPastEndOfFile(bool enabled) {
                 text_edit->set_scroll_past_end_of_file_enabled(enabled);
             }
+
+            bool getScrollSmooth() {
+                return text_edit->is_smooth_scroll_enabled();
+            }
     };
 }
 
