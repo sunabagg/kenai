@@ -211,6 +211,10 @@ namespace sunaba::ui {
             bool getDrawControlChars() {
                 return text_edit->get_draw_control_chars();
             }
+
+            void setDrawControlChars(bool enabled) {
+                text_edit->set_draw_control_chars(enabled);
+            }
     };
 }
 
