@@ -156,6 +156,7 @@ namespace sunaba::ui {
             "getPreviousTab", &TabContainer::getPreviousTab,
             "getTabBar", &TabContainer::getTabBar,
             "getTabButtonIcon", &TabContainer::getTabButtonIcon,
+            "getTabControl", &TabContainer::getTabControl,
         );
 
     }
