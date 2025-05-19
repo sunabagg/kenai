@@ -319,6 +319,10 @@ namespace sunaba::ui {
             void setMinimapWidth(int width) {
                 text_edit->set_minimap_width(width);
             }
+
+            int getMouseDefaultCursorShape() {
+                return text_edit->get_default_cursor_shape();
+            }
     };
 }
 
