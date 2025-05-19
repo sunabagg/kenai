@@ -359,6 +359,10 @@ namespace sunaba::ui {
             void setScrollHorizontal(int scroll) {
                 text_edit->set_h_scroll(scroll);
             }
+
+            bool getScrollPastEndOfFile() {
+                return text_edit->is_scroll_past_end_of_file_enabled();
+            }
     };
 }
 
