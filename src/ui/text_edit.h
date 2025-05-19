@@ -103,6 +103,10 @@ namespace sunaba::ui {
                 connectTextEditSignals();
                 setControl(text_edit);
             }
+
+            int getAutowrapMode() {
+                return text_edit->get_autowrap_mode();
+            }
     };
 }
 
