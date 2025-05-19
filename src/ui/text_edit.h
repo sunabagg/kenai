@@ -333,7 +333,7 @@ namespace sunaba::ui {
             }
 
             void setPlaceholderText(std::string text) {
-                text_edit->set_placeholder_text(String(text.c_str()));
+                text_edit->set_placeholder(String(text.c_str()));
             }
     };
 }
