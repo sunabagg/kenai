@@ -464,6 +464,10 @@ namespace sunaba::ui {
             void setUseDefaultWordSeparators(bool enabled) {
                 text_edit->set_use_default_word_separators(enabled);
             }
+
+            bool getVirtualKeyboardEnabled() {
+                return text_edit->is_virtual_keyboard_enabled();
+            }
     };
 }
 
