@@ -297,6 +297,10 @@ namespace sunaba::ui {
             std::string getTabTooltip(int tab) {
                 return String(container->get_tab_tooltip(tab)).utf8().get_data();
             }
+
+            bool isTabDisabled(int tab) {
+                return container->is_tab_disabled(tab);
+            }
     };
 }
 
