@@ -150,6 +150,7 @@ namespace sunaba::ui {
             "tabChanged", sol::property(&TabContainer::getTabChangedEvent, &TabContainer::setTabChangedEvent),
             "tabClicked", sol::property(&TabContainer::getTabClickedEvent, &TabContainer::setTabClickedEvent),
             "tabHovered", sol::property(&TabContainer::getTabHoveredEvent, &TabContainer::setTabHoveredEvent),
+            "tabSelected", sol::property(&TabContainer::getTabSelectedEvent, &TabContainer::setTabSelectedEvent),
         );
 
     }
