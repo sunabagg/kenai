@@ -514,6 +514,9 @@ namespace sunaba::ui {
             }
 
             Event* linesEditedFromEvent;
+            Event* getLinesEditedFromEvent() {
+                return linesEditedFromEvent;
+            }
     };
 }
 
