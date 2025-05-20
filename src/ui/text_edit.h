@@ -12,6 +12,7 @@
 #include "../core/event.h"
 #include "syntax_highlighter.h"
 #include "h_scroll_bar.h"
+#include "../desktop/popup_menu.h"
 
 using namespace godot;
 using namespace sunaba::core;
@@ -813,6 +814,10 @@ namespace sunaba::ui {
 
             Vector2 getLocalMousePos() {
                 return text_edit->get_local_mouse_pos();
+            }
+
+            sunaba::desktop::PopupMenu* getMenu() {
+                return new sunaba::desktop::PopupMenu(text_edit->get_menu());
             }
     };
 }
