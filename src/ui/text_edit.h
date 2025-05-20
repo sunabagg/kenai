@@ -1179,6 +1179,10 @@ namespace sunaba::ui {
             void swapLines(int fromLine, int toLine) {
                 text_edit->swap_lines(fromLine, toLine);
             }
+
+            void tagSavedVersion() {
+                text_edit->tag_saved_version();
+            }
     };
 }
 
