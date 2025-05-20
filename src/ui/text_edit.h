@@ -1125,6 +1125,10 @@ namespace sunaba::ui {
             void setLineGutterClickable(int line, int gutter, bool clickable) {
                 text_edit->set_line_gutter_clickable(line, gutter, clickable);
             }
+
+            void setLineGutterIcon(int line, int gutter, sunaba::core::Texture2D* icon) {
+                text_edit->set_line_gutter_icon(line, gutter, icon->getTexture());
+            }
     };
 }
 
