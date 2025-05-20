@@ -1001,6 +1001,10 @@ namespace sunaba::ui {
             bool isMouseOverSelection(bool edges, int caretIndex = -1) {
                 return text_edit->is_mouse_over_selection(edges, caretIndex);
             }
+
+            bool isOvertypeModeEnabled() {
+                return text_edit->is_overtype_mode_enabled();
+            }
     };
 }
 
