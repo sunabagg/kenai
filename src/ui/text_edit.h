@@ -1147,6 +1147,10 @@ namespace sunaba::ui {
             void setOvertypeModeEnabled(bool enabled) {
                 text_edit->set_overtype_mode_enabled(enabled);
             }
+
+            void setSearchFlags(int flags) {
+                text_edit->set_search_flags(static_cast<godot::TextEdit::SearchFlags>(flags));
+            }
     };
 }
 
