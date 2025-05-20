@@ -291,6 +291,10 @@ namespace sunaba::ui {
                 &TextEdit::getScrollSmooth,
                 &TextEdit::setScrollSmooth
             ),
+            "scrollVScrollSpeed", sol::property(
+                &TextEdit::getScrollVSScrollSpeed,
+                &TextEdit::setScrollVSScrollSpeed
+            ),
         );
     }
 }
