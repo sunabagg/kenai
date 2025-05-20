@@ -1183,6 +1183,10 @@ namespace sunaba::ui {
             void tagSavedVersion() {
                 text_edit->tag_saved_version();
             }
+
+            void undo() {
+                text_edit->undo();
+            }
     };
 }
 
