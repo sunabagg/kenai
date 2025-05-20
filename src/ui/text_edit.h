@@ -1105,6 +1105,10 @@ namespace sunaba::ui {
             void setLine(int line, std::string text) {
                 text_edit->set_line(line, String(text.c_str()));
             }
+
+            void setLineAsCenterVisible(int line, int wrapIndex = 0) {
+                text_edit->set_line_as_center_visible(line, wrapIndex);
+            }
     };
 }
 
