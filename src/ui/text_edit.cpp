@@ -283,6 +283,10 @@ namespace sunaba::ui {
                 &TextEdit::getScrollHorizontal,
                 &TextEdit::setScrollHorizontal
             ),
+            "scrollPastEndOfFile", sol::property(
+                &TextEdit::getScrollPastEndOfFile,
+                &TextEdit::setScrollPastEndOfFile
+            ),
         );
     }
 }
