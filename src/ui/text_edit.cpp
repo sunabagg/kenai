@@ -387,6 +387,7 @@ namespace sunaba::ui {
             "collapseCarets", &TextEdit::collapseCarets,
             "copy", &TextEdit::copy,
             "cut", &TextEdit::cut,
+            "deleteSelection", &TextEdit::deleteSelection,
         );
     }
 }
