@@ -887,6 +887,10 @@ namespace sunaba::ui {
             int getSelectionOriginLine(int caretIndex = 0) {
                 return text_edit->get_selection_origin_line(caretIndex);
             }
+
+            int getSelectionTOLine(int caretIndex = 0) {
+                return text_edit->get_selection_to_line(caretIndex);
+            }
     };
 }
 
