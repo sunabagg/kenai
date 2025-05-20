@@ -171,6 +171,10 @@ namespace sunaba::ui {
                 &TextEdit::getCaretDrawWhenEditableDisabled,
                 &TextEdit::setCaretDrawWhenEditableDisabled
             ),
+            "caretMidGrapheme", sol::property(
+                &TextEdit::getCaretMidGrapheme,
+                &TextEdit::setCaretMidGrapheme
+            ),
         );
     }
 }
