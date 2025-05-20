@@ -724,6 +724,10 @@ namespace sunaba::ui {
             HScrollBar* getHScrollBar() {
                 return new HScrollBar(text_edit->get_h_scroll_bar());
             }
+
+            int getIndentLevel(int line) {
+                return text_edit->get_indent_level(line);
+            }
     };
 }
 
