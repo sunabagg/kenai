@@ -1083,7 +1083,7 @@ namespace sunaba::ui {
             }
 
             void setGutterDraw(int gutter, bool draw) {
-                text_edit->set_gutter_drawn(gutter, draw);
+                text_edit->set_gutter_draw(gutter, draw);
             }
     };
 }
