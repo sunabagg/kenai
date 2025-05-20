@@ -1097,6 +1097,10 @@ namespace sunaba::ui {
             void setGutterType(int gutter, int type) {
                 text_edit->set_gutter_type(gutter, static_cast<godot::TextEdit::GutterType>(type));
             }
+
+            void setGutterWidth(int gutter, int width) {
+                text_edit->set_gutter_width(gutter, width);
+            }
     };
 }
 
