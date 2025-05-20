@@ -259,6 +259,10 @@ namespace sunaba::ui {
                 &TextEdit::getMinimapDraw,
                 &TextEdit::setMinimapDraw
             ),
+            "minimapWidth", sol::property(
+                &TextEdit::getMinimapWidth,
+                &TextEdit::setMinimapWidth
+            )
         );
     }
 }
