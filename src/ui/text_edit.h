@@ -997,6 +997,10 @@ namespace sunaba::ui {
             bool isMenuVisible() {
                 return text_edit->is_menu_visible();
             }
+
+            bool isMouseOverSelection(bool edges, int caretIndex = -1) {
+                return text_edit->is_mouse_over_selection(edges, caretIndex);
+            }
     };
 }
 
