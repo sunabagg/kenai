@@ -961,6 +961,10 @@ namespace sunaba::ui {
             bool isCaretAfterSelectionOrigin(int caret = 0) {
                 return text_edit->is_caret_after_selection_origin(caret);
             }
+
+            bool isCaretVisible(int caret = 0) {
+                return text_edit->is_caret_visible(caret);
+            }
     };
 }
 
