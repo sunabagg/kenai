@@ -1113,6 +1113,10 @@ namespace sunaba::ui {
             void setLineAsFirstVisible(int line, int wrapIndex = 0) {
                 text_edit->set_line_as_first_visible(line, wrapIndex);
             }
+
+            void setLineAsLastVisible(int line, int wrapIndex = 0) {
+                text_edit->set_line_as_last_visible(line, wrapIndex);
+            }
     };
 }
 
