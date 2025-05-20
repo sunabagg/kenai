@@ -638,6 +638,10 @@ namespace sunaba::ui {
                 text_edit->cancel_ime();
             }
 
+            void centerViewportToCaret(int caret = 0) {
+                text_edit->center_viewport_to_caret(caret);
+            }
+
             void clear() {
                 text_edit->clear();
             }
