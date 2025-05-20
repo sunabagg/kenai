@@ -879,6 +879,10 @@ namespace sunaba::ui {
             int getSelectionMode() {
                 return text_edit->get_selection_mode();
             }
+
+            int getSelectionOriginColumn(int caretIndex = 0) {
+                return text_edit->get_selection_origin_column(caretIndex);
+            }
     };
 }
 
