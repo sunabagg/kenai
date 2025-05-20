@@ -207,6 +207,10 @@ namespace sunaba::ui {
                 &TextEdit::getDragAndDropSelectionEnabled,
                 &TextEdit::setDragAndDropSelectionEnabled
             ),
+            "drawControlChars", sol::property(
+                &TextEdit::getDrawControlChars,
+                &TextEdit::setDrawControlChars
+            ),
         );
     }
 }
