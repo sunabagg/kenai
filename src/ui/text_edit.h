@@ -1081,6 +1081,10 @@ namespace sunaba::ui {
             void setGutterClickable(int gutter, bool clickable) {
                 text_edit->set_gutter_clickable(gutter, clickable);
             }
+
+            void setGutterDraw(int gutter, bool draw) {
+                text_edit->set_gutter_drawn(gutter, draw);
+            }
     };
 }
 
