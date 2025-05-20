@@ -401,6 +401,7 @@ namespace sunaba::ui {
             "getFirstNonWhitespaceColumn", &TextEdit::getFirstNonWhitespaceColumn,
             "getFirstVisibleLine", &TextEdit::getFirstVisibleLine,
             "getGutterCount", &TextEdit::getGutterCount,
+            "getGutterName", &TextEdit::getGutterName,
         );
     }
 }
