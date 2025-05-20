@@ -155,6 +155,10 @@ namespace sunaba::ui {
         lua.new_usertype<TextEdit>("TextEdit",
             sol::constructors<TextEdit()>(),
             sol::base_classes, sol::bases<BaseObject, Element, sunaba::core::CanvasItem, Control>(),
+            "autowrapMode", sol::property(
+                &TextEdit::getAutowrapMode,
+                &TextEdit::setAutowrapMode
+            ),
         );
     }
 }
