@@ -658,6 +658,10 @@ namespace sunaba::ui {
             void deselect(int caret = -1) {
                 text_edit->deselect(caret);
             }
+
+            void endAction() {
+                text_edit->end_action();
+            }
     };
 }
 
