@@ -1021,6 +1021,10 @@ namespace sunaba::ui {
             bool multicaretEditIgnoreCaret(int caret) {
                 return text_edit->multicaret_edit_ignore_caret(caret);
             }
+
+            void paste(int caret = -1) {
+                text_edit->paste(caret);
+            }
     };
 }
 
