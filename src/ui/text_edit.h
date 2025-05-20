@@ -768,6 +768,10 @@ namespace sunaba::ui {
             Variant getLineGutterMetadata(int line, int gutter) {
                 return text_edit->get_line_gutter_metadata(line, gutter);
             }
+
+            std::string getLineGutterText(int line, int gutter) {
+                return String(text_edit->get_line_gutter_text(line, gutter)).utf8().get_data();
+            }
     };
 }
 
