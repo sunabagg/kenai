@@ -965,6 +965,10 @@ namespace sunaba::ui {
             bool isCaretVisible(int caret = 0) {
                 return text_edit->is_caret_visible(caret);
             }
+
+            bool isDraggingCursor() {
+                return text_edit->is_dragging_cursor();
+            }
     };
 }
 
