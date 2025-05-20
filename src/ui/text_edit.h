@@ -1127,7 +1127,9 @@ namespace sunaba::ui {
             }
 
             void setLineGutterIcon(int line, int gutter, sunaba::core::Texture2D* icon) {
-                text_edit->set_line_gutter_icon(line, gutter, icon->getTexture());
+                godot::Texture2D* texture = icon->getTexture2D();
+                Ref<godot::Texture2D> ref_texture = Ref<godot::Texture2D>(texture);
+                text_edit->set_line_gutter_icon(line, gutter, ref_texture);
             }
     };
 }
