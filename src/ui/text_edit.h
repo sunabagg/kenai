@@ -925,6 +925,10 @@ namespace sunaba::ui {
             int getVisibleLineCount() {
                 return text_edit->get_visible_line_count();
             }
+
+            int getVisibleLineCountInRange(int fromLine, int toLine) {
+                return text_edit->get_visible_line_count_in_range(fromLine, toLine);
+            }
     };
 }
 
