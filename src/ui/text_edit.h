@@ -1117,6 +1117,10 @@ namespace sunaba::ui {
             void setLineAsLastVisible(int line, int wrapIndex = 0) {
                 text_edit->set_line_as_last_visible(line, wrapIndex);
             }
+
+            void setLineBackgroundColor(int line, Color color) {
+                text_edit->set_line_background_color(line, color);
+            }
     };
 }
 
