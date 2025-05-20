@@ -828,8 +828,8 @@ namespace sunaba::ui {
                 return text_edit->get_minimap_visible_lines();
             }
 
-            Vector2i getNextVisibleLineIndex(int line, int wrapIndex, int visibleAmount) {
-                return text_edit->get_next_visible_line_index(line, wrapIndex, visibleAmount);
+            Vector2i getNextVisibleLineIndexOffsetFrom(int line, int wrapIndex, int visibleAmount) {
+                return text_edit->get_next_visible_line_index_offset_from(line, wrapIndex, visibleAmount);
             }
     };
 }
