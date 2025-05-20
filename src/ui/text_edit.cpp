@@ -215,6 +215,10 @@ namespace sunaba::ui {
                 &TextEdit::getDrawSpaces,
                 &TextEdit::setDrawSpaces
             ),
+            "drawTabs", sol::property(
+                &TextEdit::getDrawTabs,
+                &TextEdit::setDrawTabs
+            ),
         );
     }
 }
