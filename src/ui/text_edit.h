@@ -581,6 +581,15 @@ namespace sunaba::ui {
                     }
                 }
             }
+
+            void onPastePrimaryClipboard(int caret_index) {
+                if (scriptInstance != sol::lua_nil) {
+                    auto func = scriptInstance["pastePrimaryClipboard"].get<sol::function>();
+                    if (func) {
+                        func(scriptInstance, caret_index);
+                    }
+                }
+            }
     };
 }
 
