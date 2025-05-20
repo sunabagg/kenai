@@ -393,6 +393,7 @@ namespace sunaba::ui {
             "endComplexOperation", &TextEdit::endComplexOperation,
             "endMulticaretEdit", &TextEdit::endMulticaretEdit,
             "getCaretColumn", &TextEdit::getCaretColumn,
+            "getCaretCount", &TextEdit::getCaretCount,
         );
     }
 }
