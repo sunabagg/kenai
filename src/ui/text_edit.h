@@ -606,6 +606,10 @@ namespace sunaba::ui {
             void addSelectionForNextOccurrence() {
                 text_edit->add_selection_for_next_occurrence();
             }
+
+            void adjustCaretsAfterEdit(int caret, int fromLine, int fromCol, int toLine, int toCol) {
+                text_edit->adjust_carets_after_edit(caret, fromLine, fromCol, toLine, toCol);
+            }
     };
 }
 
