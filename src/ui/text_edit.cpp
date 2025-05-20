@@ -203,6 +203,10 @@ namespace sunaba::ui {
                 &TextEdit::getDeselectOnFocusLossEnabled,
                 &TextEdit::setDeselectOnFocusLossEnabled
             ),
+            "dragAndDropSelectionEnabled", sol::property(
+                &TextEdit::getDragAndDropSelectionEnabled,
+                &TextEdit::setDragAndDropSelectionEnabled
+            ),
         );
     }
 }
