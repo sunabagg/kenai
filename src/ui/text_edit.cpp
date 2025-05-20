@@ -339,6 +339,10 @@ namespace sunaba::ui {
                 &TextEdit::getVirtualKeyboardEnabled,
                 &TextEdit::setVirtualKeyboardEnabled
             ),
+            "wrapMode", sol::property(
+                &TextEdit::getWrapMode,
+                &TextEdit::setWrapMode
+            ),
         );
     }
 }
