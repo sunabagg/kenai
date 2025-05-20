@@ -610,6 +610,10 @@ namespace sunaba::ui {
             void adjustCaretsAfterEdit(int caret, int fromLine, int fromCol, int toLine, int toCol) {
                 text_edit->adjust_carets_after_edit(caret, fromLine, fromCol, toLine, toCol);
             }
+
+            void adjustViewportToCaret(int caret) {
+                text_edit->adjust_viewport_to_caret(caret);
+            }
     };
 }
 
