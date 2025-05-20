@@ -377,7 +377,8 @@ namespace sunaba::ui {
             "addSelectionForNextOccurrence", &TextEdit::addSelectionForNextOccurrence,
             "adjustCaretsAfterEdit", &TextEdit::adjustCaretsAfterEdit,
             "adjustViewportToCaret", &TextEdit::adjustViewportToCaret,
-            "applyIme", &TextEdit::applyIme
+            "applyIme", &TextEdit::applyIme,
+            "backspace", &TextEdit::backspace
         );
     }
 }
