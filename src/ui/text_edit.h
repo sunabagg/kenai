@@ -618,6 +618,10 @@ namespace sunaba::ui {
             void applyIme() {
                 text_edit->apply_ime();
             }
+
+            void backspace() {
+                text_edit->backspace();
+            }
     };
 }
 
