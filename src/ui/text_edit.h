@@ -760,6 +760,10 @@ namespace sunaba::ui {
             sunaba::core::Texture2D* getLineGutterIcon(int line, int gutter) {
                 return new sunaba::core::Texture2D(text_edit->get_line_gutter_icon(line, gutter).ptr());
             }
+
+            Color getLineGutterItemColor(int line, int gutter) {
+                return text_edit->get_line_gutter_item_color(line, gutter);
+            }
     };
 }
 
