@@ -219,6 +219,10 @@ namespace sunaba::ui {
                 &TextEdit::getDrawTabs,
                 &TextEdit::setDrawTabs
             ),
+            "editable", sol::property(
+                &TextEdit::getEditable,
+                &TextEdit::setEditable
+            ),
         );
     }
 }
