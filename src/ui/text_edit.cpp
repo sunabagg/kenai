@@ -183,6 +183,10 @@ namespace sunaba::ui {
                 &TextEdit::getCaretMultiple,
                 &TextEdit::setCaretMultiple
             ),
+            "caretType", sol::property(
+                &TextEdit::getCaretType,
+                &TextEdit::setCaretType
+            ),
         );
     }
 }
