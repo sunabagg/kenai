@@ -863,6 +863,10 @@ namespace sunaba::ui {
             int getSelectionColumn(int caretIndex = 0) {
                 return text_edit->get_selection_column(caretIndex);
             }
+
+            int getSelectionFromColumn(int caretIndex = 0) {
+                return text_edit->get_selection_from_column(caretIndex);
+            }
     };
 }
 
