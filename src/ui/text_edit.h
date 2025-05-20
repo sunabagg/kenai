@@ -670,6 +670,10 @@ namespace sunaba::ui {
             void endMulticaretEdit() {
                 text_edit->end_multicaret_edit();
             }
+
+            int getCaretColumn(int caret = 0) {
+                return text_edit->get_caret_column(caret);
+            }
     };
 }
 
