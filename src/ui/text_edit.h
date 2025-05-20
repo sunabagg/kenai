@@ -1041,6 +1041,10 @@ namespace sunaba::ui {
             void removeGutter(int gutter) {
                 text_edit->remove_gutter(gutter);
             }
+
+            void removeLineAt(int line, bool moveCaretsDown = true) {
+                text_edit->remove_line_at(line, moveCaretsDown);
+            }
     };
 }
 
