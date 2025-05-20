@@ -904,6 +904,10 @@ namespace sunaba::ui {
             int getTabSize() {
                 return text_edit->get_tab_size();
             }
+
+            int getTotalGutterWidth() {
+                return text_edit->get_total_gutter_width();
+            }
     };
 }
 
