@@ -299,6 +299,10 @@ namespace sunaba::ui {
                 &TextEdit::getScrollVertical,
                 &TextEdit::setScrollVertical
             ),
+            "selectingEnabled", sol::property(
+                &TextEdit::getSelectingEnabled,
+                &TextEdit::setSelectingEnabled
+            ),
         );
     }
 }
