@@ -1163,6 +1163,10 @@ namespace sunaba::ui {
             void setSelectionOriginLine(int line, int caretIndex = 0) {
                 text_edit->set_selection_origin_line(line, caretIndex);
             }
+
+            void setTabSize(int size) {
+                text_edit->set_tab_size(size);
+            }
     };
 }
 
