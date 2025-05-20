@@ -703,6 +703,10 @@ namespace sunaba::ui {
             int getFirstNonWhitespaceColumn(int line) {
                 return text_edit->get_first_non_whitespace_column(line);
             }
+
+            int getFIrstVisibleLine() {
+                return text_edit->get_first_visible_line();
+            }
     };
 }
 
