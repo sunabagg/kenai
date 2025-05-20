@@ -385,6 +385,7 @@ namespace sunaba::ui {
             "centerViewportToCaret", &TextEdit::centerViewportToCaret,
             "clear", &TextEdit::clear,
             "collapseCarets", &TextEdit::collapseCarets,
+            "copy", &TextEdit::copy,
         );
     }
 }
