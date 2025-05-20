@@ -638,6 +638,10 @@ namespace sunaba::ui {
             void clearUndoHistory() {
                 text_edit->clear_undo_history();
             }
+
+            void collapseCarets(int fromLine, int fromCol, int toLine, int toCol, bool inclusive = false) {
+                text_edit->collapse_carets(fromLine, fromCol, toLine, toCol, inclusive);
+            }
     };
 }
 
