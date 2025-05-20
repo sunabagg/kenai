@@ -626,6 +626,10 @@ namespace sunaba::ui {
             void beginComplexOperation() {
                 text_edit->begin_complex_operation();
             }
+
+            void beginMulticaretEdit() {
+                text_edit->begin_multicaret_edit();
+            }
     };
 }
 
