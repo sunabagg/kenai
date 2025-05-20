@@ -744,6 +744,10 @@ namespace sunaba::ui {
             std::string getLine(int line) {
                 return String(text_edit->get_line(line)).utf8().get_data();
             }
+
+            Color getLineBackgroundColor(int line) {
+                return text_edit->get_line_background_color(line);
+            }
     };
 }
 
