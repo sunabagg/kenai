@@ -1171,6 +1171,10 @@ namespace sunaba::ui {
             void skipSelectionForNextOccurrence() {
                 text_edit->skip_selection_for_next_occurrence();
             }
+
+            void startAction() {
+                text_edit->start_action();
+            }
     };
 }
 
