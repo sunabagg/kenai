@@ -993,6 +993,10 @@ namespace sunaba::ui {
             bool isLIneWrapped(int line) {
                 return text_edit->is_line_wrapped(line);
             }
+
+            bool isMenuVisible() {
+                return text_edit->is_menu_visible();
+            }
     };
 }
 
