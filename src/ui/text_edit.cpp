@@ -187,6 +187,10 @@ namespace sunaba::ui {
                 &TextEdit::getCaretType,
                 &TextEdit::setCaretType
             ),
+            "clipContents", sol::property(
+                &TextEdit::getClipContents,
+                &TextEdit::setClipContents
+            ),
         );
     }
 }
