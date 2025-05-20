@@ -973,6 +973,10 @@ namespace sunaba::ui {
             bool isGutterClickable(int gutter) {
                 return text_edit->is_gutter_clickable(gutter);
             }
+
+            bool isGutterDrawn(int gutter) {
+                return text_edit->is_gutter_drawn(gutter);
+            }
     };
 }
 
