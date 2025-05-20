@@ -855,6 +855,10 @@ namespace sunaba::ui {
             std::string getSelectedText() {
                 return String(text_edit->get_selected_text()).utf8().get_data();
             }
+
+            int getSelectionAtLineColumn(int line, int column, bool includeEdges = true, bool onlySelections = true) {
+                return text_edit->get_selection_at_line_column(line, column, includeEdges, onlySelections);
+            }
     };
 }
 
