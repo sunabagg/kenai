@@ -1135,6 +1135,10 @@ namespace sunaba::ui {
             void setLineGutterItemColor(int line, int gutter, Color color) {
                 text_edit->set_line_gutter_item_color(line, gutter, color);
             }
+
+            void setLineGutterMetadata(int line, int gutter, Variant metadata) {
+                text_edit->set_line_gutter_metadata(line, gutter, metadata);
+            }
     };
 }
 
