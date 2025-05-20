@@ -12,6 +12,7 @@
 #include "../core/event.h"
 #include "syntax_highlighter.h"
 #include "h_scroll_bar.h"
+#include "v_scroll_bar.h"
 #include "../desktop/popup_menu.h"
 
 using namespace godot;
@@ -911,6 +912,10 @@ namespace sunaba::ui {
 
             int getTotalVisibleLineCount() {
                 return text_edit->get_total_visible_line_count();
+            }
+
+            VScrollBar* getVScrollBar() {
+                return new VScrollBar(text_edit->get_v_scroll_bar());
             }
     };
 }
