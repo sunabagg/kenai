@@ -408,6 +408,7 @@ namespace sunaba::ui {
             "getIndentLevel", &TextEdit::getIndentLevel,
             "getLastFullVisibleLine", &TextEdit::getLastFullVisibleLine,
             "getLastFullVisibleLineWrapIndex", &TextEdit::getLastFullVisibleLineWrapIndex,
+            "getLastUnhiddenLine", &TextEdit::getLastUnhiddenLine,
         );
     }
 }
