@@ -262,7 +262,11 @@ namespace sunaba::ui {
             "minimapWidth", sol::property(
                 &TextEdit::getMinimapWidth,
                 &TextEdit::setMinimapWidth
-            )
+            ),
+            "mouseDefaultCursorShape", sol::property(
+                &TextEdit::getMouseDefaultCursorShape,
+                &TextEdit::setMouseDefaultCursorShape
+            ),
         );
     }
 }
