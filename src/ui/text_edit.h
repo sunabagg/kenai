@@ -875,6 +875,10 @@ namespace sunaba::ui {
             int getSelectionLine(int caretIndex = 0) {
                 return text_edit->get_selection_line(caretIndex);
             }
+
+            int getSelectionMode() {
+                return text_edit->get_selection_mode();
+            }
     };
 }
 
