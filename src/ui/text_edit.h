@@ -843,6 +843,10 @@ namespace sunaba::ui {
             Rect2i getRectAtLineColumn(int line, int column) {
                 return text_edit->get_rect_at_line_column(line, column);
             }
+
+            int getSavedVersion() {
+                return text_edit->get_saved_version();
+            }
     };
 }
 
