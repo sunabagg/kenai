@@ -381,6 +381,7 @@ namespace sunaba::ui {
             "backspace", &TextEdit::backspace,
             "beginComplexOperation", &TextEdit::beginComplexOperation,
             "beginMulticaretEdit", &TextEdit::beginMulticaretEdit,
+            "cancelIme", &TextEdit::cancelIme,
         );
     }
 }
