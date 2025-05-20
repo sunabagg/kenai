@@ -335,6 +335,10 @@ namespace sunaba::ui {
                 &TextEdit::getUseDefaultWordSeparators,
                 &TextEdit::setUseDefaultWordSeparators
             ),
+            "virtualKeyboardEnabled", sol::property(
+                &TextEdit::getVirtualKeyboardEnabled,
+                &TextEdit::setVirtualKeyboardEnabled
+            ),
         );
     }
 }
