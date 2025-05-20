@@ -819,6 +819,10 @@ namespace sunaba::ui {
             sunaba::desktop::PopupMenu* getMenu() {
                 return new sunaba::desktop::PopupMenu(text_edit->get_menu());
             }
+
+            int getMinimapLineAtPos(Vector2i pos) {
+                return text_edit->get_minimap_line_at_pos(pos);
+            }
     };
 }
 
