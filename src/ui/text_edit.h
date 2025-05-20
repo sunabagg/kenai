@@ -651,6 +651,10 @@ namespace sunaba::ui {
                 text_edit->cut();
             }
 
+            void deleteSelection(int caret = -1) {
+                text_edit->delete_selection(caret);
+            }
+
     };
 }
 
