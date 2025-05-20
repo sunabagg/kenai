@@ -159,6 +159,10 @@ namespace sunaba::ui {
                 &TextEdit::getAutowrapMode,
                 &TextEdit::setAutowrapMode
             ),
+            "caretBlink", sol::property(
+                &TextEdit::getCaretBlink,
+                &TextEdit::setCaretBlink
+            ),
         );
     }
 }
