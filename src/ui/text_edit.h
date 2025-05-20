@@ -748,6 +748,10 @@ namespace sunaba::ui {
             Color getLineBackgroundColor(int line) {
                 return text_edit->get_line_background_color(line);
             }
+
+            Vector2i getLineColumnAtPos(Vector2i pos, bool clampLine = true, bool clampColumn = true) {
+                return text_edit->get_line_column_at_pos(pos, clampLine, clampColumn);
+            }
     };
 }
 
