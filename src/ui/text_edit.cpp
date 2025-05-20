@@ -255,6 +255,10 @@ namespace sunaba::ui {
                 &TextEdit::getMiddleMousePasteEnabled,
                 &TextEdit::setMiddleMousePasteEnabled
             ),
+            "minimapDraw", sol::property(
+                &TextEdit::getMinimapDraw,
+                &TextEdit::setMinimapDraw
+            ),
         );
     }
 }
