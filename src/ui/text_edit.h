@@ -11,6 +11,7 @@
 #include "../core/stl_function_wrapper.h"
 #include "../core/event.h"
 #include "syntax_highlighter.h"
+#include "h_scroll_bar.h"
 
 using namespace godot;
 using namespace sunaba::core;
@@ -718,6 +719,10 @@ namespace sunaba::ui {
 
             int getGutterType(int gutter) {
                 return text_edit->get_gutter_type(gutter);
+            }
+
+            HScrollBar* getHScrollBar() {
+                return new HScrollBar(text_edit->get_h_scroll_bar());
             }
     };
 }
