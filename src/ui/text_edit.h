@@ -1109,6 +1109,10 @@ namespace sunaba::ui {
             void setLineAsCenterVisible(int line, int wrapIndex = 0) {
                 text_edit->set_line_as_center_visible(line, wrapIndex);
             }
+
+            void setLineAsFirstVisible(int line, int wrapIndex = 0) {
+                text_edit->set_line_as_first_visible(line, wrapIndex);
+            }
     };
 }
 
