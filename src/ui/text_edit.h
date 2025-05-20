@@ -1101,6 +1101,10 @@ namespace sunaba::ui {
             void setGutterWidth(int gutter, int width) {
                 text_edit->set_gutter_width(gutter, width);
             }
+
+            void setLine(int line, std::string text) {
+                text_edit->set_line(line, String(text.c_str()));
+            }
     };
 }
 
