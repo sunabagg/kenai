@@ -243,6 +243,10 @@ namespace sunaba::ui {
                 &TextEdit::getHighlightCurrentLine,
                 &TextEdit::setHighlightCurrentLine
             ),
+            "indentWrappedLines", sol::property(
+                &TextEdit::getIndentWrappedLines,
+                &TextEdit::setIndentWrappedLines
+            ),
         );
     }
 }
