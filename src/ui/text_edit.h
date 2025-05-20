@@ -647,8 +647,8 @@ namespace sunaba::ui {
                 text_edit->copy();
             }
 
-            void cut() {
-                text_edit->cut();
+            void cut(int caret = -1) {
+                text_edit->cut(caret);
             }
 
             void deleteSelection(int caret = -1) {
