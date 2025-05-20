@@ -715,6 +715,10 @@ namespace sunaba::ui {
             std::string getGutterName(int gutter) {
                 return String(text_edit->get_gutter_name(gutter)).utf8().get_data();
             }
+
+            int getGutterType(int gutter) {
+                return text_edit->get_gutter_type(gutter);
+            }
     };
 }
 
