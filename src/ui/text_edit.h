@@ -1175,6 +1175,10 @@ namespace sunaba::ui {
             void startAction(int action) {
                 text_edit->start_action(static_cast<godot::TextEdit::EditAction>(action));
             }
+
+            void swapLines(int fromLine, int toLine) {
+                text_edit->swap_lines(fromLine, toLine);
+            }
     };
 }
 
