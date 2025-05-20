@@ -598,6 +598,10 @@ namespace sunaba::ui {
             void addCaretAtCarets(bool below) {
                 text_edit->add_caret_at_carets(below);
             }
+
+            void addGutter(int at) {
+                text_edit->add_gutter(at);
+            }
     };
 }
 
