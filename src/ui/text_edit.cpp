@@ -319,6 +319,10 @@ namespace sunaba::ui {
                 &TextEdit::getSyntaxHighlighter,
                 &TextEdit::setSyntaxHighlighter
             ),
+            "text", sol::property(
+                &TextEdit::getText,
+                &TextEdit::setText
+            )
         );
     }
 }
