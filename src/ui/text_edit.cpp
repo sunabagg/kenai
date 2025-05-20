@@ -311,6 +311,10 @@ namespace sunaba::ui {
                 &TextEdit::getStructuredTextBidiOverride,
                 &TextEdit::setStructuredTextBidiOverride
             ),
+            "structuredTextBidiOverrideOptions", sol::property(
+                &TextEdit::getStructuredTextBidiOverrideOptions,
+                &TextEdit::setStructuredTextBidiOverrideOptions
+            ),
         );
     }
 }
