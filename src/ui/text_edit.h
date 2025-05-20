@@ -772,6 +772,10 @@ namespace sunaba::ui {
             std::string getLineGutterText(int line, int gutter) {
                 return String(text_edit->get_line_gutter_text(line, gutter)).utf8().get_data();
             }
+
+            int getLineHeight() {
+                return text_edit->get_line_height();
+            }
     };
 }
 
