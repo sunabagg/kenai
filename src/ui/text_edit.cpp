@@ -195,6 +195,10 @@ namespace sunaba::ui {
                 &TextEdit::getContextMenuEnabled,
                 &TextEdit::setContextMenuEnabled
             ),
+            "customWordSeparators", sol::property(
+                &TextEdit::getCustomWordSeparators,
+                &TextEdit::setCustomWordSeparators
+            ),
         );
     }
 }
