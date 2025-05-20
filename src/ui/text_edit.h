@@ -823,6 +823,10 @@ namespace sunaba::ui {
             int getMinimapLineAtPos(Vector2i pos) {
                 return text_edit->get_minimap_line_at_pos(pos);
             }
+
+            int getMinimapVisibleLines() {
+                return text_edit->get_minimap_visible_lines();
+            }
     };
 }
 
