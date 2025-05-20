@@ -1005,6 +1005,10 @@ namespace sunaba::ui {
             bool isOvertypeModeEnabled() {
                 return text_edit->is_overtype_mode_enabled();
             }
+
+            void menuOption(int option) {
+                text_edit->menu_option(option);
+            }
     };
 }
 
