@@ -785,6 +785,10 @@ namespace sunaba::ui {
                 }
                 return ranges;
             }
+
+            int getLineWidth(int line, int wrapIndex = -1) {
+                return text_edit->get_line_width(line, wrapIndex);
+            }
     };
 }
 
