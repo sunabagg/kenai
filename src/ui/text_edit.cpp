@@ -359,6 +359,10 @@ namespace sunaba::ui {
                 &TextEdit::getGutterRemovedEvent,
                 &TextEdit::setGutterRemovedEvent
             ),
+            "linesEditedFrom", sol::property(
+                &TextEdit::getLinesEditedFromEvent,
+                &TextEdit::setLinesEditedFromEvent
+            ),
         );
     }
 }
