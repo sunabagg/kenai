@@ -1155,6 +1155,10 @@ namespace sunaba::ui {
             void setSelectionMode(int mode) {
                 text_edit->set_selection_mode(static_cast<godot::TextEdit::SelectionMode>(mode));
             }
+
+            void setSelectionOriginColumn(int column, int caretIndex = 0) {
+                text_edit->set_selection_origin_column(column, caretIndex);
+            }
     };
 }
 
