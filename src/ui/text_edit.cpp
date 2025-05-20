@@ -199,6 +199,10 @@ namespace sunaba::ui {
                 &TextEdit::getCustomWordSeparators,
                 &TextEdit::setCustomWordSeparators
             ),
+            "deselectOnFocusLossEnabled", sol::property(
+                &TextEdit::getDeselectOnFocusLossEnabled,
+                &TextEdit::setDeselectOnFocusLossEnabled
+            ),
         );
     }
 }
