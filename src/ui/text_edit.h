@@ -1049,6 +1049,10 @@ namespace sunaba::ui {
             void removeSecondaryCarets() {
                 text_edit->remove_secondary_carets();
             }
+
+            void removeText(int fromLine, int fromColumn, int toLine, int toColumn) {
+                text_edit->remove_text(fromLine, fromColumn, toLine, toColumn);
+            }
     };
 }
 
