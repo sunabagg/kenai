@@ -384,6 +384,7 @@ namespace sunaba::ui {
             "cancelIme", &TextEdit::cancelIme,
             "centerViewportToCaret", &TextEdit::centerViewportToCaret,
             "clear", &TextEdit::clear,
+            "collapseCarets", &TextEdit::collapseCarets,
         );
     }
 }
