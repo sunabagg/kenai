@@ -150,4 +150,8 @@ namespace sunaba::ui {
             this->element->onPastePrimaryClipboard(caret_index);
         }
     }
+
+    void bindTextEdit(sol::state& lua) {
+        
+    }
 }
