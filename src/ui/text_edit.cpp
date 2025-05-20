@@ -295,6 +295,10 @@ namespace sunaba::ui {
                 &TextEdit::getScrollVScrollSpeed,
                 &TextEdit::setScrollVScrollSpeed
             ),
+            "scrollVertical", sol::property(
+                &TextEdit::getScrollVertical,
+                &TextEdit::setScrollVertical
+            ),
         );
     }
 }
