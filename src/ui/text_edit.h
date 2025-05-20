@@ -728,6 +728,10 @@ namespace sunaba::ui {
             int getIndentLevel(int line) {
                 return text_edit->get_indent_level(line);
             }
+
+            int getLastFullVisibleLine() {
+                return text_edit->get_last_full_visible_line();
+            }
     };
 }
 
