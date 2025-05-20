@@ -315,6 +315,10 @@ namespace sunaba::ui {
                 &TextEdit::getStructuredTextBidiOverrideOptions,
                 &TextEdit::setStructuredTextBidiOverrideOptions
             ),
+            "syntaxHighlighter", sol::property(
+                &TextEdit::getSyntaxHighlighter,
+                &TextEdit::setSyntaxHighlighter
+            ),
         );
     }
 }
