@@ -917,6 +917,10 @@ namespace sunaba::ui {
             VScrollBar* getVScrollBar() {
                 return new VScrollBar(text_edit->get_v_scroll_bar());
             }
+
+            int getVersion() {
+                return text_edit->get_version();
+            }
     };
 }
 
