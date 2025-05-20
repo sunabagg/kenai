@@ -1045,6 +1045,10 @@ namespace sunaba::ui {
             void removeLineAt(int line, bool moveCaretsDown = true) {
                 text_edit->remove_line_at(line, moveCaretsDown);
             }
+
+            void removeSecondaryCarets() {
+                text_edit->remove_secondary_carets();
+            }
     };
 }
 
