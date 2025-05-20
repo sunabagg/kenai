@@ -619,8 +619,8 @@ namespace sunaba::ui {
                 text_edit->apply_ime();
             }
 
-            void backspace() {
-                text_edit->backspace();
+            void backspace(int caret_index = - 1) {
+                text_edit->backspace(caret_index);
             }
 
             void beginComplexOperation() {
