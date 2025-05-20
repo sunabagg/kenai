@@ -389,6 +389,7 @@ namespace sunaba::ui {
             "cut", &TextEdit::cut,
             "deleteSelection", &TextEdit::deleteSelection,
             "deselect", &TextEdit::deselect,
+            "endAction", &TextEdit::endAction,
         );
     }
 }
