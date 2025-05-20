@@ -351,6 +351,10 @@ namespace sunaba::ui {
                 &TextEdit::getGutterAddedEvent,
                 &TextEdit::setGutterAddedEvent
             ),
+            "gutterClicked", sol::property(
+                &TextEdit::getGutterClickedEvent,
+                &TextEdit::setGutterClickedEvent
+            ),
         );
     }
 }
