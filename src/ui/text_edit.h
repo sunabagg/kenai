@@ -989,6 +989,10 @@ namespace sunaba::ui {
             bool isLineGutterClickable(int line, int gutter) {
                 return text_edit->is_line_gutter_clickable(line, gutter);
             }
+
+            bool isLIneWrapped(int line) {
+                return text_edit->is_line_wrapped(line);
+            }
     };
 }
 
