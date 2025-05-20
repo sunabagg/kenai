@@ -327,6 +327,10 @@ namespace sunaba::ui {
                 &TextEdit::getTextDirection,
                 &TextEdit::setTextDirection
             ),
+            "useCustomWordSeparators", sol::property(
+                &TextEdit::getUseCustomWordSeparators,
+                &TextEdit::setUseCustomWordSeparators
+            ),
         );
     }
 }
