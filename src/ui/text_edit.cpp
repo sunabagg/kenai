@@ -400,6 +400,7 @@ namespace sunaba::ui {
             "getCaretWrapIndex", &TextEdit::getCaretWrapIndex,
             "getFirstNonWhitespaceColumn", &TextEdit::getFirstNonWhitespaceColumn,
             "getFirstVisibleLine", &TextEdit::getFirstVisibleLine,
+            "getGutterCount", &TextEdit::getGutterCount,
         );
     }
 }
