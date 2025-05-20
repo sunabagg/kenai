@@ -1159,6 +1159,10 @@ namespace sunaba::ui {
             void setSelectionOriginColumn(int column, int caretIndex = 0) {
                 text_edit->set_selection_origin_column(column, caretIndex);
             }
+
+            void setSelectionOriginLine(int line, int caretIndex = 0) {
+                text_edit->set_selection_origin_line(line, caretIndex);
+            }
     };
 }
 
