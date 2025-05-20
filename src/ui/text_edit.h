@@ -1089,6 +1089,10 @@ namespace sunaba::ui {
             void setGutterName(int gutter, std::string name) {
                 text_edit->set_gutter_name(gutter, String(name.c_str()));
             }
+
+            void setGutterOverwritable(int gutter, bool overwritable) {
+                text_edit->set_gutter_overwritable(gutter, overwritable);
+            }
     };
 }
 
