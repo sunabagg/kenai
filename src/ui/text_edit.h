@@ -921,6 +921,10 @@ namespace sunaba::ui {
             int getVersion() {
                 return text_edit->get_version();
             }
+
+            int getVisibleLineCount() {
+                return text_edit->get_visible_line_count();
+            }
     };
 }
 
