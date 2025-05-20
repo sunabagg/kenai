@@ -536,6 +536,15 @@ namespace sunaba::ui {
             void setTextSetEvent(Event* event) {
                 textSetEvent = event;
             }
+
+            void onBackspace(int caret_index) {
+                if (scriptInstance != sol::lua_nil) {
+                    auto func = scriptInstance["backspace"].get<sol::function>();
+                    if (func) {
+                        func(scriptInstance, caret_index);
+                    }
+                }
+            }
     };
 }
 
