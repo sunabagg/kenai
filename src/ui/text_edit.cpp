@@ -227,6 +227,10 @@ namespace sunaba::ui {
                 &TextEdit::getEmojiMenuEnabled,
                 &TextEdit::setEmojiMenuEnabled
             ),
+            "emptySelectionClipboardEnabled", sol::property(
+                &TextEdit::getEmptySelectionClipboardEnabled,
+                &TextEdit::setEmptySelectionClipboardEnabled
+            ),
         );
     }
 }
