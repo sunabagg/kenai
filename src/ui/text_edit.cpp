@@ -413,6 +413,7 @@ namespace sunaba::ui {
             "getLineBackgroundColor", &TextEdit::getLineBackgroundColor,
             "getLineColumnAtPos", &TextEdit::getLineColumnAtPos,
             "getLineCount", &TextEdit::getLineCount,
+            "getLineGutterIcon", &TextEdit::getLineGutterIcon,
         );
     }
 }
