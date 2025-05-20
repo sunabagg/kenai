@@ -191,6 +191,10 @@ namespace sunaba::ui {
                 &TextEdit::getClipContents,
                 &TextEdit::setClipContents
             ),
+            "contextMenuEnabled", sol::property(
+                &TextEdit::getContextMenuEnabled,
+                &TextEdit::setContextMenuEnabled
+            ),
         );
     }
 }
