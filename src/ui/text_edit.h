@@ -572,6 +572,15 @@ namespace sunaba::ui {
                     }
                 }
             }
+
+            void onPaste(int caret_index) {
+                if (scriptInstance != sol::lua_nil) {
+                    auto func = scriptInstance["paste"].get<sol::function>();
+                    if (func) {
+                        func(scriptInstance, caret_index);
+                    }
+                }
+            }
     };
 }
 
