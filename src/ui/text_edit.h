@@ -1167,6 +1167,10 @@ namespace sunaba::ui {
             void setTabSize(int size) {
                 text_edit->set_tab_size(size);
             }
+
+            void skipSelectionForNextOccurrence() {
+                text_edit->skip_selection_for_next_occurrence();
+            }
     };
 }
 
