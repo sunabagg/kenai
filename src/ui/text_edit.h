@@ -655,6 +655,9 @@ namespace sunaba::ui {
                 text_edit->delete_selection(caret);
             }
 
+            void deselect(int caret = -1) {
+                text_edit->deselect(caret);
+            }
     };
 }
 
