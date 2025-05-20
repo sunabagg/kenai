@@ -175,6 +175,10 @@ namespace sunaba::ui {
                 &TextEdit::getCaretMidGrapheme,
                 &TextEdit::setCaretMidGrapheme
             ),
+            "caretMoveOnRightClick", sol::property(
+                &TextEdit::getCaretMoveOnRightClick,
+                &TextEdit::setCaretMoveOnRightClick
+            ),
         );
     }
 }
