@@ -981,6 +981,10 @@ namespace sunaba::ui {
             bool isGutterOverwritable(int gutter) {
                 return text_edit->is_gutter_overwritable(gutter);
             }
+
+            bool isInMultiCaretEdit() {
+                return text_edit->is_in_multicaret_edit();
+            }
     };
 }
 
