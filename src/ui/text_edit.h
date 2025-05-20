@@ -764,6 +764,10 @@ namespace sunaba::ui {
             Color getLineGutterItemColor(int line, int gutter) {
                 return text_edit->get_line_gutter_item_color(line, gutter);
             }
+
+            Variant getLineGutterMetadata(int line, int gutter) {
+                return text_edit->get_line_gutter_metadata(line, gutter);
+            }
     };
 }
 
