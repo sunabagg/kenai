@@ -247,6 +247,10 @@ namespace sunaba::ui {
                 &TextEdit::getIndentWrappedLines,
                 &TextEdit::setIndentWrappedLines
             ),
+            "language", sol::property(
+                &TextEdit::getLanguage,
+                &TextEdit::setLanguage
+            ),
         );
     }
 }
