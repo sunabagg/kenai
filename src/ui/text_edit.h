@@ -801,6 +801,15 @@ namespace sunaba::ui {
             int getLineWrapIndexAtColumn(int line, int column) {
                 return text_edit->get_line_wrap_index_at_column(line, column);
             }
+
+            std::vector<std::string> getLineWrappedText(int line) {
+                std::vector<std::string> wrappedText;
+                PackedStringArray wrappedTextArray = text_edit->get_line_wrapped_text(line);
+                for (int i = 0; i < wrappedTextArray.size(); ++i) {
+                    wrappedText.push_back(wrappedTextArray[i].utf8().get_data());
+                }
+                return wrappedText;
+            }
     };
 }
 
