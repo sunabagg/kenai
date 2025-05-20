@@ -1013,6 +1013,10 @@ namespace sunaba::ui {
             void mergeGutters(int fromLine, int toLine) {
                 text_edit->merge_gutters(fromLine, toLine);
             }
+
+            void mergeOverlappingCarets() {
+                text_edit->merge_overlapping_carets();
+            }
     };
 }
 
