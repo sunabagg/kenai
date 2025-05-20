@@ -969,6 +969,10 @@ namespace sunaba::ui {
             bool isDraggingCursor() {
                 return text_edit->is_dragging_cursor();
             }
+
+            bool isGutterClickable(int gutter) {
+                return text_edit->is_gutter_clickable(gutter);
+            }
     };
 }
 
