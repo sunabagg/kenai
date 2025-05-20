@@ -859,6 +859,10 @@ namespace sunaba::ui {
             int getSelectionAtLineColumn(int line, int column, bool includeEdges = true, bool onlySelections = true) {
                 return text_edit->get_selection_at_line_column(line, column, includeEdges, onlySelections);
             }
+
+            int getSelectionColumn(int caretIndex = 0) {
+                return text_edit->get_selection_column(caretIndex);
+            }
     };
 }
 
