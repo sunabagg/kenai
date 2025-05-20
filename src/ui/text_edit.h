@@ -929,6 +929,10 @@ namespace sunaba::ui {
             int getVisibleLineCountInRange(int fromLine, int toLine) {
                 return text_edit->get_visible_line_count_in_range(fromLine, toLine);
             }
+
+            std::string getWordAtPos(Vector2 pos) {
+                return String(text_edit->get_word_at_pos(pos)).utf8().get_data();
+            }
     };
 }
 
