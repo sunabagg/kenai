@@ -839,6 +839,10 @@ namespace sunaba::ui {
             Vector2i getPosAtLineColumn(int line, int column) {
                 return text_edit->get_pos_at_line_column(line, column);
             }
+
+            Rect2i getRectAtLineColumn(int line, int column) {
+                return text_edit->get_rect_at_line_column(line, column);
+            }
     };
 }
 
