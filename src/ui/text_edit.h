@@ -674,6 +674,10 @@ namespace sunaba::ui {
             int getCaretColumn(int caret = 0) {
                 return text_edit->get_caret_column(caret);
             }
+
+            int getCaretCount() {
+                return text_edit->get_caret_count();
+            }
     };
 }
 
