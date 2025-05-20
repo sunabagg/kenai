@@ -691,6 +691,10 @@ namespace sunaba::ui {
                 }
                 return order;
             }
+
+            int getCaretLine(int caret = 0) {
+                return text_edit->get_caret_line(caret);
+            }
     };
 }
 
