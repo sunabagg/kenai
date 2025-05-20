@@ -704,7 +704,7 @@ namespace sunaba::ui {
                 return text_edit->get_first_non_whitespace_column(line);
             }
 
-            int getFIrstVisibleLine() {
+            int getFirstVisibleLine() {
                 return text_edit->get_first_visible_line();
             }
     };
