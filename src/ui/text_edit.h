@@ -1151,6 +1151,10 @@ namespace sunaba::ui {
             void setSearchFlags(int flags) {
                 text_edit->set_search_flags(static_cast<godot::TextEdit::SearchFlags>(flags));
             }
+
+            void setSelectionMode(int mode) {
+                text_edit->set_selection_mode(static_cast<godot::TextEdit::SelectionMode>(mode));
+            }
     };
 }
 
