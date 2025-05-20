@@ -622,6 +622,10 @@ namespace sunaba::ui {
             void backspace() {
                 text_edit->backspace();
             }
+
+            void beginComplexOperation() {
+                text_edit->begin_complex_operation();
+            }
     };
 }
 
