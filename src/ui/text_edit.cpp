@@ -404,6 +404,7 @@ namespace sunaba::ui {
             "getGutterName", &TextEdit::getGutterName,
             "getGutterType", &TextEdit::getGutterType,
             "getGutterWidth", &TextEdit::getGutterWidth,
+            "getHScrollBar", &TextEdit::getHScrollBar,
         );
     }
 }
