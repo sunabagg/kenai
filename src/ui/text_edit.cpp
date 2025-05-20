@@ -279,6 +279,10 @@ namespace sunaba::ui {
                 &TextEdit::getScrollFitContentWidth,
                 &TextEdit::setScrollFitContentWidth
             ),
+            "scrollHorizontal", sol::property(
+                &TextEdit::getScrollHorizontal,
+                &TextEdit::setScrollHorizontal
+            ),
         );
     }
 }
