@@ -707,6 +707,10 @@ namespace sunaba::ui {
             int getFirstVisibleLine() {
                 return text_edit->get_first_visible_line();
             }
+
+            int getGutterCount() {
+                return text_edit->get_gutter_count();
+            }
     };
 }
 
