@@ -1061,6 +1061,10 @@ namespace sunaba::ui {
             void select(int originLine, int originColumn, int caretLine, int caretColumn, int caretIndex = 0) {
                 text_edit->select(originLine, originColumn, caretLine, caretColumn, caretIndex);
             }
+
+            void selectAll() {
+                text_edit->select_all();
+            }
     };
 }
 
