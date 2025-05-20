@@ -711,6 +711,10 @@ namespace sunaba::ui {
             int getGutterCount() {
                 return text_edit->get_gutter_count();
             }
+
+            std::string getGutterName(int gutter) {
+                return String(text_edit->get_gutter_name(gutter)).utf8().get_data();
+            }
     };
 }
 
