@@ -949,6 +949,10 @@ namespace sunaba::ui {
             bool hasSelection(int caret = -1) {
                 return text_edit->has_selection(caret);
             }
+
+            bool hasUndo() {
+                return text_edit->has_undo();
+            }
     };
 }
 
