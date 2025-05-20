@@ -267,6 +267,10 @@ namespace sunaba::ui {
                 &TextEdit::getMouseDefaultCursorShape,
                 &TextEdit::setMouseDefaultCursorShape
             ),
+            "placeholderText", sol::property(
+                &TextEdit::getPlaceholderText,
+                &TextEdit::setPlaceholderText
+            ),
         );
     }
 }
