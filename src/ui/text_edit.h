@@ -563,6 +563,15 @@ namespace sunaba::ui {
                     }
                 }
             }
+
+            void onHandleUnicodeInput(int unicode_char, int caret_index) {
+                if (scriptInstance != sol::lua_nil) {
+                    auto func = scriptInstance["handleUnicodeInput"].get<sol::function>();
+                    if (func) {
+                        func(scriptInstance, unicode_char, caret_index);
+                    }
+                }
+            }
     };
 }
 
