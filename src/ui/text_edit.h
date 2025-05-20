@@ -1131,6 +1131,10 @@ namespace sunaba::ui {
                 Ref<godot::Texture2D> ref_texture = Ref<godot::Texture2D>(texture);
                 text_edit->set_line_gutter_icon(line, gutter, ref_texture);
             }
+
+            void setLineGutterItemColor(int line, int gutter, Color color) {
+                text_edit->set_line_gutter_item_color(line, gutter, color);
+            }
     };
 }
 
