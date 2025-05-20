@@ -630,6 +630,10 @@ namespace sunaba::ui {
             void beginMulticaretEdit() {
                 text_edit->begin_multicaret_edit();
             }
+
+            void clear() {
+                text_edit->clear();
+            }
     };
 }
 
