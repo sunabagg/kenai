@@ -1085,6 +1085,10 @@ namespace sunaba::ui {
             void setGutterDraw(int gutter, bool draw) {
                 text_edit->set_gutter_draw(gutter, draw);
             }
+
+            void setGutterName(int gutter, std::string name) {
+                text_edit->set_gutter_name(gutter, String(name.c_str()));
+            }
     };
 }
 
