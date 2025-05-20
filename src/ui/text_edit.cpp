@@ -395,6 +395,7 @@ namespace sunaba::ui {
             "getCaretColumn", &TextEdit::getCaretColumn,
             "getCaretCount", &TextEdit::getCaretCount,
             "getCaretDrawPos", &TextEdit::getCaretDrawPos,
+            "getCaretIndexEditOrder", &TextEdit::getCaretIndexEditOrder,
         );
     }
 }
