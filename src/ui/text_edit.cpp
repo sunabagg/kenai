@@ -57,7 +57,7 @@ namespace sunaba::ui {
 
     void TextEditProxy::_draw() {
         if (this->element != nullptr) {
-            this->element->draw();
+            this->element->_draw();
         }
     }
 }
