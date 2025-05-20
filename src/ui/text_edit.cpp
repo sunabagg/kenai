@@ -211,6 +211,10 @@ namespace sunaba::ui {
                 &TextEdit::getDrawControlChars,
                 &TextEdit::setDrawControlChars
             ),
+            "drawSpaces", sol::property(
+                &TextEdit::getDrawSpaces,
+                &TextEdit::setDrawSpaces
+            ),
         );
     }
 }
