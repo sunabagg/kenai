@@ -410,6 +410,7 @@ namespace sunaba::ui {
             "getLastFullVisibleLineWrapIndex", &TextEdit::getLastFullVisibleLineWrapIndex,
             "getLastUnhiddenLine", &TextEdit::getLastUnhiddenLine,
             "getLine", &TextEdit::getLine,
+            "getLineBackgroundColor", &TextEdit::getLineBackgroundColor,
         );
     }
 }
