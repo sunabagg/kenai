@@ -678,6 +678,10 @@ namespace sunaba::ui {
             int getCaretCount() {
                 return text_edit->get_caret_count();
             }
+
+            Vector2 getCaretDrawPos(int caret = 0) {
+                return text_edit->get_caret_draw_pos(caret);
+            }
     };
 }
 
