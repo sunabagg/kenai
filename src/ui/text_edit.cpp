@@ -402,6 +402,7 @@ namespace sunaba::ui {
             "getFirstVisibleLine", &TextEdit::getFirstVisibleLine,
             "getGutterCount", &TextEdit::getGutterCount,
             "getGutterName", &TextEdit::getGutterName,
+            "getGutterType", &TextEdit::getGutterType,
         );
     }
 }
