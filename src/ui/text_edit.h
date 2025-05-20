@@ -891,6 +891,15 @@ namespace sunaba::ui {
             int getSelectionToLine(int caretIndex = 0) {
                 return text_edit->get_selection_to_line(caretIndex);
             }
+
+            std::vector<int> getSortedCarets(bool includeIgnoredCarets = false) {
+                std::vector<int> sortedCarets;
+                PackedInt32Array sortedCaretsArray = text_edit->get_sorted_carets(includeIgnoredCarets);
+                for (int i = 0; i < sortedCaretsArray.size(); ++i) {
+                    sortedCarets.push_back(sortedCaretsArray[i]);
+                }
+                return sortedCarets;
+            }
     };
 }
 
