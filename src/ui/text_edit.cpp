@@ -403,6 +403,7 @@ namespace sunaba::ui {
             "getGutterCount", &TextEdit::getGutterCount,
             "getGutterName", &TextEdit::getGutterName,
             "getGutterType", &TextEdit::getGutterType,
+            "getGutterWidth", &TextEdit::getGutterWidth,
         );
     }
 }
