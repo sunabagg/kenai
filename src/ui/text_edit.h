@@ -699,6 +699,10 @@ namespace sunaba::ui {
             int getCaretWrapIndex(int caret = 0) {
                 return text_edit->get_caret_wrap_index(caret);
             }
+
+            int getFirstNonWhitespaceColumn(int line) {
+                return text_edit->get_first_non_whitespace_column(line);
+            }
     };
 }
 
