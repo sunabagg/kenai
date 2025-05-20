@@ -953,6 +953,10 @@ namespace sunaba::ui {
             bool hasUndo() {
                 return text_edit->has_undo();
             }
+
+            void insertLineAt(int line, std::string text) {
+                text_edit->insert_line_at(line, String(text.c_str()));
+            }
     };
 }
 
