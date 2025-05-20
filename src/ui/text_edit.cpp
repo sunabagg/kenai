@@ -391,6 +391,7 @@ namespace sunaba::ui {
             "deselect", &TextEdit::deselect,
             "endAction", &TextEdit::endAction,
             "endComplexOperation", &TextEdit::endComplexOperation,
+            "endMulticaretEdit", &TextEdit::endMulticaretEdit,
         );
     }
 }
