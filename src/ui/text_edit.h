@@ -634,6 +634,10 @@ namespace sunaba::ui {
                 text_edit->begin_multicaret_edit();
             }
 
+            void cancelIme() {
+                text_edit->cancel_ime();
+            }
+
             void clear() {
                 text_edit->clear();
             }
