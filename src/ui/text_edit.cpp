@@ -223,6 +223,10 @@ namespace sunaba::ui {
                 &TextEdit::getEditable,
                 &TextEdit::setEditable
             ),
+            "emojiMenuEnabled", sol::property(
+                &TextEdit::getEmojiMenuEnabled,
+                &TextEdit::setEmojiMenuEnabled
+            ),
         );
     }
 }
