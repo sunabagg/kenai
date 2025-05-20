@@ -776,6 +776,15 @@ namespace sunaba::ui {
             int getLineHeight() {
                 return text_edit->get_line_height();
             }
+
+            std::vector<Vector2i> getLineRangesFromCarets(bool onlySelections = false, bool mergeAdjacent = true) {
+                std::vector<Vector2i> ranges;
+                TypedArray<Vector2i> rangesArray = text_edit->get_line_ranges_from_carets(onlySelections, mergeAdjacent);
+                for (int i = 0; i < rangesArray.size(); ++i) {
+                    ranges.push_back(rangesArray[i]);
+                }
+                return ranges;
+            }
     };
 }
 
