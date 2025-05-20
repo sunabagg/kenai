@@ -851,6 +851,10 @@ namespace sunaba::ui {
             float getScrollPosForLine(int line, int wrapIndex = 0) {
                 return text_edit->get_scroll_pos_for_line(line);
             }
+
+            std::string getSelectedText() {
+                return String(text_edit->get_selected_text()).utf8().get_data();
+            }
     };
 }
 
