@@ -323,6 +323,10 @@ namespace sunaba::ui {
                 &TextEdit::getText,
                 &TextEdit::setText
             )
+            "textDirection", sol::property(
+                &TextEdit::getTextDirection,
+                &TextEdit::setTextDirection
+            ),
         );
     }
 }
