@@ -54,4 +54,10 @@ namespace sunaba::ui {
             this->element->shortcutInput(event);
         }
     }
+
+    void TextEditProxy::_draw() {
+        if (this->element != nullptr) {
+            this->element->draw();
+        }
+    }
 }
