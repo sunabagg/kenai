@@ -411,6 +411,7 @@ namespace sunaba::ui {
             "getLastUnhiddenLine", &TextEdit::getLastUnhiddenLine,
             "getLine", &TextEdit::getLine,
             "getLineBackgroundColor", &TextEdit::getLineBackgroundColor,
+            "getLineColumnAtPos", &TextEdit::getLineColumnAtPos
         );
     }
 }
