@@ -405,6 +405,7 @@ namespace sunaba::ui {
             "getGutterType", &TextEdit::getGutterType,
             "getGutterWidth", &TextEdit::getGutterWidth,
             "getHScrollBar", &TextEdit::getHScrollBar,
+            "getIndentLevel", &TextEdit::getIndentLevel,
         );
     }
 }
