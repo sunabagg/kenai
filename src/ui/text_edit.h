@@ -1033,6 +1033,10 @@ namespace sunaba::ui {
             void redo() {
                 text_edit->redo();
             }
+
+            void removeCaret(int caret = -1) {
+                text_edit->remove_caret(caret);
+            }
     };
 }
 
