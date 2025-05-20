@@ -179,6 +179,10 @@ namespace sunaba::ui {
                 &TextEdit::getCaretMoveOnRightClick,
                 &TextEdit::setCaretMoveOnRightClick
             ),
+            "caretMultiple", sol::property(
+                &TextEdit::getCaretMultiple,
+                &TextEdit::setCaretMultiple
+            ),
         );
     }
 }
