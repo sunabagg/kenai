@@ -363,6 +363,10 @@ namespace sunaba::ui {
                 &TextEdit::getLinesEditedFromEvent,
                 &TextEdit::setLinesEditedFromEvent
             ),
+            "textChanged", sol::property(
+                &TextEdit::getTextChangedEvent,
+                &TextEdit::setTextChangedEvent
+            ),
         );
     }
 }
