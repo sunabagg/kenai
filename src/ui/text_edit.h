@@ -797,6 +797,10 @@ namespace sunaba::ui {
             int getLineWrapCount(int line) {
                 return text_edit->get_line_wrap_count(line);
             }
+
+            int getLineWrapIndexAtColumn(int line, int column) {
+                return text_edit->get_line_wrap_index_at_column(line, column);
+            }
     };
 }
 
