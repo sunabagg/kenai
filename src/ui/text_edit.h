@@ -1037,6 +1037,10 @@ namespace sunaba::ui {
             void removeCaret(int caret = -1) {
                 text_edit->remove_caret(caret);
             }
+
+            void removeGutter(int gutter) {
+                text_edit->remove_gutter(gutter);
+            }
     };
 }
 
