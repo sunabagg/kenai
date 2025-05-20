@@ -407,6 +407,7 @@ namespace sunaba::ui {
             "getHScrollBar", &TextEdit::getHScrollBar,
             "getIndentLevel", &TextEdit::getIndentLevel,
             "getLastFullVisibleLine", &TextEdit::getLastFullVisibleLine,
+            "getLastFullVisibleLineWrapIndex", &TextEdit::getLastFullVisibleLineWrapIndex,
         );
     }
 }
