@@ -937,6 +937,10 @@ namespace sunaba::ui {
             std::string getWordUnderCaret(int caret = -1) {
                 return String(text_edit->get_word_under_caret(caret)).utf8().get_data();
             }
+
+            bool hasImeText() {
+                return text_edit->has_ime_text();
+            }
     };
 }
 
