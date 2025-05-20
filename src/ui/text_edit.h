@@ -756,6 +756,10 @@ namespace sunaba::ui {
             int getLineCount() {
                 return text_edit->get_line_count();
             }
+
+            sunaba::core::Texture2D* getLineGutterIcon(int line, int gutter) {
+                return new sunaba::core::Texture2D(text_edit->get_line_gutter_icon(line, gutter).ptr());
+            }
     };
 }
 
