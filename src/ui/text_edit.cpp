@@ -372,6 +372,7 @@ namespace sunaba::ui {
                 &TextEdit::setTextSetEvent
             ),
             "addCaret", &TextEdit::addCaret,
+            "addCaretAtCarets", &TextEdit::addCaretAtCarets,
         );
     }
 }
