@@ -126,4 +126,10 @@ namespace sunaba::ui {
             this->element->onCopy(caret_index);
         }
     }
+
+    void TextEditProxy::_cut(int caret_index) {
+        if (this->element != nullptr) {
+            this->element->onCut(caret_index);
+        }
+    }
 }
