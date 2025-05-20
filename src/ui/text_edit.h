@@ -957,6 +957,10 @@ namespace sunaba::ui {
             void insertLineAt(int line, std::string text) {
                 text_edit->insert_line_at(line, String(text.c_str()));
             }
+
+            bool isCaretAfterSelectionOrigin(int caret = 0) {
+                return text_edit->is_caret_after_selection_origin(caret);
+            }
     };
 }
 
