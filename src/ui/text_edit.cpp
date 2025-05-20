@@ -231,6 +231,10 @@ namespace sunaba::ui {
                 &TextEdit::getEmptySelectionClipboardEnabled,
                 &TextEdit::setEmptySelectionClipboardEnabled
             ),
+            "focusMode", sol::property(
+                &TextEdit::getFocusMode,
+                &TextEdit::setFocusMode
+            ),
         );
     }
 }
