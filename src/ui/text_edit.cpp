@@ -235,6 +235,10 @@ namespace sunaba::ui {
                 &TextEdit::getFocusMode,
                 &TextEdit::setFocusMode
             ),
+            "highlightAllOccurrences", sol::property(
+                &TextEdit::getHighlightAllOccurrences,
+                &TextEdit::setHighlightAllOccurrences
+            ),
         );
     }
 }
