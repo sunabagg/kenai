@@ -303,6 +303,10 @@ namespace sunaba::ui {
                 &TextEdit::getSelectingEnabled,
                 &TextEdit::setSelectingEnabled
             ),
+            "shortcutKeysEnabled", sol::property(
+                &TextEdit::getShortcutKeysEnabled,
+                &TextEdit::setShortcutKeysEnabled
+            ),
         );
     }
 }
