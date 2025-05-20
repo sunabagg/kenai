@@ -416,6 +416,7 @@ namespace sunaba::ui {
             "getLineGutterIcon", &TextEdit::getLineGutterIcon,
             "getLineGutterItemColor", &TextEdit::getLineGutterItemColor,
             "getLineGutterMetadata", &TextEdit::getLineGutterMetadata,
+            "getLineGutterText", &TextEdit::getLineGutterText,
         );
     }
 }
