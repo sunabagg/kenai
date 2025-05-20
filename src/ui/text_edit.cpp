@@ -382,6 +382,7 @@ namespace sunaba::ui {
             "beginComplexOperation", &TextEdit::beginComplexOperation,
             "beginMulticaretEdit", &TextEdit::beginMulticaretEdit,
             "cancelIme", &TextEdit::cancelIme,
+            "centerViewportToCaret", &TextEdit::centerViewportToCaret,
         );
     }
 }
