@@ -599,7 +599,7 @@ namespace sunaba::ui {
                 text_edit->add_caret_at_carets(below);
             }
 
-            void addGutter(int at) {
+            void addGutter(int at = -1) {
                 text_edit->add_gutter(at);
             }
 
