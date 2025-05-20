@@ -343,6 +343,10 @@ namespace sunaba::ui {
                 &TextEdit::getWrapMode,
                 &TextEdit::setWrapMode
             ),
+            "caretChanged", sol::property(
+                &TextEdit::getCaretChangedEvent,
+                &TextEdit::setCaretChangedEvent
+            ),
         );
     }
 }
