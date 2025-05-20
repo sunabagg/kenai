@@ -374,6 +374,7 @@ namespace sunaba::ui {
             "addCaret", &TextEdit::addCaret,
             "addCaretAtCarets", &TextEdit::addCaretAtCarets,
             "addGutter", &TextEdit::addGutter,
+            "addSelectionForNextOccurrence", &TextEdit::addSelectionForNextOccurrence,
         );
     }
 }
