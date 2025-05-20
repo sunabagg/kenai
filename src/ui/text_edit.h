@@ -985,6 +985,10 @@ namespace sunaba::ui {
             bool isInMulitcaretEdit() {
                 return text_edit->is_in_mulitcaret_edit();
             }
+
+            bool isLineGutterClickable(int line, int gutter) {
+                return text_edit->is_line_gutter_clickable(line, gutter);
+            }
     };
 }
 
