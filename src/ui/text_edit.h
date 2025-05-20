@@ -1065,6 +1065,10 @@ namespace sunaba::ui {
             void selectAll() {
                 text_edit->select_all();
             }
+
+            void selectWordUnderCaret(int caret = -1) {
+                text_edit->select_word_under_caret(caret);
+            }
     };
 }
 
