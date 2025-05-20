@@ -380,6 +380,7 @@ namespace sunaba::ui {
             "applyIme", &TextEdit::applyIme,
             "backspace", &TextEdit::backspace,
             "beginComplexOperation", &TextEdit::beginComplexOperation,
+            "beginMulticaretEdit", &TextEdit::beginMulticaretEdit,
         );
     }
 }
