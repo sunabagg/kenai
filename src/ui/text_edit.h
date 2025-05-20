@@ -643,8 +643,8 @@ namespace sunaba::ui {
                 text_edit->collapse_carets(fromLine, fromCol, toLine, toCol, inclusive);
             }
 
-            void copy() {
-                text_edit->copy();
+            void copy(int caret = -1) {
+                text_edit->copy(caret);
             }
 
             void cut(int caret = -1) {
