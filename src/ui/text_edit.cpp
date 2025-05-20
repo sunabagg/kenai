@@ -30,4 +30,10 @@ namespace sunaba::ui {
             this->element->physicsProcess(delta);
         }
     }
+
+    void TextEditProxy::_input(const Ref<InputEvent>& event) {
+        if (this->element != nullptr) {
+            this->element->input(event);
+        }
+    }
 }
