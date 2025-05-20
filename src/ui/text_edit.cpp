@@ -251,6 +251,10 @@ namespace sunaba::ui {
                 &TextEdit::getLanguage,
                 &TextEdit::setLanguage
             ),
+            "middleMousePasteEnabled", sol::property(
+                &TextEdit::getMiddleMousePasteEnabled,
+                &TextEdit::setMiddleMousePasteEnabled
+            ),
         );
     }
 }
