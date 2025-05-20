@@ -634,6 +634,10 @@ namespace sunaba::ui {
             void clear() {
                 text_edit->clear();
             }
+
+            void clearUndoHistory() {
+                text_edit->clear_undo_history();
+            }
     };
 }
 
