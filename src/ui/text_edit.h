@@ -1057,6 +1057,10 @@ namespace sunaba::ui {
             Vector2i search(std::string text, int flags, int fromLine, int fromColumn) {
                 return text_edit->search(String(text.c_str()), static_cast<godot::TextEdit::SearchFlags>(flags), fromLine, fromColumn);
             }
+
+            void select(int originLine, int originColumn, int caretLine, int caretColumn, int caretIndex = 0) {
+                text_edit->select(originLine, originColumn, caretLine, caretColumn, caretIndex);
+            }
     };
 }
 
