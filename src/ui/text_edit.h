@@ -646,6 +646,11 @@ namespace sunaba::ui {
             void copy() {
                 text_edit->copy();
             }
+
+            void cut() {
+                text_edit->cut();
+            }
+
     };
 }
 
