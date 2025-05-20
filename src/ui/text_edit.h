@@ -1069,6 +1069,10 @@ namespace sunaba::ui {
             void selectWordUnderCaret(int caret = -1) {
                 text_edit->select_word_under_caret(caret);
             }
+
+            void setCaretColumn(int column, bool adjustViewport = true, int caretIndex = 0) {
+                text_edit->set_caret_column(column, adjustViewport, caretIndex);
+            }
     };
 }
 
