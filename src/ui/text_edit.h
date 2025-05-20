@@ -614,6 +614,10 @@ namespace sunaba::ui {
             void adjustViewportToCaret(int caret) {
                 text_edit->adjust_viewport_to_caret(caret);
             }
+
+            void applyIme() {
+                text_edit->apply_ime();
+            }
     };
 }
 
