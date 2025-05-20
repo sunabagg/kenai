@@ -883,6 +883,10 @@ namespace sunaba::ui {
             int getSelectionOriginColumn(int caretIndex = 0) {
                 return text_edit->get_selection_origin_column(caretIndex);
             }
+
+            int getSelectionOriginLine(int caretIndex = 0) {
+                return text_edit->get_selection_origin_line(caretIndex);
+            }
     };
 }
 
