@@ -933,6 +933,10 @@ namespace sunaba::ui {
             std::string getWordAtPos(Vector2 pos) {
                 return String(text_edit->get_word_at_pos(pos)).utf8().get_data();
             }
+
+            std::string getWordUnderCaret(int caret = -1) {
+                return String(text_edit->get_word_under_caret(caret)).utf8().get_data();
+            }
     };
 }
 
