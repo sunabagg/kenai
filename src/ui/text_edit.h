@@ -554,6 +554,15 @@ namespace sunaba::ui {
                     }
                 }
             }
+
+            void onCut(int caret_index) {
+                if (scriptInstance != sol::lua_nil) {
+                    auto func = scriptInstance["cut"].get<sol::function>();
+                    if (func) {
+                        func(scriptInstance, caret_index);
+                    }
+                }
+            }
     };
 }
 
