@@ -1172,8 +1172,8 @@ namespace sunaba::ui {
                 text_edit->skip_selection_for_next_occurrence();
             }
 
-            void startAction() {
-                text_edit->start_action();
+            void startAction(int action) {
+                text_edit->start_action(static_cast<godot::TextEdit::EditAction>(action));
             }
     };
 }
