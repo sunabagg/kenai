@@ -1077,6 +1077,10 @@ namespace sunaba::ui {
             void setCaretLine(int line, bool adjustViewport = true, bool canBeHidden = true, int wrapIndex = 0, int caretIndex = 0) {
                 text_edit->set_caret_line(line, adjustViewport, canBeHidden, wrapIndex, caretIndex);
             }
+
+            void setGutterClickable(int gutter, bool clickable) {
+                text_edit->set_gutter_clickable(gutter, clickable);
+            }
     };
 }
 
