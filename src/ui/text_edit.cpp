@@ -152,6 +152,8 @@ namespace sunaba::ui {
     }
 
     void bindTextEdit(sol::state& lua) {
-        
+        lua.new_usertype<TextEdit>("TextEdit",
+            sol::constructors<TextEdit()>(),
+        );
     }
 }
