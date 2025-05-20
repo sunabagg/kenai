@@ -602,6 +602,10 @@ namespace sunaba::ui {
             void addGutter(int at) {
                 text_edit->add_gutter(at);
             }
+
+            void addSelectionForNextOccurrence() {
+                text_edit->add_selection_for_next_occurrence();
+            }
     };
 }
 
