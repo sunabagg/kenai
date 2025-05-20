@@ -378,7 +378,8 @@ namespace sunaba::ui {
             "adjustCaretsAfterEdit", &TextEdit::adjustCaretsAfterEdit,
             "adjustViewportToCaret", &TextEdit::adjustViewportToCaret,
             "applyIme", &TextEdit::applyIme,
-            "backspace", &TextEdit::backspace
+            "backspace", &TextEdit::backspace,
+            "beginComplexOperation", &TextEdit::beginComplexOperation,
         );
     }
 }
