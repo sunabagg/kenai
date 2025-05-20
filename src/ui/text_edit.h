@@ -810,6 +810,10 @@ namespace sunaba::ui {
                 }
                 return wrappedText;
             }
+
+            Vector2 getLocalMousePos() {
+                return text_edit->get_local_mouse_pos();
+            }
     };
 }
 
