@@ -6,4 +6,10 @@ namespace sunaba::ui {
             this->element->enterTree();
         }
     }
+
+    void TextEditProxy::_exit_tree() {
+        if (this->element != nullptr) {
+            this->element->exitTree();
+        }
+    }
 }
