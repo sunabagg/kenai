@@ -977,6 +977,10 @@ namespace sunaba::ui {
             bool isGutterDrawn(int gutter) {
                 return text_edit->is_gutter_drawn(gutter);
             }
+
+            bool isGutterOverwritable(int gutter) {
+                return text_edit->is_gutter_overwritable(gutter);
+            }
     };
 }
 
