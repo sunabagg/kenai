@@ -847,6 +847,10 @@ namespace sunaba::ui {
             int getSavedVersion() {
                 return text_edit->get_saved_version();
             }
+
+            float getScrollPosForLine(int line, int wrapIndex = 0) {
+                return text_edit->get_scroll_pos_for_line(line);
+            }
     };
 }
 
