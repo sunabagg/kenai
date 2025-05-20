@@ -239,6 +239,10 @@ namespace sunaba::ui {
                 &TextEdit::getHighlightAllOccurrences,
                 &TextEdit::setHighlightAllOccurrences
             ),
+            "highlightCurrentLine", sol::property(
+                &TextEdit::getHighlightCurrentLine,
+                &TextEdit::setHighlightCurrentLine
+            ),
         );
     }
 }
