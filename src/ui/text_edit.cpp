@@ -367,6 +367,10 @@ namespace sunaba::ui {
                 &TextEdit::getTextChangedEvent,
                 &TextEdit::setTextChangedEvent
             ),
+            "textSet", sol::property(
+                &TextEdit::getTextSetEvent,
+                &TextEdit::setTextSetEvent
+            ),
         );
     }
 }
