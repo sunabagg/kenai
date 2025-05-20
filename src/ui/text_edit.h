@@ -594,6 +594,10 @@ namespace sunaba::ui {
             int addCaret(int line, int column) {
                 return text_edit->add_caret(line, column);
             }
+
+            void addCaretAtCarets(bool below) {
+                text_edit->add_caret_at_carets(below);
+            }
     };
 }
 
