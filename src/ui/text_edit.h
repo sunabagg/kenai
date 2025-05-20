@@ -732,6 +732,10 @@ namespace sunaba::ui {
             int getLastFullVisibleLine() {
                 return text_edit->get_last_full_visible_line();
             }
+
+            int getLastFullVisibleLineWrapIndex() {
+                return text_edit->get_last_full_visible_line_wrap_index();
+            }
     };
 }
 
