@@ -24,4 +24,10 @@ namespace sunaba::ui {
             this->element->process(delta);
         }
     }
+
+    void TextEditProxy::_physics_process(double delta) {
+        if (this->element != nullptr) {
+            this->element->physicsProcess(delta);
+        }
+    }
 }
