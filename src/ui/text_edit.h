@@ -1093,6 +1093,10 @@ namespace sunaba::ui {
             void setGutterOverwritable(int gutter, bool overwritable) {
                 text_edit->set_gutter_overwritable(gutter, overwritable);
             }
+
+            void setGutterType(int gutter, int type) {
+                text_edit->set_gutter_type(gutter, static_cast<godot::TextEdit::GutterType>(type));
+            }
     };
 }
 
