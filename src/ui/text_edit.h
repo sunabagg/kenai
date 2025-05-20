@@ -1121,6 +1121,10 @@ namespace sunaba::ui {
             void setLineBackgroundColor(int line, Color color) {
                 text_edit->set_line_background_color(line, color);
             }
+
+            void setLineGutterClickable(int line, int gutter, bool clickable) {
+                text_edit->set_line_gutter_clickable(line, gutter, clickable);
+            }
     };
 }
 
