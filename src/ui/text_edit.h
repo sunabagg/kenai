@@ -740,6 +740,10 @@ namespace sunaba::ui {
             int getLastUnhiddenLine() {
                 return text_edit->get_last_unhidden_line();
             }
+
+            std::string getLine(int line) {
+                return String(text_edit->get_line(line)).utf8().get_data();
+            }
     };
 }
 
