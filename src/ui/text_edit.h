@@ -941,6 +941,10 @@ namespace sunaba::ui {
             bool hasImeText() {
                 return text_edit->has_ime_text();
             }
+
+            bool hasRedo() {
+                return text_edit->has_redo();
+            }
     };
 }
 
