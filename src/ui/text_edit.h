@@ -695,6 +695,10 @@ namespace sunaba::ui {
             int getCaretLine(int caret = 0) {
                 return text_edit->get_caret_line(caret);
             }
+
+            int getCaretWrapIndex(int caret = 0) {
+                return text_edit->get_caret_wrap_index(caret);
+            }
     };
 }
 
