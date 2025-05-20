@@ -167,6 +167,10 @@ namespace sunaba::ui {
                 &TextEdit::getCaretBlinkInterval,
                 &TextEdit::setCaretBlinkInterval
             ),
+            "caretDrawWhenEditableDisabled", sol::property(
+                &TextEdit::getCaretDrawWhenEditableDisabled,
+                &TextEdit::setCaretDrawWhenEditableDisabled
+            ),
         );
     }
 }
