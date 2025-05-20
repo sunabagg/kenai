@@ -380,11 +380,11 @@ namespace sunaba::ui {
                 text_edit->set_smooth_scroll_enabled(enabled);
             }
 
-            float getScrollVSScrollSpeed() {
+            float getScrollVScrollSpeed() {
                 return text_edit->get_v_scroll_speed();
             }
 
-            void setScrollVSScrollSpeed(float speed) {
+            void setScrollVScrollSpeed(float speed) {
                 text_edit->set_v_scroll_speed(speed);
             }
 
