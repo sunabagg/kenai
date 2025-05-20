@@ -1053,6 +1053,10 @@ namespace sunaba::ui {
             void removeText(int fromLine, int fromColumn, int toLine, int toColumn) {
                 text_edit->remove_text(fromLine, fromColumn, toLine, toColumn);
             }
+
+            Vector2i search(std::string text, int flags, int fromLine, int fromColumn) {
+                return text_edit->search(String(text.c_str()), static_cast<godot::TextEdit::SearchFlags>(flags), fromLine, fromColumn);
+            }
     };
 }
 
