@@ -908,6 +908,10 @@ namespace sunaba::ui {
             int getTotalGutterWidth() {
                 return text_edit->get_total_gutter_width();
             }
+
+            int getTotalVisibleLineCount() {
+                return text_edit->get_total_visible_line_count();
+            }
     };
 }
 
