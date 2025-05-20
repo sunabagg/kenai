@@ -287,6 +287,10 @@ namespace sunaba::ui {
                 &TextEdit::getScrollPastEndOfFile,
                 &TextEdit::setScrollPastEndOfFile
             ),
+            "scrollSmooth", sol::property(
+                &TextEdit::getScrollSmooth,
+                &TextEdit::setScrollSmooth
+            ),
         );
     }
 }
