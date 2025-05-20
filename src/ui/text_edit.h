@@ -1009,6 +1009,10 @@ namespace sunaba::ui {
             void menuOption(int option) {
                 text_edit->menu_option(option);
             }
+
+            void mergeGutters(int fromLine, int toLine) {
+                text_edit->merge_gutters(fromLine, toLine);
+            }
     };
 }
 
