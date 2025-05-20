@@ -793,6 +793,10 @@ namespace sunaba::ui {
             std::string getLineWithIme(int line) {
                 return String(text_edit->get_line_with_ime(line)).utf8().get_data();
             }
+
+            int getLineWrapCount(int line) {
+                return text_edit->get_line_wrap_count(line);
+            }
     };
 }
 
