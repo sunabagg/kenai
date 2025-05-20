@@ -682,6 +682,15 @@ namespace sunaba::ui {
             Vector2 getCaretDrawPos(int caret = 0) {
                 return text_edit->get_caret_draw_pos(caret);
             }
+
+            std::vector<int> getCaretIndexEditOrder() {
+                std::vector<int> order;
+                PackedInt32Array orderArray = text_edit->get_caret_index_edit_order();
+                for (int i = 0; i < orderArray.size(); ++i) {
+                    order.push_back(orderArray[i]);
+                }
+                return order;
+            }
     };
 }
 
