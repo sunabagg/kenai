@@ -1017,6 +1017,10 @@ namespace sunaba::ui {
             void mergeOverlappingCarets() {
                 text_edit->merge_overlapping_carets();
             }
+
+            bool multicaretEditIgnoreCaret(int caret) {
+                return text_edit->multicaret_edit_ignore_caret(caret);
+            }
     };
 }
 
