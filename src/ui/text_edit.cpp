@@ -406,6 +406,7 @@ namespace sunaba::ui {
             "getGutterWidth", &TextEdit::getGutterWidth,
             "getHScrollBar", &TextEdit::getHScrollBar,
             "getIndentLevel", &TextEdit::getIndentLevel,
+            "getLastFullVisibleLine", &TextEdit::getLastFullVisibleLine,
         );
     }
 }
