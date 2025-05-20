@@ -1025,6 +1025,10 @@ namespace sunaba::ui {
             void paste(int caret = -1) {
                 text_edit->paste(caret);
             }
+
+            void pastePrimaryClipboard(int caret = -1) {
+                text_edit->paste_primary_clipboard(caret);
+            }
     };
 }
 
