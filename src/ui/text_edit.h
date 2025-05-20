@@ -1139,6 +1139,10 @@ namespace sunaba::ui {
             void setLineGutterMetadata(int line, int gutter, Variant metadata) {
                 text_edit->set_line_gutter_metadata(line, gutter, metadata);
             }
+
+            void setLineGutterText(int line, int gutter, std::string text) {
+                text_edit->set_line_gutter_text(line, gutter, String(text.c_str()));
+            }
     };
 }
 
