@@ -900,6 +900,10 @@ namespace sunaba::ui {
                 }
                 return sortedCarets;
             }
+
+            int getTabSize() {
+                return text_edit->get_tab_size();
+            }
     };
 }
 
