@@ -1143,6 +1143,10 @@ namespace sunaba::ui {
             void setLineGutterText(int line, int gutter, std::string text) {
                 text_edit->set_line_gutter_text(line, gutter, String(text.c_str()));
             }
+
+            void setOvertypeModeEnabled(bool enabled) {
+                text_edit->set_overtype_mode_enabled(enabled);
+            }
     };
 }
 
