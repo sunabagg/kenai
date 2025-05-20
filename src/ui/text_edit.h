@@ -835,6 +835,10 @@ namespace sunaba::ui {
             int getNextVisibleLineOffsetFrom(int line, int visibleAmount) {
                 return text_edit->get_next_visible_line_offset_from(line, visibleAmount);
             }
+
+            Vector2i getPosAtLineColumn(int line, int column) {
+                return text_edit->get_pos_at_line_column(line, column);
+            }
     };
 }
 
