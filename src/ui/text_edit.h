@@ -731,6 +731,10 @@ namespace sunaba::ui {
                 return text_edit->get_gutter_type(gutter);
             }
 
+            int getGutterWidth(int gutter) {
+                return text_edit->get_gutter_width(gutter);
+            }
+
             HScrollBar* getHScrollBar() {
                 return new HScrollBar(text_edit->get_h_scroll_bar());
             }
