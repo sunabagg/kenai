@@ -163,6 +163,10 @@ namespace sunaba::ui {
                 &TextEdit::getCaretBlink,
                 &TextEdit::setCaretBlink
             ),
+            "caretBlinkInterval", sol::property(
+                &TextEdit::getCaretBlinkInterval,
+                &TextEdit::setCaretBlinkInterval
+            ),
         );
     }
 }
