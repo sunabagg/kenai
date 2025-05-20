@@ -642,6 +642,10 @@ namespace sunaba::ui {
             void collapseCarets(int fromLine, int fromCol, int toLine, int toCol, bool inclusive = false) {
                 text_edit->collapse_carets(fromLine, fromCol, toLine, toCol, inclusive);
             }
+
+            void copy() {
+                text_edit->copy();
+            }
     };
 }
 
