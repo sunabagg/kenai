@@ -398,6 +398,7 @@ namespace sunaba::ui {
             "getCaretIndexEditOrder", &TextEdit::getCaretIndexEditOrder,
             "getCaretLine", &TextEdit::getCaretLine,
             "getCaretWrapIndex", &TextEdit::getCaretWrapIndex,
+            "getFirstNonWhitespaceColumn", &TextEdit::getFirstNonWhitespaceColumn,
         );
     }
 }
