@@ -483,6 +483,7 @@ namespace sunaba::ui {
             "redo", &TextEdit::redo,
             "removeCaret", &TextEdit::removeCaret,
             "removeGutter", &TextEdit::removeGutter,
+            "removeLineAt", &TextEdit::removeLineAt,
         );
     }
 }
