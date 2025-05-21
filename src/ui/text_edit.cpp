@@ -436,6 +436,7 @@ namespace sunaba::ui {
             "getScrollPosForLine", &TextEdit::getScrollPosForLine,
             "getSelectedText", &TextEdit::getSelectedText,
             "getSelectionAtLineColumn", &TextEdit::getSelectionAtLineColumn,
+            "getSelectionColumn", &TextEdit::getSelectionColumn,
         );
     }
 }
