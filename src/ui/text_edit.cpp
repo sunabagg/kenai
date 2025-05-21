@@ -490,6 +490,7 @@ namespace sunaba::ui {
             "select", &TextEdit::select,
             "selectAll", &TextEdit::selectAll,
             "selectWordUnderCaret", &TextEdit::selectWordUnderCaret,
+            "setCaretColumn", &TextEdit::setCaretColumn,
         );
     }
 }
