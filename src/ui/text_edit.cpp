@@ -517,6 +517,7 @@ namespace sunaba::ui {
             "setTabSize", &TextEdit::setTabSize,
             "skipSelectionForNextOccurrence", &TextEdit::skipSelectionForNextOccurrence,
             "startAction", &TextEdit::startAction,
+            "swapLines", &TextEdit::swapLines,
         );
     }
 }
