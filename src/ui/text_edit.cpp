@@ -423,6 +423,7 @@ namespace sunaba::ui {
             "getLineWithIme", &TextEdit::getLineWithIme,
             "getLineWrapCount", &TextEdit::getLineWrapCount,
             "getLineWrapIndexAtColumn", &TextEdit::getLineWrapIndexAtColumn,
+            "getLineWrappedText", &TextEdit::getLineWrappedText,
         );
     }
 }
