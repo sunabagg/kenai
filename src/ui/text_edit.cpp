@@ -477,6 +477,7 @@ namespace sunaba::ui {
             "menuOption", &TextEdit::menuOption,
             "mergeGutters", &TextEdit::mergeGutters,
             "mergeOverlappingCarets", &TextEdit::mergeOverlappingCarets,
+            "multicaretEditIgnoreCaret", &TextEdit::multicaretEditIgnoreCaret,
         );
     }
 }
