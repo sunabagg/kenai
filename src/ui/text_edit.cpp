@@ -520,6 +520,10 @@ namespace sunaba::ui {
             "swapLines", &TextEdit::swapLines,
             "tagSavedVersion", &TextEdit::tagSavedVersion,
             "undo", &TextEdit::undo,
+            "cast", [](Element* e) {
+                TextEditNode* text_edit = Object::cast_to<TextEditNode>(e->getNode());
+                return new TextEdit(text_edit);
+            }
         );
     }
 }
