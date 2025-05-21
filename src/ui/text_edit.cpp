@@ -514,6 +514,7 @@ namespace sunaba::ui {
             "setSelectionMode", &TextEdit::setSelectionMode,
             "setSelectionOriginColumn", &TextEdit::setSelectionOriginColumn,
             "setSelectionOriginLine", &TextEdit::setSelectionOriginLine,
+            "setTabSize", &TextEdit::setTabSize,
         );
     }
 }
