@@ -465,6 +465,7 @@ namespace sunaba::ui {
             "isCaretAfterSelectionOrigin", &TextEdit::isCaretAfterSelectionOrigin,
             "isCaretVisible", &TextEdit::isCaretVisible,
             "isDraggingCursor", &TextEdit::isDraggingCursor,
+            "isGutterClickable", &TextEdit::isGutterClickable,
         );
     }
 }
