@@ -475,6 +475,7 @@ namespace sunaba::ui {
             "isMouseOverSelection", &TextEdit::isMouseOverSelection,
             "isOvertypeModeEnabled", &TextEdit::isOvertypeModeEnabled,
             "menuOption", &TextEdit::menuOption,
+            "mergeGutters", &TextEdit::mergeGutters,
         );
     }
 }
