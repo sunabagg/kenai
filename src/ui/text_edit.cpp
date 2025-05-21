@@ -487,6 +487,7 @@ namespace sunaba::ui {
             "removeSecondaryCarets", &TextEdit::removeSecondaryCarets,
             "removeText", &TextEdit::removeText,
             "search", &TextEdit::search,
+            "select", &TextEdit::select,
         );
     }
 }
