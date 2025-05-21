@@ -434,6 +434,7 @@ namespace sunaba::ui {
             "getRectAtLineColumn", &TextEdit::getRectAtLineColumn,
             "getSavedVersion", &TextEdit::getSavedVersion,
             "getScrollPosForLine", &TextEdit::getScrollPosForLine,
+            "getSelectedText", &TextEdit::getSelectedText,
         );
     }
 }
