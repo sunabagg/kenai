@@ -468,6 +468,7 @@ namespace sunaba::ui {
             "isGutterClickable", &TextEdit::isGutterClickable,
             "isGutterDrawn", &TextEdit::isGutterDrawn,
             "isGutterOverwritable", &TextEdit::isGutterOverwritable,
+            "isInMulticaretEdit", &TextEdit::isInMulticaretEdit,
         );
     }
 }
