@@ -474,6 +474,7 @@ namespace sunaba::ui {
             "isMenuVisible", &TextEdit::isMenuVisible,
             "isMouseOverSelection", &TextEdit::isMouseOverSelection,
             "isOvertypeModeEnabled", &TextEdit::isOvertypeModeEnabled,
+            "menuOption", &TextEdit::menuOption,
         );
     }
 }
