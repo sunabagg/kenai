@@ -494,6 +494,7 @@ namespace sunaba::ui {
             "setCaretLine", &TextEdit::setCaretLine,
             "setGutterClickable", &TextEdit::setGutterClickable,
             "setGutterDraw", &TextEdit::setGutterDraw,
+            "setGutterName", &TextEdit::setGutterName,
         );
     }
 }
