@@ -422,6 +422,7 @@ namespace sunaba::ui {
             "getLineWidth", &TextEdit::getLineWidth,
             "getLineWithIme", &TextEdit::getLineWithIme,
             "getLineWrapCount", &TextEdit::getLineWrapCount,
+            "getLineWrapIndexAtColumn", &TextEdit::getLineWrapIndexAtColumn,
         );
     }
 }
