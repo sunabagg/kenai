@@ -455,6 +455,7 @@ namespace sunaba::ui {
             "getVisibleLineCountInRange", &TextEdit::getVisibleLineCountInRange,
             "getWordAtPos", &TextEdit::getWordAtPos,
             "getWordUnderCaret", &TextEdit::getWordUnderCaret,
+            "hasImeText", &TextEdit::hasImeText,
         );
     }
 }
