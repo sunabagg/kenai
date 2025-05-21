@@ -488,6 +488,7 @@ namespace sunaba::ui {
             "removeText", &TextEdit::removeText,
             "search", &TextEdit::search,
             "select", &TextEdit::select,
+            "selectAll", &TextEdit::selectAll,
         );
     }
 }
