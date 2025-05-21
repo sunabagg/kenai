@@ -481,6 +481,7 @@ namespace sunaba::ui {
             "paste", &TextEdit::paste,
             "pastePrimaryClipboard", &TextEdit::pastePrimaryClipboard,
             "redo", &TextEdit::redo,
+            "removeCaret", &TextEdit::removeCaret,
         );
     }
 }
