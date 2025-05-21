@@ -508,6 +508,7 @@ namespace sunaba::ui {
             "setLineGutterItemColor", &TextEdit::setLineGutterItemColor,
             "setLineGutterMetadata", &TextEdit::setLineGutterMetadata,
             "setLineGutterText", &TextEdit::setLineGutterText,
+            "setOvertypeModeEnabled", &TextEdit::setOvertypeModeEnabled,
         );
     }
 }
