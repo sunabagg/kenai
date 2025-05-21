@@ -438,6 +438,7 @@ namespace sunaba::ui {
             "getSelectionAtLineColumn", &TextEdit::getSelectionAtLineColumn,
             "getSelectionColumn", &TextEdit::getSelectionColumn,
             "getSelectionFromColumn", &TextEdit::getSelectionFromColumn,
+            "getSelectionFromLine", &TextEdit::getSelectionFromLine,
         );
     }
 }
