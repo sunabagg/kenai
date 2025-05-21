@@ -459,6 +459,7 @@ namespace sunaba::ui {
             "hasRedo", &TextEdit::hasRedo,
             "hasSelection", &TextEdit::hasSelection,
             "hasUndo", &TextEdit::hasUndo,
+            "insertLineAt", &TextEdit::insertLineAt,
         );
     }
 }
