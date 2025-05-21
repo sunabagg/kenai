@@ -472,6 +472,7 @@ namespace sunaba::ui {
             "isLineGutterClickable", &TextEdit::isLineGutterClickable,
             "isLineWrapped", &TextEdit::isLineWrapped,
             "isMenuVisible", &TextEdit::isMenuVisible,
+            "isMouseOverSelection", &TextEdit::isMouseOverSelection,
         );
     }
 }
