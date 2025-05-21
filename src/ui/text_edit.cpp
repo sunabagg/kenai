@@ -430,6 +430,7 @@ namespace sunaba::ui {
             "getMinimapVisibleLines", &TextEdit::getMinimapVisibleLines,
             "getNextVisibleLineIndexOffsetFrom", &TextEdit::getNextVisibleLineIndexOffsetFrom,
             "getNextVisibleLineOffsetFrom", &TextEdit::getNextVisibleLineOffsetFrom,
+            "getPosAtLineColumn", &TextEdit::getPosAtLineColumn,
         );
     }
 }
