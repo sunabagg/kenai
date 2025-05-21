@@ -420,6 +420,7 @@ namespace sunaba::ui {
             "getLineHeight", &TextEdit::getLineHeight,
             "getLineRangesFromCarets", &TextEdit::getLineRangesFromCarets,
             "getLineWidth", &TextEdit::getLineWidth,
+            "getLineWithIme", &TextEdit::getLineWithIme,
         );
     }
 }
