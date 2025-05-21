@@ -450,6 +450,7 @@ namespace sunaba::ui {
             "getTotalGutterWidth", &TextEdit::getTotalGutterWidth,
             "getTotalVisibleLineCount", &TextEdit::getTotalVisibleLineCount,
             "getVScrollBar", &TextEdit::getVScrollBar,
+            "getVersion", &TextEdit::getVersion,
         );
     }
 }
