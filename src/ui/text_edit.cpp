@@ -518,6 +518,7 @@ namespace sunaba::ui {
             "skipSelectionForNextOccurrence", &TextEdit::skipSelectionForNextOccurrence,
             "startAction", &TextEdit::startAction,
             "swapLines", &TextEdit::swapLines,
+            "tabSavedVersion", &TextEdit::tabSavedVersion,
         );
     }
 }
