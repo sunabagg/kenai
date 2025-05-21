@@ -503,6 +503,7 @@ namespace sunaba::ui {
             "setLineAsFirstVisible", &TextEdit::setLineAsFirstVisible,
             "setLineAsLastVisible", &TextEdit::setLineAsLastVisible,
             "setLineBackgroundColor", &TextEdit::setLineBackgroundColor,
+            "setLineGutterClickable", &TextEdit::setLineGutterClickable,
         );
     }
 }
