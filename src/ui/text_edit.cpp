@@ -426,6 +426,7 @@ namespace sunaba::ui {
             "getLineWrappedText", &TextEdit::getLineWrappedText,
             "getLocalMousePos", &TextEdit::getLocalMousePos,
             "getMenu", &TextEdit::getMenu,
+            "getMinimapLineAtPos", &TextEdit::getMinimapLineAtPos,
         );
     }
 }
