@@ -511,6 +511,7 @@ namespace sunaba::ui {
             "setOvertypeModeEnabled", &TextEdit::setOvertypeModeEnabled,
             "setSearchFlags", &TextEdit::setSearchFlags,
             "setSearchText", &TextEdit::setSearchText,
+            "setSelectionMode", &TextEdit::setSelectionMode,
         );
     }
 }
