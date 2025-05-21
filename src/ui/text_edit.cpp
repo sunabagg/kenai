@@ -451,6 +451,7 @@ namespace sunaba::ui {
             "getTotalVisibleLineCount", &TextEdit::getTotalVisibleLineCount,
             "getVScrollBar", &TextEdit::getVScrollBar,
             "getVersion", &TextEdit::getVersion,
+            "getVisibleLineCount", &TextEdit::getVisibleLineCount,
         );
     }
 }
