@@ -447,6 +447,7 @@ namespace sunaba::ui {
             "getSelectionToLine", &TextEdit::getSelectionToLine,
             "getSortedCarets", &TextEdit::getSortedCarets,
             "getTabSize", &TextEdit::getTabSize,
+            "getTotalGutterWidth", &TextEdit::getTotalGutterWidth,
         );
     }
 }
