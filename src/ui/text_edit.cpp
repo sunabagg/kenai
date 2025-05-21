@@ -507,6 +507,7 @@ namespace sunaba::ui {
             "setLineGutterIcon", &TextEdit::setLineGutterIcon,
             "setLineGutterItemColor", &TextEdit::setLineGutterItemColor,
             "setLineGutterMetadata", &TextEdit::setLineGutterMetadata,
+            "setLineGutterText", &TextEdit::setLineGutterText,
         );
     }
 }
