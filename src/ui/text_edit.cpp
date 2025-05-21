@@ -471,6 +471,7 @@ namespace sunaba::ui {
             "isInMulticaretEdit", &TextEdit::isInMulitcaretEdit,
             "isLineGutterClickable", &TextEdit::isLineGutterClickable,
             "isLineWrapped", &TextEdit::isLineWrapped,
+            "isMenuVisible", &TextEdit::isMenuVisible,
         );
     }
 }
