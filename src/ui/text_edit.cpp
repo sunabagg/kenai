@@ -495,6 +495,7 @@ namespace sunaba::ui {
             "setGutterClickable", &TextEdit::setGutterClickable,
             "setGutterDraw", &TextEdit::setGutterDraw,
             "setGutterName", &TextEdit::setGutterName,
+            "setGutterOverwritable", &TextEdit::setGutterOverwritable,
         );
     }
 }
