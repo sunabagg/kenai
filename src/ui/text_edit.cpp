@@ -462,6 +462,7 @@ namespace sunaba::ui {
             "insertLineAt", &TextEdit::insertLineAt,
             "insertText", &TextEdit::insertText,
             "insertTextAtCaret", &TextEdit::insertTextAtCaret,
+            "isCaretAfterSelectionOrigin", &TextEdit::isCaretAfterSelectionOrigin,
         );
     }
 }
