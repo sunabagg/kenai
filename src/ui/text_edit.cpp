@@ -501,6 +501,7 @@ namespace sunaba::ui {
             "setLine", &TextEdit::setLine,
             "setLineAsCenterVisible", &TextEdit::setLineAsCenterVisible,
             "setLineAsFirstVisible", &TextEdit::setLineAsFirstVisible,
+            "setLineAsLastVisible", &TextEdit::setLineAsLastVisible,
         );
     }
 }
