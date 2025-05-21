@@ -512,6 +512,7 @@ namespace sunaba::ui {
             "setSearchFlags", &TextEdit::setSearchFlags,
             "setSearchText", &TextEdit::setSearchText,
             "setSelectionMode", &TextEdit::setSelectionMode,
+            "setSelectionOriginColumn", &TextEdit::setSelectionOriginColumn,
         );
     }
 }
