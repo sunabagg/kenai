@@ -1014,7 +1014,7 @@ namespace sunaba::ui {
                 return text_edit->is_line_gutter_clickable(line, gutter);
             }
 
-            bool isLIneWrapped(int line) {
+            bool isLineWrapped(int line) {
                 return text_edit->is_line_wrapped(line);
             }
 
