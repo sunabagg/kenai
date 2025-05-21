@@ -435,6 +435,7 @@ namespace sunaba::ui {
             "getSavedVersion", &TextEdit::getSavedVersion,
             "getScrollPosForLine", &TextEdit::getScrollPosForLine,
             "getSelectedText", &TextEdit::getSelectedText,
+            "getSelectionAtLineColumn", &TextEdit::getSelectionAtLineColumn,
         );
     }
 }
