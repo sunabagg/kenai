@@ -421,6 +421,7 @@ namespace sunaba::ui {
             "getLineRangesFromCarets", &TextEdit::getLineRangesFromCarets,
             "getLineWidth", &TextEdit::getLineWidth,
             "getLineWithIme", &TextEdit::getLineWithIme,
+            "getLineWrapCount", &TextEdit::getLineWrapCount,
         );
     }
 }
