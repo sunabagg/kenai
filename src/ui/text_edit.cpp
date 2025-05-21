@@ -489,6 +489,7 @@ namespace sunaba::ui {
             "search", &TextEdit::search,
             "select", &TextEdit::select,
             "selectAll", &TextEdit::selectAll,
+            "selectWordUnderCaret", &TextEdit::selectWordUnderCaret,
         );
     }
 }
