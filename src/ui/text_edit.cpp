@@ -464,6 +464,7 @@ namespace sunaba::ui {
             "insertTextAtCaret", &TextEdit::insertTextAtCaret,
             "isCaretAfterSelectionOrigin", &TextEdit::isCaretAfterSelectionOrigin,
             "isCaretVisible", &TextEdit::isCaretVisible,
+            "isDraggingCursor", &TextEdit::isDraggingCursor,
         );
     }
 }
