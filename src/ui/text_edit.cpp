@@ -461,6 +461,7 @@ namespace sunaba::ui {
             "hasUndo", &TextEdit::hasUndo,
             "insertLineAt", &TextEdit::insertLineAt,
             "insertText", &TextEdit::insertText,
+            "insertTextAtCaret", &TextEdit::insertTextAtCaret,
         );
     }
 }
