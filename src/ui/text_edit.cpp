@@ -510,6 +510,7 @@ namespace sunaba::ui {
             "setLineGutterText", &TextEdit::setLineGutterText,
             "setOvertypeModeEnabled", &TextEdit::setOvertypeModeEnabled,
             "setSearchFlags", &TextEdit::setSearchFlags,
+            "setSearchText", &TextEdit::setSearchText,
         );
     }
 }
