@@ -974,6 +974,10 @@ namespace sunaba::ui {
                 text_edit->insert_line_at(line, String(text.c_str()));
             }
 
+            void insertText(std::string text, int line, int column, bool beforeSelectionBegin = true, bool beforeSelectionEnd = false) {
+                text_edit->insert_text(String(text.c_str()), line, column, beforeSelectionBegin, beforeSelectionEnd);
+            }
+
             void insertTextAtCaret(std::string text, int caret = -1) {
                 text_edit->insert_text_at_caret(String(text.c_str()), caret);
             }
