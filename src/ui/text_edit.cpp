@@ -519,6 +519,7 @@ namespace sunaba::ui {
             "startAction", &TextEdit::startAction,
             "swapLines", &TextEdit::swapLines,
             "tagSavedVersion", &TextEdit::tagSavedVersion,
+            "undo", &TextEdit::undo,
         );
     }
 }
