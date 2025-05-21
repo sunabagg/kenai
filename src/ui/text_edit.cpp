@@ -424,6 +424,7 @@ namespace sunaba::ui {
             "getLineWrapCount", &TextEdit::getLineWrapCount,
             "getLineWrapIndexAtColumn", &TextEdit::getLineWrapIndexAtColumn,
             "getLineWrappedText", &TextEdit::getLineWrappedText,
+            "getLocalMousePos", &TextEdit::getLocalMousePos,
         );
     }
 }
