@@ -454,6 +454,7 @@ namespace sunaba::ui {
             "getVisibleLineCount", &TextEdit::getVisibleLineCount,
             "getVisibleLineCountInRange", &TextEdit::getVisibleLineCountInRange,
             "getWordAtPos", &TextEdit::getWordAtPos,
+            "getWordUnderCaret", &TextEdit::getWordUnderCaret,
         );
     }
 }
