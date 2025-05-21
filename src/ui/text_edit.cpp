@@ -428,7 +428,8 @@ namespace sunaba::ui {
             "getMenu", &TextEdit::getMenu,
             "getMinimapLineAtPos", &TextEdit::getMinimapLineAtPos,
             "getMinimapVisibleLines", &TextEdit::getMinimapVisibleLines,
-            "getNaxtVisibleLineIndexOffsetFrom", &TextEdit::getNextVisibleLineIndexOffsetFrom,
+            "getNextVisibleLineIndexOffsetFrom", &TextEdit::getNextVisibleLineIndexOffsetFrom,
+            "getNextVisibleLineOffsetFrom", &TextEdit::getNextVisibleLineOffsetFrom,
         );
     }
 }
