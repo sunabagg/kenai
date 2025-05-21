@@ -453,6 +453,7 @@ namespace sunaba::ui {
             "getVersion", &TextEdit::getVersion,
             "getVisibleLineCount", &TextEdit::getVisibleLineCount,
             "getVisibleLineCountInRange", &TextEdit::getVisibleLineCountInRange,
+            "getWordAtPos", &TextEdit::getWordAtPos,
         );
     }
 }
