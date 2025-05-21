@@ -480,6 +480,7 @@ namespace sunaba::ui {
             "multicaretEditIgnoreCaret", &TextEdit::multicaretEditIgnoreCaret,
             "paste", &TextEdit::paste,
             "pastePrimaryClipboard", &TextEdit::pastePrimaryClipboard,
+            "redo", &TextEdit::redo,
         );
     }
 }
