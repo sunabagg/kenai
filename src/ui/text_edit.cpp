@@ -499,6 +499,7 @@ namespace sunaba::ui {
             "setGutterType", &TextEdit::setGutterType,
             "setGutterWidth", &TextEdit::setGutterWidth,
             "setLine", &TextEdit::setLine,
+            "setLineAsCenterVisible", &TextEdit::setLineAsCenterVisible,
         );
     }
 }
