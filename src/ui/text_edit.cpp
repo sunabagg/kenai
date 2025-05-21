@@ -479,6 +479,7 @@ namespace sunaba::ui {
             "mergeOverlappingCarets", &TextEdit::mergeOverlappingCarets,
             "multicaretEditIgnoreCaret", &TextEdit::multicaretEditIgnoreCaret,
             "paste", &TextEdit::paste,
+            "pastePrimaryClipboard", &TextEdit::pastePrimaryClipboard,
         );
     }
 }
