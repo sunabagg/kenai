@@ -473,6 +473,7 @@ namespace sunaba::ui {
             "isLineWrapped", &TextEdit::isLineWrapped,
             "isMenuVisible", &TextEdit::isMenuVisible,
             "isMouseOverSelection", &TextEdit::isMouseOverSelection,
+            "isOvertypeModeEnabled", &TextEdit::isOvertypeModeEnabled,
         );
     }
 }
