@@ -431,6 +431,7 @@ namespace sunaba::ui {
             "getNextVisibleLineIndexOffsetFrom", &TextEdit::getNextVisibleLineIndexOffsetFrom,
             "getNextVisibleLineOffsetFrom", &TextEdit::getNextVisibleLineOffsetFrom,
             "getPosAtLineColumn", &TextEdit::getPosAtLineColumn,
+            "getRectAtLineColumn", &TextEdit::getRectAtLineColumn,
         );
     }
 }
