@@ -418,6 +418,7 @@ namespace sunaba::ui {
             "getLineGutterMetadata", &TextEdit::getLineGutterMetadata,
             "getLineGutterText", &TextEdit::getLineGutterText,
             "getLineHeight", &TextEdit::getLineHeight,
+            "getLineRangesFromCarets", &TextEdit::getLineRangesFromCarets,
         );
     }
 }
