@@ -442,6 +442,7 @@ namespace sunaba::ui {
             "getSelectionLine", &TextEdit::getSelectionLine,
             "getSelectionMode", &TextEdit::getSelectionMode,
             "getSelectionOriginColumn", &TextEdit::getSelectionOriginColumn,
+            "getSelectionOriginLine", &TextEdit::getSelectionOriginLine,
         );
     }
 }
