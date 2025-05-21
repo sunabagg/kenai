@@ -470,6 +470,7 @@ namespace sunaba::ui {
             "isGutterOverwritable", &TextEdit::isGutterOverwritable,
             "isInMulticaretEdit", &TextEdit::isInMulitcaretEdit,
             "isLineGutterClickable", &TextEdit::isLineGutterClickable,
+            "isLineWrapped", &TextEdit::isLineWrapped,
         );
     }
 }
