@@ -456,6 +456,7 @@ namespace sunaba::ui {
             "getWordAtPos", &TextEdit::getWordAtPos,
             "getWordUnderCaret", &TextEdit::getWordUnderCaret,
             "hasImeText", &TextEdit::hasImeText,
+            "hasRedo", &TextEdit::hasRedo,
         );
     }
 }
