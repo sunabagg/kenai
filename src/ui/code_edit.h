@@ -105,6 +105,10 @@ namespace sunaba::ui {
                 connectCodeEditSignals();
                 setTextEdit(code_edit);
             }
+
+            bool getAutBraceCompletionEnabled() {
+                return code_edit->is_auto_brace_completion_enabled();
+            }
     };
 }
 
