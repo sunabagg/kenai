@@ -117,6 +117,10 @@ namespace sunaba::ui {
             bool getAutoBraceCompletionHighlightMatching() {
                 return code_edit->is_highlight_matching_braces_enabled();
             }
+
+            void setAutoBraceCompletionHighlightMatching(bool enabled) {
+                code_edit->set_highlight_matching_braces_enabled(enabled);
+            }
     };
 }
 
