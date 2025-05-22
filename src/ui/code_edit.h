@@ -109,6 +109,10 @@ namespace sunaba::ui {
             bool getAutBraceCompletionEnabled() {
                 return code_edit->is_auto_brace_completion_enabled();
             }
+
+            void setAutBraceCompletionEnabled(bool enabled) {
+                code_edit->set_auto_brace_completion_enabled(enabled);
+            }
     };
 }
 
