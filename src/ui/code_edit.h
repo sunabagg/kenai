@@ -339,6 +339,10 @@ namespace sunaba::ui {
             int getTextDirection() {
                 return code_edit->get_text_direction();
             }
+
+            void setTextDirection(int direction) {
+                code_edit->set_text_direction(static_cast<godot::Control::TextDirection>(direction));
+            }
     };
 }
 
