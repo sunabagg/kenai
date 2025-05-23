@@ -417,7 +417,10 @@ namespace sunaba::ui {
                     iconRef = Ref<godot::Resource>();
                 }
                 code_edit->add_code_completion_option(static_cast<CodeEditNode::CodeCompletionKind>(type), String(displayText.c_str()), String(insertText.c_str()), textColor, iconRef, value, location);
+            }
 
+            void addCommentDelimiter(const std::string& startKey, const std::string& endKey, bool lineOnly = false) {
+                code_edit->add_comment_delimiter(String(startKey.c_str()), String(endKey.c_str()), lineOnly);
             }
     };
 }
