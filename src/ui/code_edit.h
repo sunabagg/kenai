@@ -247,6 +247,20 @@ namespace sunaba::ui {
             bool getIndentAutomatic() {
                 return code_edit->is_auto_indent_enabled();
             }
+
+            void setIndentAutomatic(bool enabled) {
+                code_edit->set_auto_indent_enabled(enabled);
+            }
+
+            std::vector<std::string> getIndentAutomaticPrefixes() {
+                std::vector<std::string> pairs;
+                TypedArray<String> prefixes = code_edit->get_auto_indent_prefixes();
+                for (int i = 0; i < prefixes.size(); ++i) {
+                    String prefix = prefixes[i];
+                    pairs.push_back(prefix.utf8().get_data());
+                }
+                return pairs;
+            }
     };
 }
 
