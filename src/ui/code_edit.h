@@ -243,6 +243,10 @@ namespace sunaba::ui {
             void setGuttersZeroPadLineNumbers(bool enabled) {
                 code_edit->set_line_numbers_zero_padded(enabled);
             }
+
+            bool getIndentAutomatic() {
+                return code_edit->is_auto_indent_enabled();
+            }
     };
 }
 
