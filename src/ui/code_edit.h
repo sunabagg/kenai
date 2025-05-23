@@ -203,6 +203,10 @@ namespace sunaba::ui {
             void setGuttersDrawBookmarks(bool enabled) {
                 code_edit->set_draw_bookmarks_gutter(enabled);
             }
+
+            bool getGutterDrawBreakpointsGutter() {
+                return code_edit->is_drawing_breakpoints_gutter();
+            }
     };
 }
 
