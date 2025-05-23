@@ -403,6 +403,10 @@ namespace sunaba::ui {
                 }
                 return Dictionary();
             }
+
+            void addAutoBraceCompletionPair(const std::string& startKey, const std::string& endKey) {
+                code_edit->add_auto_brace_completion_pair(String(startKey.c_str()), String(endKey.c_str()));
+            }
     };
 }
 
