@@ -466,6 +466,10 @@ namespace sunaba::ui {
             void createCodeRegion() {
                 code_edit->create_code_region();
             }
+
+            void deleteLines() {
+                code_edit->delete_lines();
+            }
     };
 }
 
