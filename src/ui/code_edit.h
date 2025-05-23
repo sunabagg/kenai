@@ -293,6 +293,10 @@ namespace sunaba::ui {
             void setLayoutDirection(int direction) {
                 code_edit->set_layout_direction(static_cast<godot::Control::LayoutDirection>(direction));
             }
+
+            bool getLineFolding() {
+                return code_edit->is_line_folding_enabled();
+            }
     };
 }
 
