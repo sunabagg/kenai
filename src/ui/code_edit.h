@@ -199,6 +199,10 @@ namespace sunaba::ui {
             bool getGuttersDrawBookmarks() {
                 return code_edit->is_drawing_bookmarks_gutter();
             }
+
+            void setGuttersDrawBookmarks(bool enabled) {
+                code_edit->set_draw_bookmarks_gutter(enabled);
+            }
     };
 }
 
