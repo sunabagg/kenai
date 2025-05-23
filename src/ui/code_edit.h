@@ -510,6 +510,10 @@ namespace sunaba::ui {
                 }
                 return lines;
             }
+
+            Dictionary getCodeCompletionOption(int index) {
+                return code_edit->get_code_completion_option(index);
+            }
     };
 }
 
