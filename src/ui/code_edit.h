@@ -177,6 +177,16 @@ namespace sunaba::ui {
                 }
                 code_edit->set_comment_delimiters(arr);
             }
+
+            std::vector<std::string> getDelimiterStrings() {
+                std::vector<std::string> pairs;
+                auto delimiters = code_edit->get_string_delimiters();
+                for (int i = 0; i < delimiters.size(); ++i) {
+                    String delimiter = delimiters[i];
+                    pairs.push_back(delimiter.utf8().get_data());
+                }
+                return pairs;
+            }
     };
 }
 
