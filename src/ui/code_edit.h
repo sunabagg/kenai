@@ -133,6 +133,10 @@ namespace sunaba::ui {
             bool getCodeCompletionEnabled() {
                 return code_edit->is_code_completion_enabled();
             }
+
+            void setCodeCompletionEnabled(bool enabled) {
+                code_edit->set_code_completion_enabled(enabled);
+            }
     };
 }
 
