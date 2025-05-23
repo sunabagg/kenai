@@ -187,6 +187,14 @@ namespace sunaba::ui {
                 }
                 return pairs;
             }
+
+            void setDelimiterStrings(const std::vector<std::string>& delimiters) {
+                TypedArray<String> arr;
+                for (const auto& delimiter : delimiters) {
+                    arr.push_back(String(delimiter.c_str()));
+                }
+                code_edit->set_string_delimiters(arr);
+            }
     };
 }
 
