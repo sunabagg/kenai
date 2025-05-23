@@ -289,6 +289,10 @@ namespace sunaba::ui {
             int getLayoutDirection() {
                 return code_edit->get_layout_direction();
             }
+
+            void setLayoutDirection(int direction) {
+                code_edit->set_layout_direction(static_cast<Control::LayoutDirection>(direction));
+            }
     };
 }
 
