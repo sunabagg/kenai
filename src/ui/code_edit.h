@@ -301,6 +301,16 @@ namespace sunaba::ui {
             void setLineFolding(bool enabled) {
                 code_edit->set_line_folding_enabled(enabled);
             }
+
+            std::vector<int> getLineLengthGuidelines() {
+                std::vector<int> lines;
+                PackedInt32Array guidelines = code_edit->get_line_length_guidelines();
+                for (int i = 0; i < guidelines.size(); ++i) {
+                    int line = guidelines[i];
+                    lines.push_back(line);
+                }
+                return lines;
+            }
     };
 }
 
