@@ -490,6 +490,16 @@ namespace sunaba::ui {
             std::string getAutoBraceCompletionCloseKey(const std::string& openKey) {
                 return code_edit->get_auto_brace_completion_close_key(String(openKey.c_str())).utf8().get_data();
             }
+
+            std::vector<int> getBookmarkedLines() {
+                std::vector<int> lines;
+                PackedInt32Array bookmarks = code_edit->get_bookmarked_lines();
+                for (int i = 0; i < bookmarks.size(); ++i) {
+                    int line = bookmarks[i];
+                    lines.push_back(line);
+                }
+                return lines;
+            }
     };
 }
 
