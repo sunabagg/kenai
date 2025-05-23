@@ -207,6 +207,10 @@ namespace sunaba::ui {
             bool getGutterDrawBreakpointsGutter() {
                 return code_edit->is_drawing_breakpoints_gutter();
             }
+
+            void setGutterDrawBreakpointsGutter(bool enabled) {
+                code_edit->set_draw_breakpoints_gutter(enabled);
+            }
     };
 }
 
