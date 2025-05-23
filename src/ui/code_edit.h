@@ -358,6 +358,7 @@ namespace sunaba::ui {
             void setCodeCompletionRequestedEvent(Event* event) {
                 codeCompletionRequestedEvent = event;
             }
+            Event* symbolHoveredEvent;
     };
 }
 
