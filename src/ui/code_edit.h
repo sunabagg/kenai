@@ -376,6 +376,9 @@ namespace sunaba::ui {
             Event* getSymbolValidateEvent() {
                 return symbolValidateEvent;
             }
+            void setSymbolValidateEvent(Event* event) {
+                symbolValidateEvent = event;
+            }
     };
 }
 
