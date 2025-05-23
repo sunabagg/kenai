@@ -69,6 +69,8 @@ namespace sunaba::ui {
 
             void _paste_primary_clipboard(int caret_index) override;
 
+            void _confirm_code_completion(bool replace) override;
+
             TypedArray<Dictionary> _filter_code_completion_candidates(const TypedArray<Dictionary>& candidates) const override;
     };
 
