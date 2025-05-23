@@ -548,6 +548,10 @@ namespace sunaba::ui {
             std::string getDelimiterStartKey(int delimiterIndex) {
                 return code_edit->get_delimiter_start_key(delimiterIndex).utf8().get_data();
             }
+
+            Vector2 getDelimiterStartPosition(int line, int column) {
+                return code_edit->get_delimiter_start_position(line, column);
+            }
     };
 }
 
