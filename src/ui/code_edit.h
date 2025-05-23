@@ -239,6 +239,10 @@ namespace sunaba::ui {
             bool getGuttersZeroPadLineNumbers() {
                 return code_edit->is_line_numbers_zero_padded();
             }
+
+            void setGuttersZeroPadLineNumbers(bool enabled) {
+                code_edit->set_line_numbers_zero_padded(enabled);
+            }
     };
 }
 
