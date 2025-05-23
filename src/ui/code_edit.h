@@ -369,6 +369,9 @@ namespace sunaba::ui {
             Event* getSymbolLookupEvent() {
                 return symbolLookupEvent;
             }
+            void setSymbolLookupEvent(Event* event) {
+                symbolLookupEvent = event;
+            }
     };
 }
 
