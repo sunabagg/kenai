@@ -219,6 +219,10 @@ namespace sunaba::ui {
             void setGutterDrawExecutingLines(bool enabled) {
                 code_edit->set_draw_executing_lines_gutter(enabled);
             }
+
+            bool getGutterDrawFoldGutter() {
+                return code_edit->is_drawing_fold_gutter();
+            }
     };
 }
 
