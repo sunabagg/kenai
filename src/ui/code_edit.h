@@ -277,6 +277,10 @@ namespace sunaba::ui {
             void setIndentSize(int size) {
                 code_edit->set_indent_size(size);
             }
+
+            bool getIndentUseSpaces() {
+                return code_edit->is_indent_using_spaces();
+            }
     };
 }
 
