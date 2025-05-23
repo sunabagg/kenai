@@ -478,6 +478,10 @@ namespace sunaba::ui {
             void duplicateLines() {
                 code_edit->duplicate_lines();
             }
+
+            void foldAllLines() {
+                code_edit->fold_all_lines();
+            }
     };
 }
 
