@@ -382,7 +382,10 @@ namespace sunaba::ui {
 
             void onConfirmCodeCompletion() {
                 if (scriptInstance != sol::lua_nil) {
-                    
+                    auto func = scriptInstance["confirm_code_completion"].get<sol::function>();
+                    if (func) {
+                        func(scriptInstance);
+                    }
                 }
             }
     };
