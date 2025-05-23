@@ -159,6 +159,18 @@ namespace sunaba::ui {
                 }
                 code_edit->set_auto_indent_prefixes(arr);
             }
+
+            std::vector<std::string> getDelimiterComments() {
+                std::vector<std::string> pairs;
+                Dictionary delimiters = code_edit->get_auto_brace_completion_pairs();
+                for (const auto& key : delimiters.keys()) {
+                    String delimiter = key;
+                    String comment = delimiters[key];
+                    pairs.push_back(delimiter.utf8().get_data());
+                    pairs.push_back(comment.utf8().get_data());
+                }
+                return pairs;
+            }
     };
 }
 
