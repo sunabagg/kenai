@@ -486,6 +486,10 @@ namespace sunaba::ui {
             void foldLine(int line) {
                 code_edit->fold_line(line);
             }
+
+            std::string getAutoBraceCompletionCloseKey(const std::string& openKey) {
+                return code_edit->get_auto_brace_completion_close_key(String(openKey.c_str())).utf8().get_data();
+            }
     };
 }
 
