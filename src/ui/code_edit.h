@@ -285,6 +285,10 @@ namespace sunaba::ui {
             void setIndentUseSpaces(bool use_spaces) {
                 code_edit->set_indent_using_spaces(use_spaces);
             }
+
+            int getLayoutDirection() {
+                return code_edit->get_layout_direction();
+            }
     };
 }
 
