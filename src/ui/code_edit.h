@@ -345,6 +345,9 @@ namespace sunaba::ui {
             }
 
             Event* breakpointToggledEvent;
+            Event* getBreakpointToggledEvent() {
+                return breakpointToggledEvent;
+            }
     };
 }
 
