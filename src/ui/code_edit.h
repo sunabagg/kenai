@@ -388,6 +388,21 @@ namespace sunaba::ui {
                     }
                 }
             }
+
+            Dictionary onFilterCodeCompletionCandidates(const TypedArray<Dictionary>& candidates) {
+                if (scriptInstance != sol::lua_nil) {
+                    auto func = scriptInstance["filter_code_completion_candidates"].get<sol::function>();
+                    if (func) {
+                        Array candidatesArray;
+                        for (int i = 0; i < candidates.size(); ++i) {
+                            Dictionary candidate = candidates[i];
+                            candidatesArray.append(candidate);
+                        }
+                        return func(scriptInstance, candidatesArray);
+                    }
+                }
+                return Dictionary();
+            }
     };
 }
 
