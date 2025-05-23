@@ -362,6 +362,9 @@ namespace sunaba::ui {
             Event* getSymbolHoveredEvent() {
                 return symbolHoveredEvent;
             }
+            void setSymbolHoveredEvent(Event* event) {
+                symbolHoveredEvent = event;
+            }
     };
 }
 
