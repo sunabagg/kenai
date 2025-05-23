@@ -227,6 +227,10 @@ namespace sunaba::ui {
             void setGutterDrawFoldGutter(bool enabled) {
                 code_edit->set_draw_fold_gutter(enabled);
             }
+
+            bool getGutterDrawLineNumbers() {
+                return code_edit->is_draw_line_numbers_enabled();
+            }
     };
 }
 
