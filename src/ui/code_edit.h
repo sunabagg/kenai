@@ -438,6 +438,10 @@ namespace sunaba::ui {
             void clearBookmarkedLines() {
                 code_edit->clear_bookmarked_lines();
             }
+
+            void clearBreakpointedLines() {
+                code_edit->clear_breakpointed_lines();
+            }
     };
 }
 
