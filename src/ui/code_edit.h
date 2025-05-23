@@ -470,6 +470,10 @@ namespace sunaba::ui {
             void deleteLines() {
                 code_edit->delete_lines();
             }
+
+            void doIndent() {
+                code_edit->do_indent();
+            }
     };
 }
 
