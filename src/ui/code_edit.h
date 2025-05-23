@@ -327,6 +327,10 @@ namespace sunaba::ui {
             void setSymbolLookupOnClick(bool enabled) {
                 code_edit->set_symbol_lookup_on_click_enabled(enabled);
             }
+
+            bool getSymbolTooltipOnHover() {
+                return code_edit->is_symbol_tooltip_on_hover_enabled();
+            }
     };
 }
 
