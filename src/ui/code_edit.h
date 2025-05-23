@@ -355,6 +355,9 @@ namespace sunaba::ui {
             Event* getCodeCompletionRequestedEvent() {
                 return codeCompletionRequestedEvent;
             }
+            void setCodeCompletionRequestedEvent(Event* event) {
+                codeCompletionRequestedEvent = event;
+            }
     };
 }
 
