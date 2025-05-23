@@ -204,31 +204,31 @@ namespace sunaba::ui {
                 code_edit->set_draw_bookmarks_gutter(enabled);
             }
 
-            bool getGutterDrawBreakpointsGutter() {
+            bool getGuttersDrawBreakpointsGutter() {
                 return code_edit->is_drawing_breakpoints_gutter();
             }
 
-            void setGutterDrawBreakpointsGutter(bool enabled) {
+            void setGuttersDrawBreakpointsGutter(bool enabled) {
                 code_edit->set_draw_breakpoints_gutter(enabled);
             }
 
-            bool getGutterDrawExecutingLines() {
+            bool getGuttersDrawExecutingLines() {
                 return code_edit->is_drawing_executing_lines_gutter();
             }
 
-            void setGutterDrawExecutingLines(bool enabled) {
+            void setGuttersDrawExecutingLines(bool enabled) {
                 code_edit->set_draw_executing_lines_gutter(enabled);
             }
 
-            bool getGutterDrawFoldGutter() {
+            bool getGuttersDrawFoldGutter() {
                 return code_edit->is_drawing_fold_gutter();
             }
 
-            void setGutterDrawFoldGutter(bool enabled) {
+            void setGuttersDrawFoldGutter(bool enabled) {
                 code_edit->set_draw_fold_gutter(enabled);
             }
 
-            bool getGutterDrawLineNumbers() {
+            bool getGuttersDrawLineNumbers() {
                 return code_edit->is_draw_line_numbers_enabled();
             }
     };
