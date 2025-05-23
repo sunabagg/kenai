@@ -319,6 +319,10 @@ namespace sunaba::ui {
                 }
                 code_edit->set_line_length_guidelines(arr);
             }
+
+            bool getSymbolLookupOnClick() {
+                return code_edit->is_symbol_lookup_on_click_enabled();
+            }
     };
 }
 
