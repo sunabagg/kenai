@@ -442,6 +442,10 @@ namespace sunaba::ui {
             void clearBreakpointedLines() {
                 code_edit->clear_breakpointed_lines();
             }
+
+            void clearCommentDelimiters() {
+                code_edit->clear_comment_delimiters();
+            }
     };
 }
 
