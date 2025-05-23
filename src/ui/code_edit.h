@@ -273,6 +273,10 @@ namespace sunaba::ui {
             int getIndentSize() {
                 return code_edit->get_indent_size();
             }
+
+            void setIndentSize(int size) {
+                code_edit->set_indent_size(size);
+            }
     };
 }
 
