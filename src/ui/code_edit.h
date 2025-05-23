@@ -323,6 +323,10 @@ namespace sunaba::ui {
             bool getSymbolLookupOnClick() {
                 return code_edit->is_symbol_lookup_on_click_enabled();
             }
+
+            void setSymbolLookupOnClick(bool enabled) {
+                code_edit->set_symbol_lookup_on_click_enabled(enabled);
+            }
     };
 }
 
