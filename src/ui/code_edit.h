@@ -458,6 +458,10 @@ namespace sunaba::ui {
             void confirmCodeCompletion() {
                 code_edit->confirm_code_completion();
             }
+
+            void convertIndent(int fromLine = -1, int toLine = -1) {
+                code_edit->convert_indent(fromLine, toLine);
+            }
     };
 }
 
