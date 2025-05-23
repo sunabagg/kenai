@@ -352,6 +352,9 @@ namespace sunaba::ui {
                 breakpointToggledEvent = event;
             }
             Event* codeCompletionRequestedEvent;
+            Event* getCodeCompletionRequestedEvent() {
+                return codeCompletionRequestedEvent;
+            }
     };
 }
 
