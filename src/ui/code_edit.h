@@ -269,6 +269,10 @@ namespace sunaba::ui {
                 }
                 code_edit->set_auto_indent_prefixes(arr);
             }
+
+            int getIndentSize() {
+                return code_edit->get_indent_size();
+            }
     };
 }
 
