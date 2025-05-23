@@ -407,6 +407,18 @@ namespace sunaba::ui {
             void addAutoBraceCompletionPair(const std::string& startKey, const std::string& endKey) {
                 code_edit->add_auto_brace_completion_pair(String(startKey.c_str()), String(endKey.c_str()));
             }
+
+            void addCodeCompletionOption(int type, const std::string& displayText, const std::string& insertText, const Color textColor, sunaba::core::Resource* icon = nullptr, Variant value = Variant(), int location = 1024) {
+                Ref<godot::Resource> iconRef;
+                if (icon != nullptr) {
+                    iconRef = Ref<godot::Resource>(icon->getResource());
+                }
+                else {
+                    iconRef = Ref<godot::Resource>();
+                }
+                code_edit->add_code_completion_option(static_cast<CodeEditNode::CodeCompletionKind>(type), String(displayText.c_str()), String(insertText.c_str()), textColor, iconRef, value, location);
+
+            }
     };
 }
 
