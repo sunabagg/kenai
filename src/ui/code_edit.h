@@ -129,6 +129,10 @@ namespace sunaba::ui {
             void setAutoBraceCompletionPairs(const Dictionary& pairs) {
                 code_edit->set_auto_brace_completion_pairs(pairs);
             }
+
+            bool getCodeCompletionEnabled() {
+                return code_edit->is_code_completion_enabled();
+            }
     };
 }
 
