@@ -343,6 +343,8 @@ namespace sunaba::ui {
             void setTextDirection(int direction) {
                 code_edit->set_text_direction(static_cast<godot::Control::TextDirection>(direction));
             }
+
+            Event* breakpointToggledEvent;
     };
 }
 
