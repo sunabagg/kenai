@@ -331,6 +331,10 @@ namespace sunaba::ui {
             bool getSymbolTooltipOnHover() {
                 return code_edit->is_symbol_tooltip_on_hover_enabled();
             }
+
+            void setSymbolTooltipOnHover(bool enabled) {
+                code_edit->set_symbol_tooltip_on_hover_enabled(enabled);
+            }
     };
 }
 
