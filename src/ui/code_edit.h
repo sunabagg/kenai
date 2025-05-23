@@ -169,6 +169,14 @@ namespace sunaba::ui {
                 }
                 return pairs;
             }
+
+            void setDelimiterComments(const std::vector<std::string>& delimiters) {
+                TypedArray<String> arr;
+                for (const auto& delimiter : delimiters) {
+                    arr.push_back(String(delimiter.c_str()));
+                }
+                code_edit->set_comment_delimiters(arr);
+            }
     };
 }
 
