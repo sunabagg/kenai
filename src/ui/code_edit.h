@@ -446,6 +446,10 @@ namespace sunaba::ui {
             void clearCommentDelimiters() {
                 code_edit->clear_comment_delimiters();
             }
+
+            void clearExecutingLines() {
+                code_edit->clear_executing_lines();
+            }
     };
 }
 
