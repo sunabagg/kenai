@@ -536,6 +536,10 @@ namespace sunaba::ui {
             std::string getCodeRegionStartTag() {
                 return code_edit->get_code_region_start_tag().utf8().get_data();
             }
+
+            std::string getDelimiterEndKey(int delimiterIndex) {
+                return code_edit->get_delimiter_end_key(delimiterIndex).utf8().get_data();
+            }
     };
 }
 
