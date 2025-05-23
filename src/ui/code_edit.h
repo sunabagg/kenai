@@ -311,6 +311,14 @@ namespace sunaba::ui {
                 }
                 return lines;
             }
+
+            void setLineLengthGuidelines(const std::vector<int>& lines) {
+                PackedInt32Array arr;
+                for (const auto& line : lines) {
+                    arr.push_back(line);
+                }
+                code_edit->set_line_length_guidelines(arr);
+            }
     };
 }
 
