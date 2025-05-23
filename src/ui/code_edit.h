@@ -482,6 +482,10 @@ namespace sunaba::ui {
             void foldAllLines() {
                 code_edit->fold_all_lines();
             }
+
+            void foldLine(int line) {
+                code_edit->fold_line(line);
+            }
     };
 }
 
