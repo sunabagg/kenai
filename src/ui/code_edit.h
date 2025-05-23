@@ -422,6 +422,10 @@ namespace sunaba::ui {
             void addCommentDelimiter(const std::string& startKey, const std::string& endKey, bool lineOnly = false) {
                 code_edit->add_comment_delimiter(String(startKey.c_str()), String(endKey.c_str()), lineOnly);
             }
+
+            void addStringDelimiter(const std::string& startKey, const std::string& endKey, bool lineOnly = false) {
+                code_edit->add_string_delimiter(String(startKey.c_str()), String(endKey.c_str()), lineOnly);
+            }
     };
 }
 
