@@ -474,6 +474,10 @@ namespace sunaba::ui {
             void doIndent() {
                 code_edit->do_indent();
             }
+
+            void duplicateLines() {
+                code_edit->duplicate_lines();
+            }
     };
 }
 
