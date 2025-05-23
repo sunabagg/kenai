@@ -524,6 +524,10 @@ namespace sunaba::ui {
                 }
                 return options;
             }
+
+            int getCodeCompletionSelectedIndex() {
+                return code_edit->get_code_completion_selected_index();
+            }
     };
 }
 
