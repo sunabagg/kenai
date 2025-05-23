@@ -552,7 +552,16 @@ namespace sunaba::ui {
             Vector2 getDelimiterStartPosition(int line, int column) {
                 return code_edit->get_delimiter_start_position(line, column);
             }
-    };
+
+            std::vector<int> getExecutioningLines() {
+                std::vector<int> lines;
+                PackedInt32Array executingLines = code_edit->get_executing_lines();
+                for (int i = 0; i < executingLines.size(); ++i) {
+                    int line = executingLines[i];
+                    lines.push_back(line);
+                }
+                return lines;
+            }
 }
 
 #endif // CODE_EDIT_H
