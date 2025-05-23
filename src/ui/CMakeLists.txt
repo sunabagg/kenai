@@ -107,6 +107,7 @@ target_sources(${PROJECT_NAME} PRIVATE
         syntax_highlighter.cpp
         text_edit.h
         text_edit.cpp
+        code_edit.h
 )
 
 target_include_directories( ${PROJECT_NAME}
