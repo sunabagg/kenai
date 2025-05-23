@@ -462,6 +462,10 @@ namespace sunaba::ui {
             void convertIndent(int fromLine = -1, int toLine = -1) {
                 code_edit->convert_indent(fromLine, toLine);
             }
+
+            void createCodeRegion() {
+                code_edit->create_code_region();
+            }
     };
 }
 
