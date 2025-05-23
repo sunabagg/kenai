@@ -231,6 +231,10 @@ namespace sunaba::ui {
             bool getGuttersDrawLineNumbers() {
                 return code_edit->is_draw_line_numbers_enabled();
             }
+
+            void setGuttersDrawLineNumbers(bool enabled) {
+                code_edit->set_draw_line_numbers(enabled);
+            }
     };
 }
 
