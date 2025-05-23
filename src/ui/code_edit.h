@@ -195,6 +195,10 @@ namespace sunaba::ui {
                 }
                 code_edit->set_string_delimiters(arr);
             }
+
+            bool getGuttersDrawBookmarks() {
+                return code_edit->is_drawing_bookmarks_gutter();
+            }
     };
 }
 
