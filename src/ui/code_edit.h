@@ -434,6 +434,10 @@ namespace sunaba::ui {
             void cancelCodeCompletion() {
                 code_edit->cancel_code_completion();
             }
+
+            void clearBookmarkedLines() {
+                code_edit->clear_bookmarked_lines();
+            }
     };
 }
 
