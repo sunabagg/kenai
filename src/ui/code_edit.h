@@ -450,6 +450,10 @@ namespace sunaba::ui {
             void clearExecutingLines() {
                 code_edit->clear_executing_lines();
             }
+
+            void clearStringDelimiters() {
+                code_edit->clear_string_delimiters();
+            }
     };
 }
 
