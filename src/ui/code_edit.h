@@ -162,12 +162,10 @@ namespace sunaba::ui {
 
             std::vector<std::string> getDelimiterComments() {
                 std::vector<std::string> pairs;
-                Dictionary delimiters = code_edit->get_auto_brace_completion_pairs();
-                for (const auto& key : delimiters.keys()) {
-                    String delimiter = key;
-                    String comment = delimiters[key];
+                auto delimiters = code_edit->get_comment_delimiters();
+                for (int i = 0; i < delimiters.size(); ++i) {
+                    String delimiter = delimiters[i];
                     pairs.push_back(delimiter.utf8().get_data());
-                    pairs.push_back(comment.utf8().get_data());
                 }
                 return pairs;
             }
