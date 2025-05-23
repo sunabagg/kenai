@@ -430,6 +430,10 @@ namespace sunaba::ui {
             bool canFoldLine(int line) {
                 return code_edit->can_fold_line(line);
             }
+
+            void cancelCodeCompletion() {
+                code_edit->cancel_code_completion();
+            }
     };
 }
 
