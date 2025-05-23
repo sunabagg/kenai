@@ -514,6 +514,16 @@ namespace sunaba::ui {
             Dictionary getCodeCompletionOption(int index) {
                 return code_edit->get_code_completion_option(index);
             }
+
+            std::vector<Dictionary> getCodeCompletionOptions() {
+                std::vector<Dictionary> options;
+                Array codeCompletionOptions = code_edit->get_code_completion_options();
+                for (int i = 0; i < codeCompletionOptions.size(); ++i) {
+                    Dictionary option = codeCompletionOptions[i];
+                    options.push_back(option);
+                }
+                return options;
+            }
     };
 }
 
