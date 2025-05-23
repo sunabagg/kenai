@@ -528,6 +528,10 @@ namespace sunaba::ui {
             int getCodeCompletionSelectedIndex() {
                 return code_edit->get_code_completion_selected_index();
             }
+
+            std::string getCodeRegionStartTag() {
+                return code_edit->get_code_region_start_tag().utf8().get_data();
+            }
     };
 }
 
