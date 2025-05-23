@@ -68,6 +68,8 @@ namespace sunaba::ui {
             void _paste(int caret_index) override;
 
             void _paste_primary_clipboard(int caret_index) override;
+
+            TypedArray<Dictionary> _filter_code_completion_candidates(const TypedArray<Dictionary>& candidates) const override;
     };
 
     class CodeEdit : public TextEdit {
@@ -137,6 +139,8 @@ namespace sunaba::ui {
             void setCodeCompletionEnabled(bool enabled) {
                 code_edit->set_code_completion_enabled(enabled);
             }
+
+
     };
 }
 
