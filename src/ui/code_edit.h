@@ -297,6 +297,10 @@ namespace sunaba::ui {
             bool getLineFolding() {
                 return code_edit->is_line_folding_enabled();
             }
+
+            void setLineFolding(bool enabled) {
+                code_edit->set_line_folding_enabled(enabled);
+            }
     };
 }
 
