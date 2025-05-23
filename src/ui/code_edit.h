@@ -151,6 +151,14 @@ namespace sunaba::ui {
                 }
                 return pairs;
             }
+
+            void setCodeCompletionPrefixes(const std::vector<std::string>& prefixes) {
+                TypedArray<String> arr;
+                for (const auto& prefix : prefixes) {
+                    arr.push_back(String(prefix.c_str()));
+                }
+                code_edit->set_auto_indent_prefixes(arr);
+            }
     };
 }
 
