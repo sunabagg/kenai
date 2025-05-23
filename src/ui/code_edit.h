@@ -454,6 +454,10 @@ namespace sunaba::ui {
             void clearStringDelimiters() {
                 code_edit->clear_string_delimiters();
             }
+
+            void confirmCodeCompletion() {
+                code_edit->confirm_code_completion();
+            }
     };
 }
 
