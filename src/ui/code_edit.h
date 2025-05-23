@@ -379,6 +379,12 @@ namespace sunaba::ui {
             void setSymbolValidateEvent(Event* event) {
                 symbolValidateEvent = event;
             }
+
+            void onConfirmCodeCompletion() {
+                if (scriptInstance != sol::lua_nil) {
+                    
+                }
+            }
     };
 }
 
