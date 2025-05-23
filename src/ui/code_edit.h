@@ -500,6 +500,16 @@ namespace sunaba::ui {
                 }
                 return lines;
             }
+
+            std::vector<int> getBreakpointedLines() {
+                std::vector<int> lines;
+                PackedInt32Array breakpoints = code_edit->get_breakpointed_lines();
+                for (int i = 0; i < breakpoints.size(); ++i) {
+                    int line = breakpoints[i];
+                    lines.push_back(line);
+                }
+                return lines;
+            }
     };
 }
 
