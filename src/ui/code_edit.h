@@ -426,6 +426,10 @@ namespace sunaba::ui {
             void addStringDelimiter(const std::string& startKey, const std::string& endKey, bool lineOnly = false) {
                 code_edit->add_string_delimiter(String(startKey.c_str()), String(endKey.c_str()), lineOnly);
             }
+
+            bool canFoldLine(int line) {
+                return code_edit->can_fold_line(line);
+            }
     };
 }
 
