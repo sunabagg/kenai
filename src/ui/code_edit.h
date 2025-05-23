@@ -335,6 +335,10 @@ namespace sunaba::ui {
             void setSymbolTooltipOnHover(bool enabled) {
                 code_edit->set_symbol_tooltip_on_hover_enabled(enabled);
             }
+
+            int getTextDirection() {
+                return code_edit->get_text_direction();
+            }
     };
 }
 
