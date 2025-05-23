@@ -235,6 +235,10 @@ namespace sunaba::ui {
             void setGuttersDrawLineNumbers(bool enabled) {
                 code_edit->set_draw_line_numbers(enabled);
             }
+
+            bool getGuttersZeroPadLineNumbers() {
+                return code_edit->is_line_numbers_zero_padded();
+            }
     };
 }
 
