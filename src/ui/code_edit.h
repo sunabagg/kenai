@@ -644,6 +644,10 @@ namespace sunaba::ui {
             void moveLinesUp() {
                 code_edit->move_lines_up();
             }
+
+            void removeCommentDelimiter(const std::string& startKey) {
+                code_edit->remove_comment_delimiter(String(startKey.c_str()));
+            }
     };
 }
 
