@@ -144,4 +144,10 @@ namespace sunaba::ui {
             this->element->onPaste(caret_index);
         }
     }
+
+    void CodeEditProxy::_paste_primary_clipboard(int caret_index) {
+        if (this->element != nullptr) {
+            this->element->onPastePrimaryClipboard(caret_index);
+        }
+    }
 }
