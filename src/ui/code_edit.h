@@ -616,6 +616,10 @@ namespace sunaba::ui {
             bool isLineBookmarked(int line) {
                 return code_edit->is_line_bookmarked(line);
             }
+
+            bool isLineBreakpointed(int line) {
+                return code_edit->is_line_breakpointed(line);
+            }
     };
 }
 
