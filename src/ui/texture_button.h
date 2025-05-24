@@ -129,5 +129,9 @@ namespace sunaba::ui {
             sunaba::core::BitMap* getTextureClickMask() const {
                 return new sunaba::core::BitMap(this->texture_button->get_click_mask().ptr());
             }
+
+            void setTextureClickMask(sunaba::core::BitMap* mask) {
+                this->texture_button->set_click_mask(mask->getBitMap());
+            }
     }
 }
