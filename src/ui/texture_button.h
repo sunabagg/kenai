@@ -126,6 +126,8 @@ namespace sunaba::ui {
                 this->texture_button->set_stretch_mode(static_cast<TextureButtonNode::StretchMode>(mode));
             }
 
-
+            sunaba::core::BitMap* getTextureClickMask() const {
+                return new sunaba::core::BitMap(this->texture_button->get_click_mask().ptr());
+            }
     }
 }
