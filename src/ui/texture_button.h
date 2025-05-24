@@ -142,5 +142,9 @@ namespace sunaba::ui {
             void setTextureDisabled(sunaba::core::Texture2D* texture) {
                 this->texture_button->set_texture_disabled(texture->getTexture2D());
             }
+
+            sunaba::core::Texture2D* getTextureFocused() const {
+                return new sunaba::core::Texture2D(this->texture_button->get_texture_focused().ptr());
+            }
     }
 }
