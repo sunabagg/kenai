@@ -120,5 +120,9 @@ namespace sunaba::ui {
             int getStretchMode() const {
                 return this->texture_button->get_stretch_mode();
             }
+
+            void setStretchMode(int mode) {
+                this->texture_button->set_stretch_mode(static_cast<TextureButton::StretchMode>(mode));
+            }
     }
 }
