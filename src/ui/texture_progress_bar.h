@@ -110,6 +110,10 @@ namespace sunaba::ui {
             Vector2 getRadialCenterOffset() const {
                 return proxy->get_radial_center_offset();
             }
+
+            float getRadialFillDegrees() const {
+                return proxy->get_fill_degrees();
+            }
     };
 }
 
