@@ -175,6 +175,10 @@ namespace sunaba::ui {
                 &CodeEdit::getCodeCompletionPrefixes,
                 &CodeEdit::setCodeCompletionPrefixes
             ),
+            "delimiterComments", sol::property(
+                &CodeEdit::getDelimiterComments,
+                &CodeEdit::setDelimiterComments
+            ),
         );
     }
 }
