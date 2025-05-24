@@ -329,6 +329,7 @@ namespace sunaba::ui {
             "setLineAsBreakpoint", &CodeEdit::setLineAsBreakpoint,
             "setLineAsExecuting", &CodeEdit::setLineAsExecuting,
             "setSymbolLookupWordAsValid", &CodeEdit::setSymbolLookupWordAsValid,
+            "toggleFoldableLine", &CodeEdit::toggleFoldableLine,
         );
     }
 }
