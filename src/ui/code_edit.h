@@ -119,6 +119,7 @@ namespace sunaba::ui {
                     return Variant();
                 };
                 Callable symbolHoveredCallable = StlFunctionWrapper::create_callable_from_cpp_function(SymbolHoveredFunc);
+                code_edit->connect("symbol_hovered", symbolHoveredCallable);
             }
 
         public:
