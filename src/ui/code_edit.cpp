@@ -150,4 +150,9 @@ namespace sunaba::ui {
             this->element->onPastePrimaryClipboard(caret_index);
         }
     }
+
+    void bindCodeEdit(sol::state& lua) {
+        lua.new_usertype<CodeEdit>("CodeEdit",
+        );
+    }
 }
