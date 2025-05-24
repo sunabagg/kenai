@@ -306,6 +306,7 @@ namespace sunaba::ui {
             "getTextWithCursorChar", &CodeEdit::getTextWithCursorChar,
             "hasAutoBraceCompletionCloseKey", &CodeEdit::hasAutoBraceCompletionCloseKey,
             "hasAutoBraceCompletionOpenKey", &CodeEdit::hasAutoBraceCompletionOpenKey,
+            "hasCommentDelimiter", &CodeEdit::hasCommentDelimiter,
         );
     }
 }
