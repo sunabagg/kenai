@@ -163,6 +163,10 @@ namespace sunaba::ui {
                 &CodeEdit::getAutoBraceCompletionHighlightMatching,
                 &CodeEdit::setAutoBraceCompletionHighlightMatching
             ),
+            "autoBraceCompletionPairs", sol::property(
+                &CodeEdit::getAutoBraceCompletionPairs,
+                &CodeEdit::setAutoBraceCompletionPairs
+            ),
         );
     }
 }
