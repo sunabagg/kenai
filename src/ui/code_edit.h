@@ -684,6 +684,10 @@ namespace sunaba::ui {
             void setLineAsExecuting(int line, bool executing) {
                 code_edit->set_line_as_executing(line, executing);
             }
+
+            void setSymbolLookupWordAsValid(bool valid) {
+                code_edit->set_symbol_lookup_word_as_valid(valid);
+            }
     };
 }
 
