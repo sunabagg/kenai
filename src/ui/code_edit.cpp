@@ -120,4 +120,10 @@ namespace sunaba::ui {
             this->element->backspace(caret_index);
         }
     }
+
+    void CodeEditProxy::_copy(int caret_index) {
+        if (this->element != nullptr) {
+            this->element->copy(caret_index);
+        }
+    }
 }
