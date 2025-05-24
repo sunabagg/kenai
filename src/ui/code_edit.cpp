@@ -243,6 +243,10 @@ namespace sunaba::ui {
                 &CodeEdit::getSymbolTooltipOnHover,
                 &CodeEdit::setSymbolTooltipOnHover
             ),
+            "textDirection", sol::property(
+                &CodeEdit::getTextDirection,
+                &CodeEdit::setTextDirection
+            ),
         );
     }
 }
