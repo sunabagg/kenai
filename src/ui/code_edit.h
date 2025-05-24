@@ -656,6 +656,10 @@ namespace sunaba::ui {
             void requestCodeCompletion() {
                 code_edit->request_code_completion();
             }
+
+            void setCodeCompletionSelectedIndex(int index) {
+                code_edit->set_code_completion_selected_index(index);
+            }
     };
 }
 
