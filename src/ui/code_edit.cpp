@@ -195,6 +195,10 @@ namespace sunaba::ui {
                 &CodeEdit::getGuttersDrawExecutingLines,
                 &CodeEdit::setGuttersDrawExecutingLines
             ),
+            "guttersDrawFoldGutter", sol::property(
+                &CodeEdit::getGuttersDrawFoldGutter,
+                &CodeEdit::setGuttersDrawFoldGutter
+            ),
         );
     }
 }
