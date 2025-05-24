@@ -8,6 +8,7 @@
 #define TextureButtonNode godot::TextureButton
 
 #include "base_button.h"
+#include "../core/bit_map.h"
 
 using namespace godot;
 using namespace sunaba::core;
@@ -124,5 +125,7 @@ namespace sunaba::ui {
             void setStretchMode(int mode) {
                 this->texture_button->set_stretch_mode(static_cast<TextureButtonNode::StretchMode>(mode));
             }
+
+
     }
 }
