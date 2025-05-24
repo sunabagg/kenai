@@ -648,6 +648,11 @@ namespace sunaba::ui {
             void removeCommentDelimiter(const std::string& startKey) {
                 code_edit->remove_comment_delimiter(String(startKey.c_str()));
             }
+
+            void removeStringDelimiter(const std::string& startKey) {
+                code_edit->remove_string_delimiter(String(startKey.c_str()));
+            }
+
     };
 }
 
