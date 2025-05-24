@@ -94,14 +94,14 @@ namespace sunaba::ui {
                 };
                 Callable breakpointToggledCallable = StlFunctionWrapper::create_callable_from_cpp_function(breakpointToggledFunc);
                 code_edit->connect("breakpoint_toggled", breakpointToggledCallable);
-                SignalFunc bookmarkToggledFunc =
+                SignalFunc codeCompletionRequestedFunc =
                 [this](std::vector<Variant> av) {
                     Array args;
                     for (int i = 0; i < av.size(); ++i) {
                         args.append(av[i]);
                     }
-                    if (this->bookmarkToggledEvent != nullptr) {
-                        this->bookmarkToggledEvent->emit(args);
+                    if (this->codeCompletionRequestedEvent != nullptr) {
+                        this->codeCompletionRequestedEvent->emit(args);
                     }
                     return Variant();
                 };
