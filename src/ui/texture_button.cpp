@@ -116,4 +116,10 @@ namespace sunaba::ui {
         return TypedArray<Vector3i>();
     }
 
+    void TextureButtonProxy::_pressed() {
+        if (this->element != nullptr) {
+            this->element->pressed();
+        }
+    }
+
 } // namespace sunaba::ui
