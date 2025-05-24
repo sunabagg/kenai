@@ -146,6 +146,10 @@ namespace sunaba::ui {
                 &TextureButton::getTextureClickMask,
                 &TextureButton::setTextureClickMask
             ),
+            "textureDisabled", sol::property(
+                &TextureButton::getTextureDisabled,
+                &TextureButton::setTextureDisabled
+            ),
         );
     }
 
