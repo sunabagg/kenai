@@ -325,6 +325,7 @@ namespace sunaba::ui {
             "setCodeHint", &CodeEdit::setCodeHint,
             "setCodeHintDrawBelow", &CodeEdit::setCodeHintDrawBelow,
             "setCodeRegionTags", &CodeEdit::setCodeRegionTags,
+            "setLineAsBookmarked", &CodeEdit::setLineAsBookmarked,
         );
     }
 }
