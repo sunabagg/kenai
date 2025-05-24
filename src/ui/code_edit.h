@@ -110,11 +110,11 @@ namespace sunaba::ui {
                 setTextEdit(code_edit);
             }
 
-            bool getAutBraceCompletionEnabled() {
+            bool getAutoBraceCompletionEnabled() {
                 return code_edit->is_auto_brace_completion_enabled();
             }
 
-            void setAutBraceCompletionEnabled(bool enabled) {
+            void setAutoBraceCompletionEnabled(bool enabled) {
                 code_edit->set_auto_brace_completion_enabled(enabled);
             }
 
