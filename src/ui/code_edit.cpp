@@ -280,6 +280,7 @@ namespace sunaba::ui {
             "clearStringDelimiters", &CodeEdit::clearStringDelimiters,
             "confirmCodeCompletion", &CodeEdit::confirmCodeCompletion,
             "convertIndent", &CodeEdit::convertIndent,
+            "createCodeRegion", &CodeEdit::createCodeRegion,
         );
     }
 }
