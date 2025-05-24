@@ -135,7 +135,7 @@ namespace sunaba::ui {
 
     void CodeEditProxy::_handle_unicode_input(int unicode_char, int caret_index) {
         if (this->element != nullptr) {
-            this->element->handleUnicodeInput(unicode_char, caret_index);
+            this->element->onHandleUnicodeInput(unicode_char, caret_index);
         }
     }
 }
