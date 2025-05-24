@@ -307,6 +307,7 @@ namespace sunaba::ui {
             "hasAutoBraceCompletionCloseKey", &CodeEdit::hasAutoBraceCompletionCloseKey,
             "hasAutoBraceCompletionOpenKey", &CodeEdit::hasAutoBraceCompletionOpenKey,
             "hasCommentDelimiter", &CodeEdit::hasCommentDelimiter,
+            "hasStringDelimiter", &CodeEdit::hasStringDelimiter,
         );
     }
 }
