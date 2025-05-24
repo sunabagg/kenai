@@ -584,6 +584,10 @@ namespace sunaba::ui {
             std::string getTextWithCursorChar(int line, int column) {
                 return code_edit->get_text_with_cursor_char(line, column).utf8().get_data();
             }
+
+            bool hasAutoBraceCompletionCloseKey(const std::string& openKey) {
+                return code_edit->has_auto_brace_completion_close_key(String(openKey.c_str()));
+            }
     };
 }
 
