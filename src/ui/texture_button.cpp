@@ -154,6 +154,10 @@ namespace sunaba::ui {
                 &TextureButton::getTextureFocused,
                 &TextureButton::setTextureFocused
             ),
+            "textureHover", sol::property(
+                &TextureButton::getTextureHover,
+                &TextureButton::setTextureHover
+            ),
             "textureNormal", sol::property(
                 &TextureButton::getTextureNormal,
                 &TextureButton::setTextureNormal
