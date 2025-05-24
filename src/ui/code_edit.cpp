@@ -310,6 +310,7 @@ namespace sunaba::ui {
             "hasStringDelimiter", &CodeEdit::hasStringDelimiter,
             "indentLines", &CodeEdit::indentLines,
             "isInComment", &CodeEdit::isInComment,
+            "isInString", &CodeEdit::isInString,
         );
     }
 }
