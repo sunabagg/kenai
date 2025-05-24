@@ -572,6 +572,10 @@ namespace sunaba::ui {
                 }
                 return lines;
             }
+
+            std::string getTextForCodeCompletion() {
+                return code_edit->get_text_for_code_completion().utf8().get_data();
+            }
     };
 }
 
