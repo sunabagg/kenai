@@ -94,6 +94,7 @@ namespace sunaba::ui {
                 this->texture_button = p_node;
                 p_node->element = this;
                 connectTextureButtonSignals();
+                setBaseButton(p_node);
             }
 
             bool getFlipH() const {
