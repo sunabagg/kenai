@@ -688,6 +688,10 @@ namespace sunaba::ui {
             void setSymbolLookupWordAsValid(bool valid) {
                 code_edit->set_symbol_lookup_word_as_valid(valid);
             }
+
+            void toggleFoldableLine(int line) {
+                code_edit->toggle_foldable_line(line);
+            }
     };
 }
 
