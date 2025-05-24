@@ -9,6 +9,7 @@
 
 #include "base_button.h"
 #include "../core/bit_map.h"
+#include "../core/texture2d.h"
 
 using namespace godot;
 using namespace sunaba::core;
@@ -133,5 +134,7 @@ namespace sunaba::ui {
             void setTextureClickMask(sunaba::core::BitMap* mask) {
                 this->texture_button->set_click_mask(mask->getBitMap());
             }
+
+
     }
 }
