@@ -588,6 +588,10 @@ namespace sunaba::ui {
             bool hasAutoBraceCompletionCloseKey(const std::string& openKey) {
                 return code_edit->has_auto_brace_completion_close_key(String(openKey.c_str()));
             }
+
+            bool hasAutoBraceCompletionOpenKey(const std::string& openKey) {
+                return code_edit->has_auto_brace_completion_open_key(String(openKey.c_str()));
+            }
     };
 }
 
