@@ -692,6 +692,10 @@ namespace sunaba::ui {
             void toggleFoldableLine(int line) {
                 code_edit->toggle_foldable_line(line);
             }
+
+            void toggleFoldableLinesAtCarets() {
+                code_edit->toggle_foldable_lines_at_carets();
+            }
     };
 }
 
