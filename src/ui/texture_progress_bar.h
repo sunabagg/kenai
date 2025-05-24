@@ -90,6 +90,10 @@ namespace sunaba::ui {
             void setFillMode(int mode) {
                 proxy->set_fill_mode(mode);
             }
+
+            int getMouseFilter() const {
+                return proxy->get_mouse_filter();
+            }
     };
 }
 
