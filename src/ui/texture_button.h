@@ -170,5 +170,9 @@ namespace sunaba::ui {
             sunaba::core::Texture2D* getTexturePressed() const {
                 return new sunaba::core::Texture2D(this->texture_button->get_texture_pressed().ptr());
             }
+
+            void setTexturePressed(sunaba::core::Texture2D* texture) {
+                this->texture_button->set_texture_pressed(texture->getTexture2D());
+            }
     }
 }
