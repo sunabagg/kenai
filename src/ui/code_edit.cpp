@@ -305,6 +305,7 @@ namespace sunaba::ui {
             "getTextForSymbolLookup", &CodeEdit::getTextForSymbolLookup,
             "getTextWithCursorChar", &CodeEdit::getTextWithCursorChar,
             "hasAutoBraceCompletionCloseKey", &CodeEdit::hasAutoBraceCompletionCloseKey,
+            "hasAutoBraceCompletionOpenKey", &CodeEdit::hasAutoBraceCompletionOpenKey,
         );
     }
 }
