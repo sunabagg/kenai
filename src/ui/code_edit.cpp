@@ -319,6 +319,7 @@ namespace sunaba::ui {
             "isLineFolded", &CodeEdit::isLineFolded,
             "moveLinesDown", &CodeEdit::moveLinesDown,
             "removeStringDelimiter", &CodeEdit::removeStringDelimiter,
+            "requestCodeCompletion", &CodeEdit::requestCodeCompletion,
         );
     }
 }
