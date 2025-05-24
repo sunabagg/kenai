@@ -274,6 +274,7 @@ namespace sunaba::ui {
             "canFoldLine", &CodeEdit::canFoldLine,
             "cancelCodeCompletion", &CodeEdit::cancelCodeCompletion,
             "clearBookmarkedLines", &CodeEdit::clearBookmarkedLines,
+            "clearBreakpointedLines", &CodeEdit::clearBreakpointLines,
         );
     }
 }
