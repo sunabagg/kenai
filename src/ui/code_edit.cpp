@@ -247,6 +247,10 @@ namespace sunaba::ui {
                 &CodeEdit::getTextDirection,
                 &CodeEdit::setTextDirection
             ),
+            "breakpointToggled", sol::property(
+                &CodeEdit::getBreakpointToggledEvent,
+                &CodeEdit::setBreakpointToggledEvent
+            ),
         );
     }
 }
