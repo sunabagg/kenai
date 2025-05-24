@@ -150,6 +150,10 @@ namespace sunaba::ui {
                 &TextureButton::getTextureDisabled,
                 &TextureButton::setTextureDisabled
             ),
+            "textureFocused", sol::property(
+                &TextureButton::getTextureFocused,
+                &TextureButton::setTextureFocused
+            ),
             "textureNormal", sol::property(
                 &TextureButton::getTextureNormal,
                 &TextureButton::setTextureNormal
