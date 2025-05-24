@@ -154,6 +154,10 @@ namespace sunaba::ui {
                 &TextureButton::getTextureNormal,
                 &TextureButton::setTextureNormal
             ),
+            "texturePressed", sol::property(
+                &TextureButton::getTexturePressed,
+                &TextureButton::setTexturePressed
+            ),
         );
     }
 
