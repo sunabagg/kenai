@@ -138,6 +138,10 @@ namespace sunaba::ui {
                 &TextureButton::getIgnoreTextureSize,
                 &TextureButton::setIgnoreTextureSize
             ),
+            "stretchMode", sol::property(
+                &TextureButton::getStretchMode,
+                &TextureButton::setStretchMode
+            ),
         );
     }
 
