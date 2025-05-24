@@ -81,6 +81,17 @@ namespace sunaba::ui {
             void connectCodeEditSignals() {
                 // Connect signals specific to CodeEdit
                 // Example: code_edit->connect("signal_name", this, "method_name");
+                SignalFunc breakpointToggledFunc =
+                [this](std::vector<Variant> av) {
+                    Array args;
+                    for (int i = 0; i < av.size(); ++i) {
+                        args.append(av[i]);
+                    }
+                    if (this->breakpointToggledEvent != nullptr) {
+                        this->breakpointToggledEvent->emit(args);
+                    }
+                    return Variant();
+                };
             }
 
         public:
