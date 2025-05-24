@@ -309,6 +309,7 @@ namespace sunaba::ui {
             "hasCommentDelimiter", &CodeEdit::hasCommentDelimiter,
             "hasStringDelimiter", &CodeEdit::hasStringDelimiter,
             "indentLines", &CodeEdit::indentLines,
+            "isInComment", &CodeEdit::isInComment,
         );
     }
 }
