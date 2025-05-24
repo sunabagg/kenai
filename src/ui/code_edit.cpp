@@ -117,7 +117,7 @@ namespace sunaba::ui {
 
     void CodeEditProxy::_backspace(int caret_index) {
         if (this->element != nullptr) {
-            this->element->backspace(caret_index);
+            this->element->onBackspace(caret_index);
         }
     }
 
