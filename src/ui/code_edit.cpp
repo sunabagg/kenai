@@ -315,6 +315,7 @@ namespace sunaba::ui {
             "isLineBreakpointed", &CodeEdit::isLineBreakpointed,
             "isLineCodeRegionEnd", &CodeEdit::isLineCodeRegionEnd,
             "isLineCodeRegionStart", &CodeEdit::isLineCodeRegionStart,
+            "isLineExecuting", &CodeEdit::isLineExecuting,
         );
     }
 }
