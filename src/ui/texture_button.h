@@ -100,5 +100,9 @@ namespace sunaba::ui {
             void setFlipH(bool enable) {
                 this->texture_button->set_flip_h(enable);
             }
+
+            bool getFlipV() const {
+                return this->texture_button->is_flipped_v();
+            }
     }
 }
