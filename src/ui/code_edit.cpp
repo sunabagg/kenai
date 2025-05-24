@@ -42,4 +42,9 @@ namespace sunaba::ui {
             this->element->unhandledInput(event);
         }
     }
+    void CodeEditProxy::_unhandled_key_input(const Ref<InputEvent>& event) {
+        if (this->element != nullptr) {
+            this->element->unhandledKeyInput(event);
+        }
+    }
 }
