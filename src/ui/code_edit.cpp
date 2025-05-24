@@ -317,6 +317,7 @@ namespace sunaba::ui {
             "isLineCodeRegionStart", &CodeEdit::isLineCodeRegionStart,
             "isLineExecuting", &CodeEdit::isLineExecuting,
             "isLineFolded", &CodeEdit::isLineFolded,
+            "moveLinesDown", &CodeEdit::moveLinesDown,
         );
     }
 }
