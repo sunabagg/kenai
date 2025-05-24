@@ -302,6 +302,7 @@ namespace sunaba::ui {
             "getExecutingLines", &CodeEdit::getExecutingLines,
             "getFoldedLines", &CodeEdit::getFoldedLines,
             "getTextForCodeCompletion", &CodeEdit::getTextForCodeCompletion,
+            "getTextForSymbolLookup", &CodeEdit::getTextForSymbolLookup,
         );
     }
 }
