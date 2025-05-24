@@ -300,6 +300,7 @@ namespace sunaba::ui {
             "getDelimiterStartKey", &CodeEdit::getDelimiterStartKey,
             "getDelimiterStartPosition", &CodeEdit::getDelimiterStartPosition,
             "getExecutingLines", &CodeEdit::getExecutingLines,
+            "getFoldedLines", &CodeEdit::getFoldedLines,
         );
     }
 }
