@@ -592,6 +592,10 @@ namespace sunaba::ui {
             bool hasAutoBraceCompletionOpenKey(const std::string& openKey) {
                 return code_edit->has_auto_brace_completion_open_key(String(openKey.c_str()));
             }
+
+            bool hasCommentDelimiter(const std::string& startKey, const std::string& endKey) {
+                return code_edit->has_comment_delimiter(String(startKey.c_str()), String(endKey.c_str()));
+            }
     };
 }
 
