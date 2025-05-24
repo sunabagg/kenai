@@ -276,6 +276,7 @@ namespace sunaba::ui {
             "clearBookmarkedLines", &CodeEdit::clearBookmarkedLines,
             "clearBreakpointedLines", &CodeEdit::clearBreakpointedLines,
             "clearCommentDelimiters", &CodeEdit::clearCommentDelimiters,
+            "clearExecutingLines", &CodeEdit::clearExecutingLines,
         );
     }
 }
