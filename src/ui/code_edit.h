@@ -660,6 +660,10 @@ namespace sunaba::ui {
             void setCodeCompletionSelectedIndex(int index) {
                 code_edit->set_code_completion_selected_index(index);
             }
+
+            void setCodeHint(const std::string& hint) {
+                code_edit->set_code_hint(String(hint.c_str()));
+            }
     };
 }
 
