@@ -87,6 +87,7 @@ namespace sunaba::ui {
             void setTextureButton(TextureButtonNode* p_node) {
                 this->texture_button = p_node;
                 connectTextureButtonSignals();
+                setBaseButton(p_node);
             }
 
             void setTextureButton(TextureButtonProxy* p_node) {
