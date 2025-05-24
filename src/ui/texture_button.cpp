@@ -104,7 +104,7 @@ namespace sunaba::ui {
 
     bool TextureButtonProxy::_has_point(const Vector2& point) const {
         if (this->element != nullptr) {
-            return this->element->_hasPoint(point);
+            return this->element->hasPoint(point);
         }
         return false;
     }
