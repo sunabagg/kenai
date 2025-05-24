@@ -99,7 +99,7 @@ namespace sunaba::ui {
                 proxy->set_mouse_filter(static_cast<TextureProgressBarNode::MouseFilter>(filter));
             }
 
-            bool getNinPatchStretch() const {
+            bool getNinePatchStretch() const {
                 return proxy->get_nine_patch_stretch();
             }
 
