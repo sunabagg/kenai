@@ -328,6 +328,7 @@ namespace sunaba::ui {
             "setLineAsBookmarked", &CodeEdit::setLineAsBookmarked,
             "setLineAsBreakpoint", &CodeEdit::setLineAsBreakpoint,
             "setLineAsExecuting", &CodeEdit::setLineAsExecuting,
+            "setSymbolLookupWordAsValid", &CodeEdit::setSymbolLookupWordAsValid,
         );
     }
 }
