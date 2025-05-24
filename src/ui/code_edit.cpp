@@ -282,6 +282,7 @@ namespace sunaba::ui {
             "convertIndent", &CodeEdit::convertIndent,
             "createCodeRegion", &CodeEdit::createCodeRegion,
             "deleteLines", &CodeEdit::deleteLines,
+            "doIndent", &CodeEdit::doIndent,
         );
     }
 }
