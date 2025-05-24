@@ -327,6 +327,7 @@ namespace sunaba::ui {
             "setCodeRegionTags", &CodeEdit::setCodeRegionTags,
             "setLineAsBookmarked", &CodeEdit::setLineAsBookmarked,
             "setLineAsBreakpoint", &CodeEdit::setLineAsBreakpoint,
+            "setLineAsExecuting", &CodeEdit::setLineAsExecuting,
         );
     }
 }
