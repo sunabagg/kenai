@@ -107,6 +107,17 @@ namespace sunaba::ui {
                 };
                 Callable codeCompletionRequestedCallable = StlFunctionWrapper::create_callable_from_cpp_function(codeCompletionRequestedFunc);
                 code_edit->connect("code_completion_requested", codeCompletionRequestedCallable);
+                SignalFunc SymbolHoveredFunc =
+                [this](std::vector<Variant> av) {
+                    Array args;
+                    for (int i = 0; i < av.size(); ++i) {
+                        args.append(av[i]);
+                    }
+                    if (this->symbolHoveredEvent != nullptr) {
+                        this->symbolHoveredEvent->emit(args);
+                    }
+                    return Variant();
+                };
             }
 
         public:
