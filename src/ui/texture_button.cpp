@@ -167,6 +167,7 @@ namespace sunaba::ui {
                 &TextureButton::setTexturePressed
             ),
             "cast", [](Element* element) {
+                TextureButtonNode* node = Object::cast_to<TextureButtonNode>(element->getNode());
             }
         );
     }
