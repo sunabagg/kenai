@@ -153,6 +153,7 @@ namespace sunaba::ui {
 
     void bindCodeEdit(sol::state& lua) {
         lua.new_usertype<CodeEdit>("CodeEdit",
+            sol::constructors<CodeEdit()>(),
         );
     }
 }
