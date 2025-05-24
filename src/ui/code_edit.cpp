@@ -267,6 +267,7 @@ namespace sunaba::ui {
                 &CodeEdit::getSymbolValidateEvent,
                 &CodeEdit::setSymbolValidateEvent
             ),
+            "addCommentDelimiter", &CodeEdit::addCommentDelimiter,
         );
     }
 }
