@@ -299,6 +299,7 @@ namespace sunaba::ui {
             "getDelimiterEndPosition", &CodeEdit::getDelimiterEndPosition,
             "getDelimiterStartKey", &CodeEdit::getDelimiterStartKey,
             "getDelimiterStartPosition", &CodeEdit::getDelimiterStartPosition,
+            "getExecutingLines", &CodeEdit::getExecutingLines,
         );
     }
 }
