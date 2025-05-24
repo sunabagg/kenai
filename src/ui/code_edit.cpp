@@ -251,6 +251,10 @@ namespace sunaba::ui {
                 &CodeEdit::getBreakpointToggledEvent,
                 &CodeEdit::setBreakpointToggledEvent
             ),
+            "codeCompletionRequested", sol::property(
+                &CodeEdit::getCodeCompletionRequestedEvent,
+                &CodeEdit::setCodeCompletionRequestedEvent
+            ),
         );
     }
 }
