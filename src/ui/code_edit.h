@@ -93,6 +93,7 @@ namespace sunaba::ui {
                     return Variant();
                 };
                 Callable breakpointToggledCallable = StlFunctionWrapper::create_callable_from_cpp_function(breakpointToggledFunc);
+                code_edit->connect("breakpoint_toggled", breakpointToggledCallable);
             }
 
         public:
