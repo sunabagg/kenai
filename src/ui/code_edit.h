@@ -576,6 +576,10 @@ namespace sunaba::ui {
             std::string getTextForCodeCompletion() {
                 return code_edit->get_text_for_code_completion().utf8().get_data();
             }
+
+            std::string getTextForSymbolLookup() {
+                return code_edit->get_text_for_symbol_lookup().utf8().get_data();
+            }
     };
 }
 
