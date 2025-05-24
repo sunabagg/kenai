@@ -138,4 +138,10 @@ namespace sunaba::ui {
             this->element->onHandleUnicodeInput(unicode_char, caret_index);
         }
     }
+
+    void CodeEditProxy::_paste(int caret_index) {
+        if (this->element != nullptr) {
+            this->element->onPaste(caret_index);
+        }
+    }
 }
