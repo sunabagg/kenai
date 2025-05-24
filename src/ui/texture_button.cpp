@@ -32,4 +32,10 @@ namespace sunaba::ui {
         }
     }
 
+    void TextureButtonProxy::_input(const Ref<InputEvent>& event) {
+        if (this->element != nullptr) {
+            this->element->input(event);
+        }
+    }
+
 } // namespace sunaba::ui
