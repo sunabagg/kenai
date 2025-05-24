@@ -270,6 +270,7 @@ namespace sunaba::ui {
             "addAutoBraceCompletionPair", &CodeEdit::addAutoBraceCompletionPair,
             "addCodeCompletionOption", &CodeEdit::addCodeCompletionOption,
             "addCommentDelimiter", &CodeEdit::addCommentDelimiter,
+            "addStringDelimiter", &CodeEdit::addStringDelimiter,
         );
     }
 }
