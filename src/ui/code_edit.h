@@ -105,6 +105,7 @@ namespace sunaba::ui {
                     }
                     return Variant();
                 };
+                Callable codeCompletionRequestedCallable = StlFunctionWrapper::create_callable_from_cpp_function(codeCompletionRequestedFunc);
             }
 
         public:
