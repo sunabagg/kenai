@@ -94,6 +94,10 @@ namespace sunaba::ui {
             int getMouseFilter() const {
                 return proxy->get_mouse_filter();
             }
+
+            void setMouseFilter(int filter) {
+                proxy->set_mouse_filter(filter);
+            }
     };
 }
 
