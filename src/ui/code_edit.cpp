@@ -321,6 +321,7 @@ namespace sunaba::ui {
             "removeCommentDelimiter", &CodeEdit::removeCommentDelimiter,
             "removeStringDelimiter", &CodeEdit::removeStringDelimiter,
             "requestCodeCompletion", &CodeEdit::requestCodeCompletion,
+            "setCodeCompletionSelectedIndex", &CodeEdit::setCodeCompletionSelectedIndex,
         );
     }
 }
