@@ -608,6 +608,10 @@ namespace sunaba::ui {
             int isInComment(int line, int column = -1) {
                 return code_edit->is_in_comment(line, column);
             }
+
+            int isInString(int line, int column = -1) {
+                return code_edit->is_in_string(line, column);
+            }
     };
 }
 
