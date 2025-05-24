@@ -108,5 +108,9 @@ namespace sunaba::ui {
             void setFlipV(bool enable) {
                 this->texture_button->set_flip_v(enable);
             }
+
+            bool getIgnoreTextureSize() const {
+                return this->texture_button->get_ignore_texture_size();
+            }
     }
 }
