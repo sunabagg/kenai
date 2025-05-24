@@ -106,6 +106,10 @@ namespace sunaba::ui {
             void setNinePatchStretch(bool stretch) {
                 proxy->set_nine_patch_stretch(stretch);
             }
+
+            Vector2 getRadialCenterOffset() const {
+                return proxy->get_radial_center_offset();
+            }
     };
 }
 
