@@ -267,6 +267,7 @@ namespace sunaba::ui {
                 &CodeEdit::getSymbolValidateEvent,
                 &CodeEdit::setSymbolValidateEvent
             ),
+            "addAutoBraceCompletionPair", &CodeEdit::addAutoBraceCompletionPair,
             "addCommentDelimiter", &CodeEdit::addCommentDelimiter,
         );
     }
