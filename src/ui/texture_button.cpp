@@ -122,4 +122,10 @@ namespace sunaba::ui {
         }
     }
 
+    void TextureButtonProxy::_toggled(bool button_pressed) {
+        if (this->element != nullptr) {
+            this->element->toggled(button_pressed);
+        }
+    }
+
 } // namespace sunaba::ui
