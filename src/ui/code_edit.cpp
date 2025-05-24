@@ -273,6 +273,7 @@ namespace sunaba::ui {
             "addStringDelimiter", &CodeEdit::addStringDelimiter,
             "canFoldLine", &CodeEdit::canFoldLine,
             "cancelCodeCompletion", &CodeEdit::cancelCodeCompletion,
+            "clearBookmarkedLines", &CodeEdit::clearBookmarkedLines,
         );
     }
 }
