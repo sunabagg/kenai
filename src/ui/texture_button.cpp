@@ -134,6 +134,10 @@ namespace sunaba::ui {
             sol::base_classes, sol::bases<BaseObject, Element, sunaba::core::CanvasItem, Control, BaseButton>(),
             "flipH", sol::property(&TextureButton::getFlipH, &TextureButton::setFlipH),
             "flipV", sol::property(&TextureButton::getFlipV, &TextureButton::setFlipV),
+            "ignoreTextureSize", sol::property(
+                &TextureButton::getIgnoreTextureSize,
+                &TextureButton::setIgnoreTextureSize
+            ),
         );
     }
 
