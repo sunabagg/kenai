@@ -187,9 +187,9 @@ namespace sunaba::ui {
                 &CodeEdit::getGuttersDrawBookmarks,
                 &CodeEdit::setGuttersDrawBookmarks
             ),
-            "guttersDrawBreakpoints", sol::property(
-                &CodeEdit::getGuttersDrawBreakpoints,
-                &CodeEdit::setGuttersDrawBreakpoints
+            "guttersDrawBreakpointsGutter", sol::property(
+                &CodeEdit::getGuttersDrawBreakpointsGutter,
+                &CodeEdit::setGuttersDrawBreakpointsGutter
             ),
         );
     }
