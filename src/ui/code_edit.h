@@ -120,6 +120,17 @@ namespace sunaba::ui {
                 };
                 Callable symbolHoveredCallable = StlFunctionWrapper::create_callable_from_cpp_function(SymbolHoveredFunc);
                 code_edit->connect("symbol_hovered", symbolHoveredCallable);
+                SignalFunc symbolLookupFunc =
+                [this](std::vector<Variant> av) {
+                    Array args;
+                    for (int i = 0; i < av.size(); ++i) {
+                        args.append(av[i]);
+                    }
+                    if (this->symbolLookupEvent != nullptr) {
+                        this->symbolLookupEvent->emit(args);
+                    }
+                    return Variant();
+                };
             }
 
         public:
