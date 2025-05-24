@@ -179,6 +179,10 @@ namespace sunaba::ui {
                 &CodeEdit::getDelimiterComments,
                 &CodeEdit::setDelimiterComments
             ),
+            "delimiterStrings", sol::property(
+                &CodeEdit::getDelimiterStrings,
+                &CodeEdit::setDelimiterStrings
+            ),
         );
     }
 }
