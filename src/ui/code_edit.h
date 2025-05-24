@@ -708,6 +708,10 @@ namespace sunaba::ui {
             void unindentLines() {
                 code_edit->unindent_lines();
             }
+
+            void updateCodeCompletionOptions(bool force) {
+                code_edit->update_code_completion_options(force);
+            }
     };
 }
 
