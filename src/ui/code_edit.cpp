@@ -223,6 +223,10 @@ namespace sunaba::ui {
                 &CodeEdit::getIndentUseSpaces,
                 &CodeEdit::setIndentUseSpaces
             ),
+            "layoutDirection", sol::property(
+                &CodeEdit::getLayoutDirection,
+                &CodeEdit::setLayoutDirection
+            ),
         );
     }
 }
