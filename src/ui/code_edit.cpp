@@ -114,4 +114,10 @@ namespace sunaba::ui {
         }
         return TypedArray<Vector3i>();
     }
+
+    void CodeEditProxy::_backspace(int caret_index) {
+        if (this->element != nullptr) {
+            this->element->backspace(caret_index);
+        }
+    }
 }
