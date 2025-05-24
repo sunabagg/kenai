@@ -80,4 +80,11 @@ namespace sunaba::ui {
         }
         return Variant();
     }
+
+    Vector2 CodeEditProxy::_get_minimum_size() const {
+        if (this->element != nullptr) {
+            return this->element->getMinimumSize();
+        }
+        return Vector2();
+    }
 }
