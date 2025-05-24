@@ -281,6 +281,7 @@ namespace sunaba::ui {
             "confirmCodeCompletion", &CodeEdit::confirmCodeCompletion,
             "convertIndent", &CodeEdit::convertIndent,
             "createCodeRegion", &CodeEdit::createCodeRegion,
+            "deleteLines", &CodeEdit::deleteLines,
         );
     }
 }
