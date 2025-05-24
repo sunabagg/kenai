@@ -680,6 +680,10 @@ namespace sunaba::ui {
             void setLineAsBreakpoint(int line, bool breakpointed) {
                 code_edit->set_line_as_breakpoint(line, breakpointed);
             }
+
+            void setLineAsExecuting(int line, bool executing) {
+                code_edit->set_line_as_executing(line, executing);
+            }
     };
 }
 
