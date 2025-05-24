@@ -144,6 +144,7 @@ namespace sunaba::ui {
                     }
                     return Variant();
                 };
+                Callable symbolValidateCallable = StlFunctionWrapper::create_callable_from_cpp_function(symbolValidateFunc);
             }
 
         public:
