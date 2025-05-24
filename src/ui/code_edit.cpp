@@ -235,6 +235,10 @@ namespace sunaba::ui {
                 &CodeEdit::getLineLengthGuidelines,
                 &CodeEdit::setLineLengthGuidelines
             ),
+            "symbolLookupOnClick", sol::property(
+                &CodeEdit::getSymbolLookupOnClick,
+                &CodeEdit::setSymbolLookupOnClick
+            ),
         );
     }
 }
