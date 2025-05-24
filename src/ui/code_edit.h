@@ -704,6 +704,10 @@ namespace sunaba::ui {
             void unfoldLine(int line) {
                 code_edit->unfold_line(line);
             }
+
+            void unindentLines() {
+                code_edit->unindent_lines();
+            }
     };
 }
 
