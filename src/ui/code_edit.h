@@ -636,6 +636,10 @@ namespace sunaba::ui {
             bool isLineFolded(int line) {
                 return code_edit->is_line_folded(line);
             }
+
+            void moveLinesDown() {
+                code_edit->move_lines_down();
+            }
     };
 }
 
