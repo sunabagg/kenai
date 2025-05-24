@@ -128,4 +128,10 @@ namespace sunaba::ui {
         }
     }
 
+    void bindTextureButton(sol::state& lua) {
+        lua.new_usertype<TextureButton>("TextureButton",
+            sol::constructors<TextureButton()>(),
+        );
+    }
+
 } // namespace sunaba::ui
