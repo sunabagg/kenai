@@ -312,6 +312,7 @@ namespace sunaba::ui {
             "isInComment", &CodeEdit::isInComment,
             "isInString", &CodeEdit::isInString,
             "isLineBookmarked", &CodeEdit::isLineBookmarked,
+            "isLineBreakpointed", &CodeEdit::isLineBreakpointed,
         );
     }
 }
