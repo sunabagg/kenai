@@ -290,6 +290,7 @@ namespace sunaba::ui {
             "getAutoBraceCompletionCloseKey", &CodeEdit::getAutoBraceCompletionCloseKey,
             "getBookmarkedLines", &CodeEdit::getBookmarkedLines,
             "getBreakpointedLines", &CodeEdit::getBreakpointedLines,
+            "getCodeCompletionOption", &CodeEdit::getCodeCompletionOption,
         );
     }
 }
