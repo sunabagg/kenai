@@ -624,6 +624,10 @@ namespace sunaba::ui {
             bool isLineCodeRegionEnd(int line) {
                 return code_edit->is_line_code_region_end(line);
             }
+
+            bool isLineCodeRegionStart(int line) {
+                return code_edit->is_line_code_region_start(line);
+            }
     };
 }
 
