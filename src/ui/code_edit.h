@@ -664,6 +664,10 @@ namespace sunaba::ui {
             void setCodeHint(const std::string& hint) {
                 code_edit->set_code_hint(String(hint.c_str()));
             }
+
+            void setCodeHintDrawBelow(bool drawBelow) {
+                code_edit->set_code_hint_draw_below(drawBelow);
+            }
     };
 }
 
