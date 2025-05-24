@@ -700,6 +700,10 @@ namespace sunaba::ui {
             void unfoldAllLines() {
                 code_edit->unfold_all_lines();
             }
+
+            void unfoldLine(int line) {
+                code_edit->unfold_line(line);
+            }
     };
 }
 
