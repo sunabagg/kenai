@@ -330,6 +330,7 @@ namespace sunaba::ui {
             "setLineAsExecuting", &CodeEdit::setLineAsExecuting,
             "setSymbolLookupWordAsValid", &CodeEdit::setSymbolLookupWordAsValid,
             "toggleFoldableLine", &CodeEdit::toggleFoldableLine,
+            "toggleFoldableLinesAtCarets", &CodeEdit::toggleFoldableLinesAtCarets,
         );
     }
 }
