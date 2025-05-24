@@ -318,6 +318,7 @@ namespace sunaba::ui {
             "isLineExecuting", &CodeEdit::isLineExecuting,
             "isLineFolded", &CodeEdit::isLineFolded,
             "moveLinesDown", &CodeEdit::moveLinesDown,
+            "removeCommentDelimiter", &CodeEdit::removeCommentDelimiter,
             "removeStringDelimiter", &CodeEdit::removeStringDelimiter,
             "requestCodeCompletion", &CodeEdit::requestCodeCompletion,
         );
