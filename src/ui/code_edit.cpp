@@ -293,6 +293,7 @@ namespace sunaba::ui {
             "getCodeCompletionOption", &CodeEdit::getCodeCompletionOption,
             "getCodeCompletionOptions", &CodeEdit::getCodeCompletionOptions,
             "getCodeCompletionSelectedIndex", &CodeEdit::getCodeCompletionSelectedIndex,
+            "getCodeRegionEndTag", &CodeEdit::getCodeRegionEndTag,
         );
     }
 }
