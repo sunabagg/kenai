@@ -239,6 +239,10 @@ namespace sunaba::ui {
                 &CodeEdit::getSymbolLookupOnClick,
                 &CodeEdit::setSymbolLookupOnClick
             ),
+            "symbolTooltipOnHover", sol::property(
+                &CodeEdit::getSymbolTooltipOnHover,
+                &CodeEdit::setSymbolTooltipOnHover
+            ),
         );
     }
 }
