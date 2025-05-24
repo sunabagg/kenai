@@ -215,6 +215,10 @@ namespace sunaba::ui {
                 &CodeEdit::getIndentAutomaticPrefixes,
                 &CodeEdit::setIndentAutomaticPrefixes
             ),
+            "indentSize", sol::property(
+                &CodeEdit::getIndentSize,
+                &CodeEdit::setIndentSize
+            ),
         );
     }
 }
