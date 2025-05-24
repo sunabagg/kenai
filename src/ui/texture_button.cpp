@@ -44,4 +44,10 @@ namespace sunaba::ui {
         }
     }
 
+    void TextureButtonProxy::_unhandled_key_input(const Ref<InputEvent>& event) {
+        if (this->element != nullptr) {
+            this->element->unhandledKeyInput(event);
+        }
+    }
+
 } // namespace sunaba::ui
