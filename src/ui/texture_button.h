@@ -104,5 +104,9 @@ namespace sunaba::ui {
             bool getFlipV() const {
                 return this->texture_button->is_flipped_v();
             }
+
+            void setFlipV(bool enable) {
+                this->texture_button->set_flip_v(enable);
+            }
     }
 }
