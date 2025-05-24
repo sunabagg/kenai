@@ -612,6 +612,10 @@ namespace sunaba::ui {
             int isInString(int line, int column = -1) {
                 return code_edit->is_in_string(line, column);
             }
+
+            bool isLineBookmarked(int line) {
+                return code_edit->is_line_bookmarked(line);
+            }
     };
 }
 
