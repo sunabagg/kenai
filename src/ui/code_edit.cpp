@@ -334,6 +334,7 @@ namespace sunaba::ui {
             "unfoldAllLines", &CodeEdit::unfoldAllLines,
             "unfoldLine", &CodeEdit::unfoldLine,
             "unindentLines", &CodeEdit::unindentLines,
+            "updateCodeCompletionOptions", &CodeEdit::updateCodeCompletionOptions,
         );
     }
 }
