@@ -102,6 +102,10 @@ namespace sunaba::ui {
             bool getNinPatchStretch() const {
                 return proxy->get_nine_patch_stretch();
             }
+
+            void setNinePatchStretch(bool stretch) {
+                proxy->set_nine_patch_stretch(stretch);
+            }
     };
 }
 
