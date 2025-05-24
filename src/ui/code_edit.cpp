@@ -227,6 +227,10 @@ namespace sunaba::ui {
                 &CodeEdit::getLayoutDirection,
                 &CodeEdit::setLayoutDirection
             ),
+            "lineFolding", sol::property(
+                &CodeEdit::getLineFolding,
+                &CodeEdit::setLineFolding
+            ),
         );
     }
 }
