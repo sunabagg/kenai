@@ -335,6 +335,10 @@ namespace sunaba::ui {
             "unfoldLine", &CodeEdit::unfoldLine,
             "unindentLines", &CodeEdit::unindentLines,
             "updateCodeCompletionOptions", &CodeEdit::updateCodeCompletionOptions,
+            "cast", [](Element* element) {
+                CodeEditNode* code_edit = Object::cast_to<CodeEditNode>(element->getNode());
+                
+            }
         );
     }
 }
