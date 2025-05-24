@@ -653,6 +653,9 @@ namespace sunaba::ui {
                 code_edit->remove_string_delimiter(String(startKey.c_str()));
             }
 
+            void requestCodeCompletion() {
+                code_edit->request_code_completion();
+            }
     };
 }
 
