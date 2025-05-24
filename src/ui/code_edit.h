@@ -596,6 +596,10 @@ namespace sunaba::ui {
             bool hasCommentDelimiter(const std::string& startKey, const std::string& endKey) {
                 return code_edit->has_comment_delimiter(String(startKey.c_str()), String(endKey.c_str()));
             }
+
+            bool hasStringDelimiter(const std::string& startKey, const std::string& endKey) {
+                return code_edit->has_string_delimiter(String(startKey.c_str()), String(endKey.c_str()));
+            }
     };
 }
 
