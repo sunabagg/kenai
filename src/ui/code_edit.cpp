@@ -203,6 +203,10 @@ namespace sunaba::ui {
                 &CodeEdit::getGuttersDrawLineNumbers,
                 &CodeEdit::setGuttersDrawLineNumbers
             ),
+            "guttersZeroPadLineNumbers", sol::property(
+                &CodeEdit::getGuttersZeroPadLineNumbers,
+                &CodeEdit::setGuttersZeroPadLineNumbers
+            ),
         );
     }
 }
