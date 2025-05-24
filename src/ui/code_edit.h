@@ -604,6 +604,10 @@ namespace sunaba::ui {
             void indentLines() {
                 code_edit->indent_lines();
             }
+
+            int isInComment(int line, int column = -1) {
+                return code_edit->is_in_comment(line, column);
+            }
     };
 }
 
