@@ -219,6 +219,10 @@ namespace sunaba::ui {
                 &CodeEdit::getIndentSize,
                 &CodeEdit::setIndentSize
             ),
+            "indentUseSpaces", sol::property(
+                &CodeEdit::getIndentUseSpaces,
+                &CodeEdit::setIndentUseSpaces
+            ),
         );
     }
 }
