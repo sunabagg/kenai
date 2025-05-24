@@ -331,6 +331,7 @@ namespace sunaba::ui {
             "setSymbolLookupWordAsValid", &CodeEdit::setSymbolLookupWordAsValid,
             "toggleFoldableLine", &CodeEdit::toggleFoldableLine,
             "toggleFoldableLinesAtCarets", &CodeEdit::toggleFoldableLinesAtCarets,
+            "unfoldAllLines", &CodeEdit::unfoldAllLines,
         );
     }
 }
