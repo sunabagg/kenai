@@ -672,6 +672,10 @@ namespace sunaba::ui {
             void setCodeRegionTags(const std::string& startTag = "&quot;region&quot;", const std::string& endTag = "&quot;endregion&quot;") {
                 code_edit->set_code_region_tags(String(startTag.c_str()), String(endTag.c_str()));
             }
+
+            void setLineAsBookmarked(int line, bool bookmarked) {
+                code_edit->set_line_as_bookmarked(line, bookmarked);
+            }
     };
 }
 
