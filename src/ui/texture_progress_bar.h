@@ -86,6 +86,10 @@ namespace sunaba::ui {
             int getFillMode() const {
                 return proxy->get_fill_mode();
             }
+
+            void setFillMode(int mode) {
+                proxy->set_fill_mode(mode);
+            }
     };
 }
 
