@@ -479,6 +479,10 @@ namespace sunaba::ui {
                 code_edit->duplicate_lines();
             }
 
+            void duplicateSelection() {
+                code_edit->duplicate_selection();
+            }
+
             void foldAllLines() {
                 code_edit->fold_all_lines();
             }
