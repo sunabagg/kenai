@@ -278,6 +278,7 @@ namespace sunaba::ui {
             "clearCommentDelimiters", &CodeEdit::clearCommentDelimiters,
             "clearExecutingLines", &CodeEdit::clearExecutingLines,
             "clearStringDelimiters", &CodeEdit::clearStringDelimiters,
+            "confirmCodeCompletion", &CodeEdit::confirmCodeCompletion,
         );
     }
 }
