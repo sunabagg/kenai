@@ -324,6 +324,7 @@ namespace sunaba::ui {
             "setCodeCompletionSelectedIndex", &CodeEdit::setCodeCompletionSelectedIndex,
             "setCodeHint", &CodeEdit::setCodeHint,
             "setCodeHintDrawBelow", &CodeEdit::setCodeHintDrawBelow,
+            "setCodeRegionTags", &CodeEdit::setCodeRegionTags,
         );
     }
 }
