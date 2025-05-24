@@ -259,6 +259,10 @@ namespace sunaba::ui {
                 &CodeEdit::getSymbolHoveredEvent,
                 &CodeEdit::setSymbolHoveredEvent
             ),
+            "symbolLookup", sol::property(
+                &CodeEdit::getSymbolLookupEvent,
+                &CodeEdit::setSymbolLookupEvent
+            ),
         );
     }
 }
