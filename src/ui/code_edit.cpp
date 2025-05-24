@@ -155,6 +155,10 @@ namespace sunaba::ui {
         lua.new_usertype<CodeEdit>("CodeEdit",
             sol::constructors<CodeEdit()>(),
             sol::base_classes, sol::bases<BaseObject, Element, sunaba::core::CanvasItem, Control, TextEdit>(),
+            "autoBraceCompletionEnabled", sol::property(
+                &CodeEdit::getAutoBraceCompletionEnabled,
+                &CodeEdit::setAutoBraceCompletionEnabled
+            ),
         );
     }
 }
