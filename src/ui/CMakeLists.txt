@@ -109,6 +109,8 @@ target_sources(${PROJECT_NAME} PRIVATE
         text_edit.cpp
         code_edit.h
         code_edit.cpp
+        texture_button.h
+        texture_button.cpp
 )
 
 target_include_directories( ${PROJECT_NAME}
