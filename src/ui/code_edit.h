@@ -562,6 +562,17 @@ namespace sunaba::ui {
                 }
                 return lines;
             }
+
+            std::vector<int> getFoldedLines() {
+                std::vector<int> lines;
+                PackedInt32Array foldedLines = code_edit->get_folded_lines();
+                for (int i = 0; i < foldedLines.size(); ++i) {
+                    int line = foldedLines[i];
+                    lines.push_back(line);
+                }
+                return lines;
+            }
+    };
 }
 
 #endif // CODE_EDIT_H
