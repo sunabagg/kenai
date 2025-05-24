@@ -211,6 +211,10 @@ namespace sunaba::ui {
                 &CodeEdit::getIndentAutomatic,
                 &CodeEdit::setIndentAutomatic
             ),
+            "indentAutomaticPrefixes", sol::property(
+                &CodeEdit::getIndentAutomaticPrefixes,
+                &CodeEdit::setIndentAutomaticPrefixes
+            ),
         );
     }
 }
