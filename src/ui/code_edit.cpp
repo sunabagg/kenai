@@ -292,6 +292,7 @@ namespace sunaba::ui {
             "getBreakpointedLines", &CodeEdit::getBreakpointedLines,
             "getCodeCompletionOption", &CodeEdit::getCodeCompletionOption,
             "getCodeCompletionOptions", &CodeEdit::getCodeCompletionOptions,
+            "getCodeCompletionSelectedIndex", &CodeEdit::getCodeCompletionSelectedIndex,
         );
     }
 }
