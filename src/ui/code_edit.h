@@ -640,6 +640,10 @@ namespace sunaba::ui {
             void moveLinesDown() {
                 code_edit->move_lines_down();
             }
+
+            void moveLinesUp() {
+                code_edit->move_lines_up();
+            }
     };
 }
 
