@@ -150,5 +150,9 @@ namespace sunaba::ui {
             void setTextureFocused(sunaba::core::Texture2D* texture) {
                 this->texture_button->set_texture_focused(texture->getTexture2D());
             }
+
+            sunaba::core::Texture2D* getTextureHover() const {
+                return new sunaba::core::Texture2D(this->texture_button->get_texture_hover().ptr());
+            }
     }
 }
