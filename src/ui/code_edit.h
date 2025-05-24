@@ -620,6 +620,10 @@ namespace sunaba::ui {
             bool isLineBreakpointed(int line) {
                 return code_edit->is_line_breakpointed(line);
             }
+
+            bool isLineCodeRegionEnd(int line) {
+                return code_edit->is_line_code_region_end(line);
+            }
     };
 }
 
