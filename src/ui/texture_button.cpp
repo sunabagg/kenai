@@ -56,4 +56,10 @@ namespace sunaba::ui {
         }
     }
 
+    void TextureButtonProxy::_draw() {
+        if (this->element != nullptr) {
+            this->element->_draw();
+        }
+    }
+
 } // namespace sunaba::ui
