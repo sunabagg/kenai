@@ -311,6 +311,7 @@ namespace sunaba::ui {
             "indentLines", &CodeEdit::indentLines,
             "isInComment", &CodeEdit::isInComment,
             "isInString", &CodeEdit::isInString,
+            "isLineBookmarked", &CodeEdit::isLineBookmarked,
         );
     }
 }
