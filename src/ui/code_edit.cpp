@@ -289,6 +289,7 @@ namespace sunaba::ui {
             "foldLine", &CodeEdit::foldLine,
             "getAutoBraceCompletionCloseKey", &CodeEdit::getAutoBraceCompletionCloseKey,
             "getBookmarkedLines", &CodeEdit::getBookmarkedLines,
+            "getBreakpointedLines", &CodeEdit::getBreakpointedLines,
         );
     }
 }
