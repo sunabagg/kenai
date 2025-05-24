@@ -116,5 +116,9 @@ namespace sunaba::ui {
             void setIgnoreTextureSize(bool ignore) {
                 this->texture_button->set_ignore_texture_size(ignore);
             }
+
+            int getStretchMode() const {
+                return this->texture_button->get_stretch_mode();
+            }
     }
 }
