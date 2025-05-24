@@ -285,6 +285,7 @@ namespace sunaba::ui {
             "doIndent", &CodeEdit::doIndent,
             "duplicateLines", &CodeEdit::duplicateLines,
             "duplicateSelection", &CodeEdit::duplicateSelection,
+            "foldAllLines", &CodeEdit::foldAllLines,
         );
     }
 }
