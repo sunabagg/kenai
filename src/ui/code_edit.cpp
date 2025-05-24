@@ -287,6 +287,7 @@ namespace sunaba::ui {
             "duplicateSelection", &CodeEdit::duplicateSelection,
             "foldAllLines", &CodeEdit::foldAllLines,
             "foldLine", &CodeEdit::foldLine,
+            "getAutoBraceCompletionCloseKey", &CodeEdit::getAutoBraceCompletionCloseKey,
         );
     }
 }
