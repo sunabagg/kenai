@@ -108,6 +108,7 @@ target_sources(${PROJECT_NAME} PRIVATE
         text_edit.h
         text_edit.cpp
         code_edit.h
+        code_edit.cpp
 )
 
 target_include_directories( ${PROJECT_NAME}
