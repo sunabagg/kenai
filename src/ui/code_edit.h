@@ -676,6 +676,10 @@ namespace sunaba::ui {
             void setLineAsBookmarked(int line, bool bookmarked) {
                 code_edit->set_line_as_bookmarked(line, bookmarked);
             }
+
+            void setLineAsBreakpoint(int line, bool breakpointed) {
+                code_edit->set_line_as_breakpoint(line, breakpointed);
+            }
     };
 }
 
