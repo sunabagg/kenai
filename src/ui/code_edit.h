@@ -628,6 +628,10 @@ namespace sunaba::ui {
             bool isLineCodeRegionStart(int line) {
                 return code_edit->is_line_code_region_start(line);
             }
+
+            bool isLineExecuting(int line) {
+                return code_edit->is_line_executing(line);
+            }
     };
 }
 
