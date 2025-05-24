@@ -632,6 +632,10 @@ namespace sunaba::ui {
             bool isLineExecuting(int line) {
                 return code_edit->is_line_executing(line);
             }
+
+            bool isLineFolded(int line) {
+                return code_edit->is_line_folded(line);
+            }
     };
 }
 
