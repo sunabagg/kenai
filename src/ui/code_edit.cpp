@@ -286,6 +286,7 @@ namespace sunaba::ui {
             "duplicateLines", &CodeEdit::duplicateLines,
             "duplicateSelection", &CodeEdit::duplicateSelection,
             "foldAllLines", &CodeEdit::foldAllLines,
+            "foldLine", &CodeEdit::foldLine,
         );
     }
 }
