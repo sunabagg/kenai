@@ -154,5 +154,9 @@ namespace sunaba::ui {
             sunaba::core::Texture2D* getTextureHover() const {
                 return new sunaba::core::Texture2D(this->texture_button->get_texture_hover().ptr());
             }
+
+            void setTextureHover(sunaba::core::Texture2D* texture) {
+                this->texture_button->set_texture_hover(texture->getTexture2D());
+            }
     }
 }
