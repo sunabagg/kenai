@@ -283,6 +283,7 @@ namespace sunaba::ui {
             "createCodeRegion", &CodeEdit::createCodeRegion,
             "deleteLines", &CodeEdit::deleteLines,
             "doIndent", &CodeEdit::doIndent,
+            "duplicateLines", &CodeEdit::duplicateLines,
         );
     }
 }
