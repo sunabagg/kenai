@@ -132,4 +132,10 @@ namespace sunaba::ui {
             this->element->cut(caret_index);
         }
     }
+
+    void CodeEditProxy::_handle_unicode_input(int unicode_char, int caret_index) {
+        if (this->element != nullptr) {
+            this->element->handleUnicodeInput(unicode_char, caret_index);
+        }
+    }
 }
