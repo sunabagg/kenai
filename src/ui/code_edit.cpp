@@ -107,4 +107,11 @@ namespace sunaba::ui {
         }
         return false;
     }
+
+    TypedArray<Vector3i> CodeEditProxy::_structured_text_parser(const Array& args, const String& text) const {
+        if (this->element != nullptr) {
+            return this->element->structuredTextParser(args, text);
+        }
+        return TypedArray<Vector3i>();
+    }
 }
