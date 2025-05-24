@@ -313,6 +313,7 @@ namespace sunaba::ui {
             "isInString", &CodeEdit::isInString,
             "isLineBookmarked", &CodeEdit::isLineBookmarked,
             "isLineBreakpointed", &CodeEdit::isLineBreakpointed,
+            "isLineCodeRegionEnd", &CodeEdit::isLineCodeRegionEnd,
         );
     }
 }
