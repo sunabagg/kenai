@@ -82,6 +82,10 @@ namespace sunaba::ui {
                 p_node->element = this;
                 setRange(p_node);
             }
+
+            int getFillMode() const {
+                return proxy->get_fill_mode();
+            }
     };
 }
 
