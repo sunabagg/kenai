@@ -323,6 +323,7 @@ namespace sunaba::ui {
             "requestCodeCompletion", &CodeEdit::requestCodeCompletion,
             "setCodeCompletionSelectedIndex", &CodeEdit::setCodeCompletionSelectedIndex,
             "setCodeHint", &CodeEdit::setCodeHint,
+            "setCodeHintDrawBelow", &CodeEdit::setCodeHintDrawBelow,
         );
     }
 }
