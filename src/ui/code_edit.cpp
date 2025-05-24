@@ -296,6 +296,7 @@ namespace sunaba::ui {
             "getCodeRegionEndTag", &CodeEdit::getCodeRegionEndTag,
             "getCodeRegionStartTag", &CodeEdit::getCodeRegionStartTag,
             "getDelimiterEndKey", &CodeEdit::getDelimiterEndKey,
+            "getDelimiterEndPosition", &CodeEdit::getDelimiterEndPosition,
         );
     }
 }
