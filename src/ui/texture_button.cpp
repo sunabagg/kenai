@@ -168,6 +168,7 @@ namespace sunaba::ui {
             ),
             "cast", [](Element* element) {
                 TextureButtonNode* node = Object::cast_to<TextureButtonNode>(element->getNode());
+                return new TextureButton(node);
             }
         );
     }
