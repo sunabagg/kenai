@@ -171,6 +171,10 @@ namespace sunaba::ui {
                 &CodeEdit::getCodeCompletionEnabled,
                 &CodeEdit::setCodeCompletionEnabled
             ),
+            "codeCompletionPrefixes", sol::property(
+                &CodeEdit::getCodeCompletionPrefixes,
+                &CodeEdit::setCodeCompletionPrefixes
+            ),
         );
     }
 }
