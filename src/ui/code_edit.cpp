@@ -263,6 +263,10 @@ namespace sunaba::ui {
                 &CodeEdit::getSymbolLookupEvent,
                 &CodeEdit::setSymbolLookupEvent
             ),
+            "symbolValidate", sol::property(
+                &CodeEdit::getSymbolValidateEvent,
+                &CodeEdit::setSymbolValidateEvent
+            ),
         );
     }
 }
