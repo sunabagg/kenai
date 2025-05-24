@@ -183,6 +183,10 @@ namespace sunaba::ui {
                 &CodeEdit::getDelimiterStrings,
                 &CodeEdit::setDelimiterStrings
             ),
+            "guttersDrawBookmarks", sol::property(
+                &CodeEdit::getGuttersDrawBookmarks,
+                &CodeEdit::setGuttersDrawBookmarks
+            ),
         );
     }
 }
