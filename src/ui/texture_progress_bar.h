@@ -96,7 +96,7 @@ namespace sunaba::ui {
             }
 
             void setMouseFilter(int filter) {
-                proxy->set_mouse_filter(filter);
+                proxy->set_mouse_filter(static_cast<TextureProgressBarNode::MouseFilter>(filter));
             }
     };
 }
