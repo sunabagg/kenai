@@ -207,6 +207,10 @@ namespace sunaba::ui {
                 &CodeEdit::getGuttersZeroPadLineNumbers,
                 &CodeEdit::setGuttersZeroPadLineNumbers
             ),
+            "indentAutomatic", sol::property(
+                &CodeEdit::getIndentAutomatic,
+                &CodeEdit::setIndentAutomatic
+            ),
         );
     }
 }
