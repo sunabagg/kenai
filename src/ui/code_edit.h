@@ -133,6 +133,17 @@ namespace sunaba::ui {
                 };
                 Callable symbolLookupCallable = StlFunctionWrapper::create_callable_from_cpp_function(symbolLookupFunc);
                 code_edit->connect("symbol_lookup", symbolLookupCallable);
+                SignalFunc symbolValidateFunc =
+                [this](std::vector<Variant> av) {
+                    Array args;
+                    for (int i = 0; i < av.size(); ++i) {
+                        args.append(av[i]);
+                    }
+                    if (this->symbolValidateEvent != nullptr) {
+                        this->symbolValidateEvent->emit(args);
+                    }
+                    return Variant();
+                };
             }
 
         public:
