@@ -132,6 +132,7 @@ namespace sunaba::ui {
                     return Variant();
                 };
                 Callable symbolLookupCallable = StlFunctionWrapper::create_callable_from_cpp_function(symbolLookupFunc);
+                code_edit->connect("symbol_lookup", symbolLookupCallable);
             }
 
         public:
