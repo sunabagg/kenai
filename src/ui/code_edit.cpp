@@ -284,6 +284,7 @@ namespace sunaba::ui {
             "deleteLines", &CodeEdit::deleteLines,
             "doIndent", &CodeEdit::doIndent,
             "duplicateLines", &CodeEdit::duplicateLines,
+            "duplicateSelection", &CodeEdit::duplicateSelection,
         );
     }
 }
