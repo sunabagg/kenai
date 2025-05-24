@@ -123,7 +123,7 @@ namespace sunaba::ui {
 
     void CodeEditProxy::_copy(int caret_index) {
         if (this->element != nullptr) {
-            this->element->copy(caret_index);
+            this->element->onCopy(caret_index);
         }
     }
 
