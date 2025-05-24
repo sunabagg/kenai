@@ -291,6 +291,7 @@ namespace sunaba::ui {
             "getBookmarkedLines", &CodeEdit::getBookmarkedLines,
             "getBreakpointedLines", &CodeEdit::getBreakpointedLines,
             "getCodeCompletionOption", &CodeEdit::getCodeCompletionOption,
+            "getCodeCompletionOptions", &CodeEdit::getCodeCompletionOptions,
         );
     }
 }
