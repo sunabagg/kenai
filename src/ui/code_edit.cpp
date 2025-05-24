@@ -308,6 +308,7 @@ namespace sunaba::ui {
             "hasAutoBraceCompletionOpenKey", &CodeEdit::hasAutoBraceCompletionOpenKey,
             "hasCommentDelimiter", &CodeEdit::hasCommentDelimiter,
             "hasStringDelimiter", &CodeEdit::hasStringDelimiter,
+            "indentLines", &CodeEdit::indentLines,
         );
     }
 }
