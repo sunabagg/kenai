@@ -314,6 +314,7 @@ namespace sunaba::ui {
             "isLineBookmarked", &CodeEdit::isLineBookmarked,
             "isLineBreakpointed", &CodeEdit::isLineBreakpointed,
             "isLineCodeRegionEnd", &CodeEdit::isLineCodeRegionEnd,
+            "isLineCodeRegionStart", &CodeEdit::isLineCodeRegionStart,
         );
     }
 }
