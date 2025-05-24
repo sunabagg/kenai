@@ -82,4 +82,11 @@ namespace sunaba::ui {
         return Variant();
     }
 
+    Vector2 TextureButtonProxy::_get_minimum_size() const {
+        if (this->element != nullptr) {
+            return this->element->_getMinimumSize();
+        }
+        return Vector2();
+    }
+
 } // namespace sunaba::ui
