@@ -602,7 +602,7 @@ namespace sunaba::ui {
             }
 
             bool hasStringDelimiter(const std::string& startKey, const std::string& endKey) {
-                return code_edit->has_string_delimiter(String(startKey.c_str()), String(endKey.c_str()));
+                return code_edit->has_string_delimiter(String(startKey.c_str()));
             }
 
             void indentLines() {
