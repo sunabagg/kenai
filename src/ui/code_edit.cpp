@@ -129,7 +129,7 @@ namespace sunaba::ui {
 
     void CodeEditProxy::_cut(int caret_index) {
         if (this->element != nullptr) {
-            this->element->cut(caret_index);
+            this->element->onCut(caret_index);
         }
     }
 
