@@ -255,6 +255,10 @@ namespace sunaba::ui {
                 &CodeEdit::getCodeCompletionRequestedEvent,
                 &CodeEdit::setCodeCompletionRequestedEvent
             ),
+            "symbolHovered", sol::property(
+                &CodeEdit::getSymbolHoveredEvent,
+                &CodeEdit::setSymbolHoveredEvent
+            ),
         );
     }
 }
