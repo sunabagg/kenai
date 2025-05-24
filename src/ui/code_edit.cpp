@@ -332,7 +332,8 @@ namespace sunaba::ui {
             "toggleFoldableLine", &CodeEdit::toggleFoldableLine,
             "toggleFoldableLinesAtCarets", &CodeEdit::toggleFoldableLinesAtCarets,
             "unfoldAllLines", &CodeEdit::unfoldAllLines,
-            "unfoldLine", &CodeEdit::unfoldLine
+            "unfoldLine", &CodeEdit::unfoldLine,
+            "unindentLines", &CodeEdit::unindentLines,
         );
     }
 }
