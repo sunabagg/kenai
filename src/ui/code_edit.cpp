@@ -303,6 +303,7 @@ namespace sunaba::ui {
             "getFoldedLines", &CodeEdit::getFoldedLines,
             "getTextForCodeCompletion", &CodeEdit::getTextForCodeCompletion,
             "getTextForSymbolLookup", &CodeEdit::getTextForSymbolLookup,
+            "getTextWithCursorChar", &CodeEdit::getTextWithCursorChar,
         );
     }
 }
