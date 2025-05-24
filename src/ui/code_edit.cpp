@@ -337,7 +337,7 @@ namespace sunaba::ui {
             "updateCodeCompletionOptions", &CodeEdit::updateCodeCompletionOptions,
             "cast", [](Element* element) {
                 CodeEditNode* code_edit = Object::cast_to<CodeEditNode>(element->getNode());
-                
+                return new CodeEdit(code_edit);
             }
         );
     }
