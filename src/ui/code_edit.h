@@ -580,6 +580,10 @@ namespace sunaba::ui {
             std::string getTextForSymbolLookup() {
                 return code_edit->get_text_for_symbol_lookup().utf8().get_data();
             }
+
+            std::string getTextWithCursorChar(int line, int column) {
+                return code_edit->get_text_with_cursor_char(line, column).utf8().get_data();
+            }
     };
 }
 
