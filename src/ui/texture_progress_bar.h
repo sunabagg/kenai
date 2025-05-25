@@ -165,6 +165,10 @@ namespace sunaba::ui {
             int getStretchMarginRight() const {
                 return proxy->get_stretch_margin(Side::SIDE_RIGHT);
             }
+
+            void setStretchMarginRight(int value) {
+                proxy->set_stretch_margin(Side::SIDE_RIGHT, value);
+            }
     };
 }
 
