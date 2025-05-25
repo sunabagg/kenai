@@ -160,6 +160,10 @@ namespace sunaba::ui {
             void setEnableRecursiveFolding(bool enable) {
                 tree->set_enable_recursive_folding(enable);
             }
+
+            int getFocusMode() const {
+                return tree->get_focus_mode();
+            }
     };
 }
 
