@@ -103,6 +103,7 @@ namespace sunaba::ui {
             "setMetadata", &TreeItem::setMetadata,
             "setRange", &TreeItem::setRange,
             "setRangeConfig", &TreeItem::setRangeConfig,
+            "setSelectable", &TreeItem::setSelectable,
         );
     }
 }
