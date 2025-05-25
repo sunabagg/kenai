@@ -225,6 +225,10 @@ namespace sunaba::ui {
             TreeItem* getPrev() {
                 return new TreeItem(tree_item->get_prev());
             }
+
+            TreeItem* getPrevInTree() {
+                return new TreeItem(tree_item->get_prev_in_tree());
+            }
     };
 }
 
