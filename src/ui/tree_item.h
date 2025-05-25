@@ -139,6 +139,14 @@ namespace sunaba::ui {
             int getChildCount() const {
                 return tree_item->get_child_count();
             }
+
+            std::vector<TreeItem*> getChildren() const {
+                std::vector<TreeItem*> children;
+                for (int i = 0; i < tree_item->get_child_count(); ++i) {
+                    children.push_back(new TreeItem(tree_item->get_child(i)));
+                }
+                return children;
+            }
     };
 }
 
