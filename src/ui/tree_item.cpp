@@ -40,6 +40,7 @@ namespace sunaba::ui {
             "getIconModulate", &TreeItem::getIconModulate,
             "getIconOverlay", &TreeItem::getIconOverlay,
             "getIconRegion", &TreeItem::getIconRegion,
+            "getIndex", &TreeItem::getIndex,
         );
     }
 }
