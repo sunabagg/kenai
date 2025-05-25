@@ -70,6 +70,7 @@ namespace sunaba::ui {
             "isIndeterminate", &TreeItem::isIndeterminate,
             "isSelectable", &TreeItem::isSelectable,
             "isSelected", &TreeItem::isSelected,
+            "isVisibleInTree", &TreeItem::isVisibleInTree,
         );
     }
 }
