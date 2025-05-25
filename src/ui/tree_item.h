@@ -293,6 +293,10 @@ namespace sunaba::ui {
             bool isCustomSetAsButton(int column) const {
                 return tree_item->is_custom_set_as_button(column);
             }
+
+            bool isEditMultiline(int column) const {
+                return tree_item->is_edit_multiline(column);
+            }
     };
 }
 
