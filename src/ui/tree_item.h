@@ -409,6 +409,10 @@ namespace sunaba::ui {
             void setIcon(int column, sunaba::core::Texture2D* texture) {
                 tree_item->set_icon(column, Ref<godot::Texture2D>(texture->getTexture2D()));
             }
+
+            void setIconMaxWidth(int column, int width) {
+                tree_item->set_icon_max_width(column, width);
+            }
     };
 }
 
