@@ -33,6 +33,7 @@ namespace sunaba::ui {
             "getCustomColor", &TreeItem::getCustomColor,
             "getCustomFont", &TreeItem::getCustomFont,
             "getCustomFontSize", &TreeItem::getCustomFontSize,
+            "getExpandRight", &TreeItem::getExpandRight,
         );
     }
 }
