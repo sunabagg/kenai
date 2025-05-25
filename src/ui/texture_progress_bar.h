@@ -238,6 +238,10 @@ namespace sunaba::ui {
             Color getTintUnder() const {
                 return proxy->get_tint_under();
             }
+
+            void setTintUnder(const Color &tint) {
+                proxy->set_tint_under(tint);
+            }
     };
 }
 
