@@ -28,6 +28,7 @@ namespace sunaba::ui {
             "getCellMode", &TreeItem::getCellMode,
             "getChild", &TreeItem::getChild,
             "getChildCount", &TreeItem::getChildCount,
+            "getChildren", &TreeItem::getChildren,
         );
     }
 }
