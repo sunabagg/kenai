@@ -103,6 +103,10 @@ namespace sunaba::ui {
             int getAutoTranslateMode(int column) const {
                 return tree_item->get_auto_translate_mode(column);
             }
+
+            sunaba::core::Texture2D* getButton(int column, int idx) const {
+                return new sunaba::core::Texture2D(tree_item->get_button(column, idx).ptr());
+            }
     };
 }
 
