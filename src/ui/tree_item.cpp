@@ -42,6 +42,7 @@ namespace sunaba::ui {
             "getIconRegion", &TreeItem::getIconRegion,
             "getIndex", &TreeItem::getIndex,
             "getLanguage", &TreeItem::getLanguage,
+            "getMetadata", &BaseObject::getMetadata,
         );
     }
 }
