@@ -123,6 +123,7 @@ namespace sunaba::ui {
             "expandMode", sol::property(&TextureRect::getExpandMode, &TextureRect::setExpandMode),
             "flipH", sol::property(&TextureRect::getFlipH, &TextureRect::setFlipH),
             "flipV", sol::property(&TextureRect::getFlipV, &TextureRect::setFlipV),
+            "mouseFilter", sol::property(&TextureRect::getMouseFilter, &TextureRect::setMouseFilter),
         );
     }
 }
