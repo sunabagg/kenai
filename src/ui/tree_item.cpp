@@ -53,6 +53,7 @@ namespace sunaba::ui {
             "getRange", &TreeItem::getRange,
             "getRangeConfig", &TreeItem::getRangeConfig,
             "getStructuredTextBidiOverride", &TreeItem::getStructuredTextBidiOverride,
+            "getStructuredTextBdidOverrideOptions", &TreeItem::getStructuredTextBidiOverrideOptions,
         );
     }
 }
