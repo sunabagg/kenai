@@ -313,6 +313,10 @@ namespace sunaba::ui {
             bool isSelected(int column) const {
                 return tree_item->is_selected(column);
             }
+
+            bool isVisibleInTree() const {
+                return tree_item->is_visible_in_tree();
+            }
     };
 }
 
