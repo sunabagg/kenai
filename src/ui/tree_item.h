@@ -62,6 +62,10 @@ namespace sunaba::ui {
             bool getVisible() const {
                 return tree_item->is_visible();
             }
+
+            void setVisible(bool visible) {
+                tree_item->set_visible(visible);
+            }
     };
 }
 
