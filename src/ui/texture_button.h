@@ -176,5 +176,7 @@ namespace sunaba::ui {
             void setTexturePressed(sunaba::core::Texture2D* texture) {
                 this->texture_button->set_texture_pressed(texture->getTexture2D());
             }
-    }
+    };
 }
+
+#endif // TEXTURE_BUTTON_H
