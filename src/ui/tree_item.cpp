@@ -67,6 +67,7 @@ namespace sunaba::ui {
             "isCustomSetAsButton", &TreeItem::isCustomSetAsButton,
             "isEditMultiline", &TreeItem::isEditMultiline,
             "isEditable", &TreeItem::isEditable,
+            "isIndeterminate", &TreeItem::isIndeterminate,
         );
     }
 }
