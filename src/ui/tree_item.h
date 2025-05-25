@@ -345,6 +345,10 @@ namespace sunaba::ui {
             void setAutowrapMode(int column, int mode) {
                 tree_item->set_autowrap_mode(column, static_cast<TextServer::AutowrapMode>(mode));
             }
+
+            void setButton(int column, int buttonIdx, sunaba::core::Texture2D* button) {
+                tree_item->set_button(column, buttonIdx, Ref<godot::Texture2D>(button->getTexture2D()));
+            }
     };
 }
 
