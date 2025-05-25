@@ -93,6 +93,7 @@ namespace sunaba::ui {
             "setEditMultiline", &TreeItem::setEditMultiline,
             "setEditable", &TreeItem::setEditable,
             "setExpandRight", &TreeItem::setExpandRight,
+            "setIcon", &TreeItem::setIcon,
         );
     }
 }
