@@ -107,6 +107,10 @@ namespace sunaba::ui {
             void setFlipV(bool p_enable) {
                 texture_rect->set_flip_v(p_enable);
             }
+
+            int getMouseFilter() const {
+                return texture_rect->get_mouse_filter();
+            }
     };
 }
 
