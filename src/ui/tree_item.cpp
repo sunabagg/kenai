@@ -111,6 +111,7 @@ namespace sunaba::ui {
             "setTextAlignment", &TreeItem::setTextAlignment,
             "setTextDirection", &TreeItem::setTextDirection,
             "setTextOverrunBehavior", &TreeItem::setTextOverrunBehavior,
+            "setTooltipText", &TreeItem::setTooltipText,
         );
     }
 }
