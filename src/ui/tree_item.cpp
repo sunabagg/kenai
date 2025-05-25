@@ -69,6 +69,7 @@ namespace sunaba::ui {
             "isEditable", &TreeItem::isEditable,
             "isIndeterminate", &TreeItem::isIndeterminate,
             "isSelectable", &TreeItem::isSelectable,
+            "isSelected", &TreeItem::isSelected,
         );
     }
 }
