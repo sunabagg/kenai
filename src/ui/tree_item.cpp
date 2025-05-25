@@ -73,6 +73,7 @@ namespace sunaba::ui {
             "isVisibleInTree", &TreeItem::isVisibleInTree,
             "moveAfter", &TreeItem::moveAfter,
             "moveBefore", &TreeItem::moveBefore,
+            "propagateCheck", &TreeItem::propagateCheck,
         );
     }
 }
