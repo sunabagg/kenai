@@ -91,6 +91,7 @@ namespace sunaba::ui {
             "setCustomFont", &TreeItem::setCustomFont,
             "setCustomFontSize", &TreeItem::setCustomFontSize,
             "setEditMultiline", &TreeItem::setEditMultiline,
+            "setEditable", &TreeItem::setEditable,
         );
     }
 }
