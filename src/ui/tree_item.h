@@ -107,6 +107,10 @@ namespace sunaba::ui {
             sunaba::core::Texture2D* getButton(int column, int idx) const {
                 return new sunaba::core::Texture2D(tree_item->get_button(column, idx).ptr());
             }
+
+            int getButtonById(int column, int id) const {
+                return tree_item->get_button_by_id(column, id);
+            }
     };
 }
 
