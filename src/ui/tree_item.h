@@ -233,6 +233,10 @@ namespace sunaba::ui {
             TreeItem* getPrevVisible() {
                 return new TreeItem(tree_item->get_prev_visible());
             }
+
+            float getRange(int column) const {
+                return tree_item->get_range(column);
+            }
     };
 }
 
