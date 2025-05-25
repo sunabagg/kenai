@@ -12,6 +12,7 @@ namespace sunaba::ui {
             "addButton", &TreeItem::addButton,
             "addChild", &TreeItem::addChild,
             "clearButtons", &TreeItem::clearButtons,
+            "clearCustomBgColor", &TreeItem::clearCustomBgColor,
         );
     }
 }
