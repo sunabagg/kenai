@@ -89,7 +89,7 @@ namespace sunaba::ui {
             }
 
             void setExpandMode(int p_expand_mode) {
-                texture_rect->set_expand_mode(static_cast<TextureRect::ExpandMode>(p_expand_mode));
+                texture_rect->set_expand_mode(static_cast<TextureRectNode::ExpandMode>(p_expand_mode));
             }
     };
 }
