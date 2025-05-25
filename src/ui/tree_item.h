@@ -457,6 +457,10 @@ namespace sunaba::ui {
             void setStructuredTextBidiOverrideOptions(int column, const Array& args) {
                 tree_item->set_structured_text_bidi_override_options(column, args);
             }
+
+            void setSuffix(int column, const std::string& text) {
+                tree_item->set_suffix(column, text.c_str());
+            }
     };
 }
 
