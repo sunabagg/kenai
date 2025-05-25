@@ -180,6 +180,10 @@ namespace sunaba::ui {
             bool getHideRoot() const {
                 return tree->is_root_hidden();
             }
+
+            void setHideRoot(bool enable) {
+                tree->set_hide_root(enable);
+            }
     };
 }
 
