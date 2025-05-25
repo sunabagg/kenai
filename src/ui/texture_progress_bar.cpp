@@ -146,6 +146,10 @@ namespace sunaba::ui {
             "tintUnder", sol::property(&TextureProgressBar::getTintUnder, &TextureProgressBar::setTintUnder),
             "getStretchMargin", &TextureProgressBar::getStretchMargin,
             "setStretchMargin", &TextureProgressBar::setStretchMargin,
+            "cast", [](Element* element) {
+                TextureProgressBarNode* node = Object::cast_to<TextureProgressBarNode>(element->getNode());
+                return new TextureProgressBar(node);
+            }
         );
     }
 

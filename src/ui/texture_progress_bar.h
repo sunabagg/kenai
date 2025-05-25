@@ -236,11 +236,11 @@ namespace sunaba::ui {
             }
 
             int getStretchMargin(int side) {
-                return proxy->get_stretch_margin(static_cast<ControlNode::Side>(side));
+                return proxy->get_stretch_margin(static_cast<Side>(side));
             }
 
             void setStretchMargin(int side, int value) {
-                proxy->set_stretch_margin(static_cast<ControlNode::Side>(side), value);
+                proxy->set_stretch_margin(static_cast<Side>(side), value);
             }
     };
 }
