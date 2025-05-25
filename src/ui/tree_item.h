@@ -469,6 +469,10 @@ namespace sunaba::ui {
             void setTextAlignment(int column, int alignment) {
                 tree_item->set_text_alignment(column, static_cast<HorizontalAlignment>(alignment));
             }
+
+            void setTextDirection(int column, int direction) {
+                tree_item->set_text_direction(column, static_cast<Control::TextDirection>(direction));
+            }
     };
 }
 
