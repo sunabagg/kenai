@@ -365,6 +365,10 @@ namespace sunaba::ui {
             void setCellMode(int column, int mode) {
                 tree_item->set_cell_mode(column, static_cast<GodotTreeItem::TreeCellMode>(mode));
             }
+
+            void setChecked(int column, bool checked) {
+                tree_item->set_checked(column, checked);
+            }
     };
 }
 
