@@ -119,6 +119,10 @@ namespace sunaba::ui {
             int getButtonCount(int column) const {
                 return tree_item->get_button_count(column);
             }
+
+            int getButtonId(int column, int idx) const {
+                return tree_item->get_button_id(column, idx);
+            }
     };
 }
 
