@@ -90,6 +90,7 @@ namespace sunaba::ui {
             "setCustomColor", &TreeItem::setCustomColor,
             "setCustomFont", &TreeItem::setCustomFont,
             "setCustomFontSize", &TreeItem::setCustomFontSize,
+            "setEditMultiline", &TreeItem::setEditMultiline,
         );
     }
 }
