@@ -22,6 +22,7 @@ namespace sunaba::ui {
             "getButton", &TreeItem::getButton,
             "getButtonById", &TreeItem::getButtonById,
             "getButtonColor", &TreeItem::getButtonColor,
+            "getButtonCount", &TreeItem::getButtonCount,
         );
     }
 }
