@@ -357,6 +357,10 @@ namespace sunaba::ui {
             void setButtonDisabled(int column, int idx, bool disabled) {
                 tree_item->set_button_disabled(column, idx, disabled);
             }
+
+            void setButtonTooltipText(int column, int idx, const std::string& text) {
+                tree_item->set_button_tooltip_text(column, idx, text.c_str());
+            }
     };
 }
 
