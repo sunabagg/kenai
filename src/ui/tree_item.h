@@ -131,6 +131,10 @@ namespace sunaba::ui {
             int getCellMode(int column) const {
                 return tree_item->get_cell_mode(column);
             }
+
+            TreeItem* getChild(int index) const {
+                return new TreeItem(tree_item->get_child(index));
+            }
     };
 }
 
