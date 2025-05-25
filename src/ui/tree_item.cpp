@@ -1,6 +1,11 @@
 #include "tree_item.h"
+#include "tree.h"
 
 namespace sunaba::ui {
+    Tree* TreeItem::getTree() const {
+        return new Tree(tree_item->get_tree());
+    }
+
     void bindTreeItem(sol::state& lua) {
         lua.new_usertype<TreeItem>("TreeItem",
             sol::constructors<TreeItem()>(),
