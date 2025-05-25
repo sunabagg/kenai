@@ -66,6 +66,7 @@ namespace sunaba::ui {
             "isChecked", &TreeItem::isChecked,
             "isCustomSetAsButton", &TreeItem::isCustomSetAsButton,
             "isEditMultiline", &TreeItem::isEditMultiline,
+            "isEditable", &TreeItem::isEditable,
         );
     }
 }
