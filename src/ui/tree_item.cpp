@@ -77,6 +77,7 @@ namespace sunaba::ui {
             "removeChild", &TreeItem::removeChild,
             "select", &TreeItem::select,
             "setAutoTranslateMode", &TreeItem::setAutoTranslateMode,
+            "setAutowrapMode", &TreeItem::setAutowrapMode,
         );
     }
 }
