@@ -321,6 +321,10 @@ namespace sunaba::ui {
             void moveAfter(TreeItem* item) {
                 tree_item->move_after(item->getTreeItem());
             }
+
+            void moveBefore(TreeItem* item) {
+                tree_item->move_before(item->getTreeItem());
+            }
     };
 }
 
