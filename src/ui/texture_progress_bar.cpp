@@ -133,6 +133,7 @@ namespace sunaba::ui {
             "radialFillDegrees", sol::property(&TextureProgressBar::getRadialFillDegrees, &TextureProgressBar::setRadialFillDegrees),
             "radialInitialAngle", sol::property(&TextureProgressBar::getRadialInitialAngle, &TextureProgressBar::setRadialInitialAngle),
             "sizeFlagsVertical", sol::property(&TextureProgressBar::getSizeFlagsVertical, &TextureProgressBar::setSizeFlagsVertical),
+            "step", sol::property(&TextureProgressBar::getStep, &TextureProgressBar::setStep),
         );
     }
 
