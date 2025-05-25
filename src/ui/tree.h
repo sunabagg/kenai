@@ -176,6 +176,10 @@ namespace sunaba::ui {
             void setHideFolding(bool hide) {
                 tree->set_hide_folding(hide);
             }
+
+            bool getHideRoot() const {
+                return tree->is_root_hidden();
+            }
     };
 }
 
