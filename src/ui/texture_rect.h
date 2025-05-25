@@ -83,6 +83,10 @@ namespace sunaba::ui {
                 p_texture_rect->element = this;
                 setControl(p_texture_rect);
             }
+
+            int getExpandMode() const {
+                return texture_rect->get_expand_mode();
+            }
     };
 }
 
