@@ -10,6 +10,7 @@ namespace sunaba::ui {
             "disableFolding", sol::property(&TreeItem::getDisableFolding, &TreeItem::setDisableFolding),
             "visible", sol::property(&TreeItem::getVisible, &TreeItem::setVisible),
             "addButton", &TreeItem::addButton,
+            "addChild", &TreeItem::addChild,
         );
     }
 }
