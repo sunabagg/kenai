@@ -145,6 +145,7 @@ namespace sunaba::ui {
             "tintProgress", sol::property(&TextureProgressBar::getTintProgress, &TextureProgressBar::setTintProgress),
             "tintUnder", sol::property(&TextureProgressBar::getTintUnder, &TextureProgressBar::setTintUnder),
             "getStretchMargin", &TextureProgressBar::getStretchMargin,
+            "setStretchMargin", &TextureProgressBar::setStretchMargin,
         );
     }
 
