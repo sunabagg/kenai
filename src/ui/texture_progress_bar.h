@@ -190,6 +190,10 @@ namespace sunaba::ui {
             sunaba::core::Texture2D* getTextureProgress() {
                 return new sunaba::core::Texture2D(proxy->get_progress_texture().ptr());
             }
+
+            void setTextureProgress(sunaba::core::Texture2D* texture) {
+                proxy->set_progress_texture(texture->getTexture2D());
+            }
     };
 }
 
