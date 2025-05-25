@@ -369,6 +369,10 @@ namespace sunaba::ui {
             void setChecked(int column, bool checked) {
                 tree_item->set_checked(column, checked);
             }
+
+            void setCollapsedRecursive(bool enable) {
+                tree_item->set_collapsed_recursive(enable);
+            }
     };
 }
 
