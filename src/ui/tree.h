@@ -120,6 +120,10 @@ namespace sunaba::ui {
             void setAutoTooltip(bool enable) {
                 tree->set_auto_tooltip(enable);
             }
+
+            bool getClipContents() const {
+                return tree->is_clipping_contents();
+            }
     };
 }
 
