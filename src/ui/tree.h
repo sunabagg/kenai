@@ -140,6 +140,10 @@ namespace sunaba::ui {
             int getColumns() const {
                 return tree->get_columns();
             }
+
+            void setColumns(int amount) {
+                tree->set_columns(amount);
+            }
     };
 }
 
