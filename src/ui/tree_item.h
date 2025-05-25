@@ -42,6 +42,10 @@ namespace sunaba::ui {
             bool getCollapsed() const {
                 return tree_item->is_collapsed();
             }
+
+            void setCollapsed(bool collapsed) {
+                tree_item->set_collapsed(collapsed);
+            }
     };
 }
 
