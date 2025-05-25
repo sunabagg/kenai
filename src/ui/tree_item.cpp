@@ -99,6 +99,7 @@ namespace sunaba::ui {
             "setIconOverlay", &TreeItem::setIconOverlay,
             "setIconRegion", &TreeItem::setIconRegion,
             "setIndeterminate", &TreeItem::setIndeterminate,
+            "setLanguage", &TreeItem::setLanguage,
         );
     }
 }
