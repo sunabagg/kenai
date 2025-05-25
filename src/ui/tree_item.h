@@ -54,6 +54,10 @@ namespace sunaba::ui {
             bool getDisableFolding() const {
                 return tree_item->is_folding_disabled();
             }
+
+            void setDisableFolding(bool disable) {
+                tree_item->set_folding_disabled(disable);
+            }
     };
 }
 
