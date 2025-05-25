@@ -128,6 +128,10 @@ namespace sunaba::ui {
             void setClipContents(bool enabled) {
                 tree->set_clip_contents(enabled);
             }
+
+            bool getColumnTitlesVisible() const {
+                return tree->are_column_titles_visible();
+            }
     };
 }
 
