@@ -108,6 +108,10 @@ namespace sunaba::ui {
             bool getAllowSearch() const {
                 return tree->get_allow_search();
             }
+
+            void setAllowSearch(bool allow) {
+                tree->set_allow_search(allow);
+            }
     };
 }
 
