@@ -205,6 +205,10 @@ namespace sunaba::ui {
             Variant getMetadata(int column) const {
                 return tree_item->get_metadata(column);
             }
+
+            TreeItem* getNext() {
+                return new TreeItem(tree_item->get_next());
+            }
     };
 }
 
