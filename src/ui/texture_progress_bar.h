@@ -141,6 +141,10 @@ namespace sunaba::ui {
             float getStep() const {
                 return proxy->get_step();
             }
+
+            void setStep(float value) {
+                proxy->set_step(value);
+            }
     };
 }
 
