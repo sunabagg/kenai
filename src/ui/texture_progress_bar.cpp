@@ -130,6 +130,7 @@ namespace sunaba::ui {
             "mouseFilter", sol::property(&TextureProgressBar::getMouseFilter, &TextureProgressBar::setMouseFilter),
             "ninePatchStretch", sol::property(&TextureProgressBar::getNinePatchStretch, &TextureProgressBar::setNinePatchStretch),
             "radialCenterOffset", sol::property(&TextureProgressBar::getRadialCenterOffset, &TextureProgressBar::setRadialCenterOffset),
+            "radialFillDegrees", sol::property(&TextureProgressBar::getRadialFillDegrees, &TextureProgressBar::setRadialFillDegrees),
         );
     }
 
