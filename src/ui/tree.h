@@ -148,6 +148,14 @@ namespace sunaba::ui {
             int getDropModeFlags() const {
                 return tree->get_drop_mode_flags();
             }
+
+            void setDropModeFlags(int flags) {
+                tree->set_drop_mode_flags(flags);
+            }
+
+            bool getEnableRecursiveFolding() const {
+                return tree->is_recursive_folding_enabled();
+            }
     };
 }
 
