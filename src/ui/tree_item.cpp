@@ -56,6 +56,7 @@ namespace sunaba::ui {
             "getStructuredTextBdidOverrideOptions", &TreeItem::getStructuredTextBidiOverrideOptions,
             "getSuffix", &TreeItem::getSuffix,
             "getText", &TreeItem::getText,
+            "getTextAlignment", &TreeItem::getTextAlignment,
         );
     }
 }
