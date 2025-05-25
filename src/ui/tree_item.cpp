@@ -20,6 +20,7 @@ namespace sunaba::ui {
             "getAutoTranslateMode", &TreeItem::getAutoTranslateMode,
             "getAutowrapMode", &TreeItem::getAutowrapMode,
             "getButton", &TreeItem::getButton,
+            "getButtonById", &TreeItem::getButtonById,
         );
     }
 }
