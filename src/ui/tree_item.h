@@ -277,6 +277,10 @@ namespace sunaba::ui {
             }
 
             Tree* getTree() const;
+
+            bool isAnyCollapsed() const {
+                return tree_item->is_any_collapsed();
+            }
     };
 }
 
