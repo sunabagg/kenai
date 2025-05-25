@@ -131,6 +131,7 @@ namespace sunaba::ui {
             "ninePatchStretch", sol::property(&TextureProgressBar::getNinePatchStretch, &TextureProgressBar::setNinePatchStretch),
             "radialCenterOffset", sol::property(&TextureProgressBar::getRadialCenterOffset, &TextureProgressBar::setRadialCenterOffset),
             "radialFillDegrees", sol::property(&TextureProgressBar::getRadialFillDegrees, &TextureProgressBar::setRadialFillDegrees),
+            "radialInitialAngle", sol::property(&TextureProgressBar::getRadialInitialAngle, &TextureProgressBar::setRadialInitialAngle),
         );
     }
 
