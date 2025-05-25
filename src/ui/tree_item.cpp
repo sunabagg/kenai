@@ -12,6 +12,13 @@
 using namespace godot;
 using namespace sunaba::core;
 
+namespace sunaba::ui {
+    void bindTreeItem(sol::state& lua);
+
+    class TreeItem : public BaseObject {
+        
+    };
+}
 
 
 #endif // TREE_ITEM_H
