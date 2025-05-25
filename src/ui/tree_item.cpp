@@ -61,6 +61,7 @@ namespace sunaba::ui {
             "getTextOverrunBehavior", &TreeItem::getTextOverrunBehavior,
             "getTooltipText", &TreeItem::getTooltipText,
             "getTree", &TreeItem::getTree,
+            "isAnyCollapsed", &TreeItem::isAnyCollapsed,
         );
     }
 }
