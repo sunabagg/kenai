@@ -101,7 +101,8 @@ namespace sunaba::ui {
             "setIndeterminate", &TreeItem::setIndeterminate,
             "setLanguage", &TreeItem::setLanguage,
             "setMetadata", &TreeItem::setMetadata,
-            "setRange", &TreeItem::setRange
+            "setRange", &TreeItem::setRange,
+            "setRangeConfig", &TreeItem::setRangeConfig,
         );
     }
 }
