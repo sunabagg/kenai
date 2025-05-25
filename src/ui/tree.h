@@ -144,6 +144,10 @@ namespace sunaba::ui {
             void setColumns(int amount) {
                 tree->set_columns(amount);
             }
+
+            int getDropModeFlags() const {
+                return tree->get_drop_mode_flags();
+            }
     };
 }
 
