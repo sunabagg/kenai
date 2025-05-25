@@ -276,7 +276,7 @@ namespace sunaba::ui {
                 return tree_item->get_tooltip_text(column).utf8().get_data();
             }
 
-
+            Tree* getTree() const;
     };
 }
 
