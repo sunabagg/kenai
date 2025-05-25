@@ -166,7 +166,7 @@ namespace sunaba::ui {
             }
 
             void setFocusMode(int mode) {
-                tree->set_focus_mode(static_cast<Control::FocusMode>(mode));
+                tree->set_focus_mode(static_cast<ControlNode::FocusMode>(mode));
             }
     };
 }
