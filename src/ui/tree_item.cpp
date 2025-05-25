@@ -52,6 +52,7 @@ namespace sunaba::ui {
             "getPrevVisible", &TreeItem::getPrevVisible,
             "getRange", &TreeItem::getRange,
             "getRangeConfig", &TreeItem::getRangeConfig,
+            "getStructuredTextBidiOverride", &TreeItem::getStructuredTextBidiOverride,
         );
     }
 }
