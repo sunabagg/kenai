@@ -9,6 +9,7 @@ namespace sunaba::ui {
             "customMinimumHeight", sol::property(&TreeItem::getCustomMinimumHeight, &TreeItem::setCustomMinimumHeight),
             "disableFolding", sol::property(&TreeItem::getDisableFolding, &TreeItem::setDisableFolding),
             "visible", sol::property(&TreeItem::getVisible, &TreeItem::setVisible),
+            "addButton", &TreeItem::addButton,
         );
     }
 }
