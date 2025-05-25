@@ -17,6 +17,7 @@ namespace sunaba::ui {
             "createChild", &TreeItem::createChild,
             "deselect", &TreeItem::deselect,
             "eraseButton", &TreeItem::eraseButton,
+            "getAutoTranslateMode", &TreeItem::getAutoTranslateMode,
         );
     }
 }
