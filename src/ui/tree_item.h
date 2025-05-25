@@ -317,6 +317,10 @@ namespace sunaba::ui {
             bool isVisibleInTree() const {
                 return tree_item->is_visible_in_tree();
             }
+
+            void moveAfter(TreeItem* item) {
+                tree_item->move_after(item->getTreeItem());
+            }
     };
 }
 
