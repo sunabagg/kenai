@@ -15,6 +15,7 @@ namespace sunaba::ui {
             "clearCustomBgColor", &TreeItem::clearCustomBgColor,
             "clearCustomColor", &TreeItem::clearCustomColor,
             "createChild", &TreeItem::createChild,
+            "deselect", &TreeItem::deselect,
         );
     }
 }
