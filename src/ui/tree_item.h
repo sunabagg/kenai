@@ -221,6 +221,10 @@ namespace sunaba::ui {
             TreeItem* getParent() const {
                 return new TreeItem(tree_item->get_parent());
             }
+
+            TreeItem* getPrev() {
+                return new TreeItem(tree_item->get_prev());
+            }
     };
 }
 
