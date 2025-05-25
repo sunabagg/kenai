@@ -128,6 +128,7 @@ namespace sunaba::ui {
             sol::base_classes, sol::bases<BaseObject, Element, sunaba::core::CanvasItem, Control, Range>(),
             "fillMode", sol::property(&TextureProgressBar::getFillMode, &TextureProgressBar::setFillMode),
             "mouseFilter", sol::property(&TextureProgressBar::getMouseFilter, &TextureProgressBar::setMouseFilter),
+            "ninPatchStretch", sol::property(&TextureProgressBar::getNinePatchStretch, &TextureProgressBar::setNinePatchStretch),
         );
     }
 
