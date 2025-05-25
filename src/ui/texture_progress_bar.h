@@ -8,6 +8,7 @@
 #define TextureProgressBarNode godot::TextureProgressBar
 
 #include "range.h"
+#include "../core/texture2d.h"
 
 using namespace godot;
 using namespace sunaba::core;
@@ -177,6 +178,7 @@ namespace sunaba::ui {
             void setStretchMarginTop(int value) {
                 proxy->set_stretch_margin(Side::SIDE_TOP, value);
             }
+            
     };
 }
 
