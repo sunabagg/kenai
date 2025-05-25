@@ -67,6 +67,10 @@ namespace sunaba::ui {
             void setVisible(bool visible) {
                 tree_item->set_visible(visible);
             }
+
+            void addButton(int column, sunaba::core::Texture2D* button, int id = -1, bool disabled = false, std::string toolTipText = "&quot;&quot;") {
+                tree_item->add_button(column, Ref<godot::Texture2D>(button->getTexture2D()), id, disabled, toolTipText.c_str());
+            }
     };
 }
 
