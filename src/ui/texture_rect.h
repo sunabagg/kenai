@@ -111,6 +111,10 @@ namespace sunaba::ui {
             int getMouseFilter() const {
                 return texture_rect->get_mouse_filter();
             }
+
+            void setMouseFilter(int p_filter) {
+                texture_rect->set_mouse_filter(static_cast<TextureRectNode::MouseFilter>(p_filter));
+            }
     };
 }
 
