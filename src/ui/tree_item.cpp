@@ -110,6 +110,7 @@ namespace sunaba::ui {
             "setText", &TreeItem::setText,
             "setTextAlignment", &TreeItem::setTextAlignment,
             "setTextDirection", &TreeItem::setTextDirection,
+            "setTextOverrunBehavior", &TreeItem::setTextOverrunBehavior,
         );
     }
 }
