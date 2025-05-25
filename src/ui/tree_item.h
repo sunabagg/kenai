@@ -201,6 +201,10 @@ namespace sunaba::ui {
             std::string getLanguage(int column) const {
                 return tree_item->get_language(column).utf8().get_data();
             }
+
+            Variant getMetadata(int column) const {
+                return tree_item->get_metadata(column);
+            }
     };
 }
 
