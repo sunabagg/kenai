@@ -128,6 +128,7 @@ namespace sunaba::ui {
             "texture", sol::property(&TextureRect::getTexture, &TextureRect::setTexture),
             "cast", [](Element* element) {
                 TextureRectNode* node = Object::cast_to<TextureRectNode>(element->getNode());
+                return new TextureRect(node);
             }
         );
     }
