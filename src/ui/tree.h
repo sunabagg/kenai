@@ -172,6 +172,10 @@ namespace sunaba::ui {
             bool getHideFolding() const {
                 return tree->is_folding_hidden();
             }
+
+            void setHideFolding(bool hide) {
+                tree->set_hide_folding(hide);
+            }
     };
 }
 
