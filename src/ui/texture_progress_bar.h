@@ -182,6 +182,10 @@ namespace sunaba::ui {
             sunaba::core::Texture2D* getTextureOver() {
                 return new sunaba::core::Texture2D(proxy->get_over_texture().ptr());
             }
+
+            void setTextureOver(sunaba::core::Texture2D* texture) {
+                proxy->set_over_texture(texture->getTexture2D());
+            }
     };
 }
 
