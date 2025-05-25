@@ -11,6 +11,7 @@ namespace sunaba::ui {
             "visible", sol::property(&TreeItem::getVisible, &TreeItem::setVisible),
             "addButton", &TreeItem::addButton,
             "addChild", &TreeItem::addChild,
+            "clearButtons", &TreeItem::clearButtons,
         );
     }
 }
