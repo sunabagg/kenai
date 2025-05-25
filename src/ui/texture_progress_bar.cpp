@@ -122,4 +122,11 @@ namespace sunaba::ui {
         }
     }
 
+    void bindTextureProgressBar(sol::state& lua) {
+        lua.new_usertype<TextureProgressBar>("TextureProgressBar",
+            sol::constructors<TextureProgressBar()>(),
+            sol::base_classes, sol::bases<BaseObject, Element, sunaba::core::CanvasItem, Control, Range>(),
+        );
+    }
+
 } // namespace sunaba::ui
