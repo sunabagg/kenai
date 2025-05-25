@@ -269,6 +269,10 @@ namespace sunaba::ui {
             int getTextOverrunBehavior(int column) const {
                 return tree_item->get_text_overrun_behavior(column);
             }
+
+            std::string getTooltipText(int column) const {
+                return tree_item->get_tooltip_text(column).utf8().get_data();
+            }
     };
 }
 
