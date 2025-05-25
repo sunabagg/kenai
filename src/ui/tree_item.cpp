@@ -62,6 +62,7 @@ namespace sunaba::ui {
             "getTooltipText", &TreeItem::getTooltipText,
             "getTree", &TreeItem::getTree,
             "isAnyCollapsed", &TreeItem::isAnyCollapsed,
+            "isButtonDisabled", &TreeItem::isButtonDisabled,
         );
     }
 }
