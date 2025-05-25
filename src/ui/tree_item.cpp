@@ -80,6 +80,7 @@ namespace sunaba::ui {
             "setAutowrapMode", &TreeItem::setAutowrapMode,
             "setButton", &TreeItem::setButton,
             "setButtonColor", &TreeItem::setButtonColor,
+            "setButtonDisabled", &TreeItem::setButtonDisabled,
         );
     }
 }
