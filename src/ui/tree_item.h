@@ -237,6 +237,10 @@ namespace sunaba::ui {
             float getRange(int column) const {
                 return tree_item->get_range(column);
             }
+
+            Dictionary getRangeConfig(int column) const {
+                return tree_item->get_range_config(column);
+            }
     };
 }
 
