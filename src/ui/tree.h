@@ -204,6 +204,10 @@ namespace sunaba::ui {
             int getSelectMode() const {
                 return tree->get_select_mode();
             }
+
+            void setSelectMode(int mode) {
+                tree->set_select_mode(static_cast<GodotTree::SelectMode>(mode));
+            }
     };
 }
 
