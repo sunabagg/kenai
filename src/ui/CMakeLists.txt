@@ -113,6 +113,8 @@ target_sources(${PROJECT_NAME} PRIVATE
         texture_button.cpp
         texture_progress_bar.h
         texture_progress_bar.cpp
+        texture_rect.h
+        texture_rect.cpp
 )
 
 target_include_directories( ${PROJECT_NAME}
