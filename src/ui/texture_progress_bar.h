@@ -137,6 +137,10 @@ namespace sunaba::ui {
             void setSizeFlagsVertical(int flags) {
                 proxy->set_v_size_flags(static_cast<ControlNode::SizeFlags>(flags));
             }
+
+            float getStep() const {
+                return proxy->get_step();
+            }
     };
 }
 
