@@ -99,6 +99,10 @@ namespace sunaba::ui {
             void eraseButton(int column, int idx) {
                 tree_item->erase_button(column, idx);
             }
+
+            int getAutoTranslateMode(int column) const {
+                return tree_item->get_auto_translate_mode(column);
+            }
     };
 }
 
