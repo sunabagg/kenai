@@ -55,6 +55,10 @@ namespace sunaba::ui {
                 return tree_item->get_custom_minimum_height();
             }
 
+            void setCustomMinimumHeight(int height) {
+                tree_item->set_custom_minimum_height(height);
+            }
+
             bool getDisableFolding() const {
                 return tree_item->is_folding_disabled();
             }
