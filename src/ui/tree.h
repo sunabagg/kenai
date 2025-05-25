@@ -196,6 +196,10 @@ namespace sunaba::ui {
             bool getScrollVerticalEnabled() const {
                 return tree->is_v_scroll_enabled();
             }
+
+            void setScrollVerticalEnabled(bool enable) {
+                tree->set_v_scroll_enabled(enable);
+            }
     };
 }
 
