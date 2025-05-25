@@ -17,6 +17,8 @@ using namespace sunaba::core;
 namespace sunaba::ui {
     void bindTreeItem(sol::state& lua);
 
+    class Tree;
+
     class TreeItem : public BaseObject {
         private:
             GodotTreeItem* tree_item = nullptr; // Pointer to the TreeItem instance
@@ -273,6 +275,8 @@ namespace sunaba::ui {
             std::string getTooltipText(int column) const {
                 return tree_item->get_tooltip_text(column).utf8().get_data();
             }
+
+
     };
 }
 
