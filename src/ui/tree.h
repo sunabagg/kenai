@@ -200,6 +200,10 @@ namespace sunaba::ui {
             void setScrollVerticalEnabled(bool enable) {
                 tree->set_v_scroll_enabled(enable);
             }
+
+            int getSelectMode() const {
+                return tree->get_select_mode();
+            }
     };
 }
 
