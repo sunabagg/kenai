@@ -353,6 +353,10 @@ namespace sunaba::ui {
             void setButtonColor(int column, int idx, const Color& color) {
                 tree_item->set_button_color(column, idx, color);
             }
+
+            void setButtonDisabled(int column, int idx, bool disabled) {
+                tree_item->set_button_disabled(column, idx, disabled);
+            }
     };
 }
 
