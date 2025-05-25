@@ -381,6 +381,10 @@ namespace sunaba::ui {
             void setCustomBgColor(int column, const Color& color, bool justOutline = false) {
                 tree_item->set_custom_bg_color(column, color, justOutline);
             }
+
+            void setCustomColor(int column, const Color& color) {
+                tree_item->set_custom_color(column, color);
+            }
     };
 }
 
