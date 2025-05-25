@@ -79,6 +79,7 @@ namespace sunaba::ui {
             "setAutoTranslateMode", &TreeItem::setAutoTranslateMode,
             "setAutowrapMode", &TreeItem::setAutowrapMode,
             "setButton", &TreeItem::setButton,
+            "setButtonColor", &TreeItem::setButtonColor,
         );
     }
 }
