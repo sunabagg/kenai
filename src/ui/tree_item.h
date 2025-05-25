@@ -333,6 +333,10 @@ namespace sunaba::ui {
             void removeChild(TreeItem* child) {
                 tree_item->remove_child(child->getTreeItem());
             }
+
+            void select(int column) {
+                tree_item->select(column);
+            }
     };
 }
 
