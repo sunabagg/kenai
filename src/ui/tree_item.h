@@ -181,6 +181,10 @@ namespace sunaba::ui {
             int getIconMaxWidth(int column) const {
                 return tree_item->get_icon_max_width(column);
             }
+
+            Color getIconModulate(int column) const {
+                return tree_item->get_icon_modulate(column);
+            }
     };
 }
 
