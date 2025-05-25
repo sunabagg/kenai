@@ -230,6 +230,10 @@ namespace sunaba::ui {
             Color getTintProgress() const {
                 return proxy->get_tint_progress();
             }
+
+            void setTintProgress(const Color &tint) {
+                proxy->set_tint_progress(tint);
+            }
     };
 }
 
