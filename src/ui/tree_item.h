@@ -249,6 +249,10 @@ namespace sunaba::ui {
             Array getStructuredTextBidiOverrideOptions(int column) const {
                 return tree_item->get_structured_text_bidi_override_options(column);
             }
+
+            std::string getSuffix(int column) const {
+                return tree_item->get_suffix(column).utf8().get_data();
+            }
     };
 }
 
