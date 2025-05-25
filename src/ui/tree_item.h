@@ -135,6 +135,10 @@ namespace sunaba::ui {
             TreeItem* getChild(int index) const {
                 return new TreeItem(tree_item->get_child(index));
             }
+
+            int getChildCount() const {
+                return tree_item->get_child_count();
+            }
     };
 }
 
