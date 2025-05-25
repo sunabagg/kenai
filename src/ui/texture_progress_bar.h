@@ -214,6 +214,10 @@ namespace sunaba::ui {
             sunaba::core::Texture2D* getTextureUnder() {
                 return new sunaba::core::Texture2D(proxy->get_under_texture().ptr());
             }
+
+            void setTextureUnder(sunaba::core::Texture2D* texture) {
+                proxy->set_under_texture(texture->getTexture2D());
+            }
     };
 }
 
