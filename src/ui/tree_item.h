@@ -46,6 +46,10 @@ namespace sunaba::ui {
             void setCollapsed(bool collapsed) {
                 tree_item->set_collapsed(collapsed);
             }
+
+            int getCustomMinimumHeight() const {
+                return tree_item->get_custom_minimum_height();
+            }
     };
 }
 
