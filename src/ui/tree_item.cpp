@@ -100,6 +100,7 @@ namespace sunaba::ui {
             "setIconRegion", &TreeItem::setIconRegion,
             "setIndeterminate", &TreeItem::setIndeterminate,
             "setLanguage", &TreeItem::setLanguage,
+            "setMetadata", &TreeItem::setMetadata,
         );
     }
 }
