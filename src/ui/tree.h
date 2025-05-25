@@ -88,6 +88,10 @@ namespace sunaba::ui {
                 connectSignals();
                 setControl(t);
             }
+
+            bool getAllowReselect() const {
+                return tree->get_allow_reselect();
+            }
     };
 }
 
