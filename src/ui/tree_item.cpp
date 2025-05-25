@@ -107,6 +107,7 @@ namespace sunaba::ui {
             "setStructuredTextBidiOverride", &TreeItem::setStructuredTextBidiOverride,
             "setStructuredTextBidiOverrideOptions", &TreeItem::setStructuredTextBidiOverrideOptions,
             "setSuffix", &TreeItem::setSuffix,
+            "setText", &TreeItem::setText,
         );
     }
 }
