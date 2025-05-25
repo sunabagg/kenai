@@ -119,6 +119,10 @@ namespace sunaba::ui {
             int getStretchMode() const {
                 return texture_rect->get_stretch_mode();
             }
+
+            void setStretchMode(int p_stretch_mode) {
+                texture_rect->set_stretch_mode(static_cast<TextureRectNode::StretchMode>(p_stretch_mode));
+            }
     };
 }
 
