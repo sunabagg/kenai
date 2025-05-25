@@ -309,6 +309,10 @@ namespace sunaba::ui {
             bool isSelectable(int column) const {
                 return tree_item->is_selectable(column);
             }
+
+            bool isSelected(int column) const {
+                return tree_item->is_selected(column);
+            }
     };
 }
 
