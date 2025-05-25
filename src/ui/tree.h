@@ -112,6 +112,10 @@ namespace sunaba::ui {
             void setAllowSearch(bool allow) {
                 tree->set_allow_search(allow);
             }
+
+            bool getAutoTooltip() const {
+                return tree->is_auto_tooltip_enabled();
+            }
     };
 }
 
