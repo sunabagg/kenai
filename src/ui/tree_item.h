@@ -461,6 +461,10 @@ namespace sunaba::ui {
             void setSuffix(int column, const std::string& text) {
                 tree_item->set_suffix(column, text.c_str());
             }
+
+            void setText(int column, const std::string& text) {
+                tree_item->set_text(column, text.c_str());
+            }
     };
 }
 
