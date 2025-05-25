@@ -477,6 +477,10 @@ namespace sunaba::ui {
             void setTextOverrunBehavior(int column, int behavior) {
                 tree_item->set_text_overrun_behavior(column, static_cast<TextServer::OverrunBehavior>(behavior));
             }
+
+            void setTooltipText(int column, const std::string& text) {
+                tree_item->set_tooltip_text(column, text.c_str());
+            }
     };
 }
 
