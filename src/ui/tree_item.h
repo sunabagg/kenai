@@ -257,6 +257,10 @@ namespace sunaba::ui {
             std::string getText(int column) const {
                 return tree_item->get_text(column).utf8().get_data();
             }
+
+            int getTextAlignment(int column) const {
+                return tree_item->get_text_alignment(column);
+            }
     };
 }
 
