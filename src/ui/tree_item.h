@@ -8,6 +8,7 @@
 #define GodotTreeItem godot::TreeItem
 
 #include "../core/base_object.h"
+#include "../core/texture2d.h"
 
 using namespace godot;
 using namespace sunaba::core;
