@@ -120,6 +120,7 @@ namespace sunaba::ui {
         lua.new_usertype<TextureRect>("TextureRect",
             sol::constructors<TextureRect()>(),
             sol::base_classes, sol::bases<BaseObject, Element, sunaba::core::CanvasItem, Control>(),
+            "expandMode", sol::property(&TextureRect::getExpandMode, &TextureRect::setExpandMode),
         );
     }
 }
