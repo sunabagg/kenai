@@ -285,6 +285,10 @@ namespace sunaba::ui {
             bool isButtonDisabled(int column, int idx) const {
                 return tree_item->is_button_disabled(column, idx);
             }
+
+            bool isChecked(int column) const {
+                return tree_item->is_checked(column);
+            }
     };
 }
 
