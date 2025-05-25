@@ -45,6 +45,7 @@ namespace sunaba::ui {
             "getMetadata", &TreeItem::getMetadata,
             "getNext", &TreeItem::getNext,
             "getNextInTree", &TreeItem::getNextInTree,
+            "getNextVisible", &TreeItem::getNextVisible,
         );
     }
 }
