@@ -222,6 +222,10 @@ namespace sunaba::ui {
             Color getTintOver() const {
                 return proxy->get_tint_over();
             }
+
+            void setTintOver(const Color &tint) {
+                proxy->set_tint_over(tint);
+            }
     };
 }
 
