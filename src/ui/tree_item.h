@@ -278,8 +278,8 @@ namespace sunaba::ui {
 
             Tree* getTree() const;
 
-            bool isAnyCollapsed() const {
-                return tree_item->is_any_collapsed();
+            bool isAnyCollapsed(bool onlyVisible = false) const {
+                return tree_item->is_any_collapsed(onlyVisible);
             }
 
             bool isButtonDisabled(int column, int idx) const {
