@@ -104,6 +104,10 @@ namespace sunaba::ui {
             void setAllowRmbSelect(bool allow) {
                 tree->set_allow_rmb_select(allow);
             }
+
+            bool getAllowSearch() const {
+                return tree->get_allow_search();
+            }
     };
 }
 
