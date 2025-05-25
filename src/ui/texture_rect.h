@@ -99,6 +99,10 @@ namespace sunaba::ui {
             void setFlipH(bool p_enable) {
                 texture_rect->set_flip_h(p_enable);
             }
+
+            bool getFlipV() const {
+                return texture_rect->is_flipped_v();
+            }
     };
 }
 
