@@ -71,6 +71,7 @@ namespace sunaba::ui {
             "isSelectable", &TreeItem::isSelectable,
             "isSelected", &TreeItem::isSelected,
             "isVisibleInTree", &TreeItem::isVisibleInTree,
+            "moveAfter", &TreeItem::moveAfter,
         );
     }
 }
