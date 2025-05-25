@@ -265,6 +265,10 @@ namespace sunaba::ui {
             int getTextDirection(int column) const {
                 return tree_item->get_text_direction(column);
             }
+
+            int getTextOverrunBehavior(int column) const {
+                return tree_item->get_text_overrun_behavior(column);
+            }
     };
 }
 
