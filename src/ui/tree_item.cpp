@@ -83,6 +83,7 @@ namespace sunaba::ui {
             "setButtonDisabled", &TreeItem::setButtonDisabled,
             "setButtonTooltipText", &TreeItem::setButtonTooltipText,
             "setCellMode", &TreeItem::setCellMode,
+            "setChecked", &TreeItem::setChecked,
         );
     }
 }
