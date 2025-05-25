@@ -38,6 +38,10 @@ namespace sunaba::ui {
             void setTreeItem(GodotTreeItem* item) {
                 tree_item = item;
             }
+
+            bool getCollapsed() const {
+                return tree_item->is_collapsed();
+            }
     };
 }
 
