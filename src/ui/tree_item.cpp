@@ -84,6 +84,7 @@ namespace sunaba::ui {
             "setButtonTooltipText", &TreeItem::setButtonTooltipText,
             "setCellMode", &TreeItem::setCellMode,
             "setChecked", &TreeItem::setChecked,
+            "setCollapsedRecursive", &TreeItem::setCollapsedRecursive,
         );
     }
 }
