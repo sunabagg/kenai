@@ -297,6 +297,10 @@ namespace sunaba::ui {
             bool isEditMultiline(int column) const {
                 return tree_item->is_edit_multiline(column);
             }
+
+            bool isEditable(int column) const {
+                return tree_item->is_editable(column);
+            }
     };
 }
 
