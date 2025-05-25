@@ -63,6 +63,7 @@ namespace sunaba::ui {
             "getTree", &TreeItem::getTree,
             "isAnyCollapsed", &TreeItem::isAnyCollapsed,
             "isButtonDisabled", &TreeItem::isButtonDisabled,
+            "isChecked", &TreeItem::isChecked,
         );
     }
 }
