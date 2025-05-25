@@ -9,6 +9,7 @@
 
 #include "../core/base_object.h"
 #include "../core/texture2d.h"
+#include "../core/font.h"
 
 using namespace godot;
 using namespace sunaba::core;
