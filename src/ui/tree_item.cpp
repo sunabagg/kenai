@@ -36,6 +36,7 @@ namespace sunaba::ui {
             "getExpandRight", &TreeItem::getExpandRight,
             "getFirstChild", &TreeItem::getFirstChild,
             "getIcon", &TreeItem::getIcon,
+            "getIconMaxWidth", &TreeItem::getIconMaxWidth,
         );
     }
 }
