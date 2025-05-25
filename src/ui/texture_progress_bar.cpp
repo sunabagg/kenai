@@ -143,6 +143,7 @@ namespace sunaba::ui {
             "textureUnder", sol::property(&TextureProgressBar::getTextureUnder, &TextureProgressBar::setTextureUnder), 
             "tintOver", sol::property(&TextureProgressBar::getTintOver, &TextureProgressBar::setTintOver),
             "tintProgress", sol::property(&TextureProgressBar::getTintProgress, &TextureProgressBar::setTintProgress),
+            "tintUnder", sol::property(&TextureProgressBar::getTintUnder, &TextureProgressBar::setTintUnder),
         );
     }
 
