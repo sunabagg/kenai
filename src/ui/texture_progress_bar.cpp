@@ -89,4 +89,11 @@ namespace sunaba::ui {
         return Vector2();
     }
 
+    String TextureProgressBarProxy::_get_tooltip(const Vector2 &at_position) const {
+        if (this->element != nullptr) {
+            return this->element->getTooltip(at_position);
+        }
+        return String();
+    }
+
 } // namespace sunaba::ui
