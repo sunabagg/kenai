@@ -349,6 +349,10 @@ namespace sunaba::ui {
             void setButton(int column, int buttonIdx, sunaba::core::Texture2D* button) {
                 tree_item->set_button(column, buttonIdx, Ref<godot::Texture2D>(button->getTexture2D()));
             }
+
+            void setButtonColor(int column, int idx, const Color& color) {
+                tree_item->set_button_color(column, idx, color);
+            }
     };
 }
 
