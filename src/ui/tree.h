@@ -168,6 +168,10 @@ namespace sunaba::ui {
             void setFocusMode(int mode) {
                 tree->set_focus_mode(static_cast<ControlNode::FocusMode>(mode));
             }
+
+            bool getHideFolding() const {
+                return tree->is_folding_hidden();
+            }
     };
 }
 
