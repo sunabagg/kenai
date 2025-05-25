@@ -453,6 +453,10 @@ namespace sunaba::ui {
             void setStructuredTextBidiOverride(int column, int parser) {
                 tree_item->set_structured_text_bidi_override(column, static_cast<TextServer::StructuredTextParser>(parser));
             }
+
+            void setStructuredTextBidiOverrideOptions(int column, const Array& args) {
+                tree_item->set_structured_text_bidi_override_options(column, args);
+            }
     };
 }
 
