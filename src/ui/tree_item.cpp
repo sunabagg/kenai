@@ -19,6 +19,7 @@ namespace sunaba::ui {
             "eraseButton", &TreeItem::eraseButton,
             "getAutoTranslateMode", &TreeItem::getAutoTranslateMode,
             "getAutowrapMode", &TreeItem::getAutowrapMode,
+            "getButton", &TreeItem::getButton,
         );
     }
 }
