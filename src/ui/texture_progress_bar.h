@@ -194,6 +194,10 @@ namespace sunaba::ui {
             void setTextureProgress(sunaba::core::Texture2D* texture) {
                 proxy->set_progress_texture(texture->getTexture2D());
             }
+
+            Vector2 getTextureProgressOffset() const {
+                return proxy->get_texture_progress_offset();
+            }
     };
 }
 
