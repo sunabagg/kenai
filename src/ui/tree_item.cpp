@@ -57,6 +57,7 @@ namespace sunaba::ui {
             "getSuffix", &TreeItem::getSuffix,
             "getText", &TreeItem::getText,
             "getTextAlignment", &TreeItem::getTextAlignment,
+            "getTextDirection", &TreeItem::getTextDirection,
         );
     }
 }
