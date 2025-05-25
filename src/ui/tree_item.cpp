@@ -97,6 +97,7 @@ namespace sunaba::ui {
             "setIconMaxWidth", &TreeItem::setIconMaxWidth,
             "setIconModulate", &TreeItem::setIconModulate,
             "setIconOverlay", &TreeItem::setIconOverlay,
+            "setIconRegion", &TreeItem::setIconRegion,
         );
     }
 }
