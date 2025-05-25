@@ -25,6 +25,7 @@ namespace sunaba::ui {
             "getButtonCount", &TreeItem::getButtonCount,
             "getButtonId", &TreeItem::getButtonId,
             "getButtonTooltipText", &TreeItem::getButtonTooltipText,
+            "getCellMode", &TreeItem::getCellMode,
         );
     }
 }
