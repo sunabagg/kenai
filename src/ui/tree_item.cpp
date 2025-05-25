@@ -86,6 +86,7 @@ namespace sunaba::ui {
             "setChecked", &TreeItem::setChecked,
             "setCollapsedRecursive", &TreeItem::setCollapsedRecursive,
             "setCustomAsButton", &TreeItem::setCustomAsButton,
+            "setCustomBgColor", &TreeItem::setCustomBgColor,
         );
     }
 }
