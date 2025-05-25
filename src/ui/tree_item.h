@@ -433,6 +433,10 @@ namespace sunaba::ui {
             void setLanguage(int column, const std::string& language) {
                 tree_item->set_language(column, language.c_str());
             }
+
+            void setMetadata(int column, const Variant& meta) {
+                tree_item->set_metadata(column, meta);
+            }
     };
 }
 
