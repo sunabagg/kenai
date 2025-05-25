@@ -43,6 +43,7 @@ namespace sunaba::ui {
             "getIndex", &TreeItem::getIndex,
             "getLanguage", &TreeItem::getLanguage,
             "getMetadata", &TreeItem::getMetadata,
+            "getNext", &TreeItem::getNext,
         );
     }
 }
