@@ -103,6 +103,10 @@ namespace sunaba::ui {
             bool getFlipV() const {
                 return texture_rect->is_flipped_v();
             }
+
+            void setFlipV(bool p_enable) {
+                texture_rect->set_flip_v(p_enable);
+            }
     };
 }
 
