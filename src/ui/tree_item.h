@@ -305,6 +305,10 @@ namespace sunaba::ui {
             bool isIndeterminate(int column) const {
                 return tree_item->is_indeterminate(column);
             }
+
+            bool isSelectable(int column) const {
+                return tree_item->is_selectable(column);
+            }
     };
 }
 
