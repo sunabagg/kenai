@@ -109,6 +109,7 @@ namespace sunaba::ui {
             "setSuffix", &TreeItem::setSuffix,
             "setText", &TreeItem::setText,
             "setTextAlignment", &TreeItem::setTextAlignment,
+            "setTextDirection", &TreeItem::setTextDirection,
         );
     }
 }
