@@ -127,6 +127,10 @@ namespace sunaba::ui {
             sunaba::core::Texture2D* getTexture() {
                 return new sunaba::core::Texture2D(texture_rect->get_texture().ptr());
             }
+
+            void setTexture(sunaba::core::Texture2D* texture) {
+                texture_rect->set_texture(texture->getTexture2D());
+            }
     };
 }
 
