@@ -124,6 +124,10 @@ namespace sunaba::ui {
             bool getClipContents() const {
                 return tree->is_clipping_contents();
             }
+
+            void setClipContents(bool enabled) {
+                tree->set_clip_contents(enabled);
+            }
     };
 }
 
