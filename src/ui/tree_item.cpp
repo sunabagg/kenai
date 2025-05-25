@@ -21,6 +21,7 @@ namespace sunaba::ui {
             "getAutowrapMode", &TreeItem::getAutowrapMode,
             "getButton", &TreeItem::getButton,
             "getButtonById", &TreeItem::getButtonById,
+            "getButtonColor", &TreeItem::getButtonColor,
         );
     }
 }
