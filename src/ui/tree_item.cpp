@@ -95,6 +95,7 @@ namespace sunaba::ui {
             "setExpandRight", &TreeItem::setExpandRight,
             "setIcon", &TreeItem::setIcon,
             "setIconMaxWidth", &TreeItem::setIconMaxWidth,
+            "setIconModulate", &TreeItem::setIconModulate,
         );
     }
 }
