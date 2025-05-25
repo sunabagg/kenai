@@ -156,6 +156,10 @@ namespace sunaba::ui {
             bool getEnableRecursiveFolding() const {
                 return tree->is_recursive_folding_enabled();
             }
+
+            void setEnableRecursiveFolding(bool enable) {
+                tree->set_enable_recursive_folding(enable);
+            }
     };
 }
 
