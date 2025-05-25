@@ -401,6 +401,10 @@ namespace sunaba::ui {
             void setEditable(int column, bool editable) {
                 tree_item->set_editable(column, editable);
             }
+
+            void setExpandRight(int column, bool expand) {
+                tree_item->set_expand_right(column, expand);
+            }
     };
 }
 
