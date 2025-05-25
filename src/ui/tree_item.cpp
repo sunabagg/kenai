@@ -98,6 +98,7 @@ namespace sunaba::ui {
             "setIconModulate", &TreeItem::setIconModulate,
             "setIconOverlay", &TreeItem::setIconOverlay,
             "setIconRegion", &TreeItem::setIconRegion,
+            "setIndeterminate", &TreeItem::setIndeterminate,
         );
     }
 }
