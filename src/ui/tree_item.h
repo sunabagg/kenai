@@ -83,6 +83,10 @@ namespace sunaba::ui {
             void clearCustomBgColor(int column) {
                 tree_item->clear_custom_bg_color(column);
             }
+
+            void clearCustomColor(int column) {
+                tree_item->clear_custom_color(column);
+            }
     };
 }
 
