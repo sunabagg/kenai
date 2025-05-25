@@ -91,6 +91,10 @@ namespace sunaba::ui {
             TreeItem* createChild(int index = -1) {
                 return new TreeItem(tree_item->create_child(index));
             }
+
+            void deselect(int column) {
+                tree_item->deselect(column);
+            }
     };
 }
 
