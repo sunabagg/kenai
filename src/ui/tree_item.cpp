@@ -31,6 +31,7 @@ namespace sunaba::ui {
             "getChildren", &TreeItem::getChildren,
             "getCustomBgColor", &TreeItem::getCustomBgColor,
             "getCustomColor", &TreeItem::getCustomColor,
+            "getCustomFont", &TreeItem::getCustomFont,
         );
     }
 }
