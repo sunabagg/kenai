@@ -102,4 +102,11 @@ namespace sunaba::ui {
         }
     }
 
+    bool TextureProgressBarProxy::_has_point(const Vector2 &point) const {
+        if (this->element != nullptr) {
+            return this->element->hasPoint(point);
+        }
+        return false;
+    }
+
 } // namespace sunaba::ui
