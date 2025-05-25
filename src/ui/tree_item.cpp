@@ -89,6 +89,7 @@ namespace sunaba::ui {
             "setCustomBgColor", &TreeItem::setCustomBgColor,
             "setCustomColor", &TreeItem::setCustomColor,
             "setCustomFont", &TreeItem::setCustomFont,
+            "setCustomFontSize", &TreeItem::setCustomFontSize,
         );
     }
 }
