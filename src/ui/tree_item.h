@@ -413,6 +413,10 @@ namespace sunaba::ui {
             void setIconMaxWidth(int column, int width) {
                 tree_item->set_icon_max_width(column, width);
             }
+
+            void setIconModulate(int column, const Color& modulate) {
+                tree_item->set_icon_modulate(column, modulate);
+            }
     };
 }
 
