@@ -115,6 +115,10 @@ namespace sunaba::ui {
             Color getButtonColor(int column, int idx) const {
                 return tree_item->get_button_color(column, idx);
             }
+
+            int getButtonCount(int column) const {
+                return tree_item->get_button_count(column);
+            }
     };
 }
 
