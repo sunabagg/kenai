@@ -445,6 +445,10 @@ namespace sunaba::ui {
             void setRangeConfig(int column, float min, float max, float step, bool expr = false) {
                 tree_item->set_range_config(column, min, max, step, expr);
             }
+
+            void setSelectable(int column, bool selectable) {
+                tree_item->set_selectable(column, selectable);
+            }
     };
 }
 
