@@ -94,6 +94,7 @@ namespace sunaba::ui {
             "setEditable", &TreeItem::setEditable,
             "setExpandRight", &TreeItem::setExpandRight,
             "setIcon", &TreeItem::setIcon,
+            "setIconMaxWidth", &TreeItem::setIconMaxWidth,
         );
     }
 }
