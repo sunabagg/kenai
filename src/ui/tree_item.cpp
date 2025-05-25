@@ -59,6 +59,7 @@ namespace sunaba::ui {
             "getTextAlignment", &TreeItem::getTextAlignment,
             "getTextDirection", &TreeItem::getTextDirection,
             "getTextOverrunBehavior", &TreeItem::getTextOverrunBehavior,
+            "getTooltipText", &TreeItem::getTooltipText,
         );
     }
 }
