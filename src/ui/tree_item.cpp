@@ -81,6 +81,7 @@ namespace sunaba::ui {
             "setButton", &TreeItem::setButton,
             "setButtonColor", &TreeItem::setButtonColor,
             "setButtonDisabled", &TreeItem::setButtonDisabled,
+            "setButtonTooltipText", &TreeItem::setButtonTooltipText,
         );
     }
 }
