@@ -16,6 +16,7 @@ namespace sunaba::ui {
             "clearCustomColor", &TreeItem::clearCustomColor,
             "createChild", &TreeItem::createChild,
             "deselect", &TreeItem::deselect,
+            "eraseButton", &TreeItem::eraseButton,
         );
     }
 }
