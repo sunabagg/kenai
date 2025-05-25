@@ -393,6 +393,10 @@ namespace sunaba::ui {
             void setCustomFontSize(int column, int size) {
                 tree_item->set_custom_font_size(column, size);
             }
+
+            void setEditMultiline(int column, bool multiline) {
+                tree_item->set_edit_multiline(column, multiline);
+            }
     };
 }
 
