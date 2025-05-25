@@ -41,6 +41,7 @@ namespace sunaba::ui {
             "getIconOverlay", &TreeItem::getIconOverlay,
             "getIconRegion", &TreeItem::getIconRegion,
             "getIndex", &TreeItem::getIndex,
+            "getLanguage", &TreeItem::getLanguage,
         );
     }
 }
