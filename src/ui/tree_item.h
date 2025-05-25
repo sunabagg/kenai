@@ -389,6 +389,10 @@ namespace sunaba::ui {
             void setCustomFont(int column, sunaba::core::Font* font) {
                 tree_item->set_custom_font(column, Ref<godot::Font>(font->getFont()));
             }
+
+            void setCustomFontSize(int column, int size) {
+                tree_item->set_custom_font_size(column, size);
+            }
     };
 }
 
