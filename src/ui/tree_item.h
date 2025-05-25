@@ -160,6 +160,10 @@ namespace sunaba::ui {
             sunaba::core::Font* getCustomFont(int column) const {
                 return new sunaba::core::Font(tree_item->get_custom_font(column).ptr());
             }
+
+            int getCustomFontSize(int column) const {
+                return tree_item->get_custom_font_size(column);
+            }
     };
 }
 
