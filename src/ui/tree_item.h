@@ -337,6 +337,10 @@ namespace sunaba::ui {
             void select(int column) {
                 tree_item->select(column);
             }
+
+            void setAutoTranslateMode(int column, int mode) {
+                tree_item->set_auto_translate_mode(column, static_cast<Node::AutoTranslateMode>(mode));
+            }
     };
 }
 
