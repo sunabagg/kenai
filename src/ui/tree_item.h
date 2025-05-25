@@ -147,6 +147,10 @@ namespace sunaba::ui {
                 }
                 return children;
             }
+
+            Color getCustomBgColor(int column) const {
+                return tree_item->get_custom_bg_color(column);
+            }
     };
 }
 
