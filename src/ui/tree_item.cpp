@@ -50,6 +50,7 @@ namespace sunaba::ui {
             "getPrev", &TreeItem::getPrev,
             "getPrevInTree", &TreeItem::getPrevInTree,
             "getPrevVisible", &TreeItem::getPrevVisible,
+            "getRange", &TreeItem::getRange,
         );
     }
 }
