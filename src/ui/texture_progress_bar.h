@@ -218,6 +218,10 @@ namespace sunaba::ui {
             void setTextureUnder(sunaba::core::Texture2D* texture) {
                 proxy->set_under_texture(texture->getTexture2D());
             }
+
+            Color getTintOver() const {
+                return proxy->get_tint_over();
+            }
     };
 }
 
