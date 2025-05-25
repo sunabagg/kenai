@@ -78,6 +78,7 @@ namespace sunaba::ui {
             "select", &TreeItem::select,
             "setAutoTranslateMode", &TreeItem::setAutoTranslateMode,
             "setAutowrapMode", &TreeItem::setAutowrapMode,
+            "setButton", &TreeItem::setButton,
         );
     }
 }
