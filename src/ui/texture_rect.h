@@ -123,6 +123,10 @@ namespace sunaba::ui {
             void setStretchMode(int p_stretch_mode) {
                 texture_rect->set_stretch_mode(static_cast<TextureRectNode::StretchMode>(p_stretch_mode));
             }
+
+            sunaba::core::Texture2D* getTexture() {
+                return new sunaba::core::Texture2D(texture_rect->get_texture().ptr());
+            }
     };
 }
 
