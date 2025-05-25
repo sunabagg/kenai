@@ -289,6 +289,10 @@ namespace sunaba::ui {
             bool isChecked(int column) const {
                 return tree_item->is_checked(column);
             }
+
+            bool isCustomSetAsButton(int column) const {
+                return tree_item->is_custom_set_as_button(column);
+            }
     };
 }
 
