@@ -188,6 +188,10 @@ namespace sunaba::ui {
             bool getScrollHorizontalEnabled() const {
                 return tree->is_h_scroll_enabled();
             }
+
+            void setScrollHorizontalEnabled(bool enable) {
+                tree->set_h_scroll_enabled(enable);
+            }
     };
 }
 
