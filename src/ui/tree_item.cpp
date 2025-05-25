@@ -6,6 +6,7 @@ namespace sunaba::ui {
             sol::constructors<TreeItem()>(),
             sol::base_classes, sol::bases<BaseObject>(),
             "collapsed", sol::property(&TreeItem::getCollapsed, &TreeItem::setCollapsed),
+            "customMinimumHeight", sol::property(&TreeItem::getCustomMinimumHeight, &TreeItem::setCustomMinimumHeight),
         );
     }
 }
