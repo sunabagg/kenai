@@ -34,6 +34,7 @@ namespace sunaba::ui {
             "getCustomFont", &TreeItem::getCustomFont,
             "getCustomFontSize", &TreeItem::getCustomFontSize,
             "getExpandRight", &TreeItem::getExpandRight,
+            "getFirstChild", &TreeItem::getFirstChild,
         );
     }
 }
