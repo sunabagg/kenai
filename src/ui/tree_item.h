@@ -449,6 +449,10 @@ namespace sunaba::ui {
             void setSelectable(int column, bool selectable) {
                 tree_item->set_selectable(column, selectable);
             }
+
+            void setStructuredTextBidiOverride(int column, int parser) {
+                tree_item->set_structured_text_bidi_override(column, static_cast<TextServer::StructuredTextParser>(parser));
+            }
     };
 }
 
