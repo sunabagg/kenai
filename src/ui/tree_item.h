@@ -95,6 +95,10 @@ namespace sunaba::ui {
             void deselect(int column) {
                 tree_item->deselect(column);
             }
+
+            void eraseButton(int column, int idx) {
+                tree_item->erase_button(column, idx);
+            }
     };
 }
 
