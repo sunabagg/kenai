@@ -127,6 +127,10 @@ namespace sunaba::ui {
             std::string getButtonTooltipText(int column, int idx) const {
                 return tree_item->get_button_tooltip_text(column, idx).utf8().get_data();
             }
+
+            int getCellMode(int column) const {
+                return tree_item->get_cell_mode(column);
+            }
     };
 }
 
