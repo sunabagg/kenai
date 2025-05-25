@@ -481,6 +481,10 @@ namespace sunaba::ui {
             void setTooltipText(int column, const std::string& text) {
                 tree_item->set_tooltip_text(column, text.c_str());
             }
+
+            void uncollapseTree() {
+                tree_item->uncollapse_tree();
+            }
     };
 }
 
