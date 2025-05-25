@@ -226,6 +226,10 @@ namespace sunaba::ui {
             void setTintOver(const Color &tint) {
                 proxy->set_tint_over(tint);
             }
+
+            Color getTintProgress() const {
+                return proxy->get_tint_progress();
+            }
     };
 }
 
