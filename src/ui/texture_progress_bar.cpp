@@ -75,4 +75,11 @@ namespace sunaba::ui {
         }
     }
 
+    Variant TextureProgressBarProxy::_get_drag_data(const Vector2 &at_position) {
+        if (this->element != nullptr) {
+            return this->element->getDragData(at_position);
+        }
+        return Variant();
+    }
+
 } // namespace sunaba::ui
