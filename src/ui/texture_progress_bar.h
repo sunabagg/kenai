@@ -133,6 +133,10 @@ namespace sunaba::ui {
             int getSizeFlagsVertical() const {
                 return proxy->get_v_size_flags();
             }
+
+            void setSizeFlagsVertical(int flags) {
+                proxy->set_v_size_flags(static_cast<Control::SizeFlags>(flags));
+            }
     };
 }
 
