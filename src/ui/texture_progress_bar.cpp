@@ -138,6 +138,7 @@ namespace sunaba::ui {
             "stretchMarginLeft", sol::property(&TextureProgressBar::getStretchMarginLeft, &TextureProgressBar::setStretchMarginLeft),
             "stretchMarginRight", sol::property(&TextureProgressBar::getStretchMarginRight, &TextureProgressBar::setStretchMarginRight),
             "stretchMarginTop", sol::property(&TextureProgressBar::getStretchMarginTop, &TextureProgressBar::setStretchMarginTop),
+            "textureProgress", sol::property(&TextureProgressBar::getTextureProgress, &TextureProgressBar::setTextureProgress),
         );
     }
 
