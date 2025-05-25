@@ -112,6 +112,7 @@ namespace sunaba::ui {
             "setTextDirection", &TreeItem::setTextDirection,
             "setTextOverrunBehavior", &TreeItem::setTextOverrunBehavior,
             "setTooltipText", &TreeItem::setTooltipText,
+            "uncollapseTree", &TreeItem::uncollapseTree
         );
     }
 }
