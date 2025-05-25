@@ -209,6 +209,10 @@ namespace sunaba::ui {
             TreeItem* getNext() {
                 return new TreeItem(tree_item->get_next());
             }
+
+            TreeItem* getNextInTree() {
+                return new TreeItem(tree_item->get_next_in_tree());
+            }
     };
 }
 
