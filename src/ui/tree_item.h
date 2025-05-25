@@ -425,6 +425,10 @@ namespace sunaba::ui {
             void setIconRegion(int column, const Rect2& region) {
                 tree_item->set_icon_region(column, region);
             }
+
+            void setIndeterminate(int column, bool indeterminate) {
+                tree_item->set_indeterminate(column, indeterminate);
+            }
     };
 }
 
