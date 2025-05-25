@@ -111,6 +111,10 @@ namespace sunaba::ui {
             int getButtonById(int column, int id) const {
                 return tree_item->get_button_by_id(column, id);
             }
+
+            Color getButtonColor(int column, int idx) const {
+                return tree_item->get_button_color(column, idx);
+            }
     };
 }
 
