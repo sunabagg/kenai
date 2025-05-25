@@ -325,6 +325,10 @@ namespace sunaba::ui {
             void moveBefore(TreeItem* item) {
                 tree_item->move_before(item->getTreeItem());
             }
+
+            void propagateCheck(int column, bool emitSignal = true) {
+                tree_item->propagate_check(column, emitSignal);
+            }
     };
 }
 
