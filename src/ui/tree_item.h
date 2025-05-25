@@ -261,6 +261,10 @@ namespace sunaba::ui {
             int getTextAlignment(int column) const {
                 return tree_item->get_text_alignment(column);
             }
+
+            int getTextDirection(int column) const {
+                return tree_item->get_text_direction(column);
+            }
     };
 }
 
