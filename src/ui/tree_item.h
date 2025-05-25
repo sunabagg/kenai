@@ -164,6 +164,11 @@ namespace sunaba::ui {
             int getCustomFontSize(int column) const {
                 return tree_item->get_custom_font_size(column);
             }
+
+
+            bool getExpandRight(int column) const {
+                return tree_item->get_expand_right(column);
+            }
     };
 }
 
