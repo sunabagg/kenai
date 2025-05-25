@@ -441,6 +441,10 @@ namespace sunaba::ui {
             void setRange(int column, float value) {
                 tree_item->set_range(column, value);
             }
+
+            void setRangeConfig(int column, float min, float max, float step, bool expr = false) {
+                tree_item->set_range_config(column, min, max, step, expr);
+            }
     };
 }
 
