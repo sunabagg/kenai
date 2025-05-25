@@ -116,4 +116,10 @@ namespace sunaba::ui {
         return TypedArray<Vector3i>();
     }
 
+    void TextureProgressBarProxy::_value_changed(double p_new_value) {
+        if (this->element != nullptr) {
+            this->element->valueChanged(p_new_value);
+        }
+    }
+
 } // namespace sunaba::ui
