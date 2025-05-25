@@ -184,6 +184,10 @@ namespace sunaba::ui {
             void setHideRoot(bool enable) {
                 tree->set_hide_root(enable);
             }
+
+            bool getScrollHorizontalEnabled() const {
+                return tree->is_h_scroll_enabled();
+            }
     };
 }
 
