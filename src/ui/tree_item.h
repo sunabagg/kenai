@@ -185,6 +185,10 @@ namespace sunaba::ui {
             Color getIconModulate(int column) const {
                 return tree_item->get_icon_modulate(column);
             }
+
+            sunaba::core::Texture2D* getIconOverlay(int column) const {
+                return new sunaba::core::Texture2D(tree_item->get_icon_overlay(column).ptr());
+            }
     };
 }
 
