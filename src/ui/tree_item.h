@@ -397,6 +397,10 @@ namespace sunaba::ui {
             void setEditMultiline(int column, bool multiline) {
                 tree_item->set_edit_multiline(column, multiline);
             }
+
+            void setEditable(int column, bool editable) {
+                tree_item->set_editable(column, editable);
+            }
     };
 }
 
