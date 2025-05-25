@@ -429,6 +429,10 @@ namespace sunaba::ui {
             void setIndeterminate(int column, bool indeterminate) {
                 tree_item->set_indeterminate(column, indeterminate);
             }
+
+            void setLanguage(int column, const std::string& language) {
+                tree_item->set_language(column, language.c_str());
+            }
     };
 }
 
