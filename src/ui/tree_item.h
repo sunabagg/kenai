@@ -87,6 +87,10 @@ namespace sunaba::ui {
             void clearCustomColor(int column) {
                 tree_item->clear_custom_color(column);
             }
+
+            TreeItem* createChild(int index = -1) {
+                return new TreeItem(tree_item->create_child(index));
+            }
     };
 }
 
