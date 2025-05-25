@@ -105,6 +105,7 @@ namespace sunaba::ui {
             "setRangeConfig", &TreeItem::setRangeConfig,
             "setSelectable", &TreeItem::setSelectable,
             "setStructuredTextBidiOverride", &TreeItem::setStructuredTextBidiOverride,
+            "setStructuredTextBidiOverrideOptions", &TreeItem::setStructuredTextBidiOverrideOptions,
         );
     }
 }
