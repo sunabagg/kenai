@@ -39,6 +39,7 @@ namespace sunaba::ui {
             "getIconMaxWidth", &TreeItem::getIconMaxWidth,
             "getIconModulate", &TreeItem::getIconModulate,
             "getIconOverlay", &TreeItem::getIconOverlay,
+            "getIconRegion", &TreeItem::getIconRegion,
         );
     }
 }
