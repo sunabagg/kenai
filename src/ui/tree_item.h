@@ -405,6 +405,10 @@ namespace sunaba::ui {
             void setExpandRight(int column, bool expand) {
                 tree_item->set_expand_right(column, expand);
             }
+
+            void setIcon(int column, sunaba::core::Texture2D* texture) {
+                tree_item->set_icon(column, Ref<godot::Texture2D>(texture->getTexture2D()));
+            }
     };
 }
 
