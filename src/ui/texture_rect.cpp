@@ -115,4 +115,9 @@ namespace sunaba::ui {
         }
         return TypedArray<Vector3i>();
     }
+
+    void bindTextureRect(sol::state& lua) {
+        lua.new_usertype<TextureRect>("TextureRect",
+        );
+    }
 }
