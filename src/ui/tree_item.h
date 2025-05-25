@@ -329,6 +329,10 @@ namespace sunaba::ui {
             void propagateCheck(int column, bool emitSignal = true) {
                 tree_item->propagate_check(column, emitSignal);
             }
+
+            void removeChild(TreeItem* child) {
+                tree_item->remove_child(child->getTreeItem());
+            }
     };
 }
 
