@@ -116,6 +116,10 @@ namespace sunaba::ui {
             bool getAutoTooltip() const {
                 return tree->is_auto_tooltip_enabled();
             }
+
+            void setAutoTooltip(bool enable) {
+                tree->set_auto_tooltip_enabled(enable);
+            }
     };
 }
 
