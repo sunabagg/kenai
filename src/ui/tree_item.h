@@ -253,6 +253,10 @@ namespace sunaba::ui {
             std::string getSuffix(int column) const {
                 return tree_item->get_suffix(column).utf8().get_data();
             }
+
+            std::string getText(int column) const {
+                return tree_item->get_text(column).utf8().get_data();
+            }
     };
 }
 
