@@ -177,6 +177,10 @@ namespace sunaba::ui {
             sunaba::core::Texture2D* getIcon(int column) const {
                 return new sunaba::core::Texture2D(tree_item->get_icon(column).ptr());
             }
+
+            int getIconMaxWidth(int column) const {
+                return tree_item->get_icon_max_width(column);
+            }
     };
 }
 
