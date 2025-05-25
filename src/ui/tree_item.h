@@ -421,6 +421,10 @@ namespace sunaba::ui {
             void setIconOverlay(int column, sunaba::core::Texture2D* texture) {
                 tree_item->set_icon_overlay(column, Ref<godot::Texture2D>(texture->getTexture2D()));
             }
+
+            void setIconRegion(int column, const Rect2& region) {
+                tree_item->set_icon_region(column, region);
+            }
     };
 }
 
