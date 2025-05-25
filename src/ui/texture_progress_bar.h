@@ -234,6 +234,10 @@ namespace sunaba::ui {
             void setTintUnder(const Color &tint) {
                 proxy->set_tint_under(tint);
             }
+
+            void getStretchMargin(int side) {
+                return proxy->get_stretch_margin(static_cast<ControlNode::Side>(side));
+            }
     };
 }
 
