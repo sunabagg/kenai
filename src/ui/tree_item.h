@@ -169,6 +169,10 @@ namespace sunaba::ui {
             bool getExpandRight(int column) const {
                 return tree_item->get_expand_right(column);
             }
+
+            TreeItem* getFirstChild() const {
+                return new TreeItem(tree_item->get_first_child());
+            }
     };
 }
 
