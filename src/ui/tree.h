@@ -132,6 +132,10 @@ namespace sunaba::ui {
             bool getColumnTitlesVisible() const {
                 return tree->are_column_titles_visible();
             }
+
+            void setColumnTitlesVisible(bool visible) {
+                tree->set_column_titles_visible(visible);
+            }
     };
 }
 
