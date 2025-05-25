@@ -373,6 +373,10 @@ namespace sunaba::ui {
             void setCollapsedRecursive(bool enable) {
                 tree_item->set_collapsed_recursive(enable);
             }
+
+            void setCustomAsButton(int column, bool enable) {
+                tree_item->set_custom_as_button(column, enable);
+            }
     };
 }
 
