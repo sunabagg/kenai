@@ -24,6 +24,7 @@ namespace sunaba::ui {
             "getButtonColor", &TreeItem::getButtonColor,
             "getButtonCount", &TreeItem::getButtonCount,
             "getButtonId", &TreeItem::getButtonId,
+            "getButtonTooltipText", &TreeItem::getButtonTooltipText,
         );
     }
 }
