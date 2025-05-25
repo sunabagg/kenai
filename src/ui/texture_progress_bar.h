@@ -121,6 +121,10 @@ namespace sunaba::ui {
             void setRadialFillDegrees(float degrees) {
                 proxy->set_fill_degrees(degrees);
             }
+
+            float getRadialInitialAngle() const {
+                return proxy->get_radial_initial_angle();
+            }
     };
 }
 
