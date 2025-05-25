@@ -126,6 +126,7 @@ namespace sunaba::ui {
             "mouseFilter", sol::property(&TextureRect::getMouseFilter, &TextureRect::setMouseFilter),
             "stretchMode", sol::property(&TextureRect::getStretchMode, &TextureRect::setStretchMode),
             "texture", sol::property(&TextureRect::getTexture, &TextureRect::setTexture),
+            "cast"
         );
     }
 }
