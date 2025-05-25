@@ -361,6 +361,10 @@ namespace sunaba::ui {
             void setButtonTooltipText(int column, int idx, const std::string& text) {
                 tree_item->set_button_tooltip_text(column, idx, text.c_str());
             }
+
+            void setCellMode(int column, int mode) {
+                tree_item->set_cell_mode(column, static_cast<GodotTreeItem::TreeCellMode>(mode));
+            }
     };
 }
 
