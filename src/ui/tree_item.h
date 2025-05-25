@@ -417,6 +417,10 @@ namespace sunaba::ui {
             void setIconModulate(int column, const Color& modulate) {
                 tree_item->set_icon_modulate(column, modulate);
             }
+
+            void setIconOverlay(int column, sunaba::core::Texture2D* texture) {
+                tree_item->set_icon_overlay(column, Ref<godot::Texture2D>(texture->getTexture2D()));
+            }
     };
 }
 
