@@ -119,6 +119,7 @@ namespace sunaba::ui {
     void bindTextureRect(sol::state& lua) {
         lua.new_usertype<TextureRect>("TextureRect",
             sol::constructors<TextureRect()>(),
+            sol::base_classes, sol::bases<BaseObject, Element, sunaba::core::CanvasItem, Control>(),
         );
     }
 }
