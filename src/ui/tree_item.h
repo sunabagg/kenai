@@ -197,6 +197,10 @@ namespace sunaba::ui {
             int getIndex() const {
                 return tree_item->get_index();
             }
+
+            std::string getLanguage(int column) const {
+                return tree_item->get_language(column).utf8().get_data();
+            }
     };
 }
 
