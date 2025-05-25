@@ -92,6 +92,10 @@ namespace sunaba::ui {
             bool getAllowReselect() const {
                 return tree->get_allow_reselect();
             }
+
+            void setAllowReselect(bool allow) {
+                tree->set_allow_reselect(allow);
+            }
     };
 }
 
