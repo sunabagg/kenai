@@ -301,6 +301,10 @@ namespace sunaba::ui {
             bool isEditable(int column) const {
                 return tree_item->is_editable(column);
             }
+
+            bool isIndeterminate(int column) const {
+                return tree_item->is_indeterminate(column);
+            }
     };
 }
 
