@@ -16,7 +16,28 @@ namespace sunaba::ui {
     void bindTreeItem(sol::state& lua);
 
     class TreeItem : public BaseObject {
-        
+        private:
+            GodotTreeItem* tree_item = nullptr; // Pointer to the TreeItem instance
+        public:
+            // Constructor with GodotTreeItem parameter
+            TreeItem(GodotTreeItem* item) {
+                setTreeItem(item);
+            }
+
+            // Constructor with no parameters
+            TreeItem() {
+                tree_item = memnew(GodotTreeItem);
+            }
+
+            // Getter for the TreeItem node
+            GodotTreeItem* getTreeItem() const {
+                return tree_item;
+            }
+
+            // Setter for the TreeItem node
+            void setTreeItem(GodotTreeItem* item) {
+                tree_item = item;
+            }
     };
 }
 
