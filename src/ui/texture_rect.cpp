@@ -62,4 +62,10 @@ namespace sunaba::ui {
         }
     }
     
+    bool TextureRectProxy::_can_drop_data(const Vector2& at_position, const Variant &data) const {
+        if (this->element != nullptr) {
+            return this->element->_can_drop_data(at_position, data);
+        }
+        return false;
+    }
 }
