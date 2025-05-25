@@ -437,6 +437,10 @@ namespace sunaba::ui {
             void setMetadata(int column, const Variant& meta) {
                 tree_item->set_metadata(column, meta);
             }
+
+            void setRange(int column, float value) {
+                tree_item->set_range(column, value);
+            }
     };
 }
 
