@@ -193,6 +193,10 @@ namespace sunaba::ui {
             Rect2 getIconRegion(int column) const {
                 return tree_item->get_icon_region(column);
             }
+            
+            int getIndex() const {
+                return tree_item->get_index();
+            }
     };
 }
 
