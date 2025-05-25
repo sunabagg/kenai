@@ -74,6 +74,7 @@ namespace sunaba::ui {
             "moveAfter", &TreeItem::moveAfter,
             "moveBefore", &TreeItem::moveBefore,
             "propagateCheck", &TreeItem::propagateCheck,
+            "removeChild", &TreeItem::removeChild,
         );
     }
 }
