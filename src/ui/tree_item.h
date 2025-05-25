@@ -485,6 +485,13 @@ namespace sunaba::ui {
             void uncollapseTree() {
                 tree_item->uncollapse_tree();
             }
+
+            void _delete() {
+                if (tree_item) {
+                    memdelete(tree_item);
+                    tree_item = nullptr;
+                }
+            }
     };
 }
 
