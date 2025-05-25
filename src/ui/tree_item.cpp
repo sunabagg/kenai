@@ -46,6 +46,7 @@ namespace sunaba::ui {
             "getNext", &TreeItem::getNext,
             "getNextInTree", &TreeItem::getNextInTree,
             "getNextVisible", &TreeItem::getNextVisible,
+            "getParent", &TreeItem::getParent,
         );
     }
 }
