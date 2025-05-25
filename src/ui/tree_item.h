@@ -241,6 +241,10 @@ namespace sunaba::ui {
             Dictionary getRangeConfig(int column) const {
                 return tree_item->get_range_config(column);
             }
+
+            int getStructuredTextBidiOverride(int column) const {
+                return tree_item->get_structured_text_bidi_override(column);
+            }
     };
 }
 
