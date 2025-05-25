@@ -108,4 +108,11 @@ namespace sunaba::ui {
         }
         return false;
     }
+
+    TypedArray<Vector3i> TextureRectProxy::_structured_text_parser(const Array &args, const String &text) const {
+        if (this->element != nullptr) {
+            return this->element->_structured_text_parser(args, text);
+        }
+        return TypedArray<Vector3i>();
+    }
 }
