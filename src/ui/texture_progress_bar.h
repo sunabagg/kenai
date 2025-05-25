@@ -179,6 +179,9 @@ namespace sunaba::ui {
                 proxy->set_stretch_margin(Side::SIDE_TOP, value);
             }
             
+            sunaba::core::Texture2D* getTextureOver() {
+                return new sunaba::core::Texture2D(proxy->get_over_texture().ptr());
+            }
     };
 }
 
