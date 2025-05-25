@@ -115,6 +115,10 @@ namespace sunaba::ui {
             void setMouseFilter(int p_filter) {
                 texture_rect->set_mouse_filter(static_cast<TextureRectNode::MouseFilter>(p_filter));
             }
+
+            int getStretchMode() const {
+                return texture_rect->get_stretch_mode();
+            }
     };
 }
 
