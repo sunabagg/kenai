@@ -131,7 +131,7 @@ namespace sunaba::ui {
             }
 
             int getSizeFlagsVertical() const {
-                return proxy->get_size_flags_vertical();
+                return proxy->get_v_size_flags();
             }
     };
 }
