@@ -85,6 +85,7 @@ namespace sunaba::ui {
             "setCellMode", &TreeItem::setCellMode,
             "setChecked", &TreeItem::setChecked,
             "setCollapsedRecursive", &TreeItem::setCollapsedRecursive,
+            "setCustomAsButton", &TreeItem::setCustomAsButton,
         );
     }
 }
