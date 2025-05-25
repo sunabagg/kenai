@@ -100,6 +100,10 @@ namespace sunaba::ui {
             bool getAllowRmbSelect() const {
                 return tree->get_allow_rmb_select();
             }
+
+            void setAllowRmbSelect(bool allow) {
+                tree->set_allow_rmb_select(allow);
+            }
     };
 }
 
