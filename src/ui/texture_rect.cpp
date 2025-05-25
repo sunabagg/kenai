@@ -122,6 +122,7 @@ namespace sunaba::ui {
             sol::base_classes, sol::bases<BaseObject, Element, sunaba::core::CanvasItem, Control>(),
             "expandMode", sol::property(&TextureRect::getExpandMode, &TextureRect::setExpandMode),
             "flipH", sol::property(&TextureRect::getFlipH, &TextureRect::setFlipH),
+            "flipV", sol::property(&TextureRect::getFlipV, &TextureRect::setFlipV),
         );
     }
 }
