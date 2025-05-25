@@ -126,6 +126,7 @@ namespace sunaba::ui {
         lua.new_usertype<TextureProgressBar>("TextureProgressBar",
             sol::constructors<TextureProgressBar()>(),
             sol::base_classes, sol::bases<BaseObject, Element, sunaba::core::CanvasItem, Control, Range>(),
+            "fillMode", sol::property(&TextureProgressBar::getFillMode, &TextureProgressBar::setFillMode),
         );
     }
 
