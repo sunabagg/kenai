@@ -281,6 +281,10 @@ namespace sunaba::ui {
             bool isAnyCollapsed() const {
                 return tree_item->is_any_collapsed();
             }
+
+            bool isButtonDisabled(int column, int idx) const {
+                return tree_item->is_button_disabled(column, idx);
+            }
     };
 }
 
