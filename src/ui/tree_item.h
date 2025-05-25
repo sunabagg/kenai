@@ -377,6 +377,10 @@ namespace sunaba::ui {
             void setCustomAsButton(int column, bool enable) {
                 tree_item->set_custom_as_button(column, enable);
             }
+
+            void setCustomBgColor(int column, const Color& color, bool justOutline = false) {
+                tree_item->set_custom_bg_color(column, color, justOutline);
+            }
     };
 }
 
