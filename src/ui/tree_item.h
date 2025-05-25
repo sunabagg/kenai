@@ -75,6 +75,10 @@ namespace sunaba::ui {
             void addChild(TreeItem* child) {
                 tree_item->add_child(child->getTreeItem());
             }
+            
+            void clearButtons() {
+                tree_item->clear_buttons();
+            }
     };
 }
 
