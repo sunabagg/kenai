@@ -129,6 +129,10 @@ namespace sunaba::ui {
             void setRadialInitialAngle(float angle) {
                 proxy->set_radial_initial_angle(angle);
             }
+
+            int getSizeFlagsVertical() const {
+                return proxy->get_size_flags_vertical();
+            }
     };
 }
 
