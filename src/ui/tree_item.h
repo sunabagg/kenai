@@ -245,6 +245,10 @@ namespace sunaba::ui {
             int getStructuredTextBidiOverride(int column) const {
                 return tree_item->get_structured_text_bidi_override(column);
             }
+
+            Array getStructuredTextBidiOverrideOptions(int column) const {
+                return tree_item->get_structured_text_bidi_override_options(column);
+            }
     };
 }
 
