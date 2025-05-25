@@ -145,6 +145,10 @@ namespace sunaba::ui {
             void setStep(float value) {
                 proxy->set_step(value);
             }
+
+            int getStretchMarginBottom() const {
+                return proxy->get_stretch_margin(Side::SIDE_BOTTOM);
+            }
     };
 }
 
