@@ -76,6 +76,7 @@ namespace sunaba::ui {
             "propagateCheck", &TreeItem::propagateCheck,
             "removeChild", &TreeItem::removeChild,
             "select", &TreeItem::select,
+            "setAutoTranslateMode", &TreeItem::setAutoTranslateMode,
         );
     }
 }
