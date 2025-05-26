@@ -408,6 +408,10 @@ namespace sunaba::ui {
             int getPressedButton() const {
                 return tree->get_pressed_button();
             }
+
+            TreeItem* getRoot() const {
+                return new TreeItem(tree->get_root());
+            }
     };
 }
 
