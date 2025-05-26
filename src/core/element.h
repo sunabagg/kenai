@@ -250,7 +250,7 @@ namespace sunaba::core {
 
         Element* getParent() {
             if (isRootNode) {
-                return new Element(nullptr);
+                return nullptr; // If this is the root node, it has no parent
             }
             return new Element(getNode()->get_parent());
         }
