@@ -340,6 +340,10 @@ namespace sunaba::ui {
             void deselectAll() {
                 tree->deselect_all();
             }
+
+            bool editSelected(bool forceEdit = false) {
+                return tree->edit_selected(forceEdit);
+            }
     };
 }
 
