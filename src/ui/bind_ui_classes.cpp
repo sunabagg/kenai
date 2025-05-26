@@ -50,6 +50,7 @@
 #include "v_split_container.h"
 #include "sub_viewport_container.h"
 #include "tab_bar.h"
+#include "tab_container.h"
 
 void sunaba::ui::bindUIClasses(sol::state& lua) {
     bindStyleBox(lua);
