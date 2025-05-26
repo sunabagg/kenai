@@ -324,6 +324,10 @@ namespace sunaba::core {
         }
 
         void _delete() {
+            if (isRootNode) {
+                // If this is the root node, we should not delete it
+                return;
+            }
             // Freeing logic for the element
             if (node != nullptr) {
                 node->queue_free();
