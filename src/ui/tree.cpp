@@ -260,6 +260,7 @@ namespace sunaba::ui {
             "getColumnTitleLanguage", &Tree::getColumnTitleLanguage,
             "getColumnWidth", &Tree::getColumnWidth,
             "getCustomPopupRect", &Tree::getCustomPopupRect,
+            "getDropSelectionAtPosition", &Tree::getDropSelectionAtPosition,
         );
     }
 }
