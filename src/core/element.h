@@ -14,7 +14,6 @@ using namespace sunaba::core;
 using namespace godot;
 
 namespace sunaba::desktop {
-    class Viewport;
     class Window;
 }
 
@@ -37,6 +36,8 @@ namespace sunaba::core {
         void _unhandled_key_input(const Ref<InputEvent>& event) override;
         void _shortcut_input(const Ref<InputEvent>& event) override;
     };
+
+    class Viewport;
     
     class Element : public BaseObject {    
     private:
