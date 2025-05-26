@@ -314,6 +314,9 @@ namespace sunaba::ui {
             }
 
             Event* multiSelectedEvent;
+            Event* getMultiSelectedEvent() {
+                return multiSelectedEvent;
+            }
     };
 }
 
