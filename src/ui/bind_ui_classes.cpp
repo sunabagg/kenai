@@ -49,6 +49,7 @@
 #include "h_split_container.h"
 #include "v_split_container.h"
 #include "sub_viewport_container.h"
+#include "tab_bar.h"
 
 void sunaba::ui::bindUIClasses(sol::state& lua) {
     bindStyleBox(lua);
@@ -100,4 +101,5 @@ void sunaba::ui::bindUIClasses(sol::state& lua) {
     bindHSplitContainer(lua);
     bindVSplitContainer(lua);
     bindSubViewportContainer(lua);
+    bindTabBar(lua);
 }
