@@ -460,6 +460,10 @@ namespace sunaba::ui {
             void setColumnTitleDirection(int column, int direction) {
                 tree->set_column_title_direction(column, static_cast<ControlNode::TextDirection>(direction));
             }
+
+            void setColumnTitleLanguage(int column, const std::string& language) {
+                tree->set_column_title_language(column, String(language.c_str()));
+            }
     };
 }
 
