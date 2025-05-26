@@ -454,7 +454,7 @@ namespace sunaba::ui {
                 }
             }
 
-            Dictionary onFilterCodeCompletionCandidates(const TypedArray<Dictionary>& candidates) {
+            TypedArray<Dictionary> onFilterCodeCompletionCandidates(const TypedArray<Dictionary>& candidates) {
                 if (scriptInstance != sol::lua_nil) {
                     auto func = scriptInstance["filter_code_completion_candidates"].get<sol::function>();
                     if (func) {
@@ -463,10 +463,10 @@ namespace sunaba::ui {
                             Dictionary candidate = candidates[i];
                             candidatesArray.append(candidate);
                         }
-                        return func(scriptInstance, candidatesArray);
+                        std::vector<Dictionary> res = func(scriptInstance, candidatesArray);
                     }
                 }
-                return Dictionary();
+                return TypedArray<Dictionary>();
             }
 
             void addAutoBraceCompletionPair(const std::string& startKey, const std::string& endKey) {
