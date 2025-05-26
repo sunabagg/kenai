@@ -11,6 +11,7 @@ namespace sunaba::ui {
             "memberKeywordColors", sol::property(&CodeHighlighter::getMemberKeywordColors, &CodeHighlighter::setMemberKeywordColors),
             "memberVariableColor", &CodeHighlighter::getMemberVariableColor,
             "numberColor", &CodeHighlighter::getNumberColor,
+            "symbolColor", &CodeHighlighter::getSymbolColor,
         );
     }
 }
