@@ -37,9 +37,20 @@ namespace sunaba::core {
         void _shortcut_input(const Ref<InputEvent>& event) override;
     };
 
+    class NodeSignalWrapper : public Object {
+        GDCLASS(NodeSignalWrapper, Object)
+        protected:
+            static void _bind_methods();
+        public:
+            Element* element = nullptr;
+
+            NodeSignalWrapper() = default;
+            ~NodeSignalWrapper() = default;
+    };
+
     class Viewport;
-    
-    class Element : public BaseObject {    
+
+    class Element : public BaseObject {
     private:
         Node* node = nullptr; // Pointer to the Node instance
         void connectElementSignals() {
