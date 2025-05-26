@@ -60,6 +60,14 @@ namespace sunaba::core {
         ClassDB::bind_method(D_METHOD("size_changed"), &ViewportSignalWrapper::size_changed);
     }
 
+    void ViewportSignalWrapper::gui_focus_changed(Node* new_focus) {
+        if (element != nullptr) {
+            Array args;
+            args.push_back(new_focus);
+            element->guiFocusChangedEvent->emit(args);
+        }
+    }
+
     void bindViewport(sol::state &lua) {
         lua.new_usertype<Viewport>("Viewport",
             sol::constructors<Viewport()>(),
