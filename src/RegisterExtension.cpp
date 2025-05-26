@@ -39,7 +39,6 @@ namespace
         godot::ClassDB::register_class<sunaba::core::BaseObjectProxy>();
         godot::ClassDB::register_class<sunaba::core::StlFunctionWrapper>();
 
-        godot::ClassDB::register_class<sunaba::core::NodeProxy>();
         godot::ClassDB::register_class<sunaba::core::NodeSignalWrapper>();
     }
 
