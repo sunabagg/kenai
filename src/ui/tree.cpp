@@ -251,6 +251,7 @@ namespace sunaba::ui {
             "deselectAll", &Tree::deselectAll,
             "editSelected", &Tree::editSelected,
             "ensureCursorIsVisible", &Tree::ensureCursorIsVisible,
+            "getButtonIdAtPosition", &Tree::getButtonIdAtPosition,
         );
     }
 }
