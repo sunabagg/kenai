@@ -31,6 +31,7 @@
 #include "option_button.h"
 #include "panel.h"
 #include "panel_container.h"
+#include "range.h"
 
 void sunaba::ui::bindUIClasses(sol::state& lua) {
     bindStyleBox(lua);
@@ -64,4 +65,5 @@ void sunaba::ui::bindUIClasses(sol::state& lua) {
     bindOptionButton(lua);
     bindPanel(lua);
     bindPanelContainer(lua);
+    bindRange(lua);
 }
