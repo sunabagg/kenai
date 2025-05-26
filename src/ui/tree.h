@@ -444,6 +444,10 @@ namespace sunaba::ui {
             void setColumnExpand(int column, bool expand) {
                 tree->set_column_expand(column, expand);
             }
+
+            void setColumnExpandRatio(int column, int ratio) {
+                tree->set_column_expand_ratio(column, ratio);
+            }
     };
 }
 
