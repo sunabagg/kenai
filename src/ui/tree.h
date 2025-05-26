@@ -356,6 +356,10 @@ namespace sunaba::ui {
             int getColumnAtPosition(const Vector2& position) const {
                 return tree->get_column_at_position(position);
             }
+
+            int getColumnExpandRatio(int column) const {
+                return tree->get_column_expand_ratio(column);
+            }
     };
 }
 
