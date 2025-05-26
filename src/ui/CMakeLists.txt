@@ -122,7 +122,9 @@ target_sources(${PROJECT_NAME} PRIVATE
         v_box_container.h
         v_box_container.cpp
         v_flow_container.h
+        v_flow_container.cpp
         code_highlighter.h
+        
 )
 
 target_include_directories( ${PROJECT_NAME}
