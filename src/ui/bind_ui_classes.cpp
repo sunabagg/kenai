@@ -30,6 +30,7 @@
 #include "nine_patch_rect.h"
 #include "option_button.h"
 #include "panel.h"
+#include "panel_container.h"
 
 void sunaba::ui::bindUIClasses(sol::state& lua) {
     bindStyleBox(lua);
@@ -62,4 +63,5 @@ void sunaba::ui::bindUIClasses(sol::state& lua) {
     bindNinePatchRect(lua);
     bindOptionButton(lua);
     bindPanel(lua);
+    bindPanelContainer(lua);
 }
