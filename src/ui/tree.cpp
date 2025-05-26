@@ -150,6 +150,10 @@ namespace sunaba::ui {
                 &Tree::getColumnTitlesVisible,
                 &Tree::setColumnTitlesVisible
             ),
+            "columns", sol::property(
+                &Tree::getColumns,
+                &Tree::setColumns
+            ),
         );
     }
 }
