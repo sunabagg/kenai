@@ -380,6 +380,10 @@ namespace sunaba::ui {
             int getColumnWidth(int column) const {
                 return tree->get_column_width(column);
             }
+            
+            Rect2 getCustomPopupRect() const {
+                return tree->get_custom_popup_rect();
+            }
     };
 }
 
