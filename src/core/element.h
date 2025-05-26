@@ -58,6 +58,8 @@ namespace sunaba::core {
             void replacing_by(Node* node);
 
             void tree_entered();
+
+            void tree_exited();
     };
 
     class Viewport;
