@@ -448,6 +448,10 @@ namespace sunaba::ui {
             void setColumnExpandRatio(int column, int ratio) {
                 tree->set_column_expand_ratio(column, ratio);
             }
+
+            void setColumnTitle(int column, const std::string& title) {
+                tree->set_column_title(column, String(title.c_str()));
+            }
     };
 }
 
