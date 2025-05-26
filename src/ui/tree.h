@@ -458,7 +458,7 @@ namespace sunaba::ui {
             }
 
             void setColumnTitleDirection(int column, int direction) {
-                tree->set_column_title_direction(column, static_cast<Control::TextDirection>(direction));
+                tree->set_column_title_direction(column, static_cast<ControlNode::TextDirection>(direction));
             }
     };
 }
