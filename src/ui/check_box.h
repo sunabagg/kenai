@@ -10,6 +10,8 @@
 #include "button.h"
 
 namespace sunaba::ui {
+    void bindCheckBox(sol::state& lua);
+    
     class CheckBox;
 
     class CheckBoxProxy : public CheckBoxNode {
