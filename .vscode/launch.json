@@ -40,9 +40,8 @@
         },
         {
             "name": "macOS Launch",
-            "type": "lldb",
+            "type": "lldb-dap",
             "request": "launch",
-            "envFile": "${workspaceFolder}/.env",
             "program": "${env:GODOT4}",
             "args": [
                 "--verbose"
