@@ -105,6 +105,10 @@ namespace sunaba::ui {
         void clearKeywordColors() {
             code_highlighter->clear_keyword_colors();
         }
+
+        void clearMemberKeywordColors() {
+            code_highlighter->clear_member_keyword_colors();
+        }
     };
 }
 
