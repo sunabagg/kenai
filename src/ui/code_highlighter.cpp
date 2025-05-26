@@ -15,6 +15,7 @@ namespace sunaba::ui {
             "addColorRegion", &CodeHighlighter::addColorRegion,
             "addKeywordColor", &CodeHighlighter::addKeywordColor,
             "addMemberKeywordColor", &CodeHighlighter::addMemberKeywordColor,
+            "clearColorRegions", &CodeHighlighter::clearColorRegions,
         );
     }
 }
