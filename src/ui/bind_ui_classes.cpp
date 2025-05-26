@@ -51,6 +51,7 @@
 #include "sub_viewport_container.h"
 #include "tab_bar.h"
 #include "tab_container.h"
+#include "syntax_highlighter.h"
 
 void sunaba::ui::bindUIClasses(sol::state& lua) {
     bindStyleBox(lua);
@@ -103,4 +104,6 @@ void sunaba::ui::bindUIClasses(sol::state& lua) {
     bindVSplitContainer(lua);
     bindSubViewportContainer(lua);
     bindTabBar(lua);
+    bindTabContainer(lua);
+    bindSyntaxHighlighter(lua);
 }
