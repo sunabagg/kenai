@@ -154,6 +154,10 @@ namespace sunaba::ui {
                 &Tree::getColumns,
                 &Tree::setColumns
             ),
+            "dropModeFlags", sol::property(
+                &Tree::getDropModeFlags,
+                &Tree::setDropModeFlags
+            ),
         );
     }
 }
