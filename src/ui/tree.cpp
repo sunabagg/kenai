@@ -146,6 +146,10 @@ namespace sunaba::ui {
                 &Tree::getClipContents,
                 &Tree::setClipContents
             ),
+            "columnTitlesVisible", sol::property(
+                &Tree::getColumnTitlesVisible,
+                &Tree::setColumnTitlesVisible
+            ),
         );
     }
 }
