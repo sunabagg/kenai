@@ -230,6 +230,10 @@ namespace sunaba::ui {
                 &Tree::getItemIconDoubleClickedEvent,
                 &Tree::setItemIconDoubleClickedEvent
             ),
+            "itemMouseSelected", sol::property(
+                &Tree::getItemMouseSelectedEvent,
+                &Tree::setItemMouseSelectedEvent
+            ),
         );
     }
 }
