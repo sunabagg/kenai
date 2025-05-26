@@ -41,6 +41,10 @@ namespace sunaba::ui {
             code_highlighter = p_node;
             setResource(code_highlighter);
         }
+
+        Dictionary getColorRegions() const {
+            return code_highlighter->get_color_regions();
+        }
     };
 }
 
