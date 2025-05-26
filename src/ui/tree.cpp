@@ -258,6 +258,7 @@ namespace sunaba::ui {
             "getColumnTitleAlignment", &Tree::getColumnTitleAlignment,
             "getColumnTitleDirection", &Tree::getColumnTitleDirection,
             "getColumnTitleLanguage", &Tree::getColumnTitleLanguage,
+            "getColumnWidth", &Tree::getColumnWidth,
         );
     }
 }
