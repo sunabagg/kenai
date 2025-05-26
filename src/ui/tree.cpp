@@ -107,4 +107,18 @@ namespace sunaba::ui {
         }
         return false;
     }
+
+    // Object* TreeProxy::_make_custom_tooltip(const String &for_text) const {
+    //     if (this->element != nullptr) {
+    //         return this->element->makeCustomTooltip(for_text);
+    //     }
+    //     return nullptr;  
+    // }
+
+    TypedArray<Vector3i> TreeProxy::_structured_text_parser(const Array &args, const String &text) const {
+        if (this->element != nullptr) {
+            return this->element->structuredTextParser(args, text);
+        }
+        return TypedArray<Vector3i>();
+    }
 }
