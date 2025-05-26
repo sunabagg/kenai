@@ -67,4 +67,10 @@ namespace sunaba::ui {
         }
         return false;
     }
+
+    void TreeProxy::_drop_data(const Vector2 &at_position, const Variant &data) {
+        if (this->element != nullptr) {
+            this->element->dropData(at_position, data);
+        }
+    }
 }
