@@ -42,6 +42,7 @@
 #include "h_separator.h"
 #include "v_separator.h"
 #include "slider.h"
+#include "h_slider.h"
 
 void sunaba::ui::bindUIClasses(sol::state& lua) {
     bindStyleBox(lua);
@@ -86,4 +87,5 @@ void sunaba::ui::bindUIClasses(sol::state& lua) {
     bindHSeparator(lua);
     bindVSeparator(lua);
     bindSlider(lua);
+    bindHSlider(lua);
 }
