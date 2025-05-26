@@ -60,4 +60,11 @@ namespace sunaba::ui {
             this->element->_draw();
         }
     }
+
+    bool TreeProxy::_can_drop_data(const Vector2& at_position, const Variant &data) const {
+        if (this->element != nullptr) {
+            return this->element->canDropData(at_position, data);
+        }
+        return false;
+    }
 }
