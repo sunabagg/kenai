@@ -214,6 +214,10 @@ namespace sunaba::ui {
                 &Tree::getEmptyClickedEvent,
                 &Tree::setEmptyClickedEvent
             ),
+            "itemActivated", sol::property(
+                &Tree::getItemActivatedEvent,
+                &Tree::setItemActivatedEvent
+            ),
         );
     }
 }
