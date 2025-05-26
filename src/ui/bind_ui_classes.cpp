@@ -40,6 +40,7 @@
 #include "scroll_container.h"
 #include "separator.h"
 #include "h_separator.h"
+#include "v_separator.h"
 
 void sunaba::ui::bindUIClasses(sol::state& lua) {
     bindStyleBox(lua);
@@ -82,4 +83,5 @@ void sunaba::ui::bindUIClasses(sol::state& lua) {
     bindScrollContainer(lua);
     bindSeparator(lua);
     bindHSeparator(lua);
+    bindVSeparator(lua);
 }
