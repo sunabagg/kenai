@@ -325,6 +325,9 @@ namespace sunaba::ui {
             Event* getNothingSelectedEvent() {
                 return nothingSelectedEvent;
             }
+            void setNothingSelectedEvent(Event* event) {
+                nothingSelectedEvent = event;
+            }
     };
 }
 
