@@ -231,4 +231,11 @@ namespace sunaba::core {
             element->replacingBy->emit(args);
         }
     }
+
+    void NodeSignalWrapper::tree_entered() {
+        if (element->treeEntered != nullptr) {
+            Array args;
+            element->treeEntered->emit(args);
+        }
+    }
 }
