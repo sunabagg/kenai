@@ -264,6 +264,7 @@ namespace sunaba::ui {
             "getEdited", &Tree::getEdited,
             "getEditedColumn", &Tree::getEditedColumn,
             "getItemAreaRect", &Tree::getItemAreaRect,
+            "getItemAtPosition", &Tree::getItemAtPosition,
         );
     }
 }
