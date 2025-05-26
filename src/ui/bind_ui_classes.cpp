@@ -7,6 +7,7 @@
 #include "style_box_texture.h"
 #include "theme.h"
 #include "control.h"
+#include "base_button.h"
 
 void sunaba::ui::bindUIClasses(sol::state& lua) {
     bindStyleBox(lua);
@@ -16,4 +17,5 @@ void sunaba::ui::bindUIClasses(sol::state& lua) {
     bindStyleBoxTexture(lua);
     bindTheme(lua);
     bindControl(lua);
+    bindBaseButton(lua);
 }
