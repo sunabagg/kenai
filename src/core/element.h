@@ -60,21 +60,14 @@ namespace sunaba::core {
 
         NodeSignalWrapper *nodeSignalWrapper = nullptr;
         void connectElementSignals() {
+
+            if (this->nodeSignalWrapper == nullptr) {
+                this->nodeSignalWrapper = memnew(NodeSignalWrapper);
+                this->nodeSignalWrapper->element = this;
+            }
+            this->node->connect("child_entered_tree", Callable(this->nodeSignalWrapper, "child_entered_tree"));
+            this->node->connect("child_exited_tree", Callable(this->nodeSignalWrapper, "child_exited_tree"));
             
-            Callable childEnteredTreeCallable = StlFunctionWrapper::create_callable_from_cpp_function(childEntertedTreeFunc);
-            this->node->connect("child_entered_tree", childEnteredTreeCallable);
-            std::function<Variant(std::vector<Variant>)> childExitedTreeFunc =
-            [this](std::vector<Variant> args) {
-                Node* child = Object::cast_to<Node>(args[0].operator Object*());
-                Array argsArray;
-                argsArray.append(new Element(child));
-                if (this->childExitedTree != nullptr) {
-                    this->childExitedTree->emit(argsArray);
-                }
-                return Variant();
-            };
-            Callable childExitedTreeCallable = StlFunctionWrapper::create_callable_from_cpp_function(childExitedTreeFunc);
-            this->node->connect("child_exited_tree", childExitedTreeCallable);
             std::function<Variant(std::vector<Variant>)> childOrderChangedFunc =
             [this](std::vector<Variant> args) {
                 Array argsArray;
