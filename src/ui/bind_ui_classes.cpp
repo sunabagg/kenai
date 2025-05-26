@@ -11,6 +11,7 @@
 #include "button_group.h"
 #include "button.h"
 #include "check_box.h"
+#include "check_button.h"
 
 void sunaba::ui::bindUIClasses(sol::state& lua) {
     bindStyleBox(lua);
@@ -24,4 +25,5 @@ void sunaba::ui::bindUIClasses(sol::state& lua) {
     bindButtonGroup(lua);
     bindButton(lua);
     bindCheckBox(lua);
+    bindCheckButton(lua);
 }
