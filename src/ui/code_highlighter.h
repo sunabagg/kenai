@@ -94,6 +94,10 @@ namespace sunaba::ui {
             return code_highlighter->get_symbol_color();
         }
 
+        void setSymbolColor(const Color &p_color) {
+            code_highlighter->set_symbol_color(p_color);
+        }
+
         void addColorRegion(const std::string &p_start_key, const std::string &p_end_key, const Color &p_color, bool p_line_only = false) {
             code_highlighter->add_color_region(p_start_key.c_str(), p_end_key.c_str(), p_color, p_line_only);
         }
