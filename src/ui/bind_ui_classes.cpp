@@ -46,6 +46,7 @@
 #include "v_slider.h"
 #include "spin_box.h"
 #include "split_container.h"
+#include "h_split_container.h"
 
 void sunaba::ui::bindUIClasses(sol::state& lua) {
     bindStyleBox(lua);
@@ -94,4 +95,5 @@ void sunaba::ui::bindUIClasses(sol::state& lua) {
     bindVSlider(lua);
     bindSpinBox(lua);
     bindSplitContainer(lua);
+    bindHSplitContainer(lua);
 }
