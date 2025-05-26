@@ -84,17 +84,7 @@ namespace sunaba::core {
             this->node->connect("replacing_by", Callable(this->nodeSignalWrapper, "replacing_by"));
             this->node->connect("tree_entered", Callable(this->nodeSignalWrapper, "tree_entered"));
             this->node->connect("tree_exited", Callable(this->nodeSignalWrapper, "tree_exited"));
-            
-            std::function<Variant(std::vector<Variant>)> treeExitingFunc =
-            [this](std::vector<Variant> args) {
-                Array argsArray;
-                if (this->treeExiting != nullptr) {
-                    this->treeExiting->emit(argsArray);
-                }
-                return Variant();
-            };
-            Callable treeExitingCallable = StlFunctionWrapper::create_callable_from_cpp_function(treeExitingFunc);
-            this->node->connect("tree_exiting", treeExitingCallable);
+            this->node->connect("tree_exiting", Callable(this->nodeSignalWrapper, "tree_exiting"));
         }
     public:
         sol::table scriptInstance = sol::lua_nil;
