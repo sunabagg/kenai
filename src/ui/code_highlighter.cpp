@@ -13,6 +13,7 @@ namespace sunaba::ui {
             "numberColor", sol::property(&CodeHighlighter::getNumberColor, &CodeHighlighter::setNumberColor),
             "symbolColor", sol::property(&CodeHighlighter::getSymbolColor, &CodeHighlighter::setSymbolColor),
             "addColorRegion", &CodeHighlighter::addColorRegion,
+            "addKeywordColor", &CodeHighlighter::addKeywordColor,
         );
     }
 }
