@@ -279,6 +279,7 @@ namespace sunaba::ui {
             "setColumnExpandRatio", &Tree::setColumnExpandRatio,
             "setColumnTitle", &Tree::setColumnTitle,
             "setColumnTitleAlignment", &Tree::setColumnTitleAlignment,
+            "setColumnTitleDirection", &Tree::setColumnTitleDirection,
         );
     }
 }
