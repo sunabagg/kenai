@@ -182,6 +182,10 @@ namespace sunaba::ui {
                 &Tree::getScrollVerticalEnabled,
                 &Tree::setScrollVerticalEnabled
             ),
+            "selectMode", sol::property(
+                &Tree::getSelectMode,
+                &Tree::setSelectMode
+            ),
         );
     }
 }
