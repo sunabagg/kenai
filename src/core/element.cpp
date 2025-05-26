@@ -216,4 +216,11 @@ namespace sunaba::core {
             element->childOrderChanged->emit(args);
         }
     }
+
+    void NodeSignalWrapper::renamed() {
+        if (element->renamed != nullptr) {
+            Array args;
+            element->renamed->emit(args);
+        }
+    }
 }
