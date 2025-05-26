@@ -348,6 +348,10 @@ namespace sunaba::ui {
             void ensureCursorIsVisible() {
                 tree->ensure_cursor_is_visible();
             }
+
+            int getButtonIdAtPosition(const Vector2& position) const {
+                return tree->get_button_id_at_position(position);
+            }
     };
 }
 
