@@ -86,8 +86,8 @@ namespace sunaba::ui {
             return code_highlighter->get_symbol_color();
         }
 
-        void addColorRegion(const String &p_start_key, const String &p_end_key, const Color &p_color, bool p_line_only = false) {
-            code_highlighter->add_color_region(p_start_key, p_end_key, p_color, p_line_only);
+        void addColorRegion(const std::string &p_start_key, const std::string &p_end_key, const Color &p_color, bool p_line_only = false) {
+            code_highlighter->add_color_region(p_start_key.c_str(), p_end_key.c_str(), p_color, p_line_only);
         }
 
         void addKeywordColor(const String &p_keyword, const Color &p_color) {
