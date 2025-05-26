@@ -248,6 +248,8 @@ namespace sunaba::ui {
             void setCustomItemClickedEvent(Event* event) {
                 customItenClickedEvent = event;
             }
+
+            Event* customPopupEditedEvent;
     };
 }
 
