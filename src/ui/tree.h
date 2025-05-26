@@ -240,6 +240,8 @@ namespace sunaba::ui {
             void setColumnTitleClickedEvent(Event* event) {
                 columnTitleClickedEvent = event;
             }
+
+            Event* customItenClickedEvent;
     };
 }
 
