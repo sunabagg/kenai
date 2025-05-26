@@ -2,7 +2,7 @@
 #define V_BOX_CONTAINER_H
 
 #include <godot_cpp/classes/v_box_container.hpp>
-#include <godot-cpp/variant/variant.hpp>
+#include <godot_cpp/variant/variant.hpp>
 #include <sol/sol.hpp>
 
 #define VBoxContainerNode godot::VBoxContainer
