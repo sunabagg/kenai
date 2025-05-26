@@ -33,6 +33,7 @@
 #include "panel_container.h"
 #include "range.h"
 #include "progress_bar.h"
+#include "reference_rect.h"
 
 void sunaba::ui::bindUIClasses(sol::state& lua) {
     bindStyleBox(lua);
@@ -68,4 +69,5 @@ void sunaba::ui::bindUIClasses(sol::state& lua) {
     bindPanelContainer(lua);
     bindRange(lua);
     bindProgressBar(lua);
+    bindReferenceRect(lua);
 }
