@@ -274,6 +274,7 @@ namespace sunaba::ui {
             "isColumnClippingContent", &Tree::isColumnClippingContent,
             "isColumnExpanding", &Tree::isColumnExpanding,
             "scrollToItem", &Tree::scrollToItem,
+            "setColumnCustomMinimumWidth", &Tree::setColumnCustomMinimumWidth,
         );
     }
 }
