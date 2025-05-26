@@ -344,6 +344,10 @@ namespace sunaba::ui {
             bool editSelected(bool forceEdit = false) {
                 return tree->edit_selected(forceEdit);
             }
+
+            void ensureCursorIsVisible() {
+                tree->ensure_cursor_is_visible();
+            }
     };
 }
 
