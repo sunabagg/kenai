@@ -74,10 +74,18 @@ namespace sunaba::ui {
             this->element->dropData(at_position, data);
         }
     }
+
     Variant VFlowContainerProxy::_get_drag_data(const Vector2 &at_position) {
         if (element != nullptr) {
             return element->getDragData(at_position);
         }
         return Variant();
+    }
+
+    Vector2 VFlowContainerProxy::_get_minimum_size() const {
+        if (element != nullptr) {
+            return element->getMinimumSize();
+        }
+        return Vector2();
     }
 } // namespace sunaba::ui
