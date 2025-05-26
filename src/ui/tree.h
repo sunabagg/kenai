@@ -424,6 +424,10 @@ namespace sunaba::ui {
             int getSelectedColumn() const {
                 return tree->get_selected_column();
             }
+
+            bool isColumnClippingContent(int column) const {
+                return tree->is_column_clipping_content(column);
+            }
     };
 }
 
