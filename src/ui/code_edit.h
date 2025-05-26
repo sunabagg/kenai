@@ -464,6 +464,12 @@ namespace sunaba::ui {
                             candidatesArray.append(candidate);
                         }
                         std::vector<Dictionary> res = func(scriptInstance, candidatesArray);
+                        TypedArray<Dictionary> result;
+                        for (int i = 0; i < res.size(); ++i) {
+                            Dictionary item = res[i];
+                            result.push_back(item);
+                        }
+                        return result;
                     }
                 }
                 return TypedArray<Dictionary>();
