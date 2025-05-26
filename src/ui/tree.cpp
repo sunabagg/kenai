@@ -194,6 +194,10 @@ namespace sunaba::ui {
                 &Tree::getCellSelectedEvent,
                 &Tree::setCellSelectedEvent
             ),
+            "checkPropagatedToItem", sol::property(
+                &Tree::getCheckPropagatedToItemEvent,
+                &Tree::setCheckPropagatedToItemEvent
+            ),
         );
     }
 }
