@@ -259,6 +259,7 @@ namespace sunaba::ui {
             "getColumnTitleDirection", &Tree::getColumnTitleDirection,
             "getColumnTitleLanguage", &Tree::getColumnTitleLanguage,
             "getColumnWidth", &Tree::getColumnWidth,
+            "getCustomPopupRect", &Tree::getCustomPopupRect,
         );
     }
 }
