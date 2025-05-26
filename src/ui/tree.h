@@ -440,6 +440,10 @@ namespace sunaba::ui {
             void setColumnCustomMinimumWidth(int column, int minWidth) {
                 tree->set_column_custom_minimum_width(column, minWidth);
             }
+
+            void setColumnExpand(int column, bool expand) {
+                tree->set_column_expand(column, expand);
+            }
     };
 }
 
