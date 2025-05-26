@@ -22,6 +22,7 @@
 #include "h_flow_container.h"
 #include "item_list.h"
 #include "label.h"
+#include "line_edit.h"
 
 void sunaba::ui::bindUIClasses(sol::state& lua) {
     bindStyleBox(lua);
@@ -46,4 +47,5 @@ void sunaba::ui::bindUIClasses(sol::state& lua) {
     bindHFlowContainer(lua);
     bindItemList(lua);
     bindLabel(lua);
+    bindLineEdit(lua);
 }
