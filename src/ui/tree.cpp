@@ -142,6 +142,10 @@ namespace sunaba::ui {
                 &Tree::getAutoTooltip,
                 &Tree::setAutoTooltip
             ),
+            "clipContents", sol::property(
+                &Tree::getClipContents,
+                &Tree::setClipContents
+            ),
         );
     }
 }
