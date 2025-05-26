@@ -129,6 +129,10 @@ namespace sunaba::ui {
         void removeKeywordColor(const std::string &p_keyword) {
             code_highlighter->remove_keyword_color(p_keyword.c_str());
         }
+
+        void removeMemberKeywordColor(const std::string &p_member_keyword) {
+            code_highlighter->remove_member_keyword_color(p_member_keyword.c_str());
+        }
     };
 }
 
