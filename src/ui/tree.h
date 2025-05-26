@@ -285,6 +285,9 @@ namespace sunaba::ui {
             Event* getItemEditedEvent() {
                 return itemEditedEvent;
             }
+            void setItemEditedEvent(Event* event) {
+                itemEditedEvent = event;
+            }
     };
 }
 
