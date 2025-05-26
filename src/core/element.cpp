@@ -1,6 +1,8 @@
 #include "element.h"
 #include "proxy_db.h"
 #include "stl_function_wrapper.h"
+#include "viewport.h"
+#include "../desktop/window.h"
 
 using namespace sunaba::core;
 using namespace godot;
