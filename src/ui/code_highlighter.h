@@ -109,6 +109,10 @@ namespace sunaba::ui {
         void clearMemberKeywordColors() {
             code_highlighter->clear_member_keyword_colors();
         }
+
+        bool hasColorRegion(const String &p_start_key) const {
+            return code_highlighter->has_color_region(p_start_key);
+        }
     };
 }
 
