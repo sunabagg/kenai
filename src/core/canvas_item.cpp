@@ -81,6 +81,12 @@ namespace sunaba::core {
         }
     }
 
+    void CanvasItemSignalWrapper::item_rect_changed() {
+        if (element != nullptr) {
+            element->itemRectChanged->emit(godot::Array());
+        }
+    }
+
     void bindCanvasItem(sol::state& lua) {
         lua.new_usertype<CanvasItem>(
             "CanvasItem",
