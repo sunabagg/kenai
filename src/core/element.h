@@ -80,16 +80,6 @@ namespace sunaba::core {
             this->node->connect("replacing_by", Callable(this->nodeSignalWrapper, "replacing_by"));
             this->node->connect("tree_entered", Callable(this->nodeSignalWrapper, "tree_entered"));
             
-            std::function<Variant(std::vector<Variant>)> treeEnteredFunc =
-            [this](std::vector<Variant> args) {
-                Array argsArray;
-                if (this->treeEntered != nullptr) {
-                    this->treeEntered->emit(argsArray);
-                }
-                return Variant();
-            };
-            Callable treeEnteredCallable = StlFunctionWrapper::create_callable_from_cpp_function(treeEnteredFunc);
-            this->node->connect("tree_entered", treeEnteredCallable);
             std::function<Variant(std::vector<Variant>)> treeExitedFunc =
             [this](std::vector<Variant> args) {
                 Array argsArray;
