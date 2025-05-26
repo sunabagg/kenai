@@ -54,6 +54,7 @@
 #include "syntax_highlighter.h"
 #include "text_edit.h"
 #include "code_edit.h"
+#include "texture_button.h"
 
 void sunaba::ui::bindUIClasses(sol::state& lua) {
     bindStyleBox(lua);
@@ -110,4 +111,5 @@ void sunaba::ui::bindUIClasses(sol::state& lua) {
     bindSyntaxHighlighter(lua);
     bindTextEdit(lua);
     bindCodeEdit(lua);
+    bindTextureButton(lua);
 }
