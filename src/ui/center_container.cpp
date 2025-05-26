@@ -129,7 +129,7 @@ namespace sunaba::ui {
         return PackedInt32Array();
     }
 
-    void bindCenterContainerProxy(sol::state& lua) {
+    void bindCenterContainer(sol::state& lua) {
         lua.new_usertype<CenterContainer>("CenterContainer",
             sol::constructors<CenterContainer()>(),
             sol::base_classes, sol::bases<BaseObject, Element, sunaba::core::CanvasItem, Control, Container>(),
