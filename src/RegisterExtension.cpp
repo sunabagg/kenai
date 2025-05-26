@@ -13,6 +13,8 @@
 #include "tests/scene_test.h"
 #include "app.h"
 
+#include "core/element.h"
+
 /// @file
 /// Register our classes with Godot.
 
