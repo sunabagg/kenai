@@ -247,6 +247,7 @@ namespace sunaba::ui {
                 &Tree::setNothingSelectedEvent
             ),
             "clear", &Tree::clear,
+            "createItem", &Tree::createItem,
         );
     }
 }
