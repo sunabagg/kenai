@@ -304,6 +304,8 @@ namespace sunaba::ui {
             void setItemMouseSelectedEvent(Event* event) {
                 itemMouseSelectedEvent = event;
             }
+
+            Event* itemSelectedEvent;
     };
 }
 
