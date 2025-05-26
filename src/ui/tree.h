@@ -388,6 +388,10 @@ namespace sunaba::ui {
             int getDropSelectionAtPosition(const Vector2& position) const {
                 return tree->get_drop_section_at_position(position);
             }
+
+            int getEditedColumn() const {
+                return tree->get_edited_column();
+            }
     };
 }
 
