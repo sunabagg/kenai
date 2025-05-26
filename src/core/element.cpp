@@ -245,4 +245,11 @@ namespace sunaba::core {
             element->treeExited->emit(args);
         }
     }
+
+    void NodeSignalWrapper::tree_exiting() {
+        if (element->treeExiting != nullptr) {
+            Array args;
+            element->treeExiting->emit(args);
+        }
+    }
 }
