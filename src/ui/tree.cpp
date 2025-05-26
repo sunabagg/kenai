@@ -130,6 +130,10 @@ namespace sunaba::ui {
                 &Tree::getAllowReselect,
                 &Tree::setAllowReselect
             ),
+            "allowRmbSelect", sol::property(
+                &Tree::getAllowRmbSelect,
+                &Tree::setAllowRmbSelect
+            ),
         );
     }
 }
