@@ -35,6 +35,7 @@ namespace
         godot::ClassDB::register_class<sunaba::core::SceneNode>();
         godot::ClassDB::register_class<sunaba::core::EventBridge>();
         godot::ClassDB::register_class<sunaba::core::BaseObjectProxy>();
+        godot::ClassDB::register_class<sunaba::core::StlFunctionWrapper>();
     }
 
     /// @brief Called by Godot to let us do any cleanup.
