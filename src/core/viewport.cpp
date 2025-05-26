@@ -68,6 +68,13 @@ namespace sunaba::core {
         }
     }
 
+    void ViewportSignalWrapper::size_changed() {
+        if (element != nullptr) {
+            Array args;
+            element->sizeChangedEvent->emit(args);
+        }
+    }
+
     void bindViewport(sol::state &lua) {
         lua.new_usertype<Viewport>("Viewport",
             sol::constructors<Viewport()>(),
