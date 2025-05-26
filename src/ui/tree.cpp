@@ -222,6 +222,10 @@ namespace sunaba::ui {
                 &Tree::getItemCollapsedEvent,
                 &Tree::setItemCollapsedEvent
             ),
+            "itemEdited", sol::property(
+                &Tree::getItemEditedEvent,
+                &Tree::setItemEditedEvent
+            ),
         );
     }
 }
