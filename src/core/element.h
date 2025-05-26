@@ -323,12 +323,16 @@ namespace sunaba::core {
             node->set_name(name.c_str());
         }
 
-        void onFree() override {
+        void _delete() {
             // Freeing logic for the element
             if (node != nullptr) {
                 node->queue_free();
                 node = nullptr;
             }
+        }
+
+        void onFree() override {
+            
         }
 
         bool isNull() {
