@@ -121,4 +121,10 @@ namespace sunaba::ui {
         }
         return TypedArray<Vector3i>();
     }
+
+    void bindTree(sol::state &lua) {
+        lua.new_usertype<Tree>("Tree",
+            sol::constructors<Tree()>(),
+        );
+    }
 }
