@@ -134,6 +134,10 @@ namespace sunaba::ui {
                 &Tree::getAllowRmbSelect,
                 &Tree::setAllowRmbSelect
             ),
+            "allowSearch", sol::property(
+                &Tree::getAllowSearch,
+                &Tree::setAllowSearch
+            ),
         );
     }
 }
