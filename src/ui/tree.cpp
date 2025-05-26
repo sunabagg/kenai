@@ -174,6 +174,10 @@ namespace sunaba::ui {
                 &Tree::getHideRoot,
                 &Tree::setHideRoot
             ),
+            "scrollHorizontalEnabled", sol::property(
+                &Tree::getScrollHorizontalEnabled,
+                &Tree::setScrollHorizontalEnabled
+            ),
         );
     }
 }
