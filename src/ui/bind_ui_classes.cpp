@@ -23,4 +23,5 @@ void sunaba::ui::bindUIClasses(sol::state& lua) {
     bindBaseButton(lua);
     bindButtonGroup(lua);
     bindButton(lua);
+    bindCheckBox(lua);
 }
