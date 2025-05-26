@@ -170,6 +170,10 @@ namespace sunaba::ui {
                 &Tree::getHideFolding,
                 &Tree::setHideFolding
             ),
+            "hideRoot", sol::property(
+                &Tree::getHideRoot,
+                &Tree::setHideRoot
+            ),
         );
     }
 }
