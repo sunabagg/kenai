@@ -236,6 +236,9 @@ namespace sunaba::ui {
             Event* getColumnTitleClickedEvent() {
                 return columnTitleClickedEvent;
             }
+            void setColumnTitleClickedEvent(Event* event) {
+                columnTitleClickedEvent = event;
+            }
     };
 }
 
