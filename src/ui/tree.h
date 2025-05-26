@@ -368,6 +368,10 @@ namespace sunaba::ui {
             int getColumnTitleAlignment(int column) const {
                 return tree->get_column_title_alignment(column);
             }
+
+            int getColumnTitleDirection(int column) const {
+                return tree->get_column_title_direction(column);
+            }
     };
 }
 
