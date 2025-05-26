@@ -157,6 +157,13 @@ namespace sunaba::ui {
         }
     }
 
+    TypedArray<Dictionary> CodeEditProxy::_filter_code_completion_candidates(const TypedArray<Dictionary>& candidates) const {
+        if (this->element != nullptr) {
+            return this->element->onFilterCodeCompletionCandidates(candidates);
+        }
+        return TypedArray<Dictionary>();
+    }
+
     void bindCodeEdit(sol::state& lua) {
         lua.new_usertype<CodeEdit>("CodeEdit",
             sol::constructors<CodeEdit()>(),
