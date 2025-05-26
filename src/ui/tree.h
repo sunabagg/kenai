@@ -211,7 +211,7 @@ namespace sunaba::ui {
 
             Event* buttonClickedEvent;
             Event* getButtonClickedEvent() {
-                ret
+                return buttonClickedEvent;
             }
     };
 }
