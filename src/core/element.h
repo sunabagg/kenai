@@ -334,6 +334,10 @@ namespace sunaba::core {
         bool isNull() {
             return node == nullptr;
         }
+
+        sunaba::desktop::Viewport* getViewport();
+
+        sunaba::desktop::Window* getWindow();
     };
 }
 
