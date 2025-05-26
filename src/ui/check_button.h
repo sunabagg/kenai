@@ -11,6 +11,8 @@
 
 
 namespace sunaba::ui {
+    void bindCheckButton(sol::state& lua);
+    
     class CheckButton;
 
     class CheckButtonProxy : public CheckButtonNode {
