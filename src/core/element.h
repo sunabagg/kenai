@@ -52,6 +52,8 @@ namespace sunaba::core {
             void child_exited_tree(Node* child);
 
             void child_order_changed();
+
+            void renamed(); 
     };
 
     class Viewport;
