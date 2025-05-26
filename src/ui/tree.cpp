@@ -255,7 +255,8 @@ namespace sunaba::ui {
             "getColumnAtPosition", &Tree::getColumnAtPosition,
             "getColumnExpandRatio", &Tree::getColumnExpandRatio,
             "getColumnTitle", &Tree::getColumnTitle,
-            "getColumnTitleAlignment", &Tree::getColumnTitleAlignment
+            "getColumnTitleAlignment", &Tree::getColumnTitleAlignment,
+            "getColumnTitleDirection", &Tree::getColumnTitleDirection,
         );
     }
 }
