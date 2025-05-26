@@ -15,6 +15,7 @@
 #include "container.h"
 #include "aspect_ratio_container.h"
 #include "box_container.h"
+#include "center_container.h"
 
 void sunaba::ui::bindUIClasses(sol::state& lua) {
     bindStyleBox(lua);
@@ -32,4 +33,5 @@ void sunaba::ui::bindUIClasses(sol::state& lua) {
     bindContainer(lua);
     bindAspectRatioContainer(lua);
     bindBoxContainer(lua);
+    bindCenterContainer(lua);
 }
