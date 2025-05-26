@@ -56,6 +56,8 @@ namespace sunaba::core {
             void renamed();
             
             void replacing_by(Node* node);
+
+            void tree_entered();
     };
 
     class Viewport;
