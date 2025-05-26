@@ -78,6 +78,7 @@ namespace sunaba::core {
             this->node->connect("child_order_changed", Callable(this->nodeSignalWrapper, "child_order_changed"));
             this->node->connect("renamed", Callable(this->nodeSignalWrapper, "renamed"));
             this->node->connect("replacing_by", Callable(this->nodeSignalWrapper, "replacing_by"));
+            this->node->connect("tree_entered", Callable(this->nodeSignalWrapper, "tree_entered"));
             
             std::function<Variant(std::vector<Variant>)> treeEnteredFunc =
             [this](std::vector<Variant> args) {
