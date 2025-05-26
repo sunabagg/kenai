@@ -249,6 +249,9 @@ namespace sunaba::core {
         }
 
         Element* getParent() {
+            if (isRootNode) {
+                return new Element(nullptr);
+            }
             return new Element(getNode()->get_parent());
         }
 
