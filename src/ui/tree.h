@@ -309,6 +309,9 @@ namespace sunaba::ui {
             Event* getItemSelectedEvent() {
                 return itemSelectedEvent;
             }
+            void setItemSelectedEvent(Event* event) {
+                itemSelectedEvent = event;
+            }
     };
 }
 
