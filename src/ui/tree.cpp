@@ -276,6 +276,7 @@ namespace sunaba::ui {
             "scrollToItem", &Tree::scrollToItem,
             "setColumnCustomMinimumWidth", &Tree::setColumnCustomMinimumWidth,
             "setColumnExpand", &Tree::setColumnExpand,
+            "setColumnExpandRatio", &Tree::setColumnExpandRatio,
         );
     }
 }
