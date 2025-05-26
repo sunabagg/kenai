@@ -290,6 +290,9 @@ namespace sunaba::ui {
             }
 
             Event* itemIconDoubleClickedEvent;
+            Event* getItemIconDoubleClickedEvent() {
+                return itemIconDoubleClickedEvent;
+            }
     };
 }
 
