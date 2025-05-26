@@ -166,6 +166,10 @@ namespace sunaba::ui {
                 &Tree::getFocusMode,
                 &Tree::setFocusMode
             ),
+            "hideFolding", sol::property(
+                &Tree::getHideFolding,
+                &Tree::setHideFolding
+            ),
         );
     }
 }
