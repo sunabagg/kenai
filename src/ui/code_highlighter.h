@@ -54,8 +54,8 @@ namespace sunaba::ui {
             return code_highlighter->get_function_color();
         }
 
-        Color getKeywordColor() const {
-            return code_highlighter->get_keyword_color();
+        Color getKeywordColors() const {
+            return code_highlighter->get_keyword_colors();
         }
     };
 }
