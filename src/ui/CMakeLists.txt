@@ -120,6 +120,7 @@ target_sources(${PROJECT_NAME} PRIVATE
         tree.h
         tree.cpp
         v_box_container.h
+        v_box_container.cpp
 )
 
 target_include_directories( ${PROJECT_NAME}
