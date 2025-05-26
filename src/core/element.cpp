@@ -209,4 +209,11 @@ namespace sunaba::core {
             element->childExitedTree->emit(args);
         }
     }
+
+    void NodeSignalWrapper::child_order_changed() {
+        if (element->childOrderChanged != nullptr) {
+            Array args;
+            element->childOrderChanged->emit(args);
+        }
+    }
 }
