@@ -78,7 +78,7 @@ namespace sunaba::core {
                 this->nodeSignalWrapper->element = this;
             }
             this->node->connect("child_entered_tree", Callable(this->nodeSignalWrapper, "child_entered_tree"));
-            this->node->connect("child_exited_tree", Callable(this->nodeSignalWrapper, "child_exited_tree"));
+            this->node->connect("child_exiting_tree", Callable(this->nodeSignalWrapper, "child_exited_tree"));
             this->node->connect("child_order_changed", Callable(this->nodeSignalWrapper, "child_order_changed"));
             this->node->connect("renamed", Callable(this->nodeSignalWrapper, "renamed"));
             this->node->connect("replacing_by", Callable(this->nodeSignalWrapper, "replacing_by"));
