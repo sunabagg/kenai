@@ -400,6 +400,10 @@ namespace sunaba::ui {
             TreeItem* getItemAtPosition(const Vector2& position) const {
                 return new TreeItem(tree->get_item_at_position(position));
             }
+
+            TreeItem* getNextSelected(TreeItem* from) const {
+                return new TreeItem(tree->get_next_selected(from->getTreeItem()));
+            }
     };
 }
 
