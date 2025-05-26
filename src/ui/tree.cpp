@@ -158,6 +158,10 @@ namespace sunaba::ui {
                 &Tree::getDropModeFlags,
                 &Tree::setDropModeFlags
             ),
+            "enableRecursiveFolding", sol::property(
+                &Tree::getEnableRecursiveFolding,
+                &Tree::setEnableRecursiveFolding
+            ),
         );
     }
 }
