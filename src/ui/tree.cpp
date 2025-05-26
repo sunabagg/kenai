@@ -270,6 +270,7 @@ namespace sunaba::ui {
             "getRoot", &Tree::getRoot,
             "getScroll", &Tree::getScroll,
             "getSelected", &Tree::getSelected,
+            "getSelectedColumn", &Tree::getSelectedColumn,
         );
     }
 }
