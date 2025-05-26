@@ -277,6 +277,7 @@ namespace sunaba::ui {
             "setColumnCustomMinimumWidth", &Tree::setColumnCustomMinimumWidth,
             "setColumnExpand", &Tree::setColumnExpand,
             "setColumnExpandRatio", &Tree::setColumnExpandRatio,
+            "setColumnTitle", &Tree::setColumnTitle,
         );
     }
 }
