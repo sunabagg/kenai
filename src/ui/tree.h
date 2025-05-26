@@ -372,6 +372,10 @@ namespace sunaba::ui {
             int getColumnTitleDirection(int column) const {
                 return tree->get_column_title_direction(column);
             }
+
+            std::string getColumnTitleLanguage(int column) const {
+                return tree->get_column_title_language(column).utf8().get_data();
+            }
     };
 }
 
