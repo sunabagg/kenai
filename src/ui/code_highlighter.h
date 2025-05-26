@@ -17,7 +17,7 @@ namespace sunaba::ui {
 
     class CodeEdit;
 
-    class CodeHighlighter : public sunaba::core::Resource {
+    class CodeHighlighter : public SyntaxHighlighter {
     private:
         GodotCodeHighlighter* code_highlighter = nullptr; // Pointer to the CodeHighlighter instance
     public:
@@ -39,7 +39,7 @@ namespace sunaba::ui {
         // Setter for the CodeHighlighter node
         void setCodeHighlighter(GodotCodeHighlighter* p_node) {
             code_highlighter = p_node;
-            setResource(code_highlighter);
+            set(code_highlighter);
         }
 
         Dictionary getColorRegions() const {
