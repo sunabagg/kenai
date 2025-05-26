@@ -208,6 +208,8 @@ namespace sunaba::ui {
             void setSelectMode(int mode) {
                 tree->set_select_mode(static_cast<GodotTree::SelectMode>(mode));
             }
+
+            Event* buttonClickedEvent;
     };
 }
 
