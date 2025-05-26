@@ -223,4 +223,12 @@ namespace sunaba::core {
             element->renamed->emit(args);
         }
     }
+
+    void NodeSignalWrapper::replacing_by(Node* node) {
+        if (element->replacingBy != nullptr) {
+            Array args;
+            args.append(node);
+            element->replacingBy->emit(args);
+        }
+    }
 }
