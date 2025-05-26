@@ -253,6 +253,9 @@ namespace sunaba::ui {
             Event* getCustomPopupEditedEvent() {
                 return customPopupEditedEvent;
             }
+            void setCustomPopupEditedEvent(Event* event) {
+                customPopupEditedEvent = event;
+            }
     };
 }
 
