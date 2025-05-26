@@ -11,6 +11,8 @@
 #include "../core/texture2d.h"
 
 namespace sunaba::ui {
+    void bindButton(sol::state& lua);
+
     class Button;
 
     class ButtonProxy : public ButtonNode {
