@@ -139,6 +139,7 @@ void App::start( const String &path) {
     sunaba::desktop::bindDesktopClasses(global_state);
 
     auto* rootNode = new sunaba::core::Element(this);
+    rootNode->isRootNode = true;
 #ifdef _WIN32
     // Register hx-lua-simdjson module
     //global_state.require("hx_lua_simdjson", luaopen_hxsimdjson, false);
