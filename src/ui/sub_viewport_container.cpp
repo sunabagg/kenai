@@ -136,7 +136,7 @@ namespace sunaba::ui {
         return false;
     }
 
-    void bindSubViewportContainerProxy(sol::state& lua) {
+    void bindSubViewportContainer(sol::state& lua) {
         lua.new_usertype<SubViewportContainer>("SubViewportContainer",
             sol::constructors<SubViewportContainer()>(),
             sol::base_classes, sol::bases<BaseObject, Element, sunaba::core::CanvasItem, Control, Container>(),
