@@ -140,6 +140,7 @@ void App::start( const String &path) {
 
     auto* rootNode = new sunaba::core::Element(this);
     rootNode->isRootNode = true;
+    global_state["rootNode"] = rootNode;
 #ifdef _WIN32
     // Register hx-lua-simdjson module
     //global_state.require("hx_lua_simdjson", luaopen_hxsimdjson, false);
