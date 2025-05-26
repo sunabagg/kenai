@@ -129,4 +129,11 @@ namespace sunaba::ui {
         }
         return PackedInt32Array();
     }
+
+    void bindVFlowContainer(sol::state &lua) {
+        lua.new_usertype<VFlowContainer>("VFlowContainer",
+            sol::constructors<VFlowContainer()>(),
+            sol::base_classes, sol::bases<BaseObject, Element, sunaba::core::CanvasItem, Control, Container, FlowContainer>()
+        );
+    }
 } // namespace sunaba::ui
