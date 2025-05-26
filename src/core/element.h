@@ -13,6 +13,11 @@
 using namespace sunaba::core;
 using namespace godot;
 
+namespace sunaba::desktop {
+    class Viewport;
+    class Window;
+}
+
 namespace sunaba::core {
     void bindElement(sol::state &lua);
 
