@@ -266,6 +266,7 @@ namespace sunaba::ui {
             "getItemAreaRect", &Tree::getItemAreaRect,
             "getItemAtPosition", &Tree::getItemAtPosition,
             "getNextSelected", &Tree::getNextSelected,
+            "getPressedButton", &Tree::getPressedButton,
         );
     }
 }
