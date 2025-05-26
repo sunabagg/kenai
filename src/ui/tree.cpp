@@ -87,4 +87,11 @@ namespace sunaba::ui {
         }
         return Vector2();
     }
+
+    String TreeProxy::_get_tooltip(const Vector2 &at_position) const {
+        if (this->element != nullptr) {
+            return this->element->_getTooltip(at_position).c_str();
+        }
+        return String();
+    }
 }
