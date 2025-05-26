@@ -254,6 +254,7 @@ namespace sunaba::ui {
             "getButtonIdAtPosition", &Tree::getButtonIdAtPosition,
             "getColumnAtPosition", &Tree::getColumnAtPosition,
             "getColumnExpandRatio", &Tree::getColumnExpandRatio,
+            "getColumnTitle", &Tree::getColumnTitle,
         );
     }
 }
