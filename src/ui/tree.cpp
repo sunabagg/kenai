@@ -198,6 +198,10 @@ namespace sunaba::ui {
                 &Tree::getCheckPropagatedToItemEvent,
                 &Tree::setCheckPropagatedToItemEvent
             ),
+            "columnTitleClicked", sol::property(
+                &Tree::getColumnTitleClickedEvent,
+                &Tree::setColumnTitleClickedEvent
+            ),
         );
     }
 }
