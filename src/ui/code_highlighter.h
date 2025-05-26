@@ -61,6 +61,10 @@ namespace sunaba::ui {
         Dictionary getKeywordColors() const {
             return code_highlighter->get_keyword_colors();
         }
+
+        void setKeywordColors(const Dictionary &p_keywords) {
+            code_highlighter->set_keyword_colors(p_keywords);
+        }
     };
 }
 
