@@ -436,6 +436,10 @@ namespace sunaba::ui {
             void scrollToItem(TreeItem* item, bool centerOnItem = false) {
                 tree->scroll_to_item(item->getTreeItem(), centerOnItem);
             }
+
+            void setColumnCustomMinimumWidth(int column, int minWidth) {
+                tree->set_column_custom_minimum_width(column, minWidth);
+            }
     };
 }
 
