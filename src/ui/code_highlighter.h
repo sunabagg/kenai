@@ -101,6 +101,10 @@ namespace sunaba::ui {
         void clearColorRegions() {
             code_highlighter->clear_color_regions();
         }
+
+        void clearKeywordColors() {
+            code_highlighter->clear_keyword_colors();
+        }
     };
 }
 
