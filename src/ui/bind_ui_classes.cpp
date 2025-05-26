@@ -18,6 +18,7 @@
 #include "center_container.h"
 #include "flow_container.h"
 #include "grid_container.h"
+#include "h_box_container.h"
 
 void sunaba::ui::bindUIClasses(sol::state& lua) {
     bindStyleBox(lua);
@@ -38,4 +39,5 @@ void sunaba::ui::bindUIClasses(sol::state& lua) {
     bindCenterContainer(lua);
     bindFlowContainer(lua);
     bindGridContainer(lua);
+    bindHBoxContainer(lua);
 }
