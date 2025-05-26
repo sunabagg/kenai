@@ -121,6 +121,10 @@ namespace sunaba::ui {
         bool hasMemberKeywordColor(const std::string &p_member_keyword) const {
             return code_highlighter->has_member_keyword_color(p_member_keyword.c_str());
         }
+
+        void removeColorRegion(const std::string &p_start_key) {
+            code_highlighter->remove_color_region(p_start_key.c_str());
+        }
     };
 }
 
