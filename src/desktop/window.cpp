@@ -62,7 +62,7 @@ namespace sunaba::desktop {
         return WindowNode::_get_contents_minimum_size();
     }
 
-    void bindWindow(sol::state_view& lua) {
+    void bindWindow(sol::state& lua) {
         lua.new_usertype<Window>("Window",
             sol::constructors<Window()>(),
             sol::base_classes, sol::bases<BaseObject, Element, sunaba::core::Viewport>(),
