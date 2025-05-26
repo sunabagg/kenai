@@ -452,6 +452,10 @@ namespace sunaba::ui {
             void setColumnTitle(int column, const std::string& title) {
                 tree->set_column_title(column, String(title.c_str()));
             }
+
+            void setColumnTitleAlignment(int column, int alignment) {
+                tree->set_column_title_alignment(column, static_cast<HorizontalAlignment>(alignment));
+            }
     };
 }
 
