@@ -186,6 +186,10 @@ namespace sunaba::ui {
                 &Tree::getSelectMode,
                 &Tree::setSelectMode
             ),
+            "buttonClicked", sol::property(
+                &Tree::getButtonClickedEvent,
+                &Tree::setButtonClickedEvent
+            ),
         );
     }
 }
