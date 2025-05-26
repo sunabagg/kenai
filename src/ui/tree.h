@@ -332,6 +332,10 @@ namespace sunaba::ui {
             void clear() {
                 tree->clear();
             }
+
+            TreeItem* createItem(TreeItem* parent = nullptr, int index = -1) {
+                return new TreeItem(tree->create_item(parent->getTreeItem(), index));
+            }
     };
 }
 
