@@ -72,7 +72,7 @@ namespace sunaba::core {
             this->node->connect("child_entered_tree", Callable(this->nodeSignalWrapper, "child_entered_tree"));
             this->node->connect("child_exited_tree", Callable(this->nodeSignalWrapper, "child_exited_tree"));
             this->node->connect("child_order_changed", Callable(this->nodeSignalWrapper, "child_order_changed"));
-
+            this->node->connect("renamed", Callable(this->nodeSignalWrapper, "renamed"));
             
             std::function<Variant(std::vector<Variant>)> renamedFunc =
             [this](std::vector<Variant> args) {
