@@ -69,6 +69,10 @@ namespace sunaba::ui {
         Dictionary getMemberKeywordColors() const {
             return code_highlighter->get_member_keyword_colors();
         }
+
+        void setMemberKeywordColors(const Dictionary &p_member_keyword) {
+            code_highlighter->set_member_keyword_colors(p_member_keyword);
+        }
     };
 }
 
