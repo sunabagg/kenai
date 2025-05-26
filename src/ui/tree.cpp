@@ -178,6 +178,10 @@ namespace sunaba::ui {
                 &Tree::getScrollHorizontalEnabled,
                 &Tree::setScrollHorizontalEnabled
             ),
+            "scrollVerticalEnabled", sol::property(
+                &Tree::getScrollVerticalEnabled,
+                &Tree::setScrollVerticalEnabled
+            ),
         );
     }
 }
