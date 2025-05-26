@@ -277,6 +277,9 @@ namespace sunaba::ui {
             Event* getItemCollapsedEvent() {
                 return itemCollapsedEvent;
             }
+            void setItemCollapsedEvent(Event* event) {
+                itemCollapsedEvent = event;
+            }
     };
 }
 
