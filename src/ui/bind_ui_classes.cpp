@@ -27,6 +27,7 @@
 #include "margin_container.h"
 #include "menu_bar.h"
 #include "menu_button.h"
+#include "nine_patch_rect.h"
 
 void sunaba::ui::bindUIClasses(sol::state& lua) {
     bindStyleBox(lua);
@@ -56,4 +57,5 @@ void sunaba::ui::bindUIClasses(sol::state& lua) {
     bindMarginContainer(lua);
     bindMenuBar(lua);
     bindMenuButton(lua);
+    bindNinePatchRect(lua);
 }
