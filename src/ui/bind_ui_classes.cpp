@@ -26,6 +26,7 @@
 #include "link_button.h"
 #include "margin_container.h"
 #include "menu_bar.h"
+#include "menu_button.h"
 
 void sunaba::ui::bindUIClasses(sol::state& lua) {
     bindStyleBox(lua);
@@ -54,4 +55,5 @@ void sunaba::ui::bindUIClasses(sol::state& lua) {
     bindLinkButton(lua);
     bindMarginContainer(lua);
     bindMenuBar(lua);
+    bindMenuButton(lua);
 }
