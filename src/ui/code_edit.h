@@ -445,11 +445,11 @@ namespace sunaba::ui {
                 symbolValidateEvent = event;
             }
 
-            void onConfirmCodeCompletion() {
+            void onConfirmCodeCompletion(bool replace) {
                 if (scriptInstance != sol::lua_nil) {
                     auto func = scriptInstance["confirm_code_completion"].get<sol::function>();
                     if (func) {
-                        func(scriptInstance);
+                        func(scriptInstance, replace);
                     }
                 }
             }
