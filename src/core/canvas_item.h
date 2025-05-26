@@ -46,9 +46,9 @@ namespace sunaba::core {
             ~CanvasItemSignalWrapper() = default;
 
             void draw();
-            void hidden(const Array& args);
-            void item_rect_changed(const Array& args);
-            void visibility_changed(const Array& args);
+            void hidden();
+            void item_rect_changed();
+            void visibility_changed();
     };
 
     class CanvasItem : public Element {
