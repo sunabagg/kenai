@@ -360,6 +360,10 @@ namespace sunaba::ui {
             int getColumnExpandRatio(int column) const {
                 return tree->get_column_expand_ratio(column);
             }
+
+            std::string getColumnTitle(int column) const {
+                return tree->get_column_title(column).utf8().get_data();
+            }
     };
 }
 
