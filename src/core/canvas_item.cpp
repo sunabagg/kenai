@@ -62,6 +62,13 @@ namespace sunaba::core {
         }
     }
 
+    void CanvasItemSignalWrapper::_bind_methods() {
+        ClassDB::bind_method(D_METHOD("draw", "args"), &CanvasItemSignalWrapper::draw);
+        ClassDB::bind_method(D_METHOD("hidden", "args"), &CanvasItemSignalWrapper::hidden);
+        ClassDB::bind_method(D_METHOD("item_rect_changed", "args"), &CanvasItemSignalWrapper::item_rect_changed);
+        ClassDB::bind_method(D_METHOD("visibility_changed", "args"), &CanvasItemSignalWrapper::visibility_changed);
+    }
+
     void bindCanvasItem(sol::state& lua) {
         lua.new_usertype<CanvasItem>(
             "CanvasItem",
