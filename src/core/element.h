@@ -127,6 +127,8 @@ namespace sunaba::core {
     public:
         sol::table scriptInstance = sol::lua_nil;
 
+        bool isRootNode = false; // Flag to indicate if this is the root node
+
         Event* childEnteredTree;
         Event* childExitedTree;
         Event* childOrderChanged;
