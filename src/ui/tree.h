@@ -320,6 +320,8 @@ namespace sunaba::ui {
             void setMultiSelectedEvent(Event* event) {
                 multiSelectedEvent = event;
             }
+
+            Event* nothingSelectedEvent;
     };
 }
 
