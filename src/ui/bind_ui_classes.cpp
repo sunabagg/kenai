@@ -23,6 +23,7 @@
 #include "item_list.h"
 #include "label.h"
 #include "line_edit.h"
+#include "link_button.h"
 
 void sunaba::ui::bindUIClasses(sol::state& lua) {
     bindStyleBox(lua);
@@ -48,4 +49,5 @@ void sunaba::ui::bindUIClasses(sol::state& lua) {
     bindItemList(lua);
     bindLabel(lua);
     bindLineEdit(lua);
+    bindLinkButton(lua);
 }
