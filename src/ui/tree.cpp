@@ -12,4 +12,10 @@ namespace sunaba::ui {
             this->element->exitTree();
         }
     }
+
+    void TreeProxy::_ready() {
+        if (this->element != nullptr) {
+            this->element->ready();
+        }
+    }
 }
