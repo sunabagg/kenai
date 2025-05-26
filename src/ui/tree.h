@@ -328,6 +328,10 @@ namespace sunaba::ui {
             void setNothingSelectedEvent(Event* event) {
                 nothingSelectedEvent = event;
             }
+
+            void clear() {
+                tree->clear();
+            }
     };
 }
 
