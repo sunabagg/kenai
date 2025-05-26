@@ -81,6 +81,10 @@ namespace sunaba::ui {
         Color getNumberColor() const {
             return code_highlighter->get_number_color();
         }
+
+        Color getSymbolColor() const {
+            return code_highlighter->get_symbol_color();
+        }
     };
 }
 
