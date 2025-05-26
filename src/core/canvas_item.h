@@ -75,6 +75,14 @@ namespace sunaba::core {
         CanvasItem(CanvasItemProxy* p_node) {
             setCanvasItem(p_node);
         }
+
+        void onFree() override {
+            if (canvas_item_signal_wrapper) {
+                memdelete(canvas_item_signal_wrapper);
+                canvas_item_signal_wrapper = nullptr;
+            }
+            Element::onFree();
+        }
     
         // Constructor with no parameters
         CanvasItem() {
