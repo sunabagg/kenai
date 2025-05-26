@@ -17,3 +17,4 @@ out/*
 vcpkg_installed/*
 CMakeUserPresets.json
 .env
+*.DS_Store
