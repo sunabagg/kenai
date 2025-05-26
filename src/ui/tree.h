@@ -226,6 +226,9 @@ namespace sunaba::ui {
             }
 
             Event* checkPropagatedToItemEvent;
+            Event* getCheckPropagatedToItemEvent() {
+                return checkPropagatedToItemEvent;
+            }
     };
 }
 
