@@ -271,6 +271,7 @@ namespace sunaba::ui {
             "getScroll", &Tree::getScroll,
             "getSelected", &Tree::getSelected,
             "getSelectedColumn", &Tree::getSelectedColumn,
+            "isColumnClippingContent", &Tree::isColumnClippingContent
         );
     }
 }
