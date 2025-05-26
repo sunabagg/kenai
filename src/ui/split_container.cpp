@@ -95,6 +95,19 @@ namespace sunaba::ui {
         return String();
     }
 
+    bool SplitContainerProxy::_has_point(const Vector2& point) const {
+        if (element != nullptr) {
+            return element->hasPoint(point);
+        }
+        return false;
+    }
+    
+    void SplitContainerProxy::_gui_input(const Ref<InputEvent>& event) {
+        if (element != nullptr) {
+            element->guiInput(event);
+        }
+    }
+
     TypedArray<Vector3i> SplitContainerProxy::_structured_text_parser(const Array& args, const String& text) const {
         if (element != nullptr) {
             return element->structuredTextParser(args, text);
