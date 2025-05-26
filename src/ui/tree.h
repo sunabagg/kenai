@@ -232,6 +232,7 @@ namespace sunaba::ui {
             void setCheckPropagatedToItemEvent(Event* event) {
                 checkPropagatedToItemEvent = event;
             }
+            
             Event* columnTitleClickedEvent;
             Event* getColumnTitleClickedEvent() {
                 return columnTitleClickedEvent;
