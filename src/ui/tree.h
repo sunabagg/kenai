@@ -352,6 +352,10 @@ namespace sunaba::ui {
             int getButtonIdAtPosition(const Vector2& position) const {
                 return tree->get_button_id_at_position(position);
             }
+
+            int getColumnAtPosition(const Vector2& position) const {
+                return tree->get_column_at_position(position);
+            }
     };
 }
 
