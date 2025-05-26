@@ -296,6 +296,8 @@ namespace sunaba::ui {
             void setItemIconDoubleClickedEvent(Event* event) {
                 itemIconDoubleClickedEvent = event;
             }
+
+            Event* itemMouseSelectedEvent;
     };
 }
 
