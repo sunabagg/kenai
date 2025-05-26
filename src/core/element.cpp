@@ -168,3 +168,14 @@ sunaba::core::Viewport* sunaba::core::Element::getViewport() {
     }
     return new Viewport(viewport);
 }
+
+sunaba::desktop::Window* sunaba::core::Element::getWindow() {
+    if (node == nullptr) {
+        return nullptr;
+    }
+    godot::Window* window = Object::cast_to<godot::Window>(node->get_window());
+    if (window == nullptr) {
+        return nullptr;
+    }
+    return new sunaba::desktop::Window(window);
+}
