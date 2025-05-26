@@ -273,6 +273,7 @@ namespace sunaba::ui {
             "getSelectedColumn", &Tree::getSelectedColumn,
             "isColumnClippingContent", &Tree::isColumnClippingContent,
             "isColumnExpanding", &Tree::isColumnExpanding,
+            "scrollToItem", &Tree::scrollToItem,
         );
     }
 }
