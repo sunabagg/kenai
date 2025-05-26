@@ -25,6 +25,7 @@ namespace sunaba::ui {
             "hasMemberKeywordColor", &CodeHighlighter::hasMemberKeywordColor,
             "removeColorRegion", &CodeHighlighter::removeColorRegion,
             "removeKeywordColor", &CodeHighlighter::removeKeywordColor,
+            "removeMemberKeywordColor", &CodeHighlighter::removeMemberKeywordColor,
         );
     }
 }
