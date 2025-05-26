@@ -19,6 +19,7 @@ namespace sunaba::ui {
             "clearKeywordColors", &CodeHighlighter::clearKeywordColors,
             "clearMemberKeywordColors", &CodeHighlighter::clearMemberKeywordColors,
             "getKeywordColor", &CodeHighlighter::hasKeywordColor,
+            "getMemberKeyWorkColor", &CodeHighlighter::getMemberKeywordColor,
         );
     }
 }
