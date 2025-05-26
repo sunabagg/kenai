@@ -376,6 +376,10 @@ namespace sunaba::ui {
             std::string getColumnTitleLanguage(int column) const {
                 return tree->get_column_title_language(column).utf8().get_data();
             }
+
+            int getColumnWidth(int column) const {
+                return tree->get_column_width(column);
+            }
     };
 }
 
