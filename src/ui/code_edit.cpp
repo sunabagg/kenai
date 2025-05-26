@@ -151,6 +151,12 @@ namespace sunaba::ui {
         }
     }
 
+    void CodeEditProxy::_confirm_code_completion(bool replace) {
+        if (this->element != nullptr) {
+            this->element->onConfirmCodeCompletion(replace);
+        }
+    }
+
     void bindCodeEdit(sol::state& lua) {
         lua.new_usertype<CodeEdit>("CodeEdit",
             sol::constructors<CodeEdit()>(),
