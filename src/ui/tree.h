@@ -428,6 +428,10 @@ namespace sunaba::ui {
             bool isColumnClippingContent(int column) const {
                 return tree->is_column_clipping_content(column);
             }
+
+            bool isColumnExpanding(int column) const {
+                return tree->is_column_expanding(column);
+            }
     };
 }
 
