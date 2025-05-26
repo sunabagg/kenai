@@ -420,6 +420,10 @@ namespace sunaba::ui {
             TreeItem* getSelected() const {
                 return new TreeItem(tree->get_selected());
             }
+
+            int getSelectedColumn() const {
+                return tree->get_selected_column();
+            }
     };
 }
 
