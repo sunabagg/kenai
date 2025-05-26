@@ -115,4 +115,11 @@ namespace sunaba::ui {
         }
         return TypedArray<Vector3i>();
     }
+
+    PackedInt32Array VFlowContainerProxy::_get_allowed_size_flags_horizontal() const {
+        if (this->element != nullptr) {
+            return this->element->getAllowedSizeFlagsHorizontal();
+        }
+        return PackedInt32Array();
+    }
 } // namespace sunaba::ui
