@@ -392,6 +392,10 @@ namespace sunaba::ui {
             int getEditedColumn() const {
                 return tree->get_edited_column();
             }
+
+            Rect2 getItemAreaRect(TreeItem* item, int column = -1, int buttonIndex = -1) const {
+                return tree->get_item_area_rect(item->getTreeItem(), column, buttonIndex);
+            }
     };
 }
 
