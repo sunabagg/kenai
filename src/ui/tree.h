@@ -416,6 +416,10 @@ namespace sunaba::ui {
             Vector2 getScroll() const {
                 return tree->get_scroll();
             }
+
+            TreeItem* getSelected() const {
+                return new TreeItem(tree->get_selected());
+            }
     };
 }
 
