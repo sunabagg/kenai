@@ -162,6 +162,10 @@ namespace sunaba::ui {
                 &Tree::getEnableRecursiveFolding,
                 &Tree::setEnableRecursiveFolding
             ),
+            "focusMode", sol::property(
+                &Tree::getFocusMode,
+                &Tree::setFocusMode
+            ),
         );
     }
 }
