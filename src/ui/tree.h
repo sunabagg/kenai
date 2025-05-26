@@ -464,6 +464,10 @@ namespace sunaba::ui {
             void setColumnTitleLanguage(int column, const std::string& language) {
                 tree->set_column_title_language(column, String(language.c_str()));
             }
+
+            void setSelected(TreeItem* item, int column) {
+                tree->set_selected(item->getTreeItem(), column);
+            }
     };
 }
 
