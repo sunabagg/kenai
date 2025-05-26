@@ -94,8 +94,8 @@ namespace sunaba::ui {
             code_highlighter->add_keyword_color(p_keyword.c_str(), p_color);
         }
 
-        void addMemberKeywordColor(const String &p_member_keyword, const Color &p_color) {
-            code_highlighter->add_member_keyword_color(p_member_keyword, p_color);
+        void addMemberKeywordColor(const std::string &p_member_keyword, const Color &p_color) {
+            code_highlighter->add_member_keyword_color(p_member_keyword.c_str(), p_color);
         }
 
         void clearColorRegions() {
