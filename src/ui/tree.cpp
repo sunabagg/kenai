@@ -253,6 +253,7 @@ namespace sunaba::ui {
             "ensureCursorIsVisible", &Tree::ensureCursorIsVisible,
             "getButtonIdAtPosition", &Tree::getButtonIdAtPosition,
             "getColumnAtPosition", &Tree::getColumnAtPosition,
+            "getColumnExpandRatio", &Tree::getColumnExpandRatio,
         );
     }
 }
