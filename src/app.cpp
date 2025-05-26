@@ -17,6 +17,7 @@
 #include "input/bind_input_classes.h"
 #include "spatial/bind_spatial_classes.h"
 #include "ui/bind_ui_classes.h"
+#include "desktop/bind_desktop_classes.h"
 #ifdef _WIN32 // hack fix for MSVC. TODO: this is dumb
 //#include <hxluasimdjson.cpp>
 //#include <simdjson.cpp>
@@ -134,6 +135,7 @@ void App::start( const String &path) {
     sunaba::core::bindCoreClasses(global_state);
     sunaba::spatial::bindSpatialClasses(global_state);
     sunaba::ui::bindUIClasses(global_state);
+    sunaba::desktop::bindDesktopClasses(global_state);
 #ifdef _WIN32
     // Register hx-lua-simdjson module
     //global_state.require("hx_lua_simdjson", luaopen_hxsimdjson, false);
