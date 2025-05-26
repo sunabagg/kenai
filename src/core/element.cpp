@@ -157,3 +157,14 @@ void sunaba::core::NodeProxy::_shortcut_input(const Ref<InputEvent>& event) {
         this->element->shortcutInput(event);
     }
 }
+
+sunaba::core::Viewport* sunaba::core::Element::getViewport() {
+    if (node == nullptr) {
+        return nullptr;
+    }
+    godot::Viewport* viewport = Object::cast_to<godot::Viewport>(node->get_viewport());
+    if (viewport == nullptr) {
+        return nullptr;
+    }
+    return new Viewport(viewport);
+}
