@@ -404,6 +404,10 @@ namespace sunaba::ui {
             TreeItem* getNextSelected(TreeItem* from) const {
                 return new TreeItem(tree->get_next_selected(from->getTreeItem()));
             }
+
+            int getPressedButton() const {
+                return tree->get_pressed_button();
+            }
     };
 }
 
