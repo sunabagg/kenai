@@ -126,6 +126,10 @@ namespace sunaba::ui {
         lua.new_usertype<Tree>("Tree",
             sol::constructors<Tree()>(),
             sol::base_classes, sol::bases<BaseObject, Element, sunaba::core::CanvasItem, Control>(),
+            "allowReselect", sol::property(
+                &Tree::getAllowReselect,
+                &Tree::setAllowReselect
+            ),
         );
     }
 }
