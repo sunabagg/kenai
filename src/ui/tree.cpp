@@ -249,6 +249,7 @@ namespace sunaba::ui {
             "clear", &Tree::clear,
             "createItem", &Tree::createItem,
             "deselectAll", &Tree::deselectAll,
+            "editSelected", &Tree::editSelected
         );
     }
 }
