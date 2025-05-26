@@ -35,6 +35,22 @@ namespace sunaba::core {
             void _draw() override;
     };
 
+    class CanvasItemSignalWrapper : public Object {
+        GDCLASS(CanvasItemSignalWrapper, Object)
+        protected:
+            static void _bind_methods();
+        public:
+            sunaba::core::CanvasItem* element = nullptr;
+
+            CanvasItemSignalWrapper() = default;
+            ~CanvasItemSignalWrapper() = default;
+
+            void draw(const Array& args);
+            void hidden(const Array& args);
+            void item_rect_changed(const Array& args);
+            void visibility_changed(const Array& args);
+    };
+
     class CanvasItem : public Element {
     private:
         CanvasItemNode* canvas_item = nullptr; // Pointer to the CanvasItem instance
