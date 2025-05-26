@@ -26,6 +26,9 @@ namespace sunaba::ui {
             "removeColorRegion", &CodeHighlighter::removeColorRegion,
             "removeKeywordColor", &CodeHighlighter::removeKeywordColor,
             "removeMemberKeywordColor", &CodeHighlighter::removeMemberKeywordColor,
+            "cast", [](sunaba::core::Resource* p_resource) {
+                return new CodeHighlighter(godot::Object::cast_to<GodotCodeHighlighter>(p_resource->getResource()));
+            }
         );
     }
 }
