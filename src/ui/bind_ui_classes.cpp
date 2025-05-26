@@ -35,6 +35,7 @@
 #include "progress_bar.h"
 #include "reference_rect.h"
 #include "scroll_bar.h"
+#include "h_scroll_bar.h"
 
 void sunaba::ui::bindUIClasses(sol::state& lua) {
     bindStyleBox(lua);
@@ -72,4 +73,5 @@ void sunaba::ui::bindUIClasses(sol::state& lua) {
     bindProgressBar(lua);
     bindReferenceRect(lua);
     bindScrollBar(lua);
+    bindHScrollBar(lua);
 }
