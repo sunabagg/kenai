@@ -55,6 +55,7 @@
 #include "text_edit.h"
 #include "code_edit.h"
 #include "texture_button.h"
+#include "texture_progress_bar.h"
 
 void sunaba::ui::bindUIClasses(sol::state& lua) {
     bindStyleBox(lua);
@@ -112,4 +113,5 @@ void sunaba::ui::bindUIClasses(sol::state& lua) {
     bindTextEdit(lua);
     bindCodeEdit(lua);
     bindTextureButton(lua);
+    bindTextureProgressBar(lua);
 }
