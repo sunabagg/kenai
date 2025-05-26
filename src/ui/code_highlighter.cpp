@@ -14,6 +14,7 @@ namespace sunaba::ui {
             "symbolColor", sol::property(&CodeHighlighter::getSymbolColor, &CodeHighlighter::setSymbolColor),
             "addColorRegion", &CodeHighlighter::addColorRegion,
             "addKeywordColor", &CodeHighlighter::addKeywordColor,
+            "addMemberKeywordColor", &CodeHighlighter::addMemberKeywordColor,
         );
     }
 }
