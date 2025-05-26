@@ -58,6 +58,7 @@
 #include "texture_progress_bar.h"
 #include "texture_rect.h"
 #include "tree_item.h"
+#include "tree.h"
 
 void sunaba::ui::bindUIClasses(sol::state& lua) {
     bindStyleBox(lua);
@@ -118,4 +119,5 @@ void sunaba::ui::bindUIClasses(sol::state& lua) {
     bindTextureProgressBar(lua);
     bindTextureRect(lua);
     bindTreeItem(lua);
+    bindTree(lua);
 }
