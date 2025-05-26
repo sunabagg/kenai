@@ -312,6 +312,8 @@ namespace sunaba::ui {
             void setItemSelectedEvent(Event* event) {
                 itemSelectedEvent = event;
             }
+
+            Event* multiSelectedEvent;
     };
 }
 
