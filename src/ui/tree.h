@@ -389,6 +389,10 @@ namespace sunaba::ui {
                 return tree->get_drop_section_at_position(position);
             }
 
+            TreeItem* getEdited() const {
+                return new TreeItem(tree->get_edited());
+            }
+
             int getEditedColumn() const {
                 return tree->get_edited_column();
             }
