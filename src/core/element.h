@@ -344,7 +344,7 @@ namespace sunaba::core {
             return node == nullptr;
         }
 
-        sunaba::desktop::Viewport* getViewport();
+        Viewport* getViewport();
 
         sunaba::desktop::Window* getWindow();
     };
