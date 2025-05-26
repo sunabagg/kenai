@@ -53,6 +53,10 @@ namespace sunaba::ui {
         Color getFunctionColor() const {
             return code_highlighter->get_function_color();
         }
+        
+        void setFunctionColor(const Color &p_color) {
+            code_highlighter->set_function_color(p_color);
+        }
 
         Dictionary getKeywordColors() const {
             return code_highlighter->get_keyword_colors();
