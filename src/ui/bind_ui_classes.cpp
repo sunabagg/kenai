@@ -38,6 +38,7 @@
 #include "h_scroll_bar.h"
 #include "v_scroll_bar.h"
 #include "scroll_container.h"
+#include "separator.h"
 
 void sunaba::ui::bindUIClasses(sol::state& lua) {
     bindStyleBox(lua);
@@ -78,4 +79,5 @@ void sunaba::ui::bindUIClasses(sol::state& lua) {
     bindHScrollBar(lua);
     bindVScrollBar(lua);
     bindScrollContainer(lua);
+    bindSeparator(lua);
 }
