@@ -14,6 +14,7 @@
 #include "app.h"
 
 #include "core/element.h"
+#include "core/canvas_item.h"
 
 /// @file
 /// Register our classes with Godot.
@@ -40,6 +41,7 @@ namespace
         godot::ClassDB::register_class<sunaba::core::StlFunctionWrapper>();
 
         godot::ClassDB::register_class<sunaba::core::NodeSignalWrapper>();
+        godot::ClassDB::register_class<sunaba::core::CanvasItemSignalWrapper>();
     }
 
     /// @brief Called by Godot to let us do any cleanup.
