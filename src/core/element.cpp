@@ -184,7 +184,14 @@ sunaba::desktop::Window* sunaba::core::Element::getWindow() {
 
 namespace sunaba::core {
     void NodeSignalWrapper::_bind_methods() {
-        
+        ClassDB::bind_method(D_METHOD("child_entered_tree", "child"), &NodeSignalWrapper::child_entered_tree);
+        ClassDB::bind_method(D_METHOD("child_exited_tree", "child"), &NodeSignalWrapper::child_exited_tree);
+        ClassDB::bind_method(D_METHOD("child_order_changed"), &NodeSignalWrapper::child_order_changed);
+        ClassDB::bind_method(D_METHOD("renamed"), &NodeSignalWrapper::renamed);
+        ClassDB::bind_method(D_METHOD("replacing_by", "node"), &NodeSignalWrapper::replacing_by);
+        ClassDB::bind_method(D_METHOD("tree_entered"), &NodeSignalWrapper::tree_entered);
+        ClassDB::bind_method(D_METHOD("tree_exited"), &NodeSignalWrapper::tree_exited);
+        ClassDB::bind_method(D_METHOD("tree_exiting"), &NodeSignalWrapper::tree_exiting);
     }
 
     void NodeSignalWrapper::child_entered_tree(Node* child) {
