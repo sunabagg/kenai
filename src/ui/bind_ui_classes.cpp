@@ -10,6 +10,7 @@
 #include "base_button.h"
 #include "button_group.h"
 #include "button.h"
+#include "check_box.h"
 
 void sunaba::ui::bindUIClasses(sol::state& lua) {
     bindStyleBox(lua);
