@@ -8,6 +8,7 @@
 
 #include "core/scene_node.h"
 #include "core/event.h"
+#include "core/stl_function_wrapper.h"
 #include "core/base_object_proxy.h"
 #include "tests/scene_test.h"
 #include "app.h"
