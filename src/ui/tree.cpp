@@ -268,7 +268,8 @@ namespace sunaba::ui {
             "getNextSelected", &Tree::getNextSelected,
             "getPressedButton", &Tree::getPressedButton,
             "getRoot", &Tree::getRoot,
-            "getScroll", &Tree::getScroll
+            "getScroll", &Tree::getScroll,
+            "getSelected", &Tree::getSelected,
         );
     }
 }
