@@ -117,6 +117,8 @@ target_sources(${PROJECT_NAME} PRIVATE
         texture_rect.cpp
         tree_item.h
         tree_item.cpp
+        tree.h
+        tree.cpp
 )
 
 target_include_directories( ${PROJECT_NAME}
