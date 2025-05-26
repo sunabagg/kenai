@@ -206,6 +206,10 @@ namespace sunaba::ui {
                 &Tree::getCustomItemClickedEvent,
                 &Tree::setCustomItemClickedEvent
             ),
+            "customPopupEdited", sol::property(
+                &Tree::getCustomPopupEditedEvent,
+                &Tree::setCustomPopupEditedEvent
+            ),
         );
     }
 }
