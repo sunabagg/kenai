@@ -97,6 +97,10 @@ namespace sunaba::ui {
         void addMemberKeywordColor(const String &p_member_keyword, const Color &p_color) {
             code_highlighter->add_member_keyword_color(p_member_keyword, p_color);
         }
+
+        void clearColorRegions() {
+            code_highlighter->clear_color_regions();
+        }
     };
 }
 
