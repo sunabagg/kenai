@@ -54,4 +54,10 @@ namespace sunaba::ui {
             this->element->shortcutInput(event);
         }
     }
+
+    void TreeProxy::_draw() {
+        if (this->element != nullptr) {
+            this->element->_draw();
+        }
+    }
 }
