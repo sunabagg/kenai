@@ -274,6 +274,9 @@ namespace sunaba::ui {
             }
 
             Event* itemCollapsedEvent;
+            Event* getItemCollapsedEvent() {
+                return itemCollapsedEvent;
+            }
     };
 }
 
