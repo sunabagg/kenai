@@ -39,7 +39,7 @@ namespace sunaba::ui {
         // Setter for the CodeHighlighter node
         void setCodeHighlighter(GodotCodeHighlighter* p_node) {
             code_highlighter = p_node;
-            set(code_highlighter);
+            setSyntaxHighlighter(code_highlighter);
         }
 
         Dictionary getColorRegions() const {
