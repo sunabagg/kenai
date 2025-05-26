@@ -190,6 +190,10 @@ namespace sunaba::ui {
                 &Tree::getButtonClickedEvent,
                 &Tree::setButtonClickedEvent
             ),
+            "cellSelected", sol::property(
+                &Tree::getCellSelectedEvent,
+                &Tree::setCellSelectedEvent
+            ),
         );
     }
 }
