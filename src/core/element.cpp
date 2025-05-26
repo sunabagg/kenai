@@ -181,3 +181,11 @@ sunaba::desktop::Window* sunaba::core::Element::getWindow() {
     }
     return new sunaba::desktop::Window(window);
 }
+
+namespace sunaba::core {
+    void NodeSignalWrapper::child_entered_tree() {
+        if (element->childEnteredTree != nullptr) {
+            element->childEnteredTree->emit();
+        }
+    }
+}
