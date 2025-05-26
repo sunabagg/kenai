@@ -46,6 +46,10 @@ namespace sunaba::core {
 
             NodeSignalWrapper() = default;
             ~NodeSignalWrapper() = default;
+
+            void child_entered_tree(Node* child);
+
+            void child_exited_tree(Node* child);
     };
 
     class Viewport;
