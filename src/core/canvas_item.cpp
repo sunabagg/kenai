@@ -87,6 +87,12 @@ namespace sunaba::core {
         }
     }
 
+    void CanvasItemSignalWrapper::visibility_changed() {
+        if (element != nullptr) {
+            element->visibilityChanged->emit(godot::Array());
+        }
+    }
+
     void bindCanvasItem(sol::state& lua) {
         lua.new_usertype<CanvasItem>(
             "CanvasItem",
