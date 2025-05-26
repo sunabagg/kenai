@@ -216,6 +216,8 @@ namespace sunaba::ui {
             void setButtonClickedEvent(Event* event) {
                 buttonClickedEvent = event;
             }
+
+            Event* cellSelectedEvent;
     };
 }
 
