@@ -250,6 +250,9 @@ namespace sunaba::ui {
             }
 
             Event* customPopupEditedEvent;
+            Event* getCustomPopupEditedEvent() {
+                return customPopupEditedEvent;
+            }
     };
 }
 
