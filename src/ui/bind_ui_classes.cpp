@@ -14,6 +14,7 @@
 #include "check_button.h"
 #include "container.h"
 #include "aspect_ratio_container.h"
+#include "box_container.h"
 
 void sunaba::ui::bindUIClasses(sol::state& lua) {
     bindStyleBox(lua);
@@ -30,4 +31,5 @@ void sunaba::ui::bindUIClasses(sol::state& lua) {
     bindCheckButton(lua);
     bindContainer(lua);
     bindAspectRatioContainer(lua);
+    bindBoxContainer(lua);
 }
