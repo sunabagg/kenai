@@ -183,9 +183,15 @@ sunaba::desktop::Window* sunaba::core::Element::getWindow() {
 }
 
 namespace sunaba::core {
-    void NodeSignalWrapper::child_entered_tree() {
+    void NodeSignalWrapper::_bind_methods() {
+        
+    }
+
+    void NodeSignalWrapper::child_entered_tree(Node* child) {
         if (element->childEnteredTree != nullptr) {
-            element->childEnteredTree->emit();
+            Array args;
+            args.append(child);
+            element->childEnteredTree->emit(args);
         }
     }
 }
