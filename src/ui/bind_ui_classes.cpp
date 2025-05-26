@@ -53,6 +53,7 @@
 #include "tab_container.h"
 #include "syntax_highlighter.h"
 #include "text_edit.h"
+#include "code_edit.h"
 
 void sunaba::ui::bindUIClasses(sol::state& lua) {
     bindStyleBox(lua);
@@ -108,4 +109,5 @@ void sunaba::ui::bindUIClasses(sol::state& lua) {
     bindTabContainer(lua);
     bindSyntaxHighlighter(lua);
     bindTextEdit(lua);
+    bindCodeEdit(lua);
 }
