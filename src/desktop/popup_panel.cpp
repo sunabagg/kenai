@@ -62,7 +62,7 @@ namespace sunaba::desktop {
         return PopupPanelNode::get_contents_minimum_size();
     }
 
-    void bindPopupPanel(sol::state_view& lua) {
+    void bindPopupPanel(sol::state& lua) {
         lua.new_usertype<PopupPanel>("PopupPanel",
             sol::constructors<PopupPanel()>(),
             sol::base_classes, sol::bases<BaseObject, Element, sunaba::core::Viewport, Window, Popup>(),
