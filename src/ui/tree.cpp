@@ -138,6 +138,10 @@ namespace sunaba::ui {
                 &Tree::getAllowSearch,
                 &Tree::setAllowSearch
             ),
+            "autoTooltip", sol::property(
+                &Tree::getAutoTooltip,
+                &Tree::setAutoTooltip
+            ),
         );
     }
 }
