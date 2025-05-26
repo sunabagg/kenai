@@ -384,6 +384,10 @@ namespace sunaba::ui {
             Rect2 getCustomPopupRect() const {
                 return tree->get_custom_popup_rect();
             }
+
+            int getDropSelectionAtPosition(const Vector2& position) const {
+                return tree->get_drop_section_at_position(position);
+            }
     };
 }
 
