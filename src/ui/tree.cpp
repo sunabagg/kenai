@@ -263,6 +263,7 @@ namespace sunaba::ui {
             "getDropSelectionAtPosition", &Tree::getDropSelectionAtPosition,
             "getEdited", &Tree::getEdited,
             "getEditedColumn", &Tree::getEditedColumn,
+            "getItemAreaRect", &Tree::getItemAreaRect,
         );
     }
 }
