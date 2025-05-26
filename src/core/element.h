@@ -74,16 +74,7 @@ namespace sunaba::core {
             this->node->connect("child_order_changed", Callable(this->nodeSignalWrapper, "child_order_changed"));
             this->node->connect("renamed", Callable(this->nodeSignalWrapper, "renamed"));
             
-            std::function<Variant(std::vector<Variant>)> renamedFunc =
-            [this](std::vector<Variant> args) {
-                Array argsArray;
-                if (this->renamed != nullptr) {
-                    this->renamed->emit(argsArray);
-                }
-                return Variant();
-            };
-            Callable renamedCallable = StlFunctionWrapper::create_callable_from_cpp_function(renamedFunc);
-            this->node->connect("renamed", renamedCallable);
+            
             std::function<Variant(std::vector<Variant>)> replacingByFunc =
             [this](std::vector<Variant> args) {
                 Node* node = Object::cast_to<Node>(args[0].operator Object*());
