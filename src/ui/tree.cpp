@@ -238,6 +238,10 @@ namespace sunaba::ui {
                 &Tree::getItemSelectedEvent,
                 &Tree::setItemSelectedEvent
             ),
+            "multiSelected", sol::property(
+                &Tree::getMultiSelectedEvent,
+                &Tree::setMultiSelectedEvent
+            ),
         );
     }
 }
