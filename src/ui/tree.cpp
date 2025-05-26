@@ -280,6 +280,7 @@ namespace sunaba::ui {
             "setColumnTitle", &Tree::setColumnTitle,
             "setColumnTitleAlignment", &Tree::setColumnTitleAlignment,
             "setColumnTitleDirection", &Tree::setColumnTitleDirection,
+            "setColumnTitleLanguage", &Tree::setColumnTitleLanguage,
         );
     }
 }
