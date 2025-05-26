@@ -221,6 +221,9 @@ namespace sunaba::ui {
             Event* getCellSelectedEvent() {
                 return cellSelectedEvent;
             } 
+            void setCellSelectedEvent(Event* event) {
+                cellSelectedEvent = event;
+            }
     };
 }
 
