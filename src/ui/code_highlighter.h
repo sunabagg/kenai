@@ -77,6 +77,10 @@ namespace sunaba::ui {
         Color getMemberVariableColor() const {
             return code_highlighter->get_member_variable_color();
         }
+
+        Color getNumberColor() const {
+            return code_highlighter->get_number_color();
+        }
     };
 }
 
