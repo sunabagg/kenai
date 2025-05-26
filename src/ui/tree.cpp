@@ -261,6 +261,7 @@ namespace sunaba::ui {
             "getColumnWidth", &Tree::getColumnWidth,
             "getCustomPopupRect", &Tree::getCustomPopupRect,
             "getDropSelectionAtPosition", &Tree::getDropSelectionAtPosition,
+            "getEdited", &Tree::getEdited,
         );
     }
 }
