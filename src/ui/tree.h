@@ -432,6 +432,10 @@ namespace sunaba::ui {
             bool isColumnExpanding(int column) const {
                 return tree->is_column_expanding(column);
             }
+
+            void scrollToItem(TreeItem* item, bool centerOnItem = false) {
+                tree->scroll_to_item(item->getTreeItem(), centerOnItem);
+            }
     };
 }
 
