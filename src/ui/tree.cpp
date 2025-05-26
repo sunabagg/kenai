@@ -218,6 +218,10 @@ namespace sunaba::ui {
                 &Tree::getItemActivatedEvent,
                 &Tree::setItemActivatedEvent
             ),
+            "itemCollapsed", sol::property(
+                &Tree::getItemCollapsedEvent,
+                &Tree::setItemCollapsedEvent
+            ),
         );
     }
 }
