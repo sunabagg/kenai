@@ -479,7 +479,7 @@ namespace sunaba::ui {
             }
 
             void setTextDirection(int column, int direction) {
-                tree_item->set_text_direction(column, static_cast<Control::TextDirection>(direction));
+                tree_item->set_text_direction(column, static_cast<godot::Control::TextDirection>(direction));
             }
 
             void setTextOverrunBehavior(int column, int behavior) {
