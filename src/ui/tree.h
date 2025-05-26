@@ -396,6 +396,10 @@ namespace sunaba::ui {
             Rect2 getItemAreaRect(TreeItem* item, int column = -1, int buttonIndex = -1) const {
                 return tree->get_item_area_rect(item->getTreeItem(), column, buttonIndex);
             }
+
+            TreeItem* getItemAtPosition(const Vector2& position) const {
+                return new TreeItem(tree->get_item_at_position(position));
+            }
     };
 }
 
