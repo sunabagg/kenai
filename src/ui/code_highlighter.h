@@ -125,6 +125,10 @@ namespace sunaba::ui {
         void removeColorRegion(const std::string &p_start_key) {
             code_highlighter->remove_color_region(p_start_key.c_str());
         }
+
+        void removeKeywordColor(const std::string &p_keyword) {
+            code_highlighter->remove_keyword_color(p_keyword.c_str());
+        }
     };
 }
 
