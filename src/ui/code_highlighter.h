@@ -45,6 +45,10 @@ namespace sunaba::ui {
         Dictionary getColorRegions() const {
             return code_highlighter->get_color_regions();
         }
+
+        void setColorRegions(const Dictionary &p_color_regions) {
+            code_highlighter->set_color_regions(p_color_regions);
+        }
     };
 }
 
