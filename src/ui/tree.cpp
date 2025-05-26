@@ -202,6 +202,10 @@ namespace sunaba::ui {
                 &Tree::getColumnTitleClickedEvent,
                 &Tree::setColumnTitleClickedEvent
             ),
+            "customItemClicked", sol::property(
+                &Tree::getCustomItemClickedEvent,
+                &Tree::setCustomItemClickedEvent
+            ),
         );
     }
 }
