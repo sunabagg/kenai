@@ -60,6 +60,8 @@ namespace sunaba::core {
             void tree_entered();
 
             void tree_exited();
+
+            void tree_exiting();
     };
 
     class Viewport;
