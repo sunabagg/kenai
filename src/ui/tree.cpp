@@ -252,6 +252,7 @@ namespace sunaba::ui {
             "editSelected", &Tree::editSelected,
             "ensureCursorIsVisible", &Tree::ensureCursorIsVisible,
             "getButtonIdAtPosition", &Tree::getButtonIdAtPosition,
+            "getColumnAtPosition", &Tree::getColumnAtPosition,
         );
     }
 }
