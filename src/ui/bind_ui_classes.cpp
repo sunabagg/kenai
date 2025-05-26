@@ -20,6 +20,7 @@
 #include "grid_container.h"
 #include "h_box_container.h"
 #include "h_flow_container.h"
+#include "item_list.h"
 
 void sunaba::ui::bindUIClasses(sol::state& lua) {
     bindStyleBox(lua);
@@ -42,4 +43,5 @@ void sunaba::ui::bindUIClasses(sol::state& lua) {
     bindGridContainer(lua);
     bindHBoxContainer(lua);
     bindHFlowContainer(lua);
+    bindItemList(lua);
 }
