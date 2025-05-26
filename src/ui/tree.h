@@ -245,6 +245,9 @@ namespace sunaba::ui {
             Event* getCustomItemClickedEvent() {
                 return customItenClickedEvent;
             }
+            void setCustomItemClickedEvent(Event* event) {
+                customItenClickedEvent = event;
+            }
     };
 }
 
