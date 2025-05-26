@@ -412,6 +412,10 @@ namespace sunaba::ui {
             TreeItem* getRoot() const {
                 return new TreeItem(tree->get_root());
             }
+
+            Vector2 getScroll() const {
+                return tree->get_scroll();
+            }
     };
 }
 
