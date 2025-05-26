@@ -201,4 +201,12 @@ namespace sunaba::core {
             element->childEnteredTree->emit(args);
         }
     }
+
+    void NodeSignalWrapper::child_exited_tree(Node* child) {
+        if (element->childExitedTree != nullptr) {
+            Array args;
+            args.append(child);
+            element->childExitedTree->emit(args);
+        }
+    }
 }
