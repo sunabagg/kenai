@@ -281,6 +281,10 @@ namespace sunaba::ui {
             "setColumnTitleAlignment", &Tree::setColumnTitleAlignment,
             "setColumnTitleDirection", &Tree::setColumnTitleDirection,
             "setColumnTitleLanguage", &Tree::setColumnTitleLanguage,
+            "setSelected", &Tree::setSelected,
+            "cast", [](Element* element) {
+                
+            }
         );
     }
 }
