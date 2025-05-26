@@ -288,6 +288,8 @@ namespace sunaba::ui {
             void setItemEditedEvent(Event* event) {
                 itemEditedEvent = event;
             }
+
+            Event* itemIconDoubleClickedEvent;
     };
 }
 
