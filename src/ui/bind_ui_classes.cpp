@@ -61,6 +61,7 @@
 #include "tree.h"
 #include "v_box_container.h"
 #include "v_flow_container.h"
+#include "code_highlighter.h"
 
 void sunaba::ui::bindUIClasses(sol::state& lua) {
     bindStyleBox(lua);
@@ -124,4 +125,5 @@ void sunaba::ui::bindUIClasses(sol::state& lua) {
     bindTree(lua);
     bindVBoxContainer(lua);
     bindVFlowContainer(lua);
+    bindCodeHighlighter(lua);
 }
