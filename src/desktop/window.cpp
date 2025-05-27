@@ -126,6 +126,13 @@ namespace sunaba::desktop {
         }
     }
 
+    void WindowSignalWrapper::mouse_entered() {
+        if (element != nullptr) {
+            Array args;
+            element->mouseEnteredEvent->emit(args);
+        }
+    }
+
     void bindWindow(sol::state& lua) {
         lua.new_usertype<Window>("Window",
             sol::constructors<Window()>(),
