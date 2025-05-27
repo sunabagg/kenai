@@ -40,6 +40,19 @@ namespace sunaba::desktop {
             Vector2 _get_contents_minimum_size() const override;
     };
 
+    class PopupSignalWrapper : public Object {
+        GDCLASS(PopupSignalWrapper, Object)
+        protected:
+            static void _bind_methods();
+        public:
+            sunaba::desktop::Popup* element = nullptr;
+
+            PopupSignalWrapper() = default;
+            ~PopupSignalWrapper() = default;
+
+            void popup_hide();
+    };
+
     class Popup : public sunaba::desktop::Window {
         private:
             PopupNode* popup = nullptr; // Pointer to the Popup instance
