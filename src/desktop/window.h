@@ -55,7 +55,7 @@ namespace sunaba::desktop {
             void about_to_popup();
             void close_requested();
             void dpi_changed();
-            void files_dropped();
+            void files_dropped(const PackedStringArray& files);
             void focus_entered();
             void focus_exited();
             void go_back_requested();
