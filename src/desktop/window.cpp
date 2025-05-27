@@ -99,7 +99,9 @@ namespace sunaba::desktop {
 
     void WindowSignalWrapper::files_dropped(const PackedStringArray& files) {
         if (element != nullptr) {
-            element->filesDroppedEvent->emit();
+            Array args;
+            args.append(files);
+            element->filesDroppedEvent->emit(args);
         }
     }
 
