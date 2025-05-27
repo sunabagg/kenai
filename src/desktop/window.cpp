@@ -133,6 +133,13 @@ namespace sunaba::desktop {
         }
     }
 
+    void WindowSignalWrapper::mouse_exited() {
+        if (element != nullptr) {
+            Array args;
+            element->mouseExitedEvent->emit(args);
+        }
+    }
+
     void bindWindow(sol::state& lua) {
         lua.new_usertype<Window>("Window",
             sol::constructors<Window()>(),
