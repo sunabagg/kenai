@@ -92,7 +92,8 @@ namespace sunaba::desktop {
 
     void WindowSignalWrapper::dpi_changed() {
         if (element != nullptr) {
-            element->dpiChangedEvent->emit();
+            Array args;
+            element->dpiChangedEvent->emit(args);
         }
     }
 
