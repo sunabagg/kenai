@@ -56,8 +56,15 @@ namespace sunaba::desktop {
     class Popup : public sunaba::desktop::Window {
         private:
             PopupNode* popup = nullptr; // Pointer to the Popup instance
+            PopupSignalWrapper* popupSignalWrapper = nullptr;
             void connectPopupSignals() {
                 // Connect signals specific to Popup
+                if (this->popupSignalWrapper == nullptr) {
+                    this->popupSignalWrapper = memnew(PopupSignalWrapper);
+                    this->popupSignalWrapper->element = this;
+                }
+
+                this->popup->connect("popup_hide", Callable(this->popupSignalWrapper, "popup_hide"));
             }
 
         public:
