@@ -46,6 +46,8 @@ namespace
         godot::ClassDB::register_class<sunaba::core::NodeSignalWrapper>();
         godot::ClassDB::register_class<sunaba::core::CanvasItemSignalWrapper>();
         godot::ClassDB::register_class<sunaba::core::ViewportSignalWrapper>();
+
+        godot::ClassDB::register_class<sunaba::desktop::WindowSignalWrapper>();
     }
 
     /// @brief Called by Godot to let us do any cleanup.
