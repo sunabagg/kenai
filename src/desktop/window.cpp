@@ -140,6 +140,13 @@ namespace sunaba::desktop {
         }
     }
 
+    void WindowSignalWrapper::theme_changed() {
+        if (element != nullptr) {
+            Array args;
+            element->themeChangedEvent->emit(args);
+        }
+    }
+
     void bindWindow(sol::state& lua) {
         lua.new_usertype<Window>("Window",
             sol::constructors<Window()>(),
