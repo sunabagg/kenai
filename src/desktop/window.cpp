@@ -76,6 +76,12 @@ namespace sunaba::desktop {
         ClassDB::bind_method(D_METHOD("title_changed"), &WindowSignalWrapper::title_changed);
     }
 
+    void WindowSignalWrapper::about_to_popup() {
+        if (element != nullptr) {
+            element->aboutToPopupEvent->emit();
+        }
+    }
+
     void bindWindow(sol::state& lua) {
         lua.new_usertype<Window>("Window",
             sol::constructors<Window()>(),
