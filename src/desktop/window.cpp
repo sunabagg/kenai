@@ -82,6 +82,12 @@ namespace sunaba::desktop {
         }
     }
 
+    void WindowSignalWrapper::close_requested() {
+        if (element != nullptr) {
+            element->closeRequestedEvent->emit();
+        }
+    }
+
     void bindWindow(sol::state& lua) {
         lua.new_usertype<Window>("Window",
             sol::constructors<Window()>(),
