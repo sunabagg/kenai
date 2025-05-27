@@ -85,7 +85,8 @@ namespace sunaba::desktop {
 
     void WindowSignalWrapper::close_requested() {
         if (element != nullptr) {
-            element->closeRequestedEvent->emit();
+            Array args;
+            element->closeRequestedEvent->emit(args);
         }
     }
 
