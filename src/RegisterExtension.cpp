@@ -17,6 +17,8 @@
 #include "core/canvas_item.h"
 #include "core/viewport.h"
 
+#include "desktop/window.h"
+
 /// @file
 /// Register our classes with Godot.
 
