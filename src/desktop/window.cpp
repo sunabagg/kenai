@@ -78,7 +78,8 @@ namespace sunaba::desktop {
 
     void WindowSignalWrapper::about_to_popup() {
         if (element != nullptr) {
-            element->aboutToPopupEvent->emit();
+            Array args;
+            element->aboutToPopupEvent->emit(args);
         }
     }
 
@@ -94,7 +95,7 @@ namespace sunaba::desktop {
         }
     }
 
-    void WindowSignalWrapper::files_dropped() {
+    void WindowSignalWrapper::files_dropped(const PackedStringArray& files) {
         if (element != nullptr) {
             element->filesDroppedEvent->emit();
         }
