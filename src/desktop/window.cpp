@@ -119,6 +119,13 @@ namespace sunaba::desktop {
         }
     }
 
+    void WindowSignalWrapper::go_back_requested() {
+        if (element != nullptr) {
+            Array args;
+            element->goBackRequestedEvent->emit(args);
+        }
+    }
+
     void bindWindow(sol::state& lua) {
         lua.new_usertype<Window>("Window",
             sol::constructors<Window()>(),
