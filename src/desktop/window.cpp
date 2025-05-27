@@ -88,6 +88,12 @@ namespace sunaba::desktop {
         }
     }
 
+    void WindowSignalWrapper::dpi_changed() {
+        if (element != nullptr) {
+            element->dpiChangedEvent->emit();
+        }
+    }
+
     void bindWindow(sol::state& lua) {
         lua.new_usertype<Window>("Window",
             sol::constructors<Window()>(),
