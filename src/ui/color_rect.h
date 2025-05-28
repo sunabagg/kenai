@@ -82,5 +82,9 @@ namespace sunaba::ui {
                 p_node->element = this;
                 setControl(color_rect);
             }
+
+            Color getColor() const {
+                return color_rect->get_color();
+            }
     }
 }
