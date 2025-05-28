@@ -92,6 +92,7 @@ namespace sunaba::ui {
                 }
 
                 this->item_list->connect("empty_clicked", Callable(this->item_list_signal_wrapper, "emptyClicked"));
+                this->item_list->connect("item_activated", Callable(this->item_list_signal_wrapper, "itemActivated"));
             }
 
         public:
