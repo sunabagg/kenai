@@ -48,4 +48,10 @@ namespace sunaba::ui {
             this->element->unhandledKeyInput(event);
         }
     }
+
+    void sunaba::ui::ColorRectProxy::_shortcut_input(const Ref<InputEvent>& event) {
+        if (this->element != nullptr) {
+            this->element->shortcutInput(event);
+        }
+    }
 }
