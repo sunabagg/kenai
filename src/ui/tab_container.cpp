@@ -170,6 +170,14 @@ namespace sunaba::ui {
         }
     }
 
+    void TabContainerSignalWrapper::tab_clicked(int tab) {
+        if (element != nullptr && element->getTabClickedEvent() != nullptr) {
+            Array args;
+            args.push_back(tab);
+            element->getTabClickedEvent()->emit(args);
+        }
+    }
+
     void bindTabContainer(sol::state& lua) {
         lua.new_usertype<TabContainer>("TabContainer",
             sol::constructors<TabContainer()>(),
