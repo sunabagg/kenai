@@ -1247,6 +1247,14 @@ namespace sunaba::ui {
             void undo() {
                 text_edit->undo();
             }
+
+            void onFree() override {
+                if (textEditSignalWrapper) {
+                    memdelete(textEditSignalWrapper);
+                    textEditSignalWrapper = nullptr;
+                }
+                Control::onFree();
+            }
     };
 }
 
