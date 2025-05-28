@@ -61,6 +61,23 @@ namespace sunaba::ui {
             TypedArray<Vector3i> _structured_text_parser(const Array &args, const String &text) const override;
         };
 
+        class ItemListSignalWrapper : public Object {
+            GDCLASS(ItemListSignalWrapper, Object)
+            protected:
+                static void _bind_methods();
+            public:
+                ItemList* element = nullptr;
+
+                ItemListSignalWrapper() = default;
+                ~ItemListSignalWrapper() = default;
+
+                void emptyClicked(const Vector2 &at_position, int button_index);
+                void itemActivated(int index);
+                void itemClicked(int index, const Vector2 &at_position, int button_index);
+                void itemSelected(int index);
+                void multiSelected(int index, bool selected);
+        };
+
         class ItemList : public Control {
         private:
             ItemListNode* item_list = nullptr; // Pointer to the ItemList instance
