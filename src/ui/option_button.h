@@ -58,6 +58,20 @@ namespace sunaba::ui {
             void _toggled(bool p_toggled_on) override;
     };
 
+    class OptionButtonSignalWrapper : public Object {
+        GDCLASS(OptionButtonSignalWrapper, Object)
+        protected:
+            static void _bind_methods();
+        public:
+            sunaba::ui::OptionButton* element = nullptr;
+
+            OptionButtonSignalWrapper() = default;
+            ~OptionButtonSignalWrapper() = default;
+
+            void item_focused(int index);
+            void item_selected(int index);
+    };
+
     class OptionButton : public sunaba::ui::Button {
         private:
             OptionButtonNode* optionButton = nullptr;
