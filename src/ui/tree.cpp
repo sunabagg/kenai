@@ -122,6 +122,10 @@ namespace sunaba::ui {
         return TypedArray<Vector3i>();
     }
 
+    void TreeSignalWrapper::_bind_methods() {
+        ClassDB::bind_method(D_METHOD("button_clicked", "item", "column", "id", "mouse_button_index"), &TreeSignalWrapper::button_clicked);
+    }
+
     void bindTree(sol::state &lua) {
         lua.new_usertype<Tree>("Tree",
             sol::constructors<Tree()>(),
