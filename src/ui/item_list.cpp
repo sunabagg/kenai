@@ -115,6 +115,14 @@ namespace sunaba::ui {
         return TypedArray<Vector3i>();
     }
 
+    void ItemListSignalWrapper::_bind_methods() {
+        ClassDB::bind_method(D_METHOD("emptyClicked", "at_position", "button_index"), &ItemListSignalWrapper::emptyClicked);
+        ClassDB::bind_method(D_METHOD("itemActivated", "index"), &ItemListSignalWrapper::itemActivated);
+        ClassDB::bind_method(D_METHOD("itemClicked", "index", "at_position", "button_index"), &ItemListSignalWrapper::itemClicked);
+        ClassDB::bind_method(D_METHOD("itemSelected", "index"), &ItemListSignalWrapper::itemSelected);
+        ClassDB::bind_method(D_METHOD("multiSelected", "index", "selected"), &ItemListSignalWrapper::multiSelected);
+    }
+
     void bindItemList(sol::state& lua) {
         lua.new_usertype<ItemList>("ItemList",
             sol::constructors<ItemList()>(),
