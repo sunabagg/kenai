@@ -117,7 +117,8 @@ namespace sunaba::ui {
 
     void bindColorRect(sol::state& lua) {
         lua.new_usertype<ColorRect>("ColorRect",
-            sol::constructors<ColorRect()>()
+            sol::constructors<ColorRect()>(),
+            sol::base_classes, sol::bases<BaseObject, Element, sunaba::core::CanvasItem, Control>(),
         );
     }
 }
