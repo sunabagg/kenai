@@ -150,6 +150,13 @@ namespace sunaba::ui {
         }
     }
 
+    void BaseButtonSignalWrapper::pressed() {
+        if (element != nullptr) {
+            Array args;
+            element->pressedEvent->emit(args);
+        }
+    }
+
     void BaseButtonSignalWrapper::toggled(bool p_toggled_on) {
         if (element != nullptr) {
             Array args;
