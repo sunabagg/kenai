@@ -120,6 +120,10 @@ namespace sunaba::ui {
             sol::constructors<ColorRect()>(),
             sol::base_classes, sol::bases<BaseObject, Element, sunaba::core::CanvasItem, Control>(),
             "color", sol::property(&ColorRect::getColor, &ColorRect::setColor),
+            "cast", [](Element* e) {
+                ColorRectNode* node = Object::cast_to<ColorRectNode>(e->getNode());
+                return new ColorRect(node);
+            }
         );
     }
 }
