@@ -192,6 +192,15 @@ namespace sunaba::ui {
         }
     }
 
+    void TreeSignalWrapper::empty_clicked(Vector2 click_position, int mouse_button_index) {
+        if (this->element != nullptr) {
+            Array args;
+            args.push_back(click_position);
+            args.push_back(mouse_button_index);
+            this->element->getEmptyClickedEvent()->emit(args);
+        }
+    }
+
     void bindTree(sol::state &lua) {
         lua.new_usertype<Tree>("Tree",
             sol::constructors<Tree()>(),
