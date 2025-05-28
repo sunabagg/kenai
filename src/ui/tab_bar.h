@@ -82,6 +82,8 @@ namespace sunaba::ui {
     class TabBar : public Control {
         private:
             TabBarNode* container = nullptr; // Pointer to the TabBar instance
+
+            TabBarSignalWrapper* tabBarSignalWrapper = nullptr;
             void connectContainerSignals() {
                 // Connect signals specific to TabBar
                 SignalFunc activeTabRearrangedFunc = 
