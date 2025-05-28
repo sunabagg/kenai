@@ -230,6 +230,15 @@ namespace sunaba::ui {
             void unshare() {
                 range->unshare();
             }
+
+            void onFree() override {
+                if (rangeSignalWrapper) {
+                    rangeSignalWrapper->element = nullptr;
+                    memdelete(rangeSignalWrapper);
+                    rangeSignalWrapper = nullptr;
+                }
+                Control::onFree();
+            }
     };
 }
 
