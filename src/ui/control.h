@@ -89,7 +89,7 @@ namespace sunaba::ui {
                 // Connect signals specific to Controlstd::function<Variant(std::vector<Variant>)> focusEnteredFunc =
                 if (this->controlSignalWrapper == nullptr) {
                     this->controlSignalWrapper = memnew(ControlSignalWrapper);
-                    this->controlSignalWrapper->control = this;
+                    this->controlSignalWrapper->element = this;
                 }
 
                 this->control->connect("focus_entered", Callable(this->controlSignalWrapper, "focus_entered"));
