@@ -158,6 +158,15 @@ namespace sunaba::ui {
         }
     }
 
+    void TreeSignalWrapper::check_propagated_to_item(godot::TreeItem* item, int column) {
+        if (this->element != nullptr) {
+            Array args;
+            args.push_back(item);
+            args.push_back(column);
+            this->element->getCheckPropagatedToItemEvent()->emit(args);
+        }
+    }
+
     void bindTree(sol::state &lua) {
         lua.new_usertype<Tree>("Tree",
             sol::constructors<Tree()>(),
