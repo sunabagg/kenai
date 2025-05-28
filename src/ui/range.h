@@ -49,6 +49,20 @@ namespace sunaba::ui {
             void _value_changed(double value) override;
     };
 
+    class RangeSignalWrapper : public Object {
+        GDCLASS(RangeSignalWrapper, Object)
+        protected:
+            static void _bind_methods();
+        public:
+            sunaba::ui::Range* element = nullptr;
+
+            RangeSignalWrapper() = default;
+            ~RangeSignalWrapper() = default;
+
+            void changed();
+            void value_changed(double value);
+    };
+
     class Range : public sunaba::ui::Control {
         private:
             RangeNode* range = nullptr; // Pointer to the Range instance
