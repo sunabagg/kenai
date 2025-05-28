@@ -70,15 +70,15 @@ namespace sunaba::ui {
             ControlSignalWrapper() = default;
             ~ControlSignalWrapper() = default;
 
-            void focus_entered(std::vector<Variant> args);
-            void focus_exited(std::vector<Variant> args);
-            void gui_input(std::vector<Variant> args);
-            void minimum_size_changed(std::vector<Variant> args);
-            void mouse_entered(std::vector<Variant> args);
-            void mouse_exited(std::vector<Variant> args);
-            void resized(std::vector<Variant> args);
-            void size_flags_changed(std::vector<Variant> args);
-            void theme_changed(std::vector<Variant> args);
+            void focus_entered();
+            void focus_exited();
+            void gui_input();
+            void minimum_size_changed();
+            void mouse_entered();
+            void mouse_exited();
+            void resized();
+            void size_flags_changed();
+            void theme_changed();
     };
 
     class Control : public sunaba::core::CanvasItem {
