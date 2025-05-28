@@ -123,6 +123,15 @@ namespace sunaba::ui {
         ClassDB::bind_method(D_METHOD("multiSelected", "index", "selected"), &ItemListSignalWrapper::multiSelected);
     }
 
+    void ItemListSignalWrapper::emptyClicked(const Vector2& at_position, int button_index) {
+        if (element != nullptr) {
+            Array args;
+            args.push_back(at_position);
+            args.push_back(button_index);
+            element->emptyClickedEvent->emit(args);
+        }
+    }
+
     void bindItemList(sol::state& lua) {
         lua.new_usertype<ItemList>("ItemList",
             sol::constructors<ItemList()>(),
