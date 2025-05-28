@@ -133,6 +133,14 @@ namespace sunaba::ui {
         }
     }
 
+    void RangeSignalWrapper::value_changed(double value) {
+        if (element != nullptr) {
+            Array args;
+            args.push_back(value);
+            element->getValueChangedEvent()->emit(args);
+        }
+    }
+
     void bindRange(sol::state &lua) {
         lua.new_usertype<Range>("Range",
             sol::constructors<Range()>(),
