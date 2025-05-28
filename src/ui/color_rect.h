@@ -92,3 +92,5 @@ namespace sunaba::ui {
             }
     };
 }
+
+#endif // COLOR_RECT_H
