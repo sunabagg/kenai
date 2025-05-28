@@ -100,6 +100,10 @@ namespace sunaba::ui {
             void connectTextEditSignals() {
                 // Connect signals from the text_edit to the element
                 // Example: text_edit->connect("signal_name", this, "method_name");
+                if (this->text_edit_signal_wrapper == nullptr) {
+                    this->text_edit_signal_wrapper = memnew(TextEditSignalWrapper);
+                    this->text_edit_signal_wrapper->element = this;
+                }
             }
         public:
             TextEdit() {
