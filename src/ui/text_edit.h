@@ -84,6 +84,7 @@ namespace sunaba::ui {
             TextEditSignalWrapper() = default;
             ~TextEditSignalWrapper() = default;
 
+            void caret_changed();
     };
 
     class TextEdit : public Control {
