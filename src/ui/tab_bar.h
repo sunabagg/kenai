@@ -59,6 +59,26 @@ namespace sunaba::ui {
             TypedArray<Vector3i> _structured_text_parser(const Array &args, const String &text) const override;
     };
 
+    class TabBarSignalWrapper : public Object {
+        GDCLASS(TabBarSignalWrapper, Object)
+        protected:
+            static void _bind_methods();
+        public:
+            sunaba::ui::TabBar* element = nullptr;
+
+            TabBarSignalWrapper() = default;
+            ~TabBarSignalWrapper() = default;
+
+            void activeTabRearranged(int idx_to);
+            void tabButtonPressed();
+            void tabChanged();
+            void tabClicked();
+            void tabClosePressed();
+            void tabHovered();
+            void tabRmbClicked();
+            void tabSelected();
+    };
+
     class TabBar : public Control {
         private:
             TabBarNode* container = nullptr; // Pointer to the TabBar instance
