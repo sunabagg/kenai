@@ -83,6 +83,10 @@ namespace sunaba::ui {
             ContainerSignalWrapper* containerSignalWrapper = nullptr;
             void connectContainerSignals() {
                 // Connect signals specific to Container
+                if (this->containerSignalWrapper == nullptr) {
+                    this->containerSignalWrapper = memnew(ContainerSignalWrapper);
+                    this->containerSignalWrapper->element = this;
+                }
             }
 
         public:
