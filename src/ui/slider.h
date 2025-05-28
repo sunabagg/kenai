@@ -179,6 +179,15 @@ namespace sunaba::ui {
             void setDragStartedEvent(Event* event) {
                 dragStartedEvent = event;
             }
+
+            void onFree() override {
+                if (sliderSignalWrapper) {
+                    sliderSignalWrapper->element = nullptr;
+                    memdelete(sliderSignalWrapper);
+                    sliderSignalWrapper = nullptr;
+                }
+                Range::onFree();
+            }
     };
 }
 
