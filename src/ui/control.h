@@ -847,6 +847,14 @@ namespace sunaba::ui {
             void warpMouse(Vector2 position) {
                 control->warp_mouse(position);
             }
+
+            void onFree() override {
+                if (controlSignalWrapper) {
+                    memdelete(controlSignalWrapper);
+                    controlSignalWrapper = nullptr;
+                }
+                CanvasItem::onFree();
+            }
     };
 }
 
