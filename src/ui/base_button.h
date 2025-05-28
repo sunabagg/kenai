@@ -90,6 +90,8 @@ namespace sunaba::ui {
                     this->base_button_signal_wrapper = memnew(BaseButtonSignalWrapper);
                     this->base_button_signal_wrapper->element = this;
                 }
+
+                this->base_button->connect("pressed", Callable(this->base_button_signal_wrapper, "pressed"));
             }
         
         public:
