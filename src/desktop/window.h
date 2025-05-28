@@ -794,6 +794,14 @@ namespace sunaba::desktop {
             void startResize(int edge) {
                 window->start_resize(static_cast<godot::DisplayServer::WindowResizeEdge>(edge));
             }
+
+            void onFree() override {
+                if (windowSignalWrapper) {
+                    memdelete(windowSignalWrapper);
+                    windowSignalWrapper = nullptr;
+                }
+                Viewport::onFree();
+            }
     };
 }
 
