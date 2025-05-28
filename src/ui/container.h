@@ -63,7 +63,7 @@ namespace sunaba::ui {
     };
 
     class ContainerSignalWrapper : public Object{
-        GDCLASS(ContainerSignalWrapper, Object
+        GDCLASS(ContainerSignalWrapper, Object)
         protected:
             static void _bind_methods();
         public:
