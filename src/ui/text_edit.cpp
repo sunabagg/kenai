@@ -168,6 +168,13 @@ namespace sunaba::ui {
         }
     }
 
+    void TextEditSignalWrapper::gutter_added() {
+        if (this->element != nullptr && this->element->getGutterAddedEvent() != nullptr) {
+            Array args;
+            this->element->getGutterAddedEvent()->emit(args);
+        }
+    }
+
     void bindTextEdit(sol::state& lua) {
         lua.new_usertype<TextEdit>("TextEdit",
             sol::constructors<TextEdit()>(),
