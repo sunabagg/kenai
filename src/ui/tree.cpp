@@ -137,6 +137,7 @@ namespace sunaba::ui {
         ClassDB::bind_method(D_METHOD("item_mouse_selected", "mouse_position", "mouse_button_index"), &TreeSignalWrapper::item_mouse_selected);
         ClassDB::bind_method(D_METHOD("item_selected", "item"), &TreeSignalWrapper::item_selected);
         ClassDB::bind_method(D_METHOD("multi_selected", "item", "column", "selected"), &TreeSignalWrapper::multi_selected);
+        ClassDB::bind_method(D_METHOD("nothing_selected"), &TreeSignalWrapper::nothing_selected);
     }
 
     void bindTree(sol::state &lua) {
