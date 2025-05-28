@@ -140,6 +140,17 @@ namespace sunaba::ui {
         ClassDB::bind_method(D_METHOD("nothing_selected"), &TreeSignalWrapper::nothing_selected);
     }
 
+    void TreeSignalWrapper::button_clicked(godot::TreeItem* item, int column, int id, int mouse_button_index) {
+        if (this->element != nullptr) {
+            Array args;
+            args.push_back(item);
+            args.push_back(column);
+            args.push_back(id);
+            args.push_back(mouse_button_index);
+            this->element->getButtonClickedEvent()->emit(args);
+        }
+    }
+
     void bindTree(sol::state &lua) {
         lua.new_usertype<Tree>("Tree",
             sol::constructors<Tree()>(),
