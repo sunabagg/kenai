@@ -104,6 +104,8 @@ namespace sunaba::ui {
                     this->text_edit_signal_wrapper = memnew(TextEditSignalWrapper);
                     this->text_edit_signal_wrapper->element = this;
                 }
+
+                this->text_edit->connect("caret_changed", Callable(this->text_edit_signal_wrapper, "caret_changed"));
             }
         public:
             TextEdit() {
