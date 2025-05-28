@@ -78,6 +78,7 @@ namespace sunaba::ui {
             void empty_clicked(Vector2 click_position, int mouse_button_index);
             void item_activated();
             void item_collapsed(godot::TreeItem* item);
+            void item_edited();
     };
 
     class Tree : public Control {
