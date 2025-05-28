@@ -520,6 +520,14 @@ namespace sunaba::ui {
             void setSelected(TreeItem* item, int column) {
                 tree->set_selected(item->getTreeItem(), column);
             }
+
+            void onFree() override {
+                if (treeSignalWrapper) {
+                    memdelete(treeSignalWrapper);
+                    treeSignalWrapper = nullptr;
+                }
+                Control::onFree();
+            }
     };
 }
 
