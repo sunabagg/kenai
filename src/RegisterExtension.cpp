@@ -24,6 +24,7 @@
 #include "ui/control.h"
 #include "ui/base_button.h"
 #include "ui/container.h"
+#include "ui/item_list.h"
 
 /// @file
 /// Register our classes with Godot.
