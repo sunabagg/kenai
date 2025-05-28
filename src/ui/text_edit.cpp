@@ -151,6 +151,16 @@ namespace sunaba::ui {
         }
     }
 
+    void TextEditSignalWrapper::_bind_methods() {
+        ClassDB::bind_method(D_METHOD("caret_changed"), &TextEditSignalWrapper::caret_changed);
+        ClassDB::bind_method(D_METHOD("gutter_added"), &TextEditSignalWrapper::gutter_added);
+        ClassDB::bind_method(D_METHOD("gutter_clicked", "line", "gutter"), &TextEditSignalWrapper::gutter_clicked);
+        ClassDB::bind_method(D_METHOD("gutter_removed"), &TextEditSignalWrapper::gutter_removed);
+        ClassDB::bind_method(D_METHOD("lines_edited_from", "from_line"), &TextEditSignalWrapper::lines_edited_from);
+        ClassDB::bind_method(D_METHOD("text_changed"), &TextEditSignalWrapper::text_changed);
+        ClassDB::bind_method(D_METHOD("text_set"), &TextEditSignalWrapper::text_set);
+    }
+
     void bindTextEdit(sol::state& lua) {
         lua.new_usertype<TextEdit>("TextEdit",
             sol::constructors<TextEdit()>(),
