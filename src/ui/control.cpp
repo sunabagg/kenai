@@ -156,6 +156,13 @@ namespace sunaba::ui {
         }
     }
 
+    void ControlSignalWrapper::minimum_size_changed() {
+        if (element != nullptr) {
+            Array args;
+            element->minimumSizeChangedEvent->emit(args);
+        }
+    }
+
     void bindControl(sol::state& lua) {
         auto ut = lua.new_usertype<Control>("Control",
             sol::constructors<Control()>(),
