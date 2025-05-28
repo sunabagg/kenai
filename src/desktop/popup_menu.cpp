@@ -62,6 +62,13 @@ namespace sunaba::desktop {
         return PopupMenuNode::get_contents_minimum_size();
     }
 
+    void PopupMenuSignalWrapper::_bind_methods() {
+        ClassDB::bind_method(D_METHOD("id_focused", "id"), &PopupMenuSignalWrapper::id_focused);
+        ClassDB::bind_method(D_METHOD("id_pressed", "id"), &PopupMenuSignalWrapper::id_pressed);
+        ClassDB::bind_method(D_METHOD("index_pressed", "index"), &PopupMenuSignalWrapper::index_pressed);
+        ClassDB::bind_method(D_METHOD("menu_changed"), &PopupMenuSignalWrapper::menu_changed);
+    }
+
     void bindPopupMenu(sol::state& lua) {
         lua.new_usertype<PopupMenu>("PopupMenu",
             sol::constructors<PopupMenu()>(),
