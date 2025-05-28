@@ -95,6 +95,7 @@ namespace sunaba::ui {
                 this->item_list->connect("item_activated", Callable(this->item_list_signal_wrapper, "itemActivated"));
                 this->item_list->connect("item_clicked", Callable(this->item_list_signal_wrapper, "itemClicked"));
                 this->item_list->connect("item_selected", Callable(this->item_list_signal_wrapper, "itemSelected"));
+                this->item_list->connect("multi_selected", Callable(this->item_list_signal_wrapper, "multiSelected"));
             }
 
         public:
