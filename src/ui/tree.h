@@ -69,10 +69,10 @@ namespace sunaba::ui {
             TreeSignalWrapper() = default;
             ~TreeSignalWrapper() = default;
 
-            void button_clicked(TreeItem* item, int column, int id, int mouseButtonIndex);
+            void button_clicked(TreeItem* item, int column, int id, int mouse_button_index);
             void cell_selected();
             void check_propagated_to_item(TreeItem* item, int column);
-            void column_title_clicked(int column);
+            void column_title_clicked(int column, int mouse_button_index);
             void custom_item_clicked(TreeItem* item, int column);
             void custom_popup_edited(TreeItem* item, int column);
             void empty_clicked();
