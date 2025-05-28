@@ -191,6 +191,14 @@ namespace sunaba::ui {
         }
     }
 
+    void TextEditSignalWrapper::lines_edited_from(int from_line) {
+        if (this->element != nullptr && this->element->getLinesEditedFromEvent() != nullptr) {
+            Array args;
+            args.push_back(from_line);
+            this->element->getLinesEditedFromEvent()->emit(args);
+        }
+    }
+
     void bindTextEdit(sol::state& lua) {
         lua.new_usertype<TextEdit>("TextEdit",
             sol::constructors<TextEdit()>(),
