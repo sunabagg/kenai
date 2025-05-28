@@ -201,6 +201,13 @@ namespace sunaba::ui {
         }
     }
 
+    void TreeSignalWrapper::item_activated() {
+        if (this->element != nullptr) {
+            Array args;
+            this->element->getItemActivatedEvent()->emit(args);
+        }
+    }
+
     void bindTree(sol::state &lua) {
         lua.new_usertype<Tree>("Tree",
             sol::constructors<Tree()>(),
