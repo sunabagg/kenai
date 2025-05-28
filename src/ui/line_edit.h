@@ -58,6 +58,22 @@ namespace sunaba::ui {
             TypedArray<Vector3i> _structured_text_parser(const Array &args, const String &text) const override;
     };
 
+    class LineEditSignalWrapper : public Object {
+        GDCLASS(LineEditSignalWrapper, Object)
+        protected:
+            static void _bind_methods();
+        public:
+            sunaba::ui::LineEdit* element = nullptr;
+
+            LineEditSignalWrapper() = default;
+            ~LineEditSignalWrapper() = default;
+
+            void editingToggled(bool toggledOn);
+            void textChangeRejected(const String &rejectedSubstring);
+            void textChanged(const String &newText);
+            void textSubmitted(const String &newText);
+    };
+
     class LineEdit : public Control {
         private:
             LineEditNode* line_edit_node = nullptr;
