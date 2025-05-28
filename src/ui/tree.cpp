@@ -230,7 +230,7 @@ namespace sunaba::ui {
         }
     }
 
-    void TreeSignalWrapper::item_mouse_selected(Vector2 mouse_position, int mouse_button_index) {
+    void TreeSignalWrapper::item_mouse_selected(const Vector2& mouse_position, int mouse_button_index) {
         if (this->element != nullptr) {
             Array args;
             args.push_back(mouse_position);
