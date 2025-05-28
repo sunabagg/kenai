@@ -77,6 +77,7 @@ namespace sunaba::ui {
     class Slider : public sunaba::ui::Range {
         private:
             SliderNode* slider = nullptr; // Pointer to the Slider instance
+            SliderSignalWrapper* sliderSignalWrapper = nullptr;
             void connectSliderSignals() {
                 // Connect signals specific to Slider
                 std::function<Variant(std::vector<Variant>)> dragEndedFunc =
