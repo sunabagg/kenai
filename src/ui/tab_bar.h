@@ -70,7 +70,7 @@ namespace sunaba::ui {
             ~TabBarSignalWrapper() = default;
 
             void activeTabRearranged(int idx_to);
-            void tabButtonPressed();
+            void tabButtonPressed(int tab);
             void tabChanged();
             void tabClicked();
             void tabClosePressed();
