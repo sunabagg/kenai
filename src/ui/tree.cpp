@@ -230,6 +230,15 @@ namespace sunaba::ui {
         }
     }
 
+    void TreeSignalWrapper::item_mouse_selected(Vector2 mouse_position, int mouse_button_index) {
+        if (this->element != nullptr) {
+            Array args;
+            args.push_back(mouse_position);
+            args.push_back(mouse_button_index);
+            this->element->getItemMouseSelectedEvent()->emit(args);
+        }
+    }
+
     void bindTree(sol::state &lua) {
         lua.new_usertype<Tree>("Tree",
             sol::constructors<Tree()>(),
