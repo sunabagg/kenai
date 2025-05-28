@@ -122,6 +122,17 @@ namespace sunaba::ui {
         return TypedArray<Vector3i>();
     }
 
+    void TabBarSignalWrapper::_bind_methods() {
+        ClassDB::bind_method(D_METHOD("activeTabRearranged", "tab_to"), &TabBarSignalWrapper::activeTabRearranged);
+        ClassDB::bind_method(D_METHOD("tabButtonPressed", "tab_idx"), &TabBarSignalWrapper::tabButtonPressed);
+        ClassDB::bind_method(D_METHOD("tabChanged", "tab_idx"), &TabBarSignalWrapper::tabChanged);
+        ClassDB::bind_method(D_METHOD("tabClicked", "tab_idx"), &TabBarSignalWrapper::tabClicked);
+        ClassDB::bind_method(D_METHOD("tabClosePressed", "tab_idx"), &TabBarSignalWrapper::tabClosePressed);
+        ClassDB::bind_method(D_METHOD("tabHovered", "tab_idx"), &TabBarSignalWrapper::tabHovered);
+        ClassDB::bind_method(D_METHOD("tabRmbClicked", "tab_idx"), &TabBarSignalWrapper::tabRmbClicked);
+        ClassDB::bind_method(D_METHOD("tabSelected", "tab_idx"), &TabBarSignalWrapper::tabSelected);
+    }
+
     void bindTabBar(sol::state& lua) {
         lua.new_usertype<TabBar>("TabBar",
             sol::constructors<TabBar()>(),
