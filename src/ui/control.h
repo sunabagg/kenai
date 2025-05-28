@@ -72,7 +72,7 @@ namespace sunaba::ui {
 
             void focus_entered();
             void focus_exited();
-            void gui_input();
+            void gui_input(Ref<InputEvent> event);
             void minimum_size_changed();
             void mouse_entered();
             void mouse_exited();
