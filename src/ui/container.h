@@ -62,6 +62,20 @@ namespace sunaba::ui {
             PackedInt32Array _get_allowed_size_flags_vertical() const override;
     };
 
+    class ContainerSignalWrapper : public NodeSignalWrapper {
+        GDCLASS(ContainerSignalWrapper, NodeSignalWrapper)
+        protected:
+            static void _bind_methods();
+        public:
+            sunaba::ui::Container* element = nullptr;
+
+            ContainerSignalWrapper() = default;
+            ~ContainerSignalWrapper() = default;
+
+            void pre_sort_children();
+            void sort_children();
+    };
+
     class Container : public Control {
         private:
             ContainerNode* container = nullptr; // Pointer to the Container instance
