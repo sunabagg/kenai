@@ -161,6 +161,13 @@ namespace sunaba::ui {
         ClassDB::bind_method(D_METHOD("text_set"), &TextEditSignalWrapper::text_set);
     }
 
+    void TextEditSignalWrapper::caret_changed() {
+        if (this->element != nullptr && this->element->getCaretChangedEvent() != nullptr) {
+            Array args;
+            this->element->getCaretChangedEvent()->emit(args);
+        }
+    }
+
     void bindTextEdit(sol::state& lua) {
         lua.new_usertype<TextEdit>("TextEdit",
             sol::constructors<TextEdit()>(),
