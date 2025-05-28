@@ -69,14 +69,15 @@ namespace sunaba::ui {
             TreeSignalWrapper() = default;
             ~TreeSignalWrapper() = default;
 
-            void button_clicked(TreeItem* item, int column, int id, int mouse_button_index);
+            void button_clicked(godot::TreeItem* item, int column, int id, int mouse_button_index);
             void cell_selected();
-            void check_propagated_to_item(TreeItem* item, int column);
+            void check_propagated_to_item(godot::TreeItem* item, int column);
             void column_title_clicked(int column, int mouse_button_index);
             void custom_item_clicked(int column);
             void custom_popup_edited(bool arrow_clicked);
             void empty_clicked(Vector2 click_position, int mouse_button_index);
             void item_activated();
+            void item_collapsed(godot::TreeItem* item);
     };
 
     class Tree : public Control {
