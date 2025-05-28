@@ -170,6 +170,13 @@ namespace sunaba::ui {
         }
     }
 
+    void ControlSignalWrapper::mouse_exited() {
+        if (element != nullptr) {
+            Array args;
+            element->mouseExitedEvent->emit(args);
+        }
+    }
+
     void bindControl(sol::state& lua) {
         auto ut = lua.new_usertype<Control>("Control",
             sol::constructors<Control()>(),
