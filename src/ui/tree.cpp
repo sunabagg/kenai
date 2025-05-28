@@ -246,6 +246,16 @@ namespace sunaba::ui {
         }
     }
 
+    void TreeSignalWrapper::multi_selected(godot::TreeItem* item, int column, bool selected) {
+        if (this->element != nullptr) {
+            Array args;
+            args.push_back(item);
+            args.push_back(column);
+            args.push_back(selected);
+            this->element->getMultiSelectedEvent()->emit(args);
+        }
+    }
+
     void bindTree(sol::state &lua) {
         lua.new_usertype<Tree>("Tree",
             sol::constructors<Tree()>(),
