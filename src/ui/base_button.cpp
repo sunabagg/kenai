@@ -143,6 +143,13 @@ namespace sunaba::ui {
         base_button->set_button_group(group->getButtonGroup());
     }
 
+    void BaseButtonSignalWrapper::pressed() {
+        if (element != nullptr) {
+            Array args;
+            element->pressedEvent->emit(args);
+        }
+    }
+
     void bindBaseButton(sol::state &lua) {
         lua.new_usertype<BaseButton>("BaseButton",
             sol::constructors<BaseButton(), BaseButton(BaseButtonNode*)>(),
