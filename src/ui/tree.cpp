@@ -208,6 +208,14 @@ namespace sunaba::ui {
         }
     }
 
+    void TreeSignalWrapper::item_collapsed(godot::TreeItem* item) {
+        if (this->element != nullptr) {
+            Array args;
+            args.push_back(item);
+            this->element->getItemCollapsedEvent()->emit(args);
+        }
+    }
+
     void bindTree(sol::state &lua) {
         lua.new_usertype<Tree>("Tree",
             sol::constructors<Tree()>(),
