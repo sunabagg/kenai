@@ -69,6 +69,12 @@ namespace sunaba::desktop {
         ClassDB::bind_method(D_METHOD("menu_changed"), &PopupMenuSignalWrapper::menu_changed);
     }
 
+    void PopupMenuSignalWrapper::id_focused(int id) {
+        if (element != nullptr) {
+            element->idFocused(id);
+        }
+    }
+
     void bindPopupMenu(sol::state& lua) {
         lua.new_usertype<PopupMenu>("PopupMenu",
             sol::constructors<PopupMenu()>(),
