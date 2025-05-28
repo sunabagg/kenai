@@ -510,6 +510,14 @@ namespace sunaba::ui {
             void unedit() {
                 line_edit_node->unedit();
             }
+
+            void onFree() override {
+                if (line_edit_signal_wrapper) {
+                    memdelete(line_edit_signal_wrapper);
+                    line_edit_signal_wrapper = nullptr;
+                }
+                Control::onFree();
+            }
     };
 }
 
