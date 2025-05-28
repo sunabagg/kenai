@@ -150,6 +150,13 @@ namespace sunaba::ui {
         }
     }
 
+    void BaseButtonSignalWrapper::_bind_methods() {
+        ClassDB::bind_method(D_METHOD("pressed"), &BaseButtonSignalWrapper::pressed);
+        ClassDB::bind_method(D_METHOD("toggled", "p_toggled_on"), &BaseButtonSignalWrapper::toggled);
+        ClassDB::bind_method(D_METHOD("button_down"), &BaseButtonSignalWrapper::button_down);
+        ClassDB::bind_method(D_METHOD("button_up"), &BaseButtonSignalWrapper::button_up);
+    }
+
     void BaseButtonSignalWrapper::pressed() {
         if (element != nullptr) {
             Array args;
