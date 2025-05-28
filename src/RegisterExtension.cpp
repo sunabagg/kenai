@@ -25,6 +25,7 @@
 #include "ui/base_button.h"
 #include "ui/container.h"
 #include "ui/item_list.h"
+#include "ui/line_edit.h"
 
 /// @file
 /// Register our classes with Godot.
@@ -62,6 +63,7 @@ namespace
         godot::ClassDB::register_class<sunaba::ui::BaseButtonSignalWrapper>();
         godot::ClassDB::register_class<sunaba::ui::ContainerSignalWrapper>();
         godot::ClassDB::register_class<sunaba::ui::ItemListSignalWrapper>();
+        godot::ClassDB::register_class<sunaba::ui::LineEditSignalWrapper>();
     }
 
     /// @brief Called by Godot to let us do any cleanup.
