@@ -69,6 +69,7 @@ namespace
         godot::ClassDB::register_class<sunaba::ui::LineEditSignalWrapper>();
         godot::ClassDB::register_class<sunaba::ui::MenuButtonSignalWrapper>();
         godot::ClassDB::register_class<sunaba::ui::OptionButtonSignalWrapper>();
+        godot::ClassDB::register_class<sunaba::ui::RangeSignalWrapper>();
     }
 
     /// @brief Called by Godot to let us do any cleanup.
