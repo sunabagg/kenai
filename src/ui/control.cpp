@@ -184,6 +184,13 @@ namespace sunaba::ui {
         }
     }
 
+    void ControlSignalWrapper::size_flags_changed() {
+        if (element != nullptr) {
+            Array args;
+            element->sizeFlagsChangedEvent->emit(args);
+        }
+    }
+
     void bindControl(sol::state& lua) {
         auto ut = lua.new_usertype<Control>("Control",
             sol::constructors<Control()>(),
