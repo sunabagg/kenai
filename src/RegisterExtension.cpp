@@ -18,6 +18,7 @@
 #include "core/viewport.h"
 
 #include "desktop/window.h"
+#include "desktop/popup.h"
 
 /// @file
 /// Register our classes with Godot.
