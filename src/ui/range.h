@@ -66,6 +66,8 @@ namespace sunaba::ui {
     class Range : public sunaba::ui::Control {
         private:
             RangeNode* range = nullptr; // Pointer to the Range instance
+
+            RangeSignalWrapper* rangeSignalWrapper = nullptr;
             void connectRangeSignals() {
                 // Connect signals specific to Range
                 SignalFunc changedFunc =
