@@ -93,6 +93,7 @@ namespace sunaba::ui {
 
                 this->base_button->connect("pressed", Callable(this->base_button_signal_wrapper, "pressed"));
                 this->base_button->connect("toggled", Callable(this->base_button_signal_wrapper, "toggled"));
+                this->base_button->connect("button_down", Callable(this->base_button_signal_wrapper, "button_down"));
             }
         
         public:
