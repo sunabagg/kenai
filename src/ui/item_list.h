@@ -90,6 +90,8 @@ namespace sunaba::ui {
                     this->item_list_signal_wrapper = memnew(ItemListSignalWrapper);
                     this->item_list_signal_wrapper->element = this;
                 }
+
+                this->item_list->connect("empty_clicked", Callable(this->item_list_signal_wrapper, "emptyClicked"));
             }
 
         public:
