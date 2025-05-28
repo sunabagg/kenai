@@ -129,6 +129,16 @@ namespace sunaba::ui {
         return PackedInt32Array();
     }
 
+    void TabContainerSignalWrapper::_bind_methods() {
+        ClassDB::bind_method(D_METHOD("active_tab_rearranged", "tab"), &TabContainerSignalWrapper::active_tab_rearranged);
+        ClassDB::bind_method(D_METHOD("pre_popup_pressed"), &TabContainerSignalWrapper::pre_popup_pressed);
+        ClassDB::bind_method(D_METHOD("tab_button_pressed", "tab"), &TabContainerSignalWrapper::tab_button_pressed);
+        ClassDB::bind_method(D_METHOD("tab_changed", "tab"), &TabContainerSignalWrapper::tab_changed);
+        ClassDB::bind_method(D_METHOD("tab_clicked", "tab"), &TabContainerSignalWrapper::tab_clicked);
+        ClassDB::bind_method(D_METHOD("tab_hovered", "tab"), &TabContainerSignalWrapper::tab_hovered);
+        ClassDB::bind_method(D_METHOD("tab_selected", "tab"), &TabContainerSignalWrapper::tab_selected);
+    }
+
     void bindTabContainer(sol::state& lua) {
         lua.new_usertype<TabContainer>("TabContainer",
             sol::constructors<TabContainer()>(),
