@@ -128,7 +128,7 @@ namespace sunaba::ui {
         ClassDB::bind_method(D_METHOD("check_propagated_to_item", "item", "column"), &TreeSignalWrapper::check_propagated_to_item);
         ClassDB::bind_method(D_METHOD("column_title_clicked", "column", "mouse_button_index"), &TreeSignalWrapper::column_title_clicked);
         ClassDB::bind_method(D_METHOD("custom_item_clicked", "column"), &TreeSignalWrapper::custom_item_clicked);
-        ClassDB::bind_method(D_METHOD("custom_popup_edited", "item", "column"), &TreeSignalWrapper::custom_popup_edited);
+        ClassDB::bind_method(D_METHOD("custom_popup_edited", "arrow_clicked"), &TreeSignalWrapper::custom_popup_edited);
         ClassDB::bind_method(D_METHOD("empty_clicked", "click_position", "mouse_button_index"), &TreeSignalWrapper::empty_clicked);
         ClassDB::bind_method(D_METHOD("item_activated"), &TreeSignalWrapper::item_activated);
         ClassDB::bind_method(D_METHOD("item_collapsed", "item"), &TreeSignalWrapper::item_collapsed);
