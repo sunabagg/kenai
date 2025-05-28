@@ -150,6 +150,14 @@ namespace sunaba::ui {
         }
     }
 
+    void ItemListSignalWrapper::itemSelected(int index) {
+        if (element != nullptr) {
+            Array args;
+            args.push_back(index);
+            element->itemSelectedEvent->emit(args);
+        }
+    }
+
     void bindItemList(sol::state& lua) {
         lua.new_usertype<ItemList>("ItemList",
             sol::constructors<ItemList()>(),
