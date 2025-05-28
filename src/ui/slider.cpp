@@ -135,6 +135,13 @@ namespace sunaba::ui {
         }
     }
 
+    void SliderSignalWrapper::drag_started() {
+        if (element != nullptr) {
+            Array args;
+            element->dragStartedEvent->emit(args);
+        }
+    }
+
     void bindSlider(sol::state& lua) {
         lua.new_usertype<Slider>("Slider",
             sol::constructors<Slider()>(),
