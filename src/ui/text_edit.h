@@ -74,8 +74,8 @@ namespace sunaba::ui {
             void _paste_primary_clipboard(int caret_index) override;
     };
 
-    class TextEditSignalWrapper : public NodeSignalWrapper {
-        GDCLASS(TextEditSignalWrapper, NodeSignalWrapper)
+    class TextEditSignalWrapper : public Object{
+        GDCLASS(TextEditSignalWrapper, Object)
         protected:
             static void _bind_methods();
         public:
