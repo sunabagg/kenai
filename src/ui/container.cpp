@@ -119,6 +119,11 @@ namespace sunaba::ui {
         return PackedInt32Array();
     }
 
+    void ContainerSignalWrapper::_bind_methods() {
+        ClassDB::bind_method(D_METHOD("pre_sort_children"), &ContainerSignalWrapper::pre_sort_children);
+        ClassDB::bind_method(D_METHOD("sort_children"), &ContainerSignalWrapper::sort_children);
+    }
+
     void ContainerSignalWrapper::pre_sort_children() {
         if (element != nullptr && element->getPreSortChildrenEvent() != nullptr) {
             Array args;
