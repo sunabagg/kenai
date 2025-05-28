@@ -133,6 +133,14 @@ namespace sunaba::ui {
         ClassDB::bind_method(D_METHOD("tabSelected", "tab_idx"), &TabBarSignalWrapper::tabSelected);
     }
 
+    void TabBarSignalWrapper::activeTabRearranged(int tab_to) {
+        if (element) {
+            Array args;
+            args.push_back(tab_to);
+            element->activeTabRearrangedEvent->emit(args);
+        }
+    }
+
     void bindTabBar(sol::state& lua) {
         lua.new_usertype<TabBar>("TabBar",
             sol::constructors<TabBar()>(),
