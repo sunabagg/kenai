@@ -26,6 +26,7 @@
 #include "ui/container.h"
 #include "ui/item_list.h"
 #include "ui/line_edit.h"
+#include "ui/menu_button.h"
 
 /// @file
 /// Register our classes with Godot.
