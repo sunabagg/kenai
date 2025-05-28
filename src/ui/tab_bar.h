@@ -90,6 +90,8 @@ namespace sunaba::ui {
                     this->tabBarSignalWrapper = memnew(TabBarSignalWrapper);
                     this->tabBarSignalWrapper->element = this;
                 }
+
+                this->container->connect("active_tab_rearranged", Callable(this->tabBarSignalWrapper, "activeTabRearranged"));
             }
 
         public:
