@@ -147,6 +147,13 @@ namespace sunaba::ui {
         }
     }
 
+    void TabContainerSignalWrapper::pre_popup_pressed() {
+        if (element != nullptr && element->getPrePopupPressedEvent() != nullptr) {
+            Array args;
+            element->getPrePopupPressedEvent()->emit(args);
+        }
+    }
+
     void bindTabContainer(sol::state& lua) {
         lua.new_usertype<TabContainer>("TabContainer",
             sol::constructors<TabContainer()>(),
