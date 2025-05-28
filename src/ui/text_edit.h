@@ -74,6 +74,18 @@ namespace sunaba::ui {
             void _paste_primary_clipboard(int caret_index) override;
     };
 
+    class TextEditSignalWrapper : public NodeSignalWrapper {
+        GDCLASS(TextEditSignalWrapper, NodeSignalWrapper)
+        protected:
+            static void _bind_methods();
+        public:
+            sunaba::ui::TextEdit* element = nullptr;
+
+            TextEditSignalWrapper() = default;
+            ~TextEditSignalWrapper() = default;
+
+    };
+
     class TextEdit : public Control {
         private:
             TextEditNode* text_edit = nullptr; // Pointer to the TextEdit instance
