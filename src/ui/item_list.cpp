@@ -140,6 +140,16 @@ namespace sunaba::ui {
         }
     }
 
+    void ItemListSignalWrapper::itemClicked(int index, const Vector2& at_position, int button_index) {
+        if (element != nullptr) {
+            Array args;
+            args.push_back(index);
+            args.push_back(at_position);
+            args.push_back(button_index);
+            element->itemClickedEvent->emit(args);
+        }
+    }
+
     void bindItemList(sol::state& lua) {
         lua.new_usertype<ItemList>("ItemList",
             sol::constructors<ItemList()>(),
