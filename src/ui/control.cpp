@@ -191,6 +191,13 @@ namespace sunaba::ui {
         }
     }
 
+    void ControlSignalWrapper::theme_changed() {
+        if (element != nullptr) {
+            Array args;
+            element->themeChangedEvent->emit(args);
+        }
+    }
+
     void bindControl(sol::state& lua) {
         auto ut = lua.new_usertype<Control>("Control",
             sol::constructors<Control()>(),
