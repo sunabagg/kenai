@@ -57,6 +57,19 @@ namespace sunaba::ui {
             void _toggled(bool p_toggled_on) override;
     };
 
+    class MenuButtonSignalWrapper : public Object {
+        GDCLASS(MenuButtonSignalWrapper, Object)
+        protected:
+            static void _bind_methods();
+        public:
+            sunaba::ui::MenuButton* element = nullptr;
+
+            MenuButtonSignalWrapper() = default;
+            ~MenuButtonSignalWrapper() = default;
+
+            void about_to_popup();
+    };
+
     class MenuButton : public Button {
         private:
             MenuButtonNode* menu_button = nullptr;
