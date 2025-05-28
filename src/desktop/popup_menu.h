@@ -43,6 +43,22 @@ namespace sunaba::desktop {
         Vector2 _get_contents_minimum_size() const override;
     };
 
+    class PopupMenuSignalWrapper : public Object {
+        GDCLASS(PopupMenuSignalWrapper, Object)
+        protected:
+            static void _bind_methods();
+        public:
+            sunaba::desktop::PopupMenu* element = nullptr;
+
+            PopupMenuSignalWrapper() = default;
+            ~PopupMenuSignalWrapper() = default;
+
+            void id_focused(int id);
+            void id_pressed(int id);
+            void index_pressed(int index);
+            void menu_changed();
+    };
+
     class PopupMenu : public Popup {
         private:
             PopupMenuNode* popup_menu = nullptr; // Pointer to the PopupMenu instance
