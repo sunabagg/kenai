@@ -74,6 +74,9 @@ namespace sunaba::ui {
                     this->rangeSignalWrapper = memnew(RangeSignalWrapper);
                     this->rangeSignalWrapper->element = this;
                 }
+
+                this->range->connect("changed", Callable(this->rangeSignalWrapper, "changed"));
+                this->range->connect("value_changed", Callable(this->rangeSignalWrapper, "value_changed"));
             }
 
         public:
