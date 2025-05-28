@@ -90,5 +90,5 @@ namespace sunaba::ui {
             void setColor(const Color &p_color) {
                 color_rect->set_color(p_color);
             }
-    }
+    };
 }
