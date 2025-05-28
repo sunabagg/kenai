@@ -81,6 +81,7 @@ namespace sunaba::ui {
             void item_edited();
             void item_icon_double_clicked();
             void item_mouse_selected(const Vector2& mouse_position, int mouse_button_index);
+            void item_selected();
     };
 
     class Tree : public Control {
