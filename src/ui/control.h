@@ -65,7 +65,7 @@ namespace sunaba::ui {
         protected:
             static void _bind_methods();
         public:
-            sunaba::ui::Control* control = nullptr;
+            sunaba::ui::Control* element = nullptr;
 
             ControlSignalWrapper() = default;
             ~ControlSignalWrapper() = default;
