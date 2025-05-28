@@ -30,6 +30,7 @@
 #include "ui/option_button.h"
 #include "ui/range.h"
 #include "ui/slider.h"
+#include "ui/tab_bar.h"
 
 /// @file
 /// Register our classes with Godot.
