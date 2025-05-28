@@ -132,6 +132,22 @@ namespace sunaba::ui {
         ClassDB::bind_method(D_METHOD("item_selected", "index"), &OptionButtonSignalWrapper::item_selected);
     }
 
+    void OptionButtonSignalWrapper::item_focused(int index) {
+        if (element != nullptr) {
+            Array args;
+            args.push_back(index);
+            element->itemFocusedEvent->emit(args);
+        }
+    }
+
+    void OptionButtonSignalWrapper::item_selected(int index) {
+        if (element != nullptr) {
+            Array args;
+            args.push_back(index);
+            element->itemSelectedEvent->emit(args);
+        }
+    }
+
     void bindOptionButton(sol::state& lua) {
         lua.new_usertype<OptionButton>("OptionButton",
             sol::constructors<OptionButton()>(),
