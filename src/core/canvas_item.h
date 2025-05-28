@@ -597,6 +597,14 @@ namespace sunaba::core {
                 }
             }
         }
+
+        void onFree() override {
+            if (canvas_item_signal_wrapper) {
+                memdelete(canvas_item_signal_wrapper);
+                canvas_item_signal_wrapper = nullptr;
+            }
+            Element::onFree();
+        }
     };
 }
 
