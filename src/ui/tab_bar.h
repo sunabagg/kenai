@@ -440,6 +440,14 @@ namespace sunaba::ui {
             void setTabTooltip(int tab, const std::string& tooltip) {
                 container->set_tab_tooltip(tab, tooltip.c_str());
             }
+
+            void onFree() override {
+                if (tabBarSignalWrapper) {
+                    memdelete(tabBarSignalWrapper);
+                    tabBarSignalWrapper = nullptr;
+                }
+                Control::onFree();
+            }
     };
 }
 
