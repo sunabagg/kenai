@@ -134,6 +134,13 @@ namespace sunaba::ui {
         ClassDB::bind_method(D_METHOD("theme_changed"), &ControlSignalWrapper::theme_changed);
     }
 
+    void ControlSignalWrapper::focus_entered() {
+        if (element != nullptr) {
+            Array args;
+            element->focusEnteredEvent->emit(args);
+        }
+    }
+
     void bindControl(sol::state& lua) {
         auto ut = lua.new_usertype<Control>("Control",
             sol::constructors<Control()>(),
