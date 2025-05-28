@@ -114,4 +114,10 @@ namespace sunaba::ui {
         }
         return TypedArray<Vector3i>();
     }
+
+    void bindColorRect(sol::state& lua) {
+        lua.new_usertype<ColorRect>("ColorRect",
+            sol::constructors<ColorRect()>()
+        );
+    }
 }
