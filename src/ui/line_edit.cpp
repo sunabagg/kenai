@@ -130,6 +130,14 @@ namespace sunaba::ui {
         }
     }
 
+    void LineEditSignalWrapper::textChangeRejected(const String &rejectedSubstring) {
+        if (this->element != nullptr) {
+            Array args;
+            args.push_back(rejectedSubstring);
+            this->element->textChangeRejectedEvent->emit(args);
+        }
+    }
+
     void bindLineEdit(sol::state& lua) {
         lua.new_usertype<LineEdit>("LineEdit",
             sol::constructors<LineEdit()>(),
