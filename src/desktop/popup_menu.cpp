@@ -71,7 +71,9 @@ namespace sunaba::desktop {
 
     void PopupMenuSignalWrapper::id_focused(int id) {
         if (element != nullptr) {
-            element->idFocused(id);
+            Array args;
+            args.push_back(id);
+            element->idFocusedEvent->emit(args);
         }
     }
 
