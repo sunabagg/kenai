@@ -77,21 +77,12 @@ namespace sunaba::ui {
             MenuButtonSignalWrapper* menu_button_signal_wrapper = nullptr;
             void connectMenuButtonSignals() {
                 // Connect signals specific to MenuButton
-                std::function<Variant(std::vector<Variant>)> aboutToPopupFunc =
-                [this](std::vector<Variant> av) {
-                    Array args;
-                    for (int i = 0; i < av.size(); ++i) {
-                        args.append(av[i]);
-                    }
-                    if (this->aboutToPopupEvent != nullptr) {
-                        this->aboutToPopupEvent->emit(args);
-                    }
-                    return Variant();
-                };
-                Callable aboutToPopupCallable = StlFunctionWrapper::create_callable_from_cpp_function(aboutToPopupFunc);
-                menu_button->connect("about_to_popup", aboutToPopupCallable);
+                if (this->menu_button_signal_wrapper == nullptr) {
+                    this->menu_button_signal_wrapper = memnew(MenuButtonSignalWrapper);
+                    this->menu_button_signal_wrapper->element = this;
+                }
+                this->menu_button->connect("about_to_popup", Callable(this->menu_button_signal_wrapper, "about_to_popup"));
             }
-
         public:
             MenuButton() {
                 setMenuButton(memnew(MenuButtonProxy));
