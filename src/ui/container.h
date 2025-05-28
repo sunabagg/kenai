@@ -62,8 +62,8 @@ namespace sunaba::ui {
             PackedInt32Array _get_allowed_size_flags_vertical() const override;
     };
 
-    class ContainerSignalWrapper : public NodeSignalWrapper {
-        GDCLASS(ContainerSignalWrapper, NodeSignalWrapper)
+    class ContainerSignalWrapper : public Object{
+        GDCLASS(ContainerSignalWrapper, Object
         protected:
             static void _bind_methods();
         public:
