@@ -76,7 +76,7 @@ namespace sunaba::ui {
             void custom_item_clicked(int column);
             void custom_popup_edited(bool arrow_clicked);
             void empty_clicked(Vector2 click_position, int mouse_button_index);
-            void item_activated(TreeItem* item, int column);
+            void item_activated();
     };
 
     class Tree : public Control {
