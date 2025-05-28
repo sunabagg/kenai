@@ -87,6 +87,7 @@ namespace sunaba::ui {
         private:
             TabContainerNode* container = nullptr; // Pointer to the TabContainer instance
 
+            TabContainerSignalWrapper* containerSignalWrapper = nullptr;
             void connectContainerSignals() {
                 // Connect signals from the container to the element
                 // Example: container->connect("signal_name", this, "method_name");
