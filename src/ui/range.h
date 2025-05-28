@@ -70,32 +70,10 @@ namespace sunaba::ui {
             RangeSignalWrapper* rangeSignalWrapper = nullptr;
             void connectRangeSignals() {
                 // Connect signals specific to Range
-                SignalFunc changedFunc =
-                [this](std::vector<Variant> av) {
-                    Array args;
-                    for (int i = 0; i < av.size(); ++i) {
-                        args.push_back(av[i]);
-                    }
-                    if (changedEvent != nullptr) {
-                        changedEvent->emit(args);
-                    }
-                    return Variant();
-                };
-                Callable changedCallable = to_callable(changedFunc);
-                range->connect("changed", changedCallable);
-                SignalFunc valueChangedFunc =
-                [this](std::vector<Variant> av) {
-                    Array args;
-                    for (int i = 0; i < av.size(); ++i) {
-                        args.push_back(av[i]);
-                    }
-                    if (valueChangedEvent != nullptr) {
-                        valueChangedEvent->emit(args);
-                    }
-                    return Variant();
-                };
-                Callable valueChangedCallable = to_callable(valueChangedFunc);
-                range->connect("value_changed", valueChangedCallable);
+                if (this->rangeSignalWrapper == nullptr) {
+                    this->rangeSignalWrapper = memnew(RangeSignalWrapper);
+                    this->rangeSignalWrapper->element = this;
+                }
             }
 
         public:
