@@ -96,6 +96,7 @@ namespace sunaba::ui {
     class TextEdit : public Control {
         private:
             TextEditNode* text_edit = nullptr; // Pointer to the TextEdit instance
+            TextEditSignalWrapper* text_edit_signal_wrapper = nullptr;
             void connectTextEditSignals() {
                 // Connect signals from the text_edit to the element
                 // Example: text_edit->connect("signal_name", this, "method_name");
