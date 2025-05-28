@@ -149,6 +149,14 @@ namespace sunaba::ui {
         }
     }
 
+    void TabBarSignalWrapper::tabChanged(int tab_idx) {
+        if (element) {
+            Array args;
+            args.push_back(tab_idx);
+            element->tabChangedEvent->emit(args);
+        }
+    }
+
     void bindTabBar(sol::state& lua) {
         lua.new_usertype<TabBar>("TabBar",
             sol::constructors<TabBar()>(),
