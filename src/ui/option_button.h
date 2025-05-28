@@ -292,6 +292,14 @@ namespace sunaba::ui {
             void showPopup() {
                 optionButton->show_popup();
             }
+
+            void onFree() override {
+                if (optionButtonSignalWrapper) {
+                    memdelete(optionButtonSignalWrapper);
+                    optionButtonSignalWrapper = nullptr;
+                }
+                Button::onFree();
+            }
     };
 }
 
