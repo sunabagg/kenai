@@ -508,6 +508,14 @@ namespace sunaba::ui {
             void sortItemsByText() {
                 item_list->sort_items_by_text();
             }
+
+            void onFree() override {
+                if (item_list_signal_wrapper) {
+                    memdelete(item_list_signal_wrapper);
+                    item_list_signal_wrapper = nullptr;
+                }
+                Control::onFree();
+            }
     };
 }
 
