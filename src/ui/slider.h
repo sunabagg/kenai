@@ -84,6 +84,9 @@ namespace sunaba::ui {
                     this->sliderSignalWrapper = memnew(SliderSignalWrapper);
                     this->sliderSignalWrapper->element = this;
                 }
+
+                this->slider->connect("drag_ended", Callable(this->sliderSignalWrapper, "drag_ended"));
+                this->slider->connect("drag_started", Callable(this->sliderSignalWrapper, "drag_started"));
             }
 
         public:
