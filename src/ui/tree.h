@@ -75,7 +75,7 @@ namespace sunaba::ui {
             void column_title_clicked(int column, int mouse_button_index);
             void custom_item_clicked(int column);
             void custom_popup_edited(bool arrow_clicked);
-            void empty_clicked(Vector2 click_position, int mouse_button_index);
+            void empty_clicked(const Vector2& click_position, int mouse_button_index);
             void item_activated();
             void item_collapsed(godot::TreeItem* item);
             void item_edited();
@@ -96,7 +96,7 @@ namespace sunaba::ui {
                     this->treeSignalWrapper = memnew(TreeSignalWrapper);
                     this->treeSignalWrapper->element = this;
                 }
-                
+
                 this->tree->connect("button_clicked", Callable(this->treeSignalWrapper, "button_clicked"));
                 this->tree->connect("cell_selected", Callable(this->treeSignalWrapper, "cell_selected"));
                 this->tree->connect("check_propagated_to_item", Callable(this->treeSignalWrapper, "check_propagated_to_item"));
