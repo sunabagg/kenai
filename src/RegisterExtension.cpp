@@ -54,6 +54,8 @@ namespace
         godot::ClassDB::register_class<sunaba::desktop::WindowSignalWrapper>();
         godot::ClassDB::register_class<sunaba::desktop::PopupSignalWrapper>();
         godot::ClassDB::register_class<sunaba::desktop::PopupMenuSignalWrapper>();
+
+        godot::ClassDB::register_class<sunaba::ui::ControlSignalWrapper>();
     }
 
     /// @brief Called by Godot to let us do any cleanup.
