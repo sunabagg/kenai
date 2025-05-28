@@ -64,10 +64,27 @@ namespace sunaba::ui {
             void _toggled(bool p_toggled_on) override;
     };
 
+    class BaseButtonSignalWrapper : public Object {
+        GDCLASS(BaseButtonSignalWrapper, Object)
+        protected:
+            static void _bind_methods();
+        public:
+            sunaba::ui::BaseButton* element = nullptr;
+
+            BaseButtonSignalWrapper() = default;
+            ~BaseButtonSignalWrapper() = default;
+
+            void pressed();
+            void toggled(bool p_toggled_on);
+            void button_down();
+            void button_up();
+    };
+
     class BaseButton : public sunaba::ui::Control {
         private:
             BaseButtonNode* base_button = nullptr;
 
+            BaseButtonSignalWrapper* base_button_signal_wrapper = nullptr;
             void connectBaseButtonSignals() {
                 // Connect signals from the BaseButton node to the BaseButton class
                 std::function<Variant(std::vector<Variant>)> pressedFunc =
