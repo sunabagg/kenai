@@ -87,6 +87,8 @@ namespace sunaba::ui {
                     this->containerSignalWrapper = memnew(ContainerSignalWrapper);
                     this->containerSignalWrapper->element = this;
                 }
+
+                this->container->connect("pre_sort_children", Callable(this->containerSignalWrapper, "pre_sort_children"));
             }
 
         public:
