@@ -80,32 +80,10 @@ namespace sunaba::ui {
             SliderSignalWrapper* sliderSignalWrapper = nullptr;
             void connectSliderSignals() {
                 // Connect signals specific to Slider
-                std::function<Variant(std::vector<Variant>)> dragEndedFunc =
-                [this](std::vector<Variant> av) {
-                    Array args;
-                    for (int i = 0; i < av.size(); ++i) {
-                        args.append(av[i]);
-                    }
-                    if (this->dragEndedEvent != nullptr) {
-                        this->dragEndedEvent->emit(args);
-                    }
-                    return Variant();
-                };
-                Callable dragEndedCallable = StlFunctionWrapper::create_callable_from_cpp_function(dragEndedFunc);
-                this->slider->connect("drag_ended", dragEndedCallable);
-                std::function<Variant(std::vector<Variant>)> dragStartedFunc =
-                [this](std::vector<Variant> av) {
-                    Array args;
-                    for (int i = 0; i < av.size(); ++i) {
-                        args.append(av[i]);
-                    }
-                    if (this->dragStartedEvent != nullptr) {
-                        this->dragStartedEvent->emit(args);
-                    }
-                    return Variant();
-                };
-                Callable dragStartedCallable = StlFunctionWrapper::create_callable_from_cpp_function(dragStartedFunc);
-                this->slider->connect("drag_started", dragStartedCallable);
+                if (this->sliderSignalWrapper == nullptr) {
+                    this->sliderSignalWrapper = memnew(SliderSignalWrapper);
+                    this->sliderSignalWrapper->element = this;
+                }
             }
 
         public:
