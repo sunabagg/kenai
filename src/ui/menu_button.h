@@ -74,6 +74,7 @@ namespace sunaba::ui {
         private:
             MenuButtonNode* menu_button = nullptr;
 
+            MenuButtonSignalWrapper* menu_button_signal_wrapper = nullptr;
             void connectMenuButtonSignals() {
                 // Connect signals specific to MenuButton
                 std::function<Variant(std::vector<Variant>)> aboutToPopupFunc =
