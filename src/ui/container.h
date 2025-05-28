@@ -182,6 +182,14 @@ namespace sunaba::ui {
                     }
                 }
             }
+
+            void onFree() override {
+                if (containerSignalWrapper) {
+                    memdelete(containerSignalWrapper);
+                    containerSignalWrapper = nullptr;
+                }
+                Control::onFree();
+            }
     };
 }
 
