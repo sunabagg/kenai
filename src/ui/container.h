@@ -79,6 +79,8 @@ namespace sunaba::ui {
     class Container : public Control {
         private:
             ContainerNode* container = nullptr; // Pointer to the Container instance
+
+            ContainerSignalWrapper* containerSignalWrapper = nullptr;
             void connectContainerSignals() {
                 // Connect signals specific to Container
             }
