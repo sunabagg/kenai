@@ -92,6 +92,7 @@ namespace sunaba::ui {
                 }
 
                 this->container->connect("active_tab_rearranged", Callable(this->tabBarSignalWrapper, "activeTabRearranged"));
+                this->container->connect("tab_button_pressed", Callable(this->tabBarSignalWrapper, "tabButtonPressed"));
             }
 
         public:
