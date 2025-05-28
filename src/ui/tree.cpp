@@ -176,6 +176,14 @@ namespace sunaba::ui {
         }
     }
 
+    void TreeSignalWrapper::custom_item_clicked(int column) {
+        if (this->element != nullptr) {
+            Array args;
+            args.push_back(column);
+            this->element->getCustomItemClickedEvent()->emit(args);
+        }
+    }
+
     void bindTree(sol::state &lua) {
         lua.new_usertype<Tree>("Tree",
             sol::constructors<Tree()>(),
