@@ -121,6 +121,12 @@ namespace sunaba::ui {
         }
     }
 
+    void SliderSignalWrapper::_bind_methods() {
+        // Bind the methods for Slider signals
+        ClassDB::bind_method(D_METHOD("drag_ended", "value"), &SliderSignalWrapper::drag_ended);
+        ClassDB::bind_method(D_METHOD("drag_started"), &SliderSignalWrapper::drag_started);
+    }
+
     void bindSlider(sol::state& lua) {
         lua.new_usertype<Slider>("Slider",
             sol::constructors<Slider()>(),
