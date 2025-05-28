@@ -167,6 +167,15 @@ namespace sunaba::ui {
         }
     }
 
+    void TreeSignalWrapper::column_title_clicked(int column, int mouse_button_index) {
+        if (this->element != nullptr) {
+            Array args;
+            args.push_back(column);
+            args.push_back(mouse_button_index);
+            this->element->getColumnTitleClickedEvent()->emit(args);
+        }
+    }
+
     void bindTree(sol::state &lua) {
         lua.new_usertype<Tree>("Tree",
             sol::constructors<Tree()>(),
