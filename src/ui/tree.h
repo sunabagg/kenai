@@ -83,6 +83,7 @@ namespace sunaba::ui {
             void item_mouse_selected(const Vector2& mouse_position, int mouse_button_index);
             void item_selected();
             void multi_selected(godot::TreeItem* item, int column, bool selected);
+            void nothing_selected();
     };
 
     class Tree : public Control {
