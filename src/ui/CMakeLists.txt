@@ -126,6 +126,7 @@ target_sources(${PROJECT_NAME} PRIVATE
         code_highlighter.h
         code_highlighter.cpp
         color_rect.h
+        color_rect.cpp
 )
 
 target_include_directories( ${PROJECT_NAME}
