@@ -33,6 +33,7 @@
 #include "ui/tab_bar.h"
 #include "ui/tab_container.h"
 #include "ui/text_edit.h"
+#include "ui/tree.h"
 
 /// @file
 /// Register our classes with Godot.
