@@ -184,6 +184,13 @@ namespace sunaba::ui {
         }
     }
 
+    void TextEditSignalWrapper::gutter_removed() {
+        if (this->element != nullptr && this->element->getGutterRemovedEvent() != nullptr) {
+            Array args;
+            this->element->getGutterRemovedEvent()->emit(args);
+        }
+    }
+
     void bindTextEdit(sol::state& lua) {
         lua.new_usertype<TextEdit>("TextEdit",
             sol::constructors<TextEdit()>(),
