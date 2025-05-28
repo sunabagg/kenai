@@ -59,6 +59,26 @@ namespace sunaba::ui {
             TypedArray<Vector3i> _structured_text_parser(const Array &args, const String &text) const override;
     };
 
+    class TreeSignalWrapper : public Object {
+        GDCLASS(TreeSignalWrapper, Object)
+        protected:
+            static void _bind_methods();
+        public:
+            sunaba::ui::Tree* element = nullptr;
+
+            TreeSignalWrapper() = default;
+            ~TreeSignalWrapper() = default;
+
+            void button_clicked(TreeItem* item, int column);
+            void cell_selected(TreeItem* item, int column);
+            void check_propagated_to_item(TreeItem* item, bool propagated);
+            void column_title_clicked(int column);
+            void custom_item_clicked(TreeItem* item, int column);
+            void custom_popup_edited(TreeItem* item, int column);
+            void empty_clicked();
+            void item_activated(TreeItem* item, int column);
+    };
+
     class Tree : public Control {
         private:
             GodotTree* tree = nullptr; // Pointer to the Tree instance
