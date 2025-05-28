@@ -207,6 +207,13 @@ namespace sunaba::ui {
         }
     }
 
+    void TextEditSignalWrapper::text_set() {
+        if (this->element != nullptr && this->element->getTextSetEvent() != nullptr) {
+            Array args;
+            this->element->getTextSetEvent()->emit(args);
+        }
+    }
+
     void bindTextEdit(sol::state& lua) {
         lua.new_usertype<TextEdit>("TextEdit",
             sol::constructors<TextEdit()>(),
