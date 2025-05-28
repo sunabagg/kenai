@@ -141,6 +141,13 @@ namespace sunaba::ui {
         }
     }
 
+    void ControlSignalWrapper::focus_exited() {
+        if (element != nullptr) {
+            Array args;
+            element->focusExitedEvent->emit(args);
+        }
+    }
+
     void bindControl(sol::state& lua) {
         auto ut = lua.new_usertype<Control>("Control",
             sol::constructors<Control()>(),
