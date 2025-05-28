@@ -64,6 +64,25 @@ namespace sunaba::ui {
             PackedInt32Array _get_allowed_size_flags_vertical() const override;
     };
 
+    class TabContainerSignalWrapper : public Object {
+        GDCLASS(TabContainerSignalWrapper, Object)
+        protected:
+            static void _bind_methods();
+        public:
+            sunaba::ui::TabContainer* element = nullptr;
+
+            TabContainerSignalWrapper() = default;
+            ~TabContainerSignalWrapper() = default;
+
+            void active_tab_rearranged(int tab);
+            void pre_popup_pressed();
+            void tab_button_pressed(int tab);
+            void tab_changed(int tab);
+            void tab_clicked(int tab);
+            void tab_hovered(int tab);
+            void tab_selected(int tab);
+    };
+
     class TabContainer : public Container {
         private:
             TabContainerNode* container = nullptr; // Pointer to the TabContainer instance
