@@ -76,7 +76,7 @@ namespace sunaba::ui {
             void tabClosePressed(int tab);
             void tabHovered(int tab);
             void tabRmbClicked(int tab);
-            void tabSelected();
+            void tabSelected(int tab);
     };
 
     class TabBar : public Control {
