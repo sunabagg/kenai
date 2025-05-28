@@ -86,62 +86,10 @@ namespace sunaba::ui {
 
             BaseButtonSignalWrapper* base_button_signal_wrapper = nullptr;
             void connectBaseButtonSignals() {
-                // Connect signals from the BaseButton node to the BaseButton class
-                std::function<Variant(std::vector<Variant>)> pressedFunc =
-                [this](std::vector<Variant> av) {
-                    Array args;
-                    for (int i = 0; i < av.size(); ++i) {
-                        args.append(av[i]);
-                    }
-                    if (this->pressedEvent != nullptr) {
-                        this->pressedEvent->emit(args);
-                    }
-                    return Variant();
-                };
-                Callable pressedCallable = StlFunctionWrapper::create_callable_from_cpp_function(pressedFunc);
-                base_button->connect("pressed", pressedCallable);
-
-                std::function<Variant(std::vector<Variant>)> toggledFunc =
-                [this](std::vector<Variant> av) {
-                    Array args;
-                    for (int i = 0; i < av.size(); ++i) {
-                        args.append(av[i]);
-                    }
-                    if (this->toggledEvent != nullptr) {
-                        this->toggledEvent->emit(args);
-                    }
-                    return Variant();
-                };
-                Callable toggledCallable = StlFunctionWrapper::create_callable_from_cpp_function(toggledFunc);
-                base_button->connect("toggled", toggledCallable);
-
-                std::function<Variant(std::vector<Variant>)> buttonDownFunc =
-                [this](std::vector<Variant> av) {
-                    Array args;
-                    for (int i = 0; i < av.size(); ++i) {
-                        args.append(av[i]);
-                    }
-                    if (this->buttonDown != nullptr) {
-                        this->buttonDown->emit(args);
-                    }
-                    return Variant();
-                };
-                Callable buttonDownCallable = StlFunctionWrapper::create_callable_from_cpp_function(buttonDownFunc);
-                base_button->connect("button_down", buttonDownCallable);
-
-                std::function<Variant(std::vector<Variant>)> buttonUpFunc =
-                [this](std::vector<Variant> av) {
-                    Array args;
-                    for (int i = 0; i < av.size(); ++i) {
-                        args.append(av[i]);
-                    }
-                    if (this->buttonUp != nullptr) {
-                        this->buttonUp->emit(args);
-                    }
-                    return Variant();
-                };
-                Callable buttonUpCallable = StlFunctionWrapper::create_callable_from_cpp_function(buttonUpFunc);
-                base_button->connect("button_up", buttonUpCallable);
+                if (this->base_button_signal_wrapper == nullptr) {
+                    this->base_button_signal_wrapper = memnew(BaseButtonSignalWrapper);
+                    this->base_button_signal_wrapper->element = this;
+                }
             }
         
         public:
