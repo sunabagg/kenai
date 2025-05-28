@@ -78,6 +78,7 @@ namespace sunaba::ui {
         private:
             LineEditNode* line_edit_node = nullptr;
 
+            LineEditSignalWrapper* line_edit_signal_wrapper = nullptr;
             void connectLineEditSignals() {
                 std::function<Variant(std::vector<Variant>)> editingToggledFunc =
                 [this](std::vector<Variant> argsv) {
