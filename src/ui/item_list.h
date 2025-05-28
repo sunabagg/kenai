@@ -82,68 +82,14 @@ namespace sunaba::ui {
         private:
             ItemListNode* item_list = nullptr; // Pointer to the ItemList instance
 
+            ItemListSignalWrapper* item_list_signal_wrapper = nullptr;
             void connectItemListSignals() {
                 // Connect signals from the item list to the element
                 // Example: item_list->connect("signal_name", this, "method_name");
-                std::function<Variant(std::vector<Variant>)> emptyClickedFunc = 
-                [this](std::vector<Variant> args) {
-                    Array argsArray;
-                    argsArray.append(args[0]);
-                    if (this->emptyClickedEvent != nullptr) {
-                        this->emptyClickedEvent->emit(argsArray);
-                    }
-                    return Variant();
-                };
-                Callable emptyClickedCallable = StlFunctionWrapper::create_callable_from_cpp_function(emptyClickedFunc);
-                this->item_list->connect("empty_clicked", emptyClickedCallable);
-                
-                std::function<Variant(std::vector<Variant>)> itemActivatedFunc =
-                [this](std::vector<Variant> args) {
-                    Array argsArray;
-                    argsArray.append(args[0]);
-                    if (this->itemActivatedEvent != nullptr) {
-                        this->itemActivatedEvent->emit(argsArray);
-                    }
-                    return Variant();
-                };
-                Callable itemActivatedCallable = StlFunctionWrapper::create_callable_from_cpp_function(itemActivatedFunc);
-                this->item_list->connect("item_activated", itemActivatedCallable);
-
-                std::function<Variant(std::vector<Variant>)> itemClickedFunc =
-                [this](std::vector<Variant> args) {
-                    Array argsArray;
-                    argsArray.append(args[0]);
-                    if (this->itemClickedEvent != nullptr) {
-                        this->itemClickedEvent->emit(argsArray);
-                    }
-                    return Variant();
-                };
-                Callable itemClickedCallable = StlFunctionWrapper::create_callable_from_cpp_function(itemClickedFunc);
-                this->item_list->connect("item_clicked", itemClickedCallable);
-
-                std::function<Variant(std::vector<Variant>)> itemSelectedFunc =
-                [this](std::vector<Variant> args) {
-                    Array argsArray;
-                    argsArray.append(args[0]);
-                    if (this->itemSelectedEvent != nullptr) {
-                        this->itemSelectedEvent->emit(argsArray);
-                    }
-                    return Variant();
-                };
-                Callable itemSelectedCallable = StlFunctionWrapper::create_callable_from_cpp_function(itemSelectedFunc);
-                this->item_list->connect("item_selected", itemSelectedCallable);
-
-                std::function<Variant(std::vector<Variant>)> multiSelectedFunc =
-                [this](std::vector<Variant> args) {
-                    Array argsArray;
-                    argsArray.append(args[0]);
-                    if (this->multiSelectedEvent != nullptr) {
-                        this->multiSelectedEvent->emit(argsArray);
-                    }
-                    return Variant();
-                };
-                Callable multiSelectedCallable = StlFunctionWrapper::create_callable_from_cpp_function(multiSelectedFunc);
-                this->item_list->connect("multi_selected", multiSelectedCallable);
+                if (this->item_list_signal_wrapper == nullptr) {
+                    this->item_list_signal_wrapper = memnew(ItemListSignalWrapper);
+                    this->item_list_signal_wrapper->element = this;
+                }
             }
 
         public:
