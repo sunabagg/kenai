@@ -28,6 +28,7 @@
 #include "ui/line_edit.h"
 #include "ui/menu_button.h"
 #include "ui/option_button.h"
+#include "ui/range.h"
 
 /// @file
 /// Register our classes with Godot.
