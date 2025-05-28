@@ -165,6 +165,14 @@ namespace sunaba::ui {
         }
     }
 
+    void TabBarSignalWrapper::tabClosePressed(int tab_idx) {
+        if (element) {
+            Array args;
+            args.push_back(tab_idx);
+            element->tabClosePressedEvent->emit(args);
+        }
+    }
+
     void bindTabBar(sol::state& lua) {
         lua.new_usertype<TabBar>("TabBar",
             sol::constructors<TabBar()>(),
