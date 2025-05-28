@@ -86,6 +86,7 @@ namespace sunaba::ui {
 
             void caret_changed();
             void gutter_added();
+            void gutter_clicked(int line, int gutter);
     };
 
     class TextEdit : public Control {
