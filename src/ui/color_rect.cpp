@@ -63,7 +63,7 @@ namespace sunaba::ui {
 
     bool ColorRectProxy::_can_drop_data(const Vector2& at_position, const Variant &data) const {
         if (element != nullptr) {
-            return element->_can_drop_data(at_position, data);
+            return element->canDropData(at_position, data);
         }
         return false;
     }
