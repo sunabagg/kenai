@@ -71,7 +71,7 @@ namespace sunaba::ui {
 
             void button_clicked(TreeItem* item, int column, int id, int mouseButtonIndex);
             void cell_selected();
-            void check_propagated_to_item(TreeItem* item, bool propagated);
+            void check_propagated_to_item(TreeItem* item, int column);
             void column_title_clicked(int column);
             void custom_item_clicked(TreeItem* item, int column);
             void custom_popup_edited(TreeItem* item, int column);
