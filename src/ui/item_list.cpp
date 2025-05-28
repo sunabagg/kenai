@@ -158,6 +158,15 @@ namespace sunaba::ui {
         }
     }
 
+    void ItemListSignalWrapper::multiSelected(int index, bool selected) {
+        if (element != nullptr) {
+            Array args;
+            args.push_back(index);
+            args.push_back(selected);
+            element->multiSelectedEvent->emit(args);
+        }
+    }
+
     void bindItemList(sol::state& lua) {
         lua.new_usertype<ItemList>("ItemList",
             sol::constructors<ItemList()>(),
