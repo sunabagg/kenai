@@ -19,6 +19,9 @@
 
 #include "desktop/window.h"
 #include "desktop/popup.h"
+#include "desktop/popup_menu.h"
+
+#include "ui/control.h"
 
 /// @file
 /// Register our classes with Godot.
@@ -50,6 +53,7 @@ namespace
 
         godot::ClassDB::register_class<sunaba::desktop::WindowSignalWrapper>();
         godot::ClassDB::register_class<sunaba::desktop::PopupSignalWrapper>();
+        godot::ClassDB::register_class<sunaba::desktop::PopupMenuSignalWrapper>();
     }
 
     /// @brief Called by Godot to let us do any cleanup.
