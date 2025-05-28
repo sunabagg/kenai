@@ -143,13 +143,6 @@ namespace sunaba::ui {
         base_button->set_button_group(group->getButtonGroup());
     }
 
-    void BaseButtonSignalWrapper::pressed() {
-        if (element != nullptr) {
-            Array args;
-            element->pressedEvent->emit(args);
-        }
-    }
-
     void BaseButtonSignalWrapper::_bind_methods() {
         ClassDB::bind_method(D_METHOD("pressed"), &BaseButtonSignalWrapper::pressed);
         ClassDB::bind_method(D_METHOD("toggled", "p_toggled_on"), &BaseButtonSignalWrapper::toggled);
