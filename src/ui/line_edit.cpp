@@ -138,6 +138,14 @@ namespace sunaba::ui {
         }
     }
 
+    void LineEditSignalWrapper::textChanged(const String &newText) {
+        if (this->element != nullptr) {
+            Array args;
+            args.push_back(newText);
+            this->element->textChangedEvent->emit(args);
+        }
+    }
+
     void bindLineEdit(sol::state& lua) {
         lua.new_usertype<LineEdit>("LineEdit",
             sol::constructors<LineEdit()>(),
