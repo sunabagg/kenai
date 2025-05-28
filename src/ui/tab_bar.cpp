@@ -173,6 +173,14 @@ namespace sunaba::ui {
         }
     }
 
+    void TabBarSignalWrapper::tabHovered(int tab_idx) {
+        if (element) {
+            Array args;
+            args.push_back(tab_idx);
+            element->tabHoveredEvent->emit(args);
+        }
+    }
+
     void bindTabBar(sol::state& lua) {
         lua.new_usertype<TabBar>("TabBar",
             sol::constructors<TabBar()>(),
