@@ -73,4 +73,11 @@ namespace sunaba::ui {
             element->dropData(at_position, data);
         }
     }
+
+    Variant ColorRectProxy::_get_drag_data(const Vector2 &at_position) {
+        if (element != nullptr) {
+            return element->getDragData(at_position);
+        }
+        return Variant();
+    }
 }
