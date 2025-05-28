@@ -90,6 +90,7 @@ namespace sunaba::ui {
         private:
             GodotTree* tree = nullptr; // Pointer to the Tree instance
 
+            TreeSignalWrapper* treeSignalWrapper = nullptr;
             void connectSignals() {
             }
         public:
