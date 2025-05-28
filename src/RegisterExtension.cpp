@@ -61,6 +61,7 @@ namespace
         godot::ClassDB::register_class<sunaba::ui::ControlSignalWrapper>();
         godot::ClassDB::register_class<sunaba::ui::BaseButtonSignalWrapper>();
         godot::ClassDB::register_class<sunaba::ui::ContainerSignalWrapper>();
+        godot::ClassDB::register_class<sunaba::ui::ItemListSignalWrapper>();
     }
 
     /// @brief Called by Godot to let us do any cleanup.
