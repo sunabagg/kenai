@@ -179,6 +179,14 @@ namespace sunaba::ui {
             void showPopup() {
                 menu_button->show_popup();
             }
+
+            void onFree() override {
+                if (menu_button_signal_wrapper) {
+                    memdelete(menu_button_signal_wrapper);
+                    menu_button_signal_wrapper = nullptr;
+                }
+                Button::onFree();
+            }
     };
 } 
 
