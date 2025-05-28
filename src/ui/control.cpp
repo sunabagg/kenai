@@ -122,6 +122,18 @@ namespace sunaba::ui {
         return TypedArray<Vector3i>();
     }
 
+    void ControlSignalWrapper::_bind_methods() {
+        ClassDB::bind_method(D_METHOD("focus_entered"), &ControlSignalWrapper::focus_entered);
+        ClassDB::bind_method(D_METHOD("focus_exited"), &ControlSignalWrapper::focus_exited);
+        ClassDB::bind_method(D_METHOD("gui_input", "event"), &ControlSignalWrapper::gui_input);
+        ClassDB::bind_method(D_METHOD("minimum_size_changed"), &ControlSignalWrapper::minimum_size_changed);
+        ClassDB::bind_method(D_METHOD("mouse_entered"), &ControlSignalWrapper::mouse_entered);
+        ClassDB::bind_method(D_METHOD("mouse_exited"), &ControlSignalWrapper::mouse_exited);
+        ClassDB::bind_method(D_METHOD("resized"), &ControlSignalWrapper::resized);
+        ClassDB::bind_method(D_METHOD("size_flags_changed"), &ControlSignalWrapper::size_flags_changed);
+        ClassDB::bind_method(D_METHOD("theme_changed"), &ControlSignalWrapper::theme_changed);
+    }
+
     void bindControl(sol::state& lua) {
         auto ut = lua.new_usertype<Control>("Control",
             sol::constructors<Control()>(),
