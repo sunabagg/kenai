@@ -12,4 +12,10 @@ namespace sunaba::ui {
             this->element->exitTree();
         }
     }
+
+    void sunaba::ui::ColorRectProxy::_ready() {
+        if (this->element != nullptr) {
+            this->element->ready();
+        }
+    }
 }
