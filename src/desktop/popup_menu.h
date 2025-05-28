@@ -495,6 +495,15 @@ namespace sunaba::desktop {
             void toggleItemMultistate(int index) {
                 popup_menu->toggle_item_multistate(index);
             }
+
+            void onFree() override {
+                if (popup_menu_signal_wrapper) {
+                    memdelete(popup_menu_signal_wrapper);
+                    popup_menu_signal_wrapper = nullptr;
+                }
+                popup_menu = nullptr;
+                Popup::onFree();
+            }
     };
 }
 
