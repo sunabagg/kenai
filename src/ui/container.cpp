@@ -119,6 +119,13 @@ namespace sunaba::ui {
         return PackedInt32Array();
     }
 
+    void ContainerSignalWrapper::pre_sort_children() {
+        if (element != nullptr && element->getPreSortChildrenEvent() != nullptr) {
+            Array args;
+            element->getPreSortChildrenEvent()->emit(args);
+        }
+    }
+
     void bindContainer(sol::state& lua) {
         auto ut = lua.new_usertype<Container>("Container",
             sol::constructors<Container()>(),
