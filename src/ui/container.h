@@ -89,6 +89,7 @@ namespace sunaba::ui {
                 }
 
                 this->container->connect("pre_sort_children", Callable(this->containerSignalWrapper, "pre_sort_children"));
+                this->container->connect("sort_children", Callable(this->containerSignalWrapper, "sort_children"));
             }
 
         public:
