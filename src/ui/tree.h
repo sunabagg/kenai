@@ -92,6 +92,26 @@ namespace sunaba::ui {
 
             TreeSignalWrapper* treeSignalWrapper = nullptr;
             void connectSignals() {
+                if (this->treeSignalWrapper == nullptr) {
+                    this->treeSignalWrapper = memnew(TreeSignalWrapper);
+                    this->treeSignalWrapper->element = this;
+                }
+                
+                this->tree->connect("button_clicked", Callable(this->treeSignalWrapper, "button_clicked"));
+                this->tree->connect("cell_selected", Callable(this->treeSignalWrapper, "cell_selected"));
+                this->tree->connect("check_propagated_to_item", Callable(this->treeSignalWrapper, "check_propagated_to_item"));
+                this->tree->connect("column_title_clicked", Callable(this->treeSignalWrapper, "column_title_clicked"));
+                this->tree->connect("custom_item_clicked", Callable(this->treeSignalWrapper, "custom_item_clicked"));
+                this->tree->connect("custom_popup_edited", Callable(this->treeSignalWrapper, "custom_popup_edited"));
+                this->tree->connect("empty_clicked", Callable(this->treeSignalWrapper, "empty_clicked"));
+                this->tree->connect("item_activated", Callable(this->treeSignalWrapper, "item_activated"));
+                this->tree->connect("item_collapsed", Callable(this->treeSignalWrapper, "item_collapsed"));
+                this->tree->connect("item_edited", Callable(this->treeSignalWrapper, "item_edited"));
+                this->tree->connect("item_icon_double_clicked", Callable(this->treeSignalWrapper, "item_icon_double_clicked"));
+                this->tree->connect("item_mouse_selected", Callable(this->treeSignalWrapper, "item_mouse_selected"));
+                this->tree->connect("item_selected", Callable(this->treeSignalWrapper, "item_selected"));
+                this->tree->connect("multi_selected", Callable(this->treeSignalWrapper, "multi_selected"));
+                this->tree->connect("nothing_selected", Callable(this->treeSignalWrapper, "nothing_selected"));
             }
         public:
             // Constructor with GodotTree parameter
