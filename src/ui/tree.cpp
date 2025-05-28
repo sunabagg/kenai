@@ -184,6 +184,14 @@ namespace sunaba::ui {
         }
     }
 
+    void TreeSignalWrapper::custom_popup_edited(bool arrow_clicked) {
+        if (this->element != nullptr) {
+            Array args;
+            args.push_back(arrow_clicked);
+            this->element->getCustomPopupEditedEvent()->emit(args);
+        }
+    }
+
     void bindTree(sol::state &lua) {
         lua.new_usertype<Tree>("Tree",
             sol::constructors<Tree()>(),
