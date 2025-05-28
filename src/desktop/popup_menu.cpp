@@ -85,6 +85,14 @@ namespace sunaba::desktop {
         }
     }
 
+    void PopupMenuSignalWrapper::index_pressed(int index) {
+        if (element != nullptr) {
+            Array args;
+            args.push_back(index);
+            element->indexPressedEvent->emit(args);
+        }
+    }
+
     void bindPopupMenu(sol::state& lua) {
         lua.new_usertype<PopupMenu>("PopupMenu",
             sol::constructors<PopupMenu()>(),
