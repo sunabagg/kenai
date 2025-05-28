@@ -79,32 +79,12 @@ namespace sunaba::ui {
             OptionButtonSignalWrapper* optionButtonSignalWrapper = nullptr;
             void connectOptionButtonSignals() {
                 // Connect signals specific to OptionButton
-                SignalFunc itemFocusedFunc =
-                [this](std::vector<Variant> av) {
-                    Array args;
-                    for (int i = 0; i < av.size(); ++i) {
-                        args.append(av[i]);
-                    }
-                    if (this->itemFocusedEvent != nullptr) {
-                        this->itemFocusedEvent->emit(args);
-                    }
-                    return Variant();
-                };
-                Callable itemFocusedCallable = to_callable(itemFocusedFunc);
-                optionButton->connect("item_focused", itemFocusedCallable);
-                SignalFunc itemSelectedFunc =
-                [this](std::vector<Variant> av) {
-                    Array args;
-                    for (int i = 0; i < av.size(); ++i) {
-                        args.append(av[i]);
-                    }
-                    if (this->itemSelectedEvent != nullptr) {
-                        this->itemSelectedEvent->emit(args);
-                    }
-                    return Variant();
-                };
-                Callable itemSelectedCallable = to_callable(itemSelectedFunc);
-                optionButton->connect("item_selected", itemSelectedCallable);
+                if (this->optionButtonSignalWrapper == nullptr) {
+                    this->optionButtonSignalWrapper = memnew(OptionButtonSignalWrapper);
+                    this->optionButtonSignalWrapper->element = this;
+                }
+                this->optionButton->connect("item_focused", Callable(this->optionButtonSignalWrapper, "item_focused"));
+                this->optionButton->connect("item_selected", Callable(this->optionButtonSignalWrapper, "item_selected"));
             }
 
         public:
