@@ -86,5 +86,9 @@ namespace sunaba::ui {
             Color getColor() const {
                 return color_rect->get_color();
             }
+
+            void setColor(const Color &p_color) {
+                color_rect->set_color(p_color);
+            }
     }
 }
