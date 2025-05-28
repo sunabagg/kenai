@@ -223,6 +223,13 @@ namespace sunaba::ui {
         }
     }
 
+    void TreeSignalWrapper::item_icon_double_clicked() {
+        if (this->element != nullptr) {
+            Array args;
+            this->element->getItemIconDoubleClickedEvent()->emit(args);
+        }
+    }
+
     void bindTree(sol::state &lua) {
         lua.new_usertype<Tree>("Tree",
             sol::constructors<Tree()>(),
