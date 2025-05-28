@@ -122,6 +122,14 @@ namespace sunaba::ui {
         ClassDB::bind_method(D_METHOD("textSubmitted", "newText"), &LineEditSignalWrapper::textSubmitted);
     }
 
+    void LineEditSignalWrapper::editingToggled(bool toggledOn) {
+        if (this->element != nullptr) {
+            Array args;
+            args.push_back(toggledOn);
+            this->element->editingToggledEvent->emit(args);
+        }
+    }
+
     void bindLineEdit(sol::state& lua) {
         lua.new_usertype<LineEdit>("LineEdit",
             sol::constructors<LineEdit()>(),
