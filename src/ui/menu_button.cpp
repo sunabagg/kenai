@@ -127,6 +127,13 @@ namespace sunaba::ui {
         }
     }
 
+    void MenuButtonSignalWrapper::about_to_popup() {
+        if (element != nullptr && element->aboutToPopupEvent != nullptr) {
+            Array args;
+            element->aboutToPopupEvent->emit(args);
+        }
+    }
+
     void bindMenuButton(sol::state &lua) {
         using namespace sol;
         using namespace sunaba::ui;
