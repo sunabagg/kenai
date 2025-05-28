@@ -75,6 +75,7 @@ namespace
         godot::ClassDB::register_class<sunaba::ui::RangeSignalWrapper>();
         godot::ClassDB::register_class<sunaba::ui::SliderSignalWrapper>();
         godot::ClassDB::register_class<sunaba::ui::TabBarSignalWrapper>();
+        godot::ClassDB::register_class<sunaba::ui::TabContainerSignalWrapper>();
     }
 
     /// @brief Called by Godot to let us do any cleanup.
