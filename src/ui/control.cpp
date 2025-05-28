@@ -177,6 +177,13 @@ namespace sunaba::ui {
         }
     }
 
+    void ControlSignalWrapper::resized() {
+        if (element != nullptr) {
+            Array args;
+            element->resizedEvent->emit(args);
+        }
+    }
+
     void bindControl(sol::state& lua) {
         auto ut = lua.new_usertype<Control>("Control",
             sol::constructors<Control()>(),
