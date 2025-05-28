@@ -265,6 +265,15 @@ namespace sunaba::ui {
                     }
                 }
             }
+
+            void onFree() override {
+                if (base_button_signal_wrapper) {
+                    base_button_signal_wrapper->element = nullptr;
+                    memdelete(base_button_signal_wrapper);
+                    base_button_signal_wrapper = nullptr;
+                }
+                Control::onFree();
+            }
         };
 }
 
