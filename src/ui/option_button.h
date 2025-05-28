@@ -76,6 +76,7 @@ namespace sunaba::ui {
         private:
             OptionButtonNode* optionButton = nullptr;
 
+            OptionButtonSignalWrapper* optionButtonSignalWrapper = nullptr;
             void connectOptionButtonSignals() {
                 // Connect signals specific to OptionButton
                 SignalFunc itemFocusedFunc =
