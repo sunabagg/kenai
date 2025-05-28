@@ -139,6 +139,14 @@ namespace sunaba::ui {
         ClassDB::bind_method(D_METHOD("tab_selected", "tab"), &TabContainerSignalWrapper::tab_selected);
     }
 
+    void TabContainerSignalWrapper::active_tab_rearranged(int tab) {
+        if (element != nullptr && element->getActiveTabRearrangedEvent() != nullptr) {
+            Array args;
+            args.push_back(tab);
+            element->getActiveTabRearrangedEvent()->emit(args);
+        }
+    }
+
     void bindTabContainer(sol::state& lua) {
         lua.new_usertype<TabContainer>("TabContainer",
             sol::constructors<TabContainer()>(),
