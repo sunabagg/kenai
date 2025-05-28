@@ -71,7 +71,7 @@ namespace sunaba::ui {
 
             void activeTabRearranged(int idx_to);
             void tabButtonPressed(int tab);
-            void tabChanged();
+            void tabChanged(int tab);
             void tabClicked();
             void tabClosePressed();
             void tabHovered();
