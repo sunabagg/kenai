@@ -148,6 +148,14 @@ namespace sunaba::ui {
         }
     }
 
+    void ControlSignalWrapper::gui_input(Ref<InputEvent> event) {
+        if (element != nullptr) {
+            Array args;
+            args.append(event);
+            element->guiInputEvent->emit(args);
+        }
+    }
+
     void bindControl(sol::state& lua) {
         auto ut = lua.new_usertype<Control>("Control",
             sol::constructors<Control()>(),
