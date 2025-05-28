@@ -107,6 +107,7 @@ namespace sunaba::ui {
 
                 this->text_edit->connect("caret_changed", Callable(this->text_edit_signal_wrapper, "caret_changed"));
                 this->text_edit->connect("gutter_added", Callable(this->text_edit_signal_wrapper, "gutter_added"));
+                this->text_edit->connect("gutter_clicked", Callable(this->text_edit_signal_wrapper, "gutter_clicked"));
             }
         public:
             TextEdit() {
