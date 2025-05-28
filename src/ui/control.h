@@ -60,128 +60,47 @@ namespace sunaba::ui {
             TypedArray<Vector3i> _structured_text_parser(const Array &args, const String &text) const override;
     };
 
+    class ControlSignalWrapper : public Object {
+        GDCLASS(ControlSignalWrapper, Object)
+        protected:
+            static void _bind_methods();
+        public:
+            sunaba::ui::Control* control = nullptr;
+
+            ControlSignalWrapper() = default;
+            ~ControlSignalWrapper() = default;
+
+            void focus_entered(std::vector<Variant> args);
+            void focus_exited(std::vector<Variant> args);
+            void gui_input(std::vector<Variant> args);
+            void minimum_size_changed(std::vector<Variant> args);
+            void mouse_entered(std::vector<Variant> args);
+            void mouse_exited(std::vector<Variant> args);
+            void resized(std::vector<Variant> args);
+            void size_flags_changed(std::vector<Variant> args);
+            void theme_changed(std::vector<Variant> args);
+    };
+
     class Control : public sunaba::core::CanvasItem {
         private:
             ControlNode* control = nullptr; // Pointer to the Control instance
+            ControlSignalWrapper* controlSignalWrapper = nullptr;
             void connectControlSignals() {
                 // Connect signals specific to Controlstd::function<Variant(std::vector<Variant>)> focusEnteredFunc =
-                std::function<Variant(std::vector<Variant>)> focusEnteredFunc =
-                [this](std::vector<Variant> av) {
-                    Array args;
-                    for (int i = 0; i < av.size(); ++i) {
-                        args.append(av[i]);
-                    }
-                    if (this->focusEnteredEvent != nullptr) {
-                        this->focusEnteredEvent->emit(args);
-                    }
-                    return Variant();
-                };
-                Callable focusEnteredCallable = StlFunctionWrapper::create_callable_from_cpp_function(focusEnteredFunc);
-                this->control->connect("focus_entered", focusEnteredCallable);
-                std::function<Variant(std::vector<Variant>)> focusExitedFunc =
-                [this](std::vector<Variant> av) {
-                    Array args;
-                    for (int i = 0; i < av.size(); ++i) {
-                        args.append(av[i]);
-                    }
-                    if (this->focusExitedEvent != nullptr) {
-                        this->focusExitedEvent->emit(args);
-                    }
-                    return Variant();
-                };
-                Callable focusExitedCallable = StlFunctionWrapper::create_callable_from_cpp_function(focusExitedFunc);
-                this->control->connect("focus_exited", focusExitedCallable);
-                std::function<Variant(std::vector<Variant>)> guiInputFunc =
-                [this](std::vector<Variant> av) {
-                    Array args;
-                    for (int i = 0; i < av.size(); ++i) {
-                        args.append(av[i]);
-                    }
-                    if (this->guiInputEvent != nullptr) {
-                        this->guiInputEvent->emit(args);
-                    }
-                    return Variant();
-                };
-                Callable guiInputCallable = StlFunctionWrapper::create_callable_from_cpp_function(guiInputFunc);
-                this->control->connect("gui_input", guiInputCallable);
-                std::function<Variant(std::vector<Variant>)> minimumSizeChangedFunc =
-                [this](std::vector<Variant> av) {
-                    Array args;
-                    for (int i = 0; i < av.size(); ++i) {
-                        args.append(av[i]);
-                    }
-                    if (this->minimumSizeChangedEvent != nullptr) {
-                        this->minimumSizeChangedEvent->emit(args);
-                    }
-                    return Variant();
-                };
-                Callable minimumSizeChangedCallable = StlFunctionWrapper::create_callable_from_cpp_function(minimumSizeChangedFunc);
-                this->control->connect("minimum_size_changed", minimumSizeChangedCallable);
-                std::function<Variant(std::vector<Variant>)> mouseEnteredFunc =
-                [this](std::vector<Variant> av) {
-                    Array args;
-                    for (int i = 0; i < av.size(); ++i) {
-                        args.append(av[i]);
-                    }
-                    if (this->mouseEnteredEvent != nullptr) {
-                        this->mouseEnteredEvent->emit(args);
-                    }
-                    return Variant();
-                };
-                Callable mouseEnteredCallable = StlFunctionWrapper::create_callable_from_cpp_function(mouseEnteredFunc);
-                this->control->connect("mouse_entered", mouseEnteredCallable);
-                std::function<Variant(std::vector<Variant>)> mouseExitedFunc =
-                [this](std::vector<Variant> av) {
-                    Array args;
-                    for (int i = 0; i < av.size(); ++i) {
-                        args.append(av[i]);
-                    }
-                    if (this->mouseExitedEvent != nullptr) {
-                        this->mouseExitedEvent->emit(args);
-                    }
-                    return Variant();
-                };
-                Callable mouseExitedCallable = StlFunctionWrapper::create_callable_from_cpp_function(mouseExitedFunc);
-                this->control->connect("mouse_exited", mouseExitedCallable);
-                std::function<Variant(std::vector<Variant>)> resizedFunc =
-                [this](std::vector<Variant> av) {
-                    Array args;
-                    for (int i = 0; i < av.size(); ++i) {
-                        args.append(av[i]);
-                    }
-                    if (this->resizedEvent != nullptr) {
-                        this->resizedEvent->emit(args);
-                    }
-                    return Variant();
-                };
-                Callable resizedCallable = StlFunctionWrapper::create_callable_from_cpp_function(resizedFunc);
-                this->control->connect("resized", resizedCallable);
-                std::function<Variant(std::vector<Variant>)> sizeFlagsChangedFunc =
-                [this](std::vector<Variant> av) {
-                    Array args;
-                    for (int i = 0; i < av.size(); ++i) {
-                        args.append(av[i]);
-                    }
-                    if (this->sizeFlagsChangedEvent != nullptr) {
-                        this->sizeFlagsChangedEvent->emit(args);
-                    }
-                    return Variant();
-                };
-                Callable sizeFlagsChangedCallable = StlFunctionWrapper::create_callable_from_cpp_function(sizeFlagsChangedFunc);
-                this->control->connect("size_flags_changed", sizeFlagsChangedCallable);
-                std::function<Variant(std::vector<Variant>)> themeChangedFunc =
-                [this](std::vector<Variant> av) {
-                    Array args;
-                    for (int i = 0; i < av.size(); ++i) {
-                        args.append(av[i]);
-                    }
-                    if (this->themeChangedEvent != nullptr) {
-                        this->themeChangedEvent->emit(args);
-                    }
-                    return Variant();
-                };
-                Callable themeChangedCallable = StlFunctionWrapper::create_callable_from_cpp_function(themeChangedFunc);
-                this->control->connect("theme_changed", themeChangedCallable);
+                if (this->controlSignalWrapper == nullptr) {
+                    this->controlSignalWrapper = memnew(ControlSignalWrapper);
+                    this->controlSignalWrapper->control = this;
+                }
+
+                this->control->connect("focus_entered", Callable(this->controlSignalWrapper, "focus_entered"));
+                this->control->connect("focus_exited", Callable(this->controlSignalWrapper, "focus_exited"));
+                this->control->connect("gui_input", Callable(this->controlSignalWrapper, "gui_input"));
+                this->control->connect("minimum_size_changed", Callable(this->controlSignalWrapper, "minimum_size_changed"));
+                this->control->connect("mouse_entered", Callable(this->controlSignalWrapper, "mouse_entered"));
+                this->control->connect("mouse_exited", Callable(this->controlSignalWrapper, "mouse_exited"));
+                this->control->connect("resized", Callable(this->controlSignalWrapper, "resized"));
+                this->control->connect("size_flags_changed", Callable(this->controlSignalWrapper, "size_flags_changed"));
+                this->control->connect("theme_changed", Callable(this->controlSignalWrapper, "theme_changed"));
             }
         public:
             // Constructor with Node* parameter
