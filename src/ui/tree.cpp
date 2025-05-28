@@ -133,6 +133,7 @@ namespace sunaba::ui {
         ClassDB::bind_method(D_METHOD("item_activated"), &TreeSignalWrapper::item_activated);
         ClassDB::bind_method(D_METHOD("item_collapsed", "item"), &TreeSignalWrapper::item_collapsed);
         ClassDB::bind_method(D_METHOD("item_edited"), &TreeSignalWrapper::item_edited);
+        ClassDB::bind_method(D_METHOD("item_icon_double_clicked"), &TreeSignalWrapper::item_icon_double_clicked);
     }
 
     void bindTree(sol::state &lua) {
