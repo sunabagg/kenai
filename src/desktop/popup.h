@@ -135,6 +135,15 @@ namespace sunaba::desktop {
             void setPopupHideEvent(Event* event) {
                 popupHideEvent = event;
             }
+
+            void onFree() override {
+                if (popupSignalWrapper) {
+                    memdelete(popupSignalWrapper);
+                    popupSignalWrapper = nullptr;
+                }
+                popup = nullptr;
+                sunaba::desktop::Window::onFree();
+            }
     };
 }
 
