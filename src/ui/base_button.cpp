@@ -150,6 +150,14 @@ namespace sunaba::ui {
         }
     }
 
+    void BaseButtonSignalWrapper::toggled(bool p_toggled_on) {
+        if (element != nullptr) {
+            Array args;
+            args.push_back(p_toggled_on);
+            element->toggledEvent->emit(args);
+        }
+    }
+
     void bindBaseButton(sol::state &lua) {
         lua.new_usertype<BaseButton>("BaseButton",
             sol::constructors<BaseButton(), BaseButton(BaseButtonNode*)>(),
