@@ -100,4 +100,11 @@ namespace sunaba::ui {
             element->guiInput(event);
         }
     }
+
+    bool ColorRectProxy::_has_point(const Vector2 &point) const {
+        if (element != nullptr) {
+            return element->hasPoint(point);
+        }
+        return false;
+    }
 }
