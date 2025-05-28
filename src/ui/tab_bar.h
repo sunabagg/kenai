@@ -95,6 +95,7 @@ namespace sunaba::ui {
                 this->container->connect("tab_button_pressed", Callable(this->tabBarSignalWrapper, "tabButtonPressed"));
                 this->container->connect("tab_changed", Callable(this->tabBarSignalWrapper, "tabChanged"));
                 this->container->connect("tab_clicked", Callable(this->tabBarSignalWrapper, "tabClicked"));
+                this->container->connect("tab_close_pressed", Callable(this->tabBarSignalWrapper, "tabClosePressed"));
             }
 
         public:
