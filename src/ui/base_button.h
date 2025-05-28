@@ -12,7 +12,7 @@
 #include "../core/event.h"
 
 #include "../core/stl_function_wrapper.h"
-#define StlFunctionWrapper sunaba::core::StlFunctionWrapper
+using namespace sunaba::core;
 
 namespace sunaba::ui {
     void bindBaseButton(sol::state &lua);
