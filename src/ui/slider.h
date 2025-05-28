@@ -60,6 +60,20 @@ namespace sunaba::ui {
             void _value_changed(double value) override;
     };
 
+    class SliderSignalWrapper : public Object {
+        GDCLASS(SliderSignalWrapper, Object)
+        protected:
+            static void _bind_methods();
+        public:
+            sunaba::ui::Slider* element = nullptr;
+
+            SliderSignalWrapper() = default;
+            ~SliderSignalWrapper() = default;
+
+            void drag_ended(bool value_changed);
+            void drag_started();
+    };
+
     class Slider : public sunaba::ui::Range {
         private:
             SliderNode* slider = nullptr; // Pointer to the Slider instance
