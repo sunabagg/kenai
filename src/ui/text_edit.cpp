@@ -191,10 +191,11 @@ namespace sunaba::ui {
         }
     }
 
-    void TextEditSignalWrapper::lines_edited_from(int from_line) {
+    void TextEditSignalWrapper::lines_edited_from(int from_line, int to_line) {
         if (this->element != nullptr && this->element->getLinesEditedFromEvent() != nullptr) {
             Array args;
             args.push_back(from_line);
+            args.push_back(to_line);
             this->element->getLinesEditedFromEvent()->emit(args);
         }
     }
