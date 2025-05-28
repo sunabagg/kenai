@@ -165,6 +165,13 @@ namespace sunaba::ui {
         }
     }
 
+    void BaseButtonSignalWrapper::button_up() {
+        if (element != nullptr) {
+            Array args;
+            element->buttonUp->emit(args);
+        }
+    }
+
     void bindBaseButton(sol::state &lua) {
         lua.new_usertype<BaseButton>("BaseButton",
             sol::constructors<BaseButton(), BaseButton(BaseButtonNode*)>(),
