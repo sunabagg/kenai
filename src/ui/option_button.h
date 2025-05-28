@@ -298,7 +298,7 @@ namespace sunaba::ui {
                     memdelete(optionButtonSignalWrapper);
                     optionButtonSignalWrapper = nullptr;
                 }
-                Button::onFree();
+                BaseButton::onFree();
             }
     };
 }
