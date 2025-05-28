@@ -1249,9 +1249,9 @@ namespace sunaba::ui {
             }
 
             void onFree() override {
-                if (textEditSignalWrapper) {
-                    memdelete(textEditSignalWrapper);
-                    textEditSignalWrapper = nullptr;
+                if (text_edit_signal_wrapper) {
+                    memdelete(text_edit_signal_wrapper);
+                    text_edit_signal_wrapper = nullptr;
                 }
                 Control::onFree();
             }
