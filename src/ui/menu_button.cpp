@@ -127,6 +127,10 @@ namespace sunaba::ui {
         }
     }
 
+    void MenuButtonSignalWrapper::_bind_methods() {
+        ClassDB::bind_method(D_METHOD("about_to_popup"), &MenuButtonSignalWrapper::about_to_popup);
+    }
+
     void MenuButtonSignalWrapper::about_to_popup() {
         if (element != nullptr && element->aboutToPopupEvent != nullptr) {
             Array args;
