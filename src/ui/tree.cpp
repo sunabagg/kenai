@@ -256,6 +256,13 @@ namespace sunaba::ui {
         }
     }
 
+    void TreeSignalWrapper::nothing_selected() {
+        if (this->element != nullptr) {
+            Array args;
+            this->element->getNothingSelectedEvent()->emit(args);
+        }
+    }
+
     void bindTree(sol::state &lua) {
         lua.new_usertype<Tree>("Tree",
             sol::constructors<Tree()>(),
