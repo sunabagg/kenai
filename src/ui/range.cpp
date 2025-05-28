@@ -121,6 +121,11 @@ namespace sunaba::ui {
         }
     }
 
+    void RangeSignalWrapper::_bind_methods() {
+        godot::ClassDB::bind_method(godot::D_METHOD("changed"), &RangeSignalWrapper::changed);
+        godot::ClassDB::bind_method(godot::D_METHOD("value_changed", "value"), &RangeSignalWrapper::value_changed);
+    }
+
     void bindRange(sol::state &lua) {
         lua.new_usertype<Range>("Range",
             sol::constructors<Range()>(),
