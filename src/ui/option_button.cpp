@@ -127,6 +127,11 @@ namespace sunaba::ui {
         }
     }
 
+    void OptionButtonSignalWrapper::_bind_methods() {
+        ClassDB::bind_method(D_METHOD("item_focused", "index"), &OptionButtonSignalWrapper::item_focused);
+        ClassDB::bind_method(D_METHOD("item_selected", "index"), &OptionButtonSignalWrapper::item_selected);
+    }
+
     void bindOptionButton(sol::state& lua) {
         lua.new_usertype<OptionButton>("OptionButton",
             sol::constructors<OptionButton()>(),
