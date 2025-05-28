@@ -115,6 +115,45 @@ namespace sunaba::ui {
         return TypedArray<Vector3i>();
     }
 
+    void LineEditSignalWrapper::_bind_methods() {
+        ClassDB::bind_method(D_METHOD("editingToggled", "toggledOn"), &LineEditSignalWrapper::editingToggled);
+        ClassDB::bind_method(D_METHOD("textChangeRejected", "rejectedSubstring"), &LineEditSignalWrapper::textChangeRejected);
+        ClassDB::bind_method(D_METHOD("textChanged", "newText"), &LineEditSignalWrapper::textChanged);
+        ClassDB::bind_method(D_METHOD("textSubmitted", "newText"), &LineEditSignalWrapper::textSubmitted);
+    }
+
+    void LineEditSignalWrapper::editingToggled(bool toggledOn) {
+        if (this->element != nullptr) {
+            Array args;
+            args.push_back(toggledOn);
+            this->element->editingToggledEvent->emit(args);
+        }
+    }
+
+    void LineEditSignalWrapper::textChangeRejected(const String &rejectedSubstring) {
+        if (this->element != nullptr) {
+            Array args;
+            args.push_back(rejectedSubstring);
+            this->element->textChangeRejectedEvent->emit(args);
+        }
+    }
+
+    void LineEditSignalWrapper::textChanged(const String &newText) {
+        if (this->element != nullptr) {
+            Array args;
+            args.push_back(newText);
+            this->element->textChangedEvent->emit(args);
+        }
+    }
+
+    void LineEditSignalWrapper::textSubmitted(const String &newText) {
+        if (this->element != nullptr) {
+            Array args;
+            args.push_back(newText);
+            this->element->textSubmittedEvent->emit(args);
+        }
+    }
+
     void bindLineEdit(sol::state& lua) {
         lua.new_usertype<LineEdit>("LineEdit",
             sol::constructors<LineEdit()>(),

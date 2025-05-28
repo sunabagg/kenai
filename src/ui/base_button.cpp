@@ -143,6 +143,42 @@ namespace sunaba::ui {
         base_button->set_button_group(group->getButtonGroup());
     }
 
+    void BaseButtonSignalWrapper::_bind_methods() {
+        ClassDB::bind_method(D_METHOD("pressed"), &BaseButtonSignalWrapper::pressed);
+        ClassDB::bind_method(D_METHOD("toggled", "p_toggled_on"), &BaseButtonSignalWrapper::toggled);
+        ClassDB::bind_method(D_METHOD("button_down"), &BaseButtonSignalWrapper::button_down);
+        ClassDB::bind_method(D_METHOD("button_up"), &BaseButtonSignalWrapper::button_up);
+    }
+
+    void BaseButtonSignalWrapper::pressed() {
+        if (element != nullptr) {
+            Array args;
+            element->pressedEvent->emit(args);
+        }
+    }
+
+    void BaseButtonSignalWrapper::toggled(bool p_toggled_on) {
+        if (element != nullptr) {
+            Array args;
+            args.push_back(p_toggled_on);
+            element->toggledEvent->emit(args);
+        }
+    }
+
+    void BaseButtonSignalWrapper::button_down() {
+        if (element != nullptr) {
+            Array args;
+            element->buttonDown->emit(args);
+        }
+    }
+
+    void BaseButtonSignalWrapper::button_up() {
+        if (element != nullptr) {
+            Array args;
+            element->buttonUp->emit(args);
+        }
+    }
+
     void bindBaseButton(sol::state &lua) {
         lua.new_usertype<BaseButton>("BaseButton",
             sol::constructors<BaseButton(), BaseButton(BaseButtonNode*)>(),

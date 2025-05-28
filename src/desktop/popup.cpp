@@ -62,6 +62,17 @@ namespace sunaba::desktop {
         return PopupNode::_get_contents_minimum_size();
     }
 
+    void PopupSignalWrapper::_bind_methods() {
+        ClassDB::bind_method(D_METHOD("popup_hide"), &PopupSignalWrapper::popup_hide);
+    }
+
+    void PopupSignalWrapper::popup_hide() {
+        if (element != nullptr) {
+            Array args;
+            element->popupHideEvent->emit(args);
+        }
+    }
+
     void bindPopup(sol::state& lua) {
         lua.new_usertype<Popup>("Popup",
             sol::constructors<Popup()>(),

@@ -40,9 +40,8 @@
         },
         {
             "name": "macOS Launch",
-            "type": "lldb",
+            "type": "lldb-dap",
             "request": "launch",
-            "envFile": "${workspaceFolder}/.env",
             "program": "${env:GODOT4}",
             "args": [
                 "--verbose"
@@ -66,7 +65,7 @@
         },
         {
             "name": "macOS Launch (Local)",
-            "type": "lldb",
+            "type": "lldb-dap",
             "request": "launch",
             "program": "/Applications/Godot.app/Contents/MacOS/Godot",
             "args": [

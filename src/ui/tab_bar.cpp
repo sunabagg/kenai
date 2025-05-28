@@ -122,6 +122,81 @@ namespace sunaba::ui {
         return TypedArray<Vector3i>();
     }
 
+    void TabBarSignalWrapper::_bind_methods() {
+        ClassDB::bind_method(D_METHOD("activeTabRearranged", "tab_to"), &TabBarSignalWrapper::activeTabRearranged);
+        ClassDB::bind_method(D_METHOD("tabButtonPressed", "tab_idx"), &TabBarSignalWrapper::tabButtonPressed);
+        ClassDB::bind_method(D_METHOD("tabChanged", "tab_idx"), &TabBarSignalWrapper::tabChanged);
+        ClassDB::bind_method(D_METHOD("tabClicked", "tab_idx"), &TabBarSignalWrapper::tabClicked);
+        ClassDB::bind_method(D_METHOD("tabClosePressed", "tab_idx"), &TabBarSignalWrapper::tabClosePressed);
+        ClassDB::bind_method(D_METHOD("tabHovered", "tab_idx"), &TabBarSignalWrapper::tabHovered);
+        ClassDB::bind_method(D_METHOD("tabRmbClicked", "tab_idx"), &TabBarSignalWrapper::tabRmbClicked);
+        ClassDB::bind_method(D_METHOD("tabSelected", "tab_idx"), &TabBarSignalWrapper::tabSelected);
+    }
+
+    void TabBarSignalWrapper::activeTabRearranged(int tab_to) {
+        if (element) {
+            Array args;
+            args.push_back(tab_to);
+            element->activeTabRearrangedEvent->emit(args);
+        }
+    }
+
+    void TabBarSignalWrapper::tabButtonPressed(int tab_idx) {
+        if (element) {
+            Array args;
+            args.push_back(tab_idx);
+            element->tabButtonPressedEvent->emit(args);
+        }
+    }
+
+    void TabBarSignalWrapper::tabChanged(int tab_idx) {
+        if (element) {
+            Array args;
+            args.push_back(tab_idx);
+            element->tabChangedEvent->emit(args);
+        }
+    }
+
+    void TabBarSignalWrapper::tabClicked(int tab_idx) {
+        if (element) {
+            Array args;
+            args.push_back(tab_idx);
+            element->tabClickedEvent->emit(args);
+        }
+    }
+
+    void TabBarSignalWrapper::tabClosePressed(int tab_idx) {
+        if (element) {
+            Array args;
+            args.push_back(tab_idx);
+            element->tabClosePressedEvent->emit(args);
+        }
+    }
+
+    void TabBarSignalWrapper::tabHovered(int tab_idx) {
+        if (element) {
+            Array args;
+            args.push_back(tab_idx);
+            element->tabHoveredEvent->emit(args);
+        }
+    }
+
+    void TabBarSignalWrapper::tabRmbClicked(int tab_idx) {
+        if (element) {
+            Array args;
+            args.push_back(tab_idx);
+            element->tabRmbClickedEvent->emit(args);
+        }
+    }
+
+    void TabBarSignalWrapper::tabSelected(int tab_idx) {
+        if (element) {
+            Array args;
+            args.push_back(tab_idx);
+            element->tabSelectedEvent->emit(args);
+        }
+    }
+
     void bindTabBar(sol::state& lua) {
         lua.new_usertype<TabBar>("TabBar",
             sol::constructors<TabBar()>(),

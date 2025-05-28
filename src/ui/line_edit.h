@@ -58,67 +58,36 @@ namespace sunaba::ui {
             TypedArray<Vector3i> _structured_text_parser(const Array &args, const String &text) const override;
     };
 
+    class LineEditSignalWrapper : public Object {
+        GDCLASS(LineEditSignalWrapper, Object)
+        protected:
+            static void _bind_methods();
+        public:
+            sunaba::ui::LineEdit* element = nullptr;
+
+            LineEditSignalWrapper() = default;
+            ~LineEditSignalWrapper() = default;
+
+            void editingToggled(bool toggledOn);
+            void textChangeRejected(const String &rejectedSubstring);
+            void textChanged(const String &newText);
+            void textSubmitted(const String &newText);
+    };
+
     class LineEdit : public Control {
         private:
             LineEditNode* line_edit_node = nullptr;
 
+            LineEditSignalWrapper* line_edit_signal_wrapper = nullptr;
             void connectLineEditSignals() {
-                std::function<Variant(std::vector<Variant>)> editingToggledFunc =
-                [this](std::vector<Variant> argsv) {
-                    Array args;
-                    for (int i = 0; i < argsv.size(); i++)
-                    {
-                        args.append(argsv[i]);
-                    }
-                    if (this->editingToggledEvent != nullptr) {
-                        this->editingToggledEvent->emit(args);
-                    }
-                    return Variant();
-                };
-                Callable editingToggledCallable = StlFunctionWrapper::create_callable_from_cpp_function(editingToggledFunc);
-                line_edit_node->connect("editing_toggled", editingToggledCallable);
-                std::function<Variant(std::vector<Variant>)> textChangeRejectedFunc =
-                [this](std::vector<Variant> argsv) {
-                    Array args;
-                    for (int i = 0; i < argsv.size(); i++)
-                    {
-                        args.append(argsv[i]);
-                    }
-                    if (this->textChangeRejectedEvent != nullptr) {
-                        this->textChangeRejectedEvent->emit(args);
-                    }
-                    return Variant();
-                };
-                Callable textChangeRejectedCallable = StlFunctionWrapper::create_callable_from_cpp_function(textChangeRejectedFunc);
-                line_edit_node->connect("text_changed_rejected", textChangeRejectedCallable);
-                std::function<Variant(std::vector<Variant>)> textChangedFunc =
-                [this](std::vector<Variant> argsv) {
-                    Array args;
-                    for (int i = 0; i < argsv.size(); i++)
-                    {
-                        args.append(argsv[i]);
-                    }
-                    if (this->textChangedEvent != nullptr) {
-                        this->textChangedEvent->emit(args);
-                    }
-                    return Variant();
-                };
-                Callable textChangedCallable = StlFunctionWrapper::create_callable_from_cpp_function(textChangedFunc);
-                line_edit_node->connect("text_changed", textChangedCallable);
-                std::function<Variant(std::vector<Variant>)> textSubmittedFunc =
-                [this](std::vector<Variant> argsv) {
-                    Array args;
-                    for (int i = 0; i < argsv.size(); i++)
-                    {
-                        args.append(argsv[i]);
-                    }
-                    if (this->textSubmittedEvent != nullptr) {
-                        this->textSubmittedEvent->emit(args);
-                    }
-                    return Variant();
-                };
-                Callable textSubmittedCallable = StlFunctionWrapper::create_callable_from_cpp_function(textSubmittedFunc);
-                line_edit_node->connect("text_submitted", textSubmittedCallable);
+                if (this->line_edit_signal_wrapper == nullptr) {
+                    this->line_edit_signal_wrapper = memnew(LineEditSignalWrapper);
+                    this->line_edit_signal_wrapper->element = this;
+                }
+                this->line_edit_node->connect("editing_toggled", Callable(this->line_edit_signal_wrapper, "editingToggled"));
+                this->line_edit_node->connect("text_change_rejected", Callable(this->line_edit_signal_wrapper, "textChangeRejected"));
+                this->line_edit_node->connect("text_changed", Callable(this->line_edit_signal_wrapper, "textChanged"));
+                this->line_edit_node->connect("text_submitted", Callable(this->line_edit_signal_wrapper, "textSubmitted"));
             }
 
         public:
@@ -540,6 +509,14 @@ namespace sunaba::ui {
 
             void unedit() {
                 line_edit_node->unedit();
+            }
+
+            void onFree() override {
+                if (line_edit_signal_wrapper) {
+                    memdelete(line_edit_signal_wrapper);
+                    line_edit_signal_wrapper = nullptr;
+                }
+                Control::onFree();
             }
     };
 }

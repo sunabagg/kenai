@@ -40,33 +40,32 @@ namespace sunaba::core {
             void _shortcut_input(const Ref<InputEvent>& event) override;
     };
 
+    class ViewportSignalWrapper : public Object {
+        GDCLASS(ViewportSignalWrapper, Object)
+        protected:
+            static void _bind_methods();
+        public:
+            sunaba::core::Viewport* element = nullptr;
+
+            ViewportSignalWrapper() = default;
+            ~ViewportSignalWrapper() = default;
+
+            void gui_focus_changed(Node* new_focus);
+            void size_changed();
+    };
+
     class Viewport : public Element {
         private:
             ViewportNode* viewport = nullptr; // Pointer to the Viewport instance
+            ViewportSignalWrapper* viewportSignalWrapper = nullptr;
             void connectViewportSignals() {
-                // Connect signals specific to Viewport
-                std::function<Variant(std::vector<Variant>)> guiFocusChangedFunc =
-                [this](std::vector<Variant> args) {
-                    Node* newFocus = Object::cast_to<Node>(args[0].operator Object*());
-                    Array argsArray;
-                    argsArray.append(new Element(newFocus));
-                    if (this->guiFocusChangedEvent != nullptr) {
-                        this->guiFocusChangedEvent->emit(argsArray);
-                    }
-                    return Variant();
-                };
-                Callable guiFocusChangedCallable = StlFunctionWrapper::create_callable_from_cpp_function(guiFocusChangedFunc);
-                this->viewport->connect("gui_focus_changed", guiFocusChangedCallable);
-                std::function<Variant(std::vector<Variant>)> sizeChangedFunc =
-                [this](std::vector<Variant> args) {
-                    Array argsArray;
-                    if (this->sizeChangedEvent != nullptr) {
-                        this->sizeChangedEvent->emit(argsArray);
-                    }
-                    return Variant();
-                };
-                Callable sizeChangedCallable = StlFunctionWrapper::create_callable_from_cpp_function(sizeChangedFunc);
-                this->viewport->connect("size_changed", sizeChangedCallable);
+                if (this->viewportSignalWrapper == nullptr) {
+                    this->viewportSignalWrapper = memnew(ViewportSignalWrapper);
+                    this->viewportSignalWrapper->element = this;
+                }
+
+                this->viewport->connect("gui_focus_changed", Callable(this->viewportSignalWrapper, "gui_focus_changed"));
+                this->viewport->connect("size_changed", Callable(this->viewportSignalWrapper, "size_changed"));
             }
 
         public:
@@ -593,6 +592,14 @@ namespace sunaba::core {
 
             void warpMouse(const Vector2& position) {
                 viewport->warp_mouse(position);
+            }
+
+            void onFree() override {
+                if (viewportSignalWrapper) {
+                    memdelete(viewportSignalWrapper);
+                    viewportSignalWrapper = nullptr;
+                }
+                Element::onFree();
             }
     };
 }

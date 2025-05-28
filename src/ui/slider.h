@@ -60,37 +60,33 @@ namespace sunaba::ui {
             void _value_changed(double value) override;
     };
 
+    class SliderSignalWrapper : public Object {
+        GDCLASS(SliderSignalWrapper, Object)
+        protected:
+            static void _bind_methods();
+        public:
+            sunaba::ui::Slider* element = nullptr;
+
+            SliderSignalWrapper() = default;
+            ~SliderSignalWrapper() = default;
+
+            void drag_ended(bool value_changed);
+            void drag_started();
+    };
+
     class Slider : public sunaba::ui::Range {
         private:
             SliderNode* slider = nullptr; // Pointer to the Slider instance
+            SliderSignalWrapper* sliderSignalWrapper = nullptr;
             void connectSliderSignals() {
                 // Connect signals specific to Slider
-                std::function<Variant(std::vector<Variant>)> dragEndedFunc =
-                [this](std::vector<Variant> av) {
-                    Array args;
-                    for (int i = 0; i < av.size(); ++i) {
-                        args.append(av[i]);
-                    }
-                    if (this->dragEndedEvent != nullptr) {
-                        this->dragEndedEvent->emit(args);
-                    }
-                    return Variant();
-                };
-                Callable dragEndedCallable = StlFunctionWrapper::create_callable_from_cpp_function(dragEndedFunc);
-                this->slider->connect("drag_ended", dragEndedCallable);
-                std::function<Variant(std::vector<Variant>)> dragStartedFunc =
-                [this](std::vector<Variant> av) {
-                    Array args;
-                    for (int i = 0; i < av.size(); ++i) {
-                        args.append(av[i]);
-                    }
-                    if (this->dragStartedEvent != nullptr) {
-                        this->dragStartedEvent->emit(args);
-                    }
-                    return Variant();
-                };
-                Callable dragStartedCallable = StlFunctionWrapper::create_callable_from_cpp_function(dragStartedFunc);
-                this->slider->connect("drag_started", dragStartedCallable);
+                if (this->sliderSignalWrapper == nullptr) {
+                    this->sliderSignalWrapper = memnew(SliderSignalWrapper);
+                    this->sliderSignalWrapper->element = this;
+                }
+
+                this->slider->connect("drag_ended", Callable(this->sliderSignalWrapper, "drag_ended"));
+                this->slider->connect("drag_started", Callable(this->sliderSignalWrapper, "drag_started"));
             }
 
         public:
@@ -182,6 +178,15 @@ namespace sunaba::ui {
             }
             void setDragStartedEvent(Event* event) {
                 dragStartedEvent = event;
+            }
+
+            void onFree() override {
+                if (sliderSignalWrapper) {
+                    sliderSignalWrapper->element = nullptr;
+                    memdelete(sliderSignalWrapper);
+                    sliderSignalWrapper = nullptr;
+                }
+                Range::onFree();
             }
     };
 }

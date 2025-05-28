@@ -57,27 +57,32 @@ namespace sunaba::ui {
             void _toggled(bool p_toggled_on) override;
     };
 
+    class MenuButtonSignalWrapper : public Object {
+        GDCLASS(MenuButtonSignalWrapper, Object)
+        protected:
+            static void _bind_methods();
+        public:
+            sunaba::ui::MenuButton* element = nullptr;
+
+            MenuButtonSignalWrapper() = default;
+            ~MenuButtonSignalWrapper() = default;
+
+            void about_to_popup();
+    };
+
     class MenuButton : public Button {
         private:
             MenuButtonNode* menu_button = nullptr;
 
+            MenuButtonSignalWrapper* menu_button_signal_wrapper = nullptr;
             void connectMenuButtonSignals() {
                 // Connect signals specific to MenuButton
-                std::function<Variant(std::vector<Variant>)> aboutToPopupFunc =
-                [this](std::vector<Variant> av) {
-                    Array args;
-                    for (int i = 0; i < av.size(); ++i) {
-                        args.append(av[i]);
-                    }
-                    if (this->aboutToPopupEvent != nullptr) {
-                        this->aboutToPopupEvent->emit(args);
-                    }
-                    return Variant();
-                };
-                Callable aboutToPopupCallable = StlFunctionWrapper::create_callable_from_cpp_function(aboutToPopupFunc);
-                menu_button->connect("about_to_popup", aboutToPopupCallable);
+                if (this->menu_button_signal_wrapper == nullptr) {
+                    this->menu_button_signal_wrapper = memnew(MenuButtonSignalWrapper);
+                    this->menu_button_signal_wrapper->element = this;
+                }
+                this->menu_button->connect("about_to_popup", Callable(this->menu_button_signal_wrapper, "about_to_popup"));
             }
-
         public:
             MenuButton() {
                 setMenuButton(memnew(MenuButtonProxy));
@@ -173,6 +178,14 @@ namespace sunaba::ui {
 
             void showPopup() {
                 menu_button->show_popup();
+            }
+
+            void onFree() override {
+                if (menu_button_signal_wrapper) {
+                    memdelete(menu_button_signal_wrapper);
+                    menu_button_signal_wrapper = nullptr;
+                }
+                Button::onFree();
             }
     };
 } 

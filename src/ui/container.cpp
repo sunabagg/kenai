@@ -119,6 +119,25 @@ namespace sunaba::ui {
         return PackedInt32Array();
     }
 
+    void ContainerSignalWrapper::_bind_methods() {
+        ClassDB::bind_method(D_METHOD("pre_sort_children"), &ContainerSignalWrapper::pre_sort_children);
+        ClassDB::bind_method(D_METHOD("sort_children"), &ContainerSignalWrapper::sort_children);
+    }
+
+    void ContainerSignalWrapper::pre_sort_children() {
+        if (element != nullptr && element->getPreSortChildrenEvent() != nullptr) {
+            Array args;
+            element->getPreSortChildrenEvent()->emit(args);
+        }
+    }
+
+    void ContainerSignalWrapper::sort_children() {
+        if (element != nullptr && element->getSortChildrenEvent() != nullptr) {
+            Array args;
+            element->getSortChildrenEvent()->emit(args);
+        }
+    }
+
     void bindContainer(sol::state& lua) {
         auto ut = lua.new_usertype<Container>("Container",
             sol::constructors<Container()>(),

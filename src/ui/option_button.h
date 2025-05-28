@@ -58,38 +58,33 @@ namespace sunaba::ui {
             void _toggled(bool p_toggled_on) override;
     };
 
+    class OptionButtonSignalWrapper : public Object {
+        GDCLASS(OptionButtonSignalWrapper, Object)
+        protected:
+            static void _bind_methods();
+        public:
+            sunaba::ui::OptionButton* element = nullptr;
+
+            OptionButtonSignalWrapper() = default;
+            ~OptionButtonSignalWrapper() = default;
+
+            void item_focused(int index);
+            void item_selected(int index);
+    };
+
     class OptionButton : public sunaba::ui::Button {
         private:
             OptionButtonNode* optionButton = nullptr;
 
+            OptionButtonSignalWrapper* optionButtonSignalWrapper = nullptr;
             void connectOptionButtonSignals() {
                 // Connect signals specific to OptionButton
-                SignalFunc itemFocusedFunc =
-                [this](std::vector<Variant> av) {
-                    Array args;
-                    for (int i = 0; i < av.size(); ++i) {
-                        args.append(av[i]);
-                    }
-                    if (this->itemFocusedEvent != nullptr) {
-                        this->itemFocusedEvent->emit(args);
-                    }
-                    return Variant();
-                };
-                Callable itemFocusedCallable = to_callable(itemFocusedFunc);
-                optionButton->connect("item_focused", itemFocusedCallable);
-                SignalFunc itemSelectedFunc =
-                [this](std::vector<Variant> av) {
-                    Array args;
-                    for (int i = 0; i < av.size(); ++i) {
-                        args.append(av[i]);
-                    }
-                    if (this->itemSelectedEvent != nullptr) {
-                        this->itemSelectedEvent->emit(args);
-                    }
-                    return Variant();
-                };
-                Callable itemSelectedCallable = to_callable(itemSelectedFunc);
-                optionButton->connect("item_selected", itemSelectedCallable);
+                if (this->optionButtonSignalWrapper == nullptr) {
+                    this->optionButtonSignalWrapper = memnew(OptionButtonSignalWrapper);
+                    this->optionButtonSignalWrapper->element = this;
+                }
+                this->optionButton->connect("item_focused", Callable(this->optionButtonSignalWrapper, "item_focused"));
+                this->optionButton->connect("item_selected", Callable(this->optionButtonSignalWrapper, "item_selected"));
             }
 
         public:
@@ -296,6 +291,14 @@ namespace sunaba::ui {
 
             void showPopup() {
                 optionButton->show_popup();
+            }
+
+            void onFree() override {
+                if (optionButtonSignalWrapper) {
+                    memdelete(optionButtonSignalWrapper);
+                    optionButtonSignalWrapper = nullptr;
+                }
+                BaseButton::onFree();
             }
     };
 }

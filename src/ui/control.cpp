@@ -122,6 +122,82 @@ namespace sunaba::ui {
         return TypedArray<Vector3i>();
     }
 
+    void ControlSignalWrapper::_bind_methods() {
+        ClassDB::bind_method(D_METHOD("focus_entered"), &ControlSignalWrapper::focus_entered);
+        ClassDB::bind_method(D_METHOD("focus_exited"), &ControlSignalWrapper::focus_exited);
+        ClassDB::bind_method(D_METHOD("gui_input", "event"), &ControlSignalWrapper::gui_input);
+        ClassDB::bind_method(D_METHOD("minimum_size_changed"), &ControlSignalWrapper::minimum_size_changed);
+        ClassDB::bind_method(D_METHOD("mouse_entered"), &ControlSignalWrapper::mouse_entered);
+        ClassDB::bind_method(D_METHOD("mouse_exited"), &ControlSignalWrapper::mouse_exited);
+        ClassDB::bind_method(D_METHOD("resized"), &ControlSignalWrapper::resized);
+        ClassDB::bind_method(D_METHOD("size_flags_changed"), &ControlSignalWrapper::size_flags_changed);
+        ClassDB::bind_method(D_METHOD("theme_changed"), &ControlSignalWrapper::theme_changed);
+    }
+
+    void ControlSignalWrapper::focus_entered() {
+        if (element != nullptr) {
+            Array args;
+            element->focusEnteredEvent->emit(args);
+        }
+    }
+
+    void ControlSignalWrapper::focus_exited() {
+        if (element != nullptr) {
+            Array args;
+            element->focusExitedEvent->emit(args);
+        }
+    }
+
+    void ControlSignalWrapper::gui_input(Ref<InputEvent> event) {
+        if (element != nullptr) {
+            Array args;
+            args.append(event);
+            element->guiInputEvent->emit(args);
+        }
+    }
+
+    void ControlSignalWrapper::minimum_size_changed() {
+        if (element != nullptr) {
+            Array args;
+            element->minimumSizeChangedEvent->emit(args);
+        }
+    }
+
+    void ControlSignalWrapper::mouse_entered() {
+        if (element != nullptr) {
+            Array args;
+            element->mouseEnteredEvent->emit(args);
+        }
+    }
+
+    void ControlSignalWrapper::mouse_exited() {
+        if (element != nullptr) {
+            Array args;
+            element->mouseExitedEvent->emit(args);
+        }
+    }
+
+    void ControlSignalWrapper::resized() {
+        if (element != nullptr) {
+            Array args;
+            element->resizedEvent->emit(args);
+        }
+    }
+
+    void ControlSignalWrapper::size_flags_changed() {
+        if (element != nullptr) {
+            Array args;
+            element->sizeFlagsChangedEvent->emit(args);
+        }
+    }
+
+    void ControlSignalWrapper::theme_changed() {
+        if (element != nullptr) {
+            Array args;
+            element->themeChangedEvent->emit(args);
+        }
+    }
+
     void bindControl(sol::state& lua) {
         auto ut = lua.new_usertype<Control>("Control",
             sol::constructors<Control()>(),

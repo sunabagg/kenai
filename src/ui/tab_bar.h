@@ -59,123 +59,46 @@ namespace sunaba::ui {
             TypedArray<Vector3i> _structured_text_parser(const Array &args, const String &text) const override;
     };
 
+    class TabBarSignalWrapper : public Object {
+        GDCLASS(TabBarSignalWrapper, Object)
+        protected:
+            static void _bind_methods();
+        public:
+            sunaba::ui::TabBar* element = nullptr;
+
+            TabBarSignalWrapper() = default;
+            ~TabBarSignalWrapper() = default;
+
+            void activeTabRearranged(int idx_to);
+            void tabButtonPressed(int tab);
+            void tabChanged(int tab);
+            void tabClicked(int tab);
+            void tabClosePressed(int tab);
+            void tabHovered(int tab);
+            void tabRmbClicked(int tab);
+            void tabSelected(int tab);
+    };
+
     class TabBar : public Control {
         private:
             TabBarNode* container = nullptr; // Pointer to the TabBar instance
+
+            TabBarSignalWrapper* tabBarSignalWrapper = nullptr;
             void connectContainerSignals() {
                 // Connect signals specific to TabBar
-                SignalFunc activeTabRearrangedFunc = 
-                [this] (std::vector<Variant> av) {
-                    Array args;
-                    for (int i = 0; i < av.size(); i++)
-                    {
-                        args.append(av[i]);
-                    }
-                    if (activeTabRearrangedEvent != nullptr) {
-                        activeTabRearrangedEvent->emit(args);
-                    }
-                    return Variant();
-                };
-                Callable activeTabRearrangedCallable = StlFunctionWrapper::create_callable_from_cpp_function(activeTabRearrangedFunc);
-                container->connect("active_tab_rearranged", activeTabRearrangedCallable);
-                SignalFunc tabButtonPressedFunc =
-                [this] (std::vector<Variant> av) {
-                    Array args;
-                    for (int i = 0; i < av.size(); i++)
-                    {
-                        args.append(av[i]);
-                    }
-                    if (tabButtonPressedEvent != nullptr) {
-                        tabButtonPressedEvent->emit(args);
-                    }
-                    return Variant();
-                };
-                Callable tabButtonPressedCallable = StlFunctionWrapper::create_callable_from_cpp_function(tabButtonPressedFunc);
-                container->connect("tab_button_pressed", tabButtonPressedCallable);
-                SignalFunc tabChangedFunc =
-                [this] (std::vector<Variant> av) {
-                    Array args;
-                    for (int i = 0; i < av.size(); i++)
-                    {
-                        args.append(av[i]);
-                    }
-                    if (tabChangedEvent != nullptr) {
-                        tabChangedEvent->emit(args);
-                    }
-                    return Variant();
-                };
-                Callable tabChangedCallable = StlFunctionWrapper::create_callable_from_cpp_function(tabChangedFunc);
-                container->connect("tab_changed", tabChangedCallable);
-                SignalFunc tabClickedFunc =
-                [this] (std::vector<Variant> av) {
-                    Array args;
-                    for (int i = 0; i < av.size(); i++)
-                    {
-                        args.append(av[i]);
-                    }
-                    if (tabClickedEvent != nullptr) {
-                        tabClickedEvent->emit(args);
-                    }
-                    return Variant();
-                };
-                Callable tabClickedCallable = StlFunctionWrapper::create_callable_from_cpp_function(tabClickedFunc);
-                container->connect("tab_clicked", tabClickedCallable);
-                SignalFunc tabClosePressedFunc =
-                [this] (std::vector<Variant> av) {
-                    Array args;
-                    for (int i = 0; i < av.size(); i++)
-                    {
-                        args.append(av[i]);
-                    }
-                    if (tabClosePressedEvent != nullptr) {
-                        tabClosePressedEvent->emit(args);
-                    }
-                    return Variant();
-                };
-                Callable tabClosePressedCallable = StlFunctionWrapper::create_callable_from_cpp_function(tabClosePressedFunc);
-                container->connect("tab_close_pressed", tabClosePressedCallable);
-                SignalFunc tabHoveredFunc =
-                [this] (std::vector<Variant> av) {
-                    Array args;
-                    for (int i = 0; i < av.size(); i++)
-                    {
-                        args.append(av[i]);
-                    }
-                    if (tabHoveredEvent != nullptr) {
-                        tabHoveredEvent->emit(args);
-                    }
-                    return Variant();
-                };
-                Callable tabHoveredCallable = StlFunctionWrapper::create_callable_from_cpp_function(tabHoveredFunc);
-                container->connect("tab_hovered", tabHoveredCallable);
-                SignalFunc tabRmbClickedFunc =
-                [this] (std::vector<Variant> av) {
-                    Array args;
-                    for (int i = 0; i < av.size(); i++)
-                    {
-                        args.append(av[i]);
-                    }
-                    if (tabRmbClickedEvent != nullptr) {
-                        tabRmbClickedEvent->emit(args);
-                    }
-                    return Variant();
-                };
-                Callable tabRmbClickedCallable = StlFunctionWrapper::create_callable_from_cpp_function(tabRmbClickedFunc);
-                container->connect("tab_rmb_clicked", tabRmbClickedCallable);
-                SignalFunc tabSelectedFunc =
-                [this] (std::vector<Variant> av) {
-                    Array args;
-                    for (int i = 0; i < av.size(); i++)
-                    {
-                        args.append(av[i]);
-                    }
-                    if (tabSelectedEvent != nullptr) {
-                        tabSelectedEvent->emit(args);
-                    }
-                    return Variant();
-                };
-                Callable tabSelectedCallable = StlFunctionWrapper::create_callable_from_cpp_function(tabSelectedFunc);
-                container->connect("tab_selected", tabSelectedCallable);
+                if (this->tabBarSignalWrapper == nullptr) {
+                    this->tabBarSignalWrapper = memnew(TabBarSignalWrapper);
+                    this->tabBarSignalWrapper->element = this;
+                }
+
+                this->container->connect("active_tab_rearranged", Callable(this->tabBarSignalWrapper, "activeTabRearranged"));
+                this->container->connect("tab_button_pressed", Callable(this->tabBarSignalWrapper, "tabButtonPressed"));
+                this->container->connect("tab_changed", Callable(this->tabBarSignalWrapper, "tabChanged"));
+                this->container->connect("tab_clicked", Callable(this->tabBarSignalWrapper, "tabClicked"));
+                this->container->connect("tab_close_pressed", Callable(this->tabBarSignalWrapper, "tabClosePressed"));
+                this->container->connect("tab_hovered", Callable(this->tabBarSignalWrapper, "tabHovered"));
+                this->container->connect("tab_rmb_clicked", Callable(this->tabBarSignalWrapper, "tabRmbClicked"));
+                this->container->connect("tab_selected", Callable(this->tabBarSignalWrapper, "tabSelected"));
             }
 
         public:
@@ -516,6 +439,14 @@ namespace sunaba::ui {
 
             void setTabTooltip(int tab, const std::string& tooltip) {
                 container->set_tab_tooltip(tab, tooltip.c_str());
+            }
+
+            void onFree() override {
+                if (tabBarSignalWrapper) {
+                    memdelete(tabBarSignalWrapper);
+                    tabBarSignalWrapper = nullptr;
+                }
+                Control::onFree();
             }
     };
 }

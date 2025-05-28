@@ -115,6 +115,58 @@ namespace sunaba::ui {
         return TypedArray<Vector3i>();
     }
 
+    void ItemListSignalWrapper::_bind_methods() {
+        ClassDB::bind_method(D_METHOD("emptyClicked", "at_position", "button_index"), &ItemListSignalWrapper::emptyClicked);
+        ClassDB::bind_method(D_METHOD("itemActivated", "index"), &ItemListSignalWrapper::itemActivated);
+        ClassDB::bind_method(D_METHOD("itemClicked", "index", "at_position", "button_index"), &ItemListSignalWrapper::itemClicked);
+        ClassDB::bind_method(D_METHOD("itemSelected", "index"), &ItemListSignalWrapper::itemSelected);
+        ClassDB::bind_method(D_METHOD("multiSelected", "index", "selected"), &ItemListSignalWrapper::multiSelected);
+    }
+
+    void ItemListSignalWrapper::emptyClicked(const Vector2& at_position, int button_index) {
+        if (element != nullptr) {
+            Array args;
+            args.push_back(at_position);
+            args.push_back(button_index);
+            element->emptyClickedEvent->emit(args);
+        }
+    }
+
+    void ItemListSignalWrapper::itemActivated(int index) {
+        if (element != nullptr) {
+            Array args;
+            args.push_back(index);
+            element->itemActivatedEvent->emit(args);
+        }
+    }
+
+    void ItemListSignalWrapper::itemClicked(int index, const Vector2& at_position, int button_index) {
+        if (element != nullptr) {
+            Array args;
+            args.push_back(index);
+            args.push_back(at_position);
+            args.push_back(button_index);
+            element->itemClickedEvent->emit(args);
+        }
+    }
+
+    void ItemListSignalWrapper::itemSelected(int index) {
+        if (element != nullptr) {
+            Array args;
+            args.push_back(index);
+            element->itemSelectedEvent->emit(args);
+        }
+    }
+
+    void ItemListSignalWrapper::multiSelected(int index, bool selected) {
+        if (element != nullptr) {
+            Array args;
+            args.push_back(index);
+            args.push_back(selected);
+            element->multiSelectedEvent->emit(args);
+        }
+    }
+
     void bindItemList(sol::state& lua) {
         lua.new_usertype<ItemList>("ItemList",
             sol::constructors<ItemList()>(),

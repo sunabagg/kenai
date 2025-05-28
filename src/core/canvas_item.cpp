@@ -62,6 +62,37 @@ namespace sunaba::core {
         }
     }
 
+    void CanvasItemSignalWrapper::_bind_methods() {
+        ClassDB::bind_method(D_METHOD("draw"), &CanvasItemSignalWrapper::draw);
+        ClassDB::bind_method(D_METHOD("hidden"), &CanvasItemSignalWrapper::hidden);
+        ClassDB::bind_method(D_METHOD("item_rect_changed"), &CanvasItemSignalWrapper::item_rect_changed);
+        ClassDB::bind_method(D_METHOD("visibility_changed"), &CanvasItemSignalWrapper::visibility_changed);
+    }
+
+    void CanvasItemSignalWrapper::draw() {
+        if (element != nullptr) {
+            element->draw->emit(godot::Array());
+        }
+    }
+
+    void CanvasItemSignalWrapper::hidden() {
+        if (element != nullptr) {
+            element->hidden->emit(godot::Array());
+        }
+    }
+
+    void CanvasItemSignalWrapper::item_rect_changed() {
+        if (element != nullptr) {
+            element->itemRectChanged->emit(godot::Array());
+        }
+    }
+
+    void CanvasItemSignalWrapper::visibility_changed() {
+        if (element != nullptr) {
+            element->visibilityChanged->emit(godot::Array());
+        }
+    }
+
     void bindCanvasItem(sol::state& lua) {
         lua.new_usertype<CanvasItem>(
             "CanvasItem",

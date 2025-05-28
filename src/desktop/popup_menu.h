@@ -43,11 +43,37 @@ namespace sunaba::desktop {
         Vector2 _get_contents_minimum_size() const override;
     };
 
+    class PopupMenuSignalWrapper : public Object {
+        GDCLASS(PopupMenuSignalWrapper, Object)
+        protected:
+            static void _bind_methods();
+        public:
+            sunaba::desktop::PopupMenu* element = nullptr;
+
+            PopupMenuSignalWrapper() = default;
+            ~PopupMenuSignalWrapper() = default;
+
+            void id_focused(int id);
+            void id_pressed(int id);
+            void index_pressed(int index);
+            void menu_changed();
+    };
+
     class PopupMenu : public Popup {
         private:
             PopupMenuNode* popup_menu = nullptr; // Pointer to the PopupMenu instance
+            
+            PopupMenuSignalWrapper* popup_menu_signal_wrapper = nullptr;
             void connectPopupMenuSignals() {
                 // Connect signals specific to PopupMenu
+                if (this->popup_menu_signal_wrapper == nullptr) {
+                    this->popup_menu_signal_wrapper = memnew(PopupMenuSignalWrapper);
+                    this->popup_menu_signal_wrapper->element = this;
+                }
+                this->popup_menu->connect("id_focused", Callable(this->popup_menu_signal_wrapper, "id_focused"));
+                this->popup_menu->connect("id_pressed", Callable(this->popup_menu_signal_wrapper, "id_pressed"));
+                this->popup_menu->connect("index_pressed", Callable(this->popup_menu_signal_wrapper, "index_pressed"));
+                this->popup_menu->connect("menu_changed", Callable(this->popup_menu_signal_wrapper, "menu_changed"));
             }
         public:
             PopupMenu() {
@@ -468,6 +494,15 @@ namespace sunaba::desktop {
 
             void toggleItemMultistate(int index) {
                 popup_menu->toggle_item_multistate(index);
+            }
+
+            void onFree() override {
+                if (popup_menu_signal_wrapper) {
+                    memdelete(popup_menu_signal_wrapper);
+                    popup_menu_signal_wrapper = nullptr;
+                }
+                popup_menu = nullptr;
+                Popup::onFree();
             }
     };
 }

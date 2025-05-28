@@ -181,3 +181,75 @@ sunaba::desktop::Window* sunaba::core::Element::getWindow() {
     }
     return new sunaba::desktop::Window(window);
 }
+
+namespace sunaba::core {
+    void NodeSignalWrapper::_bind_methods() {
+        ClassDB::bind_method(D_METHOD("child_entered_tree", "child"), &NodeSignalWrapper::child_entered_tree);
+        ClassDB::bind_method(D_METHOD("child_exited_tree", "child"), &NodeSignalWrapper::child_exited_tree);
+        ClassDB::bind_method(D_METHOD("child_order_changed"), &NodeSignalWrapper::child_order_changed);
+        ClassDB::bind_method(D_METHOD("renamed"), &NodeSignalWrapper::renamed);
+        ClassDB::bind_method(D_METHOD("replacing_by", "node"), &NodeSignalWrapper::replacing_by);
+        ClassDB::bind_method(D_METHOD("tree_entered"), &NodeSignalWrapper::tree_entered);
+        ClassDB::bind_method(D_METHOD("tree_exited"), &NodeSignalWrapper::tree_exited);
+        ClassDB::bind_method(D_METHOD("tree_exiting"), &NodeSignalWrapper::tree_exiting);
+    }
+
+    void NodeSignalWrapper::child_entered_tree(Node* child) {
+        if (element->childEnteredTree != nullptr) {
+            Array args;
+            args.append(child);
+            element->childEnteredTree->emit(args);
+        }
+    }
+
+    void NodeSignalWrapper::child_exited_tree(Node* child) {
+        if (element->childExitedTree != nullptr) {
+            Array args;
+            args.append(child);
+            element->childExitedTree->emit(args);
+        }
+    }
+
+    void NodeSignalWrapper::child_order_changed() {
+        if (element->childOrderChanged != nullptr) {
+            Array args;
+            element->childOrderChanged->emit(args);
+        }
+    }
+
+    void NodeSignalWrapper::renamed() {
+        if (element->renamed != nullptr) {
+            Array args;
+            element->renamed->emit(args);
+        }
+    }
+
+    void NodeSignalWrapper::replacing_by(Node* node) {
+        if (element->replacingBy != nullptr) {
+            Array args;
+            args.append(node);
+            element->replacingBy->emit(args);
+        }
+    }
+
+    void NodeSignalWrapper::tree_entered() {
+        if (element->treeEntered != nullptr) {
+            Array args;
+            element->treeEntered->emit(args);
+        }
+    }
+
+    void NodeSignalWrapper::tree_exited() {
+        if (element->treeExited != nullptr) {
+            Array args;
+            element->treeExited->emit(args);
+        }
+    }
+
+    void NodeSignalWrapper::tree_exiting() {
+        if (element->treeExiting != nullptr) {
+            Array args;
+            element->treeExiting->emit(args);
+        }
+    }
+}

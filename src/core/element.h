@@ -37,98 +37,54 @@ namespace sunaba::core {
         void _shortcut_input(const Ref<InputEvent>& event) override;
     };
 
+    class NodeSignalWrapper : public Object {
+        GDCLASS(NodeSignalWrapper, Object)
+        protected:
+            static void _bind_methods();
+        public:
+            Element* element = nullptr;
+
+            NodeSignalWrapper() = default;
+            ~NodeSignalWrapper() = default;
+
+            void child_entered_tree(Node* child);
+
+            void child_exited_tree(Node* child);
+
+            void child_order_changed();
+
+            void renamed();
+            
+            void replacing_by(Node* node);
+
+            void tree_entered();
+
+            void tree_exited();
+
+            void tree_exiting();
+    };
+
     class Viewport;
-    
-    class Element : public BaseObject {    
+
+    class Element : public BaseObject {
     private:
         Node* node = nullptr; // Pointer to the Node instance
+
+        NodeSignalWrapper *nodeSignalWrapper = nullptr;
         void connectElementSignals() {
-            std::function<Variant(std::vector<Variant>)> childEntertedTreeFunc = 
-            [this](std::vector<Variant> args) {
-                Node* child = Object::cast_to<Node>(args[0].operator Object*());
-                Array argsArray;
-                argsArray.append(new Element(child));
-                if (this->childEnteredTree != nullptr) {
-                    this->childEnteredTree->emit(argsArray);
-                }
-                return Variant();
-            };
-            Callable childEnteredTreeCallable = StlFunctionWrapper::create_callable_from_cpp_function(childEntertedTreeFunc);
-            this->node->connect("child_entered_tree", childEnteredTreeCallable);
-            std::function<Variant(std::vector<Variant>)> childExitedTreeFunc =
-            [this](std::vector<Variant> args) {
-                Node* child = Object::cast_to<Node>(args[0].operator Object*());
-                Array argsArray;
-                argsArray.append(new Element(child));
-                if (this->childExitedTree != nullptr) {
-                    this->childExitedTree->emit(argsArray);
-                }
-                return Variant();
-            };
-            Callable childExitedTreeCallable = StlFunctionWrapper::create_callable_from_cpp_function(childExitedTreeFunc);
-            this->node->connect("child_exited_tree", childExitedTreeCallable);
-            std::function<Variant(std::vector<Variant>)> childOrderChangedFunc =
-            [this](std::vector<Variant> args) {
-                Array argsArray;
-                if (this->childOrderChanged != nullptr) {
-                    this->childOrderChanged->emit(argsArray);
-                }
-                return Variant();
-            };
-            Callable childOrderChangedCallable = StlFunctionWrapper::create_callable_from_cpp_function(childOrderChangedFunc);
-            this->node->connect("child_order_changed", childOrderChangedCallable);
-            std::function<Variant(std::vector<Variant>)> renamedFunc =
-            [this](std::vector<Variant> args) {
-                Array argsArray;
-                if (this->renamed != nullptr) {
-                    this->renamed->emit(argsArray);
-                }
-                return Variant();
-            };
-            Callable renamedCallable = StlFunctionWrapper::create_callable_from_cpp_function(renamedFunc);
-            this->node->connect("renamed", renamedCallable);
-            std::function<Variant(std::vector<Variant>)> replacingByFunc =
-            [this](std::vector<Variant> args) {
-                Node* node = Object::cast_to<Node>(args[0].operator Object*());
-                Array argsArray;
-                argsArray.append(new Element(node));
-                if (this->replacingBy != nullptr) {
-                    this->replacingBy->emit(argsArray);
-                }
-                return Variant();
-            };
-            Callable replacingByCallable = StlFunctionWrapper::create_callable_from_cpp_function(replacingByFunc);
-            this->node->connect("replacing_by", replacingByCallable);
-            std::function<Variant(std::vector<Variant>)> treeEnteredFunc =
-            [this](std::vector<Variant> args) {
-                Array argsArray;
-                if (this->treeEntered != nullptr) {
-                    this->treeEntered->emit(argsArray);
-                }
-                return Variant();
-            };
-            Callable treeEnteredCallable = StlFunctionWrapper::create_callable_from_cpp_function(treeEnteredFunc);
-            this->node->connect("tree_entered", treeEnteredCallable);
-            std::function<Variant(std::vector<Variant>)> treeExitedFunc =
-            [this](std::vector<Variant> args) {
-                Array argsArray;
-                if (this->treeExited != nullptr) {
-                    this->treeExited->emit(argsArray);
-                }
-                return Variant();
-            };
-            Callable treeExitedCallable = StlFunctionWrapper::create_callable_from_cpp_function(treeExitedFunc);
-            this->node->connect("tree_exited", treeExitedCallable);
-            std::function<Variant(std::vector<Variant>)> treeExitingFunc =
-            [this](std::vector<Variant> args) {
-                Array argsArray;
-                if (this->treeExiting != nullptr) {
-                    this->treeExiting->emit(argsArray);
-                }
-                return Variant();
-            };
-            Callable treeExitingCallable = StlFunctionWrapper::create_callable_from_cpp_function(treeExitingFunc);
-            this->node->connect("tree_exiting", treeExitingCallable);
+
+            if (this->nodeSignalWrapper == nullptr) {
+                this->nodeSignalWrapper = memnew(NodeSignalWrapper);
+                this->nodeSignalWrapper->element = this;
+            }
+            this->node->connect("child_entered_tree", Callable(this->nodeSignalWrapper, "child_entered_tree"));
+            this->node->connect("child_exiting_tree", Callable(this->nodeSignalWrapper, "child_exited_tree"));
+            this->node->connect("child_order_changed", Callable(this->nodeSignalWrapper, "child_order_changed"));
+            this->node->connect("renamed", Callable(this->nodeSignalWrapper, "renamed"));
+            this->node->connect("replacing_by", Callable(this->nodeSignalWrapper, "replacing_by"));
+            this->node->connect("tree_entered", Callable(this->nodeSignalWrapper, "tree_entered"));
+            this->node->connect("tree_exited", Callable(this->nodeSignalWrapper, "tree_exited"));
+            this->node->connect("tree_exiting", Callable(this->nodeSignalWrapper, "tree_exiting"));
         }
     public:
         sol::table scriptInstance = sol::lua_nil;
@@ -336,8 +292,13 @@ namespace sunaba::core {
             }
         }
 
-        void onFree() override {
-            
+        virtual void onNodeFree()  {}
+
+        virtual void onFree() override {
+            if (nodeSignalWrapper != nullptr) {
+                memdelete(nodeSignalWrapper);
+                nodeSignalWrapper = nullptr;
+            }
         }
 
         bool isNull() {

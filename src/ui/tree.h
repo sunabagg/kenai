@@ -59,11 +59,59 @@ namespace sunaba::ui {
             TypedArray<Vector3i> _structured_text_parser(const Array &args, const String &text) const override;
     };
 
+    class TreeSignalWrapper : public Object {
+        GDCLASS(TreeSignalWrapper, Object)
+        protected:
+            static void _bind_methods();
+        public:
+            sunaba::ui::Tree* element = nullptr;
+
+            TreeSignalWrapper() = default;
+            ~TreeSignalWrapper() = default;
+
+            void button_clicked(godot::TreeItem* item, int column, int id, int mouse_button_index);
+            void cell_selected();
+            void check_propagated_to_item(godot::TreeItem* item, int column);
+            void column_title_clicked(int column, int mouse_button_index);
+            void custom_item_clicked(int column);
+            void custom_popup_edited(bool arrow_clicked);
+            void empty_clicked(const Vector2& click_position, int mouse_button_index);
+            void item_activated();
+            void item_collapsed(godot::TreeItem* item);
+            void item_edited();
+            void item_icon_double_clicked();
+            void item_mouse_selected(const Vector2& mouse_position, int mouse_button_index);
+            void item_selected();
+            void multi_selected(godot::TreeItem* item, int column, bool selected);
+            void nothing_selected();
+    };
+
     class Tree : public Control {
         private:
             GodotTree* tree = nullptr; // Pointer to the Tree instance
 
+            TreeSignalWrapper* treeSignalWrapper = nullptr;
             void connectSignals() {
+                if (this->treeSignalWrapper == nullptr) {
+                    this->treeSignalWrapper = memnew(TreeSignalWrapper);
+                    this->treeSignalWrapper->element = this;
+                }
+
+                this->tree->connect("button_clicked", Callable(this->treeSignalWrapper, "button_clicked"));
+                this->tree->connect("cell_selected", Callable(this->treeSignalWrapper, "cell_selected"));
+                this->tree->connect("check_propagated_to_item", Callable(this->treeSignalWrapper, "check_propagated_to_item"));
+                this->tree->connect("column_title_clicked", Callable(this->treeSignalWrapper, "column_title_clicked"));
+                this->tree->connect("custom_item_clicked", Callable(this->treeSignalWrapper, "custom_item_clicked"));
+                this->tree->connect("custom_popup_edited", Callable(this->treeSignalWrapper, "custom_popup_edited"));
+                this->tree->connect("empty_clicked", Callable(this->treeSignalWrapper, "empty_clicked"));
+                this->tree->connect("item_activated", Callable(this->treeSignalWrapper, "item_activated"));
+                this->tree->connect("item_collapsed", Callable(this->treeSignalWrapper, "item_collapsed"));
+                this->tree->connect("item_edited", Callable(this->treeSignalWrapper, "item_edited"));
+                this->tree->connect("item_icon_double_clicked", Callable(this->treeSignalWrapper, "item_icon_double_clicked"));
+                this->tree->connect("item_mouse_selected", Callable(this->treeSignalWrapper, "item_mouse_selected"));
+                this->tree->connect("item_selected", Callable(this->treeSignalWrapper, "item_selected"));
+                this->tree->connect("multi_selected", Callable(this->treeSignalWrapper, "multi_selected"));
+                this->tree->connect("nothing_selected", Callable(this->treeSignalWrapper, "nothing_selected"));
             }
         public:
             // Constructor with GodotTree parameter
@@ -471,6 +519,14 @@ namespace sunaba::ui {
 
             void setSelected(TreeItem* item, int column) {
                 tree->set_selected(item->getTreeItem(), column);
+            }
+
+            void onFree() override {
+                if (treeSignalWrapper) {
+                    memdelete(treeSignalWrapper);
+                    treeSignalWrapper = nullptr;
+                }
+                Control::onFree();
             }
     };
 }

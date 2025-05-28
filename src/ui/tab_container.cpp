@@ -129,6 +129,71 @@ namespace sunaba::ui {
         return PackedInt32Array();
     }
 
+    void TabContainerSignalWrapper::_bind_methods() {
+        ClassDB::bind_method(D_METHOD("active_tab_rearranged", "tab"), &TabContainerSignalWrapper::active_tab_rearranged);
+        ClassDB::bind_method(D_METHOD("pre_popup_pressed"), &TabContainerSignalWrapper::pre_popup_pressed);
+        ClassDB::bind_method(D_METHOD("tab_button_pressed", "tab"), &TabContainerSignalWrapper::tab_button_pressed);
+        ClassDB::bind_method(D_METHOD("tab_changed", "tab"), &TabContainerSignalWrapper::tab_changed);
+        ClassDB::bind_method(D_METHOD("tab_clicked", "tab"), &TabContainerSignalWrapper::tab_clicked);
+        ClassDB::bind_method(D_METHOD("tab_hovered", "tab"), &TabContainerSignalWrapper::tab_hovered);
+        ClassDB::bind_method(D_METHOD("tab_selected", "tab"), &TabContainerSignalWrapper::tab_selected);
+    }
+
+    void TabContainerSignalWrapper::active_tab_rearranged(int tab) {
+        if (element != nullptr && element->getActiveTabRearrangedEvent() != nullptr) {
+            Array args;
+            args.push_back(tab);
+            element->getActiveTabRearrangedEvent()->emit(args);
+        }
+    }
+
+    void TabContainerSignalWrapper::pre_popup_pressed() {
+        if (element != nullptr && element->getPrePopupPressedEvent() != nullptr) {
+            Array args;
+            element->getPrePopupPressedEvent()->emit(args);
+        }
+    }
+
+    void TabContainerSignalWrapper::tab_button_pressed(int tab) {
+        if (element != nullptr && element->getTabButtonPressedEvent() != nullptr) {
+            Array args;
+            args.push_back(tab);
+            element->getTabButtonPressedEvent()->emit(args);
+        }
+    }
+
+    void TabContainerSignalWrapper::tab_changed(int tab) {
+        if (element != nullptr && element->getTabChangedEvent() != nullptr) {
+            Array args;
+            args.push_back(tab);
+            element->getTabChangedEvent()->emit(args);
+        }
+    }
+
+    void TabContainerSignalWrapper::tab_clicked(int tab) {
+        if (element != nullptr && element->getTabClickedEvent() != nullptr) {
+            Array args;
+            args.push_back(tab);
+            element->getTabClickedEvent()->emit(args);
+        }
+    }
+
+    void TabContainerSignalWrapper::tab_hovered(int tab) {
+        if (element != nullptr && element->getTabHoveredEvent() != nullptr) {
+            Array args;
+            args.push_back(tab);
+            element->getTabHoveredEvent()->emit(args);
+        }
+    }
+
+    void TabContainerSignalWrapper::tab_selected(int tab) {
+        if (element != nullptr && element->getTabSelectedEvent() != nullptr) {
+            Array args;
+            args.push_back(tab);
+            element->getTabSelectedEvent()->emit(args);
+        }
+    }
+
     void bindTabContainer(sol::state& lua) {
         lua.new_usertype<TabContainer>("TabContainer",
             sol::constructors<TabContainer()>(),

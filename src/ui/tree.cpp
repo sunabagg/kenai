@@ -122,6 +122,147 @@ namespace sunaba::ui {
         return TypedArray<Vector3i>();
     }
 
+    void TreeSignalWrapper::_bind_methods() {
+        ClassDB::bind_method(D_METHOD("button_clicked", "item", "column", "id", "mouse_button_index"), &TreeSignalWrapper::button_clicked);
+        ClassDB::bind_method(D_METHOD("cell_selected"), &TreeSignalWrapper::cell_selected);
+        ClassDB::bind_method(D_METHOD("check_propagated_to_item", "item", "column"), &TreeSignalWrapper::check_propagated_to_item);
+        ClassDB::bind_method(D_METHOD("column_title_clicked", "column", "mouse_button_index"), &TreeSignalWrapper::column_title_clicked);
+        ClassDB::bind_method(D_METHOD("custom_item_clicked", "column"), &TreeSignalWrapper::custom_item_clicked);
+        ClassDB::bind_method(D_METHOD("custom_popup_edited", "arrow_clicked"), &TreeSignalWrapper::custom_popup_edited);
+        ClassDB::bind_method(D_METHOD("empty_clicked", "click_position", "mouse_button_index"), &TreeSignalWrapper::empty_clicked);
+        ClassDB::bind_method(D_METHOD("item_activated"), &TreeSignalWrapper::item_activated);
+        ClassDB::bind_method(D_METHOD("item_collapsed", "item"), &TreeSignalWrapper::item_collapsed);
+        ClassDB::bind_method(D_METHOD("item_edited"), &TreeSignalWrapper::item_edited);
+        ClassDB::bind_method(D_METHOD("item_icon_double_clicked"), &TreeSignalWrapper::item_icon_double_clicked);
+        ClassDB::bind_method(D_METHOD("item_mouse_selected", "mouse_position", "mouse_button_index"), &TreeSignalWrapper::item_mouse_selected);
+        ClassDB::bind_method(D_METHOD("item_selected"), &TreeSignalWrapper::item_selected);
+        ClassDB::bind_method(D_METHOD("multi_selected", "item", "column", "selected"), &TreeSignalWrapper::multi_selected);
+        ClassDB::bind_method(D_METHOD("nothing_selected"), &TreeSignalWrapper::nothing_selected);
+    }
+
+    void TreeSignalWrapper::button_clicked(godot::TreeItem* item, int column, int id, int mouse_button_index) {
+        if (this->element != nullptr) {
+            Array args;
+            args.push_back(item);
+            args.push_back(column);
+            args.push_back(id);
+            args.push_back(mouse_button_index);
+            this->element->getButtonClickedEvent()->emit(args);
+        }
+    }
+
+    void TreeSignalWrapper::cell_selected() {
+        if (this->element != nullptr) {
+            Array args;
+            this->element->getCellSelectedEvent()->emit(args);
+        }
+    }
+
+    void TreeSignalWrapper::check_propagated_to_item(godot::TreeItem* item, int column) {
+        if (this->element != nullptr) {
+            Array args;
+            args.push_back(item);
+            args.push_back(column);
+            this->element->getCheckPropagatedToItemEvent()->emit(args);
+        }
+    }
+
+    void TreeSignalWrapper::column_title_clicked(int column, int mouse_button_index) {
+        if (this->element != nullptr) {
+            Array args;
+            args.push_back(column);
+            args.push_back(mouse_button_index);
+            this->element->getColumnTitleClickedEvent()->emit(args);
+        }
+    }
+
+    void TreeSignalWrapper::custom_item_clicked(int column) {
+        if (this->element != nullptr) {
+            Array args;
+            args.push_back(column);
+            this->element->getCustomItemClickedEvent()->emit(args);
+        }
+    }
+
+    void TreeSignalWrapper::custom_popup_edited(bool arrow_clicked) {
+        if (this->element != nullptr) {
+            Array args;
+            args.push_back(arrow_clicked);
+            this->element->getCustomPopupEditedEvent()->emit(args);
+        }
+    }
+
+    void TreeSignalWrapper::empty_clicked(const Vector2& click_position, int mouse_button_index) {
+        if (this->element != nullptr) {
+            Array args;
+            args.push_back(click_position);
+            args.push_back(mouse_button_index);
+            this->element->getEmptyClickedEvent()->emit(args);
+        }
+    }
+
+    void TreeSignalWrapper::item_activated() {
+        if (this->element != nullptr) {
+            Array args;
+            this->element->getItemActivatedEvent()->emit(args);
+        }
+    }
+
+    void TreeSignalWrapper::item_collapsed(godot::TreeItem* item) {
+        if (this->element != nullptr) {
+            Array args;
+            args.push_back(item);
+            this->element->getItemCollapsedEvent()->emit(args);
+        }
+    }
+
+    void TreeSignalWrapper::item_edited() {
+        if (this->element != nullptr) {
+            Array args;
+            this->element->getItemEditedEvent()->emit(args);
+        }
+    }
+
+    void TreeSignalWrapper::item_icon_double_clicked() {
+        if (this->element != nullptr) {
+            Array args;
+            this->element->getItemIconDoubleClickedEvent()->emit(args);
+        }
+    }
+
+    void TreeSignalWrapper::item_mouse_selected(const Vector2& mouse_position, int mouse_button_index) {
+        if (this->element != nullptr) {
+            Array args;
+            args.push_back(mouse_position);
+            args.push_back(mouse_button_index);
+            this->element->getItemMouseSelectedEvent()->emit(args);
+        }
+    }
+
+    void TreeSignalWrapper::item_selected() {
+        if (this->element != nullptr) {
+            Array args;
+            this->element->getItemSelectedEvent()->emit(args);
+        }
+    }
+
+    void TreeSignalWrapper::multi_selected(godot::TreeItem* item, int column, bool selected) {
+        if (this->element != nullptr) {
+            Array args;
+            args.push_back(item);
+            args.push_back(column);
+            args.push_back(selected);
+            this->element->getMultiSelectedEvent()->emit(args);
+        }
+    }
+
+    void TreeSignalWrapper::nothing_selected() {
+        if (this->element != nullptr) {
+            Array args;
+            this->element->getNothingSelectedEvent()->emit(args);
+        }
+    }
+
     void bindTree(sol::state &lua) {
         lua.new_usertype<Tree>("Tree",
             sol::constructors<Tree()>(),

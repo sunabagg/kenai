@@ -62,11 +62,34 @@ namespace sunaba::ui {
             PackedInt32Array _get_allowed_size_flags_vertical() const override;
     };
 
+    class ContainerSignalWrapper : public Object{
+        GDCLASS(ContainerSignalWrapper, Object)
+        protected:
+            static void _bind_methods();
+        public:
+            sunaba::ui::Container* element = nullptr;
+
+            ContainerSignalWrapper() = default;
+            ~ContainerSignalWrapper() = default;
+
+            void pre_sort_children();
+            void sort_children();
+    };
+
     class Container : public Control {
         private:
             ContainerNode* container = nullptr; // Pointer to the Container instance
+
+            ContainerSignalWrapper* containerSignalWrapper = nullptr;
             void connectContainerSignals() {
                 // Connect signals specific to Container
+                if (this->containerSignalWrapper == nullptr) {
+                    this->containerSignalWrapper = memnew(ContainerSignalWrapper);
+                    this->containerSignalWrapper->element = this;
+                }
+
+                this->container->connect("pre_sort_children", Callable(this->containerSignalWrapper, "pre_sort_children"));
+                this->container->connect("sort_children", Callable(this->containerSignalWrapper, "sort_children"));
             }
 
         public:
@@ -158,6 +181,14 @@ namespace sunaba::ui {
                         return arr;
                     }
                 }
+            }
+
+            void onFree() override {
+                if (containerSignalWrapper) {
+                    memdelete(containerSignalWrapper);
+                    containerSignalWrapper = nullptr;
+                }
+                Control::onFree();
             }
     };
 }

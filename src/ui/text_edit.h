@@ -74,12 +74,44 @@ namespace sunaba::ui {
             void _paste_primary_clipboard(int caret_index) override;
     };
 
+    class TextEditSignalWrapper : public Object{
+        GDCLASS(TextEditSignalWrapper, Object)
+        protected:
+            static void _bind_methods();
+        public:
+            sunaba::ui::TextEdit* element = nullptr;
+
+            TextEditSignalWrapper() = default;
+            ~TextEditSignalWrapper() = default;
+
+            void caret_changed();
+            void gutter_added();
+            void gutter_clicked(int line, int gutter);
+            void gutter_removed();
+            void lines_edited_from(int from_line, int to_line);
+            void text_changed();
+            void text_set();
+    };
+
     class TextEdit : public Control {
         private:
             TextEditNode* text_edit = nullptr; // Pointer to the TextEdit instance
+            TextEditSignalWrapper* text_edit_signal_wrapper = nullptr;
             void connectTextEditSignals() {
                 // Connect signals from the text_edit to the element
                 // Example: text_edit->connect("signal_name", this, "method_name");
+                if (this->text_edit_signal_wrapper == nullptr) {
+                    this->text_edit_signal_wrapper = memnew(TextEditSignalWrapper);
+                    this->text_edit_signal_wrapper->element = this;
+                }
+
+                this->text_edit->connect("caret_changed", Callable(this->text_edit_signal_wrapper, "caret_changed"));
+                this->text_edit->connect("gutter_added", Callable(this->text_edit_signal_wrapper, "gutter_added"));
+                this->text_edit->connect("gutter_clicked", Callable(this->text_edit_signal_wrapper, "gutter_clicked"));
+                this->text_edit->connect("gutter_removed", Callable(this->text_edit_signal_wrapper, "gutter_removed"));
+                this->text_edit->connect("lines_edited_from", Callable(this->text_edit_signal_wrapper, "lines_edited_from"));
+                this->text_edit->connect("text_changed", Callable(this->text_edit_signal_wrapper, "text_changed"));
+                this->text_edit->connect("text_set", Callable(this->text_edit_signal_wrapper, "text_set"));
             }
         public:
             TextEdit() {
@@ -1214,6 +1246,14 @@ namespace sunaba::ui {
 
             void undo() {
                 text_edit->undo();
+            }
+
+            void onFree() override {
+                if (text_edit_signal_wrapper) {
+                    memdelete(text_edit_signal_wrapper);
+                    text_edit_signal_wrapper = nullptr;
+                }
+                Control::onFree();
             }
     };
 }

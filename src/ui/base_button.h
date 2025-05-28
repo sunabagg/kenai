@@ -12,7 +12,7 @@
 #include "../core/event.h"
 
 #include "../core/stl_function_wrapper.h"
-#define StlFunctionWrapper sunaba::core::StlFunctionWrapper
+using namespace sunaba::core;
 
 namespace sunaba::ui {
     void bindBaseButton(sol::state &lua);
@@ -64,67 +64,37 @@ namespace sunaba::ui {
             void _toggled(bool p_toggled_on) override;
     };
 
+    class BaseButtonSignalWrapper : public Object {
+        GDCLASS(BaseButtonSignalWrapper, Object)
+        protected:
+            static void _bind_methods();
+        public:
+            sunaba::ui::BaseButton* element = nullptr;
+
+            BaseButtonSignalWrapper() = default;
+            ~BaseButtonSignalWrapper() = default;
+
+            void pressed();
+            void toggled(bool p_toggled_on);
+            void button_down();
+            void button_up();
+    };
+
     class BaseButton : public sunaba::ui::Control {
         private:
             BaseButtonNode* base_button = nullptr;
 
+            BaseButtonSignalWrapper* base_button_signal_wrapper = nullptr;
             void connectBaseButtonSignals() {
-                // Connect signals from the BaseButton node to the BaseButton class
-                std::function<Variant(std::vector<Variant>)> pressedFunc =
-                [this](std::vector<Variant> av) {
-                    Array args;
-                    for (int i = 0; i < av.size(); ++i) {
-                        args.append(av[i]);
-                    }
-                    if (this->pressedEvent != nullptr) {
-                        this->pressedEvent->emit(args);
-                    }
-                    return Variant();
-                };
-                Callable pressedCallable = StlFunctionWrapper::create_callable_from_cpp_function(pressedFunc);
-                base_button->connect("pressed", pressedCallable);
+                if (this->base_button_signal_wrapper == nullptr) {
+                    this->base_button_signal_wrapper = memnew(BaseButtonSignalWrapper);
+                    this->base_button_signal_wrapper->element = this;
+                }
 
-                std::function<Variant(std::vector<Variant>)> toggledFunc =
-                [this](std::vector<Variant> av) {
-                    Array args;
-                    for (int i = 0; i < av.size(); ++i) {
-                        args.append(av[i]);
-                    }
-                    if (this->toggledEvent != nullptr) {
-                        this->toggledEvent->emit(args);
-                    }
-                    return Variant();
-                };
-                Callable toggledCallable = StlFunctionWrapper::create_callable_from_cpp_function(toggledFunc);
-                base_button->connect("toggled", toggledCallable);
-
-                std::function<Variant(std::vector<Variant>)> buttonDownFunc =
-                [this](std::vector<Variant> av) {
-                    Array args;
-                    for (int i = 0; i < av.size(); ++i) {
-                        args.append(av[i]);
-                    }
-                    if (this->buttonDown != nullptr) {
-                        this->buttonDown->emit(args);
-                    }
-                    return Variant();
-                };
-                Callable buttonDownCallable = StlFunctionWrapper::create_callable_from_cpp_function(buttonDownFunc);
-                base_button->connect("button_down", buttonDownCallable);
-
-                std::function<Variant(std::vector<Variant>)> buttonUpFunc =
-                [this](std::vector<Variant> av) {
-                    Array args;
-                    for (int i = 0; i < av.size(); ++i) {
-                        args.append(av[i]);
-                    }
-                    if (this->buttonUp != nullptr) {
-                        this->buttonUp->emit(args);
-                    }
-                    return Variant();
-                };
-                Callable buttonUpCallable = StlFunctionWrapper::create_callable_from_cpp_function(buttonUpFunc);
-                base_button->connect("button_up", buttonUpCallable);
+                this->base_button->connect("pressed", Callable(this->base_button_signal_wrapper, "pressed"));
+                this->base_button->connect("toggled", Callable(this->base_button_signal_wrapper, "toggled"));
+                this->base_button->connect("button_down", Callable(this->base_button_signal_wrapper, "button_down"));
+                this->base_button->connect("button_up", Callable(this->base_button_signal_wrapper, "button_up"));
             }
         
         public:
@@ -294,6 +264,15 @@ namespace sunaba::ui {
                         func(scriptInstance, toggled);
                     }
                 }
+            }
+
+            void onFree() override {
+                if (base_button_signal_wrapper) {
+                    base_button_signal_wrapper->element = nullptr;
+                    memdelete(base_button_signal_wrapper);
+                    base_button_signal_wrapper = nullptr;
+                }
+                Control::onFree();
             }
         };
 }

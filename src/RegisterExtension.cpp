@@ -13,6 +13,28 @@
 #include "tests/scene_test.h"
 #include "app.h"
 
+#include "core/element.h"
+#include "core/canvas_item.h"
+#include "core/viewport.h"
+
+#include "desktop/window.h"
+#include "desktop/popup.h"
+#include "desktop/popup_menu.h"
+
+#include "ui/control.h"
+#include "ui/base_button.h"
+#include "ui/container.h"
+#include "ui/item_list.h"
+#include "ui/line_edit.h"
+#include "ui/menu_button.h"
+#include "ui/option_button.h"
+#include "ui/range.h"
+#include "ui/slider.h"
+#include "ui/tab_bar.h"
+#include "ui/tab_container.h"
+#include "ui/text_edit.h"
+#include "ui/tree.h"
+
 /// @file
 /// Register our classes with Godot.
 
@@ -36,6 +58,28 @@ namespace
         godot::ClassDB::register_class<sunaba::core::EventBridge>();
         godot::ClassDB::register_class<sunaba::core::BaseObjectProxy>();
         godot::ClassDB::register_class<sunaba::core::StlFunctionWrapper>();
+
+        godot::ClassDB::register_class<sunaba::core::NodeSignalWrapper>();
+        godot::ClassDB::register_class<sunaba::core::CanvasItemSignalWrapper>();
+        godot::ClassDB::register_class<sunaba::core::ViewportSignalWrapper>();
+
+        godot::ClassDB::register_class<sunaba::desktop::WindowSignalWrapper>();
+        godot::ClassDB::register_class<sunaba::desktop::PopupSignalWrapper>();
+        godot::ClassDB::register_class<sunaba::desktop::PopupMenuSignalWrapper>();
+
+        godot::ClassDB::register_class<sunaba::ui::ControlSignalWrapper>();
+        godot::ClassDB::register_class<sunaba::ui::BaseButtonSignalWrapper>();
+        godot::ClassDB::register_class<sunaba::ui::ContainerSignalWrapper>();
+        godot::ClassDB::register_class<sunaba::ui::ItemListSignalWrapper>();
+        godot::ClassDB::register_class<sunaba::ui::LineEditSignalWrapper>();
+        godot::ClassDB::register_class<sunaba::ui::MenuButtonSignalWrapper>();
+        godot::ClassDB::register_class<sunaba::ui::OptionButtonSignalWrapper>();
+        godot::ClassDB::register_class<sunaba::ui::RangeSignalWrapper>();
+        godot::ClassDB::register_class<sunaba::ui::SliderSignalWrapper>();
+        godot::ClassDB::register_class<sunaba::ui::TabBarSignalWrapper>();
+        godot::ClassDB::register_class<sunaba::ui::TabContainerSignalWrapper>();
+        godot::ClassDB::register_class<sunaba::ui::TextEditSignalWrapper>();
+        godot::ClassDB::register_class<sunaba::ui::TreeSignalWrapper>();
     }
 
     /// @brief Called by Godot to let us do any cleanup.

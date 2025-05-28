@@ -62,6 +62,44 @@ namespace sunaba::desktop {
         return PopupMenuNode::get_contents_minimum_size();
     }
 
+    void PopupMenuSignalWrapper::_bind_methods() {
+        ClassDB::bind_method(D_METHOD("id_focused", "id"), &PopupMenuSignalWrapper::id_focused);
+        ClassDB::bind_method(D_METHOD("id_pressed", "id"), &PopupMenuSignalWrapper::id_pressed);
+        ClassDB::bind_method(D_METHOD("index_pressed", "index"), &PopupMenuSignalWrapper::index_pressed);
+        ClassDB::bind_method(D_METHOD("menu_changed"), &PopupMenuSignalWrapper::menu_changed);
+    }
+
+    void PopupMenuSignalWrapper::id_focused(int id) {
+        if (element != nullptr) {
+            Array args;
+            args.push_back(id);
+            element->idFocusedEvent->emit(args);
+        }
+    }
+
+    void PopupMenuSignalWrapper::id_pressed(int id) {
+        if (element != nullptr) {
+            Array args;
+            args.push_back(id);
+            element->idPressedEvent->emit(args);
+        }
+    }
+
+    void PopupMenuSignalWrapper::index_pressed(int index) {
+        if (element != nullptr) {
+            Array args;
+            args.push_back(index);
+            element->indexPressedEvent->emit(args);
+        }
+    }
+
+    void PopupMenuSignalWrapper::menu_changed() {
+        if (element != nullptr) {
+            Array args;
+            element->menuChangedEvent->emit(args);
+        }
+    }
+
     void bindPopupMenu(sol::state& lua) {
         lua.new_usertype<PopupMenu>("PopupMenu",
             sol::constructors<PopupMenu()>(),

@@ -49,37 +49,34 @@ namespace sunaba::ui {
             void _value_changed(double value) override;
     };
 
+    class RangeSignalWrapper : public Object {
+        GDCLASS(RangeSignalWrapper, Object)
+        protected:
+            static void _bind_methods();
+        public:
+            sunaba::ui::Range* element = nullptr;
+
+            RangeSignalWrapper() = default;
+            ~RangeSignalWrapper() = default;
+
+            void changed();
+            void value_changed(double value);
+    };
+
     class Range : public sunaba::ui::Control {
         private:
             RangeNode* range = nullptr; // Pointer to the Range instance
+
+            RangeSignalWrapper* rangeSignalWrapper = nullptr;
             void connectRangeSignals() {
                 // Connect signals specific to Range
-                SignalFunc changedFunc =
-                [this](std::vector<Variant> av) {
-                    Array args;
-                    for (int i = 0; i < av.size(); ++i) {
-                        args.push_back(av[i]);
-                    }
-                    if (changedEvent != nullptr) {
-                        changedEvent->emit(args);
-                    }
-                    return Variant();
-                };
-                Callable changedCallable = to_callable(changedFunc);
-                range->connect("changed", changedCallable);
-                SignalFunc valueChangedFunc =
-                [this](std::vector<Variant> av) {
-                    Array args;
-                    for (int i = 0; i < av.size(); ++i) {
-                        args.push_back(av[i]);
-                    }
-                    if (valueChangedEvent != nullptr) {
-                        valueChangedEvent->emit(args);
-                    }
-                    return Variant();
-                };
-                Callable valueChangedCallable = to_callable(valueChangedFunc);
-                range->connect("value_changed", valueChangedCallable);
+                if (this->rangeSignalWrapper == nullptr) {
+                    this->rangeSignalWrapper = memnew(RangeSignalWrapper);
+                    this->rangeSignalWrapper->element = this;
+                }
+
+                this->range->connect("changed", Callable(this->rangeSignalWrapper, "changed"));
+                this->range->connect("value_changed", Callable(this->rangeSignalWrapper, "value_changed"));
             }
 
         public:
@@ -232,6 +229,15 @@ namespace sunaba::ui {
 
             void unshare() {
                 range->unshare();
+            }
+
+            void onFree() override {
+                if (rangeSignalWrapper) {
+                    rangeSignalWrapper->element = nullptr;
+                    memdelete(rangeSignalWrapper);
+                    rangeSignalWrapper = nullptr;
+                }
+                Control::onFree();
             }
     };
 }

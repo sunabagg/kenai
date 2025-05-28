@@ -62,6 +62,98 @@ namespace sunaba::desktop {
         return WindowNode::_get_contents_minimum_size();
     }
 
+    void WindowSignalWrapper::_bind_methods() {
+        ClassDB::bind_method(D_METHOD("about_to_popup"), &WindowSignalWrapper::about_to_popup);
+        ClassDB::bind_method(D_METHOD("close_requested"), &WindowSignalWrapper::close_requested);
+        ClassDB::bind_method(D_METHOD("dpi_changed"), &WindowSignalWrapper::dpi_changed);
+        ClassDB::bind_method(D_METHOD("files_dropped"), &WindowSignalWrapper::files_dropped);
+        ClassDB::bind_method(D_METHOD("focus_entered"), &WindowSignalWrapper::focus_entered);
+        ClassDB::bind_method(D_METHOD("focus_exited"), &WindowSignalWrapper::focus_exited);
+        ClassDB::bind_method(D_METHOD("go_back_requested"), &WindowSignalWrapper::go_back_requested);
+        ClassDB::bind_method(D_METHOD("mouse_entered"), &WindowSignalWrapper::mouse_entered);
+        ClassDB::bind_method(D_METHOD("mouse_exited"), &WindowSignalWrapper::mouse_exited);
+        ClassDB::bind_method(D_METHOD("theme_changed"), &WindowSignalWrapper::theme_changed);
+        ClassDB::bind_method(D_METHOD("title_changed"), &WindowSignalWrapper::title_changed);
+    }
+
+    void WindowSignalWrapper::about_to_popup() {
+        if (element != nullptr) {
+            Array args;
+            element->aboutToPopupEvent->emit(args);
+        }
+    }
+
+    void WindowSignalWrapper::close_requested() {
+        if (element != nullptr) {
+            Array args;
+            element->closeRequestedEvent->emit(args);
+        }
+    }
+
+    void WindowSignalWrapper::dpi_changed() {
+        if (element != nullptr) {
+            Array args;
+            element->dpiChangedEvent->emit(args);
+        }
+    }
+
+    void WindowSignalWrapper::files_dropped(const PackedStringArray& files) {
+        if (element != nullptr) {
+            Array args;
+            args.append(files);
+            element->filesDroppedEvent->emit(args);
+        }
+    }
+
+    void WindowSignalWrapper::focus_entered() {
+        if (element != nullptr) {
+            Array args;
+            element->focusEnteredEvent->emit(args);
+        }
+    }
+
+    void WindowSignalWrapper::focus_exited() {
+        if (element != nullptr) {
+            Array args;
+            element->focusExitedEvent->emit(args);
+        }
+    }
+
+    void WindowSignalWrapper::go_back_requested() {
+        if (element != nullptr) {
+            Array args;
+            element->goBackRequestedEvent->emit(args);
+        }
+    }
+
+    void WindowSignalWrapper::mouse_entered() {
+        if (element != nullptr) {
+            Array args;
+            element->mouseEnteredEvent->emit(args);
+        }
+    }
+
+    void WindowSignalWrapper::mouse_exited() {
+        if (element != nullptr) {
+            Array args;
+            element->mouseExitedEvent->emit(args);
+        }
+    }
+
+    void WindowSignalWrapper::theme_changed() {
+        if (element != nullptr) {
+            Array args;
+            element->themeChangedEvent->emit(args);
+        }
+    }
+
+    void WindowSignalWrapper::title_changed() {
+        if (element != nullptr) {
+            Array args;
+            element->titleChangedEvent->emit(args);
+        }
+    }
+
     void bindWindow(sol::state& lua) {
         lua.new_usertype<Window>("Window",
             sol::constructors<Window()>(),

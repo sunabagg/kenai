@@ -42,150 +42,50 @@ namespace sunaba::desktop {
             Vector2 _get_contents_minimum_size() const override;
     };
 
+    class WindowSignalWrapper : public Object {
+        GDCLASS(WindowSignalWrapper, Object)
+        protected:
+            static void _bind_methods();
+        public:
+            sunaba::desktop::Window* element = nullptr;
+
+            WindowSignalWrapper() = default;
+            ~WindowSignalWrapper() = default;
+
+            void about_to_popup();
+            void close_requested();
+            void dpi_changed();
+            void files_dropped(const PackedStringArray& files);
+            void focus_entered();
+            void focus_exited();
+            void go_back_requested();
+            void mouse_entered();
+            void mouse_exited();
+            void theme_changed();
+            void title_changed();
+    };
+
     class Window : public sunaba::core::Viewport {
         private:
             WindowNode* window = nullptr; // Pointer to the Window instance
+            WindowSignalWrapper* windowSignalWrapper = nullptr;
             void connectWindowSignals() {
-                std::function<Variant(std::vector<Variant>)> aboutToPopupFunc =
-                [this](std::vector<Variant> args) {
-                    Array argsArray;
-                    if (this->aboutToPopupEvent != nullptr) {
-                        this->aboutToPopupEvent->emit(argsArray);
-                    }
-                    return Variant();
-                };
-                Callable aboutToPopupCallable = StlFunctionWrapper::create_callable_from_cpp_function(aboutToPopupFunc);
-                this->window->connect("about_to_popup", aboutToPopupCallable);
-                std::function<Variant(std::vector<Variant>)> closeRequestedFunc =
-                [this](std::vector<Variant> args) {
-                    Array argsArray;
-                    if (this->closeRequestedEvent != nullptr) {
-                        this->closeRequestedEvent->emit(argsArray);
-                    }
-                    return Variant();
-                };
-                Callable closeRequestedCallable = StlFunctionWrapper::create_callable_from_cpp_function(closeRequestedFunc);
-                this->window->connect("close_requested", closeRequestedCallable);
-                std::function<Variant(std::vector<Variant>)> dpiChangedFunc =
-                [this](std::vector<Variant> args) {
-                    Array argsArray;
-                    if (this->dpiChangedEvent != nullptr) {
-                        this->dpiChangedEvent->emit(argsArray);
-                    }
-                    return Variant();
-                };
-                Callable dpiChangedCallable = StlFunctionWrapper::create_callable_from_cpp_function(dpiChangedFunc);
-                this->window->connect("dpi_changed", dpiChangedCallable);
-                std::function<Variant(std::vector<Variant>)> filesDroppedFunc =
-                [this](std::vector<Variant> args) {
-                    Array argsArray;
-                    if (this->filesDroppedEvent != nullptr) {
-                        this->filesDroppedEvent->emit(argsArray);
-                    }
-                    return Variant();
-                };
-                Callable filesDroppedCallable = StlFunctionWrapper::create_callable_from_cpp_function(filesDroppedFunc);
-                this->window->connect("files_dropped", filesDroppedCallable);
-                std::function<Variant(std::vector<Variant>)> focusEnteredFunc =
-                [this](std::vector<Variant> args) {
-                    Array argsArray;
-                    if (this->focusEnteredEvent != nullptr) {
-                        this->focusEnteredEvent->emit(argsArray);
-                    }
-                    return Variant();
-                };
-                Callable focusEnteredCallable = StlFunctionWrapper::create_callable_from_cpp_function(focusEnteredFunc);
-                this->window->connect("focus_entered", focusEnteredCallable);
-                std::function<Variant(std::vector<Variant>)> focusExitedFunc =
-                [this](std::vector<Variant> args) {
-                    Array argsArray;
-                    if (this->focusExitedEvent != nullptr) {
-                        this->focusExitedEvent->emit(argsArray);
-                    }
-                    return Variant();
-                };
-                Callable focusExitedCallable = StlFunctionWrapper::create_callable_from_cpp_function(focusExitedFunc);
-                this->window->connect("focus_exited", focusExitedCallable);
-                std::function<Variant(std::vector<Variant>)> goBackRequestedFunc =
-                [this](std::vector<Variant> args) {
-                    Array argsArray;
-                    if (this->goBackRequestedEvent != nullptr) {
-                        this->goBackRequestedEvent->emit(argsArray);
-                    }
-                    return Variant();
-                };
-                Callable goBackRequestedCallable = StlFunctionWrapper::create_callable_from_cpp_function(goBackRequestedFunc);
-                this->window->connect("go_back_requested", goBackRequestedCallable);
-                std::function<Variant(std::vector<Variant>)> mouseEnteredFunc =
-                [this](std::vector<Variant> args) {
-                    Array argsArray;
-                    if (this->mouseEnteredEvent != nullptr) {
-                        this->mouseEnteredEvent->emit(argsArray);
-                    }
-                    return Variant();
-                };
-                Callable mouseEnteredCallable = StlFunctionWrapper::create_callable_from_cpp_function(mouseEnteredFunc);
-                this->window->connect("mouse_entered", mouseEnteredCallable);
-                std::function<Variant(std::vector<Variant>)> mouseExitedFunc =
-                [this](std::vector<Variant> args) {
-                    Array argsArray;
-                    if (this->mouseExitedEvent != nullptr) {
-                        this->mouseExitedEvent->emit(argsArray);
-                    }
-                    return Variant();
-                };
-                Callable mouseExitedCallable = StlFunctionWrapper::create_callable_from_cpp_function(mouseExitedFunc);
-                this->window->connect("mouse_exited", mouseExitedCallable);
-                std::function<Variant(std::vector<Variant>)> themeChangedFunc =
-                [this](std::vector<Variant> args) {
-                    Array argsArray;
-                    if (this->themeChangedEvent != nullptr) {
-                        this->themeChangedEvent->emit(argsArray);
-                    }
-                    return Variant();
-                };
-                Callable themeChangedCallable = StlFunctionWrapper::create_callable_from_cpp_function(themeChangedFunc);
-                this->window->connect("theme_changed", themeChangedCallable);
-                std::function<Variant(std::vector<Variant>)> titleChangedFunc =
-                [this](std::vector<Variant> args) {
-                    Array argsArray;
-                    if (this->titleChangedEvent != nullptr) {
-                        this->titleChangedEvent->emit(argsArray);
-                    }
-                    return Variant();
-                };
-                Callable titleChangedCallable = StlFunctionWrapper::create_callable_from_cpp_function(titleChangedFunc);
-                this->window->connect("title_changed", titleChangedCallable);
-                std::function<Variant(std::vector<Variant>)> titlebarChangedFunc =
-                [this](std::vector<Variant> args) {
-                    Array argsArray;
-                    if (this->titlebarChangedEvent != nullptr) {
-                        this->titlebarChangedEvent->emit(argsArray);
-                    }
-                    return Variant();
-                };
-                Callable titlebarChangedCallable = StlFunctionWrapper::create_callable_from_cpp_function(titlebarChangedFunc);
-                this->window->connect("titlebar_changed", titlebarChangedCallable);
-                std::function<Variant(std::vector<Variant>)> visibilityChangedFunc =
-                [this](std::vector<Variant> args) {
-                    Array argsArray;
-                    if (this->visibilityChangedEvent != nullptr) {
-                        this->visibilityChangedEvent->emit(argsArray);
-                    }
-                    return Variant();
-                };
-                Callable visibilityChangedCallable = StlFunctionWrapper::create_callable_from_cpp_function(visibilityChangedFunc);
-                this->window->connect("visibility_changed", visibilityChangedCallable);
-                std::function<Variant(std::vector<Variant>)> windowInputFunc =
-                [this](std::vector<Variant> args) {
-                    Array argsArray;
-                    if (this->windowInputEvent != nullptr) {
-                        this->windowInputEvent->emit(argsArray);
-                    }
-                    return Variant();
-                };
-                Callable windowInputCallable = StlFunctionWrapper::create_callable_from_cpp_function(windowInputFunc);
-                this->window->connect("window_input", windowInputCallable);
+                if (this->windowSignalWrapper == nullptr) {
+                    this->windowSignalWrapper = memnew(WindowSignalWrapper);
+                    this->windowSignalWrapper->element = this;
+                }
+
+                this->window->connect("about_to_popup", Callable(this->windowSignalWrapper, "about_to_popup"));
+                this->window->connect("close_requested", Callable(this->windowSignalWrapper, "close_requested"));
+                this->window->connect("dpi_changed", Callable(this->windowSignalWrapper, "dpi_changed"));
+                this->window->connect("files_dropped", Callable(this->windowSignalWrapper, "files_dropped"));
+                this->window->connect("focus_entered", Callable(this->windowSignalWrapper, "focus_entered"));
+                this->window->connect("focus_exited", Callable(this->windowSignalWrapper, "focus_exited"));
+                this->window->connect("go_back_requested", Callable(this->windowSignalWrapper, "go_back_requested"));
+                this->window->connect("mouse_entered", Callable(this->windowSignalWrapper, "mouse_entered"));
+                this->window->connect("mouse_exited", Callable(this->windowSignalWrapper, "mouse_exited"));
+                this->window->connect("theme_changed", Callable(this->windowSignalWrapper, "theme_changed"));
+                this->window->connect("title_changed", Callable(this->windowSignalWrapper, "title_changed"));
             }
 
         public:
@@ -893,6 +793,14 @@ namespace sunaba::desktop {
 
             void startResize(int edge) {
                 window->start_resize(static_cast<godot::DisplayServer::WindowResizeEdge>(edge));
+            }
+
+            void onFree() override {
+                if (windowSignalWrapper) {
+                    memdelete(windowSignalWrapper);
+                    windowSignalWrapper = nullptr;
+                }
+                Viewport::onFree();
             }
     };
 }

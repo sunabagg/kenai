@@ -64,13 +64,45 @@ namespace sunaba::ui {
             PackedInt32Array _get_allowed_size_flags_vertical() const override;
     };
 
+    class TabContainerSignalWrapper : public Object {
+        GDCLASS(TabContainerSignalWrapper, Object)
+        protected:
+            static void _bind_methods();
+        public:
+            sunaba::ui::TabContainer* element = nullptr;
+
+            TabContainerSignalWrapper() = default;
+            ~TabContainerSignalWrapper() = default;
+
+            void active_tab_rearranged(int tab);
+            void pre_popup_pressed();
+            void tab_button_pressed(int tab);
+            void tab_changed(int tab);
+            void tab_clicked(int tab);
+            void tab_hovered(int tab);
+            void tab_selected(int tab);
+    };
+
     class TabContainer : public Container {
         private:
             TabContainerNode* container = nullptr; // Pointer to the TabContainer instance
 
+            TabContainerSignalWrapper* containerSignalWrapper = nullptr;
             void connectContainerSignals() {
                 // Connect signals from the container to the element
                 // Example: container->connect("signal_name", this, "method_name");
+                if (this->containerSignalWrapper == nullptr) {
+                    this->containerSignalWrapper = memnew(TabContainerSignalWrapper);
+                    this->containerSignalWrapper->element = this;
+                }
+
+                this->container->connect("active_tab_rearranged", Callable(this->containerSignalWrapper, "active_tab_rearranged"));
+                this->container->connect("pre_popup_pressed", Callable(this->containerSignalWrapper, "pre_popup_pressed"));
+                this->container->connect("tab_button_pressed", Callable(this->containerSignalWrapper, "tab_button_pressed"));
+                this->container->connect("tab_changed", Callable(this->containerSignalWrapper, "tab_changed"));
+                this->container->connect("tab_clicked", Callable(this->containerSignalWrapper, "tab_clicked"));
+                this->container->connect("tab_hovered", Callable(this->containerSignalWrapper, "tab_hovered"));
+                this->container->connect("tab_selected", Callable(this->containerSignalWrapper, "tab_selected"));
             }
         public:
             TabContainer() {
@@ -365,6 +397,14 @@ namespace sunaba::ui {
 
             void setTabTooltip(int tab, const std::string& tooltip) {
                 container->set_tab_tooltip(tab, String(tooltip.c_str()));
+            }
+
+            void onFree() override {
+                if (containerSignalWrapper) {
+                    memdelete(containerSignalWrapper);
+                    containerSignalWrapper = nullptr;
+                }
+                Container::onFree();
             }
     };
 }

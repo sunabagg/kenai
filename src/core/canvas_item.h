@@ -35,63 +35,36 @@ namespace sunaba::core {
             void _draw() override;
     };
 
+    class CanvasItemSignalWrapper : public Object {
+        GDCLASS(CanvasItemSignalWrapper, Object)
+        protected:
+            static void _bind_methods();
+        public:
+            sunaba::core::CanvasItem* element = nullptr;
+
+            CanvasItemSignalWrapper() = default;
+            ~CanvasItemSignalWrapper() = default;
+
+            void draw();
+            void hidden();
+            void item_rect_changed();
+            void visibility_changed();
+    };
+
     class CanvasItem : public Element {
     private:
         CanvasItemNode* canvas_item = nullptr; // Pointer to the CanvasItem instance
 
+        CanvasItemSignalWrapper* canvas_item_signal_wrapper = nullptr;
         void connectCanvasItemSignals() {
-            std::function<Variant(std::vector<Variant>)> drawFunc = 
-            [this](std::vector<Variant> av) {
-                Array args;
-                for (int i = 0; i < av.size(); ++i) {
-                    args.append(av[i]);
-                }
-                if (this->draw != nullptr) {
-                    this->draw->emit(args);
-                }
-                return Variant();
-            };
-            Callable drawCallable = StlFunctionWrapper::create_callable_from_cpp_function(drawFunc);
-            this->canvas_item->connect("draw", drawCallable);
-            std::function<Variant(std::vector<Variant>)> hiddenFunc =
-            [this](std::vector<Variant> av) {
-                Array args;
-                for (int i = 0; i < av.size(); ++i) {
-                    args.append(av[i]);
-                }
-                if (this->hidden != nullptr) {
-                    this->hidden->emit(args);
-                }
-                return Variant();
-            };
-            Callable hiddenCallable = StlFunctionWrapper::create_callable_from_cpp_function(hiddenFunc);
-            this->canvas_item->connect("hidden", hiddenCallable);
-            std::function<Variant(std::vector<Variant>)> itemRectChangedFunc =
-            [this](std::vector<Variant> av) {
-                Array args;
-                for (int i = 0; i < av.size(); ++i) {
-                    args.append(av[i]);
-                }
-                if (this->itemRectChanged != nullptr) {
-                    this->itemRectChanged->emit(args);
-                }
-                return Variant();
-            };
-            Callable itemRectChangedCallable = StlFunctionWrapper::create_callable_from_cpp_function(itemRectChangedFunc);
-            this->canvas_item->connect("item_rect_changed", itemRectChangedCallable);
-            std::function<Variant(std::vector<Variant>)> visibilityChangedFunc =
-            [this](std::vector<Variant> av) {
-                Array args;
-                for (int i = 0; i < av.size(); ++i) {
-                    args.append(av[i]);
-                }
-                if (this->visibilityChanged != nullptr) {
-                    this->visibilityChanged->emit(args);
-                }
-                return Variant();
-            };
-            Callable visibilityChangedCallable = StlFunctionWrapper::create_callable_from_cpp_function(visibilityChangedFunc);
-            this->canvas_item->connect("visibility_changed", visibilityChangedCallable);
+            if (this->canvas_item_signal_wrapper == nullptr) {
+                this->canvas_item_signal_wrapper = memnew(CanvasItemSignalWrapper);
+                this->canvas_item_signal_wrapper->element = this;
+            }
+            this->canvas_item->connect("draw", Callable(this->canvas_item_signal_wrapper, "draw"));
+            this->canvas_item->connect("hidden", Callable(this->canvas_item_signal_wrapper, "hidden"));
+            this->canvas_item->connect("item_rect_changed", Callable(this->canvas_item_signal_wrapper, "item_rect_changed"));
+            this->canvas_item->connect("visibility_changed", Callable(this->canvas_item_signal_wrapper, "visibility_changed"));
         }
     public:
         // Constructor with Node* parameter
@@ -615,6 +588,14 @@ namespace sunaba::core {
                     func(scriptInstance);
                 }
             }
+        }
+
+        void onFree() override {
+            if (canvas_item_signal_wrapper) {
+                memdelete(canvas_item_signal_wrapper);
+                canvas_item_signal_wrapper = nullptr;
+            }
+            Element::onFree();
         }
     };
 }
