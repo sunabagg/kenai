@@ -593,6 +593,14 @@ namespace sunaba::core {
             void warpMouse(const Vector2& position) {
                 viewport->warp_mouse(position);
             }
+
+            void onFree() override {
+                if (viewportSignalWrapper) {
+                    memdelete(viewportSignalWrapper);
+                    viewportSignalWrapper = nullptr;
+                }
+                Element::onFree();
+            }
     };
 }
 
