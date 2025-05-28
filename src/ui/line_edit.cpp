@@ -115,6 +115,13 @@ namespace sunaba::ui {
         return TypedArray<Vector3i>();
     }
 
+    void LineEditSignalWrapper::_bind_methods() {
+        ClassDB::bind_method(D_METHOD("editingToggled", "toggledOn"), &LineEditSignalWrapper::editingToggled);
+        ClassDB::bind_method(D_METHOD("textChangeRejected", "rejectedSubstring"), &LineEditSignalWrapper::textChangeRejected);
+        ClassDB::bind_method(D_METHOD("textChanged", "newText"), &LineEditSignalWrapper::textChanged);
+        ClassDB::bind_method(D_METHOD("textSubmitted", "newText"), &LineEditSignalWrapper::textSubmitted);
+    }
+
     void bindLineEdit(sol::state& lua) {
         lua.new_usertype<LineEdit>("LineEdit",
             sol::constructors<LineEdit()>(),
