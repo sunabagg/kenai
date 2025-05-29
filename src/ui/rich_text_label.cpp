@@ -354,6 +354,7 @@ namespace sunaba::ui {
             "scrollToLine", &RichTextLabel::scrollToLine,
             "scrollToParagraph", &RichTextLabel::scrollToParagraph,
             "scrollToSelection", &RichTextLabel::scrollToSelection,
+            "selectAll", &RichTextLabel::selectAll,
             
         );
     }
