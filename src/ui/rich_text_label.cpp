@@ -152,4 +152,27 @@ namespace sunaba::ui {
             element->metaHoverStartedEvent->emit(args);
         }
     }
+
+    void bindRichTextLabel(sol::state& lua) {
+        lua.new_usertype<RichTextLabel>("RichTextLabel",
+            sol::constructors<RichTextLabel()>(),
+            sol::base_classes, sol::bases<BaseObject, Element, sunaba::core::CanvasItem, Control>(),
+            "autowrapMode", sol::property(
+                &RichTextLabel::getAutowrapMode,
+                &RichTextLabel::setAutowrapMode
+            ),
+            "bbcodeEnabled", sol::property(
+                &RichTextLabel::getBbcodeEnabled,
+                &RichTextLabel::setBbcodeEnabled
+            ),
+            "clipContents", sol::property(
+                &RichTextLabel::getClipContents,
+                &RichTextLabel::setClipContents
+            ),
+            "contextMenuEnabled", sol::property(
+                &RichTextLabel::getContextMenuEnabled,
+                &RichTextLabel::setContextMenuEnabled
+            )
+        );
+    }
 } // namespace sunaba::ui
