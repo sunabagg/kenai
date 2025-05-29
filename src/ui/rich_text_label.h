@@ -489,6 +489,10 @@ namespace sunaba::ui {
             void installEffect(Variant effect) {
                 rich_text_label->install_effect(effect);
             }
+
+            bool invalidateParagraph(int paragraph) {
+                return rich_text_label->invalidate_paragraph(paragraph);
+            }
     };
 }    
 
