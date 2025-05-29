@@ -8,5 +8,5 @@ extern class ButtonGroup extends Resource {
     public var allowUnpress: Bool;
     public var pressed: Event;
     public function getButtons(): lua.Table<Int, BaseButton>;
-
+    public function getPressedButton(): BaseButton;
 }
