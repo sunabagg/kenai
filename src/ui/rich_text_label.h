@@ -604,6 +604,10 @@ namespace sunaba::ui {
             void pushMeta(const Variant& data, int underlineMode = 1, const std::string& tooltip = "") {
                 rich_text_label->push_meta(data, static_cast<RichTextLabelNode::MetaUnderline>(underlineMode), String(tooltip.c_str()));
             }
+
+            void pushMono() {
+                rich_text_label->push_mono();
+            }
     };
 }
 
