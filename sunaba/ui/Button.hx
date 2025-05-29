@@ -10,4 +10,5 @@ extern class Button extends BaseButton {
     public var expandIcon: Bool;
     public var flat: Bool;
     public var icon: Texture2D;
+    public var iconAlignment: Int;
 }
