@@ -34,6 +34,7 @@
 #include "ui/tab_container.h"
 #include "ui/text_edit.h"
 #include "ui/tree.h"
+#include "ui/rich_text_label.h"
 
 /// @file
 /// Register our classes with Godot.
@@ -80,6 +81,7 @@ namespace
         godot::ClassDB::register_class<sunaba::ui::TabContainerSignalWrapper>();
         godot::ClassDB::register_class<sunaba::ui::TextEditSignalWrapper>();
         godot::ClassDB::register_class<sunaba::ui::TreeSignalWrapper>();
+        godot::ClassDB::register_class<sunaba::ui::RichTextLabelSignalWrapper>();
     }
 
     /// @brief Called by Godot to let us do any cleanup.
