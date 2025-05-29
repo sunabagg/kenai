@@ -11,4 +11,5 @@ extern class Button extends BaseButton {
     public var flat: Bool;
     public var icon: Texture2D;
     public var iconAlignment: Int;
+    public var language: String;
 }
