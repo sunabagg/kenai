@@ -136,4 +136,12 @@ namespace sunaba::ui {
             element->metaClickedEvent->emit(args);
         }
     }
+
+    void RichTextLabelSignalWrapper::meta_hover_ended(const Variant& meta) {
+        if (element != nullptr) {
+            Array args;
+            args.append(meta);
+            element->metaHoverEndedEvent->emit(args);
+        }
+    }
 } // namespace sunaba::ui
