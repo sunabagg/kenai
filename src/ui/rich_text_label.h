@@ -181,6 +181,10 @@ namespace sunaba::ui {
             void setFitContent(bool enabled) {
                 rich_text_label->set_fit_content(enabled);
             }
+
+            bool getHintUnderlined() const {
+                return rich_text_label->is_hint_underlined();
+            }
     };
 }    
 
