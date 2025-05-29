@@ -423,6 +423,10 @@ namespace sunaba::ui {
             int getContentWidth() const {
                 return rich_text_label->get_content_width();
             }
+
+            int getLineCount() const {
+                return rich_text_label->get_line_count();
+            }
     };
 }    
 
