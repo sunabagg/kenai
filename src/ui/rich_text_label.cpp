@@ -237,6 +237,10 @@ namespace sunaba::ui {
                 &RichTextLabel::getStructuredTextBidiOverrideOptions,
                 &RichTextLabel::setStructuredTextBidiOverrideOptions
             ),
+            "tabSize", sol::property(
+                &RichTextLabel::getTabSize,
+                &RichTextLabel::setTabSize
+            ),
         );
     }
 } // namespace sunaba::ui
