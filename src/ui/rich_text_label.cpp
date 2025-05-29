@@ -201,6 +201,10 @@ namespace sunaba::ui {
                 &RichTextLabel::getJustificationFlags,
                 &RichTextLabel::setJustificationFlags
             ),
+            "language", sol::property(
+                &RichTextLabel::getLanguage,
+                &RichTextLabel::setLanguage
+            ),
         );
     }
 } // namespace sunaba::ui
