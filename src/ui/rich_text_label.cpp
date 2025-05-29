@@ -32,4 +32,10 @@ namespace sunaba::ui {
         }
     }
 
+    void RichTextLabelProxy::_input(const Ref<InputEvent>& event) {
+        if (element != nullptr) {
+            element->input(event);
+        }
+    }
+
 } // namespace sunaba::ui
