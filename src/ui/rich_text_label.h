@@ -153,6 +153,10 @@ namespace sunaba::ui {
             Array getCustomEffects() const {
                 return rich_text_label->get_effects();
             }
+
+            void setCustomEffects(const Array& effects) {
+                rich_text_label->set_effects(effects);
+            }
     };
 }    
 
