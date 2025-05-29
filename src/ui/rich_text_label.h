@@ -513,6 +513,10 @@ namespace sunaba::ui {
             void newline() {
                 rich_text_label->newline();
             }
+
+            void parseBbcode(const std::string& bbcode) {
+                rich_text_label->parse_bbcode(String(bbcode.c_str()));
+            }
     };
 }    
 
