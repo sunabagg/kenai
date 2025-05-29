@@ -592,6 +592,10 @@ namespace sunaba::ui {
             void pushItalics() {
                 rich_text_label->push_italics();
             }
+
+            void pushLanguage(const std::string& language) {
+                rich_text_label->push_language(String(language.c_str()));
+            }
     };
 }
 
