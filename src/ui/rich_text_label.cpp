@@ -307,6 +307,10 @@ namespace sunaba::ui {
             "getParsedText", &RichTextLabel::getParsedText,
             "getSelectedText", &RichTextLabel::getSelectedText,
             "getSelectionFrom", &RichTextLabel::getSelectionFrom,
+            "getSelectionLineOffset", &RichTextLabel::getSelectionLineOffset,
+            "getSelectionTo", &RichTextLabel::getSelectionTo,
+            "getTotalCharacterCount", &RichTextLabel::getTotalCharacterCount,
+            
         );
     }
 } // namespace sunaba::ui
