@@ -289,6 +289,7 @@ namespace sunaba::ui {
                 &RichTextLabel::getMetaHoverStartedEvent,
                 &RichTextLabel::setMetaHoverStartedEvent
             ),
+            "addImage", &RichTextLabel::addImage,
         );
     }
 } // namespace sunaba::ui
