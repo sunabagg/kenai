@@ -324,6 +324,7 @@ namespace sunaba::ui {
             "parseExpressionsForValues", &RichTextLabel::parseExpressionsForValues,
             "pop", &RichTextLabel::pop,
             "popAll", &RichTextLabel::popAll,
+            "popContext", &RichTextLabel::popContext,
             
         );
     }
