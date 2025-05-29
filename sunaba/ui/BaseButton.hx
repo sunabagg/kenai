@@ -6,4 +6,5 @@ extern class BaseButton extends Control {
     public var buttonGroup: ButtonGroup;
     public var buttonMask: Int;
     public var buttonPressed: Bool;
+    public var disabled: Bool;
 }
