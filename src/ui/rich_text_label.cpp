@@ -359,6 +359,7 @@ namespace sunaba::ui {
             "setCellPadding", &RichTextLabel::setCellPadding,
             "setCellRowBackgroundColor", &RichTextLabel::setCellRowBackgroundColor,
             "setCellSizeOverride", &RichTextLabel::setCellSizeOverride,
+            "setTableColumnExpand", &RichTextLabel::setTableColumnExpand,
             
         );
     }
