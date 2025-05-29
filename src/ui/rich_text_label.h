@@ -277,6 +277,10 @@ namespace sunaba::ui {
             void setStructuredTextBidiOverrideOptions(const Array& options) {
                 rich_text_label->set_structured_text_bidi_override_options(options);
             }
+
+            int getTabSize() const {
+                return rich_text_label->get_tab_size();
+            }
     };
 }    
 
