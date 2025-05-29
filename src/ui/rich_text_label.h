@@ -452,6 +452,10 @@ namespace sunaba::ui {
             std::string getParsedText() const {
                 return rich_text_label->get_parsed_text().utf8().get_data();
             }
+
+            std::string getSelectedText() const {
+                return rich_text_label->get_selected_text().utf8().get_data();
+            }
     };
 }    
 
