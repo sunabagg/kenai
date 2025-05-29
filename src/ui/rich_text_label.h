@@ -533,6 +533,10 @@ namespace sunaba::ui {
             void popAll() {
                 rich_text_label->pop_all();
             }
+
+            void popContext() {
+                rich_text_label->pop_context();
+            }
     };
 }
 
