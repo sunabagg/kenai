@@ -225,6 +225,10 @@ namespace sunaba::ui {
             int getProgressBarDelay() const {
                 return rich_text_label->get_progress_bar_delay();
             }
+
+            void setProgressBarDelay(int delay) {
+                rich_text_label->set_progress_bar_delay(delay);
+            }
     };
 }    
 
