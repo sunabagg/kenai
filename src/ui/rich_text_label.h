@@ -367,6 +367,9 @@ namespace sunaba::ui {
             Event* getMetaClickedEvent() {
                 return metaClickedEvent;
             }
+            void setMetaClickedEvent(Event* event) {
+                metaClickedEvent = event;
+            }
     };
 }    
 
