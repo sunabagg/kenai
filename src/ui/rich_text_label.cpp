@@ -323,6 +323,7 @@ namespace sunaba::ui {
             "parseBBCode", &RichTextLabel::parseBBCode,
             "parseExpressionsForValues", &RichTextLabel::parseExpressionsForValues,
             "pop", &RichTextLabel::pop,
+            "popAll", &RichTextLabel::popAll,
             
         );
     }
