@@ -306,6 +306,10 @@ namespace sunaba::ui {
             void setText(const std::string& text) {
                 rich_text_label->set_text(String(text.c_str()));
             }
+
+            int getTextDirection() const {
+                return rich_text_label->get_text_direction();
+            }
     };
 }    
 
