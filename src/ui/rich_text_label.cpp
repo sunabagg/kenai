@@ -253,6 +253,10 @@ namespace sunaba::ui {
                 &RichTextLabel::getTextDirection,
                 &RichTextLabel::setTextDirection
             ),
+            "threaded", sol::property(
+                &RichTextLabel::getThreaded,
+                &RichTextLabel::setThreaded
+            ),
         );
     }
 } // namespace sunaba::ui
