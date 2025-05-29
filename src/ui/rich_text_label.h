@@ -620,6 +620,14 @@ namespace sunaba::ui {
             void pushOutlineSize(int outlineSize) {
                 rich_text_label->push_outline_size(outlineSize);
             }
+
+            void pushParagraph(int alignment, int baseDirection = 0, const std::string& language = "", int structuredTextParser = 0, int justificationFlags = 163, const std::vector<float>& tabStops = {}) {
+                PackedFloat32Array tabStops_pf32a;
+                for (const float& stop : tabStops) {
+                    tabStops_pf32a.push_back(stop);
+                }
+                rich_text_label->push_paragraph(static_cast<HorizontalAlignment>(alignment), static_cast<ControlNode::TextDirection>(baseDirection), String(language.c_str()), static_cast<TextServer::StructuredTextParser>(structuredTextParser), static_cast<BitField<TextServer::JustificationFlag>>(justificationFlags), tabStops_pf32a);
+            }
     };
 }
 
