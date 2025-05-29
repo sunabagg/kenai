@@ -128,6 +128,7 @@ target_sources(${PROJECT_NAME} PRIVATE
         color_rect.h
         color_rect.cpp
         rich_text_label.h
+        rich_text_label.cpp
 )
 
 target_include_directories( ${PROJECT_NAME}
