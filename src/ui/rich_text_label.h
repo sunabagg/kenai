@@ -576,6 +576,10 @@ namespace sunaba::ui {
             void pushFont(sunaba::core::Font* font, int fontSize = 0) {
                 rich_text_label->push_font(font->getFont(), fontSize);
             }
+
+            void pushFontSize(int fontSize) {
+                rich_text_label->push_font_size(fontSize);
+            }
     };
 }
 
