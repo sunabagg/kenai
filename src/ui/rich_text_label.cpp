@@ -60,4 +60,11 @@ namespace sunaba::ui {
             element->_draw();
         }
     }
+
+    bool RichTextLabelProxy::_can_drop_data(const Vector2& at_position, const Variant &data) const {
+        if (element != nullptr) {
+            return element->canDropData(at_position, data);
+        }
+        return false;
+    }
 } // namespace sunaba::ui
