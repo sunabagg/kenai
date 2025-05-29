@@ -264,7 +264,7 @@ namespace sunaba::desktop {
                 popup_menu->add_radio_check_shortcut(shortcut->getShortcut(), id, global);
             }
 
-            void addSeparator(const std::string& label = "&quot;&quot;", int id = -1) {
+            void addSeparator(const std::string& label = "", int id = -1) {
                 popup_menu->add_separator(label.c_str(), id);
             }
 
