@@ -468,6 +468,10 @@ namespace sunaba::ui {
             int getSelectionTo() const {
                 return rich_text_label->get_selection_to();
             }
+
+            int getTotalCharacterCount() const {
+                return rich_text_label->get_total_character_count();
+            }
     };
 }    
 
