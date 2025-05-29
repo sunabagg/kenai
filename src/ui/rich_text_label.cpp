@@ -351,6 +351,7 @@ namespace sunaba::ui {
             "pushTable", &RichTextLabel::pushTable,
             "pushUnderline", &RichTextLabel::pushUnderline,
             "removeParagraph", &RichTextLabel::removeParagraph,
+            "scrollToLine", &RichTextLabel::scrollToLine,
             
         );
     }
