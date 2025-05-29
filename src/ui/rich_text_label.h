@@ -125,6 +125,10 @@ namespace sunaba::ui {
             void setAutowrapMode(int mode) {
                 rich_text_label->set_autowrap_mode(static_cast<TextServer::AutowrapMode>(mode));
             }
+
+            bool getBbcodeEnabled() const {
+                return rich_text_label->is_using_bbcode();
+            }
     };
 }    
 
