@@ -221,6 +221,10 @@ namespace sunaba::ui {
             void setMetaUnderlined(bool enabled) {
                 rich_text_label->set_meta_underline(enabled);
             }
+
+            int getProgressBarDelay() const {
+                return rich_text_label->get_progress_bar_delay();
+            }
     };
 }    
 
