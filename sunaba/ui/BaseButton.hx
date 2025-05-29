@@ -1,5 +1,6 @@
 package sunaba.ui;
 
+import sunaba.core.Element;
 import sunaba.input.Shortcut;
 
 @:native("BaseButton")
@@ -27,8 +28,8 @@ extern class BaseButton extends Control {
 
 abstract BaseButtonAbstract(BaseButton) from BaseButton to BaseButton {
     @:from
-    public static function fromControl(control: Control): BaseButtonAbstract {
-        var btn = BaseButton.toBaseButton(control);
+    public static function fromElement(element: Element): BaseButtonAbstract {
+        var btn = BaseButton.toBaseButton(element);
         if (btn.isNull()) {
             return null;
         }
