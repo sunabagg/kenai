@@ -172,7 +172,11 @@ namespace sunaba::ui {
             "contextMenuEnabled", sol::property(
                 &RichTextLabel::getContextMenuEnabled,
                 &RichTextLabel::setContextMenuEnabled
-            )
+            ),
+            "customEffects", sol::property(
+                &RichTextLabel::getCustomEffects,
+                &RichTextLabel::setCustomEffects
+            ),
         );
     }
 } // namespace sunaba::ui
