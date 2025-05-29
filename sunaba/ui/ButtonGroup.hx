@@ -9,4 +9,6 @@ extern class ButtonGroup extends Resource {
     public var pressed: Event;
     public function getButtons(): lua.Table<Int, BaseButton>;
     public function getPressedButton(): BaseButton;
+    @:native("cast")
+    public function castFrom(type: Dynamic): ButtonGroup;
 }
