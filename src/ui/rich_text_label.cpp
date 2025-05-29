@@ -285,6 +285,10 @@ namespace sunaba::ui {
                 &RichTextLabel::getMetaHoverEndedEvent,
                 &RichTextLabel::setMetaHoverEndedEvent
             ),
+            "metaHoverStarted", sol::property(
+                &RichTextLabel::getMetaHoverStartedEvent,
+                &RichTextLabel::setMetaHoverStartedEvent
+            ),
         );
     }
 } // namespace sunaba::ui
