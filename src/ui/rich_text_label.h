@@ -173,6 +173,10 @@ namespace sunaba::ui {
             void setDragAndDropSelectionEnabled(bool enabled) {
                 rich_text_label->set_drag_and_drop_selection_enabled(enabled);
             }
+
+            bool getFitContent() const {
+                return rich_text_label->is_fit_content_enabled();
+            }
     };
 }    
 
