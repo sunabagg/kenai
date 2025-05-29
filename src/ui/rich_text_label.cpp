@@ -128,4 +128,12 @@ namespace sunaba::ui {
             element->finishedEvent->emit(args);
         }
     }
+
+    void RichTextLabelSignalWrapper::meta_clicked(const Variant& meta) {
+        if (element != nullptr) {
+            Array args;
+            args.append(meta);
+            element->metaClickedEvent->emit(args);
+        }
+    }
 } // namespace sunaba::ui
