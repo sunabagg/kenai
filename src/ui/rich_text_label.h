@@ -273,6 +273,10 @@ namespace sunaba::ui {
             Array getStructuredTextBidiOverrideOptions() const {
                 return rich_text_label->get_structured_text_bidi_override_options();
             }
+
+            void setStructuredTextBidiOverrideOptions(const Array& options) {
+                rich_text_label->set_structured_text_bidi_override_options(options);
+            }
     };
 }    
 
