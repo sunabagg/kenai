@@ -684,6 +684,14 @@ namespace sunaba::ui {
             void updateImage(Variant key, int mask, sunaba::core::Texture2D* image, int width = 0, int height = 0, Color color = Color(1, 1, 1, 1), int inlineAlign = 5, Rect2 region = Rect2(0, 0, 0, 0), bool pad = false, std::string tooltip = "", bool sizeInPercent = false) {
                 rich_text_label->update_image(key, mask, image->getTexture2D(), width, height, color, static_cast<InlineAlignment>(inlineAlign), region, pad, String(tooltip.c_str()), sizeInPercent);
             }
+
+            void onFree() override {
+                if (richTextLabelSignalWrapper) {
+                    memdelete(richTextLabelSignalWrapper);
+                    richTextLabelSignalWrapper = nullptr;
+                }
+                Control::onFree();
+            }
     };
 }
 
