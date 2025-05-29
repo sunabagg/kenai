@@ -640,6 +640,10 @@ namespace sunaba::ui {
             void pushUnderline() {
                 rich_text_label->push_underline();
             }
+
+            bool removeParagraph(int paragraph, bool noInvalidate = false) {
+                return rich_text_label->remove_paragraph(paragraph, noInvalidate);
+            }
     };
 }
 
