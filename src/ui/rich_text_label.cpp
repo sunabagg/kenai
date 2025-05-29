@@ -268,7 +268,11 @@ namespace sunaba::ui {
             "visibleCharactersBehavior", sol::property(
                 &RichTextLabel::getVisibleCharactersBehavior,
                 &RichTextLabel::setVisibleCharactersBehavior
-            )
+            ),
+            "visibleRatio", sol::property(
+                &RichTextLabel::getVisibleRatio,
+                &RichTextLabel::setVisibleRatio
+            ),
         );
     }
 } // namespace sunaba::ui
