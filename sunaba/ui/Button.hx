@@ -4,4 +4,5 @@ package sunaba.ui;
 extern class Button extends BaseButton {
     public var alignment: Int;
     public var autowrapMode: Int;
+    public var clipText: Bool;
 }
