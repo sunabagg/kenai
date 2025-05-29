@@ -361,7 +361,9 @@ namespace sunaba::ui {
             "setCellSizeOverride", &RichTextLabel::setCellSizeOverride,
             "setTableColumnExpand", &RichTextLabel::setTableColumnExpand,
             "updateImage", &RichTextLabel::updateImage,
-            
+            "cast", [](Element* e) {
+                
+            }
         );
     }
 } // namespace sunaba::ui
