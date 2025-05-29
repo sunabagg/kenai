@@ -13,4 +13,5 @@ extern class Button extends BaseButton {
     public var iconAlignment: Int;
     public var language: String;
     public var text: String;
+    public var textDirection: Int;
 }
