@@ -114,4 +114,11 @@ namespace sunaba::ui {
         }
         return TypedArray<Vector3i>();
     }
+
+    void RichTextLabelSignalWrapper::_bind_methods() {
+        ClassDB::bind_method(D_METHOD("finished"), &RichTextLabelSignalWrapper::finished);
+        ClassDB::bind_method(D_METHOD("meta_clicked", "meta"), &RichTextLabelSignalWrapper::meta_clicked);
+        ClassDB::bind_method(D_METHOD("meta_hover_ended", "meta"), &RichTextLabelSignalWrapper::meta_hover_ended);
+        ClassDB::bind_method(D_METHOD("meta_hover_started", "meta"), &RichTextLabelSignalWrapper::meta_hover_started);
+    }
 } // namespace sunaba::ui
