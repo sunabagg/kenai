@@ -419,6 +419,10 @@ namespace sunaba::ui {
             int getContentHeight() const {
                 return rich_text_label->get_content_height();
             }
+
+            int getContentWidth() const {
+                return rich_text_label->get_content_width();
+            }
     };
 }    
 
