@@ -209,6 +209,10 @@ namespace sunaba::ui {
             std::string getLanguage() const {
                 return rich_text_label->get_language().utf8().get_data();
             }
+
+            void setLanguage(const std::string& language) {
+                rich_text_label->set_language(String(language.c_str()));
+            }
     };
 }    
 
