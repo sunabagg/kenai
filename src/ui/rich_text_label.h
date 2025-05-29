@@ -129,6 +129,10 @@ namespace sunaba::ui {
             bool getBbcodeEnabled() const {
                 return rich_text_label->is_using_bbcode();
             }
+
+            void setBbcodeEnabled(bool enabled) {
+                rich_text_label->set_use_bbcode(enabled);
+            }
     };
 }    
 
