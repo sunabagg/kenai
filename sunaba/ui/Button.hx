@@ -14,4 +14,5 @@ extern class Button extends BaseButton {
     public var language: String;
     public var text: String;
     public var textDirection: Int;
+    public var textOverrunBehavior: Int;
 }
