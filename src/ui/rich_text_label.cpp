@@ -326,6 +326,7 @@ namespace sunaba::ui {
             "popAll", &RichTextLabel::popAll,
             "popContext", &RichTextLabel::popContext,
             "pushBgcolor", &RichTextLabel::pushBgcolor,
+            "pushBold", &RichTextLabel::pushBold,
             
         );
     }
