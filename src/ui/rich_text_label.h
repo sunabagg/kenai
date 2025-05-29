@@ -448,6 +448,10 @@ namespace sunaba::ui {
             float getParagraphOffset(int paragraph) const {
                 return rich_text_label->get_paragraph_offset(paragraph);
             }
+
+            std::string getParsedText() const {
+                return rich_text_label->get_parsed_text().utf8().get_data();
+            }
     };
 }    
 
