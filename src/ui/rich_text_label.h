@@ -229,6 +229,10 @@ namespace sunaba::ui {
             void setProgressBarDelay(int delay) {
                 rich_text_label->set_progress_bar_delay(delay);
             }
+
+            bool getScrollActive() const {
+                return rich_text_label->is_scroll_active();
+            }
     };
 }    
 
