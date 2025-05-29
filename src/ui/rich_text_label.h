@@ -187,7 +187,7 @@ namespace sunaba::ui {
             }
 
             void setHintUnderlined(bool enabled) {
-                rich_text_label->set_hint_underlined(enabled);
+                rich_text_label->set_hint_underline(enabled);
             }
     };
 }    
