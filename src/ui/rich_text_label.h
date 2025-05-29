@@ -383,6 +383,9 @@ namespace sunaba::ui {
             Event* getMetaHoverStartedEvent() {
                 return metaHoverStartedEvent;
             }
+            void setMetaHoverStartedEvent(Event* event) {
+                metaHoverStartedEvent = event;
+            }
     };
 }    
 
