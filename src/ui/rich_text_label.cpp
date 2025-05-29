@@ -321,6 +321,7 @@ namespace sunaba::ui {
             "menuOption", &RichTextLabel::menuOption,
             "newline", &RichTextLabel::newline,
             "parseBBCode", &RichTextLabel::parseBBCode,
+            "parseExpressionsForValues", &RichTextLabel::parseExpressionsForValues,
             
         );
     }
