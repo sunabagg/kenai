@@ -12,3 +12,14 @@ extern class ButtonGroup extends Resource {
     @:native("cast")
     public function castFrom(type: Dynamic): ButtonGroup;
 }
+
+abstract ButtonGroupAbstract(ButtonGroup) from ButtonGroup to ButtonGroup {
+    @:from
+    public static function fromResource(resource: Resource): ButtonGroupAbstract {
+        var bg = ButtonGroup.castFrom(resource);
+        if (bg.isNull()) {
+            return null;
+        }
+        return bg;
+    }
+}
