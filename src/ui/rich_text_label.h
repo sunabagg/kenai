@@ -185,6 +185,10 @@ namespace sunaba::ui {
             bool getHintUnderlined() const {
                 return rich_text_label->is_hint_underlined();
             }
+
+            void setHintUnderlined(bool enabled) {
+                rich_text_label->set_hint_underlined(enabled);
+            }
     };
 }    
 
