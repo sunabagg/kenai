@@ -290,6 +290,14 @@ namespace sunaba::ui {
                 }
                 return stops;
             }
+
+            void setTabStops(const std::vector<float>& stops) {
+                PackedFloat32Array stops_pf32a;
+                for (const float& stop : stops) {
+                    stops_pf32a.push_back(stop);
+                }
+                rich_text_label->set_tab_stops(stops_pf32a);
+            }
     };
 }    
 
