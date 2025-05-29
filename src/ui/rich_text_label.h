@@ -157,6 +157,10 @@ namespace sunaba::ui {
             void setCustomEffects(const Array& effects) {
                 rich_text_label->set_effects(effects);
             }
+
+            bool getDeselectOnFocusLossEnabled() const {
+                return rich_text_label->is_deselect_on_focus_loss_enabled();
+            }
     };
 }    
 
