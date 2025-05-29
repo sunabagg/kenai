@@ -357,6 +357,7 @@ namespace sunaba::ui {
             "selectAll", &RichTextLabel::selectAll,
             "setCellBorderColor", &RichTextLabel::setCellBorderColor,
             "setCellPadding", &RichTextLabel::setCellPadding,
+            "setCellRowBackgroundColor", &RichTextLabel::setCellRowBackgroundColor,
             
         );
     }
