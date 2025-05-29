@@ -568,6 +568,10 @@ namespace sunaba::ui {
             void pushDropcap(std::string string, sunaba::core::Font* font, int size, Rect2 dropcapMargins = Rect2(0, 0, 0, 0), Color color = Color(1, 1, 1, 1), int outlineSize = 0, Color outlineColor = Color(0, 0, 0, 0)) {
                 rich_text_label->push_dropcap(String(string.c_str()), font->getFont(), size, dropcapMargins, color, outlineSize, outlineColor);
             }
+
+            void pushFgcolor(const Color& fgcolor) {
+                rich_text_label->push_fgcolor(fgcolor);
+            }
     };
 }
 
