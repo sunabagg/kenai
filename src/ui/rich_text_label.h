@@ -612,6 +612,10 @@ namespace sunaba::ui {
             void pushNormal() {
                 rich_text_label->push_normal();
             }
+
+            void pushOutlineColor(const Color& color) {
+                rich_text_label->push_outline_color(color);
+            }
     };
 }
 
