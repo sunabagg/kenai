@@ -572,6 +572,10 @@ namespace sunaba::ui {
             void pushFgcolor(const Color& fgcolor) {
                 rich_text_label->push_fgcolor(fgcolor);
             }
+
+            void pushFont(sunaba::core::Font* font, int fontSize = 0) {
+                rich_text_label->push_font(font->getFont(), fontSize);
+            }
     };
 }
 
