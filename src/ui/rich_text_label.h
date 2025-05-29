@@ -440,6 +440,10 @@ namespace sunaba::ui {
             sunaba::desktop::PopupMenu* getMenu() {
                 return new sunaba::desktop::PopupMenu(rich_text_label->get_menu());
             }
+
+            int getParagraphCount() const {
+                return rich_text_label->get_paragraph_count();
+            }
     };
 }    
 
