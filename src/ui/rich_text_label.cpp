@@ -355,6 +355,7 @@ namespace sunaba::ui {
             "scrollToParagraph", &RichTextLabel::scrollToParagraph,
             "scrollToSelection", &RichTextLabel::scrollToSelection,
             "selectAll", &RichTextLabel::selectAll,
+            "setCellBorderColor", &RichTextLabel::setCellBorderColor,
             
         );
     }
