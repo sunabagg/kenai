@@ -54,4 +54,10 @@ namespace sunaba::ui {
             element->shortcutInput(event);
         }
     }
+
+    void RichTextLabelProxy::_draw() {
+        if (element != nullptr) {
+            element->_draw();
+        }
+    }
 } // namespace sunaba::ui
