@@ -345,6 +345,7 @@ namespace sunaba::ui {
             "pushMono", &RichTextLabel::pushMono,
             "pushNormal", &RichTextLabel::pushNormal,
             "pushOutlineColor", &RichTextLabel::pushOutlineColor,
+            "pushOutlineSize", &RichTextLabel::pushOutlineSize,
             
         );
     }
