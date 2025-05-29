@@ -296,6 +296,7 @@ namespace sunaba::ui {
             "deselect", &RichTextLabel::deselect,
             "getCharacterLine", &RichTextLabel::getCharacterLine,
             "getCharacterParagraph", &RichTextLabel::getCharacterParagraph,
+            "getContentHeight", &RichTextLabel::getContentHeight,
         );
     }
 } // namespace sunaba::ui
