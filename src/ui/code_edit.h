@@ -744,7 +744,7 @@ namespace sunaba::ui {
                 code_edit->set_code_hint_draw_below(drawBelow);
             }
 
-            void setCodeRegionTags(const std::string& startTag = "&quot;region&quot;", const std::string& endTag = "&quot;endregion&quot;") {
+            void setCodeRegionTags(const std::string& startTag = "region", const std::string& endTag = "endregion") {
                 code_edit->set_code_region_tags(String(startTag.c_str()), String(endTag.c_str()));
             }
 

@@ -597,7 +597,7 @@ namespace sunaba::ui {
                 rich_text_label->push_language(String(language.c_str()));
             }
 
-            void pushList(int level, int type, bool capitalize, const std::string& bullet = "&quot;•&quot;") {
+            void pushList(int level, int type, bool capitalize, const std::string& bullet = "•") {
                 rich_text_label->push_list(level, static_cast<RichTextLabelNode::ListType>(type), capitalize, String(bullet.c_str()));
             }
     };

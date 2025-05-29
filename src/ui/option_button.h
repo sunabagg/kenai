@@ -196,7 +196,7 @@ namespace sunaba::ui {
                 optionButton->add_item(String(label.c_str()), id);
             }
 
-            void addSeparator(std::string text = "&quot;&quot;") {
+            void addSeparator(std::string text = "") {
                 optionButton->add_separator(String(text.c_str()));
             }
 
