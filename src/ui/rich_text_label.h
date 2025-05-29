@@ -411,6 +411,10 @@ namespace sunaba::ui {
             int getCharacterLine(int character) const {
                 return rich_text_label->get_character_line(character);
             }
+
+            int getCharacterParagraph(int character) const {
+                return rich_text_label->get_character_paragraph(character);
+            }
     };
 }    
 
