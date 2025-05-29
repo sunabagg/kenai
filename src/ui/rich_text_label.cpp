@@ -330,6 +330,7 @@ namespace sunaba::ui {
             "pushBoldItalics", &RichTextLabel::pushBoldItalics,
             "pushCell", &RichTextLabel::pushCell,
             "pushColor", &RichTextLabel::pushColor,
+            "pushContext", &RichTextLabel::pushContext,
             
         );
     }
