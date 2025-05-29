@@ -333,6 +333,7 @@ namespace sunaba::ui {
             "pushContext", &RichTextLabel::pushContext,
             //"pushCustomfx", &RichTextLabel::pushCustomfx,
             "pushDropcap", &RichTextLabel::pushDropcap,
+            "pushFgcolor", &RichTextLabel::pushFgcolor,
             
         );
     }
