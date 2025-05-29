@@ -350,6 +350,10 @@ namespace sunaba::ui {
             float getVisibleRatio() const {
                 return rich_text_label->get_visible_ratio();
             }
+
+            void setVisibleRatio(float ratio) {
+                rich_text_label->set_visible_ratio(ratio);
+            }
     };
 }    
 
