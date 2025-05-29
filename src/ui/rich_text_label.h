@@ -362,6 +362,8 @@ namespace sunaba::ui {
             void setFinishedEvent(Event* event) {
                 finishedEvent = event;
             }
+
+            Event* metaClickedEvent;
     };
 }    
 
