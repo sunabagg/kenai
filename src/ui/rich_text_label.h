@@ -497,6 +497,10 @@ namespace sunaba::ui {
             bool isFinished() const {
                 return rich_text_label->is_finished();
             }
+
+            bool isMenuVisible() const {
+                return rich_text_label->is_menu_visible();
+            }
     };
 }    
 
