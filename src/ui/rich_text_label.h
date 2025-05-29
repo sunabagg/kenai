@@ -253,6 +253,10 @@ namespace sunaba::ui {
             void setSelectionEnabled(bool enabled) {
                 rich_text_label->set_selection_enabled(enabled);
             }
+
+            bool getShortcutKeysEnabled() const {
+                return rich_text_label->is_shortcut_keys_enabled();
+            }
     };
 }    
 
