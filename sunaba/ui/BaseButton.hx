@@ -19,4 +19,5 @@ extern class BaseButton extends Control {
     public var pressed: Event;
     public var toggled: Event;
     public function getDrawMode(): Int;
+    public function isHovered(): Bool;
 }
