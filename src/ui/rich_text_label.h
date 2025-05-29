@@ -338,6 +338,10 @@ namespace sunaba::ui {
             void setVisibleCharacters(int count) {
                 rich_text_label->set_visible_characters(count);
             }
+
+            int getVisibleCharactersBehavior() const {
+                return rich_text_label->get_visible_characters_behavior();
+            }
     };
 }    
 
