@@ -217,6 +217,10 @@ namespace sunaba::ui {
             bool getMetaUnderlined() const {
                 return rich_text_label->is_meta_underlined();
             }
+
+            void setMetaUnderlined(bool enabled) {
+                rich_text_label->set_meta_underline(enabled);
+            }
     };
 }    
 
