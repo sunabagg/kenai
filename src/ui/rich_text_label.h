@@ -322,6 +322,10 @@ namespace sunaba::ui {
             void setThreaded(bool threaded) {
                 rich_text_label->set_threaded(threaded);
             }
+
+            int getVerticalAlignment() const {
+                return rich_text_label->get_vertical_alignment();
+            }
     };
 }    
 
