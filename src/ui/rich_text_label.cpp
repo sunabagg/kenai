@@ -319,6 +319,7 @@ namespace sunaba::ui {
             "isMenuVisible", &RichTextLabel::isMenuVisible,
             "isReady", &RichTextLabel::isReady,
             "menuOption", &RichTextLabel::menuOption,
+            "newline", &RichTextLabel::newline,
             
         );
     }
