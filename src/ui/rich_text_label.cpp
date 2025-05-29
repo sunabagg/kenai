@@ -342,6 +342,7 @@ namespace sunaba::ui {
             "pushLanguage", &RichTextLabel::pushLanguage,
             "pushList", &RichTextLabel::pushList,
             "pushMeta", &RichTextLabel::pushMeta,
+            "pushMono", &RichTextLabel::pushMono,
             
         );
     }
