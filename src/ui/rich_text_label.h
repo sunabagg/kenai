@@ -473,6 +473,10 @@ namespace sunaba::ui {
             int getTotalCharacterCount() const {
                 return rich_text_label->get_total_character_count();
             }
+
+            VScrollBar* getVScrollBar() {
+                return new VScrollBar(rich_text_label->get_v_scroll_bar());
+            }
     };
 }    
 
