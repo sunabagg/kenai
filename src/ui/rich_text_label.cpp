@@ -297,6 +297,7 @@ namespace sunaba::ui {
             "getCharacterLine", &RichTextLabel::getCharacterLine,
             "getCharacterParagraph", &RichTextLabel::getCharacterParagraph,
             "getContentHeight", &RichTextLabel::getContentHeight,
+            "getContentWidth", &RichTextLabel::getContentWidth,
         );
     }
 } // namespace sunaba::ui
