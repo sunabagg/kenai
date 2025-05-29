@@ -209,6 +209,10 @@ namespace sunaba::ui {
                 &RichTextLabel::getMetaUnderlined,
                 &RichTextLabel::setMetaUnderlined
             ),
+            "progressBarDelay", sol::property(
+                &RichTextLabel::getProgressBarDelay,
+                &RichTextLabel::setProgressBarDelay
+            ),
         );
     }
 } // namespace sunaba::ui
