@@ -318,6 +318,10 @@ namespace sunaba::ui {
             bool getThreaded() {
                 return rich_text_label->is_threaded();
             }
+
+            void setThreaded(bool threaded) {
+                rich_text_label->set_threaded(threaded);
+            }
     };
 }    
 
