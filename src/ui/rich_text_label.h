@@ -302,6 +302,10 @@ namespace sunaba::ui {
             std::string getText() const {
                 return rich_text_label->get_text().utf8().get_data();
             }
+
+            void setText(const std::string& text) {
+                rich_text_label->set_text(String(text.c_str()));
+            }
     };
 }    
 
