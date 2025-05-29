@@ -656,6 +656,10 @@ namespace sunaba::ui {
             void scrollToSelection() {
                 rich_text_label->scroll_to_selection();
             }
+
+            void selectAll() {
+                rich_text_label->select_all();
+            }
     };
 }
 
