@@ -588,6 +588,10 @@ namespace sunaba::ui {
             void pushIndent(int level) {
                 rich_text_label->push_indent(level);
             }
+
+            void pushItalics() {
+                rich_text_label->push_italics();
+            }
     };
 }
 
