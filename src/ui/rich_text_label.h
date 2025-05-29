@@ -481,6 +481,10 @@ namespace sunaba::ui {
             int getVisibleLineCount() const {
                 return rich_text_label->get_visible_line_count();
             }
+
+            int getVisibleParagraphCount() const {
+                return rich_text_label->get_visible_paragraph_count();
+            }
     };
 }    
 
