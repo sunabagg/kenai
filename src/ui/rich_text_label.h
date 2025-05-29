@@ -149,6 +149,10 @@ namespace sunaba::ui {
             void setContextMenuEnabled(bool enabled) {
                 rich_text_label->set_context_menu_enabled(enabled);
             }
+
+            Array getCustomEffects() const {
+                return rich_text_label->get_custom_effects();
+            }
     };
 }    
 
