@@ -328,6 +328,7 @@ namespace sunaba::ui {
             "pushBgcolor", &RichTextLabel::pushBgcolor,
             "pushBold", &RichTextLabel::pushBold,
             "pushBoldItalics", &RichTextLabel::pushBoldItalics,
+            "pushCell", &RichTextLabel::pushCell,
             
         );
     }
