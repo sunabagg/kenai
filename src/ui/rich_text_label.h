@@ -197,6 +197,10 @@ namespace sunaba::ui {
             void setHorizontalAlignment(int alignment) {
                 rich_text_label->set_horizontal_alignment(static_cast<HorizontalAlignment>(alignment));
             }
+
+            int getJustificationFlags() const {
+                return rich_text_label->get_justification_flags();
+            }
     };
 }    
 
