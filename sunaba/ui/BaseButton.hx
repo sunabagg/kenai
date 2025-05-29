@@ -17,4 +17,5 @@ extern class BaseButton extends Control {
     public var buttonDown: Event;
     public var buttonUp: Event;
     public var pressed: Event;
+    public var toggled: Event;
 }
