@@ -165,6 +165,10 @@ namespace sunaba::ui {
             void setDeselectOnFocusLossEnabled(bool enabled) {
                 rich_text_label->set_deselect_on_focus_loss_enabled(enabled);
             }
+
+            bool getDragAndDropSelectionEnabled() const {
+                return rich_text_label->is_drag_and_drop_selection_enabled();
+            }
     };
 }    
 
