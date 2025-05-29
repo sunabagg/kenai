@@ -632,6 +632,10 @@ namespace sunaba::ui {
             void pushStrikethrough() {
                 rich_text_label->push_strikethrough();
             }
+
+            void pushTable(int columns, int inlineAlign = 0, int alignToRow = -1) {
+                rich_text_label->push_table(columns, static_cast<InlineAlignment>(inlineAlign), alignToRow);
+            }
     };
 }
 
