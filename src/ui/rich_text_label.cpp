@@ -310,6 +310,7 @@ namespace sunaba::ui {
             "getSelectionLineOffset", &RichTextLabel::getSelectionLineOffset,
             "getSelectionTo", &RichTextLabel::getSelectionTo,
             "getTotalCharacterCount", &RichTextLabel::getTotalCharacterCount,
+            "getVScrollBar", &RichTextLabel::getVScrollBar,
             
         );
     }
