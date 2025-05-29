@@ -19,3 +19,14 @@ extern class Button extends BaseButton {
     @:native("cast")
     public function toButton(type: Dynamic): Button;
 }
+
+abstract ButtonAbstract(Button) from Button to Button {
+    @:from
+    public static function fromElement(element: Element): ButtonAbstract {
+        var btn = Button.castFrom(element);
+        if (btn.isNull()) {
+            return null;
+        }
+        return btn;
+    }
+}
