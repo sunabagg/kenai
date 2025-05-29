@@ -363,6 +363,7 @@ namespace sunaba::ui {
             "updateImage", &RichTextLabel::updateImage,
             "cast", [](Element* e) {
                 RichTextLabelNode* node = Object::cast_to<RichTextLabelNode>(e->getNode());
+                return new RichTextLabel(node);
             }
         );
     }
