@@ -300,6 +300,7 @@ namespace sunaba::ui {
             "getContentWidth", &RichTextLabel::getContentWidth,
             "getLineCount", &RichTextLabel::getLineCount,
             "getLineOffset", &RichTextLabel::getLineOffset,
+            "getLineRange", &RichTextLabel::getLineRange,
         );
     }
 } // namespace sunaba::ui
