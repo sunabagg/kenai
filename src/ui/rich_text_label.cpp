@@ -360,6 +360,7 @@ namespace sunaba::ui {
             "setCellRowBackgroundColor", &RichTextLabel::setCellRowBackgroundColor,
             "setCellSizeOverride", &RichTextLabel::setCellSizeOverride,
             "setTableColumnExpand", &RichTextLabel::setTableColumnExpand,
+            "updateImage", &RichTextLabel::updateImage,
             
         );
     }
