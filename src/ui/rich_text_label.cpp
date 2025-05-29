@@ -294,6 +294,8 @@ namespace sunaba::ui {
             "appendText", &RichTextLabel::appendText,
             "clear", &RichTextLabel::clear,
             "deselect", &RichTextLabel::deselect,
+            "getCharacterLine", &RichTextLabel::getCharacterLine,
+            "getCharacterParagraph", &RichTextLabel::getCharacterParagraph,
         );
     }
 } // namespace sunaba::ui
