@@ -145,6 +145,10 @@ namespace sunaba::ui {
             bool getContextMenuEnabled() const {
                 return rich_text_label->is_context_menu_enabled();
             }
+
+            void setContextMenuEnabled(bool enabled) {
+                rich_text_label->set_context_menu_enabled(enabled);
+            }
     };
 }    
 
