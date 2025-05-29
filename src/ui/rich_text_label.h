@@ -676,6 +676,10 @@ namespace sunaba::ui {
             void setCellSizeOverride(Vector2 minSize, Vector2 maxSize) {
                 rich_text_label->set_cell_size_override(minSize, maxSize);
             }
+
+            void setTableColumnExpand(int column, bool expand, int ratio = 1, bool shrink = true) {
+                rich_text_label->set_table_column_expand(column, expand, ratio, shrink);
+            }
     };
 }
 
