@@ -133,6 +133,10 @@ namespace sunaba::ui {
             void setBbcodeEnabled(bool enabled) {
                 rich_text_label->set_use_bbcode(enabled);
             }
+
+            bool getClipContents() const {
+                return rich_text_label->is_clipping_contents();
+            }
     };
 }    
 
