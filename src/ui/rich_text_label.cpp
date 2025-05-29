@@ -336,6 +336,7 @@ namespace sunaba::ui {
             "pushFgcolor", &RichTextLabel::pushFgcolor,
             "pushFont", &RichTextLabel::pushFont,
             "pushFontSize", &RichTextLabel::pushFontSize,
+            "pushHint", &RichTextLabel::pushHint,
             
         );
     }
