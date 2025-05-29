@@ -298,6 +298,10 @@ namespace sunaba::ui {
                 }
                 rich_text_label->set_tab_stops(stops_pf32a);
             }
+
+            std::string getText() const {
+                return rich_text_label->get_text().utf8().get_data();
+            }
     };
 }    
 
