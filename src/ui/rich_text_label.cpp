@@ -121,4 +121,11 @@ namespace sunaba::ui {
         ClassDB::bind_method(D_METHOD("meta_hover_ended", "meta"), &RichTextLabelSignalWrapper::meta_hover_ended);
         ClassDB::bind_method(D_METHOD("meta_hover_started", "meta"), &RichTextLabelSignalWrapper::meta_hover_started);
     }
+
+    void RichTextLabelSignalWrapper::finished() {
+        if (element != nullptr) {
+            Array args;
+            element->finishedEvent->emit(args);
+        }
+    }
 } // namespace sunaba::ui
