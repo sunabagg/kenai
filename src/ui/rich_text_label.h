@@ -644,6 +644,10 @@ namespace sunaba::ui {
             bool removeParagraph(int paragraph, bool noInvalidate = false) {
                 return rich_text_label->remove_paragraph(paragraph, noInvalidate);
             }
+
+            void scrollToLine(int line) {
+                rich_text_label->scroll_to_line(line);
+            }
     };
 }
 
