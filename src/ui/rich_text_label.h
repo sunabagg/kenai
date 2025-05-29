@@ -213,6 +213,10 @@ namespace sunaba::ui {
             void setLanguage(const std::string& language) {
                 rich_text_label->set_language(String(language.c_str()));
             }
+
+            bool getMetaUnderlined() const {
+                return rich_text_label->is_meta_underlined();
+            }
     };
 }    
 
