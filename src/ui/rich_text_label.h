@@ -672,6 +672,10 @@ namespace sunaba::ui {
             void setCellRowBackgroundColor(const Color& oddRowBg, const Color& evenRowBg) {
                 rich_text_label->set_cell_row_background_color(oddRowBg, evenRowBg);
             }
+
+            void setCellSizeOverride(int minSize, int maxSize) {
+                rich_text_label->set_cell_size_override(minSize, maxSize);
+            }
     };
 }
 
