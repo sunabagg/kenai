@@ -291,6 +291,7 @@ namespace sunaba::ui {
             ),
             "addImage", &RichTextLabel::addImage,
             "addText", &RichTextLabel::addText,
+            "appendText", &RichTextLabel::appendText,
         );
     }
 } // namespace sunaba::ui
