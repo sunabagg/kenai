@@ -6,4 +6,5 @@ extern class Button extends BaseButton {
     public var autowrapMode: Int;
     public var clipText: Bool;
     public var expandIcon: Bool;
+    public var flat: Bool;
 }
