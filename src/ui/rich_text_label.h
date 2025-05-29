@@ -584,6 +584,10 @@ namespace sunaba::ui {
             void pushHint(const std::string& description) {
                 rich_text_label->push_hint(String(description.c_str()));
             }
+
+            void pushIndent(int level) {
+                rich_text_label->push_indent(level);
+            }
     };
 }
 
