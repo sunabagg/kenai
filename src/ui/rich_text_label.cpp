@@ -261,6 +261,10 @@ namespace sunaba::ui {
                 &RichTextLabel::getVerticalAlignment,
                 &RichTextLabel::setVerticalAlignment
             ),
+            "visibleCharacters", sol::property(
+                &RichTextLabel::getVisibleCharacters,
+                &RichTextLabel::setVisibleCharacters
+            ),
         );
     }
 } // namespace sunaba::ui
