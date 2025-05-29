@@ -161,6 +161,10 @@ namespace sunaba::ui {
             bool getDeselectOnFocusLossEnabled() const {
                 return rich_text_label->is_deselect_on_focus_loss_enabled();
             }
+
+            void setDeselectOnFocusLossEnabled(bool enabled) {
+                rich_text_label->set_deselect_on_focus_loss_enabled(enabled);
+            }
     };
 }    
 
