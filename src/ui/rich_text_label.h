@@ -545,6 +545,10 @@ namespace sunaba::ui {
             void pushBold() {
                 rich_text_label->push_bold();
             }
+
+            void pushBoldItalics() {
+                rich_text_label->push_bold_italics();
+            }
     };
 }
 
