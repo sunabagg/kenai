@@ -517,7 +517,15 @@ namespace sunaba::ui {
             void parseBBCode(const std::string& bbcode) {
                 rich_text_label->parse_bbcode(String(bbcode.c_str()));
             }
+
+            Dictionary parseExpressionsForValues(std::vector<std::string> expressions) {
+                PackedStringArray expressions_psa;
+                for (const std::string& expr : expressions) {
+                    expressions_psa.push_back(String(expr.c_str()));
+                }
+                return rich_text_label->parse_expressions_for_values(expressions_psa);
+            }
     };
-}    
+}
 
 #endif // RICH_TEXT_LABEL_H
