@@ -580,6 +580,10 @@ namespace sunaba::ui {
             void pushFontSize(int fontSize) {
                 rich_text_label->push_font_size(fontSize);
             }
+
+            void pushHint(const std::string& description) {
+                rich_text_label->push_hint(String(description.c_str()));
+            }
     };
 }
 
