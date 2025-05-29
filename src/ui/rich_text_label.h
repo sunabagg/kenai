@@ -359,6 +359,9 @@ namespace sunaba::ui {
             Event* getFinishedEvent() {
                 return finishedEvent;
             }
+            void setFinishedEvent(Event* event) {
+                finishedEvent = event;
+            }
     };
 }    
 
