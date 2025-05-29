@@ -312,6 +312,7 @@ namespace sunaba::ui {
             "getTotalCharacterCount", &RichTextLabel::getTotalCharacterCount,
             "getVScrollBar", &RichTextLabel::getVScrollBar,
             "getVisibleLineCount", &RichTextLabel::getVisibleLineCount,
+            "getVisibleParagraphCount", &RichTextLabel::getVisibleParagraphCount,
             
         );
     }
