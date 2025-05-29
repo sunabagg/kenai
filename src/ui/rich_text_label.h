@@ -177,6 +177,10 @@ namespace sunaba::ui {
             bool getFitContent() const {
                 return rich_text_label->is_fit_content_enabled();
             }
+
+            void setFitContent(bool enabled) {
+                rich_text_label->set_fit_content(enabled);
+            }
     };
 }    
 
