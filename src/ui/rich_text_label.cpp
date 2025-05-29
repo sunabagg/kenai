@@ -205,6 +205,10 @@ namespace sunaba::ui {
                 &RichTextLabel::getLanguage,
                 &RichTextLabel::setLanguage
             ),
+            "metaUnderlined", sol::property(
+                &RichTextLabel::getMetaUnderlined,
+                &RichTextLabel::setMetaUnderlined
+            ),
         );
     }
 } // namespace sunaba::ui
