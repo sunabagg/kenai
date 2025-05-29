@@ -537,6 +537,10 @@ namespace sunaba::ui {
             void popContext() {
                 rich_text_label->pop_context();
             }
+
+            void pushBgcolor(const Color& bgcolor) {
+                rich_text_label->push_bgcolor(bgcolor);
+            }
     };
 }
 
