@@ -356,6 +356,7 @@ namespace sunaba::ui {
             "scrollToSelection", &RichTextLabel::scrollToSelection,
             "selectAll", &RichTextLabel::selectAll,
             "setCellBorderColor", &RichTextLabel::setCellBorderColor,
+            "setCellPadding", &RichTextLabel::setCellPadding,
             
         );
     }
