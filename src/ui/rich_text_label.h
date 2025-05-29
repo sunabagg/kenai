@@ -553,6 +553,10 @@ namespace sunaba::ui {
             void pushCell() {
                 rich_text_label->push_cell();
             }
+
+            void pushColor(const Color& color) {
+                rich_text_label->push_color(color);
+            }
     };
 }
 
