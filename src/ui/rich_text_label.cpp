@@ -299,6 +299,7 @@ namespace sunaba::ui {
             "getContentHeight", &RichTextLabel::getContentHeight,
             "getContentWidth", &RichTextLabel::getContentWidth,
             "getLineCount", &RichTextLabel::getLineCount,
+            "getLineOffset", &RichTextLabel::getLineOffset,
         );
     }
 } // namespace sunaba::ui
