@@ -464,6 +464,10 @@ namespace sunaba::ui {
             float getSelectionLineOffset() const {
                 return rich_text_label->get_selection_line_offset();
             }
+
+            int getSelectionTo() const {
+                return rich_text_label->get_selection_to();
+            }
     };
 }    
 
