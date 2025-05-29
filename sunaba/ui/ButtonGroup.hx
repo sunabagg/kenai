@@ -7,4 +7,5 @@ import sunaba.core.Event;
 extern class ButtonGroup extends Resource {
     public var allowUnpress: Bool;
     public var pressed: Event;
+    public var buttons: lua.Table<Int, BaseButton>;
 }
