@@ -399,6 +399,10 @@ namespace sunaba::ui {
             void appendText(const std::string& bbcode) {
                 rich_text_label->add_text(String(bbcode.c_str()));
             }
+
+            void clear() {
+                rich_text_label->clear();
+            }
     };
 }    
 
