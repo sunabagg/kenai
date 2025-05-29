@@ -664,6 +664,10 @@ namespace sunaba::ui {
             void setCellBorderColor(const Color& color) {
                 rich_text_label->set_cell_border_color(color);
             }
+
+            void setCellPadding(Rect2 padding) {
+                rich_text_label->set_cell_padding(padding);
+            }
     };
 }
 
