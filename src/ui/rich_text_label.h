@@ -407,6 +407,10 @@ namespace sunaba::ui {
             void deselect() {
                 rich_text_label->deselect();
             }
+
+            int getCharacterLine(int character) const {
+                return rich_text_label->get_character_line(character);
+            }
     };
 }    
 
