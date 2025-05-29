@@ -322,6 +322,7 @@ namespace sunaba::ui {
             "newline", &RichTextLabel::newline,
             "parseBBCode", &RichTextLabel::parseBBCode,
             "parseExpressionsForValues", &RichTextLabel::parseExpressionsForValues,
+            "pop", &RichTextLabel::pop,
             
         );
     }
