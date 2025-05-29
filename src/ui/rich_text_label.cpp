@@ -229,6 +229,10 @@ namespace sunaba::ui {
                 &RichTextLabel::getShortcutKeysEnabled,
                 &RichTextLabel::setShortcutKeysEnabled
             ),
+            "structuredTextBidiOverride", sol::property(
+                &RichTextLabel::getStructuredTextBidiOverride,
+                &RichTextLabel::setStructuredTextBidiOverride
+            ),
         );
     }
 } // namespace sunaba::ui
