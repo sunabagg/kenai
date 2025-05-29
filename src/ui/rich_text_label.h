@@ -151,7 +151,7 @@ namespace sunaba::ui {
             }
 
             Array getCustomEffects() const {
-                return rich_text_label->get_custom_effects();
+                return rich_text_label->get_effects();
             }
     };
 }    
