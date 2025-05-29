@@ -337,6 +337,7 @@ namespace sunaba::ui {
             "pushFont", &RichTextLabel::pushFont,
             "pushFontSize", &RichTextLabel::pushFontSize,
             "pushHint", &RichTextLabel::pushHint,
+            "pushIndent", &RichTextLabel::pushIndent,
             
         );
     }
