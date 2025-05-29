@@ -1,5 +1,7 @@
 package sunaba.ui;
 
+import sunaba.input.Shortcut;
+
 @:native("BaseButton")
 extern class BaseButton extends Control {
     public var actionMode: Int;
@@ -9,4 +11,5 @@ extern class BaseButton extends Control {
     public var disabled: Bool;
     public var focusMode: Int;
     public var keepPressedOutside: Bool;
+    public var shortcut: Shortcut;
 }
