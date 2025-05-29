@@ -501,6 +501,10 @@ namespace sunaba::ui {
             bool isMenuVisible() const {
                 return rich_text_label->is_menu_visible();
             }
+
+            bool isReady() const {
+                return rich_text_label->is_ready();
+            }
     };
 }    
 
