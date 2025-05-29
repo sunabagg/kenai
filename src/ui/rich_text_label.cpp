@@ -316,6 +316,7 @@ namespace sunaba::ui {
             "installEffect", &RichTextLabel::installEffect,
             "invalidateParagraph", &RichTextLabel::invalidateParagraph,
             "isFinished", &RichTextLabel::isFinished,
+            "isMenuVisible", &RichTextLabel::isMenuVisible,
             
         );
     }
