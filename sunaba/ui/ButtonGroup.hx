@@ -4,5 +4,5 @@ import sunaba.core.Resource;
 
 @:native("ButtonGroup")
 extern class ButtonGroup extends Resource {
-    
+    public var allowUnpress: Bool;
 }
