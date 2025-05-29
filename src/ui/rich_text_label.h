@@ -233,6 +233,10 @@ namespace sunaba::ui {
             bool getScrollActive() const {
                 return rich_text_label->is_scroll_active();
             }
+
+            void setScrollActive(bool active) {
+                rich_text_label->set_scroll_active(active);
+            }
     };
 }    
 
