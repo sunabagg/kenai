@@ -334,6 +334,10 @@ namespace sunaba::ui {
             int getVisibleCharacters() const {
                 return rich_text_label->get_visible_characters();
             }
+
+            void setVisibleCharacters(int count) {
+                rich_text_label->set_visible_characters(count);
+            }
     };
 }    
 
