@@ -628,6 +628,10 @@ namespace sunaba::ui {
                 }
                 rich_text_label->push_paragraph(static_cast<HorizontalAlignment>(alignment), static_cast<ControlNode::TextDirection>(baseDirection), String(language.c_str()), static_cast<TextServer::StructuredTextParser>(structuredTextParser), static_cast<BitField<TextServer::JustificationFlag>>(justificationFlags), tabStops_pf32a);
             }
+
+            void pushStrikethrough() {
+                rich_text_label->push_strikethrough();
+            }
     };
 }
 
