@@ -353,6 +353,7 @@ namespace sunaba::ui {
             "removeParagraph", &RichTextLabel::removeParagraph,
             "scrollToLine", &RichTextLabel::scrollToLine,
             "scrollToParagraph", &RichTextLabel::scrollToParagraph,
+            "scrollToSelection", &RichTextLabel::scrollToSelection,
             
         );
     }
