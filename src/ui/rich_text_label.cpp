@@ -185,6 +185,10 @@ namespace sunaba::ui {
                 &RichTextLabel::getDragAndDropSelectionEnabled,
                 &RichTextLabel::setDragAndDropSelectionEnabled
             ),
+            "fitContent", sol::property(
+                &RichTextLabel::getFitContent,
+                &RichTextLabel::setFitContent
+            ),
         );
     }
 } // namespace sunaba::ui
