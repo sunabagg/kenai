@@ -21,4 +21,6 @@ extern class BaseButton extends Control {
     public function getDrawMode(): Int;
     public function isHovered(): Bool;
     public function setPressedNoEvent(pressed: Bool): Void;
+    @:native("cast")
+    public function castFrom(type: Dynamic): BaseButton;
 }
