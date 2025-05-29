@@ -335,6 +335,7 @@ namespace sunaba::ui {
             "pushDropcap", &RichTextLabel::pushDropcap,
             "pushFgcolor", &RichTextLabel::pushFgcolor,
             "pushFont", &RichTextLabel::pushFont,
+            "pushFontSize", &RichTextLabel::pushFontSize,
             
         );
     }
