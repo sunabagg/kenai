@@ -427,6 +427,10 @@ namespace sunaba::ui {
             int getLineCount() const {
                 return rich_text_label->get_line_count();
             }
+
+            float getLineOffset(int line) const {
+                return rich_text_label->get_line_offset(line);
+            }
     };
 }    
 
