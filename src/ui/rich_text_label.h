@@ -117,6 +117,10 @@ namespace sunaba::ui {
                 connectRichTextLabelSignals();
                 setControl(p_node);
             }
+
+            int getAutowrapMode() const {
+                return rich_text_label->get_autowrap_mode();
+            }
     };
 }    
 
