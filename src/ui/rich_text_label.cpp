@@ -197,6 +197,10 @@ namespace sunaba::ui {
                 &RichTextLabel::getHorizontalAlignment,
                 &RichTextLabel::setHorizontalAlignment
             ),
+            "justificationFlags", sol::property(
+                &RichTextLabel::getJustificationFlags,
+                &RichTextLabel::setJustificationFlags
+            ),
         );
     }
 } // namespace sunaba::ui
