@@ -283,10 +283,10 @@ namespace sunaba::ui {
             }
 
             std::vector<float> getTabStops() const {
-                PackedFloat32Array stops_p32a = rich_text_label->get_tab_stops();
+                PackedFloat32Array stops_pf32a = rich_text_label->get_tab_stops();
                 std::vector<float> stops;
-                for (int i = 0; i < stops_p32a.size(); ++i) {
-                    stops.push_back(stops_p32a[i]);
+                for (int i = 0; i < stops_pf32a.size(); ++i) {
+                    stops.push_back(stops_pf32a[i]);
                 }
                 return stops;
             }
