@@ -249,6 +249,10 @@ namespace sunaba::ui {
                 &RichTextLabel::getText,
                 &RichTextLabel::setText
             ),
+            "textDirection", sol::property(
+                &RichTextLabel::getTextDirection,
+                &RichTextLabel::setTextDirection
+            ),
         );
     }
 } // namespace sunaba::ui
