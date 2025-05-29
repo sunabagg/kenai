@@ -648,6 +648,10 @@ namespace sunaba::ui {
             void scrollToLine(int line) {
                 rich_text_label->scroll_to_line(line);
             }
+
+            void scrollToParagraph(int paragraph) {
+                rich_text_label->scroll_to_paragraph(paragraph);
+            }
     };
 }
 
