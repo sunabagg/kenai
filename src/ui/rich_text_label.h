@@ -525,6 +525,10 @@ namespace sunaba::ui {
                 }
                 return rich_text_label->parse_expressions_for_values(expressions_psa);
             }
+
+            void pop() {
+                rich_text_label->pop();
+            }
     };
 }
 
