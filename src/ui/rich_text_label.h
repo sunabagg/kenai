@@ -121,6 +121,10 @@ namespace sunaba::ui {
             int getAutowrapMode() const {
                 return rich_text_label->get_autowrap_mode();
             }
+
+            void setAutowrapMode(int mode) {
+                rich_text_label->set_autowrap_mode(static_cast<TextServer::AutowrapMode>(mode));
+            }
     };
 }    
 
