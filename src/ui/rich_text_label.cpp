@@ -1,7 +1,6 @@
 #include "rich_text_label.h"
 
 namespace sunaba::ui {
-
     void RichTextLabelProxy::_enter_tree() {
         if (element != nullptr) {
             element->enterTree();
