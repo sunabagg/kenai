@@ -293,6 +293,7 @@ namespace sunaba::ui {
             "addText", &RichTextLabel::addText,
             "appendText", &RichTextLabel::appendText,
             "clear", &RichTextLabel::clear,
+            "deselect", &RichTextLabel::deselect,
         );
     }
 } // namespace sunaba::ui
