@@ -436,6 +436,10 @@ namespace sunaba::ui {
             Vector2i getLineRange(int line) const {
                 return rich_text_label->get_line_range(line);
             }
+
+            sunaba::desktop::PopupMenu* getMenu() {
+                return new sunaba::desktop::PopupMenu(rich_text_label->get_menu());
+            }
     };
 }    
 
