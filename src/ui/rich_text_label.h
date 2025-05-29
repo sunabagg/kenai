@@ -314,6 +314,10 @@ namespace sunaba::ui {
             void setTextDirection(int direction) {
                 rich_text_label->set_text_direction(static_cast<ControlNode::TextDirection>(direction));
             }
+
+            bool getThreaded() {
+                return rich_text_label->is_threaded();
+            }
     };
 }    
 
