@@ -505,6 +505,10 @@ namespace sunaba::ui {
             bool isReady() const {
                 return rich_text_label->is_ready();
             }
+
+            void menuOption(int option) {
+                rich_text_label->menu_option(option);
+            }
     };
 }    
 
