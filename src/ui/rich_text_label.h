@@ -493,6 +493,10 @@ namespace sunaba::ui {
             bool invalidateParagraph(int paragraph) {
                 return rich_text_label->invalidate_paragraph(paragraph);
             }
+
+            bool isFinished() const {
+                return rich_text_label->is_finished();
+            }
     };
 }    
 
