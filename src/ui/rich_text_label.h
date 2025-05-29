@@ -477,6 +477,10 @@ namespace sunaba::ui {
             VScrollBar* getVScrollBar() {
                 return new VScrollBar(rich_text_label->get_v_scroll_bar());
             }
+
+            int getVisibleLineCount() const {
+                return rich_text_label->get_visible_line_count();
+            }
     };
 }    
 
