@@ -600,6 +600,10 @@ namespace sunaba::ui {
             void pushList(int level, int type, bool capitalize, const std::string& bullet = "•") {
                 rich_text_label->push_list(level, static_cast<RichTextLabelNode::ListType>(type), capitalize, String(bullet.c_str()));
             }
+
+            void pushMeta(const Variant& data, int underlineMode = 1, const std::string& tooltip = "") {
+                rich_text_label->push_meta(data, static_cast<RichTextLabelNode::MetaUnderline>(underlineMode), String(tooltip.c_str()));
+            }
     };
 }
 
