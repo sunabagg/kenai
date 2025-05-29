@@ -181,6 +181,10 @@ namespace sunaba::ui {
                 &RichTextLabel::getDeselectOnFocusLossEnabled,
                 &RichTextLabel::setDeselectOnFocusLossEnabled
             ),
+            "dragAndDropSelectionEnabled", sol::property(
+                &RichTextLabel::getDragAndDropSelectionEnabled,
+                &RichTextLabel::setDragAndDropSelectionEnabled
+            ),
         );
     }
 } // namespace sunaba::ui
