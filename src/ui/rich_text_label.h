@@ -249,6 +249,10 @@ namespace sunaba::ui {
             bool getSelectionEnabled() const {
                 return rich_text_label->is_selection_enabled();
             }
+
+            void setSelectionEnabled(bool enabled) {
+                rich_text_label->set_selection_enabled(enabled);
+            }
     };
 }    
 
