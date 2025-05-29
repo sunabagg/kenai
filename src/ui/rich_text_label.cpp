@@ -347,6 +347,7 @@ namespace sunaba::ui {
             "pushOutlineColor", &RichTextLabel::pushOutlineColor,
             "pushOutlineSize", &RichTextLabel::pushOutlineSize,
             "pushParagraph", &RichTextLabel::pushParagraph,
+            "pushStrikethrough", &RichTextLabel::pushStrikethrough,
             
         );
     }
