@@ -403,6 +403,10 @@ namespace sunaba::ui {
             void clear() {
                 rich_text_label->clear();
             }
+
+            void deselect() {
+                rich_text_label->deselect();
+            }
     };
 }    
 
