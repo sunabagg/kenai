@@ -660,6 +660,10 @@ namespace sunaba::ui {
             void selectAll() {
                 rich_text_label->select_all();
             }
+
+            void setCellBorderColor(const Color& color) {
+                rich_text_label->set_cell_border_color(color);
+            }
     };
 }
 
