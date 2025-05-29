@@ -342,6 +342,10 @@ namespace sunaba::ui {
             int getVisibleCharactersBehavior() const {
                 return rich_text_label->get_visible_characters_behavior();
             }
+
+            void setVisibleCharactersBehavior(int behavior) {
+                rich_text_label->set_visible_characters_behavior(static_cast<TextServer::VisibleCharactersBehavior>(behavior));
+            }
     };
 }    
 
