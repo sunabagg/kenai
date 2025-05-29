@@ -225,6 +225,10 @@ namespace sunaba::ui {
                 &RichTextLabel::getSelectionEnabled,
                 &RichTextLabel::setSelectionEnabled
             ),
+            "shortcutKeysEnabled", sol::property(
+                &RichTextLabel::getShortcutKeysEnabled,
+                &RichTextLabel::setShortcutKeysEnabled
+            ),
         );
     }
 } // namespace sunaba::ui
