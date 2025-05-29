@@ -314,6 +314,7 @@ namespace sunaba::ui {
             "getVisibleLineCount", &RichTextLabel::getVisibleLineCount,
             "getVisibleParagraphCount", &RichTextLabel::getVisibleParagraphCount,
             "installEffect", &RichTextLabel::installEffect,
+            "invalidateParagraph", &RichTextLabel::invalidateParagraph,
             
         );
     }
