@@ -310,6 +310,10 @@ namespace sunaba::ui {
             int getTextDirection() const {
                 return rich_text_label->get_text_direction();
             }
+
+            void setTextDirection(int direction) {
+                rich_text_label->set_text_direction(static_cast<ControlNode::TextDirection>(direction));
+            }
     };
 }    
 
