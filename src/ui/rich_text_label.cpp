@@ -277,6 +277,10 @@ namespace sunaba::ui {
                 &RichTextLabel::getFinishedEvent,
                 &RichTextLabel::setFinishedEvent
             ),
+            "metaClicked", sol::property(
+                &RichTextLabel::getMetaClickedEvent,
+                &RichTextLabel::setMetaClickedEvent
+            ),
         );
     }
 } // namespace sunaba::ui
