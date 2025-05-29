@@ -317,6 +317,7 @@ namespace sunaba::ui {
             "invalidateParagraph", &RichTextLabel::invalidateParagraph,
             "isFinished", &RichTextLabel::isFinished,
             "isMenuVisible", &RichTextLabel::isMenuVisible,
+            "isReady", &RichTextLabel::isReady,
             
         );
     }
