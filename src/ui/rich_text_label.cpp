@@ -306,6 +306,7 @@ namespace sunaba::ui {
             "getParagraphOffset", &RichTextLabel::getParagraphOffset,
             "getParsedText", &RichTextLabel::getParsedText,
             "getSelectedText", &RichTextLabel::getSelectedText,
+            "getSelectionFrom", &RichTextLabel::getSelectionFrom,
         );
     }
 } // namespace sunaba::ui
