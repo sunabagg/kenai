@@ -241,6 +241,10 @@ namespace sunaba::ui {
                 &RichTextLabel::getTabSize,
                 &RichTextLabel::setTabSize
             ),
+            "tabStops", sol::property(
+                &RichTextLabel::getTabStops,
+                &RichTextLabel::setTabStops
+            ),
         );
     }
 } // namespace sunaba::ui
