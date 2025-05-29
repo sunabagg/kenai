@@ -444,6 +444,10 @@ namespace sunaba::ui {
             int getParagraphCount() const {
                 return rich_text_label->get_paragraph_count();
             }
+
+            float getParagraphOffset(int paragraph) const {
+                return rich_text_label->get_paragraph_offset(paragraph);
+            }
     };
 }    
 
