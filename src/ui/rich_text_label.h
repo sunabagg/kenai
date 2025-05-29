@@ -261,6 +261,10 @@ namespace sunaba::ui {
             void setShortcutKeysEnabled(bool enabled) {
                 rich_text_label->set_shortcut_keys_enabled(enabled);
             }
+
+            int getStructuredTextBidiOverride() const {
+                return rich_text_label->get_structured_text_bidi_override();
+            }
     };
 }    
 
