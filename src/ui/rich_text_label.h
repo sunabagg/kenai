@@ -608,6 +608,10 @@ namespace sunaba::ui {
             void pushMono() {
                 rich_text_label->push_mono();
             }
+
+            void pushNormal() {
+                rich_text_label->push_normal();
+            }
     };
 }
 
