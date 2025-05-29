@@ -355,7 +355,7 @@ namespace sunaba::ui {
                 rich_text_label->set_visible_ratio(ratio);
             }
 
-            Event finishedEvent;
+            Event* finishedEvent;
     };
 }    
 
