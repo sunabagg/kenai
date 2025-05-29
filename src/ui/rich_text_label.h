@@ -9,6 +9,7 @@
 
 #include "control.h"
 #include "../core/texture2d.h"
+#include "../desktop/popup_menu.h"
 
 using namespace godot;
 using namespace sunaba::core;
