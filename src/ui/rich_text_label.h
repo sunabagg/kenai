@@ -652,6 +652,10 @@ namespace sunaba::ui {
             void scrollToParagraph(int paragraph) {
                 rich_text_label->scroll_to_paragraph(paragraph);
             }
+
+            void scrollToSelection() {
+                rich_text_label->scroll_to_selection();
+            }
     };
 }
 
