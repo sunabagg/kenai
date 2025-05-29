@@ -302,6 +302,7 @@ namespace sunaba::ui {
             "getLineOffset", &RichTextLabel::getLineOffset,
             "getLineRange", &RichTextLabel::getLineRange,
             "getMenu", &RichTextLabel::getMenu,
+            "getParagraphCount", &RichTextLabel::getParagraphCount,
         );
     }
 } // namespace sunaba::ui
