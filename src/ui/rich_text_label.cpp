@@ -273,6 +273,10 @@ namespace sunaba::ui {
                 &RichTextLabel::getVisibleRatio,
                 &RichTextLabel::setVisibleRatio
             ),
+            "finished", sol::property(
+                &RichTextLabel::getFinishedEvent,
+                &RichTextLabel::setFinishedEvent
+            ),
         );
     }
 } // namespace sunaba::ui
