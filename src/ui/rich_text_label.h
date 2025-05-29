@@ -265,6 +265,14 @@ namespace sunaba::ui {
             int getStructuredTextBidiOverride() const {
                 return rich_text_label->get_structured_text_bidi_override();
             }
+
+            void setStructuredTextBidiOverride(int override) {
+                rich_text_label->set_structured_text_bidi_override(static_cast<TextServer::StructuredTextParser>(override));
+            }
+
+            Array getStructuredTextBidiOverrideOptions() const {
+                return rich_text_label->get_structured_text_bidi_override_options();
+            }
     };
 }    
 
