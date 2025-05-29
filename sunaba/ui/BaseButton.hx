@@ -4,4 +4,5 @@ package sunaba.ui;
 extern class BaseButton extends Control {
     public var actionMode: Int;
     public var buttonGroup: ButtonGroup;
+    public var buttonMask: Int;
 }
