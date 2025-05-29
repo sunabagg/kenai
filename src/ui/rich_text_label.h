@@ -509,6 +509,10 @@ namespace sunaba::ui {
             void menuOption(int option) {
                 rich_text_label->menu_option(option);
             }
+
+            void newline() {
+                rich_text_label->newline();
+            }
     };
 }    
 
