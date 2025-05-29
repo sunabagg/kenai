@@ -350,6 +350,7 @@ namespace sunaba::ui {
             "pushStrikethrough", &RichTextLabel::pushStrikethrough,
             "pushTable", &RichTextLabel::pushTable,
             "pushUnderline", &RichTextLabel::pushUnderline,
+            "removeParagraph", &RichTextLabel::removeParagraph,
             
         );
     }
