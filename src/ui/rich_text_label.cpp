@@ -177,6 +177,10 @@ namespace sunaba::ui {
                 &RichTextLabel::getCustomEffects,
                 &RichTextLabel::setCustomEffects
             ),
+            "deselectOnFocusLossEnabled", sol::property(
+                &RichTextLabel::getDeselectOnFocusLossEnabled,
+                &RichTextLabel::setDeselectOnFocusLossEnabled
+            ),
         );
     }
 } // namespace sunaba::ui
