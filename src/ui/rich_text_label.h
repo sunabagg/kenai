@@ -326,6 +326,10 @@ namespace sunaba::ui {
             int getVerticalAlignment() const {
                 return rich_text_label->get_vertical_alignment();
             }
+
+            void setVerticalAlignment(int alignment) {
+                rich_text_label->set_vertical_alignment(static_cast<VerticalAlignment>(alignment));
+            }
     };
 }    
 
