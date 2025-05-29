@@ -137,6 +137,10 @@ namespace sunaba::ui {
             bool getClipContents() const {
                 return rich_text_label->is_clipping_contents();
             }
+
+            void setClipContents(bool enabled) {
+                rich_text_label->set_clip_contents(enabled);
+            }
     };
 }    
 
