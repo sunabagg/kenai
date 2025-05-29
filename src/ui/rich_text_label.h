@@ -557,6 +557,10 @@ namespace sunaba::ui {
             void pushColor(const Color& color) {
                 rich_text_label->push_color(color);
             }
+
+            void pushContext() {
+                rich_text_label->push_context();
+            }
     };
 }
 
