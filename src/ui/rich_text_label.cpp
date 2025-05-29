@@ -320,6 +320,7 @@ namespace sunaba::ui {
             "isReady", &RichTextLabel::isReady,
             "menuOption", &RichTextLabel::menuOption,
             "newline", &RichTextLabel::newline,
+            "parseBbcode", &RichTextLabel::parseBbcode,
             
         );
     }
