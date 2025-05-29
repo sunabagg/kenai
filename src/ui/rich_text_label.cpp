@@ -313,6 +313,7 @@ namespace sunaba::ui {
             "getVScrollBar", &RichTextLabel::getVScrollBar,
             "getVisibleLineCount", &RichTextLabel::getVisibleLineCount,
             "getVisibleParagraphCount", &RichTextLabel::getVisibleParagraphCount,
+            "installEffect", &RichTextLabel::installEffect,
             
         );
     }
