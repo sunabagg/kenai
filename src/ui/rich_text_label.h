@@ -10,6 +10,7 @@
 #include "control.h"
 #include "../core/texture2d.h"
 #include "../desktop/popup_menu.h"
+#include "v_scroll_bar.h"
 
 using namespace godot;
 using namespace sunaba::core;
