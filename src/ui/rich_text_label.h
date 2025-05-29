@@ -354,6 +354,8 @@ namespace sunaba::ui {
             void setVisibleRatio(float ratio) {
                 rich_text_label->set_visible_ratio(ratio);
             }
+
+            Event finishedEvent;
     };
 }    
 
