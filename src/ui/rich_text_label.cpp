@@ -340,6 +340,7 @@ namespace sunaba::ui {
             "pushIndent", &RichTextLabel::pushIndent,
             "pushItalics", &RichTextLabel::pushItalics,
             "pushLanguage", &RichTextLabel::pushLanguage,
+            "pushList", &RichTextLabel::pushList,
             
         );
     }
