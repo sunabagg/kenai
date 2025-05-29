@@ -189,6 +189,10 @@ namespace sunaba::ui {
                 &RichTextLabel::getFitContent,
                 &RichTextLabel::setFitContent
             ),
+            "hintUnderlined", sol::property(
+                &RichTextLabel::getHintUnderlined,
+                &RichTextLabel::setHintUnderlined
+            ),
         );
     }
 } // namespace sunaba::ui
