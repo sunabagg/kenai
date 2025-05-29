@@ -265,6 +265,10 @@ namespace sunaba::ui {
                 &RichTextLabel::getVisibleCharacters,
                 &RichTextLabel::setVisibleCharacters
             ),
+            "visibleCharactersBehavior", sol::property(
+                &RichTextLabel::getVisibleCharactersBehavior,
+                &RichTextLabel::setVisibleCharactersBehavior
+            )
         );
     }
 } // namespace sunaba::ui
