@@ -9,6 +9,7 @@
 
 #include "control.h"
 #include "../core/texture2d.h"
+#include "../core/font.h"
 #include "../desktop/popup_menu.h"
 #include "v_scroll_bar.h"
 
@@ -560,6 +561,12 @@ namespace sunaba::ui {
 
             void pushContext() {
                 rich_text_label->push_context();
+            }
+
+            //void pushCustomfx
+
+            void pushDropcap(std::string string, sunaba::core::Font* font, int size, Rect2 dropcapMargins = Rect2(0, 0, 0, 0), Color color = Color(1, 1, 1, 1), int outlineSize = 0, Color outlineColor = Color(0, 0, 0, 0)) {
+                rich_text_label->push_dropcap(String(string.c_str()), font->getFont(), size, dropcapMargins, color, outlineSize, outlineColor);
             }
     };
 }
