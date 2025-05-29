@@ -221,6 +221,10 @@ namespace sunaba::ui {
                 &RichTextLabel::getScrollFollowing,
                 &RichTextLabel::setScrollFollowing
             ),
+            "selectionEnabled", sol::property(
+                &RichTextLabel::getSelectionEnabled,
+                &RichTextLabel::setSelectionEnabled
+            ),
         );
     }
 } // namespace sunaba::ui
