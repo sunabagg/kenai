@@ -485,6 +485,10 @@ namespace sunaba::ui {
             int getVisibleParagraphCount() const {
                 return rich_text_label->get_visible_paragraph_count();
             }
+
+            void installEffect(Variant effect) {
+                rich_text_label->install_effect(effect);
+            }
     };
 }    
 
