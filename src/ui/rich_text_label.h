@@ -541,6 +541,10 @@ namespace sunaba::ui {
             void pushBgcolor(const Color& bgcolor) {
                 rich_text_label->push_bgcolor(bgcolor);
             }
+
+            void pushBold() {
+                rich_text_label->push_bold();
+            }
     };
 }
 
