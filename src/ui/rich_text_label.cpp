@@ -49,4 +49,10 @@ namespace sunaba::ui {
             element->unhandledKeyInput(event);
         }
     }
+
+    void RichTextLabelProxy::_shortcut_input(const Ref<InputEvent>& event) {
+        if (element != nullptr) {
+            element->shortcutInput(event);
+        }
+    }
 } // namespace sunaba::ui
