@@ -8,4 +8,5 @@ extern class BaseButton extends Control {
     public var buttonPressed: Bool;
     public var disabled: Bool;
     public var focusMode: Int;
+    public var keepPressedOutside: Bool;
 }
