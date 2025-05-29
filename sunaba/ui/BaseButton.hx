@@ -20,4 +20,5 @@ extern class BaseButton extends Control {
     public var toggled: Event;
     public function getDrawMode(): Int;
     public function isHovered(): Bool;
+    public function setPressedNoEvent(pressed: Bool): Void;
 }
