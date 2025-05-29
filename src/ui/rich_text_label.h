@@ -431,6 +431,10 @@ namespace sunaba::ui {
             float getLineOffset(int line) const {
                 return rich_text_label->get_line_offset(line);
             }
+
+            Vector2i getLineRange(int line) const {
+                return rich_text_label->get_line_range(line);
+            }
     };
 }    
 
