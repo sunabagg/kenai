@@ -193,6 +193,10 @@ namespace sunaba::ui {
                 &RichTextLabel::getHintUnderlined,
                 &RichTextLabel::setHintUnderlined
             ),
+            "horizontalAlignment", sol::property(
+                &RichTextLabel::getHorizontalAlignment,
+                &RichTextLabel::setHorizontalAlignment
+            ),
         );
     }
 } // namespace sunaba::ui
