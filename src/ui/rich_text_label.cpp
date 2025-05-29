@@ -213,6 +213,10 @@ namespace sunaba::ui {
                 &RichTextLabel::getProgressBarDelay,
                 &RichTextLabel::setProgressBarDelay
             ),
+            "scrollActive", sol::property(
+                &RichTextLabel::getScrollActive,
+                &RichTextLabel::setScrollActive
+            ),
         );
     }
 } // namespace sunaba::ui
