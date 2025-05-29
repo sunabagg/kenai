@@ -205,6 +205,10 @@ namespace sunaba::ui {
             void setJustificationFlags(int flags) {
                 rich_text_label->set_justification_flags(static_cast<BitField<TextServer::JustificationFlag>>(flags));
             }
+
+            std::string getLanguage() const {
+                return rich_text_label->get_language().utf8().get_data();
+            }
     };
 }    
 
