@@ -668,6 +668,10 @@ namespace sunaba::ui {
             void setCellPadding(Rect2 padding) {
                 rich_text_label->set_cell_padding(padding);
             }
+
+            void steCellRowBackgroundColor(const Color& oddRowBg, const Color& evenRowBg) {
+                rich_text_label->set_cell_row_background_color(oddRowBg, evenRowBg);
+            }
     };
 }
 
