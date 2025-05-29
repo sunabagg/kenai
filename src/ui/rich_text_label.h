@@ -245,6 +245,10 @@ namespace sunaba::ui {
             void setScrollFollowing(bool following) {
                 rich_text_label->set_scroll_follow(following);
             }
+
+            bool getSelectionEnabled() const {
+                return rich_text_label->is_selection_enabled();
+            }
     };
 }    
 
