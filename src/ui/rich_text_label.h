@@ -281,6 +281,15 @@ namespace sunaba::ui {
             int getTabSize() const {
                 return rich_text_label->get_tab_size();
             }
+
+            std::vector<float> getTabStops() const {
+                PackedFloat32Array stops_p32a = rich_text_label->get_tab_stops();
+                std::vector<float> stops;
+                for (int i = 0; i < stops_p32a.size(); ++i) {
+                    stops.push_back(stops_p32a[i]);
+                }
+                return stops;
+            }
     };
 }    
 
