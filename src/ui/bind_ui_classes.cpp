@@ -63,6 +63,7 @@
 #include "v_flow_container.h"
 #include "code_highlighter.h"
 #include "color_rect.h"
+#include "rich_text_label.h"
 
 void sunaba::ui::bindUIClasses(sol::state& lua) {
     bindStyleBox(lua);
@@ -128,4 +129,5 @@ void sunaba::ui::bindUIClasses(sol::state& lua) {
     bindVFlowContainer(lua);
     bindCodeHighlighter(lua);
     bindColorRect(lua);
+    bindRichTextLabel(lua);
 }
