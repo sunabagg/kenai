@@ -233,6 +233,10 @@ namespace sunaba::ui {
                 &RichTextLabel::getStructuredTextBidiOverride,
                 &RichTextLabel::setStructuredTextBidiOverride
             ),
+            "structuredTextBidiOverrideOptions", sol::property(
+                &RichTextLabel::getStructuredTextBidiOverrideOptions,
+                &RichTextLabel::setStructuredTextBidiOverrideOptions
+            ),
         );
     }
 } // namespace sunaba::ui
