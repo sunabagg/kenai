@@ -25,3 +25,14 @@ extern class BaseButton extends Control {
     public function toBaseButton(type: Dynamic): BaseButton;
 }
 
+abstract BaseButtonAbstract(BaseButton) from BaseButton to BaseButton {
+    @:from
+    public static function fromControl(control: Control): BaseButtonAbstract {
+        var btn = BaseButton.toBaseButton(control);
+        if (btn.isNull()) {
+            return null;
+        }
+        return btn;
+    }
+}
+
