@@ -241,6 +241,10 @@ namespace sunaba::ui {
             bool getScrollFollowing() const {
                 return rich_text_label->is_scroll_following();
             }
+
+            void setScrollFollowing(bool following) {
+                rich_text_label->set_scroll_follow(following);
+            }
     };
 }    
 
