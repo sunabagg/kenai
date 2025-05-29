@@ -311,6 +311,7 @@ namespace sunaba::ui {
             "getSelectionTo", &RichTextLabel::getSelectionTo,
             "getTotalCharacterCount", &RichTextLabel::getTotalCharacterCount,
             "getVScrollBar", &RichTextLabel::getVScrollBar,
+            "getVisibleLineCount", &RichTextLabel::getVisibleLineCount,
             
         );
     }
