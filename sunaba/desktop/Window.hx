@@ -76,4 +76,5 @@ extern class Window extends Viewport {
     public function getThemeColor(name: String, ?type: String): Color;
     public function getThemeConstant(name: String, ?type: String): Int;
     public function getThemeDefaultBaseScale(): Float;
+    public function getThemeDefaultFont(): Font;
 }
