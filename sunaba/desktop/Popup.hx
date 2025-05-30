@@ -1,6 +1,8 @@
 package sunaba.desktop;
 
+import sunaba.core.Event;
+
 @:native("Popup")
 extern class Popup extends Window {
-    
+    public var popupHide: Event;
 }
