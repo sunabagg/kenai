@@ -13,4 +13,5 @@ extern class Window extends Viewport {
     public var contentScaleMode: Int;
     public var contentScaleSize: Vector2i;
     public var contentScaleStretch: Int;
+    public var currentScreen: Int;
 }
