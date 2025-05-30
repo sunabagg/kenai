@@ -132,4 +132,5 @@ extern class Window extends Viewport {
     public function setUseFontOversampling(use: Bool): Void;
     public function show(): Void;
     public function startDrag(): Void;
+    public function startResize(edge: Int): Void;
 }
