@@ -41,4 +41,5 @@ extern class PopupMenu extends Popup {
     public function getItemAccelerator(index: Int): Int;
     public function getItemIcon(index: Int): Texture2D;
     public function getItemIconMaxWidth(index: Int): Int;
+    public function getItemIconModulate(index: Int): Color;
 }
