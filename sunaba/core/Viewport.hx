@@ -56,4 +56,5 @@ extern class Viewport extends Element {
     public function canvasCullMaskBit(layer: Int): Bool;
     public function getFinalTransform(): Transform2D;
     public function getMousePosition(): Vector2;
+    public function getRenderInfo(type: Int, info: Int): Int;
 }
