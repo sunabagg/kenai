@@ -67,4 +67,5 @@ extern class Viewport extends Element {
     public function guiGetHoveredControl(): Control;
     public function guiIsDragSuccessful(): Bool;
     public function guiIsDragging(): Bool;
+    public function guiReleaseFocus(): Void;
 }
