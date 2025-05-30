@@ -37,4 +37,5 @@ extern class PopupMenu extends Popup {
     public function addSubmenuNodeItem(label: String, submenu: PopupMenu, ?id: Int, ?accel: Int): Void;
     public function clear(?freeSubmenus: Bool): Void;
     public function getFocusedItem(): Int;
+    public function getItemAccelerator(index: Int): Int;
 }
