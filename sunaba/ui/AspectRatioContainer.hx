@@ -6,4 +6,6 @@ extern class AspectRatioContainer extends Container {
     public var alignmentVertical: Int;
     public var ratio: Float;
     public var stretchMode: Int;
+    @:native("cast")
+    public function toAspectRatioContainer(type: Dynamic): AspectRatioContainer;
 }
