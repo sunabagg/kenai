@@ -42,4 +42,5 @@ extern class Window extends Viewport {
     public var visible: Bool;
     public var wrapControls: Bool;
     public var aboutToPopup: Event;
+    public var closeRequested: Event;
 }
