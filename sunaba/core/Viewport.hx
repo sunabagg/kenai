@@ -60,4 +60,5 @@ extern class Viewport extends Element {
     public function getScreenTransform(): Transform2D;
     public function getStretchTransform(): Transform2D;
     public function getVisibleRect(): Rect2;
+    public function guiCancelDrag(): Void;
 }
