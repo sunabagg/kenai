@@ -59,4 +59,5 @@ extern class Viewport extends Element {
     public function getRenderInfo(type: Int, info: Int): Int;
     public function getScreenTransform(): Transform2D;
     public function getStretchTransform(): Transform2D;
+    public function getVisibleRect(): Rect2;
 }
