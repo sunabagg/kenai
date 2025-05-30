@@ -8,4 +8,5 @@ extern class Window extends Viewport {
     public var autoTranslate: Bool;
     public var borderless: Bool;
     public var contentScaleAspect: Int;
+    public var contentScaleFactor: Float;
 }
