@@ -55,4 +55,5 @@ extern class Viewport extends Element {
     public function findWorld3D(): World3D;
     public function canvasCullMaskBit(layer: Int): Bool;
     public function getFinalTransform(): Transform2D;
+    public function getMousePosition(): Vector2;
 }
