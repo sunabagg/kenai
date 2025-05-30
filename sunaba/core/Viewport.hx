@@ -77,4 +77,5 @@ extern class Viewport extends Element {
     public function setCanvasCullMaskBit(layer: Int, enable: Bool): Void;
     public function setInputAsHandled(): Void;
     public function setPositionalShadowAtlasQuadrantSubdiv(quadrant: Int, subdiv: Int): Void;
+    public function updateMouseCursorState(): Void;
 }
