@@ -9,3 +9,14 @@ extern class AspectRatioContainer extends Container {
     @:native("cast")
     public function toAspectRatioContainer(type: Dynamic): AspectRatioContainer;
 }
+
+abstract AspectRatioContainerAbstract(AspectRatioContainer) from AspectRatioContainer to AspectRatioContainer {
+    @:from
+    public static function fromElement(element: sunaba.core.Element): AspectRatioContainerAbstract {
+        var container = AspectRatioContainer.toAspectRatioContainer(element);
+        if (container.isNull()) {
+            return null;
+        }
+        return container;
+    }
+}
