@@ -9,6 +9,7 @@ import sunaba.core.Event;
 import sunaba.core.Font;
 import sunaba.core.Texture2D;
 import sunaba.ui.StyleBox;
+import sunaba.core.Rect2i;
 
 @:native("Window")
 extern class Window extends Viewport {
@@ -104,4 +105,5 @@ extern class Window extends Viewport {
     public function isUsingFontOversampling(): Bool;
     public function moveToCenter(): Void;
     public function moveToForeground(): Void;
+    public function popup(?rect: Rect2i): Void;
 }
