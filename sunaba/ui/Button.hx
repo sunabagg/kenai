@@ -1,5 +1,6 @@
 package sunaba.ui;
 
+import sunaba.core.Element;
 import sunaba.core.Texture2D;
 
 @:native("ButtonGroup")
