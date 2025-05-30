@@ -9,4 +9,5 @@ extern class Viewport extends Element {
     public var canvasItemDefaultTextureFilter: Int;
     public var canvasItemDefaultTextureRepeat: Int;
     public var canvasTransform: Transform2D;
+    public var debugDraw: Int;
 }
