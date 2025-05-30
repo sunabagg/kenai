@@ -17,4 +17,5 @@ extern class Viewport extends Element {
     public var guiEmbedSubwindows: Bool;
     public var guiSnapControlsToPixels: Bool;
     public var handleInputLocally: Bool;
+    public var meshLodThreshold: Float;
 }
