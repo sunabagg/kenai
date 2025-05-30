@@ -12,4 +12,5 @@ extern class Window extends Viewport {
     public var contentScaleFactor: Float;
     public var contentScaleMode: Int;
     public var contentScaleSize: Vector2i;
+    public var contentScaleStretch: Int;
 }
