@@ -25,5 +25,5 @@ extern class Window extends Viewport {
     public var minSize: Vector2i;
     public var mode: Int;
     public var mousePassthrough: Bool;
-    public var mousePassthoughPolygon: Array<Vector2>;
+    public var mousePassthroughPolygon: Array<Vector2>;
 }
