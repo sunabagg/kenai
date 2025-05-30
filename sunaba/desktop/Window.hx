@@ -68,4 +68,5 @@ extern class Window extends Viewport {
     public function beginBulkThemeOverride(): Void;
     public function canDraw(): Bool;
     public function childControlsChanged(): Void;
+    public function endBulkThemeOverride(): Void;
 }
