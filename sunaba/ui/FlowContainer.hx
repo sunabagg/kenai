@@ -10,3 +10,14 @@ extern class FlowContainer extends Container {
     @:native("cast")
     public function toFlowContainer(type: Dynamic): FlowContainer;
 }
+
+abstract FlowContainerAbstract(FlowContainer) from FlowContainer to FlowContainer {
+    @:from
+    public static function fromElement(element: sunaba.core.Element): FlowContainerAbstract {
+        var container = FlowContainer.toFlowContainer(element);
+        if (container.isNull()) {
+            return null;
+        }
+        return container;
+    }
+}
