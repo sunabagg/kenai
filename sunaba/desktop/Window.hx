@@ -120,4 +120,5 @@ extern class Window extends Viewport {
     public function removeThemeConstantOverride(name: String): Void;
     public function removeThemeFontOverride(name: String): Void;
     public function removeThemeFontSizeOverride(name: String): Void;
+    public function removeThemeIconOverride(name: String): Void;
 }
