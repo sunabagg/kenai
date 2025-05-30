@@ -5,6 +5,7 @@ import sunaba.core.Vector2i;
 import sunaba.core.Vector2;
 import sunaba.ui.Theme;
 import sunaba.core.Color;
+import sunaba.core.Event;
 
 @:native("Window")
 extern class Window extends Viewport {
