@@ -2,6 +2,7 @@ package sunaba.desktop;
 
 import sunaba.core.Viewport;
 import sunaba.core.Vector2i;
+import sunaba.core.Vector2;
 
 @:native("Window")
 extern class Window extends Viewport {
@@ -24,4 +25,5 @@ extern class Window extends Viewport {
     public var minSize: Vector2i;
     public var mode: Int;
     public var mousePassthrough: Bool;
+    public var mousePassthoughPolygon: Array<Vector2>;
 }
