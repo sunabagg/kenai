@@ -11,4 +11,5 @@ extern class Viewport extends Element {
     public var canvasTransform: Transform2D;
     public var debugDraw: Int;
     public var disable3D: Bool;
+    public var fsrSharpness: Float;
 }
