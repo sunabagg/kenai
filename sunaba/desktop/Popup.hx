@@ -8,3 +8,14 @@ extern class Popup extends Window {
     @:native("cast")
     public function toPopup(type: Dynamic): Popup;
 }
+
+abstract PopupAbstract(Popup) from Popup to Popup {
+    @:from
+    public static function fromElement(element: sunaba.core.Element): PopupAbstract {
+        var popup = Popup.toPopup(element);
+        if (popup.isNull()) {
+            return null;
+        }
+        return popup;
+    }
+}
