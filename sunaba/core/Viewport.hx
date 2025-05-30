@@ -43,4 +43,5 @@ extern class Viewport extends Element {
     public var useHdr2D: Bool;
     public var useOcclusionCulling: Bool;
     public var useTaa: Bool;
+    public var useXr: Bool;
 }
