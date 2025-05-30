@@ -33,4 +33,5 @@ extern class Viewport extends Element {
     public var positionalShadowAtlasSize: Int;
     public var scaling3DMode: Int;
     public var scaling3DScale: Float;
+    public var screenSpaceAA: Int;
 }
