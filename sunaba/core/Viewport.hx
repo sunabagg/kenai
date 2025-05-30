@@ -74,4 +74,5 @@ extern class Viewport extends Element {
     public function pushInput(event: InputEvent, ?inLocalCoords: Bool): Void;
     public function pushTextInput(text: String): Void;
     public function pushUnhandledInput(event: InputEvent, ?inLocalCoords: Bool): Void;
+    public function setCanvasCullMaskBit(layer: Int, enable: Bool): Void;
 }
