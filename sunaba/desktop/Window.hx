@@ -66,4 +66,5 @@ extern class Window extends Viewport {
     public function addThemeIconOverride(name: String, icon: Texture2D): Void;
     public function addThemeStyleboxOverride(name: String, stylebox: StyleBox): Void;
     public function beginBulkThemeOverride(): Void;
+    public function canDraw(): Bool;
 }
