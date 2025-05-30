@@ -50,4 +50,5 @@ extern class Window extends Viewport {
     public var goBackRequested: Event;
     public var mouseEntered: Event;
     public var mouseExited: Event;
+    public var themeChanged: Event;
 }
