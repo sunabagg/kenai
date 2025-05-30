@@ -9,3 +9,14 @@ extern class ColorRect extends Control {
     @:native("cast")
     public function toColorRect(type: Dynamic): ColorRect;
 }
+
+abstract ColorRectAbstract(ColorRect) from ColorRect to ColorRect {
+    @:from
+    public static function fromElement(element: sunaba.core.Element): ColorRectAbstract {
+        var rect = ColorRect.toColorRect(element);
+        if (rect.isNull()) {
+            return null;
+        }
+        return rect;
+    }
+}
