@@ -116,4 +116,5 @@ extern class Window extends Viewport {
     public function popupExclusiveCenteredRatio(fromElement: Element, ?ratio: Float): Void;
     public function popupExclusiveOnParent(fromElement: Element, parentRect: Rect2i): Void;
     public function popupOnParent(parentRect: Rect2i): Void;
+    public function removeThemeColorOverride(name: String): Void;
 }
