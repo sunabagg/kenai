@@ -17,4 +17,5 @@ extern class Window extends Viewport {
     public var excludeFromCapture: Bool;
     public var exclusive: Bool;
     public var extendToTitle: Bool;
+    public var forceNative: Bool;
 }
