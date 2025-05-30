@@ -1,5 +1,7 @@
 package sunaba.core;
 
+import sunaba.spatial.World3D;
+
 @:native("Viewport")
 extern class Viewport extends Element {
     public var anisotropicFilteringLevel: Int;
@@ -47,4 +49,5 @@ extern class Viewport extends Element {
     public var vrsMode: Int;
     public var vrsTexture: Texture2D;
     public var vrsUpdateMode: Int;
+    public var world3D: World3D;
 }
