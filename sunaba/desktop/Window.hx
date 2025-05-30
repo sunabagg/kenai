@@ -125,4 +125,5 @@ extern class Window extends Viewport {
     public function requestAttention(): Void;
     public function resetSize(): Void;
     public function setImeActive(active: Bool): Void;
+    public function setFlag(flag: Int, value: Bool): Void;
 }
