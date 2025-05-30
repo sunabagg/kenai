@@ -8,4 +8,5 @@ public class Container extends Control {
     public var preSortChildren: Event;
     public var sortChildren: Event;
     public function fitChildInRect(child: Control, rect: sunaba.core.Rect2): Void;
+    public function queueSort(): Void;
 }
