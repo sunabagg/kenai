@@ -24,4 +24,5 @@ extern class Viewport extends Element {
     public var physicsInterpolationMode: Int;
     public var physicsObjectPicking: Bool;
     public var physicsObjectPickingFirstOnly: Bool;
+    public var physicsObjectPickingSort: Bool;
 }
