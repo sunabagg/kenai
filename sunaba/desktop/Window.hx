@@ -93,4 +93,5 @@ extern class Window extends Viewport {
     public function hasThemeFontOverride(name: String): Bool;
     public function hasThemeFontSize(name: String, ?type: String): Bool;
     public function hasThemeFontSizeOverride(name: String): Bool;
+    public function hasThemeIcon(name: String, ?type: String): Bool;
 }
