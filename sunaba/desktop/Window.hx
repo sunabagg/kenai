@@ -110,7 +110,7 @@ extern class Window extends Viewport {
     public function popupCentered(?minsize: Vector2i): Void;
     public function popupCenteredClamped(?minsize: Vector2i, ?fallbackRatio: Float): Void;
     public function popupCenteredRatio(?ratio: Float): Void;
-    public function popupExclusive(element: Element, ?rect: Rect2i): Void;
-    public function popupExclusiveCentered(element: Element, ?minsize: Vector2i): Void;
-    public function popupExclusiveCenteredClamped(element: Element, ?minsize: Vector2i, ?fallbackRatio: Float): Void;
+    public function popupExclusive(fromElement: Element, ?rect: Rect2i): Void;
+    public function popupExclusiveCentered(fromElement: Element, ?minsize: Vector2i): Void;
+    public function popupExclusiveCenteredClamped(fromElement: Element, ?minsize: Vector2i, ?fallbackRatio: Float): Void;
 }
