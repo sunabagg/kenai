@@ -1,6 +1,7 @@
 package sunaba.core;
 
 import sunaba.spatial.World3D;
+import sunaba.ui.Control;
 
 @:native("Viewport")
 extern class Viewport extends Element {
@@ -62,4 +63,5 @@ extern class Viewport extends Element {
     public function getVisibleRect(): Rect2;
     public function guiCancelDrag(): Void;
     public function guiGetDragData(): Variant;
+    public function guiGetFocusOwner() : Control;
 }
