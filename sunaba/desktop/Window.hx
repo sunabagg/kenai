@@ -72,4 +72,5 @@ extern class Window extends Viewport {
     public function getFlag(flag: Int): Bool;
     public function getLayoutDirection(): Int;
     public function getPositionWithDecorations(): Vector2i;
+    public function getSizeWithDecorations(): Vector2i;
 }
