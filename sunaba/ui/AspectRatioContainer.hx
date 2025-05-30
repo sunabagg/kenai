@@ -1,5 +1,7 @@
 package sunaba.ui;
 
+import sunaba.core.Element;
+
 @:native("AspectRatioContainer")
 extern class AspectRatioContainer extends Container {
     public var alignmentHorizontal: Int;
