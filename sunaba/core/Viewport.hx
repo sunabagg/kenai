@@ -53,4 +53,5 @@ extern class Viewport extends Element {
     public var guiFocusChanged: Event;
     public var sizeChanged: Event;
     public function findWorld3D(): World3D;
+    public function canvasCullMaskBit(layer: Int): Bool;
 }
