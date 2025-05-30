@@ -25,4 +25,5 @@ extern class Viewport extends Element {
     public var physicsObjectPicking: Bool;
     public var physicsObjectPickingFirstOnly: Bool;
     public var physicsObjectPickingSort: Bool;
+    public var positionalShadowAtlas16Bits: Bool;
 }
