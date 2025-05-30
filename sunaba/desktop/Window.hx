@@ -9,4 +9,5 @@ extern class Window extends Viewport {
     public var borderless: Bool;
     public var contentScaleAspect: Int;
     public var contentScaleFactor: Float;
+    public var contentScaleMode: Int;
 }
