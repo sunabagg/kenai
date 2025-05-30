@@ -8,4 +8,5 @@ extern class PopupMenu extends Popup {
     public var hideOnStateItemSelection: Bool;
     public var itemCount: Int;
     public var preferNativeMneu: Bool;
+    public var submenuPopupDelay: Float;
 }
