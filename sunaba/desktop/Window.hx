@@ -129,4 +129,5 @@ extern class Window extends Viewport {
     public function setImePosition(position: Vector2i): Void;
     public function setLayoutDirection(direction: Int): Void;
     public function setUnparentWhenInvisible(unparent: Bool): Void;
+    public function setUseFontOversampling(use: Bool): Void;
 }
