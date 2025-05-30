@@ -6,4 +6,5 @@ extern class PopupMenu extends Popup {
     public var hideOnCheckableItemSelection: Bool;
     public var hideOnItemSelection: Bool;
     public var hideOnStateItemSelection: Bool;
+    public var itemCount: Int;
 }
