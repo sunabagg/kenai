@@ -14,4 +14,5 @@ extern class PopupMenu extends Popup {
     public var systemMenuId: Int;
     public var idFocused: Event;
     public var idPressed: Event;
+    public var menuChanged: Event;
 }
