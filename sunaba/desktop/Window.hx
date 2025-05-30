@@ -14,4 +14,5 @@ extern class Window extends Viewport {
     public var contentScaleSize: Vector2i;
     public var contentScaleStretch: Int;
     public var currentScreen: Int;
+    public var excludeFromCapture: Bool;
 }
