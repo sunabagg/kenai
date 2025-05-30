@@ -1,6 +1,7 @@
 package sunaba.ui;
 
 import sunaba.core.Event;
+import sunaba.core.Element;
 
 @:native("Container")
 public class Container extends Control {
