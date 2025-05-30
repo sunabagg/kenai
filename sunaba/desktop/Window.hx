@@ -59,4 +59,5 @@ extern class Window extends Viewport {
     public var visibilityChanged: Event;
     public function addThemeColorOverride(name: String, color: Color): Void;
     public function addThemeConstantOverride(name: String, value: Int): Void;
+    public function addThemeFontOverride(name: String, font: Font): Void;
 }
