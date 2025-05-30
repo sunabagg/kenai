@@ -40,4 +40,5 @@ extern class Viewport extends Element {
     public var textureMipmapBias: Float;
     public var transparentBg: Bool;
     public var useDebanding: Bool;
+    public var useHdr2D: Bool;
 }
