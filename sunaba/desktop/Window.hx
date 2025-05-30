@@ -107,4 +107,5 @@ extern class Window extends Viewport {
     public function moveToForeground(): Void;
     public function popup(?rect: Rect2i): Void;
     public function popupCentered(?minsize: Vector2i): Void;
+    public function popupCenteredClamped(?minsize: Vector2i, ?fallbackRatio: Float): Void;
 }
