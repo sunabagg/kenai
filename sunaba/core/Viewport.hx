@@ -6,4 +6,5 @@ extern class Viewport extends Element {
     public var audioListenerEnable2D: Bool;
     public var audioListenerEnable3D: Bool;
     public var canvasCullMask: Int;
+    public var canvasItemDefaultTextureFilter: Int;
 }
