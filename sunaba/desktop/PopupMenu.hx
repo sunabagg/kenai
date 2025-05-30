@@ -12,4 +12,5 @@ extern class PopupMenu extends Popup {
     public var preferNativeMenu: Bool;
     public var submenuPopupDelay: Float;
     public var systemMenuId: Int;
+    public var idFocused: Event;
 }
