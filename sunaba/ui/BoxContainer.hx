@@ -8,3 +8,14 @@ extern class BoxContainer extends Container {
     @:native("cast")
     public function toBoxContainer(type: Dynamic): BoxContainer;
 }
+
+abstract BoxContainerAbstract(BoxContainer) from BoxContainer to BoxContainer {
+    @:from
+    public static function fromElement(element: sunaba.core.Element): BoxContainerAbstract {
+        var container = BoxContainer.toBoxContainer(element);
+        if (container.isNull()) {
+            return null;
+        }
+        return container;
+    }
+}
