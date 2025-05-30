@@ -98,4 +98,5 @@ extern class Window extends Viewport {
     public function hasThemeStylebox(name: String, ?type: String): Bool;
     public function hasThemeStyleboxOverride(name: String): Bool;
     public function hide(): Void;
+    public function isEmbedded(): Bool;
 }
