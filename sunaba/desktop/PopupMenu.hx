@@ -29,4 +29,5 @@ extern class PopupMenu extends Popup {
     public function addIconShortcut(texture: Texture2D, shortcut: Shortcut, ?id: Int, ?global: Bool, ?allowEcho: Bool): Void;
     public function addItem(label: String, id: Int, ?accel: Int): Void;
     public function addMultistateItem(label: String, maxStates: Int, defaultState: Int, ?id: Int, ?accel: Int): Void;
+    public function addRadioCheckItem(label: String, ?id: Int, ?accel: Int): Void;
 }
