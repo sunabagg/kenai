@@ -100,4 +100,5 @@ extern class Window extends Viewport {
     public function hide(): Void;
     public function isEmbedded(): Bool;
     public function isLayoutRtl(): Bool;
+    public function isMaximizeAllowed(): Bool;
 }
