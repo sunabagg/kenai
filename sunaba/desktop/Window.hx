@@ -70,4 +70,5 @@ extern class Window extends Viewport {
     public function childControlsChanged(): Void;
     public function endBulkThemeOverride(): Void;
     public function getFlag(flag: Int): Bool;
+    public function getLayoutDirection(): Int;
 }
