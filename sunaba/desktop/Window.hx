@@ -84,4 +84,5 @@ extern class Window extends Viewport {
     public function getThemeStylebox(name: String, ?type: String): StyleBox;
     public function getWindowId(): Int;
     public function grabFocus(): Void;
+    public function hasFocus(): Bool;
 }
