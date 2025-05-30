@@ -101,4 +101,5 @@ extern class Window extends Viewport {
     public function isEmbedded(): Bool;
     public function isLayoutRtl(): Bool;
     public function isMaximizeAllowed(): Bool;
+    public function isUsingFontOversampling(): Bool;
 }
