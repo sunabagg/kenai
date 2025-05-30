@@ -29,4 +29,5 @@ extern class Viewport extends Element {
     public var positionalShadowAtlasQuad0: Bool;
     public var positionalShadowAtlasQuad1: Bool;
     public var positionalShadowAtlasQuad2: Bool;
+    public var positionalShadowAtlasQuad3: Bool;
 }
