@@ -21,4 +21,5 @@ extern class Viewport extends Element {
     public var msaa2D: Int;
     public var msaa3D: Int;
     public var ownWorld3D: Bool;
+    public var physicsInterpolationMode: Int;
 }
