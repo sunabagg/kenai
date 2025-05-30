@@ -8,6 +8,7 @@ import sunaba.core.Color;
 import sunaba.core.Event;
 import sunaba.core.Font;
 import sunaba.core.Texture2D;
+import sunaba.ui.StyleBox;
 
 @:native("Window")
 extern class Window extends Viewport {
