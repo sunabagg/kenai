@@ -44,4 +44,5 @@ extern class Viewport extends Element {
     public var useOcclusionCulling: Bool;
     public var useTaa: Bool;
     public var useXr: Bool;
+    public var vrsMode: Int;
 }
