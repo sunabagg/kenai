@@ -64,4 +64,5 @@ extern class Viewport extends Element {
     public function guiCancelDrag(): Void;
     public function guiGetDragData(): Variant;
     public function guiGetFocusOwner() : Control;
+    public function guiGetHoveredControl(): Control;
 }
