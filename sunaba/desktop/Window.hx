@@ -1,6 +1,7 @@
 package sunaba.desktop;
 
 import sunaba.core.Viewport;
+import sunaba.core.Vector2i;
 
 @:native("Window")
 extern class Window extends Viewport {
@@ -10,4 +11,5 @@ extern class Window extends Viewport {
     public var contentScaleAspect: Int;
     public var contentScaleFactor: Float;
     public var contentScaleMode: Int;
+    public var contentScaleSize: Vector2i;
 }
