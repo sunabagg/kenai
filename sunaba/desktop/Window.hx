@@ -32,4 +32,5 @@ extern class Window extends Viewport {
     public var sharpCorners: Bool;
     public var size: Vector2i;
     public var theme: Theme;
+    public var themeTypeVariation: String;
 }
