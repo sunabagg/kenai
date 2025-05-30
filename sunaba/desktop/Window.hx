@@ -29,4 +29,5 @@ extern class Window extends Viewport {
     public var popupWindow: Bool;
     public var position: Vector2i;
     public var sharpCorners: Bool;
+    public var size: Vector2i;
 }
