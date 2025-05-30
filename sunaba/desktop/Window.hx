@@ -78,4 +78,5 @@ extern class Window extends Viewport {
     public function getThemeDefaultBaseScale(): Float;
     public function getThemeDefaultFont(): Font;
     public function getThemeDefaultFontSize(): Int;
+    public function getThemeFont(name: String, ?type: String): Font;
 }
