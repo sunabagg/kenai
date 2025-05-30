@@ -50,4 +50,5 @@ extern class Viewport extends Element {
     public var vrsTexture: Texture2D;
     public var vrsUpdateMode: Int;
     public var world3D: World3D;
+    public var guiFocusChanged: Event;
 }
