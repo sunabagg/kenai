@@ -16,4 +16,5 @@ extern class Window extends Viewport {
     public var currentScreen: Int;
     public var excludeFromCapture: Bool;
     public var exclusive: Bool;
+    public var extendToTitle: Bool;
 }
