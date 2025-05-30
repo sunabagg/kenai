@@ -127,4 +127,5 @@ extern class Window extends Viewport {
     public function setImeActive(active: Bool): Void;
     public function setFlag(flag: Int, value: Bool): Void;
     public function setImePosition(position: Vector2i): Void;
+    public function setLayoutDirection(direction: Int): Void;
 }
