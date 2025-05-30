@@ -133,4 +133,6 @@ extern class Window extends Viewport {
     public function show(): Void;
     public function startDrag(): Void;
     public function startResize(edge: Int): Void;
+    @:native("cast")
+    public function toWindow(type: Dynamic): Window;
 }
