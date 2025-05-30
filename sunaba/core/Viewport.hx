@@ -79,4 +79,6 @@ extern class Viewport extends Element {
     public function setPositionalShadowAtlasQuadrantSubdiv(quadrant: Int, subdiv: Int): Void;
     public function updateMouseCursorState(): Void;
     public function warpMouse(position: Vector2): Void;
+    @:native("cast")
+    public function toViewport(type: Dynamic): Viewport;
 }
