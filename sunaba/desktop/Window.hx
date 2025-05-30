@@ -23,4 +23,5 @@ extern class Window extends Viewport {
     public var maxSize: Vector2i;
     public var minSize: Vector2i;
     public var mode: Int;
+    public var mousePassthrough: Bool;
 }
