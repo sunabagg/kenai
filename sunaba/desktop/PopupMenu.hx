@@ -20,4 +20,5 @@ extern class PopupMenu extends Popup {
     public function activateItemByEvent(event: InputEvent, ?forGlobalOnly: Bool) : Void;
     public function addCheckItem(label: String, ?id: Int, ?accel: Int): Void;
     public function addCheckShortcut(shortcut: Shortcut, ?id: Int, ?global: Bool): Void;
+    public function addIconCheckItem(texture: Texture2D, label: String, ?id: Int, ?accel: Int): Void;
 }
