@@ -118,4 +118,5 @@ extern class Window extends Viewport {
     public function popupOnParent(parentRect: Rect2i): Void;
     public function removeThemeColorOverride(name: String): Void;
     public function removeThemeConstantOverride(name: String): Void;
+    public function removeThemeFontOverride(name: String): Void;
 }
