@@ -51,4 +51,5 @@ extern class Window extends Viewport {
     public var mouseEntered: Event;
     public var mouseExited: Event;
     public var themeChanged: Event;
+    public var titleChanged: Event;
 }
