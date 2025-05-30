@@ -33,4 +33,5 @@ extern class PopupMenu extends Popup {
     public function addRadioCheckShortcut(shortcut: Shortcut, ?id: Int, ?global: Bool): Void;
     public function addSeparator(?label: String, ?id: Int): Void;
     public function addShortcut(shortcut: Shortcut, ?id: Int, ?global: Bool, ?allowEcho: Bool): Void;
+    public function addSubmenuItem(label: String, submenu: String, ?id: Int, ?accel: Int): Void;
 }
