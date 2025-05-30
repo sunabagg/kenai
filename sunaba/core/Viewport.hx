@@ -20,4 +20,5 @@ extern class Viewport extends Element {
     public var meshLodThreshold: Float;
     public var msaa2D: Int;
     public var msaa3D: Int;
+    public var ownWorld3D: Bool;
 }
