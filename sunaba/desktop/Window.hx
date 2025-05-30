@@ -10,6 +10,7 @@ import sunaba.core.Font;
 import sunaba.core.Texture2D;
 import sunaba.ui.StyleBox;
 import sunaba.core.Rect2i;
+import sunaba.core.Element;
 
 @:native("Window")
 extern class Window extends Viewport {
@@ -109,4 +110,5 @@ extern class Window extends Viewport {
     public function popupCentered(?minsize: Vector2i): Void;
     public function popupCenteredClamped(?minsize: Vector2i, ?fallbackRatio: Float): Void;
     public function popupCenteredRatio(?ratio: Float): Void;
+    public function popupExclusive(element: Element, ?rect: Rect2i): Void;
 }
