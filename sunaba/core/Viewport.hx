@@ -41,4 +41,5 @@ extern class Viewport extends Element {
     public var transparentBg: Bool;
     public var useDebanding: Bool;
     public var useHdr2D: Bool;
+    public var useOcclusionCulling: Bool;
 }
