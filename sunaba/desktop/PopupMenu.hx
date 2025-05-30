@@ -3,6 +3,7 @@ package sunaba.desktop;
 import sunaba.core.Event;
 import sunaba.input.InputEvent;
 import sunaba.input.Shortcut;
+import sunaba.core.Texture2D;
 
 @:native("PopupMenu")
 extern class PopupMenu extends Popup {
