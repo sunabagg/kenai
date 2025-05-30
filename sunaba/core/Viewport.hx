@@ -72,4 +72,5 @@ extern class Viewport extends Element {
     public function isInputHandled(): Bool;
     public function notifyMouseEntered(): Void;
     public function pushInput(event: InputEvent, ?inLocalCoords: Bool): Void;
+    public function pushTextInput(text: String): Void;
 }
