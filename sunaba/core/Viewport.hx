@@ -18,4 +18,5 @@ extern class Viewport extends Element {
     public var guiSnapControlsToPixels: Bool;
     public var handleInputLocally: Bool;
     public var meshLodThreshold: Float;
+    public var msaa2D: Int;
 }
