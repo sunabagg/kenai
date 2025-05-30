@@ -36,4 +36,5 @@ extern class Viewport extends Element {
     public var screenSpaceAA: Int;
     public var sdfOversize: Int;
     public var sdfScale: Float;
+    public var snap2DTransformToPixels: Bool;
 }
