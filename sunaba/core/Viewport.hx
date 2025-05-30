@@ -51,4 +51,5 @@ extern class Viewport extends Element {
     public var vrsUpdateMode: Int;
     public var world3D: World3D;
     public var guiFocusChanged: Event;
+    public var sizeChanged: Event;
 }
