@@ -48,5 +48,5 @@ extern class Window extends Viewport {
     public var focusEntered: Event;
     public var focusExited: Event;
     public var goBackRequested: Event;
-    public var mouseRequested: Event;
+    public var mouseEntered: Event;
 }
