@@ -40,4 +40,5 @@ extern class Window extends Viewport {
     public var unfocusable: Bool;
     public var unresizable: Bool;
     public var visible: Bool;
+    public var wrapControls: Bool;
 }
