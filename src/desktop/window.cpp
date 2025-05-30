@@ -395,7 +395,7 @@ namespace sunaba::desktop {
             "isMaximizeAllowed", &Window::isMaximizeAllowed,
             "isUsingFontOversampling", &Window::isUsingFontOversampling,
             "moveToCenter", &Window::moveToCenter,
-            "moveToForground", &Window::moveToForground,
+            "moveToForeground", &Window::moveToForeground,
             "popup", &Window::popup,
             "popupCentered", &Window::popupCentered,
             "popupCenteredClamped", &Window::popupCenteredClamped,

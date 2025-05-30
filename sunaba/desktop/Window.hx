@@ -103,5 +103,5 @@ extern class Window extends Viewport {
     public function isMaximizeAllowed(): Bool;
     public function isUsingFontOversampling(): Bool;
     public function moveToCenter(): Void;
-    public function moveToForground(): Void;
+    public function moveToForeground(): Void;
 }
