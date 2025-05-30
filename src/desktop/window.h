@@ -215,7 +215,7 @@ namespace sunaba::desktop {
             bool getForceNative() {
                 return window->get_force_native();
             }
-            
+
             void setForceNative(bool force) {
                 window->set_force_native(force);
             }
@@ -276,7 +276,7 @@ namespace sunaba::desktop {
                 }
                 return result;
             }
-            
+
             void setMousePassthroughPolygon(std::vector<Vector2> polygon) {
                 PackedVector2Array passtrough_polygon;
                 for (size_t i = 0; i < polygon.size(); i++) {
@@ -285,8 +285,8 @@ namespace sunaba::desktop {
                 window->set_mouse_passthrough_polygon(passtrough_polygon);
             }
 
-            void getPopupWindow() {
-                window->get_flag(godot::Window::Flags::FLAG_POPUP);
+            bool getPopupWindow() {
+                return window->get_flag(godot::Window::Flags::FLAG_POPUP);
             }
 
             void setPopupWindow(bool popup) {
@@ -525,7 +525,7 @@ namespace sunaba::desktop {
 
             void addThemeIconOverride(std::string name, sunaba::core::Texture2D* icon) {
                 window->add_theme_icon_override(name.c_str(), Ref<godot::Texture2D>(icon->getTexture()));
-            } 
+            }
 
             void addThemeStyleBoxOverride(std::string name, sunaba::ui::StyleBox* stylebox) {
                 window->add_theme_stylebox_override(name.c_str(), Ref<godot::StyleBox>(stylebox->getStyleBox()));
