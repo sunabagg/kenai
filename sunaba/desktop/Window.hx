@@ -34,4 +34,5 @@ extern class Window extends Viewport {
     public var theme: Theme;
     public var themeTypeVariation: String;
     public var title: String;
+    public var transient: Bool;
 }
