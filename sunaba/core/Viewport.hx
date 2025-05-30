@@ -16,4 +16,5 @@ extern class Viewport extends Element {
     public var guiDisableInput: Bool;
     public var guiEmbedSubwindows: Bool;
     public var guiSnapControlsToPixels: Bool;
+    public var handleInputLocally: Bool;
 }
