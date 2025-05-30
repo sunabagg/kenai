@@ -45,4 +45,5 @@ extern class Window extends Viewport {
     public var closeRequested: Event;
     public var dpiChanged: Event;
     public var filesDropped: Event;
+    public var focusEntered: Event;
 }
