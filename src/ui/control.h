@@ -648,11 +648,11 @@ namespace sunaba::ui {
                 return control->get_screen_position();
             }
 
-            Color getThemeColor(std::string name, std::string type = String(StringName("&amp;")).utf8().get_data()) {
+            Color getThemeColor(std::string name, std::string type = String(StringName("&")).utf8().get_data()) {
                 return control->get_theme_color(name.c_str(), type.c_str());
             }
 
-            int getThemeConstant(std::string name, std::string type = String(StringName("&amp;")).utf8().get_data()) {
+            int getThemeConstant(std::string name, std::string type = String(StringName("&")).utf8().get_data()) {
                 return control->get_theme_constant(name.c_str(), type.c_str());
             }
 
@@ -668,19 +668,19 @@ namespace sunaba::ui {
                 return control->get_theme_default_font_size();
             }
 
-            sunaba::core::Font* getThemeFont(std::string name, std::string type = String(StringName("&amp;")).utf8().get_data()) {
+            sunaba::core::Font* getThemeFont(std::string name, std::string type = String(StringName("&")).utf8().get_data()) {
                 return new sunaba::core::Font(control->get_theme_font(name.c_str(), type.c_str()).ptr());
             }
 
-            int getThemeFontSize(std::string name, std::string type = String(StringName("&amp;")).utf8().get_data()) {
+            int getThemeFontSize(std::string name, std::string type = String(StringName("&")).utf8().get_data()) {
                 return control->get_theme_font_size(name.c_str(), type.c_str());
             }
 
-            sunaba::core::Texture2D* getThemeIcon(std::string name, std::string type = String(StringName("&amp;")).utf8().get_data()) {
+            sunaba::core::Texture2D* getThemeIcon(std::string name, std::string type = String(StringName("&")).utf8().get_data()) {
                 return new sunaba::core::Texture2D(control->get_theme_icon(name.c_str(), type.c_str()).ptr());
             }
 
-            StyleBox* getThemeStylebox(std::string name, std::string type = String(StringName("&amp;")).utf8().get_data()) {
+            StyleBox* getThemeStylebox(std::string name, std::string type = String(StringName("&")).utf8().get_data()) {
                 return new StyleBox(control->get_theme_stylebox(name.c_str(), type.c_str()).ptr());
             }
 
@@ -700,7 +700,7 @@ namespace sunaba::ui {
                 return control->has_focus();
             }
 
-            bool hasThemeColor(std::string name, std::string type = String(StringName("&amp;")).utf8().get_data()) {
+            bool hasThemeColor(std::string name, std::string type = String(StringName("&")).utf8().get_data()) {
                 return control->has_theme_color(name.c_str(), type.c_str());
             }
 
@@ -708,7 +708,7 @@ namespace sunaba::ui {
                 return control->has_theme_color_override(name.c_str());
             }
 
-            bool hasThemeConstant(std::string name, std::string type = String(StringName("&amp;")).utf8().get_data()) {
+            bool hasThemeConstant(std::string name, std::string type = String(StringName("&")).utf8().get_data()) {
                 return control->has_theme_constant(name.c_str(), type.c_str());
             }
 
@@ -716,7 +716,7 @@ namespace sunaba::ui {
                 return control->has_theme_constant_override(name.c_str());
             }
 
-            bool hasThemeFont(std::string name, std::string type = String(StringName("&amp;")).utf8().get_data()) {
+            bool hasThemeFont(std::string name, std::string type = String(StringName("&")).utf8().get_data()) {
                 return control->has_theme_font(name.c_str(), type.c_str());
             }
 
@@ -724,7 +724,7 @@ namespace sunaba::ui {
                 return control->has_theme_font_override(name.c_str());
             }
 
-            bool hasThemeFontSize(std::string name, std::string type = String(StringName("&amp;")).utf8().get_data()) {
+            bool hasThemeFontSize(std::string name, std::string type = String(StringName("&")).utf8().get_data()) {
                 return control->has_theme_font_size(name.c_str(), type.c_str());
             }
 
@@ -732,7 +732,7 @@ namespace sunaba::ui {
                 return control->has_theme_font_size_override(name.c_str());
             }
 
-            bool hasThemeIcon(std::string name, std::string type = String(StringName("&amp;")).utf8().get_data()) {
+            bool hasThemeIcon(std::string name, std::string type = String(StringName("&")).utf8().get_data()) {
                 return control->has_theme_icon(name.c_str(), type.c_str());
             }
 
@@ -740,7 +740,7 @@ namespace sunaba::ui {
                 return control->has_theme_icon_override(name.c_str());
             }
 
-            bool hasThemeStylebox(std::string name, std::string type = String(StringName("&amp;")).utf8().get_data()) {
+            bool hasThemeStylebox(std::string name, std::string type = String(StringName("&")).utf8().get_data()) {
                 return control->has_theme_stylebox(name.c_str(), type.c_str());
             }
 

@@ -563,11 +563,11 @@ namespace sunaba::desktop {
                 return window->get_size_with_decorations();
             }
 
-            Color getThemeColor(std::string name, std::string type = "&amp;") {
+            Color getThemeColor(std::string name, std::string type = "&") {
                 return window->get_theme_color(name.c_str(), type.c_str());
             }
 
-            int getThemeConstant(std::string name, std::string type = "&amp;") {
+            int getThemeConstant(std::string name, std::string type = "&") {
                 return window->get_theme_constant(name.c_str(), type.c_str());
             }
 
@@ -583,19 +583,19 @@ namespace sunaba::desktop {
                 return window->get_theme_default_font_size();
             }
 
-            sunaba::core::Font* getThemeFont(std::string name, std::string type = "&amp;") {
+            sunaba::core::Font* getThemeFont(std::string name, std::string type = "&") {
                 return new sunaba::core::Font(window->get_theme_font(name.c_str(), type.c_str()).ptr());
             }
 
-            int getThemeFontSize(std::string name, std::string type = "&amp;") {
+            int getThemeFontSize(std::string name, std::string type = "&") {
                 return window->get_theme_font_size(name.c_str(), type.c_str());
             }
 
-            sunaba::core::Texture2D* getThemeIcon(std::string name, std::string type = "&amp;") {
+            sunaba::core::Texture2D* getThemeIcon(std::string name, std::string type = "&") {
                 return new sunaba::core::Texture2D(window->get_theme_icon(name.c_str(), type.c_str()).ptr());
             }
 
-            sunaba::ui::StyleBox* getThemeStyleBox(std::string name, std::string type = "&amp;") {
+            sunaba::ui::StyleBox* getThemeStyleBox(std::string name, std::string type = "&") {
                 return new sunaba::ui::StyleBox(window->get_theme_stylebox(name.c_str(), type.c_str()).ptr());
             }
 
@@ -611,7 +611,7 @@ namespace sunaba::desktop {
                 return window->has_focus();
             }
 
-            bool hasThemeColor(std::string name, std::string type = "&amp;") {
+            bool hasThemeColor(std::string name, std::string type = "&") {
                 return window->has_theme_color(name.c_str(), type.c_str());
             }
 
@@ -619,7 +619,7 @@ namespace sunaba::desktop {
                 return window->has_theme_color_override(name.c_str());
             }
 
-            bool hasThemeConstant(std::string name, std::string type = "&amp;") {
+            bool hasThemeConstant(std::string name, std::string type = "&") {
                 return window->has_theme_constant(name.c_str(), type.c_str());
             }
 
@@ -627,7 +627,7 @@ namespace sunaba::desktop {
                 return window->has_theme_constant_override(name.c_str());
             }
 
-            bool hasThemeFont(std::string name, std::string type = "&amp;") {
+            bool hasThemeFont(std::string name, std::string type = "&") {
                 return window->has_theme_font(name.c_str(), type.c_str());
             }
 
@@ -635,7 +635,7 @@ namespace sunaba::desktop {
                 return window->has_theme_font_override(name.c_str());
             }
 
-            bool hasThemeFontSize(std::string name, std::string type = "&amp;") {
+            bool hasThemeFontSize(std::string name, std::string type = "&") {
                 return window->has_theme_font_size(name.c_str(), type.c_str());
             }
 
@@ -643,7 +643,7 @@ namespace sunaba::desktop {
                 return window->has_theme_font_size_override(name.c_str());
             }
 
-            bool hasThemeIcon(std::string name, std::string type = "&amp;") {
+            bool hasThemeIcon(std::string name, std::string type = "&") {
                 return window->has_theme_icon(name.c_str(), type.c_str());
             }
 
@@ -651,7 +651,7 @@ namespace sunaba::desktop {
                 return window->has_theme_icon_override(name.c_str());
             }
 
-            bool hasThemeStyleBox(std::string name, std::string type = "&amp;") {
+            bool hasThemeStyleBox(std::string name, std::string type = "&") {
                 return window->has_theme_stylebox(name.c_str(), type.c_str());
             }
 
