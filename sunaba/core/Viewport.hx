@@ -2,6 +2,7 @@ package sunaba.core;
 
 import sunaba.spatial.World3D;
 import sunaba.ui.Control;
+import sunaba.input.InputEvent;
 
 @:native("Viewport")
 extern class Viewport extends Element {
@@ -70,4 +71,5 @@ extern class Viewport extends Element {
     public function guiReleaseFocus(): Void;
     public function isInputHandled(): Bool;
     public function notifyMouseEntered(): Void;
+    public function pushInput(event: InputEvent, ?inLocalCoords: Bool): Void;
 }
