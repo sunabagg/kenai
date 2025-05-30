@@ -21,4 +21,5 @@ extern class Window extends Viewport {
     public var initialPosition: Int;
     public var keepTitleVisible: Bool;
     public var maxSize: Vector2i;
+    public var minSize: Vector2i;
 }
