@@ -35,4 +35,5 @@ extern class Viewport extends Element {
     public var scaling3DScale: Float;
     public var screenSpaceAA: Int;
     public var sdfOversize: Int;
+    public var sdfScale: Float;
 }
