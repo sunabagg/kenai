@@ -14,3 +14,14 @@ public class Container extends Control {
     @:native("cast")
     public function toContainer(type: Dynamic): Container;
 }
+
+abstract ContainerAbstarct(Container) from Container to Container {
+    @:from
+    public static function fromElement(element: sunaba.core.Element): ContainerAbstarct {
+        var container = Container.toContainer(element);
+        if (container.isNull()) {
+            return null;
+        }
+        return container;
+    }
+}
