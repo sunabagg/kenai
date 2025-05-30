@@ -6,5 +6,5 @@ extern class FlowContainer extends Container {
     public var lastWrapAlignment: Int;
     public var reverseFill: Bool;
     public var vertical: Bool;
-    public var lineCount: Int;
+    public function getLineCount(): Int;
 }
