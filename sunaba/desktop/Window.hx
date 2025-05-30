@@ -3,6 +3,7 @@ package sunaba.desktop;
 import sunaba.core.Viewport;
 import sunaba.core.Vector2i;
 import sunaba.core.Vector2;
+import sunaba.ui.Theme;
 
 @:native("Window")
 extern class Window extends Viewport {
