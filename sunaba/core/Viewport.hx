@@ -57,4 +57,5 @@ extern class Viewport extends Element {
     public function getFinalTransform(): Transform2D;
     public function getMousePosition(): Vector2;
     public function getRenderInfo(type: Int, info: Int): Int;
+    public function getScreenTransform(): Transform2D;
 }
