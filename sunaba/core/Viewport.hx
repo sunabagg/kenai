@@ -45,4 +45,5 @@ extern class Viewport extends Element {
     public var useTaa: Bool;
     public var useXr: Bool;
     public var vrsMode: Int;
+    public var vrsTexture: Texture2D;
 }
