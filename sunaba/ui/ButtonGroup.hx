@@ -7,7 +7,7 @@ import sunaba.core.Event;
 extern class ButtonGroup extends Resource {
     public var allowUnpress: Bool;
     public var pressed: Event;
-    public function getButtons(): lua.Table<Int, BaseButton>;
+    public function getButtons(): Array<BaseButton>;
     public function getPressedButton(): BaseButton;
     @:native("cast")
     public function castFrom(type: Dynamic): ButtonGroup;
