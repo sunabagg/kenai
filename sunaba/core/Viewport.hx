@@ -38,4 +38,5 @@ extern class Viewport extends Element {
     public var sdfScale: Float;
     public var snap2DTransformToPixels: Bool;
     public var textureMipmapBias: Float;
+    public var transparentBg: Bool;
 }
