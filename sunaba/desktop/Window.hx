@@ -47,4 +47,5 @@ extern class Window extends Viewport {
     public var filesDropped: Event;
     public var focusEntered: Event;
     public var focusExited: Event;
+    public var goBackRequested: Event;
 }
