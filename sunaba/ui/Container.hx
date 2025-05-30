@@ -6,4 +6,5 @@ import sunaba.core.Event;
 public class Container extends Control {
     public var mouseFilter: Int;
     public var preSortChildren: Event;
+    public var sortChildren: Event;
 }
