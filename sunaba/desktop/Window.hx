@@ -63,5 +63,6 @@ extern class Window extends Viewport {
     public function addThemeConstantOverride(name: String, value: Int): Void;
     public function addThemeFontOverride(name: String, font: Font): Void;
     public function addThemeFontSizeOverride(name: String, size: Int): Void;
-    public function addThemeIconOverride(name: String, icon: Texture2D): Void;
+    public function addThemeIconOverride(name: String, icon: Texture2D): Void
+    public function addThemeStyleboxOverride(name: String, stylebox: StyleBox): Void;
 }
