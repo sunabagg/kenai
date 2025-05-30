@@ -1,5 +1,7 @@
 package sunaba.desktop;
 
+import sunaba.core.Event;
+
 @:native("PopupMenu")
 extern class PopupMenu extends Popup {
     public var allowSearch: Bool;
