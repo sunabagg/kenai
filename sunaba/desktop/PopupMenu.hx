@@ -9,4 +9,5 @@ extern class PopupMenu extends Popup {
     public var itemCount: Int;
     public var preferNativeMneu: Bool;
     public var submenuPopupDelay: Float;
+    public var systemMenuId: Int;
 }
