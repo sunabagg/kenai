@@ -69,4 +69,5 @@ extern class Viewport extends Element {
     public function guiIsDragging(): Bool;
     public function guiReleaseFocus(): Void;
     public function isInputHandled(): Bool;
+    public function notifyMouseEntered(): Void;
 }
