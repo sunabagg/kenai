@@ -73,4 +73,5 @@ extern class Window extends Viewport {
     public function getLayoutDirection(): Int;
     public function getPositionWithDecorations(): Vector2i;
     public function getSizeWithDecorations(): Vector2i;
+    public function getThemeColor(name: String, ?type: String): Color;
 }
