@@ -1,5 +1,7 @@
 package sunaba.ui;
 
+import sunaba.core.Element;
+
 @:native("BoxContainer")
 extern class BoxContainer extends Container {
     public var alignment: Int;
