@@ -18,4 +18,5 @@ extern class Window extends Viewport {
     public var exclusive: Bool;
     public var extendToTitle: Bool;
     public var forceNative: Bool;
+    public var initialPosition: Int;
 }
