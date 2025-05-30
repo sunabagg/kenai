@@ -82,4 +82,5 @@ extern class Window extends Viewport {
     public function getThemeFontSize(name: String, ?type: String): Int;
     public function getThemeIcon(name: String, ?type: String): Texture2D;
     public function getThemeStylebox(name: String, ?type: String): StyleBox;
+    public function getWindowId(): Int;
 }
