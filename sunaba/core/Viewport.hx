@@ -82,3 +82,14 @@ extern class Viewport extends Element {
     @:native("cast")
     public function toViewport(type: Dynamic): Viewport;
 }
+
+abstract ViewportAbstract(Viewport) from Viewport to Viewport {
+    @:from
+    public static function fromElement(element: Element): ViewportAbstract {
+        var viewport = Viewport.toViewport(element);
+        if (viewport.isNull()) {
+            return null;
+        }
+        return viewport;
+    }
+}
