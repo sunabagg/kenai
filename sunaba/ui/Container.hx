@@ -10,4 +10,5 @@ public class Container extends Control {
     public function fitChildInRect(child: Control, rect: sunaba.core.Rect2): Void;
     public function queueSort(): Void;
     public function getAllowedSizeFlagsHorizontal(): Array<Int>;
+    public function getAllowedSizeFlagsVertical(): Array<Int>;
 }
