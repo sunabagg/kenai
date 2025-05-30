@@ -86,4 +86,5 @@ extern class Window extends Viewport {
     public function grabFocus(): Void;
     public function hasFocus(): Bool;
     public function hasThemeColor(name: String, ?type: String): Bool;
+    public function hasThemeColorOverride(name: String): Bool;
 }
