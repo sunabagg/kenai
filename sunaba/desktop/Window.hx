@@ -28,4 +28,5 @@ extern class Window extends Viewport {
     public var mousePassthroughPolygon: Array<Vector2>;
     public var popupWindow: Bool;
     public var position: Vector2i;
+    public var sharpCorners: Bool;
 }
