@@ -4,6 +4,7 @@ import sunaba.core.Viewport;
 import sunaba.core.Vector2i;
 import sunaba.core.Vector2;
 import sunaba.ui.Theme;
+import sunaba.core.Color;
 
 @:native("Window")
 extern class Window extends Viewport {
@@ -54,5 +55,5 @@ extern class Window extends Viewport {
     public var titleChanged: Event;
     public var titlebarChanged: Event;
     public var visibilityChanged: Event;
-    public function addThemeColorOverride(name: String, color: sunaba.core.Color): Void;
+    public function addThemeColorOverride(name: String, color: Color): Void;
 }
