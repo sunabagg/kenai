@@ -31,4 +31,5 @@ extern class PopupMenu extends Popup {
     public function addMultistateItem(label: String, maxStates: Int, defaultState: Int, ?id: Int, ?accel: Int): Void;
     public function addRadioCheckItem(label: String, ?id: Int, ?accel: Int): Void;
     public function addRadioCheckShortcut(shortcut: Shortcut, ?id: Int, ?global: Bool): Void;
+    public function addSeparator(?label: String, ?id: Int): Void;
 }
