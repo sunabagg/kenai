@@ -37,4 +37,5 @@ extern class Window extends Viewport {
     public var transient: Bool;
     public var transientToFocused: Bool;
     public var transparent: Bool;
+    public var unfocusable: Bool;
 }
