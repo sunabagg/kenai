@@ -124,4 +124,5 @@ extern class Window extends Viewport {
     public function removeThemeStyleboxOverride(name: String): Void;
     public function requestAttention(): Void;
     public function resetSize(): Void;
+    public function setImeActive(active: Bool): Void;
 }
