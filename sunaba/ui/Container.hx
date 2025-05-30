@@ -11,4 +11,6 @@ public class Container extends Control {
     public function queueSort(): Void;
     public function getAllowedSizeFlagsHorizontal(): Array<Int>;
     public function getAllowedSizeFlagsVertical(): Array<Int>;
+    @:native("cast")
+    public function toContainer(type: Dynamic): Container;
 }
