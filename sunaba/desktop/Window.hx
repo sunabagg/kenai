@@ -54,4 +54,5 @@ extern class Window extends Viewport {
     public var titleChanged: Event;
     public var titlebarChanged: Event;
     public var visibilityChanged: Event;
+    public function addThemeColorOverride(name: String, color: sunaba.core.Color): Void;
 }
