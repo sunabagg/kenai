@@ -70,4 +70,5 @@ extern class PopupMenu extends Popup {
     public function setItemAsRadioCheckable(id: Int, radioCheckable: Bool): Void;
     public function setItemAsSeparator(id: Int, separator: Bool): Void;
     public function setItemChecked(id: Int, checked: Bool): Void;
+    public function setItemDisabled(id: Int, disabled: Bool): Void;
 }
