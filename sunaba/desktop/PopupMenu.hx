@@ -64,4 +64,5 @@ extern class PopupMenu extends Popup {
     public function isSystemMenu(): Bool;
     public function removeItem(id: Int): Void;
     public function scrollToItem(id: Int): Void;
+    public function setFocusedItem(id: Int): Void;
 }
