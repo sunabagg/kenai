@@ -8,4 +8,5 @@ extern class ItemList extends Control {
     public var autoHeight: Bool;
     public var autoWidth: Bool;
     public var clipContents: Bool;
+    public var fixedColumnWidth: Int;
 }
