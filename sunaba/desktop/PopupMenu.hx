@@ -46,4 +46,5 @@ extern class PopupMenu extends Popup {
     public function getItemId(index: Int): Int;
     public function getItemIndent(id: Int): Int;
     public function getItemLanguage(index: Int): String;
+    public function getItemMetadata(index: Int): Variant;
 }
