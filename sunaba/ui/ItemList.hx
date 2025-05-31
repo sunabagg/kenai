@@ -32,4 +32,5 @@ extern class ItemList extends Control {
     public function addIconItem(texture: Texture2D, ?selectable: Bool): Void;
     public function addItem(test: String, ?icon: Texture2D, ?selectable: Bool): Void;
     public function clear(): Void;
+    public function deselect(index: Int): Void;
 }
