@@ -35,4 +35,5 @@ extern class ItemList extends Control {
     public function deselect(index: Int): Void;
     public function deselectAll(): Void;
     public function ensureCurrentIsVisible(): Void;
+    public function forceUpdateListSize(): Void;
 }
