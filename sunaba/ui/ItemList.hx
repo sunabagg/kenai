@@ -4,6 +4,7 @@ import sunaba.core.Vector2i;
 import sunaba.core.Event;
 import sunaba.core.Texture2D;
 import sunaba.core.Vector2;
+import sunaba.core.Color;
 
 @:native("ItemList")
 extern class ItemList extends Control {
