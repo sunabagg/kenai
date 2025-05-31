@@ -52,4 +52,5 @@ extern class PopupMenu extends Popup {
     public function getItemShortcut(index: Int): Shortcut;
     public function getItemSubmenu(index: Int): String;
     public function getItemSubmenuNode(index: Int): PopupMenu;
+    public function getItemText(index: Int): String;
 }
