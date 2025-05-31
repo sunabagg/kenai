@@ -5,3 +5,14 @@ extern class HFlowContainer extends FlowContainer {
     @:native("cast")
     public function toHFlowContainer(type: Dynamic): HFlowContainer;
 }
+
+abstract HFlowContainerAbstract(HFlowContainer) from HFlowContainer to HFlowContainer {
+    @:from
+    public static function fromElement(element: sunaba.core.Element): HFlowContainerAbstract {
+        var hflow = HFlowContainer.toHFlowContainer(element);
+        if (hflow.isNull()) {
+            return null;
+        }
+        return hflow;
+    }
+}
