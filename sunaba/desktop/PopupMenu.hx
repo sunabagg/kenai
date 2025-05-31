@@ -50,4 +50,5 @@ extern class PopupMenu extends Popup {
     public function getItemMultistate(index: Int): Int;
     public function getItemMultistateMax(index: Int): Int;
     public function getItemShortcut(index: Int): Shortcut;
+    public function getItemSubmenu(index: Int): String;
 }
