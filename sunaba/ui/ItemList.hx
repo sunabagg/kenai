@@ -59,4 +59,5 @@ extern class ItemList extends Control {
     public function isItemTooltipEnabled(index: Int): Bool;
     public function isSelected(index: Int): Bool;
     public function moveItem(from: Int, to: Int): Void;
+    public function removeItem(index: Int): Void;
 }
