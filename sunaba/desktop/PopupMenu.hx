@@ -59,4 +59,5 @@ extern class PopupMenu extends Popup {
     public function isItemChecked(index: Int): Bool;
     public function isItemDisabled(index: Int): Bool;
     public function isItemRadioCheckable(index: Int): Bool;
+    public function isItemSeparator(index: Int): Bool;
 }
