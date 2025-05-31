@@ -1,6 +1,7 @@
 package sunaba.ui;
 
 import sunaba.core.Vector2i;
+import sunaba.core.Event;
 
 @:native("ItemList")
 extern class ItemList extends Control {
