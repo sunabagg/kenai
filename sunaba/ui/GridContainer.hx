@@ -1,0 +1,6 @@
+package sunaba.ui;
+
+@:native("GridContainer")
+extern class GridContainer extends Container {
+    
+}
