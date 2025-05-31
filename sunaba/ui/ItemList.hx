@@ -36,4 +36,5 @@ extern class ItemList extends Control {
     public function deselectAll(): Void;
     public function ensureCurrentIsVisible(): Void;
     public function forceUpdateListSize(): Void;
+    //public function getHScrollBar(): HScrollBar;
 }
