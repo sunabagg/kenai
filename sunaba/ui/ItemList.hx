@@ -72,4 +72,5 @@ extern class ItemList extends Control {
     public function setItemLanguage(index: Int, language: String): Void;
     public function setItemMetadata(index: Int, metadata: Dynamic): Void;
     public function setItemSelectable(index: Int, selectable: Bool): Void;
+    public function setItemText(index: Int, text: String): Void;
 }
