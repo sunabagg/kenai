@@ -76,4 +76,5 @@ extern class ItemList extends Control {
     public function setItemTextDirection(index: Int, direction: Int): Void;
     public function setItemTooltip(index: Int, tooltip: String): Void;
     public function setItemTooltipEnabled(index: Int, enabled: Bool): Void;
+    public function sortItemsByText(): Void;
 }
