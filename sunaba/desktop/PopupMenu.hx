@@ -70,9 +70,9 @@ extern class PopupMenu extends Popup {
     public function setItemAsRadioCheckable(id: Int, radioCheckable: Bool): Void;
     public function setItemAsSeparator(id: Int, separator: Bool): Void;
     public function setItemChecked(id: Int, checked: Bool): Void;
-    public function setItemDisabled(id: Int, disabled: Bool): Void;
-    public function setItemIcon(id: Int, texture: Texture2D): Void;
-    public function setItemIconMaxWidth(id: Int, maxWidth: Int): Void;
+    public function setItemDisabled(index: Int, disabled: Bool): Void;
+    public function setItemIcon(index: Int, texture: Texture2D): Void;
+    public function setItemIconMaxWidth(index: Int, maxWidth: Int): Void;
     public function setItemIconModulate(index: Int, modulate: Color): Void;
     public function setItemId(index: Int, id: Int): Void;
     public function setItemIndent(index: Int, indent: Int): Void;
