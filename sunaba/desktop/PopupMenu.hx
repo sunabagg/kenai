@@ -89,4 +89,6 @@ extern class PopupMenu extends Popup {
     public function setItemTooltip(index: Int, tooltip: String): Void;
     public function toggleItemChecked(index: Int): Void;
     public function toggleItemMultistate(index: Int): Void;
+    @:native("cast")
+    public function toPopupMenu(type: Dynamic): PopupMenu;
 }
