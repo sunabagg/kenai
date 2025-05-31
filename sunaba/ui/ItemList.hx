@@ -57,4 +57,5 @@ extern class ItemList extends Control {
     public function isItemIconTransposed(index: Int): Bool;
     public function isItemSelectable(index: Int): Bool;
     public function isItemTooltipEnabled(index: Int): Bool;
+    public function isSelected(index: Int): Bool;
 }
