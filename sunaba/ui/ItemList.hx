@@ -15,4 +15,5 @@ extern class ItemList extends Control {
     public var focusMode: Int;
     public var iconMode: Int;
     public var iconScale: Float;
+    public var itemCount: Int;
 }
