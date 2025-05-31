@@ -27,4 +27,5 @@ extern class ItemList extends Control {
     public var itemActivated: Event;
     public var itemClicked: Event;
     public var itemSelected: Event;
+    public var multiSelected: Event;
 }
