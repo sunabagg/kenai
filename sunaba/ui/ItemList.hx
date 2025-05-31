@@ -50,4 +50,5 @@ extern class ItemList extends Control {
     public function getItemLanguage(index: Int): String;
     public function getItemTextDirection(index: Int): Int;
     public function getItemTooltip(index: Int): String;
+    public function getSelectedItems(): Array<Int>;
 }
