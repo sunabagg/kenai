@@ -30,4 +30,5 @@ extern class ItemList extends Control {
     public var itemSelected: Event;
     public var multiSelected: Event;
     public function addIconItem(texture: Texture2D, ?selectable: Bool): Void;
+    public function addItem(test: String, ?icon: Texture2D, ?selectable: Bool): Void;
 }
