@@ -71,4 +71,5 @@ extern class PopupMenu extends Popup {
     public function setItemAsSeparator(id: Int, separator: Bool): Void;
     public function setItemChecked(id: Int, checked: Bool): Void;
     public function setItemDisabled(id: Int, disabled: Bool): Void;
+    public function setItemIcon(id: Int, texture: Texture2D): Void;
 }
