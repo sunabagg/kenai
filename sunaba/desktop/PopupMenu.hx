@@ -73,4 +73,5 @@ extern class PopupMenu extends Popup {
     public function setItemDisabled(id: Int, disabled: Bool): Void;
     public function setItemIcon(id: Int, texture: Texture2D): Void;
     public function setItemIconMaxWidth(id: Int, maxWidth: Int): Void;
+    public function setItemIconModulate(id: Int, modulate: Color): Void;
 }
