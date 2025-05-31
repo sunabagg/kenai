@@ -84,4 +84,5 @@ extern class PopupMenu extends Popup {
     public function setItemShortcutDisabled(index: Int, disabled: Bool): Void;
     public function setItemSubmenu(index: Int, submenu: String): Void;
     public function setItemSubmenuNode(index: Int, submenu: PopupMenu): Void;
+    public function setItemText(index: Int, text: String): Void;
 }
