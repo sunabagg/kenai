@@ -43,4 +43,5 @@ extern class ItemList extends Control {
     public function getItemAutoTranslate(index: Int): Int;
     public function getItemCustomBgColor(index: Int): Color;
     public function getItemCustomFgColor(index: Int): Color;
+    public function getItemIcon(index: Int): Texture2D;
 }
