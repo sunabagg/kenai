@@ -16,4 +16,5 @@ extern class ItemList extends Control {
     public var iconMode: Int;
     public var iconScale: Float;
     public var itemCount: Int;
+    public var maxColumns: Int;
 }
