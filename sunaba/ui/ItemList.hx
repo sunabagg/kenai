@@ -20,4 +20,5 @@ extern class ItemList extends Control {
     public var maxTextLines: Int;
     public var sameColumnWidth: Bool;
     public var selectMode: Int;
+    public var textOverrunBehavior: Int;
 }
