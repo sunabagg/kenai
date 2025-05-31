@@ -42,4 +42,5 @@ extern class ItemList extends Control {
     public function getItemAtPosition(position: Vector2, ?exact: Bool): Int;
     public function getItemAutoTranslate(index: Int): Int;
     public function getItemCustomBgColor(index: Int): Color;
+    public function getItemCustomFgColor(index: Int): Color;
 }
