@@ -60,4 +60,5 @@ extern class ItemList extends Control {
     public function isSelected(index: Int): Bool;
     public function moveItem(from: Int, to: Int): Void;
     public function removeItem(index: Int): Void;
+    public function select(index: Int, ?single: Bool): Void;
 }
