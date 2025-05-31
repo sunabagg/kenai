@@ -47,4 +47,5 @@ extern class ItemList extends Control {
     public function getItemIcon(index: Int): Texture2D;
     public function getItemIconModulate(index: Int): Color;
     public function getItemIconRegion(index: Int): Rect2;
+    public function getItemLanguage(index: Int): String;
 }
