@@ -62,11 +62,11 @@ extern class PopupMenu extends Popup {
     public function isItemSeparator(index: Int): Bool;
     public function isItemShortcutDisabled(index: Int): Bool;
     public function isSystemMenu(): Bool;
-    public function removeItem(id: Int): Void;
-    public function scrollToItem(id: Int): Void;
-    public function setFocusedItem(id: Int): Void;
-    public function setItemAccelerator(id: Int, accel: Int): Void;
-    public function setItemAsCheckable(id: Int, checkable: Bool): Void;
+    public function removeItem(index: Int): Void;
+    public function scrollToItem(index: Int): Void;
+    public function setFocusedItem(index: Int): Void;
+    public function setItemAccelerator(index: Int, accel: Int): Void;
+    public function setItemAsCheckable(index: Int, checkable: Bool): Void;
     public function setItemAsRadioCheckable(index: Int, radioCheckable: Bool): Void;
     public function setItemAsSeparator(index: Int, separator: Bool): Void;
     public function setItemChecked(index: Int, checked: Bool): Void;
