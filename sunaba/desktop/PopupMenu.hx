@@ -92,3 +92,14 @@ extern class PopupMenu extends Popup {
     @:native("cast")
     public function toPopupMenu(type: Dynamic): PopupMenu;
 }
+
+abstract PopupMenuAbstract(PopupMenu) from PopupMenu to PopupMenu {
+    @:from
+    public static function fromElement(element: Element): PopupMenuAbstract {
+        var menu = PopupMenu.toPopupMenu(element);
+        if (menu.isNull()) {
+            return null;
+        }
+        return menu;
+    }
+}
