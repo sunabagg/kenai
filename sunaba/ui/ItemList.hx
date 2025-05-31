@@ -62,4 +62,5 @@ extern class ItemList extends Control {
     public function removeItem(index: Int): Void;
     public function select(index: Int, ?single: Bool): Void;
     public function setItemAutoTranslateMode(index: Int, mode: Int): Void;
+    public function setItemCustomBgColor(index: Int, color: Color): Void;
 }
