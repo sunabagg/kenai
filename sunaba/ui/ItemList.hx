@@ -70,4 +70,5 @@ extern class ItemList extends Control {
     public function setItemIconRegion(index: Int, region: Rect2): Void;
     public function setItemIconTransposed(index: Int, transposed: Bool): Void;
     public function setItemLanguage(index: Int, language: String): Void;
+    public function setItemMetadata(index: Int, metadata: Dynamic): Void;
 }
