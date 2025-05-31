@@ -17,6 +17,7 @@ boot_splash/bg_color=Color(1, 1, 1, 1)
 boot_splash/fullsize=false
 boot_splash/image="uid://tqi54djfy3ia"
 config/icon="uid://bcnaj1jhop8y"
+config/icon.macos="uid://do70wj6aatdd8"
 
 [display]
 
@@ -39,3 +40,5 @@ theme/custom_font="uid://bm2qptywwnt6s"
 
 renderer/rendering_method="gl_compatibility"
 renderer/rendering_method.mobile="gl_compatibility"
+textures/vram_compression/import_s3tc_bptc=true
+textures/vram_compression/import_etc2_astc=true
