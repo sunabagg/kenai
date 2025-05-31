@@ -81,4 +81,5 @@ extern class PopupMenu extends Popup {
     public function setItemMultistate(index: Int, state: Int): Void;
     public function setItemMultistateMax(index: Int, maxStates: Int): Void;
     public function setItemShortcut(index: Int, shortcut: Shortcut, ?global: Bool): Void;
+    public function setItemShortcutDisabled(index: Int, disabled: Bool): Void;
 }
