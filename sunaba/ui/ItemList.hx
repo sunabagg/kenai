@@ -6,4 +6,5 @@ extern class ItemList extends Control {
     public var allowRmbSelect: Bool;
     public var allowSearch: Bool;
     public var autoHeight: Bool;
+    public var autoWidth: Bool;
 }
