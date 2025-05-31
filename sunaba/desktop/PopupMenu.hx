@@ -78,4 +78,5 @@ extern class PopupMenu extends Popup {
     public function setItemIndent(index: Int, indent: Int): Void;
     public function setItemLanguage(index: Int, language: String): Void;
     public function setItemMetadata(index: Int, metadata: Variant): Void;
+    public function setItemMultistate(index: Int, state: Int): Void;
 }
