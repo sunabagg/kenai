@@ -68,5 +68,6 @@ extern class ItemList extends Control {
     public function setItemIcon(index: Int, texture: Texture2D): Void;
     public function setItemIconModulate(index: Int, color: Color): Void;
     public function setItemIconRegion(index: Int, region: Rect2): Void;
+    public function setItemIconTransposed(index: Int, transposed: Bool): Void;
     public function setItemLanguage(index: Int, language: String): Void;
 }
