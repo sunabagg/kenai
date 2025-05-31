@@ -76,4 +76,5 @@ extern class PopupMenu extends Popup {
     public function setItemIconModulate(id: Int, modulate: Color): Void;
     public function setItemId(index: Int, id: Int): Void;
     public function setItemIndent(index: Int, indent: Int): Void;
+    public function setItemLanguage(index: Int, language: String): Void;
 }
