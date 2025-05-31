@@ -53,4 +53,5 @@ extern class ItemList extends Control {
     public function getSelectedItems(): Array<Int>;
     //public function getVScrollBar(): VScrollBar;
     public function isAnythingSelected(): Bool;
+    public function isItemDisabled(index: Int): Bool;
 }
