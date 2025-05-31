@@ -51,4 +51,5 @@ extern class ItemList extends Control {
     public function getItemTextDirection(index: Int): Int;
     public function getItemTooltip(index: Int): String;
     public function getSelectedItems(): Array<Int>;
+    //public function getVScrollBar(): VScrollBar;
 }
