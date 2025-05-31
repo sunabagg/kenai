@@ -66,4 +66,5 @@ extern class ItemList extends Control {
     public function setItemCustomFgColor(index: Int, color: Color): Void;
     public function setItemDisabled(index: Int, disabled: Bool): Void;
     public function setItemIcon(index: Int, texture: Texture2D): Void;
+    public function setItemIconModulate(index: Int, color: Color): Void;
 }
