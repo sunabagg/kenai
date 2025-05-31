@@ -38,4 +38,5 @@ extern class ItemList extends Control {
     public function ensureCurrentIsVisible(): Void;
     public function forceUpdateListSize(): Void;
     //public function getHScrollBar(): HScrollBar;
+    public function getItemAtPosition(position: Vector2, ?exact: Bool): Int;
 }
