@@ -21,4 +21,5 @@ extern class ItemList extends Control {
     public var sameColumnWidth: Bool;
     public var selectMode: Int;
     public var textOverrunBehavior: Int;
+    public var wraparoundItems: Bool;
 }
