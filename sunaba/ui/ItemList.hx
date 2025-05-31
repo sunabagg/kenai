@@ -23,4 +23,5 @@ extern class ItemList extends Control {
     public var selectMode: Int;
     public var textOverrunBehavior: Int;
     public var wraparoundItems: Bool;
+    public var emptyClicked: Event;
 }
