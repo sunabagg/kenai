@@ -1,5 +1,7 @@
 package sunaba.ui;
 
+import sunaba.core.Vector2i;
+
 @:native("ItemList")
 extern class ItemList extends Control {
     public var allowReselect: Bool;
