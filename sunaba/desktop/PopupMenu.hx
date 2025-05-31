@@ -55,4 +55,5 @@ extern class PopupMenu extends Popup {
     public function getItemText(index: Int): String;
     public function getItemTextDirection(index: Int): Int;
     public function getItemTooltip(index: Int): String;
+    public function isItemCheckable(index: Int): Bool;
 }
