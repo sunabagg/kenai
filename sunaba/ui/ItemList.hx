@@ -11,4 +11,5 @@ extern class ItemList extends Control {
     public var autoWidth: Bool;
     public var clipContents: Bool;
     public var fixedColumnWidth: Int;
+    public var fixedIconSize: Vector2i;
 }
