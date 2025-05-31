@@ -87,4 +87,5 @@ extern class PopupMenu extends Popup {
     public function setItemText(index: Int, text: String): Void;
     public function setItemTextDirection(index: Int, direction: Int): Void;
     public function setItemTooltip(index: Int, tooltip: String): Void;
+    public function toggleItemChecked(index: Int): Void;
 }
