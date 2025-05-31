@@ -18,4 +18,5 @@ extern class ItemList extends Control {
     public var itemCount: Int;
     public var maxColumns: Int;
     public var maxTextLines: Int;
+    public var sameColumnWidth: Bool;
 }
