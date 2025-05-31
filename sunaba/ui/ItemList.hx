@@ -46,4 +46,5 @@ extern class ItemList extends Control {
     public function getItemCustomFgColor(index: Int): Color;
     public function getItemIcon(index: Int): Texture2D;
     public function getItemIconModulate(index: Int): Color;
+    public function getItemIconRegion(index: Int): Rect2;
 }
