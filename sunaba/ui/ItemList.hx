@@ -25,4 +25,5 @@ extern class ItemList extends Control {
     public var wraparoundItems: Bool;
     public var emptyClicked: Event;
     public var itemActivated: Event;
+    public var itemClicked: Event;
 }
