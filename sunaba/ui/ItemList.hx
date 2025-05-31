@@ -64,4 +64,5 @@ extern class ItemList extends Control {
     public function setItemAutoTranslateMode(index: Int, mode: Int): Void;
     public function setItemCustomBgColor(index: Int, color: Color): Void;
     public function setItemCustomFgColor(index: Int, color: Color): Void;
+    public function setItemDisabled(index: Int, disabled: Bool): Void;
 }
