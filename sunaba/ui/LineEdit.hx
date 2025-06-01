@@ -18,4 +18,5 @@ extern class LineEdit extends Control {
     public var expandToTextLength: Bool;
     public var flat: Bool;
     public var keepEditingOnTextSubmit: Bool;
+    public var language: String;
 }
