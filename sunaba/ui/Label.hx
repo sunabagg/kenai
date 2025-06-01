@@ -31,4 +31,5 @@ extern class Label extends Control {
     public var visibleRatio: Float;
     public function getCharacterBounds(index: Int): Rect2;
     public function getTotalCharacterCount(): Int;
+    public function getVisibleLineCount(): Int;
 }
