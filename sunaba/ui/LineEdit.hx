@@ -15,4 +15,5 @@ extern class LineEdit extends Control {
     public var drawControlChars: Bool;
     public var editable: Bool;
     public var emojiMenuEnabled: Bool;
+    public var expandToTextLength: Bool;
 }
