@@ -80,3 +80,14 @@ extern class ItemList extends Control {
     @:native("cast")
     public function toItemList(type: Dynamic): ItemList;
 }
+
+abstract ItemListAbstract(ItemList) from ItemList to ItemList {
+    @:from
+    public static function fromElement(element: sunaba.core.Element): ItemListAbstract {
+        var itemList = ItemList.toItemList(element);
+        if (itemList.isNull()) {
+            return null;
+        }
+        return itemList;
+    }
+}
