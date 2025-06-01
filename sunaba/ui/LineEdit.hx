@@ -59,4 +59,5 @@ extern class LineEdit extends Control {
     public function insertTextAtCaret(text: String): Void;
     public function isEditing(): Bool;
     public function isMenuVisible(): Bool;
+    public function unedit(): Void;
 }
