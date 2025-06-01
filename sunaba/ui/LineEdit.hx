@@ -24,4 +24,5 @@ extern class LineEdit extends Control {
     public var mouseDefaultCursorShape: Int;
     public var placeholderText: String;
     public var rightIcon: sunaba.core.Texture2D;
+    public var secret: Bool;
 }
