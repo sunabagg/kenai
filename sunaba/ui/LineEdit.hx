@@ -7,4 +7,5 @@ extern class LineEdit extends Control {
     public var caretBlinkInterval: Float;
     public var caretColumn: Int;
     public var caretForceDisplayed: Bool;
+    public var caretMidGrapheme: Bool;
 }
