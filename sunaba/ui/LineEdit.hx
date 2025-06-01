@@ -17,4 +17,5 @@ extern class LineEdit extends Control {
     public var emojiMenuEnabled: Bool;
     public var expandToTextLength: Bool;
     public var flat: Bool;
+    public var keepEditingOnTextSubmit: Bool;
 }
