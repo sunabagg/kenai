@@ -6,4 +6,5 @@ extern class LineEdit extends Control {
     public var caretBlink: Bool;
     public var caretBlinkInterval: Float;
     public var caretColumn: Int;
+    public var caretForceDisplayed: Bool;
 }
