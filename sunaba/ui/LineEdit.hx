@@ -62,5 +62,7 @@ extern class LineEdit extends Control {
     public function select(from: Int, ?to: Int): Void;
     public function selectAll(): Void;
     public function unedit(): Void;
+    @:native("cast")
+    public static function toLineEdit(obj: Dynamic): LineEdit;
 
 }
