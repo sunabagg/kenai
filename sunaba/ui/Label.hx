@@ -32,4 +32,6 @@ extern class Label extends Control {
     public function getCharacterBounds(index: Int): Rect2;
     public function getTotalCharacterCount(): Int;
     public function getVisibleLineCount(): Int;
+    @:native("cast")
+    public static function toLabel(obj: Dynamic): Label;
 }
