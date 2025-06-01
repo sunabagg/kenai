@@ -4,7 +4,7 @@ import sunaba.core.Event;
 import sunaba.core.Element;
 
 @:native("Container")
-public class Container extends Control {
+extern class Container extends Control {
     public var mouseFilter: Int;
     public var preSortChildren: Event;
     public var sortChildren: Event;
