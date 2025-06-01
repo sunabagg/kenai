@@ -45,4 +45,5 @@ extern class LineEdit extends Control {
     public function deleteCharAtCaret(): Void;
     public function deleteText(from: Int, to: Int): Void;
     public function deselect(): Void;
+    public function edit(): Void;
 }
