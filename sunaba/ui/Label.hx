@@ -38,7 +38,11 @@ extern class Label extends Control {
 
 abstract LabelAbstract(Label) from Label to Label {
     @:from
-    public static function fromLabel(label: Label): LabelAbstract {
-        return cast label;
+    public static function fromElement(element: sunaba.core.Element): Label {
+        var label = Label.toLabel(element);
+        if (label.isNull()){
+            return null;
+        }
+        return label;
     }
 }
