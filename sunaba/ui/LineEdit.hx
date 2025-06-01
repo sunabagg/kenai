@@ -52,4 +52,5 @@ extern class LineEdit extends Control {
     public function getScrollOffset(): Float;
     public function getSelectedText(): String;
     public function getSelectionFromColumn(): Int;
+    public function hasImeText(): Bool;
 }
