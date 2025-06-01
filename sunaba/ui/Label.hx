@@ -27,4 +27,5 @@ extern class Label extends Control {
     public var verticalAlignment: Int;
     public var visibleCharacters: Int;
     public var visibleCharactersBehavior: Int;
+    public var visibleRatio: Float;
 }
