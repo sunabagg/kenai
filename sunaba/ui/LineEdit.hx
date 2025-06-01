@@ -32,4 +32,5 @@ extern class LineEdit extends Control {
     public var structuredTextBidiOverride: Int;
     public var structuredTextBidiOverrideOptions: sunaba.core.ArrayList;
     public var text: String;
+    public var textDirection: Int;
 }
