@@ -64,5 +64,15 @@ extern class LineEdit extends Control {
     public function unedit(): Void;
     @:native("cast")
     public static function toLineEdit(obj: Dynamic): LineEdit;
+}
 
+abstract LineEditAbstract(LineEdit) from LineEdit to LineEdit {
+    @:from
+    public static function fromElement(element: sunaba.core.Element): LineEdit {
+        var lineEdit = LineEdit.toLineEdit(element);
+        if (lineEdit.isNull()){
+            return null;
+        }
+        return lineEdit;
+    }
 }
