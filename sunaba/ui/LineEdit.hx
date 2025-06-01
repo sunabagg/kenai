@@ -23,4 +23,5 @@ extern class LineEdit extends Control {
     public var middleMousePasteEnabled: Bool;
     public var mouseDefaultCursorShape: Int;
     public var placeholderText: String;
+    public var rightIcon: sunaba.core.Texture2D;
 }
