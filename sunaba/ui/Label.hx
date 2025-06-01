@@ -20,4 +20,5 @@ extern class Label extends Control {
     public var structuredTextBidiOverride: Int;
     public var structuredTextBidiOverrideOptions: ArrayList;
     public var tabStops: Array<Float>;
+    public var text: String;
 }
