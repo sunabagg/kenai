@@ -26,4 +26,5 @@ extern class LineEdit extends Control {
     public var rightIcon: sunaba.core.Texture2D;
     public var secret: Bool;
     public var secretCharacter: String;
+    public var selectAllOnFocus: Bool;
 }
