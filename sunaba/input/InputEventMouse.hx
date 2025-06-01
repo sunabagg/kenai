@@ -8,7 +8,7 @@ extern class InputEventMouse extends InputEventWithModifiers {
     public var globalPosition: Vector2;
     public var position: Vector2;
     @:native("cast")
-    public function castFrom(res: Dynamic): InputEventMouse;
+    public static function castFrom(res: Dynamic): InputEventMouse;
 }
 
 abstract InputEventMouseAbstract(InputEventMouse) from InputEventMouse to InputEventMouse {

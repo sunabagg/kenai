@@ -80,7 +80,7 @@ extern class Viewport extends Element {
     public function updateMouseCursorState(): Void;
     public function warpMouse(position: Vector2): Void;
     @:native("cast")
-    public function toViewport(type: Dynamic): Viewport;
+    public static function toViewport(type: Dynamic): Viewport;
 }
 
 abstract ViewportAbstract(Viewport) from Viewport to Viewport {

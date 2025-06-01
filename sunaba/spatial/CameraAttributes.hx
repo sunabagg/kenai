@@ -10,7 +10,7 @@ extern class CameraAttributes extends Resource {
     public var exposureMultiplier: Float;
     public var exposureSensitivity: Float;
     @:native("cast")
-    public function castFrom(res: Dynamic): CameraAttributes;
+    public static function castFrom(res: Dynamic): CameraAttributes;
 }
 
 abstract CameraAttributesAbstract(CameraAttributes) from CameraAttributes to CameraAttributes {

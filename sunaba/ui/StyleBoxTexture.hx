@@ -27,7 +27,7 @@ extern class StyleBoxTexture extends StyleBox {
     public function setTextureMargin(margin: Int, value: Float): Void;
     public function setTextureMarginAll(value: Float): Void;
     @:native("cast")
-    public function castFrom(res: Dynamic): StyleBoxTexture;
+    public static function castFrom(res: Dynamic): StyleBoxTexture;
 }
 
 abstract StyleBoxTextureAbstract(StyleBoxTexture) from StyleBoxTexture to StyleBoxTexture {

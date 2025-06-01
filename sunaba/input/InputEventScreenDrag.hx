@@ -12,7 +12,7 @@ extern class InputEventScreenDrag extends InputEventFromWindow {
     public var tilt: Vector2;
     public var velocity: Vector2;
     @:native("cast")
-    public function castFrom(res: Dynamic): InputEventScreenDrag;
+    public static function castFrom(res: Dynamic): InputEventScreenDrag;
 }
 
 abstract InputEventScreenDragAbstract(InputEventScreenDrag) from InputEventScreenDrag to InputEventScreenDrag {

@@ -18,7 +18,7 @@ extern class Button extends BaseButton {
     public var textOverrunBehavior: Int;
     public var verticalIconAlignment: Int;
     @:native("cast")
-    public function toButton(type: Dynamic): Button;
+    public static function toButton(type: Dynamic): Button;
 }
 
 abstract ButtonAbstract(Button) from Button to Button {

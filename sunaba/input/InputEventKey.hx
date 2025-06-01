@@ -16,7 +16,7 @@ extern class InputEventKey extends InputEventWithModifiers {
     public function getKeycodeWithModifiers(): Int;
     public function getPhysicalKeycodeWithModifiers(): Int;
     @:native("cast")
-    public function castFrom(res: Dynamic): InputEventKey;
+    public static function castFrom(res: Dynamic): InputEventKey;
 }
 
 abstract InputEventKeyAbstract(InputEventKey) from InputEventKey to InputEventKey {

@@ -7,7 +7,7 @@ extern class InputEventShortcut extends InputEventWithModifiers {
     public function hasValidEvent(): Bool;
     public function matchesEvent(event: InputEvent): Bool;
     @:native("cast")
-    public function castFrom(res: Dynamic): InputEventShortcut;
+    public static function castFrom(res: Dynamic): InputEventShortcut;
 }
 
 abstract InputEventShortcutAbstract(InputEventShortcut) from InputEventShortcut to InputEventShortcut {

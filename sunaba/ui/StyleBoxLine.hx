@@ -8,7 +8,7 @@ extern class StyleBoxLine extends StyleBox {
     public var thickness: Float;
     public var vertical: Bool;
     @:native("cast")
-    public function castFrom(res: Dynamic): StyleBoxLine;
+    public static function castFrom(res: Dynamic): StyleBoxLine;
 }
 
 abstract StyleBoxLineAbstract(StyleBoxLine) from StyleBoxLine to StyleBoxLine {

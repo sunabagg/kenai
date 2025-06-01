@@ -5,7 +5,7 @@ import sunaba.core.Resource;
 @:native("StyleBoxEmpty")
 extern class StyleBoxEmpty extends StyleBox {
     @:native("cast")
-    public function castFrom(res: Dynamic): StyleBoxEmpty;
+    public static function castFrom(res: Dynamic): StyleBoxEmpty;
 }
 
 abstract StyleBoxEmptyAbstract(StyleBoxEmpty) from StyleBoxEmpty to StyleBoxEmpty {

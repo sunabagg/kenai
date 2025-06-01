@@ -36,7 +36,7 @@ extern class StyleBoxFlat extends StyleBox {
     public function setExpandMargin(margin: Int, value: Int): Void;
     public function setExpandMarginAll(value: Int): Void;
     @:native("cast")
-    public function castFrom(res: Dynamic): StyleBoxFlat;
+    public static function castFrom(res: Dynamic): StyleBoxFlat;
 }
 
 abstract StyleBoxFlatAbstract(StyleBoxFlat) from StyleBoxFlat to StyleBoxFlat {

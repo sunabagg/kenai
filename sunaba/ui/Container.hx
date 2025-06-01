@@ -13,7 +13,7 @@ public class Container extends Control {
     public function getAllowedSizeFlagsHorizontal(): Array<Int>;
     public function getAllowedSizeFlagsVertical(): Array<Int>;
     @:native("cast")
-    public function toContainer(type: Dynamic): Container;
+    public static function toContainer(type: Dynamic): Container;
 }
 
 abstract ContainerAbstarct(Container) from Container to Container {

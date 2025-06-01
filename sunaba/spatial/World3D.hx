@@ -8,7 +8,7 @@ extern class World3D extends Resource {
     public var cameraAttributes: CameraAttributes;
     public var environment: Environment;
     @:native("cast")
-    public function castFrom(res: Dynamic): World3D;
+    public static function castFrom(res: Dynamic): World3D;
 }
 
 abstract World3DAbstract(World3D) from World3D to World3D {

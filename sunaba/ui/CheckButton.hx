@@ -3,7 +3,7 @@ package sunaba.ui;
 @:native("CheckButton")
 extern class CheckButton extends Button {
     @:native("cast")
-    public function toCheckButton(type: Dynamic): CheckButton;
+    public static function toCheckButton(type: Dynamic): CheckButton;
 }
 
 abstract CheckButtonAbstract(CheckButton) from CheckButton to CheckButton {

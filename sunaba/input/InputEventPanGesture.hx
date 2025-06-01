@@ -4,7 +4,7 @@ package sunaba.input;
 extern class InputEventPanGesture extends InputEventGesture {
     public var delta: Vector2;
     @:native("cast")
-    public function castFrom(res: Dynamic): InputEventPanGesture;
+    public static function castFrom(res: Dynamic): InputEventPanGesture;
 }
 
 abstract InputEventPanGestureAbstract(InputEventPanGesture) from InputEventPanGesture to InputEventPanGesture {

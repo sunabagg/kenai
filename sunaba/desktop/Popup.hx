@@ -6,7 +6,7 @@ import sunaba.core.Event;
 extern class Popup extends Window {
     public var popupHide: Event;
     @:native("cast")
-    public function toPopup(type: Dynamic): Popup;
+    public static function toPopup(type: Dynamic): Popup;
 }
 
 abstract PopupAbstract(Popup) from Popup to Popup {

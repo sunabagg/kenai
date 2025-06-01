@@ -76,7 +76,7 @@ extern class Theme extends Resource {
     public function setThemeItem(name: String, type: String, item: Variant): Void;
     public function setTypeVariation(themeType: String, baseType: String): Void;
     @:native("cast")
-    public function castFrom(res: Dynamic): Theme;
+    public static function castFrom(res: Dynamic): Theme;
 }
 
 abstract ThemeAbstract(Theme) from Theme to Theme {

@@ -7,7 +7,7 @@ import sunaba.core.Element;
 extern class ColorRect extends Control {
     public var color: Color;
     @:native("cast")
-    public function toColorRect(type: Dynamic): ColorRect;
+    public static function toColorRect(type: Dynamic): ColorRect;
 }
 
 abstract ColorRectAbstract(ColorRect) from ColorRect to ColorRect {

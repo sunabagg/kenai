@@ -9,7 +9,7 @@ extern class AspectRatioContainer extends Container {
     public var ratio: Float;
     public var stretchMode: Int;
     @:native("cast")
-    public function toAspectRatioContainer(type: Dynamic): AspectRatioContainer;
+    public static function toAspectRatioContainer(type: Dynamic): AspectRatioContainer;
 }
 
 abstract AspectRatioContainerAbstract(AspectRatioContainer) from AspectRatioContainer to AspectRatioContainer {

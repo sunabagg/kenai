@@ -10,7 +10,7 @@ extern class InputEventWithModifiers extends InputEventFromWindow {
     public function getModifiersMask(): Int;
     public function isCommandOrControlPressed(): Bool;
     @:native("cast")
-    public function castFrom(res: Dynamic): InputEventWithModifiers;
+    public static function castFrom(res: Dynamic): InputEventWithModifiers;
 }
 
 abstract InputEventWithModifiersAbstract(InputEventWithModifiers) from InputEventWithModifiers to InputEventWithModifiers {

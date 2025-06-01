@@ -8,7 +8,7 @@ extern class InputEventScreenTouch extends InputEventFromWindow {
     public var position: Vector2;
     public var pressed: Bool;
     @:native("cast")
-    public function castFrom(res: Dynamic): InputEventScreenTouch;
+    public static function castFrom(res: Dynamic): InputEventScreenTouch;
 }
 
 abstract InputEventScreenTouchAbstract(InputEventScreenTouch) from InputEventScreenTouch to InputEventScreenTouch {

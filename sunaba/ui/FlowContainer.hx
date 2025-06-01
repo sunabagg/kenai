@@ -8,7 +8,7 @@ extern class FlowContainer extends Container {
     public var vertical: Bool;
     public function getLineCount(): Int;
     @:native("cast")
-    public function toFlowContainer(type: Dynamic): FlowContainer;
+    public static function toFlowContainer(type: Dynamic): FlowContainer;
 }
 
 abstract FlowContainerAbstract(FlowContainer) from FlowContainer to FlowContainer {

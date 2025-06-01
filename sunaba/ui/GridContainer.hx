@@ -4,7 +4,7 @@ package sunaba.ui;
 extern class GridContainer extends Container {
     public var columns: Int;
     @:native("cast")
-    public function toGridContainer(type: Dynamic): GridContainer;
+    public static function toGridContainer(type: Dynamic): GridContainer;
 }
 
 abstract GridContainerAbstract(GridContainer) from GridContainer to GridContainer {

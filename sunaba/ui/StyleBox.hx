@@ -16,7 +16,7 @@ extern class StyleBox extends Resource {
     public function setContentMargin(margin: Int, value: Float): Void;
     public function setMargin(margin: Int, value: Float): Void;
     @:native("cast")
-    public function castFrom(res: Dynamic): StyleBox;
+    public static function castFrom(res: Dynamic): StyleBox;
 }
 
 abstract StyleBoxAbstract(StyleBox) from StyleBox to StyleBox {

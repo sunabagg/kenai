@@ -8,7 +8,7 @@ extern class ArrayOccluder3D extends Occluder3D {
     public var vertices: lua.Table<Int, Vector3>;
     public function setArrays(vertices: lua.Table<Int, Vector3>, indices: lua.Table<Int, Int>): Void;
     @:native("cast")
-    public function castFrom(res: Dynamic): ArrayOccluder3D;
+    public static function castFrom(res: Dynamic): ArrayOccluder3D;
 }
 
 abstract ArrayOccluder3DAbstract(ArrayOccluder3D) from ArrayOccluder3D to ArrayOccluder3D {

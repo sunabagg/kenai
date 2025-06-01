@@ -5,7 +5,7 @@ import sunaba.core.Element;
 @:native("CheckBox")
 extern class CheckBox extends Button {
     @:native("cast")
-    public function toCheckBox(type: Dynamic): CheckBox;
+    public static function toCheckBox(type: Dynamic): CheckBox;
 }
 
 abstract CheckBoxAbstract(CheckBox) from CheckBox to CheckBox {

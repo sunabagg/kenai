@@ -131,7 +131,7 @@ extern class BaseMaterial3D extends Material {
     public function setFlag(flag: Int, value: Bool): Void;
     public function setTexture(texture: Int, value: Texture2D): Void;
     @:native("cast")
-    public function castFrom(res: Dynamic): BaseMaterial3D;
+    public static function castFrom(res: Dynamic): BaseMaterial3D;
 }
 
 abstract BaseMaterial3DAbstract(BaseMaterial3D) from BaseMaterial3D to BaseMaterial3D {

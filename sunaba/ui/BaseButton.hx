@@ -23,7 +23,7 @@ extern class BaseButton extends Control {
     public function isHovered(): Bool;
     public function setPressedNoEvent(pressed: Bool): Void;
     @:native("cast")
-    public function toBaseButton(type: Dynamic): BaseButton;
+    public static function toBaseButton(type: Dynamic): BaseButton;
 }
 
 abstract BaseButtonAbstract(BaseButton) from BaseButton to BaseButton {

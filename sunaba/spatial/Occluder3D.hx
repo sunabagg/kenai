@@ -8,7 +8,7 @@ extern class Occluder3D extends Resource {
     public function getIndices(): lua.Table<Int, Int>;
     public function getVertices(): lua.Table<Int, Vector3>;
     @:native("cast")
-    public function castFrom(res: Dynamic): Occluder3D;
+    public static function castFrom(res: Dynamic): Occluder3D;
 }
 
 abstract Occluder3DAbstract(Occluder3D) from Occluder3D to Occluder3D {

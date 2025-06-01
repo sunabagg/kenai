@@ -90,7 +90,7 @@ extern class PopupMenu extends Popup {
     public function toggleItemChecked(index: Int): Void;
     public function toggleItemMultistate(index: Int): Void;
     @:native("cast")
-    public function toPopupMenu(type: Dynamic): PopupMenu;
+    public static function toPopupMenu(type: Dynamic): PopupMenu;
 }
 
 abstract PopupMenuAbstract(PopupMenu) from PopupMenu to PopupMenu {

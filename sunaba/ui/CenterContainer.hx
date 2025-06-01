@@ -6,7 +6,7 @@ import sunaba.core.Element;
 extern class CenterContainer extends Container {
     public var useTopLeft: Bool;
     @:native("cast")
-    public function toCenterContainer(type: Dynamic): CenterContainer;
+    public static function toCenterContainer(type: Dynamic): CenterContainer;
 }
 
 abstract CenterContainerAbstract(CenterContainer) from CenterContainer to CenterContainer {

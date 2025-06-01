@@ -4,7 +4,7 @@ package sunaba.input;
 extern class InputEventFromWindow extends InputEvent {
     public var windowId: Int;
     @:native("cast")
-    public function castFrom(res: Dynamic): InputEventFromWindow;
+    public static function castFrom(res: Dynamic): InputEventFromWindow;
 } // end package sunaba.input
 
 abstract InputEventFromWindowAbstract(InputEventFromWindow) from InputEventFromWindow to InputEventFromWindow {

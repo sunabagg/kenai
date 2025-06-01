@@ -4,7 +4,7 @@ package sunaba.spatial;
 extern class BoxOccluder3D extends Occluder3D {
     public var size: Vector3;
     @:native("cast")
-    public function castFrom(res: Dynamic): BoxOccluder3D;
+    public static function castFrom(res: Dynamic): BoxOccluder3D;
 }
 
 abstract BoxOccluder3DAbstract(BoxOccluder3D) from BoxOccluder3D to BoxOccluder3D {

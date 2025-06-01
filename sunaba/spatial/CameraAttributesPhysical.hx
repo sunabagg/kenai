@@ -12,7 +12,7 @@ extern class CameraAttributesPhysical extends CameraAttributes {
     public var frustumNear: Float;
     public function getFov(): Float;
     @:native("cast")
-    public function castFrom(res: Dynamic): CameraAttributesPhysical;
+    public static function castFrom(res: Dynamic): CameraAttributesPhysical;
 }
 
 abstract CameraAttributesPhysicalAbstract(CameraAttributesPhysical) from CameraAttributesPhysical to CameraAttributesPhysical {

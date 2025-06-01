@@ -10,7 +10,7 @@ extern class ButtonGroup extends Resource {
     public function getButtons(): Array<BaseButton>;
     public function getPressedButton(): BaseButton;
     @:native("cast")
-    public function castFrom(type: Dynamic): ButtonGroup;
+    public static function castFrom(type: Dynamic): ButtonGroup;
 }
 
 abstract ButtonGroupAbstract(ButtonGroup) from ButtonGroup to ButtonGroup {

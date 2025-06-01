@@ -4,7 +4,7 @@ package sunaba.input;
 extern class InputEventMagnifyGesture extends InputEventGesture {
     public var factor: Float;
     @:native("cast")
-    public function castFrom(res: Dynamic): InputEventMagnifyGesture;
+    public static function castFrom(res: Dynamic): InputEventMagnifyGesture;
 }
 
 abstract InputEventMagnifyGestureAbstract(InputEventMagnifyGesture) from InputEventMagnifyGesture to InputEventMagnifyGesture {

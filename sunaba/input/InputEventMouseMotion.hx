@@ -9,7 +9,7 @@ extern class InputEventMouseMotion extends InputEventMouse {
     public var relative: Vector2;
     public var screenRelative: Vector2;
     @:native("cast")
-    public function castFrom(res: Dynamic): InputEventMouseMotion;
+    public static function castFrom(res: Dynamic): InputEventMouseMotion;
 }
 
 abstract InputEventMouseMotionAbstract(InputEventMouseMotion) from InputEventMouseMotion to InputEventMouseMotion {

@@ -11,7 +11,7 @@ extern class InputEventMidi extends InputEvent {
     public var pressure: Int;
     public var velocity: Int;
     @:native("cast")
-    public function castFrom(res: Dynamic): InputEventMidi;
+    public static function castFrom(res: Dynamic): InputEventMidi;
 }
 
 abstract InputEventMidiAbstract(InputEventMidi) from InputEventMidi to InputEventMidi {

@@ -8,7 +8,7 @@ extern class BoxContainer extends Container {
     public var vertical: Bool;
     public function addSpacer(begin: Bool): Void;
     @:native("cast")
-    public function toBoxContainer(type: Dynamic): BoxContainer;
+    public static function toBoxContainer(type: Dynamic): BoxContainer;
 }
 
 abstract BoxContainerAbstract(BoxContainer) from BoxContainer to BoxContainer {

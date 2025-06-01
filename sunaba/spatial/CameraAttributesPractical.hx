@@ -12,7 +12,7 @@ extern class CameraAttributesPractical extends CameraAttributes {
     public var dofBlurNearEnabled: Bool;
     public var dofBlurNearTransition: Float;
     @:native("cast")
-    public function castFrom(res: Dynamic): CameraAttributesPractical;
+    public static function castFrom(res: Dynamic): CameraAttributesPractical;
 }
 
 abstract CameraAttributesPracticalAbstract(CameraAttributesPractical) from CameraAttributesPractical to CameraAttributesPractical {
