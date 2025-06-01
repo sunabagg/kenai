@@ -14,4 +14,5 @@ extern class Label extends Control {
     public var linesSkipped: Int;
     public var maxLinesSkipped: Int;
     public var mouseFilter: Int;
+    public var paragraphSeparator: String;
 }
