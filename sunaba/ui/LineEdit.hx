@@ -21,4 +21,5 @@ extern class LineEdit extends Control {
     public var language: String;
     public var maxLength: Int;
     public var middleMousePasteEnabled: Bool;
+    public var mouseDefaultCursorShape: Int;
 }
