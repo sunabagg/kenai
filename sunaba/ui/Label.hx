@@ -6,4 +6,5 @@ extern class Label extends Control {
     public var clipText: Bool;
     public var ellipsisChar: String;
     public var horizontalAlignment: Int;
+    public var justificationFlags: Int;
 }
