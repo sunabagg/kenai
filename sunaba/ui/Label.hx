@@ -9,4 +9,5 @@ extern class Label extends Control {
     public var ellipsisChar: String;
     public var horizontalAlignment: Int;
     public var justificationFlags: Int;
+    public var labelSettings: LabelSettings;
 }
