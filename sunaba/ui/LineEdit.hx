@@ -35,4 +35,5 @@ extern class LineEdit extends Control {
     public var textDirection: Int;
     public var virtualKeyboardEnabled: Bool;
     public var virtualKeyboardType: Int;
+    public var editingToggledEvent: sunaba.core.Event;
 }
