@@ -25,4 +25,5 @@ extern class Label extends Control {
     public var textOverrunBehavior: Int;
     public var uppercase: Bool;
     public var verticalAlignment: Int;
+    public var visibleCharacters: Int;
 }
