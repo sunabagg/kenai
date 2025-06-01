@@ -22,4 +22,5 @@ extern class Label extends Control {
     public var tabStops: Array<Float>;
     public var text: String;
     public var textDirection: Int;
+    public var textOverrunBehavior: Int;
 }
