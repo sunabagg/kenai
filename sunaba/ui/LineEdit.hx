@@ -34,4 +34,5 @@ extern class LineEdit extends Control {
     public var text: String;
     public var textDirection: Int;
     public var virtualKeyboardEnabled: Bool;
+    public var virtualKeyboardType: Int;
 }
