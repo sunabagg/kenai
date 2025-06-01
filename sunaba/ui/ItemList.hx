@@ -77,4 +77,6 @@ extern class ItemList extends Control {
     public function setItemTooltip(index: Int, tooltip: String): Void;
     public function setItemTooltipEnabled(index: Int, enabled: Bool): Void;
     public function sortItemsByText(): Void;
+    @:native("cast")
+    public function toItemList(type: Dynamic): ItemList;
 }
