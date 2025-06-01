@@ -10,7 +10,6 @@ extern class BaseButton extends Control {
     public var buttonMask: Int;
     public var buttonPressed: Bool;
     public var disabled: Bool;
-    public var focusMode: Int;
     public var keepPressedOutside: Bool;
     public var shortcut: Shortcut;
     public var shortcutFeedback: Bool;
