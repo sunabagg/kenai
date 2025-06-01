@@ -5,4 +5,5 @@ extern class Label extends Control {
     public var autowrapMode: Int;
     public var clipText: Bool;
     public var ellipsisChar: String;
+    public var horizontalAlignment: Int;
 }
