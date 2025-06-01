@@ -50,4 +50,5 @@ extern class LineEdit extends Control {
     public function edit(): Void;
     public function getMenu(): PopupMenu;
     public function getScrollOffset(): Float;
+    public function getSelectedText(): String;
 }
