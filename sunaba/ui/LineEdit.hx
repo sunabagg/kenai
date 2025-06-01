@@ -10,4 +10,5 @@ extern class LineEdit extends Control {
     public var caretMidGrapheme: Bool;
     public var clearButtonEnabled: Bool;
     public var contextMenuEnabled: Bool;
+    public var deselectOnFocusLossEnabled: Bool;
 }
