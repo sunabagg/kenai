@@ -1,5 +1,7 @@
 package sunaba.ui;
 
+import sunaba.desktop.PopupMenu;
+
 @:native("LineEdit")
 extern class LineEdit extends Control {
     public var alignment: Int;
@@ -46,4 +48,5 @@ extern class LineEdit extends Control {
     public function deleteText(from: Int, to: Int): Void;
     public function deselect(): Void;
     public function edit(): Void;
+
 }
