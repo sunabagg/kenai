@@ -22,7 +22,7 @@ extern class Element extends BaseObject {
     public function isNull(): Bool;
     public function getViewport(): Viewport;
     @:native("cast")
-    public static function castElement(): Element;
+    public static function castElement(obj:Dynamic): Element;
 }
 
 abstract ElementAbstract(Element) from Element to Element {
