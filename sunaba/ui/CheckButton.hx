@@ -1,5 +1,7 @@
 package sunaba.ui;
 
+import sunaba.core.Element;
+
 @:native("CheckButton")
 extern class CheckButton extends Button {
     @:native("cast")
