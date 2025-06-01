@@ -55,4 +55,5 @@ extern class LineEdit extends Control {
     public function hasImeText(): Bool;
     public function hasRedo(): Bool;
     public function hasSelection(): Bool;
+    public function hasUndo(): Bool;
 }
