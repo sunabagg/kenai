@@ -35,3 +35,10 @@ extern class Label extends Control {
     @:native("cast")
     public static function toLabel(obj: Dynamic): Label;
 }
+
+abstract LabelAbstract(Label) from Label to Label {
+    @:from
+    public static function fromLabel(label: Label): LabelAbstract {
+        return cast label;
+    }
+}
