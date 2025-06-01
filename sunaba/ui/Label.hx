@@ -12,4 +12,5 @@ extern class Label extends Control {
     public var labelSettings: LabelSettings;
     public var language: String;
     public var linesSkipped: Int;
+    public var maxLinesSkipped: Int;
 }
