@@ -39,4 +39,5 @@ extern class LineEdit extends Control {
     public var textChangeRejected: sunaba.core.Event;
     public var textChanged: sunaba.core.Event;
     public var textSubmitted: sunaba.core.Event;
+    public function applyIme(): Void;
 }
