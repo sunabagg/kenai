@@ -13,4 +13,5 @@ extern class LineEdit extends Control {
     public var deselectOnFocusLossEnabled: Bool;
     public var dragAndDropSelectionEnabled: Bool;
     public var drawControlChars: Bool;
+    public var editable: Bool;
 }
