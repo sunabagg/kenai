@@ -17,7 +17,6 @@ extern class ItemList extends Control {
     public var clipContents: Bool;
     public var fixedColumnWidth: Int;
     public var fixedIconSize: Vector2i;
-    public var focusMode: Int;
     public var iconMode: Int;
     public var iconScale: Float;
     public var itemCount: Int;
