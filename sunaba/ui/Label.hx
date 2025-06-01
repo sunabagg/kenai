@@ -26,4 +26,5 @@ extern class Label extends Control {
     public var uppercase: Bool;
     public var verticalAlignment: Int;
     public var visibleCharacters: Int;
+    public var visibleCharactersBehavior: Int;
 }
