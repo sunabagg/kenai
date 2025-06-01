@@ -54,4 +54,5 @@ extern class LineEdit extends Control {
     public function getSelectionFromColumn(): Int;
     public function hasImeText(): Bool;
     public function hasRedo(): Bool;
+    public function hasSelection(): Bool;
 }
