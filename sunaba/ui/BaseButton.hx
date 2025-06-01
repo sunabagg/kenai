@@ -2,6 +2,7 @@ package sunaba.ui;
 
 import sunaba.core.Element;
 import sunaba.input.Shortcut;
+import sunaba.core.Event;
 
 @:native("BaseButton")
 extern class BaseButton extends Control {
