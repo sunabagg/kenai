@@ -11,4 +11,5 @@ extern class Label extends Control {
     public var justificationFlags: Int;
     public var labelSettings: LabelSettings;
     public var language: String;
+    public var linesSkipped: Int;
 }
