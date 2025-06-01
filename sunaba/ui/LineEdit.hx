@@ -29,4 +29,5 @@ extern class LineEdit extends Control {
     public var selectAllOnFocus: Bool;
     public var selectingEnabled: Bool;
     public var shortcutKeysEnabled: Bool;
+    public var structuredTextBidiOverride: Int;
 }
