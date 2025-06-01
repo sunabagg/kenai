@@ -16,7 +16,6 @@ extern class Label extends Control {
     public var linesSkipped: Int;
     public var maxLinesSkipped: Int;
     public var paragraphSeparator: String;
-    public var sizeFlagsVertical: Int;
     public var structuredTextBidiOverride: Int;
     public var structuredTextBidiOverrideOptions: ArrayList;
     public var tabStops: Array<Float>;
