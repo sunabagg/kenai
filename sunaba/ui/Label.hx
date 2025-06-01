@@ -29,6 +29,5 @@ extern class Label extends Control {
     public var visibleCharacters: Int;
     public var visibleCharactersBehavior: Int;
     public var visibleRatio: Float;
-    public var characterBounds: Rect2;
-    public var lineCount: Int;
+    public function getCharacterBounds(index: Int): Rect2;
 }
