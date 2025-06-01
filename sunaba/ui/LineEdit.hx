@@ -9,4 +9,5 @@ extern class LineEdit extends Control {
     public var caretForceDisplayed: Bool;
     public var caretMidGrapheme: Bool;
     public var clearButtonEnabled: Bool;
+    public var contextMenuEnabled: Bool;
 }
