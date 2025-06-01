@@ -27,4 +27,5 @@ extern class LineEdit extends Control {
     public var secret: Bool;
     public var secretCharacter: String;
     public var selectAllOnFocus: Bool;
+    public var selectingEnabled: Bool;
 }
