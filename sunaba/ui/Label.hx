@@ -18,4 +18,5 @@ extern class Label extends Control {
     public var paragraphSeparator: String;
     public var sizeFlagsVertical: Int;
     public var structuredTextBidiOverride: Int;
+    public var structuredTextBidiOverrideOptions: ArrayList;
 }
