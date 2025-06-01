@@ -31,4 +31,5 @@ extern class LineEdit extends Control {
     public var shortcutKeysEnabled: Bool;
     public var structuredTextBidiOverride: Int;
     public var structuredTextBidiOverrideOptions: sunaba.core.ArrayList;
+    public var text: String;
 }
