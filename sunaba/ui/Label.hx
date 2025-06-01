@@ -1,6 +1,7 @@
 package sunaba.ui;
 
 import sunaba.core.LabelSettings;
+import sunaba.core.ArrayList;
 
 @:native("Label")
 extern class Label extends Control {
