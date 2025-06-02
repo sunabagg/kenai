@@ -4,4 +4,5 @@ package sunaba.ui;
 extern class Range extends Control {
     public var allowGreater: Bool;
     public var allowLesser: Bool;
+    public var expEdit: Bool;
 }
