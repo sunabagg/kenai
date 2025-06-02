@@ -78,4 +78,5 @@ extern class RichTextLabel extends Control {
     public function parseExpressionsForValues(expressions: Array<String>): Dictionary;
     public function pop(): Void;
     public function popAll(): Void;
+    public function popContent(): Void;
 }
