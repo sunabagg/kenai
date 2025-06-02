@@ -14,4 +14,5 @@ extern class RichTextLabel extends Control {
     public var fitContent: Bool;
     public var hintUnderlined: Bool;
     public var horizontalAlignment: Int;
+    public var justificationFlags: Int;
 }
