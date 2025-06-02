@@ -10,4 +10,5 @@ extern class Range extends Control {
     public var page: Float;
     public var ratio: Float;
     public var rounded: Bool;
+    public var sizeFlagsVertical: Int;
 }
