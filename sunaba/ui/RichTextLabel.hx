@@ -55,4 +55,5 @@ extern class RichTextLabel extends Control {
     public function getLineOffset(line: Int): Float;
     public function getLineRange(line: Int): Vector2i;
     public function getMenu(): PopupMenu;
+    public function getParagraphCount(): Int;
 }
