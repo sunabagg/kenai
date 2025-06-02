@@ -1,5 +1,7 @@
 package sunaba.ui;
 
+import sunaba.core.Event;
+
 @:native("ScrollContainer")
 extern class ScrollContainer extends Container {
     public var clipContents: Bool;
