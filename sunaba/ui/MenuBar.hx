@@ -17,4 +17,5 @@ extern class MenuBar extends Control {
     public function isMenuDisabled(index: Int): Bool;
     public function isMenuHidden(index: Int): Bool;
     public function isNativeMenu(index: Int): Bool;
+    public function setDisableShortcuts(disable: Bool): Void;
 }
