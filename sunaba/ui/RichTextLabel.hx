@@ -109,4 +109,5 @@ extern class RichTextLabel extends Control {
     public function scrollToParagraph(paragraph: Int): Void;
     public function scrollToSelection(): Void;
     public function selectAll(): Void;
+    public function setCellBorderColor(color: Color): Void;
 }
