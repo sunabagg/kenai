@@ -10,4 +10,6 @@ extern class LinkButton extends BaseButton {
     public var textDirection: Int;
     public var underline: Bool;
     public var uri: String;
+    @:native("cast")
+    public static function toLinkButton(obj: Dynamic): sunaba.ui.LinkButton;
 }
