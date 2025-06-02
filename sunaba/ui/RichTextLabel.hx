@@ -66,7 +66,7 @@ extern class RichTextLabel extends Control {
     public function getSelectionLineOffset(): Float;
     public function getSelectionTo(): Int;
     public function getTotalCharacterCount(): Int;
-    //public function getVScrollBar(): ScrollBar;
+    public function getVScrollBar(): ScrollBar;
     public function getVisibleLineCount(): Int;
     public function getVisibleParagraphCount(): Int;
     public function installEffect(effect: Variant): Void;
