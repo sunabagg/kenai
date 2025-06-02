@@ -9,3 +9,14 @@ extern class ProgressBar extends Range {
     @:native("cast")
     public static function toProgressBar(obj: Dynamic): sunaba.ui.ProgressBar;
 }
+
+abstract ProgressBarAbstract(ProgressBar) from ProgressBar to ProgressBar {
+    @:from
+    public static function fromElement(element: sunaba.core.Element): sunaba.ui.ProgressBar {
+        var progressBar = sunaba.ui.ProgressBar.toProgressBar(element);
+        if (progressBar.isNull()) {
+            return null;
+        }
+        return progressBar;
+    }
+}
