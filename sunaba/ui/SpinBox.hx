@@ -7,4 +7,5 @@ extern class SpinBox extends Range{
     public var editable: Bool;
     public var prefix: String;
     public var selectAllOnFocus: Bool;
+    public var suffix: String;
 }
