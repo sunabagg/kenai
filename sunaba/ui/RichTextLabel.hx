@@ -8,4 +8,5 @@ extern class RichTextLabel extends Control {
     public var bbcodeEnabled: Bool;
     public var clipContents: Bool;
     public var contextMenuEnabled: Bool;
+    public var customEffects: ArrayList;
 }
