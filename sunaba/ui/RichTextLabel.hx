@@ -111,4 +111,5 @@ extern class RichTextLabel extends Control {
     public function selectAll(): Void;
     public function setCellBorderColor(color: Color): Void;
     public function setCellSizeOverride(minSize: Vector2, maxSize: Vector2): Void;
+    public function setTableColumnExpand(column: Int, expand: Bool, ?ratio: Int, ?shrink: Bool): Void;
 }
