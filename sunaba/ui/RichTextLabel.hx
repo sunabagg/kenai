@@ -35,4 +35,5 @@ extern class RichTextLabel extends Control {
     public var visibleRatio: Float;
     public var finished: sunaba.core.Event;
     public var metaClicked: sunaba.core.Event;
+    public var metaHoverEnded: sunaba.core.Event;
 }
