@@ -4,4 +4,5 @@ package sunaba.ui;
 extern class OptionButton extends Button {
     public var actionMode: Int;
     public var allowReselect: Bool;
+    public var fitToLongestItem: Bool;
 }
