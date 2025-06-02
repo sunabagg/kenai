@@ -12,4 +12,5 @@ extern class OptionButton extends Button {
     public var itemFocused: sunaba.core.Event;
     public var itemSelected: sunaba.core.Event;
     public function addIconItem(texture: Texture2D, label: String, ?id: Int): Void;
+    public function addItem(label: String, ?id: Int): Void;
 }
