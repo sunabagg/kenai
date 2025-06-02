@@ -101,5 +101,5 @@ extern class RichTextLabel extends Control {
     public function pushOutlineColor(color: Color): Void;
     public function pushOutlineSize(size: Int): Void;
     public function pushParagraph(alignment: Int, ?baseDirection: Int, ?language: String, ?structureTextParser: String, ?justificationFlags: Int, ?flags: Array<Float>): Void;
-    
+    public function pushStrikethrough(): Void;
 }
