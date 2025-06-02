@@ -58,4 +58,5 @@ extern class RichTextLabel extends Control {
     public function getParagraphCount(): Int;
     public function getParagraphOffset(paragraph: Int): Float;
     public function getParsedText(): String;
+    public function getSelectedText(): String;
 }
