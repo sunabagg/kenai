@@ -11,4 +11,5 @@ extern class RichTextLabel extends Control {
     public var customEffects: ArrayList;
     public var deselectOnFocusLossEnabled: Bool;
     public var dragAndDropSelectionEnabled: Bool;
+    public var fitContent: Bool;
 }
