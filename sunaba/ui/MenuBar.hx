@@ -8,4 +8,5 @@ extern class MenuBar extends Control {
     public var startIndex: Int;
     public var switchOnHover: Bool;
     public var textDirection: Int;
+    public function getMenuCount(): Int;
 }
