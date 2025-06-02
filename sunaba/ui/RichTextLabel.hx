@@ -71,4 +71,5 @@ extern class RichTextLabel extends Control {
     public function isFinished(): Bool;
     public function isMenuVisible(): Bool;
     public function isReady(): Bool;
+    public function menuOption(option: Int): Void;
 }
