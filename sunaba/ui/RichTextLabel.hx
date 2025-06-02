@@ -96,4 +96,5 @@ extern class RichTextLabel extends Control {
     public function pushLanguage(language: String): Void;
     public function pushList(level: Int, type: Int, capitalize: Bool, ?bullet: String): Void;
     public function pushMeta(data: Variant, ?underlineMode: Int, ?tooltip: String): Void;
+    public function pushMono(): Void;
 }
