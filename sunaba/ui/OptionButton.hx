@@ -30,4 +30,5 @@ extern class OptionButton extends Button {
     public function removeItem(idx: Int): Void;
     public function select(idx: Int): Void;
     public function setDisableShortcuts(disable: Bool): Void;
+    public function setItemDisabled(idx: Int, disabled: Bool): Void;
 }
