@@ -11,4 +11,6 @@ extern class SpinBox extends Range{
     public var updateOnTextChanged: Bool;
     public function apply(): Void;
     public function getLineEdit(): sunaba.ui.LineEdit;
+    @:native("cast")
+    public static function toSpinBox(obj: Dynamic): sunaba.ui.SpinBox;
 }
