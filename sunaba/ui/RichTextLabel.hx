@@ -99,4 +99,5 @@ extern class RichTextLabel extends Control {
     public function pushMono(): Void;
     public function pushNormal(): Void;
     public function pushOutlineColor(color: Color): Void;
+    public function pushOutlineSize(size: Int): Void;
 }
