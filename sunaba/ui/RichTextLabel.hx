@@ -13,4 +13,5 @@ extern class RichTextLabel extends Control {
     public var dragAndDropSelectionEnabled: Bool;
     public var fitContent: Bool;
     public var hintUnderlined: Bool;
+    public var horizontalAlignment: Int;
 }
