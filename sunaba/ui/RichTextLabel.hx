@@ -40,4 +40,5 @@ extern class RichTextLabel extends Control {
     public var metaClicked: sunaba.core.Event;
     public var metaHoverEnded: sunaba.core.Event;
     public var metaHoverStarted: sunaba.core.Event;
+    public function addImage(image: sunaba.core.Texture2D, ?width: Int, ?height: Int, ?color: Color, ?inlineAlign: Int, ?region: Rect2, ?key: Variant, ?pad: Bool, ?tooltip: String, ?sizeInPercent: Bool ): Void;
 }
