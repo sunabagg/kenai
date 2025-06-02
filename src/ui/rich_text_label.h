@@ -395,7 +395,7 @@ namespace sunaba::ui {
                 metaHoverStartedEvent = event;
             }
 
-            void addImage(sunaba::core::Texture2D* image, int width = 0, int height = 0, Color color = Color(1, 1, 1, 1), int inlineAlign = 5, Rect2 region = Rect2(0, 0, 0, 0), Variant key = Variant(), bool pad = false, std::string tooltip = "&qout;&qout;", bool sizeInPercent = false) {
+            void addImage(sunaba::core::Texture2D* image, int width = 0, int height = 0, Color color = Color(1, 1, 1, 1), int inlineAlign = 5, Rect2 region = Rect2(0, 0, 0, 0), Variant key = Variant(), bool pad = false, std::string tooltip = "''", bool sizeInPercent = false) {
                 rich_text_label->add_image(image->getTexture2D(), width, height, color, static_cast<InlineAlignment>(inlineAlign), region, key, pad, String(tooltip.c_str()), sizeInPercent);
             }
 
