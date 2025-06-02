@@ -105,4 +105,5 @@ extern class RichTextLabel extends Control {
     public function pushTable(columns: Int, ?inlineAlign: int, ?alignToRow: Int) : Void;
     public function pushUnderline(): Void;
     public function removeParagraph(paragraph: Int, ?noInvalidate: Bool): Void;
+    public function scrollToLine(line: Int): Void;
 }
