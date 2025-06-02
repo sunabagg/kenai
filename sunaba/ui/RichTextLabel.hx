@@ -102,4 +102,5 @@ extern class RichTextLabel extends Control {
     public function pushOutlineSize(size: Int): Void;
     public function pushParagraph(alignment: Int, ?baseDirection: Int, ?language: String, ?structureTextParser: String, ?justificationFlags: Int, ?flags: Array<Float>): Void;
     public function pushStrikethrough(): Void;
+    public function pushTable(columns: Int, ?inlineAlign: int, ?alignToRow: Int) : Void;
 }
