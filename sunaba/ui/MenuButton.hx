@@ -12,4 +12,6 @@ extern class MenuButton extends Button {
     public function getPopup(): PopupMenu;
     public function setDisableShortcuts(disable: Bool): Void;
     public function showPopup(): Void;
+    @:native("cast")
+    public static function toMenuButton(obj: Dynamic): sunaba.ui.MenuButton;
 }
