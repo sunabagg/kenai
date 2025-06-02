@@ -90,4 +90,5 @@ extern class RichTextLabel extends Control {
     public function pushFgcolor(fgcolor: Color): Void;
     public function pushFont(font: Font): Void;
     public function pushFontSize(size: Int): Void;
+    public function pushHint(description: String): Void;
 }
