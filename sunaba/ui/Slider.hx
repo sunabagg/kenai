@@ -9,4 +9,5 @@ extern class Slider extends Range {
     public var tickCount: Int;
     public var ticksOnBorders: Bool;
     public var dragEnded: Event;
+    public var dragStarted: Event;
 }
