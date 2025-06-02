@@ -6,4 +6,5 @@ import sunaba.core.Event;
 extern class ScrollBar extends Range {
     public var customStep: Float;
     public var step: Float;
+    public var scrolling: Event;
 }
