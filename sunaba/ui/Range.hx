@@ -7,4 +7,5 @@ extern class Range extends Control {
     public var expEdit: Bool;
     public var maxValue: Float;
     public var minValue: Float;
+    public var page: Float;
 }
