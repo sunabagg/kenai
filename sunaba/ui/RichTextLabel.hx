@@ -76,4 +76,5 @@ extern class RichTextLabel extends Control {
     public function newline(): Void;
     public function parseBBCode(bbcode: String): Void;
     public function parseExpressionsForValues(expressions: Array<String>): Dictionary;
+    public function pop(): Void;
 }
