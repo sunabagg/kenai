@@ -10,4 +10,5 @@ extern class SpinBox extends Range{
     public var suffix: String;
     public var updateOnTextChanged: Bool;
     public function apply(): Void;
+    public function getLineEdit(): sunaba.ui.LineEdit;
 }
