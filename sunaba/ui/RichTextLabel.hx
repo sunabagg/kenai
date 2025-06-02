@@ -7,6 +7,7 @@ import sunaba.core.Color;
 import sunaba.core.Vector2i;
 import sunaba.desktop.PopupMenu;
 import sunaba.core.Dictionary;
+import sunaba.core.Font;
 
 @:native("PanelContainer")
 extern class RichTextLabel extends Control {
