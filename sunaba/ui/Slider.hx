@@ -10,4 +10,6 @@ extern class Slider extends Range {
     public var ticksOnBorders: Bool;
     public var dragEnded: Event;
     public var dragStarted: Event;
+    @:native("cast")
+    public static function toSlider(obj: Dynamic): sunaba.ui.Slider;
 }
