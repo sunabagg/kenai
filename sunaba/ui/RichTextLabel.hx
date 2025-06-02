@@ -9,4 +9,5 @@ extern class RichTextLabel extends Control {
     public var clipContents: Bool;
     public var contextMenuEnabled: Bool;
     public var customEffects: ArrayList;
+    public var deselectOnFocusLossEnabled: Bool;
 }
