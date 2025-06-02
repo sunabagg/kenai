@@ -22,4 +22,6 @@ extern class MenuBar extends Control {
     public function setMenuHidden(index: Int, hidden: Bool): Void;
     public function setMenuTitle(index: Int, title: String): Void;
     public function setMenuTooltip(index: Int, tooltip: String): Void;
+    @:native("cast")
+    public static function toMenuBar(obj: Dynamic): sunaba.ui.MenuBar;
 }
