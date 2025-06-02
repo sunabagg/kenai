@@ -25,3 +25,14 @@ extern class MenuBar extends Control {
     @:native("cast")
     public static function toMenuBar(obj: Dynamic): sunaba.ui.MenuBar;
 }
+
+abstract MenuBarAbstract(MenuBar) from MenuBar to MenuBar {
+    @:from
+    public static function fromElement(element: sunaba.core.Element): sunaba.ui.MenuBar {
+        var menuBar = sunaba.ui.MenuBar.toMenuBar(element);
+        if (menuBar.isNull()) {
+            return null;
+        }
+        return menuBar;
+    }
+}
