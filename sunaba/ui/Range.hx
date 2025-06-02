@@ -1,5 +1,7 @@
 package sunaba.ui;
 
+import sunaba.core.Element;
+
 @:native("Range")
 extern class Range extends Control {
     public var allowGreater: Bool;
@@ -16,4 +18,5 @@ extern class Range extends Control {
     public var changed: sunaba.core.Event;
     public var valueChanged: sunaba.core.Event;
     public function setValueNoSignal(value: Float): Void;
+    public function share(with: Element): Void;
 }
