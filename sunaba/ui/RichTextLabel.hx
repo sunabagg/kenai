@@ -62,4 +62,5 @@ extern class RichTextLabel extends Control {
     public function getSelectionFrom(): Int;
     public function getSelectionLineOffset(): Float;
     public function getSelectionTo(): Int;
+    public function getTotalCharacterCount(): Int;
 }
