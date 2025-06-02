@@ -4,5 +4,5 @@ package sunaba.ui;
 extern class MenuButton extends Button {
     public var flat: Bool;
     public var itemCount: Int;
-    public var isSwitchOnHover: Bool;
+    public var switchOnHover: Bool;
 }
