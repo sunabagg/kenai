@@ -13,3 +13,14 @@ extern class LinkButton extends BaseButton {
     @:native("cast")
     public static function toLinkButton(obj: Dynamic): sunaba.ui.LinkButton;
 }
+
+abstract LinkButtonAbstract(LinkButton) from LinkButton to LinkButton {
+    @:from
+    public static function fromElement(element: sunaba.core.Element): sunaba.ui.LinkButton {
+        var linkButton = sunaba.ui.LinkButton.toLinkButton(element);
+        if (linkButton.isNull()) {
+            return null;
+        }
+        return linkButton;
+    }
+}
