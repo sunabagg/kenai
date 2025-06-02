@@ -6,4 +6,5 @@ extern class ScrollContainer extends Container {
     public var drawFocusBorder: Bool;
     public var followFocus: Bool;
     public var horizontalScrollMode: sunaba.ui.ScrollMode;
+    public var scrollDeadzone: Int;
 }
