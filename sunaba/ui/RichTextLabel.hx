@@ -110,4 +110,5 @@ extern class RichTextLabel extends Control {
     public function scrollToSelection(): Void;
     public function selectAll(): Void;
     public function setCellBorderColor(color: Color): Void;
+    public function setCellSizeOverride(size: Float): Void;
 }
