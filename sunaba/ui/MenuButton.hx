@@ -15,3 +15,14 @@ extern class MenuButton extends Button {
     @:native("cast")
     public static function toMenuButton(obj: Dynamic): sunaba.ui.MenuButton;
 }
+
+abstract MenuButtonAbstract(MenuButton) from MenuButton to MenuButton {
+    @:from
+    public static function fromElement(element: sunaba.core.Element): sunaba.ui.MenuButton {
+        var menuButton = sunaba.ui.MenuButton.toMenuButton(element);
+        if (menuButton.isNull()) {
+            return null;
+        }
+        return menuButton;
+    }
+}
