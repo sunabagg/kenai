@@ -3,6 +3,7 @@ package sunaba.ui;
 import sunaba.core.ArrayList;
 import sunaba.core.Variant;
 import sunaba.core.Rect2;
+import sunaba.core.Color;
 
 @:native("PanelContainer")
 extern class RichTextLabel extends Control {
