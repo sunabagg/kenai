@@ -8,4 +8,5 @@ extern class ScrollContainer extends Container {
     public var horizontalScrollMode: sunaba.ui.ScrollMode;
     public var scrollDeadzone: Int;
     public var scrollHorizontal: Int;
+    public var scrollHorizontalCustomStep: Float;
 }
