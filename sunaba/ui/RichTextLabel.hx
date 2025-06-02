@@ -20,4 +20,5 @@ extern class RichTextLabel extends Control {
     public var progressBarDelay: Int;
     public var scrollActive: Bool;
     public var scrollFollowing: Bool;
+    public var selectionEnabled: Bool;
 }
