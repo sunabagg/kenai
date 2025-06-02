@@ -14,3 +14,14 @@ extern class SpinBox extends Range{
     @:native("cast")
     public static function toSpinBox(obj: Dynamic): sunaba.ui.SpinBox;
 }
+
+abstract SpinBoxAbstract(SpinBox) from SpinBox to SpinBox {
+    @:from
+    public static function fromElement(element: sunaba.core.Element): sunaba.ui.SpinBox {
+        var spinBox = sunaba.ui.SpinBox.toSpinBox(element);
+        if (spinBox.isNull()) {
+            return null;
+        }
+        return spinBox;
+    }
+}
