@@ -93,4 +93,5 @@ extern class RichTextLabel extends Control {
     public function pushHint(description: String): Void;
     public function pushIndent(level: Int): Void;
     public function pushItalics(): Void;
+    public function pushLanguage(language: String): Void;
 }
