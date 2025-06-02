@@ -15,4 +15,5 @@ extern class Range extends Control {
     public var value: Float;
     public var changed: sunaba.core.Event;
     public var valueChanged: sunaba.core.Event;
+    public function setValueNoSignal(value: Float): Void;
 }
