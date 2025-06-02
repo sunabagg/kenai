@@ -32,4 +32,5 @@ extern class OptionButton extends Button {
     public function setDisableShortcuts(disable: Bool): Void;
     public function setItemDisabled(idx: Int, disabled: Bool): Void;
     public function setItemIcon(idx: Int, texture: Texture2D): Void;
+    public function setItemId(idx: Int, id: Int): Void;
 }
