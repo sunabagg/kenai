@@ -14,4 +14,5 @@ extern class Range extends Control {
     public var step: Float;
     public var value: Float;
     public var changed: sunaba.core.Event;
+    public var valueChanged: sunaba.core.Event;
 }
