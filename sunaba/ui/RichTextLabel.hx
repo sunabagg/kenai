@@ -44,4 +44,5 @@ extern class RichTextLabel extends Control {
     public function addText(text: String): Void;
     public function appendText(bbcode: String): Void;
     public function clear(): Void;
+    public function deselect(): Void;
 }
