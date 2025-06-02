@@ -116,3 +116,14 @@ extern class RichTextLabel extends Control {
     @:native("cast")
     public static function toRichTextLabel(obj: Dynamic): sunaba.ui.RichTextLabel;
 }
+
+abstract RichTextLabelAbstract(RichTextLabel) from RichTextLabel to RichTextLabel {
+    @:from
+    public static function fromElement(element: sunaba.core.Element): sunaba.ui.RichTextLabel {
+        var richTextLabel = sunaba.ui.RichTextLabel.toRichTextLabel(element);
+        if (richTextLabel.isNull()) {
+            return null;
+        }
+        return richTextLabel;
+    }
+}
