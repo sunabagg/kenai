@@ -4,4 +4,5 @@ package sunaba.ui;
 extern class RichTextLabel extends Control {
     public var autowrapMode: Int;
     public var bbcodeEnabled: Bool;
+    public var clipContents: Bool;
 }
