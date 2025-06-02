@@ -6,4 +6,5 @@ extern class OptionButton extends Button {
     public var allowReselect: Bool;
     public var fitToLongestItem: Bool;
     public var itemCount: Int;
+    public var selected: Int;
 }
