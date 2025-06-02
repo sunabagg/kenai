@@ -17,4 +17,5 @@ extern class RichTextLabel extends Control {
     public var justificationFlags: Int;
     public var language: String;
     public var metaUnderlined: Bool;
+    public var progressBarDelay: Int;
 }
