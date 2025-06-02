@@ -8,4 +8,5 @@ extern class Slider extends Range {
     public var scrollable: Bool;
     public var tickCount: Int;
     public var ticksOnBorders: Bool;
+    public var dragEnded: Event;
 }
