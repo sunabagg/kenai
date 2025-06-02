@@ -16,4 +16,5 @@ extern class ScrollContainer extends Container {
     public var verticalScrollMode: Int;
     public var scrollStarted: Event;
     public var scrollStopped: Event;
+    public function getHScrollBar(): HScrollBar;
 }
