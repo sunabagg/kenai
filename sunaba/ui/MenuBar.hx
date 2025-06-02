@@ -11,4 +11,5 @@ extern class MenuBar extends Control {
     public var switchOnHover: Bool;
     public var textDirection: Int;
     public function getMenuCount(): Int;
+    public function getMenuPopup(index: Int): PopupMenu;
 }
