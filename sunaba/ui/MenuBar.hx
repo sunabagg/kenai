@@ -1,5 +1,7 @@
 package sunaba.ui;
 
+import sunaba.desktop.PopupMenu;
+
 @:native("MenuBar")
 extern class MenuBar extends Control {
     public var flat: Bool;
