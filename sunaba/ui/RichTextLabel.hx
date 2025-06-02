@@ -112,4 +112,6 @@ extern class RichTextLabel extends Control {
     public function setCellBorderColor(color: Color): Void;
     public function setCellSizeOverride(minSize: Vector2, maxSize: Vector2): Void;
     public function setTableColumnExpand(column: Int, expand: Bool, ?ratio: Int, ?shrink: Bool): Void;
+    public function updateImage(key: Variant, mask: Int, image: sunaba.core.Texture2D, ?width: Int, ?height: Int, ?color: Color, ?inlineAlign: Int, ?region: Rect2, ?pad: Bool, ?tooltip: String, ?sizeInPercent: Bool): Void;
+    
 }
