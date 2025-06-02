@@ -1,6 +1,7 @@
 package sunaba.ui;
 
 import sunaba.core.Rect2;
+import sunaba.core.Texture;
 
 @:native("NinePatchRect")
 extern class NinePatchRect extends Control {
