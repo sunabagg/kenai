@@ -24,4 +24,5 @@ extern class RichTextLabel extends Control {
     public var shortcutKeysEnabled: Bool;
     public var structuredTextBidiOverride: Int;
     public var structuredTextBidiOverrideOptions: ArrayList;
+    public var tabSize: Int;
 }
