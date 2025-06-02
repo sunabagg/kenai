@@ -6,4 +6,5 @@ extern class SpinBox extends Range{
     public var customArrowStep: Bool;
     public var editable: Bool;
     public var prefix: String;
+    public var selectAllOnFocus: Bool;
 }
