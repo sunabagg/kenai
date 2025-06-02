@@ -14,4 +14,5 @@ extern class MenuBar extends Control {
     public function getMenuPopup(index: Int): PopupMenu;
     public function getMenuTitle(index: Int): String;
     public function getMenuTooltip(index: Int): String;
+    public function isMenuDisabled(index: Int): Bool;
 }
