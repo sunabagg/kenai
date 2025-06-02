@@ -8,4 +8,5 @@ extern class LinkButton extends BaseButton {
     public var structuredTextBidiOverrideOptions: sunaba.core.ArrayList;
     public var text: String;
     public var textDirection: Int;
+    public var underline: Bool;
 }
