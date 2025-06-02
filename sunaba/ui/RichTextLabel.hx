@@ -65,4 +65,5 @@ extern class RichTextLabel extends Control {
     public function getTotalCharacterCount(): Int;
     //public function getVScrollBar(): ScrollBar;
     public function getVisibleLineCount(): Int;
+    public function getVisibleParagraphCount(): Int;
 }
