@@ -21,3 +21,14 @@ extern class NinePatchRect extends Control {
     @:native("cast")
     public static function toNinePatchRect(obj: Dynamic): sunaba.ui.NinePatchRect;
 }
+
+abstract NinePatchRectAbstract(NinePatchRect) from NinePatchRect to NinePatchRect {
+    @:from
+    public static function fromElement(element: sunaba.core.Element): sunaba.ui.NinePatchRect {
+        var ninePatchRect = sunaba.ui.NinePatchRect.toNinePatchRect(element);
+        if (ninePatchRect.isNull()) {
+            return null;
+        }
+        return ninePatchRect;
+    }
+}
