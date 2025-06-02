@@ -68,4 +68,5 @@ extern class RichTextLabel extends Control {
     public function getVisibleParagraphCount(): Int;
     public function installEffect(effect: Variant): Void;
     public function invalidateParagraph(paragraph: Int): Bool;
+    public function isFinished(): Bool;
 }
