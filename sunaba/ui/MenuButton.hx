@@ -1,5 +1,7 @@
 package sunaba.ui;
 
+import sunaba.desktop.PopupMenu;
+
 @:native("MenuButton")
 extern class MenuButton extends Button {
     public var flat: Bool;
