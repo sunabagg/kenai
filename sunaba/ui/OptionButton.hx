@@ -37,4 +37,6 @@ extern class OptionButton extends Button {
     public function setItemText(idx: Int, text: String): Void;
     public function setItemTooltip(idx: Int, tooltip: String): Void;
     public function showPopup(): Void;
+    @:native("cast")
+    public static function toOptionButton(obj: Dynamic): sunaba.ui.OptionButton;
 }
