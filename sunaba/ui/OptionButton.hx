@@ -17,4 +17,5 @@ extern class OptionButton extends Button {
     public function clear(): Void;
     public function getItemIcon(idx: Int): Texture2D;
     public function getItemId(idx: Int): Int;
+    public function getItemIndex(id: Int): Int;
 }
