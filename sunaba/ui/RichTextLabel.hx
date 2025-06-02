@@ -52,4 +52,5 @@ extern class RichTextLabel extends Control {
     public function getContentWidth(): Float;
     public function getLineCount(): Int;
     public function getLineOffset(line: Int): Float;
+    public function getLineRange(line: Int): Vector2i;
 }
