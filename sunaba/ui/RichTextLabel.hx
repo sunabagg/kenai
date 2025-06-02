@@ -36,4 +36,5 @@ extern class RichTextLabel extends Control {
     public var finished: sunaba.core.Event;
     public var metaClicked: sunaba.core.Event;
     public var metaHoverEnded: sunaba.core.Event;
+    public var metaHoverStarted: sunaba.core.Event;
 }
