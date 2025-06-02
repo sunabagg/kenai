@@ -1,5 +1,7 @@
 package sunaba.ui;
 
+import sunaba.core.ArrayList;
+
 @:native("PanelContainer")
 extern class RichTextLabel extends Control {
     public var autowrapMode: Int;
