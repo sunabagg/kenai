@@ -11,5 +11,5 @@ extern class ScrollContainer extends Container {
     public var scrollHorizontalCustomStep: Float;
     public var scrollVertical: Int;
     public var scrollVerticalCustomStep: Float;
-    public var verticalScrollMode: sunaba.ui.ScrollMode;
+    public var verticalScrollMode: Int;
 }
