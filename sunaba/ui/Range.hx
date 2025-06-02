@@ -20,4 +20,6 @@ extern class Range extends Control {
     public function setValueNoSignal(value: Float): Void;
     public function share(with: Element): Void;
     public function unshare(): Void;
+    @:native("cast")
+    public static function toRange(obj: Dynamic): sunaba.ui.Range;
 }
