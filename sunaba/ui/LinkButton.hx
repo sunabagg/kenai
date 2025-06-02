@@ -9,4 +9,5 @@ extern class LinkButton extends BaseButton {
     public var text: String;
     public var textDirection: Int;
     public var underline: Bool;
+    public var uri: String;
 }
