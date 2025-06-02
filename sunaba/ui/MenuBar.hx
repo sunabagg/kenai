@@ -21,4 +21,5 @@ extern class MenuBar extends Control {
     public function setMenuDisabled(index: Int, disabled: Bool): Void;
     public function setMenuHidden(index: Int, hidden: Bool): Void;
     public function setMenuTitle(index: Int, title: String): Void;
+    public function setMenuTooltip(index: Int, tooltip: String): Void;
 }
