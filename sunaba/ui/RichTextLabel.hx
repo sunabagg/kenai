@@ -73,4 +73,5 @@ extern class RichTextLabel extends Control {
     public function isReady(): Bool;
     public function menuOption(option: Int): Void;
     public function newline(): Void;
+    public function parseBBCode(bbcode: String): Void;
 }
