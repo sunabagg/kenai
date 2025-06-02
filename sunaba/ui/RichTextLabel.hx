@@ -98,4 +98,5 @@ extern class RichTextLabel extends Control {
     public function pushMeta(data: Variant, ?underlineMode: Int, ?tooltip: String): Void;
     public function pushMono(): Void;
     public function pushNormal(): Void;
+    public function pushOutlineColor(color: Color): Void;
 }
