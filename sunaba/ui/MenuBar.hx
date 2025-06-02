@@ -7,4 +7,5 @@ extern class MenuBar extends Control {
     public var preferGlobalMenu: Bool;
     public var startIndex: Int;
     public var switchOnHover: Bool;
+    public var textDirection: Int;
 }
