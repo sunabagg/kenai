@@ -9,4 +9,5 @@ extern class MenuButton extends Button {
     public var switchOnHover: Bool;
     public var toggleMode: Bool;
     public var aboutToPopup: sunaba.core.Event;
+    public function getPopup(): PopupMenu;
 }
