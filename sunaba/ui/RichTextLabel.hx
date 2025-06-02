@@ -64,4 +64,5 @@ extern class RichTextLabel extends Control {
     public function getSelectionTo(): Int;
     public function getTotalCharacterCount(): Int;
     //public function getVScrollBar(): ScrollBar;
+    public function getVisibleLineCount(): Int;
 }
