@@ -5,4 +5,5 @@ import sunaba.core.Color;
 @:native("ReferenceRect")
 extern class ReferenceRect extends Control {
     public var borderColor: Color;
+    public var borderWidth: Float;
 }
