@@ -26,4 +26,5 @@ extern class OptionButton extends Button {
     public function getSelectedId(): Int;
     public function getSelectedMetadata(): Variant;
     public function hasSelectableItems(): Bool;
+    public function isItemDisabled(idx: Int): Bool;
 }
