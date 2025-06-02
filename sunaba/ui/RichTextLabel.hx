@@ -48,4 +48,5 @@ extern class RichTextLabel extends Control {
     public function getCharacterLine(character: Int): Int;
     public function getCharacterParagraph(character: Int): Int;
     public function getContentHeight(): Float;
+    public function getContentWidth(): Float;
 }
