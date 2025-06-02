@@ -5,4 +5,5 @@ extern class MenuBar extends Control {
     public var flat: Bool;
     public var language: String;
     public var preferGlobalMenu: Bool;
+    public var startIndex: Int;
 }
