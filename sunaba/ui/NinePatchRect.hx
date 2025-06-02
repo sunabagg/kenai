@@ -17,4 +17,5 @@ extern class NinePatchRect extends Control {
     public var texture: Texture2D;
     public var textureChanged: sunaba.core.Event;
     public function getPatchMargin(side: Int): Int;
+    public function setPatchMargin(side: Int, margin: Int): Void;
 }
