@@ -87,4 +87,5 @@ extern class RichTextLabel extends Control {
     public function pushColor(color: Color): Void;
     public function pushContext(): Void;
     public function pushDropcap(string: String, font: Font, size: Int, ?dropcapMargins: Rect2, ?color: Color, ?outlineSize: Int, ?outlineColor: Color): Void;
+    public function pushFgcolor(fgcolor: Color): Void;
 }
