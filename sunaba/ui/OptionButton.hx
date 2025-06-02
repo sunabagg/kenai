@@ -35,4 +35,5 @@ extern class OptionButton extends Button {
     public function setItemId(idx: Int, id: Int): Void;
     public function setItemMetadata(idx: Int, metadata: Variant): Void;
     public function setItemText(idx: Int, text: String): Void;
+    public function setItemTooltip(idx: Int, tooltip: String): Void;
 }
