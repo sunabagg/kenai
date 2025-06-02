@@ -1,6 +1,7 @@
 package sunaba.ui;
 
 import sunaba.core.Texture2D;
+import sunaba.core.Variant;
 
 @:native("OptionButton")
 extern class OptionButton extends Button {
