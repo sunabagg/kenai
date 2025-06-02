@@ -23,3 +23,14 @@ extern class Range extends Control {
     @:native("cast")
     public static function toRange(obj: Dynamic): sunaba.ui.Range;
 }
+
+abstract RangeAbstract(Range) from Range to Range {
+    @:from
+    public static function fromElement(element: sunaba.core.Element): sunaba.ui.Range {
+        var range = sunaba.ui.Range.toRange(element);
+        if (range.isNull()) {
+            return null;
+        }
+        return range;
+    }
+}
