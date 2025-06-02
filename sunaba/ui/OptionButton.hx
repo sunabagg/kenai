@@ -24,4 +24,5 @@ extern class OptionButton extends Button {
     public function getItemTooltip(idx: Int): String;
     public function getSelectedItem(?fromLast: Bool): Int;
     public function getSelectedId(): Int;
+    public function getSelectedMetadata(): Variant;
 }
