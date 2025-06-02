@@ -83,4 +83,5 @@ extern class RichTextLabel extends Control {
     public function pushBold(): Void;
     public function pushBoldItalics(): Void;
     public function pushCell(): Void;
+    public function pushColor(color: Color): Void;
 }
