@@ -28,4 +28,5 @@ extern class RichTextLabel extends Control {
     public var tabStops: Array<Float>;
     public var text: String;
     public var textDirection: Int;
+    public var threaded: Bool;
 }
