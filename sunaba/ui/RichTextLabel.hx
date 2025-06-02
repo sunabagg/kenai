@@ -33,4 +33,5 @@ extern class RichTextLabel extends Control {
     public var visibleCharacters: Int;
     public var visibleCharactersBehavior: Int;
     public var visibleRatio: Float;
+    public var finished: sunaba.core.Event;
 }
