@@ -108,4 +108,5 @@ extern class RichTextLabel extends Control {
     public function scrollToLine(line: Int): Void;
     public function scrollToParagraph(paragraph: Int): Void;
     public function scrollToSelection(): Void;
+    public function selectAll(): Void;
 }
