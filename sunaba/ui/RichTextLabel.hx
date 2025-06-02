@@ -25,5 +25,5 @@ extern class RichTextLabel extends Control {
     public var structuredTextBidiOverride: Int;
     public var structuredTextBidiOverrideOptions: ArrayList;
     public var tabSize: Int;
-    public var tabStops: Arry<Float>;
+    public var tabStops: Array<Float>;
 }
