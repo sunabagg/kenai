@@ -12,4 +12,5 @@ extern class NinePatchRect extends Control {
     public var patchMarginLeft: Int;
     public var patchMarginRight: Int;
     public var patchMarginTop: Int;
+    public var regionRect: Rect2;
 }
