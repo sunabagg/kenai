@@ -10,4 +10,5 @@ extern class MenuButton extends Button {
     public var toggleMode: Bool;
     public var aboutToPopup: sunaba.core.Event;
     public function getPopup(): PopupMenu;
+    public function setDisableShortcuts(disable: Bool): Void;
 }
