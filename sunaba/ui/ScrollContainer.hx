@@ -14,4 +14,5 @@ extern class ScrollContainer extends Container {
     public var scrollVertical: Int;
     public var scrollVerticalCustomStep: Float;
     public var verticalScrollMode: Int;
+    public var scrollStarted: Event;
 }
