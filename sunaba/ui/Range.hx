@@ -8,4 +8,5 @@ extern class Range extends Control {
     public var maxValue: Float;
     public var minValue: Float;
     public var page: Float;
+    public var ratio: Float;
 }
