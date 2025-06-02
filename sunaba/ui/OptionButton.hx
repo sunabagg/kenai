@@ -8,4 +8,5 @@ extern class OptionButton extends Button {
     public var itemCount: Int;
     public var selected: Int;
     public var itemFocused: sunaba.core.Event;
+    public var itemSelected: sunaba.core.Event;
 }
