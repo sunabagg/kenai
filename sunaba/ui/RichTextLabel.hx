@@ -5,6 +5,7 @@ import sunaba.core.Variant;
 import sunaba.core.Rect2;
 import sunaba.core.Color;
 import sunaba.core.Vector2i;
+import sunaba.core.Vector2;
 import sunaba.desktop.PopupMenu;
 import sunaba.core.Dictionary;
 import sunaba.core.Font;
@@ -102,7 +103,7 @@ extern class RichTextLabel extends Control {
     public function pushOutlineSize(size: Int): Void;
     public function pushParagraph(alignment: Int, ?baseDirection: Int, ?language: String, ?structureTextParser: String, ?justificationFlags: Int, ?flags: Array<Float>): Void;
     public function pushStrikethrough(): Void;
-    public function pushTable(columns: Int, ?inlineAlign: int, ?alignToRow: Int) : Void;
+    public function pushTable(columns: Int, ?inlineAlign: Int, ?alignToRow: Int) : Void;
     public function pushUnderline(): Void;
     public function removeParagraph(paragraph: Int, ?noInvalidate: Bool): Void;
     public function scrollToLine(line: Int): Void;
