@@ -104,4 +104,5 @@ extern class RichTextLabel extends Control {
     public function pushStrikethrough(): Void;
     public function pushTable(columns: Int, ?inlineAlign: int, ?alignToRow: Int) : Void;
     public function pushUnderline(): Void;
+    public function removeParagraph(paragraph: Int, ?noInvalidate: Bool): Void;
 }
