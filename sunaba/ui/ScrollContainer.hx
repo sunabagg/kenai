@@ -21,3 +21,14 @@ extern class ScrollContainer extends Container {
     @:native("cast")
     public static function toScrollContainer(obj: Dynamic): sunaba.ui.ScrollContainer;
 }
+
+abstract ScrollContainerAbstract(ScrollContainer) from ScrollContainer to ScrollContainer {
+    @:from
+    public static function fromElement(element: sunaba.core.Element): sunaba.ui.ScrollContainer {
+        var scrollContainer = sunaba.ui.ScrollContainer.toScrollContainer(element);
+        if (scrollContainer.isNull()) {
+            return null;
+        }
+        return scrollContainer;
+    }
+}
