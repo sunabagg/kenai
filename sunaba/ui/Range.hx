@@ -6,4 +6,5 @@ extern class Range extends Control {
     public var allowLesser: Bool;
     public var expEdit: Bool;
     public var maxValue: Float;
+    public var minValue: Float;
 }
