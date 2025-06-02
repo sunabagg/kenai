@@ -7,4 +7,5 @@ extern class OptionButton extends Button {
     public var fitToLongestItem: Bool;
     public var itemCount: Int;
     public var selected: Int;
+    public var itemFocused: sunaba.core.Event;
 }
