@@ -8,4 +8,5 @@ extern class SpinBox extends Range{
     public var prefix: String;
     public var selectAllOnFocus: Bool;
     public var suffix: String;
+    public var updateOnTextChanged: Bool;
 }
