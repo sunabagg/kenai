@@ -1,5 +1,7 @@
 package sunaba.ui;
 
+import sunaba.core.Texture2D;
+
 @:native("OptionButton")
 extern class OptionButton extends Button {
     public var actionMode: Int;
@@ -9,4 +11,5 @@ extern class OptionButton extends Button {
     public var selected: Int;
     public var itemFocused: sunaba.core.Event;
     public var itemSelected: sunaba.core.Event;
+    public function addIconItem(texture: Texture2D, label: String, ?id: Int): Void;
 }
