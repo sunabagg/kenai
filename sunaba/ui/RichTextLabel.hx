@@ -21,4 +21,5 @@ extern class RichTextLabel extends Control {
     public var scrollActive: Bool;
     public var scrollFollowing: Bool;
     public var selectionEnabled: Bool;
+    public var shortcutKeysEnabled: Bool;
 }
