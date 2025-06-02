@@ -1,5 +1,7 @@
 package sunaba.ui;
 
+import sunaba.core.Rect2;
+
 @:native("NinePatchRect")
 extern class NinePatchRect extends Control {
     public var axisStretchHorizontal: Int;
