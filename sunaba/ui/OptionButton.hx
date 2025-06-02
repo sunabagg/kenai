@@ -40,3 +40,14 @@ extern class OptionButton extends Button {
     @:native("cast")
     public static function toOptionButton(obj: Dynamic): sunaba.ui.OptionButton;
 }
+
+abstract OptionButtonAbstract(OptionButton) from OptionButton to OptionButton {
+    @:from
+    public static function fromElement(element: sunaba.core.Element): sunaba.ui.OptionButton {
+        var optionButton = sunaba.ui.OptionButton.toOptionButton(element);
+        if (optionButton.isNull()) {
+            return null;
+        }
+        return optionButton;
+    }
+}
