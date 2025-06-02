@@ -30,4 +30,5 @@ extern class RichTextLabel extends Control {
     public var textDirection: Int;
     public var threaded: Bool;
     public var verticalAlignment: Int;
+    public var visibleCharacters: Int;
 }
