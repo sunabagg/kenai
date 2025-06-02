@@ -7,4 +7,5 @@ extern class NinePatchRect extends Control {
     public var drawCenter: Bool;
     public var mouseFilter: Int;
     public var patchMarginLeft: Int;
+    public var patchMarginRight: Int;
 }
