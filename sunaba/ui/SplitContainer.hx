@@ -10,4 +10,5 @@ extern class SplitContainer extends Container {
     public var draggerVisibility: Int;
     public var draggingEnabled: Bool;
     public var splitOffset: Int;
+    public var vertical: Bool;
 }
