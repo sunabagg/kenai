@@ -12,4 +12,5 @@ extern class SplitContainer extends Container {
     public var splitOffset: Int;
     public var vertical: Bool;
     public var dragEnded: sunaba.core.Event;
+    public var dragStarted: sunaba.core.Event;
 }
