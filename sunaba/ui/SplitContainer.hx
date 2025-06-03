@@ -6,4 +6,5 @@ extern class SplitContainer extends Container {
     public var dragAreaHighlightInEditor: Bool;
     public var dragAreaMarginBegin: Int;
     public var dragAreaMarginEnd: Int;
+    public var dragAreaOffset: Int;
 }
