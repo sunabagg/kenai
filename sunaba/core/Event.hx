@@ -23,12 +23,12 @@ abstract EventAbstract(Event) from Event to Event {
     }
 
     @op(A += B)
-    public function add(func: Function): Void {
-        this.connect(func);
+    public static function add(event: Event, func: Function): Void {
+        event.connect(func);
     }
 
     @op(A -= B)
-    public function remove(func: Function): Void {
-        this.disconnect(func);
+    public static function remove(event: Event, func: Function): Void {
+        event.disconnect(func);
     }
 }
