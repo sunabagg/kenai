@@ -19,3 +19,14 @@ extern class SplitContainer extends Container {
     @:native("cast")
     public static function toSplitContainer(obj: Dynamic): sunaba.ui.SplitContainer;
 }
+
+abstract SplitContainerAbstract(SplitContainer) from SplitContainer to SplitContainer {
+    @:from
+    public static function fromElement(element: sunaba.core.Element): sunaba.ui.SplitContainer {
+        var splitContainer = sunaba.ui.SplitContainer.toSplitContainer(element);
+        if (splitContainer.isNull()) {
+            return null;
+        }
+        return splitContainer;
+    }
+}
