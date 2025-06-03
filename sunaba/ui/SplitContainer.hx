@@ -15,4 +15,5 @@ extern class SplitContainer extends Container {
     public var dragStarted: sunaba.core.Event;
     public var dragged: sunaba.core.Event;
     public function clanpSplitOffset(): Void;
+    public function getDragAreaControl(): sunaba.ui.Control;
 }
