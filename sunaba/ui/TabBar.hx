@@ -4,4 +4,5 @@ package sunaba.ui;
 extern class TabBar extends Container {
     public var clipTabs: Bool;
     public var currentTab: Int;
+    public var deselectEnabled: Bool;
 }
