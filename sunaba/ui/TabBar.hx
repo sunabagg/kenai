@@ -31,4 +31,5 @@ extern class TabBar extends Control {
     public function ensureTabVisible(tab: Int): Void;
     public function getOffsetButtonsVisible(): Bool;
     public function getPreviousTab(): Int;
+    public function getTabButtonIcon(tab: Int): Texture2D;
 }
