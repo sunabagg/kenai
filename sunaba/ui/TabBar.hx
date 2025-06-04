@@ -41,4 +41,5 @@ extern class TabBar extends Control {
     public function getTabMetadata(tab: Int): Variant;
     public function getTabOffset(): Int;
     public function getTabRect(tab: Int): Rect2;
+    public function getTabTextDirection(tab: Int): Int;
 }
