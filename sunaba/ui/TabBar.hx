@@ -14,4 +14,5 @@ extern class TabBar extends Control {
     public var tabAlignment: Int;
     public var tabCloseDisplayPolicy: Int;
     public var tabCount: Int;
+    public var tabsRearrangeGroup: Int;
 }
