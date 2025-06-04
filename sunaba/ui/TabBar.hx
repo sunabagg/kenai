@@ -55,4 +55,5 @@ extern class TabBar extends Control {
     public function setTabHidden(tab: Int, hidden: Bool): Void;
     public function setTabIcon(tab: Int, icon: Texture2D): Void;
     public function setTabIconMaxWidth(tab: Int, width: Int): Void;
+    public function setTabLanguage(tab: Int, language: String): Void;
 }
