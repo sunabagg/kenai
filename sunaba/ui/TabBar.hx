@@ -2,7 +2,7 @@ package sunaba.ui;
 
 import sunaba.core.Event;
 import sunaba.core.Texture2D;
-import sunaba.core.Variant
+import sunaba.core.Variant;
 
 @:native("TabBar")
 extern class TabBar extends Control {
@@ -38,4 +38,5 @@ extern class TabBar extends Control {
     public function getTabIdxAtPoint(point: Vector2): Int;
     public function getTabLanguage(tab: Int): String;
     public function getTabMetadata(tab: Int): Variant;
+    public function getTabOffset(): Int;
 }
