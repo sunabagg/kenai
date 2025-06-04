@@ -63,3 +63,14 @@ extern class TabBar extends Control {
     @:native("cast")
     public static function toTabBar(obj: Dynamic): TabBar;
 }
+
+abstract TabBarAbstract(TabBar) from TabBar to TabBar {
+    @:from
+    public static function fromElement(element: sunaba.core.Element): TabBarAbstract {
+        var tabbar = TabBar.toTabBar(element);
+        if (tabbar.isNull()) {
+            return null;
+        }
+        return tabbar;
+    }
+}
