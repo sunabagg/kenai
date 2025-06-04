@@ -30,4 +30,5 @@ extern class TabBar extends Control {
     public function clearTabs(): Void;
     public function ensureTabVisible(tab: Int): Void;
     public function getOffsetButtonsVisible(): Bool;
+    public function getPreviousTab(): Int;
 }
