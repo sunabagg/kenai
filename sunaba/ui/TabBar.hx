@@ -50,4 +50,5 @@ extern class TabBar extends Control {
     public function removeTab(tab: Int): Void;
     public function selectNextAvailable(): Bool;
     public function selectPreviousAvailable(): Bool;
+    public function setTabButtonIcon(tab: Int, icon: Texture2D): Void;
 }
