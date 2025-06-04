@@ -59,4 +59,5 @@ extern class TabBar extends Control {
     public function setTabMetadata(tab: Int, metadata: Variant): Void;
     public function setTabTextDirection(tab: Int, direction: Int): Void;
     public function setTabTitle(tab: Int, title: String): Void;
+    public function setTabTooltip(tab: Int, tooltip: String): Void;
 }
