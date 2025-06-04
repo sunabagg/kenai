@@ -24,4 +24,5 @@ extern class TabBar extends Control {
     public var tabClosePressed: Event;
     public var tabHovered: Event;
     public var tabRmbClicked: Event;
+    public var tabSelected: Event;
 }
