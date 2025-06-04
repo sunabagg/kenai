@@ -7,4 +7,5 @@ extern class TabBar extends Control {
     public var deselectEnabled: Bool;
     public var dragToRearrangeEnabled: Bool;
     public var focusMode: Int;
+    public var maxTabWidth: Int;
 }
