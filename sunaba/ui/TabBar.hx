@@ -10,4 +10,5 @@ extern class TabBar extends Control {
     public var maxTabWidth: Int;
     public var scrollToSelected: Bool;
     public var scrollingEnabled: Bool;
+    public var selectWithRmb: Bool;
 }
