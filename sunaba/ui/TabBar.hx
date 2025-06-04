@@ -37,4 +37,5 @@ extern class TabBar extends Control {
     public function getTabIconMaxWidth(tab: Int): Int;
     public function getTabIdxAtPoint(point: Vector2): Int;
     public function getTabLanguage(tab: Int): String;
+    public function getTabMetadata(tab: Int): Variant;
 }
