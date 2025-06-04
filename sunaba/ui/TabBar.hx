@@ -1,5 +1,7 @@
 package sunaba.ui;
 
+import sunaba.core.Event;
+
 @:native("TabBar")
 extern class TabBar extends Control {
     public var clipTabs: Bool;
