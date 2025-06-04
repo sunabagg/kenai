@@ -57,4 +57,5 @@ extern class TabBar extends Control {
     public function setTabIconMaxWidth(tab: Int, width: Int): Void;
     public function setTabLanguage(tab: Int, language: String): Void;
     public function setTabMetadata(tab: Int, metadata: Variant): Void;
+    public function setTabTextDirection(tab: Int, direction: Int): Void;
 }
