@@ -12,4 +12,5 @@ extern class TabBar extends Control {
     public var scrollingEnabled: Bool;
     public var selectWithRmb: Bool;
     public var tabAlignment: Int;
+    public var tabCloseDisplayPolicy: Int;
 }
