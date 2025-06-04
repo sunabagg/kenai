@@ -19,4 +19,5 @@ extern class TabBar extends Control {
     public var tabsRearrangeGroup: Int;
     public var activeTabRearrange: Event;
     public var tabButtonPressed: Event;
+    public var tabChanged: Event;
 }
