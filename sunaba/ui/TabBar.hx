@@ -6,4 +6,5 @@ extern class TabBar extends Container {
     public var currentTab: Int;
     public var deselectEnabled: Bool;
     public var dragToRearrangeEnabled: Bool;
+    public var focusMode: Int;
 }
