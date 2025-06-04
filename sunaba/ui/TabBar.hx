@@ -48,4 +48,5 @@ extern class TabBar extends Control {
     public function isTabHidden(tab: Int): Bool;
     public function moveTab(from: Int, to: Int): Void;
     public function removeTab(tab: Int): Void;
+    public function selectNextAvailable(): Bool;
 }
