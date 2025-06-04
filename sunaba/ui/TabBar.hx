@@ -46,4 +46,5 @@ extern class TabBar extends Control {
     public function getTabTooltip(tab: Int): String;
     public function isTabDisabled(tab: Int): Bool;
     public function isTabHidden(tab: Int): Bool;
+    public function moveTab(from: Int, to: Int): Void;
 }
