@@ -29,4 +29,5 @@ extern class TabBar extends Control {
     public function addTab(name: String, ?icon: Texture2D): Void;
     public function clearTabs(): Void;
     public function ensureTabVisible(tab: Int): Void;
+    public function getOffsetButtonsVisible(): Bool;
 }
