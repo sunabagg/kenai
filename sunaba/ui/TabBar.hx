@@ -27,4 +27,5 @@ extern class TabBar extends Control {
     public var tabRmbClicked: Event;
     public var tabSelected: Event;
     public function addTab(name: String, ?icon: Texture2D): Void;
+    public function clearTabs(): Void;
 }
