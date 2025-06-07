@@ -185,4 +185,5 @@ extern class TextEdit extends Control {
     public function setGutterClickable(gutter: Int, clickable: Bool): Void;
     public function setGutterDraw(gutter: Int, drawn: Bool): Void;
     public function setGutterName(gutter: Int, name: String): Void;
+    public function setGutterOverwritable(gutter: Int, overwritable: Bool): Void;
 }
