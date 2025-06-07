@@ -26,4 +26,5 @@ extern class TabContainer extends Container {
     public function getCurrentTabControl(): Control;
     public function getPopup() : Popup;
     public function getPreviousTab(): Int;
+    public function getTabBar(): TabBar;
 }
