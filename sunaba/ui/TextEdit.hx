@@ -73,4 +73,5 @@ extern class TextEdit extends Control {
     public function clearUndoHistory(): Void;
     public function collapseCarets(fromLine: Int, fromColumn: Int, toLine: Int, toColumn: Int, ?inclusive: Bool): Void;
     public function copy(?caret: Int): Void;
+    public function cut(?caret: Int): Void;
 }
