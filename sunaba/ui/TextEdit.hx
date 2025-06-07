@@ -179,4 +179,5 @@ extern class TextEdit extends Control {
     public function search(text: String, flags: Int, fromLine: Int, fromColumn: Int): Vector2i;
     public function select(originLine: Int, originColumn: Int, caretLine: Int, caretColumn: Int, ?caretIndex: Int): Void;
     public function selectAll(): Void;
+    public function selectWordUnderCaret(?caret: Int): Void;
 }
