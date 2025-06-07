@@ -9,6 +9,7 @@ import sunaba.core.Texture2D;
 import sunaba.desktop.PopupMenu;
 import sunaba.core.Rect2i;
 import sunaba.core.Variant;
+import sunaba.core.Element;
 
 @:native("TextEdit")
 extern class TextEdit extends Control {
