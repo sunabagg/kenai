@@ -21,4 +21,5 @@ extern class TabContainer extends Container {
     public var tabChanged: Event;
     public var tabClicked: Event;
     public var tabHovered: Event;
+    public var tabSelected: Event;
 }
