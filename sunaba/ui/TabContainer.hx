@@ -50,4 +50,5 @@ extern class TabContainer extends Container {
     public function setTabIconMaxWidth(tab: Int, width: Int): Void;
     public function setTabMetadata(tab: Int, metadata: Variant): Void;
     public function setTabTitle(tab: Int, title: String): Void;
+    public function setTabTooltip(tab: Int, tooltip: String): Void;
 }
