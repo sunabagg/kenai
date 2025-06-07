@@ -8,4 +8,5 @@ extern class TextEdit extends Control {
     public var caretDrawWhenEditableDisabled: Bool;
     public var caretMidGrapheme: Bool;
     public var caretMoveOnRightClick: Bool;
+    public var caretMultiple: Bool;
 }
