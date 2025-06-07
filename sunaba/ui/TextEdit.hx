@@ -105,4 +105,5 @@ extern class TextEdit extends Control {
     public function getLineGutterIcon(line: Int, gutter: Int): Texture2D;
     public function getLineGutterMetadata(line: Int, gutter: Int): Variant;
     public function getLineGutterText(line: Int, gutter: Int): String;
+    public function getLineHeight(): Int;
 }
