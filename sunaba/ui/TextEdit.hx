@@ -172,4 +172,5 @@ extern class TextEdit extends Control {
     public function pastePrimaryClipboard(?caret: Int): Void;
     public function redo(): Void;
     public function removeCaret(caret: Int): Void;
+    public function removeGutter(gutter: Int): Void;
 }
