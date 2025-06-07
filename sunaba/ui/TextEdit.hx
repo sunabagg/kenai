@@ -42,4 +42,5 @@ extern class TextEdit extends Control {
     public var shortcutKeysEnabled: Bool;
     public var structuredTextBidiOverride: Bool;
     public var structuredTextBidiOverrideOptions: ArrayList;
+    public var syntaxHighlighter: SyntaxHighlighter;
 }
