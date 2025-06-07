@@ -144,4 +144,5 @@ extern class TextEdit extends Control {
     public function getVisibleLineCount(): Int;
     public function getVisibleLineCountInRange(fromLine: Int, toLine: Int): Int;
     public function getWordAtPos(pos: Vector2): String;
+    public function getWordUnderCaret(?caret: Int): String;
 }
