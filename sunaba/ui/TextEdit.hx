@@ -190,4 +190,5 @@ extern class TextEdit extends Control {
     public function setGutterWidth(gutter: Int, width: Int): Void;
     public function setLine(line: Int, text: String): Void;
     public function setLineAsCenterVisible(line: Int, ?wrapIndex: Int): Void;
+    public function setLineAsFirstVisible(line: Int, ?wrapIndex: Int): Void;
 }
