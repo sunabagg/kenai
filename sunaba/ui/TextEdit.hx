@@ -149,4 +149,5 @@ extern class TextEdit extends Control {
     public function hasRedo(): Bool;
     public function hasSelection(?caret: Int): Bool;
     public function hasUndo(): Bool;
+    public function insertLineAt(line: Int, text: String): Void;
 }
