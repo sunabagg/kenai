@@ -3,6 +3,7 @@ package sunaba.ui;
 import sunaba.core.ArrayList;
 import sunaba.core.Event;
 import sunaba.core.Vector2;
+import sunaba.core.Vector2i;
 import sunaba.core.Color;
 import sunaba.core.Texture2D;
 import sunaba.desktop.PopupMenu;
