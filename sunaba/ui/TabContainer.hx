@@ -43,4 +43,5 @@ extern class TabContainer extends Container {
     public function selectNextAvailable(): Bool;
     public function selectPreviousAvailable(): Bool;
     public function setPopup(popup: Popup): Void;
+    public function setTabButtonIcon(tab: Int, icon: Texture2D): Void;
 }
