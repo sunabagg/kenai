@@ -1,6 +1,7 @@
 package sunaba.ui;
 
 import sunaba.core.Event;
+import sunaba.desktop.Popup;
 
 @:native("TabContainer")
 extern class TabContainer extends Container {
