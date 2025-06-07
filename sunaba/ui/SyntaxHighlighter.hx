@@ -8,4 +8,5 @@ extern class SyntaxHighlighter extends Resource {
     public function clearHighlightingCache(): Void;
     public function getLineSyntaxHighlighting(line: Int): Dictionary;
     //public function getTextEdit(): TextEdit;
+    public function updateCache(): Void;
 }
