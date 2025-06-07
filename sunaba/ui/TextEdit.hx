@@ -61,4 +61,5 @@ extern class TextEdit extends Control {
     public function addCaretAtCarets(bellow: Bool): Void;
     public function addGutter(?at: Int): Void;
     public function addSelectionForNextOccurrence(): Void;
+    public function adjustCaretsAfterEdit(caret: Int, fromLine: Int, fromColumn: Int, toLine: Int, toColumn: Int): Void;
 }
