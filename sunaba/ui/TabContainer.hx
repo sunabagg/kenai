@@ -6,4 +6,5 @@ extern class TabContainer extends Container {
     public var clipTabs: Bool;
     public var currentTab: Int;
     public var deselectEnabled: Bool;
+    public var dragToRearrangeEnabled: Bool;
 }
