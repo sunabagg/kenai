@@ -207,4 +207,6 @@ extern class TextEdit extends Control {
     public function swapLines(fromLine: Int, toLine: Int): Void;
     public function tagSavedVersion(): Void;
     public function undo(): Void;
+    @:native("cast")
+    public static function castFrom(type: Dynamic): TextEdit;
 }
