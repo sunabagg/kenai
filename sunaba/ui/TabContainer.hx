@@ -19,4 +19,5 @@ extern class TabContainer extends Container {
     public var prePopupPressed: Event;
     public var tabButtonPressed: Event;
     public var tabChanged: Event;
+    public var tabClicked: Event;
 }
