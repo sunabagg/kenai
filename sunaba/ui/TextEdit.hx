@@ -57,4 +57,5 @@ extern class TextEdit extends Control {
     public var linesEditedFrom: Event;
     public var textChanged: Event;
     public var textSet: Event;
+    public function addCaret(line: Int, column: Int): Int;
 }
