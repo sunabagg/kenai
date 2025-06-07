@@ -154,4 +154,5 @@ extern class TextEdit extends Control {
     public function insertTextAtCaret(text: String, ?caretIndex: Int): Void;
     public function isCaretAfterSelectionOrigin(?caert: Int): Bool;
     public function isCaretVisible(?caret: Int): Bool;
+    public function isDraggingCursor(): Bool;
 }
