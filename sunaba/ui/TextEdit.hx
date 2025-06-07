@@ -27,4 +27,5 @@ extern class TextEdit extends Control {
     public var middleMousePasteEnabled: Bool;
     public var minimapDraw: Bool;
     public var minimapWidth: Int;
+    public var mouseDefaultCursorShape: Int;
 }
