@@ -54,3 +54,14 @@ extern class TabContainer extends Container {
     @:native("cast")
     public static function toTabContainer(obj:Dynamic): TabContainer;
 }
+
+abstract TabConatinerAbstract(TabContainer) from TabContainer to TabContainer {
+    @:from
+    public static function fromElement(element: Element): ControlAbstract {
+        var tbContainer = TabContainer.toTabContainer(element);
+        if (tbContainer.isNull()) {
+            return null;
+        }
+        return tbContainer;
+    }
+}
