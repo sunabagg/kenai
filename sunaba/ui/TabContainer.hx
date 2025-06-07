@@ -39,4 +39,5 @@ extern class TabContainer extends Container {
     public function getTabTitle(tab: Int): String;
     public function getTabTooltip(tab: Int): String;
     public function isTabDisabled(tab: Int): Bool;
+    public function isTabHidden(tab: Int): Bool;
 }
