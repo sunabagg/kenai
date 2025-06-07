@@ -200,4 +200,5 @@ extern class TextEdit extends Control {
     public function setOvertypeModeEnabled(enabled: Bool): Void;
     public function setSearchFlags(flags: Int): Void;
     public function setSelectionOriginColumn(column: Int, ?caretIndex: Int): Void;
+    public function setSelectionOriginLine(line: Int, ?caretIndex: Int): Void;
 }
