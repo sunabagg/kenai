@@ -141,4 +141,5 @@ extern class TextEdit extends Control {
     public function getTabSize(): Int;
     public function getTotalGutterWidth(): Int;
     public function getTotalVisibleLineCount(): Int;
+    public function getVisibleLineCount(): Int;
 }
