@@ -167,4 +167,5 @@ extern class TextEdit extends Control {
     public function menuOption(option: Int): Void;
     public function mergeGutters(fromLine: Int, toLine: Int): Void;
     public function mergeOverlappingCarets(): Void;
+    public function multicaretEditIgnoreCaret(caret: Int): Void;
 }
