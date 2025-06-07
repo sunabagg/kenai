@@ -16,4 +16,5 @@ extern class TabContainer extends Container {
     public var tabsVisible: Bool;
     public var useHiddenTabsForMinSize: Bool;
     public var activeTabRearranged: Event;
+    public var prePopupPressed: Event;
 }
