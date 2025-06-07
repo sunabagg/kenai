@@ -109,4 +109,5 @@ extern class TextEdit extends Control {
     public function getLineRangesFromCarets(?onlySelections: Bool, ?mergeAdjacent: Bool): Array<Vector2i>;
     public function getLineWidth(line: Int, ?wrapIndex: Int): Int;
     public function getLineWithIme(line: Int): String;
+    public function getLineWrapCount(line: Int): Int;
 }
