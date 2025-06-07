@@ -5,4 +5,5 @@ extern class TextEdit extends Control {
     public var autowrapMode: Int;
     public var caretBlink: Bool;
     public var caretBlinkInterval: Float;
+    public var caretDrawWhenEditableDisabled: Bool;
 }
