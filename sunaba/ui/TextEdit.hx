@@ -147,4 +147,5 @@ extern class TextEdit extends Control {
     public function getWordUnderCaret(?caret: Int): String;
     public function hasImeText(): Bool;
     public function hasRedo(): Bool;
+    public function hasSelection(?caret: Int): Bool;
 }
