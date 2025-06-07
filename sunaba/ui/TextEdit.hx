@@ -54,4 +54,5 @@ extern class TextEdit extends Control {
     public var gutterAdded: Event;
     public var gutterClicked: Event;
     public var gutterRemoved: Event;
+    public var linesEditedFrom: Event;
 }
