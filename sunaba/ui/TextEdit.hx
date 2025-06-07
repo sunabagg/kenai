@@ -100,4 +100,5 @@ extern class TextEdit extends Control {
     public function getLine(line: Int): String;
     public function getLineBackgroundColor(line: Int): Color;
     public function getLineColumnAtPos(pos: Vector2i, ?clampLine: Bool, ?clampColumn: Bool): Vector2i;
+    public function getLineCount(): Int;
 }
