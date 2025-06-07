@@ -79,4 +79,5 @@ extern class TextEdit extends Control {
     public function endAction(): Void;
     public function endComplexOperation(): Void;
     public function endMulticaretEdit(): Void;
+    public function getCaretColumn(?caret: Int): Int;
 }
