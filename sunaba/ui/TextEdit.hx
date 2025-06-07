@@ -29,4 +29,5 @@ extern class TextEdit extends Control {
     public var minimapWidth: Int;
     public var mouseDefaultCursorShape: Int;
     public var placeholderText: String;
+    public var scrollFitContentHeight: Bool;
 }
