@@ -42,4 +42,5 @@ extern class TabContainer extends Container {
     public function isTabHidden(tab: Int): Bool;
     public function selectNextAvailable(): Bool;
     public function selectPreviousAvailable(): Bool;
+    public function setPopup(popup: Popup): Void;
 }
