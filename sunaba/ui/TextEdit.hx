@@ -182,4 +182,5 @@ extern class TextEdit extends Control {
     public function selectWordUnderCaret(?caret: Int): Void;
     public function setCaretColumn(column: Int, ?adjustViewport: Bool, ?caretIndex: Int): Void;
     public function setCaretLine(line: Int, ?adjustViewport: Bool, ?canBeHidden: Bool, ?wrapIndex: Int, ?caretIndex: Int): Void;
+    public function setGutterClickable(gutter: Int, clickable: Bool): Void;
 }
