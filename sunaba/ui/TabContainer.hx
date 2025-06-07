@@ -30,4 +30,5 @@ extern class TabContainer extends Container {
     public function getTabBar(): TabBar;
     public function getTabButtonIcon(tab: Int): Texture2D;
     public function getTabControl(tab: Int): Control;
+    public function getTabCount(): Int;
 }
