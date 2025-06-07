@@ -127,4 +127,5 @@ extern class TextEdit extends Control {
     public function getSavedVersion(): Int;
     public function getScrollPosForLine(line: Int, ?wrapIndex: Int): Float;
     public function getSelectedText(): String;
+    public function getSelectionAtLineColumn(line: Int, column: Int, ?includeEdges: Bool, ?onlySelections: Bool): Int;
 }
