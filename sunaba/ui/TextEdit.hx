@@ -97,4 +97,5 @@ extern class TextEdit extends Control {
     public function getLastFullVisibleLineWrapIndex(): Int;
     public function getLastUnhiddenLine(): Int;
     public function getLine(line: Int): String;
+    public function getLineBackgroundColor(line: Int): Color;
 }
