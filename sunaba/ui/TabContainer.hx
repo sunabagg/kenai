@@ -1,5 +1,7 @@
 package sunaba.ui;
 
+import sunaba.core.Event;
+
 @:native("TabContainer")
 extern class TabContainer extends Container {
     public var allTabsInFront: Bool;
