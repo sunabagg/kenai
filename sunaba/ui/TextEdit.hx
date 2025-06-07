@@ -90,4 +90,5 @@ extern class TextEdit extends Control {
     public function getFirstVisibleLine(): Int;
     public function getGutterCount(): Int;
     public function getGutterType(gutter: Int): Int;
+    public function getGutterWidth(gutter: Int): Int;
 }
