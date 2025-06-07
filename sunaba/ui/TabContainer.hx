@@ -28,4 +28,5 @@ extern class TabContainer extends Container {
     public function getPopup() : Popup;
     public function getPreviousTab(): Int;
     public function getTabBar(): TabBar;
+    public function getTabButtonIcon(tab: Int): Texture2D;
 }
