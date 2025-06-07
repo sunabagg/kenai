@@ -37,4 +37,5 @@ extern class TabContainer extends Container {
     public function getTabIdxFromControl(control: Control): Int;
     public function getTabMetadata(tab: Int): Variant;
     public function getTabTitle(tab: Int): String;
+    public function getTabTooltip(tab: Int): String;
 }
