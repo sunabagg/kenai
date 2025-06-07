@@ -14,4 +14,5 @@ extern class TextEdit extends Control {
     public var contextMenuEnabled: Bool;
     public var customWordSeparators: String;
     public var deselectOnFocusLost: Bool;
+    public var dragAndDropSelectionEnabled: Bool;
 }
