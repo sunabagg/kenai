@@ -206,4 +206,5 @@ extern class TextEdit extends Control {
     public function startAction(action: Int): Void;
     public function swapLines(fromLine: Int, toLine: Int): Void;
     public function tagSavedVersion(): Void;
+    public function undo(): Void;
 }
