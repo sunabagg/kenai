@@ -71,4 +71,5 @@ extern class TextEdit extends Control {
     public function centerViewportToCaret(?caret: Int): Void;
     public function clear(): Void;
     public function clearUndoHistory(): Void;
+    public function collapseCarets(fromLine: Int, fromColumn: Int, toLine: Int, toColumn: Int, ?inclusive: Bool): Void;
 }
