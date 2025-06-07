@@ -111,4 +111,5 @@ extern class TextEdit extends Control {
     public function getLineWithIme(line: Int): String;
     public function getLineWrapCount(line: Int): Int;
     public function getLineWrapIndexAtColumn(line: Int, column: Int): Int;
+    public function getLineWrappedText(line: Int): Array<String>;
 }
