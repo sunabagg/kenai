@@ -137,4 +137,5 @@ extern class TextEdit extends Control {
     public function getSelectionOriginLine(?caretIndex: Int): Int;
     public function getSelectionToColumn(?caretIndex: Int): Int;
     public function getSelectionToLine(?caretIndex: Int): Int;
+    public function getSortedCarets(?includeIgnoredCarets: Bool): Array<Int>;
 }
