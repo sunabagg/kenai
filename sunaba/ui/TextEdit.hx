@@ -17,4 +17,5 @@ extern class TextEdit extends Control {
     public var dragAndDropSelectionEnabled: Bool;
     public var drawControlChars: Bool;
     public var drawSpaces: Bool;
+    public var editable: Bool;
 }
