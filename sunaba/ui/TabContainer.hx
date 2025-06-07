@@ -8,4 +8,5 @@ extern class TabContainer extends Container {
     public var deselectEnabled: Bool;
     public var dragToRearrangeEnabled: Bool;
     public var tabAlignment: Int;
+    public var tabFocusMode: Int;
 }
