@@ -93,4 +93,5 @@ extern class TextEdit extends Control {
     public function getGutterWidth(gutter: Int): Int;
     public function getHScrollBar(): HScrollBar;
     public function getIndentLevel(line: Int): Int;
+    public function getLastFullVisibleLine(): Int;
 }
