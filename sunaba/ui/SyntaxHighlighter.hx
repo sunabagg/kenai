@@ -9,4 +9,6 @@ extern class SyntaxHighlighter extends Resource {
     public function getLineSyntaxHighlighting(line: Int): Dictionary;
     //public function getTextEdit(): TextEdit;
     public function updateCache(): Void;
+    @:native("cast")
+    public static function castFrom(type: Dynamic): SyntaxHighlighter;
 }
