@@ -113,4 +113,5 @@ extern class TextEdit extends Control {
     public function getLineWrapIndexAtColumn(line: Int, column: Int): Int;
     public function getLineWrappedText(line: Int): Array<String>;
     public function getLocalMousePos(): Vector2;
+    public function getMenu(): PopupMenu;
 }
