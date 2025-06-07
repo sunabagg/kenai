@@ -86,4 +86,5 @@ extern class TextEdit extends Control {
     public function getCaretIndexEditOrder(): Array<Int>;
     public function getCaretLine(?caret: Int): Int;
     public function getCaretWrapIndex(?caret: Int): Int;
+    public function getFirstNonWhitespaceColumn(line: Int): Int;
 }
