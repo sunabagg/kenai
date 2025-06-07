@@ -130,4 +130,5 @@ extern class TextEdit extends Control {
     public function getSelectionAtLineColumn(line: Int, column: Int, ?includeEdges: Bool, ?onlySelections: Bool): Int;
     public function getSelectionColumn(?caretIndex: Int): Int;
     public function getSelectionFromColumn(?caretIndex: Int): Int;
+    public function getSelectionFromLine(?caretIndex: Int): Int;
 }
