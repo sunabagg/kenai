@@ -1,5 +1,7 @@
 package sunaba.ui;
 
+import sunaba.core.ArrayList;
+
 @:native("TextEdit")
 extern class TextEdit extends Control {
     public var autowrapMode: Int;
