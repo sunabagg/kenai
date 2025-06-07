@@ -45,4 +45,5 @@ extern class TextEdit extends Control {
     public var syntaxHighlighter: SyntaxHighlighter;
     public var text: String;
     public var textDirection: Int;
+    public var useCustomWordSeparators: Bool;
 }
