@@ -84,4 +84,5 @@ extern class TextEdit extends Control {
     public function getCaretCount(): Int;
     public function getCaretDrawPos(?caret: Int): Vector2;
     public function getCaretIndexEditOrder(): Array<Int>;
+    public function getCaretLine(?caret: Int): Int;
 }
