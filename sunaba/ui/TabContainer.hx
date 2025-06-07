@@ -38,4 +38,5 @@ extern class TabContainer extends Container {
     public function getTabMetadata(tab: Int): Variant;
     public function getTabTitle(tab: Int): String;
     public function getTabTooltip(tab: Int): String;
+    public function isTabDisabled(tab: Int): Bool;
 }
