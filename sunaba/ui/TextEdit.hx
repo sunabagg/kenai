@@ -106,4 +106,5 @@ extern class TextEdit extends Control {
     public function getLineGutterMetadata(line: Int, gutter: Int): Variant;
     public function getLineGutterText(line: Int, gutter: Int): String;
     public function getLineHeight(): Int;
+    public function getLineRangesFromCarets(?onlySelections: Bool, ?mergeAdjacent: Bool): Array<Vector2i>;
 }
