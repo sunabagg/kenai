@@ -46,4 +46,5 @@ extern class TextEdit extends Control {
     public var text: String;
     public var textDirection: Int;
     public var useCustomWordSeparators: Bool;
+    public var useDefaultWordSeparators: Bool;
 }
