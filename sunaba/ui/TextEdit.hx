@@ -6,4 +6,5 @@ extern class TextEdit extends Control {
     public var caretBlink: Bool;
     public var caretBlinkInterval: Float;
     public var caretDrawWhenEditableDisabled: Bool;
+    public var caretMidGrapheme: Bool;
 }
