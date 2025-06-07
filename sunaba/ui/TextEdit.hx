@@ -21,4 +21,5 @@ extern class TextEdit extends Control {
     public var emojuMenuEnabled: Bool;
     public var emptySelectionClipboardEnabled: Bool;
     public var highlightAllOccurrences: Bool;
+    public var highlightCurrentLine: Bool;
 }
