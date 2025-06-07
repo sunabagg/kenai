@@ -32,4 +32,5 @@ extern class TextEdit extends Control {
     public var scrollFitContentHeight: Bool;
     public var scrollFitContentWidth: Bool;
     public var scrollHorizontal: Int;
+    public var scrollPastEndOfFile: Bool;
 }
