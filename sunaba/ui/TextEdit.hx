@@ -195,4 +195,5 @@ extern class TextEdit extends Control {
     public function setLineBackgroundColor(line: Int, color: Color): Void;
     public function setLineGutterClickable(line: Int, gutter: Int, clickable: Bool): Void;
     public function setLineGutterIcon(line: Int, gutter: Int, icon: Texture2D): Void;
+    public function setLineGutterMetadata(line: Int, gutter: Int, metadata: Variant): Void;
 }
