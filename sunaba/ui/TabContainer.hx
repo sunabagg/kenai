@@ -34,4 +34,5 @@ extern class TabContainer extends Container {
     public function getTabIcon(tab: Int): Texture2D;
     public function getTabIconMaxWidth(tab: Int): Int;
     public function getTabIdxAtPoint(point: Vector2): Int;
+    public function getTabIdxFromControl(control: Control): Int;
 }
