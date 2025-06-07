@@ -51,4 +51,6 @@ extern class TabContainer extends Container {
     public function setTabMetadata(tab: Int, metadata: Variant): Void;
     public function setTabTitle(tab: Int, title: String): Void;
     public function setTabTooltip(tab: Int, tooltip: String): Void;
+    @:native("cast")
+    public static function toTabContainer(obj:Dynamic): TabContainer;
 }
