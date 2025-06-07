@@ -49,4 +49,5 @@ extern class TabContainer extends Container {
     public function setTabIcon(tab: Int, icon: Texture2D): Void;
     public function setTabIconMaxWidth(tab: Int, width: Int): Void;
     public function setTabMetadata(tab: Int, metadata: Variant): Void;
+    public function setTabTitle(tab: Int, title: String): Void;
 }
