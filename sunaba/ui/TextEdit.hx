@@ -10,4 +10,5 @@ extern class TextEdit extends Control {
     public var caretMoveOnRightClick: Bool;
     public var caretMultiple: Bool;
     public var caretType: Int;
+    public var clipContents: Bool;
 }
