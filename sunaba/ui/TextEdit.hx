@@ -163,4 +163,5 @@ extern class TextEdit extends Control {
     public function isLineWrapped(line: Int): Bool;
     public function isMenuVisible(): Bool;
     public function isMouseOverSelection(edges: Bool, ?caretIndex: Int): Bool;
+    public function isOvertypeModeEnabled(): Bool;
 }
