@@ -22,4 +22,5 @@ extern class TextEdit extends Control {
     public var emptySelectionClipboardEnabled: Bool;
     public var highlightAllOccurrences: Bool;
     public var highlightCurrentLine: Bool;
+    public var indentWrappedLines: Bool;
 }
