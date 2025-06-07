@@ -166,4 +166,5 @@ extern class TextEdit extends Control {
     public function isOvertypeModeEnabled(): Bool;
     public function menuOption(option: Int): Void;
     public function mergeGutters(fromLine: Int, toLine: Int): Void;
+    public function mergeOverlappingCarets(): Void;
 }
