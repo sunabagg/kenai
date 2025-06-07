@@ -192,4 +192,5 @@ extern class TextEdit extends Control {
     public function setLineAsCenterVisible(line: Int, ?wrapIndex: Int): Void;
     public function setLineAsFirstVisible(line: Int, ?wrapIndex: Int): Void;
     public function setLineAsLastVisible(line: Int, ?wrapIndex: Int): Void;
+    public function setLineBackgroundColor(line: Int, color: Color): Void;
 }
