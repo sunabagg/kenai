@@ -51,4 +51,5 @@ extern class TextEdit extends Control {
     public var virtualKeyboardEnabled: Bool;
     public var wrapMode: Int;
     public var caretChanged: Event;
+    public var gutterAdded: Event;
 }
