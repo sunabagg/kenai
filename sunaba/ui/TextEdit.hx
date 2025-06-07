@@ -146,4 +146,5 @@ extern class TextEdit extends Control {
     public function getWordAtPos(pos: Vector2): String;
     public function getWordUnderCaret(?caret: Int): String;
     public function hasImeText(): Bool;
+    public function hasRedo(): Bool;
 }
