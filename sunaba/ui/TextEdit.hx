@@ -142,4 +142,5 @@ extern class TextEdit extends Control {
     public function getTotalGutterWidth(): Int;
     public function getTotalVisibleLineCount(): Int;
     public function getVisibleLineCount(): Int;
+    public function getVisibleLineCountInRange(fromLine: Int, toLine: Int): Int;
 }
