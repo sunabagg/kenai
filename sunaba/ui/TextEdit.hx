@@ -139,4 +139,5 @@ extern class TextEdit extends Control {
     public function getSelectionToLine(?caretIndex: Int): Int;
     public function getSortedCarets(?includeIgnoredCarets: Bool): Array<Int>;
     public function getTabSize(): Int;
+    public function getTotalGutterWidth(): Int;
 }
