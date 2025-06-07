@@ -16,4 +16,5 @@ extern class TextEdit extends Control {
     public var deselectOnFocusLost: Bool;
     public var dragAndDropSelectionEnabled: Bool;
     public var drawControlChars: Bool;
+    public var drawSpaces: Bool;
 }
