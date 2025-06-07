@@ -116,4 +116,5 @@ extern class TextEdit extends Control {
     public function getLocalMousePos(): Vector2;
     public function getMenu(): PopupMenu;
     public function getMinimapLineAtPos(pos: Vector2): Int;
+    public function getMinimapAtPos(pos: Vector2i): Int;
 }
