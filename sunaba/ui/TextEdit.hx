@@ -3,6 +3,7 @@ package sunaba.ui;
 import sunaba.core.ArrayList;
 import sunaba.core.Event;
 import sunaba.core.Vector2;
+import sunaba.core.Color;
 
 @:native("TextEdit")
 extern class TextEdit extends Control {
