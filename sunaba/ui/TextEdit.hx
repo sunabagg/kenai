@@ -176,4 +176,5 @@ extern class TextEdit extends Control {
     public function removeLineAt(line: Int, ?moveCaretsDown: Bool): Void;
     public function removeSecondaryCarets(): Void;
     public function removeText(fromLine: Int, fromColumn: Int, toLine: Int, toColumn: Int): Void;
+    public function search(text: String, flags: Int, fromLine: Int, fromColumn: Int): Vector2i;
 }
