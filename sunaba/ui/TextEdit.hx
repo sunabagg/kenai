@@ -184,4 +184,5 @@ extern class TextEdit extends Control {
     public function setCaretLine(line: Int, ?adjustViewport: Bool, ?canBeHidden: Bool, ?wrapIndex: Int, ?caretIndex: Int): Void;
     public function setGutterClickable(gutter: Int, clickable: Bool): Void;
     public function setGutterDraw(gutter: Int, drawn: Bool): Void;
+    public function setGutterName(gutter: Int, name: String): Void;
 }
