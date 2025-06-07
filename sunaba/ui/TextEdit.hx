@@ -203,4 +203,5 @@ extern class TextEdit extends Control {
     public function setSelectionOriginLine(line: Int, ?caretIndex: Int): Void;
     public function setTabSize(size: Int): Void;
     public function skipSelectionForNextOccurrence(): Void;
+    public function startAction(action: Int): Void;
 }
