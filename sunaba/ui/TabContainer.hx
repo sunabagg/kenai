@@ -10,4 +10,5 @@ extern class TabContainer extends Container {
     public var tabAlignment: Int;
     public var tabFocusMode: Int;
     public var tabsPosition: Int;
+    public var tabsRearrangeGroup: Int;
 }
