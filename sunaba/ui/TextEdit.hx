@@ -30,4 +30,5 @@ extern class TextEdit extends Control {
     public var mouseDefaultCursorShape: Int;
     public var placeholderText: String;
     public var scrollFitContentHeight: Bool;
+    public var scrollFitContentWidth: Bool;
 }
