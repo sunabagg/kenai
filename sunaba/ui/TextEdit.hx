@@ -77,4 +77,5 @@ extern class TextEdit extends Control {
     public function deleteSelection(?caret: Int): Void;
     public function deselect(?caret: Int): Void;
     public function endAction(): Void;
+    public function endComplexOperation(): Void;
 }
