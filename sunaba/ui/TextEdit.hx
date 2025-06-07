@@ -31,4 +31,5 @@ extern class TextEdit extends Control {
     public var placeholderText: String;
     public var scrollFitContentHeight: Bool;
     public var scrollFitContentWidth: Bool;
+    public var scrollHorizontal: Int;
 }
