@@ -41,4 +41,5 @@ extern class TextEdit extends Control {
     public var selectingEnabled: Bool;
     public var shortcutKeysEnabled: Bool;
     public var structureTextBidiOverride: Bool;
+    public var structuredTextBidiOverrideOptions: ArrayList;
 }
