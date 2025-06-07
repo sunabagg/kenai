@@ -40,6 +40,6 @@ extern class TextEdit extends Control {
     public var scrollVertical: Float;
     public var selectingEnabled: Bool;
     public var shortcutKeysEnabled: Bool;
-    public var structureTextBidiOverride: Bool;
+    public var structuredTextBidiOverride: Bool;
     public var structuredTextBidiOverrideOptions: ArrayList;
 }
