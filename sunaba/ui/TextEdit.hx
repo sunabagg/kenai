@@ -193,4 +193,5 @@ extern class TextEdit extends Control {
     public function setLineAsFirstVisible(line: Int, ?wrapIndex: Int): Void;
     public function setLineAsLastVisible(line: Int, ?wrapIndex: Int): Void;
     public function setLineBackgroundColor(line: Int, color: Color): Void;
+    public function setLineGutterClickable(line: Int, gutter: Int, clickable: Bool): Void;
 }
