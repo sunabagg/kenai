@@ -115,4 +115,5 @@ extern class TextEdit extends Control {
     public function getLineWrappedText(line: Int): Array<String>;
     public function getLocalMousePos(): Vector2;
     public function getMenu(): PopupMenu;
+    public function getMinimapLineAtPos(pos: Vector2): Int;
 }
