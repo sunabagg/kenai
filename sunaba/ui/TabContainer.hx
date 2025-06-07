@@ -47,4 +47,5 @@ extern class TabContainer extends Container {
     public function setTabDisabled(tab: Int, disabled: Bool): Void;
     public function setTabHidden(tab: Int, hidden: Bool): Void;
     public function setTabIcon(tab: Int, icon: Texture2D): Void;
+    public function setTabIconMaxWidth(tab: Int, width: Int): Void;
 }
