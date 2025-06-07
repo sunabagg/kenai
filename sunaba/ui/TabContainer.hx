@@ -12,4 +12,5 @@ extern class TabContainer extends Container {
     public var tabsPosition: Int;
     public var tabsRearrangeGroup: Int;
     public var tabsVisible: Bool;
+    public var useHiddenTabsForMinSize: Bool;
 }
