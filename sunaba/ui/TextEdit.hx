@@ -75,4 +75,5 @@ extern class TextEdit extends Control {
     public function copy(?caret: Int): Void;
     public function cut(?caret: Int): Void;
     public function deleteSelection(?caret: Int): Void;
+    public function deselect(?caret: Int): Void;
 }
