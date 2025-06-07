@@ -1,6 +1,7 @@
 package sunaba.ui;
 
 import sunaba.core.ArrayList;
+import sunaba.core.Event;
 
 @:native("TextEdit")
 extern class TextEdit extends Control {
