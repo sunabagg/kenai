@@ -24,4 +24,5 @@ extern class TabContainer extends Container {
     public var tabHovered: Event;
     public var tabSelected: Event;
     public function getCurrentTabControl(): Control;
+    public function getPopup() : Popup;
 }
