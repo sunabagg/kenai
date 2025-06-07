@@ -173,4 +173,5 @@ extern class TextEdit extends Control {
     public function redo(): Void;
     public function removeCaret(caret: Int): Void;
     public function removeGutter(gutter: Int): Void;
+    public function removeLineAt(line: Int, ?moveCaretsDown: Bool): Void;
 }
