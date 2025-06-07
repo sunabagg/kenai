@@ -23,4 +23,5 @@ extern class TextEdit extends Control {
     public var highlightAllOccurrences: Bool;
     public var highlightCurrentLine: Bool;
     public var indentWrappedLines: Bool;
+    public var language: String;
 }
