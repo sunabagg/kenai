@@ -4,6 +4,7 @@ import sunaba.core.Event;
 import sunaba.core.Texture2D;
 import sunaba.core.Variant;
 import sunaba.core.Rect2;
+import sunaba.core.Vector2;
 
 @:native("TabBar")
 extern class TabBar extends Control {
