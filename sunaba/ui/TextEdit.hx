@@ -210,3 +210,14 @@ extern class TextEdit extends Control {
     @:native("cast")
     public static function castFrom(type: Dynamic): TextEdit;
 }
+
+abstract TextEditAbstract(TextEdit) from TextEdit to TextEdit {
+    @:from
+    public static function fromControl(e: Element): TextEditAbstract {
+        var te = TextEdit.castFrom(e);
+        if (te.isNull()) {
+            return null;
+        }
+        return te;
+    }
+}
