@@ -95,4 +95,5 @@ extern class TextEdit extends Control {
     public function getIndentLevel(line: Int): Int;
     public function getLastFullVisibleLine(): Int;
     public function getLastFullVisibleLineWrapIndex(): Int;
+    public function getLastUnhiddenLine(): Int;
 }
