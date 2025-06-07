@@ -169,4 +169,5 @@ extern class TextEdit extends Control {
     public function mergeOverlappingCarets(): Void;
     public function multicaretEditIgnoreCaret(caret: Int): Void;
     public function paste(?caret: Int): Void;
+    public function pastePrimaryClipboard(?caret: Int): Void;
 }
