@@ -158,4 +158,5 @@ extern class TextEdit extends Control {
     public function isGutterClickable(gutter: Int): Bool;
     public function isGutterDrawn(gutter: Int): Bool;
     public function isGutterOverwritable(gutter: Int): Bool;
+    public function isInMulticaretEdit(): Bool;
 }
