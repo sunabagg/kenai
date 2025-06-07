@@ -70,4 +70,5 @@ extern class TextEdit extends Control {
     public function cancelIme(): Void;
     public function centerViewportToCaret(?caret: Int): Void;
     public function clear(): Void;
+    public function clearUndoHistory(): Void;
 }
