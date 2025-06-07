@@ -152,4 +152,5 @@ extern class TextEdit extends Control {
     public function insertLineAt(line: Int, text: String): Void;
     public function insertText(text: String, line: Int, column: Int, ?beforeSelectionBegin: Bool, beforeSelectionEnd: Bool): Void;
     public function insertTextAtCaret(text: String, ?caretIndex: Int): Void;
+    public function isCaretAfterSelectionOrigin(?caert: Int): Bool;
 }
