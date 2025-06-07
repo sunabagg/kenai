@@ -11,4 +11,5 @@ extern class TextEdit extends Control {
     public var caretMultiple: Bool;
     public var caretType: Int;
     public var clipContents: Bool;
+    public var contextMenuEnabled: Bool;
 }
