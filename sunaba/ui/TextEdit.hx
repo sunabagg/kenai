@@ -89,4 +89,5 @@ extern class TextEdit extends Control {
     public function getFirstNonWhitespaceColumn(line: Int): Int;
     public function getFirstVisibleLine(): Int;
     public function getGutterCount(): Int;
+    public function getGutterType(gutter: Int): Int;
 }
