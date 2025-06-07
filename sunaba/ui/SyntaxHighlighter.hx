@@ -1,6 +1,7 @@
 package sunaba.ui;
 
 import sunaba.core.Resource;
+import sunaba.core.Dictionary;
 
 @:native("SyntaxHighlighter")
 extern class SyntaxHighlighter extends Resource {
