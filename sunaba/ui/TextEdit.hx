@@ -36,4 +36,5 @@ extern class TextEdit extends Control {
     public var scrollSmooth: Bool;
     public var scrollVScrollSpeed: Float;
     public var scrollVertical: Float;
+    public var selectingEnabled: Bool;
 }
