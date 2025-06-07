@@ -18,4 +18,5 @@ extern class TextEdit extends Control {
     public var drawControlChars: Bool;
     public var drawSpaces: Bool;
     public var editable: Bool;
+    public var emojuMenuEnabled: Bool;
 }
