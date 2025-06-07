@@ -67,4 +67,5 @@ extern class TextEdit extends Control {
     public function backspace(?caretIndex: Int): Void;
     public function beginComplexOperation(): Void;
     public function beginMulticaretEdit(): Void;
+    public function cancelIme(): Void;
 }
