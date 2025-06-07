@@ -121,4 +121,5 @@ extern class TextEdit extends Control {
     public function getMinimapVisibleLines(): Int;
     public function getNextVisibleLineIndexOffsetFrom(line: Int, wrapIndex: Int, visibleAmount: Int): Vector2i;
     public function getNextVisibleLineOffsetFrom(line: Int, visibleAmount: Int): Int;
+    public function getPosAtLineColumn(line: Int, column: Int): Vector2i;
 }
