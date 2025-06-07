@@ -199,4 +199,5 @@ extern class TextEdit extends Control {
     public function setLineGutterText(line: Int, gutter: Int, text: String): Void;
     public function setOvertypeModeEnabled(enabled: Bool): Void;
     public function setSearchFlags(flags: Int): Void;
+    public function setSelectionOriginColumn(column: Int, ?caretIndex: Int): Void;
 }
