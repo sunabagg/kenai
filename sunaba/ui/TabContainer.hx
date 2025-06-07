@@ -2,6 +2,7 @@ package sunaba.ui;
 
 import sunaba.core.Event;
 import sunaba.desktop.Popup;
+import sunaba.core.Texture2D;
 
 @:native("TabContainer")
 extern class TabContainer extends Container {
