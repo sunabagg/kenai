@@ -4,4 +4,5 @@ package sunaba.ui;
 extern class TextEdit extends Control {
     public var autowrapMode: Int;
     public var caretBlink: Bool;
+    public var caretBlinkInterval: Float;
 }
