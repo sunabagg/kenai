@@ -125,4 +125,5 @@ extern class TextEdit extends Control {
     public function getPosAtLineColumn(line: Int, column: Int): Vector2i;
     public function getRectAtLineColumn(line: Int, column: Int): Rect2i;
     public function getSavedVersion(): Int;
+    public function getScrollPosForLine(line: Int, ?wrapIndex: Int): Float;
 }
