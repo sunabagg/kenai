@@ -12,3 +12,14 @@ extern class SyntaxHighlighter extends Resource {
     @:native("cast")
     public static function castFrom(type: Dynamic): SyntaxHighlighter;
 }
+
+abstract SyntaxHighlighterAbstract(SyntaxHighlighter) from SyntaxHighlighter to SyntaxHighlighter {
+    @:from
+    public static function fromResource(resource: Resource): SyntaxHighlighterAbstract {
+        var sh = SyntaxHighlighter.castFrom(resource);
+        if (sh.isNull()) {
+            return null;
+        }
+        return sh;
+    }
+}
