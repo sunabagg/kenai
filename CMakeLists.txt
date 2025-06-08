@@ -413,7 +413,7 @@ if (USE_LUAJIT)
     target_link_libraries(${PROJECT_NAME}
         PRIVATE
             godot-cpp
-            ${LUAJIT_LIBRARIES}
+            ${LUAJIT_STATIC_LIBRARIES}
             sol2
             #hxsimdjson
             #Luau.Compiler Luau.VM
