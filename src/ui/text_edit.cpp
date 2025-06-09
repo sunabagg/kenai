@@ -472,7 +472,7 @@ namespace sunaba::ui {
             "getLastFullVisibleLine", &TextEdit::getLastFullVisibleLine,
             "getLastFullVisibleLineWrapIndex", &TextEdit::getLastFullVisibleLineWrapIndex,
             "getLastUnhiddenLine", &TextEdit::getLastUnhiddenLine,
-            "getLine", &TextEdit::getLine,
+            //"getLine", &TextEdit::getLine,
             "getLineBackgroundColor", &TextEdit::getLineBackgroundColor,
             "getLineColumnAtPos", &TextEdit::getLineColumnAtPos,
             "getLineCount", &TextEdit::getLineCount,
@@ -502,10 +502,10 @@ namespace sunaba::ui {
             "getSelectionColumn", &TextEdit::getSelectionColumn,
             "getSelectionFromColumn", &TextEdit::getSelectionFromColumn,
             "getSelectionFromLine", &TextEdit::getSelectionFromLine,
-            "getSelectionLine", &TextEdit::getSelectionLine,
+            "getSelectionLine", &TextEdit::getSelectionLine/*,
             "getSelectionMode", &TextEdit::getSelectionMode,
-            "getSelectionOriginColumn", &TextEdit::getSelectionOriginColumn,
-            "getSelectionOriginLine", &TextEdit::getSelectionOriginLine,
+            //"getSelectionOriginColumn", &TextEdit::getSelectionOriginColumn,
+            //"getSelectionOriginLine", &TextEdit::getSelectionOriginLine,
             "getSelectionToColumn", &TextEdit::getSelectionToColumn,
             "getSelectionToLine", &TextEdit::getSelectionToLine,
             "getSortedCarets", &TextEdit::getSortedCarets,
@@ -582,7 +582,7 @@ namespace sunaba::ui {
             "startAction", &TextEdit::startAction,
             "swapLines", &TextEdit::swapLines,
             "tagSavedVersion", &TextEdit::tagSavedVersion,
-            "undo", &TextEdit::undo,
+            "undo", &TextEdit::undo*/,
             "cast", [](Element* e) {
                 TextEditNode* text_edit = Object::cast_to<TextEditNode>(e->getNode());
                 return new TextEdit(text_edit);
