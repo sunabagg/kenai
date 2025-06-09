@@ -59,4 +59,5 @@ extern class CodeEdit extends TextEdit {
     public function getAutoBraceCompletionCloseKey(opneKey: String): String;
     public function getBookmarkedLines(): Array<Int>;
     public function getBreakpointedLines(): Array<Int>;
+    public function getCodeCompletionOption(index: Int): Dictionary;
 }
