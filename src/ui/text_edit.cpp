@@ -576,9 +576,9 @@ namespace sunaba::ui {
         ut["setLineGutterIcon"] = &TextEdit::setLineGutterIcon;
         ut["setLineGutterItemColor"] = &TextEdit::setLineGutterItemColor;
         ut["setLineGutterMetadata"] = &TextEdit::setLineGutterMetadata;
+        ut["setLineGutterText"] = &TextEdit::setLineGutterText;
 
         /*
-            "setLineGutterText", &TextEdit::setLineGutterText,
             "setOvertypeModeEnabled", &TextEdit::setOvertypeModeEnabled,
             "setSearchFlags", &TextEdit::setSearchFlags,
             "setSearchText", &TextEdit::setSearchText,
