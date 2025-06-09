@@ -31,4 +31,6 @@ extern class CodeEdit extends TextEdit {
     public var breakpointToggled: Event;
     public var codeCompletionRequested: Event;
     public var symbolHovered: Event;
+    public var symbolLookup: Event;
+    public var symbolValidate: Event;
 }
