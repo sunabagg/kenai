@@ -580,9 +580,9 @@ namespace sunaba::ui {
         ut["setOvertypeModeEnabled"] = &TextEdit::setOvertypeModeEnabled;
         ut["setSearchFlags"] = &TextEdit::setSearchFlags;
         ut["setSearchText"] = &TextEdit::setSearchText;
+        ut["setSelectionMode"] = &TextEdit::setSelectionMode;
 
         /*
-            "setSelectionMode", &TextEdit::setSelectionMode,
             "setSelectionOriginColumn", &TextEdit::setSelectionOriginColumn,
             "setSelectionOriginLine", &TextEdit::setSelectionOriginLine,
             "setTabSize", &TextEdit::setTabSize,
