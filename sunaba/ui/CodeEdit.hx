@@ -22,4 +22,5 @@ extern class CodeEdit extends TextEdit {
     public var indentSize: Int;
     public var indentUseSpaces: Bool;
     public var layoutDirection: Float;
+    public var lineFolding: Bool;
 }
