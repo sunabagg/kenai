@@ -28,4 +28,5 @@ extern class CodeEdit extends TextEdit {
     public var symbolLookupOnClick: Bool;
     public var symbolTooltipOnHover: Bool;
     public var textDirection: Int;
+    public var breakpointToggled: Event;
 }
