@@ -527,10 +527,9 @@ namespace sunaba::ui {
         ut["hasImeText"] = &TextEdit::hasImeText;
         ut["hasRedo"] = &TextEdit::hasRedo;
         ut["hasSelection"] = &TextEdit::hasSelection;
+        ut["hasUndo"] = &TextEdit::hasUndo;
 
         /*
-            , &TextEdit::hasSelection,
-            "hasUndo", &TextEdit::hasUndo,
             "insertLineAt", &TextEdit::insertLineAt,
             "insertText", &TextEdit::insertText,
             "insertTextAtCaret", &TextEdit::insertTextAtCaret,
