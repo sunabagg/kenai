@@ -109,3 +109,14 @@ extern class CodeEdit extends TextEdit {
     @:native("cast")
     public static function toCodeEdit(obj: Dynamic): CodeEdit;
 }
+
+abstract CodeEditAbstract(CodeEdit) from CodeEdit to CodeEdit {
+    @:from
+    public static function fromElement(element: Element): CodeEditAbstract {
+        var cItem = CodeEdit.toCodeEdit(element);
+        if (cItem.isNull()) {
+            return null;
+        }
+        return cItem;
+    }
+}
