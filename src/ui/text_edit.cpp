@@ -585,9 +585,10 @@ namespace sunaba::ui {
         ut["setSelectionOriginLine"] = &TextEdit::setSelectionOriginLine;
         ut["setTabSize"] = &TextEdit::setTabSize;
         ut["skipSelectionForNextOccurrence"] = &TextEdit::skipSelectionForNextOccurrence;
+        ut["startAction"] = &TextEdit::startAction;
 
         /*
-            "startAction", &TextEdit::startAction,
+            , &TextEdit::startAction,
             "swapLines", &TextEdit::swapLines,
             "tagSavedVersion", &TextEdit::tagSavedVersion,
             "undo", &TextEdit::undo*/
