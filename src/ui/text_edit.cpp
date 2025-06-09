@@ -522,10 +522,9 @@ namespace sunaba::ui {
         ut["getVersion"] = &TextEdit::getVersion;
         ut["getVisibleLineCount"] = &TextEdit::getVisibleLineCount;
         ut["getVisibleLineCountInRange"] = &TextEdit::getVisibleLineCountInRange;
+        ut["getWordAtPos"] = &TextEdit::getWordAtPos;
         
         /*
-            "getVisibleLineCountInRange", &TextEdit::getVisibleLineCountInRange,
-            "getWordAtPos", &TextEdit::getWordAtPos,
             "getWordUnderCaret", &TextEdit::getWordUnderCaret,
             "hasImeText", &TextEdit::hasImeText,
             "hasRedo", &TextEdit::hasRedo,
