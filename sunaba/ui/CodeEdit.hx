@@ -60,4 +60,5 @@ extern class CodeEdit extends TextEdit {
     public function getBookmarkedLines(): Array<Int>;
     public function getBreakpointedLines(): Array<Int>;
     public function getCodeCompletionOption(index: Int): Dictionary;
+    public function getCodeCompletionOptions(): Array<Dictionary>;
 }
