@@ -94,4 +94,5 @@ extern class CodeEdit extends TextEdit {
     public function requestCodeCompletion(): Void;
     public function setCodeCompletionSelectedIndex(index: Int): Void;
     public function setCodeHint(hint: String): Void;
+    public function setCodeHintDrawBelow(drawBelow: Bool): Void;
 }
