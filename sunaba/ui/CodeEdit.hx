@@ -33,4 +33,5 @@ extern class CodeEdit extends TextEdit {
     public var symbolHovered: Event;
     public var symbolLookup: Event;
     public var symbolValidate: Event;
+    public function addAutoBraceCompletionPair(startKey: String, endKey: String): Void;
 }
