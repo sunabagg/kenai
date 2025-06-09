@@ -95,4 +95,5 @@ extern class CodeEdit extends TextEdit {
     public function setCodeCompletionSelectedIndex(index: Int): Void;
     public function setCodeHint(hint: String): Void;
     public function setCodeHintDrawBelow(drawBelow: Bool): Void;
+    public function setCodeRegionTags(?startTag: String, ?endTag: String): Void;
 }
