@@ -85,7 +85,7 @@ namespace sunaba::ui {
             ~CodeEditSignalWrapper() = default;
 
             void breakpoint_toggled(int line);
-            void code_completion_requested(const Array& args);
+            void code_completion_requested();
             void symbol_hovered(const Array& args);
             void symbol_lookup(const Array& args);
             void symbol_validate(const Array& args);
