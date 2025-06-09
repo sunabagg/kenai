@@ -89,4 +89,5 @@ extern class CodeEdit extends TextEdit {
     public function isLineFolded(line: Int): Bool;
     public function moveLinesDown(): Void;
     public function moveLinesUp(): Void;
+    public function removeCommentDelimiter(startKey: String): Void;
 }
