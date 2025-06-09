@@ -62,4 +62,5 @@ extern class CodeEdit extends TextEdit {
     public function getCodeCompletionOption(index: Int): Dictionary;
     public function getCodeCompletionOptions(): Array<Dictionary>;
     public function getCodeCompletionSelectedIndex(): Int;
+    public function getCodeRegionEndTag(): String;
 }
