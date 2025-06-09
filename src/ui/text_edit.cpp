@@ -587,9 +587,9 @@ namespace sunaba::ui {
         ut["skipSelectionForNextOccurrence"] = &TextEdit::skipSelectionForNextOccurrence;
         ut["startAction"] = &TextEdit::startAction;
         ut["swapLines"] = &TextEdit::swapLines;
+        ut["tagSavedVersion"] = &TextEdit::tagSavedVersion;
 
         /*
-            "tagSavedVersion", &TextEdit::tagSavedVersion,
             "undo", &TextEdit::undo*/
     }
 }
