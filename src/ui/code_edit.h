@@ -103,6 +103,8 @@ namespace sunaba::ui {
                     this->code_edit_signal_wrapper = memnew(CodeEditSignalWrapper);
                     this->code_edit_signal_wrapper->element = this;
                 }
+
+                this->code_edit->connect("breakpoint_toggled", Callable(this->code_edit_signal_wrapper, "breakpoint_toggled"));
             }
 
         public:
