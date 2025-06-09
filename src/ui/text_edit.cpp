@@ -550,9 +550,10 @@ namespace sunaba::ui {
         ut["paste"] = &TextEdit::paste;
         ut["pastePrimaryClipboard"] = &TextEdit::pastePrimaryClipboard;
         ut["redo"] = &TextEdit::redo;
+        ut["removeCaret"] = &TextEdit::removeCaret;
 
         /*
-            "removeCaret", &TextEdit::removeCaret,
+            , &TextEdit::removeCaret,
             "removeGutter", &TextEdit::removeGutter,
             "removeLineAt", &TextEdit::removeLineAt,
             "removeSecondaryCarets", &TextEdit::removeSecondaryCarets,
