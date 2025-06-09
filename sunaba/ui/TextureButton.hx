@@ -1,5 +1,7 @@
 package sunaba.ui;
 
+import sunaba.core.BitMap;
+
 @Native("TextureButton")
 extern class TextureButton extends BaseButton {
     public var flipH: Bool;
