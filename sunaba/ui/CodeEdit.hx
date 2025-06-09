@@ -41,4 +41,5 @@ extern class CodeEdit extends TextEdit {
     public function addCommentDelimiter(startKey: String, endKey: String, ?lineOnly: Bool): Void;
     public function addStringDelimiter(startKey: String, endKey: String, ?lineOnly: Bool): Void;
     public function canFoldLine(line: Int): Bool;
+    public function cancelCodeCompletion(): Void;
 }
