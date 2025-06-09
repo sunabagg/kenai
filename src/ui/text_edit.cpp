@@ -520,10 +520,9 @@ namespace sunaba::ui {
         ut["getTotalVisibleLineCount"] = &TextEdit::getTotalVisibleLineCount;
         ut["getVScrollBar"] = &TextEdit::getVScrollBar;
         ut["getVersion"] = &TextEdit::getVersion;
+        ut["getVisibleLineCount"] = &TextEdit::getVisibleLineCount;
         
         /*
-            
-            "getVisibleLineCount", &TextEdit::getVisibleLineCount,
             "getVisibleLineCountInRange", &TextEdit::getVisibleLineCountInRange,
             "getWordAtPos", &TextEdit::getWordAtPos,
             "getWordUnderCaret", &TextEdit::getWordUnderCaret,
