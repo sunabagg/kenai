@@ -519,9 +519,10 @@ namespace sunaba::ui {
         ut["getTotalGutterWidth"] = &TextEdit::getTotalGutterWidth;
         ut["getTotalVisibleLineCount"] = &TextEdit::getTotalVisibleLineCount;
         ut["getVScrollBar"] = &TextEdit::getVScrollBar;
+        ut["getVersion"] = &TextEdit::getVersion;
         
         /*
-            "getVersion", &TextEdit::getVersion,
+            
             "getVisibleLineCount", &TextEdit::getVisibleLineCount,
             "getVisibleLineCountInRange", &TextEdit::getVisibleLineCountInRange,
             "getWordAtPos", &TextEdit::getWordAtPos,
