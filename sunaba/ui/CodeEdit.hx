@@ -24,4 +24,5 @@ extern class CodeEdit extends TextEdit {
     public var layoutDirection: Float;
     public var lineFolding: Bool;
     public var lineLengthGuidelines: Array<Int>;
+    public var symbolLookupOnClick: Bool;
 }
