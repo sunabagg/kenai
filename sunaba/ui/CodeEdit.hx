@@ -38,4 +38,5 @@ extern class CodeEdit extends TextEdit {
     public var symbolValidate: Event;
     public function addAutoBraceCompletionPair(startKey: String, endKey: String): Void;
     public function addCodeCompletionOption(type: Int, displayText: String, insertText: String, textColor: Color, ?icon: Resource, ?value: Variant, ?location: Int): Void;
+    public function addCommentDelimiter(startKey: String, endKey: String, ?lineOnly: Bool): Void;
 }
