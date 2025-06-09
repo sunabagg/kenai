@@ -1,5 +1,7 @@
 package sunaba.ui;
 
+import sunaba.core.Dictionary;
+
 @:native("CodeEdit")
 extern class CodeEdit extends TextEdit {
     public var autoBraceCompletionEnabled: Bool;
