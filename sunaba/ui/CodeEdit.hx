@@ -5,6 +5,7 @@ import sunaba.core.Event;
 import sunaba.core.Color;
 import sunaba.core.Resource;
 import sunaba.core.Variant;
+import sunaba.core.Vector2;
 
 @:native("CodeEdit")
 extern class CodeEdit extends TextEdit {
@@ -65,4 +66,5 @@ extern class CodeEdit extends TextEdit {
     public function getCodeRegionEndTag(): String;
     public function getCodeRegionStartTag(): String;
     public function getDelimiterEndKey(delimiterIndex: Int): String;
+
 }
