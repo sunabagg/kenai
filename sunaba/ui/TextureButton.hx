@@ -13,4 +13,5 @@ extern class TextureButton extends BaseButton {
     public var textureDisabled: Texture2D;
     public var textureFocused: Texture2D;
     public var textureHover: Texture2D;
+    public var textureNormal: Texture2D;
 }
