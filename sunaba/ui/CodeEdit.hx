@@ -66,5 +66,5 @@ extern class CodeEdit extends TextEdit {
     public function getCodeRegionEndTag(): String;
     public function getCodeRegionStartTag(): String;
     public function getDelimiterEndKey(delimiterIndex: Int): String;
-
+    public function getDelimiterEndPosition(line: Int, column: Int): Vector2;
 }
