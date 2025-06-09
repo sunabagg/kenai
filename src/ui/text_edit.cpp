@@ -524,9 +524,9 @@ namespace sunaba::ui {
         ut["getVisibleLineCountInRange"] = &TextEdit::getVisibleLineCountInRange;
         ut["getWordAtPos"] = &TextEdit::getWordAtPos;
         ut["getWordUnderCaret"] = &TextEdit::getWordUnderCaret;
+        ut["hasImeText"] = &TextEdit::hasImeText;
         
         /*
-            "hasImeText", &TextEdit::hasImeText,
             "hasRedo", &TextEdit::hasRedo,
             "hasSelection", &TextEdit::hasSelection,
             "hasUndo", &TextEdit::hasUndo,
