@@ -547,9 +547,9 @@ namespace sunaba::ui {
         ut["mergeGutters"] = &TextEdit::mergeGutters;
         ut["mergeOverlappingCarets"] = &TextEdit::mergeOverlappingCarets;
         ut["multicaretEditIgnoreCaret"] = &TextEdit::multicaretEditIgnoreCaret;
+        ut["paste"] = &TextEdit::paste;
 
         /*
-            "paste", &TextEdit::paste,
             "pastePrimaryClipboard", &TextEdit::pastePrimaryClipboard,
             "redo", &TextEdit::redo,
             "removeCaret", &TextEdit::removeCaret,
