@@ -167,8 +167,10 @@ namespace sunaba::ui {
     void CodeEditSignalWrapper::_bind_methods() {
     }
 
-    void CodeEditSignalWrapper::breakpoint_toggled(const Array& args) {
+    void CodeEditSignalWrapper::breakpoint_toggled(int line) {
         if (this->element != nullptr) {
+            Array args;
+            args.push_back(line);
             this->element->breakpointToggledEvent->emit(args);
         }
     }
