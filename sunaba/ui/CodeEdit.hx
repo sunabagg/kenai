@@ -9,4 +9,5 @@ extern class CodeEdit extends TextEdit {
     public var autoBraceCompletionPairs: Dictionary;
     public var codeCompletionEnabled: Bool;
     public var codeCompletionPrefixes: Array<String>;
+    public var delimiterComments: Array<String>;
 }
