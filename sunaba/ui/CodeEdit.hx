@@ -11,4 +11,5 @@ extern class CodeEdit extends TextEdit {
     public var codeCompletionPrefixes: Array<String>;
     public var delimiterComments: Array<String>;
     public var delimiterStrings: Array<String>;
+    public var guttersDrawBookmarks: Bool;
 }
