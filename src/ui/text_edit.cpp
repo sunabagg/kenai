@@ -570,9 +570,9 @@ namespace sunaba::ui {
         ut["setLine"] = &TextEdit::setLine;
         ut["setLineAsCenterVisible"] = &TextEdit::setLineAsCenterVisible;
         ut["setLineAsFirstVisible"] = &TextEdit::setLineAsFirstVisible;
+        ut["setLineAsLastVisible"] = &TextEdit::setLineAsLastVisible;
 
         /*
-            "setLineAsLastVisible", &TextEdit::setLineAsLastVisible,
             "setLineBackgroundColor", &TextEdit::setLineBackgroundColor,
             "setLineGutterClickable", &TextEdit::setLineGutterClickable,
             "setLineGutterIcon", &TextEdit::setLineGutterIcon,
