@@ -175,8 +175,9 @@ namespace sunaba::ui {
         }
     }
 
-    void CodeEditSignalWrapper::code_completion_requested(const Array& args) {
+    void CodeEditSignalWrapper::code_completion_requested() {
         if (this->element != nullptr) {
+            Array args;
             this->element->codeCompletionRequestedEvent->emit(args);
         }
     }
