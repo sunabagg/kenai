@@ -106,4 +106,6 @@ extern class CodeEdit extends TextEdit {
     public function unfoldLine(line: Int): Void;
     public function unindentLines(): Void;
     public function updateCodeCompletionOptions(force: Bool): Void;
+    @:native("cast")
+    public static function toCodeEdit(obj: Dynamic): CodeEdit;
 }
