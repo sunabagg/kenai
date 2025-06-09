@@ -2,6 +2,7 @@ package sunaba.ui;
 
 import sunaba.core.BitMap;
 import sunaba.core.Texture2D;
+import sunaba.core.Element;
 
 @Native("TextureButton")
 extern class TextureButton extends BaseButton {
@@ -17,4 +18,15 @@ extern class TextureButton extends BaseButton {
     public var texturePressed: Texture2D;
     @:native("cast")
     public static function toTextureButton(obj: Dynamic): TextureButton;
+}
+
+abstract TextureButtonAbstract(TextureButton) from TextureButton to TextureButton {
+    @:from
+    public static function fromElement(e: Element): TextureButtonAbstract {
+        var tButton = TextureButton.toTextureButton(e);
+        if (tButton.isNull()) {
+            return null;
+        }
+        return tButton;
+    }
 }
