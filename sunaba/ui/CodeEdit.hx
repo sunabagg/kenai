@@ -69,4 +69,5 @@ extern class CodeEdit extends TextEdit {
     public function getDelimiterEndPosition(line: Int, column: Int): Vector2;
     public function getDelimiterStartKey(delimiterIndex: Int): String;
     public function getDelimiterStartPosition(line: Int, column: Int): Vector2;
+    public function getExecutingLines(): Array<Int>;
 }
