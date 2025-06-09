@@ -539,9 +539,9 @@ namespace sunaba::ui {
         ut["isGutterOverwritable"] = &TextEdit::isGutterOverwritable;
         ut["isInMulitcaretEdit"] = &TextEdit::isInMulitcaretEdit;
         ut["isLineGutterClickable"] = &TextEdit::isLineGutterClickable;
+        ut["isLineWrapped"] = &TextEdit::isLineWrapped;
 
         /*
-            "isLineWrapped", &TextEdit::isLineWrapped,
             "isMenuVisible", &TextEdit::isMenuVisible,
             "isMouseOverSelection", &TextEdit::isMouseOverSelection,
             "isOvertypeModeEnabled", &TextEdit::isOvertypeModeEnabled,
