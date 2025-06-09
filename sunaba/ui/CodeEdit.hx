@@ -82,4 +82,5 @@ extern class CodeEdit extends TextEdit {
     public function isInComment(line: Int, ?column: Int): Bool;
     public function isInString(line: Int, ?column: Int): Bool;
     public function isLineBookmarked(line: Int): Bool;
+    public function isLineBreakpointed(line: Int): Bool;
 }
