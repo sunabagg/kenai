@@ -530,10 +530,10 @@ namespace sunaba::ui {
         ut["hasUndo"] = &TextEdit::hasUndo;
         ut["insertLineAt"] = &TextEdit::insertLineAt;
         ut["insertText"] = &TextEdit::insertText;
+        ut["insertTextAtCaret"] = &TextEdit::insertTextAtCaret;
 
         /*
-            , &TextEdit::insertText,
-            "insertTextAtCaret", &TextEdit::insertTextAtCaret,
+            , &TextEdit::insertTextAtCaret,
             "isCaretAfterSelectionOrigin", &TextEdit::isCaretAfterSelectionOrigin,
             "isCaretVisible", &TextEdit::isCaretVisible,
             "isDraggingCursor", &TextEdit::isDraggingCursor,
