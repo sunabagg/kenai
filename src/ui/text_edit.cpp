@@ -543,9 +543,10 @@ namespace sunaba::ui {
         ut["isMenuVisible"] = &TextEdit::isMenuVisible;
         ut["isMouseOverSelection"] = &TextEdit::isMouseOverSelection;
         ut["isOvertypeModeEnabled"] = &TextEdit::isOvertypeModeEnabled;
+        ut["menuOption"] = &TextEdit::menuOption;
 
         /*
-            "menuOption", &TextEdit::menuOption,
+            , &TextEdit::menuOption,
             "mergeGutters", &TextEdit::mergeGutters,
             "mergeOverlappingCarets", &TextEdit::mergeOverlappingCarets,
             "multicaretEditIgnoreCaret", &TextEdit::multicaretEditIgnoreCaret,
