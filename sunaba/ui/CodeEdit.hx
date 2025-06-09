@@ -1,6 +1,7 @@
 package sunaba.ui;
 
 import sunaba.core.Dictionary;
+import sunaba.core.Event;
 
 @:native("CodeEdit")
 extern class CodeEdit extends TextEdit {
