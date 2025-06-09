@@ -50,4 +50,5 @@ extern class CodeEdit extends TextEdit {
     public function confirmCodeCompletion(): Void;
     public function convertIndent(?fromLine: Int, ?toLine: Int): Void;
     public function createCodeRegion(): Void;
+    public function deleteLines(): Void;
 }
