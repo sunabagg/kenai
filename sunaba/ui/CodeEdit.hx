@@ -52,4 +52,5 @@ extern class CodeEdit extends TextEdit {
     public function createCodeRegion(): Void;
     public function deleteLines(): Void;
     public function doIndent(): Void;
+    public function duplicateLines(): Void;
 }
