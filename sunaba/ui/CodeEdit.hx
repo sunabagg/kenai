@@ -72,4 +72,5 @@ extern class CodeEdit extends TextEdit {
     public function getExecutingLines(): Array<Int>;
     public function getFoldedLines(): Array<Int>;
     public function getTextForCodeCompletion(): String;
+    public function getTextForSymbolLookup(): String;
 }
