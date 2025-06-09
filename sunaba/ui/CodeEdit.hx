@@ -6,4 +6,5 @@ import sunaba.core.Dictionary;
 extern class CodeEdit extends TextEdit {
     public var autoBraceCompletionEnabled: Bool;
     public var autoBraceCompletionHighlightMatching: Bool;
+    public var autoBraceCompletionPairs: Dictionary;
 }
