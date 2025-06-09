@@ -192,6 +192,16 @@ namespace sunaba::ui {
         }
     }
 
+    void CodeEditSignalWrapper::symbol_lookup(const String& symbol, int line, int column) {
+        if (this->element != nullptr) {
+            Array args;
+            args.push_back(symbol);
+            args.push_back(line);
+            args.push_back(column);
+            this->element->symbolLookupEvent->emit(args);
+        }
+    }
+
     void bindCodeEdit(sol::state& lua) {
         lua.new_usertype<CodeEdit>("CodeEdit",
             sol::constructors<CodeEdit()>(),
