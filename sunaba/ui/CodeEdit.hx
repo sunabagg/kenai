@@ -54,4 +54,5 @@ extern class CodeEdit extends TextEdit {
     public function doIndent(): Void;
     public function duplicateLines(): Void;
     public function duplicateSelection(): Void;
+    public function foldAllLines(): Void;
 }
