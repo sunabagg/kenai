@@ -2,5 +2,5 @@ package sunaba.ui;
 
 @Native("TextureButton")
 extern class TextureButton extends BaseButton {
-    
+    public var flipH: Bool;
 }
