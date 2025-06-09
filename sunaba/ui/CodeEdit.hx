@@ -103,4 +103,5 @@ extern class CodeEdit extends TextEdit {
     public function toggleFoldableLine(line: Int): Void;
     public function toggleFoldableLinesAtCarets(): Void;
     public function unfoldAllLines(): Void;
+    public function unfoldLine(line: Int): Void;
 }
