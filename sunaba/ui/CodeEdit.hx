@@ -76,4 +76,5 @@ extern class CodeEdit extends TextEdit {
     public function getTextWithCursorChar(line: Int, column: Int): String;
     public function hasAutoBraceCompletionCloseKey(openKey: String): Bool;
     public function hasAutoBraceCompletionOpenKey(openKey: String): Bool;
+    public function hasCommentDelimiter(startKey: String): Bool;
 }
