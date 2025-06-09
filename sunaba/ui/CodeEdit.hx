@@ -79,4 +79,5 @@ extern class CodeEdit extends TextEdit {
     public function hasCommentDelimiter(startKey: String): Bool;
     public function hasStringDelimiter(startKey: String): Bool;
     public function indentLines(): Void;
+    public function isInComment(line: Int, ?column: Int): Bool;
 }
