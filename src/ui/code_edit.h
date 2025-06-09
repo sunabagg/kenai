@@ -105,6 +105,7 @@ namespace sunaba::ui {
                 }
 
                 this->code_edit->connect("breakpoint_toggled", Callable(this->code_edit_signal_wrapper, "breakpoint_toggled"));
+                this->code_edit->connect("code_completion_requested", Callable(this->code_edit_signal_wrapper, "code_completion_requested"));
             }
 
         public:
