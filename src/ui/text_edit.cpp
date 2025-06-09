@@ -588,8 +588,6 @@ namespace sunaba::ui {
         ut["startAction"] = &TextEdit::startAction;
         ut["swapLines"] = &TextEdit::swapLines;
         ut["tagSavedVersion"] = &TextEdit::tagSavedVersion;
-
-        /*
-            "undo", &TextEdit::undo*/
+        ut["undo"] = &TextEdit::undo;
     }
 }
