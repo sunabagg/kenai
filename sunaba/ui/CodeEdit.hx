@@ -14,4 +14,5 @@ extern class CodeEdit extends TextEdit {
     public var guttersDrawBookmarks: Bool;
     public var guttersDrawBreakpointsGutter: Bool;
     public var guttersDrawExecutingLines: Bool;
+    public var guttersDrawFoldGutter: Bool;
 }
