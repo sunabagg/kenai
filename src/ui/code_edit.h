@@ -87,7 +87,7 @@ namespace sunaba::ui {
             void breakpoint_toggled(int line);
             void code_completion_requested();
             void symbol_hovered(const String& symbol, int line, int column);
-            void symbol_lookup(const Array& args);
+            void symbol_lookup(const String& symbol, int line, int column);
             void symbol_validate(const Array& args);
     };
 
