@@ -545,9 +545,9 @@ namespace sunaba::ui {
         ut["isOvertypeModeEnabled"] = &TextEdit::isOvertypeModeEnabled;
         ut["menuOption"] = &TextEdit::menuOption;
         ut["mergeGutters"] = &TextEdit::mergeGutters;
+        ut["mergeOverlappingCarets"] = &TextEdit::mergeOverlappingCarets;
 
         /*
-            "mergeOverlappingCarets", &TextEdit::mergeOverlappingCarets,
             "multicaretEditIgnoreCaret", &TextEdit::multicaretEditIgnoreCaret,
             "paste", &TextEdit::paste,
             "pastePrimaryClipboard", &TextEdit::pastePrimaryClipboard,
