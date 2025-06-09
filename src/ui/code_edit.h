@@ -74,6 +74,23 @@ namespace sunaba::ui {
             TypedArray<Dictionary> _filter_code_completion_candidates(const TypedArray<Dictionary>& candidates) const override;
     };
 
+    class CodeEditSignalWrapper : public Object {
+        GDCLASS(CodeEditSignalWrapper, Object)
+        protected:
+            static void _bind_methods();
+        public:
+            sunaba::ui::CodeEdit* element = nullptr;
+
+            CodeEditSignalWrapper() = default;
+            ~CodeEditSignalWrapper() = default;
+
+            void breakpoint_toggled(const Array& args);
+            void code_completion_requested(const Array& args);
+            void symbol_hovered(const Array& args);
+            void symbol_lookup(const Array& args);
+            void symbol_validate(const Array& args);
+    };
+
     class CodeEdit : public TextEdit {
         private:
             CodeEditNode* code_edit = nullptr; // Pointer to the CodeEdit instance
