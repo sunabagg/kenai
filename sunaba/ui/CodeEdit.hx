@@ -98,4 +98,5 @@ extern class CodeEdit extends TextEdit {
     public function setCodeRegionTags(?startTag: String, ?endTag: String): Void;
     public function setLineAsBookmarked(line: Int, bookmarked: Bool): Void;
     public function setLineAsBreakpoint(line: Int, breakpointed: Bool): Void;
+    public function setLineAsExecuting(line: Int, executing: Bool): Void;
 }
