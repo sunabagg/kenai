@@ -88,4 +88,5 @@ extern class CodeEdit extends TextEdit {
     public function isLineExecuting(line: Int): Bool;
     public function isLineFolded(line: Int): Bool;
     public function moveLinesDown(): Void;
+    public function moveLinesUp(): Void;
 }
