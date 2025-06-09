@@ -95,74 +95,14 @@ namespace sunaba::ui {
         private:
             CodeEditNode* code_edit = nullptr; // Pointer to the CodeEdit instance
 
+            CodeEditSignalWrapper* code_edit_signal_wrapper = nullptr;
             void connectCodeEditSignals() {
                 // Connect signals specific to CodeEdit
                 // Example: code_edit->connect("signal_name", this, "method_name");
-                SignalFunc breakpointToggledFunc =
-                [this](std::vector<Variant> av) {
-                    Array args;
-                    for (int i = 0; i < av.size(); ++i) {
-                        args.append(av[i]);
-                    }
-                    if (this->breakpointToggledEvent != nullptr) {
-                        this->breakpointToggledEvent->emit(args);
-                    }
-                    return Variant();
-                };
-                Callable breakpointToggledCallable = StlFunctionWrapper::create_callable_from_cpp_function(breakpointToggledFunc);
-                code_edit->connect("breakpoint_toggled", breakpointToggledCallable);
-                SignalFunc codeCompletionRequestedFunc =
-                [this](std::vector<Variant> av) {
-                    Array args;
-                    for (int i = 0; i < av.size(); ++i) {
-                        args.append(av[i]);
-                    }
-                    if (this->codeCompletionRequestedEvent != nullptr) {
-                        this->codeCompletionRequestedEvent->emit(args);
-                    }
-                    return Variant();
-                };
-                Callable codeCompletionRequestedCallable = StlFunctionWrapper::create_callable_from_cpp_function(codeCompletionRequestedFunc);
-                code_edit->connect("code_completion_requested", codeCompletionRequestedCallable);
-                SignalFunc SymbolHoveredFunc =
-                [this](std::vector<Variant> av) {
-                    Array args;
-                    for (int i = 0; i < av.size(); ++i) {
-                        args.append(av[i]);
-                    }
-                    if (this->symbolHoveredEvent != nullptr) {
-                        this->symbolHoveredEvent->emit(args);
-                    }
-                    return Variant();
-                };
-                Callable symbolHoveredCallable = StlFunctionWrapper::create_callable_from_cpp_function(SymbolHoveredFunc);
-                code_edit->connect("symbol_hovered", symbolHoveredCallable);
-                SignalFunc symbolLookupFunc =
-                [this](std::vector<Variant> av) {
-                    Array args;
-                    for (int i = 0; i < av.size(); ++i) {
-                        args.append(av[i]);
-                    }
-                    if (this->symbolLookupEvent != nullptr) {
-                        this->symbolLookupEvent->emit(args);
-                    }
-                    return Variant();
-                };
-                Callable symbolLookupCallable = StlFunctionWrapper::create_callable_from_cpp_function(symbolLookupFunc);
-                code_edit->connect("symbol_lookup", symbolLookupCallable);
-                SignalFunc symbolValidateFunc =
-                [this](std::vector<Variant> av) {
-                    Array args;
-                    for (int i = 0; i < av.size(); ++i) {
-                        args.append(av[i]);
-                    }
-                    if (this->symbolValidateEvent != nullptr) {
-                        this->symbolValidateEvent->emit(args);
-                    }
-                    return Variant();
-                };
-                Callable symbolValidateCallable = StlFunctionWrapper::create_callable_from_cpp_function(symbolValidateFunc);
-                code_edit->connect("symbol_validate", symbolValidateCallable);
+                if (this->code_edit_signal_wrapper == nullptr) {
+                    this->code_edit_signal_wrapper = memnew(CodeEditSignalWrapper);
+                    this->code_edit_signal_wrapper->element = this;
+                }
             }
 
         public:
