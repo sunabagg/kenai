@@ -578,10 +578,9 @@ namespace sunaba::ui {
         ut["setLineGutterMetadata"] = &TextEdit::setLineGutterMetadata;
         ut["setLineGutterText"] = &TextEdit::setLineGutterText;
         ut["setOvertypeModeEnabled"] = &TextEdit::setOvertypeModeEnabled;
+        ut["setSearchFlags"] = &TextEdit::setSearchFlags;
 
         /*
-            , &TextEdit::setOvertypeModeEnabled,
-            "setSearchFlags", &TextEdit::setSearchFlags,
             "setSearchText", &TextEdit::setSearchText,
             "setSelectionMode", &TextEdit::setSelectionMode,
             "setSelectionOriginColumn", &TextEdit::setSelectionOriginColumn,
