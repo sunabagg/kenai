@@ -90,4 +90,5 @@ extern class CodeEdit extends TextEdit {
     public function moveLinesDown(): Void;
     public function moveLinesUp(): Void;
     public function removeCommentDelimiter(startKey: String): Void;
+    public function removeStringDelimiter(startKey: String): Void;
 }
