@@ -99,4 +99,5 @@ extern class CodeEdit extends TextEdit {
     public function setLineAsBookmarked(line: Int, bookmarked: Bool): Void;
     public function setLineAsBreakpoint(line: Int, breakpointed: Bool): Void;
     public function setLineAsExecuting(line: Int, executing: Bool): Void;
+    public function setSymbolLookupWordAsValid(valid: Bool): Void;
 }
