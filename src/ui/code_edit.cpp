@@ -178,6 +178,12 @@ namespace sunaba::ui {
         }
     }
 
+    void CodeEditSignalWrapper::code_completion_requested(const Array& args) {
+        if (this->element != nullptr) {
+            this->element->codeCompletionRequestedEvent->emit(args);
+        }
+    }
+
     void bindCodeEdit(sol::state& lua) {
         lua.new_usertype<CodeEdit>("CodeEdit",
             sol::constructors<CodeEdit()>(),
