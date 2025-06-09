@@ -521,6 +521,7 @@ namespace sunaba::ui {
         ut["getVScrollBar"] = &TextEdit::getVScrollBar;
         ut["getVersion"] = &TextEdit::getVersion;
         ut["getVisibleLineCount"] = &TextEdit::getVisibleLineCount;
+        ut["getVisibleLineCountInRange"] = &TextEdit::getVisibleLineCountInRange;
         
         /*
             "getVisibleLineCountInRange", &TextEdit::getVisibleLineCountInRange,
