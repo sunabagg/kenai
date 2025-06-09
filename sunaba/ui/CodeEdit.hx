@@ -84,4 +84,5 @@ extern class CodeEdit extends TextEdit {
     public function isLineBookmarked(line: Int): Bool;
     public function isLineBreakpointed(line: Int): Bool;
     public function isLineCodeRegionEnd(line: Int): Bool;
+    public function isLineCodeRegionStart(line: Int): Bool;
 }
