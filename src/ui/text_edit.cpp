@@ -556,9 +556,9 @@ namespace sunaba::ui {
         ut["removeSecondaryCarets"] = &TextEdit::removeSecondaryCarets;
         ut["removeText"] = &TextEdit::removeText;
         ut["search"] = &TextEdit::search;
+        ut["select"] = &TextEdit::select;
 
         /*
-            "select", &TextEdit::select,
             "selectAll", &TextEdit::selectAll,
             "selectWordUnderCaret", &TextEdit::selectWordUnderCaret,
             "setCaretColumn", &TextEdit::setCaretColumn,
