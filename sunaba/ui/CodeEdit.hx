@@ -85,5 +85,5 @@ extern class CodeEdit extends TextEdit {
     public function isLineBreakpointed(line: Int): Bool;
     public function isLineCodeRegionEnd(line: Int): Bool;
     public function isLineCodeRegionStart(line: Int): Bool;
-    public function isLIneExecuting(line: Int): Bool;
+    public function isLineExecuting(line: Int): Bool;
 }
