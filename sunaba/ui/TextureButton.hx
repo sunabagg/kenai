@@ -4,4 +4,5 @@ package sunaba.ui;
 extern class TextureButton extends BaseButton {
     public var flipH: Bool;
     public var flipV: Bool;
+    public var ignoreTextureSize: Bool;
 }
