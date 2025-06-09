@@ -515,9 +515,9 @@ namespace sunaba::ui {
         ut["getSelectionToColumn"] = &TextEdit::getSelectionToColumn;
         ut["getSelectionToLine"] = &TextEdit::getSelectionToLine;
         ut["getSortedCarets"] = &TextEdit::getSortedCarets;
+        ut["getTabSize"] = &TextEdit::getTabSize;
         
         /*
-            "getTabSize", &TextEdit::getTabSize,
             "getTotalGutterWidth", &TextEdit::getTotalGutterWidth,
             "getTotalVisibleLineCount", &TextEdit::getTotalVisibleLineCount,
             "getVScrollBar", &TextEdit::getVScrollBar,
