@@ -568,9 +568,9 @@ namespace sunaba::ui {
         ut["setGutterType"] = &TextEdit::setGutterType;
         ut["setGutterWidth"] = &TextEdit::setGutterWidth;
         ut["setLine"] = &TextEdit::setLine;
+        ut["setLineAsCenterVisible"] = &TextEdit::setLineAsCenterVisible;
 
         /*
-            "setLineAsCenterVisible", &TextEdit::setLineAsCenterVisible,
             "setLineAsFirstVisible", &TextEdit::setLineAsFirstVisible,
             "setLineAsLastVisible", &TextEdit::setLineAsLastVisible,
             "setLineBackgroundColor", &TextEdit::setLineBackgroundColor,
