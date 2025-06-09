@@ -70,4 +70,5 @@ extern class CodeEdit extends TextEdit {
     public function getDelimiterStartKey(delimiterIndex: Int): String;
     public function getDelimiterStartPosition(line: Int, column: Int): Vector2;
     public function getExecutingLines(): Array<Int>;
+    public function getFoldedLines(): Array<Int>;
 }
