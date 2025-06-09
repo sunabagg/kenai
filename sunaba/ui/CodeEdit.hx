@@ -20,4 +20,5 @@ extern class CodeEdit extends TextEdit {
     public var indentAutomatic: Bool;
     public var indentAutomaticPrefixes: Array<String>;
     public var indentSize: Int;
+    public var indentUseSpaces: Bool;
 }
