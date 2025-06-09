@@ -202,6 +202,14 @@ namespace sunaba::ui {
         }
     }
 
+    void CodeEditSignalWrapper::symbol_validate(const String& symbol) {
+        if (this->element != nullptr) {
+            Array args;
+            args.push_back(symbol);
+            this->element->symbolValidateEvent->emit(args);
+        }
+    }
+
     void bindCodeEdit(sol::state& lua) {
         lua.new_usertype<CodeEdit>("CodeEdit",
             sol::constructors<CodeEdit()>(),
