@@ -165,6 +165,7 @@ namespace sunaba::ui {
     }
 
     void CodeEditSignalWrapper::_bind_methods() {
+        ClassDB::bind_method(D_METHOD("breakpoint_toggled", "line"), &CodeEditSignalWrapper::breakpoint_toggled);
     }
 
     void CodeEditSignalWrapper::breakpoint_toggled(int line) {
