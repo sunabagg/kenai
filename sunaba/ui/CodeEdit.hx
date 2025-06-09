@@ -105,4 +105,5 @@ extern class CodeEdit extends TextEdit {
     public function unfoldAllLines(): Void;
     public function unfoldLine(line: Int): Void;
     public function unindentLines(): Void;
+    public function updateCodeCompletionOptions(force: Bool): Void;
 }
