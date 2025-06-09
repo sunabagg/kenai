@@ -100,4 +100,5 @@ extern class CodeEdit extends TextEdit {
     public function setLineAsBreakpoint(line: Int, breakpointed: Bool): Void;
     public function setLineAsExecuting(line: Int, executing: Bool): Void;
     public function setSymbolLookupWordAsValid(valid: Bool): Void;
+    public function toggleFoldableLine(line: Int): Void;
 }
