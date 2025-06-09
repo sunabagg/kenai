@@ -510,9 +510,9 @@ namespace sunaba::ui {
         );
 
         ut["getSelectionMode"] = &TextEdit::getSelectionMode;
+        ut["getSelectionOriginColumn"] = &TextEdit::getSelectionOriginColumn;
         
         /*
-            //"getSelectionOriginColumn", &TextEdit::getSelectionOriginColumn,
             //"getSelectionOriginLine", &TextEdit::getSelectionOriginLine,
             "getSelectionToColumn", &TextEdit::getSelectionToColumn,
             "getSelectionToLine", &TextEdit::getSelectionToLine,
