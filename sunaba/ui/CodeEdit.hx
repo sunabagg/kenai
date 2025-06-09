@@ -78,4 +78,5 @@ extern class CodeEdit extends TextEdit {
     public function hasAutoBraceCompletionOpenKey(openKey: String): Bool;
     public function hasCommentDelimiter(startKey: String): Bool;
     public function hasStringDelimiter(startKey: String): Bool;
+    public function indentLines(): Void;
 }
