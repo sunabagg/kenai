@@ -47,4 +47,5 @@ extern class CodeEdit extends TextEdit {
     public function clearCommentDelimiters(): Void;
     public function clearExecutingLines(): Void;
     public function clearStringDelimiters(): Void;
+    public function confirmCodeCompletion(): Void;
 }
