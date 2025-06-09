@@ -81,6 +81,7 @@ namespace
         godot::ClassDB::register_class<sunaba::ui::TabBarSignalWrapper>();
         godot::ClassDB::register_class<sunaba::ui::TabContainerSignalWrapper>();
         godot::ClassDB::register_class<sunaba::ui::TextEditSignalWrapper>();
+        godot::ClassDB::register_class<sunaba::ui::CodeEditSignalWrapper>();
         godot::ClassDB::register_class<sunaba::ui::TreeSignalWrapper>();
         godot::ClassDB::register_class<sunaba::ui::RichTextLabelSignalWrapper>();
     }
