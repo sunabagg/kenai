@@ -93,4 +93,5 @@ extern class CodeEdit extends TextEdit {
     public function removeStringDelimiter(startKey: String): Void;
     public function requestCodeCompletion(): Void;
     public function setCodeCompletionSelectedIndex(index: Int): Void;
+    public function setCodeHint(hint: String): Void;
 }
