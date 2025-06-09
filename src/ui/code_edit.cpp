@@ -164,6 +164,12 @@ namespace sunaba::ui {
         return TypedArray<Dictionary>();
     }
 
+    void CodeEditSignalWrapper::breakpoint_toggled(const Array& args) {
+        if (this->element != nullptr) {
+            this->element->breakpointToggledEvent->emit(args);
+        }
+    }
+
     void bindCodeEdit(sol::state& lua) {
         lua.new_usertype<CodeEdit>("CodeEdit",
             sol::constructors<CodeEdit()>(),
