@@ -2,6 +2,9 @@ package sunaba.ui;
 
 import sunaba.core.Dictionary;
 import sunaba.core.Event;
+import sunaba.core.Color;
+import sunaba.core.Resource;
+import sunaba.core.Variant;
 
 @:native("CodeEdit")
 extern class CodeEdit extends TextEdit {
@@ -34,4 +37,5 @@ extern class CodeEdit extends TextEdit {
     public var symbolLookup: Event;
     public var symbolValidate: Event;
     public function addAutoBraceCompletionPair(startKey: String, endKey: String): Void;
+    public function addCodeCompletionOption(type: Int, displayText: String, insertText: String, textColor: Color, ?icon: Resource, ?value: Variant, ?location: Int): Void;
 }
