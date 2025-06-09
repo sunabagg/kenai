@@ -19,4 +19,5 @@ extern class CodeEdit extends TextEdit {
     public var guttersZeroPadLineNumbers: Bool;
     public var indentAutomatic: Bool;
     public var indentAutomaticPrefixes: Array<String>;
+    public var indentSize: Int;
 }
