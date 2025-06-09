@@ -1,6 +1,7 @@
 package sunaba.ui;
 
 import sunaba.core.BitMap;
+import sunaba.core.Texture2D;
 
 @Native("TextureButton")
 extern class TextureButton extends BaseButton {
