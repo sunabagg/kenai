@@ -61,4 +61,5 @@ extern class CodeEdit extends TextEdit {
     public function getBreakpointedLines(): Array<Int>;
     public function getCodeCompletionOption(index: Int): Dictionary;
     public function getCodeCompletionOptions(): Array<Dictionary>;
+    public function getCodeCompletionSelectedIndex(): Int;
 }
