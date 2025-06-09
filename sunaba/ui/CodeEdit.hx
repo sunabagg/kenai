@@ -81,4 +81,5 @@ extern class CodeEdit extends TextEdit {
     public function indentLines(): Void;
     public function isInComment(line: Int, ?column: Int): Bool;
     public function isInString(line: Int, ?column: Int): Bool;
+    public function isLineBookmarked(line: Int): Bool;
 }
