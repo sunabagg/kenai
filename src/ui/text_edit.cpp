@@ -517,9 +517,9 @@ namespace sunaba::ui {
         ut["getSortedCarets"] = &TextEdit::getSortedCarets;
         ut["getTabSize"] = &TextEdit::getTabSize;
         ut["getTotalGutterWidth"] = &TextEdit::getTotalGutterWidth;
+        ut["getTotalVisibleLineCount"] = &TextEdit::getTotalVisibleLineCount;
         
         /*
-            "getTotalVisibleLineCount", &TextEdit::getTotalVisibleLineCount,
             "getVScrollBar", &TextEdit::getVScrollBar,
             "getVersion", &TextEdit::getVersion,
             "getVisibleLineCount", &TextEdit::getVisibleLineCount,
