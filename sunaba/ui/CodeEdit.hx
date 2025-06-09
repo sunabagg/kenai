@@ -43,4 +43,5 @@ extern class CodeEdit extends TextEdit {
     public function canFoldLine(line: Int): Bool;
     public function cancelCodeCompletion(): Void;
     public function clearBookmarkedLines(): Void;
+    public function clearBreakpointedLines(): Void;
 }
