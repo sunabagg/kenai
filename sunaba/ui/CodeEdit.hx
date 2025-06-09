@@ -40,4 +40,5 @@ extern class CodeEdit extends TextEdit {
     public function addCodeCompletionOption(type: Int, displayText: String, insertText: String, textColor: Color, ?icon: Resource, ?value: Variant, ?location: Int): Void;
     public function addCommentDelimiter(startKey: String, endKey: String, ?lineOnly: Bool): Void;
     public function addStringDelimiter(startKey: String, endKey: String, ?lineOnly: Bool): Void;
+    public function canFoldLine(line: Int): Bool;
 }
