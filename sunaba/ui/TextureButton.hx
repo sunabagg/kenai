@@ -15,4 +15,6 @@ extern class TextureButton extends BaseButton {
     public var textureHover: Texture2D;
     public var textureNormal: Texture2D;
     public var texturePressed: Texture2D;
+    @:native("cast")
+    public static function toTextureButton(obj: Dynamic): TextureButton;
 }
