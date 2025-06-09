@@ -534,9 +534,9 @@ namespace sunaba::ui {
         ut["isCaretAfterSelectionOrigin"] = &TextEdit::isCaretAfterSelectionOrigin;
         ut["isCaretVisible"] = &TextEdit::isCaretVisible;
         ut["isDraggingCursor"] = &TextEdit::isDraggingCursor;
+        ut["isGutterClickable"] = &TextEdit::isGutterClickable;
 
         /*
-            "isGutterClickable", &TextEdit::isGutterClickable,
             "isGutterDrawn", &TextEdit::isGutterDrawn,
             "isGutterOverwritable", &TextEdit::isGutterOverwritable,
             "isInMulticaretEdit", &TextEdit::isInMulitcaretEdit,
