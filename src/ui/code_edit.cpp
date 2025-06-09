@@ -164,6 +164,14 @@ namespace sunaba::ui {
         return TypedArray<Dictionary>();
     }
 
+    void CodeEditSignalWrapper::_bind_methods() {
+        ClassDB::bind_method(D_METHOD("breakpoint_toggled", "args"), &CodeEditSignalWrapper::breakpoint_toggled);
+        ClassDB::bind_method(D_METHOD("code_completion_requested", "args"), &CodeEditSignalWrapper::code_completion_requested);
+        ClassDB::bind_method(D_METHOD("symbol_hovered", "args"), &CodeEditSignalWrapper::symbol_hovered);
+        ClassDB::bind_method(D_METHOD("symbol_lookup", "args"), &CodeEditSignalWrapper::symbol_lookup);
+        ClassDB::bind_method(D_METHOD("symbol_validate", "args"), &CodeEditSignalWrapper::symbol_validate);
+    }
+
     void CodeEditSignalWrapper::breakpoint_toggled(const Array& args) {
         if (this->element != nullptr) {
             this->element->breakpointToggledEvent->emit(args);
