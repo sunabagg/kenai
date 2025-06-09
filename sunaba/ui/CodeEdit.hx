@@ -73,4 +73,5 @@ extern class CodeEdit extends TextEdit {
     public function getFoldedLines(): Array<Int>;
     public function getTextForCodeCompletion(): String;
     public function getTextForSymbolLookup(): String;
+    public function getTextWithCursorChar(line: Int, column: Int): String;
 }
