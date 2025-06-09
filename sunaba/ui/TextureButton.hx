@@ -8,4 +8,5 @@ extern class TextureButton extends BaseButton {
     public var flipV: Bool;
     public var ignoreTextureSize: Bool;
     public var stretchMode: Int;
+    public var textureClickMask: BitMap;
 }
