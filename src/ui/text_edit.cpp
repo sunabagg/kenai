@@ -502,8 +502,16 @@ namespace sunaba::ui {
             "getSelectionColumn", &TextEdit::getSelectionColumn,
             "getSelectionFromColumn", &TextEdit::getSelectionFromColumn,
             "getSelectionFromLine", &TextEdit::getSelectionFromLine,
-            "getSelectionLine", &TextEdit::getSelectionLine/*,
-            "getSelectionMode", &TextEdit::getSelectionMode,
+            "getSelectionLine", &TextEdit::getSelectionLine,
+            "cast", [](Element* e) {
+                TextEditNode* text_edit = Object::cast_to<TextEditNode>(e->getNode());
+                return new TextEdit(text_edit);
+            }
+        );
+
+        ut["getSelectionMode"] = &TextEdit::getSelectionMode;
+        
+        /*
             //"getSelectionOriginColumn", &TextEdit::getSelectionOriginColumn,
             //"getSelectionOriginLine", &TextEdit::getSelectionOriginLine,
             "getSelectionToColumn", &TextEdit::getSelectionToColumn,
@@ -582,11 +590,6 @@ namespace sunaba::ui {
             "startAction", &TextEdit::startAction,
             "swapLines", &TextEdit::swapLines,
             "tagSavedVersion", &TextEdit::tagSavedVersion,
-            "undo", &TextEdit::undo*/,
-            "cast", [](Element* e) {
-                TextEditNode* text_edit = Object::cast_to<TextEditNode>(e->getNode());
-                return new TextEdit(text_edit);
-            }
-        );
+            "undo", &TextEdit::undo*/
     }
 }
