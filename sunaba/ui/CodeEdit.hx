@@ -102,4 +102,5 @@ extern class CodeEdit extends TextEdit {
     public function setSymbolLookupWordAsValid(valid: Bool): Void;
     public function toggleFoldableLine(line: Int): Void;
     public function toggleFoldableLinesAtCarets(): Void;
+    public function unfoldAllLines(): Void;
 }
