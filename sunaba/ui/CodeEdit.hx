@@ -57,4 +57,5 @@ extern class CodeEdit extends TextEdit {
     public function foldAllLines(): Void;
     public function foldLine(line: Int): Void;
     public function getAutoBraceCompletionCloseKey(opneKey: String): String;
+    public function getBookmarkedLines(): Array<Int>;
 }
