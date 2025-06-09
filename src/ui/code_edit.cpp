@@ -166,6 +166,10 @@ namespace sunaba::ui {
 
     void CodeEditSignalWrapper::_bind_methods() {
         ClassDB::bind_method(D_METHOD("breakpoint_toggled", "line"), &CodeEditSignalWrapper::breakpoint_toggled);
+        ClassDB::bind_method(D_METHOD("code_completion_requested"), &CodeEditSignalWrapper::code_completion_requested);
+        ClassDB::bind_method(D_METHOD("symbol_hovered", "symbol", "line", "column"), &CodeEditSignalWrapper::symbol_hovered);
+        ClassDB::bind_method(D_METHOD("symbol_lookup", "symbol", "line", "column"), &CodeEditSignalWrapper::symbol_lookup);
+        ClassDB::bind_method(D_METHOD("symbol_validate", "symbol"), &CodeEditSignalWrapper::symbol_validate);
     }
 
     void CodeEditSignalWrapper::breakpoint_toggled(int line) {
