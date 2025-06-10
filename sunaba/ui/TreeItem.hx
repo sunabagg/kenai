@@ -87,4 +87,5 @@ extern class TreeItem extends BaseObject {
     public function setButton(column: Int, buttonIdx: Int, button: Texture2D): Void;
     public function setButtonColor(column: Int, idx: Int, color: Color): Void;
     public function setButtonDisabled(column: Int, idx: Int, disabled: Bool): Void;
+    public function setButtonTooltipText(column: Int, idx: Int, tooltipText: String): Void;
 }
