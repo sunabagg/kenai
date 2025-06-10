@@ -35,4 +35,5 @@ extern class TreeItem extends BaseObject {
     public function getCustomColor(column: Int): Color;
     public function getCustomFont(column: Int): Font;
     public function getCustomFontSize(column: Int): Int;
+    public function getExpandRight(column: Int): Bool;
 }
