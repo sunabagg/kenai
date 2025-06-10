@@ -9,4 +9,5 @@ extern class Tree extends Control {
     public var clipContents: Bool;
     public var columnTitlesVisible: Bool;
     public var columns: Int;
+    public var dropModeFlags: Int;
 }
