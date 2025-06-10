@@ -89,4 +89,5 @@ extern class TreeItem extends BaseObject {
     public function setButtonDisabled(column: Int, idx: Int, disabled: Bool): Void;
     public function setButtonTooltipText(column: Int, idx: Int, tooltipText: String): Void;
     public function setCellMode(column: Int, mode: Int): Void;
+    public function setChecked(column: Int, checked: Bool): Void;
 }
