@@ -522,6 +522,9 @@ namespace sunaba::ui {
             }
 
             void setSelected(TreeItem* item, int column) {
+                if (!item) {
+                    return; // Avoid null pointer dereference
+                }
                 tree->set_selected(item->getTreeItem(), column);
             }
 
