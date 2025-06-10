@@ -110,4 +110,5 @@ extern class TreeItem extends BaseObject {
     public function setRange(column: Int, range: Float): Void;
     public function setRangeConfig(column: Int, min: Float, max: Float, step: Float, ?expr: Bool): Void;
     public function setSelectable(column: Int, selectable: Bool): Void;
+    public function setStructuredTextBidiOverride(column: Int, bidiOverride: Int): Void;
 }
