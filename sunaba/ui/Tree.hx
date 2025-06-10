@@ -7,4 +7,5 @@ extern class Tree extends Control {
     public var allowSearch: Bool;
     public var autoTooltip: Bool;
     public var clipContents: Bool;
+    public var columnTitlesVisible: Bool;
 }
