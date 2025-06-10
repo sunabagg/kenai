@@ -80,4 +80,5 @@ extern class TreeItem extends BaseObject {
     public function moveAfter(item: TreeItem): Void;
     public function moveBefore(item: TreeItem): Void;
     public function propagateCheck(column: Int, ?emitSignal: Bool): Void;
+    public function removeChild(item: TreeItem): Void;
 }
