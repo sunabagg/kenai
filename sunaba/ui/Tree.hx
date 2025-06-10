@@ -6,4 +6,5 @@ extern class Tree extends Control {
     public var allowRmbSelect: Bool;
     public var allowSearch: Bool;
     public var autoTooltip: Bool;
+    public var clipContents: Bool;
 }
