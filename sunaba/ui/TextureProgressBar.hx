@@ -26,4 +26,6 @@ extern class TextureProgressBar extends Range {
     public var tintUnder: Color;
     public function getStretchMargin(side: Int): Int;
     public function setStretchMargin(side: Int, margin: Int): Void;
+    @:native("cast")
+    public static function toTextureProgressBar(obj: Dynamic): TextureProgressBar;
 }
