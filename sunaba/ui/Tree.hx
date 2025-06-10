@@ -8,4 +8,5 @@ extern class Tree extends Control {
     public var autoTooltip: Bool;
     public var clipContents: Bool;
     public var columnTitlesVisible: Bool;
+    public var columns: Int;
 }
