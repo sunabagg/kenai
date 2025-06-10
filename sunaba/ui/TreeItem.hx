@@ -57,4 +57,5 @@ extern class TreeItem extends BaseObject {
     public function getPrevVisible(): TreeItem;
     public function getRange(column: Int): Float;
     public function getRangeConfig(column: Int): Dictionary;
+    public function getStructuredTextBidiOverride(column: Int): Int;
 }
