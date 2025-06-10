@@ -97,4 +97,5 @@ extern class TreeItem extends BaseObject {
     public function setCustomFont(column: Int, font: Font): Void;
     public function setCustomFontSize(column: Int, size: Int): Void;
     public function setEditMultiline(column: Int, multiline: Bool): Void;
+    public function setEditable(column: Int, editable: Bool): Void;
 }
