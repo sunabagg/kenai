@@ -489,6 +489,9 @@ namespace sunaba::ui {
             }
 
             void scrollToItem(TreeItem* item, bool centerOnItem = false) {
+                if (!item) {
+                    return; // Avoid null pointer dereference
+                }
                 godot::TreeItem* treeItem = item ? item->getTreeItem() : nullptr;
                 tree->scroll_to_item(treeItem, centerOnItem);
             }
