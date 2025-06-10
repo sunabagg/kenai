@@ -95,4 +95,5 @@ extern class TreeItem extends BaseObject {
     public function setCustomBgColor(column: Int, color: Color): Void;
     public function setCustomColor(column: Int, color: Color): Void;
     public function setCustomFont(column: Int, font: Font): Void;
+    public function setCustomFontSize(column: Int, size: Int): Void;
 }
