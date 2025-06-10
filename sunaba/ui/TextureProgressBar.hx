@@ -9,4 +9,5 @@ extern class TextureProgressBar extends Range {
     public var ninePatchStretch: Bool;
     public var radialCenterOffset: Vector2;
     public var radialFillDegrees: Float;
+    public var radialInitialAngle: Float;
 }
