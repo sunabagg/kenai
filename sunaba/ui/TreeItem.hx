@@ -91,4 +91,5 @@ extern class TreeItem extends BaseObject {
     public function setCellMode(column: Int, mode: Int): Void;
     public function setChecked(column: Int, checked: Bool): Void;
     public function setCollapsedRecursive(collapsed: Bool): Void;
+    public function setCustomAsButton(column: Int, enable: Bool): Void;
 }
