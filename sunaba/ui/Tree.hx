@@ -27,4 +27,5 @@ extern class Tree extends Control {
     public var itemActivated: Event;
     public var itemCollapsed: Event;
     public var itemEdited: Event;
+    public var itemIconDoubleClicked: Event;
 }
