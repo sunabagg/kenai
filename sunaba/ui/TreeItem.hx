@@ -23,4 +23,5 @@ extern class TreeItem extends BaseObject {
     public function getButton(column: Int, idx: Int): Texture2D;
     public function getButtonById(column: Int, id: Int): Int;
     public function getButtonColor(column: Int, idx: Int): Color;
+    public function getButtonCount(column: Int): Int;
 }
