@@ -78,4 +78,5 @@ extern class TreeItem extends BaseObject {
     public function isSelected(column: Int): Bool;
     public function isVisibleInTree(): Bool;
     public function moveAfter(item: TreeItem): Void;
+    public function moveBefore(item: TreeItem): Void;
 }
