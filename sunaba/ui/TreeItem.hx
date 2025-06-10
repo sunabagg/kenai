@@ -60,4 +60,5 @@ extern class TreeItem extends BaseObject {
     public function getRangeConfig(column: Int): Dictionary;
     public function getStructuredTextBidiOverride(column: Int): Int;
     public function getStructuredTextBidiOverrideOptions(column: Int): ArrayList;
+    public function getSuffix(column: Int): String;
 }
