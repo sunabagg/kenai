@@ -103,4 +103,5 @@ extern class TreeItem extends BaseObject {
     public function setIconMaxWidth(column: Int, maxWidth: Int): Void;
     public function setIconModulate(column: Int, modulate: Color): Void;
     public function setIconOverlay(column: Int, overlay: Texture2D): Void;
+    public function setIconRegion(column: Int, region: Rect2): Void;
 }
