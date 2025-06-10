@@ -29,3 +29,14 @@ extern class CodeHighlighter extends SyntaxHighlighter {
     @:native("cast")
     public static function toCodeHighlighter(obj: Dynamic): CodeHighlighter;
 }
+
+abstract CodeHighlighterAbstract(CodeHighlighter) from CodeHighlighter to CodeHighlighter {
+    @:from
+    public static function fromResource(resource: Resource): CodeHighlighterAbstract {
+        var ch = CodeHighlighter.toCodeHighlighter(resource);
+        if (ch.isNull()) {
+            return null;
+        }
+        return ch;
+    }
+}
