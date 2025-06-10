@@ -70,4 +70,5 @@ extern class TreeItem extends BaseObject {
     public function isAnyCollapsed(onlyVisible: Bool): Bool;
     public function isButtonDisabled(column: Int, idx: Int): Bool;
     public function isChecked(column: Int): Bool;
+    public function isCustomSetAsButton(column: Int): Bool;
 }
