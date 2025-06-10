@@ -12,4 +12,5 @@ extern class Tree extends Control {
     public var dropModeFlags: Int;
     public var enableRecursiveFolding: Bool;
     public var focusMode: Bool;
+    public var hideFolding: Bool;
 }
