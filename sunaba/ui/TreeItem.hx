@@ -18,4 +18,5 @@ extern class TreeItem extends BaseObject {
     public function deselect(column: Int): Void;
     public function eraseButton(column: Int, idx: Int): Void;
     public function getAutoTranslateMode(column: Int): Int;
+    public function getAutowrapMode(column: Int): Int;
 }
