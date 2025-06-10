@@ -15,4 +15,5 @@ extern class Tree extends Control {
     public var hideFolding: Bool;
     public var hideRoot: Bool;
     public var scrollHorizontalEnabled: Bool;
+    public var scrollVerticalEnabled: Bool;
 }
