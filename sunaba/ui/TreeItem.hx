@@ -104,4 +104,5 @@ extern class TreeItem extends BaseObject {
     public function setIconModulate(column: Int, modulate: Color): Void;
     public function setIconOverlay(column: Int, overlay: Texture2D): Void;
     public function setIconRegion(column: Int, region: Rect2): Void;
+    public function setIndeterminate(column: Int, indeterminate: Bool): Void;
 }
