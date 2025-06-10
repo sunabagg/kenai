@@ -382,9 +382,6 @@ namespace sunaba::ui {
             }
 
             TreeItem* createItem(TreeItem* parent = nullptr, int index = -1) {
-                if (!tree) {
-                    return nullptr; // Avoid null pointer dereference
-                }
                 godot::TreeItem* parentItem = parent ? parent->getTreeItem() : nullptr;
                 return new TreeItem(tree->create_item(parentItem, index));
             }
