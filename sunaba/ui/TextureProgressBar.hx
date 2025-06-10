@@ -8,4 +8,5 @@ extern class TextureProgressBar extends Range {
     public var mouseFilter: Int;
     public var ninePatchStretch: Bool;
     public var radialCenterOffset: Vector2;
+    public var radialFillDegrees: Float;
 }
