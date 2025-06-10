@@ -49,4 +49,5 @@ extern class TreeItem extends BaseObject {
     public function getMetadata(column: Int): Variant;
     public function getNext(): TreeItem;
     public function getNextInTree(): TreeItem;
+    public function getNextVisible(): TreeItem;
 }
