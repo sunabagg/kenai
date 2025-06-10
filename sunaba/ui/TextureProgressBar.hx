@@ -2,6 +2,7 @@ package sunaba.ui;
 
 import sunaba.core.Vector2;
 import sunaba.core.Texture2D;
+import sunaba.core.Color;
 
 @:native("TextureProgressBar")
 extern class TextureProgressBar extends Range {
