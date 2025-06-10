@@ -40,4 +40,5 @@ extern class TreeItem extends BaseObject {
     public function getIcon(column: Int): Texture2D;
     public function getIconMaxWidth(column: Int): Int;
     public function getIconModulate(column: Int): Color;
+    public function getIconOverlay(column: Int): Texture2D;
 }
