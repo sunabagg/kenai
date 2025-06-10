@@ -22,4 +22,5 @@ extern class Tree extends Control {
     public var checkPropagatedToItem: Event;
     public var columnTitleClicked: Event;
     public var customItemClicked: Event;
+    public var customPopupEdited: Event;
 }
