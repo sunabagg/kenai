@@ -1,6 +1,7 @@
 package sunaba.ui;
 
 import sunaba.core.BaseObject;
+import sunaba.core.Texture2D;
 
 @:native("TreeItem")
 extern class TreeItem extends BaseObject {
@@ -8,4 +9,5 @@ extern class TreeItem extends BaseObject {
     public var customMinimumHeight: Int;
     public var disableFolding: Bool;
     public var visible: Bool;
+    public function addButton(colum: Int, button: Texture2D, ?id: Int, ?disabled: Bool, ?tooltipText: String): Void;
 }
