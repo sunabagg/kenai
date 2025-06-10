@@ -109,4 +109,5 @@ extern class TreeItem extends BaseObject {
     public function setMetadata(column: Int, metadata: Variant): Void;
     public function setRange(column: Int, range: Float): Void;
     public function setRangeConfig(column: Int, min: Float, max: Float, step: Float, ?expr: Bool): Void;
+    public function setSelectable(column: Int, selectable: Bool): Void;
 }
