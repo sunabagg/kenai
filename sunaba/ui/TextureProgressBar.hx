@@ -21,4 +21,5 @@ extern class TextureProgressBar extends Range {
     public var textureOver: Texture2D;
     public var textureProgress: Texture2D;
     public var textureUnder: Texture2D;
+    public var tintOver: Color;
 }
