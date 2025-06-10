@@ -29,3 +29,14 @@ extern class TextureProgressBar extends Range {
     @:native("cast")
     public static function toTextureProgressBar(obj: Dynamic): TextureProgressBar;
 }
+
+abstract TextureProgressBarAbstract(TextureProgressBar) from TextureProgressBar to TextureProgressBar {
+    @:from
+    public static function fromElement(e: Element): TextureProgressBarAbstract {
+        var tProgressBar = TextureProgressBar.toTextureProgressBar(e);
+        if (tProgressBar.isNull()) {
+            return null;
+        }
+        return tProgressBar;
+    }
+}
