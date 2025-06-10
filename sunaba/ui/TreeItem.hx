@@ -68,4 +68,5 @@ extern class TreeItem extends BaseObject {
     public function getTooltipText(column: Int): String;
     public function getTree(): Tree;
     public function isAnyCollapsed(onlyVisible: Bool): Bool;
+    public function isButtonDisabled(column: Int, idx: Int): Bool;
 }
