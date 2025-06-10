@@ -18,4 +18,5 @@ extern class Tree extends Control {
     public var scrollVerticalEnabled: Bool;
     public var selectMode: Int;
     public var buttonClicked: Event;
+    public var cellSelected: Event;
 }
