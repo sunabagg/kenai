@@ -71,4 +71,5 @@ extern class TreeItem extends BaseObject {
     public function isButtonDisabled(column: Int, idx: Int): Bool;
     public function isChecked(column: Int): Bool;
     public function isCustomSetAsButton(column: Int): Bool;
+    public function isEditMultiline(column: Int): Bool;
 }
