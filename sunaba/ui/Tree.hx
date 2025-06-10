@@ -33,4 +33,5 @@ extern class Tree extends Control {
     public var multiSelected: Event;
     public var nothingSelected: Event;
     public function clear(): Void;
+    public function createItem(?parent: TreeItem, ?index: Int): TreeItem;
 }
