@@ -6,6 +6,7 @@ import sunaba.core.Color;
 import sunaba.core.Resource;
 import sunaba.core.Variant;
 import sunaba.core.Vector2;
+import sunaba.core.Element;
 
 @:native("CodeEdit")
 extern class CodeEdit extends TextEdit {
