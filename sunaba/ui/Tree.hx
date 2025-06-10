@@ -21,4 +21,5 @@ extern class Tree extends Control {
     public var cellSelected: Event;
     public var checkPropagatedToItem: Event;
     public var columnTitleClicked: Event;
+    public var customItemClicked: Event;
 }
