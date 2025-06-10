@@ -6,6 +6,7 @@ import sunaba.core.Texture2D;
 import sunaba.core.Font;
 import sunaba.core.Rect2;
 import sunaba.core.Variant;
+import sunaba.core.Dictionary;
 
 @:native("TreeItem")
 extern class TreeItem extends BaseObject {
@@ -55,4 +56,5 @@ extern class TreeItem extends BaseObject {
     public function getPrevInTree(): TreeItem;
     public function getPrevVisible(): TreeItem;
     public function getRange(column: Int): Float;
+    public function getRangeConfig(column: Int): Dictionary;
 }
