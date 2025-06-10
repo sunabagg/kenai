@@ -26,4 +26,6 @@ extern class CodeHighlighter extends SyntaxHighlighter {
     public function removeColorRegion(startKey: String): Void;
     public function removeKeywordColor(keyword: String): Void;
     public function removeMemberKeywordColor(memberType: String): Void;
+    @:native("cast")
+    public static function toCodeHighlighter(obj: Dynamic): CodeHighlighter;
 }
