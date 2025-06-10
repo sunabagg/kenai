@@ -112,4 +112,5 @@ extern class TreeItem extends BaseObject {
     public function setSelectable(column: Int, selectable: Bool): Void;
     public function setStructuredTextBidiOverride(column: Int, bidiOverride: Int): Void;
     public function setStructuredTextBidiOverrideOptions(column: Int, bidiOverrideOptions: ArrayList): Void;
+    public function setSuffix(column: Int, suffix: String): Void;
 }
