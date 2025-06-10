@@ -489,7 +489,8 @@ namespace sunaba::ui {
             }
 
             void scrollToItem(TreeItem* item, bool centerOnItem = false) {
-                tree->scroll_to_item(item->getTreeItem(), centerOnItem);
+                godot::TreeItem* treeItem = item ? item->getTreeItem() : nullptr;
+                tree->scroll_to_item(treeItem, centerOnItem);
             }
 
             void setColumnCustomMinimumWidth(int column, int minWidth) {
