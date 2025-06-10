@@ -13,4 +13,5 @@ extern class TreeItem extends BaseObject {
     public function addChild(item: TreeItem): Void;
     public function clearButtons(): Void;
     public function clearCustomBgColor(column: Int): Void;
+    public function clearCustomColor(column: Int): Void;
 }
