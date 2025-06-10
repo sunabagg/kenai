@@ -66,4 +66,6 @@ extern class TreeItem extends BaseObject {
     public function getTextDirection(column: Int): Int;
     public function getTextOverrunBehavior(column: Int): Int;
     public function getTooltipText(column: Int): String;
+    public function getTree(): Tree;
+    public function isAnyCollapsed(onlyVisible: Bool): Bool;
 }
