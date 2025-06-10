@@ -4,4 +4,5 @@ package sunaba.ui;
 extern class TextureProgressBar extends Range {
     public var fillMode: Int;
     public var mouseFilter: Int;
+    public var ninePatchStretch: Bool;
 }
