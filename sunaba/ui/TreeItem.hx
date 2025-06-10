@@ -54,4 +54,5 @@ extern class TreeItem extends BaseObject {
     public function getPrev(): TreeItem;
     public function getPrevInTree(): TreeItem;
     public function getPrevVisible(): TreeItem;
+    public function getRange(column: Int): Float;
 }
