@@ -17,4 +17,5 @@ extern class TextureProgressBar extends Range {
     public var stretchMarginLeft: Float;
     public var stretchMarginRight: Float;
     public var stretchMarginTop: Float;
+    public var textureOver: Texture2D;
 }
