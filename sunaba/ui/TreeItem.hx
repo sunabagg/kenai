@@ -115,4 +115,5 @@ extern class TreeItem extends BaseObject {
     public function setSuffix(column: Int, suffix: String): Void;
     public function setText(column: Int, text: String): Void;
     public function setTextAlignment(column: Int, alignment: Int): Void;
+    public function setTextDirection(column: Int, direction: Int): Void;
 }
