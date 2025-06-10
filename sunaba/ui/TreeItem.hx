@@ -82,4 +82,5 @@ extern class TreeItem extends BaseObject {
     public function propagateCheck(column: Int, ?emitSignal: Bool): Void;
     public function removeChild(item: TreeItem): Void;
     public function select(column: Int): Void;
+    public function setAutoTranslateMode(column: Int, mode: Int): Void;
 }
