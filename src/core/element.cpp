@@ -95,6 +95,7 @@ void sunaba::core::bindElement(sol::state &lua) {
         "isNull", &Element::isNull,
         "getViewport", &Element::getViewport,
         "getWindow", &Element::getWindow,
+        "delete", &Element::_delete,
         "cast", [](Element* e) {
             return new Element(Object::cast_to<Node>(e->getNode()));
         }
