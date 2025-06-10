@@ -5,6 +5,7 @@ import sunaba.core.BaseObject;
 import sunaba.core.Texture2D;
 import sunaba.core.Font;
 import sunaba.core.Rect2;
+import sunaba.core.Variant;
 
 @:native("TreeItem")
 extern class TreeItem extends BaseObject {
@@ -45,4 +46,5 @@ extern class TreeItem extends BaseObject {
     public function getIconRegion(column: Int): Rect2;
     public function getIndex(): Int;
     public function getLanguage(column: Int): String;
+    public function getMetadata(column: Int): Variant;
 }
