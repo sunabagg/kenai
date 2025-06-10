@@ -7,6 +7,7 @@ import sunaba.core.Font;
 import sunaba.core.Rect2;
 import sunaba.core.Variant;
 import sunaba.core.Dictionary;
+import sunaba.core.ArrayList;
 
 @:native("TreeItem")
 extern class TreeItem extends BaseObject {
@@ -58,4 +59,5 @@ extern class TreeItem extends BaseObject {
     public function getRange(column: Int): Float;
     public function getRangeConfig(column: Int): Dictionary;
     public function getStructuredTextBidiOverride(column: Int): Int;
+    public function getStructuredTextBidiOverrideOptions(column: Int): ArrayList;
 }
