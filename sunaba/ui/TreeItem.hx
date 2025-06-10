@@ -37,4 +37,5 @@ extern class TreeItem extends BaseObject {
     public function getCustomFontSize(column: Int): Int;
     public function getExpandRight(column: Int): Bool;
     public function getFirstChild(): TreeItem;
+    public function getIcon(column: Int): Texture2D;
 }
