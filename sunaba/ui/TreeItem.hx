@@ -75,4 +75,5 @@ extern class TreeItem extends BaseObject {
     public function isEditable(column: Int): Bool;
     public function isIndeterminate(column: Int): Bool;
     public function isSelectable(column: Int): Bool;
+    public function isSelected(column: Int): Bool;
 }
