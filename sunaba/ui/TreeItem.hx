@@ -52,4 +52,5 @@ extern class TreeItem extends BaseObject {
     public function getNextVisible(): TreeItem;
     public function getParent(): TreeItem;
     public function getPrev(): TreeItem;
+    public function getPrevInTree(): TreeItem;
 }
