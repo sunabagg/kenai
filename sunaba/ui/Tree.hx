@@ -19,4 +19,5 @@ extern class Tree extends Control {
     public var selectMode: Int;
     public var buttonClicked: Event;
     public var cellSelected: Event;
+    public var checkPropagatedToItem: Event;
 }
