@@ -11,4 +11,5 @@ extern class CodeHighlighter extends SyntaxHighlighter {
     public var memberKeywordColors: Dictionary;
     public var memberVariableColor: Color;
     public var numberColor: Color;
+    public var symbolColor: Color;
 }
