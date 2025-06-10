@@ -93,4 +93,5 @@ extern class TreeItem extends BaseObject {
     public function setCollapsedRecursive(collapsed: Bool): Void;
     public function setCustomAsButton(column: Int, enable: Bool): Void;
     public function setCustomBgColor(column: Int, color: Color): Void;
+    public function setCustomColor(column: Int, color: Color): Void;
 }
