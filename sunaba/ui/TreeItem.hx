@@ -65,4 +65,5 @@ extern class TreeItem extends BaseObject {
     public function getTextAlignment(column: Int): Int;
     public function getTextDirection(column: Int): Int;
     public function getTextOverrunBehavior(column: Int): Int;
+    public function getTooltipText(column: Int): String;
 }
