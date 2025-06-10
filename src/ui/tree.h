@@ -447,6 +447,9 @@ namespace sunaba::ui {
             }
 
             Rect2 getItemAreaRect(TreeItem* item, int column = -1, int buttonIndex = -1) const {
+                if (!item) {
+                    return Rect2(); // Return an empty Rect2 if item is null
+                }
                 godot::TreeItem* treeItem = item ? item->getTreeItem() : nullptr;
                 return tree->get_item_area_rect(treeItem, column, buttonIndex);
             }
