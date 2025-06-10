@@ -1,6 +1,9 @@
 package sunaba.ui;
 
+import sunaba.core.Dictionary;
+
 @:native("CodeHighlighter")
 extern class CodeHighlighter extends SyntaxHighlighter {
+    public var colorRegions: Dictionary;
     
 }
