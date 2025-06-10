@@ -84,4 +84,5 @@ extern class TreeItem extends BaseObject {
     public function select(column: Int): Void;
     public function setAutoTranslateMode(column: Int, mode: Int): Void;
     public function setAutowrapMode(column: Int, mode: Int): Void;
+    public function setButton(column: Int, buttonIdx: Int, button: Texture2D): Void;
 }
