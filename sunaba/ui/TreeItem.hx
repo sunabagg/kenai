@@ -29,4 +29,5 @@ extern class TreeItem extends BaseObject {
     public function getCellMode(column: Int): Int;
     public function getChild(index: Int): TreeItem;
     public function getChildCount(): Int;
+    public function getChildren(): Array<TreeItem>;
 }
