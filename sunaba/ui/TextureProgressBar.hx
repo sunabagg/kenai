@@ -25,4 +25,5 @@ extern class TextureProgressBar extends Range {
     public var tintProgress: Color;
     public var tintUnder: Color;
     public function getStretchMargin(side: Int): Int;
+    public function setStretchMargin(side: Int, margin: Int): Void;
 }
