@@ -13,4 +13,5 @@ extern class TextureProgressBar extends Range {
     public var sizeFlagsVertical: Int;
     public var step: Float;
     public var stretchMarginBottom: Float;
+    public var stretchMarginLeft: Float;
 }
