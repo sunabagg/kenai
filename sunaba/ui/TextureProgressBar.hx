@@ -12,7 +12,6 @@ extern class TextureProgressBar extends Range {
     public var radialFillDegrees: Float;
     public var radialInitialAngle: Float;
     public var sizeFlagsVertical: Int;
-    public var step: Float;
     public var stretchMarginBottom: Int;
     public var stretchMarginLeft: Int;
     public var stretchMarginRight: Int;
