@@ -62,4 +62,5 @@ extern class TreeItem extends BaseObject {
     public function getStructuredTextBidiOverrideOptions(column: Int): ArrayList;
     public function getSuffix(column: Int): String;
     public function getText(column: Int): String;
+    public function getTextAlignment(column: Int): Int;
 }
