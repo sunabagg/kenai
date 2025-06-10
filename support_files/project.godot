@@ -17,7 +17,8 @@ boot_splash/bg_color=Color(1, 1, 1, 1)
 boot_splash/fullsize=false
 boot_splash/image="uid://tqi54djfy3ia"
 config/icon="uid://bcnaj1jhop8y"
-config/icon.macos="uid://do70wj6aatdd8"
+config/macos_native_icon="res://Sunaba-macOS.icns"
+config/icon.macos="uid://8bj12bgeryg6"
 
 [display]
 
