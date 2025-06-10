@@ -3,6 +3,7 @@ package sunaba.ui;
 import sunaba.core.Color;
 import sunaba.core.BaseObject;
 import sunaba.core.Texture2D;
+import sunaba.core.Font;
 
 @:native("TreeItem")
 extern class TreeItem extends BaseObject {
@@ -32,4 +33,5 @@ extern class TreeItem extends BaseObject {
     public function getChildren(): Array<TreeItem>;
     public function getCustomBgColor(column: Int): Color;
     public function getCustomColor(column: Int): Color;
+    public function getCustomFont(column: Int): Font;
 }
