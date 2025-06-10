@@ -7,5 +7,5 @@ extern class TreeItem extends BaseObject {
     public var collapsed: Bool;
     public var customMinimumHeight: Int;
     public var disableFolding: Bool;
-    
+    public var visible: Bool;
 }
