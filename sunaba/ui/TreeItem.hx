@@ -6,5 +6,6 @@ import sunaba.core.BaseObject;
 extern class TreeItem extends BaseObject {
     public var collapsed: Bool;
     public var customMinimumHeight: Int;
+    public var disableFolding: Bool;
     
 }
