@@ -4,6 +4,7 @@ import sunaba.core.Color;
 import sunaba.core.BaseObject;
 import sunaba.core.Texture2D;
 import sunaba.core.Font;
+import sunaba.core.Rect2;
 
 @:native("TreeItem")
 extern class TreeItem extends BaseObject {
