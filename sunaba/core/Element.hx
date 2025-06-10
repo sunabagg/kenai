@@ -21,6 +21,7 @@ extern class Element extends BaseObject {
     public function getChildren(): lua.Table<Int, Element>;
     public function isNull(): Bool;
     public function getViewport(): Viewport;
+    public function delete(): Void;
     @:native("cast")
     public static function castElement(obj:Dynamic): Element;
 }
