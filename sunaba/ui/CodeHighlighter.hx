@@ -12,4 +12,5 @@ extern class CodeHighlighter extends SyntaxHighlighter {
     public var memberVariableColor: Color;
     public var numberColor: Color;
     public var symbolColor: Color;
+    public function addColorRegion(startKey: String, endKey: String, color: Color, ?lineOnly: Bool): Void;
 }
