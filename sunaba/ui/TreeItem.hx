@@ -107,4 +107,5 @@ extern class TreeItem extends BaseObject {
     public function setIndeterminate(column: Int, indeterminate: Bool): Void;
     public function setLanguage(column: Int, language: String): Void;
     public function setMetadata(column: Int, metadata: Variant): Void;
+    public function setRange(column: Int, range: Float): Void;
 }
