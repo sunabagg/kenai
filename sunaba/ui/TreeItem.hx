@@ -31,4 +31,5 @@ extern class TreeItem extends BaseObject {
     public function getChildCount(): Int;
     public function getChildren(): Array<TreeItem>;
     public function getCustomBgColor(column: Int): Color;
+    public function getCustomColor(column: Int): Color;
 }
