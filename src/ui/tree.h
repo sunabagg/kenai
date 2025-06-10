@@ -456,8 +456,10 @@ namespace sunaba::ui {
             }
 
             TreeItem* getNextSelected(TreeItem* from) const {
-                godot::TreeItem* treeItem = from ? from->getTreeItem() : nullptr;
-                return new TreeItem(tree->get_next_selected(treeItem));
+                if (!from) {
+                    return nullptr; // Avoid null pointer dereference
+                }
+                return new TreeItem(tree->get_next_selected(from->getTreeItem()));
             }
 
             int getPressedButton() const {
