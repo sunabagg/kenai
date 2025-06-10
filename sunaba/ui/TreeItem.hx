@@ -117,4 +117,5 @@ extern class TreeItem extends BaseObject {
     public function setTextAlignment(column: Int, alignment: Int): Void;
     public function setTextDirection(column: Int, direction: Int): Void;
     public function setTextOverrunBehavior(column: Int, behavior: Int): Void;
+    public function setTooltipText(column: Int, tooltipText: String): Void;
 }
