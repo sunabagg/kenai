@@ -382,7 +382,8 @@ namespace sunaba::ui {
             }
 
             TreeItem* createItem(TreeItem* parent = nullptr, int index = -1) {
-                return new TreeItem(tree->create_item(parent->getTreeItem(), index));
+                godot::TreeItem* parentItem = parent ? parent->getTreeItem() : nullptr;
+                return new TreeItem(tree->create_item(parentItem, index));
             }
 
             void deselectAll() {
