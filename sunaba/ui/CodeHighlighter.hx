@@ -20,4 +20,5 @@ extern class CodeHighlighter extends SyntaxHighlighter {
     public function clearMemberKeywordColors(): Void;
     public function getKeywordColor(keyword: String): Color;
     public function getMemberKeywordColor(memberType: String): Color;
+    public function hasColorRegion(startKey: String): Bool;
 }
