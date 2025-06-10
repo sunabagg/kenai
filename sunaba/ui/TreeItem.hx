@@ -20,4 +20,5 @@ extern class TreeItem extends BaseObject {
     public function getAutoTranslateMode(column: Int): Int;
     public function getAutowrapMode(column: Int): Int;
     public function getButton(column: Int, idx: Int): Texture2D;
+    public function getButtonById(column: Int, id: Int): Int;
 }
