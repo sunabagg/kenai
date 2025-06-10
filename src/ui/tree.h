@@ -268,7 +268,7 @@ namespace sunaba::ui {
             Event* cellSelectedEvent;
             Event* getCellSelectedEvent() {
                 return cellSelectedEvent;
-            } 
+            }
             void setCellSelectedEvent(Event* event) {
                 cellSelectedEvent = event;
             }
@@ -280,7 +280,7 @@ namespace sunaba::ui {
             void setCheckPropagatedToItemEvent(Event* event) {
                 checkPropagatedToItemEvent = event;
             }
-            
+
             Event* columnTitleClickedEvent;
             Event* getColumnTitleClickedEvent() {
                 return columnTitleClickedEvent;
@@ -289,12 +289,12 @@ namespace sunaba::ui {
                 columnTitleClickedEvent = event;
             }
 
-            Event* customItenClickedEvent;
+            Event* customItemClickedEvent;
             Event* getCustomItemClickedEvent() {
-                return customItenClickedEvent;
+                return customItemClickedEvent;
             }
             void setCustomItemClickedEvent(Event* event) {
-                customItenClickedEvent = event;
+                customItemClickedEvent = event;
             }
 
             Event* customPopupEditedEvent;
@@ -428,7 +428,7 @@ namespace sunaba::ui {
             int getColumnWidth(int column) const {
                 return tree->get_column_width(column);
             }
-            
+
             Rect2 getCustomPopupRect() const {
                 return tree->get_custom_popup_rect();
             }
