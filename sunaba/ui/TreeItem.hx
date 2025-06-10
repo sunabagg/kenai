@@ -83,4 +83,5 @@ extern class TreeItem extends BaseObject {
     public function removeChild(item: TreeItem): Void;
     public function select(column: Int): Void;
     public function setAutoTranslateMode(column: Int, mode: Int): Void;
+    public function setAutowrapMode(column: Int, mode: Int): Void;
 }
