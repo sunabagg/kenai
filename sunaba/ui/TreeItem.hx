@@ -1,5 +1,6 @@
 package sunaba.ui;
 
+import sunaba.core.Color;
 import sunaba.core.BaseObject;
 import sunaba.core.Texture2D;
 
@@ -21,4 +22,5 @@ extern class TreeItem extends BaseObject {
     public function getAutowrapMode(column: Int): Int;
     public function getButton(column: Int, idx: Int): Texture2D;
     public function getButtonById(column: Int, id: Int): Int;
+    public function getButtonColor(column: Int, idx: Int): Color;
 }
