@@ -25,4 +25,5 @@ extern class TreeItem extends BaseObject {
     public function getButtonColor(column: Int, idx: Int): Color;
     public function getButtonCount(column: Int): Int;
     public function getButtonId(column: Int, idx: Int): Int;
+    public function getButtonTooltipText(column: Int, idx: Int): String;
 }
