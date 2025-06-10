@@ -32,4 +32,5 @@ extern class Tree extends Control {
     public var itemSelected: Event;
     public var multiSelected: Event;
     public var nothingSelected: Event;
+    public function clear(): Void;
 }
