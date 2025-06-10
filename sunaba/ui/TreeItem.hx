@@ -44,4 +44,5 @@ extern class TreeItem extends BaseObject {
     public function getIconOverlay(column: Int): Texture2D;
     public function getIconRegion(column: Int): Rect2;
     public function getIndex(): Int;
+    public function getLanguage(column: Int): String;
 }
