@@ -13,4 +13,5 @@ extern class Tree extends Control {
     public var enableRecursiveFolding: Bool;
     public var focusMode: Bool;
     public var hideFolding: Bool;
+    public var hideRoot: Bool;
 }
