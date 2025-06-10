@@ -47,4 +47,5 @@ extern class TreeItem extends BaseObject {
     public function getIndex(): Int;
     public function getLanguage(column: Int): String;
     public function getMetadata(column: Int): Variant;
+    public function getNext(): TreeItem;
 }
