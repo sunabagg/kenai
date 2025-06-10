@@ -11,4 +11,5 @@ extern class TreeItem extends BaseObject {
     public var visible: Bool;
     public function addButton(colum: Int, button: Texture2D, ?id: Int, ?disabled: Bool, ?tooltipText: String): Void;
     public function addChild(item: TreeItem): Void;
+    public function clearButtons(): Void;
 }
