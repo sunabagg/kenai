@@ -1,5 +1,8 @@
 package sunaba.ui;
 
+import sunaba.core.Texture2D;
+import sunaba.core.Element;
+
 @:native("TextureRect")
 extern class TextureRect extends Control {
     public var expandMode: Int;
