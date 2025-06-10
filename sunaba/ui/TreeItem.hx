@@ -16,4 +16,5 @@ extern class TreeItem extends BaseObject {
     public function clearCustomColor(column: Int): Void;
     public function createChild(?index: Int): TreeItem;
     public function deselect(column: Int): Void;
+    public function eraseButton(column: Int, idx: Int): Void;
 }
