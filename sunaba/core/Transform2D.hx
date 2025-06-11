@@ -25,7 +25,7 @@ extern class Transform2D {
     public function isConformal() : Bool;
     public function isEqualApprox(xform : Transform2D) : Bool;
     public function isFinite() : Bool;
-    public function lookingAt(target : Vector2 = Vector2.zero()) : Transform2D;
+    public function lookingAt(?target : Vector2) : Transform2D;
     public function orthonormalized() : Transform2D;
     public function rotated(angle : Float) : Transform2D;
     public function rotatedLocal(angle: Float) : Transform2D;
