@@ -20,6 +20,7 @@
 #include "desktop/window.h"
 #include "desktop/popup.h"
 #include "desktop/popup_menu.h"
+#include "desktop/popup_panel.h"
 
 #include "ui/control.h"
 #include "ui/base_button.h"
@@ -90,6 +91,7 @@ namespace
         godot::ClassDB::register_class<sunaba::core::ViewportProxy>();
 
         godot::ClassDB::register_class<sunaba::desktop::PopupMenuProxy>();
+        godot::ClassDB::register_class<sunaba::desktop::PopupPanelProxy>();
     }
 
     /// @brief Called by Godot to let us do any cleanup.
