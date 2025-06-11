@@ -22,6 +22,9 @@ namespace sunaba::desktop {
     class Window;
 
     class WindowProxy : public WindowNode {
+        GDCLASS(WindowProxy, WindowNode)
+        protected:
+            static void _bind_methods() {}
         public:
             sunaba::desktop::Window* element = nullptr;
 
