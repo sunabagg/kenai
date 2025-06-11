@@ -87,6 +87,7 @@ namespace
 
         godot::ClassDB::register_class<sunaba::core::NodeProxy>();
         godot::ClassDB::register_class<sunaba::core::CanvasItemProxy>();
+        godot::ClassDB::register_class<sunaba::core::ViewportProxy>();
     }
 
     /// @brief Called by Godot to let us do any cleanup.
