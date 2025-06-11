@@ -41,4 +41,5 @@ extern class Tree extends Control {
     public function ensureCursorIsVisible(): Void;
     public function getButtonIdAtPosition(position: Vector2): Int;
     public function getColumnAtPosition(position: Vector2): Int;
+    public function getColumnExpandRatio(column: Int): Int;
 }
