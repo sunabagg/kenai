@@ -69,10 +69,10 @@ abstract DictionaryAbstract(Dictionary) from Dictionary to Dictionary {
         this.set(key, value);
     }
 
-    public inline function forEach(func: Variant->Void): Void {
+    public inline function forEach(func: (Variant, Variant)->Void): Void {
         var keys = this.keys();
         for (i in 0...keys.size()) {
-            var key = keys[i];
+            var key = keys.get(i);
             func(key, this.get(key));
         }
     }
