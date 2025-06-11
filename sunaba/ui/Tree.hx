@@ -66,4 +66,5 @@ extern class Tree extends Control {
     public function setColumnExpand(column: Int, expand: Bool): Void;
     public function setColumnExpandRatio(column: Int, ratio: Int): Void;
     public function setColumnTitle(column: Int, title: String): Void;
+    public function setColumnTitleAlignment(column: Int, alignment: Int): Void;
 }
