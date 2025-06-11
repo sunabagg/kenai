@@ -66,6 +66,8 @@ namespace sunaba::core
 
     void bind_packedvector3array(sol::state& lua);
 
+    void bind_packedvector4array(sol::state& lua);
+
     void initialize_lua(sol::state& lua);
 }
 
