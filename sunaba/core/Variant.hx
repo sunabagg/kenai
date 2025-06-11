@@ -140,8 +140,8 @@ abstract VariantAbstract(Variant) from Variant to Variant {
         return Variant.fromFloat64(value);
     }
     @:to
-    public static function toFloat(value:VariantAbstract):Float {
-        return value.asFloat64();
+    public inline function toFloat():Float {
+        return this.asFloat64();
     }
     @:from
     public static function fromBool(value:Bool):VariantAbstract {
