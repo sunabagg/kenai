@@ -50,6 +50,8 @@ namespace sunaba::core
 
     void bind_color(sol::state& lua);
 
+    void bind_packedcolorarray(sol::state& lua);
+
     void initialize_lua(sol::state& lua);
 }
 
