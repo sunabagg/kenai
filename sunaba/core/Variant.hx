@@ -124,8 +124,8 @@ abstract VariantAbstract(Variant) from Variant to Variant {
         return Variant.fromInt64(value);
     }
     @:to
-    public static function toInt64(value:VariantAbstract):Int64 {
-        return value.asInt64();
+    public inline function toInt64():Int64 {
+        return this.asInt64();
     }
     @:from
     public static function fromInt32(value:Int32):VariantAbstract {
