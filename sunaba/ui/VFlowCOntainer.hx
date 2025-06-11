@@ -1,15 +1,15 @@
 package sunaba.ui;
 
 @:native("VFlowContainer")
-extern class VFlowCOntainer extends FlowContainer {
+extern class VFlowContainer extends FlowContainer {
     @:native("cast")
-    public static function toVFlowContainer(obj: Dynamic): VFlowCOntainer;
+    public static function toVFlowContainer(obj: Dynamic): VFlowContainer;
 }
 
-abstract VFlowContainerAbstract(VFlowCOntainer) from VFlowCOntainer to VFlowCOntainer {
+abstract VFlowContainerAbstract(VFlowContainer) from VFlowContainer to VFlowContainer {
     @:from
     public static function fromElement(element: Element): VFlowContainerAbstract {
-        var vFlow: VFlowCOntainer = VFlowCOntainer.toVFlowContainer(element);
+        var vFlow: VFlowContainer = VFlowContainer.toVFlowContainer(element);
         if (vFlow.isNull()) {
             return null;
         }
