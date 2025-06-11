@@ -47,4 +47,5 @@ extern class Tree extends Control {
     public function getColumnTitleDirection(column: Int): Int;
     public function getColumnTitleLanguage(column: Int): String;
     public function getColumnWidth(column: Int): Int;
+    public function getCustomPopupRect(column: Int): Rect2;
 }
