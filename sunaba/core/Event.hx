@@ -22,7 +22,7 @@ abstract EventAbstract(Event) from Event to Event {
         this.emit(...args);
     }
 
-    @op(A += B)
+    /*@op(A += B)
     public static function add(event: Event, func: Function): Void {
         event.connect(func);
     }
@@ -30,5 +30,5 @@ abstract EventAbstract(Event) from Event to Event {
     @op(A -= B)
     public static function remove(event: Event, func: Function): Void {
         event.disconnect(func);
-    }
+    }*/
 }
