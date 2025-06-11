@@ -8,7 +8,7 @@ abstract StringArray(lua.Table<Int, String>) from lua.Table<Int, String> to lua.
     }
 
     @:from
-    public static function fromArray(array: Array<T>): StringArray<T> {
+    public static function fromArray(array: Array<T>): StringArray {
         var result = lua.Table.fromArray(array);
         return result;
     }
