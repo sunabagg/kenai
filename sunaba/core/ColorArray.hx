@@ -5,11 +5,8 @@ import sunaba.core.Color;
 abstract ColorArray(lua.Table<Int, Color>) from lua.Table<Int, Color> to lua.Table<Int, Color> {
     @:to
     public inline function toArray(): Array<Color> {
-        var result = new Array<Color>();
-        for (i in 0...this.size()) {
-            result[i] = this.get(i);
-        }
-        return result;
+        var table : lua.Table<Int, Color> = this;
+        return lua.Table.toArray(table);
     }
 
     @:from
