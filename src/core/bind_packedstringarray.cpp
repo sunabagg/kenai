@@ -40,7 +40,9 @@ void sunaba::core::bind_packedstringarray(sol::state& lua) {
         "rfind", [](PackedStringArray& arr, const std::string& value, int start = -1) {
             return arr.rfind(value.c_str(), start);
         },
-        "set", &PackedStringArray::set,
+        "set", [](PackedStringArray& arr, int index, const std::string& value) {
+            arr.set(index, value.c_str());
+        },
         "size", &PackedStringArray::size,
         "slice", &PackedStringArray::slice,
         "sort", &PackedStringArray::sort,
