@@ -56,6 +56,8 @@ namespace sunaba::core
 
     void bind_packedfloat64array(sol::state& lua);
 
+    void bind_packedint32array(sol::state& lua);
+
     void initialize_lua(sol::state& lua);
 }
 
