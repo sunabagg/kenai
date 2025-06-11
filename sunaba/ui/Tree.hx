@@ -62,4 +62,5 @@ extern class Tree extends Control {
     public function isColumnClippingContent(column: Int): Bool;
     public function isColumnExpanding(column: Int): Bool;
     public function scrollToItem(item: TreeItem, ?centerOnItem: Bool): Void;
+    public function setColumnCustomMinimumWidth(column: Int, minWidth: Int): Void;
 }
