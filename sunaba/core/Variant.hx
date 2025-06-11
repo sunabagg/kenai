@@ -333,8 +333,8 @@ abstract VariantAbstract(Variant) from Variant to Variant {
         return Variant.fromVector2Array(value);
     }
     @:to
-    public static function toVector2Array(value:VariantAbstract):Table<Int, Vector2> {
-        return value.asVector2Array();
+    public inline function toVector2Array():Table<Int, Vector2> {
+        return this.asVector2Array();
     }
     @:from
     public static function fromVector3Array(value:Table<Int, Vector3>):VariantAbstract {
