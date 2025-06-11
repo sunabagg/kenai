@@ -18,7 +18,7 @@ extern class Label extends Control {
     public var paragraphSeparator: String;
     public var structuredTextBidiOverride: Int;
     public var structuredTextBidiOverrideOptions: ArrayList;
-    public var tabStops: Array<Float>;
+    public var tabStops: lua.Table<Int,Float>;
     public var text: String;
     public var textDirection: Int;
     public var textOverrunBehavior: Int;
