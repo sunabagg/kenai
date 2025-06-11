@@ -148,8 +148,8 @@ abstract VariantAbstract(Variant) from Variant to Variant {
         return Variant.fromBool(value);
     }
     @:to
-    public static function toBool(value:VariantAbstract):Bool {
-        return value.asBool();
+    public inline function toBool():Bool {
+        return this.asBool();
     }
     @:from
     public static function fromVector2(value:Vector2):VariantAbstract {
