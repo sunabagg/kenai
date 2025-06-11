@@ -3,7 +3,9 @@
 void sunaba::core::bind_packedstringarray(sol::state& lua) {
     lua.new_usertype<PackedStringArray>("PackedStringArray",
         sol::constructors<PackedStringArray(), PackedStringArray(const PackedStringArray&), PackedStringArray(Array)>(),
-        "append", &PackedStringArray::append,
+        "append", [](PackedStringArray& arr, const std::string& value) {
+            return arr.append(value.c_str());
+        },
         "appendArray", &PackedStringArray::append_array,
         "bsearch", &PackedStringArray::bsearch,
         "clear", &PackedStringArray::clear,
