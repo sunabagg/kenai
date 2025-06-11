@@ -30,6 +30,7 @@ target_sources(${PROJECT_NAME} PRIVATE
         bind_transform3d.cpp
         bind_aabb.cpp
         bind_color.cpp
+        bind_packedcolorarray.cpp
         sol_gdstr.h
         lua_function_wrapper.h
         bind_core_classes.h
