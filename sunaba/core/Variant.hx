@@ -268,8 +268,8 @@ abstract VariantAbstract(Variant) from Variant to Variant {
         return Variant.fromElement(value);
     }
     @:to
-    public static function toElement(value:VariantAbstract):Element {
-        return value.asElement();
+    public inline function toElement():Element {
+        return this.asElement();
     }
     @:from
     public static function fromResource(value:Resource):VariantAbstract {
