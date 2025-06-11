@@ -1,0 +1,6 @@
+--class-path src
+--main Main
+-D lua-vanilla
+-D source-map
+--lua main.lua
+--library sunaba-core
