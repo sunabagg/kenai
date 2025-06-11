@@ -236,8 +236,8 @@ abstract VariantAbstract(Variant) from Variant to Variant {
         return Variant.fromTransform2D(value);
     }
     @:to
-    public static function toTransform2D(value:VariantAbstract):Transform2D {
-        return value.asTransform2D();
+    public inline function toTransform2D():Transform2D {
+        return this.asTransform2D();
     }
     @:from
     public static function fromTransform3D(value:Transform3D):VariantAbstract {
