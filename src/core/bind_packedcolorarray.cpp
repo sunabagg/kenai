@@ -18,7 +18,6 @@ void sunaba::core::bind_packedcolorarray(sol::state& lua) {
         "resize", &PackedColorArray::resize,
         "reverse", &PackedColorArray::reverse,
         "set", &PackedColorArray::set,
-        "shuffle", &PackedColorArray::shuffle,
         "size", &PackedColorArray::size,
         sol::meta_function::index, [](const PackedColorArray& arr, int index) { return arr[index]; },
         sol::meta_function::new_index, [](PackedColorArray& arr, int index, const Color& value) {
