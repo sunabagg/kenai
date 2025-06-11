@@ -25,7 +25,7 @@ extern class Dictionary {
     public function values() : ArrayList;
 }
 
-class DictionaryIterator = {
+class DictionaryIterator {
     public var index: Int;
     public var dict: Dictionary;
     public function new(dict: Dictionary) {
