@@ -284,8 +284,8 @@ abstract VariantAbstract(Variant) from Variant to Variant {
         return Variant.fromByteArray(value);
     }
     @:to
-    public static function toByteArray(value:VariantAbstract):BinaryData {
-        return value.asByteArray();
+    public static function toByteArray():BinaryData {
+        return this.asByteArray();
     }
     /*@:from
     public static function fromIntArray(value:Table<Int, Int>):VariantAbstract {
