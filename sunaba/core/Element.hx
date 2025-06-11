@@ -2,7 +2,7 @@ package sunaba.core;
 
 @:native("Element")
 extern class Element extends BaseObject {
-    public var scriptInstance: ScriptInstance;
+    public var scriptInstance: Dynamic;
     public var name: String;
     public var childEnteredTree: Event;
     public var childExitingTree: Event;
