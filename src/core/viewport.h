@@ -22,6 +22,9 @@ namespace sunaba::core {
     class Viewport;
 
     class ViewportProxy : public ViewportNode {
+        GDCLASS(ViewportProxy, ViewportNode)
+        protected:
+            static void _bind_methods() {}
         public:
             sunaba::core::Viewport* element = nullptr;
 
