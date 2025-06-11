@@ -33,7 +33,7 @@ extern class RichTextLabel extends Control {
     public var structuredTextBidiOverride: Int;
     public var structuredTextBidiOverrideOptions: ArrayList;
     public var tabSize: Int;
-    public var tabStops: Array<Float>;
+    public var tabStops: lua.Table<Int,Float>;
     public var text: String;
     public var textDirection: Int;
     public var threaded: Bool;
@@ -77,7 +77,7 @@ extern class RichTextLabel extends Control {
     public function menuOption(option: Int): Void;
     public function newline(): Void;
     public function parseBBCode(bbcode: String): Void;
-    public function parseExpressionsForValues(expressions: Array<String>): Dictionary;
+    public function parseExpressionsForValues(expressions: lua.Table<Int,String>): Dictionary;
     public function pop(): Void;
     public function popAll(): Void;
     public function popContent(): Void;
@@ -101,7 +101,7 @@ extern class RichTextLabel extends Control {
     public function pushNormal(): Void;
     public function pushOutlineColor(color: Color): Void;
     public function pushOutlineSize(size: Int): Void;
-    public function pushParagraph(alignment: Int, ?baseDirection: Int, ?language: String, ?structureTextParser: String, ?justificationFlags: Int, ?flags: Array<Float>): Void;
+    public function pushParagraph(alignment: Int, ?baseDirection: Int, ?language: String, ?structureTextParser: String, ?justificationFlags: Int, ?flags: lua.Table<Int,Float>): Void;
     public function pushStrikethrough(): Void;
     public function pushTable(columns: Int, ?inlineAlign: Int, ?alignToRow: Int) : Void;
     public function pushUnderline(): Void;
