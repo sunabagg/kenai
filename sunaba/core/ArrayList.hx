@@ -100,7 +100,7 @@ abstract ArrayListAbstract(ArrayList) from ArrayList to ArrayList {
     }
 
     @:from
-    public static function fromArray(array: Array<Variant>): ArrayList {
+    public static function fromArray(array: Array<Variant>): ArrayListAbstract {
         var result = new ArrayList();
         for (item in array) {
             result.append(item);
