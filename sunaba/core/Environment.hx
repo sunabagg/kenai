@@ -1,5 +1,7 @@
 package sunaba.core;
 
+import sunaba.spatial.Sky;
+
 @:native("Environment")
 extern class Environment extends Resource {
     public var adjustmentBrightness: Float;
