@@ -20,6 +20,11 @@ namespace sunaba::ui {
     class AspectRatioContainer;
 
     class AspectRatioContainerProxy : public AspectRatioContainerNode {
+        GDCLASS(AspectRatioContainerProxy, AspectRatioContainerNode)
+        protected:
+            static void _bind_methods() {
+                // Bind methods specific to AspectRatioContainerProxy
+            }
         public:
             sunaba::ui::AspectRatioContainer* element = nullptr;
 
