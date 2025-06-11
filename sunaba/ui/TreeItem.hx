@@ -34,7 +34,7 @@ extern class TreeItem extends BaseObject {
     public function getCellMode(column: Int): Int;
     public function getChild(index: Int): TreeItem;
     public function getChildCount(): Int;
-    public function getChildren(): Array<TreeItem>;
+    public function getChildren(): lua.Table<Int,TreeItem>;
     public function getCustomBgColor(column: Int): Color;
     public function getCustomColor(column: Int): Color;
     public function getCustomFont(column: Int): Font;
