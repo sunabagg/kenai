@@ -1,5 +1,5 @@
 --class-path src
---main Main
+--main support_files.test4.src.Main
 -D lua-vanilla
 -D source-map
 --lua main.lua
