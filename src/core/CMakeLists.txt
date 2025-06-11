@@ -33,6 +33,7 @@ target_sources(${PROJECT_NAME} PRIVATE
         bind_packedcolorarray.cpp
         bind_packedfloat32array.cpp
         bind_packedfloat64array.cpp
+        bind_packedint32array.cpp
         sol_gdstr.h
         lua_function_wrapper.h
         bind_core_classes.h
