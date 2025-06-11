@@ -132,8 +132,8 @@ abstract VariantAbstract(Variant) from Variant to Variant {
         return Variant.fromInt32(value);
     }
     @:to
-    public static function toInt32(value:VariantAbstract):Int32 {
-        return value.asInt64().toInt32();
+    public inline function toInt32():Int32 {
+        return this.asInt64().toInt32();
     }
     @:from
     public static function fromFloat32(value:Float):VariantAbstract {
