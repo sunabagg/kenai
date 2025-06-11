@@ -36,4 +36,5 @@ extern class Tree extends Control {
     public function createItem(?parent: TreeItem, ?index: Int): TreeItem;
     public function deselectAll(): Void;
     public function editSelected(?forceEdit: Bool): Void;
+    public function ensureCursorIsVisible(): Void;
 }
