@@ -325,8 +325,8 @@ abstract VariantAbstract(Variant) from Variant to Variant {
         return Variant.fromStringArray(value);
     }
     @:to
-    public static function toStringArray(value:VariantAbstract):Table<Int, String> {
-        return value.asStringArray();
+    public inline function toStringArray():Table<Int, String> {
+        return this.asStringArray();
     }
     @:from
     public static function fromVector2Array(value:Table<Int, Vector2>):VariantAbstract {
