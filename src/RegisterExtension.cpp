@@ -84,6 +84,9 @@ namespace
         godot::ClassDB::register_class<sunaba::ui::CodeEditSignalWrapper>();
         godot::ClassDB::register_class<sunaba::ui::TreeSignalWrapper>();
         godot::ClassDB::register_class<sunaba::ui::RichTextLabelSignalWrapper>();
+
+        godot::ClassDB::register_class<sunaba::core::NodeProxy>();
+        godot::ClassDB::register_class<sunaba::core::CanvasItemProxy>();
     }
 
     /// @brief Called by Godot to let us do any cleanup.
