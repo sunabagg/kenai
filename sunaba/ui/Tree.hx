@@ -69,4 +69,6 @@ extern class Tree extends Control {
     public function setColumnTitleAlignment(column: Int, alignment: Int): Void;
     public function setColumnTitleDirection(column: Int, direction: Int): Void;
     public function setColumnTitleLanguage(column: Int, language: String): Void;
+    @:native("cast")
+    public static function toTree(obj: Dynamic): Tree;
 }
