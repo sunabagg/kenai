@@ -68,4 +68,5 @@ extern class Tree extends Control {
     public function setColumnTitle(column: Int, title: String): Void;
     public function setColumnTitleAlignment(column: Int, alignment: Int): Void;
     public function setColumnTitleDirection(column: Int, direction: Int): Void;
+    public function setColumnTitleLanguage(column: Int, language: String): Void;
 }
