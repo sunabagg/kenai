@@ -44,8 +44,8 @@ extern class Variant {
     public static function fromTransform2D(value:Transform2D):Variant;
     @:native("new")
     public static function fromTransform3D(value:Transform3D):Variant;
-    @:native("new")
-    public static function fromPlane(value:Plane):Variant;
+    //@:native("new")
+    //public static function fromPlane(value:Plane):Variant;
     @:native("new")
     public static function fromQuatrernion(value:Quaternion):Variant;
     //@:native("new")
@@ -83,7 +83,7 @@ extern class Variant {
     public function asBasis():Basis;
     public function asTransform2D():Transform2D;
     public function asTransform3D():Transform3D;
-    public function asPlane():Plane;
+    //public function asPlane():Plane;
     public function asQuaternion():Quaternion;
     //public function asDictionary():Dictionary;
     //public function asArrayList():ArrayList;
@@ -255,14 +255,14 @@ abstract VariantAbstract(Variant) from Variant to Variant {
     public static function toTransform3D(value:VariantAbstract):Transform3D {
         return value.asTransform3D();
     }
-    @:from
+    /*@:from
     public static function fromPlane(value:Plane):VariantAbstract {
         return Variant.fromPlane(value);
     }
     @:to
     public static function toPlane(value:VariantAbstract):Plane {
         return value.asPlane();
-    }
+    }*/
     @:from
     public static function fromQuaternion(value:Quaternion):VariantAbstract {
         return Variant.fromQuatrernion(value);
