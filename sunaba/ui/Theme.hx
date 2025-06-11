@@ -4,6 +4,7 @@ import sunaba.core.Resource;
 import sunaba.core.Font;
 import sunaba.core.Texture2D;
 import sunaba.core.Color;
+import sunaba.core.Variant;
 
 @:native("Theme")
 extern class Theme extends Resource {
