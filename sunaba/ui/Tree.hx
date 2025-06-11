@@ -59,4 +59,5 @@ extern class Tree extends Control {
     public function getScroll(): Vector2;
     public function getSelected(): TreeItem;
     public function getSelectedColumn(): Int;
+    public function isColumnClippingContent(column: Int): Bool;
 }
