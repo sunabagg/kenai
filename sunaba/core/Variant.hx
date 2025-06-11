@@ -95,6 +95,7 @@ extern class Variant {
     public function asStringArray():Table<Int, String>;
     public function asVector2Array():Table<Int, Vector2>;
     public function asVector3Array():Table<Int, Vector3>;
+    public function asVector4Array():Table<Int, Vector4>;
     public function asElement():Element;
     public function asResource():Resource;
     @:native("tostring")
