@@ -7,16 +7,16 @@
 template <typename Handler>
 bool sol_lua_check(sol::types<godot::String>, lua_State* L, int index, Handler&& handler, sol::stack::record& tracking) {
     int absolute_index = lua_absindex(L, index);
-    bool success = sol::stack::check<const char*>(L, absolute_index, handler, tracking);
+    bool success = sol::stack::check<std::string>(L, absolute_index, handler, tracking);
     tracking.use(1);
     return success;
 }
 
 godot::String sol_lua_get(sol::types<godot::String>, lua_State* L, int index, sol::stack::record& tracking) {
     int absolute_index = lua_absindex(L, index);
-    const char* str = sol::stack::get<const char*>(L, absolute_index, tracking);
+    const std::string& str = sol::stack::get<std::string>(L, absolute_index, tracking);
     tracking.use(1);
-    return godot::String(str);
+    return godot::String(str.c_str());
 }
 
 int sol_lua_push(sol::types<godot::String>, lua_State* L, godot::String str) {
