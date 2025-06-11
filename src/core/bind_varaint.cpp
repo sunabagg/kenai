@@ -35,7 +35,7 @@ void sunaba::core::bind_varaint(sol::state& lua) {
             Variant(AABB),
             Variant(Projection),
             Variant(Array),
-            Variant(Dictionary)
+            Variant(Dictionary),
             Variant(PackedColorArray),
             Variant(PackedFloat32Array),
         >(),
