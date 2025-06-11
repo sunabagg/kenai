@@ -60,4 +60,5 @@ extern class Tree extends Control {
     public function getSelected(): TreeItem;
     public function getSelectedColumn(): Int;
     public function isColumnClippingContent(column: Int): Bool;
+    public function isColumnExpanding(column: Int): Bool;
 }
