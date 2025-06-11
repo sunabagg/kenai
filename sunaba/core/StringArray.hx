@@ -1,6 +1,6 @@
 package sunaba.core;
 
-abstract StringArray<T>(lua.Table<Int, T>) from lua.Table<Int, T> to lua.Table<Int, T> {
+abstract StringArray(lua.Table<Int, String>) from lua.Table<Int, String> to lua.Table<Int, String> {
     @:to
     public inline function toArray(): Array<T> {
         var table : lua.Table<Int, T> = this;
