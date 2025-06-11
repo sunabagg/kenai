@@ -10,7 +10,7 @@
 
 #include "core/scene_system.h"
 #include "core/io/io_manager.h"
-#include "core/sol_gdstr.h"
+
 
 using namespace godot;
 
