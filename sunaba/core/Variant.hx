@@ -301,8 +301,8 @@ abstract VariantAbstract(Variant) from Variant to Variant {
         return Variant.fromIntArray64(value);
     }
     @:to
-    public static function toIntArray64(value:VariantAbstract):Table<Int, Int> {
-        return value.asIntArray64();
+    public inline function toIntArray64():Table<Int, Int> {
+        return this.asIntArray64();
     }
     /*@:from
     public static function fromFloatArray(value:Table<Int, Float>):VariantAbstract {
