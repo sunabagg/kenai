@@ -3,14 +3,24 @@
 void sunaba::core::bind_packedstringarray(sol::state& lua) {
     lua.new_usertype<PackedStringArray>("PackedStringArray",
         sol::constructors<PackedStringArray(), PackedStringArray(const PackedStringArray&), PackedStringArray(Array)>(),
-        "append", &PackedStringArray::append,
+        "append", [](PackedStringArray& arr, const std::string& value) {
+            return arr.append(value.c_str());
+        },
         "appendArray", &PackedStringArray::append_array,
-        "bsearch", &PackedStringArray::bsearch,
+        "bsearch", [](PackedStringArray& arr, const std::string& value, bool before = true) {
+            return arr.bsearch(value.c_str(), before);
+        },
         "clear", &PackedStringArray::clear,
-        "count", &PackedStringArray::count,
+        "count", [](PackedStringArray& arr, const std::string& value) {
+            return arr.count(value.c_str());
+        },
         "duplicate", &PackedStringArray::duplicate,
-        "fill", &PackedStringArray::fill,
-        "find", &PackedStringArray::find,
+        "fill", [](PackedStringArray& arr, const std::string& value) {
+            arr.fill(value.c_str());
+        },
+        "find", [](PackedStringArray& arr, const std::string& value) {
+            return arr.find(value.c_str());
+        },
         "get", &PackedStringArray::get,
         "has", &PackedStringArray::has,
         "insert", &PackedStringArray::insert,
