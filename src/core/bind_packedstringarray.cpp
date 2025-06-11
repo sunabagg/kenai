@@ -21,7 +21,9 @@ void sunaba::core::bind_packedstringarray(sol::state& lua) {
         "find", [](PackedStringArray& arr, const std::string& value) {
             return arr.find(value.c_str());
         },
-        "get", &PackedStringArray::get,
+        "get", [](const PackedStringArray& arr, int index) {
+            return std::string(arr.get(index).utf8().get_data());
+        },
         "has", [](PackedStringArray& arr, const std::string& value) {
             return arr.has(value.c_str());
         },
