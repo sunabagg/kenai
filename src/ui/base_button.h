@@ -22,6 +22,11 @@ namespace sunaba::ui {
     class ButtonGroup;
 
     class BaseButtonProxy : public BaseButtonNode {
+        GDCLASS(BaseButtonProxy, BaseButtonNode)
+        protected:
+            static void _bind_methods() {
+                // Binding methods for BaseButtonProxy
+            }
         public:
             sunaba::ui::BaseButton* element = nullptr;
 
