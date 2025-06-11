@@ -7,6 +7,7 @@ void sunaba::core::bind_packedcolorarray(sol::state& lua) {
         "appendArray", &PackedColorArray::append_array,
         "bsearch", &PackedColorArray::bsearch,
         "clear", &PackedColorArray::clear,
+        "count", &PackedColorArray::count,
         "duplicate", &PackedColorArray::duplicate,
         "fill", &PackedColorArray::fill,
         "get", &PackedColorArray::get,
