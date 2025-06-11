@@ -23,6 +23,9 @@ namespace sunaba::core {
     class Element; // Forward declaration
 
     class NodeProxy : public Node {
+        GDCLASS(NodeProxy, Node)
+    protected:
+        static void _bind_methods() {}
     public:
         Element* element = nullptr;
 
