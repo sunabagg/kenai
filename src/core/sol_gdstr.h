@@ -1,6 +1,6 @@
 #ifndef SOL_GDSTR_H
 #define SOL_GDSTR_H
-
+#define SOL_ALL_SAFETIES_ON 1
 #include <godot_cpp/variant/string.hpp>
 #include <sol/sol.hpp>
 
