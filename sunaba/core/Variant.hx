@@ -204,8 +204,8 @@ abstract VariantAbstract(Variant) from Variant to Variant {
         return Variant.fromColor(value);
     }
     @:to
-    public static function toColor(value:VariantAbstract):Color {
-        return value.asColor();
+    public inline function toColor():Color {
+        return this.asColor();
     }
     @:from
     public static function fromRect2(value:Rect2):VariantAbstract {
