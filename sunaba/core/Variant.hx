@@ -261,7 +261,7 @@ abstract VariantAbstract(Variant) from Variant to Variant {
     }
     @:to
     public inline function toQuaternion():Quaternion {
-        return value.asQuaternion();
+        return this.asQuaternion();
     }
     @:from
     public static function fromElement(value:Element):VariantAbstract {
@@ -284,7 +284,7 @@ abstract VariantAbstract(Variant) from Variant to Variant {
         return Variant.fromByteArray(value);
     }
     @:to
-    public static function toByteArray():BinaryData {
+    public inline function toByteArray():BinaryData {
         return this.asByteArray();
     }
     /*@:from
