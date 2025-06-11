@@ -136,12 +136,12 @@ abstract VariantAbstract(Variant) from Variant to Variant {
         return this.asInt64().toInt32();
     }
     @:from
-    public static function fromFloat32(value:Float):VariantAbstract {
-        return Variant.fromFloat32(value);
+    public static function fromFloat(value:Float):VariantAbstract {
+        return Variant.fromFloat64(value);
     }
     @:to
-    public static function toFloat32(value:VariantAbstract):Float {
-        return value.asFloat32();
+    public static function toFloat(value:VariantAbstract):Float {
+        return value.asFloat64();
     }
     @:from
     public static function fromBool(value:Bool):VariantAbstract {
