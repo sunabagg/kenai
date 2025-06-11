@@ -37,6 +37,7 @@
 #include "ui/code_edit.h"
 #include "ui/tree.h"
 #include "ui/rich_text_label.h"
+#include "ui/aspect_ratio_container.h"
 
 /// @file
 /// Register our classes with Godot.
@@ -94,6 +95,23 @@ namespace
         godot::ClassDB::register_class<sunaba::desktop::PopupProxy>();
         godot::ClassDB::register_class<sunaba::desktop::PopupMenuProxy>();
         godot::ClassDB::register_class<sunaba::desktop::PopupPanelProxy>();
+
+        godot::ClassDB::register_class<sunaba::ui::ControlProxy>();
+        godot::ClassDB::register_class<sunaba::ui::BaseButtonProxy>();
+        godot::ClassDB::register_class<sunaba::ui::ContainerProxy>();
+        godot::ClassDB::register_class<sunaba::ui::ItemListProxy>();
+        godot::ClassDB::register_class<sunaba::ui::LineEditProxy>();
+        godot::ClassDB::register_class<sunaba::ui::MenuButtonProxy>();
+        godot::ClassDB::register_class<sunaba::ui::OptionButtonProxy>();
+        godot::ClassDB::register_class<sunaba::ui::RangeProxy>();
+        godot::ClassDB::register_class<sunaba::ui::SliderProxy>();
+        godot::ClassDB::register_class<sunaba::ui::TabBarProxy>();
+        godot::ClassDB::register_class<sunaba::ui::TabContainerProxy>();
+        godot::ClassDB::register_class<sunaba::ui::TextEditProxy>();
+        godot::ClassDB::register_class<sunaba::ui::CodeEditProxy>();
+        godot::ClassDB::register_class<sunaba::ui::TreeProxy>();
+        godot::ClassDB::register_class<sunaba::ui::RichTextLabelProxy>();
+        godot::ClassDB::register_class<sunaba::ui::AspectRatioContainerProxy>();
     }
 
     /// @brief Called by Godot to let us do any cleanup.
