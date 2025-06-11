@@ -43,6 +43,7 @@ void sunaba::core::bind_varaint(sol::state& lua) {
             Variant(PackedInt64Array),
             Variant(PackedStringArray),
             Variant(PackedVector2Array),
+            Variant(PackedVector3Array),
         >(),
         "fromByteArray", [](const io::BinaryData& data) { return Variant(data.toPackedByteArray()); },
         "fromIntArray", [](const std::vector<int>& data) { 
