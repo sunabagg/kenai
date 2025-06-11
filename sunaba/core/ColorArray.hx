@@ -11,5 +11,14 @@ abstract ColorArray(lua.Table<Int, Color>) from lua.Table<Int, Color> to lua.Tab
         }
         return result;
     }
+
+    @:from
+    public static function fromArray(array: Array<Color>): ColorArray {
+        var result = new lua.Table<Int, Color>();
+        for (i in 0...array.length) {
+            result[i] = array[i];
+        }
+        return result;
+    }
     
 }
