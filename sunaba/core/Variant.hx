@@ -276,8 +276,8 @@ abstract VariantAbstract(Variant) from Variant to Variant {
         return Variant.fromResource(value);
     }
     @:to
-    public static function toResource(value:VariantAbstract):Resource {
-        return value.asResource();
+    public inline function toResource():Resource {
+        return this.asResource();
     }
     @:from
     public static function fromByteArray(value:BinaryData):VariantAbstract {
