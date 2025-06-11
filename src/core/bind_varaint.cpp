@@ -94,62 +94,7 @@ void sunaba::core::bind_varaint(sol::state& lua) {
         "asArray", &Variant::operator Array,
         "asDictionary", &Variant::operator Dictionary,
         "asByteArray", [](const Variant& v) { return io::BinaryData(v); },
-        "asIntArray", [](const Variant& v) { 
-            PackedInt32Array packed_data = v;
-            std::vector<int> data;
-            for (int i = 0; i < packed_data.size(); ++i) {
-                data.push_back(packed_data[i]);
-            }
-            return data;
-        },
-        "asIntArray64", [](const Variant& v) { 
-            PackedInt64Array packed_data = v;
-            std::vector<int64_t> data;
-            for (int i = 0; i < packed_data.size(); ++i) {
-                data.push_back(packed_data[i]);
-            }
-            return data;
-        },
-        "asFloatArray", [](const Variant& v) { 
-            PackedFloat32Array packed_data = v;
-            std::vector<float> data;
-            for (int i = 0; i < packed_data.size(); ++i) {
-                data.push_back(packed_data[i]);
-            }
-            return data;
-        },
-        "asFloatArray64", [](const Variant& v) { 
-            PackedFloat64Array packed_data = v;
-            std::vector<double> data;
-            for (int i = 0; i < packed_data.size(); ++i) {
-                data.push_back(packed_data[i]);
-            }
-            return data;
-        },
-        "asStringArray", [](const Variant& v) { 
-            PackedStringArray packed_data = v;
-            std::vector<String> data;
-            for (int i = 0; i < packed_data.size(); ++i) {
-                data.push_back(packed_data[i]);
-            }
-            return data;
-        },
-        "asVector2Array", [](const Variant& v) { 
-            PackedVector2Array packed_data = v;
-            std::vector<Vector2> data;
-            for (int i = 0; i < packed_data.size(); ++i) {
-                data.push_back(packed_data[i]);
-            }
-            return data;
-        },
-        "asVector3Array", [](const Variant& v) { 
-            PackedVector3Array packed_data = v;
-            std::vector<Vector3> data;
-            for (int i = 0; i < packed_data.size(); ++i) {
-                data.push_back(packed_data[i]);
-            }
-            return data;
-        },
+        
         "asElement", [](const Variant& v) { 
             godot::Object* obj = v.operator Object*();
             Node* n = Object::cast_to<Node>(obj);
