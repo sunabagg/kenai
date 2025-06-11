@@ -90,7 +90,7 @@ extern class TextEdit extends Control {
     public function getCaretColumn(?caret: Int): Int;
     public function getCaretCount(): Int;
     public function getCaretDrawPos(?caret: Int): Vector2;
-    public function getCaretIndexEditOrder(): Array<Int>;
+    public function getCaretIndexEditOrder(): lua.Table<Int,Int>;
     public function getCaretLine(?caret: Int): Int;
     public function getCaretWrapIndex(?caret: Int): Int;
     public function getFirstNonWhitespaceColumn(line: Int): Int;
@@ -111,12 +111,12 @@ extern class TextEdit extends Control {
     public function getLineGutterMetadata(line: Int, gutter: Int): Variant;
     public function getLineGutterText(line: Int, gutter: Int): String;
     public function getLineHeight(): Int;
-    public function getLineRangesFromCarets(?onlySelections: Bool, ?mergeAdjacent: Bool): Array<Vector2i>;
+    public function getLineRangesFromCarets(?onlySelections: Bool, ?mergeAdjacent: Bool): lua.Table<Int,Vector2i>;
     public function getLineWidth(line: Int, ?wrapIndex: Int): Int;
     public function getLineWithIme(line: Int): String;
     public function getLineWrapCount(line: Int): Int;
     public function getLineWrapIndexAtColumn(line: Int, column: Int): Int;
-    public function getLineWrappedText(line: Int): Array<String>;
+    public function getLineWrappedText(line: Int): lua.Table<Int,String>;
     public function getLocalMousePos(): Vector2;
     public function getMenu(): PopupMenu;
     public function getMinimapLineAtPos(pos: Vector2): Int;
@@ -139,7 +139,7 @@ extern class TextEdit extends Control {
     public function getSelectionOriginLine(?caretIndex: Int): Int;
     public function getSelectionToColumn(?caretIndex: Int): Int;
     public function getSelectionToLine(?caretIndex: Int): Int;
-    public function getSortedCarets(?includeIgnoredCarets: Bool): Array<Int>;
+    public function getSortedCarets(?includeIgnoredCarets: Bool): lua.Table<Int,Int>;
     public function getTabSize(): Int;
     public function getTotalGutterWidth(): Int;
     public function getTotalVisibleLineCount(): Int;
