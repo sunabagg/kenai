@@ -9,8 +9,8 @@ extern class Container extends Control {
     public var sortChildren: Event;
     public function fitChildInRect(child: Control, rect: sunaba.core.Rect2): Void;
     public function queueSort(): Void;
-    public function getAllowedSizeFlagsHorizontal(): Array<Int>;
-    public function getAllowedSizeFlagsVertical(): Array<Int>;
+    public function getAllowedSizeFlagsHorizontal(): lua.Table<Int,Int>;
+    public function getAllowedSizeFlagsVertical(): lua.Table<Int,Int>;
     @:native("cast")
     public static function toContainer(type: Dynamic): Container;
 }
