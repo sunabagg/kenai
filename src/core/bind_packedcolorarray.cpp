@@ -19,7 +19,6 @@ void sunaba::core::bind_packedcolorarray(sol::state& lua) {
         "popBack", &PackedColorArray::pop_back,
         "popFront", &PackedColorArray::pop_front,
         "pushBack", &PackedColorArray::push_back,
-        "pushFront", &PackedColorArray::push_front,
         "removeAt", &PackedColorArray::remove_at,
         "resize", &PackedColorArray::resize,
         "reverse", &PackedColorArray::reverse,
