@@ -23,6 +23,7 @@ void sunaba::core::bind_packedcolorarray(sol::state& lua) {
         "set", &PackedColorArray::set,
         "size", &PackedColorArray::size,
         "slice", &PackedColorArray::slice,
+        "sort", &PackedColorArray::sort,
         sol::meta_function::index, [](const PackedColorArray& arr, int index) { return arr[index]; },
         sol::meta_function::new_index, [](PackedColorArray& arr, int index, const Color& value) {
             arr.set(index, value);
