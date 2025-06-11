@@ -180,8 +180,8 @@ abstract VariantAbstract(Variant) from Variant to Variant {
         return Variant.fromVector2i(value);
     }
     @:to
-    public static function toVector2i(value:VariantAbstract):Vector2i {
-        return value.asVector2i();
+    public inline function toVector2i():Vector2i {
+        return this.asVector2i();
     }
     @:from
     public static function fromVector3i(value:Vector3i):VariantAbstract {
