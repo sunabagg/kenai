@@ -43,4 +43,5 @@ extern class Tree extends Control {
     public function getColumnAtPosition(position: Vector2): Int;
     public function getColumnExpandRatio(column: Int): Int;
     public function getColumnTitle(column: Int): String;
+    public function getColumnTitleAlignment(column: Int): Int;
 }
