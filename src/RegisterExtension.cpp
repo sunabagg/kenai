@@ -90,6 +90,7 @@ namespace
         godot::ClassDB::register_class<sunaba::core::CanvasItemProxy>();
         godot::ClassDB::register_class<sunaba::core::ViewportProxy>();
 
+        godot::ClassDB::register_class<sunaba::desktop::WindowProxy>();
         godot::ClassDB::register_class<sunaba::desktop::PopupProxy>();
         godot::ClassDB::register_class<sunaba::desktop::PopupMenuProxy>();
         godot::ClassDB::register_class<sunaba::desktop::PopupPanelProxy>();
