@@ -40,4 +40,5 @@ extern class Tree extends Control {
     public function editSelected(?forceEdit: Bool): Void;
     public function ensureCursorIsVisible(): Void;
     public function getButtonIdAtPosition(position: Vector2): Int;
+    public function getColumnAtPosition(position: Vector2): Int;
 }
