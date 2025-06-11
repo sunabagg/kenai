@@ -260,7 +260,7 @@ abstract VariantAbstract(Variant) from Variant to Variant {
         return Variant.fromQuatrernion(value);
     }
     @:to
-    public static function toQuaternion(value:VariantAbstract):Quaternion {
+    public inline function toQuaternion():Quaternion {
         return value.asQuaternion();
     }
     @:from
