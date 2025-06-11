@@ -102,6 +102,7 @@ void sunaba::core::bind_varaint(sol::state& lua) {
         "asPackedStringArray", &Variant::operator PackedStringArray,
         "asPackedVector2Array", &Variant::operator PackedVector2Array,
         "asPackedVector3Array", &Variant::operator PackedVector3Array,
+        "asPackedVector4Array", &Variant::operator PackedVector4Array,
         "asElement", [](const Variant& v) { 
             godot::Object* obj = v.operator Object*();
             Node* n = Object::cast_to<Node>(obj);
