@@ -18,6 +18,9 @@ namespace sunaba::desktop {
     class PopupPanel;
 
     class PopupPanelProxy : public PopupPanelNode {
+        GDCLASS(PopupPanelProxy, PopupPanelNode)
+        protected:
+            static void _bind_methods() {}
         public:
             sunaba::desktop::PopupPanel* element = nullptr;
 
