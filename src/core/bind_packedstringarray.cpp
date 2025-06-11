@@ -15,7 +15,9 @@ void sunaba::core::bind_packedstringarray(sol::state& lua) {
             return arr.count(value.c_str());
         },
         "duplicate", &PackedStringArray::duplicate,
-        "fill", &PackedStringArray::fill,
+        "fill", [](PackedStringArray& arr, const std::string& value) {
+            arr.fill(value.c_str());
+        },
         "find", &PackedStringArray::find,
         "get", &PackedStringArray::get,
         "has", &PackedStringArray::has,
