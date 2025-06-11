@@ -31,7 +31,7 @@ extern class CanvasItem extends Element {
     public function drawLcdTextureRectRegion(texture: Texture2D, rect: Rect2, srcRect: Rect2, modulate: Color = null): Void;
     public function drawLine(from: Vector2, to: Vector2, color: Color, width: Float = -1.0, antialis: Bool = false): Void;
     public function drawMsdfTextureRegion(texture: Texture2D, rect: Rect2, srcRect: Rect2, modulate: Color = null, outline: Float = 0.0, pxelRange: Float = 4.0, scale: Float = 1.0): Void;
-    public function drawMultiline(points: lua.Table<Int, Vector2>, colors: Colors, width: Float = -1.0, antialis: Bool = false): Void;
+    public function drawMultiline(points: lua.Table<Int, Vector2>, colors: lua.Table<Int, Color>, width: Float = -1.0, antialis: Bool = false): Void;
     public function drawMultilineColors(points: lua.Table<Int, Vector2>, colors: lua.Table<Int, Color>, width: Float = -1.0, antialis: Bool = false): Void;
     public function drawMultilineString(font: Font, pos: Vector2, text: String, alignment: Int = 0, width: Float = -1, fontSize: Int = 16, maxLines: Int = -1, modulate: Color = null, brkFlags: lua.Table<Int, Int> = null, justificationFlags: lua.Table<Int, Int> = null, direction: Int = 0, orientation: Int = 0): Void;
     public function drawMultilineStringOutline(font: Font, pos: Vector2, text: String, alignment: Int = 0, width: Float = -1, fontSize: Int = 16, maxLines: Int = -1, size: Int = 1, modulate: Color = null, brkFlags: lua.Table<Int, Int> = null, justificationFlags: lua.Table<Int, Int> = null, direction: Int = 0, orientation: Int = 0): Void;
@@ -41,7 +41,7 @@ extern class CanvasItem extends Element {
     public function drawRect(rect: Rect2, color: Color, filled: Bool = true, width: Float = 1.0, antialis: Bool = false): Void;
     public function drawSetTransform(pos: Vector2, rotation: Float = 0.0, scale: Vector2 = null): Void;
     public function drawSetTransformMatrix(xform: Transform2D): Void;
-    public function drawString(font: Font, pos: Vector2, text: String, alignment: Int = 0, width: FLoat = -1, fontSize: Int = 16, modulate: Color = null, justificationFlags: lua.Table<Int, Int> = null, direction: Int = 0, orientation: Int = 0): Void;
+    public function drawString(font: Font, pos: Vector2, text: String, alignment: Int = 0, width: Float = -1, fontSize: Int = 16, modulate: Color = null, justificationFlags: lua.Table<Int, Int> = null, direction: Int = 0, orientation: Int = 0): Void;
     public function drawStringOutline(font: Font, pos: Vector2, text: String, alignment: Int = 0, width: Float = -1, fontSize: Int = 16, size: Int = 1, modulate: Color = null, justificationFlags: lua.Table<Int, Int> = null, direction: Int = 0, orientation: Int = 0): Void;
     public function drawStyleBox(styleBox: StyleBox, rect: Rect2): Void;
     public function drawTexture(texture: Texture2D, pos: Vector2, modulate: Color = null): Void;
