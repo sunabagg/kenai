@@ -108,8 +108,8 @@ abstract VariantAbstract(Variant) from Variant to Variant {
         return Variant.fromString(value);
     }
     @:to
-    public static function toString(value:VariantAbstract):String {
-        return value.asString();
+    public inline function toString():String {
+        return this.asString();
     }
     @:from
     public static function fromInt(value:Int):VariantAbstract {
