@@ -22,6 +22,7 @@ namespace sunaba::ui {
     class Control;
 
     class ControlProxy : public ControlNode {
+        GDCLASS(ControlProxy, ControlNode)
         public:
             sunaba::ui::Control* element = nullptr;
 
