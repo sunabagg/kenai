@@ -31,7 +31,9 @@ void sunaba::core::bind_packedstringarray(sol::state& lua) {
             return arr.insert(index, value.c_str());
         },
         "isEmpty", &PackedStringArray::is_empty,
-        "pushBack", &PackedStringArray::push_back,
+        "pushBack", [](PackedStringArray& arr, const std::string& value) {
+            return arr.push_back(value.c_str());
+        },
         "removeAt", &PackedStringArray::remove_at,
         "resize", &PackedStringArray::resize,
         "reverse", &PackedStringArray::reverse,
