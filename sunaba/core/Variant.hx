@@ -60,6 +60,7 @@ extern class Variant {
     public static function fromStringArray(value:Table<Int, String>): Variant;
     public static function fromVector2Array(value:Table<Int, Vector2>): Variant;
     public static function fromVector3Array(value:Table<Int, Vector3>): Variant;
+    public static function fromVector4Array(value:Table<Int, Vector4>): Variant;
     public static function fromElement(value:Element): Variant;
     public static function fromResource(value:Resource): Variant;
     public function getType():Int;
