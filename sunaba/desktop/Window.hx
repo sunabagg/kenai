@@ -33,7 +33,7 @@ extern class Window extends Viewport {
     public var minSize: Vector2i;
     public var mode: Int;
     public var mousePassthrough: Bool;
-    public var mousePassthroughPolygon: lua.Table<Vector2>;
+    public var mousePassthroughPolygon: Array<Vector2>;
     public var popupWindow: Bool;
     public var position: Vector2i;
     public var sharpCorners: Bool;
