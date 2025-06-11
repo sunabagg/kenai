@@ -37,7 +37,9 @@ void sunaba::core::bind_packedstringarray(sol::state& lua) {
         "removeAt", &PackedStringArray::remove_at,
         "resize", &PackedStringArray::resize,
         "reverse", &PackedStringArray::reverse,
-        "rfind", &PackedStringArray::rfind,
+        "rfind", [](PackedStringArray& arr, const std::string& value, int start = -1) {
+            return arr.rfind(value.c_str(), start);
+        },
         "set", &PackedStringArray::set,
         "size", &PackedStringArray::size,
         "slice", &PackedStringArray::slice,
