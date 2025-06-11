@@ -8,7 +8,6 @@ void sunaba::core::bind_packedcolorarray(sol::state& lua) {
         "bsearch", &PackedColorArray::bsearch,
         "clear", &PackedColorArray::clear,
         "duplicate", &PackedColorArray::duplicate,
-        "erase", &PackedColorArray::erase,
         "fill", &PackedColorArray::fill,
         "filter", &PackedColorArray::filter,
         "get", &PackedColorArray::get,
