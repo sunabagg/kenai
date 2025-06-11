@@ -1,6 +1,6 @@
 package sunaba.core;
 
-abstract Float32Array(lua.Table<Int, Float>) from lua.Table<Int, Float> to lua.Table<Int, Float> {
+abstract FloatArray(lua.Table<Int, Float>) from lua.Table<Int, Float> to lua.Table<Int, Float> {
     @:to
     public inline function toArray(): Array<Float> {
         var table : lua.Table<Int, Float> = this;
@@ -8,7 +8,7 @@ abstract Float32Array(lua.Table<Int, Float>) from lua.Table<Int, Float> to lua.T
     }
 
     @:from
-    public static function fromArray(array: Array<Float>): Float32Array {
+    public static function fromArray(array: Array<Float>): FloatArray {
         var result = lua.Table.fromArray(array);
         return result;
     }
