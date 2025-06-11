@@ -31,6 +31,7 @@ target_sources(${PROJECT_NAME} PRIVATE
         bind_aabb.cpp
         bind_color.cpp
         bind_packedcolorarray.cpp
+        bind_packedfloat32array
         sol_gdstr.h
         lua_function_wrapper.h
         bind_core_classes.h
