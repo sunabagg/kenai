@@ -89,7 +89,7 @@ namespace sunaba::core {
     public:
         sol::table scriptInstance = sol::lua_nil;
 
-        bool isRootNode = false; // Flag to indicate if this is the root node
+        bool isRootElement = false; // Flag to indicate if this is the root node
 
         Event* childEnteredTree;
         Event* childExitedTree;
@@ -211,7 +211,7 @@ namespace sunaba::core {
         }
 
         Element* getParent() {
-            if (isRootNode) {
+            if (isRootElement) {
                 return nullptr; // If this is the root node, it has no parent
             }
             return new Element(getNode()->get_parent());
@@ -281,7 +281,7 @@ namespace sunaba::core {
         }
 
         void _delete() {
-            if (isRootNode) {
+            if (isRootElement) {
                 // If this is the root node, we should not delete it
                 return;
             }
