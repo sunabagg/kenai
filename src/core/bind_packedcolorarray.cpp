@@ -2,7 +2,7 @@
 
 void sunaba::core::bind_packedcolorarray(sol::state& lua) {
     lua.new_usertype<PackedColorArray>("PackedColorArray",
-        sol::constructors<PackedColorArray(), PackedColorArray(const PackedColorArray&)>(),
+        sol::constructors<PackedColorArray(), PackedColorArray(const PackedColorArray&), PackedColorArray(Array)>(),
         "append", &PackedColorArray::append,
         "appendArray", &PackedColorArray::append_array,
         "bsearch", &PackedColorArray::bsearch,
