@@ -19,7 +19,7 @@ void sunaba::core::bind_varaint(sol::state& lua) {
             Variant(bool),
             //Variant(long), 
             //Variant(double), 
-            Variant(String), 
+            //Variant(String), 
             Variant(Vector2), 
             Variant(Vector2i), 
             Variant(Rect2), 
