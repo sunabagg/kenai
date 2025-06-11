@@ -8,7 +8,7 @@ extern class Panel extends Control {
 
 abstract PanelAbstract(Panel) from Panel to Panel {
     @:from
-    public static function fromElement(element: sunaba.core.Element): sunaba.ui.Panel {
+    public static function fromElement(element: sunaba.core.Element): PanelAbstract {
         var panel = sunaba.ui.Panel.toPanel(element);
         if (panel.isNull()) {
             return null;
