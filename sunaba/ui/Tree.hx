@@ -56,4 +56,5 @@ extern class Tree extends Control {
     public function getNextSelected(from: TreeItem): TreeItem;
     public function getPressedButton(): TreeItem;
     public function getRoot(): TreeItem;
+    public function getScroll(): Vector2;
 }
