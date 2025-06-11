@@ -13,9 +13,9 @@ extern class Variant {
     @:native("new")
     public static function fromInt64(value:Int64):Variant;
     @:native("new")
-    public static function fromFloat32(vale:Single):Variant;
+    public static function fromFloat32(vale:Float):Variant;
     @:native("new")
-    public static function fromFloat64(value:Single):Variant;
+    public static function fromFloat64(value:Float):Variant;
     @:native("new")
     public static function fromString(value:String):Variant;
     @:native("new")
@@ -68,7 +68,7 @@ extern class Variant {
     public function asString():String;
     public function asInt32():Int32;
     public function asInt64():Int64;
-    public function asFloat32():Single;
+    public function asFloat32():Float;
     public function asFloat64():Float;
     public function asBool():Bool;
     public function asVector2():Vector2;
@@ -136,11 +136,11 @@ abstract VariantAbstract(Variant) from Variant to Variant {
         return value.asInt64().toInt32();
     }
     @:from
-    public static function fromFloat32(value:Single):VariantAbstract {
+    public static function fromFloat32(value:Float):VariantAbstract {
         return Variant.fromFloat32(value);
     }
     @:to
-    public static function toFloat32(value:VariantAbstract):Single {
+    public static function toFloat32(value:VariantAbstract):Float {
         return value.asFloat32();
     }
     @:from
