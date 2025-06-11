@@ -48,4 +48,5 @@ extern class Tree extends Control {
     public function getColumnTitleLanguage(column: Int): String;
     public function getColumnWidth(column: Int): Int;
     public function getCustomPopupRect(column: Int): Rect2;
+    public function getDropSelectionAtPosition(position: Vector2): Int;
 }
