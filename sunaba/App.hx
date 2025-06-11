@@ -7,4 +7,12 @@ class App {
     private function get_rootElement(): Element {
         return untyped __lua__("_G.rootElement");
     }
+
+    public function new() {
+        init();
+    }
+
+    public function init() {
+        
+    }
 }
