@@ -72,3 +72,14 @@ extern class Tree extends Control {
     @:native("cast")
     public static function toTree(obj: Dynamic): Tree;
 }
+
+abstract TreeAbstract(Tree) from Tree to Tree {
+    @:from
+    public static function fromElement(element: Element): ControlAbstract {
+        var tree: Tree = Tree.toTree(element);
+        if (tree.isNull()) {
+            return null;
+        }
+        return tree;
+    }
+}
