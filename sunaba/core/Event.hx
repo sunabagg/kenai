@@ -19,7 +19,7 @@ abstract EventAbstract(Event) from Event to Event {
 
     @:op(a())
     public function call(...args: Variant) {
-        this.emit(args);
+        this.emit(...args);
     }
 
     @op(A += B)
