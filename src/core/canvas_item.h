@@ -308,13 +308,15 @@ namespace sunaba::core {
             canvas_item->draw_multiline_colors(pointsArray, colorsArray, width, antialiased);
         }
 
-        void drawMultilineString(Font* font, Vector2 pos, std::string text, int alignment = 0, float width = -1, int fontSize = 16, int maxLines = -1, Color modulate = Color(1, 1, 1, 1), std::vector<int> brkFlags = {3}, std::vector<int> justificationFlags = {3}, int direction = 0, int orientation = 0) {
+        void drawMultilineString(Font* font, Vector2 pos, std::string text, int alignment = 0, float width = -1, int fontSize = 16, int maxLines = -1, Color modulate = Color(1, 1, 1, 1), PackedInt32Array brkFlags = {3}, PackedInt32Array justificationFlags = {3}, int direction = 0, int orientation = 0) {
             BitField<TextServer::LineBreakFlag> brkFlagsBitField = NULL;
-            for (int flag : brkFlags) {
+            for (int flagi = 0; flagi < brkFlags.size(); ++flagi) {
+                int flag = brkFlags[flagi];
                 brkFlagsBitField = static_cast<TextServer::LineBreakFlag>(static_cast<int>(brkFlagsBitField) | flag);
             }
             BitField<TextServer::JustificationFlag> justificationFlagsBitField = NULL;
-            for (int flag : justificationFlags) {
+            for (int flagi = 0; flagi < justificationFlags.size(); ++flagi) {
+                int flag = justificationFlags[flagi];
                 justificationFlagsBitField = static_cast<TextServer::JustificationFlag>(static_cast<int>(justificationFlagsBitField) | flag);
             }
             canvas_item->draw_multiline_string(
@@ -333,13 +335,15 @@ namespace sunaba::core {
             );
         }
 
-        void drawMultilineStringOutline(Font* font, Vector2 pos, std::string text, int alignment = 0, float width = -1, int fontSize = 16, int maxLines = -1, int size = 1, Color modulate = Color(1, 1, 1, 1), std::vector<int> brkFlags = {3}, std::vector<int> justificationFlags = {3}, int direction = 0, int orientation = 0) {
+        void drawMultilineStringOutline(Font* font, Vector2 pos, std::string text, int alignment = 0, float width = -1, int fontSize = 16, int maxLines = -1, int size = 1, Color modulate = Color(1, 1, 1, 1), PackedInt32Array brkFlags = {3}, PackedInt32Array justificationFlags = {3}, int direction = 0, int orientation = 0) {
             BitField<TextServer::LineBreakFlag> brkFlagsBitField = NULL;
-            for (int flag : brkFlags) {
+            for (int flagi = 0; flagi < brkFlags.size(); ++flagi) {
+                int flag = brkFlags[flagi];
                 brkFlagsBitField = static_cast<TextServer::LineBreakFlag>(static_cast<int>(brkFlagsBitField) | flag);
             }
             BitField<TextServer::JustificationFlag> justificationFlagsBitField = NULL;
-            for (int flag : justificationFlags) {
+            for (int flagi = 0; flagi < justificationFlags.size(); ++flagi) {
+                int flag = justificationFlags[flagi];
                 justificationFlagsBitField = static_cast<TextServer::JustificationFlag>(static_cast<int>(justificationFlagsBitField) | flag);
             }
             canvas_item->draw_multiline_string_outline(
@@ -435,9 +439,10 @@ namespace sunaba::core {
             canvas_item->draw_set_transform_matrix(xform);
         }
 
-        void drawString(Font* font, Vector2 pos, std::string text, int alignment = 0, float width = -1, int fontSize = 16, Color modulate = Color(1, 1, 1, 1), std::vector<int> justificationFlags = {3}, int direction = 0, int orientation = 0) {
+        void drawString(Font* font, Vector2 pos, std::string text, int alignment = 0, float width = -1, int fontSize = 16, Color modulate = Color(1, 1, 1, 1), PackedInt32Array justificationFlags = {3}, int direction = 0, int orientation = 0) {
             BitField<TextServer::JustificationFlag> justificationFlagsBitField = NULL;
-            for (int flag : justificationFlags) {
+            for (int flagi = 0; flagi < justificationFlags.size(); ++flagi) {
+                int flag = justificationFlags[flagi];
                 justificationFlagsBitField = static_cast<TextServer::JustificationFlag>(static_cast<int>(justificationFlagsBitField) | flag);
             }
             canvas_item->draw_string(
@@ -454,9 +459,10 @@ namespace sunaba::core {
             );
         }
 
-        void drawStringOutline(Font* font, Vector2 pos, std::string text, int alignment = 0, float width = -1, int fontSize = 16, int size = 1, Color modulate = Color(1, 1, 1, 1), std::vector<int> justificationFlags = {3}, int direction = 0, int orientation = 0) {
+        void drawStringOutline(Font* font, Vector2 pos, std::string text, int alignment = 0, float width = -1, int fontSize = 16, int size = 1, Color modulate = Color(1, 1, 1, 1), PackedInt32Array justificationFlags = {3}, int direction = 0, int orientation = 0) {
             BitField<TextServer::JustificationFlag> justificationFlagsBitField = NULL;
-            for (int flag : justificationFlags) {
+            for (int flagi = 0; flagi < justificationFlags.size(); ++flagi) {
+                int flag = justificationFlags[flagi];
                 justificationFlagsBitField = static_cast<TextServer::JustificationFlag>(static_cast<int>(justificationFlagsBitField) | flag);
             }
             canvas_item->draw_string_outline(
