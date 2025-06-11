@@ -1,6 +1,6 @@
 package sunaba.core;
 
-abstract Int32Array(lua.Table<Int, Int>) from lua.Table<Int, Int> to lua.Table<Int, Int> {
+abstract IntArray(lua.Table<Int, Int>) from lua.Table<Int, Int> to lua.Table<Int, Int> {
     @:to
     public inline function toArray(): Array<Int> {
         var table : lua.Table<Int, Int> = this;
@@ -8,7 +8,7 @@ abstract Int32Array(lua.Table<Int, Int>) from lua.Table<Int, Int> to lua.Table<I
     }
 
     @:from
-    public static function fromArray(array: Array<Int>): Int32Array {
+    public static function fromArray(array: Array<Int>): IntArray {
         var result = lua.Table.fromArray(array);
         return result;
     }
