@@ -228,8 +228,8 @@ abstract VariantAbstract(Variant) from Variant to Variant {
         return Variant.fromBasis(value);
     }
     @:to
-    public static function toBasis(value:VariantAbstract):Basis {
-        return value.asBasis();
+    public inline function toBasis():Basis {
+        return this.asBasis();
     }
     @:from
     public static function fromTransform2D(value:Transform2D):VariantAbstract {
