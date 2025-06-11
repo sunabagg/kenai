@@ -40,7 +40,7 @@ extern class ArrayList {
     public function sort(): Void;
 }
 
-class ArrayListIterator = {
+class ArrayListIterator {
     public var index: Int;
     public var array: ArrayList;
     public function new(array: ArrayList) {
