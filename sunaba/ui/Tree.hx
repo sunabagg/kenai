@@ -52,4 +52,5 @@ extern class Tree extends Control {
     public function getEdited(): TreeItem;
     public function getEditedColumn(): Int;
     public function getItemAreaRect(item: TreeItem, ?column: Int, ?buttonIndex: Int): Rect2;
+    public function getItemAtPosition(position: Vector2): TreeItem;
 }
