@@ -12,7 +12,7 @@
 #include <vector>
 
 #include "base_object.h"
-#include "sol_gdstr.h"
+
 
 using namespace godot;
 
