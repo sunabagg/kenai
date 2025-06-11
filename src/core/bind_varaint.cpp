@@ -71,6 +71,9 @@ void sunaba::core::bind_varaint(sol::state& lua) {
          "fromFloat64", [](double value) { 
             return Variant(value); 
          },
+         "fromString", [](const std::string& str) { 
+            return Variant(String(str.c_str())); 
+         },
         "getType", &Variant::get_type,
         "getTypeName", &Variant::get_type_name,
         "asString", [](const Variant& v) { return std::string((v.operator String()).utf8().get_data()); },
