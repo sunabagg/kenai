@@ -13,7 +13,6 @@ void sunaba::core::bind_packedcolorarray(sol::state& lua) {
         "has", &PackedColorArray::has,
         "insert", &PackedColorArray::insert,
         "isEmpty", &PackedColorArray::is_empty,
-        "makeReadOnly", &PackedColorArray::make_read_only,
         "max", &PackedColorArray::max,
         "min", &PackedColorArray::min,
         "popAt", &PackedColorArray::pop_at,
