@@ -58,4 +58,5 @@ extern class Tree extends Control {
     public function getRoot(): TreeItem;
     public function getScroll(): Vector2;
     public function getSelected(): TreeItem;
+    public function getSelectedColumn(): Int;
 }
