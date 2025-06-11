@@ -36,32 +36,16 @@ namespace sunaba::spatial {
             setOccluder3D(arrayOccluder);
         }
 
-        void setIndices(std::vector<int> indices) {
-            PackedInt32Array arr;
-            for (int i = 0; i < indices.size(); i++) {
-                arr.push_back(indices[i]);
-            }
-            arrayOccluder->set_indices(arr);
+        void setIndices(PackedInt32Array indices) {
+            arrayOccluder->set_indices(indices);
         }
 
-        void setVertices(std::vector<Vector3> vertices) {
-            PackedVector3Array arr;
-            for (int i = 0; i < vertices.size(); i++) {
-                arr.push_back(vertices[i]);
-            }
-            arrayOccluder->set_vertices(arr);
+        void setVertices(PackedVector3Array vertices) {
+            arrayOccluder->set_vertices(vertices);
         }
 
-        void setArrays(std::vector<Vector3> vertices, std::vector<int> indices) {
-            PackedInt32Array indicesArr;
-            for (int i = 0; i < indices.size(); i++) {
-                indicesArr.push_back(indices[i]);
-            }
-            PackedVector3Array verticesArr;
-            for (int i = 0; i < vertices.size(); i++) {
-                verticesArr.push_back(vertices[i]);
-            }
-            arrayOccluder->set_arrays(verticesArr, indicesArr);
+        void setArrays(PackedVector3Array vertices, PackedInt32Array indices) {
+            arrayOccluder->set_arrays(vertices, indices);
         }
     };
 }
