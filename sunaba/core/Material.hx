@@ -1,7 +1,7 @@
 package sunaba.core;
 
 @:native("Material")
-class Material extends Resource {
+extern class Material extends Resource {
     public var nextPass: Material;
     public var renderPriority: Int;
     public function createPlaceholder(): Resource;
