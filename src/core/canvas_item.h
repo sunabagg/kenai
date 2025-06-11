@@ -19,6 +19,9 @@ namespace sunaba::core {
     class CanvasItem;
 
     class CanvasItemProxy : public CanvasItemNode {
+        GDCLASS(CanvasItemProxy, CanvasItemNode)
+        protected:
+            static void _bind_methods() {}
         public:
             sunaba::core::CanvasItem* element = nullptr;  
     
