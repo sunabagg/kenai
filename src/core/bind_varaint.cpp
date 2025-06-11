@@ -47,55 +47,6 @@ void sunaba::core::bind_varaint(sol::state& lua) {
             Variant(PackedVector4Array)
         >(),
         "fromByteArray", [](const io::BinaryData& data) { return Variant(data.toPackedByteArray()); },
-        "fromIntArray", [](const std::vector<int>& data) { 
-            PackedInt32Array packed_data;
-            for (const auto& item : data) {
-                packed_data.append(item);
-            }
-            return Variant(packed_data);
-         },
-         "fromIntArray64", [](const std::vector<int64_t>& data) { 
-            PackedInt64Array packed_data;
-            for (const auto& item : data) {
-                packed_data.append(item);
-            }
-            return Variant(packed_data);
-         },
-         "fromFloatArray", [](const std::vector<float>& data) { 
-            PackedFloat32Array packed_data;
-            for (const auto& item : data) {
-                packed_data.append(item);
-            }
-            return Variant(packed_data);
-         },
-         "fromFloatArray64", [](const std::vector<double>& data) { 
-            PackedFloat64Array packed_data;
-            for (const auto& item : data) {
-                packed_data.append(item);
-            }
-            return Variant(packed_data);
-         },
-         "fromStringArray", [](const std::vector<String>& data) { 
-            PackedStringArray packed_data;
-            for (const auto& item : data) {
-                packed_data.append(item);
-            }
-            return Variant(packed_data);
-         },
-        "fromVector2Array", [](const std::vector<Vector2>& data) { 
-            PackedVector2Array packed_data;
-            for (const auto& item : data) {
-                packed_data.append(item);
-            }
-            return Variant(packed_data);
-        },
-        "fromVector3Array", [](const std::vector<Vector3>& data) { 
-            PackedVector3Array packed_data;
-            for (const auto& item : data) {
-                packed_data.append(item);
-            }
-            return Variant(packed_data);
-        },
         "fromElement", [](const Element* e) { 
             godot::Node* n = e->getNode();
             if (n) {
