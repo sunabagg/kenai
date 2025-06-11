@@ -63,4 +63,5 @@ extern class Tree extends Control {
     public function isColumnExpanding(column: Int): Bool;
     public function scrollToItem(item: TreeItem, ?centerOnItem: Bool): Void;
     public function setColumnCustomMinimumWidth(column: Int, minWidth: Int): Void;
+    public function setColumnExpand(column: Int, expand: Bool): Void;
 }
