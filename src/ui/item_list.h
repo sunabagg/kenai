@@ -23,6 +23,9 @@ namespace sunaba::ui {
     class ItemList;
 
     class ItemListProxy : public ItemListNode {
+        GDCLASS(ItemListProxy, ItemListNode)
+        protected:
+            static void _bind_methods() {}
         public:
             sunaba::ui::ItemList* element = nullptr;
 
