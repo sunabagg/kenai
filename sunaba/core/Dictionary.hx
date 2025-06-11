@@ -8,7 +8,7 @@ extern class Dictionary {
     public function duplicate(deep: Bool = false) : Dictionary;
     public function erase(key : Variant) : Void;
     public function findKey(key : Variant) : Variant;
-    public function get(key : Variant, ?default: Variant) : Variant;
+    public function get(key : Variant, ?d: Variant) : Variant;
     public function getOrAdd(key : Variant, ?default : Variant) : Variant;
     public function has(key : Variant) : Bool;
     public function hasAll(keys : ArrayList) : Bool;
