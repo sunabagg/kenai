@@ -51,4 +51,5 @@ extern class Tree extends Control {
     public function getDropSelectionAtPosition(position: Vector2): Int;
     public function getEdited(): TreeItem;
     public function getEditedColumn(): Int;
+    public function getItemAreaRect(item: TreeItem, ?column: Int, ?buttonIndex: Int): Rect2;
 }
