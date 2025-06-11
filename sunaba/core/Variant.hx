@@ -212,8 +212,8 @@ abstract VariantAbstract(Variant) from Variant to Variant {
         return Variant.fromRect2(value);
     }
     @:to
-    public static function toRect2(value:VariantAbstract):Rect2 {
-        return value.asRect2();
+    public inline function toRect2():Rect2 {
+        return this.asRect2();
     }
     @:from
     public static function fromRect2i(value:Rect2i):VariantAbstract {
