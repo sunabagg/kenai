@@ -19,7 +19,7 @@
 #include "spatial/bind_spatial_classes.h"
 #include "ui/bind_ui_classes.h"
 #include "desktop/bind_desktop_classes.h"
-#include "core/sol_gdstr.h"
+
 #ifdef _WIN32 // hack fix for MSVC. TODO: this is dumb
 //#include <hxluasimdjson.cpp>
 //#include <simdjson.cpp>
