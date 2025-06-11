@@ -196,8 +196,8 @@ abstract VariantAbstract(Variant) from Variant to Variant {
         return Variant.fromVector4i(value);
     }
     @:to
-    public static function toVector4i(value:VariantAbstract):Vector4i {
-        return value.asVector4i();
+    public inline function toVector4i():Vector4i {
+        return this.asVector4i();
     }
     @:from
     public static function fromColor(value:Color):VariantAbstract {
