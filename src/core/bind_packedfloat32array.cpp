@@ -23,11 +23,11 @@ void sunaba::core::bind_packedfloat32array(sol::state& lua) {
         "set", &PackedFloat32Array::set,
         "size", &PackedFloat32Array::size,
         "slice", &PackedFloat32Array::slice,
-        "sort", &PackedFloat32Array::sort,
-        sol::meta_function::index, [](const PackedFloat32Array& arr, int index) { return arr[index]; },
-        sol::meta_function::new_index, [](PackedFloat32Array& arr, int index, float value) {
-            arr.set(index, value);
-        },
-        sol::meta_function::length, &PackedFloat32Array::size
+        "sort", &PackedFloat32Array::sort//,
+        //sol::meta_function::index, [](const PackedFloat32Array& arr, int index) { return arr[index]; },
+        //sol::meta_function::new_index, [](PackedFloat32Array& arr, int index, float value) {
+        //    arr.set(index, value);
+        //},
+        //sol::meta_function::length, &PackedFloat32Array::size
     );
 }

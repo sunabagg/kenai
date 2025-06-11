@@ -23,11 +23,11 @@ void sunaba::core::bind_packedfloat64array(sol::state& lua) {
         "set", &PackedFloat64Array::set,
         "size", &PackedFloat64Array::size,
         "slice", &PackedFloat64Array::slice,
-        "sort", &PackedFloat64Array::sort,
-        sol::meta_function::index, [](const PackedFloat64Array& arr, int index) { return arr[index]; },
-        sol::meta_function::new_index, [](PackedFloat64Array& arr, int index, double value) {
-            arr.set(index, value);
-        },
-        sol::meta_function::length, &PackedFloat64Array::size
+        "sort", &PackedFloat64Array::sort//,
+        //sol::meta_function::index, [](const PackedFloat64Array& arr, int index) { return arr[index]; },
+        //sol::meta_function::new_index, [](PackedFloat64Array& arr, int index, double value) {
+        //    arr.set(index, value);
+        //},
+        //sol::meta_function::length, &PackedFloat64Array::size
     );
 }

@@ -23,11 +23,11 @@ void sunaba::core::bind_packedvector4array(sol::state& lua) {
         "set", &PackedVector4Array::set,
         "size", &PackedVector4Array::size,
         "slice", &PackedVector4Array::slice,
-        "sort", &PackedVector4Array::sort,
-        sol::meta_function::index, [](const PackedVector4Array& arr, int index) { return arr[index]; },
-        sol::meta_function::new_index, [](PackedVector4Array& arr, int index, const Vector4& value) {
-            arr.set(index, value);
-        },
-        sol::meta_function::length, &PackedVector4Array::size
+        "sort", &PackedVector4Array::sort//,
+        //sol::meta_function::index, [](const PackedVector4Array& arr, int index) { return arr[index]; },
+        //sol::meta_function::new_index, [](PackedVector4Array& arr, int index, const Vector4& value) {
+        //    arr.set(index, value);
+        //},
+        //sol::meta_function::length, &PackedVector4Array::size
     );
 }

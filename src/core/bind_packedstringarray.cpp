@@ -45,11 +45,11 @@ void sunaba::core::bind_packedstringarray(sol::state& lua) {
         },
         "size", &PackedStringArray::size,
         "slice", &PackedStringArray::slice,
-        "sort", &PackedStringArray::sort,
-        sol::meta_function::index, [](const PackedStringArray& arr, int index) { return arr[index]; },
-        sol::meta_function::new_index, [](PackedStringArray& arr, int index, const String& value) {
-            arr.set(index, value);
-        },
-        sol::meta_function::length, &PackedStringArray::size
+        "sort", &PackedStringArray::sort//,
+        //sol::meta_function::index, [](const PackedStringArray& arr, int index) { return arr[index]; },
+        //sol::meta_function::new_index, [](PackedStringArray& arr, int index, const String& value) {
+        //    arr.set(index, value);
+        //},
+        //sol::meta_function::length, &PackedStringArray::size
     );
 }
