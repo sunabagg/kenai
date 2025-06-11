@@ -92,7 +92,7 @@ abstract ArrayListAbstract(ArrayList) from ArrayList to ArrayList {
 
     @:to
     public inline function toArray(): Array<Variant> {
-        var result = new Array<Variant>(this.size());
+        var result = new Array<Variant>();
         for (i in 0...this.size()) {
             result[i] = this.get(i);
         }
