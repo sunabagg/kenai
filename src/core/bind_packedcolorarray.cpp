@@ -13,6 +13,7 @@ void sunaba::core::bind_packedcolorarray(sol::state& lua) {
         "find", &PackedColorArray::find,
         "get", &PackedColorArray::get,
         "has", &PackedColorArray::has,
+        "pushBack", &PackedColorArray::push_back,
         "insert", &PackedColorArray::insert,
         "isEmpty", &PackedColorArray::is_empty,
         "pushBack", &PackedColorArray::push_back,
