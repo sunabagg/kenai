@@ -22,6 +22,11 @@ namespace sunaba::ui {
     class RichTextLabel;
 
     class RichTextLabelProxy : public RichTextLabelNode {
+        GDCLASS(RichTextLabelProxy, RichTextLabelNode)
+        protected:
+            static void _bind_methods() {
+                // Bind methods specific to RichTextLabelProxy
+            }
         public:
             sunaba::ui::RichTextLabel* element = nullptr;
 
