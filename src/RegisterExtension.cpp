@@ -75,6 +75,7 @@
 #include "ui/v_flow_container.h"
 #include "ui/v_scroll_bar.h"
 #include "ui/v_separator.h"
+#include "ui/v_slider.h"
 
 /// @file
 /// Register our classes with Godot.
@@ -186,6 +187,7 @@ namespace
         godot::ClassDB::register_class<sunaba::ui::VFlowContainerProxy>();
         godot::ClassDB::register_class<sunaba::ui::VScrollBarProxy>();
         godot::ClassDB::register_class<sunaba::ui::VSeparatorProxy>();
+        godot::ClassDB::register_class<sunaba::ui::VSliderProxy>();
     }
 
     /// @brief Called by Godot to let us do any cleanup.
