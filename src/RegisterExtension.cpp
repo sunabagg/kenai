@@ -62,6 +62,7 @@
 #include "ui/panel.h"
 #include "ui/progress_bar.h"
 #include "ui/reference_rect.h"
+#include "ui/scroll_bar.h"
 
 /// @file
 /// Register our classes with Godot.
@@ -160,6 +161,7 @@ namespace
         godot::ClassDB::register_class<sunaba::ui::PanelProxy>();
         godot::ClassDB::register_class<sunaba::ui::ProgressBarProxy>();
         godot::ClassDB::register_class<sunaba::ui::ReferenceRectProxy>();
+        godot::ClassDB::register_class<sunaba::ui::ScrollBarProxy>();
     }
 
     /// @brief Called by Godot to let us do any cleanup.
