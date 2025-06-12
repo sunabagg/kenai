@@ -67,6 +67,7 @@
 #include "ui/separator.h"
 #include "ui/spin_box.h"
 #include "ui/split_container.h"
+#include "ui/sub_viewport_container.h"
 
 /// @file
 /// Register our classes with Godot.
@@ -170,6 +171,7 @@ namespace
         godot::ClassDB::register_class<sunaba::ui::SeparatorProxy>();
         godot::ClassDB::register_class<sunaba::ui::SpinBoxProxy>();
         godot::ClassDB::register_class<sunaba::ui::SplitContainerProxy>();
+        godot::ClassDB::register_class<sunaba::ui::SubViewportContainerProxy>();
     }
 
     /// @brief Called by Godot to let us do any cleanup.
