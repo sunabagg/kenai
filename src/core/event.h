@@ -79,9 +79,9 @@ namespace sunaba::core {
             }
 
             void emit(godot::Array args) {
-                //for (std::function<void(godot::Array)> listemer: listeners) {
-                //    listemer(args);
-                //}
+                for (auto& listener : listeners) {
+                    listener(args);
+                }
 
                 for (sol::function lua_listener : lua_listeners) {
                     sol::state_view lua_state = sol::state_view(lua_listener.lua_state());
