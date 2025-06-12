@@ -60,6 +60,7 @@
 #include "ui/nine_patch_rect.h"
 #include "ui/panel_container.h"
 #include "ui/panel.h"
+#include "ui/progress_bar.h"
 
 /// @file
 /// Register our classes with Godot.
@@ -156,6 +157,7 @@ namespace
         godot::ClassDB::register_class<sunaba::ui::NinePatchRectProxy>();
         godot::ClassDB::register_class<sunaba::ui::PanelContainerProxy>();
         godot::ClassDB::register_class<sunaba::ui::PanelProxy>();
+        godot::ClassDB::register_class<sunaba::ui::ProgressBarProxy>();
     }
 
     /// @brief Called by Godot to let us do any cleanup.
