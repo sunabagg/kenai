@@ -79,18 +79,18 @@ namespace sunaba::core {
             }
 
             void emit(godot::Array args) {
-                for (auto& listener : listeners) {
+                /*for (auto& listener : listeners) {
                     listener(args);
-                }
+                }*/
 
-                for (sol::function lua_listener : lua_listeners) {
+                ?*for (sol::function lua_listener : lua_listeners) {
                     sol::state_view lua_state = sol::state_view(lua_listener.lua_state());
                     sol::table lua_args = lua_state.create_table(args.size(), 0);
                     for (int i = 0; i < args.size(); ++i) {
                         lua_args[i + 1] = args[i]; // Lua tables are 1-indexed
                     }
                     callLuaListener(lua_listener, lua_args);
-                }
+                }*/
             }
 
             void clear() {
