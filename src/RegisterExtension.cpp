@@ -51,6 +51,7 @@
 #include "ui/h_scroll_bar.h"
 #include "ui/h_separator.h"
 #include "ui/h_slider.h"
+#include "ui/h_split_container.h"
 
 /// @file
 /// Register our classes with Godot.
@@ -138,6 +139,7 @@ namespace
         godot::ClassDB::register_class<sunaba::ui::HScrollBarProxy>();
         godot::ClassDB::register_class<sunaba::ui::HSeparatorProxy>();
         godot::ClassDB::register_class<sunaba::ui::HSliderProxy>();
+        godot::ClassDB::register_class<sunaba::ui::HSplitContainerProxy>();
     }
 
     /// @brief Called by Godot to let us do any cleanup.
