@@ -18,6 +18,11 @@ namespace sunaba::ui {
     class VScrollBar;
     
     class VScrollBarProxy : public VScrollBarNode {
+        GDCLASS(VScrollBarProxy, VScrollBarNode)
+        protected:
+            static void _bind_methods() {
+                // Bind methods specific to VScrollBarProxy
+            }
         public:
             sunaba::ui::VScrollBar* element = nullptr;
 
