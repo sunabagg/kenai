@@ -43,6 +43,7 @@
 #include "ui/center_container.h"
 #include "ui/check_box.h"
 #include "ui/check_button.h"
+#include "ui/color_rect.h"
 
 /// @file
 /// Register our classes with Godot.
@@ -122,6 +123,7 @@ namespace
         godot::ClassDB::register_class<sunaba::ui::CenterContainerProxy>();
         godot::ClassDB::register_class<sunaba::ui::CheckBoxProxy>();
         godot::ClassDB::register_class<sunaba::ui::CheckButtonProxy>();
+        godot::ClassDB::register_class<sunaba::ui::ColorRectProxy>();
     }
 
     /// @brief Called by Godot to let us do any cleanup.
