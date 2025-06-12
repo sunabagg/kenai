@@ -15,6 +15,11 @@ namespace sunaba::ui {
     class CheckBox;
 
     class CheckBoxProxy : public CheckBoxNode {
+        GDCLASS(CheckBoxProxy, CheckBoxNode)
+        protected:
+            static void _bind_methods() {
+                // Bind methods specific to CheckBoxProxy
+            }
         public:
             sunaba::ui::CheckBox* element = nullptr;
 
