@@ -149,6 +149,7 @@ namespace
         godot::ClassDB::register_class<sunaba::ui::LinkButtonProxy>();
         godot::ClassDB::register_class<sunaba::ui::MarginContainerProxy>();
         godot::ClassDB::register_class<sunaba::ui::MenuBarProxy>();
+        godot::ClassDB::register_class<sunaba::ui::MenuButtonProxy>();
     }
 
     /// @brief Called by Godot to let us do any cleanup.
