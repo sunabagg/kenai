@@ -103,7 +103,7 @@ namespace
         godot::ClassDB::register_class<sunaba::core::StlFunctionWrapper>();
 
         godot::ClassDB::register_class<sunaba::core::NodeSignalWrapper>();
-        //godot::ClassDB::register_class<sunaba::core::CanvasItemSignalWrapper>();
+        godot::ClassDB::register_class<sunaba::core::CanvasItemSignalWrapper>();
         godot::ClassDB::register_class<sunaba::core::ViewportSignalWrapper>();
 
         godot::ClassDB::register_class<sunaba::desktop::WindowSignalWrapper>();
