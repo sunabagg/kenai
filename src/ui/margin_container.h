@@ -18,6 +18,7 @@ namespace sunaba::ui {
     class MarginContainer;
 
     class MarginContainerProxy : public MarginContainerNode {
+        GDCLASS(MarginContainerProxy, MarginContainerNode)
         public:
             sunaba::ui::MarginContainer* element = nullptr;
 
