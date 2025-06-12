@@ -20,6 +20,11 @@ namespace sunaba::ui {
     class SplitContainer;
 
     class SplitContainerProxy : public SplitContainerNode {
+        GDCLASS(SplitContainerProxy, SplitContainerNode)
+        protected:
+            static void _bind_methods() {
+                // Bind methods specific to SplitContainerProxy
+            }
         public:
             sunaba::ui::SplitContainer* element = nullptr;
 
