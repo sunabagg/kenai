@@ -46,6 +46,7 @@
 #include "ui/color_rect.h"
 #include "ui/flow_container.h"
 #include "ui/grid_container.h"
+#include "ui/h_box_container.h"
 
 /// @file
 /// Register our classes with Godot.
@@ -128,6 +129,7 @@ namespace
         godot::ClassDB::register_class<sunaba::ui::ColorRectProxy>();
         godot::ClassDB::register_class<sunaba::ui::FlowContainerProxy>();
         godot::ClassDB::register_class<sunaba::ui::GridContainerProxy>();
+        godot::ClassDB::register_class<sunaba::ui::HBoxContainerProxy>();
     }
 
     /// @brief Called by Godot to let us do any cleanup.
