@@ -18,6 +18,11 @@ namespace sunaba::ui {
     class HBoxContainer;
 
     class HBoxContainerProxy : public HBoxContainerNode {
+        GDCLASS(HBoxContainerProxy, HBoxContainerNode)
+        protected:
+            static void _bind_methods() {
+                // Bind methods specific to HBoxContainerProxy
+            }
         public:
             sunaba::ui::HBoxContainer* element = nullptr;
 
