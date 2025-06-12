@@ -18,6 +18,11 @@ namespace sunaba::ui {
     class GridContainer;
 
     class GridContainerProxy : public GridContainerNode {
+        GDCLASS(GridContainerProxy, GridContainerNode)
+        protected:
+            static void _bind_methods() {
+                // Bind methods specific to GridContainerProxy
+            }
         public:
             sunaba::ui::GridContainer* element = nullptr;
 
