@@ -125,6 +125,7 @@ namespace
         godot::ClassDB::register_class<sunaba::ui::CheckBoxProxy>();
         godot::ClassDB::register_class<sunaba::ui::CheckButtonProxy>();
         godot::ClassDB::register_class<sunaba::ui::ColorRectProxy>();
+        godot::ClassDB::register_class<sunaba::ui::FlowContainerProxy>();
     }
 
     /// @brief Called by Godot to let us do any cleanup.
