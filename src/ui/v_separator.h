@@ -18,6 +18,11 @@ namespace sunaba::ui {
     class VSeparator;
 
     class VSeparatorProxy : public VSeparatorNode {
+        GDCLASS(VSeparatorProxy, VSeparatorNode)
+        protected:
+            static void _bind_methods() {
+                // Bind methods specific to VSeparatorProxy
+            }
         public:
             sunaba::ui::VSeparator* element = nullptr;
 
