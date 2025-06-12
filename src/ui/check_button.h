@@ -16,6 +16,11 @@ namespace sunaba::ui {
     class CheckButton;
 
     class CheckButtonProxy : public CheckButtonNode {
+        GDCLASS(CheckButtonProxy, CheckButtonNode)
+        protected:
+            static void _bind_methods() {
+                // Bind methods specific to CheckButtonProxy
+            }
         public:
             sunaba::ui::CheckButton* element = nullptr;
 
