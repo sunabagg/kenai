@@ -18,6 +18,11 @@ namespace sunaba::ui {
     class FlowContainer;
 
     class FlowContainerProxy : public FlowContainerNode {
+        GDCLASS(FlowContainerProxy, FlowContainerNode)
+        protected:
+            static void _bind_methods() {
+                // Bind methods specific to FlowContainerProxy
+            }
         public:
             sunaba::ui::FlowContainer* element = nullptr;
 
