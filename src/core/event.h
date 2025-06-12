@@ -61,13 +61,13 @@ namespace sunaba::core {
             }
 
             void emitLua(sol::variadic_args args) {
-                for (auto listemer: listeners) {
+                /*for (auto listemer: listeners) {
                     godot::Array args_array;
                     for (auto arg : args) {
                         args_array.append(arg.as<godot::Variant>());
                     }
                     listemer(args_array);
-                }
+                }*/
                 for (auto lua_listener : lua_listeners) {
                     sol::state_view lua_state = sol::state_view(lua_listener.lua_state());
                     sol::table lua_args = lua_state.create_table(args.size(), 0);
@@ -79,9 +79,9 @@ namespace sunaba::core {
             }
 
             void emit(godot::Array args) {
-                for (std::function<void(godot::Array)> listemer: listeners) {
-                    listemer(args);
-                }
+                //for (std::function<void(godot::Array)> listemer: listeners) {
+                //    listemer(args);
+                //}
 
                 for (sol::function lua_listener : lua_listeners) {
                     sol::state_view lua_state = sol::state_view(lua_listener.lua_state());
