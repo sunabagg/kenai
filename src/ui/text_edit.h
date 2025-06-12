@@ -24,6 +24,11 @@ namespace sunaba::ui {
     class TextEdit;
 
     class TextEditProxy : public TextEditNode {
+        GDCLASS(TextEditProxy, TextEditNode)
+        protected:
+            static void _bind_methods() {
+                // Bind methods specific to TextEditProxy
+            }
         public:
             sunaba::ui::TextEdit* element = nullptr;
 
