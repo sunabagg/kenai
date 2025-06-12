@@ -18,6 +18,11 @@ namespace sunaba::ui {
     class HScrollBar;
     
     class HScrollBarProxy : public HScrollBarNode {
+        GDCLASS(HScrollBarProxy, HScrollBarNode)
+        protected:
+            static void _bind_methods() {
+                // Bind methods specific to HScrollBarProxy
+            }
         public:
             sunaba::ui::HScrollBar* element = nullptr;
 
