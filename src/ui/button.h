@@ -16,6 +16,11 @@ namespace sunaba::ui {
     class Button;
 
     class ButtonProxy : public ButtonNode {
+        GDCLASS(ButtonProxy, ButtonNode)
+        protected:
+            static void _bind_methods() {
+                // Bind methods specific to ButtonProxy
+            }
         public:
             sunaba::ui::Button* element = nullptr;
 
