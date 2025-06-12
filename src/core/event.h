@@ -83,7 +83,7 @@ namespace sunaba::core {
                     listener(args);
                 }*/
 
-                ?*for (sol::function lua_listener : lua_listeners) {
+                /*for (sol::function lua_listener : lua_listeners) {
                     sol::state_view lua_state = sol::state_view(lua_listener.lua_state());
                     sol::table lua_args = lua_state.create_table(args.size(), 0);
                     for (int i = 0; i < args.size(); ++i) {
