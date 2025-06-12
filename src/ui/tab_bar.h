@@ -21,6 +21,7 @@ namespace sunaba::ui {
     class TabBar;
 
     class TabBarProxy : public TabBarNode {
+        GDCLASS(TabBarProxy, TabBarNode)
         protected:
             static void _bind_methods() {}
         public:
