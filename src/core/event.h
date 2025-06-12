@@ -21,7 +21,7 @@ namespace sunaba::core {
     class Event : public BaseObject {
         private:
             std::vector<std::function<void(godot::Array)>> listeners;
-            std::vector<sol::function> lua_listeners;
+            std::vector<sol::function> lua_listeners = {};
 
             void callLuaListener(sol::function listener, sol::table args) {
                 // Call the Lua listener function with the provided arguments
