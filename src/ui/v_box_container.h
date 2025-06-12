@@ -18,6 +18,11 @@ namespace sunaba::ui {
     class VBoxContainer;
 
     class VBoxContainerProxy : public VBoxContainerNode {
+        GDCLASS(VBoxContainerProxy, VBoxContainerNode)
+        protected:
+            static void _bind_methods() {
+                // Bind methods specific to VBoxContainerProxy
+            }
         public:
             sunaba::ui::VBoxContainer* element = nullptr;
 
