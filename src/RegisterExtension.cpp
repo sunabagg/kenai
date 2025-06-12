@@ -65,6 +65,7 @@
 #include "ui/scroll_bar.h"
 #include "ui/scroll_container.h"
 #include "ui/separator.h"
+#include "ui/spin_box.h"
 
 /// @file
 /// Register our classes with Godot.
