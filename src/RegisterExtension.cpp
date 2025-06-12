@@ -55,6 +55,7 @@
 #include "ui/label.h"
 #include "ui/link_button.h"
 #include "ui/margin_container.h"
+#include "ui/menu_bar.h"
 
 /// @file
 /// Register our classes with Godot.
@@ -146,6 +147,7 @@ namespace
         godot::ClassDB::register_class<sunaba::ui::LabelProxy>();
         godot::ClassDB::register_class<sunaba::ui::LinkButtonProxy>();
         godot::ClassDB::register_class<sunaba::ui::MarginContainerProxy>();
+        godot::ClassDB::register_class<sunaba::ui::MenuBarProxy>();
     }
 
     /// @brief Called by Godot to let us do any cleanup.
