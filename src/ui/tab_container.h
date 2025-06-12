@@ -22,6 +22,11 @@ namespace sunaba::ui {
     class TabContainer;
 
     class TabContainerProxy : public TabContainerNode {
+        GDCLASS(TabContainerProxy, TabContainerNode)
+        protected:
+            static void _bind_methods() {
+                // Bind methods specific to TabContainerProxy
+            }
         public:
             sunaba::ui::TabContainer* element = nullptr;
 
