@@ -21,6 +21,11 @@ namespace sunaba::ui {
     class NinePatchRect;
 
     class NinePatchRectProxy : public NinePatchRectNode {
+        GDCLASS(NinePatchRectProxy, NinePatchRectNode)
+        protected:
+            static void _bind_methods() {
+                // Bind methods specific to NinePatchRectProxy
+            }
         public:
             sunaba::ui::NinePatchRect* element = nullptr;
 
