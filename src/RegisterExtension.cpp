@@ -103,7 +103,7 @@ namespace
         godot::ClassDB::register_class<sunaba::core::StlFunctionWrapper>();
 
         godot::ClassDB::register_class<sunaba::core::NodeSignalWrapper>();
-        godot::ClassDB::register_class<sunaba::core::CanvasItemSignalWrapper>();
+        //godot::ClassDB::register_class<sunaba::core::CanvasItemSignalWrapper>();
         godot::ClassDB::register_class<sunaba::core::ViewportSignalWrapper>();
 
         godot::ClassDB::register_class<sunaba::desktop::WindowSignalWrapper>();
@@ -127,8 +127,8 @@ namespace
         godot::ClassDB::register_class<sunaba::ui::RichTextLabelSignalWrapper>();
 
         godot::ClassDB::register_class<sunaba::core::NodeProxy>();
-        godot::ClassDB::register_class<sunaba::core::CanvasItemProxy>();
-        godot::ClassDB::register_class<sunaba::core::ViewportProxy>();
+        //godot::ClassDB::register_class<sunaba::core::CanvasItemProxy>();
+        //godot::ClassDB::register_class<sunaba::core::ViewportProxy>();
 
         godot::ClassDB::register_class<sunaba::desktop::WindowProxy>();
         godot::ClassDB::register_class<sunaba::desktop::PopupProxy>();
@@ -143,7 +143,7 @@ namespace
         godot::ClassDB::register_class<sunaba::ui::MenuButtonProxy>();
         godot::ClassDB::register_class<sunaba::ui::OptionButtonProxy>();
         godot::ClassDB::register_class<sunaba::ui::RangeProxy>();
-        godot::ClassDB::register_class<sunaba::ui::SliderProxy>();
+        //godot::ClassDB::register_class<sunaba::ui::SliderProxy>();
         godot::ClassDB::register_class<sunaba::ui::TabBarProxy>();
         godot::ClassDB::register_class<sunaba::ui::TabContainerProxy>();
         godot::ClassDB::register_class<sunaba::ui::TextEditProxy>();
@@ -169,15 +169,14 @@ namespace
         godot::ClassDB::register_class<sunaba::ui::LinkButtonProxy>();
         godot::ClassDB::register_class<sunaba::ui::MarginContainerProxy>();
         godot::ClassDB::register_class<sunaba::ui::MenuBarProxy>();
-        godot::ClassDB::register_class<sunaba::ui::MenuButtonProxy>();
         godot::ClassDB::register_class<sunaba::ui::NinePatchRectProxy>();
         godot::ClassDB::register_class<sunaba::ui::PanelContainerProxy>();
         godot::ClassDB::register_class<sunaba::ui::PanelProxy>();
         godot::ClassDB::register_class<sunaba::ui::ProgressBarProxy>();
         godot::ClassDB::register_class<sunaba::ui::ReferenceRectProxy>();
-        godot::ClassDB::register_class<sunaba::ui::ScrollBarProxy>();
+        //godot::ClassDB::register_class<sunaba::ui::ScrollBarProxy>();
         godot::ClassDB::register_class<sunaba::ui::ScrollContainerProxy>();
-        godot::ClassDB::register_class<sunaba::ui::SeparatorProxy>();
+        //godot::ClassDB::register_class<sunaba::ui::SeparatorProxy>();
         godot::ClassDB::register_class<sunaba::ui::SpinBoxProxy>();
         godot::ClassDB::register_class<sunaba::ui::SplitContainerProxy>();
         godot::ClassDB::register_class<sunaba::ui::SubViewportContainerProxy>();
