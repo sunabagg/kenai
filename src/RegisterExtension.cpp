@@ -73,6 +73,7 @@
 #include "ui/texture_rect.h"
 #include "ui/v_box_container.h"
 #include "ui/v_flow_container.h"
+#include "ui/v_scroll_bar.h"
 
 /// @file
 /// Register our classes with Godot.
@@ -182,6 +183,7 @@ namespace
         godot::ClassDB::register_class<sunaba::ui::TextureRectProxy>();
         godot::ClassDB::register_class<sunaba::ui::VBoxContainerProxy>();
         godot::ClassDB::register_class<sunaba::ui::VFlowContainerProxy>();
+        godot::ClassDB::register_class<sunaba::ui::VScrollBarProxy>();
     }
 
     /// @brief Called by Godot to let us do any cleanup.
