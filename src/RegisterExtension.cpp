@@ -70,6 +70,7 @@
 #include "ui/sub_viewport_container.h"
 #include "ui/texture_button.h"
 #include "ui/texture_progress_bar.h"
+#include "ui/texture_rect.h"
 
 /// @file
 /// Register our classes with Godot.
@@ -176,6 +177,7 @@ namespace
         godot::ClassDB::register_class<sunaba::ui::SubViewportContainerProxy>();
         godot::ClassDB::register_class<sunaba::ui::TextureButtonProxy>();
         godot::ClassDB::register_class<sunaba::ui::TextureProgressBarProxy>();
+        godot::ClassDB::register_class<sunaba::ui::TextureRectProxy>();
     }
 
     /// @brief Called by Godot to let us do any cleanup.
