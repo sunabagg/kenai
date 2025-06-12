@@ -20,6 +20,11 @@ namespace sunaba::ui {
     class CenterContainer;
 
     class CenterContainerProxy : public CenterContainerNode {
+        GDCLASS(CenterContainerProxy, CenterContainerNode)
+        protected:
+            static void _bind_methods() {
+                // Bind methods specific to CenterContainerProxy
+            }
         public:
             sunaba::ui::CenterContainer* element = nullptr;
 
