@@ -18,6 +18,11 @@ namespace sunaba::ui {
     class PanelContainer;
 
     class PanelContainerProxy : public PanelContainerNode {
+        GDCLASS(PanelContainerProxy, PanelContainerNode)
+        protected:
+            static void _bind_methods() {
+                // Bind methods specific to PanelContainerProxy
+            }
         public:
             sunaba::ui::PanelContainer* element = nullptr;
 
