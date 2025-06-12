@@ -64,6 +64,7 @@
 #include "ui/reference_rect.h"
 #include "ui/scroll_bar.h"
 #include "ui/scroll_container.h"
+#include "ui/separator.h"
 
 /// @file
 /// Register our classes with Godot.
@@ -164,6 +165,7 @@ namespace
         godot::ClassDB::register_class<sunaba::ui::ReferenceRectProxy>();
         godot::ClassDB::register_class<sunaba::ui::ScrollBarProxy>();
         godot::ClassDB::register_class<sunaba::ui::ScrollContainerProxy>();
+        godot::ClassDB::register_class<sunaba::ui::SeparatorProxy>();
     }
 
     /// @brief Called by Godot to let us do any cleanup.
