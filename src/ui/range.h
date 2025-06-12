@@ -19,6 +19,11 @@ namespace sunaba::ui {
 
     class Range;
     class RangeProxy : public RangeNode {
+        GDCLASS(RangeProxy, RangeNode)
+        protected:
+            static void _bind_methods() {
+                // Bind methods specific to RangeProxy
+            }
         public:
             sunaba::ui::Range* element = nullptr;
 
