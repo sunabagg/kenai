@@ -18,6 +18,11 @@ namespace sunaba::ui {
     class VSlider;
 
     class VSliderProxy : public VSliderNode {
+        GDCLASS(VSliderProxy, VSliderNode)
+        protected:
+            static void _bind_methods() {
+                // Bind methods specific to VSliderProxy
+            }
         public:
             sunaba::ui::VSlider* element = nullptr;
 
