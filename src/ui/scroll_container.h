@@ -21,6 +21,13 @@ namespace sunaba::ui {
 
     class ScrollContainer;
     class ScrollContainerProxy : public ScrollContainerNode {
+        GDCLASS(ScrollContainerProxy, ScrollContainerNode)
+        protected:
+            static void _bind_methods() {
+                // Bind methods specific to ScrollContainerProxy
+                BIND_VIRTUAL_METHOD(ScrollContainerProxy, _scroll_ended, 123456789);
+                BIND_VIRTUAL_METHOD(ScrollContainerProxy, _scroll_started, 987654321);
+            }
         public:
             sunaba::ui::ScrollContainer* element = nullptr;
 
