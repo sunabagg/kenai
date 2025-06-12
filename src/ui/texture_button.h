@@ -20,6 +20,11 @@ namespace sunaba::ui {
     class TextureButton;
 
     class TextureButtonProxy : public TextureButtonNode {
+        GDCLASS(TextureButtonProxy, TextureButtonNode)
+        protected:
+            static void _bind_methods() {
+                // Bind methods specific to TextureButtonProxy
+            }
         public:
             sunaba::ui::TextureButton* element = nullptr;
 
