@@ -21,6 +21,9 @@ namespace sunaba::ui {
     class Tree;
 
     class TreeProxy : public GodotTree {
+        GDCLASS(TreeProxy, GodotTree)
+        protected:
+            static void _bind_methods() {}
         public:
             sunaba::ui::Tree* element = nullptr;
 
