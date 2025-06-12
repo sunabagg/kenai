@@ -58,6 +58,7 @@
 #include "ui/menu_bar.h"
 #include "ui/menu_button.h"
 #include "ui/nine_patch_rect.h"
+#include "ui/panel_container.h"
 
 /// @file
 /// Register our classes with Godot.
@@ -152,6 +153,7 @@ namespace
         godot::ClassDB::register_class<sunaba::ui::MenuBarProxy>();
         godot::ClassDB::register_class<sunaba::ui::MenuButtonProxy>();
         godot::ClassDB::register_class<sunaba::ui::NinePatchRectProxy>();
+        godot::ClassDB::register_class<sunaba::ui::PanelContainerProxy>();
     }
 
     /// @brief Called by Godot to let us do any cleanup.
