@@ -98,7 +98,7 @@ namespace
         godot::ClassDB::register_class<sunaba::App>();
         godot::ClassDB::register_class<sunaba::tests::SceneTest>();
         godot::ClassDB::register_class<sunaba::core::SceneNode>();
-        godot::ClassDB::register_class<sunaba::core::EventBridge>();
+        //godot::ClassDB::register_class<sunaba::core::EventBridge>();
         godot::ClassDB::register_class<sunaba::core::BaseObjectProxy>();
         godot::ClassDB::register_class<sunaba::core::StlFunctionWrapper>();
 

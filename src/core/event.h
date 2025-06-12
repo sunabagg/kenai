@@ -97,34 +97,6 @@ namespace sunaba::core {
                 listeners.clear();
                 lua_listeners.clear();
             }
-
-            static Event* createFromSignal(godot::Signal signal);
-    };
-
-    class EventBridge : public godot::Object {
-        GDCLASS(EventBridge, godot::Object);
-    public:
-        Event* event = nullptr;
-
-        EventBridge() {
-            event = new Event();
-        }
-        void callEvent(const godot::Variant** args, GDExtensionInt arg_count, GDExtensionCallError &error) {
-            Array args_array;
-            for (int i = 0; i < arg_count; ++i) {
-                args_array.append(args[i]);
-            }
-            event->emit(args_array);
-        }
-    protected:
-        static void _bind_methods() {
-            ClassDB::bind_vararg_method(
-                METHOD_FLAGS_DEFAULT,
-                "callEvent",
-                &EventBridge::callEvent,
-                MethodInfo(Variant::Type::NIL, "callEvent") // Add method info for clarity
-            );
-        }
     };
 }
 

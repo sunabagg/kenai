@@ -12,10 +12,3 @@ void sunaba::core::bindEvent(sol::state &lua) {
         "clear", &sunaba::core::Event::clear
     );
 }
-
-sunaba::core::Event* sunaba::core::Event::createFromSignal(godot::Signal signal) {
-    EventBridge* eventBridge = memnew(EventBridge);
-    Callable callable(eventBridge, "callEvent");
-    signal.connect(callable);
-    return eventBridge->event;
-}
