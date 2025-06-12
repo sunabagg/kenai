@@ -56,6 +56,7 @@
 #include "ui/link_button.h"
 #include "ui/margin_container.h"
 #include "ui/menu_bar.h"
+#include "ui/menu_button.h"
 
 /// @file
 /// Register our classes with Godot.
