@@ -18,6 +18,12 @@ namespace sunaba::ui {
     class ScrollBar;
     
     class ScrollBarProxy : public ScrollBarNode {
+        GDCLASS(ScrollBarProxy, ScrollBarNode)
+        protected:
+            static void _bind_methods() {
+                // Bind methods specific to ScrollBarProxy
+                BIND_VIRTUAL_METHOD(ScrollBarProxy, _value_changed, 373806689);
+            }
         public:
             sunaba::ui::ScrollBar* element = nullptr;
 
