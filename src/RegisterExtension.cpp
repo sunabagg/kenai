@@ -52,6 +52,7 @@
 #include "ui/h_separator.h"
 #include "ui/h_slider.h"
 #include "ui/h_split_container.h"
+#include "ui/label.h"
 
 /// @file
 /// Register our classes with Godot.
@@ -140,6 +141,7 @@ namespace
         godot::ClassDB::register_class<sunaba::ui::HSeparatorProxy>();
         godot::ClassDB::register_class<sunaba::ui::HSliderProxy>();
         godot::ClassDB::register_class<sunaba::ui::HSplitContainerProxy>();
+        godot::ClassDB::register_class<sunaba::ui::LabelProxy>();
     }
 
     /// @brief Called by Godot to let us do any cleanup.
