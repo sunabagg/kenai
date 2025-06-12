@@ -23,6 +23,10 @@ namespace sunaba::ui {
 
     class ControlProxy : public ControlNode {
         GDCLASS(ControlProxy, ControlNode)
+        protected:
+            static void _bind_methods() {
+                // Bind methods specific to ControlProxy
+            }
         public:
             sunaba::ui::Control* element = nullptr;
 
