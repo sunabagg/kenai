@@ -69,6 +69,7 @@
 #include "ui/split_container.h"
 #include "ui/sub_viewport_container.h"
 #include "ui/texture_button.h"
+#include "ui/texture_progress_bar.h"
 
 /// @file
 /// Register our classes with Godot.
@@ -174,6 +175,7 @@ namespace
         godot::ClassDB::register_class<sunaba::ui::SplitContainerProxy>();
         godot::ClassDB::register_class<sunaba::ui::SubViewportContainerProxy>();
         godot::ClassDB::register_class<sunaba::ui::TextureButtonProxy>();
+        godot::ClassDB::register_class<sunaba::ui::TextureProgressBarProxy>();
     }
 
     /// @brief Called by Godot to let us do any cleanup.
