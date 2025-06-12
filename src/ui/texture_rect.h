@@ -19,6 +19,11 @@ namespace sunaba::ui {
     class TextureRect;
 
     class TextureRectProxy : public TextureRectNode {
+        GDCLASS(TextureRectProxy, TextureRectNode)
+        protected:
+            static void _bind_methods() {
+                // Bind methods specific to TextureRectProxy
+            }
         public:
             sunaba::ui::TextureRect* element = nullptr;
 
