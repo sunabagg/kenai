@@ -18,6 +18,11 @@ namespace sunaba::ui {
     class ProgressBar;
 
     class ProgressBarProxy : public ProgressBarNode {
+        GDCLASS(ProgressBarProxy, ProgressBarNode)
+        protected:
+            static void _bind_methods() {
+                // Bind methods specific to ProgressBarProxy
+            }
         public:
             sunaba::ui::ProgressBar* element = nullptr;
 
