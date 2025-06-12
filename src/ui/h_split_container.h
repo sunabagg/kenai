@@ -18,6 +18,11 @@ namespace sunaba::ui {
     class HSplitContainer;
 
     class HSplitContainerProxy : public HSplitContainerNode {
+        GDCLASS(HSplitContainerProxy, HSplitContainerNode)
+        protected:
+            static void _bind_methods() {
+                // Bind methods specific to HSplitContainerProxy
+            }
         public:
             sunaba::ui::HSplitContainer* element = nullptr;
 
