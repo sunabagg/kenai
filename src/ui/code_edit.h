@@ -20,6 +20,9 @@ namespace sunaba::ui {
     class CodeEdit;
 
     class CodeEditProxy : public CodeEditNode {
+        GDCLASS(CodeEditProxy, CodeEditNode)
+        protected:
+            static void _bind_methods() {}
         public:
             sunaba::ui::CodeEdit* element = nullptr;
 
