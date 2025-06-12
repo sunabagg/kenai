@@ -16,6 +16,11 @@ namespace sunaba::ui {
     class ColorRect;
 
     class ColorRectProxy : public ColorRectNode {
+        GDCLASS(ColorRectProxy, ColorRectNode)
+        protected:
+            static void _bind_methods() {
+                // Bind methods specific to ColorRectProxy
+            }
         public:
             sunaba::ui::ColorRect* element = nullptr;
 
