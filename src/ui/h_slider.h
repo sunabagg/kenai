@@ -18,6 +18,11 @@ namespace sunaba::ui {
     class HSlider;
 
     class HSliderProxy : public HSliderNode {
+        GDCLASS(HSliderProxy, HSliderNode)
+        protected:
+            static void _bind_methods() {
+                // Bind methods specific to HSliderProxy
+            }
         public:
             sunaba::ui::HSlider* element = nullptr;
 
