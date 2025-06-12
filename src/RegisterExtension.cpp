@@ -44,6 +44,7 @@
 #include "ui/check_box.h"
 #include "ui/check_button.h"
 #include "ui/color_rect.h"
+#include "ui/flow_container.h"
 
 /// @file
 /// Register our classes with Godot.
