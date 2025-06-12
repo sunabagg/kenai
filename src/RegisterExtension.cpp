@@ -68,6 +68,7 @@
 #include "ui/spin_box.h"
 #include "ui/split_container.h"
 #include "ui/sub_viewport_container.h"
+#include "ui/texture_button.h"
 
 /// @file
 /// Register our classes with Godot.
@@ -172,6 +173,7 @@ namespace
         godot::ClassDB::register_class<sunaba::ui::SpinBoxProxy>();
         godot::ClassDB::register_class<sunaba::ui::SplitContainerProxy>();
         godot::ClassDB::register_class<sunaba::ui::SubViewportContainerProxy>();
+        godot::ClassDB::register_class<sunaba::ui::TextureButtonProxy>();
     }
 
     /// @brief Called by Godot to let us do any cleanup.
