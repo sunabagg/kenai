@@ -20,6 +20,11 @@ namespace sunaba::ui {
     class BoxContainer;
 
     class BoxContainerProxy : public BoxContainerNode {
+        GDCLASS(BoxContainerProxy, BoxContainerNode)
+        protected:
+            static void _bind_methods() {
+                // Bind methods specific to BoxContainerProxy
+            }
         public:
             sunaba::ui::BoxContainer* element = nullptr;
 
