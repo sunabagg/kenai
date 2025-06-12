@@ -18,6 +18,11 @@ namespace sunaba::ui {
     class VSplitContainer;
 
     class VSplitContainerProxy : public VSplitContainerNode {
+        GDCLASS(VSplitContainerProxy, VSplitContainerNode)
+        protected:
+            static void _bind_methods() {
+                // Bind methods specific to VSplitContainerProxy
+            }
         public:
             sunaba::ui::VSplitContainer* element = nullptr;
 
