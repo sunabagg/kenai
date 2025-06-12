@@ -21,6 +21,8 @@ namespace sunaba::ui {
     class TabBar;
 
     class TabBarProxy : public TabBarNode {
+        protected:
+            static void _bind_methods() {}
         public:
             sunaba::ui::TabBar* element = nullptr;
 
