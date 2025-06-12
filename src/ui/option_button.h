@@ -22,6 +22,11 @@ namespace sunaba::ui {
     class OptionButton;
 
     class OptionButtonProxy : public OptionButtonNode {
+        GDCLASS(OptionButtonProxy, OptionButtonNode)
+        protected:
+            static void _bind_methods() {
+                // Binding methods for OptionButtonProxy
+            }
         public:
             sunaba::ui::OptionButton* element = nullptr;
 
