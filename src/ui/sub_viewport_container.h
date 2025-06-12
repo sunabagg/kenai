@@ -19,6 +19,11 @@ namespace sunaba::ui {
     class SubViewportContainer;
     
     class SubViewportContainerProxy : public SubViewportContainerNode {
+        GDCLASS(SubViewportContainerProxy, SubViewportContainerNode)
+        protected:
+            static void _bind_methods() {
+                // Bind methods specific to SubViewportContainerProxy
+            }
         public:
             sunaba::ui::SubViewportContainer* element = nullptr;
 
