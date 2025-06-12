@@ -19,6 +19,11 @@ namespace sunaba::ui {
     class TextureProgressBar;
 
     class TextureProgressBarProxy : public TextureProgressBarNode {
+        GDCLASS(TextureProgressBarProxy, TextureProgressBarNode)
+        protected:
+            static void _bind_methods() {
+                // Bind methods specific to TextureProgressBarProxy
+            }
         public:
             sunaba::ui::TextureProgressBar* element = nullptr;
 
