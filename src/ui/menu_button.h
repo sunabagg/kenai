@@ -21,6 +21,11 @@ namespace sunaba::ui {
     class MenuButton;
 
     class MenuButtonProxy : public MenuButtonNode {
+        GDCLASS(MenuButtonProxy, MenuButtonNode)
+        protected:
+            static void _bind_methods() {
+                // Binding methods for MenuButtonProxy
+            }
         public:
             sunaba::ui::MenuButton* element = nullptr;
 
