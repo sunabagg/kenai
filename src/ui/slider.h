@@ -20,6 +20,9 @@ namespace sunaba::ui {
     class Slider;
 
     class SliderProxy : public SliderNode {
+        GDCLASS(SliderProxy, SliderNode)
+        protected:
+            static void _bind_methods() {}
         public:
             sunaba::ui::Slider* element = nullptr;
 
