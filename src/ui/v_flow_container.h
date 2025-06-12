@@ -18,6 +18,11 @@ namespace sunaba::ui {
     class VFlowContainer;
 
     class VFlowContainerProxy : public VFlowContainerNode {
+        GDCLASS(VFlowContainerProxy, VFlowContainerNode)
+        protected:
+            static void _bind_methods() {
+                // Bind methods specific to VFlowContainerProxy
+            }
         public:
             sunaba::ui::VFlowContainer* element = nullptr;
 
