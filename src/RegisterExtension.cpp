@@ -49,6 +49,7 @@
 #include "ui/h_box_container.h"
 #include "ui/h_flow_container.h"
 #include "ui/h_scroll_bar.h"
+#include "ui/h_separator.h"
 
 /// @file
 /// Register our classes with Godot.
@@ -134,6 +135,7 @@ namespace
         godot::ClassDB::register_class<sunaba::ui::HBoxContainerProxy>();
         godot::ClassDB::register_class<sunaba::ui::HFlowContainerProxy>();
         godot::ClassDB::register_class<sunaba::ui::HScrollBarProxy>();
+        godot::ClassDB::register_class<sunaba::ui::HSeparatorProxy>();
     }
 
     /// @brief Called by Godot to let us do any cleanup.
