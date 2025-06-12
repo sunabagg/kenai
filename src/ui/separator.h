@@ -18,6 +18,11 @@ namespace sunaba::ui {
     class Separator;
     
     class SeparatorProxy : public SeparatorNode {
+        GDCLASS(SeparatorProxy, SeparatorNode)
+        protected:
+            static void _bind_methods() {
+                // Bind methods specific to SeparatorProxy
+            }
         public:
             sunaba::ui::Separator* element = nullptr;
 
