@@ -19,6 +19,11 @@ namespace sunaba::ui {
     class SpinBox;
 
     class SpinBoxProxy : public SpinBoxNode {
+        GDCLASS(SpinBoxProxy, SpinBoxNode)
+        protected:
+            static void _bind_methods() {
+                // Bind methods specific to SpinBoxProxy
+            }
         public:
             sunaba::ui::SpinBox* element = nullptr;
 
