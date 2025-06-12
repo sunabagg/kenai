@@ -40,6 +40,7 @@
 #include "ui/aspect_ratio_container.h"
 #include "ui/box_container.h"
 #include "ui/button.h"
+#include "ui/center_container.h"
 
 /// @file
 /// Register our classes with Godot.
@@ -116,6 +117,7 @@ namespace
         godot::ClassDB::register_class<sunaba::ui::AspectRatioContainerProxy>();
         godot::ClassDB::register_class<sunaba::ui::BoxContainerProxy>();
         godot::ClassDB::register_class<sunaba::ui::ButtonProxy>();
+        godot::ClassDB::register_class<sunaba::ui::CenterContainerProxy>();
     }
 
     /// @brief Called by Godot to let us do any cleanup.
