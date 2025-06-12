@@ -18,6 +18,11 @@ namespace sunaba::ui {
     class HSeparator;
 
     class HSeparatorProxy : public HSeparatorNode {
+        GDCLASS(HSeparatorProxy, HSeparatorNode)
+        protected:
+            static void _bind_methods() {
+                // Bind methods specific to HSeparatorProxy
+            }
         public:
             sunaba::ui::HSeparator* element = nullptr;
 
