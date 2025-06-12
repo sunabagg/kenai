@@ -54,6 +54,7 @@
 #include "ui/h_split_container.h"
 #include "ui/label.h"
 #include "ui/link_button.h"
+#include "ui/margin_container.h"
 
 /// @file
 /// Register our classes with Godot.
@@ -144,6 +145,7 @@ namespace
         godot::ClassDB::register_class<sunaba::ui::HSplitContainerProxy>();
         godot::ClassDB::register_class<sunaba::ui::LabelProxy>();
         godot::ClassDB::register_class<sunaba::ui::LinkButtonProxy>();
+        godot::ClassDB::register_class<sunaba::ui::MarginContainerProxy>();
     }
 
     /// @brief Called by Godot to let us do any cleanup.
