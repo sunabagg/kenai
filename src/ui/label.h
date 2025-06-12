@@ -16,6 +16,11 @@ namespace sunaba::ui {
     class Label;
 
     class LabelProxy : public LabelNode {
+        GDCLASS(LabelProxy, LabelNode)
+        protected:
+            static void _bind_methods() {
+                // Bind methods specific to LabelProxy
+            }
         public:
             sunaba::ui::Label* element = nullptr;
 
