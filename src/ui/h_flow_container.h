@@ -18,6 +18,11 @@ namespace sunaba::ui {
     class HFlowContainer;
 
     class HFlowContainerProxy : public HFlowContainerNode {
+        GDCLASS(HFlowContainerProxy, HFlowContainerNode)
+        protected:
+            static void _bind_methods() {
+                // Bind methods specific to HFlowContainerProxy
+            }
         public:
             sunaba::ui::HFlowContainer* element = nullptr;
 
