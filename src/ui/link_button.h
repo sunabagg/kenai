@@ -18,6 +18,11 @@ namespace sunaba::ui {
     class LinkButton;
 
     class LinkButtonProxy : public LinkButtonNode {
+        GDCLASS(LinkButtonProxy, LinkButtonNode)
+        protected:
+            static void _bind_methods() {
+                // Bind methods specific to LinkButtonProxy
+            }
         public:
             sunaba::ui::LinkButton* element = nullptr;
 
