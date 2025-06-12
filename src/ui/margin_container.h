@@ -19,6 +19,10 @@ namespace sunaba::ui {
 
     class MarginContainerProxy : public MarginContainerNode {
         GDCLASS(MarginContainerProxy, MarginContainerNode)
+        protected:
+            static void _bind_methods() {
+                // Bind methods specific to MarginContainerProxy
+            }
         public:
             sunaba::ui::MarginContainer* element = nullptr;
 
