@@ -167,6 +167,7 @@ namespace
         godot::ClassDB::register_class<sunaba::ui::ScrollBarProxy>();
         godot::ClassDB::register_class<sunaba::ui::ScrollContainerProxy>();
         godot::ClassDB::register_class<sunaba::ui::SeparatorProxy>();
+        godot::ClassDB::register_class<sunaba::ui::SpinBoxProxy>();
     }
 
     /// @brief Called by Godot to let us do any cleanup.
