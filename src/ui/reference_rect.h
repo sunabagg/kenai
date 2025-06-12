@@ -18,6 +18,11 @@ namespace sunaba::ui {
     class ReferenceRect;
     
     class ReferenceRectProxy : public ReferenceRectNode {
+        GDCLASS(ReferenceRectProxy, ReferenceRectNode)
+        protected:
+            static void _bind_methods() {
+                // Bind methods specific to ReferenceRectProxy
+            }
         public:
             sunaba::ui::ReferenceRect* element = nullptr;
 
