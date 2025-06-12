@@ -24,7 +24,7 @@ namespace sunaba::ui {
     class LineEditProxy : public LineEditNode {
         GDCLASS(LineEditProxy, LineEditNode)
         protected:
-            static void _bind_methods(); {}
+            static void _bind_methods() {}
         public:
             sunaba::ui::LineEdit* element = nullptr;
 
