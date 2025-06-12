@@ -19,6 +19,11 @@ namespace sunaba::ui {
     class MenuBar;
 
     class MenuBarProxy : public MenuBarNode {
+        GDCLASS(MenuBarProxy, MenuBarNode)
+        protected:
+            static void _bind_methods() {
+                // Bind methods specific to MenuBarProxy
+            }
         public:
             sunaba::ui::MenuBar* element = nullptr;
 
