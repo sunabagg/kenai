@@ -39,6 +39,7 @@
 #include "ui/rich_text_label.h"
 #include "ui/aspect_ratio_container.h"
 #include "ui/box_container.h"
+#include "ui/button.h"
 
 /// @file
 /// Register our classes with Godot.
@@ -114,6 +115,7 @@ namespace
         godot::ClassDB::register_class<sunaba::ui::RichTextLabelProxy>();
         godot::ClassDB::register_class<sunaba::ui::AspectRatioContainerProxy>();
         godot::ClassDB::register_class<sunaba::ui::BoxContainerProxy>();
+        godot::ClassDB::register_class<sunaba::ui::ButtonProxy>();
     }
 
     /// @brief Called by Godot to let us do any cleanup.
