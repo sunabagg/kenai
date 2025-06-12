@@ -45,6 +45,7 @@
 #include "ui/check_button.h"
 #include "ui/color_rect.h"
 #include "ui/flow_container.h"
+#include "ui/grid_container.h"
 
 /// @file
 /// Register our classes with Godot.
@@ -126,6 +127,7 @@ namespace
         godot::ClassDB::register_class<sunaba::ui::CheckButtonProxy>();
         godot::ClassDB::register_class<sunaba::ui::ColorRectProxy>();
         godot::ClassDB::register_class<sunaba::ui::FlowContainerProxy>();
+        godot::ClassDB::register_class<sunaba::ui::GridContainerProxy>();
     }
 
     /// @brief Called by Godot to let us do any cleanup.
