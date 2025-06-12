@@ -53,6 +53,7 @@
 #include "ui/h_slider.h"
 #include "ui/h_split_container.h"
 #include "ui/label.h"
+#include "ui/link_button.h"
 
 /// @file
 /// Register our classes with Godot.
@@ -142,6 +143,7 @@ namespace
         godot::ClassDB::register_class<sunaba::ui::HSliderProxy>();
         godot::ClassDB::register_class<sunaba::ui::HSplitContainerProxy>();
         godot::ClassDB::register_class<sunaba::ui::LabelProxy>();
+        godot::ClassDB::register_class<sunaba::ui::LinkButtonProxy>();
     }
 
     /// @brief Called by Godot to let us do any cleanup.
