@@ -235,56 +235,56 @@ namespace sunaba::ui {
                 container->set_tabs_rearrange_group(group);
             }
 
-            Event* activeTabRearrangedEvent;
+            Event* activeTabRearrangedEvent = new Event();
             Event* getActiveTabRearrangedEvent() {
                 return activeTabRearrangedEvent;
             }
             void setActiveTabRearrangedEvent(Event* event) {
                 activeTabRearrangedEvent = event;
             }
-            Event* tabButtonPressedEvent;
+            Event* tabButtonPressedEvent = new Event();
             Event* getTabButtonPressedEvent() {
                 return tabButtonPressedEvent;
             }
             void setTabButtonPressedEvent(Event* event) {
                 tabButtonPressedEvent = event;
             }
-            Event* tabChangedEvent;
+            Event* tabChangedEvent = new Event();
             Event* getTabChangedEvent() {
                 return tabChangedEvent;
             }
             void setTabChangedEvent(Event* event) {
                 tabChangedEvent = event;
             }
-            Event* tabClickedEvent;
+            Event* tabClickedEvent = new Event();
             Event* getTabClickedEvent() {
                 return tabClickedEvent;
             }
             void setTabClickedEvent(Event* event) {
                 tabClickedEvent = event;
             }
-            Event* tabClosePressedEvent;
+            Event* tabClosePressedEvent = new Event();
             Event* getTabClosePressedEvent() {
                 return tabClosePressedEvent;
             }
             void setTabClosePressedEvent(Event* event) {
                 tabClosePressedEvent = event;
             }
-            Event* tabHoveredEvent;
+            Event* tabHoveredEvent = new Event();
             Event* getTabHoveredEvent() {
                 return tabHoveredEvent;
             }
             void setTabHoveredEvent(Event* event) {
                 tabHoveredEvent = event;
             }
-            Event* tabRmbClickedEvent;
+            Event* tabRmbClickedEvent = new Event();
             Event* getTabRmbClickedEvent() {
                 return tabRmbClickedEvent;
             }
             void setTabRmbClickedEvent(Event* event) {
                 tabRmbClickedEvent = event;
             }
-            Event* tabSelectedEvent;
+            Event* tabSelectedEvent = new Event();
             Event* getTabSelectedEvent() {
                 return tabSelectedEvent;
             }
