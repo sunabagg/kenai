@@ -1,5 +1,7 @@
 package sunaba.ui;
 
+import sunaba.core.Element;
+
 @:native("VBoxContainer")
 extern class VBoxContainer extends BoxContainer {
     @:native("cast")
