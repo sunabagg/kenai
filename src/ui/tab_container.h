@@ -224,7 +224,7 @@ namespace sunaba::ui {
                 container->set_use_hidden_tabs_for_min_size(enabled);
             }
 
-            Event* activeTabRearrangedEvent;
+            Event* activeTabRearrangedEvent = new Event();
             Event* getActiveTabRearrangedEvent() {
                 return activeTabRearrangedEvent;
             }
@@ -232,7 +232,7 @@ namespace sunaba::ui {
                 activeTabRearrangedEvent = event;
             }
 
-            Event* prePopupPressedEvent;
+            Event* prePopupPressedEvent = new Event();
             Event* getPrePopupPressedEvent() {
                 return prePopupPressedEvent;
             }
@@ -240,7 +240,7 @@ namespace sunaba::ui {
                 prePopupPressedEvent = event;
             }
 
-            Event* tabButtonPressedEvent;
+            Event* tabButtonPressedEvent = new Event();
             Event* getTabButtonPressedEvent() {
                 return tabButtonPressedEvent;
             }
@@ -248,7 +248,7 @@ namespace sunaba::ui {
                 tabButtonPressedEvent = event;
             }
 
-            Event* tabChangedEvent;
+            Event* tabChangedEvent = new Event();
             Event* getTabChangedEvent() {
                 return tabChangedEvent;
             }
@@ -256,7 +256,7 @@ namespace sunaba::ui {
                 tabChangedEvent = event;
             }
 
-            Event* tabClickedEvent;
+            Event* tabClickedEvent = new Event();
             Event* getTabClickedEvent() {
                 return tabClickedEvent;
             }
@@ -264,7 +264,7 @@ namespace sunaba::ui {
                 tabClickedEvent = event;
             }
 
-            Event* tabHoveredEvent;
+            Event* tabHoveredEvent = new Event();
             Event* getTabHoveredEvent() {
                 return tabHoveredEvent;
             }
@@ -272,7 +272,7 @@ namespace sunaba::ui {
                 tabHoveredEvent = event;
             }
 
-            Event* tabSelectedEvent;
+            Event* tabSelectedEvent = new Event();
             Event* getTabSelectedEvent() {
                 return tabSelectedEvent;
             }
