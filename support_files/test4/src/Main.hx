@@ -33,16 +33,10 @@ class Main extends App{
 
         var label = new Label();
 
-        label.anchorTop = 0.5;
-        label.anchorBottom = 1;
-        label.anchorLeft = 0.5;
-        label.anchorRight = 1;
-        label.offsetTop = -75;
-        label.offsetBottom = 0;
-        label.offsetLeft = -85;
-        label.offsetRight = 0;
-        label.text = "Hello, World!";
-
         control.addChild(label);
+        label.setAnchorsAndOffsetsPreset(8, 0, 0);
+        label.text = "Hello, World!";
+        label.verticalAlignment = 1;
+        label.horizontalAlignment = 1;
     }
 }

@@ -209,6 +209,7 @@ __sunaba_core__Environment_EnvironmentAbstract_Impl_ = _hx_e()
 __sunaba_core__Event_EventAbstract_Impl_ = _hx_e()
 __sunaba_core__Font_FontAbstract_Impl_ = _hx_e()
 __sunaba_core__Image_ImageAbstarct_Impl_ = _hx_e()
+__sunaba_core__LabelSettings_LabelSettingsAbstract_Impl_ = _hx_e()
 __sunaba_core__Material_MaterialAbstract_Impl_ = _hx_e()
 __sunaba_core__Resource_ResourceAbstarct_Impl_ = _hx_e()
 __sunaba_core__Texture_TextureAbstract_Impl_ = _hx_e()
@@ -220,6 +221,7 @@ __sunaba_spatial__CameraAttributes_CameraAttributesAbstract_Impl_ = _hx_e()
 __sunaba_spatial__Sky_SkyAbstract_Impl_ = _hx_e()
 __sunaba_spatial__World3D_World3DAbstract_Impl_ = _hx_e()
 __sunaba_ui__Control_ControlAbstract_Impl_ = _hx_e()
+__sunaba_ui__Label_LabelAbstract_Impl_ = _hx_e()
 __sunaba_ui__Panel_PanelAbstract_Impl_ = _hx_e()
 __sunaba_ui__StyleBox_StyleBoxAbstract_Impl_ = _hx_e()
 __sunaba_ui__Theme_ThemeAbstract_Impl_ = _hx_e()
@@ -1295,6 +1297,16 @@ __sunaba_core__Image_ImageAbstarct_Impl_.fromResource = function(resource)
   do return img end;
 end
 
+__sunaba_core__LabelSettings_LabelSettingsAbstract_Impl_.new = {}
+__sunaba_core__LabelSettings_LabelSettingsAbstract_Impl_.__name__ = true
+__sunaba_core__LabelSettings_LabelSettingsAbstract_Impl_.fromResource = function(resource) 
+  local labelsettings = LabelSettings.cast(resource);
+  if (labelsettings:isNull()) then 
+    do return nil end;
+  end;
+  do return labelsettings end;
+end
+
 __sunaba_core__Material_MaterialAbstract_Impl_.new = {}
 __sunaba_core__Material_MaterialAbstract_Impl_.__name__ = true
 __sunaba_core__Material_MaterialAbstract_Impl_.fromResource = function(resource) 
@@ -1566,6 +1578,16 @@ __sunaba_ui__Control_ControlAbstract_Impl_.fromElement = function(element)
   do return cItem end;
 end
 
+__sunaba_ui__Label_LabelAbstract_Impl_.new = {}
+__sunaba_ui__Label_LabelAbstract_Impl_.__name__ = true
+__sunaba_ui__Label_LabelAbstract_Impl_.fromElement = function(element) 
+  local label = Label.cast(element);
+  if (label:isNull()) then 
+    do return nil end;
+  end;
+  do return label end;
+end
+
 __sunaba_ui__Panel_PanelAbstract_Impl_.new = {}
 __sunaba_ui__Panel_PanelAbstract_Impl_.__name__ = true
 __sunaba_ui__Panel_PanelAbstract_Impl_.fromElement = function(element) 
@@ -1625,6 +1647,12 @@ __support_files_test4_src_Main.prototype.init = function(self)
   panel.offsetTop = 10;
   panel.offsetLeft = -10;
   panel.offsetRight = 10;
+  local label = Label.new();
+  control:addChild(label);
+  label:setAnchorsAndOffsetsPreset(8, 0, 0);
+  label.text = "Hello, World!";
+  label.verticalAlignment = 1;
+  label.horizontalAlignment = 1;
 end
 
 __support_files_test4_src_Main.prototype.__class__ =  __support_files_test4_src_Main
