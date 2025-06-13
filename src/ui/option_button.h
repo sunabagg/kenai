@@ -176,7 +176,7 @@ namespace sunaba::ui {
                 optionButton->set_toggle_mode(enabled);
             }
 
-            Event* itemFocusedEvent;
+            Event* itemFocusedEvent = new Event();
             Event* getItemFocusedEvent() {
                 return itemFocusedEvent;
             }
@@ -184,7 +184,7 @@ namespace sunaba::ui {
                 itemFocusedEvent = event;
             }
 
-            Event* itemSelectedEvent;
+            Event* itemSelectedEvent = new Event();
             Event* getItemSelectedEvent() {
                 return itemSelectedEvent;
             }
