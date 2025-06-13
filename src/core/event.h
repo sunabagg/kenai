@@ -117,12 +117,7 @@ namespace sunaba::core {
                     }
                     callLuaListener(lua_listener, lua_args);
                 }*/
-
-                for (size_t i = 0; i < listeners.size(); ++i) {
-                    const std::function<void(godot::Array)>& listener = listeners[i];
-                    listener(args);
-                }
-
+               
                 for (size_t i = 0; i < lua_listeners.size(); ++i) {
                     sol::function lua_listener = lua_listeners[i];
                     sol::state_view lua_state = sol::state_view(lua_listener.lua_state());
