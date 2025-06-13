@@ -375,35 +375,35 @@ namespace sunaba::ui {
                 code_edit->set_text_direction(static_cast<godot::Control::TextDirection>(direction));
             }
 
-            Event* breakpointToggledEvent;
+            Event* breakpointToggledEvent = new Event();
             Event* getBreakpointToggledEvent() {
                 return breakpointToggledEvent;
             }
             void setBreakpointToggledEvent(Event* event) {
                 breakpointToggledEvent = event;
             }
-            Event* codeCompletionRequestedEvent;
+            Event* codeCompletionRequestedEvent = new Event();
             Event* getCodeCompletionRequestedEvent() {
                 return codeCompletionRequestedEvent;
             }
             void setCodeCompletionRequestedEvent(Event* event) {
                 codeCompletionRequestedEvent = event;
             }
-            Event* symbolHoveredEvent;
+            Event* symbolHoveredEvent = new Event();
             Event* getSymbolHoveredEvent() {
                 return symbolHoveredEvent;
             }
             void setSymbolHoveredEvent(Event* event) {
                 symbolHoveredEvent = event;
             }
-            Event* symbolLookupEvent;
+            Event* symbolLookupEvent = new Event();
             Event* getSymbolLookupEvent() {
                 return symbolLookupEvent;
             }
             void setSymbolLookupEvent(Event* event) {
                 symbolLookupEvent = event;
             }
-            Event* symbolValidateEvent;
+            Event* symbolValidateEvent = new Event();
             Event* getSymbolValidateEvent() {
                 return symbolValidateEvent;
             }
