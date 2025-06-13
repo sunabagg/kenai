@@ -368,7 +368,7 @@ namespace sunaba::ui {
                 rich_text_label->set_visible_ratio(ratio);
             }
 
-            Event* finishedEvent;
+            Event* finishedEvent = new Event();
             Event* getFinishedEvent() {
                 return finishedEvent;
             }
@@ -376,7 +376,7 @@ namespace sunaba::ui {
                 finishedEvent = event;
             }
 
-            Event* metaClickedEvent;
+            Event* metaClickedEvent = new Event();
             Event* getMetaClickedEvent() {
                 return metaClickedEvent;
             }
@@ -384,7 +384,7 @@ namespace sunaba::ui {
                 metaClickedEvent = event;
             }
 
-            Event* metaHoverEndedEvent;
+            Event* metaHoverEndedEvent = new Event();
             Event* getMetaHoverEndedEvent() {
                 return metaHoverEndedEvent;
             }
@@ -392,7 +392,7 @@ namespace sunaba::ui {
                 metaHoverEndedEvent = event;
             }
 
-            Event* metaHoverStartedEvent;
+            Event* metaHoverStartedEvent = new Event();
             Event* getMetaHoverStartedEvent() {
                 return metaHoverStartedEvent;
             }
