@@ -136,6 +136,7 @@ namespace sunaba::ui {
         if (this->element != nullptr) {
             this->element->toggled(p_toggled_on);
         }
+        ButtonNode::_toggled(p_toggled_on);
     }
 
     void bindButton(sol::state &lua) {
