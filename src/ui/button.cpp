@@ -94,7 +94,7 @@ namespace sunaba::ui {
         if (element != nullptr) {
             return element->_getTooltip(at_position).c_str();
         }
-        return String();
+        return ButtonNode::_get_tooltip(at_position);
     }
 
     void ButtonProxy::_gui_input(const Ref<InputEvent> &event) {
