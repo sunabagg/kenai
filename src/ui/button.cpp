@@ -59,6 +59,7 @@ namespace sunaba::ui {
         if (element != nullptr) {
             element->_draw();
         }
+        ButtonNode::_draw();
     }
 
     bool ButtonProxy::_can_drop_data(const Vector2& at_position, const Variant &data) const {
