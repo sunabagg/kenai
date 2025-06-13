@@ -1739,7 +1739,7 @@ __support_files_test4_src_Main.prototype.init = function(self)
   label.text = Std.string(Std.string("You clicked me! ") .. Std.string(count)) .. Std.string(" times");
   local pressedEvent = button.pressed;
   _G.print(Std.string((Std.string("pressedEvent != null : ") .. Std.string(Std.string(pressedEvent))) ~= nil));
-  pressedEvent:link(function() 
+  pressedEvent:connect(function() 
   end);
 end
 
