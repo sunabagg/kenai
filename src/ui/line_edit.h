@@ -393,28 +393,28 @@ namespace sunaba::ui {
                 line_edit_node->set_virtual_keyboard_type(static_cast<godot::LineEdit::VirtualKeyboardType>(type));
             }
 
-            Event* editingToggledEvent;
+            Event* editingToggledEvent = new Event();
             Event* getEditingToggledEvent() {
                 return editingToggledEvent;
             }
             void setEditingToggledEvent(Event* event) {
                 editingToggledEvent = event;
             }
-            Event* textChangeRejectedEvent;
+            Event* textChangeRejectedEvent = new Event();
             Event* getTextChangeRejectedEvent() {
                 return textChangeRejectedEvent;
             }
             void setTextChangeRejectedEvent(Event* event) {
                 textChangeRejectedEvent = event;
             }
-            Event* textChangedEvent;
+            Event* textChangedEvent = new Event();
             Event* getTextChangedEvent() {
                 return textChangedEvent;
             }
             void setTextChangedEvent(Event* event) {
                 textChangedEvent = event;
             }
-            Event* textSubmittedEvent;
+            Event* textSubmittedEvent = new Event();
             Event* getTextSubmittedEvent() {
                 return textSubmittedEvent;
             }
