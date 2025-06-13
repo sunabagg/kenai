@@ -6,12 +6,8 @@ void sunaba::core::bindEvent(sol::state &lua) {
     lua.new_usertype<sunaba::core::Event>("Event",
         sol::constructors<sunaba::core::Event()>(),
         sol::base_classes, sol::bases<sunaba::core::BaseObject>(),
-        "connect", [](sunaba::core::Event& event, sol::object func) {
-            event.connectLua(func.as<sol::function>());
-        },
-        "disconnect", [](sunaba::core::Event& event, sol::object func) {
-            event.disconnectLua(func.as<sol::function>());
-        },
+        "connect", &sunaba::core::Event::connectLuaTable,
+        "disconnect", &sunaba::core::Event::disconnectLuaTable,
         "emit", &sunaba::core::Event::emitLua,
         "clear", &sunaba::core::Event::clear
     );
