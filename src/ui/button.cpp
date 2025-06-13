@@ -87,7 +87,7 @@ namespace sunaba::ui {
         if (element != nullptr) {
             return element->_getMinimumSize();
         }
-        return Vector2();
+        return ButtonNode::_get_minimum_size();
     }
 
     String ButtonProxy::_get_tooltip(const Vector2 &at_position) const {
