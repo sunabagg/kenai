@@ -521,7 +521,7 @@ namespace sunaba::ui {
                 text_edit->set_line_wrapping_mode(static_cast<godot::TextEdit::LineWrappingMode>(mode));
             }
 
-            Event* caretChangedEvent;
+            Event* caretChangedEvent = new Event();
             Event* getCaretChangedEvent() {
                 return caretChangedEvent;
             }
@@ -529,7 +529,7 @@ namespace sunaba::ui {
                 caretChangedEvent = event;
             }
 
-            Event* gutterAddedEvent;
+            Event* gutterAddedEvent = new Event();
             Event* getGutterAddedEvent() {
                 return gutterAddedEvent;
             }
@@ -537,7 +537,7 @@ namespace sunaba::ui {
                 gutterAddedEvent = event;
             }
 
-            Event* gutterClickedEvent;
+            Event* gutterClickedEvent = new Event();
             Event* getGutterClickedEvent() {
                 return gutterClickedEvent;
             }
@@ -545,7 +545,7 @@ namespace sunaba::ui {
                 gutterClickedEvent = event;
             }
 
-            Event* gutterRemovedEvent;
+            Event* gutterRemovedEvent = new Event();
             Event* getGutterRemovedEvent() {
                 return gutterRemovedEvent;
             }
@@ -553,7 +553,7 @@ namespace sunaba::ui {
                 gutterRemovedEvent = event;
             }
 
-            Event* linesEditedFromEvent;
+            Event* linesEditedFromEvent = new Event();
             Event* getLinesEditedFromEvent() {
                 return linesEditedFromEvent;
             }
@@ -561,7 +561,7 @@ namespace sunaba::ui {
                 linesEditedFromEvent = event;
             }
 
-            Event* textChangedEvent;
+            Event* textChangedEvent = new Event();
             Event* getTextChangedEvent() {
                 return textChangedEvent;
             }
@@ -569,7 +569,7 @@ namespace sunaba::ui {
                 textChangedEvent = event;
             }
 
-            Event* textSetEvent;
+            Event* textSetEvent = new Event();
             Event* getTextSetEvent() {
                 return textSetEvent;
             }
