@@ -21,9 +21,7 @@ namespace sunaba::core {
     class Event : public BaseObject {
         private:
             std::vector<std::function<void(godot::Array)>> listeners = {};
-            std::vector<sol::function> lua_listeners = {};
-
-            void callLuaListener(sol::function listener, sol::table args) {
+            std::vector<sol::function> lua_listeners = {};            void callLuaListener(sol::function listener, sol::table args) {
                 // Call the Lua listener function with the provided arguments
                 listener(sol::as_args(args));
             }
@@ -32,13 +30,9 @@ namespace sunaba::core {
             Event() = default;
             ~Event() {
                 clear();
-            }
-
-            void connect(std::function<void(godot::Array)> listener) {
+            }            void connect(std::function<void(godot::Array)> listener) {
                 listeners.push_back(listener);
-            }
-
-            void connectLua(sol::unsafe_function listener) {
+            }            void connectLua(sol::function listener) {
                 lua_listeners.push_back(listener);
             }
 
@@ -51,9 +45,7 @@ namespace sunaba::core {
                                    listener.target<void(godot::Array)>() == existing_listener.target<void(godot::Array)>();
                         }),
                     listeners.end());
-            }
-
-            void disconnectLua(sol::function listener) {
+            }            void disconnectLua(sol::function listener) {
                 auto it = std::remove(lua_listeners.begin(), lua_listeners.end(), listener);
                 if (it != lua_listeners.end()) {
                     lua_listeners.erase(it, lua_listeners.end());
@@ -67,13 +59,12 @@ namespace sunaba::core {
                         args_array.append(arg.as<godot::Variant>());
                     }
                     listemer(args_array);
-                }*/
-                for (size_t i = 0; i < lua_listeners.size(); ++i) {
+                }*/                for (size_t i = 0; i < lua_listeners.size(); ++i) {
                     sol::function lua_listener = lua_listeners[i];
                     sol::state_view lua_state = sol::state_view(lua_listener.lua_state());
                     sol::table lua_args = lua_state.create_table(args.size(), 0);
-                    for (int i = 0; i < args.size(); ++i) {
-                        lua_args[i + 1] = args[i]; // Lua tables are 1-indexed
+                    for (int j = 0; j < args.size(); ++j) {
+                        lua_args[j + 1] = args[j]; // Lua tables are 1-indexed
                     }
                     callLuaListener(lua_listener, lua_args);
                 }
