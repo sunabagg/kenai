@@ -200,14 +200,14 @@ namespace sunaba::ui {
                 range->set_value(value);
             }
 
-            Event* changedEvent;
+            Event* changedEvent = new Event();
             Event* getChangedEvent() {
                 return changedEvent;
             }
             void setChangedEvent(Event* event) {
                 changedEvent = event;
             }
-            Event* valueChangedEvent;
+            Event* valueChangedEvent = new Event();
             Event* getValueChangedEvent() {
                 return valueChangedEvent;
             }
