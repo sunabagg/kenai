@@ -400,98 +400,98 @@ namespace sunaba::desktop {
                 window->set_wrap_controls(wrap);
             }
 
-            Event* aboutToPopupEvent;
+            Event* aboutToPopupEvent = new Event();
             Event* getAboutToPopupEvent() {
                 return aboutToPopupEvent;
             }
             void setAboutToPopupEvent(Event* event) {
                 aboutToPopupEvent = event;
             }
-            Event* closeRequestedEvent;
+            Event* closeRequestedEvent = new Event();
             Event* getCloseRequestedEvent() {
                 return closeRequestedEvent;
             }
             void setCloseRequestedEvent(Event* event) {
                 closeRequestedEvent = event;
             }
-            Event* dpiChangedEvent;
+            Event* dpiChangedEvent = new Event();
             Event* getDpiChangedEvent() {
                 return dpiChangedEvent;
             }
             void setDpiChangedEvent(Event* event) {
                 dpiChangedEvent = event;
             }
-            Event* filesDroppedEvent;
+            Event* filesDroppedEvent = new Event();
             Event* getFilesDroppedEvent() {
                 return filesDroppedEvent;
             }
             void setFilesDroppedEvent(Event* event) {
                 filesDroppedEvent = event;
             }
-            Event* focusEnteredEvent;
+            Event* focusEnteredEvent = new Event();
             Event* getFocusEnteredEvent() {
                 return focusEnteredEvent;
             }
             void setFocusEnteredEvent(Event* event) {
                 focusEnteredEvent = event;
             }
-            Event* focusExitedEvent;
+            Event* focusExitedEvent = new Event();
             Event* getFocusExitedEvent() {
                 return focusExitedEvent;
             }
             void setFocusExitedEvent(Event* event) {
                 focusExitedEvent = event;
             }
-            Event* goBackRequestedEvent;
+            Event* goBackRequestedEvent = new Event();
             Event* getGoBackRequestedEvent() {
                 return goBackRequestedEvent;
             }
             void setGoBackRequestedEvent(Event* event) {
                 goBackRequestedEvent = event;
             }
-            Event* mouseEnteredEvent;
+            Event* mouseEnteredEvent = new Event();
             Event* getMouseEnteredEvent() {
                 return mouseEnteredEvent;
             }
             void setMouseEnteredEvent(Event* event) {
                 mouseEnteredEvent = event;
             }
-            Event* mouseExitedEvent;
+            Event* mouseExitedEvent = new Event();
             Event* getMouseExitedEvent() {
                 return mouseExitedEvent;
             }
             void setMouseExitedEvent(Event* event) {
                 mouseExitedEvent = event;
             }
-            Event* themeChangedEvent;
+            Event* themeChangedEvent = new Event();
             Event* getThemeChangedEvent() {
                 return themeChangedEvent;
             }
             void setThemeChangedEvent(Event* event) {
                 themeChangedEvent = event;
             }
-            Event* titleChangedEvent;
+            Event* titleChangedEvent = new Event();
             Event* getTitleChangedEvent() {
                 return titleChangedEvent;
             }
             void setTitleChangedEvent(Event* event) {
                 titleChangedEvent = event;
             }
-            Event* titlebarChangedEvent;
+            Event* titlebarChangedEvent = new Event();
             Event* getTitlebarChangedEvent() {
                 return titlebarChangedEvent;
             }
             void setTitlebarChangedEvent(Event* event) {
                 titlebarChangedEvent = event;
             }
-            Event* visibilityChangedEvent;
+            Event* visibilityChangedEvent = new Event();
             Event* getVisibilityChangedEvent() {
                 return visibilityChangedEvent;
             }
             void setVisibilityChangedEvent(Event* event) {
                 visibilityChangedEvent = event;
             }
-            Event* windowInputEvent;
+            Event* windowInputEvent = new Event();
             Event* getWindowInputEvent() {
                 return windowInputEvent;
             }
