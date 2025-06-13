@@ -1737,8 +1737,6 @@ __support_files_test4_src_Main.prototype.init = function(self)
   button.text = "Click Me!";
   local count = 0;
   label.text = Std.string(Std.string("You clicked me! ") .. Std.string(count)) .. Std.string(" times");
-  button.pressed:connect(function() 
-  end);
 end
 
 __support_files_test4_src_Main.prototype.__class__ =  __support_files_test4_src_Main
