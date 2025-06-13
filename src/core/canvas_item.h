@@ -226,10 +226,10 @@ namespace sunaba::core {
             canvas_item->set_z_index(index);
         }
 
-        Event* draw;
-        Event* hidden;
-        Event* itemRectChanged;
-        Event* visibilityChanged;
+        Event* draw = new Event();
+        Event* hidden = new Event();
+        Event* itemRectChanged = new Event();
+        Event* visibilityChanged = new Event();
 
         void drawAnimationSlice(float animationLength, float sliceBegin, float sliceEnd, float offset = 0.0f) {
             canvas_item->draw_animation_slice(animationLength, sliceBegin, sliceEnd, offset);
