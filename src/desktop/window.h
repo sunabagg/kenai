@@ -499,7 +499,6 @@ namespace sunaba::desktop {
                 windowInputEvent = event;
             }
 
-
             Vector2 getContentsMinimumSize() {
                 if (scriptInstance != sol::lua_nil) {
                     auto func = scriptInstance["getContentsMinimumSize"].get<sol::function>();
