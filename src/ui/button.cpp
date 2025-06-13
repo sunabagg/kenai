@@ -73,6 +73,7 @@ namespace sunaba::ui {
         if (element != nullptr) {
             element->dropData(at_position, data);
         }
+        ButtonNode::_drop_data(at_position, data);
     }
 
     Variant ButtonProxy::_get_drag_data(const Vector2 &at_position) {
