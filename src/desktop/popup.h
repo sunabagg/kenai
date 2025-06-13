@@ -131,7 +131,7 @@ namespace sunaba::desktop {
                 popup->set_wrap_controls(wrap);
             }
 
-            Event* popupHideEvent;
+            Event* popupHideEvent = new Event();
             Event* getPopupHideEvent() {
                 return popupHideEvent;
             }
