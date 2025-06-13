@@ -21,7 +21,10 @@ namespace sunaba::core {
     class Event : public BaseObject {
         private:
             std::vector<std::function<void(godot::Array)>> listeners = {};
-            std::vector<sol::function> lua_listeners = {};            void callLuaListener(sol::function listener, sol::table args) {
+            std::vector<sol::function> lua_listeners = {};    
+            std::map<sol::table, std::string> lua_table_listeners = {};        
+            
+            void callLuaListener(sol::function listener, sol::table args) {
                 // Call the Lua listener function with the provided arguments
                 listener(sol::as_args(args));
             }
@@ -30,9 +33,13 @@ namespace sunaba::core {
             Event() = default;
             ~Event() {
                 clear();
-            }            void connect(std::function<void(godot::Array)> listener) {
+            }            
+            
+            void connect(std::function<void(godot::Array)> listener) {
                 listeners.push_back(listener);
-            }            void connectLua(sol::function listener) {
+            }            
+            
+            void connectLua(sol::function listener) {
                 lua_listeners.push_back(listener);
             }
 
