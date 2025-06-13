@@ -220,11 +220,14 @@ __sunaba_input__InputEvent_InputEventAbstract_Impl_ = _hx_e()
 __sunaba_spatial__CameraAttributes_CameraAttributesAbstract_Impl_ = _hx_e()
 __sunaba_spatial__Sky_SkyAbstract_Impl_ = _hx_e()
 __sunaba_spatial__World3D_World3DAbstract_Impl_ = _hx_e()
+__sunaba_ui__BoxContainer_BoxContainerAbstract_Impl_ = _hx_e()
+__sunaba_ui__Container_ContainerAbstarct_Impl_ = _hx_e()
 __sunaba_ui__Control_ControlAbstract_Impl_ = _hx_e()
 __sunaba_ui__Label_LabelAbstract_Impl_ = _hx_e()
 __sunaba_ui__Panel_PanelAbstract_Impl_ = _hx_e()
 __sunaba_ui__StyleBox_StyleBoxAbstract_Impl_ = _hx_e()
 __sunaba_ui__Theme_ThemeAbstract_Impl_ = _hx_e()
+__sunaba_ui__VBoxContainer_VBoxContainerAbstract_Impl_ = _hx_e()
 __support_files_test4_src_Main = _hx_e()
 
 local _hx_bind, _hx_bit, _hx_staticToInstance, _hx_funcToField, _hx_maxn, _hx_print, _hx_apply_self, _hx_box_mr, _hx_bit_clamp, _hx_table, _hx_bit_raw
@@ -1568,6 +1571,26 @@ __sunaba_spatial__World3D_World3DAbstract_Impl_.fromResource = function(resource
   do return world3D end;
 end
 
+__sunaba_ui__BoxContainer_BoxContainerAbstract_Impl_.new = {}
+__sunaba_ui__BoxContainer_BoxContainerAbstract_Impl_.__name__ = true
+__sunaba_ui__BoxContainer_BoxContainerAbstract_Impl_.fromElement = function(element) 
+  local container = BoxContainer.cast(element);
+  if (container:isNull()) then 
+    do return nil end;
+  end;
+  do return container end;
+end
+
+__sunaba_ui__Container_ContainerAbstarct_Impl_.new = {}
+__sunaba_ui__Container_ContainerAbstarct_Impl_.__name__ = true
+__sunaba_ui__Container_ContainerAbstarct_Impl_.fromElement = function(element) 
+  local container = Container.cast(element);
+  if (container:isNull()) then 
+    do return nil end;
+  end;
+  do return container end;
+end
+
 __sunaba_ui__Control_ControlAbstract_Impl_.new = {}
 __sunaba_ui__Control_ControlAbstract_Impl_.__name__ = true
 __sunaba_ui__Control_ControlAbstract_Impl_.fromElement = function(element) 
@@ -1618,6 +1641,16 @@ __sunaba_ui__Theme_ThemeAbstract_Impl_.fromResource = function(resource)
   do return theme end;
 end
 
+__sunaba_ui__VBoxContainer_VBoxContainerAbstract_Impl_.new = {}
+__sunaba_ui__VBoxContainer_VBoxContainerAbstract_Impl_.__name__ = true
+__sunaba_ui__VBoxContainer_VBoxContainerAbstract_Impl_.fromElement = function(element) 
+  local vBox = VBoxContainer.cast(element);
+  if (vBox:isNull()) then 
+    do return nil end;
+  end;
+  do return vBox end;
+end
+
 __support_files_test4_src_Main.new = function() 
   local self = _hx_new(__support_files_test4_src_Main.prototype)
   __support_files_test4_src_Main.super(self)
@@ -1647,9 +1680,11 @@ __support_files_test4_src_Main.prototype.init = function(self)
   panel.offsetTop = 10;
   panel.offsetLeft = -10;
   panel.offsetRight = 10;
+  local vboxContainer = VBoxContainer.new();
+  control:addChild(vboxContainer);
+  vboxContainer:setAnchorsAndOffsetsPreset(8, 0, 0);
   local label = Label.new();
-  control:addChild(label);
-  label:setAnchorsAndOffsetsPreset(8, 0, 0);
+  vboxContainer:addChild(label);
   label.text = "Hello, World!";
   label.verticalAlignment = 1;
   label.horizontalAlignment = 1;

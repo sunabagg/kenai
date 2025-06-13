@@ -4,6 +4,7 @@ import sunaba.App;
 import sunaba.ui.Control;
 import sunaba.ui.Panel;
 import sunaba.ui.Label;
+import sunaba.ui.VBoxContainer;
 
 class Main extends App{
     public static function main() {
@@ -31,10 +32,14 @@ class Main extends App{
         panel.offsetLeft = -10;
         panel.offsetRight = 10;
 
+        var vboxContainer = new VBoxContainer();
+
+        control.addChild(vboxContainer);
+        vboxContainer.setAnchorsAndOffsetsPreset(8, 0, 0);
+
         var label = new Label();
 
-        control.addChild(label);
-        label.setAnchorsAndOffsetsPreset(8, 0, 0);
+        vboxContainer.addChild(label);
         label.text = "Hello, World!";
         label.verticalAlignment = 1;
         label.horizontalAlignment = 1;
