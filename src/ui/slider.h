@@ -167,7 +167,7 @@ namespace sunaba::ui {
                 slider->set_ticks_on_borders(ticks_on_borders);
             }
 
-            Event* dragEndedEvent;
+            Event* dragEndedEvent = new Event();
             Event* getDragEndedEvent() {
                 return dragEndedEvent;
             }
@@ -175,7 +175,7 @@ namespace sunaba::ui {
                 dragEndedEvent = event;
             }
 
-            Event* dragStartedEvent;
+            Event* dragStartedEvent = new Event();
             Event* getDragStartedEvent() {
                 return dragStartedEvent;
             }
