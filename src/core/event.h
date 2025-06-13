@@ -38,7 +38,7 @@ namespace sunaba::core {
                 listeners.push_back(listener);
             }
 
-            void connectLua(sol::function listener) {
+            void connectLua(sol::unsafe_function listener) {
                 lua_listeners.push_back(listener);
             }
 

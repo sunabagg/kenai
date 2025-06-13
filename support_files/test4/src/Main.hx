@@ -52,9 +52,12 @@ class Main extends App{
         label.text = "You clicked me! " + count + " times";
 
 
-        //button.pressed.connect(function() {
+        var pressedEvent = button.pressed;
+        Sys.println("pressedEvent != null : " + pressedEvent != null);
+        //untyped __lua__("_G.print(pressedEvent.connect ~= nil)");
+        pressedEvent.connect(function() {
             //count++;
             //label.text = "You clicked me! " + count + " times";
-        //});
+        });
     }
 }
