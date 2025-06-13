@@ -18,11 +18,19 @@ using namespace godot;
 namespace sunaba::core {
     void bindEvent(sol::state &lua);
 
+    class TableMethodNamePair {
+        public:
+            sol::table table;
+            std::string method_name;
+
+            TableMethodNamePair(sol::table t, const std::string& name) : table(t), method_name(name) {}
+    };
+
     class Event : public BaseObject {
         private:
             std::vector<std::function<void(godot::Array)>> listeners = {};
             std::vector<sol::function> lua_listeners = {};    
-            std::map<sol::table, std::string> lua_table_listeners = {};        
+            std::vector<TableMethodNamePair> lua_table_listeners = {};       
             
             void callLuaListener(sol::function listener, sol::table args) {
                 // Call the Lua listener function with the provided arguments
@@ -41,6 +49,24 @@ namespace sunaba::core {
             
             void connectLua(sol::function listener) {
                 lua_listeners.push_back(listener);
+            }
+
+            void connectLuaTable(sol::table table, const std::string& method_name) {
+                // Check if the table already has a listener for this method
+                for (const auto& pair : lua_table_listeners) {
+                    if (pair.table == table && pair.method_name == method_name) {
+                        return; // Already connected
+                    }
+                }
+                lua_table_listeners.emplace_back(table, method_name);
+            }
+
+            void disconnectLuaTable(sol::table table, const std::string& method_name) {
+                auto it = std::remove_if(lua_table_listeners.begin(), lua_table_listeners.end(),
+                    [&table, &method_name](const TableMethodNamePair& pair) {
+                        return pair.table == table && pair.method_name == method_name;
+                    });
+                lua_table_listeners.erase(it, lua_table_listeners.end());
             }
 
             void disconnect(std::function<void(godot::Array)> listener) {
