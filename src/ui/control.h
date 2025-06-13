@@ -458,15 +458,15 @@ namespace sunaba::ui {
                 control->set_tooltip_text(String(text.c_str()));
             }
 
-            Event* focusEnteredEvent;
-            Event* focusExitedEvent;
-            Event* guiInputEvent;
-            Event* minimumSizeChangedEvent;
-            Event* mouseEnteredEvent;
-            Event* mouseExitedEvent;
-            Event* resizedEvent;
-            Event* sizeFlagsChangedEvent;
-            Event* themeChangedEvent;
+            Event* focusEnteredEvent = new Event();
+            Event* focusExitedEvent = new Event();
+            Event* guiInputEvent = new Event();
+            Event* minimumSizeChangedEvent = new Event();
+            Event* mouseEnteredEvent = new Event();
+            Event* mouseExitedEvent = new Event();
+            Event* resizedEvent = new Event();
+            Event* sizeFlagsChangedEvent = new Event();
+            Event* themeChangedEvent = new Event();
 
             bool canDropData(Vector2 position, Variant data) {
                 if (scriptInstance != sol::lua_nil) {
