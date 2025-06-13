@@ -51,7 +51,7 @@ namespace sunaba::core {
                 lua_listeners.push_back(listener);
             }
 
-            void connectLuaTable(sol::table table, const std::string& method_name) {
+            void connectLuaTable(lua_State* L, sol::table table, const std::string& method_name) {
                 // Check if the table already has a listener for this method
                 for (const auto& pair : lua_table_listeners) {
                     if (pair.table == table && pair.method_name == method_name) {
@@ -61,7 +61,7 @@ namespace sunaba::core {
                 lua_table_listeners.emplace_back(table, method_name);
             }
 
-            void disconnectLuaTable(sol::table table, const std::string& method_name) {
+            void disconnectLuaTable(lua_State* L, sol::table table, const std::string& method_name) {
                 auto it = std::remove_if(lua_table_listeners.begin(), lua_table_listeners.end(),
                     [&table, &method_name](const TableMethodNamePair& pair) {
                         return pair.table == table && pair.method_name == method_name;
