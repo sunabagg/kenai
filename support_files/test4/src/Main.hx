@@ -38,10 +38,14 @@ class Main extends App{
         vboxContainer.setAnchorsAndOffsetsPreset(8, 0, 0);
 
         var label = new Label();
+        var labelControl = new Control();
+        
+        vboxContainer.addChild(labelControl);
 
-        vboxContainer.addChild(label);
+        labelControl.addChild(label);
+        label.setAnchorsAndOffsetsPreset(8, 0, 0);
         label.text = "Hello, World!";
-        //label.verticalAlignment = 1;
-        //label.horizontalAlignment = 1;
+        label.verticalAlignment = 1;
+        label.horizontalAlignment = 1;
     }
 }
