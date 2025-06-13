@@ -10,6 +10,9 @@ class Main extends App{
     public static function main() {
         new Main();
     }
+
+    public var count: Int = 0;
+    public var label: Label;
     
     override function init() {
         Sys.println("Hello, World!");
@@ -37,7 +40,7 @@ class Main extends App{
         control.addChild(vboxContainer);
         vboxContainer.setAnchorsAndOffsetsPreset(8, 0, 0);
 
-        var label = new Label();
+        label = new Label();
 
         vboxContainer.addChild(label);
         label.text = "Hello, World!";
@@ -48,16 +51,14 @@ class Main extends App{
         vboxContainer.addChild(button);
         button.text = "Click Me!";
 
-        var count = 0;
         label.text = "You clicked me! " + count + " times";
 
 
-        var pressedEvent = button.pressed;
-        Sys.println("pressedEvent != null : " + pressedEvent != null);
-        //untyped __lua__("_G.print(pressedEvent.connect ~= nil)");
-        pressedEvent.connect(function() {
-            //count++;
-            //label.text = "You clicked me! " + count + " times";
-        });
+        button.pressed.connect(this, "incrementCounter");
+    }
+
+    public function incrementCounter() {
+        count++;
+        label.text = "You clicked me! " + count + " times";
     }
 }
