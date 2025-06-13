@@ -3,6 +3,7 @@ package support_files.test4.src;
 import sunaba.App;
 import sunaba.ui.Control;
 import sunaba.ui.Panel;
+import sunaba.ui.Label;
 
 class Main extends App{
     public static function main() {
@@ -29,5 +30,19 @@ class Main extends App{
         panel.offsetTop = 10;
         panel.offsetLeft = -10;
         panel.offsetRight = 10;
+
+        var label = new Label();
+
+        label.anchorTop = 0.5;
+        label.anchorBottom = 1;
+        label.anchorLeft = 0.5;
+        label.anchorRight = 1;
+        label.offsetTop = -75;
+        label.offsetBottom = 0;
+        label.offsetLeft = -85;
+        label.offsetRight = 0;
+        label.text = "Hello, World!";
+
+        control.addChild(label);
     }
 }
