@@ -1686,8 +1686,6 @@ __support_files_test4_src_Main.prototype.init = function(self)
   local label = Label.new();
   vboxContainer:addChild(label);
   label.text = "Hello, World!";
-  label.verticalAlignment = 1;
-  label.horizontalAlignment = 1;
 end
 
 __support_files_test4_src_Main.prototype.__class__ =  __support_files_test4_src_Main

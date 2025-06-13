@@ -41,7 +41,7 @@ class Main extends App{
 
         vboxContainer.addChild(label);
         label.text = "Hello, World!";
-        label.verticalAlignment = 1;
-        label.horizontalAlignment = 1;
+        //label.verticalAlignment = 1;
+        //label.horizontalAlignment = 1;
     }
 }
