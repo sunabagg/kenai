@@ -129,6 +129,7 @@ namespace sunaba::ui {
         if (this->element != nullptr) {
             this->element->pressed();
         }
+        ButtonNode::_pressed();
     }
 
     void ButtonProxy::_toggled(bool p_toggled_on) {
