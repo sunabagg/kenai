@@ -101,6 +101,7 @@ namespace sunaba::ui {
         if (element != nullptr) {
             element->guiInput(event);
         }
+        ButtonNode::_gui_input(event);
     }
 
     bool ButtonProxy::_has_point(const Vector2 &point) const {
