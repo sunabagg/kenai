@@ -1737,7 +1737,7 @@ __support_files_test4_src_Main.prototype.init = function(self)
   vboxContainer:addChild(button);
   button.text = "Click Me!";
   self.label.text = Std.string(Std.string("You clicked me! ") .. Std.string(self.count)) .. Std.string(" times");
-  button.pressed:connect(self, "incrementCounter");
+  --button.pressed:connect(self, "incrementCounter");
 end
 __support_files_test4_src_Main.prototype.incrementCounter = function(self) 
   self.count = self.count + 1;
