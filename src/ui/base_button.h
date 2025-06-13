@@ -212,28 +212,28 @@ namespace sunaba::ui {
                 base_button->set_toggle_mode(enabled);
             }
 
-            Event* buttonDown;
+            Event* buttonDown = new Event();
             Event* getButtonDown() {
                 return buttonDown;
             }
             void setButtonDown(Event* event) {
                 buttonDown = event;
             }
-            Event* buttonUp;
+            Event* buttonUp = new Event();
             Event* getButtonUp() {
                 return buttonUp;
             }
             void setButtonUp(Event* event) {
                 buttonUp = event;
             }
-            Event* pressedEvent;
+            Event* pressedEvent = new Event();
             Event* getPressedEvent() {
                 return pressedEvent;
             }
             void setPressedEvent(Event* event) {
                 pressedEvent = event;
             }
-            Event* toggledEvent;
+            Event* toggledEvent = new Event();
             Event* getToggledEvent() {
                 return toggledEvent;
             }
