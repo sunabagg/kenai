@@ -71,7 +71,7 @@ namespace sunaba::ui {
 
             // Constructor with no parameters
             Button() {
-                setButton(memnew(ButtonProxy));
+                setButton(memnew(ButtonNode));
                 onInit();
             }
 
