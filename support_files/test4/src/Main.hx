@@ -1,6 +1,8 @@
 package support_files.test4.src;
 
 import sunaba.App;
+import sunaba.ui.Control;
+import sunaba.ui.Panel;
 
 class Main extends App{
     public static function main() {
@@ -10,11 +12,22 @@ class Main extends App{
     override function init() {
         Sys.println("Hello, World!");
 
-        var panel = new sunaba.ui.Panel();
+        var control = new Control();
 
-        rootElement.addChild(panel);
+        rootElement.addChild(control);
+        control.setAnchorsAndOffsetsPreset(15, 3, 0);
+        control.sizeFlagsHorizontal = 3;
+        control.sizeFlagsVertical = 3;
+        
+
+        var panel = new Panel();
+        control.addChild(panel);
         panel.setAnchorsAndOffsetsPreset(15, 3, 0);
         panel.sizeFlagsHorizontal = 3;
         panel.sizeFlagsVertical = 3;
+        panel.offsetBottom = -10;
+        panel.offsetTop = 10;
+        panel.offsetLeft = -10;
+        panel.offsetRight = 10;
     }
 }
