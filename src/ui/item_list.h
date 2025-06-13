@@ -272,35 +272,35 @@ namespace sunaba::ui {
                 item_list->set_wraparound_items(enable);
             }
 
-            Event* emptyClickedEvent;
+            Event* emptyClickedEvent = new Event();
             Event* getEmptyClickedEvent() {
                 return emptyClickedEvent;
             }
             void setEmptyClickedEvent(Event* event) {
                 emptyClickedEvent = event;
             }
-            Event* itemActivatedEvent;
+            Event* itemActivatedEvent = new Event();
             Event* getItemActivatedEvent() {
                 return itemActivatedEvent;
             }
             void setItemActivatedEvent(Event* event) {
                 itemActivatedEvent = event;
             }
-            Event* itemClickedEvent;
+            Event* itemClickedEvent = new Event();
             Event* getItemClickedEvent() {
                 return itemClickedEvent;
             }
             void setItemClickedEvent(Event* event) {
                 itemClickedEvent = event;
             }
-            Event* itemSelectedEvent;
+            Event* itemSelectedEvent = new Event();
             Event* getItemSelectedEvent() {
                 return itemSelectedEvent;
             }
             void setItemSelectedEvent(Event* event) {
                 itemSelectedEvent = event;
             }
-            Event* multiSelectedEvent;
+            Event* multiSelectedEvent = new Event();
             Event* getMultiSelectedEvent() {
                 return multiSelectedEvent;
             }
