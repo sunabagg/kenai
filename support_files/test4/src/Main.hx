@@ -52,9 +52,9 @@ class Main extends App{
         label.text = "You clicked me! " + count + " times";
 
 
-        button.pressed.connect(function() {
+        //button.pressed.connect(function() {
             //count++;
             //label.text = "You clicked me! " + count + " times";
-        });
+        //});
     }
 }
