@@ -108,7 +108,7 @@ namespace sunaba::ui {
         if (element != nullptr) {
             return element->hasPoint(point);
         }
-        return false;
+        return ButtonNode::_has_point(point);
     }
 
     //Object* ButtonProxy::_make_custom_tooltip(const String &for_text) const {
