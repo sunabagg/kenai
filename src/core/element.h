@@ -94,14 +94,14 @@ namespace sunaba::core {
 
         bool isRootElement = false; // Flag to indicate if this is the root node
 
-        Event* childEnteredTree;
-        Event* childExitedTree;
-        Event* childOrderChanged;
-        Event* renamed;
-        Event* replacingBy;
-        Event* treeEntered;
-        Event* treeExited;
-        Event* treeExiting;
+        Event* childEnteredTree = new Event();
+        Event* childExitedTree = new Event();
+        Event* childOrderChanged = new Event();
+        Event* renamed = new Event();
+        Event* replacingBy = new Event();
+        Event* treeEntered = new Event();
+        Event* treeExited = new Event();
+        Event* treeExiting = new Event();
 
         Element() {
             setNode(memnew(NodeProxy));
