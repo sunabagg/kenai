@@ -1701,6 +1701,7 @@ __support_files_test4_src_Main.new = function()
   return self
 end
 __support_files_test4_src_Main.super = function(self) 
+  self.count = 0;
   __sunaba_App.super(self);
 end
 __support_files_test4_src_Main.__name__ = true
@@ -1727,20 +1728,20 @@ __support_files_test4_src_Main.prototype.init = function(self)
   local vboxContainer = VBoxContainer.new();
   control:addChild(vboxContainer);
   vboxContainer:setAnchorsAndOffsetsPreset(8, 0, 0);
-  local label = Label.new();
-  vboxContainer:addChild(label);
-  label.text = "Hello, World!";
-  label.verticalAlignment = 1;
-  label.horizontalAlignment = 1;
+  self.label = Label.new();
+  vboxContainer:addChild(self.label);
+  self.label.text = "Hello, World!";
+  self.label.verticalAlignment = 1;
+  self.label.horizontalAlignment = 1;
   local button = Button.new();
   vboxContainer:addChild(button);
   button.text = "Click Me!";
-  local count = 0;
-  label.text = Std.string(Std.string("You clicked me! ") .. Std.string(count)) .. Std.string(" times");
-  local pressedEvent = button.pressed;
-  _G.print(Std.string((Std.string("pressedEvent != null : ") .. Std.string(Std.string(pressedEvent))) ~= nil));
-  pressedEvent:connect(function() 
-  end);
+  self.label.text = Std.string(Std.string("You clicked me! ") .. Std.string(self.count)) .. Std.string(" times");
+  button.pressed:connect(self, "incrementCounter");
+end
+__support_files_test4_src_Main.prototype.incrementCounter = function(self) 
+  self.count = self.count + 1;
+  self.label.text = Std.string(Std.string("You clicked me! ") .. Std.string(self.count)) .. Std.string(" times");
 end
 
 __support_files_test4_src_Main.prototype.__class__ =  __support_files_test4_src_Main
