@@ -165,7 +165,7 @@ namespace sunaba::ui {
                 menu_button->set_toggle_mode(enabled);
             }
 
-            Event* aboutToPopupEvent;
+            Event* aboutToPopupEvent = new Event();
             Event* getAboutToPopupEvent() {
                 return aboutToPopupEvent;
             }
