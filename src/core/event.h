@@ -38,10 +38,13 @@ namespace sunaba::core {
             }
 
             public:
-            Event() = default;
+            Event() {
+
+            }
+
             ~Event() {
                 clear();
-            }            
+            }
             
             void connect(std::function<void(godot::Array)> listener) {
                 listeners.push_back(listener);
