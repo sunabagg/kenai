@@ -54,7 +54,9 @@ class Main extends App{
         label.text = "You clicked me! " + count + " times";
 
 
-        button.pressed.connect(this, "incrementCounter");
+        button.pressed.connect(() -> {
+            incrementCounter();
+        });
     }
 
     public function incrementCounter() {

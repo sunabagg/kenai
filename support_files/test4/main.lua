@@ -1710,6 +1710,7 @@ __support_files_test4_src_Main.main = function()
 end
 __support_files_test4_src_Main.prototype = _hx_e();
 __support_files_test4_src_Main.prototype.init = function(self) 
+  local _gthis = self;
   _G.print("Hello, World!");
   local control = Control.new();
   self:get_rootElement():addChild(control);
@@ -1737,7 +1738,9 @@ __support_files_test4_src_Main.prototype.init = function(self)
   vboxContainer:addChild(button);
   button.text = "Click Me!";
   self.label.text = Std.string(Std.string("You clicked me! ") .. Std.string(self.count)) .. Std.string(" times");
-  button.pressed:connect(self, "incrementCounter");
+  button.pressed:connect(function() 
+    _gthis:incrementCounter();
+  end);
 end
 __support_files_test4_src_Main.prototype.incrementCounter = function(self) 
   self.count = self.count + 1;

@@ -5,8 +5,8 @@ import haxe.Constraints.Function;
 @:native("Event")
 extern class Event extends BaseObject {
     public function new();
-    public function connect(obj: Any, funcName: String): Void;
-    public function disconnect(obj: Any, funcName: String): Void;
+    public function connect(func: Function): Void;
+    public function disconnect(func: Function): Void;
     public function emit(...args: Variant): Void;
     public function clear(): Void;
 }
