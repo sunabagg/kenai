@@ -260,7 +260,7 @@ namespace sunaba::ui {
                 tree->set_select_mode(static_cast<GodotTree::SelectMode>(mode));
             }
 
-            Event* buttonClickedEvent;
+            Event* buttonClickedEvent = new Event();
             Event* getButtonClickedEvent() {
                 return buttonClickedEvent;
             }
@@ -268,7 +268,7 @@ namespace sunaba::ui {
                 buttonClickedEvent = event;
             }
 
-            Event* cellSelectedEvent;
+            Event* cellSelectedEvent = new Event();
             Event* getCellSelectedEvent() {
                 return cellSelectedEvent;
             }
@@ -276,7 +276,7 @@ namespace sunaba::ui {
                 cellSelectedEvent = event;
             }
 
-            Event* checkPropagatedToItemEvent;
+            Event* checkPropagatedToItemEvent = new Event();
             Event* getCheckPropagatedToItemEvent() {
                 return checkPropagatedToItemEvent;
             }
@@ -284,7 +284,7 @@ namespace sunaba::ui {
                 checkPropagatedToItemEvent = event;
             }
 
-            Event* columnTitleClickedEvent;
+            Event* columnTitleClickedEvent = new Event();
             Event* getColumnTitleClickedEvent() {
                 return columnTitleClickedEvent;
             }
@@ -292,7 +292,7 @@ namespace sunaba::ui {
                 columnTitleClickedEvent = event;
             }
 
-            Event* customItemClickedEvent;
+            Event* customItemClickedEvent = new Event();
             Event* getCustomItemClickedEvent() {
                 return customItemClickedEvent;
             }
@@ -300,7 +300,7 @@ namespace sunaba::ui {
                 customItemClickedEvent = event;
             }
 
-            Event* customPopupEditedEvent;
+            Event* customPopupEditedEvent = new Event();
             Event* getCustomPopupEditedEvent() {
                 return customPopupEditedEvent;
             }
@@ -308,7 +308,7 @@ namespace sunaba::ui {
                 customPopupEditedEvent = event;
             }
 
-            Event* emptyClickedEvent;
+            Event* emptyClickedEvent = new Event();
             Event* getEmptyClickedEvent() {
                 return emptyClickedEvent;
             }
@@ -316,7 +316,7 @@ namespace sunaba::ui {
                 emptyClickedEvent = event;
             }
 
-            Event* itemActivatedEvent;
+            Event* itemActivatedEvent = new Event();
             Event* getItemActivatedEvent() {
                 return itemActivatedEvent;
             }
@@ -324,7 +324,7 @@ namespace sunaba::ui {
                 itemActivatedEvent = event;
             }
 
-            Event* itemCollapsedEvent;
+            Event* itemCollapsedEvent = new Event();
             Event* getItemCollapsedEvent() {
                 return itemCollapsedEvent;
             }
@@ -332,7 +332,7 @@ namespace sunaba::ui {
                 itemCollapsedEvent = event;
             }
 
-            Event* itemEditedEvent;
+            Event* itemEditedEvent = new Event();
             Event* getItemEditedEvent() {
                 return itemEditedEvent;
             }
@@ -340,7 +340,7 @@ namespace sunaba::ui {
                 itemEditedEvent = event;
             }
 
-            Event* itemIconDoubleClickedEvent;
+            Event* itemIconDoubleClickedEvent = new Event();
             Event* getItemIconDoubleClickedEvent() {
                 return itemIconDoubleClickedEvent;
             }
@@ -348,7 +348,7 @@ namespace sunaba::ui {
                 itemIconDoubleClickedEvent = event;
             }
 
-            Event* itemMouseSelectedEvent;
+            Event* itemMouseSelectedEvent = new Event();
             Event* getItemMouseSelectedEvent() {
                 return itemMouseSelectedEvent;
             }
@@ -356,7 +356,7 @@ namespace sunaba::ui {
                 itemMouseSelectedEvent = event;
             }
 
-            Event* itemSelectedEvent;
+            Event* itemSelectedEvent = new Event();
             Event* getItemSelectedEvent() {
                 return itemSelectedEvent;
             }
@@ -364,7 +364,7 @@ namespace sunaba::ui {
                 itemSelectedEvent = event;
             }
 
-            Event* multiSelectedEvent;
+            Event* multiSelectedEvent = new Event();
             Event* getMultiSelectedEvent() {
                 return multiSelectedEvent;
             }
@@ -372,7 +372,7 @@ namespace sunaba::ui {
                 multiSelectedEvent = event;
             }
 
-            Event* nothingSelectedEvent;
+            Event* nothingSelectedEvent = new Event();
             Event* getNothingSelectedEvent() {
                 return nothingSelectedEvent;
             }
