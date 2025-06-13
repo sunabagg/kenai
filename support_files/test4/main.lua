@@ -217,10 +217,14 @@ __sunaba_core__Texture2D_Texture2DAbstract_Impl_ = _hx_e()
 __sunaba_core__Variant_VariantAbstract_Impl_ = _hx_e()
 __sunaba_core__Viewport_ViewportAbstract_Impl_ = _hx_e()
 __sunaba_input__InputEvent_InputEventAbstract_Impl_ = _hx_e()
+__sunaba_input__Shortcut_ShortcutAbstract_Impl_ = _hx_e()
 __sunaba_spatial__CameraAttributes_CameraAttributesAbstract_Impl_ = _hx_e()
 __sunaba_spatial__Sky_SkyAbstract_Impl_ = _hx_e()
 __sunaba_spatial__World3D_World3DAbstract_Impl_ = _hx_e()
+__sunaba_ui__BaseButton_BaseButtonAbstract_Impl_ = _hx_e()
 __sunaba_ui__BoxContainer_BoxContainerAbstract_Impl_ = _hx_e()
+__sunaba_ui__Button_ButtonAbstract_Impl_ = _hx_e()
+__sunaba_ui__ButtonGroup_ButtonGroupAbstract_Impl_ = _hx_e()
 __sunaba_ui__Container_ContainerAbstarct_Impl_ = _hx_e()
 __sunaba_ui__Control_ControlAbstract_Impl_ = _hx_e()
 __sunaba_ui__Label_LabelAbstract_Impl_ = _hx_e()
@@ -1541,6 +1545,16 @@ __sunaba_input__InputEvent_InputEventAbstract_Impl_.fromResource = function(reso
   do return inputEvent end;
 end
 
+__sunaba_input__Shortcut_ShortcutAbstract_Impl_.new = {}
+__sunaba_input__Shortcut_ShortcutAbstract_Impl_.__name__ = true
+__sunaba_input__Shortcut_ShortcutAbstract_Impl_.fromResource = function(resource) 
+  local shortcut = InputEventShortcut.cast(resource);
+  if (shortcut:isNull()) then 
+    do return nil end;
+  end;
+  do return shortcut end;
+end
+
 __sunaba_spatial__CameraAttributes_CameraAttributesAbstract_Impl_.new = {}
 __sunaba_spatial__CameraAttributes_CameraAttributesAbstract_Impl_.__name__ = true
 __sunaba_spatial__CameraAttributes_CameraAttributesAbstract_Impl_.fromResource = function(resource) 
@@ -1571,6 +1585,16 @@ __sunaba_spatial__World3D_World3DAbstract_Impl_.fromResource = function(resource
   do return world3D end;
 end
 
+__sunaba_ui__BaseButton_BaseButtonAbstract_Impl_.new = {}
+__sunaba_ui__BaseButton_BaseButtonAbstract_Impl_.__name__ = true
+__sunaba_ui__BaseButton_BaseButtonAbstract_Impl_.fromElement = function(element) 
+  local btn = BaseButton.cast(element);
+  if (btn:isNull()) then 
+    do return nil end;
+  end;
+  do return btn end;
+end
+
 __sunaba_ui__BoxContainer_BoxContainerAbstract_Impl_.new = {}
 __sunaba_ui__BoxContainer_BoxContainerAbstract_Impl_.__name__ = true
 __sunaba_ui__BoxContainer_BoxContainerAbstract_Impl_.fromElement = function(element) 
@@ -1579,6 +1603,26 @@ __sunaba_ui__BoxContainer_BoxContainerAbstract_Impl_.fromElement = function(elem
     do return nil end;
   end;
   do return container end;
+end
+
+__sunaba_ui__Button_ButtonAbstract_Impl_.new = {}
+__sunaba_ui__Button_ButtonAbstract_Impl_.__name__ = true
+__sunaba_ui__Button_ButtonAbstract_Impl_.fromElement = function(element) 
+  local btn = Button.cast(element);
+  if (btn:isNull()) then 
+    do return nil end;
+  end;
+  do return btn end;
+end
+
+__sunaba_ui__ButtonGroup_ButtonGroupAbstract_Impl_.new = {}
+__sunaba_ui__ButtonGroup_ButtonGroupAbstract_Impl_.__name__ = true
+__sunaba_ui__ButtonGroup_ButtonGroupAbstract_Impl_.fromResource = function(resource) 
+  local bg = ButtonGroup.cast(resource);
+  if (bg:isNull()) then 
+    do return nil end;
+  end;
+  do return bg end;
 end
 
 __sunaba_ui__Container_ContainerAbstarct_Impl_.new = {}
@@ -1686,6 +1730,15 @@ __support_files_test4_src_Main.prototype.init = function(self)
   local label = Label.new();
   vboxContainer:addChild(label);
   label.text = "Hello, World!";
+  label.verticalAlignment = 1;
+  label.horizontalAlignment = 1;
+  local button = Button.new();
+  vboxContainer:addChild(button);
+  button.text = "Click Me!";
+  local count = 0;
+  label.text = Std.string(Std.string("You clicked me! ") .. Std.string(count)) .. Std.string(" times");
+  button.pressed:connect(function() 
+  end);
 end
 
 __support_files_test4_src_Main.prototype.__class__ =  __support_files_test4_src_Main

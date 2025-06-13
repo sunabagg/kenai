@@ -38,14 +38,23 @@ class Main extends App{
         vboxContainer.setAnchorsAndOffsetsPreset(8, 0, 0);
 
         var label = new Label();
-        var labelControl = new Control();
-        
-        vboxContainer.addChild(labelControl);
 
-        labelControl.addChild(label);
-        label.setAnchorsAndOffsetsPreset(8, 0, 0);
+        vboxContainer.addChild(label);
         label.text = "Hello, World!";
         label.verticalAlignment = 1;
         label.horizontalAlignment = 1;
+
+        var button = new sunaba.ui.Button();
+        vboxContainer.addChild(button);
+        button.text = "Click Me!";
+
+        var count = 0;
+        label.text = "You clicked me! " + count + " times";
+
+
+        button.pressed.connect(function() {
+            //count++;
+            //label.text = "You clicked me! " + count + " times";
+        });
     }
 }

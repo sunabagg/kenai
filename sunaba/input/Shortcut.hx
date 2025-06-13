@@ -1,22 +1,24 @@
 package sunaba.input;
 
+import sunaba.core.Resource;
+
 @:native("InputEventShortcut")
-extern class InputEventShortcut extends InputEventWithModifiers {
+extern class Shortcut extends Resource {
     public var events: lua.Table<Int, InputEvent>;
     public function getAsText(): String;
     public function hasValidEvent(): Bool;
     public function matchesEvent(event: InputEvent): Bool;
     @:native("cast")
-    public static function castFrom(res: Dynamic): InputEventShortcut;
+    public static function castFrom(res: Dynamic): Shortcut;
 }
 
-abstract InputEventShortcutAbstract(InputEventShortcut) from InputEventShortcut to InputEventShortcut {
+abstract ShortcutAbstract(Shortcut) from Shortcut to Shortcut {
     @:from
-    public static function fromResource(resource: Resource) : InputEventShortcutAbstract {
-        var inputEventShortcut = InputEventShortcut.castFrom(resource);
-        if (inputEventShortcut.isNull()) {
+    public static function fromResource(resource: Resource) : ShortcutAbstract {
+        var shortcut = Shortcut.castFrom(resource);
+        if (shortcut.isNull()) {
             return null;
         }
-        return inputEventShortcut;
+        return shortcut;
     }
 } // end package sunaba.input

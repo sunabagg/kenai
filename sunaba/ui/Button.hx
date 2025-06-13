@@ -3,7 +3,7 @@ package sunaba.ui;
 import sunaba.core.Element;
 import sunaba.core.Texture2D;
 
-@:native("ButtonGroup")
+@:native("Button")
 extern class Button extends BaseButton {
     public var alignment: Int;
     public var autowrapMode: Int;
@@ -24,7 +24,7 @@ extern class Button extends BaseButton {
 abstract ButtonAbstract(Button) from Button to Button {
     @:from
     public static function fromElement(element: Element): ButtonAbstract {
-        var btn = Button.castFrom(element);
+        var btn = Button.toButton(element);
         if (btn.isNull()) {
             return null;
         }
