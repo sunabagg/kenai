@@ -117,18 +117,21 @@ namespace sunaba::core {
                     }
                     callLuaListener(lua_listener, lua_args);
                 }*/
-               
-                for (size_t i = 0; i < lua_listeners.size(); ++i) {
-                    sol::function lua_listener = lua_listeners[i];
-                    sol::state_view lua_state = sol::state_view(lua_listener.lua_state());
-                    sol::table lua_args = lua_state.create_table(args.size(), 0);
-                    for (int j = 0; j < args.size(); ++j) {
-                        lua_args[j + 1] = args[j]; // Lua tables are 1-indexed
+
+                if (!lua_listeners.empty()) {
+                    for (size_t i = 0; i < lua_listeners.size(); ++i) {
+                        sol::function lua_listener = lua_listeners[i];
+                        sol::state_view lua_state = sol::state_view(lua_listener.lua_state());
+                        sol::table lua_args = lua_state.create_table(args.size(), 0);
+                        for (int j = 0; j < args.size(); ++j) {
+                            lua_args[j + 1] = args[j]; // Lua tables are 1-indexed
+                        }
+                        callLuaListener(lua_listener, lua_args);
                     }
-                    callLuaListener(lua_listener, lua_args);
                 }
 
-                for (size_t i = 0; i < lua_table_listeners.size(); ++i) {
+                if (!lua_table_listeners.empty()) {
+                    for (size_t i = 0; i < lua_table_listeners.size(); ++i) {
                     const TableMethodNamePair& pair = lua_table_listeners[i];
                     sol::state_view lua_state = sol::state_view(pair.table.lua_state());
                     sol::function method = pair.table[pair.method_name];
@@ -140,6 +143,9 @@ namespace sunaba::core {
                         callLuaListener(method, lua_args);
                     }
                 }
+                }
+                
+                
             }
 
             void clear() {
