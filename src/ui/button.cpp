@@ -80,7 +80,7 @@ namespace sunaba::ui {
         if (element != nullptr) {
             return element->getDragData(at_position);
         }
-        return Variant();
+        return ButtonNode::_get_drag_data(at_position);
     }
 
     Vector2 ButtonProxy::_get_minimum_size() const {
