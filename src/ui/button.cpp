@@ -66,7 +66,7 @@ namespace sunaba::ui {
         if (element != nullptr) {
             return element->canDropData(at_position, data);
         }
-        return false;
+        return ButtonNode::_can_drop_data(at_position, data);
     }
 
     void ButtonProxy::_drop_data(const Vector2 &at_position, const Variant &data) {
