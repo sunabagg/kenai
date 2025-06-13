@@ -122,7 +122,7 @@ namespace sunaba::ui {
         if (element != nullptr) {
             return element->structuredTextParser(args, text);
         }
-        return TypedArray<Vector3i>();
+        return ButtonNode::_structured_text_parser(args, text);
     }
 
     void ButtonProxy::_pressed() {
