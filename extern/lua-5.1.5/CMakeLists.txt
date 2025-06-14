@@ -132,7 +132,7 @@ set ( SRC_LIB src/lapi.c src/lcode.c src/ldebug.c src/ldo.c src/ldump.c src/lfun
   src/lgc.c src/llex.c src/lmem.c src/lobject.c src/lopcodes.c src/lparser.c src/lstate.c 
   src/lstring.c src/ltable.c src/ltm.c src/lundump.c src/lvm.c src/lzio.c src/lauxlib.c 
   src/lbaselib.c src/ldblib.c src/liolib.c src/lmathlib.c src/loslib.c src/ltablib.c 
-  src/lstrlib.c src/linit.c )
+  src/lstrlib.c src/linit.c src/bit.c )
 set ( SRC_LUA src/lua.c )
 set ( SRC_LUAC src/luac.c src/print.c )
 
