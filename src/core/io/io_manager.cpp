@@ -14,7 +14,7 @@ namespace sunaba::core::io {
             sol::base_classes, sol::bases<IoInterface>(),
             "add", &IoManager::add,
             "remove", &IoManager::remove,
-            "getFileUri", &IoManager::getFileUrl
+            "getFileUri", &IoManager::getFileUri
         );
     }
 
@@ -40,7 +40,7 @@ namespace sunaba::core::io {
         return path;
     }
 
-    std::string IoManager::getFileUrl(const std::string &path, const std::string &base_url) const {
+    std::string IoManager::getFileUri(const std::string &path, const std::string &base_url) const {
         for (auto& io : interfaces) {
             if (dynamic_cast<SystemIoInterface*>(io) != nullptr) {
                 SystemIoInterface* sio = dynamic_cast<SystemIoInterface*>(io);

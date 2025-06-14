@@ -16,7 +16,7 @@ namespace sunaba::core::io {
 
         std::string getFilePath(const std::string &path) const override;
 
-        std::string getFileUrl(const std::string &path, const std::string &base_url) const;
+        std::string getFileUri(const std::string &path, const std::string &base_url) const;
 
         std::string loadText(const std::string &path) const override;
 
