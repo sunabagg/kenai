@@ -335,13 +335,27 @@ class Widget {
                 else {
                     if (Std.isOfType(element, Control)) {
                         var control: Control = cast element;
-                        if (control.hasThemeConstantOverride(attributeName)) {
-                            control.addThemeConstantOverride(attributeName, Variant.fromInt64(Std.parseInt(attributeValue)));
+                        var snakeCaseName = camelToSnake(attributeName);
+                        if (control.hasThemeConstantOverride(snakeCaseName)) {
+                            control.addThemeConstantOverride(snakeCaseName, Variant.fromInt64(Std.parseInt(attributeValue)));
                             continue;
                         }
-                        else if (control.hasThemeFontSizeOverride(attributeName)) {
-                            control.addThemeFontSizeOverride(attributeName, Std.parseFloat(attributeValue));
+                        else if (control.hasThemeFontSizeOverride(snakeCaseName)) {
+                            control.addThemeFontSizeOverride(snakeCaseName, Std.parseFloat(attributeValue));
                             continue;
+                        }
+                        else if (control.hasThemeColorOverride(snakeCaseName)) {
+                            var color = Color.html(attributeValue);
+                            if (color != null) {
+                                control.addThemeColorOverride(snakeCaseName, color);
+                                continue;
+                            }
+                            else {
+                                throw "Invalid Color value for field '" + attributeName + "' in element '" + Type.getClassName(Type.getClass(element)) + "'";
+                            }
+                        }
+                        else if (control.hasThemeColorOverride(attributeName)) {
+
                         }
                     }
                     throw "Unknown field '" + attributeName + "' in element '" + Type.getClassName(Type.getClass(element)) + "'";
@@ -384,5 +398,9 @@ class Widget {
     private function camelToPascal(str:String):String {
         if (str == null || str.length == 0) return str;
         return str.charAt(0).toUpperCase() + str.substr(1);
+    }
+
+    private function camelToSnake(input: String): String {
+        return input.replace(/([a-z])([A-Z])/g, "$1_$2").toLowerCase();
     }
 }
