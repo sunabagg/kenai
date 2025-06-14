@@ -368,6 +368,22 @@ class Widget {
                             control.addThemeFontOverride(snakeCaseName, fontFile);
                             continue;
                         }
+                        else if (control.hasThemeIconOverride(snakeCaseName)) {
+                            var image = Image.loadFromFile(attributeValue);
+                            if (image != null) {
+                                var texture = ImageTexture.createFromImage(image);
+                                if (texture != null) {
+                                    control.addThemeIconOverride(snakeCaseName, texture);
+                                    continue;
+                                }
+                                else {
+                                    throw "Failed to create Texture2D from image for field '" + attributeName + "' in element '" + Type.getClassName(Type.getClass(element)) + "'";
+                                }
+                            }
+                            else {
+                                throw "Failed to load image from file for field '" + attributeName + "' in element '" + Type.getClassName(Type.getClass(element)) + "'";
+                            }
+                        }
                     }
                     throw "Unknown field '" + attributeName + "' in element '" + Type.getClassName(Type.getClass(element)) + "'";
                 }
