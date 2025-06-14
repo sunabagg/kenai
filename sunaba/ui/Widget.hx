@@ -25,5 +25,12 @@ class Widget {
         if (rootElement != null) {
             rootElement.delete();
         }
+
+        var firstElement = xml.firstElement();
+        if (firstElement != null) {
+            if (firstElement.nodeName == "suml") {
+                
+            }
+        }
     }
 }
