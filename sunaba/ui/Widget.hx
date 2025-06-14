@@ -391,10 +391,6 @@ class Widget {
         }
     }
 
-    private function setObjectValue() {
-        
-    }
-
     private function constructChildren(element: Element, xml: Xml): Void {
         var children = xml.elements();
         for (child in children) {
