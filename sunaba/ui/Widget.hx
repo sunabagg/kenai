@@ -25,20 +25,20 @@ class Widget {
 
     private function instantiate(xml: Xml): Void {
         if (rootElement != null) {
-            var firstElement = xml.firstElement();
-            if (firstElement != null) {
-                if (firstElement.nodeName == "suml") {
-                    var fullScreenAtt = firstElement.get("fullscreen");
-                    if (fullScreenAtt == "true") {
-                        //rootElement.setAnchorsAndOffsetsPreset
-                    }
-                }
-                else {
-                    throw "Invalid root element: " + firstElement.nodeName;
-                }
-            }
+            //for
         }
 
-        
+        var firstElement = xml.firstElement();
+        if (firstElement != null) {
+            if (firstElement.nodeName == "suml") {
+                var fullScreenAtt = firstElement.get("fullscreen");
+                if (fullScreenAtt == "true") {
+                    rootElement.setAnchorsAndOffsetsPreset
+                }
+            }
+            else {
+                throw "Invalid root element: " + firstElement.nodeName;
+            }
+        }
     }
 }
