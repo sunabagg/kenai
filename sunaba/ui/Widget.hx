@@ -1,5 +1,11 @@
 package sunaba.ui;
 
+import sunaba.core.Vector2i;
+import sunaba.core.Vector4;
+import sunaba.core.Vector3;
+import sunaba.core.Vector2;
+import sunaba.core.Vector4i;
+import sunaba.core.Vector3i;
 import sunaba.core.Element;
 import lua.Table;
 import sunaba.core.io.IoManager;
@@ -151,6 +157,122 @@ class Widget {
     }
 
     private function setObjectValues(element: Element, xml: Xml): Void {
+        var attributes = xml.attributes();
+        for (attribute in attributes) {
+            var attributeName = attribute;
+            var attributeValue = xml.get(attributeName);
+            if (attributeName == "name") {
+                element.name = attributeValue;
+            }
+            else {
+                if (Reflect.hasField(element, attributeName)) {
+                    var currentValue = Reflect.field(element, attributeName);
+                    if (Std.isOfType(currentValue, Bool)) {
+                        var b : Bool = false;
+                        if (attributeValue == "true") {
+                            b = true;
+                        }
+                        else if (attributeValue == "false") {
+                            b = false;
+                        }
+                        else {
+                            throw "Invalid boolean value for field '" + attributeName + "' in element '" + Type.getClassName(Type.getClass(element)) + "'";
+                        }
+                        Reflect.setProperty(element, attributeName, b);
+                    }
+                    else if (Std.isOfType(currentValue, Int)) {
+                        Reflect.setProperty(element, attributeName, Std.parseInt(attributeValue));
+                    }
+                    else if (Std.isOfType(currentValue, Float)) {
+                        Reflect.setProperty(element, attributeName, Std.parseFloat(attributeValue));
+                    }
+                    else if (Std.isOfType(currentValue, String)) {
+                        Reflect.setProperty(element, attributeName, attributeValue);
+                    }
+                    else if (Std.isOfType(currentValue, Vector2)) {
+                        var xy = attributeValue.split(",");
+                        if (xy.length == 2) {
+                            var x = Std.parseFloat(xy[0]);
+                            var y = Std.parseFloat(xy[1]);
+                            Reflect.setProperty(element, attributeName, new Vector2(x, y));
+                        }
+                        else {
+                            throw "Invalid Vector2 value for field '" + attributeName + "' in element '" + Type.getClassName(Type.getClass(element)) + "'";
+                        }
+                    }
+                    else if (Std.isOfType(currentValue, Vector3)) {
+                        var xyz = attributeValue.split(",");
+                        if (xyz.length == 3) {
+                            var x = Std.parseFloat(xyz[0]);
+                            var y = Std.parseFloat(xyz[1]);
+                            var z = Std.parseFloat(xyz[2]);
+                            Reflect.setProperty(element, attributeName, new Vector3(x, y, z));
+                        }
+                        else {
+                            throw "Invalid Vector3 value for field '" + attributeName + "' in element '" + Type.getClassName(Type.getClass(element)) + "'";
+                        }
+                    }
+                    else if (Std.isOfType(currentValue, Vector4)) {
+                        var xyzw = attributeValue.split(",");
+                        if (xyzw.length == 4) {
+                            var x = Std.parseFloat(xyzw[0]);
+                            var y = Std.parseFloat(xyzw[1]);
+                            var z = Std.parseFloat(xyzw[2]);
+                            var w = Std.parseFloat(xyzw[3]);
+                            Reflect.setProperty(element, attributeName, new Vector4(x, y, z, w));
+                        }
+                        else {
+                            throw "Invalid Vector4 value for field '" + attributeName + "' in element '" + Type.getClassName(Type.getClass(element)) + "'";
+                        }
+                    }
+                    else if (Std.isOfType(currentValue, Vector2i)) {
+                        var xy = attributeValue.split(",");
+                        if (xy.length == 2) {
+                            var x = Std.parseInt(xy[0]);
+                            var y = Std.parseInt(xy[1]);
+                            Reflect.setProperty(element, attributeName, new Vector2i(x, y));
+                        }
+                        else {
+                            throw "Invalid Vector2i value for field '" + attributeName + "' in element '" + Type.getClassName(Type.getClass(element)) + "'";
+                        }
+                    }
+                    else if (Std.isOfType(currentValue, Vector3i)) {
+                        var xyz = attributeValue.split(",");
+                        if (xyz.length == 3) {
+                            var x = Std.parseInt(xyz[0]);
+                            var y = Std.parseInt(xyz[1]);
+                            var z = Std.parseInt(xyz[2]);
+                            Reflect.setProperty(element, attributeName, new Vector3i(x, y, z));
+                        }
+                        else {
+                            throw "Invalid Vector3i value for field '" + attributeName + "' in element '" + Type.getClassName(Type.getClass(element)) + "'";
+                        }
+                    }
+                    else if (Std.isOfType(currentValue, Vector4i)) {
+                        var xyzw = attributeValue.split(",");
+                        if (xyzw.length == 4) {
+                            var x = Std.parseInt(xyzw[0]);
+                            var y = Std.parseInt(xyzw[1]);
+                            var z = Std.parseInt(xyzw[2]);
+                            var w = Std.parseInt(xyzw[3]);
+                            Reflect.setProperty(element, attributeName, new Vector4i(x, y, z, w));
+                        }
+                        else {
+                            throw "Invalid Vector4i value for field '" + attributeName + "' in element '" + Type.getClassName(Type.getClass(element)) + "'";
+                        }
+                    }
+                    else {
+                        throw "Unsupported type for field '" + attributeName + "' in element '" + Type.getClassName(Type.getClass(element)) + "'";
+                    }
+                }
+                else {
+                    throw "Unknown field '" + attributeName + "' in element '" + Type.getClassName(Type.getClass(element)) + "'";
+                }
+            }
+        }
+    }
+
+    private function setObjectValue() {
         
     }
 
