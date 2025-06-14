@@ -15,4 +15,5 @@ extern class IoInterface extends BaseObject {
     public function fileExists(path: String): Bool;
     public function deleteFile(path: String): Void;
     public function moveFile(src: String, dest: String): Void;
+    public function createDirectory(path: String): Void;
 }
