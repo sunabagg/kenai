@@ -8,4 +8,5 @@ extern class IoInterface extends BaseObject {
     public function getFilePath(path: String): String;
     public function loadText(path: String): String;
     public function saveText(path: String, text: String): Void;
+    public function loadBinary(path: String): BinaryData;
 }
