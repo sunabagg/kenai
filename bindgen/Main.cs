@@ -175,7 +175,7 @@ public partial class Main : Node
 						}
 
 						var codeDir = enumPath.Replace(apiCodePath, "sunaba/");
-						var codeFile = enumPath + enumName + ".hx";
+						var codeFile = enumPath + "/" + enumName + ".hx";
 
 						var packageName = codeDir.Replace("/", ".");
 						
@@ -199,6 +199,10 @@ public partial class Main : Node
 						stringBuilder.AppendLine("}");
 						
 						var finalCode = stringBuilder.ToString();
+						if (!Directory.Exists(enumPath))
+						{
+							Directory.CreateDirectory(enumPath);
+						}
 						File.WriteAllText(codeFile, finalCode);
 					}
 				}
