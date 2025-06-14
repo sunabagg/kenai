@@ -1,0 +1,46 @@
+package sunaba;
+
+enum abstract PropertyHint(Int) {
+	var None = 0;
+	var Range = 1;
+	var Enum = 2;
+	var EnumSuggestion = 3;
+	var ExpEasing = 4;
+	var Link = 5;
+	var Flags = 6;
+	var Layers2DRender = 7;
+	var Layers2DPhysics = 8;
+	var Layers2DNavigation = 9;
+	var Layers3DRender = 10;
+	var Layers3DPhysics = 11;
+	var Layers3DNavigation = 12;
+	var File = 13;
+	var Dir = 14;
+	var GlobalFile = 15;
+	var GlobalDir = 16;
+	var ResourceType = 17;
+	var MultilineText = 18;
+	var Expression = 19;
+	var PlaceholderText = 20;
+	var ColorNoAlpha = 21;
+	var ObjectId = 22;
+	var TypeString = 23;
+	var NodePathToEditedNode = 24;
+	var ObjectTooBig = 25;
+	var NodePathValidTypes = 26;
+	var SaveFile = 27;
+	var GlobalSaveFile = 28;
+	var IntIsObjectid = 29;
+	var IntIsPointer = 30;
+	var ArrayType = 31;
+	var LocaleId = 32;
+	var LocalizableString = 33;
+	var NodeType = 34;
+	var HideQuaternionEdit = 35;
+	var Password = 36;
+	var LayersAvoidance = 37;
+	var DictionaryType = 38;
+	var ToolButton = 39;
+	var Oneshot = 40;
+	var Max = 42;
+}

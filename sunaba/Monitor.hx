@@ -1,0 +1,44 @@
+package sunaba;
+
+enum abstract Monitor(Int) {
+	var TimeFps = 0;
+	var TimeProcess = 1;
+	var TimePhysicsProcess = 2;
+	var TimeNavigationProcess = 3;
+	var MemoryStatic = 4;
+	var MemoryStaticMax = 5;
+	var MemoryMessageBufferMax = 6;
+	var ObjectCount = 7;
+	var ObjectResourceCount = 8;
+	var ObjectNodeCount = 9;
+	var ObjectOrphanNodeCount = 10;
+	var RenderTotalObjectsInFrame = 11;
+	var RenderTotalPrimitivesInFrame = 12;
+	var RenderTotalDrawCallsInFrame = 13;
+	var RenderVideoMemUsed = 14;
+	var RenderTextureMemUsed = 15;
+	var RenderBufferMemUsed = 16;
+	var Physics2DActiveObjects = 17;
+	var Physics2DCollisionPairs = 18;
+	var Physics2DIslandCount = 19;
+	var Physics3DActiveObjects = 20;
+	var Physics3DCollisionPairs = 21;
+	var Physics3DIslandCount = 22;
+	var AudioOutputLatency = 23;
+	var NavigationActiveMaps = 24;
+	var NavigationRegionCount = 25;
+	var NavigationAgentCount = 26;
+	var NavigationLinkCount = 27;
+	var NavigationPolygonCount = 28;
+	var NavigationEdgeCount = 29;
+	var NavigationEdgeMergeCount = 30;
+	var NavigationEdgeConnectionCount = 31;
+	var NavigationEdgeFreeCount = 32;
+	var NavigationObstacleCount = 33;
+	var PipelineCompilationsCanvas = 34;
+	var PipelineCompilationsMesh = 35;
+	var PipelineCompilationsSurface = 36;
+	var PipelineCompilationsDraw = 37;
+	var PipelineCompilationsSpecialization = 38;
+	var MonitorMax = 39;
+}

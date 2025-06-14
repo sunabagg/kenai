@@ -1,0 +1,10 @@
+package sunaba..ui;
+
+enum abstract NinePatchRectSizeFlagsHorizontal(Int) {
+	var ShrinkBegin = 0;
+	var Fill = 1;
+	var Expand = 2;
+	var ExpandFill = 3;
+	var ShrinkCenter = 4;
+	var ShrinkEnd = 8;
+}

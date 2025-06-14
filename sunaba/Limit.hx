@@ -1,0 +1,43 @@
+package sunaba;
+
+enum abstract Limit(Int) {
+	var MaxBoundUniformSets = 0;
+	var MaxFramebufferColorAttachments = 1;
+	var MaxTexturesPerUniformSet = 2;
+	var MaxSamplersPerUniformSet = 3;
+	var MaxStorageBuffersPerUniformSet = 4;
+	var MaxStorageImagesPerUniformSet = 5;
+	var MaxUniformBuffersPerUniformSet = 6;
+	var MaxDrawIndexedIndex = 7;
+	var MaxFramebufferHeight = 8;
+	var MaxFramebufferWidth = 9;
+	var MaxTextureArrayLayers = 10;
+	var MaxTextureSize1D = 11;
+	var MaxTextureSize2D = 12;
+	var MaxTextureSize3D = 13;
+	var MaxTextureSizeCube = 14;
+	var MaxTexturesPerShaderStage = 15;
+	var MaxSamplersPerShaderStage = 16;
+	var MaxStorageBuffersPerShaderStage = 17;
+	var MaxStorageImagesPerShaderStage = 18;
+	var MaxUniformBuffersPerShaderStage = 19;
+	var MaxPushConstantSize = 20;
+	var MaxUniformBufferSize = 21;
+	var MaxVertexInputAttributeOffset = 22;
+	var MaxVertexInputAttributes = 23;
+	var MaxVertexInputBindings = 24;
+	var MaxVertexInputBindingStride = 25;
+	var MinUniformBufferOffsetAlignment = 26;
+	var MaxComputeSharedMemorySize = 27;
+	var MaxComputeWorkgroupCountX = 28;
+	var MaxComputeWorkgroupCountY = 29;
+	var MaxComputeWorkgroupCountZ = 30;
+	var MaxComputeWorkgroupInvocations = 31;
+	var MaxComputeWorkgroupSizeX = 32;
+	var MaxComputeWorkgroupSizeY = 33;
+	var MaxComputeWorkgroupSizeZ = 34;
+	var MaxViewportDimensionsX = 35;
+	var MaxViewportDimensionsY = 36;
+	var MetalfxTemporalScalerMinScale = 46;
+	var MetalfxTemporalScalerMaxScale = 47;
+}

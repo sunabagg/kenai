@@ -1,0 +1,7 @@
+package sunaba..ui;
+
+enum abstract NinePatchRectTooltipAutoTranslateMode(Int) {
+	var Inherit = 0;
+	var Always = 1;
+	var Disabled = 2;
+}
