@@ -65,6 +65,7 @@ void App::start( const String &path) {
         sol::lib::count, sol::lib::math, sol::lib::string,
         sol::lib::table, sol::lib::utf8, sol::lib::package );
 
+// hack fix for PUC-Rio Lua
 #ifdef USE_PUCRIO_LUA
         lua_State* L = global_state.lua_state();
         luaopen_bit(L);
