@@ -112,6 +112,67 @@ public partial class Main : Node
 					if (propertyInfo.PropertyType.IsEnum)
 					{
 						var enumName = type.Name + propertyInfo.Name;
+						string enumPath = apiDir;
+						if (enumName.StartsWith("animation"))
+						{
+							enumPath += "animation/";
+							enumName = enumName.Replace("animation", String.Empty);
+						}
+						else if (enumName.StartsWith("core"))
+						{
+							enumPath += "core/";
+							enumName = enumName.Replace("core", String.Empty);
+						}
+						else if (enumName.StartsWith("input"))
+						{
+							enumPath += "input/";
+							enumName = enumName.Replace("input", String.Empty);
+						}
+						else if (enumName.StartsWith("ui"))
+						{
+							enumPath += "ui/";
+							enumName = enumName.Replace("ui", String.Empty);
+						}
+						else if (enumName.StartsWith("mesh"))
+						{
+							enumPath += "mesh/";
+							enumName = enumName.Replace("mesh", String.Empty);
+						}
+						else if (enumName.StartsWith("xr"))
+						{
+							enumPath += "xr/";
+							enumName = enumName.Replace("xr", String.Empty);
+						}
+						else if (enumName.StartsWith("physics"))
+						{
+							enumPath += "physics/";
+							enumName = enumName.Replace("physics", String.Empty);
+						}
+						else if (enumName.StartsWith("spatial"))
+						{
+							enumPath += "spatial/";
+							enumName = enumName.Replace("spatial", String.Empty);
+						}
+						else if (enumName.StartsWith("desktop"))
+						{
+							enumPath += "desktop/";
+							enumName = enumName.Replace("desktop", String.Empty);
+						}
+						else if (enumName.StartsWith("video"))
+						{
+							enumPath += "video/";
+							enumName = enumName.Replace("video", String.Empty);
+						}
+						else if (enumName.StartsWith("audio"))
+						{
+							enumPath += "audio/";
+							enumName = enumName.Replace("audio", String.Empty);
+						}
+						else if (enumName.StartsWith("editor"))
+						{
+							enumPath += "editor/";
+							enumName = enumName.Replace("editor", String.Empty);
+						}
 
 						var codeDir = apiDir.Replace(apiCodePath, "sunaba/");
 						var codeFile = apiDir + enumName + ".hx";
