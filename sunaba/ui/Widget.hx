@@ -12,6 +12,8 @@ import sunaba.core.Vector2;
 import sunaba.core.Vector4i;
 import sunaba.core.Vector3i;
 import sunaba.core.Element;
+import sunaba.ui.Control;
+import sunaba.core.Variant;
 import lua.Table;
 import sunaba.core.io.IoManager;
 import sunaba.LayoutPreset;
@@ -331,6 +333,12 @@ class Widget {
                     }
                 }
                 else {
+                    if (Std.isOfType(element, Control)) {
+                        var control: Control = cast element;
+                        if (control.hasThemeConstantOverride(attributeName)) {
+                            control.addThemeConstantOverride(attributeName, Variant.fromInt64(Std.parseInt(attributeValue)));
+                        }
+                    }
                     throw "Unknown field '" + attributeName + "' in element '" + Type.getClassName(Type.getClass(element)) + "'";
                 }
             }
