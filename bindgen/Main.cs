@@ -65,7 +65,7 @@ public partial class Main : Node
 
 				stringBuilder.AppendLine("}");
 
-				File.WriteAllText(codeFile, stringBuilder.ToString());
+				//File.WriteAllText(codeFile, stringBuilder.ToString());
 			}
 		}
 	}
@@ -80,7 +80,7 @@ public partial class Main : Node
 		var files = Directory.GetFiles(xmlDir, "*.xml");
 		foreach (var file in files)
 		{
-			var fileName = Path.GetFileNameWithoutExtension(file);
+			var fileName = file.GetFile().GetBaseName();
 			GenerateEnumFiles(xmlDir.Replace(parentDirPath, apiCodePath), fileName);
 		}
 	}
@@ -138,7 +138,7 @@ public partial class Main : Node
 						stringBuilder.AppendLine("}");
 						
 						var finalCode = stringBuilder.ToString();
-						File.WriteAllText(codeFile, finalCode);
+						//File.WriteAllText(codeFile, finalCode);
 					}
 				}
 			}
