@@ -65,6 +65,11 @@ void App::start( const String &path) {
         sol::lib::count, sol::lib::math, sol::lib::string,
         sol::lib::table, sol::lib::utf8, sol::lib::package );
 
+#ifdef USE_PUCRIO_LUA
+        lua_State* L = global_state.lua_state();
+#endif
+    
+
     global_state["print"] = [this]( sol::variadic_args args ) {
         String msg;
         for ( const auto &arg : args )
