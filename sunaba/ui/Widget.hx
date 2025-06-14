@@ -65,7 +65,7 @@ class Widget {
                     if (anchorRightAtt != null) {
                         rootElement.anchorRight = Std.parseFloat(anchorRightAtt);
                     }
-                    
+
                     var offsetTopAtt = firstElement.get("offsetTop");
                     if (offsetTopAtt != null) {
                         rootElement.offsetTop = Std.parseFloat(offsetTopAtt);
@@ -83,6 +83,23 @@ class Widget {
                         rootElement.offsetRight = Std.parseFloat(offsetRightAtt);
                     }
                 }
+
+                var nameAtt = firstElement.get("name");
+                if (nameAtt != null) {
+                    rootElement.name = nameAtt;
+                }
+
+                var children = firstElement.elements();
+                for (child in children) {
+                    if (child.nodeName == "head") {
+                        for (headChild in child.elements()) {
+                            if (headChild.nodeName == "style") {
+                                //
+                            }
+                        }
+                    }
+                }
+
             }
             else {
                 throw "Invalid root element: " + firstElement.nodeName;
