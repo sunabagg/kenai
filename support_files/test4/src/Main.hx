@@ -1,10 +1,12 @@
 package support_files.test4.src;
 
+import sunaba.LayoutPresetMode;
 import sunaba.App;
 import sunaba.ui.Control;
 import sunaba.ui.Panel;
 import sunaba.ui.Label;
 import sunaba.ui.VBoxContainer;
+import sunaba.LayoutPreset;
 
 class Main extends App{
     public static function main() {
@@ -20,14 +22,14 @@ class Main extends App{
         var control = new Control();
 
         rootElement.addChild(control);
-        control.setAnchorsAndOffsetsPreset(15, 3, 0);
+        control.setAnchorsAndOffsetsPreset(cast LayoutPreset.FullRect, cast LayoutPresetMode.KeepSize);
         control.sizeFlagsHorizontal = 3;
         control.sizeFlagsVertical = 3;
         
 
         var panel = new Panel();
         control.addChild(panel);
-        panel.setAnchorsAndOffsetsPreset(15, 3, 0);
+        panel.setAnchorsAndOffsetsPreset(cast LayoutPreset.FullRect, cast LayoutPresetMode.KeepSize);
         panel.sizeFlagsHorizontal = 3;
         panel.sizeFlagsVertical = 3;
         panel.offsetBottom = -10;
@@ -38,7 +40,7 @@ class Main extends App{
         var vboxContainer = new VBoxContainer();
 
         control.addChild(vboxContainer);
-        vboxContainer.setAnchorsAndOffsetsPreset(8, 0, 0);
+        vboxContainer.setAnchorsPreset(cast LayoutPreset.Center);
 
         label = new Label();
 
