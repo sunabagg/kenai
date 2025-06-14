@@ -133,7 +133,7 @@ class Widget {
         if (isAnElementClass(classType)) {
             var instance = Type.createInstance(classType, []);
             if (instance != null) {
-                var element : Element= cast instance;
+                var element : Element = cast instance;
                 setObjectValues(element, xml);
                 constructChildren(element, xml);
                 if (element.name == null) {
