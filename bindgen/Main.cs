@@ -65,7 +65,7 @@ public partial class Main : Node
 
 				stringBuilder.AppendLine("}");
 
-				//File.WriteAllText(codeFile, stringBuilder.ToString());
+				File.WriteAllText(codeFile, stringBuilder.ToString());
 			}
 		}
 	}
@@ -199,7 +199,7 @@ public partial class Main : Node
 						stringBuilder.AppendLine("}");
 						
 						var finalCode = stringBuilder.ToString();
-						//File.WriteAllText(codeFile, finalCode);
+						File.WriteAllText(codeFile, finalCode);
 					}
 				}
 			}
