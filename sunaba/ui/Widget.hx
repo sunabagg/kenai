@@ -110,7 +110,7 @@ class Widget {
                     if (child.nodeName == "head") {
                         for (headChild in child.elements()) {
                             if (headChild.nodeName == "style") {
-                                //
+                                // TODO: Implement style parsing
                             }
                         }
                     }
