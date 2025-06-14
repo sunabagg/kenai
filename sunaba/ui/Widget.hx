@@ -1,5 +1,7 @@
 package sunaba.ui;
 
+import sunaba.core.Element;
+import lua.Table;
 import sunaba.core.io.IoManager;
 import sunaba.LayoutPreset;
 import sunaba.LayoutPresetMode;
@@ -27,7 +29,14 @@ class Widget {
 
     private function instantiate(xml: Xml): Void {
         if (rootElement != null) {
-            //for
+            var childrenTable : Table<Int, Element> = rootElement.getChildren();
+            var children : Array<Element> = Table.toArray(childrenTable);
+            for (i in 0... children.length) {
+                var child = children[i];
+                if (child != null) {
+                    child.delete();
+                }
+            }
         }
 
         var firstElement = xml.firstElement();
