@@ -3,6 +3,8 @@
 
 #include <godot_cpp/classes/font_file.hpp>
 #include <godot_cpp/variant/variant.hpp>
+#include <godot_cpp/classes/dir_access.hpp>
+#include <godot_cpp/classes/file_access.hpp>
 #include <sol/sol.hpp>
 
 #define GodotFontFile godot::FontFile
@@ -378,21 +380,43 @@ namespace sunaba::core {
         int loadBitmapFont(sol::state_view lua_state, std::string path) {
             auto ioManager = IoIndex::getIoManager(lua_state);
             BinaryData f = ioManager->loadBinary(path);
-            if (f.size() > 0) {
-                setData(&f);
-            } else {
+            if (f.size() == 0) {
                 return Error::FAILED; // Error loading font
             }
+            String pathGdString = String(path.c_str());
+            if (!DirAccess::dir_exists_absolute("user://temp/")) {
+                DirAccess::make_dir_absolute("user://temp/");
+            }
+            String tempFontPath = "user://temp/" + pathGdString.get_file();
+            Ref<FileAccess> fileAccess = FileAccess::open(tempFontPath, FileAccess::WRITE);
+            if (!fileAccess.is_null()) {
+                fileAccess->store_buffer(f.toPackedByteArray());
+                fileAccess->close();
+            } else {
+                return Error::FAILED; // Error opening file
+            }
+            return fontFile->load_bitmap_font(tempFontPath);
         }
 
         int loadDynamicFont(sol::state_view lua_state, std::string path) {
             auto ioManager = IoIndex::getIoManager(lua_state);
             BinaryData f = ioManager->loadBinary(path);
-            if (f.size() > 0) {
-                setData(&f);
-            } else {
+            if (f.size() == 0) {
                 return Error::FAILED; // Error loading font
             }
+            String pathGdString = String(path.c_str());
+            if (!DirAccess::dir_exists_absolute("user://temp/")) {
+                DirAccess::make_dir_absolute("user://temp/");
+            }
+            String tempFontPath = "user://temp/" + pathGdString.get_file();
+            Ref<FileAccess> fileAccess = FileAccess::open(tempFontPath, FileAccess::WRITE);
+            if (!fileAccess.is_null()) {
+                fileAccess->store_buffer(f.toPackedByteArray());
+                fileAccess->close();
+            } else {
+                return Error::FAILED; // Error opening file
+            }
+            return fontFile->load_dynamic_font(tempFontPath);
         }
 
         void removeCache(int cacheIndex) {
