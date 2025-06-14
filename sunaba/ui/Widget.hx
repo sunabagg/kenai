@@ -31,7 +31,7 @@ class Widget {
         var firstElement = xml.firstElement();
         if (firstElement != null) {
             if (firstElement.nodeName == "suml") {
-                
+                var fullScreenAtt = firstElement.getAttribute("fullscreen");
             }
             else {
                 throw "Invalid root element: " + firstElement.nodeName;
