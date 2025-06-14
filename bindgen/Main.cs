@@ -174,8 +174,8 @@ public partial class Main : Node
 							enumName = enumName.Replace("editor", String.Empty);
 						}
 
-						var codeDir = apiDir.Replace(apiCodePath, "sunaba/");
-						var codeFile = apiDir + enumName + ".hx";
+						var codeDir = enumPath.Replace(apiCodePath, "sunaba/");
+						var codeFile = enumPath + enumName + ".hx";
 
 						var packageName = codeDir.Replace("/", ".");
 						
