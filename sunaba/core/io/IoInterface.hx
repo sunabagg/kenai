@@ -1,0 +1,8 @@
+package sunaba.core.io;
+
+import sunaba.core.BaseObject;
+
+@:native("IoInterface")
+extern class IoInterface extends BaseObject {
+    
+}
