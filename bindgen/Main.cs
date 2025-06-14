@@ -50,6 +50,11 @@ public partial class Main : Node
 		if (type != null)
 		{
 			var enumName = type.GetProperties();
+
+			foreach (var propertyInfo in enumNames)
+			{
+				
+			}
 		}
 		
 	}
