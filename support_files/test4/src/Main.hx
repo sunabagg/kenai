@@ -1,5 +1,6 @@
 package support_files.test4.src;
 
+import sunaba.SizeFlags;
 import sunaba.LayoutPresetMode;
 import sunaba.App;
 import sunaba.ui.Control;
@@ -22,16 +23,15 @@ class Main extends App{
         var control = new Control();
 
         rootElement.addChild(control);
-        control.setAnchorsAndOffsetsPreset(cast LayoutPreset.FullRect, cast LayoutPresetMode.KeepSize);
-        control.sizeFlagsHorizontal = 3;
-        control.sizeFlagsVertical = 3;
-        
+        control.setAnchorsAndOffsetsPreset(cast LayoutPreset.FullRect, cast LayoutPresetMode.KeepSize, 0);
+        control.sizeFlagsHorizontal = cast SizeFlags.Fill;
+        control.sizeFlagsVertical = cast SizeFlags.Fill;
 
         var panel = new Panel();
         control.addChild(panel);
-        panel.setAnchorsAndOffsetsPreset(cast LayoutPreset.FullRect, cast LayoutPresetMode.KeepSize);
-        panel.sizeFlagsHorizontal = 3;
-        panel.sizeFlagsVertical = 3;
+        panel.setAnchorsAndOffsetsPreset(cast LayoutPreset.FullRect, cast LayoutPresetMode.KeepSize, 0);
+        panel.sizeFlagsHorizontal = cast SizeFlags.Fill;
+        panel.sizeFlagsVertical = cast SizeFlags.Fill;
         panel.offsetBottom = -10;
         panel.offsetTop = 10;
         panel.offsetLeft = -10;
@@ -40,7 +40,9 @@ class Main extends App{
         var vboxContainer = new VBoxContainer();
 
         control.addChild(vboxContainer);
-        vboxContainer.setAnchorsPreset(cast LayoutPreset.Center);
+        vboxContainer.setAnchorsAndOffsetsPreset(cast LayoutPreset.Center, cast LayoutPresetMode.Minsize, 0);
+        vboxContainer.sizeFlagsHorizontal = cast SizeFlags.ShrinkCenter;
+        vboxContainer.sizeFlagsVertical = cast SizeFlags.ShrinkCenter;
 
         label = new Label();
 
