@@ -186,7 +186,28 @@ class Widget {
                         Reflect.setProperty(element, attributeName, b);
                     }
                     else if (Std.isOfType(currentValue, Int)) {
-                        Reflect.setProperty(element, attributeName, Std.parseInt(attributeValue));
+                        var attrArr = attributeValue.split(".");
+                        var value = attrArr[attrArr.length - 1];
+                        attrArr.resize(attrArr.length - 1);
+                        var enumName = attrArr.join(".");
+                        if (enumName != "") {
+                            var enum_ = Type.resolveEnum(enumName);
+                            if (enum_ != null) {
+                                var enumValue : Int = cast Reflect.field(enum_, value);
+                                if (enumValue != null) {
+                                    Reflect.setProperty(element, attributeName, enumValue);
+                                }
+                                else {
+                                    throw "Invalid enum value '" + value + "' for field '" + attributeName + "' in element '" + Type.getClassName(Type.getClass(element)) + "'";
+                                }
+                            }
+                            else {
+                                throw "Unknown enum: " + enumName;
+                            }
+                        }
+                        else  {
+                            Reflect.setProperty(element, attributeName, Std.parseInt(attributeValue));
+                        }
                     }
                     else if (Std.isOfType(currentValue, Float)) {
                         Reflect.setProperty(element, attributeName, Std.parseFloat(attributeValue));
