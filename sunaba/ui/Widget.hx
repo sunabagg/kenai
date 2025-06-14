@@ -150,28 +150,27 @@ class Widget {
 
     private function construct(xml: Xml) : Element {
         var className = xml.nodeName;
-        var classNamePascalCase = camelToPascal(className);
-        var classType = Type.resolveClass("sunaba.ui." + classNamePascalCase);
-        if (classType == null) {
-            classType = Type.resolveClass(className);
-        }
-        if (isAnElementClass(classType)) {
-            var instance = Type.createInstance(classType, []);
-            if (instance != null) {
-                var element : Element = cast instance;
-                setObjectValues(element, xml);
-                constructChildren(element, xml);
-                if (element.name == null) {
-                    var nameAtt = xml.get("name");
-                    if (nameAtt != null) {
-                        element.name = nameAtt;
+        var classType = Type.resolveClass(className);
+        if (classType != null) {
+            if (isAnElementClass(classType)) {
+                var instance = Type.createInstance(classType, []);
+                if (instance != null) {
+                    var element : Element = cast instance;
+                    setObjectValues(element, xml);
+                    constructChildren(element, xml);
+                    if (element.name == null) {
+                        var nameAtt = xml.get("name");
+                        if (nameAtt != null) {
+                            element.name = nameAtt;
+                        }
                     }
+                    return element;
                 }
-                return element;
             }
         }
+        
 
-
+        throw "Unknown element class: " + className;
         return null;
     }
 
