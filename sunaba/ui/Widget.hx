@@ -5,6 +5,7 @@ import lua.Table;
 import sunaba.core.io.IoManager;
 import sunaba.LayoutPreset;
 import sunaba.LayoutPresetMode;
+import Type;
 
 class Widget {
     public var rootElement: Control;
@@ -112,7 +113,76 @@ class Widget {
 
     private function constructNodes(nodes: Iterator<Xml>): Void {
         for (node in nodes) {
-            //
+            var element = construct(node);
+            if (element != null) {
+                rootElement.addChild(element);
+            }
+            else {
+                throw "Unknown element: " + node.nodeName;
+            }
         }
+    }
+
+    private function construct(xml: Xml) : Element {
+        var className = xml.nodeName;
+        var classNamePascalCase = camelToPascal(className);
+        var classType = Type.resolveClass("sunaba.ui." + classNamePascalCase);
+        if (classType == null) {
+            classType = Type.resolveClass(className);
+        }
+        if (isAnElementClass(classType)) {
+            var instance = Type.createInstance(classType, []);
+            if (instance != null) {
+                var element : Element= cast instance;
+                setObjectValues(element, xml);
+                constructChildren(element, xml);
+                if (element.name == null) {
+                    var nameAtt = xml.get("name");
+                    if (nameAtt != null) {
+                        element.name = nameAtt;
+                    }
+                }
+                return element;
+            }
+        }
+
+
+        return null;
+    }
+
+    private function setObjectValues(element: Element, xml: Xml): Void {
+        
+    }
+
+    private function constructChildren(element: Element, xml: Xml): Void {
+        var children = xml.elements();
+        for (child in children) {
+            var childElement = construct(child);
+            if (childElement != null) {
+                element.addChild(childElement);
+            }
+            else {
+                throw "Unknown child element: " + child.nodeName;
+            }
+        }
+    }
+
+    private function isAnElementClass(classInfo: Class<Dynamic>): Bool {
+        var superClass = Type.getSuperClass(classInfo);
+        if (Type.getClassName(superClass) == "Class<sunaba.core.Element>") {
+            return true;
+        }
+        else if (superClass != null) {
+            var res = isAnElementClass(superClass);
+            if (res) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    private function camelToPascal(str:String):String {
+        if (str == null || str.length == 0) return str;
+        return str.charAt(0).toUpperCase() + str.substr(1);
     }
 }
