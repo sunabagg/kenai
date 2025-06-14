@@ -1714,12 +1714,12 @@ __support_files_test4_src_Main.prototype.init = function(self)
   _G.print("Hello, World!");
   local control = Control.new();
   self:get_rootElement():addChild(control);
-  control:setAnchorsAndOffsetsPreset(15, 3, 0);
+  control:setAnchorsAndOffsetsPreset(15, 3);
   control.sizeFlagsHorizontal = 3;
   control.sizeFlagsVertical = 3;
   local panel = Panel.new();
   control:addChild(panel);
-  panel:setAnchorsAndOffsetsPreset(15, 3, 0);
+  panel:setAnchorsAndOffsetsPreset(15, 3);
   panel.sizeFlagsHorizontal = 3;
   panel.sizeFlagsVertical = 3;
   panel.offsetBottom = -10;
@@ -1728,7 +1728,7 @@ __support_files_test4_src_Main.prototype.init = function(self)
   panel.offsetRight = 10;
   local vboxContainer = VBoxContainer.new();
   control:addChild(vboxContainer);
-  vboxContainer:setAnchorsAndOffsetsPreset(8, 0, 0);
+  vboxContainer:setAnchorsPreset(8);
   self.label = Label.new();
   vboxContainer:addChild(self.label);
   self.label.text = "Hello, World!";
