@@ -13,4 +13,5 @@ extern class IoInterface extends BaseObject {
     public function getFileListAll(?extension: String, ?recursive: Bool): StringArray;
     public function getFileList(path: String, ?extension: String, ?recursive: Bool): StringArray;
     public function fileExists(path: String): Bool;
+    public function deleteFile(path: String): Void;
 }
