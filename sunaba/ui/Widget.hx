@@ -18,10 +18,10 @@ class Widget {
 
     public function parseMarkup(markup: String): Void {
         var xml = Xml.parse(markup);
-        instaniate(xml);
+        instantiate(xml);
     }
 
-    private function instaniate(xml: Xml): Void {
-        
+    private function instantiate(xml: Xml): Void {
+
     }
 }
