@@ -1,5 +1,6 @@
 package sunaba.ui;
 
+import sunaba.core.FontFile;
 import sunaba.core.Texture;
 import sunaba.core.Image;
 import sunaba.core.ImageTexture;
@@ -14,6 +15,7 @@ import sunaba.core.Vector3i;
 import sunaba.core.Element;
 import sunaba.ui.Control;
 import sunaba.core.Variant;
+import sunaba.core.FontFile;
 import lua.Table;
 import sunaba.core.io.IoManager;
 import sunaba.LayoutPreset;
@@ -354,7 +356,15 @@ class Widget {
                                 throw "Invalid Color value for field '" + attributeName + "' in element '" + Type.getClassName(Type.getClass(element)) + "'";
                             }
                         }
-                        else if (control.hasThemeColorOverride(attributeName)) {
+                        else if (control.hasThemeFontOverride(snakeCaseName)) {
+                            var fontFile = new FontFile();
+                            var res = fontFile.loadDynamicFont(attributeValue);
+                            if (res == 1) {
+                                res = fontFile.loadBitmapFont(attributeValue);
+                                if (res == 1) {
+                                    throw "Failed to load Font for field '" + attributeName + "' in element '" + Type.getClassName(Type.getClass(element)) + "'";
+                                }
+                            }
 
                         }
                     }
