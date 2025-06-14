@@ -14,7 +14,7 @@ namespace sunaba::core::io {
             sol::base_classes, sol::bases<IoInterface>(),
             "add", &IoManager::add,
             "remove", &IoManager::remove,
-            "getFileUrl", &IoManager::getFileUrl
+            "getFileUri", &IoManager::getFileUrl
         );
     }
 
