@@ -6,4 +6,5 @@ import sunaba.core.BaseObject;
 extern class IoInterface extends BaseObject {
     public var pathUri: String;
     public function getFilePath(path: String): String;
+    public function loadText(path: String): String;
 }
