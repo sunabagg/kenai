@@ -124,7 +124,7 @@ namespace sunaba::ui {
 
             // Constructor with no parameters
             Tree() {
-                setTree(memnew(TreeNode));
+                setTree(memnew(GodotTree));
                 onInit();
             }
 
