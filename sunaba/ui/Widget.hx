@@ -1,5 +1,6 @@
 package sunaba.ui;
 
+import sunaba.core.Color;
 import sunaba.core.Vector2i;
 import sunaba.core.Vector4;
 import sunaba.core.Vector3;
@@ -259,6 +260,15 @@ class Widget {
                         }
                         else {
                             throw "Invalid Vector4i value for field '" + attributeName + "' in element '" + Type.getClassName(Type.getClass(element)) + "'";
+                        }
+                    }
+                    else if (Std.isOfType(currentValue, Color)) {
+                        var color = Color.html(attributeValue);
+                        if (color != null) {
+                            Reflect.setProperty(element, attributeName, color);
+                        }
+                        else {
+                            throw "Invalid Color value for field '" + attributeName + "' in element '" + Type.getClassName(Type.getClass(element)) + "'";
                         }
                     }
                     else {
