@@ -99,7 +99,7 @@ class Widget {
                         }
                     }
                     else if (child.nodeName == "body") {
-                        
+                        constructNodes(child.elements());
                     }
                 }
 
@@ -107,6 +107,12 @@ class Widget {
             else {
                 throw "Invalid root element: " + firstElement.nodeName;
             }
+        }
+    }
+
+    private function constructNodes(nodes: Iterator<Xml>): Void {
+        for (node in nodes) {
+            //
         }
     }
 }
