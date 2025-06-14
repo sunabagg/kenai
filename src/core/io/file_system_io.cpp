@@ -26,14 +26,14 @@ namespace sunaba::core::io {
     }
     
     std::string FileSystemIo::getFileUrl(const std::string &path) const {
-        return StringUtils::replace(path, basePath, pathUrl);
+        return StringUtils::replace(path, basePath, pathUri);
     }
 
     std::string FileSystemIo::getFilePath(const std::string &path) const {
         std::string finalPath;
-        if (StringUtils::beginsWith(path, pathUrl))
+        if (StringUtils::beginsWith(path, pathUri))
         {
-            finalPath = StringUtils::replace(path, pathUrl, basePath);
+            finalPath = StringUtils::replace(path, pathUri, basePath);
         }
 
         if (StringUtils::contains(finalPath, "\\/"))
@@ -53,7 +53,7 @@ namespace sunaba::core::io {
         io->basePath = basePath;
         io->altPath = StringUtils::replace(basePath, "/", "\\");
         io->altPath2 = StringUtils::replace(basePath, "\\", "/");
-        io->pathUrl = pathUrl;
+        io->pathUri = pathUrl;
         return io;
     }
 }

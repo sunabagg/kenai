@@ -45,7 +45,7 @@ namespace sunaba::core::io {
             if (dynamic_cast<SystemIoInterface*>(io) != nullptr) {
                 SystemIoInterface* sio = dynamic_cast<SystemIoInterface*>(io);
                 if (sio != nullptr) {
-                    if (sio->pathUrl == base_url) {
+                    if (sio->pathUri == base_url) {
                         return sio->getFileUrl(path);
                     }
                 }
@@ -56,7 +56,7 @@ namespace sunaba::core::io {
 
     std::string IoManager::loadText(const std::string &path) const {
         for (auto& io : interfaces) {
-            if (StringUtils::beginsWith(path, io->pathUrl)) {
+            if (StringUtils::beginsWith(path, io->pathUri)) {
                 return io->loadText(path);
             }
         }
@@ -65,7 +65,7 @@ namespace sunaba::core::io {
 
     void IoManager::saveText(const std::string &path, const std::string &text) const {
         for (auto& io : interfaces) {
-            if (StringUtils::beginsWith(path, io->pathUrl)) {
+            if (StringUtils::beginsWith(path, io->pathUri)) {
                 io->saveText(path, text);
                 return;
             }
@@ -74,7 +74,7 @@ namespace sunaba::core::io {
 
     PackedByteArray IoManager::loadBytes(const std::string &path) const {
         for (auto& io : interfaces) {
-            if (StringUtils::beginsWith(path, io->pathUrl)) {
+            if (StringUtils::beginsWith(path, io->pathUri)) {
                 return io->loadBytes(path);
             }
         }
@@ -83,7 +83,7 @@ namespace sunaba::core::io {
 
     void IoManager::saveBytes(const std::string &path, const PackedByteArray &bytes) const {
         for (auto& io : interfaces) {
-            if (StringUtils::beginsWith(path, io->pathUrl)) {
+            if (StringUtils::beginsWith(path, io->pathUri)) {
                 io->saveBytes(path, bytes);
                 return;
             }
@@ -93,7 +93,7 @@ namespace sunaba::core::io {
     std::vector<std::string> IoManager::getFileList(const std::string &path, const std::string &extension, const bool recursive) const {
         std::vector<std::string> files;
         for (auto& io : interfaces) {
-            if (StringUtils::beginsWith(path, io->pathUrl)) {
+            if (StringUtils::beginsWith(path, io->pathUri)) {
                 auto list = io->getFileList(path, extension, recursive);
                 files.insert(files.end(), list.begin(), list.end());
             }
@@ -103,7 +103,7 @@ namespace sunaba::core::io {
 
     void IoManager::deleteFile(const std::string &path) const {
         for (auto& io : interfaces) {
-            if (StringUtils::beginsWith(path, io->pathUrl)) {
+            if (StringUtils::beginsWith(path, io->pathUri)) {
                 io->deleteFile(path);
                 return;
             }
@@ -112,7 +112,7 @@ namespace sunaba::core::io {
 
     int IoManager::createDirectory(const std::string &path) const {
         for (auto& io : interfaces) {
-            if (StringUtils::beginsWith(path, io->pathUrl)) {
+            if (StringUtils::beginsWith(path, io->pathUri)) {
                 return io->createDirectory(path);
             }
         }
@@ -121,7 +121,7 @@ namespace sunaba::core::io {
 
     void IoManager::deleteDirectory(const std::string &path) const {
         for (auto& io : interfaces) {
-            if (StringUtils::beginsWith(path, io->pathUrl)) {
+            if (StringUtils::beginsWith(path, io->pathUri)) {
                 io->deleteDirectory(path);
                 return;
             }
@@ -130,7 +130,7 @@ namespace sunaba::core::io {
 
     bool IoManager::directoryExists(const std::string &path) const {
         for (auto& io : interfaces) {
-            if (StringUtils::beginsWith(path, io->pathUrl)) {
+            if (StringUtils::beginsWith(path, io->pathUri)) {
                 return io->directoryExists(path);
             }
         }

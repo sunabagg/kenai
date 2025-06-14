@@ -8,7 +8,7 @@ namespace sunaba::core::io {
 
     class SystemIoInterface : public IoInterface {
     public:
-        virtual std::string getFileUrl(const std::string &path) const { return pathUrl + path; } 
+        virtual std::string getFileUrl(const std::string &path) const { return pathUri + path; } 
 
         std::string loadText(const std::string &path) const override;
         void saveText(const std::string &path, const std::string &text) const override;

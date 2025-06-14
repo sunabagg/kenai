@@ -23,9 +23,9 @@ namespace sunaba::core::io {
 
     class IoInterface : public BaseObject {
     public:
-        std::string pathUrl = "files://";
+        std::string pathUri = "files://";
 
-        virtual std::string getFilePath(const std::string &path) const { return pathUrl + path; }
+        virtual std::string getFilePath(const std::string &path) const { return pathUri + path; }
 
         virtual std::string loadText(const std::string &path) const { return ""; }
 
@@ -46,7 +46,7 @@ namespace sunaba::core::io {
         }
 
         std::vector<std::string> getFileListAll(const std::string &extension = "", const bool recursive = true) const {
-            return getFileList(pathUrl, extension, recursive);
+            return getFileList(pathUri, extension, recursive);
         }
 
         virtual std::vector<std::string> getFileList(const std::string &path, const std::string &extension = "", const bool recursive = true) const {
