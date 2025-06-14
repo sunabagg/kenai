@@ -67,6 +67,7 @@ void App::start( const String &path) {
 
 #ifdef USE_PUCRIO_LUA
         lua_State* L = global_state.lua_state();
+        luaopen_bit(L);
 #endif
     
 
