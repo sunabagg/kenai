@@ -48,6 +48,41 @@ class Widget {
                     rootElement.sizeFlagsHorizontal = cast SizeFlags.Fill;
                     rootElement.sizeFlagsVertical = cast SizeFlags.Fill;
                 }
+                else {
+                    var anchorTopAtt = firstElement.get("anchorTop");
+                    if (anchorTopAtt != null) {
+                        rootElement.anchorTop = Std.parseFloat(anchorTopAtt);
+                    }
+                    var anchorLeftAtt = firstElement.get("anchorLeft");
+                    if (anchorLeftAtt != null) {
+                        rootElement.anchorLeft = Std.parseFloat(anchorLeftAtt);
+                    }
+                    var anchorBottomAtt = firstElement.get("anchorBottom");
+                    if (anchorBottomAtt != null) {
+                        rootElement.anchorBottom = Std.parseFloat(anchorBottomAtt);
+                    }
+                    var anchorRightAtt = firstElement.get("anchorRight");
+                    if (anchorRightAtt != null) {
+                        rootElement.anchorRight = Std.parseFloat(anchorRightAtt);
+                    }
+                    
+                    var offsetTopAtt = firstElement.get("offsetTop");
+                    if (offsetTopAtt != null) {
+                        rootElement.offsetTop = Std.parseFloat(offsetTopAtt);
+                    }
+                    var offsetLeftAtt = firstElement.get("offsetLeft");
+                    if (offsetLeftAtt != null) {
+                        rootElement.offsetLeft = Std.parseFloat(offsetLeftAtt);
+                    }
+                    var offsetBottomAtt = firstElement.get("offsetBottom");
+                    if (offsetBottomAtt != null) {
+                        rootElement.offsetBottom = Std.parseFloat(offsetBottomAtt);
+                    }
+                    var offsetRightAtt = firstElement.get("offsetRight");
+                    if (offsetRightAtt != null) {
+                        rootElement.offsetRight = Std.parseFloat(offsetRightAtt);
+                    }
+                }
             }
             else {
                 throw "Invalid root element: " + firstElement.nodeName;
