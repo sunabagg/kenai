@@ -7,7 +7,7 @@ void sunaba::core::io::bindIoInterface(sol::state& lua) {
         "IoInterface",
         sol::no_constructor,
         sol::base_classes, sol::bases<BaseObject>(),
-        "fileUrl", sol::property(
+        "pathUri", sol::property(
             [](IoInterface& self) { return self.pathUrl; },
             [](IoInterface& self, const std::string &value) { self.pathUrl = value; }
         ),
