@@ -1,6 +1,8 @@
 package sunaba.ui;
 
 import sunaba.core.io.IoManager;
+import sunaba.LayoutPreset;
+import sunaba.LayoutPresetMode;
 
 class Widget {
     public var rootElement: Control;
@@ -33,7 +35,9 @@ class Widget {
             if (firstElement.nodeName == "suml") {
                 var fullScreenAtt = firstElement.get("fullscreen");
                 if (fullScreenAtt == "true") {
-                    rootElement.setAnchorsAndOffsetsPreset
+                    rootElement.setAnchorsAndOffsetsPreset(cast LayoutPreset.FullRect, cast LayoutPresetMode.KeepSize);
+                    rootElement.sizeFlagsHorizontal = cast SizeFlags.Fill;
+                    rootElement.sizeFlagsVertical = cast SizeFlags.Fill;
                 }
             }
             else {
