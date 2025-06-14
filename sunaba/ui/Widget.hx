@@ -3,7 +3,7 @@ package sunaba.ui;
 import sunaba.core.io.IoManager;
 
 class Widget {
-    public var rootElement: sunaba.core.Element;
+    public var rootElement: Control;
     public var io: IoManager;
     
 
@@ -31,7 +31,10 @@ class Widget {
         var firstElement = xml.firstElement();
         if (firstElement != null) {
             if (firstElement.nodeName == "suml") {
-                var versionAttribute = 
+                
+            }
+            else {
+                throw "Invalid root element: " + firstElement.nodeName;
             }
         }
     }
