@@ -3,13 +3,15 @@ package sunaba.ui;
 import sunaba.core.io.IoManager;
 
 class Widget {
-    public var rootElement: sunaba.core.Element = null;
+    public var rootElement: sunaba.core.Element;
     public var io: IoManager;
     
 
     public function new() {
-        init();
         io = untyped __lua__("_G.ioManager");
+        rootElement = new Control();
+
+        init();
     }
 
     public function init() {
@@ -23,13 +25,13 @@ class Widget {
 
     private function instantiate(xml: Xml): Void {
         if (rootElement != null) {
-            rootElement.delete();
+            for
         }
 
         var firstElement = xml.firstElement();
         if (firstElement != null) {
             if (firstElement.nodeName == "suml") {
-                
+                var versionAttribute = 
             }
         }
     }
