@@ -46,7 +46,7 @@ namespace sunaba::core::io {
                 SystemIoInterface* sio = dynamic_cast<SystemIoInterface*>(io);
                 if (sio != nullptr) {
                     if (sio->pathUri == base_url) {
-                        return sio->getFileUrl(path);
+                        return sio->getFileUri(path);
                     }
                 }
             }

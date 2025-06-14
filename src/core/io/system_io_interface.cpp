@@ -14,7 +14,7 @@ namespace sunaba::core::io {
             "SystemIoInterface",
             sol::no_constructor,
             sol::base_classes, sol::bases<IoInterface>(),
-            "getFileUrl", &SystemIoInterface::getFileUrl
+            "getFileUri", &SystemIoInterface::getFileUri
         );
     }
     
@@ -77,7 +77,7 @@ namespace sunaba::core::io {
             if (extension.size() > 0 && !StringUtils::endsWith(file.utf8().get_data(), extension)) {
                 continue;
             }
-            files.push_back(getFileUrl(path + "/" + file.utf8().get_data()));
+            files.push_back(getFileUri(path + "/" + file.utf8().get_data()));
         }
         auto dirList = dir->get_directories();
         for (int i = 0; i < dirList.size(); i++) {
@@ -87,7 +87,7 @@ namespace sunaba::core::io {
                 files.insert(files.end(), subFiles.begin(), subFiles.end());
             }
             if (extension == "" || extension == "/") {
-                files.push_back(getFileUrl(path + "/" + dirName.utf8().get_data()));
+                files.push_back(getFileUri(path + "/" + dirName.utf8().get_data()));
             }
         }
 

@@ -20,12 +20,12 @@ namespace sunaba::core::io {
             "altPath2", sol::property(
                 [](FileSystemIo& self) { return self.altPath2; }
             ),
-            "getFileUrl", &FileSystemIo::getFileUrl,
+            "getFileUrl", &FileSystemIo::getFileUri,
             "getFilePath", &FileSystemIo::getFilePath
         );
     }
     
-    std::string FileSystemIo::getFileUrl(const std::string &path) const {
+    std::string FileSystemIo::getFileUri(const std::string &path) const {
         return StringUtils::replace(path, basePath, pathUri);
     }
 

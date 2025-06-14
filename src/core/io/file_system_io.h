@@ -23,7 +23,7 @@ namespace sunaba::core::io {
 
         static FileSystemIo* create(std::string basePath, std::string pathUrl);
 
-        std::string getFileUrl(const std::string &path) const override;
+        std::string getFileUri(const std::string &path) const override;
         std::string getFilePath(const std::string &path) const override;
     };
 }
