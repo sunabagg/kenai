@@ -11,4 +11,5 @@ extern class IoInterface extends BaseObject {
     public function loadBinary(path: String): BinaryData;
     public function saveBinary(path: String, data: BinaryData): Void;
     public function getFileListAll(?extension: String, ?recursive: Bool): StringArray;
+    public function getFileList(path: String, ?extension: String, ?recursive: Bool): StringArray;
 }
