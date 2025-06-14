@@ -20,7 +20,7 @@ namespace sunaba::core::io {
             "altPath2", sol::property(
                 [](FileSystemIo& self) { return self.altPath2; }
             ),
-            "getFileUrl", &FileSystemIo::getFileUri,
+            "getFileUri", &FileSystemIo::getFileUri,
             "getFilePath", &FileSystemIo::getFilePath
         );
     }
