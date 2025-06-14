@@ -337,6 +337,11 @@ class Widget {
                         var control: Control = cast element;
                         if (control.hasThemeConstantOverride(attributeName)) {
                             control.addThemeConstantOverride(attributeName, Variant.fromInt64(Std.parseInt(attributeValue)));
+                            continue;
+                        }
+                        else if (control.hasThemeFontSizeOverride(attributeName)) {
+                            control.addThemeFontSizeOverride(attributeName, Std.parseFloat(attributeValue));
+                            continue;
                         }
                     }
                     throw "Unknown field '" + attributeName + "' in element '" + Type.getClassName(Type.getClass(element)) + "'";
