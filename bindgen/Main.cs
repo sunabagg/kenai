@@ -59,7 +59,7 @@ public partial class Main : Node
 				foreach (var value in Enum.GetValues(type))
 				{
 					var valName = Enum.GetName(type, value);
-					var valValue = (int)value;
+					var valValue = Convert.ToInt32(value);
 					stringBuilder.AppendLine("	var" + valName + " = " + valValue + ";");
 				}
 
@@ -127,7 +127,7 @@ public partial class Main : Node
 						foreach (var value in Enum.GetValues(propertyInfo.PropertyType))
 						{
 							var valName = Enum.GetName(propertyInfo.PropertyType, value);
-							var valValue = (int)value;
+							var valValue = Convert.ToInt32(value);
 							if (!valNames.Contains(valName))
 							{
 								valNames.Add(valName);
