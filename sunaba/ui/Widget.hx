@@ -3,7 +3,7 @@ package sunaba.ui;
 import sunaba.core.io.IoManager;
 
 class Widget {
-    public var rootElement: sunaba.core.Element;
+    public var rootElement: sunaba.core.Element = null;
     public var io: IoManager;
     
 
@@ -22,6 +22,8 @@ class Widget {
     }
 
     private function instantiate(xml: Xml): Void {
-
+        if (rootElement != null) {
+            rootElement.delete();
+        }
     }
 }
