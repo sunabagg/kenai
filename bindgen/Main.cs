@@ -19,6 +19,8 @@ public partial class Main : Node
 		apiCodePath = rootPath + "sunaba/";
 
 		xmlPath = rootPath + "xmlgdapi/";
+		
+		GenerateRootEnums();
 
 		foreach (var dir in System.IO.Directory.GetDirectories(xmlPath))
 		{
@@ -27,6 +29,8 @@ public partial class Main : Node
 				GenerateEnums(subdir, dir);
 			}
 		}
+		
+		GetTree().Quit();
 	}
 
 	public void GenerateRootEnums()
