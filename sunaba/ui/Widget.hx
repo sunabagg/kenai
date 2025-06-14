@@ -359,19 +359,14 @@ class Widget {
                         else if (control.hasThemeFontOverride(snakeCaseName)) {
                             var fontFile = new FontFile();
                             var res = fontFile.loadDynamicFont(attributeValue);
-                            if (res == 1) {
+                            if (res != 0) {
                                 res = fontFile.loadBitmapFont(attributeValue);
-                                if (res == 1) {
+                                if (res != 0) {
                                     throw "Failed to load Font for field '" + attributeName + "' in element '" + Type.getClassName(Type.getClass(element)) + "'";
                                 }
                             }
-                            if (res == 0) {
-                                control.addThemeFontOverride(snakeCaseName, fontFile);
-                                continue;
-                            }
-                            else {
-                                throw "Failed to load Font for field '" + attributeName + "' in element '" + Type.getClassName(Type.getClass(element)) + "'";
-                            }
+                            control.addThemeFontOverride(snakeCaseName, fontFile);
+                            continue;
                         }
                     }
                     throw "Unknown field '" + attributeName + "' in element '" + Type.getClassName(Type.getClass(element)) + "'";
@@ -420,7 +415,7 @@ class Widget {
         var result = "";
         for (i in 0...input.length) {
             var c = input.charAt(i);
-            if (i > 0 && StringTools.isUpperCase(c)) {
+            if (i > 0 && c >= "A" && c <= "Z") {
                 result += "_";
             }
             result += c.toLowerCase();
