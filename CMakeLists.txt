@@ -321,10 +321,10 @@ if (USE_LUAJIT)
     else()
         # Fallback to Lua 5.1.5
         set(USE_LUAJIT OFF)
-        add_subdirectory( extern/lua-5.4.7 )
+        add_subdirectory( extern/lua-5.1.5 )
     endif()
 else()
-    add_subdirectory( extern/lua-5.4.7 )
+    add_subdirectory( extern/lua-5.1.5 )
 endif()
 
 # For anyone on MSVC having issues with 'lua51.lib' copy it to the build directory,
@@ -340,7 +340,8 @@ if (USE_LUAJIT)
 else() #
     add_compile_definitions( USE_PUCRIO_LUA )
     #include_directories ( ${LUA_INCLUDE_DIR} )
-    include_directories ( ${CMAKE_SOURCE_DIR}/extern/lua-5.4.7/src )
+    include_directories( ${CMAKE_SOURCE_DIR}/extern/lua-5.1.5/include() )
+    include_directories ( ${CMAKE_SOURCE_DIR}/extern/lua-5.1.5/src )
 endif()
 
 target_include_directories(${PROJECT_NAME} PRIVATE extern/portable-file-dialogs )
@@ -428,7 +429,7 @@ else()
     target_link_libraries(${PROJECT_NAME}
         PRIVATE
             godot-cpp
-            lua::lua
+            liblua_static
             sol2
             #hxsimdjson
             #Luau.Compiler Luau.VM
