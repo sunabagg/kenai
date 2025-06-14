@@ -120,7 +120,7 @@ namespace sunaba::ui {
             }
         public:
             TextEdit() {
-                setTextEdit(memnew(TextEditProxy));
+                setTextEdit(memnew(TextEditNode));
                 onInit();
             }
 

@@ -103,7 +103,7 @@ namespace sunaba::ui {
 
         public:
             ItemList() {
-                setItemList(memnew(ItemListProxy));
+                setItemList(memnew(ItemListNode));
                 onInit();
             }
 

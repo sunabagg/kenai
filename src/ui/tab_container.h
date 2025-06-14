@@ -111,7 +111,7 @@ namespace sunaba::ui {
             }
         public:
             TabContainer() {
-                setTabContainer(memnew(TabContainerProxy));
+                setTabContainer(memnew(TabContainerNode));
                 onInit();
             }
 

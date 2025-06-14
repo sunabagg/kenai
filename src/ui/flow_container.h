@@ -74,7 +74,7 @@ namespace sunaba::ui {
 
         public:
             FlowContainer() {
-                setFlowContainer(memnew(FlowContainerProxy));
+                setFlowContainer(memnew(FlowContainerNode));
                 onInit();
             }
 

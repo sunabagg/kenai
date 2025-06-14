@@ -73,7 +73,7 @@ namespace sunaba::ui {
 
         public:
             LinkButton() {
-                setLinkButtonNode(memnew(LinkButtonProxy));
+                setLinkButtonNode(memnew(LinkButtonNode));
                 onInit();
             }
 

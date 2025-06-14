@@ -81,7 +81,7 @@ namespace sunaba::core {
     
         // Constructor with no parameters
         CanvasItem() {
-            //CanvasItemProxy* cip = memnew(CanvasItemProxy);
+            //CanvasItemProxy* cip = memnew(CanvasItemNode);
             //setCanvasItem(cip);
             onInit();
         }

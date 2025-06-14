@@ -114,7 +114,7 @@ namespace sunaba::ui {
             }
         public:
             SplitContainer() {
-                setSplitContainer(memnew(SplitContainerProxy));
+                setSplitContainer(memnew(SplitContainerNode));
                 onInit();
             }
 

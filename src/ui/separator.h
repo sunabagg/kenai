@@ -61,7 +61,7 @@ namespace sunaba::ui {
 
         public:
             Separator() {
-                setSeparator(memnew(SeparatorProxy));
+                setSeparator(memnew(SeparatorNode));
                 onInit();
             }
 

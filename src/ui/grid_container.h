@@ -73,7 +73,7 @@ namespace sunaba::ui {
 
         public:
             GridContainer() {
-                setGridContainer(memnew(GridContainerProxy));
+                setGridContainer(memnew(GridContainerNode));
                 onInit();
             }
 

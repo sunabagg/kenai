@@ -72,7 +72,7 @@ namespace sunaba::ui {
 
         public:
             MarginContainer() {
-                setMarginContainer(memnew(MarginContainerProxy));
+                setMarginContainer(memnew(MarginContainerNode));
                 onInit();
             }
 

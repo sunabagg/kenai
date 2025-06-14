@@ -62,7 +62,7 @@ namespace sunaba::ui {
 
         public:
             SpinBox() {
-                setSpinBox(memnew(SpinBoxProxy));
+                setSpinBox(memnew(SpinBoxNode));
                 onInit();
             }
 

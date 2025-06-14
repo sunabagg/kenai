@@ -77,7 +77,7 @@ namespace sunaba::ui {
 
         public:
             ScrollBar() {
-                setScrollBar(memnew(ScrollBarProxy));
+                setScrollBar(memnew(ScrollBarNode));
                 onInit();
                 connectScrollBarSignals();
             }

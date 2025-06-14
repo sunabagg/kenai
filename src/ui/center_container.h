@@ -85,7 +85,7 @@ namespace sunaba::ui {
             }
 
             CenterContainer() {
-                setCenterContainer(memnew(CenterContainerProxy));
+                setCenterContainer(memnew(CenterContainerNode));
                 onInit();
             }
 

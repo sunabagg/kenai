@@ -95,7 +95,7 @@ namespace sunaba::ui {
         public:
             // Constructor with Node* parameter
             OptionButton() {
-                setOptionButton(memnew(OptionButtonProxy));
+                setOptionButton(memnew(OptionButtonNode));
                 onInit();
             }
 

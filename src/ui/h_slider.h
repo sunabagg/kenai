@@ -61,7 +61,7 @@ namespace sunaba::ui {
 
         public:
             HSlider() {
-                setHSlider(memnew(HSliderProxy));
+                setHSlider(memnew(HSliderNode));
                 onInit();
             }
 

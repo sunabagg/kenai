@@ -62,7 +62,7 @@ namespace sunaba::ui {
 
         public:
             VScrollBar() {
-                setVScrollBar(memnew(VScrollBarProxy));
+                setVScrollBar(memnew(VScrollBarNode));
                 onInit();
             }
 

@@ -73,7 +73,7 @@ namespace sunaba::ui {
             }
         public:
             HFlowContainer() {
-                setHFlowContainer(memnew(HFlowContainerProxy));
+                setHFlowContainer(memnew(HFlowContainerNode));
                 onInit();
             }
 

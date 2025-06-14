@@ -67,7 +67,7 @@ namespace sunaba::ui {
 
         public:
             VBoxContainer() {
-                setVBoxContainer(memnew(VBoxContainerProxy));
+                setVBoxContainer(memnew(VBoxContainerNode));
                 onInit();
             }
 

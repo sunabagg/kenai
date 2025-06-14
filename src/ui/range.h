@@ -86,7 +86,7 @@ namespace sunaba::ui {
 
         public:
             Range() {
-                setRange(memnew(RangeProxy));
+                setRange(memnew(RangeNode));
                 onInit();
             }
 

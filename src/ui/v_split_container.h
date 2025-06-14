@@ -75,7 +75,7 @@ namespace sunaba::ui {
             }
         public:
             VSplitContainer() {
-                setSplitContainer(memnew(VSplitContainerProxy));
+                setSplitContainer(memnew(VSplitContainerNode));
                 onInit();
             }
 

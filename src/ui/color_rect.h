@@ -65,7 +65,7 @@ namespace sunaba::ui {
 
         public:
             ColorRect() {
-                setColorRect(memnew(ColorRectProxy));
+                setColorRect(memnew(ColorRectNode));
                 onInit();
             }
 

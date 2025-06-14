@@ -94,7 +94,7 @@ namespace sunaba::ui {
 
         public:
             Slider() {
-                setRange(memnew(SliderProxy));
+                setRange(memnew(SliderNode));
                 onInit();
             }
 

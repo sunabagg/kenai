@@ -104,7 +104,7 @@ namespace sunaba::core {
         Event* treeExiting = new Event();
 
         Element() {
-            setNode(memnew(NodeProxy));
+            setNode(memnew(NodeNode));
             node->set_name("Element");
             onInit();
         }

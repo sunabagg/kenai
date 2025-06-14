@@ -57,7 +57,7 @@ namespace sunaba::ui {
 
         public:
             Label() {
-                setLabelNode(memnew(LabelProxy));
+                setLabelNode(memnew(LabelNode));
                 onInit();
             }
 

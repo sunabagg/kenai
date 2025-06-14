@@ -104,7 +104,7 @@ namespace sunaba::ui {
         
             // Constructor with no parameters
             RichTextLabel() {
-                setRichTextLabel(memnew(RichTextLabelProxy));
+                setRichTextLabel(memnew(RichTextLabelNode));
                 onInit();
             }
 

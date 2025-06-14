@@ -68,7 +68,7 @@ namespace sunaba::ui {
 
         public:
             SubViewportContainer() {
-                setContainer(memnew(SubViewportContainerProxy));
+                setContainer(memnew(SubViewportContainerNode));
                 onInit();
             }
 

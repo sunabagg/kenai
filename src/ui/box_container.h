@@ -77,7 +77,7 @@ namespace sunaba::ui {
             }
         public:
             BoxContainer() {
-                setBoxContainer(memnew(BoxContainerProxy));
+                setBoxContainer(memnew(BoxContainerNode));
                 onInit();
             }
 

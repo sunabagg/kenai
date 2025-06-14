@@ -72,7 +72,7 @@ namespace sunaba::ui {
 
         public:
             PanelContainer() {
-                setPanelContainer(memnew(PanelContainerProxy));
+                setPanelContainer(memnew(PanelContainerNode));
                 onInit();
             }
 

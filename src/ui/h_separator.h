@@ -57,7 +57,7 @@ namespace sunaba::ui {
 
         public:
             HSeparator() {
-                setHSeparator(memnew(HSeparatorProxy));
+                setHSeparator(memnew(HSeparatorNode));
                 onInit();
             }
 

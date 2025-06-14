@@ -87,7 +87,7 @@ namespace sunaba::ui {
 
         public:
             NinePatchRect() {
-                setNinePatchRect(memnew(NinePatchRectProxy));
+                setNinePatchRect(memnew(NinePatchRectNode));
                 onInit();
             }
 

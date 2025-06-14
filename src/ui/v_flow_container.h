@@ -66,7 +66,7 @@ namespace sunaba::ui {
             }
         public:
             VFlowContainer() {
-                setVFlowContainer(memnew(VFlowContainerProxy));
+                setVFlowContainer(memnew(VFlowContainerNode));
                 onInit();
             }
 

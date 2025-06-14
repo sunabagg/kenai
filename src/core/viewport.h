@@ -73,7 +73,7 @@ namespace sunaba::core {
 
         public:
             Viewport() {
-                setViewport(memnew(ViewportProxy));
+                setViewport(memnew(ViewportNode));
                 onInit();
             }
 

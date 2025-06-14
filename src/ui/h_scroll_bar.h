@@ -62,7 +62,7 @@ namespace sunaba::ui {
 
         public:
             HScrollBar() {
-                setHScrollBar(memnew(HScrollBarProxy));
+                setHScrollBar(memnew(HScrollBarNode));
                 onInit();
             }
 

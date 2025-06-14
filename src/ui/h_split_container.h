@@ -75,7 +75,7 @@ namespace sunaba::ui {
             }
         public:
             HSplitContainer() {
-                setHSplitContainer(memnew(HSplitContainerProxy));
+                setHSplitContainer(memnew(HSplitContainerNode));
                 onInit();
             }
 

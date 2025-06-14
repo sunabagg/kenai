@@ -70,7 +70,7 @@ namespace sunaba::ui {
 
         public:
             TextureProgressBar() {
-                setTextureProgressBar(memnew(TextureProgressBarProxy));
+                setTextureProgressBar(memnew(TextureProgressBarNode));
                 onInit();
             }
 

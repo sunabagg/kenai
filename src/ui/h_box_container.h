@@ -67,7 +67,7 @@ namespace sunaba::ui {
 
         public:
             HBoxContainer() {
-                setHBoxContainer(memnew(HBoxContainerProxy));
+                setHBoxContainer(memnew(HBoxContainerNode));
                 onInit();
             }
 

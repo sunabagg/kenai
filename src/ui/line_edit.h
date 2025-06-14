@@ -95,7 +95,7 @@ namespace sunaba::ui {
 
         public:
             LineEdit() {
-                setLineEditNode(memnew(LineEditProxy));
+                setLineEditNode(memnew(LineEditNode));
                 onInit();
             }
 

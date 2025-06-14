@@ -80,7 +80,7 @@ namespace sunaba::desktop {
             }
         public:
             PopupMenu() {
-                setPopup(memnew(PopupMenuProxy));
+                setPopup(memnew(PopupMenuNode));
                 onInit();
             }
 

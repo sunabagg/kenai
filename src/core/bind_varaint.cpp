@@ -100,7 +100,7 @@ void sunaba::core::bind_varaint(sol::state& lua) {
             return Variant(ref);
          },
          "fromObject", [](BaseObject* obj) { 
-            BaseObjectProxy* proxy = memnew(BaseObjectProxy);
+            BaseObjectProxy* proxy = memnew(BaseObjectNode);
             proxy->base_object = obj;
             return Variant(proxy);
          },

@@ -116,7 +116,7 @@ namespace sunaba::ui {
 
         public:
             CodeEdit() {
-                setCodeEdit(memnew(CodeEditProxy));
+                setCodeEdit(memnew(CodeEditNode));
                 onInit();
             }
 

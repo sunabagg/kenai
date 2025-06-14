@@ -61,7 +61,7 @@ namespace sunaba::ui {
 
         public:
         MenuBar() {
-            setMenuBar(memnew(MenuBarProxy));
+            setMenuBar(memnew(MenuBarNode));
             onInit();
         }
 

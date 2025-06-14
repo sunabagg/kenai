@@ -60,7 +60,7 @@ namespace sunaba::ui {
 
         public:
         Panel() {
-            setPanel(memnew(PanelProxy));
+            setPanel(memnew(PanelNode));
             onInit();
         }
         Panel(PanelNode* p_node) {

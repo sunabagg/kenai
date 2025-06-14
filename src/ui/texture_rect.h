@@ -67,7 +67,7 @@ namespace sunaba::ui {
             TextureRectNode* texture_rect = nullptr; // Pointer to the TextureRect instance
         public:
             TextureRect() {
-                setTextureRect(memnew(TextureRectProxy));
+                setTextureRect(memnew(TextureRectNode));
                 onInit();
             }
 

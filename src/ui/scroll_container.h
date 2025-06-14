@@ -91,7 +91,7 @@ namespace sunaba::ui {
 
         public:
             ScrollContainer() {
-                setScrollContainer(memnew(ScrollContainerProxy));
+                setScrollContainer(memnew(ScrollContainerNode));
                 onInit();
             }
 

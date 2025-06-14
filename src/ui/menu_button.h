@@ -90,7 +90,7 @@ namespace sunaba::ui {
             }
         public:
             MenuButton() {
-                setMenuButton(memnew(MenuButtonProxy));
+                setMenuButton(memnew(MenuButtonNode));
                 onInit();
             }
 

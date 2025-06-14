@@ -67,7 +67,7 @@ namespace sunaba::ui {
 
             // Constructor with no parameters
             CheckButton() {
-                setCheckButton(memnew(CheckButtonProxy));
+                setCheckButton(memnew(CheckButtonNode));
                 onInit();
             }
 

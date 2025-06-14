@@ -61,7 +61,7 @@ namespace sunaba::ui {
 
         public:
             ReferenceRect() {
-                setReferenceRect(memnew(ReferenceRectProxy));
+                setReferenceRect(memnew(ReferenceRectNode));
                 onInit();
             }
 

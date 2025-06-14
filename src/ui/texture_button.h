@@ -85,7 +85,7 @@ namespace sunaba::ui {
 
             // Constructor with no parameters
             TextureButton() {
-                TextureButtonProxy* tbp = memnew(TextureButtonProxy);
+                TextureButtonProxy* tbp = memnew(TextureButtonNode);
                 setTextureButton(tbp);
             }
 

@@ -99,7 +99,7 @@ namespace sunaba::ui {
 
         public:
             Container() {
-                setContainer(memnew(ContainerProxy));
+                setContainer(memnew(ContainerNode));
                 onInit();
             }
 

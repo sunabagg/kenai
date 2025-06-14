@@ -62,7 +62,7 @@ namespace sunaba::ui {
 
         public:
             VSlider() {
-                setVSlider(memnew(VSliderProxy));
+                setVSlider(memnew(VSliderNode));
                 onInit();
             }
 

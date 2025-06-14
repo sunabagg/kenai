@@ -50,7 +50,7 @@ namespace sunaba::desktop {
 
         public:
             PopupPanel() {
-                setPopupPanel(memnew(PopupPanelProxy));
+                setPopupPanel(memnew(PopupPanelNode));
                 onInit();
             }
 

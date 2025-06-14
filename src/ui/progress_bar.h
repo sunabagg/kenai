@@ -62,7 +62,7 @@ namespace sunaba::ui {
 
         public:
             ProgressBar() {
-                setProgressBar(memnew(ProgressBarProxy));
+                setProgressBar(memnew(ProgressBarNode));
                 onInit();
             }
 

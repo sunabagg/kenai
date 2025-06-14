@@ -93,7 +93,7 @@ namespace sunaba::desktop {
 
         public:
             Window() {
-                setWindow(memnew(WindowProxy));
+                setWindow(memnew(WindowNode));
                 onInit();
             }
 

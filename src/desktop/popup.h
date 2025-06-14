@@ -72,7 +72,7 @@ namespace sunaba::desktop {
 
         public:
             Popup() {
-                setPopup(memnew(PopupProxy));
+                setPopup(memnew(PopupNode));
                 onInit();
             }
 

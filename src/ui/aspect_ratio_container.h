@@ -77,7 +77,7 @@ namespace sunaba::ui {
             }
         public:
             AspectRatioContainer() {
-                setARContainer(memnew(AspectRatioContainerProxy));
+                setARContainer(memnew(AspectRatioContainerNode));
                 onInit();
             }
 
