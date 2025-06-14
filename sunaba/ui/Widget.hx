@@ -365,7 +365,13 @@ class Widget {
                                     throw "Failed to load Font for field '" + attributeName + "' in element '" + Type.getClassName(Type.getClass(element)) + "'";
                                 }
                             }
-
+                            if (res == 0) {
+                                control.addThemeFontOverride(snakeCaseName, fontFile);
+                                continue;
+                            }
+                            else {
+                                throw "Failed to load Font for field '" + attributeName + "' in element '" + Type.getClassName(Type.getClass(element)) + "'";
+                            }
                         }
                     }
                     throw "Unknown field '" + attributeName + "' in element '" + Type.getClassName(Type.getClass(element)) + "'";
@@ -411,6 +417,14 @@ class Widget {
     }
 
     private function camelToSnake(input: String): String {
-        return input.replace(/([a-z])([A-Z])/g, "$1_$2").toLowerCase();
+        var result = "";
+        for (i in 0...input.length) {
+            var c = input.charAt(i);
+            if (i > 0 && StringTools.isUpperCase(c)) {
+                result += "_";
+            }
+            result += c.toLowerCase();
+        }
+        return result;
     }
 }
