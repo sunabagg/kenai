@@ -38,6 +38,16 @@ class Widget {
         
     }
 
+    public function load(path: String): Void {
+        var file = io.loadText(path);
+        if (file != null && file.length > 0) {
+            parseMarkup(file);
+        }
+        else {
+            throw "Failed to load file: " + path;
+        }
+    }
+
     public function parseMarkup(markup: String): Void {
         var xml = Xml.parse(markup);
         instantiate(xml);
