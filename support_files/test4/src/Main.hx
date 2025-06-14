@@ -4,6 +4,7 @@ import sunaba.SizeFlags;
 import sunaba.LayoutPresetMode;
 import sunaba.App;
 import sunaba.ui.Control;
+import sunaba.ui.CenterContainer;
 import sunaba.ui.Panel;
 import sunaba.ui.Label;
 import sunaba.ui.VBoxContainer;
@@ -37,12 +38,18 @@ class Main extends App{
         panel.offsetLeft = -10;
         panel.offsetRight = 10;
 
+        var centerContainer = new CenterContainer();
+        panel.addChild(centerContainer);
+        centerContainer.setAnchorsAndOffsetsPreset(cast LayoutPreset.FullRect, cast LayoutPresetMode.KeepSize, 0);
+        centerContainer.sizeFlagsHorizontal = cast SizeFlags.Fill;
+        centerContainer.sizeFlagsVertical = cast SizeFlags.Fill;
+
         var vboxContainer = new VBoxContainer();
 
-        control.addChild(vboxContainer);
+        centerContainer.addChild(vboxContainer);
         vboxContainer.setAnchorsAndOffsetsPreset(cast LayoutPreset.Center, cast LayoutPresetMode.Minsize, 0);
-        vboxContainer.sizeFlagsHorizontal = cast SizeFlags.ShrinkCenter;
-        vboxContainer.sizeFlagsVertical = cast SizeFlags.ShrinkCenter;
+        vboxContainer.sizeFlagsHorizontal = cast SizeFlags.ShrinkBegin;
+        vboxContainer.sizeFlagsVertical = cast SizeFlags.ShrinkBegin;
 
         label = new Label();
 
@@ -61,6 +68,11 @@ class Main extends App{
         button.pressed.connect(() -> {
             incrementCounter();
         });
+
+        var size = vboxContainer.size;
+        var parentSize = control.size;
+        vboxContainer.position.x = (parentSize.x - size.x) / 2;
+        vboxContainer.position.y = (parentSize.y - size.y) / 2;
     }
 
     public function incrementCounter() {

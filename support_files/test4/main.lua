@@ -225,6 +225,7 @@ __sunaba_ui__BaseButton_BaseButtonAbstract_Impl_ = _hx_e()
 __sunaba_ui__BoxContainer_BoxContainerAbstract_Impl_ = _hx_e()
 __sunaba_ui__Button_ButtonAbstract_Impl_ = _hx_e()
 __sunaba_ui__ButtonGroup_ButtonGroupAbstract_Impl_ = _hx_e()
+__sunaba_ui__CenterContainer_CenterContainerAbstract_Impl_ = _hx_e()
 __sunaba_ui__Container_ContainerAbstarct_Impl_ = _hx_e()
 __sunaba_ui__Control_ControlAbstract_Impl_ = _hx_e()
 __sunaba_ui__Label_LabelAbstract_Impl_ = _hx_e()
@@ -1625,6 +1626,16 @@ __sunaba_ui__ButtonGroup_ButtonGroupAbstract_Impl_.fromResource = function(resou
   do return bg end;
 end
 
+__sunaba_ui__CenterContainer_CenterContainerAbstract_Impl_.new = {}
+__sunaba_ui__CenterContainer_CenterContainerAbstract_Impl_.__name__ = true
+__sunaba_ui__CenterContainer_CenterContainerAbstract_Impl_.fromElement = function(element) 
+  local container = CenterContainer.cast(element);
+  if (container:isNull()) then 
+    do return nil end;
+  end;
+  do return container end;
+end
+
 __sunaba_ui__Container_ContainerAbstarct_Impl_.new = {}
 __sunaba_ui__Container_ContainerAbstarct_Impl_.__name__ = true
 __sunaba_ui__Container_ContainerAbstarct_Impl_.fromElement = function(element) 
@@ -1726,11 +1737,16 @@ __support_files_test4_src_Main.prototype.init = function(self)
   panel.offsetTop = 10;
   panel.offsetLeft = -10;
   panel.offsetRight = 10;
+  local centerContainer = CenterContainer.new();
+  panel:addChild(centerContainer);
+  centerContainer:setAnchorsAndOffsetsPreset(15, 3, 0);
+  centerContainer.sizeFlagsHorizontal = 1;
+  centerContainer.sizeFlagsVertical = 1;
   local vboxContainer = VBoxContainer.new();
-  control:addChild(vboxContainer);
+  centerContainer:addChild(vboxContainer);
   vboxContainer:setAnchorsAndOffsetsPreset(8, 0, 0);
-  vboxContainer.sizeFlagsHorizontal = 4;
-  vboxContainer.sizeFlagsVertical = 4;
+  vboxContainer.sizeFlagsHorizontal = 0;
+  vboxContainer.sizeFlagsVertical = 0;
   self.label = Label.new();
   vboxContainer:addChild(self.label);
   self.label.text = "Hello, World!";
@@ -1743,6 +1759,10 @@ __support_files_test4_src_Main.prototype.init = function(self)
   button.pressed:connect(function() 
     _gthis:incrementCounter();
   end);
+  local size = vboxContainer.size;
+  local parentSize = control.size;
+  vboxContainer.position.x = (parentSize.x - size.x) / 2;
+  vboxContainer.position.y = (parentSize.y - size.y) / 2;
 end
 __support_files_test4_src_Main.prototype.incrementCounter = function(self) 
   self.count = self.count + 1;
