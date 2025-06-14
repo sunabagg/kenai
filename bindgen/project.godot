@@ -11,7 +11,8 @@ config_version=5
 [application]
 
 config/name="Bindgen"
-config/features=PackedStringArray("4.4", "GL Compatibility")
+run/main_scene="uid://1tjhp0u1b1sy"
+config/features=PackedStringArray("4.4", "C#", "GL Compatibility")
 config/icon="res://icon.svg"
 
 [dotnet]
