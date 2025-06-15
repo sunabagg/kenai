@@ -3,6 +3,7 @@ target_sources( ${PROJECT_NAME}
         RegisterExtension.cpp
         app.h
         app.cpp
+        console.h
  )
 
 add_subdirectory( core )
