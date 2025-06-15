@@ -49,7 +49,7 @@ namespace sunaba
 
         void print(const std::string &message);
 
-        void run_command(const String &command);
+        void run_command(const String &command, std::vector<std::string> args = {});
 
         void register_command(const std::string &name, const std::function<void(const std::vector<std::string> &args)> &callback);
         
