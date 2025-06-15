@@ -12,6 +12,7 @@
 #include "core/base_object_proxy.h"
 #include "tests/scene_test.h"
 #include "app.h"
+#include "console.h"
 
 #include "core/element.h"
 #include "core/canvas_item.h"
@@ -96,6 +97,8 @@ namespace
         }
 
         godot::ClassDB::register_class<sunaba::App>();
+        godot::ClassDB::register_class<sunaba::Console>();
+        godot::ClassDB::register_class<sunaba::DefaultOutputHandler>();
         godot::ClassDB::register_class<sunaba::tests::SceneTest>();
         godot::ClassDB::register_class<sunaba::core::SceneNode>();
         //godot::ClassDB::register_class<sunaba::core::EventBridge>();
