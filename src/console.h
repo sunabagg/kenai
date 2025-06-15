@@ -38,6 +38,8 @@ namespace sunaba
         void register_command(const String &name, const std::function<void(const std::vector<std::string> &args)> &callback);
         
         void unregister_command(const String &name);
+
+        void run_executable(const String &path, const std::vector<String> &args);
     };
 }
 
