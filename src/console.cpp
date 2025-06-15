@@ -102,6 +102,8 @@ Console::Console() {
             print("run() expects a command as the first argument");
             return;
         }
+
+        run_executable(command, arguments);
     };
 }
 
