@@ -28,7 +28,7 @@ namespace sunaba
 
         sunaba::core::io::IoManager* ioManager;
 
-        Console* console;
+        Console* console = nullptr;
 
         void _ready() override;
         void _process(double delta) override;
