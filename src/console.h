@@ -31,8 +31,6 @@ namespace sunaba
 
         String shell_path;
 
-        std::map<std::string, std::function<void(const std::vector<std::string> &args)>> commands;
-
         std::vector<std::string> path;
 
         std::vector<std::function<void(const std::string &output)>> output_callbacks;
@@ -49,7 +47,7 @@ namespace sunaba
 
         void print(const std::string &message);
 
-        void run_command(const String &command, std::vector<std::string> args = {});
+        void run_command(const String &command);
 
         void register_command(const std::string &name, const std::function<void(const std::vector<std::string> &args)> &callback);
         
