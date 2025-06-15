@@ -43,6 +43,8 @@ namespace sunaba
 
         void start_shell(const String &path);
 
+        void print(const std::string &message);
+
         void run_command(const String &command);
 
         void register_command(const std::string &name, const std::function<void(const std::vector<std::string> &args)> &callback);
