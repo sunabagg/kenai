@@ -210,9 +210,11 @@ void Console::run_executable(std::string &path, const std::vector<std::string> &
         }
 
         sunaba::core::io::BinaryData binary_data = ioManager->loadBinary(path);
-        if (binary_data.size() <= 0) {
+        if (binary_data.size() == 0) {
             print(String("Failed to load executable: " + String(path.c_str())).utf8().get_data());
             return;
         }
+
+
     }
 }
