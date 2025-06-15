@@ -4,6 +4,8 @@
 
 #include "app.h"
 
+#include <godot_cpp/classes/theme.hpp>
+
 using namespace sunaba;
 
 void Console::_bind_methods() {
