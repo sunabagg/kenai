@@ -325,3 +325,14 @@ void Console::run_executable_dir(const std::vector<std::string> &args) {
     app->args = args;
     app->start(String(shell_path).utf8().get_data());
 }
+
+Console::~Console() {
+    if (ioManager) {
+        delete ioManager;
+        ioManager = nullptr;
+    }
+    if (default_output_handler) {
+        memdelete(default_output_handler);
+        default_output_handler = nullptr;
+    }
+}
