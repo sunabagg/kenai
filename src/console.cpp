@@ -1,5 +1,7 @@
 #include "console.h"
 
+#include "core/io/file_system_io.h"
+
 using namespace sunaba;
 
 void Console::_bind_methods() {
@@ -119,4 +121,10 @@ void Console::print(const std::string &message) {
     for (const auto &callback : output_callbacks) {
         callback(message);
     }
+}
+
+void Console::start_shell(const String &path) {
+    shell_path = path;
+    
+    display_default_output();
 }
