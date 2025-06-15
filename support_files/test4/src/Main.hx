@@ -24,9 +24,9 @@ class Main extends App{
         var control = new Control();
 
         rootElement.addChild(control);
-        control.setAnchorsAndOffsetsPreset(cast LayoutPreset.fullRect, LayoutPresetMode.keepSize, 0);
-        control.sizeFlagsHorizontal = cast SizeFlags.fill;
-        control.sizeFlagsVertical = cast SizeFlags.fill;
+        control.setAnchorsAndOffsetsPreset(LayoutPreset.fullRect, LayoutPresetMode.keepSize, 0);
+        control.sizeFlagsHorizontal = SizeFlags.fill;
+        control.sizeFlagsVertical = SizeFlags.fill;
 
         var panel = new Panel();
         control.addChild(panel);
