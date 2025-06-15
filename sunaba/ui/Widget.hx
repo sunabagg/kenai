@@ -151,6 +151,9 @@ class Widget {
     private function construct(xml: Xml) : Element {
         var className = xml.nodeName;
         var classType = Type.resolveClass(className);
+        if (classType == null) {
+            classType = untyped __lua__("_G." + camelToPascal(className));
+        }
         if (classType != null) {
             if (isAnElementClass(classType)) {
                 var instance = Type.createInstance(classType, []);
