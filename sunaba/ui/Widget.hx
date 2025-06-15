@@ -188,7 +188,7 @@ class Widget {
             }
             else {
                 if (hasField(element, attributeName)) {
-                    var currentValue = Reflect.field(element, attributeName);
+                    var currentValue = field(element, attributeName);
                     if (Std.isOfType(currentValue, Bool)) {
                         var b : Bool = false;
                         if (attributeValue == "true") {
@@ -419,6 +419,14 @@ class Widget {
 
     private inline function hasField(obj: Any, field: String): Bool {
         return untyped __lua__("obj[field] != nil") || Reflect.hasField(obj, field);
+    }
+
+    private function field(obj: Any, field: String): Dynamic {
+        if (untyped __lua__("obj[field] != nil")) {
+            return untyped __lua__("obj[field]");
+        }
+        return Reflect.field(obj, field);
+        
     }
 
     private function isAnElementClass(classInfo: Class<Dynamic>): Bool {
