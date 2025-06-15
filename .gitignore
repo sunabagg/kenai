@@ -19,3 +19,4 @@ CMakeUserPresets.json
 .env
 *.DS_Store
 *.o
+*.a
