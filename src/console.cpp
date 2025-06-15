@@ -114,6 +114,19 @@ Console::Console() {
 
         run_executable(command, arguments);
     };
+
+    global_state["rundir"] = [this](const sol::variadic_args & args) {
+        std::vector<std::string> arguments;
+        for (size_t i = 0; i < args.size(); ++i) {
+            if (args[i].is<std::string>()) {
+                arguments.push_back(args[i].as<std::string>());
+            } else {
+                print("rundir() expects string arguments");
+                return;
+            }
+        }
+        run_executable_dir(arguments);
+    };
 }
 
 void Console::print(const std::string &message) {
