@@ -36,3 +36,7 @@ void DefaultOutputHandler::set_console(Console* console) {
         console->default_output_handler = this;
     }
 }
+
+void DefaultOutputHandler::_bind_methods() {
+    ClassDB::bind_method(D_METHOD("on_line_edit_text_submitted", "text"), &DefaultOutputHandler::on_line_edit_text_submitted);
+}
