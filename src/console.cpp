@@ -124,7 +124,7 @@ void Console::print(const std::string &message) {
 }
 
 void Console::start_shell(const String &path) {
-    shell_path = path;
+    shell_path = "sys://";
 
     sunaba::core::io::FileSystemIo *fs_io = sunaba::core::io::FileSystemIo::create(
         path.utf8().get_data(), "sys://"
