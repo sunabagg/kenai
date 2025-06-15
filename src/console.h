@@ -55,9 +55,9 @@ namespace sunaba
         
         void unregister_command(const std::string &name);
 
-        void run_executable(const std::string &path, const std::vector<String> &args);
+        void run_executable(const std::string &path, const std::vector<std::string> &args);
 
-        void run_executable_dir(const std::string &path, const std::vector<String> &args);
+        void run_executable_dir(const std::string &path, const std::vector<std::string> &args);
     };
 
     class DefaultOutputHandler : public Control {
