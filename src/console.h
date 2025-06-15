@@ -25,6 +25,8 @@ namespace sunaba
         Console();
         ~Console();
 
+        void _ready() override;
+
         sol::state global_state;
 
         sunaba::core::io::IoManager* ioManager;
