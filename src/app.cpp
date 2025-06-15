@@ -63,7 +63,8 @@ void App::start( const String &path) {
     }
     global_state.open_libraries( sol::lib::base, sol::lib::bit32, sol::lib::coroutine,
         sol::lib::count, sol::lib::math, sol::lib::string,
-        sol::lib::table, sol::lib::utf8, sol::lib::package );
+        sol::lib::table, sol::lib::utf8, sol::lib::package, 
+        sol::lib::os,, sol::lib::io, sol::lib::debug );
 
 // hack fix for PUC-Rio Lua
 #ifdef USE_PUCRIO_LUA
@@ -171,6 +172,11 @@ void App::start( const String &path) {
     std::string script = ioManager->loadText("app://main.lua");
     //UtilityFunctions::print(script.c_str());
     //global_state.script(script);
+    global_state.script(R"(
+        local luarocks_path = require('luarocks.path')
+        package.path = luarocks_path.package_path .. ";" .. package.path
+        package.cpath = luarocks_path.package_cpath .. ";" .. package.cpath
+    )");
     sol::protected_function_result result = global_state.safe_script(script, sol::script_pass_on_error);
     
     if ( !result.valid() ) {
