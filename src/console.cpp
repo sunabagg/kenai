@@ -206,6 +206,9 @@ Console::Console() {
             print("IoManager is not initialized.");
         }
     };
+
+    register_command("ls", ls_callback);
+    register_command("dir", ls_callback);
 }
 
 void Console::print(const std::string &message) {
