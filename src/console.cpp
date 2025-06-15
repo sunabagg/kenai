@@ -76,7 +76,11 @@ Console::Console() {
                 msg += String(vec);
             }
         }
-        godot::UtilityFunctions::print( msg );
+        if (default_output_handler) {
+            default_output_handler->output_label->append_text( msg );
+        } else {
+            UtilityFunctions::print(msg);
+        }
     };
 
 }
