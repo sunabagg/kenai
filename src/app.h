@@ -30,6 +30,8 @@ namespace sunaba
 
         Console* console = nullptr;
 
+        std::vector<std::string> args;
+
         void _ready() override;
         void _process(double delta) override;
         void start( const String &path );
