@@ -1,8 +1,7 @@
-<suml>
+<suml fullscreen="true" name="ClickerCounter">
     <head>
     </head>
     <body>
-        <control>
-        </control>
+        
     </body>
 </suml>
