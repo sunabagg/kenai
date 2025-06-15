@@ -17,3 +17,9 @@ DefaultOutputHandler::DefaultOutputHandler() {
 
     input_line_edit->connect("text_submitted", Callable(this, "on_line_edit_text_submitted"));
 }
+
+DefaultOutputHandler::~DefaultOutputHandler() {
+    if (console) {
+        console->default_output_handler = nullptr;
+    }
+}
