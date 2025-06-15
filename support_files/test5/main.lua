@@ -3392,29 +3392,35 @@ __sunaba_ui_Widget.prototype.setObjectValues = function(self,element,xml)
     if (attributeName == "name") then 
       element.name = attributeValue;
     else
-      local o = element;
-      if ((function() 
-        local _hx_1
-        if ((_G.type(o) == "function") and not ((function() 
-          local _hx_2
-          if (_G.type(o) ~= "table") then 
-          _hx_2 = false; else 
-          _hx_2 = o.__name__; end
-          return _hx_2
-        end )() or (function() 
-          local _hx_3
-          if (_G.type(o) ~= "table") then 
-          _hx_3 = false; else 
-          _hx_3 = o.__ename__; end
-          return _hx_3
-        end )())) then 
-        _hx_1 = false; elseif ((_G.type(o) == "string") and ((String.prototype[attributeName] ~= nil) or (attributeName == "length"))) then 
-        _hx_1 = true; elseif (o.__fields__ ~= nil) then 
-        _hx_1 = o.__fields__[attributeName] ~= nil; else 
-        _hx_1 = o[attributeName] ~= nil; end
-        return _hx_1
-      end )()) then 
-        local currentValue = Reflect.field(element, attributeName);
+      local tmp;
+      if (not obj[field] != nil) then 
+        local o = element;
+        tmp = (function() 
+          local _hx_1
+          if ((_G.type(o) == "function") and not ((function() 
+            local _hx_2
+            if (_G.type(o) ~= "table") then 
+            _hx_2 = false; else 
+            _hx_2 = o.__name__; end
+            return _hx_2
+          end )() or (function() 
+            local _hx_3
+            if (_G.type(o) ~= "table") then 
+            _hx_3 = false; else 
+            _hx_3 = o.__ename__; end
+            return _hx_3
+          end )())) then 
+          _hx_1 = false; elseif ((_G.type(o) == "string") and ((String.prototype[attributeName] ~= nil) or (attributeName == "length"))) then 
+          _hx_1 = true; elseif (o.__fields__ ~= nil) then 
+          _hx_1 = o.__fields__[attributeName] ~= nil; else 
+          _hx_1 = o[attributeName] ~= nil; end
+          return _hx_1
+        end )();
+      else
+        tmp = true;
+      end;
+      if (tmp) then 
+        local currentValue = self:field(element, attributeName);
         if (__lua_Boot.__instanceof(currentValue, Bool)) then 
           local b = false;
           if (attributeValue == "true") then 
@@ -3427,7 +3433,11 @@ __sunaba_ui_Widget.prototype.setObjectValues = function(self,element,xml)
               _G.error(__haxe_Exception.thrown(Std.string(Std.string(Std.string(Std.string("Invalid boolean value for field '") .. Std.string(attributeName)) .. Std.string("' in element '")) .. Std.string(c.__name__)) .. Std.string("'")),0);
             end;
           end;
-          Reflect.setProperty(element, attributeName, b);
+          if (obj[field] != nil) then 
+            obj[field] = value;
+          else
+            Reflect.setProperty(element, attributeName, b);
+          end;
         else
           if (__lua_Boot.__instanceof(currentValue, Int)) then 
             local attrArr = String.prototype.split(attributeValue, ".");
@@ -3437,9 +3447,13 @@ __sunaba_ui_Widget.prototype.setObjectValues = function(self,element,xml)
             if (enumName ~= "") then 
               local enum_ = Type.resolveEnum(enumName);
               if (enum_ ~= nil) then 
-                local enumValue = Reflect.field(enum_, value);
+                local enumValue = self:field(enum_, value);
                 if (enumValue ~= nil) then 
-                  Reflect.setProperty(element, attributeName, enumValue);
+                  if (obj[field] != nil) then 
+                    obj[field] = value;
+                  else
+                    Reflect.setProperty(element, attributeName, enumValue);
+                  end;
                 else
                   local c = Type.getClass(element);
                   _G.error(__haxe_Exception.thrown(Std.string(Std.string(Std.string(Std.string(Std.string(Std.string("Invalid enum value '") .. Std.string(value)) .. Std.string("' for field '")) .. Std.string(attributeName)) .. Std.string("' in element '")) .. Std.string(c.__name__)) .. Std.string("'")),0);
@@ -3448,21 +3462,40 @@ __sunaba_ui_Widget.prototype.setObjectValues = function(self,element,xml)
                 _G.error(__haxe_Exception.thrown(Std.string("Unknown enum: ") .. Std.string(enumName)),0);
               end;
             else
-              Reflect.setProperty(element, attributeName, Std.parseInt(attributeValue));
+              local value = Std.parseInt(attributeValue);
+              if (obj[field] != nil) then 
+                obj[field] = value;
+              else
+                Reflect.setProperty(element, attributeName, value);
+              end;
             end;
           else
             if (__lua_Boot.__instanceof(currentValue, Float)) then 
-              Reflect.setProperty(element, attributeName, Std.parseFloat(attributeValue));
+              local value = Std.parseFloat(attributeValue);
+              if (obj[field] != nil) then 
+                obj[field] = value;
+              else
+                Reflect.setProperty(element, attributeName, value);
+              end;
             else
               if (__lua_Boot.__instanceof(currentValue, String)) then 
-                Reflect.setProperty(element, attributeName, attributeValue);
+                if (obj[field] != nil) then 
+                  obj[field] = value;
+                else
+                  Reflect.setProperty(element, attributeName, attributeValue);
+                end;
               else
                 if (__lua_Boot.__instanceof(currentValue, Vector2)) then 
                   local xy = String.prototype.split(attributeValue, ",");
                   if (xy.length == 2) then 
                     local x = Std.parseFloat(xy[0]);
                     local y = Std.parseFloat(xy[1]);
-                    Reflect.setProperty(element, attributeName, Vector2.new(x, y));
+                    local value = Vector2.new(x, y);
+                    if (obj[field] != nil) then 
+                      obj[field] = value;
+                    else
+                      Reflect.setProperty(element, attributeName, value);
+                    end;
                   else
                     local c = Type.getClass(element);
                     _G.error(__haxe_Exception.thrown(Std.string(Std.string(Std.string(Std.string("Invalid Vector2 value for field '") .. Std.string(attributeName)) .. Std.string("' in element '")) .. Std.string(c.__name__)) .. Std.string("'")),0);
@@ -3474,7 +3507,12 @@ __sunaba_ui_Widget.prototype.setObjectValues = function(self,element,xml)
                       local x = Std.parseFloat(xyz[0]);
                       local y = Std.parseFloat(xyz[1]);
                       local z = Std.parseFloat(xyz[2]);
-                      Reflect.setProperty(element, attributeName, Vector3.new(x, y, z));
+                      local value = Vector3.new(x, y, z);
+                      if (obj[field] != nil) then 
+                        obj[field] = value;
+                      else
+                        Reflect.setProperty(element, attributeName, value);
+                      end;
                     else
                       local c = Type.getClass(element);
                       _G.error(__haxe_Exception.thrown(Std.string(Std.string(Std.string(Std.string("Invalid Vector3 value for field '") .. Std.string(attributeName)) .. Std.string("' in element '")) .. Std.string(c.__name__)) .. Std.string("'")),0);
@@ -3487,7 +3525,12 @@ __sunaba_ui_Widget.prototype.setObjectValues = function(self,element,xml)
                         local y = Std.parseFloat(xyzw[1]);
                         local z = Std.parseFloat(xyzw[2]);
                         local w = Std.parseFloat(xyzw[3]);
-                        Reflect.setProperty(element, attributeName, Vector4.new(x, y, z, w));
+                        local value = Vector4.new(x, y, z, w);
+                        if (obj[field] != nil) then 
+                          obj[field] = value;
+                        else
+                          Reflect.setProperty(element, attributeName, value);
+                        end;
                       else
                         local c = Type.getClass(element);
                         _G.error(__haxe_Exception.thrown(Std.string(Std.string(Std.string(Std.string("Invalid Vector4 value for field '") .. Std.string(attributeName)) .. Std.string("' in element '")) .. Std.string(c.__name__)) .. Std.string("'")),0);
@@ -3498,7 +3541,12 @@ __sunaba_ui_Widget.prototype.setObjectValues = function(self,element,xml)
                         if (xy.length == 2) then 
                           local x = Std.parseInt(xy[0]);
                           local y = Std.parseInt(xy[1]);
-                          Reflect.setProperty(element, attributeName, Vector2i.new(x, y));
+                          local value = Vector2i.new(x, y);
+                          if (obj[field] != nil) then 
+                            obj[field] = value;
+                          else
+                            Reflect.setProperty(element, attributeName, value);
+                          end;
                         else
                           local c = Type.getClass(element);
                           _G.error(__haxe_Exception.thrown(Std.string(Std.string(Std.string(Std.string("Invalid Vector2i value for field '") .. Std.string(attributeName)) .. Std.string("' in element '")) .. Std.string(c.__name__)) .. Std.string("'")),0);
@@ -3510,7 +3558,12 @@ __sunaba_ui_Widget.prototype.setObjectValues = function(self,element,xml)
                             local x = Std.parseInt(xyz[0]);
                             local y = Std.parseInt(xyz[1]);
                             local z = Std.parseInt(xyz[2]);
-                            Reflect.setProperty(element, attributeName, Vector3i.new(x, y, z));
+                            local value = Vector3i.new(x, y, z);
+                            if (obj[field] != nil) then 
+                              obj[field] = value;
+                            else
+                              Reflect.setProperty(element, attributeName, value);
+                            end;
                           else
                             local c = Type.getClass(element);
                             _G.error(__haxe_Exception.thrown(Std.string(Std.string(Std.string(Std.string("Invalid Vector3i value for field '") .. Std.string(attributeName)) .. Std.string("' in element '")) .. Std.string(c.__name__)) .. Std.string("'")),0);
@@ -3523,7 +3576,12 @@ __sunaba_ui_Widget.prototype.setObjectValues = function(self,element,xml)
                               local y = Std.parseInt(xyzw[1]);
                               local z = Std.parseInt(xyzw[2]);
                               local w = Std.parseInt(xyzw[3]);
-                              Reflect.setProperty(element, attributeName, Vector4i.new(x, y, z, w));
+                              local value = Vector4i.new(x, y, z, w);
+                              if (obj[field] != nil) then 
+                                obj[field] = value;
+                              else
+                                Reflect.setProperty(element, attributeName, value);
+                              end;
                             else
                               local c = Type.getClass(element);
                               _G.error(__haxe_Exception.thrown(Std.string(Std.string(Std.string(Std.string("Invalid Vector4i value for field '") .. Std.string(attributeName)) .. Std.string("' in element '")) .. Std.string(c.__name__)) .. Std.string("'")),0);
@@ -3532,7 +3590,11 @@ __sunaba_ui_Widget.prototype.setObjectValues = function(self,element,xml)
                             if (__lua_Boot.__instanceof(currentValue, Color)) then 
                               local color = Color.html(attributeValue);
                               if (color ~= nil) then 
-                                Reflect.setProperty(element, attributeName, color);
+                                if (obj[field] != nil) then 
+                                  obj[field] = value;
+                                else
+                                  Reflect.setProperty(element, attributeName, color);
+                                end;
                               else
                                 local c = Type.getClass(element);
                                 _G.error(__haxe_Exception.thrown(Std.string(Std.string(Std.string(Std.string("Invalid Color value for field '") .. Std.string(attributeName)) .. Std.string("' in element '")) .. Std.string(c.__name__)) .. Std.string("'")),0);
@@ -3543,7 +3605,11 @@ __sunaba_ui_Widget.prototype.setObjectValues = function(self,element,xml)
                                 if (image ~= nil) then 
                                   local texture = ImageTexture.createFromImage(image);
                                   if (texture ~= nil) then 
-                                    Reflect.setProperty(element, attributeName, texture);
+                                    if (obj[field] != nil) then 
+                                      obj[field] = value;
+                                    else
+                                      Reflect.setProperty(element, attributeName, texture);
+                                    end;
                                   else
                                     local c = Type.getClass(element);
                                     _G.error(__haxe_Exception.thrown(Std.string(Std.string(Std.string(Std.string("Failed to create Texture2D from image for field '") .. Std.string(attributeName)) .. Std.string("' in element '")) .. Std.string(c.__name__)) .. Std.string("'")),0);
@@ -3558,7 +3624,11 @@ __sunaba_ui_Widget.prototype.setObjectValues = function(self,element,xml)
                                   if (image ~= nil) then 
                                     local texture = ImageTexture.createFromImage(image);
                                     if (texture ~= nil) then 
-                                      Reflect.setProperty(element, attributeName, texture);
+                                      if (obj[field] != nil) then 
+                                        obj[field] = value;
+                                      else
+                                        Reflect.setProperty(element, attributeName, texture);
+                                      end;
                                     else
                                       local c = Type.getClass(element);
                                       _G.error(__haxe_Exception.thrown(Std.string(Std.string(Std.string(Std.string("Failed to create Texture2D from image for field '") .. Std.string(attributeName)) .. Std.string("' in element '")) .. Std.string(c.__name__)) .. Std.string("'")),0);
@@ -3672,6 +3742,51 @@ __sunaba_ui_Widget.prototype.constructChildren = function(self,element,xml)
       end;
       _G.error(__haxe_Exception.thrown(Std.string("Unknown child element: ") .. Std.string(child.nodeName)),0);
     end;
+  end;
+end
+__sunaba_ui_Widget.prototype.hasField = function(self,obj,field) 
+  if (not obj[field] != nil) then 
+    local o = obj;
+    if ((_G.type(o) == "function") and not ((function() 
+      local _hx_1
+      if (_G.type(o) ~= "table") then 
+      _hx_1 = false; else 
+      _hx_1 = o.__name__; end
+      return _hx_1
+    end )() or (function() 
+      local _hx_2
+      if (_G.type(o) ~= "table") then 
+      _hx_2 = false; else 
+      _hx_2 = o.__ename__; end
+      return _hx_2
+    end )())) then 
+      do return false end;
+    else
+      if ((_G.type(o) == "string") and ((String.prototype[field] ~= nil) or (field == "length"))) then 
+        do return true end;
+      else
+        if (o.__fields__ ~= nil) then 
+          do return o.__fields__[field] ~= nil end;
+        else
+          do return o[field] ~= nil end;
+        end;
+      end;
+    end;
+  else
+    do return true end;
+  end;
+end
+__sunaba_ui_Widget.prototype.field = function(self,obj,field) 
+  if (obj[field] != nil) then 
+    do return obj[field] end;
+  end;
+  do return Reflect.field(obj, field) end
+end
+__sunaba_ui_Widget.prototype.setProperty = function(self,obj,field,value) 
+  if (obj[field] != nil) then 
+    obj[field] = value;
+  else
+    Reflect.setProperty(obj, field, value);
   end;
 end
 __sunaba_ui_Widget.prototype.isAnElementClass = function(self,classInfo) 
