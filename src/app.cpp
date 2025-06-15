@@ -64,7 +64,7 @@ void App::start( const String &path) {
     global_state.open_libraries( sol::lib::base, sol::lib::bit32, sol::lib::coroutine,
         sol::lib::count, sol::lib::math, sol::lib::string,
         sol::lib::table, sol::lib::utf8, sol::lib::package, 
-        sol::lib::os,, sol::lib::io, sol::lib::debug );
+        sol::lib::os, sol::lib::io, sol::lib::debug );
 
 // hack fix for PUC-Rio Lua
 #ifdef USE_PUCRIO_LUA
