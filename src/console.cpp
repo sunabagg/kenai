@@ -93,7 +93,7 @@ Console::Console() {
         
         std::string command = args[0].as<std::string>();
         if (command.empty()) {
-            UtilityFunctions::print("run() expects a command as the first argument");
+            print("run() expects a command as the first argument");
             return;
         }
     };
