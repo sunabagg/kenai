@@ -134,9 +134,11 @@ void Console::start_shell(const String &path) {
         ioManager->add(fs_io);
         shell_path = fs_io->getFileUri("");
     } else {
-        print("Failed to create FileSystemIo for path: " + path.utf8().get_data());
+        print(String("Failed to create FileSystemIo for path: " + path).utf8().get_data());
         return;
     }
+
+    this->path.push_back(shell_path.utf8().get_data());
     
     display_default_output();
 }
