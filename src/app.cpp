@@ -178,6 +178,16 @@ void App::start( const String &path) {
         package.path = luarocks_path.package_path .. ";" .. package.path
         package.cpath = luarocks_path.package_cpath .. ";" .. package.cpath
     )");
+
+    if (OS::get_singleton()->has_feature("editor")) {
+        if (OS::get_singleton()->get_name() == "macOS") {
+            global_state.script(R"(
+                package.path = "/usr/local/lib/luarocks/rocks-5.1/?.lua;" .. package.path
+                package.cpath = "/usr/local/lib/luarocks/rocks-5.1/?.so;" .. package.cpath
+            )");
+        }
+    }
+
     sol::protected_function_result result = global_state.safe_script(script, sol::script_pass_on_error);
     
     if ( !result.valid() ) {
