@@ -2,6 +2,10 @@
 #define CONSOLE_H
 
 #include <godot_cpp/classes/node.hpp>
+#include <godot_cpp/classes/control.hpp>
+#include <godot_cpp/classes/v_box_container.hpp>
+#include <godot_cpp/classes/rich_text_label.hpp>
+#include <godot_cpp/classes/line_edit.hpp>
 #include <sol/state.hpp>
 #include <map>
 
@@ -48,6 +52,25 @@ namespace sunaba
         void run_executable(const String &path, const std::vector<String> &args);
 
         void run_executable_dir(const String &path, const std::vector<String> &args);
+    };
+
+    class DefaultOutputHandler : public Control {
+        GDCLASS(DefaultOutputHandler, Control)
+    protected:
+        static void _bind_methods();
+        public:
+        DefaultOutputHandler();
+        ~DefaultOutputHandler();
+
+        RichTextLabel* output_label;
+        LineEdit* input_line_edit;
+        VBoxContainer* container;
+
+        Console* console;
+
+        void _ready() override;
+
+        void on_line_edit_text_submitted(const String &text);
     };
 }
 
