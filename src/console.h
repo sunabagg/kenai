@@ -33,7 +33,7 @@ namespace sunaba
 
         std::map<std::string, std::function<void(const std::vector<std::string> &args)>> commands;
 
-        std::vector<std::function<void(const String &output)>> output_callbacks;
+        std::vector<std::function<void(const std::string &output)>> output_callbacks;
 
         DefaultOutputHandler* default_output_handler = nullptr;
 
