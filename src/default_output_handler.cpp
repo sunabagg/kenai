@@ -1,11 +1,21 @@
 #include "console.h"
 
+#include <godot_cpp/classes/resource_loader.hpp>
+
 using namespace sunaba;
 
 DefaultOutputHandler::DefaultOutputHandler() {
     output_label = memnew(RichTextLabel);
     input_line_edit = memnew(LineEdit);
     container = memnew(VBoxContainer);
+
+    auto resource_loader = ResourceLoader::get_singleton();
+    if (resource_loader) {
+        Ref<Theme> theme = resource_loader->load("res://themes/default_theme.tres");
+        if (theme.is_valid()) {
+            set_theme(theme);
+        }
+    }
 
     container->add_child(output_label);
     container->add_child(input_line_edit);

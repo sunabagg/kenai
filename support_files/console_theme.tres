@@ -1,0 +1,7 @@
+[gd_resource type="Theme" load_steps=2 format=3 uid="uid://dvgu437eb7wms"]
+
+[ext_resource type="FontFile" uid="uid://bgwkjxxcm21ob" path="res://addons/lite/fonts/FragmentMono-Regular.ttf" id="1_0x8dt"]
+
+[resource]
+default_font = ExtResource("1_0x8dt")
+default_font_size = 14
