@@ -6,6 +6,7 @@
 
 #include <godot_cpp/variant/utility_functions.hpp>
 #include <godot_cpp/classes/engine.hpp>
+#include <godot_cpp/classes/os.hpp>
 #include "portable-file-dialogs.h"
 
 #include "core/element.h"
