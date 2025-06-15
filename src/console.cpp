@@ -185,6 +185,27 @@ Console::Console() {
         }
         print(String("Current path: " + shell_path).utf8().get_data());
     });
+    
+    auto ls_callback = [this](const std::vector<std::string> &args) {
+        if (!args.empty()) {
+            print("ls command does not accept any arguments.");
+            return;
+        }
+        if (ioManager) {
+            auto files = ioManager->getFileList(shell_path.utf8().get_data(), "", true);
+            if (files.empty()) {
+                print("No files found in the current directory.");
+            } else {
+                for (const auto &file : files) {
+                    auto file_path_arr = String(file.c_str()).split("/");
+                    String file_name = file_path_arr[file_path_arr.size() - 1];
+                    print(file_name.utf8().get_data());
+                }
+            }
+        } else {
+            print("IoManager is not initialized.");
+        }
+    };
 }
 
 void Console::print(const std::string &message) {
