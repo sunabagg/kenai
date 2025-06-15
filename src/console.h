@@ -37,8 +37,6 @@ namespace sunaba
 
         DefaultOutputHandler* default_output_handler = nullptr;
 
-        void _ready() override;
-
         void display_default_output();
 
         void start_shell(const String &path);
