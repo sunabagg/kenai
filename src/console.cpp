@@ -2,6 +2,8 @@
 
 #include "core/io/file_system_io.h"
 
+#include "app.h"
+
 using namespace sunaba;
 
 void Console::_bind_methods() {
@@ -183,4 +185,28 @@ void Console::display_default_output() {
 
 void Console::unregister_command(const std::string &name) {
     global_state[name] = sol::nil;
+}
+
+void Console::run_executable(std::string &path, const std::vector<std::string> &args) {
+    if (path.empty()) {
+        print("Executable path is empty.");
+        return;
+    }
+
+    if (!String(path.c_str()).ends_with(".sbx")) {
+        path = String(String(path.c_str()) + ".sbx").utf8().get_data();
+    }
+
+    if (ioManager) {
+        auto local_path = String(shell_path + path.c_str()).utf8().get_data();
+
+        if (ioManager->fileExists(local_path)) {
+            path = local_path;
+        }
+
+        if (!ioManager->fileExists(path)) {
+            print(String("Executable not found: " + String(path.c_str())).utf8().get_data());
+            return;
+        }
+    }
 }
