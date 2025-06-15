@@ -68,6 +68,8 @@ namespace sunaba
 
         Console* console;
 
+        void set_console(Console* console);
+
         void on_line_edit_text_submitted(const String &text);
     };
 }
