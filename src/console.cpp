@@ -16,6 +16,9 @@ void Console::_bind_methods() {
 }
 
 Console::Console() {
+}
+
+void Console::_ready() {
     global_state.open_libraries( 
         sol::lib::base, sol::lib::count, 
         sol::lib::math, sol::lib::string,
