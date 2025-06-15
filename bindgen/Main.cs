@@ -54,13 +54,13 @@ public partial class Main : Node
 				var stringBuilder = new System.Text.StringBuilder();
 				stringBuilder.AppendLine("package " + packageName + ";");
 				stringBuilder.AppendLine();
-				stringBuilder.AppendLine("enum abstract " + enumName + "(Int) {");
+				stringBuilder.AppendLine("enum abstract " + enumName + "(Int) from Int to Int {");
 
 				foreach (var value in Enum.GetValues(type))
 				{
 					var valName = Enum.GetName(type, value);
 					var valValue = Convert.ToInt64(value);
-					stringBuilder.AppendLine("	var " + valName + " = " + valValue + ";");
+					stringBuilder.AppendLine("	var " + valName.ToCamelCase() + " = " + valValue + ";");
 				}
 
 				stringBuilder.AppendLine("}");
