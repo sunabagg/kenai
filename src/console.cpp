@@ -183,7 +183,7 @@ Console::Console() {
             print("pwd command does not accept any arguments.");
             return;
         }
-        print("Current path: " + shell_path.utf8().get_data());
+        print(String("Current path: " + shell_path).utf8().get_data());
     });
 }
 
