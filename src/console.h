@@ -68,6 +68,7 @@ namespace sunaba
             LineEdit* input_line_edit;
             VBoxContainer* container;
 
+            Console* get_console() const;
             void set_console(Console* console);
 
             void on_line_edit_text_submitted(const String &text);
