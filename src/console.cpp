@@ -9,8 +9,74 @@ void Console::_bind_methods() {
 
 Console::Console() {
     ioManager = new sunaba::core::io::IoManager();
-    
+
     default_output_handler = memnew(DefaultOutputHandler);
     default_output_handler->set_console(this);
     add_child(default_output_handler);
+
+    global_state["print"] = [this]( sol::variadic_args args ) {
+        String msg;
+        for ( const auto &arg : args )
+        {
+            if ( arg.is<std::string>() )
+            {
+                std::string str = arg.as<std::string>();
+                msg += str.c_str();
+            }
+            else if (arg.is<sol::table>())
+            {
+                msg += "table";
+            }
+            else if (arg.is<Vector3>())
+            {
+                Vector3 vec = arg.as<Vector3>();
+                msg += String(vec);
+            }
+            else if (arg.is<Vector2>())
+            {
+                Vector2 vec = arg.as<Vector2>();
+                msg += String(vec);
+            }
+            else if (arg.is<float>())
+            {
+                float f = arg.as<float>();
+                Variant v = f;
+                msg += String(v);
+            }
+            else if (arg.is<bool>())
+            {
+                bool b = arg.as<bool>();
+                Variant v = b;
+                msg += String(v);
+            }
+            else if (arg.is<int>())
+            {
+                int i = arg.as<int>();
+                Variant v = i;
+                msg += String(v);
+            }
+            else if (arg.is<Vector4>())
+            {
+                Vector4 vec = arg.as<Vector4>();
+                msg += String(vec);
+            }
+            else if (arg.is<Vector4i>())
+            {
+                Vector4i vec = arg.as<Vector4i>();
+                msg += String(vec);
+            }
+            else if (arg.is<Vector2i>())
+            {
+                Vector2i vec = arg.as<Vector2i>();
+                msg += String(vec);
+            }
+            else if (arg.is<Vector3i>())
+            {
+                Vector3i vec = arg.as<Vector3i>();
+                msg += String(vec);
+            }
+        }
+        godot::UtilityFunctions::print( msg );
+    };
+
 }
