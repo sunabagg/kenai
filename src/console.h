@@ -27,6 +27,8 @@ namespace sunaba
         void _ready() override;
 
         void start_shell(const String &path);
+
+        void run_command(const String &command);
     };
 }
 
