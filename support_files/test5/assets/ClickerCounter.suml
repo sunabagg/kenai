@@ -2,6 +2,14 @@
     <head>
     </head>
     <body>
-        
+        <panel 
+            anchorTop="0" 
+            anchorBottom="1" 
+            anchorLeft="0" 
+            anchorRight="1" 
+            offsetBottom="-10"
+            offsetTop="10"
+            offsetLeft="-10"
+            offsetRight="10"/>
     </body>
 </suml>
