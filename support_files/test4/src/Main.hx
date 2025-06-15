@@ -24,15 +24,15 @@ class Main extends App{
         var control = new Control();
 
         rootElement.addChild(control);
-        control.setAnchorsAndOffsetsPreset(cast LayoutPreset.FullRect, cast LayoutPresetMode.KeepSize, 0);
-        control.sizeFlagsHorizontal = cast SizeFlags.Fill;
-        control.sizeFlagsVertical = cast SizeFlags.Fill;
+        control.setAnchorsAndOffsetsPreset(cast LayoutPreset.fullRect, LayoutPresetMode.keepSize, 0);
+        control.sizeFlagsHorizontal = cast SizeFlags.fill;
+        control.sizeFlagsVertical = cast SizeFlags.fill;
 
         var panel = new Panel();
         control.addChild(panel);
-        panel.setAnchorsAndOffsetsPreset(cast LayoutPreset.FullRect, cast LayoutPresetMode.KeepSize, 0);
-        panel.sizeFlagsHorizontal = cast SizeFlags.Fill;
-        panel.sizeFlagsVertical = cast SizeFlags.Fill;
+        panel.setAnchorsAndOffsetsPreset(LayoutPreset.fullRect, LayoutPresetMode.keepSize, 0);
+        panel.sizeFlagsHorizontal = SizeFlags.fill;
+        panel.sizeFlagsVertical = SizeFlags.fill;
         panel.offsetBottom = -10;
         panel.offsetTop = 10;
         panel.offsetLeft = -10;
@@ -40,16 +40,16 @@ class Main extends App{
 
         var centerContainer = new CenterContainer();
         panel.addChild(centerContainer);
-        centerContainer.setAnchorsAndOffsetsPreset(cast LayoutPreset.FullRect, cast LayoutPresetMode.KeepSize, 0);
-        centerContainer.sizeFlagsHorizontal = cast SizeFlags.Fill;
-        centerContainer.sizeFlagsVertical = cast SizeFlags.Fill;
+        centerContainer.setAnchorsAndOffsetsPreset(LayoutPreset.fullRect, LayoutPresetMode.keepSize, 0);
+        centerContainer.sizeFlagsHorizontal = SizeFlags.fill;
+        centerContainer.sizeFlagsVertical = SizeFlags.fill;
 
         var vboxContainer = new VBoxContainer();
 
         centerContainer.addChild(vboxContainer);
-        vboxContainer.setAnchorsAndOffsetsPreset(cast LayoutPreset.Center, cast LayoutPresetMode.Minsize, 0);
-        vboxContainer.sizeFlagsHorizontal = cast SizeFlags.ShrinkBegin;
-        vboxContainer.sizeFlagsVertical = cast SizeFlags.ShrinkBegin;
+        vboxContainer.setAnchorsAndOffsetsPreset(LayoutPreset.center, LayoutPresetMode.minsize, 0);
+        vboxContainer.sizeFlagsHorizontal = SizeFlags.shrinkBegin;
+        vboxContainer.sizeFlagsVertical = SizeFlags.shrinkBegin;
 
         label = new Label();
 
