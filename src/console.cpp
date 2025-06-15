@@ -78,8 +78,10 @@ Console::Console() {
         }
         if (default_output_handler) {
             default_output_handler->output_label->append_text( msg );
-        } else {
-            UtilityFunctions::print(msg);
+        }
+
+        for (const auto &callback : output_callbacks) {
+            callback(msg.utf8().get_data());
         }
     };
 
