@@ -45,13 +45,13 @@ namespace sunaba
 
         void run_command(const String &command);
 
-        void register_command(const String &name, const std::function<void(const std::vector<std::string> &args)> &callback);
+        void register_command(const std::string &name, const std::function<void(const std::vector<std::string> &args)> &callback);
         
-        void unregister_command(const String &name);
+        void unregister_command(const std::string &name);
 
-        void run_executable(const String &path, const std::vector<String> &args);
+        void run_executable(const std::string &path, const std::vector<String> &args);
 
-        void run_executable_dir(const String &path, const std::vector<String> &args);
+        void run_executable_dir(const std::string &path, const std::vector<String> &args);
     };
 
     class DefaultOutputHandler : public Control {
