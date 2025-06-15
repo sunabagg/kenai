@@ -30,6 +30,10 @@ void DefaultOutputHandler::on_line_edit_text_submitted(const String &text) {
     }
 }
 
+Console* DefaultOutputHandler::get_console() const {
+    return console;
+}
+
 void DefaultOutputHandler::set_console(Console* console) {
     this->console = console;
     if (console) {
