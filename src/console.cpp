@@ -13,7 +13,7 @@ using namespace sunaba;
 void Console::_bind_methods() {
     ClassDB::bind_method(D_METHOD("start_shell", "path"), &Console::start_shell);
     ClassDB::bind_method(D_METHOD("run_command", "command"), &Console::run_command);
-    ClassDB::bind_method(D_METHOD("display_default_output"), &Console::display_default_output);
+    //ClassDB::bind_method(D_METHOD("display_default_output"), &Console::display_default_output);
 }
 
 Console::Console() {
@@ -279,7 +279,7 @@ void Console::register_command(const std::string &name, const std::function<void
 }
 
 void Console::display_default_output() {
-    if (default_output_handler) {
+    if (default_output_handler != nullptr) {
         default_output_handler->show();
         default_output_handler->input_line_edit->set_editable(true);
         default_output_handler->input_line_edit->grab_focus();
