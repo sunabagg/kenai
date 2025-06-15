@@ -228,4 +228,5 @@ void Console::run_executable(std::string &path, const std::vector<std::string> &
         add_child(app);
         app->args = args;
         app->start(String(shell_path).utf8().get_data());
+    }
 }
