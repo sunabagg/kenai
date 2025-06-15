@@ -29,3 +29,10 @@ void DefaultOutputHandler::on_line_edit_text_submitted(const String &text) {
         console->run_command(text);
     }
 }
+
+void DefaultOutputHandler::set_console(Console* console) {
+    this->console = console;
+    if (console) {
+        console->default_output_handler = this;
+    }
+}
