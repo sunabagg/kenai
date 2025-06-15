@@ -77,13 +77,33 @@ Console::Console() {
                 msg += String(vec);
             }
         }
-        if (default_output_handler) {
-            default_output_handler->output_label->append_text( msg );
-        }
-
-        for (const auto &callback : output_callbacks) {
-            callback(msg.utf8().get_data());
-        }
+        print(msg.utf8().get_data());
     };
 
+    global_state["exec"] = [this](const sol::variadic_args & args) {
+        std::vector<std::string> arguments;
+        for (size_t i = 1; i < args.size(); ++i) {
+            if (args[i].is<std::string>()) {
+                arguments.push_back(args[i].as<std::string>());
+            } else {
+                UtilityFunctions::print("run() expects string arguments");
+                return;
+            }
+        }
+        
+        std::string command = args[0].as<std::string>();
+        if (command.empty()) {
+            UtilityFunctions::print("run() expects a command as the first argument");
+            return;
+        }
+    };
+}
+
+void Console::print(const std::string &message) {
+    if (default_output_handler) {
+        default_output_handler->output_label->append_text(String(message.c_str()));
+    }
+    for (const auto &callback : output_callbacks) {
+        callback(message);
+    }
 }
