@@ -187,7 +187,7 @@ class Widget {
                 element.name = attributeValue;
             }
             else {
-                if (Reflect.hasField(element, attributeName)) {
+                if (hasField(element, attributeName)) {
                     var currentValue = Reflect.field(element, attributeName);
                     if (Std.isOfType(currentValue, Bool)) {
                         var b : Bool = false;
@@ -415,6 +415,10 @@ class Widget {
                 throw "Unknown child element: " + child.nodeName;
             }
         }
+    }
+
+    private inline function hasField(obj: Any, field: String): Bool {
+        return untyped __lua__("obj[field] != nil") || Reflect.hasField(obj, field);
     }
 
     private function isAnElementClass(classInfo: Class<Dynamic>): Bool {
