@@ -105,6 +105,26 @@ Console::Console() {
 
         run_executable(command, arguments);
     };
+
+    global_state["run"] = [this](const sol::variadic_args & args) {
+        std::vector<std::string> arguments;
+        for (size_t i = 1; i < args.size(); ++i) {
+            if (args[i].is<std::string>()) {
+                arguments.push_back(args[i].as<std::string>());
+            } else {
+                print("run() expects string arguments");
+                return;
+            }
+        }
+        
+        std::string command = args[0].as<std::string>();
+        if (command.empty()) {
+            print("run() expects a command as the first argument");
+            return;
+        }
+
+        run_command(command, arguments);
+    };
 }
 
 void Console::print(const std::string &message) {
