@@ -11,6 +11,8 @@ using namespace godot;
 
 namespace sunaba
 {
+    class DefaultOutputHandler;
+
     class Console : public Node {
         GDCLASS(Console, Node)
     protected:
@@ -28,6 +30,8 @@ namespace sunaba
         std::map<std::string, std::function<void(const std::vector<std::string> &args)>> commands;
 
         std::vector<std::function<void(const String &output)>> output_callbacks;
+
+        DefaultOutputHandler* default_output_handler = nullptr;
 
         void _ready() override;
 
