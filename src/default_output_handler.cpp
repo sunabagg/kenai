@@ -23,3 +23,9 @@ DefaultOutputHandler::~DefaultOutputHandler() {
         console->default_output_handler = nullptr;
     }
 }
+
+void DefaultOutputHandler::on_line_edit_text_submitted(const String &text) {
+    if (console) {
+        console->run_command(text);
+    }
+}
