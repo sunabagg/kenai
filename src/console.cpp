@@ -11,7 +11,9 @@ Console::Console() {
     global_state.open_libraries( 
         sol::lib::base, sol::lib::count, 
         sol::lib::math, sol::lib::string,
-        sol::lib::table, sol::lib::utf8);
+        sol::lib::table, sol::lib::utf8
+    );
+    
     ioManager = new sunaba::core::io::IoManager();
 
     default_output_handler = memnew(DefaultOutputHandler);
