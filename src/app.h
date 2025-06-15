@@ -10,6 +10,7 @@
 
 #include "core/scene_system.h"
 #include "core/io/io_manager.h"
+#include "console.h"
 
 using namespace godot;
 
