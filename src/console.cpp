@@ -177,6 +177,14 @@ Console::Console() {
             shell_path = current_path.utf8().get_data();
         }
     });
+
+    register_command("pwd", [this](const std::vector<std::string> &args) {
+        if (!args.empty()) {
+            print("pwd command does not accept any arguments.");
+            return;
+        }
+        print("Current path: " + shell_path.utf8().get_data());
+    });
 }
 
 void Console::print(const std::string &message) {
