@@ -56,6 +56,8 @@ namespace sunaba
 
     class DefaultOutputHandler : public Control {
         GDCLASS(DefaultOutputHandler, Control)
+    private:
+        Console* console;
     protected:
         static void _bind_methods();
         public:
@@ -65,8 +67,6 @@ namespace sunaba
         RichTextLabel* output_label;
         LineEdit* input_line_edit;
         VBoxContainer* container;
-
-        Console* console;
 
         void set_console(Console* console);
 
