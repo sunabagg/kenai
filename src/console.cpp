@@ -157,3 +157,18 @@ void Console::run_command(const String &command) {
     prompt_available = true;
     default_output_handler->input_line_edit->set_editable(true);
 }
+
+void Console::register_command(const std::string &name, const std::function<void(const std::vector<std::string> &args)> &callback) {
+    global_state[name] = [callback](const sol::variadic_args &args) {
+        std::vector<std::string> arguments;
+        for (size_t i = 0; i < args.size(); ++i) {
+            if (args[i].is<std::string>()) {
+                arguments.push_back(args[i].as<std::string>());
+            } else {
+                UtilityFunctions::print("Command expects string arguments");
+                return;
+            }
+        }
+        callback(arguments);
+    };
+}
