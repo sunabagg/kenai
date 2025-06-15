@@ -92,7 +92,7 @@ Console::Console() {
             if (args[i].is<std::string>()) {
                 arguments.push_back(args[i].as<std::string>());
             } else {
-                UtilityFunctions::print("run() expects string arguments");
+                print("run() expects string arguments");
                 return;
             }
         }
