@@ -40,6 +40,8 @@ namespace sunaba
         void unregister_command(const String &name);
 
         void run_executable(const String &path, const std::vector<String> &args);
+
+        void run_executable_dir(const String &path, const std::vector<String> &args);
     };
 }
 
