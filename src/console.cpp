@@ -208,5 +208,11 @@ void Console::run_executable(std::string &path, const std::vector<std::string> &
             print(String("Executable not found: " + String(path.c_str())).utf8().get_data());
             return;
         }
+
+        sunaba::core::io::BinaryData binary_data = ioManager->loadBinary(path);
+        if (binary_data.size() <= 0) {
+            print(String("Failed to load executable: " + String(path.c_str())).utf8().get_data());
+            return;
+        }
     }
 }
