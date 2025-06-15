@@ -1,10 +1,10 @@
 package sunaba;
 
-enum abstract AnisotropicFiltering(Int) {
-	var Disabled = 0;
-	var Anisotropy2X = 1;
-	var Anisotropy4X = 2;
-	var Anisotropy8X = 3;
-	var Anisotropy16X = 4;
-	var Max = 5;
+enum abstract AnisotropicFiltering(Int) from Int to Int {
+	var disabled = 0;
+	var anisotropy2x = 1;
+	var anisotropy4x = 2;
+	var anisotropy8x = 3;
+	var anisotropy16x = 4;
+	var max = 5;
 }

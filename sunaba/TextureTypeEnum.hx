@@ -1,9 +1,9 @@
 package sunaba;
 
-enum abstract TextureTypeEnum(Int) {
-	var Data = 0;
-	var Color = 1;
-	var NormalMap = 2;
-	var Anisotropy = 3;
-	var Max = 4;
+enum abstract TextureTypeEnum(Int) from Int to Int {
+	var data = 0;
+	var color = 1;
+	var normalMap = 2;
+	var anisotropy = 3;
+	var max = 4;
 }

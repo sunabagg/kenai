@@ -1,9 +1,9 @@
 package sunaba;
 
-enum abstract EnvironmentToneMapper(Int) {
-	var Linear = 0;
-	var Reinhard = 1;
-	var Filmic = 2;
-	var Aces = 3;
-	var Agx = 4;
+enum abstract EnvironmentToneMapper(Int) from Int to Int {
+	var linear = 0;
+	var reinhard = 1;
+	var filmic = 2;
+	var aces = 3;
+	var agx = 4;
 }

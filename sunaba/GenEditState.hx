@@ -1,8 +1,8 @@
 package sunaba;
 
-enum abstract GenEditState(Int) {
-	var Disabled = 0;
-	var Instance = 1;
-	var Main = 2;
-	var MainInherited = 3;
+enum abstract GenEditState(Int) from Int to Int {
+	var disabled = 0;
+	var instance = 1;
+	var main = 2;
+	var mainInherited = 3;
 }

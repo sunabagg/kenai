@@ -1,6 +1,6 @@
 package sunaba..spatial;
 
-enum abstract StandardMaterial3DDetailUVLayer(Int) {
-	var UV1 = 0;
-	var UV2 = 1;
+enum abstract StandardMaterial3DDetailUVLayer(Int) from Int to Int {
+	var uv1 = 0;
+	var uv2 = 1;
 }

@@ -1,6 +1,6 @@
 package sunaba;
 
-enum abstract MixModeEnum(Int) {
-	var Blend = 0;
-	var Add = 1;
+enum abstract MixModeEnum(Int) from Int to Int {
+	var blend = 0;
+	var add = 1;
 }

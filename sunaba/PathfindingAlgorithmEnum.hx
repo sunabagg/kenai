@@ -1,5 +1,5 @@
 package sunaba;
 
-enum abstract PathfindingAlgorithmEnum(Int) {
-	var Astar = 0;
+enum abstract PathfindingAlgorithmEnum(Int) from Int to Int {
+	var astar = 0;
 }

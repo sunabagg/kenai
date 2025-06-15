@@ -1,15 +1,15 @@
 package sunaba;
 
-enum abstract ShapeType(Int) {
-	var WorldBoundary = 0;
-	var SeparationRay = 1;
-	var Sphere = 2;
-	var Box = 3;
-	var Capsule = 4;
-	var Cylinder = 5;
-	var ConvexPolygon = 6;
-	var ConcavePolygon = 7;
-	var Heightmap = 8;
-	var SoftBody = 9;
-	var Custom = 10;
+enum abstract ShapeType(Int) from Int to Int {
+	var worldBoundary = 0;
+	var separationRay = 1;
+	var sphere = 2;
+	var box = 3;
+	var capsule = 4;
+	var cylinder = 5;
+	var convexPolygon = 6;
+	var concavePolygon = 7;
+	var heightmap = 8;
+	var softBody = 9;
+	var custom = 10;
 }

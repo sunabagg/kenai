@@ -1,30 +1,30 @@
 package sunaba;
 
-enum abstract DriverResource(Int) {
-	var LogicalDevice = 0;
-	var LogicalDevice = 0;
-	var PhysicalDevice = 1;
-	var PhysicalDevice = 1;
-	var TopmostObject = 2;
-	var TopmostObject = 2;
-	var CommandQueue = 3;
-	var CommandQueue = 3;
-	var QueueFamily = 4;
-	var QueueFamily = 4;
-	var Texture = 5;
-	var Texture = 5;
-	var VulkanImageView = 6;
-	var VulkanImageView = 6;
-	var TextureDataFormat = 7;
-	var TextureDataFormat = 7;
-	var VulkanSampler = 8;
-	var VulkanSampler = 8;
-	var VulkanDescriptorSet = 9;
-	var VulkanDescriptorSet = 9;
-	var VulkanBuffer = 10;
-	var VulkanBuffer = 10;
-	var VulkanComputePipeline = 11;
-	var VulkanComputePipeline = 11;
-	var RenderPipeline = 12;
-	var RenderPipeline = 12;
+enum abstract DriverResource(Int) from Int to Int {
+	var logicalDevice = 0;
+	var logicalDevice = 0;
+	var physicalDevice = 1;
+	var physicalDevice = 1;
+	var topmostObject = 2;
+	var topmostObject = 2;
+	var commandQueue = 3;
+	var commandQueue = 3;
+	var queueFamily = 4;
+	var queueFamily = 4;
+	var texture = 5;
+	var texture = 5;
+	var vulkanImageView = 6;
+	var vulkanImageView = 6;
+	var textureDataFormat = 7;
+	var textureDataFormat = 7;
+	var vulkanSampler = 8;
+	var vulkanSampler = 8;
+	var vulkanDescriptorSet = 9;
+	var vulkanDescriptorSet = 9;
+	var vulkanBuffer = 10;
+	var vulkanBuffer = 10;
+	var vulkanComputePipeline = 11;
+	var vulkanComputePipeline = 11;
+	var renderPipeline = 12;
+	var renderPipeline = 12;
 }

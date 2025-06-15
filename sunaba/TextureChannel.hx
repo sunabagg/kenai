@@ -1,9 +1,9 @@
 package sunaba;
 
-enum abstract TextureChannel(Int) {
-	var Red = 0;
-	var Green = 1;
-	var Blue = 2;
-	var Alpha = 3;
-	var Grayscale = 4;
+enum abstract TextureChannel(Int) from Int to Int {
+	var red = 0;
+	var green = 1;
+	var blue = 2;
+	var alpha = 3;
+	var grayscale = 4;
 }

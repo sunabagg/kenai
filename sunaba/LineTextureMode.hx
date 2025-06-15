@@ -1,7 +1,7 @@
 package sunaba;
 
-enum abstract LineTextureMode(Int) {
-	var None = 0;
-	var Tile = 1;
-	var Stretch = 2;
+enum abstract LineTextureMode(Int) from Int to Int {
+	var none = 0;
+	var tile = 1;
+	var stretch = 2;
 }

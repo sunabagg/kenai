@@ -1,7 +1,7 @@
 package sunaba;
 
-enum abstract AlphaMode(Int) {
-	var None = 0;
-	var Bit = 1;
-	var Blend = 2;
+enum abstract AlphaMode(Int) from Int to Int {
+	var none = 0;
+	var bit = 1;
+	var blend = 2;
 }

@@ -1,8 +1,8 @@
 package sunaba;
 
-enum abstract CellularDistanceFunctionEnum(Int) {
-	var Euclidean = 0;
-	var EuclideanSquared = 1;
-	var Manhattan = 2;
-	var Hybrid = 3;
+enum abstract CellularDistanceFunctionEnum(Int) from Int to Int {
+	var euclidean = 0;
+	var euclideanSquared = 1;
+	var manhattan = 2;
+	var hybrid = 3;
 }

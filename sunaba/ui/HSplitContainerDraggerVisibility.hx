@@ -1,7 +1,7 @@
 package sunaba..ui;
 
-enum abstract HSplitContainerDraggerVisibility(Int) {
-	var Visible = 0;
-	var Hidden = 1;
-	var HiddenCollapsed = 2;
+enum abstract HSplitContainerDraggerVisibility(Int) from Int to Int {
+	var visible = 0;
+	var hidden = 1;
+	var hiddenCollapsed = 2;
 }

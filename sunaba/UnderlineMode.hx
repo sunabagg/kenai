@@ -1,7 +1,7 @@
 package sunaba;
 
-enum abstract UnderlineMode(Int) {
-	var Always = 0;
-	var OnHover = 1;
-	var Never = 2;
+enum abstract UnderlineMode(Int) from Int to Int {
+	var always = 0;
+	var onHover = 1;
+	var never = 2;
 }

@@ -1,10 +1,10 @@
 package sunaba;
 
-enum abstract ShaderMode(Int) {
-	var Spatial = 0;
-	var CanvasItem = 1;
-	var Particles = 2;
-	var Sky = 3;
-	var Fog = 4;
-	var Max = 5;
+enum abstract ShaderMode(Int) from Int to Int {
+	var spatial = 0;
+	var canvasItem = 1;
+	var particles = 2;
+	var sky = 3;
+	var fog = 4;
+	var max = 5;
 }

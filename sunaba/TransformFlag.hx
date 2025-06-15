@@ -1,8 +1,8 @@
 package sunaba;
 
-enum abstract TransformFlag(Int) {
-	var Position = 1;
-	var Rotation = 2;
-	var Scale = 4;
-	var All = 7;
+enum abstract TransformFlag(Int) from Int to Int {
+	var position = 1;
+	var rotation = 2;
+	var scale = 4;
+	var all = 7;
 }

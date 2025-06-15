@@ -1,7 +1,7 @@
 package sunaba;
 
-enum abstract SkyModeEnum(Int) {
-	var LightAndSky = 0;
-	var LightOnly = 1;
-	var SkyOnly = 2;
+enum abstract SkyModeEnum(Int) from Int to Int {
+	var lightAndSky = 0;
+	var lightOnly = 1;
+	var skyOnly = 2;
 }

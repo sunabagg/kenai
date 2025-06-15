@@ -1,7 +1,7 @@
 package sunaba;
 
-enum abstract CcdMode(Int) {
-	var Disabled = 0;
-	var CastRay = 1;
-	var CastShape = 2;
+enum abstract CcdMode(Int) from Int to Int {
+	var disabled = 0;
+	var castRay = 1;
+	var castShape = 2;
 }

@@ -1,8 +1,8 @@
 package sunaba;
 
-enum abstract VerticalAlignment(Int) {
-	var Top = 0;
-	var Center = 1;
-	var Bottom = 2;
-	var Fill = 3;
+enum abstract VerticalAlignment(Int) from Int to Int {
+	var top = 0;
+	var center = 1;
+	var bottom = 2;
+	var fill = 3;
 }

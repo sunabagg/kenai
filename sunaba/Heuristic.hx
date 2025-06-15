@@ -1,9 +1,9 @@
 package sunaba;
 
-enum abstract Heuristic(Int) {
-	var Euclidean = 0;
-	var Manhattan = 1;
-	var Octile = 2;
-	var Chebyshev = 3;
-	var Max = 4;
+enum abstract Heuristic(Int) from Int to Int {
+	var euclidean = 0;
+	var manhattan = 1;
+	var octile = 2;
+	var chebyshev = 3;
+	var max = 4;
 }

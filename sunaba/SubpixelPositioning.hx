@@ -1,10 +1,10 @@
 package sunaba;
 
-enum abstract SubpixelPositioning(Int) {
-	var Disabled = 0;
-	var Auto = 1;
-	var OneHalf = 2;
-	var OneQuarter = 3;
-	var OneQuarterMaxSize = 16;
-	var OneHalfMaxSize = 20;
+enum abstract SubpixelPositioning(Int) from Int to Int {
+	var disabled = 0;
+	var auto = 1;
+	var oneHalf = 2;
+	var oneQuarter = 3;
+	var oneQuarterMaxSize = 16;
+	var oneHalfMaxSize = 20;
 }

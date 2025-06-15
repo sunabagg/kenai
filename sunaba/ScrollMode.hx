@@ -1,9 +1,9 @@
 package sunaba;
 
-enum abstract ScrollMode(Int) {
-	var Disabled = 0;
-	var Auto = 1;
-	var ShowAlways = 2;
-	var ShowNever = 3;
-	var Reserve = 4;
+enum abstract ScrollMode(Int) from Int to Int {
+	var disabled = 0;
+	var auto = 1;
+	var showAlways = 2;
+	var showNever = 3;
+	var reserve = 4;
 }

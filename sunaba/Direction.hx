@@ -1,8 +1,8 @@
 package sunaba;
 
-enum abstract Direction(Int) {
-	var Auto = 0;
-	var Ltr = 1;
-	var Rtl = 2;
-	var Inherited = 3;
+enum abstract Direction(Int) from Int to Int {
+	var auto = 0;
+	var ltr = 1;
+	var rtl = 2;
+	var inherited = 3;
 }

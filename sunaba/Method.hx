@@ -1,14 +1,14 @@
 package sunaba;
 
-enum abstract Method(Int) {
-	var Get = 0;
-	var Head = 1;
-	var Post = 2;
-	var Put = 3;
-	var Delete = 4;
-	var Options = 5;
-	var Trace = 6;
-	var Connect = 7;
-	var Patch = 8;
-	var Max = 9;
+enum abstract Method(Int) from Int to Int {
+	var get = 0;
+	var head = 1;
+	var post = 2;
+	var put = 3;
+	var delete = 4;
+	var options = 5;
+	var trace = 6;
+	var connect = 7;
+	var patch = 8;
+	var max = 9;
 }

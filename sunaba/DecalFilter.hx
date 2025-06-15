@@ -1,10 +1,10 @@
 package sunaba;
 
-enum abstract DecalFilter(Int) {
-	var Nearest = 0;
-	var Linear = 1;
-	var NearestMipmaps = 2;
-	var LinearMipmaps = 3;
-	var NearestMipmapsAnisotropic = 4;
-	var LinearMipmapsAnisotropic = 5;
+enum abstract DecalFilter(Int) from Int to Int {
+	var nearest = 0;
+	var linear = 1;
+	var nearestMipmaps = 2;
+	var linearMipmaps = 3;
+	var nearestMipmapsAnisotropic = 4;
+	var linearMipmapsAnisotropic = 5;
 }

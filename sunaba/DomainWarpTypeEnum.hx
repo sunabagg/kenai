@@ -1,7 +1,7 @@
 package sunaba;
 
-enum abstract DomainWarpTypeEnum(Int) {
-	var Simplex = 0;
-	var SimplexReduced = 1;
-	var BasicGrid = 2;
+enum abstract DomainWarpTypeEnum(Int) from Int to Int {
+	var simplex = 0;
+	var simplexReduced = 1;
+	var basicGrid = 2;
 }

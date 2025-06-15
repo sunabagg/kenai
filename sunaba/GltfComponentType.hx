@@ -1,16 +1,16 @@
 package sunaba;
 
-enum abstract GltfComponentType(Int) {
-	var None = 0;
-	var SignedByte = 5120;
-	var UnsignedByte = 5121;
-	var SignedShort = 5122;
-	var UnsignedShort = 5123;
-	var SignedInt = 5124;
-	var UnsignedInt = 5125;
-	var SingleFloat = 5126;
-	var DoubleFloat = 5130;
-	var HalfFloat = 5131;
-	var SignedLong = 5134;
-	var UnsignedLong = 5135;
+enum abstract GltfComponentType(Int) from Int to Int {
+	var none = 0;
+	var signedByte = 5120;
+	var unsignedByte = 5121;
+	var signedShort = 5122;
+	var unsignedShort = 5123;
+	var signedInt = 5124;
+	var unsignedInt = 5125;
+	var singleFloat = 5126;
+	var doubleFloat = 5130;
+	var halfFloat = 5131;
+	var signedLong = 5134;
+	var unsignedLong = 5135;
 }

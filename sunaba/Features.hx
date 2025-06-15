@@ -1,6 +1,6 @@
 package sunaba;
 
-enum abstract Features(Int) {
-	var Shaders = 0;
-	var Multithreaded = 1;
+enum abstract Features(Int) from Int to Int {
+	var shaders = 0;
+	var multithreaded = 1;
 }

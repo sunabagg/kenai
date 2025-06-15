@@ -1,11 +1,11 @@
 package sunaba;
 
-enum abstract PipelineDynamicStateFlags(Int) {
-	var LineWidth = 1;
-	var DepthBias = 2;
-	var BlendConstants = 4;
-	var DepthBounds = 8;
-	var StencilCompareMask = 16;
-	var StencilWriteMask = 32;
-	var StencilReference = 64;
+enum abstract PipelineDynamicStateFlags(Int) from Int to Int {
+	var lineWidth = 1;
+	var depthBias = 2;
+	var blendConstants = 4;
+	var depthBounds = 8;
+	var stencilCompareMask = 16;
+	var stencilWriteMask = 32;
+	var stencilReference = 64;
 }

@@ -1,8 +1,8 @@
 package sunaba;
 
-enum abstract FilterAction(Int) {
-	var Ignore = 0;
-	var Pass = 1;
-	var Stop = 2;
-	var Blend = 3;
+enum abstract FilterAction(Int) from Int to Int {
+	var ignore = 0;
+	var pass = 1;
+	var stop = 2;
+	var blend = 3;
 }

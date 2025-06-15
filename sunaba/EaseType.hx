@@ -1,8 +1,8 @@
 package sunaba;
 
-enum abstract EaseType(Int) {
-	var In = 0;
-	var Out = 1;
-	var InOut = 2;
-	var OutIn = 3;
+enum abstract EaseType(Int) from Int to Int {
+	var in = 0;
+	var out = 1;
+	var inOut = 2;
+	var outIn = 3;
 }

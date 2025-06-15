@@ -1,8 +1,8 @@
 package sunaba;
 
-enum abstract AudioStreamGeneratorMixRate(Int) {
-	var Output = 0;
-	var Input = 1;
-	var Custom = 2;
-	var Max = 3;
+enum abstract AudioStreamGeneratorMixRate(Int) from Int to Int {
+	var output = 0;
+	var input = 1;
+	var custom = 2;
+	var max = 3;
 }

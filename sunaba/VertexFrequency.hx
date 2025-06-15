@@ -1,6 +1,6 @@
 package sunaba;
 
-enum abstract VertexFrequency(Int) {
-	var Vertex = 0;
-	var Instance = 1;
+enum abstract VertexFrequency(Int) from Int to Int {
+	var vertex = 0;
+	var instance = 1;
 }

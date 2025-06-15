@@ -1,6 +1,6 @@
 package sunaba;
 
-enum abstract SkinWeightCount(Int) {
-	var Skin4Weights = 0;
-	var Skin8Weights = 1;
+enum abstract SkinWeightCount(Int) from Int to Int {
+	var skin4Weights = 0;
+	var skin8Weights = 1;
 }

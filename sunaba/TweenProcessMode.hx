@@ -1,6 +1,6 @@
 package sunaba;
 
-enum abstract TweenProcessMode(Int) {
-	var Physics = 0;
-	var Idle = 1;
+enum abstract TweenProcessMode(Int) from Int to Int {
+	var physics = 0;
+	var idle = 1;
 }

@@ -1,7 +1,7 @@
 package sunaba;
 
-enum abstract ZipAppend(Int) {
-	var Create = 0;
-	var Createafter = 1;
-	var Addinzip = 2;
+enum abstract ZipAppend(Int) from Int to Int {
+	var create = 0;
+	var createafter = 1;
+	var addinzip = 2;
 }

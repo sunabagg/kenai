@@ -1,8 +1,8 @@
 package sunaba;
 
-enum abstract CloseButtonDisplayPolicy(Int) {
-	var ShowNever = 0;
-	var ShowActiveOnly = 1;
-	var ShowAlways = 2;
-	var Max = 3;
+enum abstract CloseButtonDisplayPolicy(Int) from Int to Int {
+	var showNever = 0;
+	var showActiveOnly = 1;
+	var showAlways = 2;
+	var max = 3;
 }

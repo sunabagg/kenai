@@ -1,7 +1,7 @@
 package sunaba..animation;
 
-enum abstract AnimationPlayerCallbackModeDiscrete(Int) {
-	var Dominant = 0;
-	var Recessive = 1;
-	var ForceContinuous = 2;
+enum abstract AnimationPlayerCallbackModeDiscrete(Int) from Int to Int {
+	var dominant = 0;
+	var recessive = 1;
+	var forceContinuous = 2;
 }

@@ -1,8 +1,8 @@
 package sunaba;
 
-enum abstract OneShotRequest(Int) {
-	var None = 0;
-	var Fire = 1;
-	var Abort = 2;
-	var FadeOut = 3;
+enum abstract OneShotRequest(Int) from Int to Int {
+	var none = 0;
+	var fire = 1;
+	var abort = 2;
+	var fadeOut = 3;
 }

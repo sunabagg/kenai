@@ -1,7 +1,7 @@
 package sunaba;
 
-enum abstract TerrainMode(Int) {
-	var CornersAndSides = 0;
-	var Corners = 1;
-	var Sides = 2;
+enum abstract TerrainMode(Int) from Int to Int {
+	var cornersAndSides = 0;
+	var corners = 1;
+	var sides = 2;
 }

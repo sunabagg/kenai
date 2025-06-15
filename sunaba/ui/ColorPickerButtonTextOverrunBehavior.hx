@@ -1,9 +1,9 @@
 package sunaba..ui;
 
-enum abstract ColorPickerButtonTextOverrunBehavior(Int) {
-	var NoTrimming = 0;
-	var TrimChar = 1;
-	var TrimWord = 2;
-	var TrimEllipsis = 3;
-	var TrimWordEllipsis = 4;
+enum abstract ColorPickerButtonTextOverrunBehavior(Int) from Int to Int {
+	var noTrimming = 0;
+	var trimChar = 1;
+	var trimWord = 2;
+	var trimEllipsis = 3;
+	var trimWordEllipsis = 4;
 }

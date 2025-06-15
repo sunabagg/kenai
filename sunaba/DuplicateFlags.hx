@@ -1,8 +1,8 @@
 package sunaba;
 
-enum abstract DuplicateFlags(Int) {
-	var Signals = 1;
-	var Groups = 2;
-	var Scripts = 4;
-	var UseInstantiation = 8;
+enum abstract DuplicateFlags(Int) from Int to Int {
+	var signals = 1;
+	var groups = 2;
+	var scripts = 4;
+	var useInstantiation = 8;
 }

@@ -1,10 +1,10 @@
 package sunaba;
 
-enum abstract SubEmitterModeEnum(Int) {
-	var Disabled = 0;
-	var Constant = 1;
-	var AtEnd = 2;
-	var AtCollision = 3;
-	var AtStart = 4;
-	var Max = 5;
+enum abstract SubEmitterModeEnum(Int) from Int to Int {
+	var disabled = 0;
+	var constant = 1;
+	var atEnd = 2;
+	var atCollision = 3;
+	var atStart = 4;
+	var max = 5;
 }

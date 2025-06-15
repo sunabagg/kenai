@@ -1,7 +1,7 @@
 package sunaba;
 
-enum abstract LoopedFlag(Int) {
-	var None = 0;
-	var End = 1;
-	var Start = 2;
+enum abstract LoopedFlag(Int) from Int to Int {
+	var none = 0;
+	var end = 1;
+	var start = 2;
 }

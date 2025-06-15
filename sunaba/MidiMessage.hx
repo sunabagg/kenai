@@ -1,23 +1,23 @@
 package sunaba;
 
-enum abstract MidiMessage(Int) {
-	var None = 0;
-	var NoteOff = 8;
-	var NoteOn = 9;
-	var Aftertouch = 10;
-	var ControlChange = 11;
-	var ProgramChange = 12;
-	var ChannelPressure = 13;
-	var PitchBend = 14;
-	var SystemExclusive = 240;
-	var QuarterFrame = 241;
-	var SongPositionPointer = 242;
-	var SongSelect = 243;
-	var TuneRequest = 246;
-	var TimingClock = 248;
-	var Start = 250;
-	var Continue = 251;
-	var Stop = 252;
-	var ActiveSensing = 254;
-	var SystemReset = 255;
+enum abstract MidiMessage(Int) from Int to Int {
+	var none = 0;
+	var noteOff = 8;
+	var noteOn = 9;
+	var aftertouch = 10;
+	var controlChange = 11;
+	var programChange = 12;
+	var channelPressure = 13;
+	var pitchBend = 14;
+	var systemExclusive = 240;
+	var quarterFrame = 241;
+	var songPositionPointer = 242;
+	var songSelect = 243;
+	var tuneRequest = 246;
+	var timingClock = 248;
+	var start = 250;
+	var continue = 251;
+	var stop = 252;
+	var activeSensing = 254;
+	var systemReset = 255;
 }

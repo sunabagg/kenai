@@ -1,7 +1,7 @@
 package sunaba;
 
-enum abstract TangentMode(Int) {
-	var Free = 0;
-	var Linear = 1;
-	var ModeCount = 2;
+enum abstract TangentMode(Int) from Int to Int {
+	var free = 0;
+	var linear = 1;
+	var modeCount = 2;
 }

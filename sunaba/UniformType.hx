@@ -1,15 +1,15 @@
 package sunaba;
 
-enum abstract UniformType(Int) {
-	var Sampler = 0;
-	var SamplerWithTexture = 1;
-	var Texture = 2;
-	var Image = 3;
-	var TextureBuffer = 4;
-	var SamplerWithTextureBuffer = 5;
-	var ImageBuffer = 6;
-	var UniformBuffer = 7;
-	var StorageBuffer = 8;
-	var InputAttachment = 9;
-	var Max = 10;
+enum abstract UniformType(Int) from Int to Int {
+	var sampler = 0;
+	var samplerWithTexture = 1;
+	var texture = 2;
+	var image = 3;
+	var textureBuffer = 4;
+	var samplerWithTextureBuffer = 5;
+	var imageBuffer = 6;
+	var uniformBuffer = 7;
+	var storageBuffer = 8;
+	var inputAttachment = 9;
+	var max = 10;
 }

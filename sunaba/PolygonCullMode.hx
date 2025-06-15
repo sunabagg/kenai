@@ -1,7 +1,7 @@
 package sunaba;
 
-enum abstract PolygonCullMode(Int) {
-	var Disabled = 0;
-	var Front = 1;
-	var Back = 2;
+enum abstract PolygonCullMode(Int) from Int to Int {
+	var disabled = 0;
+	var front = 1;
+	var back = 2;
 }

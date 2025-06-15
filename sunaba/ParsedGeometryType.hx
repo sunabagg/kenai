@@ -1,8 +1,8 @@
 package sunaba;
 
-enum abstract ParsedGeometryType(Int) {
-	var MeshInstances = 0;
-	var StaticColliders = 1;
-	var Both = 2;
-	var Max = 3;
+enum abstract ParsedGeometryType(Int) from Int to Int {
+	var meshInstances = 0;
+	var staticColliders = 1;
+	var both = 2;
+	var max = 3;
 }

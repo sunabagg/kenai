@@ -1,10 +1,10 @@
 package sunaba;
 
-enum abstract BlendOperation(Int) {
-	var Add = 0;
-	var Subtract = 1;
-	var ReverseSubtract = 2;
-	var Minimum = 3;
-	var Maximum = 4;
-	var Max = 5;
+enum abstract BlendOperation(Int) from Int to Int {
+	var add = 0;
+	var subtract = 1;
+	var reverseSubtract = 2;
+	var minimum = 3;
+	var maximum = 4;
+	var max = 5;
 }

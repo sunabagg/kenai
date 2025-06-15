@@ -1,7 +1,7 @@
 package sunaba;
 
-enum abstract TextureLayeredType(Int) {
-	var Layered2DArray = 0;
-	var Cubemap = 1;
-	var CubemapArray = 2;
+enum abstract TextureLayeredType(Int) from Int to Int {
+	var layered2dArray = 0;
+	var cubemap = 1;
+	var cubemapArray = 2;
 }

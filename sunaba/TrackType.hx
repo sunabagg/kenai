@@ -1,13 +1,13 @@
 package sunaba;
 
-enum abstract TrackType(Int) {
-	var Value = 0;
-	var Position3D = 1;
-	var Rotation3D = 2;
-	var Scale3D = 3;
-	var BlendShape = 4;
-	var Method = 5;
-	var Bezier = 6;
-	var Audio = 7;
-	var Animation = 8;
+enum abstract TrackType(Int) from Int to Int {
+	var value = 0;
+	var position3d = 1;
+	var rotation3d = 2;
+	var scale3d = 3;
+	var blendShape = 4;
+	var method = 5;
+	var bezier = 6;
+	var audio = 7;
+	var animation = 8;
 }

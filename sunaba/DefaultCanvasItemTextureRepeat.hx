@@ -1,8 +1,8 @@
 package sunaba;
 
-enum abstract DefaultCanvasItemTextureRepeat(Int) {
-	var Disabled = 0;
-	var Enabled = 1;
-	var Mirror = 2;
-	var Max = 3;
+enum abstract DefaultCanvasItemTextureRepeat(Int) from Int to Int {
+	var disabled = 0;
+	var enabled = 1;
+	var mirror = 2;
+	var max = 3;
 }

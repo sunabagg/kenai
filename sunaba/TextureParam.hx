@@ -1,23 +1,23 @@
 package sunaba;
 
-enum abstract TextureParam(Int) {
-	var Albedo = 0;
-	var Metallic = 1;
-	var Roughness = 2;
-	var Emission = 3;
-	var Normal = 4;
-	var Rim = 5;
-	var Clearcoat = 6;
-	var Flowmap = 7;
-	var AmbientOcclusion = 8;
-	var Heightmap = 9;
-	var SubsurfaceScattering = 10;
-	var SubsurfaceTransmittance = 11;
-	var Backlight = 12;
-	var Refraction = 13;
-	var DetailMask = 14;
-	var DetailAlbedo = 15;
-	var DetailNormal = 16;
-	var Orm = 17;
-	var Max = 18;
+enum abstract TextureParam(Int) from Int to Int {
+	var albedo = 0;
+	var metallic = 1;
+	var roughness = 2;
+	var emission = 3;
+	var normal = 4;
+	var rim = 5;
+	var clearcoat = 6;
+	var flowmap = 7;
+	var ambientOcclusion = 8;
+	var heightmap = 9;
+	var subsurfaceScattering = 10;
+	var subsurfaceTransmittance = 11;
+	var backlight = 12;
+	var refraction = 13;
+	var detailMask = 14;
+	var detailAlbedo = 15;
+	var detailNormal = 16;
+	var orm = 17;
+	var max = 18;
 }

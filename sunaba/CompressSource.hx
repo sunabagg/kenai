@@ -1,7 +1,7 @@
 package sunaba;
 
-enum abstract CompressSource(Int) {
-	var Generic = 0;
-	var Srgb = 1;
-	var Normal = 2;
+enum abstract CompressSource(Int) from Int to Int {
+	var generic = 0;
+	var srgb = 1;
+	var normal = 2;
 }

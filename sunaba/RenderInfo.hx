@@ -1,8 +1,8 @@
 package sunaba;
 
-enum abstract RenderInfo(Int) {
-	var ObjectsInFrame = 0;
-	var PrimitivesInFrame = 1;
-	var DrawCallsInFrame = 2;
-	var Max = 3;
+enum abstract RenderInfo(Int) from Int to Int {
+	var objectsInFrame = 0;
+	var primitivesInFrame = 1;
+	var drawCallsInFrame = 2;
+	var max = 3;
 }

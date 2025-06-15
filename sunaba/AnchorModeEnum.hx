@@ -1,6 +1,6 @@
 package sunaba;
 
-enum abstract AnchorModeEnum(Int) {
-	var FixedTopLeft = 0;
-	var DragCenter = 1;
+enum abstract AnchorModeEnum(Int) from Int to Int {
+	var fixedTopLeft = 0;
+	var dragCenter = 1;
 }

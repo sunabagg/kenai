@@ -1,6 +1,6 @@
 package sunaba;
 
-enum abstract WriteModeEnum(Int) {
-	var Text = 0;
-	var Binary = 1;
+enum abstract WriteModeEnum(Int) from Int to Int {
+	var text = 0;
+	var binary = 1;
 }

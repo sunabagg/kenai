@@ -1,7 +1,7 @@
 package sunaba..ui;
 
-enum abstract ContainerFocusMode(Int) {
-	var None = 0;
-	var Click = 1;
-	var All = 2;
+enum abstract ContainerFocusMode(Int) from Int to Int {
+	var none = 0;
+	var click = 1;
+	var all = 2;
 }

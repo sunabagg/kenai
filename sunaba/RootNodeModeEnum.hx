@@ -1,7 +1,7 @@
 package sunaba;
 
-enum abstract RootNodeModeEnum(Int) {
-	var SingleRoot = 0;
-	var KeepRoot = 1;
-	var MultiRoot = 2;
+enum abstract RootNodeModeEnum(Int) from Int to Int {
+	var singleRoot = 0;
+	var keepRoot = 1;
+	var multiRoot = 2;
 }

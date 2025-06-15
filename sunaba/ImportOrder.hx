@@ -1,6 +1,6 @@
 package sunaba;
 
-enum abstract ImportOrder(Int) {
-	var Default = 0;
-	var Scene = 100;
+enum abstract ImportOrder(Int) from Int to Int {
+	var default = 0;
+	var scene = 100;
 }

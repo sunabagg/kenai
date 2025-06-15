@@ -1,8 +1,8 @@
 package sunaba;
 
-enum abstract LoopModeEnum(Int) {
-	var Disabled = 0;
-	var Forward = 1;
-	var Pingpong = 2;
-	var Backward = 3;
+enum abstract LoopModeEnum(Int) from Int to Int {
+	var disabled = 0;
+	var forward = 1;
+	var pingpong = 2;
+	var backward = 3;
 }

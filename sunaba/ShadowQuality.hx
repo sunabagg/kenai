@@ -1,11 +1,11 @@
 package sunaba;
 
-enum abstract ShadowQuality(Int) {
-	var Hard = 0;
-	var SoftVeryLow = 1;
-	var SoftLow = 2;
-	var SoftMedium = 3;
-	var SoftHigh = 4;
-	var SoftUltra = 5;
-	var Max = 6;
+enum abstract ShadowQuality(Int) from Int to Int {
+	var hard = 0;
+	var softVeryLow = 1;
+	var softLow = 2;
+	var softMedium = 3;
+	var softHigh = 4;
+	var softUltra = 5;
+	var max = 6;
 }

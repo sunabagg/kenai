@@ -1,8 +1,8 @@
 package sunaba;
 
-enum abstract QualifierEnum(Int) {
-	var None = 0;
-	var Global = 1;
-	var Instance = 2;
-	var Max = 3;
+enum abstract QualifierEnum(Int) from Int to Int {
+	var none = 0;
+	var global = 1;
+	var instance = 2;
+	var max = 3;
 }

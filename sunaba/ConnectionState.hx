@@ -1,10 +1,10 @@
 package sunaba;
 
-enum abstract ConnectionState(Int) {
-	var New = 0;
-	var Connecting = 1;
-	var Connected = 2;
-	var Disconnected = 3;
-	var Failed = 4;
-	var Closed = 5;
+enum abstract ConnectionState(Int) from Int to Int {
+	var new = 0;
+	var connecting = 1;
+	var connected = 2;
+	var disconnected = 3;
+	var failed = 4;
+	var closed = 5;
 }

@@ -1,16 +1,16 @@
 package sunaba;
 
-enum abstract LookupResultType(Int) {
-	var ScriptLocation = 0;
-	var Class = 1;
-	var ClassConstant = 2;
-	var ClassProperty = 3;
-	var ClassMethod = 4;
-	var ClassSignal = 5;
-	var ClassEnum = 6;
-	var ClassTbdGlobalscope = 7;
-	var ClassAnnotation = 8;
-	var LocalConstant = 9;
-	var LocalVariable = 10;
-	var Max = 11;
+enum abstract LookupResultType(Int) from Int to Int {
+	var scriptLocation = 0;
+	var class = 1;
+	var classConstant = 2;
+	var classProperty = 3;
+	var classMethod = 4;
+	var classSignal = 5;
+	var classEnum = 6;
+	var classTbdGlobalscope = 7;
+	var classAnnotation = 8;
+	var localConstant = 9;
+	var localVariable = 10;
+	var max = 11;
 }

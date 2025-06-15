@@ -1,7 +1,7 @@
 package sunaba;
 
-enum abstract Hands(Int) {
-	var Left = 0;
-	var Right = 1;
-	var Max = 2;
+enum abstract Hands(Int) from Int to Int {
+	var left = 0;
+	var right = 1;
+	var max = 2;
 }

@@ -1,8 +1,8 @@
 package sunaba;
 
-enum abstract SpeakerMode(Int) {
-	var ModeStereo = 0;
-	var Surround31 = 1;
-	var Surround51 = 2;
-	var Surround71 = 3;
+enum abstract SpeakerMode(Int) from Int to Int {
+	var modeStereo = 0;
+	var surround31 = 1;
+	var surround51 = 2;
+	var surround71 = 3;
 }

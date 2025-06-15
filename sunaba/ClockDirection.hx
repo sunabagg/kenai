@@ -1,6 +1,6 @@
 package sunaba;
 
-enum abstract ClockDirection(Int) {
-	var Clockwise = 0;
-	var Counterclockwise = 1;
+enum abstract ClockDirection(Int) from Int to Int {
+	var clockwise = 0;
+	var counterclockwise = 1;
 }

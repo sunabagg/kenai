@@ -1,6 +1,6 @@
 package sunaba;
 
-enum abstract EmissionOperatorEnum(Int) {
-	var Add = 0;
-	var Multiply = 1;
+enum abstract EmissionOperatorEnum(Int) from Int to Int {
+	var add = 0;
+	var multiply = 1;
 }

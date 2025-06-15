@@ -1,13 +1,13 @@
 package sunaba;
 
-enum abstract CustomFormat(Int) {
-	var Rgba8Unorm = 0;
-	var Rgba8Snorm = 1;
-	var RgHalf = 2;
-	var RgbaHalf = 3;
-	var RFloat = 4;
-	var RgFloat = 5;
-	var RgbFloat = 6;
-	var RgbaFloat = 7;
-	var Max = 8;
+enum abstract CustomFormat(Int) from Int to Int {
+	var rgba8Unorm = 0;
+	var rgba8Snorm = 1;
+	var rgHalf = 2;
+	var rgbaHalf = 3;
+	var rFloat = 4;
+	var rgFloat = 5;
+	var rgbFloat = 6;
+	var rgbaFloat = 7;
+	var max = 8;
 }

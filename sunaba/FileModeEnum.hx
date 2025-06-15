@@ -1,9 +1,9 @@
 package sunaba;
 
-enum abstract FileModeEnum(Int) {
-	var OpenFile = 0;
-	var OpenFiles = 1;
-	var OpenDir = 2;
-	var OpenAny = 3;
-	var SaveFile = 4;
+enum abstract FileModeEnum(Int) from Int to Int {
+	var openFile = 0;
+	var openFiles = 1;
+	var openDir = 2;
+	var openAny = 3;
+	var saveFile = 4;
 }

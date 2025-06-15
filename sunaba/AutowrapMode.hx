@@ -1,8 +1,8 @@
 package sunaba;
 
-enum abstract AutowrapMode(Int) {
-	var Off = 0;
-	var Arbitrary = 1;
-	var Word = 2;
-	var WordSmart = 3;
+enum abstract AutowrapMode(Int) from Int to Int {
+	var off = 0;
+	var arbitrary = 1;
+	var word = 2;
+	var wordSmart = 3;
 }

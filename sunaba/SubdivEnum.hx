@@ -1,9 +1,9 @@
 package sunaba;
 
-enum abstract SubdivEnum(Int) {
-	var Subdiv64 = 0;
-	var Subdiv128 = 1;
-	var Subdiv256 = 2;
-	var Subdiv512 = 3;
-	var Max = 4;
+enum abstract SubdivEnum(Int) from Int to Int {
+	var subdiv64 = 0;
+	var subdiv128 = 1;
+	var subdiv256 = 2;
+	var subdiv512 = 3;
+	var max = 4;
 }

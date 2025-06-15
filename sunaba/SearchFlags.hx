@@ -1,7 +1,7 @@
 package sunaba;
 
-enum abstract SearchFlags(Int) {
-	var MatchCase = 1;
-	var WholeWords = 2;
-	var Backwards = 4;
+enum abstract SearchFlags(Int) from Int to Int {
+	var matchCase = 1;
+	var wholeWords = 2;
+	var backwards = 4;
 }

@@ -1,13 +1,13 @@
 package sunaba;
 
-enum abstract FillModeEnum(Int) {
-	var LeftToRight = 0;
-	var RightToLeft = 1;
-	var TopToBottom = 2;
-	var BottomToTop = 3;
-	var Clockwise = 4;
-	var CounterClockwise = 5;
-	var BilinearLeftAndRight = 6;
-	var BilinearTopAndBottom = 7;
-	var ClockwiseAndCounterClockwise = 8;
+enum abstract FillModeEnum(Int) from Int to Int {
+	var leftToRight = 0;
+	var rightToLeft = 1;
+	var topToBottom = 2;
+	var bottomToTop = 3;
+	var clockwise = 4;
+	var counterClockwise = 5;
+	var bilinearLeftAndRight = 6;
+	var bilinearTopAndBottom = 7;
+	var clockwiseAndCounterClockwise = 8;
 }

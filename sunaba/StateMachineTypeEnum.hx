@@ -1,7 +1,7 @@
 package sunaba;
 
-enum abstract StateMachineTypeEnum(Int) {
-	var Root = 0;
-	var Nested = 1;
-	var Grouped = 2;
+enum abstract StateMachineTypeEnum(Int) from Int to Int {
+	var root = 0;
+	var nested = 1;
+	var grouped = 2;
 }

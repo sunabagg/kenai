@@ -1,9 +1,9 @@
 package sunaba;
 
-enum abstract TrackingStatus(Int) {
-	var NormalTracking = 0;
-	var ExcessiveMotion = 1;
-	var InsufficientFeatures = 2;
-	var UnknownTracking = 3;
-	var NotTracking = 4;
+enum abstract TrackingStatus(Int) from Int to Int {
+	var normalTracking = 0;
+	var excessiveMotion = 1;
+	var insufficientFeatures = 2;
+	var unknownTracking = 3;
+	var notTracking = 4;
 }

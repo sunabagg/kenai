@@ -1,7 +1,7 @@
 package sunaba;
 
-enum abstract DepthDrawModeEnum(Int) {
-	var OpaqueOnly = 0;
-	var Always = 1;
-	var Disabled = 2;
+enum abstract DepthDrawModeEnum(Int) from Int to Int {
+	var opaqueOnly = 0;
+	var always = 1;
+	var disabled = 2;
 }

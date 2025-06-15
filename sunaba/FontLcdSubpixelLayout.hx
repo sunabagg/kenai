@@ -1,10 +1,10 @@
 package sunaba;
 
-enum abstract FontLcdSubpixelLayout(Int) {
-	var None = 0;
-	var Hrgb = 1;
-	var Hbgr = 2;
-	var Vrgb = 3;
-	var Vbgr = 4;
-	var Max = 5;
+enum abstract FontLcdSubpixelLayout(Int) from Int to Int {
+	var none = 0;
+	var hrgb = 1;
+	var hbgr = 2;
+	var vrgb = 3;
+	var vbgr = 4;
+	var max = 5;
 }

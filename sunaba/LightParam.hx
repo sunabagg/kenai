@@ -1,26 +1,26 @@
 package sunaba;
 
-enum abstract LightParam(Int) {
-	var Energy = 0;
-	var IndirectEnergy = 1;
-	var VolumetricFogEnergy = 2;
-	var Specular = 3;
-	var Range = 4;
-	var Size = 5;
-	var Attenuation = 6;
-	var SpotAngle = 7;
-	var SpotAttenuation = 8;
-	var ShadowMaxDistance = 9;
-	var ShadowSplit1Offset = 10;
-	var ShadowSplit2Offset = 11;
-	var ShadowSplit3Offset = 12;
-	var ShadowFadeStart = 13;
-	var ShadowNormalBias = 14;
-	var ShadowBias = 15;
-	var ShadowPancakeSize = 16;
-	var ShadowOpacity = 17;
-	var ShadowBlur = 18;
-	var TransmittanceBias = 19;
-	var Intensity = 20;
-	var Max = 21;
+enum abstract LightParam(Int) from Int to Int {
+	var energy = 0;
+	var indirectEnergy = 1;
+	var volumetricFogEnergy = 2;
+	var specular = 3;
+	var range = 4;
+	var size = 5;
+	var attenuation = 6;
+	var spotAngle = 7;
+	var spotAttenuation = 8;
+	var shadowMaxDistance = 9;
+	var shadowSplit1Offset = 10;
+	var shadowSplit2Offset = 11;
+	var shadowSplit3Offset = 12;
+	var shadowFadeStart = 13;
+	var shadowNormalBias = 14;
+	var shadowBias = 15;
+	var shadowPancakeSize = 16;
+	var shadowOpacity = 17;
+	var shadowBlur = 18;
+	var transmittanceBias = 19;
+	var intensity = 20;
+	var max = 21;
 }

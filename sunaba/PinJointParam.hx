@@ -1,7 +1,7 @@
 package sunaba;
 
-enum abstract PinJointParam(Int) {
-	var Bias = 0;
-	var Damping = 1;
-	var ImpulseClamp = 2;
+enum abstract PinJointParam(Int) from Int to Int {
+	var bias = 0;
+	var damping = 1;
+	var impulseClamp = 2;
 }

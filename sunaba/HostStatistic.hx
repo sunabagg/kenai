@@ -1,8 +1,8 @@
 package sunaba;
 
-enum abstract HostStatistic(Int) {
-	var SentData = 0;
-	var SentPackets = 1;
-	var ReceivedData = 2;
-	var ReceivedPackets = 3;
+enum abstract HostStatistic(Int) from Int to Int {
+	var sentData = 0;
+	var sentPackets = 1;
+	var receivedData = 2;
+	var receivedPackets = 3;
 }

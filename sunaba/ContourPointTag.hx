@@ -1,7 +1,7 @@
 package sunaba;
 
-enum abstract ContourPointTag(Int) {
-	var OffConic = 0;
-	var On = 1;
-	var OffCubic = 2;
+enum abstract ContourPointTag(Int) from Int to Int {
+	var offConic = 0;
+	var on = 1;
+	var offCubic = 2;
 }

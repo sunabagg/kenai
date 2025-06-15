@@ -1,9 +1,9 @@
 package sunaba;
 
-enum abstract LoadStatus(Int) {
-	var Ok = 0;
-	var Failed = 1;
-	var AlreadyLoaded = 2;
-	var NotLoaded = 3;
-	var NeedsRestart = 4;
+enum abstract LoadStatus(Int) from Int to Int {
+	var ok = 0;
+	var failed = 1;
+	var alreadyLoaded = 2;
+	var notLoaded = 3;
+	var needsRestart = 4;
 }

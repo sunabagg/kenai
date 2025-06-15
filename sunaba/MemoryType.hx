@@ -1,7 +1,7 @@
 package sunaba;
 
-enum abstract MemoryType(Int) {
-	var Textures = 0;
-	var Buffers = 1;
-	var Total = 2;
+enum abstract MemoryType(Int) from Int to Int {
+	var textures = 0;
+	var buffers = 1;
+	var total = 2;
 }

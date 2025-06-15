@@ -1,8 +1,8 @@
 package sunaba..spatial;
 
-enum abstract StandardMaterial3DDistanceFadeMode(Int) {
-	var Disabled = 0;
-	var PixelAlpha = 1;
-	var PixelDither = 2;
-	var ObjectDither = 3;
+enum abstract StandardMaterial3DDistanceFadeMode(Int) from Int to Int {
+	var disabled = 0;
+	var pixelAlpha = 1;
+	var pixelDither = 2;
+	var objectDither = 3;
 }

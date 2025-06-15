@@ -1,9 +1,9 @@
 package sunaba;
 
-enum abstract ConeTwistJointParam(Int) {
-	var SwingSpan = 0;
-	var TwistSpan = 1;
-	var Bias = 2;
-	var Softness = 3;
-	var Relaxation = 4;
+enum abstract ConeTwistJointParam(Int) from Int to Int {
+	var swingSpan = 0;
+	var twistSpan = 1;
+	var bias = 2;
+	var softness = 3;
+	var relaxation = 4;
 }

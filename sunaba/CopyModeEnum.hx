@@ -1,7 +1,7 @@
 package sunaba;
 
-enum abstract CopyModeEnum(Int) {
-	var Disabled = 0;
-	var Rect = 1;
-	var Viewport = 2;
+enum abstract CopyModeEnum(Int) from Int to Int {
+	var disabled = 0;
+	var rect = 1;
+	var viewport = 2;
 }

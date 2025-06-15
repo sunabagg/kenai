@@ -1,10 +1,10 @@
 package sunaba;
 
-enum abstract HandJointFlags(Int) {
-	var OrientationValid = 1;
-	var OrientationTracked = 2;
-	var PositionValid = 4;
-	var PositionTracked = 8;
-	var LinearVelocityValid = 16;
-	var AngularVelocityValid = 32;
+enum abstract HandJointFlags(Int) from Int to Int {
+	var orientationValid = 1;
+	var orientationTracked = 2;
+	var positionValid = 4;
+	var positionTracked = 8;
+	var linearVelocityValid = 16;
+	var angularVelocityValid = 32;
 }

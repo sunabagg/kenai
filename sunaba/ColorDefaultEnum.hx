@@ -1,8 +1,8 @@
 package sunaba;
 
-enum abstract ColorDefaultEnum(Int) {
-	var White = 0;
-	var Black = 1;
-	var Transparent = 2;
-	var Max = 3;
+enum abstract ColorDefaultEnum(Int) from Int to Int {
+	var white = 0;
+	var black = 1;
+	var transparent = 2;
+	var max = 3;
 }

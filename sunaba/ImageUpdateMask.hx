@@ -1,12 +1,12 @@
 package sunaba;
 
-enum abstract ImageUpdateMask(Int) {
-	var Texture = 1;
-	var Size = 2;
-	var Color = 4;
-	var Alignment = 8;
-	var Region = 16;
-	var Pad = 32;
-	var Tooltip = 64;
-	var WidthInPercent = 128;
+enum abstract ImageUpdateMask(Int) from Int to Int {
+	var texture = 1;
+	var size = 2;
+	var color = 4;
+	var alignment = 8;
+	var region = 16;
+	var pad = 32;
+	var tooltip = 64;
+	var widthInPercent = 128;
 }

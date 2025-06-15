@@ -1,11 +1,11 @@
 package sunaba..spatial;
 
-enum abstract Sprite3DTextureFilter(Int) {
-	var Nearest = 0;
-	var Linear = 1;
-	var NearestWithMipmaps = 2;
-	var LinearWithMipmaps = 3;
-	var NearestWithMipmapsAnisotropic = 4;
-	var LinearWithMipmapsAnisotropic = 5;
-	var Max = 6;
+enum abstract Sprite3DTextureFilter(Int) from Int to Int {
+	var nearest = 0;
+	var linear = 1;
+	var nearestWithMipmaps = 2;
+	var linearWithMipmaps = 3;
+	var nearestWithMipmapsAnisotropic = 4;
+	var linearWithMipmapsAnisotropic = 5;
+	var max = 6;
 }

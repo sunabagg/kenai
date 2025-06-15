@@ -1,10 +1,10 @@
 package sunaba;
 
-enum abstract FogVolumeShape(Int) {
-	var Ellipsoid = 0;
-	var Cone = 1;
-	var Cylinder = 2;
-	var Box = 3;
-	var World = 4;
-	var Max = 5;
+enum abstract FogVolumeShape(Int) from Int to Int {
+	var ellipsoid = 0;
+	var cone = 1;
+	var cylinder = 2;
+	var box = 3;
+	var world = 4;
+	var max = 5;
 }

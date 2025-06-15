@@ -1,17 +1,17 @@
 package sunaba;
 
-enum abstract InlineAlignment(Int) {
-	var TopTo = 0;
-	var TopTo = 0;
-	var TopTo = 0;
-	var CenterTo = 1;
-	var BottomTo = 2;
-	var BaselineTo = 3;
-	var BaselineTo = 3;
-	var ToCenter = 4;
-	var Center = 5;
-	var ToBaseline = 8;
-	var ToBottom = 12;
-	var ToBottom = 12;
-	var Bottom = 14;
+enum abstract InlineAlignment(Int) from Int to Int {
+	var topTo = 0;
+	var topTo = 0;
+	var topTo = 0;
+	var centerTo = 1;
+	var bottomTo = 2;
+	var baselineTo = 3;
+	var baselineTo = 3;
+	var toCenter = 4;
+	var center = 5;
+	var toBaseline = 8;
+	var toBottom = 12;
+	var toBottom = 12;
+	var bottom = 14;
 }

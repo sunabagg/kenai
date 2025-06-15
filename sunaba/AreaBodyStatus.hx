@@ -1,6 +1,6 @@
 package sunaba;
 
-enum abstract AreaBodyStatus(Int) {
-	var Added = 0;
-	var Removed = 1;
+enum abstract AreaBodyStatus(Int) from Int to Int {
+	var added = 0;
+	var removed = 1;
 }

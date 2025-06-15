@@ -1,11 +1,11 @@
 package sunaba;
 
-enum abstract Weekday(Int) {
-	var Sunday = 0;
-	var Monday = 1;
-	var Tuesday = 2;
-	var Wednesday = 3;
-	var Thursday = 4;
-	var Friday = 5;
-	var Saturday = 6;
+enum abstract Weekday(Int) from Int to Int {
+	var sunday = 0;
+	var monday = 1;
+	var tuesday = 2;
+	var wednesday = 3;
+	var thursday = 4;
+	var friday = 5;
+	var saturday = 6;
 }

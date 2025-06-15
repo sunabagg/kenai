@@ -1,8 +1,8 @@
 package sunaba;
 
-enum abstract DofBlurQuality(Int) {
-	var VeryLow = 0;
-	var Low = 1;
-	var Medium = 2;
-	var High = 3;
+enum abstract DofBlurQuality(Int) from Int to Int {
+	var veryLow = 0;
+	var low = 1;
+	var medium = 2;
+	var high = 3;
 }

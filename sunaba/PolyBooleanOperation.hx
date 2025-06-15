@@ -1,8 +1,8 @@
 package sunaba;
 
-enum abstract PolyBooleanOperation(Int) {
-	var Union = 0;
-	var Difference = 1;
-	var Intersection = 2;
-	var Xor = 3;
+enum abstract PolyBooleanOperation(Int) from Int to Int {
+	var union = 0;
+	var difference = 1;
+	var intersection = 2;
+	var xor = 3;
 }

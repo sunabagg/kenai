@@ -1,7 +1,7 @@
 package sunaba;
 
-enum abstract DropModeFlagsEnum(Int) {
-	var Disabled = 0;
-	var OnItem = 1;
-	var Inbetween = 2;
+enum abstract DropModeFlagsEnum(Int) from Int to Int {
+	var disabled = 0;
+	var onItem = 1;
+	var inbetween = 2;
 }

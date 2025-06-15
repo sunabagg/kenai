@@ -1,7 +1,7 @@
 package sunaba;
 
-enum abstract OperationEnum(Int) {
-	var Union = 0;
-	var Intersection = 1;
-	var Subtraction = 2;
+enum abstract OperationEnum(Int) from Int to Int {
+	var union = 0;
+	var intersection = 1;
+	var subtraction = 2;
 }

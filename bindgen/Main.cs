@@ -182,7 +182,7 @@ public partial class Main : Node
 						var stringBuilder = new System.Text.StringBuilder();
 						stringBuilder.AppendLine("package " + packageName + ";");
 						stringBuilder.AppendLine();
-						stringBuilder.AppendLine("enum abstract " + enumName + "(Int) {");
+						stringBuilder.AppendLine("enum abstract " + enumName + "(Int) from Int to Int {");
 						
 						List<string> valNames = new List<string>();
 						foreach (var value in Enum.GetValues(propertyInfo.PropertyType))
@@ -192,7 +192,7 @@ public partial class Main : Node
 							if (!valNames.Contains(valName))
 							{
 								valNames.Add(valName);
-								stringBuilder.AppendLine("	var " + valName + " = " + valValue + ";");
+								stringBuilder.AppendLine("	var " + valName.ToCamelCase() + " = " + valValue + ";");
 							}
 						}
 						

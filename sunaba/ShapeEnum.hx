@@ -1,6 +1,6 @@
 package sunaba;
 
-enum abstract ShapeEnum(Int) {
-	var Flat = 0;
-	var Cross = 1;
+enum abstract ShapeEnum(Int) from Int to Int {
+	var flat = 0;
+	var cross = 1;
 }

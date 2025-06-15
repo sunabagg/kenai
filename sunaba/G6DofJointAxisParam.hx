@@ -1,27 +1,27 @@
 package sunaba;
 
-enum abstract G6DofJointAxisParam(Int) {
-	var LinearLowerLimit = 0;
-	var LinearUpperLimit = 1;
-	var LinearLimitSoftness = 2;
-	var LinearRestitution = 3;
-	var LinearDamping = 4;
-	var LinearMotorTargetVelocity = 5;
-	var LinearMotorForceLimit = 6;
-	var LinearSpringStiffness = 7;
-	var LinearSpringDamping = 8;
-	var LinearSpringEquilibriumPoint = 9;
-	var AngularLowerLimit = 10;
-	var AngularUpperLimit = 11;
-	var AngularLimitSoftness = 12;
-	var AngularDamping = 13;
-	var AngularRestitution = 14;
-	var AngularForceLimit = 15;
-	var AngularErp = 16;
-	var AngularMotorTargetVelocity = 17;
-	var AngularMotorForceLimit = 18;
-	var AngularSpringStiffness = 19;
-	var AngularSpringDamping = 20;
-	var AngularSpringEquilibriumPoint = 21;
-	var Max = 22;
+enum abstract G6DofJointAxisParam(Int) from Int to Int {
+	var linearLowerLimit = 0;
+	var linearUpperLimit = 1;
+	var linearLimitSoftness = 2;
+	var linearRestitution = 3;
+	var linearDamping = 4;
+	var linearMotorTargetVelocity = 5;
+	var linearMotorForceLimit = 6;
+	var linearSpringStiffness = 7;
+	var linearSpringDamping = 8;
+	var linearSpringEquilibriumPoint = 9;
+	var angularLowerLimit = 10;
+	var angularUpperLimit = 11;
+	var angularLimitSoftness = 12;
+	var angularDamping = 13;
+	var angularRestitution = 14;
+	var angularForceLimit = 15;
+	var angularErp = 16;
+	var angularMotorTargetVelocity = 17;
+	var angularMotorForceLimit = 18;
+	var angularSpringStiffness = 19;
+	var angularSpringDamping = 20;
+	var angularSpringEquilibriumPoint = 21;
+	var max = 22;
 }

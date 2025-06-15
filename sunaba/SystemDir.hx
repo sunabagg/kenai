@@ -1,12 +1,12 @@
 package sunaba;
 
-enum abstract SystemDir(Int) {
-	var Desktop = 0;
-	var Dcim = 1;
-	var Documents = 2;
-	var Downloads = 3;
-	var Movies = 4;
-	var Music = 5;
-	var Pictures = 6;
-	var Ringtones = 7;
+enum abstract SystemDir(Int) from Int to Int {
+	var desktop = 0;
+	var dcim = 1;
+	var documents = 2;
+	var downloads = 3;
+	var movies = 4;
+	var music = 5;
+	var pictures = 6;
+	var ringtones = 7;
 }

@@ -1,6 +1,6 @@
 package sunaba;
 
-enum abstract UpdateModeEnum(Int) {
-	var Once = 0;
-	var Always = 1;
+enum abstract UpdateModeEnum(Int) from Int to Int {
+	var once = 0;
+	var always = 1;
 }

@@ -1,9 +1,9 @@
 package sunaba;
 
-enum abstract PlayAreaMode(Int) {
-	var Unknown = 0;
-	var Area3Dof = 1;
-	var Sitting = 2;
-	var Roomscale = 3;
-	var Stage = 4;
+enum abstract PlayAreaMode(Int) from Int to Int {
+	var unknown = 0;
+	var area3Dof = 1;
+	var sitting = 2;
+	var roomscale = 3;
+	var stage = 4;
 }

@@ -1,6 +1,6 @@
 package sunaba..desktop;
 
-enum abstract AcceptDialogContentScaleStretch(Int) {
-	var Fractional = 0;
-	var Integer = 1;
+enum abstract AcceptDialogContentScaleStretch(Int) from Int to Int {
+	var fractional = 0;
+	var integer = 1;
 }

@@ -1,8 +1,8 @@
 package sunaba;
 
-enum abstract TextureRepeatEnum(Int) {
-	var Default = 0;
-	var Enabled = 1;
-	var Disabled = 2;
-	var Max = 3;
+enum abstract TextureRepeatEnum(Int) from Int to Int {
+	var default = 0;
+	var enabled = 1;
+	var disabled = 2;
+	var max = 3;
 }

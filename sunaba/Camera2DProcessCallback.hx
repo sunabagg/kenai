@@ -1,6 +1,6 @@
 package sunaba;
 
-enum abstract Camera2DProcessCallback(Int) {
-	var Physics = 0;
-	var Idle = 1;
+enum abstract Camera2DProcessCallback(Int) from Int to Int {
+	var physics = 0;
+	var idle = 1;
 }

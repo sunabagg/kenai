@@ -1,7 +1,7 @@
 package sunaba..spatial;
 
-enum abstract StandardMaterial3DAlphaAntialiasingMode(Int) {
-	var Off = 0;
-	var AlphaToCoverage = 1;
-	var AlphaToCoverageAndToOne = 2;
+enum abstract StandardMaterial3DAlphaAntialiasingMode(Int) from Int to Int {
+	var off = 0;
+	var alphaToCoverage = 1;
+	var alphaToCoverageAndToOne = 2;
 }

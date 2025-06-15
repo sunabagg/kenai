@@ -1,7 +1,7 @@
 package sunaba;
 
-enum abstract SpecularModeEnum(Int) {
-	var SchlickGgx = 0;
-	var Toon = 1;
-	var Disabled = 2;
+enum abstract SpecularModeEnum(Int) from Int to Int {
+	var schlickGgx = 0;
+	var toon = 1;
+	var disabled = 2;
 }

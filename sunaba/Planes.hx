@@ -1,10 +1,10 @@
 package sunaba;
 
-enum abstract Planes(Int) {
-	var Near = 0;
-	var Far = 1;
-	var Left = 2;
-	var Top = 3;
-	var Right = 4;
-	var Bottom = 5;
+enum abstract Planes(Int) from Int to Int {
+	var near = 0;
+	var far = 1;
+	var left = 2;
+	var top = 3;
+	var right = 4;
+	var bottom = 5;
 }

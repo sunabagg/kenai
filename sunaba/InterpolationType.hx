@@ -1,9 +1,9 @@
 package sunaba;
 
-enum abstract InterpolationType(Int) {
-	var Nearest = 0;
-	var Linear = 1;
-	var Cubic = 2;
-	var LinearAngle = 3;
-	var CubicAngle = 4;
+enum abstract InterpolationType(Int) from Int to Int {
+	var nearest = 0;
+	var linear = 1;
+	var cubic = 2;
+	var linearAngle = 3;
+	var cubicAngle = 4;
 }

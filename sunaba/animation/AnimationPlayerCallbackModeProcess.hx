@@ -1,7 +1,7 @@
 package sunaba..animation;
 
-enum abstract AnimationPlayerCallbackModeProcess(Int) {
-	var Physics = 0;
-	var Idle = 1;
-	var Manual = 2;
+enum abstract AnimationPlayerCallbackModeProcess(Int) from Int to Int {
+	var physics = 0;
+	var idle = 1;
+	var manual = 2;
 }

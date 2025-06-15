@@ -1,8 +1,8 @@
 package sunaba;
 
-enum abstract FormatEnum(Int) {
-	var Format8Bits = 0;
-	var Format16Bits = 1;
-	var ImaAdpcm = 2;
-	var Qoa = 3;
+enum abstract FormatEnum(Int) from Int to Int {
+	var format8Bits = 0;
+	var format16Bits = 1;
+	var imaAdpcm = 2;
+	var qoa = 3;
 }

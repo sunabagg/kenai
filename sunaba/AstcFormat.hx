@@ -1,6 +1,6 @@
 package sunaba;
 
-enum abstract AstcFormat(Int) {
-	var Format4X4 = 0;
-	var Format8X8 = 1;
+enum abstract AstcFormat(Int) from Int to Int {
+	var format4x4 = 0;
+	var format8x8 = 1;
 }

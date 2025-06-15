@@ -1,19 +1,19 @@
 package sunaba;
 
-enum abstract Feature(Int) {
-	var SimpleLayout = 1;
-	var BidiLayout = 2;
-	var VerticalLayout = 4;
-	var Shaping = 8;
-	var KashidaJustification = 16;
-	var BreakIterators = 32;
-	var FontBitmap = 64;
-	var FontDynamic = 128;
-	var FontMsdf = 256;
-	var FontSystem = 512;
-	var FontVariable = 1024;
-	var ContextSensitiveCaseConversion = 2048;
-	var UseSupportData = 4096;
-	var UnicodeIdentifiers = 8192;
-	var UnicodeSecurity = 16384;
+enum abstract Feature(Int) from Int to Int {
+	var simpleLayout = 1;
+	var bidiLayout = 2;
+	var verticalLayout = 4;
+	var shaping = 8;
+	var kashidaJustification = 16;
+	var breakIterators = 32;
+	var fontBitmap = 64;
+	var fontDynamic = 128;
+	var fontMsdf = 256;
+	var fontSystem = 512;
+	var fontVariable = 1024;
+	var contextSensitiveCaseConversion = 2048;
+	var useSupportData = 4096;
+	var unicodeIdentifiers = 8192;
+	var unicodeSecurity = 16384;
 }

@@ -1,7 +1,7 @@
 package sunaba;
 
-enum abstract AxisStretchMode(Int) {
-	var Stretch = 0;
-	var Tile = 1;
-	var TileFit = 2;
+enum abstract AxisStretchMode(Int) from Int to Int {
+	var stretch = 0;
+	var tile = 1;
+	var tileFit = 2;
 }

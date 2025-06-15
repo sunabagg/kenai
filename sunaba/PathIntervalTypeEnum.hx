@@ -1,6 +1,6 @@
 package sunaba;
 
-enum abstract PathIntervalTypeEnum(Int) {
-	var Distance = 0;
-	var Subdivide = 1;
+enum abstract PathIntervalTypeEnum(Int) from Int to Int {
+	var distance = 0;
+	var subdivide = 1;
 }

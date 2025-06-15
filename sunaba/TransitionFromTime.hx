@@ -1,8 +1,8 @@
 package sunaba;
 
-enum abstract TransitionFromTime(Int) {
-	var Immediate = 0;
-	var NextBeat = 1;
-	var NextBar = 2;
-	var End = 3;
+enum abstract TransitionFromTime(Int) from Int to Int {
+	var immediate = 0;
+	var nextBeat = 1;
+	var nextBar = 2;
+	var end = 3;
 }

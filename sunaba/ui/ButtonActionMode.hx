@@ -1,6 +1,6 @@
 package sunaba..ui;
 
-enum abstract ButtonActionMode(Int) {
-	var Press = 0;
-	var Release = 1;
+enum abstract ButtonActionMode(Int) from Int to Int {
+	var press = 0;
+	var release = 1;
 }

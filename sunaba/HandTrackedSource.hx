@@ -1,8 +1,8 @@
 package sunaba;
 
-enum abstract HandTrackedSource(Int) {
-	var Unknown = 0;
-	var Unobstructed = 1;
-	var Controller = 2;
-	var Max = 3;
+enum abstract HandTrackedSource(Int) from Int to Int {
+	var unknown = 0;
+	var unobstructed = 1;
+	var controller = 2;
+	var max = 3;
 }

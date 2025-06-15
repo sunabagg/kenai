@@ -1,7 +1,7 @@
 package sunaba;
 
-enum abstract FindMode(Int) {
-	var Nearest = 0;
-	var Approx = 1;
-	var Exact = 2;
+enum abstract FindMode(Int) from Int to Int {
+	var nearest = 0;
+	var approx = 1;
+	var exact = 2;
 }

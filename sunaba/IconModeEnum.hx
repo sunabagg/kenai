@@ -1,6 +1,6 @@
 package sunaba;
 
-enum abstract IconModeEnum(Int) {
-	var Top = 0;
-	var Left = 1;
+enum abstract IconModeEnum(Int) from Int to Int {
+	var top = 0;
+	var left = 1;
 }

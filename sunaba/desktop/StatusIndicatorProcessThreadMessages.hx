@@ -1,7 +1,7 @@
 package sunaba..desktop;
 
-enum abstract StatusIndicatorProcessThreadMessages(Int) {
-	var Messages = 1;
-	var MessagesPhysics = 2;
-	var MessagesAll = 3;
+enum abstract StatusIndicatorProcessThreadMessages(Int) from Int to Int {
+	var messages = 1;
+	var messagesPhysics = 2;
+	var messagesAll = 3;
 }

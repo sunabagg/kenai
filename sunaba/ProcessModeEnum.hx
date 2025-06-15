@@ -1,8 +1,8 @@
 package sunaba;
 
-enum abstract ProcessModeEnum(Int) {
-	var Automatic = 0;
-	var Quality = 1;
-	var Incremental = 2;
-	var Realtime = 3;
+enum abstract ProcessModeEnum(Int) from Int to Int {
+	var automatic = 0;
+	var quality = 1;
+	var incremental = 2;
+	var realtime = 3;
 }

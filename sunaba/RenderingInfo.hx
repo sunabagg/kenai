@@ -1,15 +1,15 @@
 package sunaba;
 
-enum abstract RenderingInfo(Int) {
-	var TotalObjectsInFrame = 0;
-	var TotalPrimitivesInFrame = 1;
-	var TotalDrawCallsInFrame = 2;
-	var TextureMemUsed = 3;
-	var BufferMemUsed = 4;
-	var VideoMemUsed = 5;
-	var PipelineCompilationsCanvas = 6;
-	var PipelineCompilationsMesh = 7;
-	var PipelineCompilationsSurface = 8;
-	var PipelineCompilationsDraw = 9;
-	var PipelineCompilationsSpecialization = 10;
+enum abstract RenderingInfo(Int) from Int to Int {
+	var totalObjectsInFrame = 0;
+	var totalPrimitivesInFrame = 1;
+	var totalDrawCallsInFrame = 2;
+	var textureMemUsed = 3;
+	var bufferMemUsed = 4;
+	var videoMemUsed = 5;
+	var pipelineCompilationsCanvas = 6;
+	var pipelineCompilationsMesh = 7;
+	var pipelineCompilationsSurface = 8;
+	var pipelineCompilationsDraw = 9;
+	var pipelineCompilationsSpecialization = 10;
 }

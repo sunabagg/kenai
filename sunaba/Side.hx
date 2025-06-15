@@ -1,8 +1,8 @@
 package sunaba;
 
-enum abstract Side(Int) {
-	var Left = 0;
-	var Top = 1;
-	var Right = 2;
-	var Bottom = 3;
+enum abstract Side(Int) from Int to Int {
+	var left = 0;
+	var top = 1;
+	var right = 2;
+	var bottom = 3;
 }

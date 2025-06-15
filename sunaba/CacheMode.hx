@@ -1,9 +1,9 @@
 package sunaba;
 
-enum abstract CacheMode(Int) {
-	var Ignore = 0;
-	var Reuse = 1;
-	var Replace = 2;
-	var IgnoreDeep = 3;
-	var ReplaceDeep = 4;
+enum abstract CacheMode(Int) from Int to Int {
+	var ignore = 0;
+	var reuse = 1;
+	var replace = 2;
+	var ignoreDeep = 3;
+	var replaceDeep = 4;
 }

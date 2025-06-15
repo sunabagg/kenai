@@ -1,6 +1,6 @@
 package sunaba;
 
-enum abstract BodyDampMode(Int) {
-	var Combine = 0;
-	var Replace = 1;
+enum abstract BodyDampMode(Int) from Int to Int {
+	var combine = 0;
+	var replace = 1;
 }

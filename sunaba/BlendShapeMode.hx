@@ -1,6 +1,6 @@
 package sunaba;
 
-enum abstract BlendShapeMode(Int) {
-	var Normalized = 0;
-	var Relative = 1;
+enum abstract BlendShapeMode(Int) from Int to Int {
+	var normalized = 0;
+	var relative = 1;
 }

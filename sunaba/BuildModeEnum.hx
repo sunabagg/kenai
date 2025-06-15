@@ -1,6 +1,6 @@
 package sunaba;
 
-enum abstract BuildModeEnum(Int) {
-	var Solids = 0;
-	var Segments = 1;
+enum abstract BuildModeEnum(Int) from Int to Int {
+	var solids = 0;
+	var segments = 1;
 }

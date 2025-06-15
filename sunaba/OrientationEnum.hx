@@ -1,7 +1,7 @@
 package sunaba;
 
-enum abstract OrientationEnum(Int) {
-	var X = 0;
-	var Y = 1;
-	var Z = 2;
+enum abstract OrientationEnum(Int) from Int to Int {
+	var x = 0;
+	var y = 1;
+	var z = 2;
 }

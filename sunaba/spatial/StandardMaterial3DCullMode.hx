@@ -1,7 +1,7 @@
 package sunaba..spatial;
 
-enum abstract StandardMaterial3DCullMode(Int) {
-	var Back = 0;
-	var Front = 1;
-	var Disabled = 2;
+enum abstract StandardMaterial3DCullMode(Int) from Int to Int {
+	var back = 0;
+	var front = 1;
+	var disabled = 2;
 }

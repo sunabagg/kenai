@@ -1,7 +1,7 @@
 package sunaba;
 
-enum abstract AdvanceModeEnum(Int) {
-	var Disabled = 0;
-	var Enabled = 1;
-	var Auto = 2;
+enum abstract AdvanceModeEnum(Int) from Int to Int {
+	var disabled = 0;
+	var enabled = 1;
+	var auto = 2;
 }

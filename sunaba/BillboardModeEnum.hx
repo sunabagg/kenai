@@ -1,8 +1,8 @@
 package sunaba;
 
-enum abstract BillboardModeEnum(Int) {
-	var Disabled = 0;
-	var Enabled = 1;
-	var FixedY = 2;
-	var Particles = 3;
+enum abstract BillboardModeEnum(Int) from Int to Int {
+	var disabled = 0;
+	var enabled = 1;
+	var fixedY = 2;
+	var particles = 3;
 }

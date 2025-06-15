@@ -1,7 +1,7 @@
 package sunaba..spatial;
 
-enum abstract SpriteBase3DVisibilityRangeFadeMode(Int) {
-	var Disabled = 0;
-	var Self = 1;
-	var Dependencies = 2;
+enum abstract SpriteBase3DVisibilityRangeFadeMode(Int) from Int to Int {
+	var disabled = 0;
+	var self = 1;
+	var dependencies = 2;
 }

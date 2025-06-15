@@ -1,11 +1,11 @@
 package sunaba;
 
-enum abstract ParticlesCollisionHeightfieldResolution(Int) {
-	var Resolution256 = 0;
-	var Resolution512 = 1;
-	var Resolution1024 = 2;
-	var Resolution2048 = 3;
-	var Resolution4096 = 4;
-	var Resolution8192 = 5;
-	var Max = 6;
+enum abstract ParticlesCollisionHeightfieldResolution(Int) from Int to Int {
+	var resolution256 = 0;
+	var resolution512 = 1;
+	var resolution1024 = 2;
+	var resolution2048 = 3;
+	var resolution4096 = 4;
+	var resolution8192 = 5;
+	var max = 6;
 }

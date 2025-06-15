@@ -1,7 +1,7 @@
 package sunaba;
 
-enum abstract LightModeEnum(Int) {
-	var Normal = 0;
-	var Unshaded = 1;
-	var LightOnly = 2;
+enum abstract LightModeEnum(Int) from Int to Int {
+	var normal = 0;
+	var unshaded = 1;
+	var lightOnly = 2;
 }

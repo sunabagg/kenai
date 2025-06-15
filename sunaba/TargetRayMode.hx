@@ -1,8 +1,8 @@
 package sunaba;
 
-enum abstract TargetRayMode(Int) {
-	var Unknown = 0;
-	var Gaze = 1;
-	var TrackedPointer = 2;
-	var Screen = 3;
+enum abstract TargetRayMode(Int) from Int to Int {
+	var unknown = 0;
+	var gaze = 1;
+	var trackedPointer = 2;
+	var screen = 3;
 }

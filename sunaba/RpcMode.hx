@@ -1,7 +1,7 @@
 package sunaba;
 
-enum abstract RpcMode(Int) {
-	var Disabled = 0;
-	var AnyPeer = 1;
-	var Authority = 2;
+enum abstract RpcMode(Int) from Int to Int {
+	var disabled = 0;
+	var anyPeer = 1;
+	var authority = 2;
 }

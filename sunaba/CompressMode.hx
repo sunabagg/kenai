@@ -1,10 +1,10 @@
 package sunaba;
 
-enum abstract CompressMode(Int) {
-	var S3Tc = 0;
-	var Etc = 1;
-	var Etc2 = 2;
-	var Bptc = 3;
-	var Astc = 4;
-	var Max = 5;
+enum abstract CompressMode(Int) from Int to Int {
+	var s3Tc = 0;
+	var etc = 1;
+	var etc2 = 2;
+	var bptc = 3;
+	var astc = 4;
+	var max = 5;
 }

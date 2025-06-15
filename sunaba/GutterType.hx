@@ -1,7 +1,7 @@
 package sunaba;
 
-enum abstract GutterType(Int) {
-	var String = 0;
-	var Icon = 1;
-	var Custom = 2;
+enum abstract GutterType(Int) from Int to Int {
+	var string = 0;
+	var icon = 1;
+	var custom = 2;
 }

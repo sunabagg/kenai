@@ -1,7 +1,7 @@
 package sunaba;
 
-enum abstract LayeredType(Int) {
-	var Type2DArray = 0;
-	var Cubemap = 1;
-	var CubemapArray = 2;
+enum abstract LayeredType(Int) from Int to Int {
+	var type2dArray = 0;
+	var cubemap = 1;
+	var cubemapArray = 2;
 }

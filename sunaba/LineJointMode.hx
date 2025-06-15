@@ -1,7 +1,7 @@
 package sunaba;
 
-enum abstract LineJointMode(Int) {
-	var Sharp = 0;
-	var Bevel = 1;
-	var Round = 2;
+enum abstract LineJointMode(Int) from Int to Int {
+	var sharp = 0;
+	var bevel = 1;
+	var round = 2;
 }

@@ -1,9 +1,9 @@
 package sunaba;
 
-enum abstract Interpolation(Int) {
-	var Nearest = 0;
-	var Bilinear = 1;
-	var Cubic = 2;
-	var Trilinear = 3;
-	var Lanczos = 4;
+enum abstract Interpolation(Int) from Int to Int {
+	var nearest = 0;
+	var bilinear = 1;
+	var cubic = 2;
+	var trilinear = 3;
+	var lanczos = 4;
 }

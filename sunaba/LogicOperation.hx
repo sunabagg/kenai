@@ -1,21 +1,21 @@
 package sunaba;
 
-enum abstract LogicOperation(Int) {
-	var Clear = 0;
-	var And = 1;
-	var AndReverse = 2;
-	var Copy = 3;
-	var AndInverted = 4;
-	var NoOp = 5;
-	var Xor = 6;
-	var Or = 7;
-	var Nor = 8;
-	var Equivalent = 9;
-	var Invert = 10;
-	var OrReverse = 11;
-	var CopyInverted = 12;
-	var OrInverted = 13;
-	var Nand = 14;
-	var Set = 15;
-	var Max = 16;
+enum abstract LogicOperation(Int) from Int to Int {
+	var clear = 0;
+	var and = 1;
+	var andReverse = 2;
+	var copy = 3;
+	var andInverted = 4;
+	var noOp = 5;
+	var xor = 6;
+	var or = 7;
+	var nor = 8;
+	var equivalent = 9;
+	var invert = 10;
+	var orReverse = 11;
+	var copyInverted = 12;
+	var orInverted = 13;
+	var nand = 14;
+	var set = 15;
+	var max = 16;
 }

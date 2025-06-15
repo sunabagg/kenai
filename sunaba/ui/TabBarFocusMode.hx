@@ -1,7 +1,7 @@
 package sunaba..ui;
 
-enum abstract TabBarFocusMode(Int) {
-	var None = 0;
-	var Click = 1;
-	var All = 2;
+enum abstract TabBarFocusMode(Int) from Int to Int {
+	var none = 0;
+	var click = 1;
+	var all = 2;
 }

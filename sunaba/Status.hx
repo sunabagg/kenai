@@ -1,9 +1,9 @@
 package sunaba;
 
-enum abstract Status(Int) {
-	var Disconnected = 0;
-	var Handshaking = 1;
-	var Connected = 2;
-	var Error = 3;
-	var ErrorHostnameMismatch = 4;
+enum abstract Status(Int) from Int to Int {
+	var disconnected = 0;
+	var handshaking = 1;
+	var connected = 2;
+	var error = 3;
+	var errorHostnameMismatch = 4;
 }

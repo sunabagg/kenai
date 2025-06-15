@@ -1,10 +1,10 @@
 package sunaba;
 
-enum abstract FftSizeEnum(Int) {
-	var Size256 = 0;
-	var Size512 = 1;
-	var Size1024 = 2;
-	var Size2048 = 3;
-	var Size4096 = 4;
-	var Max = 5;
+enum abstract FftSizeEnum(Int) from Int to Int {
+	var size256 = 0;
+	var size512 = 1;
+	var size1024 = 2;
+	var size2048 = 3;
+	var size4096 = 4;
+	var max = 5;
 }

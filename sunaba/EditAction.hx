@@ -1,8 +1,8 @@
 package sunaba;
 
-enum abstract EditAction(Int) {
-	var None = 0;
-	var Typing = 1;
-	var Backspace = 2;
-	var Delete = 3;
+enum abstract EditAction(Int) from Int to Int {
+	var none = 0;
+	var typing = 1;
+	var backspace = 2;
+	var delete = 3;
 }

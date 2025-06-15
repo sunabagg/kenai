@@ -1,7 +1,7 @@
 package sunaba;
 
-enum abstract DomainWarpFractalTypeEnum(Int) {
-	var None = 0;
-	var Progressive = 1;
-	var Independent = 2;
+enum abstract DomainWarpFractalTypeEnum(Int) from Int to Int {
+	var none = 0;
+	var progressive = 1;
+	var independent = 2;
 }

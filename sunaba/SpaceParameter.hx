@@ -1,12 +1,12 @@
 package sunaba;
 
-enum abstract SpaceParameter(Int) {
-	var ContactRecycleRadius = 0;
-	var ContactMaxSeparation = 1;
-	var ContactMaxAllowedPenetration = 2;
-	var ContactDefaultBias = 3;
-	var BodyLinearVelocitySleepThreshold = 4;
-	var BodyAngularVelocitySleepThreshold = 5;
-	var BodyTimeToSleep = 6;
-	var SolverIterations = 7;
+enum abstract SpaceParameter(Int) from Int to Int {
+	var contactRecycleRadius = 0;
+	var contactMaxSeparation = 1;
+	var contactMaxAllowedPenetration = 2;
+	var contactDefaultBias = 3;
+	var bodyLinearVelocitySleepThreshold = 4;
+	var bodyAngularVelocitySleepThreshold = 5;
+	var bodyTimeToSleep = 6;
+	var solverIterations = 7;
 }

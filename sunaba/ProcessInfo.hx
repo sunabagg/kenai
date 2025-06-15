@@ -1,7 +1,7 @@
 package sunaba;
 
-enum abstract ProcessInfo(Int) {
-	var ActiveObjects = 0;
-	var CollisionPairs = 1;
-	var IslandCount = 2;
+enum abstract ProcessInfo(Int) from Int to Int {
+	var activeObjects = 0;
+	var collisionPairs = 1;
+	var islandCount = 2;
 }

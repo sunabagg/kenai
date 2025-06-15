@@ -1,11 +1,11 @@
 package sunaba;
 
-enum abstract CellularReturnTypeEnum(Int) {
-	var CellValue = 0;
-	var Distance = 1;
-	var Distance2 = 2;
-	var Distance2Add = 3;
-	var Distance2Sub = 4;
-	var Distance2Mul = 5;
-	var Distance2Div = 6;
+enum abstract CellularReturnTypeEnum(Int) from Int to Int {
+	var cellValue = 0;
+	var distance = 1;
+	var distance2 = 2;
+	var distance2Add = 3;
+	var distance2Sub = 4;
+	var distance2Mul = 5;
+	var distance2Div = 6;
 }

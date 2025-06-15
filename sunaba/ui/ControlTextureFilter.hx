@@ -1,12 +1,12 @@
 package sunaba..ui;
 
-enum abstract ControlTextureFilter(Int) {
-	var ParentNode = 0;
-	var Nearest = 1;
-	var Linear = 2;
-	var NearestWithMipmaps = 3;
-	var LinearWithMipmaps = 4;
-	var NearestWithMipmapsAnisotropic = 5;
-	var LinearWithMipmapsAnisotropic = 6;
-	var Max = 7;
+enum abstract ControlTextureFilter(Int) from Int to Int {
+	var parentNode = 0;
+	var nearest = 1;
+	var linear = 2;
+	var nearestWithMipmaps = 3;
+	var linearWithMipmaps = 4;
+	var nearestWithMipmapsAnisotropic = 5;
+	var linearWithMipmapsAnisotropic = 6;
+	var max = 7;
 }

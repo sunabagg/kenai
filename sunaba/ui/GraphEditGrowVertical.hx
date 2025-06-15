@@ -1,7 +1,7 @@
 package sunaba..ui;
 
-enum abstract GraphEditGrowVertical(Int) {
-	var Begin = 0;
-	var End = 1;
-	var Both = 2;
+enum abstract GraphEditGrowVertical(Int) from Int to Int {
+	var begin = 0;
+	var end = 1;
+	var both = 2;
 }

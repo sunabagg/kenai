@@ -1,8 +1,8 @@
 package sunaba;
 
-enum abstract PrecisionEnum(Int) {
-	var None = 0;
-	var Coarse = 1;
-	var Fine = 2;
-	var Max = 3;
+enum abstract PrecisionEnum(Int) from Int to Int {
+	var none = 0;
+	var coarse = 1;
+	var fine = 2;
+	var max = 3;
 }

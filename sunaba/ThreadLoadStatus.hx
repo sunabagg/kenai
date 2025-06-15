@@ -1,8 +1,8 @@
 package sunaba;
 
-enum abstract ThreadLoadStatus(Int) {
-	var InvalidResource = 0;
-	var InProgress = 1;
-	var Failed = 2;
-	var Loaded = 3;
+enum abstract ThreadLoadStatus(Int) from Int to Int {
+	var invalidResource = 0;
+	var inProgress = 1;
+	var failed = 2;
+	var loaded = 3;
 }

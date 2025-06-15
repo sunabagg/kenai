@@ -1,7 +1,7 @@
 package sunaba..spatial;
 
-enum abstract StandardMaterial3DDepthDrawMode(Int) {
-	var OpaqueOnly = 0;
-	var Always = 1;
-	var Disabled = 2;
+enum abstract StandardMaterial3DDepthDrawMode(Int) from Int to Int {
+	var opaqueOnly = 0;
+	var always = 1;
+	var disabled = 2;
 }

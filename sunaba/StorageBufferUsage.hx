@@ -1,5 +1,5 @@
 package sunaba;
 
-enum abstract StorageBufferUsage(Int) {
-	var Indirect = 1;
+enum abstract StorageBufferUsage(Int) from Int to Int {
+	var indirect = 1;
 }

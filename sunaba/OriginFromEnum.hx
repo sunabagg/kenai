@@ -1,7 +1,7 @@
 package sunaba;
 
-enum abstract OriginFromEnum(Int) {
-	var Self = 0;
-	var SpecificBone = 1;
-	var ExternalNode = 2;
+enum abstract OriginFromEnum(Int) from Int to Int {
+	var self = 0;
+	var specificBone = 1;
+	var externalNode = 2;
 }

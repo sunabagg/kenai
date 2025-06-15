@@ -1,11 +1,11 @@
 package sunaba;
 
-enum abstract SamplerBorderColor(Int) {
-	var FloatTransparentBlack = 0;
-	var IntTransparentBlack = 1;
-	var FloatOpaqueBlack = 2;
-	var IntOpaqueBlack = 3;
-	var FloatOpaqueWhite = 4;
-	var IntOpaqueWhite = 5;
-	var Max = 6;
+enum abstract SamplerBorderColor(Int) from Int to Int {
+	var floatTransparentBlack = 0;
+	var intTransparentBlack = 1;
+	var floatOpaqueBlack = 2;
+	var intOpaqueBlack = 3;
+	var floatOpaqueWhite = 4;
+	var intOpaqueWhite = 5;
+	var max = 6;
 }

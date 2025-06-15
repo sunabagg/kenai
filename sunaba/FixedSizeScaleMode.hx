@@ -1,7 +1,7 @@
 package sunaba;
 
-enum abstract FixedSizeScaleMode(Int) {
-	var Disable = 0;
-	var IntegerOnly = 1;
-	var Enabled = 2;
+enum abstract FixedSizeScaleMode(Int) from Int to Int {
+	var disable = 0;
+	var integerOnly = 1;
+	var enabled = 2;
 }

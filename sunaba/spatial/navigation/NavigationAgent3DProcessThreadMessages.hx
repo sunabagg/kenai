@@ -1,7 +1,7 @@
 package sunaba..spatial.navigation;
 
-enum abstract NavigationAgent3DProcessThreadMessages(Int) {
-	var Messages = 1;
-	var MessagesPhysics = 2;
-	var MessagesAll = 3;
+enum abstract NavigationAgent3DProcessThreadMessages(Int) from Int to Int {
+	var messages = 1;
+	var messagesPhysics = 2;
+	var messagesAll = 3;
 }

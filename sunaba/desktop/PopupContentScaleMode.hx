@@ -1,7 +1,7 @@
 package sunaba..desktop;
 
-enum abstract PopupContentScaleMode(Int) {
-	var Disabled = 0;
-	var CanvasItems = 1;
-	var Viewport = 2;
+enum abstract PopupContentScaleMode(Int) from Int to Int {
+	var disabled = 0;
+	var canvasItems = 1;
+	var viewport = 2;
 }

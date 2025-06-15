@@ -1,9 +1,9 @@
 package sunaba;
 
-enum abstract TextureSourceEnum(Int) {
-	var None = 0;
-	var Screen = 1;
-	var Depth = 2;
-	var NormalRoughness = 3;
-	var Max = 4;
+enum abstract TextureSourceEnum(Int) from Int to Int {
+	var none = 0;
+	var screen = 1;
+	var depth = 2;
+	var normalRoughness = 3;
+	var max = 4;
 }

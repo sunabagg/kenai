@@ -1,8 +1,8 @@
 package sunaba;
 
-enum abstract BakeQuality(Int) {
-	var Low = 0;
-	var Medium = 1;
-	var High = 2;
-	var Ultra = 3;
+enum abstract BakeQuality(Int) from Int to Int {
+	var low = 0;
+	var medium = 1;
+	var high = 2;
+	var ultra = 3;
 }

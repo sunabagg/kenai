@@ -1,8 +1,8 @@
 package sunaba;
 
-enum abstract CanvasLightShadowFilter(Int) {
-	var None = 0;
-	var Pcf5 = 1;
-	var Pcf13 = 2;
-	var Max = 3;
+enum abstract CanvasLightShadowFilter(Int) from Int to Int {
+	var none = 0;
+	var pcf5 = 1;
+	var pcf13 = 2;
+	var max = 3;
 }

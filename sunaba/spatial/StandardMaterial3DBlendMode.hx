@@ -1,9 +1,9 @@
 package sunaba..spatial;
 
-enum abstract StandardMaterial3DBlendMode(Int) {
-	var Mix = 0;
-	var Add = 1;
-	var Sub = 2;
-	var Mul = 3;
-	var PremultAlpha = 4;
+enum abstract StandardMaterial3DBlendMode(Int) from Int to Int {
+	var mix = 0;
+	var add = 1;
+	var sub = 2;
+	var mul = 3;
+	var premultAlpha = 4;
 }

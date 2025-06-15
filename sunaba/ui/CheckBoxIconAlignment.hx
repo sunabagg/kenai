@@ -1,8 +1,8 @@
 package sunaba..ui;
 
-enum abstract CheckBoxIconAlignment(Int) {
-	var Left = 0;
-	var Center = 1;
-	var Right = 2;
-	var Fill = 3;
+enum abstract CheckBoxIconAlignment(Int) from Int to Int {
+	var left = 0;
+	var center = 1;
+	var right = 2;
+	var fill = 3;
 }

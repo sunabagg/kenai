@@ -1,8 +1,8 @@
 package sunaba;
 
-enum abstract AlignmentMode(Int) {
-	var Left = 0;
-	var Center = 1;
-	var Right = 2;
-	var Max = 3;
+enum abstract AlignmentMode(Int) from Int to Int {
+	var left = 0;
+	var center = 1;
+	var right = 2;
+	var max = 3;
 }

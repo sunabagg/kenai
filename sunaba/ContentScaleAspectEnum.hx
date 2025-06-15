@@ -1,9 +1,9 @@
 package sunaba;
 
-enum abstract ContentScaleAspectEnum(Int) {
-	var Ignore = 0;
-	var Keep = 1;
-	var KeepWidth = 2;
-	var KeepHeight = 3;
-	var Expand = 4;
+enum abstract ContentScaleAspectEnum(Int) from Int to Int {
+	var ignore = 0;
+	var keep = 1;
+	var keepWidth = 2;
+	var keepHeight = 3;
+	var expand = 4;
 }

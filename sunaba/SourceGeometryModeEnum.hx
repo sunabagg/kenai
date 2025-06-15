@@ -1,8 +1,8 @@
 package sunaba;
 
-enum abstract SourceGeometryModeEnum(Int) {
-	var RootNodeChildren = 0;
-	var GroupsWithChildren = 1;
-	var GroupsExplicit = 2;
-	var Max = 3;
+enum abstract SourceGeometryModeEnum(Int) from Int to Int {
+	var rootNodeChildren = 0;
+	var groupsWithChildren = 1;
+	var groupsExplicit = 2;
+	var max = 3;
 }

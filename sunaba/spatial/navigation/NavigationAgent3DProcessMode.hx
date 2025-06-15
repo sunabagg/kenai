@@ -1,9 +1,9 @@
 package sunaba..spatial.navigation;
 
-enum abstract NavigationAgent3DProcessMode(Int) {
-	var Inherit = 0;
-	var Pausable = 1;
-	var WhenPaused = 2;
-	var Always = 3;
-	var Disabled = 4;
+enum abstract NavigationAgent3DProcessMode(Int) from Int to Int {
+	var inherit = 0;
+	var pausable = 1;
+	var whenPaused = 2;
+	var always = 3;
+	var disabled = 4;
 }

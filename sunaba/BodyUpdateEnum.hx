@@ -1,7 +1,7 @@
 package sunaba;
 
-enum abstract BodyUpdateEnum(Int) {
-	var UpperBody = 1;
-	var LowerBody = 2;
-	var Hands = 4;
+enum abstract BodyUpdateEnum(Int) from Int to Int {
+	var upperBody = 1;
+	var lowerBody = 2;
+	var hands = 4;
 }

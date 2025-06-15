@@ -1,10 +1,10 @@
 package sunaba;
 
-enum abstract EffectCallbackTypeEnum(Int) {
-	var PreOpaque = 0;
-	var PostOpaque = 1;
-	var PostSky = 2;
-	var PreTransparent = 3;
-	var PostTransparent = 4;
-	var Max = 5;
+enum abstract EffectCallbackTypeEnum(Int) from Int to Int {
+	var preOpaque = 0;
+	var postOpaque = 1;
+	var postSky = 2;
+	var preTransparent = 3;
+	var postTransparent = 4;
+	var max = 5;
 }

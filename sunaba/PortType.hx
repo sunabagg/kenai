@@ -1,14 +1,14 @@
 package sunaba;
 
-enum abstract PortType(Int) {
-	var Scalar = 0;
-	var ScalarInt = 1;
-	var ScalarUint = 2;
-	var Vector2D = 3;
-	var Vector3D = 4;
-	var Vector4D = 5;
-	var Boolean = 6;
-	var Transform = 7;
-	var Sampler = 8;
-	var Max = 9;
+enum abstract PortType(Int) from Int to Int {
+	var scalar = 0;
+	var scalarInt = 1;
+	var scalarUint = 2;
+	var vector2d = 3;
+	var vector3d = 4;
+	var vector4d = 5;
+	var boolean = 6;
+	var transform = 7;
+	var sampler = 8;
+	var max = 9;
 }

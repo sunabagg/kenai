@@ -1,7 +1,7 @@
 package sunaba..ui;
 
-enum abstract LineEditGrowHorizontal(Int) {
-	var Begin = 0;
-	var End = 1;
-	var Both = 2;
+enum abstract LineEditGrowHorizontal(Int) from Int to Int {
+	var begin = 0;
+	var end = 1;
+	var both = 2;
 }

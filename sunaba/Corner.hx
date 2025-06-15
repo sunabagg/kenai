@@ -1,8 +1,8 @@
 package sunaba;
 
-enum abstract Corner(Int) {
-	var TopLeft = 0;
-	var TopRight = 1;
-	var BottomRight = 2;
-	var BottomLeft = 3;
+enum abstract Corner(Int) from Int to Int {
+	var topLeft = 0;
+	var topRight = 1;
+	var bottomRight = 2;
+	var bottomLeft = 3;
 }

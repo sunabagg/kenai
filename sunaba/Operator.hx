@@ -1,30 +1,30 @@
 package sunaba;
 
-enum abstract Operator(Int) {
-	var Equal = 0;
-	var NotEqual = 1;
-	var Less = 2;
-	var LessEqual = 3;
-	var Greater = 4;
-	var GreaterEqual = 5;
-	var Add = 6;
-	var Subtract = 7;
-	var Multiply = 8;
-	var Divide = 9;
-	var Negate = 10;
-	var Positive = 11;
-	var Module = 12;
-	var Power = 13;
-	var ShiftLeft = 14;
-	var ShiftRight = 15;
-	var BitAnd = 16;
-	var BitOr = 17;
-	var BitXor = 18;
-	var BitNegate = 19;
-	var And = 20;
-	var Or = 21;
-	var Xor = 22;
-	var Not = 23;
-	var In = 24;
-	var Max = 25;
+enum abstract Operator(Int) from Int to Int {
+	var equal = 0;
+	var notEqual = 1;
+	var less = 2;
+	var lessEqual = 3;
+	var greater = 4;
+	var greaterEqual = 5;
+	var add = 6;
+	var subtract = 7;
+	var multiply = 8;
+	var divide = 9;
+	var negate = 10;
+	var positive = 11;
+	var module = 12;
+	var power = 13;
+	var shiftLeft = 14;
+	var shiftRight = 15;
+	var bitAnd = 16;
+	var bitOr = 17;
+	var bitXor = 18;
+	var bitNegate = 19;
+	var and = 20;
+	var or = 21;
+	var xor = 22;
+	var not = 23;
+	var in = 24;
+	var max = 25;
 }

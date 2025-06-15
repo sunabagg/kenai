@@ -1,10 +1,10 @@
 package sunaba;
 
-enum abstract BodyAxis(Int) {
-	var LinearX = 1;
-	var LinearY = 2;
-	var LinearZ = 4;
-	var AngularX = 8;
-	var AngularY = 16;
-	var AngularZ = 32;
+enum abstract BodyAxis(Int) from Int to Int {
+	var linearX = 1;
+	var linearY = 2;
+	var linearZ = 4;
+	var angularX = 8;
+	var angularY = 16;
+	var angularZ = 32;
 }

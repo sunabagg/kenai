@@ -1,6 +1,6 @@
 package sunaba;
 
-enum abstract Anchor(Int) {
-	var Begin = 0;
-	var End = 1;
+enum abstract Anchor(Int) from Int to Int {
+	var begin = 0;
+	var end = 1;
 }

@@ -1,9 +1,9 @@
 package sunaba;
 
-enum abstract EventType(Int) {
-	var None = 0;
-	var Connect = 1;
-	var Disconnect = 2;
-	var Receive = 3;
-	var Error = -1;
+enum abstract EventType(Int) from Int to Int {
+	var none = 0;
+	var connect = 1;
+	var disconnect = 2;
+	var receive = 3;
+	var error = -1;
 }

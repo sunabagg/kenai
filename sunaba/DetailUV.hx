@@ -1,6 +1,6 @@
 package sunaba;
 
-enum abstract DetailUV(Int) {
-	var UV1 = 0;
-	var UV2 = 1;
+enum abstract DetailUV(Int) from Int to Int {
+	var uv1 = 0;
+	var uv2 = 1;
 }

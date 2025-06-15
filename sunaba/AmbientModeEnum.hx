@@ -1,7 +1,7 @@
 package sunaba;
 
-enum abstract AmbientModeEnum(Int) {
-	var Disabled = 0;
-	var Environment = 1;
-	var Color = 2;
+enum abstract AmbientModeEnum(Int) from Int to Int {
+	var disabled = 0;
+	var environment = 1;
+	var color = 2;
 }

@@ -1,6 +1,6 @@
 package sunaba;
 
-enum abstract PinJointFlag(Int) {
-	var AngularLimitEnabled = 0;
-	var MotorEnabled = 1;
+enum abstract PinJointFlag(Int) from Int to Int {
+	var angularLimitEnabled = 0;
+	var motorEnabled = 1;
 }

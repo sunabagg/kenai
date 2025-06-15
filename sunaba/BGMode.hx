@@ -1,11 +1,11 @@
 package sunaba;
 
-enum abstract BGMode(Int) {
-	var ClearColor = 0;
-	var Color = 1;
-	var Sky = 2;
-	var Canvas = 3;
-	var Keep = 4;
-	var CameraFeed = 5;
-	var Max = 6;
+enum abstract BGMode(Int) from Int to Int {
+	var clearColor = 0;
+	var color = 1;
+	var sky = 2;
+	var canvas = 3;
+	var keep = 4;
+	var cameraFeed = 5;
+	var max = 6;
 }

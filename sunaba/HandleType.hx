@@ -1,10 +1,10 @@
 package sunaba;
 
-enum abstract HandleType(Int) {
-	var DisplayHandle = 0;
-	var WindowHandle = 1;
-	var WindowView = 2;
-	var OpenglContext = 3;
-	var EglDisplay = 4;
-	var EglConfig = 5;
+enum abstract HandleType(Int) from Int to Int {
+	var displayHandle = 0;
+	var windowHandle = 1;
+	var windowView = 2;
+	var openglContext = 3;
+	var eglDisplay = 4;
+	var eglConfig = 5;
 }

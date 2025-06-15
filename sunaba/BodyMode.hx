@@ -1,8 +1,8 @@
 package sunaba;
 
-enum abstract BodyMode(Int) {
-	var Static = 0;
-	var Kinematic = 1;
-	var Rigid = 2;
-	var RigidLinear = 3;
+enum abstract BodyMode(Int) from Int to Int {
+	var static = 0;
+	var kinematic = 1;
+	var rigid = 2;
+	var rigidLinear = 3;
 }

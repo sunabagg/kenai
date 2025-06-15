@@ -1,7 +1,7 @@
 package sunaba;
 
-enum abstract VisibilityUpdateModeEnum(Int) {
-	var Idle = 0;
-	var Physics = 1;
-	var None = 2;
+enum abstract VisibilityUpdateModeEnum(Int) from Int to Int {
+	var idle = 0;
+	var physics = 1;
+	var none = 2;
 }

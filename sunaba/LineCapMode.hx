@@ -1,7 +1,7 @@
 package sunaba;
 
-enum abstract LineCapMode(Int) {
-	var None = 0;
-	var Box = 1;
-	var Round = 2;
+enum abstract LineCapMode(Int) from Int to Int {
+	var none = 0;
+	var box = 1;
+	var round = 2;
 }

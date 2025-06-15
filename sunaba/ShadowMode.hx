@@ -1,6 +1,6 @@
 package sunaba;
 
-enum abstract ShadowMode(Int) {
-	var DualParaboloid = 0;
-	var Cube = 1;
+enum abstract ShadowMode(Int) from Int to Int {
+	var dualParaboloid = 0;
+	var cube = 1;
 }

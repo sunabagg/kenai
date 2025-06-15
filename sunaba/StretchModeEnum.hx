@@ -1,11 +1,11 @@
 package sunaba;
 
-enum abstract StretchModeEnum(Int) {
-	var Scale = 0;
-	var Tile = 1;
-	var Keep = 2;
-	var KeepCentered = 3;
-	var KeepAspect = 4;
-	var KeepAspectCentered = 5;
-	var KeepAspectCovered = 6;
+enum abstract StretchModeEnum(Int) from Int to Int {
+	var scale = 0;
+	var tile = 1;
+	var keep = 2;
+	var keepCentered = 3;
+	var keepAspect = 4;
+	var keepAspectCentered = 5;
+	var keepAspectCovered = 6;
 }

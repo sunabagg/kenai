@@ -1,6 +1,6 @@
 package sunaba;
 
-enum abstract VoxelGIQuality(Int) {
-	var Low = 0;
-	var High = 1;
+enum abstract VoxelGIQuality(Int) from Int to Int {
+	var low = 0;
+	var high = 1;
 }

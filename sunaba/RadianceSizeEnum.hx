@@ -1,12 +1,12 @@
 package sunaba;
 
-enum abstract RadianceSizeEnum(Int) {
-	var Size32 = 0;
-	var Size64 = 1;
-	var Size128 = 2;
-	var Size256 = 3;
-	var Size512 = 4;
-	var Size1024 = 5;
-	var Size2048 = 6;
-	var Max = 7;
+enum abstract RadianceSizeEnum(Int) from Int to Int {
+	var size32 = 0;
+	var size64 = 1;
+	var size128 = 2;
+	var size256 = 3;
+	var size512 = 4;
+	var size1024 = 5;
+	var size2048 = 6;
+	var max = 7;
 }

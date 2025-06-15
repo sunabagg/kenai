@@ -1,8 +1,8 @@
 package sunaba;
 
-enum abstract CodeCompletionLocation(Int) {
-	var Local = 0;
-	var ParentMask = 256;
-	var OtherUserCode = 512;
-	var Other = 1024;
+enum abstract CodeCompletionLocation(Int) from Int to Int {
+	var local = 0;
+	var parentMask = 256;
+	var otherUserCode = 512;
+	var other = 1024;
 }

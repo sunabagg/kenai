@@ -1,9 +1,9 @@
 package sunaba..ui;
 
-enum abstract ControlTextureRepeat(Int) {
-	var ParentNode = 0;
-	var Disabled = 1;
-	var Enabled = 2;
-	var Mirror = 3;
-	var Max = 4;
+enum abstract ControlTextureRepeat(Int) from Int to Int {
+	var parentNode = 0;
+	var disabled = 1;
+	var enabled = 2;
+	var mirror = 3;
+	var max = 4;
 }

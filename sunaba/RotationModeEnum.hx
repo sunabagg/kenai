@@ -1,9 +1,9 @@
 package sunaba;
 
-enum abstract RotationModeEnum(Int) {
-	var None = 0;
-	var Y = 1;
-	var Xy = 2;
-	var Xyz = 3;
-	var Oriented = 4;
+enum abstract RotationModeEnum(Int) from Int to Int {
+	var none = 0;
+	var y = 1;
+	var xy = 2;
+	var xyz = 3;
+	var oriented = 4;
 }

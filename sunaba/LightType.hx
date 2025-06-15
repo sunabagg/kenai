@@ -1,7 +1,7 @@
 package sunaba;
 
-enum abstract LightType(Int) {
-	var Directional = 0;
-	var Omni = 1;
-	var Spot = 2;
+enum abstract LightType(Int) from Int to Int {
+	var directional = 0;
+	var omni = 1;
+	var spot = 2;
 }

@@ -1,12 +1,12 @@
 package sunaba;
 
-enum abstract TextureSwizzle(Int) {
-	var Identity = 0;
-	var Zero = 1;
-	var One = 2;
-	var R = 3;
-	var G = 4;
-	var B = 5;
-	var A = 6;
-	var Max = 7;
+enum abstract TextureSwizzle(Int) from Int to Int {
+	var identity = 0;
+	var zero = 1;
+	var one = 2;
+	var r = 3;
+	var g = 4;
+	var b = 5;
+	var a = 6;
+	var max = 7;
 }

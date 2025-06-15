@@ -1,7 +1,7 @@
 package sunaba..ui;
 
-enum abstract VFlowContainerAlignment(Int) {
-	var Begin = 0;
-	var Center = 1;
-	var End = 2;
+enum abstract VFlowContainerAlignment(Int) from Int to Int {
+	var begin = 0;
+	var center = 1;
+	var end = 2;
 }

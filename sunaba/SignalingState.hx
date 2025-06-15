@@ -1,10 +1,10 @@
 package sunaba;
 
-enum abstract SignalingState(Int) {
-	var Stable = 0;
-	var HaveLocalOffer = 1;
-	var HaveRemoteOffer = 2;
-	var HaveLocalPranswer = 3;
-	var HaveRemotePranswer = 4;
-	var Closed = 5;
+enum abstract SignalingState(Int) from Int to Int {
+	var stable = 0;
+	var haveLocalOffer = 1;
+	var haveRemoteOffer = 2;
+	var haveLocalPranswer = 3;
+	var haveRemotePranswer = 4;
+	var closed = 5;
 }

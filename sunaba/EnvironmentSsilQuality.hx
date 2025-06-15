@@ -1,9 +1,9 @@
 package sunaba;
 
-enum abstract EnvironmentSsilQuality(Int) {
-	var VeryLow = 0;
-	var Low = 1;
-	var Medium = 2;
-	var High = 3;
-	var Ultra = 4;
+enum abstract EnvironmentSsilQuality(Int) from Int to Int {
+	var veryLow = 0;
+	var low = 1;
+	var medium = 2;
+	var high = 3;
+	var ultra = 4;
 }

@@ -1,15 +1,15 @@
 package sunaba;
 
-enum abstract BodyParameter(Int) {
-	var Bounce = 0;
-	var Friction = 1;
-	var Mass = 2;
-	var Inertia = 3;
-	var CenterOfMass = 4;
-	var GravityScale = 5;
-	var LinearDampMode = 6;
-	var AngularDampMode = 7;
-	var LinearDamp = 8;
-	var AngularDamp = 9;
-	var Max = 10;
+enum abstract BodyParameter(Int) from Int to Int {
+	var bounce = 0;
+	var friction = 1;
+	var mass = 2;
+	var inertia = 3;
+	var centerOfMass = 4;
+	var gravityScale = 5;
+	var linearDampMode = 6;
+	var angularDampMode = 7;
+	var linearDamp = 8;
+	var angularDamp = 9;
+	var max = 10;
 }

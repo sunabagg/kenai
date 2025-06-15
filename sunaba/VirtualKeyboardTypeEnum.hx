@@ -1,12 +1,12 @@
 package sunaba;
 
-enum abstract VirtualKeyboardTypeEnum(Int) {
-	var Default = 0;
-	var Multiline = 1;
-	var Number = 2;
-	var NumberDecimal = 3;
-	var Phone = 4;
-	var EmailAddress = 5;
-	var Password = 6;
-	var Url = 7;
+enum abstract VirtualKeyboardTypeEnum(Int) from Int to Int {
+	var default = 0;
+	var multiline = 1;
+	var number = 2;
+	var numberDecimal = 3;
+	var phone = 4;
+	var emailAddress = 5;
+	var password = 6;
+	var url = 7;
 }

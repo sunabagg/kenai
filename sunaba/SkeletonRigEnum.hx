@@ -1,7 +1,7 @@
 package sunaba;
 
-enum abstract SkeletonRigEnum(Int) {
-	var Openxr = 0;
-	var Humanoid = 1;
-	var Max = 2;
+enum abstract SkeletonRigEnum(Int) from Int to Int {
+	var openxr = 0;
+	var humanoid = 1;
+	var max = 2;
 }

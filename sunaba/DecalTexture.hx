@@ -1,9 +1,9 @@
 package sunaba;
 
-enum abstract DecalTexture(Int) {
-	var Albedo = 0;
-	var Normal = 1;
-	var Orm = 2;
-	var Emission = 3;
-	var Max = 4;
+enum abstract DecalTexture(Int) from Int to Int {
+	var albedo = 0;
+	var normal = 1;
+	var orm = 2;
+	var emission = 3;
+	var max = 4;
 }

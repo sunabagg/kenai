@@ -1,7 +1,7 @@
 package sunaba..audio;
 
-enum abstract AudioStreamPlayerProcessThreadMessages(Int) {
-	var Messages = 1;
-	var MessagesPhysics = 2;
-	var MessagesAll = 3;
+enum abstract AudioStreamPlayerProcessThreadMessages(Int) from Int to Int {
+	var messages = 1;
+	var messagesPhysics = 2;
+	var messagesAll = 3;
 }

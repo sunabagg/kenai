@@ -1,6 +1,6 @@
 package sunaba;
 
-enum abstract BufferCreationBits(Int) {
-	var DeviceAddressBit = 1;
-	var AsStorageBit = 2;
+enum abstract BufferCreationBits(Int) from Int to Int {
+	var deviceAddressBit = 1;
+	var asStorageBit = 2;
 }

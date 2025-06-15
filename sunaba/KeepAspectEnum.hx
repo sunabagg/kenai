@@ -1,6 +1,6 @@
 package sunaba;
 
-enum abstract KeepAspectEnum(Int) {
-	var Width = 0;
-	var Height = 1;
+enum abstract KeepAspectEnum(Int) from Int to Int {
+	var width = 0;
+	var height = 1;
 }

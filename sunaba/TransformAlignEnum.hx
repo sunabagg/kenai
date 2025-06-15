@@ -1,8 +1,8 @@
 package sunaba;
 
-enum abstract TransformAlignEnum(Int) {
-	var Disabled = 0;
-	var ZBillboard = 1;
-	var YToVelocity = 2;
-	var ZBillboardYToVelocity = 3;
+enum abstract TransformAlignEnum(Int) from Int to Int {
+	var disabled = 0;
+	var zBillboard = 1;
+	var yToVelocity = 2;
+	var zBillboardYToVelocity = 3;
 }

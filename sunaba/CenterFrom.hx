@@ -1,7 +1,7 @@
 package sunaba;
 
-enum abstract CenterFrom(Int) {
-	var WorldOrigin = 0;
-	var Node = 1;
-	var Bone = 2;
+enum abstract CenterFrom(Int) from Int to Int {
+	var worldOrigin = 0;
+	var node = 1;
+	var bone = 2;
 }

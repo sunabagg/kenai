@@ -1,8 +1,8 @@
 package sunaba;
 
-enum abstract CollisionModeEnum(Int) {
-	var Disabled = 0;
-	var Rigid = 1;
-	var HideOnContact = 2;
-	var Max = 3;
+enum abstract CollisionModeEnum(Int) from Int to Int {
+	var disabled = 0;
+	var rigid = 1;
+	var hideOnContact = 2;
+	var max = 3;
 }

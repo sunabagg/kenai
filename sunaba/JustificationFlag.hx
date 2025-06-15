@@ -1,13 +1,13 @@
 package sunaba;
 
-enum abstract JustificationFlag(Int) {
-	var None = 0;
-	var Kashida = 1;
-	var WordBound = 2;
-	var TrimEdgeSpaces = 4;
-	var AfterLastTab = 8;
-	var ConstrainEllipsis = 16;
-	var SkipLastLine = 32;
-	var SkipLastLineWithVisibleChars = 64;
-	var DoNotSkipSingleLine = 128;
+enum abstract JustificationFlag(Int) from Int to Int {
+	var none = 0;
+	var kashida = 1;
+	var wordBound = 2;
+	var trimEdgeSpaces = 4;
+	var afterLastTab = 8;
+	var constrainEllipsis = 16;
+	var skipLastLine = 32;
+	var skipLastLineWithVisibleChars = 64;
+	var doNotSkipSingleLine = 128;
 }

@@ -1,11 +1,11 @@
 package sunaba;
 
-enum abstract ResolutionEnum(Int) {
-	var Resolution16 = 0;
-	var Resolution32 = 1;
-	var Resolution64 = 2;
-	var Resolution128 = 3;
-	var Resolution256 = 4;
-	var Resolution512 = 5;
-	var Max = 6;
+enum abstract ResolutionEnum(Int) from Int to Int {
+	var resolution16 = 0;
+	var resolution32 = 1;
+	var resolution64 = 2;
+	var resolution128 = 3;
+	var resolution256 = 4;
+	var resolution512 = 5;
+	var max = 6;
 }

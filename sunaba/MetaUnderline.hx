@@ -1,7 +1,7 @@
 package sunaba;
 
-enum abstract MetaUnderline(Int) {
-	var Never = 0;
-	var Always = 1;
-	var OnHover = 2;
+enum abstract MetaUnderline(Int) from Int to Int {
+	var never = 0;
+	var always = 1;
+	var onHover = 2;
 }

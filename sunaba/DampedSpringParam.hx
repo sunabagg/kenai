@@ -1,7 +1,7 @@
 package sunaba;
 
-enum abstract DampedSpringParam(Int) {
-	var RestLength = 0;
-	var Stiffness = 1;
-	var Damping = 2;
+enum abstract DampedSpringParam(Int) from Int to Int {
+	var restLength = 0;
+	var stiffness = 1;
+	var damping = 2;
 }

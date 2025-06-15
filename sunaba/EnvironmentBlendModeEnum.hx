@@ -1,7 +1,7 @@
 package sunaba;
 
-enum abstract EnvironmentBlendModeEnum(Int) {
-	var Opaque = 0;
-	var Additive = 1;
-	var AlphaBlend = 2;
+enum abstract EnvironmentBlendModeEnum(Int) from Int to Int {
+	var opaque = 0;
+	var additive = 1;
+	var alphaBlend = 2;
 }

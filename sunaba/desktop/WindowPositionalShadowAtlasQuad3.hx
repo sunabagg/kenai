@@ -1,12 +1,12 @@
 package sunaba..desktop;
 
-enum abstract WindowPositionalShadowAtlasQuad3(Int) {
-	var Disabled = 0;
-	var Subdiv1 = 1;
-	var Subdiv4 = 2;
-	var Subdiv16 = 3;
-	var Subdiv64 = 4;
-	var Subdiv256 = 5;
-	var Subdiv1024 = 6;
-	var Max = 7;
+enum abstract WindowPositionalShadowAtlasQuad3(Int) from Int to Int {
+	var disabled = 0;
+	var subdiv1 = 1;
+	var subdiv4 = 2;
+	var subdiv16 = 3;
+	var subdiv64 = 4;
+	var subdiv256 = 5;
+	var subdiv1024 = 6;
+	var max = 7;
 }

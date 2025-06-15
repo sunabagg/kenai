@@ -1,8 +1,8 @@
 package sunaba;
 
-enum abstract RotationAxis(Int) {
-	var X = 0;
-	var Y = 1;
-	var Z = 2;
-	var All = 3;
+enum abstract RotationAxis(Int) from Int to Int {
+	var x = 0;
+	var y = 1;
+	var z = 2;
+	var all = 3;
 }

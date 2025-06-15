@@ -1,20 +1,20 @@
 package sunaba;
 
-enum abstract LayoutPreset(Int) {
-	var TopLeft = 0;
-	var TopRight = 1;
-	var BottomLeft = 2;
-	var BottomRight = 3;
-	var CenterLeft = 4;
-	var CenterTop = 5;
-	var CenterRight = 6;
-	var CenterBottom = 7;
-	var Center = 8;
-	var LeftWide = 9;
-	var TopWide = 10;
-	var RightWide = 11;
-	var BottomWide = 12;
-	var VcenterWide = 13;
-	var HcenterWide = 14;
-	var FullRect = 15;
+enum abstract LayoutPreset(Int) from Int to Int {
+	var topLeft = 0;
+	var topRight = 1;
+	var bottomLeft = 2;
+	var bottomRight = 3;
+	var centerLeft = 4;
+	var centerTop = 5;
+	var centerRight = 6;
+	var centerBottom = 7;
+	var center = 8;
+	var leftWide = 9;
+	var topWide = 10;
+	var rightWide = 11;
+	var bottomWide = 12;
+	var vcenterWide = 13;
+	var hcenterWide = 14;
+	var fullRect = 15;
 }

@@ -1,12 +1,12 @@
 package sunaba;
 
-enum abstract WindowEvent(Int) {
-	var MouseEnter = 0;
-	var MouseExit = 1;
-	var FocusIn = 2;
-	var FocusOut = 3;
-	var CloseRequest = 4;
-	var GoBackRequest = 5;
-	var DpiChange = 6;
-	var TitlebarChange = 7;
+enum abstract WindowEvent(Int) from Int to Int {
+	var mouseEnter = 0;
+	var mouseExit = 1;
+	var focusIn = 2;
+	var focusOut = 3;
+	var closeRequest = 4;
+	var goBackRequest = 5;
+	var dpiChange = 6;
+	var titlebarChange = 7;
 }

@@ -1,10 +1,10 @@
 package sunaba;
 
-enum abstract JointTypeEnum(Int) {
-	var None = 0;
-	var Pin = 1;
-	var Cone = 2;
-	var Hinge = 3;
-	var Slider = 4;
-	var Type6Dof = 5;
+enum abstract JointTypeEnum(Int) from Int to Int {
+	var none = 0;
+	var pin = 1;
+	var cone = 2;
+	var hinge = 3;
+	var slider = 4;
+	var type6Dof = 5;
 }

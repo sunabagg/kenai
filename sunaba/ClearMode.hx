@@ -1,7 +1,7 @@
 package sunaba;
 
-enum abstract ClearMode(Int) {
-	var Always = 0;
-	var Never = 1;
-	var Once = 2;
+enum abstract ClearMode(Int) from Int to Int {
+	var always = 0;
+	var never = 1;
+	var once = 2;
 }

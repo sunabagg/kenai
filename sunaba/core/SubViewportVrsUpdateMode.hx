@@ -1,8 +1,8 @@
 package sunaba..core;
 
-enum abstract SubViewportVrsUpdateMode(Int) {
-	var Disabled = 0;
-	var Once = 1;
-	var Always = 2;
-	var Max = 3;
+enum abstract SubViewportVrsUpdateMode(Int) from Int to Int {
+	var disabled = 0;
+	var once = 1;
+	var always = 2;
+	var max = 3;
 }

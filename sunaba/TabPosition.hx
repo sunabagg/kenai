@@ -1,7 +1,7 @@
 package sunaba;
 
-enum abstract TabPosition(Int) {
-	var Top = 0;
-	var Bottom = 1;
-	var Max = 2;
+enum abstract TabPosition(Int) from Int to Int {
+	var top = 0;
+	var bottom = 1;
+	var max = 2;
 }

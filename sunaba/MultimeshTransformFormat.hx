@@ -1,6 +1,6 @@
 package sunaba;
 
-enum abstract MultimeshTransformFormat(Int) {
-	var Transform2D = 0;
-	var Transform3D = 1;
+enum abstract MultimeshTransformFormat(Int) from Int to Int {
+	var transform2d = 0;
+	var transform3d = 1;
 }

@@ -1,7 +1,7 @@
 package sunaba;
 
-enum abstract EnvironmentReflectionSource(Int) {
-	var Bg = 0;
-	var Disabled = 1;
-	var Sky = 2;
+enum abstract EnvironmentReflectionSource(Int) from Int to Int {
+	var bg = 0;
+	var disabled = 1;
+	var sky = 2;
 }

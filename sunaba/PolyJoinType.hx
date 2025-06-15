@@ -1,7 +1,7 @@
 package sunaba;
 
-enum abstract PolyJoinType(Int) {
-	var Square = 0;
-	var Round = 1;
-	var Miter = 2;
+enum abstract PolyJoinType(Int) from Int to Int {
+	var square = 0;
+	var round = 1;
+	var miter = 2;
 }

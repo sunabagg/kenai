@@ -1,7 +1,7 @@
 package sunaba;
 
-enum abstract FocusModeEnum(Int) {
-	var None = 0;
-	var Click = 1;
-	var All = 2;
+enum abstract FocusModeEnum(Int) from Int to Int {
+	var none = 0;
+	var click = 1;
+	var all = 2;
 }

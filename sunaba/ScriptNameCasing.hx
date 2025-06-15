@@ -1,8 +1,8 @@
 package sunaba;
 
-enum abstract ScriptNameCasing(Int) {
-	var Auto = 0;
-	var PascalCase = 1;
-	var SnakeCase = 2;
-	var KebabCase = 3;
+enum abstract ScriptNameCasing(Int) from Int to Int {
+	var auto = 0;
+	var pascalCase = 1;
+	var snakeCase = 2;
+	var kebabCase = 3;
 }

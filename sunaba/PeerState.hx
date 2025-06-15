@@ -1,14 +1,14 @@
 package sunaba;
 
-enum abstract PeerState(Int) {
-	var Disconnected = 0;
-	var Connecting = 1;
-	var AcknowledgingConnect = 2;
-	var ConnectionPending = 3;
-	var ConnectionSucceeded = 4;
-	var Connected = 5;
-	var DisconnectLater = 6;
-	var Disconnecting = 7;
-	var AcknowledgingDisconnect = 8;
-	var Zombie = 9;
+enum abstract PeerState(Int) from Int to Int {
+	var disconnected = 0;
+	var connecting = 1;
+	var acknowledgingConnect = 2;
+	var connectionPending = 3;
+	var connectionSucceeded = 4;
+	var connected = 5;
+	var disconnectLater = 6;
+	var disconnecting = 7;
+	var acknowledgingDisconnect = 8;
+	var zombie = 9;
 }

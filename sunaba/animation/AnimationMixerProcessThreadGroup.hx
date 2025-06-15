@@ -1,7 +1,7 @@
 package sunaba..animation;
 
-enum abstract AnimationMixerProcessThreadGroup(Int) {
-	var Inherit = 0;
-	var MainThread = 1;
-	var SubThread = 2;
+enum abstract AnimationMixerProcessThreadGroup(Int) from Int to Int {
+	var inherit = 0;
+	var mainThread = 1;
+	var subThread = 2;
 }

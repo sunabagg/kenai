@@ -1,7 +1,7 @@
 package sunaba;
 
-enum abstract ColorSpace(Int) {
-	var Srgb = 0;
-	var LinearSrgb = 1;
-	var Oklab = 2;
+enum abstract ColorSpace(Int) from Int to Int {
+	var srgb = 0;
+	var linearSrgb = 1;
+	var oklab = 2;
 }

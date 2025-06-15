@@ -1,7 +1,7 @@
 package sunaba..spatial.xr;
 
-enum abstract XRCamera3DProjection(Int) {
-	var Perspective = 0;
-	var Orthogonal = 1;
-	var Frustum = 2;
+enum abstract XRCamera3DProjection(Int) from Int to Int {
+	var perspective = 0;
+	var orthogonal = 1;
+	var frustum = 2;
 }

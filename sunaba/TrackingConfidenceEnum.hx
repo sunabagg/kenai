@@ -1,7 +1,7 @@
 package sunaba;
 
-enum abstract TrackingConfidenceEnum(Int) {
-	var None = 0;
-	var Low = 1;
-	var High = 2;
+enum abstract TrackingConfidenceEnum(Int) from Int to Int {
+	var none = 0;
+	var low = 1;
+	var high = 2;
 }

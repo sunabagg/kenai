@@ -1,9 +1,9 @@
 package sunaba;
 
-enum abstract CompositorEffectFlags(Int) {
-	var AccessResolvedColor = 1;
-	var AccessResolvedDepth = 2;
-	var NeedsMotionVectors = 4;
-	var NeedsRoughness = 8;
-	var NeedsSeparateSpecular = 16;
+enum abstract CompositorEffectFlags(Int) from Int to Int {
+	var accessResolvedColor = 1;
+	var accessResolvedDepth = 2;
+	var needsMotionVectors = 4;
+	var needsRoughness = 8;
+	var needsSeparateSpecular = 16;
 }

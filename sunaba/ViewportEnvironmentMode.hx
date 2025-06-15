@@ -1,8 +1,8 @@
 package sunaba;
 
-enum abstract ViewportEnvironmentMode(Int) {
-	var Disabled = 0;
-	var Enabled = 1;
-	var Inherit = 2;
-	var Max = 3;
+enum abstract ViewportEnvironmentMode(Int) from Int to Int {
+	var disabled = 0;
+	var enabled = 1;
+	var inherit = 2;
+	var max = 3;
 }

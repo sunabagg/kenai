@@ -1,7 +1,7 @@
 package sunaba..spatial;
 
-enum abstract Label3DGIMode(Int) {
-	var Disabled = 0;
-	var Static = 1;
-	var Dynamic = 2;
+enum abstract Label3DGIMode(Int) from Int to Int {
+	var disabled = 0;
+	var static = 1;
+	var dynamic = 2;
 }

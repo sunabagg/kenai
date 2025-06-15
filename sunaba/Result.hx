@@ -1,18 +1,18 @@
 package sunaba;
 
-enum abstract Result(Int) {
-	var Success = 0;
-	var ChunkedBodySizeMismatch = 1;
-	var CantConnect = 2;
-	var CantResolve = 3;
-	var ConnectionError = 4;
-	var TlsHandshakeError = 5;
-	var NoResponse = 6;
-	var BodySizeLimitExceeded = 7;
-	var BodyDecompressFailed = 8;
-	var RequestFailed = 9;
-	var DownloadFileCantOpen = 10;
-	var DownloadFileWriteError = 11;
-	var RedirectLimitReached = 12;
-	var Timeout = 13;
+enum abstract Result(Int) from Int to Int {
+	var success = 0;
+	var chunkedBodySizeMismatch = 1;
+	var cantConnect = 2;
+	var cantResolve = 3;
+	var connectionError = 4;
+	var tlsHandshakeError = 5;
+	var noResponse = 6;
+	var bodySizeLimitExceeded = 7;
+	var bodyDecompressFailed = 8;
+	var requestFailed = 9;
+	var downloadFileCantOpen = 10;
+	var downloadFileWriteError = 11;
+	var redirectLimitReached = 12;
+	var timeout = 13;
 }

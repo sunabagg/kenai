@@ -1,10 +1,10 @@
 package sunaba..core;
 
-enum abstract SubViewportScaling3DMode(Int) {
-	var Bilinear = 0;
-	var Fsr = 1;
-	var Fsr2 = 2;
-	var MetalfxSpatial = 3;
-	var MetalfxTemporal = 4;
-	var Max = 5;
+enum abstract SubViewportScaling3DMode(Int) from Int to Int {
+	var bilinear = 0;
+	var fsr = 1;
+	var fsr2 = 2;
+	var metalfxSpatial = 3;
+	var metalfxTemporal = 4;
+	var max = 5;
 }

@@ -1,7 +1,7 @@
 package sunaba;
 
-enum abstract SwitchModeEnum(Int) {
-	var Immediate = 0;
-	var Sync = 1;
-	var AtEnd = 2;
+enum abstract SwitchModeEnum(Int) from Int to Int {
+	var immediate = 0;
+	var sync = 1;
+	var atEnd = 2;
 }

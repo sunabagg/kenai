@@ -1,10 +1,10 @@
 package sunaba..ui;
 
-enum abstract LabelSizeFlagsVertical(Int) {
-	var ShrinkBegin = 0;
-	var Fill = 1;
-	var Expand = 2;
-	var ExpandFill = 3;
-	var ShrinkCenter = 4;
-	var ShrinkEnd = 8;
+enum abstract LabelSizeFlagsVertical(Int) from Int to Int {
+	var shrinkBegin = 0;
+	var fill = 1;
+	var expand = 2;
+	var expandFill = 3;
+	var shrinkCenter = 4;
+	var shrinkEnd = 8;
 }

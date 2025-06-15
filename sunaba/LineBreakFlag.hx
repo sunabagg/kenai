@@ -1,11 +1,11 @@
 package sunaba;
 
-enum abstract LineBreakFlag(Int) {
-	var None = 0;
-	var Mandatory = 1;
-	var WordBound = 2;
-	var GraphemeBound = 4;
-	var Adaptive = 8;
-	var TrimEdgeSpaces = 16;
-	var TrimIndent = 32;
+enum abstract LineBreakFlag(Int) from Int to Int {
+	var none = 0;
+	var mandatory = 1;
+	var wordBound = 2;
+	var graphemeBound = 4;
+	var adaptive = 8;
+	var trimEdgeSpaces = 16;
+	var trimIndent = 32;
 }

@@ -1,11 +1,11 @@
 package sunaba;
 
-enum abstract G6DofJointAxisFlag(Int) {
-	var EnableLinearLimit = 0;
-	var EnableAngularLimit = 1;
-	var EnableAngularSpring = 2;
-	var EnableLinearSpring = 3;
-	var EnableMotor = 4;
-	var EnableLinearMotor = 5;
-	var Max = 6;
+enum abstract G6DofJointAxisFlag(Int) from Int to Int {
+	var enableLinearLimit = 0;
+	var enableAngularLimit = 1;
+	var enableAngularSpring = 2;
+	var enableLinearSpring = 3;
+	var enableMotor = 4;
+	var enableLinearMotor = 5;
+	var max = 6;
 }

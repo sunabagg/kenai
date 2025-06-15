@@ -1,8 +1,8 @@
 package sunaba;
 
-enum abstract FractalTypeEnum(Int) {
-	var None = 0;
-	var Fbm = 1;
-	var Ridged = 2;
-	var PingPong = 3;
+enum abstract FractalTypeEnum(Int) from Int to Int {
+	var none = 0;
+	var fbm = 1;
+	var ridged = 2;
+	var pingPong = 3;
 }

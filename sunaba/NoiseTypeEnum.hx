@@ -1,10 +1,10 @@
 package sunaba;
 
-enum abstract NoiseTypeEnum(Int) {
-	var Simplex = 0;
-	var SimplexSmooth = 1;
-	var Cellular = 2;
-	var Perlin = 3;
-	var ValueCubic = 4;
-	var Value = 5;
+enum abstract NoiseTypeEnum(Int) from Int to Int {
+	var simplex = 0;
+	var simplexSmooth = 1;
+	var cellular = 2;
+	var perlin = 3;
+	var valueCubic = 4;
+	var value = 5;
 }

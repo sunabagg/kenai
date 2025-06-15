@@ -1,13 +1,13 @@
 package sunaba;
 
-enum abstract MethodFlags(Int) {
-	var Normal = 1;
-	var Normal = 1;
-	var Editor = 2;
-	var Const = 4;
-	var Virtual = 8;
-	var Vararg = 16;
-	var Static = 32;
-	var ObjectCore = 64;
-	var VirtualRequired = 128;
+enum abstract MethodFlags(Int) from Int to Int {
+	var normal = 1;
+	var normal = 1;
+	var editor = 2;
+	var const = 4;
+	var virtual = 8;
+	var vararg = 16;
+	var static = 32;
+	var objectCore = 64;
+	var virtualRequired = 128;
 }

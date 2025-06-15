@@ -1,6 +1,6 @@
 package sunaba;
 
-enum abstract IndexBufferFormat(Int) {
-	var Uint16 = 0;
-	var Uint32 = 1;
+enum abstract IndexBufferFormat(Int) from Int to Int {
+	var uint16 = 0;
+	var uint32 = 1;
 }

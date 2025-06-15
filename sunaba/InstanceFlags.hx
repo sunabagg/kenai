@@ -1,9 +1,9 @@
 package sunaba;
 
-enum abstract InstanceFlags(Int) {
-	var UseBakedLight = 0;
-	var UseDynamicGI = 1;
-	var DrawNextFrameIfVisible = 2;
-	var IgnoreOcclusionCulling = 3;
-	var Max = 4;
+enum abstract InstanceFlags(Int) from Int to Int {
+	var useBakedLight = 0;
+	var useDynamicGi = 1;
+	var drawNextFrameIfVisible = 2;
+	var ignoreOcclusionCulling = 3;
+	var max = 4;
 }

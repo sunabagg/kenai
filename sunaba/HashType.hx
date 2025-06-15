@@ -1,7 +1,7 @@
 package sunaba;
 
-enum abstract HashType(Int) {
-	var Md5 = 0;
-	var Sha1 = 1;
-	var Sha256 = 2;
+enum abstract HashType(Int) from Int to Int {
+	var md5 = 0;
+	var sha1 = 1;
+	var sha256 = 2;
 }

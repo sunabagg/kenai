@@ -1,11 +1,11 @@
 package sunaba;
 
-enum abstract StructuredTextParser(Int) {
-	var Default = 0;
-	var Uri = 1;
-	var File = 2;
-	var Email = 3;
-	var List = 4;
-	var Gdscript = 5;
-	var Custom = 6;
+enum abstract StructuredTextParser(Int) from Int to Int {
+	var default = 0;
+	var uri = 1;
+	var file = 2;
+	var email = 3;
+	var list = 4;
+	var gdscript = 5;
+	var custom = 6;
 }

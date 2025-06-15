@@ -1,6 +1,6 @@
 package sunaba;
 
-enum abstract TextureModeEnum(Int) {
-	var Rgb = 0;
-	var Red = 1;
+enum abstract TextureModeEnum(Int) from Int to Int {
+	var rgb = 0;
+	var red = 1;
 }

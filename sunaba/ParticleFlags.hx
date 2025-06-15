@@ -1,9 +1,9 @@
 package sunaba;
 
-enum abstract ParticleFlags(Int) {
-	var AlignYToVelocity = 0;
-	var RotateY = 1;
-	var DisableZ = 2;
-	var DampingAsFriction = 3;
-	var Max = 4;
+enum abstract ParticleFlags(Int) from Int to Int {
+	var alignYToVelocity = 0;
+	var rotateY = 1;
+	var disableZ = 2;
+	var dampingAsFriction = 3;
+	var max = 4;
 }

@@ -1,24 +1,24 @@
 package sunaba;
 
-enum abstract BlendFactor(Int) {
-	var Zero = 0;
-	var One = 1;
-	var SrcColor = 2;
-	var OneMinusSrcColor = 3;
-	var DstColor = 4;
-	var OneMinusDstColor = 5;
-	var SrcAlpha = 6;
-	var OneMinusSrcAlpha = 7;
-	var DstAlpha = 8;
-	var OneMinusDstAlpha = 9;
-	var ConstantColor = 10;
-	var OneMinusConstantColor = 11;
-	var ConstantAlpha = 12;
-	var OneMinusConstantAlpha = 13;
-	var SrcAlphaSaturate = 14;
-	var Src1Color = 15;
-	var OneMinusSrc1Color = 16;
-	var Src1Alpha = 17;
-	var OneMinusSrc1Alpha = 18;
-	var Max = 19;
+enum abstract BlendFactor(Int) from Int to Int {
+	var zero = 0;
+	var one = 1;
+	var srcColor = 2;
+	var oneMinusSrcColor = 3;
+	var dstColor = 4;
+	var oneMinusDstColor = 5;
+	var srcAlpha = 6;
+	var oneMinusSrcAlpha = 7;
+	var dstAlpha = 8;
+	var oneMinusDstAlpha = 9;
+	var constantColor = 10;
+	var oneMinusConstantColor = 11;
+	var constantAlpha = 12;
+	var oneMinusConstantAlpha = 13;
+	var srcAlphaSaturate = 14;
+	var src1Color = 15;
+	var oneMinusSrc1Color = 16;
+	var src1Alpha = 17;
+	var oneMinusSrc1Alpha = 18;
+	var max = 19;
 }

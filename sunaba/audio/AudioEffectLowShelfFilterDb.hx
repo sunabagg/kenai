@@ -1,8 +1,8 @@
 package sunaba..audio;
 
-enum abstract AudioEffectLowShelfFilterDb(Int) {
-	var Filter6Db = 0;
-	var Filter12Db = 1;
-	var Filter18Db = 2;
-	var Filter24Db = 3;
+enum abstract AudioEffectLowShelfFilterDb(Int) from Int to Int {
+	var filter6Db = 0;
+	var filter12Db = 1;
+	var filter18Db = 2;
+	var filter24Db = 3;
 }

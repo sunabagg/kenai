@@ -1,9 +1,9 @@
 package sunaba;
 
-enum abstract SpacingType(Int) {
-	var Glyph = 0;
-	var Space = 1;
-	var Top = 2;
-	var Bottom = 3;
-	var Max = 4;
+enum abstract SpacingType(Int) from Int to Int {
+	var glyph = 0;
+	var space = 1;
+	var top = 2;
+	var bottom = 3;
+	var max = 4;
 }

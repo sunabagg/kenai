@@ -1,11 +1,11 @@
 package sunaba;
 
-enum abstract GltfAccessorType(Int) {
-	var Scalar = 0;
-	var Vec2 = 1;
-	var Vec3 = 2;
-	var Vec4 = 3;
-	var Mat2 = 4;
-	var Mat3 = 5;
-	var Mat4 = 6;
+enum abstract GltfAccessorType(Int) from Int to Int {
+	var scalar = 0;
+	var vec2 = 1;
+	var vec3 = 2;
+	var vec4 = 3;
+	var mat2 = 4;
+	var mat3 = 5;
+	var mat4 = 6;
 }

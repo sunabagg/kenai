@@ -1,7 +1,7 @@
 package sunaba;
 
-enum abstract ConditionEnum(Int) {
-	var All = 0;
-	var Any = 1;
-	var Max = 2;
+enum abstract ConditionEnum(Int) from Int to Int {
+	var all = 0;
+	var any = 1;
+	var max = 2;
 }

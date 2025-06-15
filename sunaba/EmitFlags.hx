@@ -1,9 +1,9 @@
 package sunaba;
 
-enum abstract EmitFlags(Int) {
-	var Position = 1;
-	var RotScale = 2;
-	var Velocity = 4;
-	var Color = 8;
-	var Custom = 16;
+enum abstract EmitFlags(Int) from Int to Int {
+	var position = 1;
+	var rotScale = 2;
+	var velocity = 4;
+	var color = 8;
+	var custom = 16;
 }

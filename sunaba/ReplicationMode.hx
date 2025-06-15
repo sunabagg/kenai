@@ -1,7 +1,7 @@
 package sunaba;
 
-enum abstract ReplicationMode(Int) {
-	var Never = 0;
-	var Always = 1;
-	var OnChange = 2;
+enum abstract ReplicationMode(Int) from Int to Int {
+	var never = 0;
+	var always = 1;
+	var onChange = 2;
 }

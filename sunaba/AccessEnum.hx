@@ -1,7 +1,7 @@
 package sunaba;
 
-enum abstract AccessEnum(Int) {
-	var Resources = 0;
-	var Userdata = 1;
-	var Filesystem = 2;
+enum abstract AccessEnum(Int) from Int to Int {
+	var resources = 0;
+	var userdata = 1;
+	var filesystem = 2;
 }

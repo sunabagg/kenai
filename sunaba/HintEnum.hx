@@ -1,9 +1,9 @@
 package sunaba;
 
-enum abstract HintEnum(Int) {
-	var None = 0;
-	var Range = 1;
-	var RangeStep = 2;
-	var Enum = 3;
-	var Max = 4;
+enum abstract HintEnum(Int) from Int to Int {
+	var none = 0;
+	var range = 1;
+	var rangeStep = 2;
+	var enum = 3;
+	var max = 4;
 }

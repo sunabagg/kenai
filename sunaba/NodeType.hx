@@ -1,11 +1,11 @@
 package sunaba;
 
-enum abstract NodeType(Int) {
-	var None = 0;
-	var Element = 1;
-	var ElementEnd = 2;
-	var Text = 3;
-	var Comment = 4;
-	var Cdata = 5;
-	var Unknown = 6;
+enum abstract NodeType(Int) from Int to Int {
+	var none = 0;
+	var element = 1;
+	var elementEnd = 2;
+	var text = 3;
+	var comment = 4;
+	var cdata = 5;
+	var unknown = 6;
 }

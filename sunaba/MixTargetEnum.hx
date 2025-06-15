@@ -1,7 +1,7 @@
 package sunaba;
 
-enum abstract MixTargetEnum(Int) {
-	var Stereo = 0;
-	var Surround = 1;
-	var Center = 2;
+enum abstract MixTargetEnum(Int) from Int to Int {
+	var stereo = 0;
+	var surround = 1;
+	var center = 2;
 }

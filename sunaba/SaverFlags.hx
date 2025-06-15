@@ -1,12 +1,12 @@
 package sunaba;
 
-enum abstract SaverFlags(Int) {
-	var None = 0;
-	var RelativePaths = 1;
-	var BundleResources = 2;
-	var ChangePath = 4;
-	var OmitEditorProperties = 8;
-	var SaveBigEndian = 16;
-	var Compress = 32;
-	var ReplaceSubresourcePaths = 64;
+enum abstract SaverFlags(Int) from Int to Int {
+	var none = 0;
+	var relativePaths = 1;
+	var bundleResources = 2;
+	var changePath = 4;
+	var omitEditorProperties = 8;
+	var saveBigEndian = 16;
+	var compress = 32;
+	var replaceSubresourcePaths = 64;
 }

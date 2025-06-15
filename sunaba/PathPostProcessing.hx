@@ -1,7 +1,7 @@
 package sunaba;
 
-enum abstract PathPostProcessing(Int) {
-	var Corridorfunnel = 0;
-	var Edgecentered = 1;
-	var None = 2;
+enum abstract PathPostProcessing(Int) from Int to Int {
+	var corridorfunnel = 0;
+	var edgecentered = 1;
+	var none = 2;
 }

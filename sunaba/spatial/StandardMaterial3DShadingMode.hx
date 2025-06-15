@@ -1,8 +1,8 @@
 package sunaba..spatial;
 
-enum abstract StandardMaterial3DShadingMode(Int) {
-	var Unshaded = 0;
-	var PerPixel = 1;
-	var PerVertex = 2;
-	var Max = 3;
+enum abstract StandardMaterial3DShadingMode(Int) from Int to Int {
+	var unshaded = 0;
+	var perPixel = 1;
+	var perVertex = 2;
+	var max = 3;
 }

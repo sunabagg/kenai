@@ -1,6 +1,6 @@
 package sunaba..spatial.physics;
 
-enum abstract VehicleBody3DLinearDampMode(Int) {
-	var Combine = 0;
-	var Replace = 1;
+enum abstract VehicleBody3DLinearDampMode(Int) from Int to Int {
+	var combine = 0;
+	var replace = 1;
 }

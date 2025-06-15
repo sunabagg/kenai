@@ -1,13 +1,13 @@
 package sunaba;
 
-enum abstract WindowResizeEdge(Int) {
-	var TopLeft = 0;
-	var Top = 1;
-	var TopRight = 2;
-	var Left = 3;
-	var Right = 4;
-	var BottomLeft = 5;
-	var Bottom = 6;
-	var BottomRight = 7;
-	var Max = 8;
+enum abstract WindowResizeEdge(Int) from Int to Int {
+	var topLeft = 0;
+	var top = 1;
+	var topRight = 2;
+	var left = 3;
+	var right = 4;
+	var bottomLeft = 5;
+	var bottom = 6;
+	var bottomRight = 7;
+	var max = 8;
 }

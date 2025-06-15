@@ -1,6 +1,6 @@
 package sunaba;
 
-enum abstract MotionModeEnum(Int) {
-	var Grounded = 0;
-	var Floating = 1;
+enum abstract MotionModeEnum(Int) from Int to Int {
+	var grounded = 0;
+	var floating = 1;
 }

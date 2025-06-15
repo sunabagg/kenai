@@ -1,13 +1,13 @@
 package sunaba;
 
-enum abstract CompareOperator(Int) {
-	var Never = 0;
-	var Less = 1;
-	var Equal = 2;
-	var LessOrEqual = 3;
-	var Greater = 4;
-	var NotEqual = 5;
-	var GreaterOrEqual = 6;
-	var Always = 7;
-	var Max = 8;
+enum abstract CompareOperator(Int) from Int to Int {
+	var never = 0;
+	var less = 1;
+	var equal = 2;
+	var lessOrEqual = 3;
+	var greater = 4;
+	var notEqual = 5;
+	var greaterOrEqual = 6;
+	var always = 7;
+	var max = 8;
 }

@@ -1,7 +1,7 @@
 package sunaba..core;
 
-enum abstract CanvasItemProcessThreadGroup(Int) {
-	var Inherit = 0;
-	var MainThread = 1;
-	var SubThread = 2;
+enum abstract CanvasItemProcessThreadGroup(Int) from Int to Int {
+	var inherit = 0;
+	var mainThread = 1;
+	var subThread = 2;
 }

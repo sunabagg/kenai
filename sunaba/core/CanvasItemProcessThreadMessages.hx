@@ -1,7 +1,7 @@
 package sunaba..core;
 
-enum abstract CanvasItemProcessThreadMessages(Int) {
-	var Messages = 1;
-	var MessagesPhysics = 2;
-	var MessagesAll = 3;
+enum abstract CanvasItemProcessThreadMessages(Int) from Int to Int {
+	var messages = 1;
+	var messagesPhysics = 2;
+	var messagesAll = 3;
 }

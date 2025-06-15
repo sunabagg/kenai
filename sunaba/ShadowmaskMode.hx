@@ -1,7 +1,7 @@
 package sunaba;
 
-enum abstract ShadowmaskMode(Int) {
-	var None = 0;
-	var Replace = 1;
-	var Overlay = 2;
+enum abstract ShadowmaskMode(Int) from Int to Int {
+	var none = 0;
+	var replace = 1;
+	var overlay = 2;
 }

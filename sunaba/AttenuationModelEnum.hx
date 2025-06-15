@@ -1,8 +1,8 @@
 package sunaba;
 
-enum abstract AttenuationModelEnum(Int) {
-	var InverseDistance = 0;
-	var InverseSquareDistance = 1;
-	var Logarithmic = 2;
-	var Disabled = 3;
+enum abstract AttenuationModelEnum(Int) from Int to Int {
+	var inverseDistance = 0;
+	var inverseSquareDistance = 1;
+	var logarithmic = 2;
+	var disabled = 3;
 }

@@ -1,7 +1,7 @@
 package sunaba;
 
-enum abstract InterpolationModeEnum(Int) {
-	var Linear = 0;
-	var Constant = 1;
-	var Cubic = 2;
+enum abstract InterpolationModeEnum(Int) from Int to Int {
+	var linear = 0;
+	var constant = 1;
+	var cubic = 2;
 }

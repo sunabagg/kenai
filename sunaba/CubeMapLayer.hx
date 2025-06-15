@@ -1,10 +1,10 @@
 package sunaba;
 
-enum abstract CubeMapLayer(Int) {
-	var Left = 0;
-	var Right = 1;
-	var Bottom = 2;
-	var Top = 3;
-	var Front = 4;
-	var Back = 5;
+enum abstract CubeMapLayer(Int) from Int to Int {
+	var left = 0;
+	var right = 1;
+	var bottom = 2;
+	var top = 3;
+	var front = 4;
+	var back = 5;
 }

@@ -1,10 +1,10 @@
 package sunaba;
 
-enum abstract ExpandModeEnum(Int) {
-	var KeepSize = 0;
-	var IgnoreSize = 1;
-	var FitWidth = 2;
-	var FitWidthProportional = 3;
-	var FitHeight = 4;
-	var FitHeightProportional = 5;
+enum abstract ExpandModeEnum(Int) from Int to Int {
+	var keepSize = 0;
+	var ignoreSize = 1;
+	var fitWidth = 2;
+	var fitWidthProportional = 3;
+	var fitHeight = 4;
+	var fitHeightProportional = 5;
 }

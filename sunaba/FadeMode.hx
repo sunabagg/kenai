@@ -1,9 +1,9 @@
 package sunaba;
 
-enum abstract FadeMode(Int) {
-	var Disabled = 0;
-	var In = 1;
-	var Out = 2;
-	var Cross = 3;
-	var Automatic = 4;
+enum abstract FadeMode(Int) from Int to Int {
+	var disabled = 0;
+	var in = 1;
+	var out = 2;
+	var cross = 3;
+	var automatic = 4;
 }

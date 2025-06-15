@@ -1,8 +1,8 @@
 package sunaba;
 
-enum abstract DistanceFadeModeEnum(Int) {
-	var Disabled = 0;
-	var PixelAlpha = 1;
-	var PixelDither = 2;
-	var ObjectDither = 3;
+enum abstract DistanceFadeModeEnum(Int) from Int to Int {
+	var disabled = 0;
+	var pixelAlpha = 1;
+	var pixelDither = 2;
+	var objectDither = 3;
 }

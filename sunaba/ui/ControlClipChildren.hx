@@ -1,8 +1,8 @@
 package sunaba..ui;
 
-enum abstract ControlClipChildren(Int) {
-	var Disabled = 0;
-	var Only = 1;
-	var AndDraw = 2;
-	var Max = 3;
+enum abstract ControlClipChildren(Int) from Int to Int {
+	var disabled = 0;
+	var only = 1;
+	var andDraw = 2;
+	var max = 3;
 }

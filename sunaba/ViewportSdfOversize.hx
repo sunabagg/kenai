@@ -1,9 +1,9 @@
 package sunaba;
 
-enum abstract ViewportSdfOversize(Int) {
-	var Oversize100Percent = 0;
-	var Oversize120Percent = 1;
-	var Oversize150Percent = 2;
-	var Oversize200Percent = 3;
-	var Max = 4;
+enum abstract ViewportSdfOversize(Int) from Int to Int {
+	var oversize100Percent = 0;
+	var oversize120Percent = 1;
+	var oversize150Percent = 2;
+	var oversize200Percent = 3;
+	var max = 4;
 }

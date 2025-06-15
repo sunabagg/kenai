@@ -1,10 +1,10 @@
 package sunaba;
 
-enum abstract MouseModeEnum(Int) {
-	var Visible = 0;
-	var Hidden = 1;
-	var Captured = 2;
-	var Confined = 3;
-	var ConfinedHidden = 4;
-	var Max = 5;
+enum abstract MouseModeEnum(Int) from Int to Int {
+	var visible = 0;
+	var hidden = 1;
+	var captured = 2;
+	var confined = 3;
+	var confinedHidden = 4;
+	var max = 5;
 }

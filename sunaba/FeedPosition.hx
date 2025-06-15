@@ -1,7 +1,7 @@
 package sunaba;
 
-enum abstract FeedPosition(Int) {
-	var Unspecified = 0;
-	var Front = 1;
-	var Back = 2;
+enum abstract FeedPosition(Int) from Int to Int {
+	var unspecified = 0;
+	var front = 1;
+	var back = 2;
 }

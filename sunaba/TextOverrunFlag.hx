@@ -1,10 +1,10 @@
 package sunaba;
 
-enum abstract TextOverrunFlag(Int) {
-	var NoTrim = 0;
-	var Trim = 1;
-	var TrimWordOnly = 2;
-	var AddEllipsis = 4;
-	var EnforceEllipsis = 8;
-	var JustificationAware = 16;
+enum abstract TextOverrunFlag(Int) from Int to Int {
+	var noTrim = 0;
+	var trim = 1;
+	var trimWordOnly = 2;
+	var addEllipsis = 4;
+	var enforceEllipsis = 8;
+	var justificationAware = 16;
 }

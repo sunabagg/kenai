@@ -1,12 +1,12 @@
 package sunaba;
 
-enum abstract HingeJointParam(Int) {
-	var Bias = 0;
-	var LimitUpper = 1;
-	var LimitLower = 2;
-	var LimitBias = 3;
-	var LimitSoftness = 4;
-	var LimitRelaxation = 5;
-	var MotorTargetVelocity = 6;
-	var MotorMaxImpulse = 7;
+enum abstract HingeJointParam(Int) from Int to Int {
+	var bias = 0;
+	var limitUpper = 1;
+	var limitLower = 2;
+	var limitBias = 3;
+	var limitSoftness = 4;
+	var limitRelaxation = 5;
+	var motorTargetVelocity = 6;
+	var motorMaxImpulse = 7;
 }

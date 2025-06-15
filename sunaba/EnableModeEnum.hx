@@ -1,7 +1,7 @@
 package sunaba;
 
-enum abstract EnableModeEnum(Int) {
-	var Inherit = 0;
-	var Always = 1;
-	var WhenPaused = 2;
+enum abstract EnableModeEnum(Int) from Int to Int {
+	var inherit = 0;
+	var always = 1;
+	var whenPaused = 2;
 }

@@ -1,8 +1,8 @@
 package sunaba..ui;
 
-enum abstract ColorPickerButtonVerticalIconAlignment(Int) {
-	var Top = 0;
-	var Center = 1;
-	var Bottom = 2;
-	var Fill = 3;
+enum abstract ColorPickerButtonVerticalIconAlignment(Int) from Int to Int {
+	var top = 0;
+	var center = 1;
+	var bottom = 2;
+	var fill = 3;
 }

@@ -1,10 +1,10 @@
 package sunaba;
 
-enum abstract DeviceType(Int) {
-	var Other = 0;
-	var IntegratedGpu = 1;
-	var DiscreteGpu = 2;
-	var VirtualGpu = 3;
-	var Cpu = 4;
-	var Max = 5;
+enum abstract DeviceType(Int) from Int to Int {
+	var other = 0;
+	var integratedGpu = 1;
+	var discreteGpu = 2;
+	var virtualGpu = 3;
+	var cpu = 4;
+	var max = 5;
 }

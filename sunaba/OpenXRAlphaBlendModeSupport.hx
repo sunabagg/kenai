@@ -1,7 +1,7 @@
 package sunaba;
 
-enum abstract OpenXRAlphaBlendModeSupport(Int) {
-	var None = 0;
-	var Real = 1;
-	var Emulating = 2;
+enum abstract OpenXRAlphaBlendModeSupport(Int) from Int to Int {
+	var none = 0;
+	var real = 1;
+	var emulating = 2;
 }

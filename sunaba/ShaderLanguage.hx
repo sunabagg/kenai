@@ -1,6 +1,6 @@
 package sunaba;
 
-enum abstract ShaderLanguage(Int) {
-	var Glsl = 0;
-	var Hlsl = 1;
+enum abstract ShaderLanguage(Int) from Int to Int {
+	var glsl = 0;
+	var hlsl = 1;
 }

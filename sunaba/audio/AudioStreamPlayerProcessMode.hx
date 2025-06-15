@@ -1,9 +1,9 @@
 package sunaba..audio;
 
-enum abstract AudioStreamPlayerProcessMode(Int) {
-	var Inherit = 0;
-	var Pausable = 1;
-	var WhenPaused = 2;
-	var Always = 3;
-	var Disabled = 4;
+enum abstract AudioStreamPlayerProcessMode(Int) from Int to Int {
+	var inherit = 0;
+	var pausable = 1;
+	var whenPaused = 2;
+	var always = 3;
+	var disabled = 4;
 }

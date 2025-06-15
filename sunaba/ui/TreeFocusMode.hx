@@ -1,7 +1,7 @@
 package sunaba..ui;
 
-enum abstract TreeFocusMode(Int) {
-	var None = 0;
-	var Click = 1;
-	var All = 2;
+enum abstract TreeFocusMode(Int) from Int to Int {
+	var none = 0;
+	var click = 1;
+	var all = 2;
 }

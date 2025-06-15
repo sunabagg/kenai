@@ -1,17 +1,17 @@
 package sunaba;
 
-enum abstract OperatorEnum(Int) {
-	var Add = 0;
-	var Sub = 1;
-	var Mul = 2;
-	var Div = 3;
-	var Mod = 4;
-	var Pow = 5;
-	var Max = 6;
-	var Min = 7;
-	var Cross = 8;
-	var Atan2 = 9;
-	var Reflect = 10;
-	var Step = 11;
-	var EnumSize = 12;
+enum abstract OperatorEnum(Int) from Int to Int {
+	var add = 0;
+	var sub = 1;
+	var mul = 2;
+	var div = 3;
+	var mod = 4;
+	var pow = 5;
+	var max = 6;
+	var min = 7;
+	var cross = 8;
+	var atan2 = 9;
+	var reflect = 10;
+	var step = 11;
+	var enumSize = 12;
 }

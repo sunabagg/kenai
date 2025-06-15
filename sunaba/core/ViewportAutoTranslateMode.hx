@@ -1,7 +1,7 @@
 package sunaba..core;
 
-enum abstract ViewportAutoTranslateMode(Int) {
-	var Inherit = 0;
-	var Always = 1;
-	var Disabled = 2;
+enum abstract ViewportAutoTranslateMode(Int) from Int to Int {
+	var inherit = 0;
+	var always = 1;
+	var disabled = 2;
 }

@@ -1,10 +1,10 @@
 package sunaba..ui;
 
-enum abstract GraphEditLayoutDirection(Int) {
-	var Inherited = 0;
-	var ApplicationLocale = 1;
-	var Ltr = 2;
-	var Rtl = 3;
-	var SystemLocale = 4;
-	var Max = 5;
+enum abstract GraphEditLayoutDirection(Int) from Int to Int {
+	var inherited = 0;
+	var applicationLocale = 1;
+	var ltr = 2;
+	var rtl = 3;
+	var systemLocale = 4;
+	var max = 5;
 }

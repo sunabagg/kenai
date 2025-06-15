@@ -1,7 +1,7 @@
 package sunaba;
 
-enum abstract JointParam(Int) {
-	var Bias = 0;
-	var MaxBias = 1;
-	var MaxForce = 2;
+enum abstract JointParam(Int) from Int to Int {
+	var bias = 0;
+	var maxBias = 1;
+	var maxForce = 2;
 }

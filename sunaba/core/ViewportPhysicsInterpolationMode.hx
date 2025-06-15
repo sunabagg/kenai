@@ -1,7 +1,7 @@
 package sunaba..core;
 
-enum abstract ViewportPhysicsInterpolationMode(Int) {
-	var Inherit = 0;
-	var On = 1;
-	var Off = 2;
+enum abstract ViewportPhysicsInterpolationMode(Int) from Int to Int {
+	var inherit = 0;
+	var on = 1;
+	var off = 2;
 }

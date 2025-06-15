@@ -1,8 +1,8 @@
 package sunaba;
 
-enum abstract ColorModeType(Int) {
-	var Rgb = 0;
-	var Hsv = 1;
-	var Raw = 2;
-	var Okhsl = 3;
+enum abstract ColorModeType(Int) from Int to Int {
+	var rgb = 0;
+	var hsv = 1;
+	var raw = 2;
+	var okhsl = 3;
 }

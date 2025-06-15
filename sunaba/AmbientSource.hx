@@ -1,8 +1,8 @@
 package sunaba;
 
-enum abstract AmbientSource(Int) {
-	var Bg = 0;
-	var Disabled = 1;
-	var Color = 2;
-	var Sky = 3;
+enum abstract AmbientSource(Int) from Int to Int {
+	var bg = 0;
+	var disabled = 1;
+	var color = 2;
+	var sky = 3;
 }

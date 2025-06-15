@@ -1,6 +1,6 @@
 package sunaba;
 
-enum abstract VisibilityModeEnum(Int) {
-	var Always = 0;
-	var TouchscreenOnly = 1;
+enum abstract VisibilityModeEnum(Int) from Int to Int {
+	var always = 0;
+	var touchscreenOnly = 1;
 }

@@ -1,7 +1,7 @@
 package sunaba;
 
-enum abstract LoaderFlags(Int) {
-	var None = 0;
-	var ForceLinear = 1;
-	var ConvertColors = 2;
+enum abstract LoaderFlags(Int) from Int to Int {
+	var none = 0;
+	var forceLinear = 1;
+	var convertColors = 2;
 }

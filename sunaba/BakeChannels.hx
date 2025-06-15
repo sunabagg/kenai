@@ -1,8 +1,8 @@
 package sunaba;
 
-enum abstract BakeChannels(Int) {
-	var AlbedoAlpha = 0;
-	var Normal = 1;
-	var Orm = 2;
-	var Emission = 3;
+enum abstract BakeChannels(Int) from Int to Int {
+	var albedoAlpha = 0;
+	var normal = 1;
+	var orm = 2;
+	var emission = 3;
 }

@@ -1,12 +1,12 @@
 package sunaba;
 
-enum abstract TextureFilterEnum(Int) {
-	var Default = 0;
-	var Nearest = 1;
-	var Linear = 2;
-	var NearestMipmap = 3;
-	var LinearMipmap = 4;
-	var NearestMipmapAnisotropic = 5;
-	var LinearMipmapAnisotropic = 6;
-	var Max = 7;
+enum abstract TextureFilterEnum(Int) from Int to Int {
+	var default = 0;
+	var nearest = 1;
+	var linear = 2;
+	var nearestMipmap = 3;
+	var linearMipmap = 4;
+	var nearestMipmapAnisotropic = 5;
+	var linearMipmapAnisotropic = 6;
+	var max = 7;
 }

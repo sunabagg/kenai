@@ -1,14 +1,14 @@
 package sunaba;
 
-enum abstract TrackerType(Int) {
-	var Head = 1;
-	var Controller = 2;
-	var Basestation = 4;
-	var Anchor = 8;
-	var Hand = 16;
-	var Body = 32;
-	var Face = 64;
-	var AnyKnown = 127;
-	var Unknown = 128;
-	var Any = 255;
+enum abstract TrackerType(Int) from Int to Int {
+	var head = 1;
+	var controller = 2;
+	var basestation = 4;
+	var anchor = 8;
+	var hand = 16;
+	var body = 32;
+	var face = 64;
+	var anyKnown = 127;
+	var unknown = 128;
+	var any = 255;
 }

@@ -1,7 +1,7 @@
 package sunaba..ui;
 
-enum abstract GraphEditTooltipAutoTranslateMode(Int) {
-	var Inherit = 0;
-	var Always = 1;
-	var Disabled = 2;
+enum abstract GraphEditTooltipAutoTranslateMode(Int) from Int to Int {
+	var inherit = 0;
+	var always = 1;
+	var disabled = 2;
 }

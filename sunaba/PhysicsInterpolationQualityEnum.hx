@@ -1,6 +1,6 @@
 package sunaba;
 
-enum abstract PhysicsInterpolationQualityEnum(Int) {
-	var Fast = 0;
-	var High = 1;
+enum abstract PhysicsInterpolationQualityEnum(Int) from Int to Int {
+	var fast = 0;
+	var high = 1;
 }

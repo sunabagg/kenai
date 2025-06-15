@@ -1,9 +1,9 @@
 package sunaba;
 
-enum abstract GlowBlendModeEnum(Int) {
-	var Additive = 0;
-	var Screen = 1;
-	var Softlight = 2;
-	var Replace = 3;
-	var Mix = 4;
+enum abstract GlowBlendModeEnum(Int) from Int to Int {
+	var additive = 0;
+	var screen = 1;
+	var softlight = 2;
+	var replace = 3;
+	var mix = 4;
 }

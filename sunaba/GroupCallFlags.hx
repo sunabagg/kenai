@@ -1,8 +1,8 @@
 package sunaba;
 
-enum abstract GroupCallFlags(Int) {
-	var Default = 0;
-	var Reverse = 1;
-	var Deferred = 2;
-	var Unique = 4;
+enum abstract GroupCallFlags(Int) from Int to Int {
+	var default = 0;
+	var reverse = 1;
+	var deferred = 2;
+	var unique = 4;
 }

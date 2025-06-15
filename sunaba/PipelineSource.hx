@@ -1,10 +1,10 @@
 package sunaba;
 
-enum abstract PipelineSource(Int) {
-	var Canvas = 0;
-	var Mesh = 1;
-	var Surface = 2;
-	var Draw = 3;
-	var Specialization = 4;
-	var Max = 5;
+enum abstract PipelineSource(Int) from Int to Int {
+	var canvas = 0;
+	var mesh = 1;
+	var surface = 2;
+	var draw = 3;
+	var specialization = 4;
+	var max = 5;
 }

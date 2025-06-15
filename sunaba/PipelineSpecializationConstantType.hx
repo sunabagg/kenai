@@ -1,7 +1,7 @@
 package sunaba;
 
-enum abstract PipelineSpecializationConstantType(Int) {
-	var Bool = 0;
-	var Int = 1;
-	var Float = 2;
+enum abstract PipelineSpecializationConstantType(Int) from Int to Int {
+	var bool = 0;
+	var int = 1;
+	var float = 2;
 }

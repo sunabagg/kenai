@@ -1,6 +1,6 @@
 package sunaba..spatial.physics;
 
-enum abstract VehicleBody3DCenterOfMassMode(Int) {
-	var Auto = 0;
-	var Custom = 1;
+enum abstract VehicleBody3DCenterOfMassMode(Int) from Int to Int {
+	var auto = 0;
+	var custom = 1;
 }

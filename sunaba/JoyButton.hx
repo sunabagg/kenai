@@ -1,28 +1,28 @@
 package sunaba;
 
-enum abstract JoyButton(Int) {
-	var A = 0;
-	var B = 1;
-	var X = 2;
-	var Y = 3;
-	var Back = 4;
-	var Guide = 5;
-	var Start = 6;
-	var LeftStick = 7;
-	var RightStick = 8;
-	var LeftShoulder = 9;
-	var RightShoulder = 10;
-	var DpadUp = 11;
-	var DpadDown = 12;
-	var DpadLeft = 13;
-	var DpadRight = 14;
-	var Misc1 = 15;
-	var Paddle1 = 16;
-	var Paddle2 = 17;
-	var Paddle3 = 18;
-	var Paddle4 = 19;
-	var Touchpad = 20;
-	var SdlMax = 21;
-	var Max = 128;
-	var Invalid = -1;
+enum abstract JoyButton(Int) from Int to Int {
+	var a = 0;
+	var b = 1;
+	var x = 2;
+	var y = 3;
+	var back = 4;
+	var guide = 5;
+	var start = 6;
+	var leftStick = 7;
+	var rightStick = 8;
+	var leftShoulder = 9;
+	var rightShoulder = 10;
+	var dpadUp = 11;
+	var dpadDown = 12;
+	var dpadLeft = 13;
+	var dpadRight = 14;
+	var misc1 = 15;
+	var paddle1 = 16;
+	var paddle2 = 17;
+	var paddle3 = 18;
+	var paddle4 = 19;
+	var touchpad = 20;
+	var sdlMax = 21;
+	var max = 128;
+	var invalid = -1;
 }

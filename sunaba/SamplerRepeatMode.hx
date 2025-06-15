@@ -1,10 +1,10 @@
 package sunaba;
 
-enum abstract SamplerRepeatMode(Int) {
-	var Repeat = 0;
-	var MirroredRepeat = 1;
-	var ClampToEdge = 2;
-	var ClampToBorder = 3;
-	var MirrorClampToEdge = 4;
-	var Max = 5;
+enum abstract SamplerRepeatMode(Int) from Int to Int {
+	var repeat = 0;
+	var mirroredRepeat = 1;
+	var clampToEdge = 2;
+	var clampToBorder = 3;
+	var mirrorClampToEdge = 4;
+	var max = 5;
 }

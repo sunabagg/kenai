@@ -1,6 +1,6 @@
 package sunaba;
 
-enum abstract CenterOfMassModeEnum(Int) {
-	var Auto = 0;
-	var Custom = 1;
+enum abstract CenterOfMassModeEnum(Int) from Int to Int {
+	var auto = 0;
+	var custom = 1;
 }

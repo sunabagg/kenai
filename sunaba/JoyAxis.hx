@@ -1,13 +1,13 @@
 package sunaba;
 
-enum abstract JoyAxis(Int) {
-	var LeftX = 0;
-	var LeftY = 1;
-	var RightX = 2;
-	var RightY = 3;
-	var TriggerLeft = 4;
-	var TriggerRight = 5;
-	var SdlMax = 6;
-	var Max = 10;
-	var Invalid = -1;
+enum abstract JoyAxis(Int) from Int to Int {
+	var leftX = 0;
+	var leftY = 1;
+	var rightX = 2;
+	var rightY = 3;
+	var triggerLeft = 4;
+	var triggerRight = 5;
+	var sdlMax = 6;
+	var max = 10;
+	var invalid = -1;
 }

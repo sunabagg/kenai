@@ -1,10 +1,10 @@
 package sunaba;
 
-enum abstract Scaling3DModeEnum(Int) {
-	var Bilinear = 0;
-	var Fsr = 1;
-	var Fsr2 = 2;
-	var MetalfxSpatial = 3;
-	var MetalfxTemporal = 4;
-	var Max = 5;
+enum abstract Scaling3DModeEnum(Int) from Int to Int {
+	var bilinear = 0;
+	var fsr = 1;
+	var fsr2 = 2;
+	var metalfxSpatial = 3;
+	var metalfxTemporal = 4;
+	var max = 5;
 }

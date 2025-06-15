@@ -1,7 +1,7 @@
 package sunaba;
 
-enum abstract Priority(Int) {
-	var Low = 0;
-	var Normal = 1;
-	var High = 2;
+enum abstract Priority(Int) from Int to Int {
+	var low = 0;
+	var normal = 1;
+	var high = 2;
 }

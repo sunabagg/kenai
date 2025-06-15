@@ -1,9 +1,9 @@
 package sunaba;
 
-enum abstract FeedDataType(Int) {
-	var Noimage = 0;
-	var Rgb = 1;
-	var Ycbcr = 2;
-	var YcbcrSep = 3;
-	var External = 4;
+enum abstract FeedDataType(Int) from Int to Int {
+	var noimage = 0;
+	var rgb = 1;
+	var ycbcr = 2;
+	var ycbcrSep = 3;
+	var external = 4;
 }

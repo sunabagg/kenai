@@ -1,8 +1,8 @@
 package sunaba;
 
-enum abstract TtsUtteranceEvent(Int) {
-	var Started = 0;
-	var Ended = 1;
-	var Canceled = 2;
-	var Boundary = 3;
+enum abstract TtsUtteranceEvent(Int) from Int to Int {
+	var started = 0;
+	var ended = 1;
+	var canceled = 2;
+	var boundary = 3;
 }

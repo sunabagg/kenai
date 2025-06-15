@@ -1,7 +1,7 @@
 package sunaba;
 
-enum abstract HandMotionRange(Int) {
-	var Unobstructed = 0;
-	var ConformToController = 1;
-	var Max = 2;
+enum abstract HandMotionRange(Int) from Int to Int {
+	var unobstructed = 0;
+	var conformToController = 1;
+	var max = 2;
 }

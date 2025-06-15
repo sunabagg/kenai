@@ -1,6 +1,6 @@
 package sunaba;
 
-enum abstract TransitionToTime(Int) {
-	var SamePosition = 0;
-	var Start = 1;
+enum abstract TransitionToTime(Int) from Int to Int {
+	var samePosition = 0;
+	var start = 1;
 }

@@ -1,9 +1,9 @@
 package sunaba;
 
-enum abstract ViewportUpdateMode(Int) {
-	var Disabled = 0;
-	var Once = 1;
-	var WhenVisible = 2;
-	var WhenParentVisible = 3;
-	var Always = 4;
+enum abstract ViewportUpdateMode(Int) from Int to Int {
+	var disabled = 0;
+	var once = 1;
+	var whenVisible = 2;
+	var whenParentVisible = 3;
+	var always = 4;
 }

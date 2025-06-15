@@ -1,14 +1,14 @@
 package sunaba;
 
-enum abstract TextureUsageBits(Int) {
-	var SamplingBit = 1;
-	var ColorAttachmentBit = 2;
-	var DepthStencilAttachmentBit = 4;
-	var StorageBit = 8;
-	var StorageAtomicBit = 16;
-	var CpuReadBit = 32;
-	var CanUpdateBit = 64;
-	var CanCopyFromBit = 128;
-	var CanCopyToBit = 256;
-	var InputAttachmentBit = 512;
+enum abstract TextureUsageBits(Int) from Int to Int {
+	var samplingBit = 1;
+	var colorAttachmentBit = 2;
+	var depthStencilAttachmentBit = 4;
+	var storageBit = 8;
+	var storageAtomicBit = 16;
+	var cpuReadBit = 32;
+	var canUpdateBit = 64;
+	var canCopyFromBit = 128;
+	var canCopyToBit = 256;
+	var inputAttachmentBit = 512;
 }

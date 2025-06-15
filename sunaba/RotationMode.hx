@@ -1,7 +1,7 @@
 package sunaba;
 
-enum abstract RotationMode(Int) {
-	var ResetFullRotation = 0;
-	var ResetButKeepTilt = 1;
-	var DontResetRotation = 2;
+enum abstract RotationMode(Int) from Int to Int {
+	var resetFullRotation = 0;
+	var resetButKeepTilt = 1;
+	var dontResetRotation = 2;
 }
