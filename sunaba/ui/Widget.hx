@@ -418,18 +418,18 @@ class Widget {
     }
 
     private inline function hasField(obj: Any, field: String): Bool {
-        return untyped __lua__("obj[field] != nil") || Reflect.hasField(obj, field);
+        return untyped __lua__("obj[field] ~= nil") || Reflect.hasField(obj, field);
     }
 
     private function field(obj: Any, field: String): Dynamic {
-        if (untyped __lua__("obj[field] != nil")) {
+        if (untyped __lua__("obj[field] ~= nil")) {
             return untyped __lua__("obj[field]");
         }
         return Reflect.field(obj, field);
     }
 
     private inline function setProperty(obj: Any, field: String, value: Dynamic): Void {
-        if (untyped __lua__("obj[field] != nil")) {
+        if (untyped __lua__("obj[field] ~= nil")) {
             untyped __lua__("obj[field] = value");
         }
         else {
