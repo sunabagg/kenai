@@ -172,3 +172,11 @@ void Console::register_command(const std::string &name, const std::function<void
         callback(arguments);
     };
 }
+
+void Console::display_default_output() {
+    if (default_output_handler) {
+        default_output_handler->show();
+        default_output_handler->input_line_edit->set_editable(true);
+        default_output_handler->input_line_edit->grab_focus();
+    }
+}
