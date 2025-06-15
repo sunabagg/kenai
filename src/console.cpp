@@ -15,6 +15,10 @@ Console::Console() {
     );
     
     ioManager = new sunaba::core::io::IoManager();
+    sunaba::core::io::bindByte(global_state);
+    sunaba::core::io::bindBinaryData(global_state);
+    sunaba::core::io::bindIoInterface(global_state);
+    sunaba::core::io::bindIoManger(global_state);
 
     default_output_handler = memnew(DefaultOutputHandler);
     default_output_handler->set_console(this);
