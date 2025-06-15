@@ -159,6 +159,8 @@ void App::start( const String &path) {
     ioManager->add(fsio);
     global_state.set("ioManager", ioManager);
 
+    global_state.set("__args", sol::as_table(args));
+
     ////sunaba::core::bind_all_godot_classes( global_state );
     //sunaba::core::initialize_lua( global_state );
 
