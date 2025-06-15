@@ -4,6 +4,8 @@ target_sources( ${PROJECT_NAME}
         app.h
         app.cpp
         console.h
+        console.cpp
+        default_output_handler.cpp
  )
 
 add_subdirectory( core )
