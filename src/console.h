@@ -39,7 +39,7 @@ namespace sunaba
 
         std::vector<std::function<void()>> back_to_prompt_callbacks;
 
-        bool prompt_available = false;
+        bool prompt_available = true;
 
         DefaultOutputHandler* default_output_handler = nullptr;
 
