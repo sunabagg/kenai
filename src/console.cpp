@@ -129,6 +129,14 @@ void Console::start_shell(const String &path) {
     sunaba::core::io::FileSystemIo *fs_io = sunaba::core::io::FileSystemIo::create(
         path.utf8().get_data(), "sys://"
     );
+
+    if (fs_io) {
+        ioManager->add(fs_io);
+        shell_path = fs_io->getFileUri("");
+    } else {
+        print("Failed to create FileSystemIo for path: " + path.utf8().get_data());
+        return;
+    }
     
     display_default_output();
 }
