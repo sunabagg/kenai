@@ -200,7 +200,7 @@ class Widget {
                         else {
                             throw "Invalid boolean value for field '" + attributeName + "' in element '" + Type.getClassName(Type.getClass(element)) + "'";
                         }
-                        Reflect.setProperty(element, attributeName, b);
+                        setProperty(element, attributeName, b);
                     }
                     else if (Std.isOfType(currentValue, Int)) {
                         var attrArr = attributeValue.split(".");
@@ -210,9 +210,9 @@ class Widget {
                         if (enumName != "") {
                             var enum_ = Type.resolveEnum(enumName);
                             if (enum_ != null) {
-                                var enumValue : Int = cast Reflect.field(enum_, value);
+                                var enumValue : Int = cast field(enum_, value);
                                 if (enumValue != null) {
-                                    Reflect.setProperty(element, attributeName, enumValue);
+                                    setProperty(element, attributeName, enumValue);
                                 }
                                 else {
                                     throw "Invalid enum value '" + value + "' for field '" + attributeName + "' in element '" + Type.getClassName(Type.getClass(element)) + "'";
@@ -223,21 +223,21 @@ class Widget {
                             }
                         }
                         else  {
-                            Reflect.setProperty(element, attributeName, Std.parseInt(attributeValue));
+                            setProperty(element, attributeName, Std.parseInt(attributeValue));
                         }
                     }
                     else if (Std.isOfType(currentValue, Float)) {
-                        Reflect.setProperty(element, attributeName, Std.parseFloat(attributeValue));
+                        setProperty(element, attributeName, Std.parseFloat(attributeValue));
                     }
                     else if (Std.isOfType(currentValue, String)) {
-                        Reflect.setProperty(element, attributeName, attributeValue);
+                        setProperty(element, attributeName, attributeValue);
                     }
                     else if (Std.isOfType(currentValue, Vector2)) {
                         var xy = attributeValue.split(",");
                         if (xy.length == 2) {
                             var x = Std.parseFloat(xy[0]);
                             var y = Std.parseFloat(xy[1]);
-                            Reflect.setProperty(element, attributeName, new Vector2(x, y));
+                            setProperty(element, attributeName, new Vector2(x, y));
                         }
                         else {
                             throw "Invalid Vector2 value for field '" + attributeName + "' in element '" + Type.getClassName(Type.getClass(element)) + "'";
@@ -249,7 +249,7 @@ class Widget {
                             var x = Std.parseFloat(xyz[0]);
                             var y = Std.parseFloat(xyz[1]);
                             var z = Std.parseFloat(xyz[2]);
-                            Reflect.setProperty(element, attributeName, new Vector3(x, y, z));
+                            setProperty(element, attributeName, new Vector3(x, y, z));
                         }
                         else {
                             throw "Invalid Vector3 value for field '" + attributeName + "' in element '" + Type.getClassName(Type.getClass(element)) + "'";
@@ -262,7 +262,7 @@ class Widget {
                             var y = Std.parseFloat(xyzw[1]);
                             var z = Std.parseFloat(xyzw[2]);
                             var w = Std.parseFloat(xyzw[3]);
-                            Reflect.setProperty(element, attributeName, new Vector4(x, y, z, w));
+                            setProperty(element, attributeName, new Vector4(x, y, z, w));
                         }
                         else {
                             throw "Invalid Vector4 value for field '" + attributeName + "' in element '" + Type.getClassName(Type.getClass(element)) + "'";
@@ -273,7 +273,7 @@ class Widget {
                         if (xy.length == 2) {
                             var x = Std.parseInt(xy[0]);
                             var y = Std.parseInt(xy[1]);
-                            Reflect.setProperty(element, attributeName, new Vector2i(x, y));
+                            setProperty(element, attributeName, new Vector2i(x, y));
                         }
                         else {
                             throw "Invalid Vector2i value for field '" + attributeName + "' in element '" + Type.getClassName(Type.getClass(element)) + "'";
@@ -285,7 +285,7 @@ class Widget {
                             var x = Std.parseInt(xyz[0]);
                             var y = Std.parseInt(xyz[1]);
                             var z = Std.parseInt(xyz[2]);
-                            Reflect.setProperty(element, attributeName, new Vector3i(x, y, z));
+                            setProperty(element, attributeName, new Vector3i(x, y, z));
                         }
                         else {
                             throw "Invalid Vector3i value for field '" + attributeName + "' in element '" + Type.getClassName(Type.getClass(element)) + "'";
@@ -298,7 +298,7 @@ class Widget {
                             var y = Std.parseInt(xyzw[1]);
                             var z = Std.parseInt(xyzw[2]);
                             var w = Std.parseInt(xyzw[3]);
-                            Reflect.setProperty(element, attributeName, new Vector4i(x, y, z, w));
+                            setProperty(element, attributeName, new Vector4i(x, y, z, w));
                         }
                         else {
                             throw "Invalid Vector4i value for field '" + attributeName + "' in element '" + Type.getClassName(Type.getClass(element)) + "'";
@@ -307,7 +307,7 @@ class Widget {
                     else if (Std.isOfType(currentValue, Color)) {
                         var color = Color.html(attributeValue);
                         if (color != null) {
-                            Reflect.setProperty(element, attributeName, color);
+                            setProperty(element, attributeName, color);
                         }
                         else {
                             throw "Invalid Color value for field '" + attributeName + "' in element '" + Type.getClassName(Type.getClass(element)) + "'";
@@ -318,7 +318,7 @@ class Widget {
                         if (image != null) {
                             var texture = ImageTexture.createFromImage(image);
                             if (texture != null) {
-                                Reflect.setProperty(element, attributeName, texture);
+                                setProperty(element, attributeName, texture);
                             }
                             else {
                                 throw "Failed to create Texture2D from image for field '" + attributeName + "' in element '" + Type.getClassName(Type.getClass(element)) + "'";
@@ -333,7 +333,7 @@ class Widget {
                         if (image != null) {
                             var texture = ImageTexture.createFromImage(image);
                             if (texture != null) {
-                                Reflect.setProperty(element, attributeName, texture);
+                                setProperty(element, attributeName, texture);
                             }
                             else {
                                 throw "Failed to create Texture2D from image for field '" + attributeName + "' in element '" + Type.getClassName(Type.getClass(element)) + "'";
@@ -426,7 +426,15 @@ class Widget {
             return untyped __lua__("obj[field]");
         }
         return Reflect.field(obj, field);
-        
+    }
+
+    private inline function setProperty(obj: Any, field: String, value: Dynamic): Void {
+        if (untyped __lua__("obj[field] != nil")) {
+            untyped __lua__("obj[field] = value");
+        }
+        else {
+            Reflect.setProperty(obj, field, value);
+        }
     }
 
     private function isAnElementClass(classInfo: Class<Dynamic>): Bool {
