@@ -11,7 +11,7 @@ DefaultOutputHandler::DefaultOutputHandler() {
 
     auto resource_loader = ResourceLoader::get_singleton();
     if (resource_loader) {
-        Ref<Theme> theme = resource_loader->load("res://themes/default_theme.tres");
+        Ref<Theme> theme = resource_loader->load("res://console_theme.tres");
         if (theme.is_valid()) {
             set_theme(theme);
         }
