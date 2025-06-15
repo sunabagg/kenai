@@ -5,6 +5,8 @@
 #include "app.h"
 
 #include <godot_cpp/classes/theme.hpp>
+#include <godot_cpp/classes/window.hpp>
+#include <godot_cpp/classes/resource_loader.hpp>
 
 using namespace sunaba;
 
@@ -325,6 +327,13 @@ void Console::run_executable_dir(const std::vector<std::string> &args) {
     App* app = memnew(App);
     add_child(app);
     app->args = args;
+    auto resource_loader = ResourceLoader::get_singleton();
+    if (resource_loader) {
+        Ref<Theme> theme = resource_loader->load("res://console_theme.tres");
+        if (theme.is_valid()) {
+            app->get_window()->set_theme(theme);
+        }
+    }
     app->start(String(shell_path).utf8().get_data());
 }
 
