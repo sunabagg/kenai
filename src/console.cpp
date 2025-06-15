@@ -141,3 +141,18 @@ void Console::start_shell(const String &path) {
     
     display_default_output();
 }
+
+void Console::run_command(const String &command) {
+    if (!prompt_available) {
+        print("Prompt is not available. Please wait for the shell to be ready.");
+        return;
+    }
+    prompt_available = false;
+    sol::protected_function_result result = global_state.safe_script(command.utf8().get_data(), sol::script_pass_on_error);
+    if (!result.valid()) {
+        sol::error err = result;
+        print(String("Error executing command: " + String(err.what())).utf8().get_data());
+    } else {
+        prompt_available = true;
+    }
+}
