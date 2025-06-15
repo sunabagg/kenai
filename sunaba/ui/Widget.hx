@@ -25,7 +25,7 @@ import Type;
 class Widget {
     public var rootElement: Control;
     public var io: IoManager;
-    
+    public var keepChildren: Bool = false;
 
     public function new() {
         io = untyped __lua__("_G.ioManager");
@@ -54,7 +54,7 @@ class Widget {
     }
 
     private function instantiate(xml: Xml): Void {
-        if (rootElement != null) {
+        if (rootElement != null && !keepChildren) {
             var childrenTable : Table<Int, Element> = rootElement.getChildren();
             var children : Array<Element> = Table.toArray(childrenTable);
             for (i in 0... children.length) {
