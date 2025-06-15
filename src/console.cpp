@@ -127,6 +127,56 @@ Console::Console() {
         }
         run_executable_dir(arguments);
     };
+
+    register_command("cd", [this](const std::vector<std::string> &args) {
+        if (args.empty()) {
+            print("cd command requires a path argument.");
+            return;
+        }
+        if (args.size() > 1) {
+            print("cd command accepts only one argument.");
+            return;
+        }
+        std::string new_path = args[0];
+        if (new_path.empty()) {
+            print("cd command requires a non-empty path.");
+            return;
+        }
+        if (new_path == "..") {
+            if (!new_path.empty()) {
+                auto shellPath_arr = shell_path.split("://");
+                String shellPath = shellPath_arr[1];
+                String shell_root = shellPath_arr[0] + "://";
+                auto new_shell_path_arr = shellPath.split("/");
+                if (new_shell_path_arr.size() > 1) {
+                    new_shell_path_arr.remove_at(new_shell_path_arr.size() - 1); // Remove the last element (current directory)
+                    String joined_path;
+                    for (int i = 0; i < new_shell_path_arr.size(); ++i) {
+                        if (i > 0) {
+                            joined_path += "/";
+                        }
+                        joined_path += new_shell_path_arr[i];
+                    }
+                    shell_path = shell_root + joined_path;
+                } else {
+                    print("Already at the root directory.");
+                }
+            } else {
+                print("Cannot go up from the root directory.");
+            }
+        } else if (String(new_path.c_str()).contains("://")) {
+            // If the path is absolute, set it directly
+            shell_path = new_path.c_str();
+        } else {
+            // If the path is relative, append it to the current shell path
+            if (!(shell_path).ends_with("/")) {
+                shell_path += "/";
+            }
+            String current_path = shell_path.utf8().get_data();
+            current_path += new_path.c_str();
+            shell_path = current_path.utf8().get_data();
+        }
+    });
 }
 
 void Console::print(const std::string &message) {
