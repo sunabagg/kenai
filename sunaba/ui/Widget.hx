@@ -70,9 +70,9 @@ class Widget {
             if (firstElement.nodeName == "suml") {
                 var fullScreenAtt = firstElement.get("fullscreen");
                 if (fullScreenAtt == "true") {
-                    rootElement.setAnchorsAndOffsetsPreset(cast LayoutPreset.FullRect, cast LayoutPresetMode.KeepSize);
-                    rootElement.sizeFlagsHorizontal = cast SizeFlags.Fill;
-                    rootElement.sizeFlagsVertical = cast SizeFlags.Fill;
+                    rootElement.setAnchorsAndOffsetsPreset(LayoutPreset.fullRect, LayoutPresetMode.keepSize);
+                    rootElement.sizeFlagsHorizontal = SizeFlags.fill;
+                    rootElement.sizeFlagsVertical = SizeFlags.fill;
                 }
                 else {
                     var anchorTopAtt = firstElement.get("anchorTop");
