@@ -37,9 +37,6 @@ namespace sunaba
 
         DefaultOutputHandler* default_output_handler = nullptr;
 
-        DefaultOutputHandler* get_default_output_handler() const;
-        void set_default_output_handler(DefaultOutputHandler* handler);
-
         void _ready() override;
 
         void display_default_output();
