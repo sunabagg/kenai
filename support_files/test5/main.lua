@@ -3393,7 +3393,7 @@ __sunaba_ui_Widget.prototype.setObjectValues = function(self,element,xml)
       element.name = attributeValue;
     else
       local tmp;
-      if (not obj[field] != nil) then 
+      if (not obj[field] ~= nil) then 
         local o = element;
         tmp = (function() 
           local _hx_1
@@ -3433,7 +3433,7 @@ __sunaba_ui_Widget.prototype.setObjectValues = function(self,element,xml)
               _G.error(__haxe_Exception.thrown(Std.string(Std.string(Std.string(Std.string("Invalid boolean value for field '") .. Std.string(attributeName)) .. Std.string("' in element '")) .. Std.string(c.__name__)) .. Std.string("'")),0);
             end;
           end;
-          if (obj[field] != nil) then 
+          if (obj[field] ~= nil) then 
             obj[field] = value;
           else
             Reflect.setProperty(element, attributeName, b);
@@ -3449,7 +3449,7 @@ __sunaba_ui_Widget.prototype.setObjectValues = function(self,element,xml)
               if (enum_ ~= nil) then 
                 local enumValue = self:field(enum_, value);
                 if (enumValue ~= nil) then 
-                  if (obj[field] != nil) then 
+                  if (obj[field] ~= nil) then 
                     obj[field] = value;
                   else
                     Reflect.setProperty(element, attributeName, enumValue);
@@ -3463,7 +3463,7 @@ __sunaba_ui_Widget.prototype.setObjectValues = function(self,element,xml)
               end;
             else
               local value = Std.parseInt(attributeValue);
-              if (obj[field] != nil) then 
+              if (obj[field] ~= nil) then 
                 obj[field] = value;
               else
                 Reflect.setProperty(element, attributeName, value);
@@ -3472,14 +3472,14 @@ __sunaba_ui_Widget.prototype.setObjectValues = function(self,element,xml)
           else
             if (__lua_Boot.__instanceof(currentValue, Float)) then 
               local value = Std.parseFloat(attributeValue);
-              if (obj[field] != nil) then 
+              if (obj[field] ~= nil) then 
                 obj[field] = value;
               else
                 Reflect.setProperty(element, attributeName, value);
               end;
             else
               if (__lua_Boot.__instanceof(currentValue, String)) then 
-                if (obj[field] != nil) then 
+                if (obj[field] ~= nil) then 
                   obj[field] = value;
                 else
                   Reflect.setProperty(element, attributeName, attributeValue);
@@ -3491,7 +3491,7 @@ __sunaba_ui_Widget.prototype.setObjectValues = function(self,element,xml)
                     local x = Std.parseFloat(xy[0]);
                     local y = Std.parseFloat(xy[1]);
                     local value = Vector2.new(x, y);
-                    if (obj[field] != nil) then 
+                    if (obj[field] ~= nil) then 
                       obj[field] = value;
                     else
                       Reflect.setProperty(element, attributeName, value);
@@ -3508,7 +3508,7 @@ __sunaba_ui_Widget.prototype.setObjectValues = function(self,element,xml)
                       local y = Std.parseFloat(xyz[1]);
                       local z = Std.parseFloat(xyz[2]);
                       local value = Vector3.new(x, y, z);
-                      if (obj[field] != nil) then 
+                      if (obj[field] ~= nil) then 
                         obj[field] = value;
                       else
                         Reflect.setProperty(element, attributeName, value);
@@ -3526,7 +3526,7 @@ __sunaba_ui_Widget.prototype.setObjectValues = function(self,element,xml)
                         local z = Std.parseFloat(xyzw[2]);
                         local w = Std.parseFloat(xyzw[3]);
                         local value = Vector4.new(x, y, z, w);
-                        if (obj[field] != nil) then 
+                        if (obj[field] ~= nil) then 
                           obj[field] = value;
                         else
                           Reflect.setProperty(element, attributeName, value);
@@ -3542,7 +3542,7 @@ __sunaba_ui_Widget.prototype.setObjectValues = function(self,element,xml)
                           local x = Std.parseInt(xy[0]);
                           local y = Std.parseInt(xy[1]);
                           local value = Vector2i.new(x, y);
-                          if (obj[field] != nil) then 
+                          if (obj[field] ~= nil) then 
                             obj[field] = value;
                           else
                             Reflect.setProperty(element, attributeName, value);
@@ -3559,7 +3559,7 @@ __sunaba_ui_Widget.prototype.setObjectValues = function(self,element,xml)
                             local y = Std.parseInt(xyz[1]);
                             local z = Std.parseInt(xyz[2]);
                             local value = Vector3i.new(x, y, z);
-                            if (obj[field] != nil) then 
+                            if (obj[field] ~= nil) then 
                               obj[field] = value;
                             else
                               Reflect.setProperty(element, attributeName, value);
@@ -3577,7 +3577,7 @@ __sunaba_ui_Widget.prototype.setObjectValues = function(self,element,xml)
                               local z = Std.parseInt(xyzw[2]);
                               local w = Std.parseInt(xyzw[3]);
                               local value = Vector4i.new(x, y, z, w);
-                              if (obj[field] != nil) then 
+                              if (obj[field] ~= nil) then 
                                 obj[field] = value;
                               else
                                 Reflect.setProperty(element, attributeName, value);
@@ -3590,7 +3590,7 @@ __sunaba_ui_Widget.prototype.setObjectValues = function(self,element,xml)
                             if (__lua_Boot.__instanceof(currentValue, Color)) then 
                               local color = Color.html(attributeValue);
                               if (color ~= nil) then 
-                                if (obj[field] != nil) then 
+                                if (obj[field] ~= nil) then 
                                   obj[field] = value;
                                 else
                                   Reflect.setProperty(element, attributeName, color);
@@ -3605,7 +3605,7 @@ __sunaba_ui_Widget.prototype.setObjectValues = function(self,element,xml)
                                 if (image ~= nil) then 
                                   local texture = ImageTexture.createFromImage(image);
                                   if (texture ~= nil) then 
-                                    if (obj[field] != nil) then 
+                                    if (obj[field] ~= nil) then 
                                       obj[field] = value;
                                     else
                                       Reflect.setProperty(element, attributeName, texture);
@@ -3624,7 +3624,7 @@ __sunaba_ui_Widget.prototype.setObjectValues = function(self,element,xml)
                                   if (image ~= nil) then 
                                     local texture = ImageTexture.createFromImage(image);
                                     if (texture ~= nil) then 
-                                      if (obj[field] != nil) then 
+                                      if (obj[field] ~= nil) then 
                                         obj[field] = value;
                                       else
                                         Reflect.setProperty(element, attributeName, texture);
@@ -3745,7 +3745,7 @@ __sunaba_ui_Widget.prototype.constructChildren = function(self,element,xml)
   end;
 end
 __sunaba_ui_Widget.prototype.hasField = function(self,obj,field) 
-  if (not obj[field] != nil) then 
+  if (not obj[field] ~= nil) then 
     local o = obj;
     if ((_G.type(o) == "function") and not ((function() 
       local _hx_1
@@ -3777,13 +3777,13 @@ __sunaba_ui_Widget.prototype.hasField = function(self,obj,field)
   end;
 end
 __sunaba_ui_Widget.prototype.field = function(self,obj,field) 
-  if (obj[field] != nil) then 
+  if (obj[field] ~= nil) then 
     do return obj[field] end;
   end;
   do return Reflect.field(obj, field) end
 end
 __sunaba_ui_Widget.prototype.setProperty = function(self,obj,field,value) 
-  if (obj[field] != nil) then 
+  if (obj[field] ~= nil) then 
     obj[field] = value;
   else
     Reflect.setProperty(obj, field, value);
