@@ -280,16 +280,16 @@ void Console::run_executable(std::string &path, const std::vector<std::string> &
 
         // TODO: implement the logic to run the executable
     }
+}
 
-    void run_executable_dir(const std::vector<std::string> &args) {
-        if (args.empty()) {
-            print("No arguments provided for run_executable_dir.");
-            return;
-        }
-
-        App* app = memnew(App);
-        add_child(app);
-        app->args = args;
-        app->start(String(shell_path).utf8().get_data());
+void Console::run_executable_dir(const std::vector<std::string> &args) {
+    if (args.empty()) {
+        print("No arguments provided for run_executable_dir.");
+        return;
     }
+
+    App* app = memnew(App);
+    add_child(app);
+    app->args = args;
+    app->start(String(shell_path).utf8().get_data());
 }
