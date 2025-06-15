@@ -180,3 +180,7 @@ void Console::display_default_output() {
         default_output_handler->input_line_edit->grab_focus();
     }
 }
+
+void Console::unregister_command(const std::string &name) {
+    global_state[name] = sol::nil;
+}
