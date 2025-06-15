@@ -13,6 +13,7 @@ Console::Console() {
     default_output_handler = memnew(DefaultOutputHandler);
     default_output_handler->set_console(this);
     add_child(default_output_handler);
+    default_output_handler->hide();
 
     global_state["print"] = [this]( sol::variadic_args args ) {
         String msg;
