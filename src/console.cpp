@@ -148,11 +148,12 @@ void Console::run_command(const String &command) {
         return;
     }
     prompt_available = false;
+    default_output_handler->input_line_edit->set_editable(false);
     sol::protected_function_result result = global_state.safe_script(command.utf8().get_data(), sol::script_pass_on_error);
     if (!result.valid()) {
         sol::error err = result;
         print(String("Error executing command: " + String(err.what())).utf8().get_data());
-    } else {
-        prompt_available = true;
     }
+    prompt_available = true;
+    default_output_handler->input_line_edit->set_editable(true);
 }
