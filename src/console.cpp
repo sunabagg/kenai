@@ -215,6 +215,6 @@ void Console::run_executable(std::string &path, const std::vector<std::string> &
             return;
         }
 
-
+        // TODO: implement the logic to run the executable
     }
 }
