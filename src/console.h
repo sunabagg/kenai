@@ -3,6 +3,7 @@
 
 #include <godot_cpp/classes/node.hpp>
 #include <sol/state.hpp>
+#include <map>
 
 #include "core/io/io_manager.h"
 
@@ -23,6 +24,8 @@ namespace sunaba
         sunaba::core::io::IoManager* ioManager;
 
         String shell_path;
+
+        std::map<std::string, std::function<void(const std::vector<std::string> &args)>> commands;
 
         void _ready() override;
 
