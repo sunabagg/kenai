@@ -152,7 +152,8 @@ class Widget {
         var className = xml.nodeName;
         var classType = Type.resolveClass(className);
         if (classType == null) {
-            classType = untyped __lua__("_G." + camelToPascal(className));
+            className = camelToPascal(className);
+            classType = untyped __lua__("_G[className]");
         }
         if (classType != null) {
             if (isAnElementClass(classType)) {
