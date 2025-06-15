@@ -1,6 +1,7 @@
 #include "console.h"
 
 #include <godot_cpp/classes/resource_loader.hpp>
+#include <godot_cpp/classes/theme.hpp>
 
 using namespace sunaba;
 
