@@ -27,11 +27,17 @@ namespace sunaba
 
         std::map<std::string, std::function<void(const std::vector<std::string> &args)>> commands;
 
+        std::vector<std::function<void(const String &output)>> output_callbacks;
+
         void _ready() override;
 
         void start_shell(const String &path);
 
         void run_command(const String &command);
+
+        void register_command(const String &name, const std::function<void(const std::vector<std::string> &args)> &callback);
+        
+        void unregister_command(const String &name);
     };
 }
 
