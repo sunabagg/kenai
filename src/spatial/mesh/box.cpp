@@ -5,7 +5,6 @@ void sunaba::spatial::mesh::bindBox(sol::state& lua) {
         "Box",
         sol::constructors<Box()>(),
         sol::base_classes, sol::bases<std::shared_ptr<Component>>(),
-        sol::meta_function::garbage_collect, sol::destructor([](Box* b) {  }),
         "size", sol::property(&Box::getSize, &Box::setSize),
         "subdivideDepth", sol::property(&Box::getSubdivideDepth, &Box::setSubdivideDepth),
         "subdivideHeight", sol::property(&Box::getSubdivideHeight, &Box::setSubdivideHeight),
