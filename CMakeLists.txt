@@ -423,6 +423,7 @@ if (USE_LUAJIT)
             godot-cpp
             ${LUAJIT_STATIC_LIBRARIES}
             sol2
+            pcre2_rexlib
             #hxsimdjson
             #Luau.Compiler Luau.VM
     )
