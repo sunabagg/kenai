@@ -461,7 +461,7 @@ static const luaL_Reg r_functions[] = {
 };
 
 /* Open the library */
-LUALIB_API int REX_OPENLIB (lua_State *L) {
+int REX_OPENLIB (lua_State *L) {
   char buf_ver[64];
   pcre2_config(PCRE2_CONFIG_VERSION, buf_ver);
   if (PCRE2_MAJOR > atoi (buf_ver)) {
