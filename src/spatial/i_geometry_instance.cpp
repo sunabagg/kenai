@@ -5,7 +5,6 @@ void sunaba::spatial::bindGeometryInstance(sol::state& lua) {
         "IGeometryInstance",
         sol::constructors<IGeometryInstance()>(),
         sol::base_classes, sol::bases<std::shared_ptr<BaseObject>, std::shared_ptr<IVisualInstance>, std::shared_ptr<Component>>(),
-        sol::meta_function::garbage_collect, sol::destructor([](IGeometryInstance* i) {  }),
         "castShadow", sol::property(&IGeometryInstance::getCastShadow, &IGeometryInstance::setCastShadow),
         "customAabb", sol::property(&IGeometryInstance::getCustomAabb, &IGeometryInstance::setCustomAabb),
         "giMode", sol::property(&IGeometryInstance::getGiMode, &IGeometryInstance::setGiMode),
