@@ -13,7 +13,7 @@ void sunaba::core::bindSceneSystem(sol::state& lua)
     );
     lua.new_usertype<Scene>(
         "Scene", 
-        sol::base_classes, sol::bases<BaseObject>(),
+        sol::base_classes, sol::bases<std::shared_ptr<BaseObject>>(),
         sol::meta_function::garbage_collect, sol::destructor([](Scene* s) {  }),
         "addEntity", &Scene::addEntity, 
         "hasEntity", &Scene::hasEntity, 
