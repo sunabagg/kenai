@@ -57,9 +57,9 @@ void sunaba::core::bindSceneSystem(sol::state& lua)
         "getChildCount", &Entity::getChildCount,
         "getChild", &Entity::getChild
     );
-    lua.new_usertype<Component>(
+    lua.new_usertype<std::shared_ptr<Component>>(
         "Component", 
-        sol::base_classes, sol::bases<BaseObject>(),
+        sol::base_classes, sol::bases<std::shared_ptr<BaseObject>>(),
         sol::meta_function::garbage_collect, sol::destructor([](Component* c) {  
         }),
         "entity", sol::property( 
