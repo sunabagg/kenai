@@ -33,8 +33,7 @@
 #include <array>
 #include <memory>
 #include <stdexcept>
-#include <pcre2/lpcre2.c>
-#include <pcre2/lpcre2_f.c>
+#include <pcre2/lpcre2.h>
 
 using namespace sunaba;
 using namespace sunaba::core;
@@ -74,12 +73,13 @@ void App::start( const String &path) {
         sol::lib::table, sol::lib::utf8, sol::lib::package, 
         sol::lib::os, sol::lib::io, sol::lib::debug );
 
+        lua_State* L = global_state.lua_state();
 // hack fix for PUC-Rio Lua
 #ifdef USE_PUCRIO_LUA
-        lua_State* L = global_state.lua_state();
         luaopen_bit(L);
 #endif
     
+    REX_OPENLIB(L); // Register the PCRE2 library
 
     global_state["print"] = [this]( sol::variadic_args args ) {
         String msg;
