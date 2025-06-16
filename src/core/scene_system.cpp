@@ -23,10 +23,10 @@ void sunaba::core::bindSceneSystem(sol::state& lua)
         "getEntityCount", &Scene::getEntityCount,
         "getEntity", &Scene::getEntity
     );
-    lua.new_usertype<Entity>(
+    lua.new_usertype<std::shared_ptr<Entity>>(
         "Entity", 
         sol::constructors<Entity()>(),
-        sol::base_classes, sol::bases<BaseObject>(),
+        sol::base_classes, sol::bases<std::shared_ptr<BaseObject>>(),
         sol::meta_function::garbage_collect, sol::destructor([](Entity* e) {  }),
         "name",sol::property( 
             [](Entity* e) { 
