@@ -11,10 +11,7 @@
 namespace sunaba::core
 {
     //static void generateBaseObjectUsertype(lua_State* L);
-
-    class BaseObject {};
-
-    class BaseObject : public std::enable_shared_from_this<BaseObject>
+    class BaseObject
     {
     public: 
         virtual void onNotification( int p_what ) {}
@@ -31,6 +28,29 @@ namespace sunaba::core
         }
 
         virtual ~BaseObject() {
+            if (!freed) {
+                free();
+            }
+        }
+    };
+
+    class SharedObject
+    {
+    public: 
+        virtual void onNotification( int p_what ) {}
+
+        void notification(const int p_notification, bool p_reversed = false);
+
+        bool freed = false;
+
+        virtual void onFree() {}
+        
+        void free() { 
+            this->onFree();
+            freed = true;
+        }
+
+        virtual ~SharedObject() {
             if (!freed) {
                 free();
             }
