@@ -405,7 +405,7 @@ else()
     # Add non-debug-specific settings here
 endif()
 
-set( CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -DLUA_USE_DLOPEN" )
+set( LUA_USE_DLOPEN ON )
 
 # Link the libraries
 if (USE_LUAJIT)
