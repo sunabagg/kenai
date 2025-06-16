@@ -4,7 +4,7 @@ void sunaba::spatial::bindVisualInstance(sol::state& lua) {
     lua.new_usertype<std::shared_ptr<IVisualInstance>>(
         "IVisualInstance",
         sol::constructors<IVisualInstance()>(),
-        sol::base_classes, sol::bases<std::shared_ptr<BaseObject>, std::shared_ptr<Component>>(),
+        sol::base_classes, sol::bases<std::shared_ptr<SharedObject>, std::shared_ptr<Component>>(),
         "layerMask", sol::property(&IVisualInstance::getLayerMask, &IVisualInstance::setLayerMask),
         "sortingOffset", sol::property(&IVisualInstance::getSortingOffset, &IVisualInstance::setSortingOffset),
         "sortingUseAabbCenter", sol::property(&IVisualInstance::getSortingUseAabbCenter, &IVisualInstance::setSortingUseAabbCenter),
