@@ -34,6 +34,7 @@
 #include <memory>
 #include <stdexcept>
 #include <pcre2/lpcre2.c>
+#include <pcre2/lpcre2_f.c>
 
 using namespace sunaba;
 using namespace sunaba::core;

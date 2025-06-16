@@ -12,7 +12,7 @@ static flag_pair pcre2_flags[] = {
   { "MAJOR",                         PCRE2_MAJOR },
   { "MINOR",                         PCRE2_MINOR },
 /*---------------------------------------------------------------------------*/
-  { "ANCHORED",                      PCRE2_ANCHORED },
+  { "ANCHORED",                      (int)PCRE2_ANCHORED },
   { "NO_UTF_CHECK",                  PCRE2_NO_UTF_CHECK },
   { "ALLOW_EMPTY_CLASS",             PCRE2_ALLOW_EMPTY_CLASS },
   { "ALT_BSUX",                      PCRE2_ALT_BSUX },
@@ -178,33 +178,6 @@ static flag_pair pcre2_config_flags[] = {
 /*---------------------------------------------------------------------------*/
   { NULL, 0 }
 };
-
-int Lpcre2_config (lua_State *L) {
-  flag_pair *fp;
-  if (lua_istable (L, 1))
-    lua_settop (L, 1);
-  else
-    lua_newtable (L);
-  for (fp = pcre2_config_flags; fp->key; ++fp) {
-    if (fp->val == PCRE2_CONFIG_JITTARGET) {
-#if PCRE2_CODE_UNIT_WIDTH == 8
-      char buf[64];
-      if (PCRE2_ERROR_BADOPTION != pcre2_config (fp->val, buf)) {
-        lua_pushstring (L, buf);
-        lua_setfield (L, -2, fp->key);
-      }
-#endif
-    }
-    else {
-      int val;
-      if (0 == pcre2_config (fp->val, &val)) {
-        lua_pushinteger (L, val);
-        lua_setfield (L, -2, fp->key);
-      }
-    }
-  }
-  return 1;
-}
 
 int Lpcre2_get_flags (lua_State *L) {
   const flag_pair* fps[] = { pcre2_flags, pcre2_error_flags, NULL };

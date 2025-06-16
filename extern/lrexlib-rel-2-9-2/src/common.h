@@ -97,7 +97,6 @@ void *Lrealloc (lua_State *L, void *p, size_t osize, size_t nsize);
 void Lfree (lua_State *L, void *p, size_t size);
 
 #ifndef REX_NOEMBEDDEDTEST
-int newmembuffer (lua_State *L);
 #endif
 
 #endif
