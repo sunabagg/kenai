@@ -46,14 +46,14 @@ namespace sunaba::spatial::mesh {
 
         void onInit() override {
             capsuleMesh = memnew(CapsuleMesh);
-            MeshRenderer* meshRenderer = entity->getComponentByT<MeshRenderer>();
+            std::shared_ptr<MeshRenderer> meshRenderer = entity->getComponentByT<MeshRenderer>();
             meshRenderer->getNode()->set_mesh(capsuleMesh);
         }
 
         void onFree() override {
             Component::onFree();
             if (capsuleMesh != nullptr) {
-                MeshRenderer* meshRenderer = entity->getComponentByT<MeshRenderer>();
+                std::shared_ptr<MeshRenderer> meshRenderer = entity->getComponentByT<MeshRenderer>();
                 meshRenderer->getNode()->set_mesh(nullptr);
                 capsuleMesh->unreference();
                 capsuleMesh = nullptr;
