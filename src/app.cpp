@@ -181,7 +181,7 @@ void App::start( const String &path) {
     
     global_state.script(extract_luarocks_lua_paths());
     global_state.script(R"(
-        print(package.path)
+        print(package.cpath)
         --package.path = "/usr/local/lib/luarocks/rocks-5.1/?.lua;" .. package.path
         --package.cpath = "/usr/local/lib/luarocks/rocks-5.1/?.so;" .. package.cpath
     )");
