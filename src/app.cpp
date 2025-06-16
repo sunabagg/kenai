@@ -78,7 +78,6 @@ void App::start( const String &path) {
         luaopen_bit(L);
 #endif
     
-    REX_OPENLIB(L); // Register the PCRE2 library
 
     global_state["print"] = [this]( sol::variadic_args args ) {
         String msg;
