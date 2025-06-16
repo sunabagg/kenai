@@ -4,12 +4,12 @@ project(lrexlib VERSION 2.9.2 LANGUAGES C)
 # Supported engines (regex backends)
 set(REGEX_BACKENDS pcre2)
 
-# Collect all sources
-foreach(backend ${REGEX_BACKENDS})
-    file(GLOB_RECURSE BACKEND_SRCS CONFIGURE_DEPENDS src/${backend}/*)
-    add_library(${backend}_rexlib STATIC ${BACKEND_SRCS})
-    target_include_directories(${backend}_rexlib PUBLIC src/${backend})
-endforeach()
+file(GLOB PCRE2_SRCS CONFIGURE_DEPENDS src/pcre2/*.c)
+file(GLOB CORE_SRCS CONFIGURE_DEPENDS src/*.c)
+add_library(pcre2_rexlib STATIC ${PCRE2_SRCS} ${CORE_SRCS})
+target_include_directories(pcre2_rexlib PUBLIC src/pcre2)
+target_include_directories(pcre2_rexlib PUBLIC src)
+
 
 # HTML docs
 file(MAKE_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}/doc)
