@@ -60,8 +60,6 @@ void sunaba::core::bindSceneSystem(sol::state& lua)
     lua.new_usertype<std::shared_ptr<Component>>(
         "Component", 
         sol::base_classes, sol::bases<std::shared_ptr<BaseObject>>(),
-        sol::meta_function::garbage_collect, sol::destructor([](Component* c) {  
-        }),
         "entity", sol::property( 
             [](Component* c) { 
                 return c->entity; 
