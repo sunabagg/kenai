@@ -173,18 +173,19 @@ void App::start( const String &path) {
     std::string script = ioManager->loadText("app://main.lua");
     //UtilityFunctions::print(script.c_str());
     //global_state.script(script);
+    
+    global_state.script(extract_luarocks_lua_paths());
     global_state.script(R"(
-        local luarocks_path = require('luarocks.path')
-        package.path = luarocks_path.package_path .. ";" .. package.path
-        package.cpath = luarocks_path.package_cpath .. ";" .. package.cpath
+        print(package.path)
+        --package.path = "/usr/local/lib/luarocks/rocks-5.1/?.lua;" .. package.path
+        --package.cpath = "/usr/local/lib/luarocks/rocks-5.1/?.so;" .. package.cpath
     )");
 
     if (OS::get_singleton()->has_feature("editor")) {
+        UtilityFunctions::print("Running in editor mode, skipping luarocks path setup.");
         if (OS::get_singleton()->get_name() == "macOS") {
-            global_state.script(R"(
-                package.path = "/usr/local/lib/luarocks/rocks-5.1/?.lua;" .. package.path
-                package.cpath = "/usr/local/lib/luarocks/rocks-5.1/?.so;" .. package.cpath
-            )");
+            UtilityFunctions::print("macOS detected, setting up luarocks path.");
+            
         }
     }
 
@@ -200,6 +201,34 @@ void App::start( const String &path) {
     } else {
         //UtilityFunctions::print("Script executed successfully");
     }
+}
+
+std::string extract_luarocks_lua_paths() {
+    std::array<char, 512> buffer;
+    std::string result;
+    std::unique_ptr<FILE, decltype(&pclose)> pipe(popen("luarocks path", "r"), pclose);
+    if (!pipe) throw std::runtime_error("Failed to run luarocks");
+
+    while (fgets(buffer.data(), buffer.size(), pipe.get()) != nullptr) {
+        result += buffer.data();
+    }
+
+    std::string lua_script;
+
+    auto extract_env = [&](const std::string& key, const std::string& lua_var) {
+        auto pos = result.find("export " + key + "='");
+        if (pos != std::string::npos) {
+            auto start = pos + key.size() + 9;
+            auto end = result.find("'", start);
+            std::string path = result.substr(start, end - start);
+            lua_script += "package." + lua_var + " = \"" + path + ";\" .. package." + lua_var + ";\n";
+        }
+    };
+
+    extract_env("LUA_PATH", "path");
+    extract_env("LUA_CPATH", "cpath");
+
+    return lua_script;
 }
 
 void App::_process(double delta) {
