@@ -1,7 +1,7 @@
 /* lpcre2_f.c - Lua binding of PCRE2 library */
 /* See Copyright Notice in the file LICENSE */
 
-#include <pcre2.h>
+#include "pcre2.h"
 #include "lua.h"
 #include "lauxlib.h"
 #include "../common.h"
