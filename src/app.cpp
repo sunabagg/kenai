@@ -33,6 +33,7 @@
 #include <array>
 #include <memory>
 #include <stdexcept>
+#include <pcre2/lpcre2.c>
 
 using namespace sunaba;
 using namespace sunaba::core;

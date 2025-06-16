@@ -6,11 +6,12 @@
 #include <locale.h>
 #include <ctype.h>
 #include <stdint.h>
-#include <pcre2.h>
+#include "pcre2.h"
 
 #include "lua.h"
 #include "lauxlib.h"
 #include "../common.h"
+#include "lpcre2.h"
 
 extern int Lpcre2_get_flags (lua_State *L);
 extern int Lpcre2_config (lua_State *L);
@@ -21,9 +22,6 @@ extern flag_pair pcre2_error_flags[];
  */
 #ifndef REX_LIBNAME
 #  define REX_LIBNAME "rex_pcre2"
-#endif
-#ifndef REX_OPENLIB
-#  define REX_OPENLIB luaopen_rex_pcre2
 #endif
 
 #define REX_TYPENAME REX_LIBNAME"_regex"

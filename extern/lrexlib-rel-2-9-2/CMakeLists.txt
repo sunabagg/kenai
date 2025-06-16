@@ -6,7 +6,7 @@ set(REGEX_BACKENDS pcre2)
 
 # Collect all sources
 foreach(backend ${REGEX_BACKENDS})
-    file(GLOB_RECURSE BACKEND_SRCS CONFIGURE_DEPENDS src/${backend}/*.c)
+    file(GLOB_RECURSE BACKEND_SRCS CONFIGURE_DEPENDS src/${backend}/*)
     add_library(${backend}_rexlib STATIC ${BACKEND_SRCS})
     target_include_directories(${backend}_rexlib PUBLIC src/${backend})
 endforeach()
@@ -33,20 +33,20 @@ add_custom_target(extra_clean
     COMMAND ${CMAKE_COMMAND} -E rm -f doc/index.html doc/manual.html doc/index.txt *.rockspec release-notes
 )
 
-find_path(PCRE2_INCLUDE_DIR pcre2.h
-    HINTS /usr/include /usr/local/include /opt/homebrew/include
-)
-
-find_library(PCRE2_LIBRARY NAMES pcre2-8
-    HINTS /usr/lib /usr/local/lib /opt/homebrew/lib
-)
-
-if(NOT PCRE2_INCLUDE_DIR OR NOT PCRE2_LIBRARY)
-    message(FATAL_ERROR "PCRE2 not found. Please install PCRE2 development files.")
-endif()
-
 target_compile_definitions(pcre2_rexlib PRIVATE PCRE2_CODE_UNIT_WIDTH=8)
 target_compile_definitions(pcre2_rexlib PRIVATE "PCRE2_CODE_UNIT_WIDTH=8")
 
-target_include_directories(pcre2_rexlib PRIVATE ${PCRE2_INCLUDE_DIR})
-target_link_libraries(pcre2_rexlib PRIVATE ${PCRE2_LIBRARY})
+add_subdirectory( pcre2 )
+
+#/Users/lucasabbas/build_sunaba_Darwin-Universal/extern/lrexlib-rel-2-9-2/pcre2/include
+set(PCRE2_INCLUDE_DIRECTORY "${PROJECT_BINARY_DIR}/pcre2")
+
+if (NOT PCRE2_INCLUDE_DIRECTORY)
+    message(FATAL_ERROR "PCRE2 include directory not found. Please ensure PCRE2 is properly installed and PCRE2_INCLUDE_DIRECTORY is set.")
+endif()
+message(STATUS "PCRE2_INCLUDE_DIR: ${PCRE2_INCLUDE_DIRECTORY}")
+
+target_include_directories(pcre2_rexlib PRIVATE pcre2/src)
+target_include_directories(pcre2_rexlib PRIVATE ${PCRE2_INCLUDE_DIRECTORY})
+include_directories(${PCRE2_INCLUDE_DIRECTORY})
+target_link_libraries(pcre2_rexlib PRIVATE pcre2-8-static)
