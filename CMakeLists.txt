@@ -360,6 +360,7 @@ include_directories( ${CMAKE_SOURCE_DIR}/extern/hx-lua-simdjson/src )
 
 add_subdirectory( extern/lrexlib-rel-2-9-2 )
 include_directories( extern/lrexlib-rel-2-9-2/src )
+target_compile_definitions(sunaba PRIVATE PCRE2_CODE_UNIT_WIDTH=8)
 
 #target_compile_features( hxsimdjson
 #    PRIVATE
