@@ -178,7 +178,7 @@ void App::start( const String &path) {
     std::string script = ioManager->loadText("app://main.lua");
     //UtilityFunctions::print(script.c_str());
     //global_state.script(script);
-    
+    /*
     global_state.script(extract_luarocks_lua_paths());
     global_state.script(R"(
         print(package.cpath)
@@ -193,7 +193,7 @@ void App::start( const String &path) {
             
         }
     }
-
+    */
     sol::protected_function_result result = global_state.safe_script(script, sol::script_pass_on_error);
     
     if ( !result.valid() ) {
