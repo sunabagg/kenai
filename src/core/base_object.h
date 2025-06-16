@@ -13,7 +13,13 @@ namespace sunaba::core
     //static void generateBaseObjectUsertype(lua_State* L);
 
     class BaseObject {
-    public:
+    
+        
+    };
+
+    class BaseObject : public std::enable_shared_from_this<BaseObject>
+    {
+    public: 
         virtual void onNotification( int p_what ) {}
 
         void notification(const int p_notification, bool p_reversed = false);
@@ -32,11 +38,6 @@ namespace sunaba::core
                 free();
             }
         }
-    };
-
-    class BaseObject : public std::enable_shared_from_this<BaseObject>
-    {
-        
     };
 }
 
