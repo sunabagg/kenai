@@ -13,11 +13,11 @@
 
 using namespace godot;
 
+// stupid hack fix to stop the compiler being dumb
+std::string extract_luarocks_lua_paths();
+
 namespace sunaba
 {
-    // stupid hack fix to stop the compiler being dumb
-    std::string extract_luarocks_lua_paths();
-
     class App : public Node {
         GDCLASS(App, Node)
     protected:
