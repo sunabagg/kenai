@@ -28,6 +28,11 @@
 //#include <simdjson.h>
 #endif
 #include <sol/sol.hpp>
+#include <cstdlib>
+#include <string>
+#include <array>
+#include <memory>
+#include <stdexcept>
 
 using namespace sunaba;
 using namespace sunaba::core;
@@ -207,7 +212,7 @@ std::string extract_luarocks_lua_paths() {
     std::array<char, 512> buffer;
     std::string result;
     std::unique_ptr<FILE, decltype(&pclose)> pipe(popen("luarocks path", "r"), pclose);
-    if (!pipe) throw std::runtime_error("Failed to run luarocks");
+    if (!pipe) return ""; //throw std::runtime_error("Failed to run luarocks");
 
     while (fgets(buffer.data(), buffer.size(), pipe.get()) != nullptr) {
         result += buffer.data();
