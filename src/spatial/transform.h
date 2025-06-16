@@ -147,11 +147,11 @@ namespace sunaba::spatial
             node->force_update_transform();
         }
 
-        SpatialTransform* getParentTransform() {
+        std::shared_ptr<SpatialTransform> getParentTransform() {
             auto parentNode = node->get_parent();
-            Entity* parentEntity = entity->parent;
+            std::shared_ptr<Entity> parentEntity = entity->parent;
             if (parentEntity->getNode() == parentNode) {
-                SpatialTransform* parentTransform = parentEntity->getComponentByT<SpatialTransform>();
+                std::shared_ptr<SpatialTransform> parentTransform = parentEntity->getComponentByT<SpatialTransform>();
                 if (parentTransform) {
                     return parentTransform;
                 }
