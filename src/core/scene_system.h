@@ -86,8 +86,8 @@ namespace sunaba::core
 		    NOTIFICATION_EDITOR_POST_SAVE = 9002,
 	    };
 
-        Entity* entity;
-        Scene* scene;
+        std::shared_ptr<Entity> entity;
+        std::shared_ptr<Scene> scene;
 
         Component() {}
 
@@ -174,13 +174,13 @@ namespace sunaba::core
 
         bool started = false;
 
-        std::vector<Entity*> children;
+        std::vector<std::shared_ptr<Entity>> children;
     public:
         std::string name;
-        std::unordered_map<std::string, Component*> components;
-        Entity* parent;
+        std::unordered_map<std::string, std::shared_ptr<Component>> components;
+        std::shared_ptr<Entity> parent;
         
-        Scene* scene;
+        std::shared_ptr<Scene> scene;
 
         Entity() {
             parent = nullptr;
@@ -208,9 +208,9 @@ namespace sunaba::core
             node = n;
         }
 
-        Entity* findEnt(godot::PackedStringArray path, int index) {
+        std::shared_ptr<Entity> findEnt(godot::PackedStringArray path, int index) {
             if (index == path.size() - 1) {
-                return this;
+                return std::make_shared<Entity>(*this);
             }
             for (auto& child : children) {
                 if (child->name.c_str() == path[index]) {
@@ -220,7 +220,7 @@ namespace sunaba::core
             return nullptr;
         }
 
-        void setScene(Scene* s) {
+        void setScene(std::shared_ptr<Scene> s) {
             this->scene = s;
             for (auto& component : components) {
                 component.second->scene = scene;
@@ -230,8 +230,8 @@ namespace sunaba::core
             }
         }
 
-        void addComponent(Component* component, std::string n) {
-            component->entity = this;
+        void addComponent(std::shared_ptr<Component> component, std::string n) {
+            component->entity = std::make_shared<Entity>(*this);
             component->scene = this->scene;
             component->onInit();
             components[n] = component;
@@ -260,7 +260,7 @@ namespace sunaba::core
             }
         }
 
-        Component* getComponentByName(std::string name) {
+        std::shared_ptr<Component> getComponentByName(std::string name) {
             if (components.find(name) != components.end()) {
                 return components[name];
             }
@@ -276,8 +276,8 @@ namespace sunaba::core
         }
 
         template<typename T>
-        std::vector<Component*> getComponentsByT() {
-            std::vector<Component*> result;
+        std::vector<std::shared_ptr<Component>> getComponentsByT() {
+            std::vector<std::shared_ptr<Component>> result;
             for (auto& comp : components) {
                 if (typeid(T) == typeid(*comp.second)) {
                     result.push_back(comp.second);
@@ -286,8 +286,8 @@ namespace sunaba::core
             return result;
         }
 
-        std::vector<Component*> getComponentsByType(sol::userdata type) {
-            std::vector<Component*> result;
+        std::vector<std::shared_ptr<Component>> getComponentsByType(sol::userdata type) {
+            std::vector<std::shared_ptr<Component>> result;
             auto typeName = type["__name"].get<std::string>();
             for (auto& comp : components) {
                 if (comp.first == typeName) {
@@ -325,7 +325,7 @@ namespace sunaba::core
             return sol::lua_nil;
         }
 
-        Component* getComponent(sol::userdata type) {
+        std::shared_ptr<Component> getComponent(sol::userdata type) {
             auto typeName = type.as<sol::userdata>()["__name"].get<std::string>();
             for (auto& comp : components) {
                 if (comp.first == typeName) {
@@ -336,10 +336,10 @@ namespace sunaba::core
         }
 
         template<typename T>
-        T* getComponentByT() {
+        std::shared_ptr<T> getComponentByT() {
             for (auto& comp : components) {
                 if (typeid(T) == typeid(*comp.second)) {
-                    return static_cast<T*>(comp.second);
+                    return std::static_pointer_cast<T>(comp.second);
                 }
             }
             return nullptr;
@@ -353,7 +353,7 @@ namespace sunaba::core
             }
         }
 
-        void removeComponent(Component* component) {
+        void removeComponent(std::shared_ptr<Component> component) {
             for (auto& comp : components) {
                 if (comp.second == component) {
                     removeComponentByName(comp.first);
@@ -372,8 +372,8 @@ namespace sunaba::core
 
         
 
-        void addChild(Entity* entity) {
-            entity->parent = this;
+        void addChild(std::shared_ptr<Entity> entity) {
+            entity->parent = std::make_shared<Entity>(*this);
             entity->setScene(this->scene);
             children.push_back(entity);
             if (node != nullptr) {
@@ -385,23 +385,22 @@ namespace sunaba::core
                 entity->ready();
         }
 
-        void removeChild(Entity* entity) {
+        void removeChild(std::shared_ptr<Entity> entity) {
             for (auto i = 0; i < children.size(); i++) {
-                Entity* ent = children[i];
-                if (ent == entity) {
-                    ent->parent = nullptr;
-                    ent->scene = nullptr;
+                if (children[i] == entity) {
+                    children[i]->parent = nullptr;
+                    children[i]->scene = nullptr;
                     children.erase(children.begin() + i);
                     if (node != nullptr)
                         node->remove_child(entity->node);
                     if (scene != nullptr)
-                        ent->exitTree();
+                        children[i]->exitTree();
                     break;
                 }
             }
         }
 
-        bool hasChild(Entity* entity) {
+        bool hasChild(std::shared_ptr<Entity> entity) {
             for (auto& child : children) {
                 if (child == entity) {
                     return true;
@@ -409,8 +408,8 @@ namespace sunaba::core
             }
             return false;
         }
-        
-        Entity* find(std::string path) {
+
+        std::shared_ptr<Entity> find(std::string path) {
             godot::String gdStr = path.c_str();
             auto split = gdStr.split("/");
             return findEnt(split, 0);
@@ -420,7 +419,7 @@ namespace sunaba::core
             return children.size();
         }
 
-        Entity* getChild(size_t index) {
+        std::shared_ptr<Entity> getChild(size_t index) {
             return children[index];
         }
 
@@ -479,7 +478,7 @@ namespace sunaba::core
 
         void onFree() override {
             if (parent != nullptr) {
-                parent->removeChild(this);
+                parent->removeChild(std::make_shared<Entity>(*this));
             }
             else if (this->scene != nullptr) {
                 removeFromScene();
@@ -509,8 +508,8 @@ namespace sunaba::core
 
     class Scene : public BaseObject {
     private:
-        Entity* findEnt(godot::PackedStringArray path, int index) {
-    
+        std::shared_ptr<Entity> findEnt(godot::PackedStringArray path, int index) {
+
             for (auto& child : entities) {
                 if (child->name.c_str() == path[index]) {
                     return child->findEnt(path, index + 1);
@@ -521,13 +520,13 @@ namespace sunaba::core
 
         bool started = false;
     public:
-        std::vector<Entity*> entities;
+        std::vector<std::shared_ptr<Entity>> entities;
         godot::Node* root;
 
         godot::Viewport* viewport;
 
-        void addEntity(Entity* entity) {
-            entity->setScene(this);
+        void addEntity(std::shared_ptr<Entity> entity) {
+            entity->setScene(std::make_shared<Scene>(*this));
             entities.push_back(entity);
             if (root != nullptr) {
                 root->add_child(entity->getNode());
@@ -538,21 +537,20 @@ namespace sunaba::core
             }
         }
 
-        void removeEntity(Entity* entity) {
+        void removeEntity(std::shared_ptr<Entity> entity) {
             for (auto i = 0; i < entities.size(); i++) {
-                Entity* ent = entities[i];
-                if (ent == entity) {
-                    ent->scene = nullptr;
+                if (entities[i] == entity) {
+                    entities[i]->scene = nullptr;
                     entities.erase(entities.begin() + i);
                     if (root != nullptr)
                         root->remove_child(entity->getNode());
-                    ent->exitTree();
+                    entity->exitTree();
                     break;
                 }
             }
         }
 
-        bool hasEntity(Entity* entity) {
+        bool hasEntity(std::shared_ptr<Entity> entity) {
             for (auto& ent : entities) {
                 if (ent == entity) {
                     return true;
@@ -561,7 +559,7 @@ namespace sunaba::core
             return false;
         }
 
-        Entity* find(std::string path) {
+        std::shared_ptr<Entity> find(std::string path) {
             godot::String gdStr = path.c_str();
             auto split = gdStr.split("/");
             return findEnt(split, 0);
@@ -571,7 +569,7 @@ namespace sunaba::core
             return entities.size();
         }
 
-        Entity* getEntity(size_t index) {
+        std::shared_ptr<Entity> getEntity(size_t index) {
             return entities[index];
         }
 
