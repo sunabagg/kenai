@@ -33,7 +33,7 @@
 #include <array>
 #include <memory>
 #include <stdexcept>
-#include <pcre2/lpcre2.h>
+//#include <pcre2/lpcre2.h>
 
 using namespace sunaba;
 using namespace sunaba::core;
@@ -79,7 +79,7 @@ void App::start( const String &path) {
         luaopen_bit(L);
 #endif
     
-    REX_OPENLIB(L); // Register the PCRE2 library
+    //REX_OPENLIB(L); // Register the PCRE2 library
 
     global_state["print"] = [this]( sol::variadic_args args ) {
         String msg;
