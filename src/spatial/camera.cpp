@@ -7,10 +7,10 @@ using namespace sunaba::core;
 namespace sunaba::spatial
 {
     void bindCamera(sol::state& lua){
-        lua.new_usertype<Camera>(
+        lua.new_usertype<std::shared_ptr<Camera>>(
             "Camera",
             sol::constructors<Camera()>(),
-            sol::base_classes, sol::bases<Component>(),
+            sol::base_classes, sol::bases<std::shared_ptr<Component>>(),
             sol::meta_function::garbage_collect, sol::destructor([](Camera* c) {  }),
             "cullMask", sol::property(&Camera::getCullMask, &Camera::setCullMask),
             "current", sol::property(&Camera::getCurrent, &Camera::setCurrent),
