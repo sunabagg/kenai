@@ -1,3 +1,5 @@
+#ifndef LREXLIB_LPCRE2_H
+#define LREXLIB_LPCRE2_H
 #include "lua.h"
 #include "lauxlib.h"
 #include "../common.h"
@@ -15,3 +17,4 @@ LUALIB_API int REX_OPENLIB (lua_State *L);
 #ifdef __cplusplus
 }
 #endif
+#endif /* LREXLIB_LPCRE2_H */
