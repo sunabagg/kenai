@@ -27,7 +27,6 @@ void sunaba::core::bindSceneSystem(sol::state& lua)
         "Entity", 
         sol::constructors<Entity()>(),
         sol::base_classes, sol::bases<std::shared_ptr<BaseObject>>(),
-        sol::meta_function::garbage_collect, sol::destructor([](Entity* e) {  }),
         "name",sol::property( 
             [](Entity* e) { 
                 return e->name; 
