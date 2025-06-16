@@ -4,6 +4,7 @@
 #include "common.h"
 
 #define REX_VERSION "Lrexlib " VERSION
+#define REX_VERSION_STR() "2.9.2"
 
 /* Forward declarations */
 static void gmatch_pushsubject (lua_State *L, TArgExec *argE);
@@ -745,7 +746,7 @@ static void alg_register (lua_State *L, const luaL_Reg *r_methods,
   lua_pushvalue(L, -1);
   lua_setglobal(L, REX_LIBNAME);
 #endif
-  lua_pushfstring (L, REX_VERSION" (for %s)", name);
+  lua_pushfstring (L, "%s (for %s)", REX_VERSION_STR(), name);
   lua_setfield (L, -2, "_VERSION");
 #ifndef REX_NOEMBEDDEDTEST
   lua_pushcfunction (L, newmembuffer);

@@ -358,6 +358,8 @@ include_directories( ${CMAKE_SOURCE_DIR}/extern/hx-lua-simdjson/src )
 #    extern/hx-lua-simdjson/src/simdjson.cpp 
 #)
 
+add_subdirectory( extern/lrexlib-rel-2-9-2 )
+
 #target_compile_features( hxsimdjson
 #    PRIVATE
 #        cxx_std_17
@@ -417,7 +419,7 @@ if (USE_LUAJIT)
     target_link_libraries(${PROJECT_NAME}
         PRIVATE
             godot-cpp
-            ${LUAJIT_LIBRARIES}
+            ${LUAJIT_STATIC_LIBRARIES}
             sol2
             #hxsimdjson
             #Luau.Compiler Luau.VM
@@ -431,8 +433,9 @@ else()
     target_link_libraries(${PROJECT_NAME}
         PRIVATE
             godot-cpp
-            liblua
+            liblua_static
             sol2
+            pcre2_rexlib
             #hxsimdjson
             #Luau.Compiler Luau.VM
     )
