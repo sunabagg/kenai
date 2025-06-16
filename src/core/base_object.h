@@ -6,6 +6,7 @@
 #define NH_OBJECT_H
 
 #include <lua.h>
+#include <memory>
 
 namespace sunaba::core
 {
@@ -31,6 +32,11 @@ namespace sunaba::core
                 free();
             }
         }
+    };
+
+    class BaseObject : public std::enable_shared_from_this<BaseObject>
+    {
+        
     };
 }
 
