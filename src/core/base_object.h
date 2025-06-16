@@ -12,10 +12,7 @@ namespace sunaba::core
 {
     //static void generateBaseObjectUsertype(lua_State* L);
 
-    class BaseObject {
-    
-        
-    };
+    class BaseObject {};
 
     class BaseObject : public std::enable_shared_from_this<BaseObject>
     {
