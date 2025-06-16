@@ -10,7 +10,7 @@ extern "C" {
 #  define REX_OPENLIB luaopen_rex_pcre2
 #endif
 
-REX_API int REX_OPENLIB (lua_State *L);
+LUALIB_API int REX_OPENLIB (lua_State *L);
 
 #ifdef __cplusplus
 }

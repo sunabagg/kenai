@@ -11,10 +11,10 @@
   int luaL_typerror (lua_State *L, int narg, const char *tname);
 #endif
 
-/* REX_API can be overridden from the command line or Makefile */
+/* REX_API can be overridden from the command line or Makefile
 #ifndef REX_API
 #  define REX_API LUALIB_API
-#endif
+#endif*/
 
 /* Special values for maxmatch in gsub. They all must be negative. */
 #define GSUB_UNLIMITED   -1
