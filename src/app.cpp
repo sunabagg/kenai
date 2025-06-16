@@ -210,34 +210,6 @@ void App::start( const String &path) {
     }
 }
 
-std::string extract_luarocks_lua_paths() {
-    std::array<char, 512> buffer;
-    std::string result;
-    std::unique_ptr<FILE, decltype(&pclose)> pipe(popen("luarocks path", "r"), pclose);
-    if (!pipe) return ""; //throw std::runtime_error("Failed to run luarocks");
-
-    while (fgets(buffer.data(), buffer.size(), pipe.get()) != nullptr) {
-        result += buffer.data();
-    }
-
-    std::string lua_script;
-
-    auto extract_env = [&](const std::string& key, const std::string& lua_var) {
-        auto pos = result.find("export " + key + "='");
-        if (pos != std::string::npos) {
-            auto start = pos + key.size() + 9;
-            auto end = result.find("'", start);
-            std::string path = result.substr(start, end - start);
-            lua_script += "package." + lua_var + " = \"" + path + ";\" .. package." + lua_var + ";\n";
-        }
-    };
-
-    extract_env("LUA_PATH", "path");
-    extract_env("LUA_CPATH", "cpath");
-
-    return lua_script;
-}
-
 void App::_process(double delta) {
     global_state.collect_garbage();
 }
