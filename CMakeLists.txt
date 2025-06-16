@@ -405,7 +405,7 @@ else()
     # Add non-debug-specific settings here
 endif()
 
-set( LUA_USE_DLOPEN ON )
+set( LUA_USE_DLOPEN OFF )
 
 # Link the libraries
 if (USE_LUAJIT)
