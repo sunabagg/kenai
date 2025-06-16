@@ -11,10 +11,6 @@ foreach(backend ${REGEX_BACKENDS})
     target_include_directories(${backend}_rexlib PUBLIC src/${backend})
 endforeach()
 
-# Optional: create a "meta" target that depends on all
-add_custom_target(lrexlib_all DEPENDS ${REGEX_BACKENDS})
-
-
 # HTML docs
 file(MAKE_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}/doc)
 
