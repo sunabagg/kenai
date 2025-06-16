@@ -85,11 +85,11 @@ void sunaba::core::bindSceneSystem(sol::state& lua)
 // hacky way to get around the fact that 
 // we can't use the scene removeEntity function in the header file
 void sunaba::core::Entity::removeFromScene() {
-    scene->removeEntity(this);
+    scene->removeEntity(std::make_shared<Entity>(*this));
 }
 
 void sunaba::core::Component::onFree()  {
     if (entity != nullptr) {
-        entity->removeComponent(this);
+        entity->removeComponent(std::make_shared<Component>(*this));
     }
 }
