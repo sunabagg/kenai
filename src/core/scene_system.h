@@ -28,7 +28,7 @@ namespace sunaba::core
     class Scene;
     class Entity;
 
-    class Component : public BaseObject
+    class Component : public SharedObject
     {
     private:    
         sol::table scriptType = sol::lua_nil;
@@ -165,7 +165,7 @@ namespace sunaba::core
         */
     };
 
-    class Entity : public BaseObject
+    class Entity : public SharedObject
     {
     private:
         godot::Node* node = nullptr;
@@ -506,7 +506,7 @@ namespace sunaba::core
         }
     };
 
-    class Scene : public BaseObject {
+    class Scene : public SharedObject {
     private:
         std::shared_ptr<Entity> findEnt(godot::PackedStringArray path, int index) {
 

@@ -2,17 +2,23 @@
 
 using namespace sunaba::core;
 
-void sunaba::core::bindSceneSystem(sol::state& lua)
+void sunaba::core::bindSceneSystem(sol::state& lua)//SharedObject
 {
-    lua.new_usertype<std::shared_ptr<BaseObject>>(
+    lua.new_usertype<BaseObject>(
         "BaseObject", 
         sol::constructors<BaseObject()>(),
         "onFree", &BaseObject::onFree,
         "free", &BaseObject::free
     );
+    lua.new_usertype<std::shared_ptr<SharedObject>>(
+        "BaseObject", 
+        sol::constructors<SharedObject()>(),
+        "onFree", &SharedObject::onFree,
+        "free", &SharedObject::free
+    );
     lua.new_usertype<std::shared_ptr<Scene>>(
         "Scene", 
-        sol::base_classes, sol::bases<std::shared_ptr<BaseObject>>(),
+        sol::base_classes, sol::bases<std::shared_ptr<SharedObject>>(),
         "addEntity", &Scene::addEntity, 
         "hasEntity", &Scene::hasEntity, 
         "removeEntity", &Scene::removeEntity, 
@@ -24,7 +30,7 @@ void sunaba::core::bindSceneSystem(sol::state& lua)
     lua.new_usertype<std::shared_ptr<Entity>>(
         "Entity", 
         sol::constructors<Entity()>(),
-        sol::base_classes, sol::bases<std::shared_ptr<BaseObject>>(),
+        sol::base_classes, sol::bases<std::shared_ptr<SharedObject>>(),
         "name",sol::property( 
             [](Entity* e) { 
                 return e->name; 
@@ -56,7 +62,7 @@ void sunaba::core::bindSceneSystem(sol::state& lua)
     );
     lua.new_usertype<std::shared_ptr<Component>>(
         "Component", 
-        sol::base_classes, sol::bases<std::shared_ptr<BaseObject>>(),
+        sol::base_classes, sol::bases<std::shared_ptr<SharedObject>>(),
         "entity", sol::property( 
             [](Component* c) { 
                 return c->entity; 
