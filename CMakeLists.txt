@@ -405,6 +405,8 @@ else()
     # Add non-debug-specific settings here
 endif()
 
+set( CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -DLUA_USE_DLOPEN" )
+
 # Link the libraries
 if (USE_LUAJIT)
     #target_link_libraries( hxsimdjson
