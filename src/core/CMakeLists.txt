@@ -107,6 +107,7 @@ target_sources(${PROJECT_NAME} PRIVATE
         canvas_item.cpp
         viewport.h
         viewport.cpp
+        reg_ex_match.h
 )
 
 add_subdirectory(io)
