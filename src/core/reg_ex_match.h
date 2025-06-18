@@ -9,6 +9,8 @@
 
 #include "../core/base_object.h"
 
+using namespace godot;
+
 namespace sunaba::core {
     void bindRegExMatch(sol::state& lua);
 
