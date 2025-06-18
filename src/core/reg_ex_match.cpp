@@ -5,7 +5,7 @@ namespace sunaba::core {
         lua.new_usertype<RegExMatch>("RegExMatch",
             sol::constructors<RegExMatch(), RegExMatch(GodotRegExMatch*)>(),
             "names", sol::readonly_property(&RegExMatch::getNames),
-            "getStrings", &RegExMatch::getStrings,
+            "strings", sol::readonly_property(&RegExMatch::getStrings),
             "getSubject", &RegExMatch::getSubject,
             "getEnd", &RegExMatch::getEnd,
             "getGroupCount", &RegExMatch::getGroupCount,
