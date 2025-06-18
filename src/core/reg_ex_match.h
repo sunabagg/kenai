@@ -56,6 +56,10 @@ namespace sunaba::core {
             std::string getSubject() const {
                 return reg_ex_match->get_subject().utf8().get_data();
             }
+
+            int getEnd(const Variant& name = 0) const {
+                return reg_ex_match->get_end(name);
+            }
     };
 }
 
