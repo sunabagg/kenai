@@ -6,4 +6,5 @@ extern class RegExMatch extends BaseObject {
     public var names: Dictionary;
     public var strings: StringArray;
     public var subject: String;
+    public function getEnd(?name: Variant): Int;
 }
