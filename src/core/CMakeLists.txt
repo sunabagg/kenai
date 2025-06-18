@@ -110,6 +110,7 @@ target_sources(${PROJECT_NAME} PRIVATE
         reg_ex_match.h
         reg_ex_match.cpp
         reg_ex.h
+        reg_ex.cpp
 )
 
 add_subdirectory(io)
