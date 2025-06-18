@@ -73,6 +73,17 @@ namespace sunaba::core {
             RegExMatch search(const std::string& subject, int offset = 0, int end = -1) const {
                 return RegExMatch(reg_ex->search(String(subject.c_str()), offset, end).ptr());
             }
+
+            std::vector<RegExMatch> searchAll(const std::string& subject, int offset = 0, int end = -1) const {
+                TypedArray<GodotRegExMatch> matches = reg_ex->search_all(String(subject.c_str()), offset, end);
+                std::vector<RegExMatch> result;
+                result.reserve(matches.size());
+                for (int i = 0; i < matches.size(); ++i) {
+                    GodotRegExMatch* matchObj = Object::cast_to<GodotRegExMatch>(matches[i].operator Object*());
+                    result.push_back(RegExMatch(matchObj));
+                }
+                return result;
+            }
     };
 }
 
