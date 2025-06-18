@@ -12,6 +12,7 @@ namespace sunaba::core {
             "getNames", &RegEx::getNames,
             "getPattern", &RegEx::getPattern,
             "isValid", &RegEx::isValid,
+            "search", &RegEx::search,
         );
     }
 }
