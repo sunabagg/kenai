@@ -42,6 +42,16 @@ namespace sunaba::core {
             Dictionary getNames() const {
                 return reg_ex_match->get_names();
             }
+
+            std::vector<std::string> getStrings() const {
+                PackedStringArray strings = reg_ex_match->get_strings();
+                std::vector<std::string> result;
+                result.reserve(strings.size());
+                for (const String& str : strings) {
+                    result.push_back(str.utf8().get_data());
+                }
+                return result;
+            }
     };
 }
 
