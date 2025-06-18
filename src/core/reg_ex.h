@@ -47,6 +47,10 @@ namespace sunaba::core {
             static RegEx createFromString(const std::string& pattern, bool show_error = true) {
                 return RegEx(GodotRegEx::create_from_string(String(pattern.c_str()), show_error).ptr());
             }
+
+            int getGroupCount() const {
+                return reg_ex->get_group_count();
+            }
     };
 }
 
