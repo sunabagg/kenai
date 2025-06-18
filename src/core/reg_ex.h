@@ -43,6 +43,10 @@ namespace sunaba::core {
             int compile(const std::string& pattern, bool show_error = true) {
                 return reg_ex->compile(String(pattern.c_str()), show_error);
             }
+
+            static RegEx create_from_string(const std::string& pattern, bool show_error = true) {
+                return RegEx(GodotRegEx::create_from_string(String(pattern.c_str()), show_error).ptr());
+            }
     };
 }
 
