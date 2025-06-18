@@ -35,6 +35,10 @@ namespace sunaba::core {
                 reg_ex = regex;
                 reg_ex->reference();
             }
+
+            void clear() {
+                reg_ex->clear();
+            }
     };
 }
 
