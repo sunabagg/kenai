@@ -61,6 +61,10 @@ namespace sunaba::core {
                 }
                 return result;
             }
+
+            std::string getPattern() const {
+                return reg_ex->get_pattern().utf8().get_data();
+            }
     };
 }
 
