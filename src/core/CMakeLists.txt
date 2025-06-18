@@ -109,6 +109,7 @@ target_sources(${PROJECT_NAME} PRIVATE
         viewport.cpp
         reg_ex_match.h
         reg_ex_match.cpp
+        reg_ex.h
 )
 
 add_subdirectory(io)
