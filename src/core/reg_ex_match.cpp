@@ -6,7 +6,7 @@ namespace sunaba::core {
             sol::constructors<RegExMatch(), RegExMatch(GodotRegExMatch*)>(),
             "names", sol::readonly_property(&RegExMatch::getNames),
             "strings", sol::readonly_property(&RegExMatch::getStrings),
-            "getSubject", &RegExMatch::getSubject,
+            "subject", sol::readonly_property(&RegExMatch::getSubject),
             "getEnd", &RegExMatch::getEnd,
             "getGroupCount", &RegExMatch::getGroupCount,
             "getStart", &RegExMatch::getStart,
