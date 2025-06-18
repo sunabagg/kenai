@@ -1,6 +1,6 @@
 package sunaba.core;
 
 @:native("RegExMatch")
-class RegExMatch extends BaseObject {
-    public function new() {}
+extern class RegExMatch extends BaseObject {
+    public function new();
 }
