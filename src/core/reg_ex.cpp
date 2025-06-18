@@ -10,7 +10,8 @@ namespace sunaba::core {
             "createFromString", &RegEx::createFromString,
             "getGroupCount", &RegEx::getGroupCount,
             "getNames", &RegEx::getNames,
-            "getPattern", &RegEx::getPattern
+            "getPattern", &RegEx::getPattern,
+            "isValid", &RegEx::isValid,
         );
     }
 }
