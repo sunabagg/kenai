@@ -8,4 +8,5 @@ extern class RegExMatch extends BaseObject {
     public var subject: String;
     public function getEnd(?name: Variant): Int;
     public function getGroupCount(): Int;
+    public function getStart(?name: Variant): Int;
 }
