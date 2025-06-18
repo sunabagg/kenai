@@ -68,6 +68,10 @@ namespace sunaba::core {
             int getStart(const Variant& name = 0) const {
                 return reg_ex_match->get_start(name);
             }
+
+            std::string getString(const Variant& name = 0) const {
+                return reg_ex_match->get_string(name).utf8().get_data();
+            }
     };
 }
 
