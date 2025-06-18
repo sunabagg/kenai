@@ -13,6 +13,8 @@ namespace sunaba::core {
             "getPattern", &RegEx::getPattern,
             "isValid", &RegEx::isValid,
             "search", &RegEx::search,
+            "searchAll", &RegEx::searchAll,
+            "sub", &RegEx::sub
         );
     }
 }
