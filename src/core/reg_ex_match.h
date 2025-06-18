@@ -7,7 +7,7 @@
 
 #define GodotRegExMatch godot::RegExMatch
 
-#include "../core/base_object.h"
+#include "base_object.h"
 
 using namespace godot;
 
