@@ -38,6 +38,10 @@ namespace sunaba::core {
                 reg_ex_match = match;
                 reg_ex_match->reference();
             }
+
+            Dictionary getNames() const {
+                return reg_ex_match->get_names();
+            }
     };
 }
 
