@@ -51,6 +51,16 @@ namespace sunaba::core {
             int getGroupCount() const {
                 return reg_ex->get_group_count();
             }
+
+            std::vector<std::string> getNames() const {
+                PackedStringArray names = reg_ex->get_names();
+                std::vector<std::string> result;
+                result.reserve(names.size());
+                for (const String& name : names) {
+                    result.push_back(name.utf8().get_data());
+                }
+                return result;
+            }
     };
 }
 
