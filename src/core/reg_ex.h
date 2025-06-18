@@ -69,6 +69,10 @@ namespace sunaba::core {
             bool isValid() const {
                 return reg_ex->is_valid();
             }
+
+            RegExMatch search(const std::string& subject, int offset = 0, int end = -1) const {
+                return RegExMatch(reg_ex->search(String(subject.c_str()), offset, end).ptr());
+            }
     };
 }
 
