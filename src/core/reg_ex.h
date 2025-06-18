@@ -84,6 +84,10 @@ namespace sunaba::core {
                 }
                 return result;
             }
+
+            std::string sub(const std::string& subject, const std::string& replacement, bool all = false, int offset = 0, int end = -1) const {
+                return reg_ex->sub(String(subject.c_str()), String(replacement.c_str()), all, offset, end).utf8().get_data();
+            }
     };
 }
 
