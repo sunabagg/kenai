@@ -64,6 +64,10 @@ namespace sunaba::core {
             int getGroupCount() const {
                 return reg_ex_match->get_group_count();
             }
+
+            int getStart(const Variant& name = 0) const {
+                return reg_ex_match->get_start(name);
+            }
     };
 }
 
