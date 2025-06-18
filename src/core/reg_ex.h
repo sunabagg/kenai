@@ -39,6 +39,10 @@ namespace sunaba::core {
             void clear() {
                 reg_ex->clear();
             }
+
+            int compile(const std::string& pattern, bool show_error = true) {
+                return reg_ex->compile(String(pattern.c_str()), show_error);
+            }
     };
 }
 
