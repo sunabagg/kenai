@@ -12,4 +12,5 @@ extern class RegEx extends BaseObject {
     public function getPattern(): String;
     public function isValid(): Bool;
     public function search(subject: String, ?offset: Int, ?end: Int): RegExMatch;
+    public function searchAll(subject: String, ?offset: Int, ?end: Int): Table<Int, RegExMatch>;
 }
