@@ -8,4 +8,5 @@ extern class RegEx extends BaseObject {
     public function getGroupCount(): Int;
     public function getNames(): StringArray;
     public function getPattern(): String;
+    public function isValid(): Bool;
 }
