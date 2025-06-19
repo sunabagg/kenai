@@ -7,4 +7,5 @@ extern class RegEx extends BaseObject {
     public function createFromString(pattern: String, ?showError: Bool): RegEx;
     public function getGroupCount(): Int;
     public function getNames(): StringArray;
+    public function getPattern(): String;
 }
