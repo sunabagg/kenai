@@ -1,5 +1,7 @@
 package sunaba.core;
 
+import lua.Table;
+
 @:native("RegEx")
 extern class RegEx extends BaseObject {
     public function new();
