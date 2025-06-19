@@ -74,4 +74,6 @@ void sunaba::core::bindCoreClasses(sol::state& lua) {
     bindElement(lua);
     bindCanvasItem(lua);
     bindViewport(lua);
+
+    bindRegExMatch(lua);
 }
