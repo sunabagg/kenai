@@ -34,6 +34,7 @@
 #include "element.h"
 #include "canvas_item.h"
 #include "event.h"
+#include "viewport.h"
 #include "reg_ex_match.h"
 #include "reg_ex.h"
 
