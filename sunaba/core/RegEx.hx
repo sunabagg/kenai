@@ -9,5 +9,5 @@ extern class RegEx extends BaseObject {
     public function getNames(): StringArray;
     public function getPattern(): String;
     public function isValid(): Bool;
-    public function search(subject: String, ?offset: Int): RegExMatch;
+    public function search(subject: String, ?offset: Int, ?end: Int): RegExMatch;
 }
