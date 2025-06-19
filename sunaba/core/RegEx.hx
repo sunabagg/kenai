@@ -4,4 +4,5 @@ package sunaba.core;
 extern class RegEx extends BaseObject {
     public function new();
     public function compile(pattern: String, ?showError: Bool): Void;
+    public function createFromString(pattern: String, ?showError: Bool): RegEx;
 }
