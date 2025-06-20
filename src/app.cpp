@@ -161,6 +161,17 @@ void App::init(bool sandboxed) {
     auto* rootElement = new sunaba::core::Element(this);
     rootElement->isRootElement = true;
     global_state["rootElement"] = rootElement;
+    ioManager = new IoManager();
+    IoIndex::bindIoManger(global_state, ioManager);
+
+    ////sunaba::core::bind_all_godot_classes( global_state );
+    //sunaba::core::initialize_lua( global_state );
+
+    global_state.set_function( "createScene", [this]() {
+        return createScene();
+    });
+
+    //sol::error *e = nullptr;
 }
 
 void App::start( const String &path) {
