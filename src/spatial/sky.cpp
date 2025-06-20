@@ -2,7 +2,9 @@
 
 void sunaba::spatial::bindSky(sol::state_view& lua) {
     lua.new_usertype<sunaba::spatial::Sky>("Sky",
-        sol::constructors<Sky()>(),
+        "new", sol::factories(
+            []() { return new sunaba::spatial::Sky(); }
+        ),
         sol::base_classes, sol::bases<sunaba::core::BaseObject, sunaba::core::Resource>(),
         "processMode", sol::property(&Sky::getProcessMode, &Sky::setProcessMode),
         "radianceSize", sol::property(&Sky::getRadianceSize, &Sky::setRadianceSize),
