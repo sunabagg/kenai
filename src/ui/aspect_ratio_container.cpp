@@ -131,7 +131,9 @@ namespace sunaba::ui {
 
     void bindAspectRatioContainer(sol::state& lua) {
         auto ut = lua.new_usertype<AspectRatioContainer>("AspectRatioContainer",
-            sol::constructors<AspectRatioContainer()>(),
+            "new", sol::factories(
+                []() { return new AspectRatioContainer(); }
+            ),
             sol::base_classes, sol::bases<BaseObject, Element, sunaba::core::CanvasItem, Control, Container>(),
             "alignmentHorizontal", sol::property(
                 &AspectRatioContainer::getAlignmentHorizontal,
