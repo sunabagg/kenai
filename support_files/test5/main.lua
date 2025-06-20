@@ -4077,12 +4077,12 @@ __support_files_test5_src_ClickerCounter.prototype = _hx_e();
 __support_files_test5_src_ClickerCounter.prototype.init = function(self) 
   local _gthis = self;
   self:load("app://assets/ClickerCounter.suml");
-  local labelElement = self.rootElement:find("centerContainer/vBoxContainer/clickCounterLabel");
+  local labelElement = self.rootElement:find("centerContainer/vboxContainer/clickCounterLabel");
   if (labelElement:isNull()) then 
     _G.error(__haxe_Exception.thrown("Label element not found in ClickerCounter layout."),0);
   end;
   self.label = Label.cast(labelElement);
-  local buttonA = __sunaba_ui__Button_ButtonAbstract_Impl_.fromElement(self.rootElement:find("centerContainer/vBoxContainer/clickerButton"));
+  local buttonA = __sunaba_ui__Button_ButtonAbstract_Impl_.fromElement(self.rootElement:find("centerContainer/vboxContainer/clickerButton"));
   local button = buttonA;
   button.pressed:connect(function() 
     _gthis:onClick();

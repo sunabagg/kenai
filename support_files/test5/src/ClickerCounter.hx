@@ -12,7 +12,7 @@ class ClickerCounter extends Widget {
     override function init() {
         load("app://assets/ClickerCounter.suml");
         var labelElement = rootElement.find(
-            "centerContainer/vBoxContainer/clickCounterLabel"
+            "centerContainer/vboxContainer/clickCounterLabel"
         );
         if (labelElement.isNull()) {
             throw "Label element not found in ClickerCounter layout.";
@@ -21,7 +21,7 @@ class ClickerCounter extends Widget {
             labelElement
         );
         var buttonA : ButtonAbstract = rootElement.find(
-            "centerContainer/vBoxContainer/clickerButton"
+            "centerContainer/vboxContainer/clickerButton"
         );
         var button : Button= buttonA;
         button.pressed.connect(() -> {
