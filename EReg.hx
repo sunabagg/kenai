@@ -53,7 +53,12 @@ class EReg {
 	**/
 	public function match(s:String):Bool {
 		lastMatch = regex.search(s);
-        return lastMatch != null;
+        if (lastMatch == null) {
+            return false; // No match found or invalid match
+        }
+        else {
+            return lastMatch.isNull() == false; // Check if the match is valid
+        }
 	}
 
 	/**
