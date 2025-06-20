@@ -3473,6 +3473,7 @@ __sunaba_ui_Widget.prototype.construct = function(self,xml)
     end )()))),0);
   end;
   local className = xml.nodeName;
+  className = self:camelToPascal(className);
   local classType = _G[className];
   if (classType ~= nil) then 
     if (self:isAnElementClass(classType)) then 
