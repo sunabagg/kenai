@@ -3,7 +3,7 @@
     <head>
     </head>
     <body>
-        <panel 
+        <panel
             fullRect="true"
             offsetBottom="-10"
             offsetTop="10"
