@@ -12,18 +12,18 @@
         <centerContainer
             fullRect="true"
             name="centerContainer">
-            <vBoxContainer 
-                name="vBoxContainer">
-                <label
-                    name="clickCounterLabel"
-                    text="You clicked me 0 times!"
-                    verticalAlignment="1"
-                    horizontalAlignment="1"/>
-                <button
-                    name="clickerButton"
-                    text="Click me!"
-                    alignment="1"/>
-            </vBoxContainer>
+                <vBoxContainer 
+                    name="vBoxContainer">
+                        <label
+                            name="clickCounterLabel"
+                            text="You clicked me 0 times!"
+                            verticalAlignment="1"
+                            horizontalAlignment="1"/>
+                        <button
+                            name="clickerButton"
+                            text="Click me!"
+                            alignment="1"/>
+                </vBoxContainer>
         </centerContainer>
     </body>
 </suml>
