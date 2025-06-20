@@ -20,7 +20,7 @@ class EReg {
         pattern = r;
         options = opt;
         regex = new RegEx();
-		throw new haxe.exceptions.NotImplementedException("Regular expressions are not implemented for this platform");
+		//throw new haxe.exceptions.NotImplementedException("Regular expressions are not implemented for this platform");
 	}
 
 	/**
