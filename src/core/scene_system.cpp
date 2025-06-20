@@ -61,6 +61,9 @@ void sunaba::core::bindSceneSystem(sol::state& lua)
     );
     lua.new_usertype<Component>(
         "Component", 
+        "new", []() {
+            return std::make_shared<Component>();
+        },
         sol::base_classes, sol::bases<BaseObject>(),
         sol::meta_function::garbage_collect, sol::destructor([](Component* c) {  
         }),
