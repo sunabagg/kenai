@@ -2,7 +2,9 @@
 
 void sunaba::input::bindInputEventAction(sol::state_view& lua) {
     lua.new_usertype<InputEventAction>("InputEventAction",
-        sol::constructors<InputEventAction(), InputEventAction(GodotInputEventAction*)>(),
+        "new", sol::factories(
+            []() { return new InputEventAction(); }
+        ),
         sol::base_classes, sol::bases<sunaba::core::BaseObject, sunaba::core::Resource, sunaba::input::InputEvent>(),
         "action", sol::property(&InputEventAction::getAction, &InputEventAction::setAction),
         "eventIndex", sol::property(&InputEventAction::getEventIndex, &InputEventAction::setEventIndex),
