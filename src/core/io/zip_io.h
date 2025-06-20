@@ -17,6 +17,17 @@ namespace sunaba::core::io {
             zip_reader  = godot::Ref<godot::ZIPReader>(memnew(godot::ZIPReader));
             zip_reader->open(path.c_str());
         }
+
+        std::string getFilePath(const std::string &path) const override {
+            String filePath = String(path.c_str());
+            if (filePath.begins_with(pathUri.c_str())) {
+                filePath = filePath.replace(pathUri.c_str(), "");
+                return filePath.utf8().get_data();
+            }
+            else {
+                return path; // Return the original path if it doesn't match the URI
+            }
+        }
         
         std::string loadText(const std::string &path) const override;
         PackedByteArray loadBytes(const std::string &path) const override;
