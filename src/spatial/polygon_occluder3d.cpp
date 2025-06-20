@@ -2,7 +2,9 @@
 
 void sunaba::spatial::bindPolygonOccluder3D(sol::state_view& lua) {
     lua.new_usertype<sunaba::spatial::PolygonOccluder3D>("ArrayOccluder3D",
-        sol::constructors<PolygonOccluder3D()>(),
+        "new", sol::factories(
+            []() { return new sunaba::spatial::PolygonOccluder3D(); }
+        ),
         sol::base_classes, sol::bases<sunaba::core::BaseObject, sunaba::core::Resource, Occluder3D>(),
         "polygon", sol::property(&PolygonOccluder3D::getPolygon, &PolygonOccluder3D::setPolygon),
         "cast", [](sunaba::core::Resource* instance) {
