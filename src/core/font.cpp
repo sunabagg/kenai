@@ -2,7 +2,9 @@
 
 void sunaba::core::bindFont(sol::state &lua) {
     lua.new_usertype<sunaba::core::Font>("Font",
-        sol::constructors<sunaba::core::Font()>(),
+        "new", sol::factories(
+            []() { return new sunaba::core::Font(); }
+        ),
         sol::base_classes, sol::bases<sunaba::core::BaseObject, sunaba::core::Resource>(),
         "fallbacks", sol::property(
             &sunaba::core::Font::getFallbacks, 
