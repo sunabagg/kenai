@@ -2,7 +2,9 @@
 
 void sunaba::spatial::bindProceduralSkyMaterial(sol::state_view& lua) {
     lua.new_usertype<sunaba::spatial::ProceduralSkyMaterial>("ProceduralSkyMaterial",
-        sol::constructors<ProceduralSkyMaterial()>(),
+        "new", sol::factories(
+            []() { return new sunaba::spatial::ProceduralSkyMaterial(); }
+        ),
         sol::base_classes, sol::bases<sunaba::core::BaseObject, sunaba::core::Resource, sunaba::core::Material>(),
         "energyMultiplier", sol::property(&ProceduralSkyMaterial::getEnergyMultiplier, &ProceduralSkyMaterial::setEnergyMultiplier),
         "groundBottomColor", sol::property(&ProceduralSkyMaterial::getGroundBottomColor, &ProceduralSkyMaterial::setGroundBottomColor),
