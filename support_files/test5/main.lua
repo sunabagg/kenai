@@ -3448,7 +3448,7 @@ __sunaba_ui_Widget.prototype.constructNodes = function(self,nodes)
     
     local node = node:next();
     local element = self:construct(node);
-    if (element ~= nil) then 
+    if ((element ~= nil) and (element:isNull() == false)) then 
       self.rootElement:addChild(element);
     else
       if (node.nodeType ~= Xml.Element) then 
