@@ -131,7 +131,9 @@ namespace sunaba::ui {
 
     void bindScrollContainer(sol::state& lua) {
         lua.new_usertype<ScrollContainer>("ScrollContainer",
-            sol::constructors<ScrollContainer()>(),
+            "new", sol::factories(
+                []() { return new ScrollContainer(); }
+            ),
             sol::base_classes, sol::bases<BaseObject, Element, sunaba::core::CanvasItem, Control, Container>(),
             "clipContents", sol::property(&ScrollContainer::isClippingContents, &ScrollContainer::setClipContents),
             "drawFocusBorder", sol::property(&ScrollContainer::getDrawFocusBorder, &ScrollContainer::setDrawFocusBorder),
