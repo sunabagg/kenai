@@ -71,4 +71,16 @@ namespace sunaba::core::io {
 
         return file_list;
     }
+
+    bool ZipIo::directoryExists(const std::string &path) const {
+        std::string realPath = getFilePath(path);
+        PackedStringArray files = zip_reader->get_files();
+        for (int i = 0; i < files.size(); ++i) {
+            std::string file = files[i].utf8().get_data();
+            if (String(file.c_str()).get_base_dir() == String(realPath.c_str())) {
+                return true; // Directory exists if any file matches the base directory
+            }
+        }
+        return false; // No files found in the specified directory
+    }
 } // namespace sunaba::core::io
