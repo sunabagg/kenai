@@ -180,7 +180,18 @@ class EReg {
 		If `s` is null, the result is unspecified.
 	**/
 	public function split(s:String):Array<String> {
-		return null;
+		var result:Array<String> = [];
+        var lastIndex = 0;
+        var searchAllTable = regex.searchAll(s);
+        var matches:Array<RegExMatch> = Table.toArray(searchAllTable);
+        for (match in matches) {
+            if (match.isNull()) continue; // Skip invalid matches
+            var start = match.getStart(0);
+            result.push(s.substr(lastIndex, start - lastIndex));
+            lastIndex = match.getEnd(0);
+        }
+        result.push(s.substr(lastIndex)); // Add the remaining part after the last match
+		return result;
 	}
 
 	/**
