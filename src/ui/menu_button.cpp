@@ -143,7 +143,9 @@ namespace sunaba::ui {
         using namespace sunaba::ui;
 
         lua.new_usertype<MenuButton>("MenuButton",
-            sol::constructors<MenuButton()>(),
+            "new", sol::factories(
+                []() { return new MenuButton(); }
+            ),
             sol::base_classes, sol::bases<BaseObject, Element, sunaba::core::CanvasItem, sunaba::ui::Control, sunaba::ui::BaseButton, Button>(),
             "actionMode", sol::property(
                 &MenuButton::getActionMode,
