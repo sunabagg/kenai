@@ -124,21 +124,24 @@ namespace sunaba::core {
                     callLuaListener(lua_listener, lua_args);
                 }*/
 
-                if (lua_listeners.size() > 0) { // Check if there are any Lua listeners
-                    for (size_t i = 0; i < lua_listeners.size(); i++) {
-                        sol::function lua_listener = lua_listeners[i];
-                        if (!lua_listener.valid()) {
-                            continue; // Skip invalid listeners
+                // Here comes yet another fucking hack.
+                if (hasLuaListeners) {
+                    if (lua_listeners.size() > 0) { // Check if there are any Lua listeners
+                        for (size_t i = 0; i < lua_listeners.size(); i++) {
+                            sol::function lua_listener = lua_listeners[i];
+                            if (!lua_listener.valid()) {
+                                continue; // Skip invalid listeners
+                            }
+                            sol::state_view lua_state = sol::state_view(lua_listener.lua_state());
+                            if (!lua_state || lua_state.lua_state() == nullptr) {
+                                continue; // Skip if the Lua state is invalid
+                            }
+                            sol::table lua_args = lua_state.create_table(args.size(), 0);
+                            for (int j = 0; j < args.size(); ++j) {
+                                lua_args[j + 1] = args[j]; // Lua tables are 1-indexed
+                            }
+                            callLuaListener(lua_listener, lua_args);
                         }
-                        sol::state_view lua_state = sol::state_view(lua_listener.lua_state());
-                        if (!lua_state || lua_state.lua_state() == nullptr) {
-                            continue; // Skip if the Lua state is invalid
-                        }
-                        sol::table lua_args = lua_state.create_table(args.size(), 0);
-                        for (int j = 0; j < args.size(); ++j) {
-                            lua_args[j + 1] = args[j]; // Lua tables are 1-indexed
-                        }
-                        callLuaListener(lua_listener, lua_args);
                     }
                 }
 
