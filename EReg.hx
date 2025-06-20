@@ -11,6 +11,11 @@ class EReg {
 
 		If `r` or `opt` are null, the result is unspecified.
 	**/
+    private var pattern: String;
+    private var options: String;
+    private var regex: RegEx;
+    private var lastMatch: RegExMatch;
+
 	public function new(r:String, opt:String) {
 		throw new haxe.exceptions.NotImplementedException("Regular expressions are not implemented for this platform");
 	}
