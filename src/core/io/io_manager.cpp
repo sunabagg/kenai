@@ -10,7 +10,9 @@ namespace sunaba::core::io {
     void bindIoManager(sol::state& lua) {
         lua.new_usertype<IoManager>(
             "IoManager",
-            sol::constructors<IoManager()>(),
+            "new", sol::factories([]() {
+                return new IoManager();
+            }),
             sol::base_classes, sol::bases<IoInterface>(),
             "add", &IoManager::add,
             "remove", &IoManager::remove,
