@@ -2,7 +2,9 @@
 
 void sunaba::core::bindImage(sol::state &lua) {
     lua.new_usertype<sunaba::core::Image>("Image",
-        sol::constructors<sunaba::core::Image()>(),
+        "new", sol::factories(
+            []() { return new sunaba::core::Image(); }
+        ),
         sol::base_classes, sol::bases<sunaba::core::BaseObject, sunaba::core::Resource>(),
         "adjustBcs", &sunaba::core::Image::adjustBcs,
         "blendRect", &sunaba::core::Image::blendRect,
