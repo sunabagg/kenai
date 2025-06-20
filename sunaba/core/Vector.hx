@@ -9,6 +9,7 @@ extern class VectorNative<T> {
     public function insert(index:Int, value:T):Void;
     public function add(key:Int, value:T):Void;
     public function clear():Void;
+    public function next():T;
 }
 
 @:generic
