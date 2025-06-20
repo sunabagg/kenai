@@ -75,7 +75,9 @@ namespace sunaba::desktop {
 
     void bindPopup(sol::state& lua) {
         lua.new_usertype<Popup>("Popup",
-            sol::constructors<Popup()>(),
+            "new", sol::factories(
+                []() { return new Popup(); }
+            ),
             sol::base_classes, sol::bases<BaseObject, Element, sunaba::core::Viewport, sunaba::desktop::Window>(),
             "borderless", sol::property(
                 &Popup::getBorderless,
