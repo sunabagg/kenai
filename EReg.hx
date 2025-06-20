@@ -23,9 +23,11 @@ class EReg {
 
         var godotPattern = r;
         if (StringTools.contains(opt, "i")) {
-            godotPatrern = "(?i)" + r; // Add case-insensitive modifier if not present
+            godotPattern = "(?i)" + r; // Add case-insensitive modifier if not present
         }
-        if (!Stri)
+        if (StringTools.contains(opt, "m")) {
+            godotPattern = "(?m)" + r; // Add multiline modifier if not present
+        }
 		//throw new haxe.exceptions.NotImplementedException("Regular expressions are not implemented for this platform");
 	}
 
