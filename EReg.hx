@@ -1,3 +1,4 @@
+import sunaba.Error;
 import sunaba.core.RegExMatch;
 import sunaba.core.RegEx;
 import lua.Table;
@@ -30,8 +31,10 @@ class EReg {
         }
 
         var error = regex.compile(godotPattern);
-		//throw new haxe.exceptions.NotImplementedException("Regular expressions are not implemented for this platform");
-	}
+        if (error != Error.ok) {
+            throw "Failed to compile regex pattern: " + r;
+        }
+    }
 
 	/**
 		Tells if `this` regular expression matches String `s`.
