@@ -1,7 +1,7 @@
 #include "base_material3d.h"
 
 void sunaba::spatial::bindBaseMaterial3D(sol::state_view& lua) {
-    lua.new_usertype<sunaba::spatial::BaseMaterial3D>("BaseMaterial3D",
+    auto ut = lua.new_usertype<sunaba::spatial::BaseMaterial3D>("BaseMaterial3D",
         "new", sol::factories(
             []() { return new sunaba::spatial::BaseMaterial3D(); }
         ),
@@ -123,11 +123,7 @@ void sunaba::spatial::bindBaseMaterial3D(sol::state_view& lua) {
         "uv2WorldTriplanar", sol::property(&BaseMaterial3D::getUv2WorldTriplanar, &BaseMaterial3D::setUv2WorldTriplanar),
         "vertexColorIsSrgb", sol::property(&BaseMaterial3D::getVertexColorIsSrgb, &BaseMaterial3D::setVertexColorIsSrgb),
         "vertexColorUseAsAlbedo", sol::property(&BaseMaterial3D::getVertexColorUseAsAlbedo, &BaseMaterial3D::setVertexColorUseAsAlbedo),
-        "getFeature", &BaseMaterial3D::getFeature,
-        "getFlag", &BaseMaterial3D::getFlag,
-        "getTexture", &BaseMaterial3D::getTexture,
-        "setFeature", &BaseMaterial3D::setFeature,
-        "setFlag", &BaseMaterial3D::setFlag,
+        
         //"setTexture", &BaseMaterial3D::setTexture,
         "cast", [](sunaba::core::Resource* res) {
             return new BaseMaterial3D(
@@ -135,4 +131,10 @@ void sunaba::spatial::bindBaseMaterial3D(sol::state_view& lua) {
             );
         }
     );
+
+    ut["getFeature"] = &BaseMaterial3D::getFeature;
+    ut["getFlag"] = &BaseMaterial3D::getFlag;
+    ut["getTexture"] = &BaseMaterial3D::getTexture;
+    ut["setFeature"] = &BaseMaterial3D::setFeature;
+    ut["setFlag"] = &BaseMaterial3D::setFlag;
 }
