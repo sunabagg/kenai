@@ -2,7 +2,9 @@
 
 void sunaba::core::bindPlaceholderTextureLayered(sol::state &lua) {
     lua.new_usertype<sunaba::core::PlaceholderTextureLayered>("PlaceholderTextureLayered",
-        sol::constructors<sunaba::core::PlaceholderTextureLayered()>(),
+        "new", sol::factories(
+            []() { return new sunaba::core::PlaceholderTextureLayered(); }
+        ),
         sol::base_classes, sol::bases<sunaba::core::BaseObject, sunaba::core::Resource, sunaba::core::Texture, sunaba::core::TextureLayered>(),
         "layers", sol::property(
             &sunaba::core::PlaceholderTextureLayered::getLayers,
