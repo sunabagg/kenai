@@ -42,10 +42,25 @@ namespace sunaba::core::io {
         PackedStringArray files = zip_reader->get_files();
         std::vector<std::string> file_list;
 
+        auto currentDirName = String(path.c_str()).get_file();
         for (int i = 0; i < files.size(); ++i) {
             std::string file = files[i].utf8().get_data();
+            auto folderName = String(file.c_str()).get_base_dir().get_file();
+            if (folderName != currentDirName) {
+                continue; // Skip files not in the current directory
+            }
+            file = pathUri + file; // Ensure the path is prefixed with the base URI
             if (file.find(path) == 0 && (extension.empty() || StringUtils::endsWith(file, extension))) {
                 file_list.push_back(file);
+                auto file_dir = String(file.c_str()).get_base_dir();
+                
+                if (recursive && file_dir != path.c_str()) {
+                    // If recursive, we can add the directory to the list
+                    std::string dir_path = file_dir.utf8().get_data();
+                    if (std::find(file_list.begin(), file_list.end(), dir_path) == file_list.end()) {
+                        file_list.push_back(dir_path);
+                    }
+                }
             }
         }
 
