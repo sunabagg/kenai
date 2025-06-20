@@ -96,7 +96,7 @@ class EReg {
 		The result does not include the matched part.
 	**/
 	public function matchedLeft():String {
-		if (lastMatch == null) {
+		if (lastMatch == null || lastMatch.isNull()) {
             return ""; // No match found
         }
         return lastInput.substr(0, lastMatch.getStart(0));
