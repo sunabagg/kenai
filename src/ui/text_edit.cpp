@@ -216,7 +216,9 @@ namespace sunaba::ui {
 
     void bindTextEdit(sol::state& lua) {
         auto ut = lua.new_usertype<TextEdit>("TextEdit",
-            sol::constructors<TextEdit()>(),
+            "new", sol::factories(
+                []() { return new TextEdit(); }
+            ),
             sol::base_classes, sol::bases<BaseObject, Element, sunaba::core::CanvasItem, Control>(),
             "autowrapMode", sol::property(
                 &TextEdit::getAutowrapMode,
