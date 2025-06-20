@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<suml fullscreen="true" name="ClickerCounter">
+<suml fullscreen="true" name="clickerCounter">
     <head>
     </head>
     <body>
