@@ -130,7 +130,7 @@ namespace sunaba::ui {
     }
 
     void bindHFlowContainer(sol::state& lua) {
-        lua.new_usertype<HFlowContainer>("HFlowContainer",
+        lua.new_usertype<HFlowContainer>("HflowContainer",
             "new", sol::factories(
                 []() { return new HFlowContainer(); }
             ),
