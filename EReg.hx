@@ -233,7 +233,6 @@ class EReg {
         var matches:Array<RegExMatch> = Table.toArray(searchAllTable);
 
         for (match in matches) {
-            //
             var start = match.getStart(0);
             var end = match.getEnd(0);
             result += s.substr(lastIndex, start - lastIndex); // Add the part before the
