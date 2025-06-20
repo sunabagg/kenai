@@ -50,7 +50,7 @@ extern class ItemList extends Control {
     public function getItemTextDirection(index: Int): Int;
     public function getItemTooltip(index: Int): String;
     public function getSelectedItems(): lua.Table<Int,Int>;
-    public function getVScrollBar(): VScrollBar;
+    public function getVScrollBar(): VscrollBar;
     public function isAnythingSelected(): Bool;
     public function isItemDisabled(index: Int): Bool;
     public function isItemIconTransposed(index: Int): Bool;
