@@ -1,5 +1,6 @@
 package sunaba.ui;
 
+import sunaba.core.GlobalObjectStack;
 import haxe.DynamicAccess;
 import sunaba.core.FontFile;
 import sunaba.core.Texture;
@@ -148,6 +149,7 @@ class Widget {
         for (node in nodes) {
             var element = construct(node);
             elementdb.push(element);
+            GlobalObjectStack.getSingleton().stack.push(new sunaba.core.StackHandle(element));
             if (element != null && element.isNull() == false) {
                 rootElement.addChild(element);
             }
