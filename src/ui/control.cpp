@@ -159,6 +159,9 @@ namespace sunaba::ui {
     void ControlSignalWrapper::minimum_size_changed() {
         if (element != nullptr) {
             Array args;
+            if (element->minimumSizeChangedEvent == nullptr) {
+                element->minimumSizeChangedEvent = new Event();
+            }
             element->minimumSizeChangedEvent->emit(args);
         }
     }
@@ -166,6 +169,9 @@ namespace sunaba::ui {
     void ControlSignalWrapper::mouse_entered() {
         if (element != nullptr) {
             Array args;
+            if (element->mouseEnteredEvent == nullptr) {
+                element->mouseEnteredEvent = new Event();
+            }
             element->mouseEnteredEvent->emit(args);
         }
     }
@@ -173,6 +179,9 @@ namespace sunaba::ui {
     void ControlSignalWrapper::mouse_exited() {
         if (element != nullptr) {
             Array args;
+            if (element->mouseExitedEvent == nullptr) {
+                element->mouseExitedEvent = new Event();
+            }
             element->mouseExitedEvent->emit(args);
         }
     }
