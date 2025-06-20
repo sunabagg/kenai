@@ -2,7 +2,9 @@
 
 void sunaba::core::bindSystemFont(sol::state_view& lua) {
     lua.new_usertype<SystemFont>("SystemFont",
-        sol::constructors<SystemFont()>(),
+        "new", sol::factories(
+            []() { return new SystemFont(); }
+        ),
         sol::base_classes, sol::bases<sunaba::core::BaseObject, sunaba::core::Resource, sunaba::core::Font>(),
         "allowSystemFallback", sol::property(&SystemFont::getAllowSystemFallback, &SystemFont::setAllowSystemFallback),
         "antialiasing", sol::property(&SystemFont::getAntialiasing, &SystemFont::setAntialiasing),
