@@ -7,7 +7,9 @@ namespace sunaba::spatial {
 
     void bindSpatialTransform(sol::state& lua) {
         lua.new_usertype<SpatialTransform>("SpatialTransform",  
-            sol::constructors<SpatialTransform()>(), 
+            "new", []() {
+                return std::make_shared<SpatialTransform>();
+            },
             sol::base_classes, sol::bases<Component>(),
             sol::meta_function::garbage_collect, sol::destructor([](SpatialTransform* t) {  }),
             "basis", sol::property(&SpatialTransform::getBasis, &SpatialTransform::setBasis),
