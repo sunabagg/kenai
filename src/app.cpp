@@ -188,6 +188,11 @@ void App::loadAndExecuteSbx(const String &path) {
     auto parseResult = headerJson->parse_string(headerJsonStr.c_str());
     Dictionary headerDict = parseResult;
 
+    if ( !headerDict.has("name") || !headerDict.has("version") ) {
+        UtilityFunctions::print( String( "Invalid header.json in " ) + path );
+        return;
+    }
+
     std::string script = ioManager->loadText("app://main.sbx");
     sol::protected_function_result result = global_state.safe_script(script, sol::script_pass_on_error);
     
