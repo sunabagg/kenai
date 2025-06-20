@@ -131,7 +131,9 @@ namespace sunaba::ui {
 
     void bindMarginContainer(sol::state &lua) { 
         lua.new_usertype<MarginContainer>("MarginContainer",
-            sol::constructors<MarginContainer()>(),
+            "new", sol::factories(
+                []() { return new MarginContainer(); }
+            ),
             sol::base_classes, sol::bases<BaseObject, Element, sunaba::core::CanvasItem, Control, Container>(),
             "cast", [](Element* e) {
                 MarginContainerNode* node = Object::cast_to<MarginContainerNode>(e->getNode());
