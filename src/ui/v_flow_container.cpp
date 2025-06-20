@@ -131,7 +131,7 @@ namespace sunaba::ui {
     }
 
     void bindVFlowContainer(sol::state &lua) {
-        lua.new_usertype<VFlowContainer>("VFlowContainer",
+        lua.new_usertype<VFlowContainer>("VflowContainer",
             "new", sol::factories(
                 []() { return new VFlowContainer(); }
             ),
