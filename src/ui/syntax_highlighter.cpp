@@ -8,7 +8,9 @@ namespace sunaba::ui {
     
     void bindSyntaxHighlighter(sol::state &lua) {
         lua.new_usertype<SyntaxHighlighter>("SyntaxHighlighter",
-            sol::constructors<SyntaxHighlighter()>(),
+            "new", sol::factories(
+                []() { return new SyntaxHighlighter(); }
+            ),
             sol::base_classes, sol::bases<sunaba::core::BaseObject, sunaba::core::Resource>(),
             "clearHighlightingCache", &SyntaxHighlighter::clearHighlightingCache,
             "getLineSyntaxHighlighting", &SyntaxHighlighter::getLineSyntaxHighlighting,
