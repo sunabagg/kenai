@@ -78,7 +78,7 @@ class EReg {
             return ""; // No match found
         }
 
-        var nVariant: VariantAbstract = n;
+        var nVariant: Variant = n;
         return lastMatch.getString(nVariant);
 	}
 
