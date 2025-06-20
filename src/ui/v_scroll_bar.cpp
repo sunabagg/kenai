@@ -123,7 +123,9 @@ namespace sunaba::ui {
 
     void bindVScrollBar(sol::state &lua) {
         lua.new_usertype<VScrollBar>("VScrollBar",
-            sol::constructors<VScrollBar()>(),
+            "new", sol::factories(
+                []() { return new VScrollBar(); }
+            ),
             sol::base_classes, sol::bases<BaseObject, Element, sunaba::core::CanvasItem, Control, Range, ScrollBar>(),
             "cast", [] (Element* element) {
                 VScrollBarNode* vScrollBarNode = Object::cast_to<VScrollBarNode>(element->getNode());
