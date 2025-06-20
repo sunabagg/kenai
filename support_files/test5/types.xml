@@ -363,6 +363,108 @@
 			<m n=":runtimeValue"/>
 		</meta>
 	</abstract>
+	<class path="sunaba.ui.Widget" params="" file="/Users/lucasabbas/sunaba/sunaba/ui/Widget.hx">
+		<rootElement public="1"><c path="sunaba.ui.Control"/></rootElement>
+		<io public="1"><c path="sunaba.core.io.IoManager"/></io>
+		<keepChildren public="1" expr="false">
+			<x path="Bool"/>
+			<meta><m n=":value"><e>false</e></m></meta>
+		</keepChildren>
+		<elementdb expr="[]">
+			<c path="Array"><c path="sunaba.core.Element"/></c>
+			<meta><m n=":value"><e>[]</e></m></meta>
+		</elementdb>
+		<init public="1" set="method" line="40"><f a=""><x path="Void"/></f></init>
+		<load public="1" set="method" line="44"><f a="path">
+	<c path="String"/>
+	<x path="Void"/>
+</f></load>
+		<parseMarkup public="1" set="method" line="61"><f a="markup">
+	<c path="String"/>
+	<x path="Void"/>
+</f></parseMarkup>
+		<instantiate set="method" line="66"><f a="xml">
+	<c path="Xml"/>
+	<x path="Void"/>
+</f></instantiate>
+		<constructNodes set="method" line="148"><f a="nodes">
+	<t path="Iterator"><c path="Xml"/></t>
+	<x path="Void"/>
+</f></constructNodes>
+		<construct set="method" line="164">
+			<f a="xml">
+				<c path="Xml"/>
+				<c path="sunaba.core.Element"/>
+			</f>
+			<meta><m n=":has_untyped"/></meta>
+		</construct>
+		<setObjectValues set="method" line="191"><f a="element:xml">
+	<c path="sunaba.core.Element"/>
+	<c path="Xml"/>
+	<x path="Void"/>
+</f></setObjectValues>
+		<constructChildren set="method" line="431"><f a="element:xml">
+	<c path="sunaba.core.Element"/>
+	<c path="Xml"/>
+	<x path="Void"/>
+</f></constructChildren>
+		<hasField get="inline" set="null" line="444">
+			<f a="object:field">
+				<x path="Any"/>
+				<c path="String"/>
+				<x path="Bool"/>
+			</f>
+			<meta><m n=":has_untyped"/></meta>
+		</hasField>
+		<field set="method" line="449">
+			<f a="obj:field">
+				<x path="Any"/>
+				<c path="String"/>
+				<d/>
+			</f>
+			<meta><m n=":has_untyped"/></meta>
+		</field>
+		<setProperty get="inline" set="null" line="456">
+			<f a="obj:field:value">
+				<x path="Any"/>
+				<c path="String"/>
+				<d/>
+				<x path="Void"/>
+			</f>
+			<meta><m n=":has_untyped"/></meta>
+		</setProperty>
+		<isAnElementClass set="method" line="465">
+			<f a="classInfo">
+				<x path="Class"><d/></x>
+				<x path="Bool"/>
+			</f>
+			<meta><m n=":has_untyped"/></meta>
+		</isAnElementClass>
+		<camelToPascal set="method" line="473"><f a="str">
+	<c path="String"/>
+	<c path="String"/>
+</f></camelToPascal>
+		<camelToSnake set="method" line="478"><f a="input">
+	<c path="String"/>
+	<c path="String"/>
+</f></camelToSnake>
+		<new public="1" set="method" line="33">
+			<f a=""><x path="Void"/></f>
+			<meta><m n=":has_untyped"/></meta>
+		</new>
+	</class>
+	<class path="ClickerCounter" params="" file="/Users/lucasabbas/sunaba/support_files/test5/src/ClickerCounter.hx">
+		<extends path="sunaba.ui.Widget"/>
+		<label><c path="sunaba.ui.Label"/></label>
+		<counter expr="0">
+			<x path="Int"/>
+			<meta><m n=":value"><e>0</e></m></meta>
+		</counter>
+		<init public="1" set="method" line="12" override="1"><f a=""><x path="Void"/></f></init>
+		<onClick set="method" line="32"><f a=""><x path="Void"/></f></onClick>
+		<new public="1" set="method" line="8"><f a=""><x path="Void"/></f></new>
+		<meta><m n=":directlyUsed"/></meta>
+	</class>
 	<class path="EReg" params="" file="/Users/lucasabbas/sunaba/EReg.hx">
 		<escape public="1" set="method" line="253" static="1">
 			<f a="s">
@@ -579,6 +681,26 @@
 		<meta><m n=":coreType"/></meta>
 		<impl><class path="_EnumValue.EnumValue_Impl_" params="" file="/usr/local/lib/haxe/std/EnumValue.hx" private="1" module="EnumValue" final="1"><meta><m n=":keep"/></meta></class></impl>
 	</abstract>
+	<class path="sunaba.App" params="" file="/Users/lucasabbas/sunaba/sunaba/App.hx">
+		<rootElement public="1" get="accessor"><c path="sunaba.core.Element"/></rootElement>
+		<get_rootElement set="method" line="8">
+			<f a=""><c path="sunaba.core.Element"/></f>
+			<meta><m n=":has_untyped"/></meta>
+		</get_rootElement>
+		<globalObjectStack public="1" get="accessor"><c path="sunaba.core.GlobalObjectStack"/></globalObjectStack>
+		<get_globalObjectStack set="method" line="13"><f a=""><c path="sunaba.core.GlobalObjectStack"/></f></get_globalObjectStack>
+		<init public="1" set="method" line="22"><f a=""><x path="Void"/></f></init>
+		<new public="1" set="method" line="17"><f a=""><x path="Void"/></f></new>
+	</class>
+	<class path="Main" params="" file="/Users/lucasabbas/sunaba/support_files/test5/src/Main.hx">
+		<extends path="sunaba.App"/>
+		<main public="1" set="method" line="6" static="1">
+			<f a=""><x path="Void"/></f>
+			<meta><m n=":keep"/></meta>
+		</main>
+		<init public="1" set="method" line="10" override="1"><f a=""><x path="Void"/></f></init>
+		<new public="1" set="method" line="5"><f a=""><x path="Void"/></f></new>
+	</class>
 	<typedef path="Map" params="K:V" file="/usr/local/lib/haxe/std/Map.hx"><x path="haxe.ds.Map">
 	<c path="Map.K"/>
 	<c path="Map.V"/>
@@ -5376,17 +5498,6 @@
 			<meta><m n=":native"><e>"new_tcp"</e></m></meta>
 		</new>
 		<meta><m n=":luaRequire"><e>"luv"</e></m></meta>
-	</class>
-	<class path="sunaba.App" params="" file="/Users/lucasabbas/sunaba/sunaba/App.hx">
-		<rootElement public="1" get="accessor"><c path="sunaba.core.Element"/></rootElement>
-		<get_rootElement set="method" line="8">
-			<f a=""><c path="sunaba.core.Element"/></f>
-			<meta><m n=":has_untyped"/></meta>
-		</get_rootElement>
-		<globalObjectStack public="1" get="accessor"><c path="sunaba.core.GlobalObjectStack"/></globalObjectStack>
-		<get_globalObjectStack set="method" line="13"><f a=""><c path="sunaba.core.GlobalObjectStack"/></f></get_globalObjectStack>
-		<init public="1" set="method" line="22"><f a=""><x path="Void"/></f></init>
-		<new public="1" set="method" line="17"><f a=""><x path="Void"/></f></new>
 	</class>
 	<abstract path="sunaba.Error" params="" file="/Users/lucasabbas/sunaba/sunaba/Error.hx">
 		<from><icast><x path="Int"/></icast></from>
@@ -13134,117 +13245,6 @@
 	</f>
 	<meta><m n=":from"/></meta>
 </fromResource></class>
-	<class path="sunaba.ui.Widget" params="" file="/Users/lucasabbas/sunaba/sunaba/ui/Widget.hx">
-		<rootElement public="1"><c path="sunaba.ui.Control"/></rootElement>
-		<io public="1"><c path="sunaba.core.io.IoManager"/></io>
-		<keepChildren public="1" expr="false">
-			<x path="Bool"/>
-			<meta><m n=":value"><e>false</e></m></meta>
-		</keepChildren>
-		<elementdb expr="[]">
-			<c path="Array"><c path="sunaba.core.Element"/></c>
-			<meta><m n=":value"><e>[]</e></m></meta>
-		</elementdb>
-		<init public="1" set="method" line="40"><f a=""><x path="Void"/></f></init>
-		<load public="1" set="method" line="44"><f a="path">
-	<c path="String"/>
-	<x path="Void"/>
-</f></load>
-		<parseMarkup public="1" set="method" line="61"><f a="markup">
-	<c path="String"/>
-	<x path="Void"/>
-</f></parseMarkup>
-		<instantiate set="method" line="66"><f a="xml">
-	<c path="Xml"/>
-	<x path="Void"/>
-</f></instantiate>
-		<constructNodes set="method" line="148"><f a="nodes">
-	<t path="Iterator"><c path="Xml"/></t>
-	<x path="Void"/>
-</f></constructNodes>
-		<construct set="method" line="164">
-			<f a="xml">
-				<c path="Xml"/>
-				<c path="sunaba.core.Element"/>
-			</f>
-			<meta><m n=":has_untyped"/></meta>
-		</construct>
-		<setObjectValues set="method" line="191"><f a="element:xml">
-	<c path="sunaba.core.Element"/>
-	<c path="Xml"/>
-	<x path="Void"/>
-</f></setObjectValues>
-		<constructChildren set="method" line="431"><f a="element:xml">
-	<c path="sunaba.core.Element"/>
-	<c path="Xml"/>
-	<x path="Void"/>
-</f></constructChildren>
-		<hasField get="inline" set="null" line="444">
-			<f a="object:field">
-				<x path="Any"/>
-				<c path="String"/>
-				<x path="Bool"/>
-			</f>
-			<meta><m n=":has_untyped"/></meta>
-		</hasField>
-		<field set="method" line="449">
-			<f a="obj:field">
-				<x path="Any"/>
-				<c path="String"/>
-				<d/>
-			</f>
-			<meta><m n=":has_untyped"/></meta>
-		</field>
-		<setProperty get="inline" set="null" line="456">
-			<f a="obj:field:value">
-				<x path="Any"/>
-				<c path="String"/>
-				<d/>
-				<x path="Void"/>
-			</f>
-			<meta><m n=":has_untyped"/></meta>
-		</setProperty>
-		<isAnElementClass set="method" line="465">
-			<f a="classInfo">
-				<x path="Class"><d/></x>
-				<x path="Bool"/>
-			</f>
-			<meta><m n=":has_untyped"/></meta>
-		</isAnElementClass>
-		<camelToPascal set="method" line="473"><f a="str">
-	<c path="String"/>
-	<c path="String"/>
-</f></camelToPascal>
-		<camelToSnake set="method" line="478"><f a="input">
-	<c path="String"/>
-	<c path="String"/>
-</f></camelToSnake>
-		<new public="1" set="method" line="33">
-			<f a=""><x path="Void"/></f>
-			<meta><m n=":has_untyped"/></meta>
-		</new>
-	</class>
-	<class path="support_files.test5.src.ClickerCounter" params="" file="/Users/lucasabbas/sunaba/support_files/test5/src/ClickerCounter.hx">
-		<extends path="sunaba.ui.Widget"/>
-		<label><c path="sunaba.ui.Label"/></label>
-		<counter expr="0">
-			<x path="Int"/>
-			<meta><m n=":value"><e>0</e></m></meta>
-		</counter>
-		<init public="1" set="method" line="12" override="1"><f a=""><x path="Void"/></f></init>
-		<onClick set="method" line="32"><f a=""><x path="Void"/></f></onClick>
-		<new public="1" set="method" line="8"><f a=""><x path="Void"/></f></new>
-		<meta><m n=":directlyUsed"/></meta>
-	</class>
-	<class path="support_files.test5.src.Main" params="" file="/Users/lucasabbas/sunaba/support_files/test5/src/Main.hx">
-		<extends path="sunaba.App"/>
-		<main public="1" set="method" line="6" static="1">
-			<f a=""><x path="Void"/></f>
-			<meta><m n=":keep"/></meta>
-		</main>
-		<init public="1" set="method" line="10" override="1"><f a=""><x path="Void"/></f></init>
-		<new public="1" set="method" line="5"><f a=""><x path="Void"/></f></new>
-	</class>
 	<typedef path="sys.FileStat" params="" file="/usr/local/lib/haxe/std/sys/FileStat.hx">
 		<a>
 			<uid>
