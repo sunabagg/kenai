@@ -138,7 +138,9 @@ namespace sunaba::ui {
 
     void bindBoxContainer(sol::state& lua) {
         auto ut = lua.new_usertype<BoxContainer>("BoxContainer",
-            sol::constructors<BoxContainer()>(),
+            "new", sol::factories(
+                []() { return new BoxContainer(); }
+            ),
             sol::base_classes, sol::bases<BaseObject, Element, sunaba::core::CanvasItem, Control, Container>(),
             "alignment", sol::property(
                 &BoxContainer::getAlignment,
