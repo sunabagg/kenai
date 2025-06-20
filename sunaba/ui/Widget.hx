@@ -166,7 +166,7 @@ class Widget {
         className = camelToPascal(className);
         var classType : Class<Dynamic> = untyped __lua__("_G[className]");
         if (classType != null) {
-            Sys.println("Constructing element of class: " + className);
+            //Sys.println("Constructing element of class: " + className);
 
             var instance = untyped __lua__("classType.new()");
             if (instance != null) {
