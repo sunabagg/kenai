@@ -55,6 +55,20 @@ abstract Vector<T>(VectorNative<T>) from VectorNative<T> to VectorNative<T> {
         return array;
     }
 
+    @:to
+    public inline function toTable():Table<Int, T> {
+        var s: Vector<T> = this;
+        var table: Table<Int, T> = untyped __lua__("table");
+        for (i in 0...s.size()) {
+            var value = s.get(i);
+            if (value == null) {
+                throw "Vector.toTable: null value at index " + i;
+            }
+            table[i] = value;
+        }
+        return table;
+    }
+
     @:from
     @:generic
     public static function fromTable<A>(table:Table<Int, A>):Vector<A> {
