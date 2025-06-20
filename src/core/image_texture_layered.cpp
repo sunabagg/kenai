@@ -2,7 +2,9 @@
 
 void sunaba::core::bindImageTextureLayered(sol::state_view& lua) {
     lua.new_usertype<sunaba::core::ImageTextureLayered>("ImageTextureLayered",
-        sol::constructors<ImageTextureLayered()>(),
+        "new", sol::factories(
+            []() { return new sunaba::core::ImageTextureLayered(); }
+        ),
         sol::base_classes, sol::bases<sunaba::core::BaseObject, sunaba::core::Resource, sunaba::core::Texture, sunaba::core::TextureLayered>(),
         "createFromImages", &ImageTextureLayered::createFromImages,
         "updateLayer", &ImageTextureLayered::updateLayer,
