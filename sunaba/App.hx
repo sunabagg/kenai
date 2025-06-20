@@ -1,5 +1,6 @@
 package sunaba;
 
+import sunaba.core.GlobalObjectStack;
 import sunaba.core.Element;
 
 class App {
@@ -8,7 +9,13 @@ class App {
         return untyped __lua__("_G.rootElement");
     }
 
+    public var globalObjectStack(get, default): GlobalObjectStack;
+    private function get_globalObjectStack(): GlobalObjectStack {
+        return GlobalObjectStack.getSingleton();
+    }
+
     public function new() {
+        GlobalObjectStack.initSingleton();
         init();
     }
 
