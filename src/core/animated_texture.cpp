@@ -3,7 +3,7 @@
 void sunaba::core::bindAnimatedTexture(sol::state &lua) {
     lua.new_usertype<sunaba::core::AnimatedTexture>("AnimatedTexture",
         "new", sol::factories(
-            []() { return new sunaba::core::AnimatedTexture(); },
+            []() { return new sunaba::core::AnimatedTexture(); }
         ),
         sol::base_classes, sol::bases<sunaba::core::BaseObject, sunaba::core::Resource, sunaba::core::Texture, sunaba::core::Texture2D>(),
         "currentFrame", sol::property(
