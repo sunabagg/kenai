@@ -2,7 +2,9 @@
 
 void sunaba::input::bindInputEventScreenDrag(sol::state_view& lua) {
     lua.new_usertype<InputEventScreenDrag>("InputEventScreenDrag",
-        sol::constructors<InputEventScreenDrag(), InputEventScreenDrag(GodotInputEventScreenDrag*)>(),
+        "new", sol::factories(
+            []() { return new InputEventScreenDrag(); }
+        ),
         sol::base_classes, sol::bases<sunaba::core::BaseObject, sunaba::core::Resource, sunaba::input::InputEvent, sunaba::input::InputEventFromWindow>(),
         "index", sol::property(&InputEventScreenDrag::getIndex, &InputEventScreenDrag::setIndex),
         "penInverted", sol::property(&InputEventScreenDrag::getPenInverted, &InputEventScreenDrag::setPenInverted),
