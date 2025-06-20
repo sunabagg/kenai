@@ -156,7 +156,9 @@ namespace sunaba::desktop {
 
     void bindWindow(sol::state& lua) {
         lua.new_usertype<Window>("Window",
-            sol::constructors<Window()>(),
+            "new", sol::factories(
+                []() { return new Window(); }
+            ),
             sol::base_classes, sol::bases<BaseObject, Element, sunaba::core::Viewport>(),
             "alwaysOnTop", sol::property(
                 &Window::getAlwaysOnTop,
