@@ -3289,6 +3289,7 @@ __sunaba_ui_Widget.prototype.load = function(self,path)
   if ((file ~= nil) and (#file > 0)) then 
     self:parseMarkup(file);
   else
+    _G.print(Std.string(Std.string("Failed to load file: ") .. Std.string(path)));
     _G.error(__haxe_Exception.thrown(Std.string("Failed to load file: ") .. Std.string(path)),0);
   end;
 end
@@ -3959,6 +3960,7 @@ _hxClasses["support_files.test5.src.ClickerCounter"] = __support_files_test5_src
 __support_files_test5_src_ClickerCounter.__name__ = "support_files.test5.src.ClickerCounter"
 __support_files_test5_src_ClickerCounter.prototype = _hx_e();
 __support_files_test5_src_ClickerCounter.prototype.init = function(self) 
+  self:load("app://assets/ClickerCounter.suml");
 end
 
 __support_files_test5_src_ClickerCounter.prototype.__class__ =  __support_files_test5_src_ClickerCounter
