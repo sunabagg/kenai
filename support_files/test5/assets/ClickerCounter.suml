@@ -9,5 +9,14 @@
             offsetTop="10"
             offsetLeft="-10"
             offsetRight="10"/>
+        <centerContainer
+            fullRect="true">
+            <vBoxContainer>
+                <label
+                    text="You clicked me 0 times?"
+                    verticalAlignment="1"
+                    horizontalAlignment="1"/>
+            </vBoxContainer>
+        </centerContainer>
     </body>
 </suml>
