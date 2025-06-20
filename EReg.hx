@@ -114,7 +114,11 @@ class EReg {
 		The result does not include the matched part.
 	**/
 	public function matchedRight():String {
-		return null;
+		if (lastMatch == null) {
+            return ""; // No match found
+        }
+        var endPos = lastMatch.getEnd(0);
+        return lastInput.substr(endPos, lastInput.length - endPos);
 	}
 
 	/**
