@@ -65,6 +65,99 @@ void App::_ready() {
     }
 }
 
+void App::init(bool sandboxed) {
+    if (!sandboxed) {
+        global_state.open_libraries( sol::lib::base, sol::lib::bit32, sol::lib::coroutine,
+            sol::lib::count, sol::lib::math, sol::lib::string,
+            sol::lib::table, sol::lib::utf8, sol::lib::package, 
+            sol::lib::os, sol::lib::io, sol::lib::debug );
+    }
+
+        lua_State* L = global_state.lua_state();
+// hack fix for PUC-Rio Lua
+#ifdef USE_PUCRIO_LUA
+        luaopen_bit(L);
+#endif
+    
+
+    global_state["print"] = [this]( sol::variadic_args args ) {
+        String msg;
+        for ( const auto &arg : args )
+        {
+            if ( arg.is<std::string>() )
+            {
+                std::string str = arg.as<std::string>();
+                msg += str.c_str();
+            }
+            else if (arg.is<sol::table>())
+            {
+                msg += "table";
+            }
+            else if (arg.is<Vector3>())
+            {
+                Vector3 vec = arg.as<Vector3>();
+                msg += String(vec);
+            }
+            else if (arg.is<Vector2>())
+            {
+                Vector2 vec = arg.as<Vector2>();
+                msg += String(vec);
+            }
+            else if (arg.is<float>())
+            {
+                float f = arg.as<float>();
+                Variant v = f;
+                msg += String(v);
+            }
+            else if (arg.is<bool>())
+            {
+                bool b = arg.as<bool>();
+                Variant v = b;
+                msg += String(v);
+            }
+            else if (arg.is<int>())
+            {
+                int i = arg.as<int>();
+                Variant v = i;
+                msg += String(v);
+            }
+            else if (arg.is<Vector4>())
+            {
+                Vector4 vec = arg.as<Vector4>();
+                msg += String(vec);
+            }
+            else if (arg.is<Vector4i>())
+            {
+                Vector4i vec = arg.as<Vector4i>();
+                msg += String(vec);
+            }
+            else if (arg.is<Vector2i>())
+            {
+                Vector2i vec = arg.as<Vector2i>();
+                msg += String(vec);
+            }
+            else if (arg.is<Vector3i>())
+            {
+                Vector3i vec = arg.as<Vector3i>();
+                msg += String(vec);
+            }
+        }
+        godot::UtilityFunctions::print( msg );
+    };
+
+    //UtilityFunctions::print("Hello, World!");
+    //sunaba::core::
+    sunaba::input::bindInputClasses(global_state);
+    sunaba::core::bindCoreClasses(global_state);
+    sunaba::spatial::bindSpatialClasses(global_state);
+    sunaba::ui::bindUIClasses(global_state);
+    sunaba::desktop::bindDesktopClasses(global_state);
+
+    auto* rootElement = new sunaba::core::Element(this);
+    rootElement->isRootElement = true;
+    global_state["rootElement"] = rootElement;
+}
+
 void App::start( const String &path) {
     if (path == "") {
         return;
