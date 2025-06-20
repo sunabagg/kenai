@@ -192,6 +192,8 @@ void App::loadAndExecuteSbx(const String &path) {
     auto luabinname = headerDict.get("luabin", "main.lua");
     zipio->pathUri = String(headerDict.get("rootUrl", "app://")).utf8().get_data();
 
+    auto luabinPath = String(String(zipio->pathUri.c_str()) + String(luabinname)).utf8().get_data();
+
     std::string script = ioManager->loadText("app://main.sbx");
     sol::protected_function_result result = global_state.safe_script(script, sol::script_pass_on_error);
     
