@@ -21,6 +21,12 @@ class EReg {
         pattern = r;
         options = opt;
         regex = new RegEx();
+        if (StringTools.isEmpty(opt)) {
+            opt = "g"; // Default to global matching if no options are provided
+        }
+        if (StringTools.contains(opt, "g")) {
+            opt = opt.replace("g", ""); // Remove global modifier for Godot compatibility
+        }
 
         var godotPattern = r;
         if (StringTools.contains(opt, "i")) {
