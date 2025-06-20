@@ -132,7 +132,9 @@ namespace sunaba::ui {
 
     void bindVFlowContainer(sol::state &lua) {
         lua.new_usertype<VFlowContainer>("VFlowContainer",
-            sol::constructors<VFlowContainer()>(),
+            "new", sol::factories(
+                []() { return new VFlowContainer(); }
+            ),
             sol::base_classes, sol::bases<BaseObject, Element, sunaba::core::CanvasItem, Control, Container, FlowContainer>(),
             "cast", [](Element* element) {
                 VFlowContainerNode* vflowContainerNode = Object::cast_to<VFlowContainerNode>(element->getNode());
