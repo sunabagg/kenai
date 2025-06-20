@@ -10,5 +10,6 @@ extern class RegExMatch extends BaseObject {
     public function getGroupCount(): Int;
     public function getStart(?name: Variant): Int;
     public function getString(?name: Variant): String;
+    public function isValid(): Bool;
     public function isNull(): Bool;
 }
