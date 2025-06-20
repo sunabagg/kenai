@@ -1,3 +1,4 @@
+import sunaba.core.Variant;
 import sunaba.Error;
 import sunaba.core.RegExMatch;
 import sunaba.core.RegEx;
@@ -73,7 +74,12 @@ class EReg {
 		If `n` equals 0, the whole matched substring is returned.
 	**/
 	public function matched(n:Int):String {
-		return null;
+		if (lastMatch == null || lastMatch.isNull()) {
+            return ""; // No match found
+        }
+
+        var nVariant: VariantAbstract = n;
+        return lastMatch.getString(nVariant);
 	}
 
 	/**
