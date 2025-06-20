@@ -2,6 +2,7 @@
     "name": "test5",
     "version": "1.0",
     "type": "executable",
+    "rootUrl": "app://",
     "scriptdir": "src",
     "apisymbols": true,
     "sourcemap": true,
