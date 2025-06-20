@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<suml fullscreen="true" name="clickerCounter">
+    <head>
+    </head>
+    <body>
+        <panel
+            fullRect="true"
+            offsetBottom="-10"
+            offsetTop="10"
+            offsetLeft="-10"
+            offsetRight="10"/>
+        <centerContainer
+            fullRect="true"
+            name="centerContainer">
+            <vboxContainer
+                name="vboxContainer">
+                <label
+                    name="clickCounterLabel"
+                    text="You clicked me 0 times!"
+                    verticalAlignment="1"
+                    horizontalAlignment="1"/>
+                <button
+                    name="clickerButton"
+                    text="Click me!"
+                    alignment="1"/>
+            </vboxContainer>
+        </centerContainer>
+    </body>
+</suml>
