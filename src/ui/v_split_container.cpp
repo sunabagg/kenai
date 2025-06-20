@@ -130,7 +130,7 @@ namespace sunaba::ui {
     }
 
     void bindVSplitContainer(sol::state& lua) {
-        lua.new_usertype<VSplitContainer>("VSplitContainer",
+        lua.new_usertype<VSplitContainer>("VsplitContainer",
             "new", sol::factories(
                 []() { return new VSplitContainer(); }
             ),
