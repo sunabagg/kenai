@@ -3,7 +3,7 @@
 void sunaba::spatial::bindVisualInstance(sol::state& lua) {
     lua.new_usertype<IVisualInstance>(
         "IVisualInstance",
-        sol::constructors<IVisualInstance()>(),
+        sol::no_constructor,
         sol::base_classes, sol::bases<Component>(),
         sol::meta_function::garbage_collect, sol::destructor([](IVisualInstance* i) {  }),
         "layerMask", sol::property(&IVisualInstance::getLayerMask, &IVisualInstance::setLayerMask),
