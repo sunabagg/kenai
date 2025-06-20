@@ -3,7 +3,9 @@
 void sunaba::spatial::mesh::bindCapsule(sol::state& lua) {
     lua.new_usertype<Capsule>(
         "Capsule",
-        sol::constructors<Capsule()>(),
+        "new", sol::factories(
+            []() { return new Capsule(); }
+        ),
         sol::base_classes, sol::bases<Component>(),
         sol::meta_function::garbage_collect, sol::destructor([](Capsule* c) {  }),
         "height", sol::property(&Capsule::getHeight, &Capsule::setHeight),
