@@ -122,7 +122,7 @@ namespace sunaba::ui {
     }
 
     void bindHScrollBar(sol::state &lua) {
-        lua.new_usertype<HScrollBar>("HScrollBar",
+        lua.new_usertype<HScrollBar>("HscrollBar",
             "new", sol::factories(
                 []() { return new HScrollBar(); }
             ),
