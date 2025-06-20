@@ -24,4 +24,11 @@ abstract Vector<T>(VectorNative<T>) from VectorNative<T> to VectorNative<T> {
         var s = this;
         return untyped __lua__("s[index]");
     }
+
+    @:arrayAccess
+    public function set(index:Int, value:T):T {
+        var s = this;
+        untyped __lua__("s[index] = value");
+        return value;
+    }
 }
