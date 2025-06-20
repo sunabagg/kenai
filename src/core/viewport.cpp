@@ -77,7 +77,9 @@ namespace sunaba::core {
 
     void bindViewport(sol::state &lua) {
         lua.new_usertype<Viewport>("Viewport",
-            sol::constructors<Viewport()>(),
+            "new", sol::factories(
+                []() { return new Viewport(); }
+            ),
             sol::base_classes, sol::bases<BaseObject, Element>(),
             "anisotropicFilteringLevel", sol::property(
                 &Viewport::getAnisotropicFilteringLevel, 
