@@ -2,7 +2,9 @@
 
 void sunaba::core::bindImageTexture(sol::state &lua) {
     lua.new_usertype<sunaba::core::ImageTexture>("ImageTexture",
-        sol::constructors<sunaba::core::ImageTexture()>(),
+        "new", sol::factories(
+            []() { return new sunaba::core::ImageTexture(); }
+        ),
         sol::base_classes, sol::bases<sunaba::core::BaseObject, sunaba::core::Resource, sunaba::core::Texture, sunaba::core::Texture2D>(),
         "image", sol::property(
             &sunaba::core::ImageTexture::getImage, 
