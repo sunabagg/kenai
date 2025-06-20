@@ -2,7 +2,9 @@
 
 void sunaba::core::bindAtlasTexture(sol::state &lua) {
     lua.new_usertype<sunaba::core::AtlasTexture>("AtlasTexture",
-        sol::constructors<sunaba::core::AtlasTexture()>(),
+        "new", sol::factories(
+            []() { return new sunaba::core::AtlasTexture(); }
+        ),
         sol::base_classes, sol::bases<sunaba::core::BaseObject, sunaba::core::Resource, sunaba::core::Texture, sunaba::core::Texture2D>(),
         "atlas", sol::property(
             &sunaba::core::AtlasTexture::getAtlas, 
