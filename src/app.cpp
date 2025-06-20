@@ -7,6 +7,7 @@
 #include <godot_cpp/variant/utility_functions.hpp>
 #include <godot_cpp/classes/engine.hpp>
 #include <godot_cpp/classes/os.hpp>
+#include <godot_cpp/classes/json.hpp>
 #include "portable-file-dialogs.h"
 
 #include "core/element.h"
@@ -179,8 +180,10 @@ void App::loadAndExecuteSbx(const String &path) {
     if (path == "") {
         return;
     }
-    auto zipio = new ZipIo(path.utf8().get_data(), "app://");
+    auto zipio = new ZipIo(path.utf8().get_data(), "temp://");
     ioManager->add(zipio);
+
+    auto headerJsonStr = zipio->loadText("temp://header.json");
 
     std::string script = ioManager->loadText("app://main.sbx");
     sol::protected_function_result result = global_state.safe_script(script, sol::script_pass_on_error);
