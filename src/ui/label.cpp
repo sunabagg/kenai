@@ -117,7 +117,9 @@ namespace sunaba::ui {
 
     void bindLabel(sol::state& lua) {
         lua.new_usertype<Label>("Label",
-            sol::constructors<Label()>(),
+            "new", sol::factories(
+                []() { return new Label(); }
+            ),
             sol::base_classes, sol::bases<BaseObject, Element, sunaba::core::CanvasItem, Control>(),
             "autowrapMode", sol::property(&Label::getAutowrapMode, &Label::setAutowrapMode),
             "clipText", sol::property(&Label::getClipText, &Label::setClipText),
