@@ -21,10 +21,11 @@ class EReg {
         options = opt;
         regex = new RegEx();
 
-        var godotPatrern = r;
-        if (!StringTools.contains(r, "i")) {
+        var godotPattern = r;
+        if (StringTools.contains(opt, "i")) {
             godotPatrern = "(?i)" + r; // Add case-insensitive modifier if not present
         }
+        if (!Stri)
 		//throw new haxe.exceptions.NotImplementedException("Regular expressions are not implemented for this platform");
 	}
 
