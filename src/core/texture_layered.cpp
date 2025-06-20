@@ -2,7 +2,9 @@
 
 void sunaba::core::bindTextureLayered(sol::state &lua) {
     lua.new_usertype<sunaba::core::TextureLayered>("TextureLayered",
-        sol::constructors<sunaba::core::TextureLayered()>(),
+        "new", sol::factories(
+            []() { return new sunaba::core::TextureLayered(); }
+        ),
         sol::base_classes, sol::bases<sunaba::core::BaseObject, sunaba::core::Resource, sunaba::core::Texture>(),
         "getFormat", &sunaba::core::TextureLayered::getFormat,
         "getHeight", &sunaba::core::TextureLayered::getHeight,
