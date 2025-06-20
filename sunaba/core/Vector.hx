@@ -9,4 +9,5 @@ extern class Vector<T> {
     public function erase(index:Int):Void;
     public function insert(index:Int, value:T):Void;
     public function add(key:Int, value:T):Void;
+    public function size():Int;
 }
