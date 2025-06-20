@@ -153,7 +153,12 @@ class EReg {
 		If `s` is null, the result is unspecified.
 	**/
 	public function matchSub(s:String, pos:Int, len:Int = -1):Bool {
-		return false;
+		lastInput = s;
+        lastMatch = regex.search(s, pos);
+        if (lastMatch == null) {
+            return false; // No match found or invalid match
+        }
+        return lastMatch.isNull() == false; // Check if the match is valid
 	}
 
 	/**
