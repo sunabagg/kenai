@@ -8,10 +8,7 @@ class Main extends App {
     }
 
     override function init() {
-        Sys.println("Hello, World!");
-
         var clickerCounter = new ClickerCounter();
-        Sys.println("ClickerCounter.rootElement.isNull: " + clickerCounter.rootElement.isNull());
         rootElement.addChild(clickerCounter.rootElement);
     }
 }
