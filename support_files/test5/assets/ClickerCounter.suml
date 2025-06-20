@@ -4,6 +4,7 @@
     </head>
     <body>
         <panel 
+            fullRect="true"
             anchorTop="$FILL_TOP_LEFT" 
             anchorBottom="$FILL_BOTTOM_RIGHT" 
             anchorLeft="$FILL_TOP_LEFT" 
