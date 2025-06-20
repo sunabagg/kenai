@@ -25,7 +25,9 @@ void sunaba::core::bindSceneSystem(sol::state& lua)
     );
     lua.new_usertype<Entity>(
         "Entity", 
-        sol::constructors<Entity()>(),
+        "new", []() {
+            return std::make_shared<Entity>();
+        },
         sol::base_classes, sol::bases<BaseObject>(),
         sol::meta_function::garbage_collect, sol::destructor([](Entity* e) {  }),
         "name",sol::property( 
