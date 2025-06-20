@@ -5,7 +5,7 @@ import lua.Table;
 @:native("RegEx")
 extern class RegEx extends BaseObject {
     public function new();
-    public function compile(pattern: String, ?showError: Bool): Void;
+    public function compile(pattern: String, ?showError: Bool): Int;
     public function createFromString(pattern: String, ?showError: Bool): RegEx;
     public function getGroupCount(): Int;
     public function getNames(): StringArray;
