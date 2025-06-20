@@ -116,7 +116,7 @@ namespace sunaba::ui {
     }
 
     void bindVSeparator(sol::state& lua) {
-        lua.new_usertype<VSeparator>("VSeparator",
+        lua.new_usertype<VSeparator>("Vseparator",
             "new", sol::factories(
                 []() { return new VSeparator(); }
             ),
