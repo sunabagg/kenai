@@ -11,6 +11,7 @@ namespace sunaba::core {
             "getGroupCount", &RegExMatch::getGroupCount,
             "getStart", &RegExMatch::getStart,
             "getString", &RegExMatch::getString
+            "isNull", &RegExMatch::isNull,
         );
     }
 }
