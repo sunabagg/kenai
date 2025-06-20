@@ -144,7 +144,9 @@ namespace sunaba::ui {
 
     void bindSlider(sol::state& lua) {
         lua.new_usertype<Slider>("Slider",
-            sol::constructors<Slider()>(),
+            "new", sol::factories(
+                []() { return new Slider(); }
+            ),
             sol::base_classes, sol::bases<BaseObject, Element, sunaba::core::CanvasItem, Control, Range>(),
             "editable", sol::property(&Slider::isEditable, &Slider::setEditable),
             "focusMode", sol::property(&Slider::getFocusMode, &Slider::setFocusMode),
