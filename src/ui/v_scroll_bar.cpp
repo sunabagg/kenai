@@ -122,7 +122,7 @@ namespace sunaba::ui {
     }
 
     void bindVScrollBar(sol::state &lua) {
-        lua.new_usertype<VScrollBar>("VScrollBar",
+        lua.new_usertype<VScrollBar>("VscrollBar",
             "new", sol::factories(
                 []() { return new VScrollBar(); }
             ),
