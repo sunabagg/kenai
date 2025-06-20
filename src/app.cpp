@@ -72,6 +72,11 @@ void App::init(bool sandboxed) {
             sol::lib::table, sol::lib::utf8, sol::lib::package, 
             sol::lib::os, sol::lib::io, sol::lib::debug );
     }
+    else {
+        global_state.open_libraries( sol::lib::base, sol::lib::bit32, sol::lib::coroutine,
+            sol::lib::count, sol::lib::math, sol::lib::string,
+            sol::lib::table, sol::lib::utf8, sol::lib::package);
+    }
 
         lua_State* L = global_state.lua_state();
 // hack fix for PUC-Rio Lua
