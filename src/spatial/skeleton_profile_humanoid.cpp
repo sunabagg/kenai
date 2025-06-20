@@ -4,7 +4,9 @@
 
 void sunaba::spatial::bindSkeletonProfileHumanoid(sol::state_view& lua) {
     lua.new_usertype<sunaba::spatial::SkeletonProfileHumanoid>("SkeletonProfileHumanoid",
-        sol::constructors<SkeletonProfileHumanoid()>(),
+        "new", sol::factories(
+            []() { return new sunaba::spatial::SkeletonProfileHumanoid(); }
+        ),
         sol::base_classes, sol::bases<sunaba::core::BaseObject, sunaba::core::Resource, SkeletonProfile>(),
         "boneSize", sol::property(&SkeletonProfileHumanoid::getBoneSize, &SkeletonProfileHumanoid::setBoneSize),
         "groupSize", sol::property(&SkeletonProfileHumanoid::getGroupSize, &SkeletonProfileHumanoid::setGroupSize),
