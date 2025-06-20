@@ -222,10 +222,12 @@ __sunaba_core__Environment_EnvironmentAbstract_Impl_ = _hx_e()
 __sunaba_core__Event_EventAbstract_Impl_ = _hx_e()
 __sunaba_core__Font_FontAbstract_Impl_ = _hx_e()
 __sunaba_core__FontFile_FontFileAbstract_Impl_ = _hx_e()
+__sunaba_core_GlobalObjectStack = _hx_e()
 __sunaba_core__Image_ImageAbstarct_Impl_ = _hx_e()
 __sunaba_core__ImageTexture_ImageTextureAbstract_Impl_ = _hx_e()
 __sunaba_core__Material_MaterialAbstract_Impl_ = _hx_e()
 __sunaba_core__Resource_ResourceAbstarct_Impl_ = _hx_e()
+__sunaba_core_StackHandle = _hx_e()
 __sunaba_core__StringArray_StringArray_Impl_ = _hx_e()
 __sunaba_core__Texture_TextureAbstract_Impl_ = _hx_e()
 __sunaba_core__Texture2D_Texture2DAbstract_Impl_ = _hx_e()
@@ -2647,6 +2649,7 @@ __sunaba_App.new = function()
   return self
 end
 __sunaba_App.super = function(self) 
+  __sunaba_core_GlobalObjectStack.initSingleton();
   self:init();
 end
 __sunaba_App.__name__ = "sunaba.App"
@@ -2654,12 +2657,15 @@ __sunaba_App.prototype = _hx_e();
 __sunaba_App.prototype.get_rootElement = function(self) 
   do return _G.rootElement end
 end
+__sunaba_App.prototype.get_globalObjectStack = function(self) 
+  do return __sunaba_core_GlobalObjectStack.getSingleton() end
+end
 __sunaba_App.prototype.init = function(self) 
 end
 
 __sunaba_App.prototype.__class__ =  __sunaba_App
 
-__sunaba_App.prototype.__properties__ =  {get_rootElement="get_rootElement"}
+__sunaba_App.prototype.__properties__ =  {get_globalObjectStack="get_globalObjectStack",get_rootElement="get_rootElement"}
 
 __sunaba_core_ArrayListIterator.new = function(array) 
   local self = _hx_new(__sunaba_core_ArrayListIterator.prototype)
@@ -2854,6 +2860,34 @@ __sunaba_core__FontFile_FontFileAbstract_Impl_.fromResource = function(resource)
   do return font end;
 end
 
+__sunaba_core_GlobalObjectStack.new = function() 
+  local self = _hx_new(__sunaba_core_GlobalObjectStack.prototype)
+  __sunaba_core_GlobalObjectStack.super(self)
+  return self
+end
+__sunaba_core_GlobalObjectStack.super = function(self) 
+  self.stack = _hx_tab_array({}, 0);
+end
+__sunaba_core_GlobalObjectStack.__name__ = "sunaba.core.GlobalObjectStack"
+__sunaba_core_GlobalObjectStack.getSingleton = function() 
+  local gos = _G.globalObjectStack;
+  if (gos == nil) then 
+    __sunaba_core_GlobalObjectStack.initSingleton();
+    gos = _G.globalObjectStack;
+    if (gos == nil) then 
+      _G.error(__haxe_Exception.thrown("GlobalObjectStack is not initialized"),0);
+    end;
+  end;
+  do return gos end;
+end
+__sunaba_core_GlobalObjectStack.initSingleton = function() 
+  local singleton = __sunaba_core_GlobalObjectStack.new();
+  _G.globalObjectStack = singleton;
+end
+__sunaba_core_GlobalObjectStack.prototype = _hx_e();
+
+__sunaba_core_GlobalObjectStack.prototype.__class__ =  __sunaba_core_GlobalObjectStack
+
 __sunaba_core__Image_ImageAbstarct_Impl_.new = {}
 __sunaba_core__Image_ImageAbstarct_Impl_.__name__ = "sunaba.core._Image.ImageAbstarct_Impl_"
 __sunaba_core__Image_ImageAbstarct_Impl_.fromResource = function(resource) 
@@ -2893,6 +2927,19 @@ __sunaba_core__Resource_ResourceAbstarct_Impl_.fromResource = function(resource)
   end;
   do return res end;
 end
+
+__sunaba_core_StackHandle.new = function(object) 
+  local self = _hx_new(__sunaba_core_StackHandle.prototype)
+  __sunaba_core_StackHandle.super(self,object)
+  return self
+end
+__sunaba_core_StackHandle.super = function(self,object) 
+  self.object = object;
+end
+__sunaba_core_StackHandle.__name__ = "sunaba.core.StackHandle"
+__sunaba_core_StackHandle.prototype = _hx_e();
+
+__sunaba_core_StackHandle.prototype.__class__ =  __sunaba_core_StackHandle
 
 __sunaba_core__StringArray_StringArray_Impl_.new = {}
 __sunaba_core__StringArray_StringArray_Impl_.__name__ = "sunaba.core._StringArray.StringArray_Impl_"
@@ -3445,6 +3492,7 @@ __sunaba_ui_Widget.prototype.constructNodes = function(self,nodes)
     local node = node:next();
     local element = self:construct(node);
     self.elementdb:push(element);
+    __sunaba_core_GlobalObjectStack.getSingleton().stack:push(__sunaba_core_StackHandle.new(element));
     if ((element ~= nil) and (element:isNull() == false)) then 
       self.rootElement:addChild(element);
     else

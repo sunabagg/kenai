@@ -14,7 +14,7 @@ class App {
         return GlobalObjectStack.getSingleton();
     }
 
-    public function new() {
+    public inline function new() {
         GlobalObjectStack.initSingleton();
         init();
     }
