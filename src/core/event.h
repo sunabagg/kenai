@@ -37,6 +37,8 @@ namespace sunaba::core {
                 listener(sol::as_args(args));
             }
 
+            bool hasLuaListeners = false;
+
             public:
             Event() {
 
@@ -52,6 +54,7 @@ namespace sunaba::core {
             
             void connectLua(sol::function listener) {
                 lua_listeners.push_back(listener);
+                hasLuaListeners = true;
             }
 
             void connectLuaTable(lua_State* L, sol::table table, const std::string& method_name) {
