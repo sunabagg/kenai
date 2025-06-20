@@ -2,7 +2,9 @@
 
 void sunaba::core::bindEnvironment(sol::state_view& lua) {
     lua.new_usertype<Environment>("Environment",
-        sol::constructors<Environment()>(),
+        "new", sol::factories(
+            []() { return new Environment(); }
+        ),
         "adjustmentBrightness", sol::property(&Environment::getAdjustmentBrightness, &Environment::setAdjustmentBrightness),
         "adjustmentColorCorrection", sol::property(&Environment::getAdjustmentColorCorrection, &Environment::setAdjustmentColorCorrection),
         "adjustmentContrast", sol::property(&Environment::getAdjustmentContrast, &Environment::setAdjustmentContrast),
