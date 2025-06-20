@@ -2,7 +2,9 @@
 
 void sunaba::input::bindInputEventJoypadButton(sol::state_view& lua) {
     lua.new_usertype<InputEventJoypadButton>("InputEventJoypadButton",
-        sol::constructors<InputEventJoypadButton(), InputEventJoypadButton(GodotInputEventJoypadButton*)>(),
+        "new", sol::factories(
+            []() { return new InputEventJoypadButton(); }
+        ),
         sol::base_classes, sol::bases<sunaba::core::BaseObject, sunaba::core::Resource, sunaba::input::InputEvent>(),
         "buttonIndex", sol::property(&InputEventJoypadButton::getButtonIndex, &InputEventJoypadButton::setButtonIndex),
         "pressed", sol::property(&InputEventJoypadButton::isPressed, &InputEventJoypadButton::setPressed),
