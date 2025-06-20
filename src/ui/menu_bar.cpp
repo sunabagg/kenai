@@ -117,7 +117,9 @@ namespace sunaba::ui {
 
     void bindMenuBar(sol::state& lua) {
         lua.new_usertype<MenuBar>("MenuBar",
-            sol::constructors<MenuBar()>(),
+            "new", sol::factories(
+                []() { return new MenuBar(); }
+            ),
             sol::base_classes, sol::bases<BaseObject, Element, sunaba::core::CanvasItem, sunaba::ui::Control>(),
             "flat", sol::property(&MenuBar::isFlat, &MenuBar::setFlat),
             "language", sol::property(&MenuBar::getLanguage, &MenuBar::setLanguage),
