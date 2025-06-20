@@ -183,34 +183,7 @@ void App::start( const String &path) {
     ioManager->add(fsio);
     global_state.set("ioManager", ioManager);
 
-    ////sunaba::core::bind_all_godot_classes( global_state );
-    //sunaba::core::initialize_lua( global_state );
-
-    global_state.set_function( "createScene", [this]() {
-        return createScene();
-    });
-
-    //sol::error *e = nullptr;
-
     std::string script = ioManager->loadText("app://main.lua");
-    //UtilityFunctions::print(script.c_str());
-    //global_state.script(script);
-    /*
-    global_state.script(extract_luarocks_lua_paths());
-    global_state.script(R"(
-        print(package.cpath)
-        --package.path = "/usr/local/lib/luarocks/rocks-5.1/?.lua;" .. package.path
-        --package.cpath = "/usr/local/lib/luarocks/rocks-5.1/?.so;" .. package.cpath
-    )");
-
-    if (OS::get_singleton()->has_feature("editor")) {
-        UtilityFunctions::print("Running in editor mode, skipping luarocks path setup.");
-        if (OS::get_singleton()->get_name() == "macOS") {
-            UtilityFunctions::print("macOS detected, setting up luarocks path.");
-            
-        }
-    }
-    */
     sol::protected_function_result result = global_state.safe_script(script, sol::script_pass_on_error);
     
     if ( !result.valid() ) {
