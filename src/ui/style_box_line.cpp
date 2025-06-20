@@ -2,7 +2,9 @@
 
 void sunaba::ui::bindStyleBoxLine(sol::state_view& lua) {
     lua.new_usertype<StyleBoxLine>("StyleBoxLine",
-        sol::constructors<StyleBoxLine()>(),
+        "new", sol::factories(
+            []() { return new StyleBoxLine(); }
+        ),
         sol::base_classes, sol::bases<sunaba::core::BaseObject, sunaba::core::Resource, sunaba::ui::StyleBox>(),
         "color", sol::property(&StyleBoxLine::getColor, &StyleBoxLine::setColor),
         "growBegin", sol::property(&StyleBoxLine::getGrowBegin, &StyleBoxLine::setGrowBegin),
