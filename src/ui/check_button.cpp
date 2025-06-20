@@ -119,7 +119,9 @@ namespace sunaba::ui {
 
     void bindCheckButton(sol::state& lua) {
         lua.new_usertype<CheckButton>("CheckButton",
-            sol::constructors<CheckButton(), CheckButton(CheckButtonNode*)>(),
+            "new", sol::factories(
+                []() { return new CheckButton(); }
+            ),
             sol::base_classes, sol::bases<BaseObject, Element, sunaba::core::CanvasItem, Control, sunaba::ui::BaseButton, Button>(),
             "alignment", sol::property(
                 &CheckButton::getAlignment,
