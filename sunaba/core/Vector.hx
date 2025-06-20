@@ -31,4 +31,18 @@ abstract Vector<T>(VectorNative<T>) from VectorNative<T> to VectorNative<T> {
         untyped __lua__("s[index] = value");
         return value;
     }
+
+    @:to
+    public inline function toArray():Array<T> {
+        var s: Vector<T> = this;
+        var array: Array<T> = [];
+        for (i in 0...s.size()) {
+            var value = s.get(i);
+            if (value == null) {
+                throw "Vector.toArray: null value at index " + i;
+            }
+            array.push(value);
+        }
+        return array;
+    }
 }
