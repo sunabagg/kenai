@@ -200,9 +200,7 @@ class Widget {
                 var control = Control.toControl(element);
                 if (control.isNull() == false) {
                     if (attributeValue == "true") {
-                        control.setAnchorsAndOffsetsPreset(LayoutPreset.fullRect, LayoutPresetMode.keepSize, 0);
-                        control.sizeFlagsHorizontal = SizeFlags.fill;
-                        control.sizeFlagsVertical = SizeFlags.fill;
+                        control.setAnchorsPreset(LayoutPreset.fullRect, true);
                     }
                 }
             }

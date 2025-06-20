@@ -5,8 +5,8 @@
     <body>
         <panel 
             fullRect="true"
-            offsetBottom="10"
-            offsetTop="-10"
+            offsetBottom="-10"
+            offsetTop="10"
             offsetLeft="-10"
             offsetRight="10"/>
     </body>

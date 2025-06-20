@@ -3552,129 +3552,120 @@ __sunaba_ui_Widget.prototype.setObjectValues = function(self,element,xml)
     if (attributeName == "name") then 
       element.name = attributeValue;
     else
-      local obj = element;
-      local tmp;
-      if (not obj[field] ~= nil) then 
-        local o = obj;
-        tmp = (function() 
-          local _hx_1
-          if ((_G.type(o) == "function") and not ((function() 
-            local _hx_2
-            if (_G.type(o) ~= "table") then 
-            _hx_2 = false; else 
-            _hx_2 = o.__name__; end
-            return _hx_2
-          end )() or (function() 
-            local _hx_3
-            if (_G.type(o) ~= "table") then 
-            _hx_3 = false; else 
-            _hx_3 = o.__ename__; end
-            return _hx_3
-          end )())) then 
-          _hx_1 = false; elseif ((_G.type(o) == "string") and ((String.prototype[attributeName] ~= nil) or (attributeName == "length"))) then 
-          _hx_1 = true; elseif (o.__fields__ ~= nil) then 
-          _hx_1 = o.__fields__[attributeName] ~= nil; else 
-          _hx_1 = o[attributeName] ~= nil; end
-          return _hx_1
-        end )();
-      else
-        tmp = true;
-      end;
-      if (tmp) then 
-        local currentValue = self:field(element, attributeName);
-        if (__lua_Boot.__instanceof(currentValue, Bool)) then 
-          local b = false;
+      if (attributeName == "fullRect") then 
+        local control = Control.cast(element);
+        if (control:isNull() == false) then 
           if (attributeValue == "true") then 
-            b = true;
-          else
-            if (attributeValue == "false") then 
-              b = false;
-            else
-              local c = Type.getClass(element);
-              _G.error(__haxe_Exception.thrown(Std.string(Std.string(Std.string(Std.string("Invalid boolean value for field '") .. Std.string(attributeName)) .. Std.string("' in element '")) .. Std.string(c.__name__)) .. Std.string("'")),0);
-            end;
+            control:setAnchorsPreset(15, true);
           end;
-          if (obj[field] ~= nil) then 
-            obj[field] = value;
-          else
-            Reflect.setProperty(element, attributeName, b);
-          end;
+        end;
+      else
+        local obj = element;
+        local tmp;
+        if (not obj[field] ~= nil) then 
+          local o = obj;
+          tmp = (function() 
+            local _hx_1
+            if ((_G.type(o) == "function") and not ((function() 
+              local _hx_2
+              if (_G.type(o) ~= "table") then 
+              _hx_2 = false; else 
+              _hx_2 = o.__name__; end
+              return _hx_2
+            end )() or (function() 
+              local _hx_3
+              if (_G.type(o) ~= "table") then 
+              _hx_3 = false; else 
+              _hx_3 = o.__ename__; end
+              return _hx_3
+            end )())) then 
+            _hx_1 = false; elseif ((_G.type(o) == "string") and ((String.prototype[attributeName] ~= nil) or (attributeName == "length"))) then 
+            _hx_1 = true; elseif (o.__fields__ ~= nil) then 
+            _hx_1 = o.__fields__[attributeName] ~= nil; else 
+            _hx_1 = o[attributeName] ~= nil; end
+            return _hx_1
+          end )();
         else
-          if (__lua_Boot.__instanceof(currentValue, Int)) then 
-            local attrArr = String.prototype.split(attributeValue, ".");
-            local value = attrArr[attrArr.length - 1];
-            attrArr:resize(attrArr.length - 1);
-            local enumName = attrArr:join(".");
-            if (enumName ~= "") then 
-              local enum_ = Type.resolveEnum(enumName);
-              if (enum_ ~= nil) then 
-                local enumValue = self:field(enum_, value);
-                if (enumValue ~= nil) then 
-                  if (obj[field] ~= nil) then 
-                    obj[field] = value;
-                  else
-                    Reflect.setProperty(element, attributeName, enumValue);
-                  end;
-                else
-                  local c = Type.getClass(element);
-                  _G.error(__haxe_Exception.thrown(Std.string(Std.string(Std.string(Std.string(Std.string(Std.string("Invalid enum value '") .. Std.string(value)) .. Std.string("' for field '")) .. Std.string(attributeName)) .. Std.string("' in element '")) .. Std.string(c.__name__)) .. Std.string("'")),0);
-                end;
-              else
-                _G.error(__haxe_Exception.thrown(Std.string("Unknown enum: ") .. Std.string(enumName)),0);
-              end;
+          tmp = true;
+        end;
+        if (tmp) then 
+          local currentValue = self:field(element, attributeName);
+          if (__lua_Boot.__instanceof(currentValue, Bool)) then 
+            local b = false;
+            if (attributeValue == "true") then 
+              b = true;
             else
-              if (attributeValue == "$FILL_BOTTOM_RIGHT") then 
-                attributeValue = "1";
-              end;
-              if (attributeValue == "$FILL_TOP_LEFT") then 
-                attributeValue = "0";
-              end;
-              local value = Std.parseInt(attributeValue);
-              if (obj[field] ~= nil) then 
-                obj[field] = value;
+              if (attributeValue == "false") then 
+                b = false;
               else
-                Reflect.setProperty(element, attributeName, value);
+                local c = Type.getClass(element);
+                _G.error(__haxe_Exception.thrown(Std.string(Std.string(Std.string(Std.string("Invalid boolean value for field '") .. Std.string(attributeName)) .. Std.string("' in element '")) .. Std.string(c.__name__)) .. Std.string("'")),0);
               end;
             end;
-          else
-            if (__lua_Boot.__instanceof(currentValue, Float)) then 
-              local value = Std.parseFloat(attributeValue);
-              if (obj[field] ~= nil) then 
-                obj[field] = value;
-              else
-                Reflect.setProperty(element, attributeName, value);
-              end;
+            if (obj[field] ~= nil) then 
+              obj[field] = value;
             else
-              if (__lua_Boot.__instanceof(currentValue, String)) then 
-                if (obj[field] ~= nil) then 
-                  obj[field] = value;
-                else
-                  Reflect.setProperty(element, attributeName, attributeValue);
-                end;
-              else
-                if (__lua_Boot.__instanceof(currentValue, Vector2)) then 
-                  local xy = String.prototype.split(attributeValue, ",");
-                  if (xy.length == 2) then 
-                    local x = Std.parseFloat(xy[0]);
-                    local y = Std.parseFloat(xy[1]);
-                    local value = Vector2.new(x, y);
+              Reflect.setProperty(element, attributeName, b);
+            end;
+          else
+            if (__lua_Boot.__instanceof(currentValue, Int)) then 
+              local attrArr = String.prototype.split(attributeValue, ".");
+              local value = attrArr[attrArr.length - 1];
+              attrArr:resize(attrArr.length - 1);
+              local enumName = attrArr:join(".");
+              if (enumName ~= "") then 
+                local enum_ = Type.resolveEnum(enumName);
+                if (enum_ ~= nil) then 
+                  local enumValue = self:field(enum_, value);
+                  if (enumValue ~= nil) then 
                     if (obj[field] ~= nil) then 
                       obj[field] = value;
                     else
-                      Reflect.setProperty(element, attributeName, value);
+                      Reflect.setProperty(element, attributeName, enumValue);
                     end;
                   else
                     local c = Type.getClass(element);
-                    _G.error(__haxe_Exception.thrown(Std.string(Std.string(Std.string(Std.string("Invalid Vector2 value for field '") .. Std.string(attributeName)) .. Std.string("' in element '")) .. Std.string(c.__name__)) .. Std.string("'")),0);
+                    _G.error(__haxe_Exception.thrown(Std.string(Std.string(Std.string(Std.string(Std.string(Std.string("Invalid enum value '") .. Std.string(value)) .. Std.string("' for field '")) .. Std.string(attributeName)) .. Std.string("' in element '")) .. Std.string(c.__name__)) .. Std.string("'")),0);
                   end;
                 else
-                  if (__lua_Boot.__instanceof(currentValue, Vector3)) then 
-                    local xyz = String.prototype.split(attributeValue, ",");
-                    if (xyz.length == 3) then 
-                      local x = Std.parseFloat(xyz[0]);
-                      local y = Std.parseFloat(xyz[1]);
-                      local z = Std.parseFloat(xyz[2]);
-                      local value = Vector3.new(x, y, z);
+                  _G.error(__haxe_Exception.thrown(Std.string("Unknown enum: ") .. Std.string(enumName)),0);
+                end;
+              else
+                if (attributeValue == "$FILL_BOTTOM_RIGHT") then 
+                  attributeValue = "1";
+                end;
+                if (attributeValue == "$FILL_TOP_LEFT") then 
+                  attributeValue = "0";
+                end;
+                local value = Std.parseInt(attributeValue);
+                if (obj[field] ~= nil) then 
+                  obj[field] = value;
+                else
+                  Reflect.setProperty(element, attributeName, value);
+                end;
+              end;
+            else
+              if (__lua_Boot.__instanceof(currentValue, Float)) then 
+                local value = Std.parseFloat(attributeValue);
+                if (obj[field] ~= nil) then 
+                  obj[field] = value;
+                else
+                  Reflect.setProperty(element, attributeName, value);
+                end;
+              else
+                if (__lua_Boot.__instanceof(currentValue, String)) then 
+                  if (obj[field] ~= nil) then 
+                    obj[field] = value;
+                  else
+                    Reflect.setProperty(element, attributeName, attributeValue);
+                  end;
+                else
+                  if (__lua_Boot.__instanceof(currentValue, Vector2)) then 
+                    local xy = String.prototype.split(attributeValue, ",");
+                    if (xy.length == 2) then 
+                      local x = Std.parseFloat(xy[0]);
+                      local y = Std.parseFloat(xy[1]);
+                      local value = Vector2.new(x, y);
                       if (obj[field] ~= nil) then 
                         obj[field] = value;
                       else
@@ -3682,17 +3673,16 @@ __sunaba_ui_Widget.prototype.setObjectValues = function(self,element,xml)
                       end;
                     else
                       local c = Type.getClass(element);
-                      _G.error(__haxe_Exception.thrown(Std.string(Std.string(Std.string(Std.string("Invalid Vector3 value for field '") .. Std.string(attributeName)) .. Std.string("' in element '")) .. Std.string(c.__name__)) .. Std.string("'")),0);
+                      _G.error(__haxe_Exception.thrown(Std.string(Std.string(Std.string(Std.string("Invalid Vector2 value for field '") .. Std.string(attributeName)) .. Std.string("' in element '")) .. Std.string(c.__name__)) .. Std.string("'")),0);
                     end;
                   else
-                    if (__lua_Boot.__instanceof(currentValue, Vector4)) then 
-                      local xyzw = String.prototype.split(attributeValue, ",");
-                      if (xyzw.length == 4) then 
-                        local x = Std.parseFloat(xyzw[0]);
-                        local y = Std.parseFloat(xyzw[1]);
-                        local z = Std.parseFloat(xyzw[2]);
-                        local w = Std.parseFloat(xyzw[3]);
-                        local value = Vector4.new(x, y, z, w);
+                    if (__lua_Boot.__instanceof(currentValue, Vector3)) then 
+                      local xyz = String.prototype.split(attributeValue, ",");
+                      if (xyz.length == 3) then 
+                        local x = Std.parseFloat(xyz[0]);
+                        local y = Std.parseFloat(xyz[1]);
+                        local z = Std.parseFloat(xyz[2]);
+                        local value = Vector3.new(x, y, z);
                         if (obj[field] ~= nil) then 
                           obj[field] = value;
                         else
@@ -3700,15 +3690,17 @@ __sunaba_ui_Widget.prototype.setObjectValues = function(self,element,xml)
                         end;
                       else
                         local c = Type.getClass(element);
-                        _G.error(__haxe_Exception.thrown(Std.string(Std.string(Std.string(Std.string("Invalid Vector4 value for field '") .. Std.string(attributeName)) .. Std.string("' in element '")) .. Std.string(c.__name__)) .. Std.string("'")),0);
+                        _G.error(__haxe_Exception.thrown(Std.string(Std.string(Std.string(Std.string("Invalid Vector3 value for field '") .. Std.string(attributeName)) .. Std.string("' in element '")) .. Std.string(c.__name__)) .. Std.string("'")),0);
                       end;
                     else
-                      if (__lua_Boot.__instanceof(currentValue, Vector2i)) then 
-                        local xy = String.prototype.split(attributeValue, ",");
-                        if (xy.length == 2) then 
-                          local x = Std.parseInt(xy[0]);
-                          local y = Std.parseInt(xy[1]);
-                          local value = Vector2i.new(x, y);
+                      if (__lua_Boot.__instanceof(currentValue, Vector4)) then 
+                        local xyzw = String.prototype.split(attributeValue, ",");
+                        if (xyzw.length == 4) then 
+                          local x = Std.parseFloat(xyzw[0]);
+                          local y = Std.parseFloat(xyzw[1]);
+                          local z = Std.parseFloat(xyzw[2]);
+                          local w = Std.parseFloat(xyzw[3]);
+                          local value = Vector4.new(x, y, z, w);
                           if (obj[field] ~= nil) then 
                             obj[field] = value;
                           else
@@ -3716,16 +3708,15 @@ __sunaba_ui_Widget.prototype.setObjectValues = function(self,element,xml)
                           end;
                         else
                           local c = Type.getClass(element);
-                          _G.error(__haxe_Exception.thrown(Std.string(Std.string(Std.string(Std.string("Invalid Vector2i value for field '") .. Std.string(attributeName)) .. Std.string("' in element '")) .. Std.string(c.__name__)) .. Std.string("'")),0);
+                          _G.error(__haxe_Exception.thrown(Std.string(Std.string(Std.string(Std.string("Invalid Vector4 value for field '") .. Std.string(attributeName)) .. Std.string("' in element '")) .. Std.string(c.__name__)) .. Std.string("'")),0);
                         end;
                       else
-                        if (__lua_Boot.__instanceof(currentValue, Vector3i)) then 
-                          local xyz = String.prototype.split(attributeValue, ",");
-                          if (xyz.length == 3) then 
-                            local x = Std.parseInt(xyz[0]);
-                            local y = Std.parseInt(xyz[1]);
-                            local z = Std.parseInt(xyz[2]);
-                            local value = Vector3i.new(x, y, z);
+                        if (__lua_Boot.__instanceof(currentValue, Vector2i)) then 
+                          local xy = String.prototype.split(attributeValue, ",");
+                          if (xy.length == 2) then 
+                            local x = Std.parseInt(xy[0]);
+                            local y = Std.parseInt(xy[1]);
+                            local value = Vector2i.new(x, y);
                             if (obj[field] ~= nil) then 
                               obj[field] = value;
                             else
@@ -3733,17 +3724,16 @@ __sunaba_ui_Widget.prototype.setObjectValues = function(self,element,xml)
                             end;
                           else
                             local c = Type.getClass(element);
-                            _G.error(__haxe_Exception.thrown(Std.string(Std.string(Std.string(Std.string("Invalid Vector3i value for field '") .. Std.string(attributeName)) .. Std.string("' in element '")) .. Std.string(c.__name__)) .. Std.string("'")),0);
+                            _G.error(__haxe_Exception.thrown(Std.string(Std.string(Std.string(Std.string("Invalid Vector2i value for field '") .. Std.string(attributeName)) .. Std.string("' in element '")) .. Std.string(c.__name__)) .. Std.string("'")),0);
                           end;
                         else
-                          if (__lua_Boot.__instanceof(currentValue, Vector4i)) then 
-                            local xyzw = String.prototype.split(attributeValue, ",");
-                            if (xyzw.length == 4) then 
-                              local x = Std.parseInt(xyzw[0]);
-                              local y = Std.parseInt(xyzw[1]);
-                              local z = Std.parseInt(xyzw[2]);
-                              local w = Std.parseInt(xyzw[3]);
-                              local value = Vector4i.new(x, y, z, w);
+                          if (__lua_Boot.__instanceof(currentValue, Vector3i)) then 
+                            local xyz = String.prototype.split(attributeValue, ",");
+                            if (xyz.length == 3) then 
+                              local x = Std.parseInt(xyz[0]);
+                              local y = Std.parseInt(xyz[1]);
+                              local z = Std.parseInt(xyz[2]);
+                              local value = Vector3i.new(x, y, z);
                               if (obj[field] ~= nil) then 
                                 obj[field] = value;
                               else
@@ -3751,42 +3741,41 @@ __sunaba_ui_Widget.prototype.setObjectValues = function(self,element,xml)
                               end;
                             else
                               local c = Type.getClass(element);
-                              _G.error(__haxe_Exception.thrown(Std.string(Std.string(Std.string(Std.string("Invalid Vector4i value for field '") .. Std.string(attributeName)) .. Std.string("' in element '")) .. Std.string(c.__name__)) .. Std.string("'")),0);
+                              _G.error(__haxe_Exception.thrown(Std.string(Std.string(Std.string(Std.string("Invalid Vector3i value for field '") .. Std.string(attributeName)) .. Std.string("' in element '")) .. Std.string(c.__name__)) .. Std.string("'")),0);
                             end;
                           else
-                            if (__lua_Boot.__instanceof(currentValue, Color)) then 
-                              local color = Color.html(attributeValue);
-                              if (color ~= nil) then 
+                            if (__lua_Boot.__instanceof(currentValue, Vector4i)) then 
+                              local xyzw = String.prototype.split(attributeValue, ",");
+                              if (xyzw.length == 4) then 
+                                local x = Std.parseInt(xyzw[0]);
+                                local y = Std.parseInt(xyzw[1]);
+                                local z = Std.parseInt(xyzw[2]);
+                                local w = Std.parseInt(xyzw[3]);
+                                local value = Vector4i.new(x, y, z, w);
                                 if (obj[field] ~= nil) then 
                                   obj[field] = value;
                                 else
-                                  Reflect.setProperty(element, attributeName, color);
+                                  Reflect.setProperty(element, attributeName, value);
                                 end;
                               else
                                 local c = Type.getClass(element);
-                                _G.error(__haxe_Exception.thrown(Std.string(Std.string(Std.string(Std.string("Invalid Color value for field '") .. Std.string(attributeName)) .. Std.string("' in element '")) .. Std.string(c.__name__)) .. Std.string("'")),0);
+                                _G.error(__haxe_Exception.thrown(Std.string(Std.string(Std.string(Std.string("Invalid Vector4i value for field '") .. Std.string(attributeName)) .. Std.string("' in element '")) .. Std.string(c.__name__)) .. Std.string("'")),0);
                               end;
                             else
-                              if (__lua_Boot.__instanceof(currentValue, Texture2D)) then 
-                                local image = Image.loadFromFile(attributeValue);
-                                if (image ~= nil) then 
-                                  local texture = ImageTexture.createFromImage(image);
-                                  if (texture ~= nil) then 
-                                    if (obj[field] ~= nil) then 
-                                      obj[field] = value;
-                                    else
-                                      Reflect.setProperty(element, attributeName, texture);
-                                    end;
+                              if (__lua_Boot.__instanceof(currentValue, Color)) then 
+                                local color = Color.html(attributeValue);
+                                if (color ~= nil) then 
+                                  if (obj[field] ~= nil) then 
+                                    obj[field] = value;
                                   else
-                                    local c = Type.getClass(element);
-                                    _G.error(__haxe_Exception.thrown(Std.string(Std.string(Std.string(Std.string("Failed to create Texture2D from image for field '") .. Std.string(attributeName)) .. Std.string("' in element '")) .. Std.string(c.__name__)) .. Std.string("'")),0);
+                                    Reflect.setProperty(element, attributeName, color);
                                   end;
                                 else
                                   local c = Type.getClass(element);
-                                  _G.error(__haxe_Exception.thrown(Std.string(Std.string(Std.string(Std.string("Failed to load image from file for field '") .. Std.string(attributeName)) .. Std.string("' in element '")) .. Std.string(c.__name__)) .. Std.string("'")),0);
+                                  _G.error(__haxe_Exception.thrown(Std.string(Std.string(Std.string(Std.string("Invalid Color value for field '") .. Std.string(attributeName)) .. Std.string("' in element '")) .. Std.string(c.__name__)) .. Std.string("'")),0);
                                 end;
                               else
-                                if (__lua_Boot.__instanceof(currentValue, Texture)) then 
+                                if (__lua_Boot.__instanceof(currentValue, Texture2D)) then 
                                   local image = Image.loadFromFile(attributeValue);
                                   if (image ~= nil) then 
                                     local texture = ImageTexture.createFromImage(image);
@@ -3805,8 +3794,28 @@ __sunaba_ui_Widget.prototype.setObjectValues = function(self,element,xml)
                                     _G.error(__haxe_Exception.thrown(Std.string(Std.string(Std.string(Std.string("Failed to load image from file for field '") .. Std.string(attributeName)) .. Std.string("' in element '")) .. Std.string(c.__name__)) .. Std.string("'")),0);
                                   end;
                                 else
-                                  local c = Type.getClass(element);
-                                  _G.error(__haxe_Exception.thrown(Std.string(Std.string(Std.string(Std.string("Unsupported type for field '") .. Std.string(attributeName)) .. Std.string("' in element '")) .. Std.string(c.__name__)) .. Std.string("'")),0);
+                                  if (__lua_Boot.__instanceof(currentValue, Texture)) then 
+                                    local image = Image.loadFromFile(attributeValue);
+                                    if (image ~= nil) then 
+                                      local texture = ImageTexture.createFromImage(image);
+                                      if (texture ~= nil) then 
+                                        if (obj[field] ~= nil) then 
+                                          obj[field] = value;
+                                        else
+                                          Reflect.setProperty(element, attributeName, texture);
+                                        end;
+                                      else
+                                        local c = Type.getClass(element);
+                                        _G.error(__haxe_Exception.thrown(Std.string(Std.string(Std.string(Std.string("Failed to create Texture2D from image for field '") .. Std.string(attributeName)) .. Std.string("' in element '")) .. Std.string(c.__name__)) .. Std.string("'")),0);
+                                      end;
+                                    else
+                                      local c = Type.getClass(element);
+                                      _G.error(__haxe_Exception.thrown(Std.string(Std.string(Std.string(Std.string("Failed to load image from file for field '") .. Std.string(attributeName)) .. Std.string("' in element '")) .. Std.string(c.__name__)) .. Std.string("'")),0);
+                                    end;
+                                  else
+                                    local c = Type.getClass(element);
+                                    _G.error(__haxe_Exception.thrown(Std.string(Std.string(Std.string(Std.string("Unsupported type for field '") .. Std.string(attributeName)) .. Std.string("' in element '")) .. Std.string(c.__name__)) .. Std.string("'")),0);
+                                  end;
                                 end;
                               end;
                             end;
@@ -3819,66 +3828,66 @@ __sunaba_ui_Widget.prototype.setObjectValues = function(self,element,xml)
               end;
             end;
           end;
-        end;
-      else
-        if (__lua_Boot.__instanceof(element, Control)) then 
-          local control = element;
-          local snakeCaseName = self:camelToSnake(attributeName);
-          if (control:hasThemeConstantOverride(snakeCaseName)) then 
-            local x = Std.parseInt(attributeValue);
-            control:addThemeConstantOverride(snakeCaseName, __sunaba_core__Variant_Variant_Impl_.fromInt64(__haxe__Int64____Int64.new(__haxe__Int32_Int32_Impl_.shr(x, 31), x)));
-            break;
-          else
-            if (control:hasThemeFontSizeOverride(snakeCaseName)) then 
-              control:addThemeFontSizeOverride(snakeCaseName, Std.parseFloat(attributeValue));
+        else
+          if (__lua_Boot.__instanceof(element, Control)) then 
+            local control = element;
+            local snakeCaseName = self:camelToSnake(attributeName);
+            if (control:hasThemeConstantOverride(snakeCaseName)) then 
+              local x = Std.parseInt(attributeValue);
+              control:addThemeConstantOverride(snakeCaseName, __sunaba_core__Variant_Variant_Impl_.fromInt64(__haxe__Int64____Int64.new(__haxe__Int32_Int32_Impl_.shr(x, 31), x)));
               break;
             else
-              if (control:hasThemeColorOverride(snakeCaseName)) then 
-                local color = Color.html(attributeValue);
-                if (color ~= nil) then 
-                  control:addThemeColorOverride(snakeCaseName, color);
-                  break;
-                else
-                  local c = Type.getClass(element);
-                  _G.error(__haxe_Exception.thrown(Std.string(Std.string(Std.string(Std.string("Invalid Color value for field '") .. Std.string(attributeName)) .. Std.string("' in element '")) .. Std.string(c.__name__)) .. Std.string("'")),0);
-                end;
+              if (control:hasThemeFontSizeOverride(snakeCaseName)) then 
+                control:addThemeFontSizeOverride(snakeCaseName, Std.parseFloat(attributeValue));
+                break;
               else
-                if (control:hasThemeFontOverride(snakeCaseName)) then 
-                  local fontFile = FontFile.new();
-                  local res = fontFile:loadDynamicFont(attributeValue);
-                  if (res ~= 0) then 
-                    res = fontFile:loadBitmapFont(attributeValue);
-                    if (res ~= 0) then 
-                      local c = Type.getClass(element);
-                      _G.error(__haxe_Exception.thrown(Std.string(Std.string(Std.string(Std.string("Failed to load Font for field '") .. Std.string(attributeName)) .. Std.string("' in element '")) .. Std.string(c.__name__)) .. Std.string("'")),0);
-                    end;
+                if (control:hasThemeColorOverride(snakeCaseName)) then 
+                  local color = Color.html(attributeValue);
+                  if (color ~= nil) then 
+                    control:addThemeColorOverride(snakeCaseName, color);
+                    break;
+                  else
+                    local c = Type.getClass(element);
+                    _G.error(__haxe_Exception.thrown(Std.string(Std.string(Std.string(Std.string("Invalid Color value for field '") .. Std.string(attributeName)) .. Std.string("' in element '")) .. Std.string(c.__name__)) .. Std.string("'")),0);
                   end;
-                  control:addThemeFontOverride(snakeCaseName, fontFile);
-                  break;
                 else
-                  if (control:hasThemeIconOverride(snakeCaseName)) then 
-                    local image = Image.loadFromFile(attributeValue);
-                    if (image ~= nil) then 
-                      local texture = ImageTexture.createFromImage(image);
-                      if (texture ~= nil) then 
-                        control:addThemeIconOverride(snakeCaseName, texture);
-                        break;
+                  if (control:hasThemeFontOverride(snakeCaseName)) then 
+                    local fontFile = FontFile.new();
+                    local res = fontFile:loadDynamicFont(attributeValue);
+                    if (res ~= 0) then 
+                      res = fontFile:loadBitmapFont(attributeValue);
+                      if (res ~= 0) then 
+                        local c = Type.getClass(element);
+                        _G.error(__haxe_Exception.thrown(Std.string(Std.string(Std.string(Std.string("Failed to load Font for field '") .. Std.string(attributeName)) .. Std.string("' in element '")) .. Std.string(c.__name__)) .. Std.string("'")),0);
+                      end;
+                    end;
+                    control:addThemeFontOverride(snakeCaseName, fontFile);
+                    break;
+                  else
+                    if (control:hasThemeIconOverride(snakeCaseName)) then 
+                      local image = Image.loadFromFile(attributeValue);
+                      if (image ~= nil) then 
+                        local texture = ImageTexture.createFromImage(image);
+                        if (texture ~= nil) then 
+                          control:addThemeIconOverride(snakeCaseName, texture);
+                          break;
+                        else
+                          local c = Type.getClass(element);
+                          _G.error(__haxe_Exception.thrown(Std.string(Std.string(Std.string(Std.string("Failed to create Texture2D from image for field '") .. Std.string(attributeName)) .. Std.string("' in element '")) .. Std.string(c.__name__)) .. Std.string("'")),0);
+                        end;
                       else
                         local c = Type.getClass(element);
-                        _G.error(__haxe_Exception.thrown(Std.string(Std.string(Std.string(Std.string("Failed to create Texture2D from image for field '") .. Std.string(attributeName)) .. Std.string("' in element '")) .. Std.string(c.__name__)) .. Std.string("'")),0);
+                        _G.error(__haxe_Exception.thrown(Std.string(Std.string(Std.string(Std.string("Failed to load image from file for field '") .. Std.string(attributeName)) .. Std.string("' in element '")) .. Std.string(c.__name__)) .. Std.string("'")),0);
                       end;
-                    else
-                      local c = Type.getClass(element);
-                      _G.error(__haxe_Exception.thrown(Std.string(Std.string(Std.string(Std.string("Failed to load image from file for field '") .. Std.string(attributeName)) .. Std.string("' in element '")) .. Std.string(c.__name__)) .. Std.string("'")),0);
                     end;
                   end;
                 end;
               end;
             end;
           end;
+          local c = Type.getClass(element);
+          _G.error(__haxe_Exception.thrown(Std.string(Std.string(Std.string(Std.string("Unknown field '") .. Std.string(attributeName)) .. Std.string("' in element '")) .. Std.string(c.__name__)) .. Std.string("'")),0);
         end;
-        local c = Type.getClass(element);
-        _G.error(__haxe_Exception.thrown(Std.string(Std.string(Std.string(Std.string("Unknown field '") .. Std.string(attributeName)) .. Std.string("' in element '")) .. Std.string(c.__name__)) .. Std.string("'")),0);
       end;
     end;until true
     if _hx_continue_1 then 
