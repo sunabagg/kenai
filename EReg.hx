@@ -227,7 +227,23 @@ class EReg {
 		If `s` or `f` are null, the result is unspecified.
 	**/
 	public function map(s:String, f:EReg->String):String {
-		return null;
+		var result:String = "";
+        var lastIndex = 0;
+        var searchAllTable = regex.searchAll(s);
+        var matches:Array<RegExMatch> = Table.toArray(searchAllTable);
+
+        for (match in matches) {
+            //
+            var start = match.getStart(0);
+            var end = match.getEnd(0);
+            result += s.substr(lastIndex, start - lastIndex); // Add the part before the
+
+            result += f(this); // Call the function with the EReg object
+            lastIndex = end; // Update the last index to the end of the match
+        }
+
+        result += s.substr(lastIndex); // Add the remaining part after the last match
+        return result;
 	}
 
 	/**
