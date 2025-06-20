@@ -251,6 +251,11 @@ class EReg {
 		If `s` is null, the result is unspecified.
 	**/
 	public static function escape(s:String):String {
-		return null;
+		var specials = ['\\', '.', '+', '*', '?', '^', '$', '(', ')', '[', ']', '{', '}', '|'];
+        var text = s;
+        for (special in specials) {
+            text = StringTools.replace(text, special, '\\' + special);
+        }
+        return text;
 	}
 }
