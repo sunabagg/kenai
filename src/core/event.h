@@ -122,7 +122,7 @@ namespace sunaba::core {
                 }*/
 
                 if (lua_listeners.size() > 0) { // Check if there are any Lua listeners
-                    for (size_t i = 0; i < lua_listeners.size(); ++i) {
+                    for (size_t i = 0; i < lua_listeners.size(); i++) {
                         sol::function lua_listener = lua_listeners[i];
                         if (!lua_listener.valid()) {
                             continue; // Skip invalid listeners
