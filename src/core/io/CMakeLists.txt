@@ -18,6 +18,7 @@ target_sources(${PROJECT_NAME} PRIVATE
         io_index.h
         io_index.cpp
         zip_io.h
+        zip_io.cpp
 )
 
 target_include_directories( ${PROJECT_NAME}
