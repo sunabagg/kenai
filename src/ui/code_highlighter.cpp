@@ -3,7 +3,9 @@
 namespace sunaba::ui {
     void bindCodeHighlighter(sol::state &lua) {
         lua.new_usertype<CodeHighlighter>("CodeHighlighter",
-            sol::constructors<CodeHighlighter()>(),
+            "new", sol::factories(
+                []() { return new CodeHighlighter(); }
+            ),
             sol::base_classes, sol::bases<sunaba::core::BaseObject, sunaba::core::Resource, SyntaxHighlighter>(),
             "colorRegions", sol::property(&CodeHighlighter::getColorRegions, &CodeHighlighter::setColorRegions),
             "functionColor", sol::property(&CodeHighlighter::getFunctionColor, &CodeHighlighter::setFunctionColor),
