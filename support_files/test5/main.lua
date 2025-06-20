@@ -3381,7 +3381,7 @@ end
 __sunaba_ui_Widget.prototype.instantiate = function(self,xml) 
   if ((self.rootElement ~= nil) and not self.keepChildren) then 
     local s = self.rootElement:getChildren();
-    local table = table;
+    local array = _hx_tab_array({}, 0);
     local _g = 0;
     local _g1 = __sunaba_core__Vector_Vector_Impl_.size(s);
     while (_g < _g1) do _hx_do_first_1 = false;
@@ -3390,28 +3390,11 @@ __sunaba_ui_Widget.prototype.instantiate = function(self,xml)
       local i = _g - 1;
       local value = __sunaba_core__Vector_Vector_Impl_.get(s, i);
       if (value == nil) then 
-        _G.error(__haxe_Exception.thrown(Std.string("Vector.toTable: null value at index ") .. Std.string(i)),0);
+        _G.error(__haxe_Exception.thrown(Std.string("Vector.toArray: null value at index ") .. Std.string(i)),0);
       end;
-      table[i] = value;
+      array:push(value);
     end;
-    local childrenTable = table;
-    local length = nil;
-    local tab = __lua_PairTools.copy(childrenTable);
-    local length = length;
-    local children;
-    if (length == nil) then 
-      length = _hx_table.maxn(tab);
-      if (length > 0) then 
-        local head = tab[1];
-        _G.table.remove(tab, 1);
-        tab[0] = head;
-        children = _hx_tab_array(tab, length);
-      else
-        children = _hx_tab_array({}, 0);
-      end;
-    else
-      children = _hx_tab_array(tab, length);
-    end;
+    local children = array;
     local _g = 0;
     local _g1 = children.length;
     while (_g < _g1) do _hx_do_first_1 = false;
@@ -3438,7 +3421,7 @@ __sunaba_ui_Widget.prototype.instantiate = function(self,xml)
     if (firstElement.nodeName == "suml") then 
       local fullScreenAtt = firstElement:get("fullscreen");
       if (fullScreenAtt == "true") then 
-        self.rootElement:setAnchorsAndOffsetsPreset(15, 3);
+        self.rootElement:setAnchorsAndOffsetsPreset(15, 3, 0);
         self.rootElement.sizeFlagsHorizontal = 1;
         self.rootElement.sizeFlagsVertical = 1;
       else

@@ -76,7 +76,7 @@ class Widget {
             if (firstElement.nodeName == "suml") {
                 var fullScreenAtt = firstElement.get("fullscreen");
                 if (fullScreenAtt == "true") {
-                    rootElement.setAnchorsAndOffsetsPreset(LayoutPreset.fullRect, LayoutPresetMode.keepSize);
+                    rootElement.setAnchorsAndOffsetsPreset(LayoutPreset.fullRect, LayoutPresetMode.keepSize, 0);
                     rootElement.sizeFlagsHorizontal = SizeFlags.fill;
                     rootElement.sizeFlagsVertical = SizeFlags.fill;
                 }
