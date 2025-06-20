@@ -64,7 +64,9 @@ namespace sunaba::desktop {
 
     void bindPopupPanel(sol::state& lua) {
         lua.new_usertype<PopupPanel>("PopupPanel",
-            sol::constructors<PopupPanel()>(),
+            "new", sol::factories(
+                []() { return new PopupPanel(); }
+            ),
             sol::base_classes, sol::bases<BaseObject, Element, sunaba::core::Viewport, Window, Popup>(),
             "transparent", sol::property(&PopupPanel::getTransparent, &PopupPanel::setTransparent),
             "transparentBg", sol::property(&PopupPanel::getTransparentBg, &PopupPanel::setTransparentBg),
