@@ -194,6 +194,10 @@ void App::loadAndExecuteSbx(const String &path) {
     Dictionary headerDict = parseResult;
 
     auto type = headerDict.get("type", "executable");
+    if (type != "executable") {
+        UtilityFunctions::print("Error: type must be executable");
+        return;
+    }
 
     auto luabinname = headerDict.get("luabin", "main.lua");
     zipio->pathUri = String(headerDict.get("rootUrl", "app://")).utf8().get_data();
