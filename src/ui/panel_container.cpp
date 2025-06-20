@@ -131,7 +131,9 @@ namespace sunaba::ui {
 
     void bindPanelContainer(sol::state &lua) {
         lua.new_usertype<PanelContainer>("PanelContainer",
-            sol::constructors<PanelContainer()>(),
+            "new", sol::factories(
+                []() { return new PanelContainer(); }
+            ),
             sol::base_classes, sol::bases<BaseObject, Element, sunaba::core::CanvasItem, Control, Container>(),
             "mouseFilter", sol::property(
                 &PanelContainer::getMouseFilter,
