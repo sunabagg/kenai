@@ -2,7 +2,9 @@
 
 void sunaba::audio::bindAudioStreamWav(sol::state_view& lua) {
     lua.new_usertype<AudioStreamWav>("AudioStreamWav",
-        sol::constructors<AudioStreamWav()>(),
+        "new", sol::factories([]() {
+            return new AudioStreamWav();
+        }),
         sol::base_classes, sol::bases<sunaba::core::BaseObject, sunaba::core::Resource, AudioStream>(),
         "cast", [](sunaba::core::Resource* resource) { 
             return new AudioStreamWav(
