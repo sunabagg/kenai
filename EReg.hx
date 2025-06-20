@@ -24,6 +24,7 @@ class EReg {
         if (opt == null || opt == "") {
             opt = "g"; // Default to global matching if no options are provided
         }
+
         if (StringTools.contains(opt, "g")) {
             opt = StringTools.replace(opt, "g", ""); // Remove global modifier for Godot compatibility
         }
@@ -32,6 +33,7 @@ class EReg {
         if (StringTools.contains(opt, "i")) {
             godotPattern = "(?i)" + r; // Add case-insensitive modifier if not present
         }
+        
         if (StringTools.contains(opt, "m")) {
             godotPattern = "(?m)" + r; // Add multiline modifier if not present
         }
