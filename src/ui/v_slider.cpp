@@ -123,7 +123,9 @@ namespace sunaba::ui {
 
     void bindVSlider(sol::state& lua) {
         lua.new_usertype<VSlider>("VSlider",
-            sol::constructors<VSlider()>(),
+            "new", sol::factories(
+                []() { return new VSlider(); }
+            ),
             sol::base_classes, sol::bases<BaseObject, Element, sunaba::core::CanvasItem, Control, Range, Slider>(),
             "cast", [] (Element* element) {
                 VSliderNode* vSlider = Object::cast_to<VSliderNode>(element->getNode());
