@@ -2,7 +2,9 @@
 
 void sunaba::core::bindLabelSettings(sol::state &lua) {
     lua.new_usertype<LabelSettings>("LabelSettings",
-        sol::constructors<LabelSettings(), LabelSettings(GodotLabelSettings*)>(),
+        "new", sol::factories(
+            []() { return new LabelSettings(); }
+        ),
         sol::base_classes, sol::bases<sunaba::core::BaseObject, sunaba::core::Resource>(),
         "font", sol::property(&LabelSettings::getFont, &LabelSettings::setFont),
         "fontColor", sol::property(&LabelSettings::getFontColor, &LabelSettings::setFontColor),
