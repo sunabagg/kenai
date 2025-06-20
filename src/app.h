@@ -30,7 +30,7 @@ namespace sunaba
         void _ready() override;
         void _process(double delta) override;
 
-        void init(bool sandboxed = true);
+        void initState(bool sandboxed = true);
 
         void loadAndExecuteSbx(const String &path);
 
