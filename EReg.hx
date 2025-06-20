@@ -33,7 +33,7 @@ class EReg {
         if (StringTools.contains(opt, "i")) {
             godotPattern = "(?i)" + r; // Add case-insensitive modifier if not present
         }
-        
+
         if (StringTools.contains(opt, "m")) {
             godotPattern = "(?m)" + r; // Add multiline modifier if not present
         }
@@ -52,7 +52,8 @@ class EReg {
 		If `s` is `null`, the result is unspecified.
 	**/
 	public function match(s:String):Bool {
-		return false;
+		lastMatch = regex.search(s);
+        return lastMatch != null;
 	}
 
 	/**
