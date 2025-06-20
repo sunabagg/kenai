@@ -76,6 +76,10 @@ namespace sunaba::core {
             bool isValid() const {
                 return reg_ex_match.is_valid();
             }
+
+            bool isNull() const {
+                return reg_ex_match.is_null();
+            }
     };
 }
 
