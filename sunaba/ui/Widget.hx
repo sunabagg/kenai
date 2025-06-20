@@ -421,7 +421,8 @@ class Widget {
         }
     }
 
-    private inline function hasField(obj: Any, field: String): Bool {
+    private inline function hasField(object: Any, field: String): Bool {
+        var obj = object;
         return untyped __lua__("obj[field] ~= nil") || Reflect.hasField(obj, field);
     }
 
