@@ -2,7 +2,9 @@
 
 void sunaba::core::bindFontVariation(sol::state &lua) {
     lua.new_usertype<FontVariation>("FontVariation",
-        sol::constructors<FontVariation()>(),
+        "new", sol::factories(
+            []() { return new FontVariation(); }
+        ),
         sol::base_classes, sol::bases<BaseObject, Resource, Font>(),
         "baseFont", sol::property(&FontVariation::getBaseFont, &FontVariation::setBaseFont),
         "baselineOffset", sol::property(&FontVariation::getBaselineOffset, &FontVariation::setBaselineOffset),
