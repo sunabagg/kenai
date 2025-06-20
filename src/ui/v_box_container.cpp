@@ -131,7 +131,7 @@ namespace sunaba::ui {
     }
 
     void bindVBoxContainer(sol::state &lua) {
-        lua.new_usertype<VBoxContainer>("VBoxContainer",
+        lua.new_usertype<VBoxContainer>("VboxContainer",
             "new", sol::factories(
                 []() { return new VBoxContainer(); }
             ),
