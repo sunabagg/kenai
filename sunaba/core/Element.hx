@@ -24,6 +24,7 @@ extern class Element extends BaseObject {
     public function delete(): Void;
     @:native("cast")
     public static function castElement(obj:Dynamic): Element;
+    public static function isElementType(): Bool;
 }
 
 abstract ElementAbstract(Element) from Element to Element {
