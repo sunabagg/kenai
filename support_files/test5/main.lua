@@ -1207,9 +1207,6 @@ Type.resolveEnum = function(name)
   end;
   do return e end;
 end
-Type.createInstance = function(cl,args) 
-  do return cl.new(_hx_table.unpack(args, 0)) end;
-end
 
 ___Xml_XmlType_Impl_.new = {}
 ___Xml_XmlType_Impl_.__name__ = "_Xml.XmlType_Impl_"
@@ -3476,20 +3473,19 @@ __sunaba_ui_Widget.prototype.construct = function(self,xml)
   className = self:camelToPascal(className);
   local classType = _G[className];
   if (classType ~= nil) then 
-    if (self:isAnElementClass(classType)) then 
-      local instance = Type.createInstance(classType, _hx_tab_array({}, 0));
-      if (instance ~= nil) then 
-        local element = instance;
-        self:setObjectValues(element, xml);
-        self:constructChildren(element, xml);
-        if (element.name == nil) then 
-          local nameAtt = xml:get("name");
-          if (nameAtt ~= nil) then 
-            element.name = nameAtt;
-          end;
+    _G.print(Std.string(Std.string("Constructing element of class: ") .. Std.string(className)));
+    local instance = classType.new();
+    if (instance ~= nil) then 
+      local element = instance;
+      self:setObjectValues(element, xml);
+      self:constructChildren(element, xml);
+      if (element.name == nil) then 
+        local nameAtt = xml:get("name");
+        if (nameAtt ~= nil) then 
+          element.name = nameAtt;
         end;
-        do return element end;
       end;
+      do return element end;
     end;
   end;
   _G.error(__haxe_Exception.thrown(Std.string("Unknown element class: ") .. Std.string(className)),0);
@@ -3904,7 +3900,7 @@ __sunaba_ui_Widget.prototype.setProperty = function(self,obj,field,value)
   end;
 end
 __sunaba_ui_Widget.prototype.isAnElementClass = function(self,classInfo) 
-  local isTrue = classInfo.isElementType ~= nil;
+  local isTrue = classInfo['isElementType'] ~= nil;
   if (isTrue == true) then 
     do return true end;
   end;

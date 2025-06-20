@@ -160,20 +160,20 @@ class Widget {
         className = camelToPascal(className);
         var classType : Class<Dynamic> = untyped __lua__("_G[className]");
         if (classType != null) {
-            if (isAnElementClass(classType)) {
-                var instance = Type.createInstance(classType, []);
-                if (instance != null) {
-                    var element : Element = cast instance;
-                    setObjectValues(element, xml);
-                    constructChildren(element, xml);
-                    if (element.name == null) {
-                        var nameAtt = xml.get("name");
-                        if (nameAtt != null) {
-                            element.name = nameAtt;
-                        }
+            Sys.println("Constructing element of class: " + className);
+
+            var instance = untyped __lua__("classType.new()");
+            if (instance != null) {
+                var element : Element = cast instance;
+                setObjectValues(element, xml);
+                constructChildren(element, xml);
+                if (element.name == null) {
+                    var nameAtt = xml.get("name");
+                    if (nameAtt != null) {
+                        element.name = nameAtt;
                     }
-                    return element;
                 }
+                return element;
             }
         }
         
@@ -442,7 +442,7 @@ class Widget {
     }
 
     private function isAnElementClass(classInfo: Class<Dynamic>): Bool {
-        var isTrue : Bool = untyped __lua__("classInfo.isElementType ~= nil");
+        var isTrue : Bool = untyped __lua__("classInfo['isElementType'] ~= nil");
         if (isTrue == true) {
             return true;
         }
