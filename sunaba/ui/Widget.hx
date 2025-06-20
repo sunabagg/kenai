@@ -233,6 +233,12 @@ class Widget {
                             }
                         }
                         else  {
+                            if (attributeValue == "$FILL_BOTTOM_RIGHT") {
+                                attributeValue = "1"; // Special case for $FILL_BOTTOM_RIGHT
+                            }
+                            if (attributeValue == "$FILL_TOP_LEFT") {
+                                attributeValue = "0"; // Special case for $FILL_TOP_LEFT
+                            }
                             setProperty(element, attributeName, Std.parseInt(attributeValue));
                         }
                     }
