@@ -29,4 +29,26 @@ namespace sunaba::core::io {
         }
         return String::utf8((const char *)bytes.ptr(), bytes.size()).utf8().get_data();
     }
+
+    PackedByteArray ZipIo::loadBytes(const std::string &path) const {
+        std::string realPath = getFilePath(path);
+        if (!zip_reader->file_exists(realPath.c_str())) {
+            return PackedByteArray();
+        }
+        return zip_reader->read_file(realPath.c_str());
+    }
+
+    std::vector<std::string> ZipIo::getFileList(const std::string &path, const std::string &extension, const bool recursive) const {
+        PackedStringArray files = zip_reader->get_files();
+        std::vector<std::string> file_list;
+
+        for (int i = 0; i < files.size(); ++i) {
+            std::string file = files[i].utf8().get_data();
+            if (file.find(path) == 0 && (extension.empty() || StringUtils::endsWith(file, extension))) {
+                file_list.push_back(file);
+            }
+        }
+
+        return file_list;
+    }
 } // namespace sunaba::core::io
