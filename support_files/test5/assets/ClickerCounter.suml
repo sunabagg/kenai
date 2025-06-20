@@ -16,6 +16,10 @@
                     text="You clicked me 0 times?"
                     verticalAlignment="1"
                     horizontalAlignment="1"/>
+                <button
+                    text="Click me!"
+                    verticalAlignment="1"
+                    horizontalAlignment="1">
             </vBoxContainer>
         </centerContainer>
     </body>
