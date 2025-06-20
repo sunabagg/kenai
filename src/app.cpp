@@ -193,6 +193,8 @@ void App::loadAndExecuteSbx(const String &path) {
     auto parseResult = headerJson->parse_string(headerJsonStr.c_str());
     Dictionary headerDict = parseResult;
 
+    auto type = headerDict.get("type", "executable");
+
     auto luabinname = headerDict.get("luabin", "main.lua");
     zipio->pathUri = String(headerDict.get("rootUrl", "app://")).utf8().get_data();
 
