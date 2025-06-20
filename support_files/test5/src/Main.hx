@@ -11,6 +11,7 @@ class Main extends App {
         Sys.println("Hello, World!");
 
         var clickerCounter = new ClickerCounter();
+        Sys.println("ClickerCounter.rootElement.isNull: " + clickerCounter.rootElement.isNull());
         rootElement.addChild(clickerCounter.rootElement);
     }
 }
