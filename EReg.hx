@@ -179,7 +179,7 @@ class EReg {
 		If `s` or `by` are null, the result is unspecified.
 	**/
 	public function replace(s:String, by:String):String {
-		return null;
+		return regex.sub(s, by);
 	}
 
 	/**
