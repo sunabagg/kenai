@@ -2,7 +2,9 @@
 
 void sunaba::spatial::bindCameraAttributes(sol::state_view& lua) {
     lua.new_usertype<CameraAttributes>("CameraAttributes",
-        sol::constructors<CameraAttributes()>(),
+        "new", sol::factories(
+            []() { return new CameraAttributes(); }
+        ),
         sol::base_classes, sol::bases<sunaba::core::BaseObject, sunaba::core::Resource>(),
         "autoExposureEnabled", sol::property(&CameraAttributes::getAutoExposureEnabled, &CameraAttributes::setAutoExposureEnabled),
         "autoExposureScale", sol::property(&CameraAttributes::getAutoExposureScale, &CameraAttributes::setAutoExposureScale),
