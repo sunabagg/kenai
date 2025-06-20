@@ -131,7 +131,9 @@ namespace sunaba::ui {
 
     void bindFlowContainer(sol::state& lua) {
         lua.new_usertype<FlowContainer>("FlowContainer",
-            sol::constructors<FlowContainer()>(),
+            "new", sol::factories(
+                []() { return new FlowContainer(); }
+            ),
             sol::base_classes, sol::bases<BaseObject, Element, sunaba::core::CanvasItem, Control, Container>(),
             "alignment", sol::property(
                 &FlowContainer::getAlignment,
