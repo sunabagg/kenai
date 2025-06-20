@@ -10,6 +10,7 @@ class EReg {
     private var options: String;
     private var regex: RegEx;
     private var lastMatch: RegExMatch;
+    private var lastInput: String;
 
     /**
 		Creates a new regular expression with pattern `r` and modifiers `opt`.
