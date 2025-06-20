@@ -87,6 +87,9 @@ void sunaba::core::bindElement(sol::state &lua) {
                 e->treeExiting = event;
             }
         ),
+        "isElementType", []() {
+                return true;
+        },
         "find", &Element::find,
         "getParent", &Element::getParent,
         "addChild", &Element::addChild,
