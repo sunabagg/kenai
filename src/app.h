@@ -29,6 +29,11 @@ namespace sunaba
 
         void _ready() override;
         void _process(double delta) override;
+
+        void init(bool sandboxed = true);
+
+        void loadAndExecuteSbx(const String &path);
+
         void start( const String &path );
 
         sunaba::core::Scene* createScene();
