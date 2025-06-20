@@ -157,6 +157,7 @@ class Widget {
 
     private function construct(xml: Xml) : Element {
         var className = xml.nodeName;
+        className = camelToPascal(className);
         var classType : Class<Dynamic> = untyped __lua__("_G[className]");
         if (classType != null) {
             if (isAnElementClass(classType)) {
