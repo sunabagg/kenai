@@ -62,8 +62,7 @@ class Widget {
 
     private function instantiate(xml: Xml): Void {
         if (rootElement != null && !keepChildren) {
-            var childrenTable : Table<Int, Element> = rootElement.getChildren();
-            var children : Array<Element> = Table.toArray(childrenTable);
+            var children : Array<Element> = rootElement.getChildren();
             for (i in 0... children.length) {
                 var child = children[i];
                 if (child != null) {
@@ -71,7 +70,7 @@ class Widget {
                 }
             }
         }
-
+        
         var firstElement = xml.firstElement();
         if (firstElement != null) {
             if (firstElement.nodeName == "suml") {
