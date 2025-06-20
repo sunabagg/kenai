@@ -41,7 +41,13 @@ class Widget {
     public function load(path: String): Void {
         var file = io.loadText(path);
         if (file != null && file.length > 0) {
-            parseMarkup(file);
+            try {
+                parseMarkup(file);
+            }
+            catch (e: Dynamic) {
+                Sys.println("Error parsing markup: " + e);
+                throw e;
+            }
         }
         else {
             Sys.println("Failed to load file: " + path);
