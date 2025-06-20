@@ -124,7 +124,9 @@ namespace sunaba::ui {
     void bindHSlider(sol::state& lua) {
         // Bindings for HSlider
         lua.new_usertype<HSlider>("HSlider",
-            sol::constructors<HSlider()>(),
+            "new", sol::factories(
+                []() { return new HSlider(); }
+            ),
             sol::base_classes, sol::bases<BaseObject, Element, sunaba::core::CanvasItem, Range, Slider>(),
             "cast", [] (Element* element) {
                 HSliderNode* hSlider = Object::cast_to<HSliderNode>(element->getNode());
