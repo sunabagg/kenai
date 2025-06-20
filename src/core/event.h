@@ -122,8 +122,15 @@ namespace sunaba::core {
                 }*/
 
                 if (!lua_listeners.empty()) {
-                    for (sol::function lua_listener : lua_listeners) {
+                    for (size_t i = 0; i < lua_listeners.size(); ++i) {
+                        sol::function lua_listener = lua_listeners[i];
+                        if (!lua_listener.valid()) {
+                            continue; // Skip invalid listeners
+                        }
                         sol::state_view lua_state = sol::state_view(lua_listener.lua_state());
+                        if (!lua_state || lua_state.lua_state() == nullptr) {
+                            continue; // Skip if the Lua state is invalid
+                        }
                         sol::table lua_args = lua_state.create_table(args.size(), 0);
                         for (int j = 0; j < args.size(); ++j) {
                             lua_args[j + 1] = args[j]; // Lua tables are 1-indexed
@@ -132,7 +139,9 @@ namespace sunaba::core {
                     }
                 }
 
-                if (!lua_table_listeners.empty()) {
+                /*
+                if (lua_table_listeners != std::vector<TableMethodNamePair>())  // Check if there are any Lua table listeners
+                {
                     for (const TableMethodNamePair& pair : lua_table_listeners) {
                         sol::state_view lua_state = sol::state_view(pair.table.lua_state());
                         sol::function method = pair.table[pair.method_name];
@@ -144,7 +153,7 @@ namespace sunaba::core {
                             callLuaListener(method, lua_args);
                         }
                     }
-                }
+                }*/
                 
                 
             }
