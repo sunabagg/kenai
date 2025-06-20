@@ -118,7 +118,7 @@ class EReg {
             return ""; // No match found
         }
         var endPos = lastMatch.getEnd(0);
-        return lastInput.substr(endPos, lastInput.length - endPos);
+        return lastInput.substr(endPos);
 	}
 
 	/**
