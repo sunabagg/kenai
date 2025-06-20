@@ -3623,6 +3623,12 @@ __sunaba_ui_Widget.prototype.setObjectValues = function(self,element,xml)
                 _G.error(__haxe_Exception.thrown(Std.string("Unknown enum: ") .. Std.string(enumName)),0);
               end;
             else
+              if (attributeValue == "$FILL_BOTTOM_RIGHT") then 
+                attributeValue = "1";
+              end;
+              if (attributeValue == "$FILL_TOP_LEFT") then 
+                attributeValue = "0";
+              end;
               local value = Std.parseInt(attributeValue);
               if (obj[field] ~= nil) then 
                 obj[field] = value;
