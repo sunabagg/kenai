@@ -441,7 +441,7 @@ class Widget {
     }
 
     private function isAnElementClass(classInfo: Class<Dynamic>): Bool {
-        var isTrue : Bool = untyped __lua__("classInfo.isElementType ~= nil and classInfo.isElementType()");
+        var isTrue : Bool = untyped __lua__("classInfo.isElementType ~= nil");
         if (isTrue == true) {
             return true;
         }

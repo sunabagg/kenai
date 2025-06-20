@@ -255,7 +255,6 @@ end
 Array.super = function(self) 
   _hx_tab_array(self, 0);
 end
-_hxClasses["Array"] = Array
 Array.__name__ = "Array"
 Array.prototype = _hx_e();
 Array.prototype.concat = function(self,a) 
@@ -621,7 +620,6 @@ EReg.super = function(self,r,opt)
     _G.error(__haxe_Exception.thrown(Std.string("Failed to compile regex pattern: ") .. Std.string(r)),0);
   end;
 end
-_hxClasses["EReg"] = EReg
 EReg.__name__ = "EReg"
 EReg.escape = function(s) 
   local specials = _hx_tab_array({[0]="\\", ".", "+", "*", "?", "^", "$", "(", ")", "[", "]", "{", "}", "|"}, 14);
@@ -768,7 +766,6 @@ end
 EReg.prototype.__class__ =  EReg
 
 Math.new = {}
-_hxClasses["Math"] = Math
 Math.__name__ = "Math"
 Math.isNaN = function(f) 
   do return f ~= f end;
@@ -789,7 +786,6 @@ Math.min = function(a,b)
 end
 
 Reflect.new = {}
-_hxClasses["Reflect"] = Reflect
 Reflect.__name__ = "Reflect"
 Reflect.field = function(o,field) 
   if (_G.type(o) == "string") then 
@@ -845,7 +841,6 @@ String.new = function(string)
 end
 String.super = function(self,string) 
 end
-_hxClasses["String"] = String
 String.__name__ = "String"
 String.__index = function(s,k) 
   if (k == "length") then 
@@ -1017,7 +1012,6 @@ end
 String.prototype.__class__ =  String
 
 Std.new = {}
-_hxClasses["Std"] = Std
 Std.__name__ = "Std"
 Std.string = function(s) 
   do return _hx_tostring(s, 0) end;
@@ -1082,14 +1076,12 @@ StringBuf.super = function(self)
   self.b = ({});
   self.length = 0;
 end
-_hxClasses["StringBuf"] = StringBuf
 StringBuf.__name__ = "StringBuf"
 StringBuf.prototype = _hx_e();
 
 StringBuf.prototype.__class__ =  StringBuf
 
 StringTools.new = {}
-_hxClasses["StringTools"] = StringTools
 StringTools.__name__ = "StringTools"
 StringTools.htmlEscape = function(s,quotes) 
   local buf_b = ({});
@@ -1181,7 +1173,6 @@ StringTools.replace = function(s,sub,by)
 end
 
 Type.new = {}
-_hxClasses["Type"] = Type
 Type.__name__ = "Type"
 Type.getClass = function(o) 
   if (o == nil) then 
@@ -1203,26 +1194,6 @@ Type.getClass = function(o)
     end;
   end;
 end
-Type.resolveClass = function(name) 
-  local cl = _hxClasses[name];
-  local tmp;
-  if (cl ~= nil) then 
-    local o = cl;
-    tmp = not ((function() 
-      local _hx_1
-      if (_G.type(o) ~= "table") then 
-      _hx_1 = false; else 
-      _hx_1 = o.__name__; end
-      return _hx_1
-    end )());
-  else
-    tmp = true;
-  end;
-  if (tmp) then 
-    do return nil end;
-  end;
-  do return cl end;
-end
 Type.resolveEnum = function(name) 
   local e = _hxClasses[name];
   if ((e == nil) or not ((function() 
@@ -1241,7 +1212,6 @@ Type.createInstance = function(cl,args)
 end
 
 ___Xml_XmlType_Impl_.new = {}
-_hxClasses["_Xml.XmlType_Impl_"] = ___Xml_XmlType_Impl_
 ___Xml_XmlType_Impl_.__name__ = "_Xml.XmlType_Impl_"
 ___Xml_XmlType_Impl_.toString = function(this1) 
   local _g = this1;
@@ -1271,7 +1241,6 @@ Xml.super = function(self,nodeType)
   self.children = _hx_tab_array({}, 0);
   self.attributeMap = __haxe_ds_StringMap.new();
 end
-_hxClasses["Xml"] = Xml
 Xml.__name__ = "Xml"
 Xml.parse = function(str) 
   do return __haxe_xml_Parser.parse(str) end;
@@ -1507,7 +1476,6 @@ end
 Xml.prototype.__class__ =  Xml
 
 __haxe_IMap.new = {}
-_hxClasses["haxe.IMap"] = __haxe_IMap
 __haxe_IMap.__name__ = "haxe.IMap"
 
 __haxe_Exception.new = function(message,previous,native) 
@@ -1528,7 +1496,6 @@ __haxe_Exception.super = function(self,message,previous,native)
     self.__skipStack = 1;
   end;
 end
-_hxClasses["haxe.Exception"] = __haxe_Exception
 __haxe_Exception.__name__ = "haxe.Exception"
 __haxe_Exception.caught = function(value) 
   if (__lua_Boot.__instanceof(value, __haxe_Exception)) then 
@@ -1565,7 +1532,6 @@ __haxe_Exception.prototype.__class__ =  __haxe_Exception
 __haxe_Exception.prototype.__properties__ =  {get_native="get_native",get_message="get_message"}
 
 __haxe__Int32_Int32_Impl_.new = {}
-_hxClasses["haxe._Int32.Int32_Impl_"] = __haxe__Int32_Int32_Impl_
 __haxe__Int32_Int32_Impl_.__name__ = "haxe._Int32.Int32_Impl_"
 __haxe__Int32_Int32_Impl_.shr = function(a,b) 
   do return __haxe__Int32_Int32_Impl_.clamp(_hx_bit.arshift(a,b)) end;
@@ -1583,14 +1549,12 @@ __haxe__Int64____Int64.super = function(self,high,low)
   self.high = high;
   self.low = low;
 end
-_hxClasses["haxe._Int64.___Int64"] = __haxe__Int64____Int64
 __haxe__Int64____Int64.__name__ = "haxe._Int64.___Int64"
 __haxe__Int64____Int64.prototype = _hx_e();
 
 __haxe__Int64____Int64.prototype.__class__ =  __haxe__Int64____Int64
 
 __haxe_NativeStackTrace.new = {}
-_hxClasses["haxe.NativeStackTrace"] = __haxe_NativeStackTrace
 __haxe_NativeStackTrace.__name__ = "haxe.NativeStackTrace"
 __haxe_NativeStackTrace.saveStack = function(exception) 
 end
@@ -1622,7 +1586,6 @@ __haxe_ValueException.super = function(self,value,previous,native)
   end )(),previous,native);
   self.value = value;
 end
-_hxClasses["haxe.ValueException"] = __haxe_ValueException
 __haxe_ValueException.__name__ = "haxe.ValueException"
 __haxe_ValueException.prototype = _hx_e();
 __haxe_ValueException.prototype.unwrap = function(self) 
@@ -1642,7 +1605,6 @@ end
 __haxe_ds_StringMap.super = function(self) 
   self.h = ({});
 end
-_hxClasses["haxe.ds.StringMap"] = __haxe_ds_StringMap
 __haxe_ds_StringMap.__name__ = "haxe.ds.StringMap"
 __haxe_ds_StringMap.__interfaces__ = {__haxe_IMap}
 __haxe_ds_StringMap.prototype = _hx_e();
@@ -1674,7 +1636,6 @@ __haxe_exceptions_PosException.super = function(self,message,previous,pos)
     self.posInfos = pos;
   end;
 end
-_hxClasses["haxe.exceptions.PosException"] = __haxe_exceptions_PosException
 __haxe_exceptions_PosException.__name__ = "haxe.exceptions.PosException"
 __haxe_exceptions_PosException.prototype = _hx_e();
 __haxe_exceptions_PosException.prototype.toString = function(self) 
@@ -1697,7 +1658,6 @@ __haxe_exceptions_NotImplementedException.super = function(self,message,previous
   end;
   __haxe_exceptions_PosException.super(self,message,previous,pos);
 end
-_hxClasses["haxe.exceptions.NotImplementedException"] = __haxe_exceptions_NotImplementedException
 __haxe_exceptions_NotImplementedException.__name__ = "haxe.exceptions.NotImplementedException"
 __haxe_exceptions_NotImplementedException.prototype = _hx_e();
 
@@ -1715,7 +1675,6 @@ __haxe_iterators_ArrayIterator.super = function(self,array)
   self.current = 0;
   self.array = array;
 end
-_hxClasses["haxe.iterators.ArrayIterator"] = __haxe_iterators_ArrayIterator
 __haxe_iterators_ArrayIterator.__name__ = "haxe.iterators.ArrayIterator"
 __haxe_iterators_ArrayIterator.prototype = _hx_e();
 __haxe_iterators_ArrayIterator.prototype.hasNext = function(self) 
@@ -1741,7 +1700,6 @@ end
 __haxe_iterators_ArrayKeyValueIterator.super = function(self,array) 
   self.array = array;
 end
-_hxClasses["haxe.iterators.ArrayKeyValueIterator"] = __haxe_iterators_ArrayKeyValueIterator
 __haxe_iterators_ArrayKeyValueIterator.__name__ = "haxe.iterators.ArrayKeyValueIterator"
 __haxe_iterators_ArrayKeyValueIterator.prototype = _hx_e();
 
@@ -1775,7 +1733,6 @@ __haxe_xml_XmlParserException.super = function(self,message,xml,position)
     end;
   end;
 end
-_hxClasses["haxe.xml.XmlParserException"] = __haxe_xml_XmlParserException
 __haxe_xml_XmlParserException.__name__ = "haxe.xml.XmlParserException"
 __haxe_xml_XmlParserException.prototype = _hx_e();
 __haxe_xml_XmlParserException.prototype.toString = function(self) 
@@ -1786,7 +1743,6 @@ end
 __haxe_xml_XmlParserException.prototype.__class__ =  __haxe_xml_XmlParserException
 
 __haxe_xml_Parser.new = {}
-_hxClasses["haxe.xml.Parser"] = __haxe_xml_Parser
 __haxe_xml_Parser.__name__ = "haxe.xml.Parser"
 __haxe_xml_Parser.parse = function(str,strict) 
   if (strict == nil) then 
@@ -2241,7 +2197,6 @@ __haxe_xml_Printer.super = function(self,pretty)
   self.output = StringBuf.new();
   self.pretty = pretty;
 end
-_hxClasses["haxe.xml.Printer"] = __haxe_xml_Printer
 __haxe_xml_Printer.__name__ = "haxe.xml.Printer"
 __haxe_xml_Printer.print = function(xml,pretty) 
   if (pretty == nil) then 
@@ -2567,7 +2522,6 @@ end
 __haxe_xml_Printer.prototype.__class__ =  __haxe_xml_Printer
 
 __lua_Boot.new = {}
-_hxClasses["lua.Boot"] = __lua_Boot
 __lua_Boot.__name__ = "lua.Boot"
 __lua_Boot.__instanceof = function(o,cl) 
   if (cl == nil) then 
@@ -2677,11 +2631,9 @@ __lua_Boot.extendsOrImplements = function(cl1,cl2)
 end
 
 __lua_UserData.new = {}
-_hxClasses["lua.UserData"] = __lua_UserData
 __lua_UserData.__name__ = "lua.UserData"
 
 __lua_PairTools.new = {}
-_hxClasses["lua.PairTools"] = __lua_PairTools
 __lua_PairTools.__name__ = "lua.PairTools"
 __lua_PairTools.copy = function(table1) 
   local ret = ({});
@@ -2690,7 +2642,6 @@ __lua_PairTools.copy = function(table1)
 end
 
 __lua_Thread.new = {}
-_hxClasses["lua.Thread"] = __lua_Thread
 __lua_Thread.__name__ = "lua.Thread"
 
 __sunaba_App.new = function() 
@@ -2701,7 +2652,6 @@ end
 __sunaba_App.super = function(self) 
   self:init();
 end
-_hxClasses["sunaba.App"] = __sunaba_App
 __sunaba_App.__name__ = "sunaba.App"
 __sunaba_App.prototype = _hx_e();
 __sunaba_App.prototype.get_rootElement = function(self) 
@@ -2723,7 +2673,6 @@ __sunaba_core_ArrayListIterator.super = function(self,array)
   self.index = 0;
   self.array = array;
 end
-_hxClasses["sunaba.core.ArrayListIterator"] = __sunaba_core_ArrayListIterator
 __sunaba_core_ArrayListIterator.__name__ = "sunaba.core.ArrayListIterator"
 __sunaba_core_ArrayListIterator.prototype = _hx_e();
 __sunaba_core_ArrayListIterator.prototype.hasNext = function(self) 
@@ -2742,7 +2691,6 @@ end
 __sunaba_core_ArrayListIterator.prototype.__class__ =  __sunaba_core_ArrayListIterator
 
 __sunaba_core__ArrayList_ArrayListAbstract_Impl_.new = {}
-_hxClasses["sunaba.core._ArrayList.ArrayListAbstract_Impl_"] = __sunaba_core__ArrayList_ArrayListAbstract_Impl_
 __sunaba_core__ArrayList_ArrayListAbstract_Impl_.__name__ = "sunaba.core._ArrayList.ArrayListAbstract_Impl_"
 __sunaba_core__ArrayList_ArrayListAbstract_Impl_.get = function(this1,index) 
   do return this1:get(index) end;
@@ -2794,7 +2742,6 @@ __sunaba_core__ArrayList_ArrayListAbstract_Impl_.iterator = function(this1)
 end
 
 __sunaba_core__CanvasItem_CanvasItemAbstract_Impl_.new = {}
-_hxClasses["sunaba.core._CanvasItem.CanvasItemAbstract_Impl_"] = __sunaba_core__CanvasItem_CanvasItemAbstract_Impl_
 __sunaba_core__CanvasItem_CanvasItemAbstract_Impl_.__name__ = "sunaba.core._CanvasItem.CanvasItemAbstract_Impl_"
 __sunaba_core__CanvasItem_CanvasItemAbstract_Impl_.fromElement = function(element) 
   local cItem = Element.cast(element);
@@ -2813,7 +2760,6 @@ __sunaba_core_DictionaryIterator.super = function(self,dict)
   self.index = 0;
   self.dict = dict;
 end
-_hxClasses["sunaba.core.DictionaryIterator"] = __sunaba_core_DictionaryIterator
 __sunaba_core_DictionaryIterator.__name__ = "sunaba.core.DictionaryIterator"
 __sunaba_core_DictionaryIterator.prototype = _hx_e();
 __sunaba_core_DictionaryIterator.prototype.hasNext = function(self) 
@@ -2832,7 +2778,6 @@ end
 __sunaba_core_DictionaryIterator.prototype.__class__ =  __sunaba_core_DictionaryIterator
 
 __sunaba_core__Dictionary_DictionaryAbstract_Impl_.new = {}
-_hxClasses["sunaba.core._Dictionary.DictionaryAbstract_Impl_"] = __sunaba_core__Dictionary_DictionaryAbstract_Impl_
 __sunaba_core__Dictionary_DictionaryAbstract_Impl_.__name__ = "sunaba.core._Dictionary.DictionaryAbstract_Impl_"
 __sunaba_core__Dictionary_DictionaryAbstract_Impl_.get = function(this1,key) 
   do return this1:get(key) end;
@@ -2863,7 +2808,6 @@ __sunaba_core__Dictionary_DictionaryAbstract_Impl_.iterator = function(this1)
 end
 
 __sunaba_core__Element_ElementAbstract_Impl_.new = {}
-_hxClasses["sunaba.core._Element.ElementAbstract_Impl_"] = __sunaba_core__Element_ElementAbstract_Impl_
 __sunaba_core__Element_ElementAbstract_Impl_.__name__ = "sunaba.core._Element.ElementAbstract_Impl_"
 __sunaba_core__Element_ElementAbstract_Impl_.fromElement = function(element) 
   local element = Element.cast(element);
@@ -2874,7 +2818,6 @@ __sunaba_core__Element_ElementAbstract_Impl_.fromElement = function(element)
 end
 
 __sunaba_core__Environment_EnvironmentAbstract_Impl_.new = {}
-_hxClasses["sunaba.core._Environment.EnvironmentAbstract_Impl_"] = __sunaba_core__Environment_EnvironmentAbstract_Impl_
 __sunaba_core__Environment_EnvironmentAbstract_Impl_.__name__ = "sunaba.core._Environment.EnvironmentAbstract_Impl_"
 __sunaba_core__Environment_EnvironmentAbstract_Impl_.fromResource = function(resource) 
   local environment = Environment.cast(resource);
@@ -2885,7 +2828,6 @@ __sunaba_core__Environment_EnvironmentAbstract_Impl_.fromResource = function(res
 end
 
 __sunaba_core__Event_EventAbstract_Impl_.new = {}
-_hxClasses["sunaba.core._Event.EventAbstract_Impl_"] = __sunaba_core__Event_EventAbstract_Impl_
 __sunaba_core__Event_EventAbstract_Impl_.__name__ = "sunaba.core._Event.EventAbstract_Impl_"
 __sunaba_core__Event_EventAbstract_Impl_.callNoArgs = function(this1) 
   this1:emit();
@@ -2896,7 +2838,6 @@ __sunaba_core__Event_EventAbstract_Impl_.call = function(this1,...)
 end
 
 __sunaba_core__Font_FontAbstract_Impl_.new = {}
-_hxClasses["sunaba.core._Font.FontAbstract_Impl_"] = __sunaba_core__Font_FontAbstract_Impl_
 __sunaba_core__Font_FontAbstract_Impl_.__name__ = "sunaba.core._Font.FontAbstract_Impl_"
 __sunaba_core__Font_FontAbstract_Impl_.fromResource = function(resource) 
   local font = Font.cast(resource);
@@ -2907,7 +2848,6 @@ __sunaba_core__Font_FontAbstract_Impl_.fromResource = function(resource)
 end
 
 __sunaba_core__FontFile_FontFileAbstract_Impl_.new = {}
-_hxClasses["sunaba.core._FontFile.FontFileAbstract_Impl_"] = __sunaba_core__FontFile_FontFileAbstract_Impl_
 __sunaba_core__FontFile_FontFileAbstract_Impl_.__name__ = "sunaba.core._FontFile.FontFileAbstract_Impl_"
 __sunaba_core__FontFile_FontFileAbstract_Impl_.fromResource = function(resource) 
   local font = FontFile.cast(resource);
@@ -2918,7 +2858,6 @@ __sunaba_core__FontFile_FontFileAbstract_Impl_.fromResource = function(resource)
 end
 
 __sunaba_core__Image_ImageAbstarct_Impl_.new = {}
-_hxClasses["sunaba.core._Image.ImageAbstarct_Impl_"] = __sunaba_core__Image_ImageAbstarct_Impl_
 __sunaba_core__Image_ImageAbstarct_Impl_.__name__ = "sunaba.core._Image.ImageAbstarct_Impl_"
 __sunaba_core__Image_ImageAbstarct_Impl_.fromResource = function(resource) 
   local img = Image.cast(resource);
@@ -2929,7 +2868,6 @@ __sunaba_core__Image_ImageAbstarct_Impl_.fromResource = function(resource)
 end
 
 __sunaba_core__ImageTexture_ImageTextureAbstract_Impl_.new = {}
-_hxClasses["sunaba.core._ImageTexture.ImageTextureAbstract_Impl_"] = __sunaba_core__ImageTexture_ImageTextureAbstract_Impl_
 __sunaba_core__ImageTexture_ImageTextureAbstract_Impl_.__name__ = "sunaba.core._ImageTexture.ImageTextureAbstract_Impl_"
 __sunaba_core__ImageTexture_ImageTextureAbstract_Impl_.fromResource = function(resource) 
   local imgTxt = ImageTexture.cast(resource);
@@ -2940,7 +2878,6 @@ __sunaba_core__ImageTexture_ImageTextureAbstract_Impl_.fromResource = function(r
 end
 
 __sunaba_core__Material_MaterialAbstract_Impl_.new = {}
-_hxClasses["sunaba.core._Material.MaterialAbstract_Impl_"] = __sunaba_core__Material_MaterialAbstract_Impl_
 __sunaba_core__Material_MaterialAbstract_Impl_.__name__ = "sunaba.core._Material.MaterialAbstract_Impl_"
 __sunaba_core__Material_MaterialAbstract_Impl_.fromResource = function(resource) 
   local material = Material.cast(resource);
@@ -2951,7 +2888,6 @@ __sunaba_core__Material_MaterialAbstract_Impl_.fromResource = function(resource)
 end
 
 __sunaba_core__Resource_ResourceAbstarct_Impl_.new = {}
-_hxClasses["sunaba.core._Resource.ResourceAbstarct_Impl_"] = __sunaba_core__Resource_ResourceAbstarct_Impl_
 __sunaba_core__Resource_ResourceAbstarct_Impl_.__name__ = "sunaba.core._Resource.ResourceAbstarct_Impl_"
 __sunaba_core__Resource_ResourceAbstarct_Impl_.fromResource = function(resource) 
   local res = Resource.cast(resource);
@@ -2962,7 +2898,6 @@ __sunaba_core__Resource_ResourceAbstarct_Impl_.fromResource = function(resource)
 end
 
 __sunaba_core__StringArray_StringArray_Impl_.new = {}
-_hxClasses["sunaba.core._StringArray.StringArray_Impl_"] = __sunaba_core__StringArray_StringArray_Impl_
 __sunaba_core__StringArray_StringArray_Impl_.__name__ = "sunaba.core._StringArray.StringArray_Impl_"
 __sunaba_core__StringArray_StringArray_Impl_.toArray = function(this1) 
   local table = this1;
@@ -2998,7 +2933,6 @@ __sunaba_core__StringArray_StringArray_Impl_.fromArray = function(array)
 end
 
 __sunaba_core__Texture_TextureAbstract_Impl_.new = {}
-_hxClasses["sunaba.core._Texture.TextureAbstract_Impl_"] = __sunaba_core__Texture_TextureAbstract_Impl_
 __sunaba_core__Texture_TextureAbstract_Impl_.__name__ = "sunaba.core._Texture.TextureAbstract_Impl_"
 __sunaba_core__Texture_TextureAbstract_Impl_.fromResource = function(resource) 
   local txt = Texture.cast(resource);
@@ -3009,7 +2943,6 @@ __sunaba_core__Texture_TextureAbstract_Impl_.fromResource = function(resource)
 end
 
 __sunaba_core__Texture2D_Texture2DAbstract_Impl_.new = {}
-_hxClasses["sunaba.core._Texture2D.Texture2DAbstract_Impl_"] = __sunaba_core__Texture2D_Texture2DAbstract_Impl_
 __sunaba_core__Texture2D_Texture2DAbstract_Impl_.__name__ = "sunaba.core._Texture2D.Texture2DAbstract_Impl_"
 __sunaba_core__Texture2D_Texture2DAbstract_Impl_.fromResource = function(resource) 
   local txt = Texture2D.cast(resource);
@@ -3020,7 +2953,6 @@ __sunaba_core__Texture2D_Texture2DAbstract_Impl_.fromResource = function(resourc
 end
 
 __sunaba_core__Variant_Variant_Impl_.new = {}
-_hxClasses["sunaba.core._Variant.Variant_Impl_"] = __sunaba_core__Variant_Variant_Impl_
 __sunaba_core__Variant_Variant_Impl_.__name__ = "sunaba.core._Variant.Variant_Impl_"
 __sunaba_core__Variant_Variant_Impl_.fromString = function(value) 
   do return Variant.new(value) end;
@@ -3192,7 +3124,6 @@ __sunaba_core__Variant_Variant_Impl_.toVector4Array = function(this1)
 end
 
 __sunaba_core__Vector_Vector_Impl_.new = {}
-_hxClasses["sunaba.core._Vector.Vector_Impl_"] = __sunaba_core__Vector_Vector_Impl_
 __sunaba_core__Vector_Vector_Impl_.__name__ = "sunaba.core._Vector.Vector_Impl_"
 __sunaba_core__Vector_Vector_Impl_._new = function() 
   do return sunaba.core.VectorNative() end;
@@ -3246,7 +3177,6 @@ __sunaba_core__Vector_Vector_Impl_.toTable = function(this1)
 end
 
 __sunaba_core__Viewport_ViewportAbstract_Impl_.new = {}
-_hxClasses["sunaba.core._Viewport.ViewportAbstract_Impl_"] = __sunaba_core__Viewport_ViewportAbstract_Impl_
 __sunaba_core__Viewport_ViewportAbstract_Impl_.__name__ = "sunaba.core._Viewport.ViewportAbstract_Impl_"
 __sunaba_core__Viewport_ViewportAbstract_Impl_.fromElement = function(element) 
   local viewport = Viewport.cast(element);
@@ -3257,7 +3187,6 @@ __sunaba_core__Viewport_ViewportAbstract_Impl_.fromElement = function(element)
 end
 
 __sunaba_input__InputEvent_InputEventAbstract_Impl_.new = {}
-_hxClasses["sunaba.input._InputEvent.InputEventAbstract_Impl_"] = __sunaba_input__InputEvent_InputEventAbstract_Impl_
 __sunaba_input__InputEvent_InputEventAbstract_Impl_.__name__ = "sunaba.input._InputEvent.InputEventAbstract_Impl_"
 __sunaba_input__InputEvent_InputEventAbstract_Impl_.fromResource = function(resource) 
   local inputEvent = InputEvent.cast(resource);
@@ -3268,7 +3197,6 @@ __sunaba_input__InputEvent_InputEventAbstract_Impl_.fromResource = function(reso
 end
 
 __sunaba_spatial__CameraAttributes_CameraAttributesAbstract_Impl_.new = {}
-_hxClasses["sunaba.spatial._CameraAttributes.CameraAttributesAbstract_Impl_"] = __sunaba_spatial__CameraAttributes_CameraAttributesAbstract_Impl_
 __sunaba_spatial__CameraAttributes_CameraAttributesAbstract_Impl_.__name__ = "sunaba.spatial._CameraAttributes.CameraAttributesAbstract_Impl_"
 __sunaba_spatial__CameraAttributes_CameraAttributesAbstract_Impl_.fromResource = function(resource) 
   local cameraAttributes = CameraAttributes.cast(resource);
@@ -3279,7 +3207,6 @@ __sunaba_spatial__CameraAttributes_CameraAttributesAbstract_Impl_.fromResource =
 end
 
 __sunaba_spatial__Sky_SkyAbstract_Impl_.new = {}
-_hxClasses["sunaba.spatial._Sky.SkyAbstract_Impl_"] = __sunaba_spatial__Sky_SkyAbstract_Impl_
 __sunaba_spatial__Sky_SkyAbstract_Impl_.__name__ = "sunaba.spatial._Sky.SkyAbstract_Impl_"
 __sunaba_spatial__Sky_SkyAbstract_Impl_.fromResource = function(resource) 
   local sky = Sky.cast(resource);
@@ -3290,7 +3217,6 @@ __sunaba_spatial__Sky_SkyAbstract_Impl_.fromResource = function(resource)
 end
 
 __sunaba_spatial__World3D_World3DAbstract_Impl_.new = {}
-_hxClasses["sunaba.spatial._World3D.World3DAbstract_Impl_"] = __sunaba_spatial__World3D_World3DAbstract_Impl_
 __sunaba_spatial__World3D_World3DAbstract_Impl_.__name__ = "sunaba.spatial._World3D.World3DAbstract_Impl_"
 __sunaba_spatial__World3D_World3DAbstract_Impl_.fromResource = function(resource) 
   local world3D = World3D.cast(resource);
@@ -3301,7 +3227,6 @@ __sunaba_spatial__World3D_World3DAbstract_Impl_.fromResource = function(resource
 end
 
 __sunaba_ui__Control_ControlAbstract_Impl_.new = {}
-_hxClasses["sunaba.ui._Control.ControlAbstract_Impl_"] = __sunaba_ui__Control_ControlAbstract_Impl_
 __sunaba_ui__Control_ControlAbstract_Impl_.__name__ = "sunaba.ui._Control.ControlAbstract_Impl_"
 __sunaba_ui__Control_ControlAbstract_Impl_.fromElement = function(element) 
   local cItem = Control.cast(element);
@@ -3312,7 +3237,6 @@ __sunaba_ui__Control_ControlAbstract_Impl_.fromElement = function(element)
 end
 
 __sunaba_ui__StyleBox_StyleBoxAbstract_Impl_.new = {}
-_hxClasses["sunaba.ui._StyleBox.StyleBoxAbstract_Impl_"] = __sunaba_ui__StyleBox_StyleBoxAbstract_Impl_
 __sunaba_ui__StyleBox_StyleBoxAbstract_Impl_.__name__ = "sunaba.ui._StyleBox.StyleBoxAbstract_Impl_"
 __sunaba_ui__StyleBox_StyleBoxAbstract_Impl_.fromResource = function(resource) 
   local styleBox = StyleBox.cast(resource);
@@ -3323,7 +3247,6 @@ __sunaba_ui__StyleBox_StyleBoxAbstract_Impl_.fromResource = function(resource)
 end
 
 __sunaba_ui__Theme_ThemeAbstract_Impl_.new = {}
-_hxClasses["sunaba.ui._Theme.ThemeAbstract_Impl_"] = __sunaba_ui__Theme_ThemeAbstract_Impl_
 __sunaba_ui__Theme_ThemeAbstract_Impl_.__name__ = "sunaba.ui._Theme.ThemeAbstract_Impl_"
 __sunaba_ui__Theme_ThemeAbstract_Impl_.fromResource = function(resource) 
   local theme = Theme.cast(resource);
@@ -3344,7 +3267,6 @@ __sunaba_ui_Widget.super = function(self)
   self.rootElement = Control.new();
   self:init();
 end
-_hxClasses["sunaba.ui.Widget"] = __sunaba_ui_Widget
 __sunaba_ui_Widget.__name__ = "sunaba.ui.Widget"
 __sunaba_ui_Widget.prototype = _hx_e();
 __sunaba_ui_Widget.prototype.init = function(self) 
@@ -3551,11 +3473,7 @@ __sunaba_ui_Widget.prototype.construct = function(self,xml)
     end )()))),0);
   end;
   local className = xml.nodeName;
-  local classType = Type.resolveClass(className);
-  if (classType == nil) then 
-    className = self:camelToPascal(className);
-    classType = _G[className];
-  end;
+  local classType = _G[className];
   if (classType ~= nil) then 
     if (self:isAnElementClass(classType)) then 
       local instance = Type.createInstance(classType, _hx_tab_array({}, 0));
@@ -3985,7 +3903,7 @@ __sunaba_ui_Widget.prototype.setProperty = function(self,obj,field,value)
   end;
 end
 __sunaba_ui_Widget.prototype.isAnElementClass = function(self,classInfo) 
-  local isTrue = classInfo.isElementType();
+  local isTrue = classInfo.isElementType ~= nil;
   if (isTrue == true) then 
     do return true end;
   end;
@@ -4024,7 +3942,6 @@ end
 __support_files_test5_src_ClickerCounter.super = function(self) 
   __sunaba_ui_Widget.super(self);
 end
-_hxClasses["support_files.test5.src.ClickerCounter"] = __support_files_test5_src_ClickerCounter
 __support_files_test5_src_ClickerCounter.__name__ = "support_files.test5.src.ClickerCounter"
 __support_files_test5_src_ClickerCounter.prototype = _hx_e();
 __support_files_test5_src_ClickerCounter.prototype.init = function(self) 
@@ -4043,7 +3960,6 @@ end
 __support_files_test5_src_Main.super = function(self) 
   __sunaba_App.super(self);
 end
-_hxClasses["support_files.test5.src.Main"] = __support_files_test5_src_Main
 __support_files_test5_src_Main.__name__ = "support_files.test5.src.Main"
 __support_files_test5_src_Main.main = function() 
   __support_files_test5_src_Main.new();
@@ -4122,7 +4038,6 @@ end
 local _hx_static_init = function()
   
   String.__name__ = "String";
-  _hxClasses.Array = Array;
   Array.__name__ = "Array";Xml.Element = 0;
   
   Xml.PCData = 1;
