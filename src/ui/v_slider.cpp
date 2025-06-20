@@ -122,7 +122,7 @@ namespace sunaba::ui {
     }
 
     void bindVSlider(sol::state& lua) {
-        lua.new_usertype<VSlider>("VSlider",
+        lua.new_usertype<VSlider>("Vslider",
             "new", sol::factories(
                 []() { return new VSlider(); }
             ),
