@@ -188,7 +188,7 @@ void App::loadAndExecuteSbx(const String &path) {
     zipio->pathUri = "temp://";
     ioManager->add(zipio);
 
-    auto headerJsonStr = ioManager->loadText("temp://header.json");
+    auto headerJsonStr = zipio->loadText("temp://header.json");
     auto headerJson = godot::Ref<JSON>(memnew(JSON));
     auto parseResult = headerJson->parse_string(headerJsonStr.c_str());
     Dictionary headerDict = parseResult;
