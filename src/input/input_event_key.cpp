@@ -2,7 +2,9 @@
 
 void sunaba::input::bindInputEventKey(sol::state_view& lua) {
     lua.new_usertype<InputEventKey>("InputEventKey",
-        sol::constructors<InputEventKey(), InputEventKey(GodotInputEventKey*)>(),
+        "new", sol::factories(
+            []() { return new InputEventKey(); }
+        ),
         sol::base_classes, sol::bases<sunaba::core::BaseObject, sunaba::core::Resource, sunaba::input::InputEvent, sunaba::input::InputEventFromWindow, sunaba::input::InputEventWithModifiers>(),
         "echo", sol::property(&InputEventKey::isEcho, &InputEventKey::setEcho),
         "keyLabel", sol::property(&InputEventKey::getKeyLabel, &InputEventKey::setKeyLabel),
