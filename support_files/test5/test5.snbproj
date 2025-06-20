@@ -1,6 +1,7 @@
 {
     "name": "test5",
     "version": "1.0",
+    "type": "executable",
     "scriptdir": "src",
     "apisymbols": true,
     "sourcemap": true,
