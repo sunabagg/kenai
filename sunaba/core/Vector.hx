@@ -9,3 +9,11 @@ extern class VectorNative<T> {
     public function insert(index:Int, value:T):Void;
     public function add(key:Int, value:T):Void;
 }
+
+@:generic
+abstract Vector<T>(VectorNative<T>) from VectorNative<T> to VectorNative<T> {
+    public function size():Int {
+        var s = this;
+        return untyped __lua__("#s")
+    }
+}
