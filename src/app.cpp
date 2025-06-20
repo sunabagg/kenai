@@ -43,7 +43,7 @@ using namespace godot;
 void App::_bind_methods() {
     ClassDB::bind_method(D_METHOD("start", "path"), &App::start);
     ClassDB::bind_method(D_METHOD("init", "sandboxed"), &App::init);
-    ClassDB::bind_method(D_METHOD("load_and_execute_sbx", "path"), &App::load_and_execute_sbx);
+    ClassDB::bind_method(D_METHOD("load_and_execute_sbx", "path"), &App::loadAndExecuteSbx);
 }
 
 void free_global_state(App* app) {
