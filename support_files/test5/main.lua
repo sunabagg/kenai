@@ -225,6 +225,7 @@ __sunaba_core__FontFile_FontFileAbstract_Impl_ = _hx_e()
 __sunaba_core_GlobalObjectStack = _hx_e()
 __sunaba_core__Image_ImageAbstarct_Impl_ = _hx_e()
 __sunaba_core__ImageTexture_ImageTextureAbstract_Impl_ = _hx_e()
+__sunaba_core__LabelSettings_LabelSettingsAbstract_Impl_ = _hx_e()
 __sunaba_core__Material_MaterialAbstract_Impl_ = _hx_e()
 __sunaba_core__Resource_ResourceAbstarct_Impl_ = _hx_e()
 __sunaba_core_StackHandle = _hx_e()
@@ -235,10 +236,15 @@ __sunaba_core__Variant_Variant_Impl_ = _hx_e()
 __sunaba_core__Vector_Vector_Impl_ = _hx_e()
 __sunaba_core__Viewport_ViewportAbstract_Impl_ = _hx_e()
 __sunaba_input__InputEvent_InputEventAbstract_Impl_ = _hx_e()
+__sunaba_input__Shortcut_ShortcutAbstract_Impl_ = _hx_e()
 __sunaba_spatial__CameraAttributes_CameraAttributesAbstract_Impl_ = _hx_e()
 __sunaba_spatial__Sky_SkyAbstract_Impl_ = _hx_e()
 __sunaba_spatial__World3D_World3DAbstract_Impl_ = _hx_e()
+__sunaba_ui__BaseButton_BaseButtonAbstract_Impl_ = _hx_e()
+__sunaba_ui__Button_ButtonAbstract_Impl_ = _hx_e()
+__sunaba_ui__ButtonGroup_ButtonGroupAbstract_Impl_ = _hx_e()
 __sunaba_ui__Control_ControlAbstract_Impl_ = _hx_e()
+__sunaba_ui__Label_LabelAbstract_Impl_ = _hx_e()
 __sunaba_ui__StyleBox_StyleBoxAbstract_Impl_ = _hx_e()
 __sunaba_ui__Theme_ThemeAbstract_Impl_ = _hx_e()
 __sunaba_ui_Widget = _hx_e()
@@ -2908,6 +2914,16 @@ __sunaba_core__ImageTexture_ImageTextureAbstract_Impl_.fromResource = function(r
   do return imgTxt end;
 end
 
+__sunaba_core__LabelSettings_LabelSettingsAbstract_Impl_.new = {}
+__sunaba_core__LabelSettings_LabelSettingsAbstract_Impl_.__name__ = "sunaba.core._LabelSettings.LabelSettingsAbstract_Impl_"
+__sunaba_core__LabelSettings_LabelSettingsAbstract_Impl_.fromResource = function(resource) 
+  local labelsettings = LabelSettings.cast(resource);
+  if (labelsettings:isNull()) then 
+    do return nil end;
+  end;
+  do return labelsettings end;
+end
+
 __sunaba_core__Material_MaterialAbstract_Impl_.new = {}
 __sunaba_core__Material_MaterialAbstract_Impl_.__name__ = "sunaba.core._Material.MaterialAbstract_Impl_"
 __sunaba_core__Material_MaterialAbstract_Impl_.fromResource = function(resource) 
@@ -3240,6 +3256,16 @@ __sunaba_input__InputEvent_InputEventAbstract_Impl_.fromResource = function(reso
   do return inputEvent end;
 end
 
+__sunaba_input__Shortcut_ShortcutAbstract_Impl_.new = {}
+__sunaba_input__Shortcut_ShortcutAbstract_Impl_.__name__ = "sunaba.input._Shortcut.ShortcutAbstract_Impl_"
+__sunaba_input__Shortcut_ShortcutAbstract_Impl_.fromResource = function(resource) 
+  local shortcut = InputEventShortcut.cast(resource);
+  if (shortcut:isNull()) then 
+    do return nil end;
+  end;
+  do return shortcut end;
+end
+
 __sunaba_spatial__CameraAttributes_CameraAttributesAbstract_Impl_.new = {}
 __sunaba_spatial__CameraAttributes_CameraAttributesAbstract_Impl_.__name__ = "sunaba.spatial._CameraAttributes.CameraAttributesAbstract_Impl_"
 __sunaba_spatial__CameraAttributes_CameraAttributesAbstract_Impl_.fromResource = function(resource) 
@@ -3270,6 +3296,36 @@ __sunaba_spatial__World3D_World3DAbstract_Impl_.fromResource = function(resource
   do return world3D end;
 end
 
+__sunaba_ui__BaseButton_BaseButtonAbstract_Impl_.new = {}
+__sunaba_ui__BaseButton_BaseButtonAbstract_Impl_.__name__ = "sunaba.ui._BaseButton.BaseButtonAbstract_Impl_"
+__sunaba_ui__BaseButton_BaseButtonAbstract_Impl_.fromElement = function(element) 
+  local btn = BaseButton.cast(element);
+  if (btn:isNull()) then 
+    do return nil end;
+  end;
+  do return btn end;
+end
+
+__sunaba_ui__Button_ButtonAbstract_Impl_.new = {}
+__sunaba_ui__Button_ButtonAbstract_Impl_.__name__ = "sunaba.ui._Button.ButtonAbstract_Impl_"
+__sunaba_ui__Button_ButtonAbstract_Impl_.fromElement = function(element) 
+  local btn = Button.cast(element);
+  if (btn:isNull()) then 
+    do return nil end;
+  end;
+  do return btn end;
+end
+
+__sunaba_ui__ButtonGroup_ButtonGroupAbstract_Impl_.new = {}
+__sunaba_ui__ButtonGroup_ButtonGroupAbstract_Impl_.__name__ = "sunaba.ui._ButtonGroup.ButtonGroupAbstract_Impl_"
+__sunaba_ui__ButtonGroup_ButtonGroupAbstract_Impl_.fromResource = function(resource) 
+  local bg = ButtonGroup.cast(resource);
+  if (bg:isNull()) then 
+    do return nil end;
+  end;
+  do return bg end;
+end
+
 __sunaba_ui__Control_ControlAbstract_Impl_.new = {}
 __sunaba_ui__Control_ControlAbstract_Impl_.__name__ = "sunaba.ui._Control.ControlAbstract_Impl_"
 __sunaba_ui__Control_ControlAbstract_Impl_.fromElement = function(element) 
@@ -3278,6 +3334,16 @@ __sunaba_ui__Control_ControlAbstract_Impl_.fromElement = function(element)
     do return nil end;
   end;
   do return cItem end;
+end
+
+__sunaba_ui__Label_LabelAbstract_Impl_.new = {}
+__sunaba_ui__Label_LabelAbstract_Impl_.__name__ = "sunaba.ui._Label.LabelAbstract_Impl_"
+__sunaba_ui__Label_LabelAbstract_Impl_.fromElement = function(element) 
+  local label = Label.cast(element);
+  if (label:isNull()) then 
+    do return nil end;
+  end;
+  do return label end;
 end
 
 __sunaba_ui__StyleBox_StyleBoxAbstract_Impl_.new = {}
@@ -4004,12 +4070,30 @@ __support_files_test5_src_ClickerCounter.new = function()
   return self
 end
 __support_files_test5_src_ClickerCounter.super = function(self) 
+  self.counter = 0;
   __sunaba_ui_Widget.super(self);
 end
 __support_files_test5_src_ClickerCounter.__name__ = "support_files.test5.src.ClickerCounter"
 __support_files_test5_src_ClickerCounter.prototype = _hx_e();
 __support_files_test5_src_ClickerCounter.prototype.init = function(self) 
+  local _gthis = self;
   self:load("app://assets/ClickerCounter.suml");
+  local labelElement = self.rootElement:find("centerContainer/vBoxContainer/clickCounterLabel");
+  if (labelElement:isNull()) then 
+    _G.error(__haxe_Exception.thrown("Label element not found in ClickerCounter layout."),0);
+  end;
+  self.label = Label.cast(labelElement);
+  local buttonA = __sunaba_ui__Button_ButtonAbstract_Impl_.fromElement(self.rootElement:find("centerContainer/vBoxContainer/clickerButton"));
+  local button = buttonA;
+  button.pressed:connect(function() 
+    _gthis:onClick();
+  end);
+end
+__support_files_test5_src_ClickerCounter.prototype.onClick = function(self) 
+  self.counter = self.counter + 1;
+  if (self.label ~= nil) then 
+    self.label.text = Std.string(Std.string("You clicked me ") .. Std.string(self.counter)) .. Std.string(" times!");
+  end;
 end
 
 __support_files_test5_src_ClickerCounter.prototype.__class__ =  __support_files_test5_src_ClickerCounter

@@ -11,13 +11,17 @@ class ClickerCounter extends Widget {
     
     override function init() {
         load("app://assets/ClickerCounter.suml");
+        var labelElement = rootElement.find(
+            "centerContainer/vBoxContainer/clickCounterLabel"
+        );
+        if (labelElement.isNull()) {
+            throw "Label element not found in ClickerCounter layout.";
+        }
         label = Label.toLabel(
-            rootElement.find(
-                "/centerContainer/vBoxContainer/clickCounterLabel"
-            )
+            labelElement
         );
         var buttonA : ButtonAbstract = rootElement.find(
-            "/centerContainer/vBoxContainer/clickerButton"
+            "centerContainer/vBoxContainer/clickerButton"
         );
         var button : Button= buttonA;
         button.pressed.connect(() -> {
