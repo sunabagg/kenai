@@ -38,7 +38,7 @@ extern class ItemList extends Control {
     public function deselectAll(): Void;
     public function ensureCurrentIsVisible(): Void;
     public function forceUpdateListSize(): Void;
-    public function getHScrollBar(): HScrollBar;
+    public function getHScrollBar(): HscrollBar;
     public function getItemAtPosition(position: Vector2, ?exact: Bool): Int;
     public function getItemAutoTranslate(index: Int): Int;
     public function getItemCustomBgColor(index: Int): Color;

@@ -98,7 +98,7 @@ extern class TextEdit extends Control {
     public function getGutterCount(): Int;
     public function getGutterType(gutter: Int): Int;
     public function getGutterWidth(gutter: Int): Int;
-    public function getHScrollBar(): HScrollBar;
+    public function getHScrollBar(): HscrollBar;
     public function getIndentLevel(line: Int): Int;
     public function getLastFullVisibleLine(): Int;
     public function getLastFullVisibleLineWrapIndex(): Int;
