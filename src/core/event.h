@@ -54,7 +54,10 @@ namespace sunaba::core {
             
             void connectLua(sol::function listener) {
                 lua_listeners.push_back(listener);
-                hasLuaListeners = true;
+                if (lua_listeners.size() > 0) // Check if there are any Lua listeners
+                    hasLuaListeners = true;
+                else
+                    hasLuaListeners = false;
             }
 
             void connectLuaTable(lua_State* L, sol::table table, const std::string& method_name) {
