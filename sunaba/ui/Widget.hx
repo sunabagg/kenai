@@ -139,7 +139,7 @@ class Widget {
     private function constructNodes(nodes: Iterator<Xml>): Void {
         for (node in nodes) {
             var element = construct(node);
-            if (element != null) {
+            if (element != null && element.isNull() == false) {
                 rootElement.addChild(element);
             }
             else {
