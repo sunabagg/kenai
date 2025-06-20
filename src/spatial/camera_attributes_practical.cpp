@@ -2,7 +2,9 @@
 
 void sunaba::spatial::bindCameraAttributesPractical(sol::state_view& lua) {
     lua.new_usertype<CameraAttributesPractical>("CameraAttributesPractical",
-        sol::constructors<CameraAttributesPractical()>(),
+        "new", sol::factories(
+            []() { return new CameraAttributesPractical(); }
+        ),
         sol::base_classes, sol::bases<sunaba::core::BaseObject, sunaba::core::Resource, sunaba::spatial::CameraAttributes>(),
         "autoExposureMaxSensitivity", sol::property(&CameraAttributesPractical::getAutoExposureMaxSensitivity, &CameraAttributesPractical::setAutoExposureMaxSensitivity),
         "autoExposureMinSensitivity", sol::property(&CameraAttributesPractical::getAutoExposureMinSensitivity, &CameraAttributesPractical::setAutoExposureMinSensitivity),

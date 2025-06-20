@@ -2,7 +2,9 @@
 
 void sunaba::spatial::bindSkin(sol::state_view& lua) {
     lua.new_usertype<sunaba::spatial::Skin>("Skin",
-        sol::constructors<Skin()>(),
+        "new", sol::factories(
+            []() { return new sunaba::spatial::Skin(); }
+        ),
         sol::base_classes, sol::bases<sunaba::core::BaseObject, sunaba::core::Resource>(),
         "addBind", &Skin::addBind,
         "addNamedBind", &Skin::addNamedBind,

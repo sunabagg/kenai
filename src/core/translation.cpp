@@ -2,7 +2,9 @@
 
 void sunaba::core::bindTranslation(sol::state &lua) {
     lua.new_usertype<sunaba::core::Translation>("Translation",
-        sol::constructors<sunaba::core::Translation()>(),
+        "new", sol::factories(
+            []() { return new sunaba::core::Translation(); }
+        ),
         sol::base_classes, sol::bases<sunaba::core::Resource>(),
         "locale", sol::property(
             &sunaba::core::Translation::getLocale,

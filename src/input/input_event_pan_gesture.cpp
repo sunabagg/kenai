@@ -2,7 +2,9 @@
 
 void sunaba::input::bindInputEventPanGesture(sol::state_view& lua) {
     lua.new_usertype<InputEventPanGesture>("InputEventPanGesture",
-        sol::constructors<InputEventPanGesture(), InputEventPanGesture(GodotInputEventPanGesture*)>(),
+        "new", sol::factories(
+            []() { return new InputEventPanGesture(); }
+        ),
         sol::base_classes, sol::bases<sunaba::core::BaseObject, sunaba::core::Resource, sunaba::input::InputEvent, sunaba::input::InputEventGesture>(),
         "delta", sol::property(&InputEventPanGesture::getDelta, &InputEventPanGesture::setDelta),
         "cast", [](sunaba::core::Resource* instance) {

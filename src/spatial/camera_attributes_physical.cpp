@@ -2,7 +2,9 @@
 
 void sunaba::spatial::bindCameraAttributesPhysical(sol::state_view& lua) {
     lua.new_usertype<CameraAttributesPhysical>("CameraAttributesPhysical",
-        sol::constructors<CameraAttributesPhysical()>(),
+        "new", sol::factories(
+            []() { return new CameraAttributesPhysical(); }
+        ),
         sol::base_classes, sol::bases<sunaba::core::BaseObject, sunaba::core::Resource, sunaba::spatial::CameraAttributes>(),
         "autoExposureMaxExposureValue", sol::property(&CameraAttributesPhysical::getAutoExposureMaxExposureValue, &CameraAttributesPhysical::setAutoExposureMaxExposureValue),
         "autoExposureMinExposureValue", sol::property(&CameraAttributesPhysical::getAutoExposureMinExposureValue, &CameraAttributesPhysical::setAutoExposureMinExposureValue),

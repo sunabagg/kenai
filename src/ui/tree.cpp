@@ -265,7 +265,9 @@ namespace sunaba::ui {
 
     void bindTree(sol::state &lua) {
         lua.new_usertype<Tree>("Tree",
-            sol::constructors<Tree()>(),
+            "new", sol::factories(
+                []() { return new Tree(); }
+            ),
             sol::base_classes, sol::bases<BaseObject, Element, sunaba::core::CanvasItem, Control>(),
             "allowReselect", sol::property(
                 &Tree::getAllowReselect,

@@ -138,7 +138,9 @@ namespace sunaba::ui {
 
     void bindSubViewportContainer(sol::state& lua) {
         lua.new_usertype<SubViewportContainer>("SubViewportContainer",
-            sol::constructors<SubViewportContainer()>(),
+            "new", sol::factories(
+                []() { return new SubViewportContainer(); }
+            ),
             sol::base_classes, sol::bases<BaseObject, Element, sunaba::core::CanvasItem, Control, Container>(),
             "focusMode", sol::property(&SubViewportContainer::getFocusMode, &SubViewportContainer::setFocusMode),
             "mouseTarget", sol::property(&SubViewportContainer::getMouseTarget, &SubViewportContainer::setMouseTarget),

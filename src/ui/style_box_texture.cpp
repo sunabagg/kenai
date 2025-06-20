@@ -2,7 +2,9 @@
 
 void sunaba::ui::bindStyleBoxTexture(sol::state_view& lua) {
     lua.new_usertype<StyleBoxTexture>("StyleBoxTexture",
-        sol::constructors<StyleBoxTexture()>(),
+        "new", sol::factories(
+            []() { return new StyleBoxTexture(); }
+        ),
         sol::base_classes, sol::bases<sunaba::core::BaseObject, sunaba::core::Resource, sunaba::ui::StyleBox>(),
         "axisStretchHorizontal", sol::property(&StyleBoxTexture::getAxisStretchHorizontal, &StyleBoxTexture::setAxisStretchHorizontal),
         "axisStretchVertical", sol::property(&StyleBoxTexture::getAxisStretchVertical, &StyleBoxTexture::setAxisStretchVertical),

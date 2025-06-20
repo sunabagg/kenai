@@ -131,7 +131,9 @@ namespace sunaba::ui {
 
     void bindGridContainer(sol::state& lua) {
         lua.new_usertype<GridContainer>("GridContainer",
-            sol::constructors<GridContainer()>(),
+            "new", sol::factories(
+                []() { return new GridContainer(); }
+            ),
             sol::base_classes, sol::bases<BaseObject, Element, sunaba::core::CanvasItem, Control, Container>(),
             "columns", sol::property(&GridContainer::getColumns, &GridContainer::setColumns),
             "cast", [](Element* element) {

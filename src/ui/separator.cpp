@@ -154,7 +154,9 @@ namespace sunaba::ui
 
     void bindSeparator(sol::state& lua) {
         lua.new_usertype<Separator>("Separator",
-            sol::constructors<Separator()>(),
+            "new", sol::factories(
+                []() { return new Separator(); }
+            ),
             sol::base_classes, sol::bases<BaseObject, Element, sunaba::core::CanvasItem, Control>(),
             "cast", [] (Element* element) {
                 SeparatorNode* separator = Object::cast_to<SeparatorNode>(element->getNode());

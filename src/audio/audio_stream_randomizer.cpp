@@ -2,7 +2,9 @@
 
 void sunaba::audio::bindAudioStreamRandomizer(sol::state_view& lua) {
     lua.new_usertype<AudioStreamRandomizer>("AudioStreamRandomizer",
-        sol::constructors<AudioStreamRandomizer()>(),
+        "new", sol::factories([]() {
+            return new AudioStreamRandomizer();
+        }),
         sol::base_classes, sol::bases<sunaba::core::BaseObject, sunaba::core::Resource, AudioStream>(),
         "cast", [](sunaba::core::Resource* resource) { 
             return new AudioStreamRandomizer(

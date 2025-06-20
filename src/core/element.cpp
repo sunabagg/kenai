@@ -10,7 +10,9 @@ using namespace godot;
 void sunaba::core::bindElement(sol::state &lua) {
     lua.new_usertype<Element>(
         "Element",
-        sol::constructors<Element()>(), // Constructor with Node* parameter
+        "new", sol::factories(
+            []() { return new Element(); }
+        ),
         sol::base_classes, sol::bases<BaseObject>(),
         sol::meta_function::garbage_collect, sol::destructor([](Element* e) {  }),
         "name", sol::property(

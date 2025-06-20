@@ -9,7 +9,7 @@ namespace sunaba::core::io {
     void bindFileSystemIo(sol::state& lua) {
         lua.new_usertype<FileSystemIo>(
             "FileSystemIo",
-            sol::constructors<FileSystemIo()>(),
+            sol::no_constructor,
             sol::base_classes, sol::bases<SystemIoInterface>(),
             "basePath", sol::property(
                 [](FileSystemIo& self) { return self.basePath; }

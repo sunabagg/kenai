@@ -117,7 +117,9 @@ namespace sunaba::ui {
 
     void bindPanel(sol::state& lua) {
         lua.new_usertype<Panel>("Panel",
-            sol::constructors<Panel()>(),
+            "new", sol::factories(
+                []() { return new Panel(); }
+            ),
             sol::base_classes, sol::bases<BaseObject, Element, sunaba::core::CanvasItem, Control>(),
             "cast", [] (Element* element) {
                 PanelNode* node = Object::cast_to<PanelNode>(element->getNode());

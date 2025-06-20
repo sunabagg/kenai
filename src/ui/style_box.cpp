@@ -6,6 +6,9 @@ void sunaba::ui::bindStyleBox(sol::state &lua) {
 
     lua.new_usertype<StyleBox>("StyleBox",
         sol::constructors<StyleBox()>(),
+        "new", sol::factories(
+            []() { return new StyleBox(); }
+        ),
         sol::base_classes, sol::bases<sunaba::core::BaseObject, sunaba::core::Resource>(),
         "contentMarginTop", sol::property(&StyleBox::getContentMarginTop, &StyleBox::setContentMarginTop),
         "contentMarginBottom", sol::property(&StyleBox::getContentMarginBottom, &StyleBox::setContentMarginBottom),

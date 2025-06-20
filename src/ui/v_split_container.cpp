@@ -131,7 +131,9 @@ namespace sunaba::ui {
 
     void bindVSplitContainer(sol::state& lua) {
         lua.new_usertype<VSplitContainer>("VSplitContainer",
-            sol::constructors<VSplitContainer()>(),
+            "new", sol::factories(
+                []() { return new VSplitContainer(); }
+            ),
             sol::base_classes, sol::bases<BaseObject, Element, sunaba::core::CanvasItem, Control, Container, SplitContainer>(),
             "cast", [](Element* element) {
                 VSplitContainerNode* node = Object::cast_to<VSplitContainerNode>(element->getNode());

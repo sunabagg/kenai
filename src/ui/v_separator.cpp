@@ -117,7 +117,9 @@ namespace sunaba::ui {
 
     void bindVSeparator(sol::state& lua) {
         lua.new_usertype<VSeparator>("VSeparator",
-            sol::constructors<VSeparator()>(),
+            "new", sol::factories(
+                []() { return new VSeparator(); }
+            ),
             sol::base_classes, sol::bases<BaseObject, Element, sunaba::core::CanvasItem, Control, Separator>(),
             "cast", [] (Element* element) {
                 VSeparatorNode* vSeparator = Object::cast_to<VSeparatorNode>(element->getNode());

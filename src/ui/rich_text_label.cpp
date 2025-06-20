@@ -155,7 +155,9 @@ namespace sunaba::ui {
 
     void bindRichTextLabel(sol::state& lua) {
         lua.new_usertype<RichTextLabel>("RichTextLabel",
-            sol::constructors<RichTextLabel()>(),
+            "new", sol::factories(
+                []() { return new RichTextLabel(); }
+            ),
             sol::base_classes, sol::bases<BaseObject, Element, sunaba::core::CanvasItem, Control>(),
             "autowrapMode", sol::property(
                 &RichTextLabel::getAutowrapMode,

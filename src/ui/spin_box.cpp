@@ -123,7 +123,9 @@ namespace sunaba::ui {
 
     void bindSpinBox(sol::state &lua) {
         lua.new_usertype<SpinBox>("SpinBox",
-            sol::constructors<SpinBox()>(),
+            "new", sol::factories(
+                []() { return new SpinBox(); }
+            ),
             sol::base_classes, sol::bases<BaseObject, Element, sunaba::core::CanvasItem, Control, Range>(),
             "alignment", sol::property(&SpinBox::getAlignment, &SpinBox::setAlignment),
             "customArrowStep", sol::property(&SpinBox::getCustomArrowStep, &SpinBox::setCustomArrowStep),

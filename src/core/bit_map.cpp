@@ -2,7 +2,8 @@
 
 void sunaba::core::bindBitMap(sol::state &lua) {
     lua.new_usertype<sunaba::core::BitMap>("BitMap",
-        sol::constructors<sunaba::core::BitMap()>(),
+        "new", sol::factories(
+            []() { return new sunaba::core::BitMap(); }),
         sol::base_classes, sol::bases<sunaba::core::BaseObject, sunaba::core::Resource>(),
         "convertToImage", &sunaba::core::BitMap::convertToImage,
         "create", &sunaba::core::BitMap::create,

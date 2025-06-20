@@ -2,7 +2,9 @@
 
 void sunaba::spatial::bindPhysicalSkyMaterial(sol::state_view& lua) {
     lua.new_usertype<sunaba::spatial::PhysicalSkyMaterial>("PhysicalSkyMaterial",
-        sol::constructors<PhysicalSkyMaterial()>(),
+        "new", sol::factories(
+            []() { return new sunaba::spatial::PhysicalSkyMaterial(); }
+        ),
         sol::base_classes, sol::bases<sunaba::core::BaseObject, sunaba::core::Resource, sunaba::core::Material>(),
         "energyMultiplier", sol::property(&PhysicalSkyMaterial::getEnergyMultiplier, &PhysicalSkyMaterial::setEnergyMultiplier),
         "groundColor", sol::property(&PhysicalSkyMaterial::getGroundColor, &PhysicalSkyMaterial::setGroundColor),

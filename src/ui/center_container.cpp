@@ -131,7 +131,9 @@ namespace sunaba::ui {
 
     void bindCenterContainer(sol::state& lua) {
         lua.new_usertype<CenterContainer>("CenterContainer",
-            sol::constructors<CenterContainer()>(),
+            "new", sol::factories(
+                []() { return new CenterContainer(); }
+            ),
             sol::base_classes, sol::bases<BaseObject, Element, sunaba::core::CanvasItem, Control, Container>(),
             "useTopLeft", sol::property(
                 &CenterContainer::isUsingTopLeft, 

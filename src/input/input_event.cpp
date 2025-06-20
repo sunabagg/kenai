@@ -2,7 +2,9 @@
 
 void sunaba::input::bindInputEvent(sol::state_view& lua) {
     lua.new_usertype<InputEvent>("InputEvent",
-        sol::constructors<InputEvent(), InputEvent(GodotInputEvent*)>(),
+        "new", sol::factories(
+            []() { return new InputEvent(); }
+        ),
         sol::base_classes, sol::bases<sunaba::core::Resource>(),
         "device", sol::property(&InputEvent::getDevice, &InputEvent::setDevice),
         "accumulate", &InputEvent::accumulate,

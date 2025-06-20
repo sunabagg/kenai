@@ -200,7 +200,9 @@ namespace sunaba::ui {
 
     void bindControl(sol::state& lua) {
         auto ut = lua.new_usertype<Control>("Control",
-            sol::constructors<Control()>(),
+            "new", sol::factories(
+                []() { return new Control(); }
+            ),
             sol::base_classes, sol::bases<BaseObject, Element, sunaba::core::CanvasItem>(),
             /*"anchorBottonm", sol::property(
                 &Control::getAnchorBottom,

@@ -156,7 +156,9 @@ namespace sunaba::ui {
 
     void bindLineEdit(sol::state& lua) {
         lua.new_usertype<LineEdit>("LineEdit",
-            sol::constructors<LineEdit()>(),
+            "new", sol::factories(
+                []() { return new LineEdit(); }
+            ),
             sol::base_classes, sol::bases<BaseObject, Element, sunaba::core::CanvasItem, Control>(),
             "alignment", sol::property(&LineEdit::getAlignment, &LineEdit::setAlignment),
             "caretBlink", sol::property(&LineEdit::getCaretBlink, &LineEdit::setCaretBlink),

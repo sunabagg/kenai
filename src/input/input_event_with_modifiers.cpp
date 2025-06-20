@@ -2,7 +2,9 @@
 
 void sunaba::input::bindInputEventWithModifiers(sol::state_view& lua) {
     lua.new_usertype<InputEventWithModifiers>("InputEventWithModifiers",
-        sol::constructors<InputEventWithModifiers(), InputEventWithModifiers(GodotInputEventWithModifiers*)>(),
+        "new", sol::factories(
+            []() { return new InputEventWithModifiers(); }
+        ),
         sol::base_classes, sol::bases<sunaba::core::BaseObject, sunaba::core::Resource, sunaba::input::InputEvent, sunaba::input::InputEventFromWindow>(),
         "altPressed", sol::property(&InputEventWithModifiers::getAltPressed, &InputEventWithModifiers::setAltPressed),
         "commandOrControlAutoremap", sol::property(&InputEventWithModifiers::getCommandOrControlAutoremap, &InputEventWithModifiers::setCommandOrControlAutoremap),

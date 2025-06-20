@@ -2,7 +2,9 @@
 
 void sunaba::input::bindInputEventGesture(sol::state_view& lua) {
     lua.new_usertype<InputEventGesture>("InputEventGesture",
-        sol::constructors<InputEventGesture(), InputEventGesture(GodotInputEventGesture*)>(),
+        "new", sol::factories(
+            []() { return new InputEventGesture(); }
+        ),
         sol::base_classes, sol::bases<sunaba::core::BaseObject, sunaba::core::Resource, sunaba::input::InputEvent>(),
         "position", sol::property(&InputEventGesture::getPosition, &InputEventGesture::setPosition),
         "cast", [](sunaba::core::Resource* instance) {

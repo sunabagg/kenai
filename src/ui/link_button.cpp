@@ -132,7 +132,9 @@ namespace sunaba::ui {
         using namespace sunaba::ui;
 
         lua.new_usertype<LinkButton>("LinkButton",
-            sol::constructors<LinkButton()>(),
+            "new", sol::factories(
+                []() { return new LinkButton(); }
+            ),
             sol::base_classes, sol::bases<BaseObject, Element, sunaba::core::CanvasItem, sunaba::ui::Control, sunaba::ui::BaseButton>(),
             "focusMode", sol::property(
                 &LinkButton::getFocusMode,

@@ -2,7 +2,9 @@
 
 void sunaba::spatial::bindArrayOccluder3D(sol::state_view& lua) {
     lua.new_usertype<sunaba::spatial::ArrayOccluder>("ArrayOccluder3D",
-        sol::constructors<ArrayOccluder()>(),
+        "new", sol::factories(
+            []() { return new sunaba::spatial::ArrayOccluder(); }
+        ),
         sol::base_classes, sol::bases<sunaba::core::BaseObject, sunaba::core::Resource, Occluder3D>(),
         "indicies", sol::property(&ArrayOccluder::getIndices, &ArrayOccluder::setIndices),
         "vertices", sol::property(&ArrayOccluder::getVertices, &ArrayOccluder::setVertices),

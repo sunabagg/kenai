@@ -2,7 +2,9 @@
 
 void sunaba::audio::bindAudioStreamPlaylist(sol::state_view& lua) {
     lua.new_usertype<AudioStreamPlaylist>("AudioStreamPlaylist",
-        sol::constructors<AudioStreamPlaylist()>(),
+        "new", sol::factories([]() {
+            return new AudioStreamPlaylist();
+        }),
         sol::base_classes, sol::bases<sunaba::core::BaseObject, sunaba::core::Resource, AudioStream>(),
         "cast", [](sunaba::core::Resource* resource) { 
             return new AudioStreamPlaylist(

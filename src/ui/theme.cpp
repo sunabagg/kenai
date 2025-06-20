@@ -2,7 +2,9 @@
 
 void sunaba::ui::bindTheme(sol::state_view& lua) {
     lua.new_usertype<Theme>("Theme",
-        sol::constructors<Theme()>(),
+        "new", sol::factories(
+            []() { return new Theme(); }
+        ),
         sol::base_classes, sol::bases<sunaba::core::BaseObject, sunaba::core::Resource>(),
         "defaultBaseScale", sol::property(&Theme::getDefaultBaseScale, &Theme::setDefaultBaseScale),
         "defaultFont", sol::property(&Theme::getDefaultFont, &Theme::setDefaultFont),

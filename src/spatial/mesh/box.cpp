@@ -3,7 +3,9 @@
 void sunaba::spatial::mesh::bindBox(sol::state& lua) {
     lua.new_usertype<Box>(
         "Box",
-        sol::constructors<Box()>(),
+        "new", sol::factories(
+            []() { return new Box(); }
+        ),
         sol::base_classes, sol::bases<Component>(),
         sol::meta_function::garbage_collect, sol::destructor([](Box* b) {  }),
         "size", sol::property(&Box::getSize, &Box::setSize),

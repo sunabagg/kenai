@@ -169,7 +169,9 @@ namespace sunaba::ui {
 
     void bindItemList(sol::state& lua) {
         lua.new_usertype<ItemList>("ItemList",
-            sol::constructors<ItemList()>(),
+            "new", sol::factories(
+                []() { return new ItemList(); }
+            ),
             sol::base_classes, sol::bases<BaseObject, Element, sunaba::core::CanvasItem, Control>(),
             "allowReselect", sol::property(&ItemList::getAllowReselect, &ItemList::setAllowReselect),
             "allowRmbSelect", sol::property(&ItemList::getAllowRmbSelect, &ItemList::setAllowRmbSelect),

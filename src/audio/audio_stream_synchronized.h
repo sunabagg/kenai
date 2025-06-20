@@ -46,7 +46,7 @@ namespace sunaba::audio {
         }
 
         AudioStream* getSyncStream(int index) {
-            return new AudioStream(audioStreamSynchronized->get_sync_stream(index));
+            return new AudioStream(audioStreamSynchronized->get_sync_stream(index).ptr());
         }
 
         float getSyncStreamVolume(int index) {
@@ -61,3 +61,5 @@ namespace sunaba::audio {
             audioStreamSynchronized->set_sync_stream_volume(index, volume);
         }
     };
+}
+#endif // AUDIO_STREAM_SYNCHRONIZED_H

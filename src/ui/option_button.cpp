@@ -150,7 +150,9 @@ namespace sunaba::ui {
 
     void bindOptionButton(sol::state& lua) {
         lua.new_usertype<OptionButton>("OptionButton",
-            sol::constructors<OptionButton()>(),
+            "new", sol::factories(
+                []() { return new OptionButton(); }
+            ),
             sol::base_classes, sol::bases<BaseObject, Element, sunaba::core::CanvasItem, Control, BaseButton, Button>(),
             "actionMode", sol::property(
                 &OptionButton::getActionMode,

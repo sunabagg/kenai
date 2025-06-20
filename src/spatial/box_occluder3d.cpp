@@ -2,7 +2,9 @@
 
 void sunaba::spatial::bindBoxOccluder3D(sol::state_view& lua) {
     lua.new_usertype<sunaba::spatial::BoxOccluder>("BoxOccluder3D",
-        sol::constructors<BoxOccluder()>(),
+        "new", sol::factories(
+            []() { return new sunaba::spatial::BoxOccluder(); }
+        ),
         sol::base_classes, sol::bases<sunaba::core::BaseObject, sunaba::core::Resource, Occluder3D>(),
         "size", sol::property(&BoxOccluder::getSize, &BoxOccluder::setSize),
         "cast", [](sunaba::core::Resource* instance) {

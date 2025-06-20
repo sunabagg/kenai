@@ -217,7 +217,9 @@ namespace sunaba::ui {
 
     void bindCodeEdit(sol::state& lua) {
         lua.new_usertype<CodeEdit>("CodeEdit",
-            sol::constructors<CodeEdit()>(),
+            "new", sol::factories(
+                []() { return new CodeEdit(); }
+            ),
             sol::base_classes, sol::bases<BaseObject, Element, sunaba::core::CanvasItem, Control, TextEdit>(),
             "autoBraceCompletionEnabled", sol::property(
                 &CodeEdit::getAutoBraceCompletionEnabled,

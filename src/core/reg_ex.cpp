@@ -3,7 +3,10 @@
 namespace sunaba::core {
     void bindRegEx(sol::state& lua) {
         lua.new_usertype<RegEx>("RegEx",
-            sol::constructors<RegEx(), RegEx(GodotRegEx*)>(),
+            "new", sol::factories(
+                []() { return new RegEx(); }
+            ),
+            sol::base_classes, sol::bases<BaseObject>(),
             "reg_ex", sol::readonly_property(&RegEx::getRegEx),
             "clear", &RegEx::clear,
             "compile", &RegEx::compile,

@@ -2,7 +2,9 @@
 
 void sunaba::core::bindShaderMaterial(sol::state_view& lua) {
         lua.new_usertype<ShaderMaterial>("ShaderMaterial",
-            sol::constructors<ShaderMaterial(), ShaderMaterial(GodotShaderMaterial*)>(),
+            "new", sol::factories(
+                []() { return new ShaderMaterial(); }
+            ),
             sol::base_classes, sol::bases<sunaba::core::BaseObject, sunaba::core::Resource, sunaba::core::Material>(),
             "shader", sol::property(&ShaderMaterial::getShader, &ShaderMaterial::setShader),
             "getShaderIntParam", &ShaderMaterial::getShaderIntParam,

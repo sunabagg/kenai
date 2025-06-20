@@ -2,7 +2,9 @@
 
 void sunaba::audio::bindAudioStream(sol::state_view& lua) {
     lua.new_usertype<AudioStream>("AudioStream",
-        sol::constructors<AudioStream()>(),
+        "new", sol::factories([]() {
+            return new AudioStream();
+        }),
         sol::base_classes, sol::bases<sunaba::core::BaseObject, sunaba::core::Resource>(),
         "canBeSampled", &AudioStream::canBeSampled,
         "getLength", &AudioStream::getLength,
