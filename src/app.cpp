@@ -44,7 +44,7 @@ using namespace godot;
 
 void App::_bind_methods() {
     ClassDB::bind_method(D_METHOD("start", "path"), &App::start);
-    ClassDB::bind_method(D_METHOD("init", "sandboxed"), &App::init);
+    ClassDB::bind_method(D_METHOD("init_state", "sandboxed"), &App::initState);
     ClassDB::bind_method(D_METHOD("load_and_execute_sbx", "path"), &App::loadAndExecuteSbx);
 }
 
@@ -67,7 +67,7 @@ void App::_ready() {
     }
 }
 
-void App::init(bool sandboxed) {
+void App::initState(bool sandboxed) {
     if (!sandboxed) {
         global_state.open_libraries( sol::lib::base, sol::lib::bit32, sol::lib::coroutine,
             sol::lib::count, sol::lib::math, sol::lib::string,
