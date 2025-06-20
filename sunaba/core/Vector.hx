@@ -6,4 +6,5 @@ extern class Vector<T> {
     public function at(index:Int):T;
     public function get(index:Int):T;
     public function find(value:T):Int;
+    public function erase(index:Int):Void;
 }
