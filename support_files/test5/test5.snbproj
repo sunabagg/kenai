@@ -5,7 +5,7 @@
     "scriptdir": "src",
     "apisymbols": true,
     "sourcemap": true,
-    "entrypoint": "support_files.test5.src.Main",
+    "entrypoint": "Main",
     "luabin": "main",
     "libraries": [
         "codegen"
