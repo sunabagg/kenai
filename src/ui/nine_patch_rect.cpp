@@ -117,7 +117,9 @@ namespace sunaba::ui {
 
     void bindNinePatchRect(sol::state &lua) {
         lua.new_usertype<NinePatchRect>("NinePatchRect",
-            sol::constructors<NinePatchRect()>(),
+            "new", sol::factories(
+                []() { return new NinePatchRect(); }
+            ),
             sol::base_classes, sol::bases<BaseObject, Element, sunaba::core::CanvasItem, Control>(),
             "axisStretchHorizontal", sol::property(
                 &NinePatchRect::getAxisStretchHorizontal,
