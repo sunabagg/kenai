@@ -17,7 +17,7 @@ extern class ScrollContainer extends Container {
     public var scrollStarted: Event;
     public var scrollStopped: Event;
     public function getHScrollBar(): HScrollBar;
-    public function getVScrollBar(): VScrollBar;
+    public function getVScrollBar(): VscrollBar;
     @:native("cast")
     public static function toScrollContainer(obj: Dynamic): sunaba.ui.ScrollContainer;
 }
