@@ -444,15 +444,9 @@ class Widget {
     }
 
     private function isAnElementClass(classInfo: Class<Dynamic>): Bool {
-        var superClass = Type.getSuperClass(classInfo);
-        if (Type.getClassName(superClass) == "Class<sunaba.core.Element>") {
+        var isTrue : Bool = untyped __lua__("classInfo.isElementType()");
+        if (isTrue == true) {
             return true;
-        }
-        else if (superClass != null) {
-            var res = isAnElementClass(superClass);
-            if (res) {
-                return true;
-            }
         }
         return false;
     }
