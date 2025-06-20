@@ -2,8 +2,8 @@
 
 void sunaba::core::bindAnimatedTexture(sol::state &lua) {
     lua.new_usertype<sunaba::core::AnimatedTexture>("AnimatedTexture",
-        sol::constructors<sunaba::core::BaseObject, sunaba::core::Resource, sunaba::core::Texture, sunaba::core::AnimatedTexture()>(),
-        sol::base_classes, sol::bases<sunaba::core::Texture2D>(),
+        sol::constructors< sunaba::core::AnimatedTexture()>(),
+        sol::base_classes, sol::bases<sunaba::core::BaseObject, sunaba::core::Resource, sunaba::core::Texture, sunaba::core::Texture2D>(),
         "currentFrame", sol::property(
             &sunaba::core::AnimatedTexture::getCurrentFrame, 
             &sunaba::core::AnimatedTexture::setCurrentFrame
