@@ -1,5 +1,6 @@
 package sunaba.ui;
 
+import haxe.DynamicAccess;
 import sunaba.core.FontFile;
 import sunaba.core.Texture;
 import sunaba.core.Image;
@@ -156,11 +157,7 @@ class Widget {
 
     private function construct(xml: Xml) : Element {
         var className = xml.nodeName;
-        var classType = Type.resolveClass(className);
-        if (classType == null) {
-            className = camelToPascal(className);
-            classType = untyped __lua__("_G[className]");
-        }
+        var classType : Class<Dynamic> = untyped __lua__("_G[className]");
         if (classType != null) {
             if (isAnElementClass(classType)) {
                 var instance = Type.createInstance(classType, []);
