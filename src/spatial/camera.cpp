@@ -9,7 +9,9 @@ namespace sunaba::spatial
     void bindCamera(sol::state& lua){
         lua.new_usertype<Camera>(
             "Camera",
-            sol::constructors<Camera()>(),
+            "new", []() {
+                return std::make_shared<Camera>();
+            },
             sol::base_classes, sol::bases<Component>(),
             sol::meta_function::garbage_collect, sol::destructor([](Camera* c) {  }),
             "cullMask", sol::property(&Camera::getCullMask, &Camera::setCullMask),
