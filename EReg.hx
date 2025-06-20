@@ -28,6 +28,8 @@ class EReg {
         if (StringTools.contains(opt, "m")) {
             godotPattern = "(?m)" + r; // Add multiline modifier if not present
         }
+
+        var error = regex.compile(godotPattern);
 		//throw new haxe.exceptions.NotImplementedException("Regular expressions are not implemented for this platform");
 	}
 
