@@ -196,6 +196,16 @@ class Widget {
             if (attributeName == "name") {
                 element.name = attributeValue;
             }
+            else if (attributeName == "fullRect") {
+                var control = Control.toControl(element);
+                if (control.isNull() == false) {
+                    if (attributeValue == "true") {
+                        control.setAnchorsAndOffsetsPreset(LayoutPreset.fullRect, LayoutPresetMode.keepSize, 0);
+                        control.sizeFlagsHorizontal = SizeFlags.fill;
+                        control.sizeFlagsVertical = SizeFlags.fill;
+                    }
+                }
+            }
             else {
                 if (hasField(element, attributeName)) {
                     var currentValue = field(element, attributeName);
