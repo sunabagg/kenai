@@ -181,6 +181,7 @@ void App::loadAndExecuteSbx(const String &path) {
         return;
     }
     auto zipio = new ZipIo(path.utf8().get_data());
+    zipio->pathUri = "temp://";
     ioManager->add(zipio);
 
     auto headerJsonStr = zipio->loadText("temp://header.json");
