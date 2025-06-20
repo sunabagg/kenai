@@ -16,6 +16,6 @@ extern class VectorNative<T> {
 abstract Vector<T>(VectorNative<T>) from VectorNative<T> to VectorNative<T> {
     public function size():Int {
         var s = this;
-        return untyped __lua__("#s")
+        return untyped __lua__("#s");
     }
 }
