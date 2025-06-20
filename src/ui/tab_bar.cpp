@@ -199,7 +199,9 @@ namespace sunaba::ui {
 
     void bindTabBar(sol::state& lua) {
         lua.new_usertype<TabBar>("TabBar",
-            sol::constructors<TabBar()>(),
+            "new", sol::factories(
+                []() { return new TabBar(); }
+            ),
             sol::base_classes, sol::bases<BaseObject, Element, sunaba::core::CanvasItem, Control>(),
             "clipTabs", sol::property(
                 &TabBar::getClipTabs,
