@@ -1,5 +1,10 @@
 package sunaba.core;
 
+import sunaba.core.io.BinaryData;
+import lua.Table;
+import haxe.Int32;
+import haxe.Int64;
+
 abstract Variant(VariantNative) from VariantNative to VariantNative {
     @:from
     public static function fromString(value:String):Variant {
