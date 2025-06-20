@@ -180,6 +180,10 @@ void App::loadAndExecuteSbx(const String &path) {
     if (path == "") {
         return;
     }
+    if (!path.ends_with(".sbx")) {
+        UtilityFunctions::print("Error: path must end with .sbx");
+        return;
+    }
     auto zipio = new ZipIo(path.utf8().get_data());
     zipio->pathUri = "temp://";
     ioManager->add(zipio);
