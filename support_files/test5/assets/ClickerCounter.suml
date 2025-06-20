@@ -16,7 +16,7 @@
                 name="vBoxContainer">
                 <label
                     name="clickCounterLabel"
-                    text="You clicked me 0 times?"
+                    text="You clicked me 0 times!"
                     verticalAlignment="1"
                     horizontalAlignment="1"/>
                 <button
