@@ -18,7 +18,7 @@ extern class Element extends BaseObject {
     public function addChild(child: Element): Void;
     public function addSibling(sibling: Element): Void;
     public function removeChild(child: Element): Void;
-    public function getChildren(): lua.Table<Int, Element>;
+    public function getChildren(): Vector<Element>;
     public function isNull(): Bool;
     public function getViewport(): Viewport;
     public function delete(): Void;
