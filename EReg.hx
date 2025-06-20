@@ -20,6 +20,11 @@ class EReg {
         pattern = r;
         options = opt;
         regex = new RegEx();
+
+        var godotPatrern = r;
+        if (!StringTools.contains(r, "i")) {
+            godotPatrern = "(?i)" + r; // Add case-insensitive modifier if not present
+        }
 		//throw new haxe.exceptions.NotImplementedException("Regular expressions are not implemented for this platform");
 	}
 
