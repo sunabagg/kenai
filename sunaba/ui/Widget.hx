@@ -44,6 +44,7 @@ class Widget {
             parseMarkup(file);
         }
         else {
+            Sys.println("Failed to load file: " + path);
             throw "Failed to load file: " + path;
         }
     }
