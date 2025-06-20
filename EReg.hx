@@ -1,214 +1,170 @@
-/*
- * Copyright (C)2005-2019 Haxe Foundation
- *
- * Permission is hereby granted, free of charge, to any person obtaining a
- * copy of this software and associated documentation files (the "Software"),
- * to deal in the Software without restriction, including without limitation
- * the rights to use, copy, modify, merge, publish, distribute, sublicense,
- * and/or sell copies of the Software, and to permit persons to whom the
- * Software is furnished to do so, subject to the following conditions:
- *
- * The above copyright notice and this permission notice shall be included in
- * all copies or substantial portions of the Software.
- *
- * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
- * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
- * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
- * AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
- * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
- * FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER
- * DEALINGS IN THE SOFTWARE.
- */
-
+import sunaba.core.RegExMatch;
+import sunaba.core.RegEx;
 import lua.Table;
-import lua.Lib;
-import lua.lib.lrexlib.Rex;
-// Note - lrexlib gives ascii-based offsets.  Use native string tools.
-import lua.NativeStringTools.*;
 
 @:coreApi
 class EReg {
-	var r:Rex; // the Rex extern instance.
-	var global:Bool; // whether the regex is in global mode.
-	var s:String; // the last matched string
-	var m:Table<Int, Int>; // the [start:Int, end:Int, and submatches:String (matched groups)] as a single table.
+    /**
+		Creates a new regular expression with pattern `r` and modifiers `opt`.
 
-	static var FLAGS:Table<String, Int> = Rex.flags();
+		This is equivalent to the shorthand syntax `~/r/opt`
 
-	public function new(r:String, opt:String):Void {
-		var ropt = 0;
-		for (i in 0...opt.length) {
-			switch (opt.charAt(i)) {
-				case "i":
-					ropt |= FLAGS.CASELESS;
-				case "m":
-					ropt |= FLAGS.MULTILINE;
-				case "s":
-					ropt |= FLAGS.DOTALL;
-				case "g":
-					global = true;
-				default:
-					null;
-			}
-		}
-
-		ropt |= FLAGS.UTF; // always check validity of utf8 string
-		ropt |= FLAGS.UCP; // always enable utf8 character properties
-
-		if (global == null)
-			global = false;
-		this.r = Rex.create(r, ropt);
+		If `r` or `opt` are null, the result is unspecified.
+	**/
+	public function new(r:String, opt:String) {
+		throw new haxe.exceptions.NotImplementedException("Regular expressions are not implemented for this platform");
 	}
 
+	/**
+		Tells if `this` regular expression matches String `s`.
+
+		This method modifies the internal state.
+
+		If `s` is `null`, the result is unspecified.
+	**/
 	public function match(s:String):Bool {
-		return matchFromByte(s, 1);
+		return false;
 	}
 
-	inline function matchFromByte(s:String, offset:Int):Bool {
-		if (s == null)
-			return false;
-		this.m = lua.TableTools.pack(r.exec(s, offset));
-		this.s = s;
-		return m[1] != null;
-	}
+	/**
+		Returns the matched sub-group `n` of `this` EReg.
 
+		This method should only be called after `this.match` or
+		`this.matchSub`, and then operates on the String of that operation.
+
+		The index `n` corresponds to the n-th set of parentheses in the pattern
+		of `this` EReg. If no such sub-group exists, the result is unspecified.
+
+		If `n` equals 0, the whole matched substring is returned.
+	**/
 	public function matched(n:Int):String {
-		if (m[1] == null || n < 0)
-			throw "EReg::matched";
-		else if (n == 0) {
-			var k = sub(s, m[1], m[2]).match;
-			return k;
-		} else if (Std.isOfType(m[3], lua.Table)) {
-			var mn = 2 * (n - 1);
-			if (Std.isOfType(untyped m[3][mn + 1], Bool))
-				return null;
-			return sub(s, untyped m[3][mn + 1], untyped m[3][mn + 2]).match;
-		} else {
-			throw "EReg:matched";
-		}
+		return null;
 	}
 
+	/**
+		Returns the part to the left of the last matched substring.
+
+		If the most recent call to `this.match` or `this.matchSub` did not
+		match anything, the result is unspecified.
+
+		If the global g modifier was in place for the matching, only the
+		substring to the left of the leftmost match is returned.
+
+		The result does not include the matched part.
+	**/
 	public function matchedLeft():String {
-		if (m[1] == null)
-			throw "No string matched";
-		return sub(s, 1, m[1] - 1).match;
+		return null;
 	}
 
+	/**
+		Returns the part to the right of the last matched substring.
+
+		If the most recent call to `this.match` or `this.matchSub` did not
+		match anything, the result is unspecified.
+
+		If the global g modifier was in place for the matching, only the
+		substring to the right of the leftmost match is returned.
+
+		The result does not include the matched part.
+	**/
 	public function matchedRight():String {
-		if (m[1] == null)
-			throw "No string matched";
-		return sub(s, m[2] + 1).match;
+		return null;
 	}
 
+	/**
+		Returns the position and length of the last matched substring, within
+		the String which was last used as argument to `this.match` or
+		`this.matchSub`.
+
+		If the most recent call to `this.match` or `this.matchSub` did not
+		match anything, the result is unspecified.
+
+		If the global g modifier was in place for the matching, the position and
+		length of the leftmost substring is returned.
+	**/
 	public function matchedPos():{pos:Int, len:Int} {
-		var left = matchedLeft();
-		var matched = matched(0);
-		if (m[1] == null)
-			throw "No string matched";
-		return {
-			pos: left.length,
-			len: matched.length
-		}
+		return null;
 	}
 
+	/**
+		Tells if `this` regular expression matches a substring of String `s`.
+
+		This function expects `pos` and `len` to describe a valid substring of
+		`s`, or else the result is unspecified. To get more robust behavior,
+		`this.match(s.substr(pos,len))` can be used instead.
+
+		This method modifies the internal state.
+
+		If `s` is null, the result is unspecified.
+	**/
 	public function matchSub(s:String, pos:Int, len:Int = -1):Bool {
-		var ss = s.substr(0, len < 0 ? s.length : pos + len);
-
-		if (global) {
-			m = lua.TableTools.pack(r.exec(ss, pos + 1));
-			var b = m[1] != null;
-			if (b) {
-				this.s = s;
-			}
-			return b;
-		} else {
-			m = lua.TableTools.pack(r.exec(ss, pos + 1));
-			var b = m[1] != null;
-			if (b) {
-				this.s = s;
-			}
-			return b;
-		}
+		return false;
 	}
 
+	/**
+		Splits String `s` at all substrings `this` EReg matches.
+
+		If a match is found at the start of `s`, the result contains a leading
+		empty String "" entry.
+
+		If a match is found at the end of `s`, the result contains a trailing
+		empty String "" entry.
+
+		If two matching substrings appear next to each other, the result
+		contains the empty String `""` between them.
+
+		By default, this method splits `s` into two parts at the first matched
+		substring. If the global g modifier is in place, `s` is split at each
+		matched substring.
+
+		If `s` is null, the result is unspecified.
+	**/
 	public function split(s:String):Array<String> {
-		if (global) {
-			return Lib.fillArray(Rex.split(s, r));
-		} else {
-			// we can't use directly Rex.split because it's ignoring the 'g' flag
-			var d = "#__delim__#";
-			return Lib.fillArray(Rex.split(replace(s, d), d));
-		}
+		return null;
 	}
 
+	/**
+		Replaces the first substring of `s` which `this` EReg matches with `by`.
+
+		If `this` EReg does not match any substring, the result is `s`.
+
+		By default, this method replaces only the first matched substring. If
+		the global g modifier is in place, all matched substrings are replaced.
+
+		If `by` contains `$1` to `$9`, the digit corresponds to number of a
+		matched sub-group and its value is used instead. If no such sub-group
+		exists, the replacement is unspecified. The string `$$` becomes `$`.
+
+		If `s` or `by` are null, the result is unspecified.
+	**/
 	public function replace(s:String, by:String):String {
-		var chunks = by.split("$$");
-		chunks = [for (chunk in chunks) Rex.gsub(chunk, "\\$(\\d)", "%%%1", 1)];
-		by = chunks.join("$");
-		return Rex.gsub(s, r, by, global ? null : 1);
+		return null;
 	}
 
+	/**
+		Calls the function `f` for the substring of `s` which `this` EReg matches
+		and replaces that substring with the result of `f` call.
+
+		The `f` function takes `this` EReg object as its first argument and should
+		return a replacement string for the substring matched.
+
+		If `this` EReg does not match any substring, the result is `s`.
+
+		By default, this method replaces only the first matched substring. If
+		the global g modifier is in place, all matched substrings are replaced.
+
+		If `s` or `f` are null, the result is unspecified.
+	**/
 	public function map(s:String, f:EReg->String):String {
-		var bytesOffset = 1;
-		var buf = new StringBuf();
-		do {
-			if (bytesOffset > len(s)) {
-				break;
-			} else if (!matchFromByte(s, bytesOffset)) {
-				buf.add(sub(s, bytesOffset).match);
-				break;
-			}
-			var pos = m[1];
-			var length = m[2] - m[1];
-			buf.add(sub(s, bytesOffset, pos - 1).match);
-			buf.add(f(this));
-			if (length < 0) {
-				var charBytes = len(sub(s, pos).match.charAt(0));
-				buf.add(sub(s, pos, pos + charBytes - 1).match);
-				bytesOffset = pos + charBytes;
-			} else {
-				bytesOffset = m[2] + 1;
-			}
-		} while (global);
-		if (!global && bytesOffset > 1 && bytesOffset - 1 < len(s))
-			buf.add(sub(s, bytesOffset).match);
-		return buf.toString();
+		return null;
 	}
 
-	function map_old(s:String, f:EReg->String):String {
-		var offset = 0;
-		var buf = new StringBuf();
-		do {
-			if (offset >= s.length) {
-				break;
-			} else if (!matchSub(s, offset)) {
-				buf.add(s.substr(offset));
-				break;
-			}
-			var p = matchedPos();
+	/**
+		Escape the string `s` for use as a part of regular expression.
 
-			buf.add(s.substr(offset, p.pos - offset));
-			buf.add(f(this));
-			if (p.len == 0) {
-				buf.add(s.substr(p.pos, 1));
-				offset = p.pos + 1;
-			} else
-				offset = p.pos + p.len;
-		} while (global);
-		if (!global && offset > 0 && offset < s.length)
-			buf.add(s.substr(offset));
-		return buf.toString();
-	}
-
+		If `s` is null, the result is unspecified.
+	**/
 	public static function escape(s:String):String {
-		return escapeRegExpRe.map(s, function(r) return "\\" + r.matched(0));
-	}
-
-	static var escapeRegExpRe = ~/[\[\]{}()*+?.\\\^$|]/g;
-
-	static function __init__():Void {
-		if (Rex == null) {
-			throw "Rex is missing.  Please install lrexlib-pcre2.";
-		}
+		return null;
 	}
 }
