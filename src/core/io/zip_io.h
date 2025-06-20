@@ -19,7 +19,6 @@ namespace sunaba::core::io {
         }
         
         std::string loadText(const std::string &path) const override;
-        void saveText(const std::string &path, const std::string &text) const override;
         PackedByteArray loadBytes(const std::string &path) const override;
         void saveBytes(const std::string &path, const PackedByteArray &bytes) const override;
         std::vector<std::string> getFileList(const std::string &path, const std::string &extension = "", const bool recursive = true) const override;
