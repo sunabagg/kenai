@@ -140,7 +140,9 @@ namespace sunaba::ui {
 
     void bindContainer(sol::state& lua) {
         auto ut = lua.new_usertype<Container>("Container",
-            sol::constructors<Container()>(),
+            "new", sol::factories(
+                []() { return new Container(); }
+            ),
             sol::base_classes, sol::bases<BaseObject, Element, sunaba::core::CanvasItem, Control>(),
             "mouseFilter", sol::property(
                 &Container::getMouseFilter,
