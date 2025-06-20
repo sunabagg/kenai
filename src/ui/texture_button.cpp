@@ -130,7 +130,9 @@ namespace sunaba::ui {
 
     void bindTextureButton(sol::state& lua) {
         lua.new_usertype<TextureButton>("TextureButton",
-            sol::constructors<TextureButton()>(),
+            "new", sol::factories(
+                []() { return new TextureButton(); }
+            ),
             sol::base_classes, sol::bases<BaseObject, Element, sunaba::core::CanvasItem, Control, BaseButton>(),
             "flipH", sol::property(&TextureButton::getFlipH, &TextureButton::setFlipH),
             "flipV", sol::property(&TextureButton::getFlipV, &TextureButton::setFlipV),
