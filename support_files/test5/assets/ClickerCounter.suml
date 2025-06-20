@@ -5,10 +5,6 @@
     <body>
         <panel 
             fullRect="true"
-            anchorTop="$FILL_TOP_LEFT" 
-            anchorBottom="$FILL_BOTTOM_RIGHT" 
-            anchorLeft="$FILL_TOP_LEFT" 
-            anchorRight="$FILL_BOTTOM_RIGHT" 
             offsetBottom="10"
             offsetTop="-10"
             offsetLeft="-10"
