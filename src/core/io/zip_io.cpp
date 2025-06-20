@@ -9,8 +9,12 @@ namespace sunaba::core::io {
     void bindZipIo(sol::state& lua) {
         lua.new_usertype<ZipIo>(
             "ZipIo",
-            sol::no_constructor,
-            sol::base_classes, sol::bases<BaseObject, IoInterface>(),
+            "new", sol::factories(
+                [](const std::string &path) {
+                    return new ZipIo(path);
+                }
+            ),
+            sol::base_classes, sol::bases<BaseObject, IoInterface>()
         );
     }
 } // namespace sunaba::core::io
