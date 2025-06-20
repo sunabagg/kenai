@@ -230,6 +230,7 @@ __sunaba_core__StringArray_StringArray_Impl_ = _hx_e()
 __sunaba_core__Texture_TextureAbstract_Impl_ = _hx_e()
 __sunaba_core__Texture2D_Texture2DAbstract_Impl_ = _hx_e()
 __sunaba_core__Variant_Variant_Impl_ = _hx_e()
+__sunaba_core__Vector_Vector_Impl_ = _hx_e()
 __sunaba_core__Viewport_ViewportAbstract_Impl_ = _hx_e()
 __sunaba_input__InputEvent_InputEventAbstract_Impl_ = _hx_e()
 __sunaba_spatial__CameraAttributes_CameraAttributesAbstract_Impl_ = _hx_e()
@@ -1532,6 +1533,13 @@ __haxe_Exception.super = function(self,message,previous,native)
 end
 _hxClasses["haxe.Exception"] = __haxe_Exception
 __haxe_Exception.__name__ = "haxe.Exception"
+__haxe_Exception.caught = function(value) 
+  if (__lua_Boot.__instanceof(value, __haxe_Exception)) then 
+    do return value end;
+  else
+    do return __haxe_ValueException.new(value, nil, value) end;
+  end;
+end
 __haxe_Exception.thrown = function(value) 
   if (__lua_Boot.__instanceof(value, __haxe_Exception)) then 
     do return value:get_native() end;
@@ -1542,6 +1550,9 @@ __haxe_Exception.thrown = function(value)
   end;
 end
 __haxe_Exception.prototype = _hx_e();
+__haxe_Exception.prototype.unwrap = function(self) 
+  do return self.__nativeException end
+end
 __haxe_Exception.prototype.toString = function(self) 
   do return self:get_message() end
 end
@@ -1617,6 +1628,9 @@ end
 _hxClasses["haxe.ValueException"] = __haxe_ValueException
 __haxe_ValueException.__name__ = "haxe.ValueException"
 __haxe_ValueException.prototype = _hx_e();
+__haxe_ValueException.prototype.unwrap = function(self) 
+  do return self.value end
+end
 
 __haxe_ValueException.prototype.__class__ =  __haxe_ValueException
 __haxe_ValueException.__super__ = __haxe_Exception
@@ -3180,6 +3194,60 @@ __sunaba_core__Variant_Variant_Impl_.toVector4Array = function(this1)
   do return this1:asVector4Array() end;
 end
 
+__sunaba_core__Vector_Vector_Impl_.new = {}
+_hxClasses["sunaba.core._Vector.Vector_Impl_"] = __sunaba_core__Vector_Vector_Impl_
+__sunaba_core__Vector_Vector_Impl_.__name__ = "sunaba.core._Vector.Vector_Impl_"
+__sunaba_core__Vector_Vector_Impl_._new = function() 
+  do return sunaba.core.VectorNative() end;
+end
+__sunaba_core__Vector_Vector_Impl_.size = function(this1) 
+  local s = this1;
+  do return #s end;
+end
+__sunaba_core__Vector_Vector_Impl_.get = function(this1,index) 
+  local s = this1;
+  do return s[index] end;
+end
+__sunaba_core__Vector_Vector_Impl_.set = function(this1,index,value) 
+  local s = this1;
+  s[index] = value;
+  do return value end;
+end
+__sunaba_core__Vector_Vector_Impl_.toArray = function(this1) 
+  local s = this1;
+  local array = _hx_tab_array({}, 0);
+  local _g = 0;
+  local _g1 = __sunaba_core__Vector_Vector_Impl_.size(s);
+  while (_g < _g1) do _hx_do_first_1 = false;
+    
+    _g = _g + 1;
+    local i = _g - 1;
+    local value = __sunaba_core__Vector_Vector_Impl_.get(s, i);
+    if (value == nil) then 
+      _G.error(__haxe_Exception.thrown(Std.string("Vector.toArray: null value at index ") .. Std.string(i)),0);
+    end;
+    array:push(value);
+  end;
+  do return array end;
+end
+__sunaba_core__Vector_Vector_Impl_.toTable = function(this1) 
+  local s = this1;
+  local table = table;
+  local _g = 0;
+  local _g1 = __sunaba_core__Vector_Vector_Impl_.size(s);
+  while (_g < _g1) do _hx_do_first_1 = false;
+    
+    _g = _g + 1;
+    local i = _g - 1;
+    local value = __sunaba_core__Vector_Vector_Impl_.get(s, i);
+    if (value == nil) then 
+      _G.error(__haxe_Exception.thrown(Std.string("Vector.toTable: null value at index ") .. Std.string(i)),0);
+    end;
+    table[i] = value;
+  end;
+  do return table end;
+end
+
 __sunaba_core__Viewport_ViewportAbstract_Impl_.new = {}
 _hxClasses["sunaba.core._Viewport.ViewportAbstract_Impl_"] = __sunaba_core__Viewport_ViewportAbstract_Impl_
 __sunaba_core__Viewport_ViewportAbstract_Impl_.__name__ = "sunaba.core._Viewport.ViewportAbstract_Impl_"
@@ -3287,7 +3355,20 @@ end
 __sunaba_ui_Widget.prototype.load = function(self,path) 
   local file = self.io:loadText(path);
   if ((file ~= nil) and (#file > 0)) then 
-    self:parseMarkup(file);
+    local _hx_status, _hx_result = pcall(function() 
+    
+        self:parseMarkup(file);
+      return _hx_pcall_default
+    end)
+    if not _hx_status and _hx_result == "_hx_pcall_break" then
+    elseif not _hx_status then 
+      local _g = _hx_result;
+      local e = __haxe_Exception.caught(_g):unwrap();
+      _G.print(Std.string(Std.string("Error parsing markup: ") .. Std.string(Std.string(e))));
+      _G.error(__haxe_Exception.thrown(e),0);
+    elseif _hx_result ~= _hx_pcall_default then
+      return _hx_result
+    end;
   else
     _G.print(Std.string(Std.string("Failed to load file: ") .. Std.string(path)));
     _G.error(__haxe_Exception.thrown(Std.string("Failed to load file: ") .. Std.string(path)),0);
@@ -3299,7 +3380,21 @@ __sunaba_ui_Widget.prototype.parseMarkup = function(self,markup)
 end
 __sunaba_ui_Widget.prototype.instantiate = function(self,xml) 
   if ((self.rootElement ~= nil) and not self.keepChildren) then 
-    local childrenTable = self.rootElement:getChildren();
+    local s = self.rootElement:getChildren();
+    local table = table;
+    local _g = 0;
+    local _g1 = __sunaba_core__Vector_Vector_Impl_.size(s);
+    while (_g < _g1) do _hx_do_first_1 = false;
+      
+      _g = _g + 1;
+      local i = _g - 1;
+      local value = __sunaba_core__Vector_Vector_Impl_.get(s, i);
+      if (value == nil) then 
+        _G.error(__haxe_Exception.thrown(Std.string("Vector.toTable: null value at index ") .. Std.string(i)),0);
+      end;
+      table[i] = value;
+    end;
+    local childrenTable = table;
     local length = nil;
     local tab = __lua_PairTools.copy(childrenTable);
     local length = length;
