@@ -7,7 +7,7 @@ import sunaba.ui.Control;
 import sunaba.ui.CenterContainer;
 import sunaba.ui.Panel;
 import sunaba.ui.Label;
-import sunaba.ui.VBoxContainer;
+import sunaba.ui.VboxContainer;
 import sunaba.LayoutPreset;
 
 class Main extends App{
@@ -44,7 +44,7 @@ class Main extends App{
         centerContainer.sizeFlagsHorizontal = SizeFlags.fill;
         centerContainer.sizeFlagsVertical = SizeFlags.fill;
 
-        var vboxContainer = new VBoxContainer();
+        var vboxContainer = new VboxContainer();
 
         centerContainer.addChild(vboxContainer);
         vboxContainer.setAnchorsAndOffsetsPreset(LayoutPreset.center, LayoutPresetMode.minsize, 0);
