@@ -14,6 +14,7 @@
 #include "core/scene_node.h"
 #include "core/bind_core_classes.h"
 #include "core/io/file_system_io.h"
+#include "core/io/zip_io.h"
 #include "core/resource.h"
 #include "core/io/io_index.h"
 #include "input/bind_input_classes.h"
@@ -172,6 +173,28 @@ void App::init(bool sandboxed) {
     });
 
     //sol::error *e = nullptr;
+}
+
+void App::loadAndExecuteSbx(const String &path) {
+    if (path == "") {
+        return;
+    }
+    auto zipio = new ZipIo(path.utf8().get_data(), "app://");
+    ioManager->add(zipio);
+
+    std::string script = ioManager->loadText("app://main.sbx");
+    sol::protected_function_result result = global_state.safe_script(script, sol::script_pass_on_error);
+    
+    if ( !result.valid() ) {
+        sol::error err = result;
+        UtilityFunctions::print( String( "Error: " ) + err.what() );
+        auto msgBox = pfd::message(
+            "Error", err.what(), pfd::choice::ok, pfd::icon::error
+        );
+        msgBox.result();
+    } else {
+        //UtilityFunctions::print("Script executed successfully");
+    }
 }
 
 void App::start( const String &path) {
