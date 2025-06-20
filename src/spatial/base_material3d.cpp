@@ -123,7 +123,6 @@ void sunaba::spatial::bindBaseMaterial3D(sol::state_view& lua) {
         "uv2WorldTriplanar", sol::property(&BaseMaterial3D::getUv2WorldTriplanar, &BaseMaterial3D::setUv2WorldTriplanar),
         "vertexColorIsSrgb", sol::property(&BaseMaterial3D::getVertexColorIsSrgb, &BaseMaterial3D::setVertexColorIsSrgb),
         "vertexColorUseAsAlbedo", sol::property(&BaseMaterial3D::getVertexColorUseAsAlbedo, &BaseMaterial3D::setVertexColorUseAsAlbedo),
-        
         //"setTexture", &BaseMaterial3D::setTexture,
         "cast", [](sunaba::core::Resource* res) {
             return new BaseMaterial3D(
