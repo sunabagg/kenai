@@ -241,14 +241,14 @@ namespace sunaba::core {
             }
         }
 
-        sol::table getChildren() {
+        std::vector<Element*> getChildren() {
             auto childrenNodes = node->get_children();
-            sol::table result;
+            std::vector<Element*> result;
             for (int i = 0; i < childrenNodes.size(); ++i) {
                 Node* childNode = Object::cast_to<Node>(childrenNodes[i].operator Object*());
                 if (childNode != nullptr) {
                     Element* childElement = new Element(childNode);
-                    result[i + 1] = childElement;
+                    result.push_back(childElement);
                 }
             }
             return result;
