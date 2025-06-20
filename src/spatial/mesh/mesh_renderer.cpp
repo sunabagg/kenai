@@ -6,7 +6,9 @@ using namespace sunaba::core;
 void sunaba::spatial::mesh::bindMeshRenderer(sol::state& lua) {
     lua.new_usertype<MeshRenderer>(
         "MeshRenderer",
-        sol::constructors<MeshRenderer()>(),
+        "new", []() {
+            return std::make_shared<MeshRenderer>();
+        },
         sol::base_classes, sol::bases<IGeometryInstance, IVisualInstance, Component>(),
         sol::meta_function::garbage_collect, sol::destructor([](MeshRenderer* m) {  }),
         "createConvexCollision", &MeshRenderer::createConvexCollision,
