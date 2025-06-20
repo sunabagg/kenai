@@ -6,5 +6,8 @@ void sunaba::core::bindTexture2DRD(sol::state &lua) {
             []() { return new Texture2DRD(); }
         ),
         sol::base_classes, sol::bases<BaseObject, Resource, Texture, Texture2D>()
+        "cast", [](Resource* instance) {
+            return new Texture2DRD(godot::Object::cast_to<GodotTexture2DRD>(instance->getResource()));
+        }
     );
 }
