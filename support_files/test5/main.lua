@@ -1203,9 +1203,6 @@ Type.getClass = function(o)
     end;
   end;
 end
-Type.getSuperClass = function(c) 
-  do return c.__super__ end;
-end
 Type.resolveClass = function(name) 
   local cl = _hxClasses[name];
   local tmp;
@@ -3988,16 +3985,9 @@ __sunaba_ui_Widget.prototype.setProperty = function(self,obj,field,value)
   end;
 end
 __sunaba_ui_Widget.prototype.isAnElementClass = function(self,classInfo) 
-  local superClass = Type.getSuperClass(classInfo);
-  if (superClass.__name__ == "Class<sunaba.core.Element>") then 
+  local isTrue = classInfo.isElementType();
+  if (isTrue == true) then 
     do return true end;
-  else
-    if (superClass ~= nil) then 
-      local res = self:isAnElementClass(superClass);
-      if (res) then 
-        do return true end;
-      end;
-    end;
   end;
   do return false end
 end
