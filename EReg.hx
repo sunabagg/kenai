@@ -133,7 +133,12 @@ class EReg {
 		length of the leftmost substring is returned.
 	**/
 	public function matchedPos():{pos:Int, len:Int} {
-		return null;
+		if (lastMatch == null || lastMatch.isNull()) {
+            return { pos: -1, len: 0 }; // No match found
+        }
+        var start = lastMatch.getStart(0);
+        var end = lastMatch.getEnd(0) - start;
+        return { pos: start, len: end - start };
 	}
 
 	/**
