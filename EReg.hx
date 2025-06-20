@@ -54,6 +54,7 @@ class EReg {
 		If `s` is `null`, the result is unspecified.
 	**/
 	public function match(s:String):Bool {
+        lastInput = s;
 		lastMatch = regex.search(s);
         if (lastMatch == null) {
             return false; // No match found or invalid match
