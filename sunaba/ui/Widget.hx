@@ -27,6 +27,7 @@ class Widget {
     public var rootElement: Control;
     public var io: IoManager;
     public var keepChildren: Bool = false;
+    private var elementdb = [];
 
     public function new() {
         io = untyped __lua__("_G.ioManager");
@@ -146,6 +147,7 @@ class Widget {
     private function constructNodes(nodes: Iterator<Xml>): Void {
         for (node in nodes) {
             var element = construct(node);
+            elementdb.push(element);
             if (element != null && element.isNull() == false) {
                 rootElement.addChild(element);
             }

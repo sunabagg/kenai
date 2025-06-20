@@ -3259,6 +3259,7 @@ __sunaba_ui_Widget.new = function()
   return self
 end
 __sunaba_ui_Widget.super = function(self) 
+  self.elementdb = _hx_tab_array({}, 0);
   self.keepChildren = false;
   self.io = _G.ioManager;
   self.rootElement = Control.new();
@@ -3443,6 +3444,7 @@ __sunaba_ui_Widget.prototype.constructNodes = function(self,nodes)
     
     local node = node:next();
     local element = self:construct(node);
+    self.elementdb:push(element);
     if ((element ~= nil) and (element:isNull() == false)) then 
       self.rootElement:addChild(element);
     else
@@ -3502,9 +3504,10 @@ __sunaba_ui_Widget.prototype.setObjectValues = function(self,element,xml)
     if (attributeName == "name") then 
       element.name = attributeValue;
     else
+      local obj = element;
       local tmp;
       if (not obj[field] ~= nil) then 
-        local o = element;
+        local o = obj;
         tmp = (function() 
           local _hx_1
           if ((_G.type(o) == "function") and not ((function() 
@@ -3854,7 +3857,8 @@ __sunaba_ui_Widget.prototype.constructChildren = function(self,element,xml)
     end;
   end;
 end
-__sunaba_ui_Widget.prototype.hasField = function(self,obj,field) 
+__sunaba_ui_Widget.prototype.hasField = function(self,object,field) 
+  local obj = object;
   if (not obj[field] ~= nil) then 
     local o = obj;
     if ((_G.type(o) == "function") and not ((function() 
