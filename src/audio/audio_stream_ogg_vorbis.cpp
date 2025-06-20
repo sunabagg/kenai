@@ -2,7 +2,9 @@
 
 void sunaba::audio::bindAudioStreamOggVorbis(sol::state_view& lua) {
     lua.new_usertype<AudioStreamOggVorbis>("AudioStreamOggVorbis",
-        sol::constructors<AudioStreamOggVorbis()>(),
+       "new", sol::factories([]() {
+            return new AudioStreamOggVorbis();
+        }),
         sol::base_classes, sol::bases<sunaba::core::BaseObject, sunaba::core::Resource, AudioStream>(),
         "cast", [](sunaba::core::Resource* resource) { 
             return new AudioStreamOggVorbis(
