@@ -3589,7 +3589,6 @@ __sunaba_ui_Widget.prototype.construct = function(self,xml)
   className = self:camelToPascal(className);
   local classType = _G[className];
   if (classType ~= nil) then 
-    _G.print(Std.string(Std.string("Constructing element of class: ") .. Std.string(className)));
     local instance = classType.new();
     if (instance ~= nil) then 
       local element = instance;
@@ -4114,9 +4113,7 @@ __support_files_test5_src_Main.main = function()
 end
 __support_files_test5_src_Main.prototype = _hx_e();
 __support_files_test5_src_Main.prototype.init = function(self) 
-  _G.print("Hello, World!");
   local clickerCounter = __support_files_test5_src_ClickerCounter.new();
-  _G.print(Std.string(Std.string("ClickerCounter.rootElement.isNull: ") .. Std.string(Std.string(clickerCounter.rootElement:isNull()))));
   self:get_rootElement():addChild(clickerCounter.rootElement);
 end
 
