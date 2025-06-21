@@ -21,7 +21,7 @@
 [ext_resource type="Texture2D" uid="uid://d2qlqkqsuico2" path="res://addons/lite/windowIcons/close20dark.png" id="16_il6h1"]
 [ext_resource type="Texture2D" uid="uid://dafpvty7c2x6q" path="res://addons/lite/dark/banner.png" id="18_c2xtr"]
 [ext_resource type="FontFile" uid="uid://wgmjhpg8t35s" path="res://addons/lite/fonts/Oxygen-Regular.ttf" id="21_unv6f"]
-[ext_resource type="SystemFont" uid="uid://bm2qptywwnt6s" path="res://addons/lite/fonts/system.tres" id="22_c4270"]
+[ext_resource type="SystemFont" uid="uid://dca7seoyu4mff" path="res://addons/lite/fonts/sans_serif.tres" id="22_c4270"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ufuef"]
 texture = ExtResource("1_ove3i")

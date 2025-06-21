@@ -39,7 +39,7 @@
 [ext_resource type="FontFile" uid="uid://8mh3yfoq37h3" path="res://addons/lite/fonts/Oxygen-Bold.ttf" id="30_njkil"]
 [ext_resource type="StyleBox" uid="uid://djrog4w1wovc5" path="res://addons/lite/topbar.tres" id="34_gtgn1"]
 [ext_resource type="FontFile" uid="uid://wgmjhpg8t35s" path="res://addons/lite/fonts/Oxygen-Regular.ttf" id="36_qe2d6"]
-[ext_resource type="SystemFont" uid="uid://bm2qptywwnt6s" path="res://addons/lite/fonts/system.tres" id="40_akx1n"]
+[ext_resource type="SystemFont" uid="uid://dca7seoyu4mff" path="res://addons/lite/fonts/sans_serif.tres" id="40_akx1n"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ufuef"]
 texture = ExtResource("3")
