@@ -113,6 +113,7 @@ void App::initState(bool sandboxed) {
         lua_setfield(L, -2, "mime.core");
     
         lua_pop(L, 2);
+        //
 #endif
     } 
 
