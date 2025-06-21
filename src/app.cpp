@@ -8,7 +8,10 @@
 #include <godot_cpp/classes/engine.hpp>
 #include <godot_cpp/classes/os.hpp>
 #include <godot_cpp/classes/json.hpp>
+#include <godot_cpp/classes/os.hpp>
+#ifdef USE_PORTABLE_FILE_DIALOGS
 #include "portable-file-dialogs.h"
+#endif
 
 #include "core/element.h"
 #include "core/scene_system.h"
@@ -218,9 +221,15 @@ void App::loadAndExecuteSbx(const String &path) {
     if ( !result.valid() ) {
         sol::error err = result;
         UtilityFunctions::print( String( "Error: " ) + err.what() );
+#ifdef USE_PORTABLE_FILE_DIALOGS
         auto msgBox = pfd::message(
             "Error", err.what(), pfd::choice::ok, pfd::icon::error
         );
+#else
+        OS::get_singleton()->alert(
+            "Error", err.what(), "OK"
+        );
+#endif
         msgBox.result();
     } else {
         //UtilityFunctions::print("Script executed successfully");
@@ -241,9 +250,15 @@ void App::start( const String &path) {
     if ( !result.valid() ) {
         sol::error err = result;
         UtilityFunctions::print( String( "Error: " ) + err.what() );
+#ifdef USE_PORTABLE_FILE_DIALOGS
         auto msgBox = pfd::message(
             "Error", err.what(), pfd::choice::ok, pfd::icon::error
         );
+#else
+        OS::get_singleton()->alert(
+            "Error", err.what(), "OK"
+        );
+#endif
         msgBox.result();
     } else {
         //UtilityFunctions::print("Script executed successfully");
