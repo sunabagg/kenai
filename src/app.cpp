@@ -92,6 +92,11 @@ void App::initState(bool sandboxed) {
         luaopen_bit(L);
 #endif
     
+    if (!sandboxed) {
+#ifdef USE_LUASOCKET
+        luaopen_socket_core(L);
+#endif
+    } 
 
     global_state["print"] = [this]( sol::variadic_args args ) {
         String msg;
