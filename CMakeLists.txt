@@ -427,6 +427,14 @@ endif()
 
 set( LUA_USE_DLOPEN OFF )
 
+if (NOT EMSCRIPTEN)
+    add_subdirectory( extern/luasocket )
+    target_compile_definitions( ${PROJECT_NAME}
+        PRIVATE
+            USE_LUASOCKET
+    )
+endif()
+
 # Link the libraries
 if (USE_LUAJIT)
     #target_link_libraries( hxsimdjson
@@ -439,21 +447,40 @@ if (USE_LUAJIT)
             godot-cpp
             ${LUAJIT_STATIC_LIBRARIES}
             sol2
+            luasocket
             #hxsimdjson
             #Luau.Compiler Luau.VM
     )
 else()
+    if (EMSCRIPTEN)
+        target_link_libraries(${PROJECT_NAME}
+            PRIVATE
+                godot-cpp
+                liblua_static
+                sol2
+                #hxsimdjson
+                #Luau.Compiler Luau.VM
+        )
+    else()
+        #target_link_libraries( hxsimdjson
+        #    PRIVATE
+        #        lua_static
+        #        Threads::Threads
+        #)
+        target_link_libraries(${PROJECT_NAME}
+            PRIVATE
+                godot-cpp
+                liblua_static
+                sol2
+                luasocket
+                #hxsimdjson
+                #Luau.Compiler Luau.VM
+        )
+    endif()
     #target_link_libraries( hxsimdjson
     #    PRIVATE
     #        liblua_static
     #        Threads::Threads
     #)
-    target_link_libraries(${PROJECT_NAME}
-        PRIVATE
-            godot-cpp
-            liblua_static
-            sol2
-            #hxsimdjson
-            #Luau.Compiler Luau.VM
-    )
+    
 endif()
