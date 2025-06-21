@@ -475,42 +475,43 @@ namespace sunaba::ui {
             "getLastFullVisibleLineWrapIndex", &TextEdit::getLastFullVisibleLineWrapIndex,
             "getLastUnhiddenLine", &TextEdit::getLastUnhiddenLine,
             //"getLine", &TextEdit::getLine,
-            "getLineBackgroundColor", &TextEdit::getLineBackgroundColor,
-            "getLineColumnAtPos", &TextEdit::getLineColumnAtPos,
-            "getLineCount", &TextEdit::getLineCount,
-            "getLineGutterIcon", &TextEdit::getLineGutterIcon,
-            "getLineGutterItemColor", &TextEdit::getLineGutterItemColor,
-            "getLineGutterMetadata", &TextEdit::getLineGutterMetadata,
-            "getLineGutterText", &TextEdit::getLineGutterText,
-            "getLineHeight", &TextEdit::getLineHeight,
-            "getLineRangesFromCarets", &TextEdit::getLineRangesFromCarets,
-            "getLineWidth", &TextEdit::getLineWidth,
-            "getLineWithIme", &TextEdit::getLineWithIme,
-            "getLineWrapCount", &TextEdit::getLineWrapCount,
-            "getLineWrapIndexAtColumn", &TextEdit::getLineWrapIndexAtColumn,
-            "getLineWrappedText", &TextEdit::getLineWrappedText,
-            "getLocalMousePos", &TextEdit::getLocalMousePos,
-            "getMenu", &TextEdit::getMenu,
-            "getMinimapLineAtPos", &TextEdit::getMinimapLineAtPos,
-            "getMinimapVisibleLines", &TextEdit::getMinimapVisibleLines,
-            "getNextVisibleLineIndexOffsetFrom", &TextEdit::getNextVisibleLineIndexOffsetFrom,
-            "getNextVisibleLineOffsetFrom", &TextEdit::getNextVisibleLineOffsetFrom,
-            "getPosAtLineColumn", &TextEdit::getPosAtLineColumn,
-            "getRectAtLineColumn", &TextEdit::getRectAtLineColumn,
-            "getSavedVersion", &TextEdit::getSavedVersion,
-            "getScrollPosForLine", &TextEdit::getScrollPosForLine,
-            "getSelectedText", &TextEdit::getSelectedText,
-            "getSelectionAtLineColumn", &TextEdit::getSelectionAtLineColumn,
-            "getSelectionColumn", &TextEdit::getSelectionColumn,
-            "getSelectionFromColumn", &TextEdit::getSelectionFromColumn,
-            "getSelectionFromLine", &TextEdit::getSelectionFromLine,
-            "getSelectionLine", &TextEdit::getSelectionLine,
+            
             "cast", [](Element* e) {
                 TextEditNode* text_edit = Object::cast_to<TextEditNode>(e->getNode());
                 return new TextEdit(text_edit);
             }
         );
 
+        ut["getLineBackgroundColor"] = &TextEdit::getLineBackgroundColor;
+        ut["getLineColumnAtPos"] = &TextEdit::getLineColumnAtPos;
+        ut["getLineCount"] = &TextEdit::getLineCount;
+        ut["getLineGutterIcon"] = &TextEdit::getLineGutterIcon;
+        ut["getLineGutterItemColor"] = &TextEdit::getLineGutterItemColor;
+        ut["getLineGutterMetadata"] = &TextEdit::getLineGutterMetadata;
+        ut["getLineGutterText"] = &TextEdit::getLineGutterText;
+        ut["getLineHeight"] = &TextEdit::getLineHeight;
+        ut["getLineRangesFromCarets"] = &TextEdit::getLineRangesFromCarets;
+        ut["getLineWidth"] = &TextEdit::getLineWidth;
+        ut["getLineWithIme"] = &TextEdit::getLineWithIme;
+        ut["getLineWrapCount"] = &TextEdit::getLineWrapCount;
+        ut["getLineWrapIndexAtColumn"] = &TextEdit::getLineWrapIndexAtColumn;
+        ut["getLineWrappedText"] = &TextEdit::getLineWrappedText;
+        ut["getLocalMousePos"] = &TextEdit::getLocalMousePos;
+        ut["getMenu"] = &TextEdit::getMenu;
+        ut["getMinimapLineAtPos"] = &TextEdit::getMinimapLineAtPos;
+        ut["getMinimapVisibleLines"] = &TextEdit::getMinimapVisibleLines;
+        ut["getNextVisibleLineIndexOffsetFrom"] = &TextEdit::getNextVisibleLineIndexOffsetFrom;
+        ut["getNextVisibleLineOffsetFrom"] = &TextEdit::getNextVisibleLineOffsetFrom;
+        ut["getPosAtLineColumn"] = &TextEdit::getPosAtLineColumn;
+        ut["getRectAtLineColumn"] = &TextEdit::getRectAtLineColumn;
+        ut["getSavedVersion"] = &TextEdit::getSavedVersion;
+        ut["getScrollPosForLine"] = &TextEdit::getScrollPosForLine;
+        ut["getSelectedText"] = &TextEdit::getSelectedText;
+        ut["getSelectionAtLineColumn"] = &TextEdit::getSelectionAtLineColumn;
+        ut["getSelectionColumn"] = &TextEdit::getSelectionColumn;
+        ut["getSelectionFromColumn"] = &TextEdit::getSelectionFromColumn;
+        ut["getSelectionFromLine"] = &TextEdit::getSelectionFromLine;
+        ut["getSelectionLine"] = &TextEdit::getSelectionLine;
         ut["getSelectionMode"] = &TextEdit::getSelectionMode;
         ut["getSelectionOriginColumn"] = &TextEdit::getSelectionOriginColumn;
         ut["getSelectionOriginLine"] = &TextEdit::getSelectionOriginLine;

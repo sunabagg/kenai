@@ -8,7 +8,11 @@ class Main extends App {
     }
 
     override function init() {
-        var clickerCounter = new ClickerCounter();
-        rootElement.addChild(clickerCounter.rootElement);
+        try {
+            var clickerCounter = new ClickerCounter();
+            rootElement.addChild(clickerCounter.rootElement);
+        } catch (e:Dynamic) {
+            trace("Error initializing ClickerCounter: " + e);
+        }
     }
 }

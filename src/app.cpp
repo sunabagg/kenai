@@ -165,6 +165,7 @@ void App::initState(bool sandboxed) {
     global_state["rootElement"] = rootElement;
     ioManager = new IoManager();
     IoIndex::bindIoManger(global_state, ioManager);
+    global_state.set("ioManager", ioManager);
 
     ////sunaba::core::bind_all_godot_classes( global_state );
     //sunaba::core::initialize_lua( global_state );
@@ -233,7 +234,6 @@ void App::start( const String &path) {
     auto fsio = FileSystemIo::create(path.utf8().get_data(), "app://");
     //UtilityFunctions::print(fsio->basePath.c_str());
     ioManager->add(fsio);
-    global_state.set("ioManager", ioManager);
 
     std::string script = ioManager->loadText("app://main.lua");
     sol::protected_function_result result = global_state.safe_script(script, sol::script_pass_on_error);
