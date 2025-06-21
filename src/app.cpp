@@ -38,6 +38,9 @@
 #include <array>
 #include <memory>
 #include <stdexcept>
+#ifdef USE_LUASOCKET
+#include <luasocket.h>
+#endif
 
 using namespace sunaba;
 using namespace sunaba::core;
