@@ -33,6 +33,7 @@ class Widget {
     public function new() {
         io = untyped __lua__("_G.ioManager");
         rootElement = new Control();
+        rootElement.theme = Theme.getDefaultTheme();
 
         init();
     }
