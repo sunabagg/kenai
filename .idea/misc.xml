@@ -4,5 +4,7 @@
     <option name="pythonIntegrationState" value="YES" />
   </component>
   <component name="CMakeWorkspace" PROJECT_DIR="$PROJECT_DIR$" />
-  <component name="ProjectRootManager" version="2" project-jdk-name="Haxe 4.3.6" project-jdk-type="Haxe toolkit" />
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_24" project-jdk-name="Android API 35, extension level 13 Platform" project-jdk-type="Android SDK">
+    <output url="file:///sunaba-android" />
+  </component>
 </project>
