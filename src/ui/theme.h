@@ -3,6 +3,8 @@
 
 #include <godot_cpp/classes/theme.hpp>
 #include <godot_cpp/variant/variant.hpp>
+#include <godot_cpp/classes/resource_loader.hpp>
+#include <godot_cpp/classes/display_server.hpp>
 #include <sol/sol.hpp>
 
 #define GodotTheme godot::Theme
@@ -33,6 +35,32 @@ namespace sunaba::ui {
 
         GodotTheme* getTheme() {
             return theme;
+        }
+
+        static Theme* getLightTheme() {
+            Ref<Resource> res = ResourceLoader::get_singleton()->load("res://addons/lite/light.tres");
+            Ref<GodotTheme> lightTheme = res;
+            if (lightTheme.is_valid()) {
+                return new Theme(lightTheme.ptr());
+            }
+            return nullptr;
+        }
+
+        static Theme* getDarkTheme() {
+            Ref<Resource> res = ResourceLoader::get_singleton()->load("res://addons/lite/dark.tres");
+            Ref<GodotTheme> darkTheme = res;
+            if (darkTheme.is_valid()) {
+                return new Theme(darkTheme.ptr());
+            }
+            return nullptr;
+        }
+
+        static Theme* getDefaultTheme() {
+            if (DisplayServer::get_singleton()->is_dark_mode()) {
+                return getDarkTheme();
+            } else {
+                return getLightTheme();
+            }
         }
 
         void setTheme(GodotTheme* t) {
