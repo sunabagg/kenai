@@ -81,8 +81,6 @@ jobs:
           cmake
           -B GDExtension-build
           -G "Ninja"
-          -D VCPKG_ROOT="${{ github.workspace }}/vcpkg"
-          -DCMAKE_TOOLCHAIN_FILE=${{ github.workspace }}/vcpkg/scripts/buildsystems/vcpkg.cmake
           -DCMAKE_BUILD_TYPE=${{ matrix.build_type }}
           --install-prefix ${{ github.workspace }}/install-${{ matrix.build_type }}
           .
