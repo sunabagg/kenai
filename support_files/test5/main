@@ -1555,7 +1555,7 @@ Main.prototype.init = function(self)
   elseif not _hx_status then 
     local _g = _hx_result;
     local e = __haxe_Exception.caught(_g):unwrap();
-    __haxe_Log.trace(Std.string("Error initializing ClickerCounter: ") .. Std.string(Std.string(e)), _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="G:\\sunaba\\support_files\\test5\\src\\Main.hx",lineNumber=15,className="Main",methodName="init"}));
+    __haxe_Log.trace(Std.string("Error initializing ClickerCounter: ") .. Std.string(Std.string(e)), _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="/Users/lucasabbas/sunaba/support_files/test5/src/Main.hx",lineNumber=15,className="Main",methodName="init"}));
   elseif _hx_result ~= _hx_pcall_default then
     return _hx_result
   end;
