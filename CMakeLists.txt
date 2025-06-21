@@ -429,6 +429,12 @@ set( LUA_USE_DLOPEN OFF )
 
 if (NOT EMSCRIPTEN)
     add_subdirectory( extern/luasocket )
+    target_include_directories( ${PROJECT_NAME}
+        PRIVATE
+            extern/luasocket/src
+            extern/luasocket/src/socket
+            extern/luasocket/src/mime
+    )
     target_compile_definitions( ${PROJECT_NAME}
         PRIVATE
             USE_LUASOCKET
