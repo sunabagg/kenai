@@ -612,6 +612,7 @@ __sunaba_ui_Widget.super = function(self)
   self.keepChildren = false;
   self.io = _G.ioManager;
   self.rootElement = Control.new();
+  self.rootElement.theme = Theme.getDefaultTheme();
   self:init();
 end
 __sunaba_ui_Widget.__name__ = "sunaba.ui.Widget"

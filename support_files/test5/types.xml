@@ -374,41 +374,41 @@
 			<c path="Array"><c path="sunaba.core.Element"/></c>
 			<meta><m n=":value"><e>[]</e></m></meta>
 		</elementdb>
-		<init public="1" set="method" line="40"><f a=""><x path="Void"/></f></init>
-		<load public="1" set="method" line="44"><f a="path">
+		<init public="1" set="method" line="41"><f a=""><x path="Void"/></f></init>
+		<load public="1" set="method" line="45"><f a="path">
 	<c path="String"/>
 	<x path="Void"/>
 </f></load>
-		<parseMarkup public="1" set="method" line="61"><f a="markup">
+		<parseMarkup public="1" set="method" line="62"><f a="markup">
 	<c path="String"/>
 	<x path="Void"/>
 </f></parseMarkup>
-		<instantiate set="method" line="66"><f a="xml">
+		<instantiate set="method" line="67"><f a="xml">
 	<c path="Xml"/>
 	<x path="Void"/>
 </f></instantiate>
-		<constructNodes set="method" line="148"><f a="nodes">
+		<constructNodes set="method" line="149"><f a="nodes">
 	<t path="Iterator"><c path="Xml"/></t>
 	<x path="Void"/>
 </f></constructNodes>
-		<construct set="method" line="164">
+		<construct set="method" line="165">
 			<f a="xml">
 				<c path="Xml"/>
 				<c path="sunaba.core.Element"/>
 			</f>
 			<meta><m n=":has_untyped"/></meta>
 		</construct>
-		<setObjectValues set="method" line="191"><f a="element:xml">
+		<setObjectValues set="method" line="192"><f a="element:xml">
 	<c path="sunaba.core.Element"/>
 	<c path="Xml"/>
 	<x path="Void"/>
 </f></setObjectValues>
-		<constructChildren set="method" line="431"><f a="element:xml">
+		<constructChildren set="method" line="432"><f a="element:xml">
 	<c path="sunaba.core.Element"/>
 	<c path="Xml"/>
 	<x path="Void"/>
 </f></constructChildren>
-		<hasField get="inline" set="null" line="444">
+		<hasField get="inline" set="null" line="445">
 			<f a="object:field">
 				<x path="Any"/>
 				<c path="String"/>
@@ -416,7 +416,7 @@
 			</f>
 			<meta><m n=":has_untyped"/></meta>
 		</hasField>
-		<field set="method" line="449">
+		<field set="method" line="450">
 			<f a="obj:field">
 				<x path="Any"/>
 				<c path="String"/>
@@ -424,7 +424,7 @@
 			</f>
 			<meta><m n=":has_untyped"/></meta>
 		</field>
-		<setProperty get="inline" set="null" line="456">
+		<setProperty get="inline" set="null" line="457">
 			<f a="obj:field:value">
 				<x path="Any"/>
 				<c path="String"/>
@@ -433,18 +433,18 @@
 			</f>
 			<meta><m n=":has_untyped"/></meta>
 		</setProperty>
-		<isAnElementClass set="method" line="465">
+		<isAnElementClass set="method" line="466">
 			<f a="classInfo">
 				<x path="Class"><d/></x>
 				<x path="Bool"/>
 			</f>
 			<meta><m n=":has_untyped"/></meta>
 		</isAnElementClass>
-		<camelToPascal set="method" line="473"><f a="str">
+		<camelToPascal set="method" line="474"><f a="str">
 	<c path="String"/>
 	<c path="String"/>
 </f></camelToPascal>
-		<camelToSnake set="method" line="478"><f a="input">
+		<camelToSnake set="method" line="479"><f a="input">
 	<c path="String"/>
 	<c path="String"/>
 </f></camelToSnake>
@@ -12904,6 +12904,7 @@
 </fromResource></class>
 	<class path="sunaba.ui.Theme" params="" file="G:\sunaba\sunaba/ui/Theme.hx" extern="1">
 		<extends path="sunaba.core.Resource"/>
+		<getDefaultTheme public="1" set="method" static="1"><f a=""><c path="sunaba.ui.Theme"/></f></getDefaultTheme>
 		<castFrom public="1" set="method" static="1">
 			<f a="res">
 				<d/>
@@ -13270,7 +13271,7 @@
 		</from>
 		<this><c path="sunaba.ui.Theme"/></this>
 		<to><icast><c path="sunaba.ui.Theme"/></icast></to>
-		<impl><class path="sunaba.ui._Theme.ThemeAbstract_Impl_" params="" file="G:\sunaba\sunaba/ui/Theme.hx" private="1" module="sunaba.ui.Theme" final="1"><fromResource public="1" set="method" line="85" static="1">
+		<impl><class path="sunaba.ui._Theme.ThemeAbstract_Impl_" params="" file="G:\sunaba\sunaba/ui/Theme.hx" private="1" module="sunaba.ui.Theme" final="1"><fromResource public="1" set="method" line="86" static="1">
 	<f a="resource">
 		<c path="sunaba.core.Resource"/>
 		<x path="sunaba.ui.ThemeAbstract"/>
@@ -13278,7 +13279,7 @@
 	<meta><m n=":from"/></meta>
 </fromResource></class></impl>
 	</abstract>
-	<class path="sunaba.ui._Theme.ThemeAbstract_Impl_" params="" file="G:\sunaba\sunaba/ui/Theme.hx" private="1" module="sunaba.ui.Theme" final="1"><fromResource public="1" set="method" line="85" static="1">
+	<class path="sunaba.ui._Theme.ThemeAbstract_Impl_" params="" file="G:\sunaba\sunaba/ui/Theme.hx" private="1" module="sunaba.ui.Theme" final="1"><fromResource public="1" set="method" line="86" static="1">
 	<f a="resource">
 		<c path="sunaba.core.Resource"/>
 		<x path="sunaba.ui.ThemeAbstract"/>
