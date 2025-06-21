@@ -71,6 +71,7 @@ void sunaba::ui::bindTheme(sol::state_view& lua) {
         "setStyleBox", &Theme::setStyleBox,
         "setThemeItem", &Theme::setThemeItem,
         "setTypeVariation", &Theme::setTypeVariation,
+        "getDefaultTheme", &Theme::getDefaultTheme,
         "cast", [](sunaba::core::Resource* res) {
             return new Theme(Object::cast_to<GodotTheme>(res->getResource()));
         }
