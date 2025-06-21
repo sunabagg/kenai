@@ -201,6 +201,7 @@ __haxe_IMap = _hx_e()
 __haxe_Exception = _hx_e()
 __haxe__Int32_Int32_Impl_ = _hx_e()
 __haxe__Int64____Int64 = _hx_e()
+__haxe_Log = _hx_e()
 __haxe_NativeStackTrace = _hx_e()
 __haxe_ValueException = _hx_e()
 __haxe_ds_StringMap = _hx_e()
@@ -1544,8 +1545,20 @@ Main.main = function()
 end
 Main.prototype = _hx_e();
 Main.prototype.init = function(self) 
-  local clickerCounter = ClickerCounter.new();
-  self:get_rootElement():addChild(clickerCounter.rootElement);
+  local _hx_status, _hx_result = pcall(function() 
+  
+      local clickerCounter = ClickerCounter.new();
+      self:get_rootElement():addChild(clickerCounter.rootElement);
+    return _hx_pcall_default
+  end)
+  if not _hx_status and _hx_result == "_hx_pcall_break" then
+  elseif not _hx_status then 
+    local _g = _hx_result;
+    local e = __haxe_Exception.caught(_g):unwrap();
+    __haxe_Log.trace(Std.string("Error initializing ClickerCounter: ") .. Std.string(Std.string(e)), _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="G:\\sunaba\\support_files\\test5\\src\\Main.hx",lineNumber=15,className="Main",methodName="init"}));
+  elseif _hx_result ~= _hx_pcall_default then
+    return _hx_result
+  end;
 end
 
 Main.prototype.__class__ =  Main
@@ -2338,6 +2351,31 @@ __haxe__Int64____Int64.__name__ = "haxe._Int64.___Int64"
 __haxe__Int64____Int64.prototype = _hx_e();
 
 __haxe__Int64____Int64.prototype.__class__ =  __haxe__Int64____Int64
+
+__haxe_Log.new = {}
+__haxe_Log.__name__ = "haxe.Log"
+__haxe_Log.formatOutput = function(v,infos) 
+  local str = Std.string(v);
+  if (infos == nil) then 
+    do return str end;
+  end;
+  local pstr = Std.string(Std.string(infos.fileName) .. Std.string(":")) .. Std.string(infos.lineNumber);
+  if (infos.customParams ~= nil) then 
+    local _g = 0;
+    local _g1 = infos.customParams;
+    while (_g < _g1.length) do _hx_do_first_1 = false;
+      
+      local v = _g1[_g];
+      _g = _g + 1;
+      str = Std.string(str) .. Std.string((Std.string(", ") .. Std.string(Std.string(v))));
+    end;
+  end;
+  do return Std.string(Std.string(pstr) .. Std.string(": ")) .. Std.string(str) end;
+end
+__haxe_Log.trace = function(v,infos) 
+  local str = __haxe_Log.formatOutput(v, infos);
+  _hx_print(str);
+end
 
 __haxe_NativeStackTrace.new = {}
 __haxe_NativeStackTrace.__name__ = "haxe.NativeStackTrace"
@@ -4220,6 +4258,8 @@ local _hx_static_init = function()
   
   
 end
+
+_hx_print = print or (function() end)
 
 _hx_table = {}
 _hx_table.pack = _G.table.pack or function(...)
