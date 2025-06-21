@@ -361,7 +361,7 @@ else() #
     include_directories ( ${CMAKE_SOURCE_DIR}/extern/lua-5.1.5/src )
 endif()
 
-if (NOT EMSCRIPTEN OR NOT ANDROID)
+if (NOT EMSCRIPTEN AND NOT ANDROID)
     target_include_directories(${PROJECT_NAME} PRIVATE extern/portable-file-dialogs )
     add_compile_definitions( USE_PORTABLE_FILE_DIALOGS )
 endif()
