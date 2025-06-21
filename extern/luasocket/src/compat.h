@@ -14,8 +14,12 @@ void *luasocket_testudata ( lua_State *L, int arg, const char *tname);
 #pragma GCC visibility pop
 #endif
 
+#ifndef luaL_setfuncs
 #define luaL_setfuncs luasocket_setfuncs
+#endif
+#ifndef luaL_testudata
 #define luaL_testudata luasocket_testudata
+#endif
 
 #endif
 

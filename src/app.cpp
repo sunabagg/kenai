@@ -32,15 +32,17 @@
 //#include <hxluasimdjson.h>
 //#include <simdjson.h>
 #endif
+#ifdef USE_LUASOCKET
+#include <luasocket.h>
+// Declare the symbol reference function
+extern void sunaba_ensure_luasocket_symbols();
+#endif
 #include <sol/sol.hpp>
 #include <cstdlib>
 #include <string>
 #include <array>
 #include <memory>
 #include <stdexcept>
-#ifdef USE_LUASOCKET
-#include <luasocket.h>
-#endif
 
 using namespace sunaba;
 using namespace sunaba::core;
@@ -94,6 +96,8 @@ void App::initState(bool sandboxed) {
     
     if (!sandboxed) {
 #ifdef USE_LUASOCKET
+        // Ensure luasocket symbols are linked
+        sunaba_ensure_luasocket_symbols();
         luaopen_socket_core(L);
 #endif
     } 

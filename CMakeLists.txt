@@ -67,7 +67,8 @@ add_library( ${PROJECT_NAME} SHARED
         src/core/scene_system.h
         src/core/lua_bind.h
         src/core/lua_bind.cpp
-        src/core/lua_function_wrapper.h)
+        src/core/lua_function_wrapper.h
+        src/core/luasocket_symbols.cpp)
 
 target_compile_features( ${PROJECT_NAME}
     PRIVATE
@@ -443,20 +444,20 @@ endif()
 
 # Link the libraries
 if (USE_LUAJIT)
-    #target_link_libraries( hxsimdjson
-    #    PRIVATE
-    #        ${LUAJIT_LIBRARIES}
-    #        Threads::Threads
-    #)
     target_link_libraries(${PROJECT_NAME}
         PRIVATE
             godot-cpp
             ${LUAJIT_STATIC_LIBRARIES}
             sol2
-            luasocket
-            #hxsimdjson
-            #Luau.Compiler Luau.VM
     )
+    
+    # Link luasocket
+    if (NOT EMSCRIPTEN)
+        target_link_libraries(${PROJECT_NAME}
+            PRIVATE
+                luasocket::static
+        )
+    endif()
 else()
     if (EMSCRIPTEN)
         target_link_libraries(${PROJECT_NAME}
@@ -464,29 +465,14 @@ else()
                 godot-cpp
                 liblua_static
                 sol2
-                #hxsimdjson
-                #Luau.Compiler Luau.VM
         )
     else()
-        #target_link_libraries( hxsimdjson
-        #    PRIVATE
-        #        lua_static
-        #        Threads::Threads
-        #)
         target_link_libraries(${PROJECT_NAME}
             PRIVATE
                 godot-cpp
                 liblua_static
                 sol2
-                luasocket
-                #hxsimdjson
-                #Luau.Compiler Luau.VM
+                luasocket::static
         )
     endif()
-    #target_link_libraries( hxsimdjson
-    #    PRIVATE
-    #        liblua_static
-    #        Threads::Threads
-    #)
-    
 endif()

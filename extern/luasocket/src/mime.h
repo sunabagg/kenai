@@ -10,6 +10,10 @@
 \*=========================================================================*/
 #include "luasocket.h"
 
+#ifdef __cplusplus
+extern "C" {
+#endif
+
 /*-------------------------------------------------------------------------*\
 * Current MIME library version
 \*-------------------------------------------------------------------------*/
@@ -18,5 +22,9 @@
 #define MIME_AUTHORS    "Diego Nehab"
 
 LUASOCKET_API int luaopen_mime_core(lua_State *L);
+
+#ifdef __cplusplus
+}
+#endif
 
 #endif /* MIME_H */

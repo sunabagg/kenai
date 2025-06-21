@@ -13,6 +13,10 @@
 #include "timeout.h"
 #include "socket.h"
 
+#ifdef __cplusplus
+extern "C" {
+#endif
+
 typedef struct t_unix_ {
     t_socket sock;
     t_io io;
@@ -22,5 +26,9 @@ typedef struct t_unix_ {
 typedef t_unix *p_unix;
 
 LUASOCKET_API int luaopen_socket_unix(lua_State *L);
+
+#ifdef __cplusplus
+}
+#endif
 
 #endif /* UNIX_H */

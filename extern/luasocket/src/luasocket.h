@@ -28,9 +28,17 @@
 #include "lauxlib.h"
 #include "compat.h"
 
+#ifdef __cplusplus
+extern "C" {
+#endif
+
 /*-------------------------------------------------------------------------*\
 * Initializes the library.
 \*-------------------------------------------------------------------------*/
 LUASOCKET_API int luaopen_socket_core(lua_State *L);
+
+#ifdef __cplusplus
+}
+#endif
 
 #endif /* LUASOCKET_H */
