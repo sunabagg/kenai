@@ -36,6 +36,11 @@
 #include <luasocket.h>
 // Declare the symbol reference function
 extern void sunaba_ensure_luasocket_symbols();
+
+// Forward declaration for mime.core Lua module initializer
+extern "C" {
+    int luaopen_mime_core(lua_State *L);
+}
 #endif
 #include <sol/sol.hpp>
 #include <cstdlib>
@@ -98,7 +103,16 @@ void App::initState(bool sandboxed) {
 #ifdef USE_LUASOCKET
         // Ensure luasocket symbols are linked
         sunaba_ensure_luasocket_symbols();
-        luaopen_socket_core(L);
+        lua_getglobal(L, "package");
+        lua_getfield(L, -1, "preload");
+    
+        lua_pushcfunction(L, luaopen_socket_core);
+        lua_setfield(L, -2, "socket.core");
+    
+        lua_pushcfunction(L, luaopen_mime_core);
+        lua_setfield(L, -2, "mime.core");
+    
+        lua_pop(L, 2);
 #endif
     } 
 
