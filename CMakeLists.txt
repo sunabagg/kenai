@@ -361,7 +361,10 @@ else() #
     include_directories ( ${CMAKE_SOURCE_DIR}/extern/lua-5.1.5/src )
 endif()
 
-target_include_directories(${PROJECT_NAME} PRIVATE extern/portable-file-dialogs )
+if (NOT EMSCRIPTEN OR NOT ANDROID)
+    target_include_directories(${PROJECT_NAME} PRIVATE extern/portable-file-dialogs )
+    add_compile_definitions( USE_PORTABLE_FILE_DIALOGS )
+endif()
 
 # Find the sol2 package
 add_subdirectory( extern/sol2 )
