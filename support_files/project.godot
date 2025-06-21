@@ -18,7 +18,8 @@ boot_splash/fullsize=false
 boot_splash/image="uid://tqi54djfy3ia"
 config/icon="uid://bcnaj1jhop8y"
 config/macos_native_icon="res://Sunaba-macOS.icns"
-config/icon.macos="uid://8bj12bgeryg6"
+config/windows_native_icon="res://sunaba.ico"
+config/icon.macos="uid://bipasi4ii6raj"
 
 [display]
 
@@ -31,7 +32,6 @@ project/assembly_name="Sunaba"
 [gui]
 
 theme/custom="uid://l77ckodjfb54"
-theme/custom_font="uid://bm2qptywwnt6s"
 
 [physics]
 
