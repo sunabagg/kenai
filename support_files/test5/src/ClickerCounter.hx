@@ -1,4 +1,4 @@
-package support_files.test5.src;
+package;
 
 import sunaba.ui.Button;
 import sunaba.ui.Button.ButtonAbstract;

@@ -1,4 +1,4 @@
-package support_files.test5.src;
+package;
 
 import sunaba.App;
 

@@ -4,6 +4,7 @@
 #include "system_io_interface.h"
 #include "file_system_io.h"
 #include "io_manager.h"
+#include "zip_io.h"
 
 
 void sunaba::core::io::bindIoClasses(sol::state& lua) {
@@ -11,4 +12,5 @@ void sunaba::core::io::bindIoClasses(sol::state& lua) {
     bindSystemIoInterface(lua);
     bindFileSystemIo(lua);
     bindIoManager(lua);
+    bindZipIo(lua);
 }

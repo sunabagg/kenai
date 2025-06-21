@@ -4,3 +4,4 @@
 -D source-map
 --lua main.lua
 --library sunaba-core
+--xml types.xml

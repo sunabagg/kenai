@@ -7,6 +7,7 @@
 #include <godot_cpp/variant/utility_functions.hpp>
 #include <godot_cpp/classes/engine.hpp>
 #include <godot_cpp/classes/os.hpp>
+#include <godot_cpp/classes/json.hpp>
 #include "portable-file-dialogs.h"
 
 #include "core/element.h"
@@ -14,6 +15,7 @@
 #include "core/scene_node.h"
 #include "core/bind_core_classes.h"
 #include "core/io/file_system_io.h"
+#include "core/io/zip_io.h"
 #include "core/resource.h"
 #include "core/io/io_index.h"
 #include "input/bind_input_classes.h"
@@ -42,6 +44,8 @@ using namespace godot;
 
 void App::_bind_methods() {
     ClassDB::bind_method(D_METHOD("start", "path"), &App::start);
+    ClassDB::bind_method(D_METHOD("init", "sandboxed"), &App::init);
+    ClassDB::bind_method(D_METHOD("load_and_execute_sbx", "path"), &App::loadAndExecuteSbx);
 }
 
 void free_global_state(App* app) {
@@ -63,14 +67,18 @@ void App::_ready() {
     }
 }
 
-void App::start( const String &path) {
-    if (path == "") {
-        return;
+void App::init(bool sandboxed) {
+    if (!sandboxed) {
+        global_state.open_libraries( sol::lib::base, sol::lib::bit32, sol::lib::coroutine,
+            sol::lib::count, sol::lib::math, sol::lib::string,
+            sol::lib::table, sol::lib::utf8, sol::lib::package, 
+            sol::lib::os, sol::lib::io, sol::lib::debug );
     }
-    global_state.open_libraries( sol::lib::base, sol::lib::bit32, sol::lib::coroutine,
-        sol::lib::count, sol::lib::math, sol::lib::string,
-        sol::lib::table, sol::lib::utf8, sol::lib::package, 
-        sol::lib::os, sol::lib::io, sol::lib::debug );
+    else {
+        global_state.open_libraries( sol::lib::base, sol::lib::bit32, sol::lib::coroutine,
+            sol::lib::count, sol::lib::math, sol::lib::string,
+            sol::lib::table, sol::lib::utf8, sol::lib::package);
+    }
 
         lua_State* L = global_state.lua_state();
 // hack fix for PUC-Rio Lua
@@ -155,16 +163,8 @@ void App::start( const String &path) {
     auto* rootElement = new sunaba::core::Element(this);
     rootElement->isRootElement = true;
     global_state["rootElement"] = rootElement;
-#ifdef _WIN32
-    // Register hx-lua-simdjson module
-    //global_state.require("hx_lua_simdjson", luaopen_hxsimdjson, false);
-#endif
     ioManager = new IoManager();
     IoIndex::bindIoManger(global_state, ioManager);
-    auto fsio = FileSystemIo::create(path.utf8().get_data(), "app://");
-    //UtilityFunctions::print(fsio->basePath.c_str());
-    ioManager->add(fsio);
-    global_state.set("ioManager", ioManager);
 
     ////sunaba::core::bind_all_godot_classes( global_state );
     //sunaba::core::initialize_lua( global_state );
@@ -174,26 +174,61 @@ void App::start( const String &path) {
     });
 
     //sol::error *e = nullptr;
+}
+
+void App::loadAndExecuteSbx(const String &path) {
+    if (path == "") {
+        return;
+    }
+    if (!path.ends_with(".sbx")) {
+        UtilityFunctions::print("Error: path must end with .sbx");
+        return;
+    }
+    auto zipio = new ZipIo(path.utf8().get_data());
+    zipio->pathUri = "temp://";
+    ioManager->add(zipio);
+
+    auto headerJsonStr = zipio->loadText("temp://header.json");
+    auto headerJson = godot::Ref<JSON>(memnew(JSON));
+    auto parseResult = headerJson->parse_string(headerJsonStr.c_str());
+    Dictionary headerDict = parseResult;
+
+    auto type = headerDict.get("type", "executable");
+    if (type != "executable") {
+        UtilityFunctions::print("Error: type must be executable");
+        return;
+    }
+
+    auto luabinname = headerDict.get("luabin", "main.lua");
+    zipio->pathUri = String(headerDict.get("rootUrl", "app://")).utf8().get_data();
+
+    auto luabinPath = String(String(zipio->pathUri.c_str()) + String(luabinname)).utf8().get_data();
+
+    std::string script = ioManager->loadText(luabinPath);
+    sol::protected_function_result result = global_state.safe_script(script, sol::script_pass_on_error);
+    
+    if ( !result.valid() ) {
+        sol::error err = result;
+        UtilityFunctions::print( String( "Error: " ) + err.what() );
+        auto msgBox = pfd::message(
+            "Error", err.what(), pfd::choice::ok, pfd::icon::error
+        );
+        msgBox.result();
+    } else {
+        //UtilityFunctions::print("Script executed successfully");
+    }
+}
+
+void App::start( const String &path) {
+    if (path == "") {
+        return;
+    }
+    auto fsio = FileSystemIo::create(path.utf8().get_data(), "app://");
+    //UtilityFunctions::print(fsio->basePath.c_str());
+    ioManager->add(fsio);
+    global_state.set("ioManager", ioManager);
 
     std::string script = ioManager->loadText("app://main.lua");
-    //UtilityFunctions::print(script.c_str());
-    //global_state.script(script);
-    /*
-    global_state.script(extract_luarocks_lua_paths());
-    global_state.script(R"(
-        print(package.cpath)
-        --package.path = "/usr/local/lib/luarocks/rocks-5.1/?.lua;" .. package.path
-        --package.cpath = "/usr/local/lib/luarocks/rocks-5.1/?.so;" .. package.cpath
-    )");
-
-    if (OS::get_singleton()->has_feature("editor")) {
-        UtilityFunctions::print("Running in editor mode, skipping luarocks path setup.");
-        if (OS::get_singleton()->get_name() == "macOS") {
-            UtilityFunctions::print("macOS detected, setting up luarocks path.");
-            
-        }
-    }
-    */
     sol::protected_function_result result = global_state.safe_script(script, sol::script_pass_on_error);
     
     if ( !result.valid() ) {
