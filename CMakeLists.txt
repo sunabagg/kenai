@@ -79,6 +79,8 @@ target_compile_features( ${PROJECT_NAME}
 set( LIB_ARCH ${CMAKE_SYSTEM_PROCESSOR} )
 if ( APPLE )
     set( LIB_ARCH "universal" )
+elseif ( ANDROID )
+    set( LIB_ARCH ${CMAKE_ANDROID_ARCH_ABI} )
 endif()
 
 # LIB_DIR is where the actual library ends up. This is used in both the build directory and the
