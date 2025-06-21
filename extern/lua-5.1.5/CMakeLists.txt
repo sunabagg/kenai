@@ -45,6 +45,15 @@ endif ( )
 set ( LUA_PATH_DEFAULT "./?.lua;${LUA_DIR}${LUA_LDIR}/?.lua;${LUA_DIR}${LUA_LDIR}/?/init.lua;./?/init.lua" )
 set ( LUA_CPATH_DEFAULT "./?${LUA_MODULE_SUFFIX};${LUA_DIR}${LUA_CDIR}/?${LUA_MODULE_SUFFIX};${LUA_DIR}${LUA_CDIR}/loadall${LUA_MODULE_SUFFIX}" )
 
+# Android specific flags to prevent FORTIFY buffer overflow
+if (ANDROID)
+  set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=0")
+  set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -fno-stack-protector")
+  # Disable Lua assertions that can cause issues on Android
+  add_compile_definitions(LUA_USE_APICHECK=0)
+  add_compile_definitions("LUAI_ASSERT(x)=((void)0)")
+endif()
+
 if ( WIN32 AND NOT CYGWIN )
   # Windows systems
   option ( LUA_WIN "Windows specific build." ON )

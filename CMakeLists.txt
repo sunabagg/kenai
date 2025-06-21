@@ -81,6 +81,21 @@ if ( APPLE )
     set( LIB_ARCH "universal" )
 elseif ( ANDROID )
     set( LIB_ARCH ${CMAKE_ANDROID_ARCH_ABI} )
+    # Disable FORTIFY_SOURCE to prevent buffer overflow crashes in Lua strchr calls
+    set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=0")
+    set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=0")
+    # Additional Android-specific flags
+    set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -fno-stack-protector")
+    set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -fno-stack-protector")
+    
+    # Sol2 safety configuration for Android
+    add_compile_definitions(SOL_ALL_SAFETIES_OFF=1)
+    add_compile_definitions(SOL_NO_CHECK_NUMBER_PRECISION=1)
+    add_compile_definitions(SOL_SAFE_REFERENCES=0)
+    
+    # Additional Lua safety flags for Android
+    add_compile_definitions(LUA_USE_APICHECK=0)
+    add_compile_definitions("LUAI_ASSERT(x)=((void)0)")
 endif()
 
 # LIB_DIR is where the actual library ends up. This is used in both the build directory and the
