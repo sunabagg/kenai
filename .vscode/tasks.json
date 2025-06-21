@@ -20,6 +20,14 @@
             "preset": "${command:cmake.activeConfigurePresetName}",
             "problemMatcher": [],
             "detail": "CMake template configure task"
+        },
+        {
+            "type": "cmake",
+            "label": "CMake: install",
+            "command": "install",
+            "preset": "${command:cmake.activeBuildPresetName}",
+            "problemMatcher": [],
+            "detail": "CMake template install task"
         }
     ]
 }
