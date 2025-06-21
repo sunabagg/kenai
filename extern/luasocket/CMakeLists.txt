@@ -1,16 +1,49 @@
 cmake_minimum_required(VERSION 3.12)
+
+# LuaSocket CMake Build System
+# 
+# This project can be used in several ways:
+# 1. Standalone build: cmake .. && cmake --build .
+# 2. As a subdirectory: add_subdirectory(extern/luasocket) in parent CMakeLists.txt
+# 3. After installation: find_package(luasocket REQUIRED)
+#
+# When used as a subdirectory, targets are available as:
+# - luasocket::static or luasocket::shared (recommended)
+# - luasocket (alias to static by default)
+# - Individual components: luasocket_socket_core_static, luasocket_mime_core_static, etc.
+
+# Determine if this is being built as a subdirectory
+if(DEFINED PROJECT_NAME)
+    set(LUASOCKET_IS_SUBPROJECT TRUE)
+else()
+    set(LUASOCKET_IS_SUBPROJECT FALSE)
+endif()
+
 project(luasocket VERSION 3.0.0 LANGUAGES C)
 
-# Options
-option(LUASOCKET_BUILD_SHARED "Build shared library" OFF)
-option(LUASOCKET_BUILD_STATIC "Build static library" ON)
-option(LUASOCKET_BUILD_UNIX "Build Unix domain sockets support" ON)
-option(LUASOCKET_BUILD_SERIAL "Build serial support" ON)
-option(LUASOCKET_INSTALL "Install luasocket" ON)
-option(LUASOCKET_DEBUG "Enable debug mode" OFF)
+# Options - adjust defaults based on whether this is a subproject
+if(LUASOCKET_IS_SUBPROJECT)
+    option(LUASOCKET_BUILD_SHARED "Build shared library" OFF)
+    option(LUASOCKET_BUILD_STATIC "Build static library" ON)
+    option(LUASOCKET_BUILD_UNIX "Build Unix domain sockets support" ON)
+    option(LUASOCKET_BUILD_SERIAL "Build serial support" ON)
+    option(LUASOCKET_INSTALL "Install luasocket" OFF)  # Default OFF for subprojects
+    option(LUASOCKET_FORCE_INSTALL "Force install even when used as subproject" OFF)
+    option(LUASOCKET_DEBUG "Enable debug mode" OFF)
+else()
+    option(LUASOCKET_BUILD_SHARED "Build shared library" OFF)
+    option(LUASOCKET_BUILD_STATIC "Build static library" ON)
+    option(LUASOCKET_BUILD_UNIX "Build Unix domain sockets support" ON)
+    option(LUASOCKET_BUILD_SERIAL "Build serial support" ON)
+    option(LUASOCKET_INSTALL "Install luasocket" ON)   # Default ON for standalone builds
+    option(LUASOCKET_FORCE_INSTALL "Force install even when used as subproject" OFF)
+    option(LUASOCKET_DEBUG "Enable debug mode" OFF)
+endif()
 
-# Find Lua
-find_package(Lua REQUIRED)
+# Find Lua - make it optional if parent project already found it
+if(NOT TARGET Lua::Lua AND NOT LUA_FOUND)
+    find_package(Lua REQUIRED)
+endif()
 
 # Set debug mode
 if(LUASOCKET_DEBUG)
@@ -269,8 +302,20 @@ if(LUASOCKET_BUILD_STATIC)
         target_link_libraries(luasocket_static INTERFACE luasocket_serial_static)
     endif()
     
+    # Propagate include directories and dependencies for static library usage
+    target_include_directories(luasocket_static INTERFACE
+        $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/src>
+        $<INSTALL_INTERFACE:include/luasocket>
+    )
+    
     # Alias for easier usage
     add_library(luasocket::static ALIAS luasocket_static)
+    
+    # For subproject usage, also create a simple "luasocket" alias
+    if(LUASOCKET_IS_SUBPROJECT)
+        add_library(luasocket ALIAS luasocket_static)
+        add_library(luasocket::luasocket ALIAS luasocket_static)
+    endif()
 endif()
 
 # Create combined shared library for convenience
@@ -289,12 +334,24 @@ if(LUASOCKET_BUILD_SHARED)
         target_link_libraries(luasocket_shared INTERFACE luasocket_serial_shared)
     endif()
     
+    # Propagate include directories for shared library usage
+    target_include_directories(luasocket_shared INTERFACE
+        $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/src>
+        $<INSTALL_INTERFACE:include/luasocket>
+    )
+    
     # Alias for easier usage
     add_library(luasocket::shared ALIAS luasocket_shared)
+    
+    # For subproject usage when only shared is built
+    if(LUASOCKET_IS_SUBPROJECT AND NOT LUASOCKET_BUILD_STATIC)
+        add_library(luasocket ALIAS luasocket_shared)
+        add_library(luasocket::luasocket ALIAS luasocket_shared)
+    endif()
 endif()
 
-# Installation
-if(LUASOCKET_INSTALL)
+# Installation (only when not used as subproject, unless explicitly requested)
+if(LUASOCKET_INSTALL AND (NOT LUASOCKET_IS_SUBPROJECT OR LUASOCKET_FORCE_INSTALL))
     include(GNUInstallDirs)
     
     # Install headers
