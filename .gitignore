@@ -11,6 +11,7 @@ sunaba-install/*
 sunaba-build-web/*
 sunaba-install-web/*
 sunaba-web-build/*
+sunaba-android-build/*
 sunaba-web-install/*
 out/*
 .vs/*
