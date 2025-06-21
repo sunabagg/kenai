@@ -38,7 +38,7 @@ namespace sunaba::ui {
         }
 
         static Theme* getLightTheme() {
-            Ref<Resource> res = ResourceLoader::get_singleton()->load("res://addons/lite/light.tres");
+            auto res = ResourceLoader::get_singleton()->load("res://addons/lite/light.tres");
             Ref<GodotTheme> lightTheme = res;
             if (lightTheme.is_valid()) {
                 return new Theme(lightTheme.ptr());
@@ -47,7 +47,7 @@ namespace sunaba::ui {
         }
 
         static Theme* getDarkTheme() {
-            Ref<Resource> res = ResourceLoader::get_singleton()->load("res://addons/lite/dark.tres");
+            auto res = ResourceLoader::get_singleton()->load("res://addons/lite/dark.tres");
             Ref<GodotTheme> darkTheme = res;
             if (darkTheme.is_valid()) {
                 return new Theme(darkTheme.ptr());
