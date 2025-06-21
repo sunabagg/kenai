@@ -33,7 +33,7 @@ $ cmake --install sunaba-build
 #### Emscripten
 
 ```sh
-$ emcmake cmake -B sunaba-build-web -S . -DCMAKE_BUILD_TYPE=Release -DCMAKE_INSTALL_PREFIX=sunaba-install-web
+$ emcmake cmake -B sunaba-build-web -S . -DCMAKE_BUILD_TYPE=Release -DCMAKE_INSTALL_PREFIX=sunaba-install-web -DCMAKE_CXX_FLAGS="-sSIDE_MODULE -fPIC -msimd128 -std=c++17 -sSUPPORT_LONGJMP=emscripten -o3 -pthread --target=wasm32-unknown-emscripten -sSHARED_MEMORY=1 -flto=thin" -DCMAKE_C_FLAGS="-sSIDE_MODULE -fPIC -msimd128 -sSUPPORT_LONGJMP=emscripten -o3 --target=wasm32-unknown-emscripten -sSHARED_MEMORY=1" -DCMAKE_EXE_LINKER_FLAGS="-sINITIAL_MEMORY=104857600 -sALLOW_MEMORY_GROWTH=1 -sSHARED_MEMORY=1"
 $ cmake --build sunaba-build-web
 $ cmake --install sunaba-build-web
 ```
