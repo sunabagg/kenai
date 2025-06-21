@@ -225,12 +225,13 @@ void App::loadAndExecuteSbx(const String &path) {
         auto msgBox = pfd::message(
             "Error", err.what(), pfd::choice::ok, pfd::icon::error
         );
+        msgBox.result();
 #else
         OS::get_singleton()->alert(
-            "Error", err.what(), "OK"
+            err.what(), "Error"
         );
 #endif
-        msgBox.result();
+        
     } else {
         //UtilityFunctions::print("Script executed successfully");
     }
@@ -254,12 +255,12 @@ void App::start( const String &path) {
         auto msgBox = pfd::message(
             "Error", err.what(), pfd::choice::ok, pfd::icon::error
         );
+        msgBox.result();
 #else
         OS::get_singleton()->alert(
-            "Error", err.what(), "OK"
+            err.what(), "Error"
         );
 #endif
-        msgBox.result();
     } else {
         //UtilityFunctions::print("Script executed successfully");
     }
