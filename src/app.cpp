@@ -321,7 +321,7 @@ void App::start( const String &path) {
     //UtilityFunctions::print(fsio->basePath.c_str());
     ioManager->add(fsio);
 
-    sol::protected_function_result result = global_state.safe_script("require('app://main.lua')", sol::script_pass_on_error);
+    sol::protected_function_result result = global_state.safe_script("require('app.main')", sol::script_pass_on_error);
     
     if ( !result.valid() ) {
         sol::error err = result;
