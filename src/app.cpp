@@ -117,13 +117,7 @@ int App::loadFileRequire(lua_State* L) {
     }
 
     luaL_loadbuffer(L, file.c_str(), file.size(), filename);
-
-    if (lua_pcall(L, 0, 1, 0) != LUA_OK) {
-        sol::stack::push(
-         L, "Error: " + String(lua_tostring(L, -1)));
-        lua_pop(L, 1); // pop the error message
-        return 0;
-    }
+    
     return 1; // return the result of the require call
 }
 
