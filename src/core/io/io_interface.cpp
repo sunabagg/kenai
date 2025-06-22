@@ -1,4 +1,5 @@
 #include "io_interface.h"
+#include "../string_utils.h"
 
 using namespace godot;
 
