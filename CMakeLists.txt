@@ -467,7 +467,7 @@ if (USE_LUAJIT)
             ${LUAJIT_STATIC_LIBRARIES}
             sol2
             luasocket::static
-                luasec::ssl
+            luasec::ssl
     )
 else()
     if (EMSCRIPTEN)
