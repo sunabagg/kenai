@@ -43,6 +43,12 @@ extern "C" {
     int luaopen_mime_core(lua_State *L);
 }
 #endif
+
+#ifdef USE_LUASEC
+extern "C" {
+    extern int luaopen_ssl_core(lua_State *L);
+}
+#endif
 #include <sol/sol.hpp>
 #include <cstdlib>
 #include <string>
