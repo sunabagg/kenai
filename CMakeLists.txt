@@ -44,6 +44,12 @@ set( CMAKE_INTERPROCEDURAL_OPTIMIZATION_RELEASE ON )
 # Output compile commands to compile_commands.json (for debugging CMake issues)
 set( CMAKE_EXPORT_COMPILE_COMMANDS ON )
 
+# Set default build type if not specified
+if(NOT CMAKE_BUILD_TYPE)
+    set(CMAKE_BUILD_TYPE "Release" CACHE STRING "Choose the type of build" FORCE)
+    set_property(CACHE CMAKE_BUILD_TYPE PROPERTY STRINGS "Debug" "Release" "MinSizeRel" "RelWithDebInfo")
+endif()
+
 # Build universal lib on macOS
 # Note that CMAKE_OSX_ARCHITECTURES must be set before project().
 if ( APPLE )
@@ -53,6 +59,7 @@ endif()
 # Main project information
 project( sunaba
     LANGUAGES
+        C
         CXX
     VERSION
         0.1.0
@@ -440,6 +447,16 @@ if (NOT EMSCRIPTEN)
         PRIVATE
             USE_LUASOCKET
     )
+    set( LUASEC_WITH_LUASOCKET OFF )
+    add_subdirectory( extern/luasec )
+    target_include_directories( ${PROJECT_NAME}
+        PRIVATE
+            extern/luasec/src 
+    )
+    target_compile_definitions( ${PROJECT_NAME}
+        PRIVATE
+            USE_LUASEC
+    )
 endif()
 
 # Link the libraries
@@ -451,11 +468,12 @@ if (USE_LUAJIT)
             sol2
     )
     
-    # Link luasocket
+    # Link luasocket and luasec
     if (NOT EMSCRIPTEN)
         target_link_libraries(${PROJECT_NAME}
             PRIVATE
                 luasocket::static
+                luasec::ssl
         )
     endif()
 else()
@@ -473,6 +491,7 @@ else()
                 liblua_static
                 sol2
                 luasocket::static
+                luasec::ssl
         )
     endif()
 endif()
