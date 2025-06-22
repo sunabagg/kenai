@@ -291,7 +291,8 @@ void App::loadAndExecuteSbx(const String &path) {
     //UtilityFunctions::print("Loading Lua binary: " + String(luabinPath.c_str()));
 
     global_state["luaBinPath"] = luabinPath;
-    sol::protected_function_result result = global_state.safe_script("require(luaBinPath)", sol::script_pass_on_error);
+    std::string script = ioManager->loadText(luabinPath);
+    sol::protected_function_result result = global_state.safe_script(script, sol::script_pass_on_error);
     
     if ( !result.valid() ) {
         sol::error err = result;
@@ -320,7 +321,8 @@ void App::start( const String &path) {
     //UtilityFunctions::print(fsio->basePath.c_str());
     ioManager->add(fsio);
 
-    sol::protected_function_result result = global_state.safe_script("require(\"app.main\")", sol::script_pass_on_error);
+    std::string script = ioManager->loadText("app://main.lua");
+    sol::protected_function_result result = global_state.safe_script(script, sol::script_pass_on_error);
     
     if ( !result.valid() ) {
         sol::error err = result;
