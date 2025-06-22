@@ -109,7 +109,12 @@ int App::loadFileRequire(lua_State* L) {
     }
 
     auto file = ioInterface->loadText(filename);
-    
+
+    if (file.empty()) {
+        sol::stack::push(
+         L, "Error: failed to load file: " + String(filename));
+        return 0;
+    }
 }
 
 void App::initState(bool sandboxed) {
