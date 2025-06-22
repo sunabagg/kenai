@@ -72,6 +72,10 @@ namespace sunaba::core::io {
         virtual bool directoryExists(const std::string &path) const { return false; }
 
         IoInterface() {}
+
+        std::string getLuaRequirePath(const std::string &path) const;
+
+        std::string getFilePathFromLuaRequirePath(const std::string &path) const;
     };
 }
 
