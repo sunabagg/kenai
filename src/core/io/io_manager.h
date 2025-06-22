@@ -18,6 +18,10 @@ namespace sunaba::core::io {
 
         std::string getFileUri(const std::string &path, const std::string &base_url) const;
 
+        std::string getLuaRequirePath(const std::string &path) const;
+
+        std::string getFilePathFromLuaRequirePath(const std::string &path) const;
+
         std::string loadText(const std::string &path) const override;
 
         void saveText(const std::string &path, const std::string &text) const override;
