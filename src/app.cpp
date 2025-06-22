@@ -86,13 +86,15 @@ int App::loadFileRequire(lua_State* L) {
     // It should return 1 if successful, 0 otherwise
     const char* filename = luaL_checkstring(L, 1);
     if (!filename || strlen(filename) == 0) {
-        UtilityFunctions::print("Error: filename is empty");
+        sol::stack::push(
+	     L, "Error: filename is empty");
         return 0;
     }
 
     auto ioInterface = IoIndex::getIoManager(global_state);
     if (!ioInterface) {
-        UtilityFunctions::print("Error: IoManager not found");
+        sol::stack::push(
+	     L, "Error: IoManager not found");
         return 0;
     }
 
@@ -101,10 +103,11 @@ int App::loadFileRequire(lua_State* L) {
     }
 
     if (!ioInterface->fileExists(filename)) {
-        UtilityFunctions::print("Error: file does not exist: " + String(filename));
+        sol::stack::push(
+	     L, "Error: file does not exist: " + String(filename));
         return 0;
     }
-    
+
     auto file = ioInterface->loadText(filename);
     
 }
