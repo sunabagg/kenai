@@ -134,6 +134,9 @@ void App::initState(bool sandboxed) {
             sol::lib::table, sol::lib::utf8, sol::lib::package);
     }
 
+    global_state.clear_package_loaders();
+    global_state.add_package_loader(App::loadFileRequire);
+
         lua_State* L = global_state.lua_state();
 // hack fix for PUC-Rio Lua
 #ifdef USE_PUCRIO_LUA
