@@ -139,6 +139,15 @@ void App::initState(bool sandboxed) {
         global_state["sandboxed"] = true;
     }
 
+    auto execDir = OS::get_singleton()->get_executable_path().get_base_dir();
+    if (OS::get_singleton()->get_name() == "macOS") {
+        // On macOS, the executable path is usually in Contents/MacOS/ directory
+        execDir = execDir.replace("/MacOS", "/Resources/").replace("\\MacOS", "\\Resources");
+    }
+    global_state["execDir"] = execDir.utf8().get_data();
+    global_state.script("package.path = package.path .. ';' .. execDir .. '/?.lua'");
+    global_state.script("print(package.path)");
+
     //global_state.clear_package_loaders();
     global_state.add_package_loader(&App::loadFileRequire);
 
@@ -299,15 +308,6 @@ void App::loadAndExecuteSbx(const String &path) {
 
     //UtilityFunctions::print("Loading Lua binary: " + String(luabinPath.c_str()));
 
-    auto execDir = OS::get_singleton()->get_executable_path().get_base_dir();
-    if (OS::get_singleton()->get_name() == "macOS") {
-        // On macOS, the executable path is usually in Contents/MacOS/ directory
-        execDir = execDir.replace("/MacOS", "/Resources/").replace("\\MacOS", "\\Resources");
-    }
-    global_state["execDir"] = execDir.utf8().get_data();
-    global_state.script("package.path = package.path .. ';' .. execDir .. '/?.lua'");
-    global_state.script("print(package.path)");
-
     global_state["luaBinPath"] = luabinPath;
     
     // Auto-start mobdebug if environment variable is set
@@ -318,7 +318,7 @@ void App::loadAndExecuteSbx(const String &path) {
         auto portEnv = std::getenv("MOBDEBUG_PORT");
         std::string host = hostEnv ? std::string(hostEnv) : "localhost";
         int port = portEnv ? std::atoi(portEnv) : 8172;
-        startMobdebug(host, port);
+        startMobdebug(host.c_str(), port);
     }
     
     std::string script = ioManager->loadText(luabinPath);
@@ -359,7 +359,7 @@ void App::start( const String &path) {
         auto portEnv = std::getenv("MOBDEBUG_PORT");
         std::string host = hostEnv ? std::string(hostEnv) : "localhost";
         int port = portEnv ? std::atoi(portEnv) : 8172;
-        startMobdebug(host, port);
+        startMobdebug(host.c_str(), port);
     }
 
     std::string script = ioManager->loadText("app://main.lua");
@@ -400,7 +400,7 @@ void App::initMobdebug() {
     global_state.set_function("start_mobdebug", [this](sol::optional<std::string> host, sol::optional<int> port) {
         std::string mobdebug_host = host.value_or("localhost");
         int mobdebug_port = port.value_or(8172);
-        startMobdebug(mobdebug_host, mobdebug_port);
+        startMobdebug(mobdebug_host.c_str(), mobdebug_port);
     });
     
     global_state.set_function("stop_mobdebug", [this]() {
@@ -455,11 +455,11 @@ void App::initMobdebug() {
     }
 }
 
-void App::startMobdebug(const std::string& host, int port) {
+void App::startMobdebug(const String& host, int port) {
     global_state["MOBDEBUG_HOST"] = host;
     global_state["MOBDEBUG_PORT"] = port;
     
-    std::string start_script = "start_debugging('" + host + "', " + std::to_string(port) + ")";
+    std::string start_script = String("start_debugging('" + host + "', " + String(std::to_string(port).c_str()) + ")").utf8().get_data();
     sol::protected_function_result result = global_state.safe_script(start_script, sol::script_pass_on_error);
     
     if (!result.valid()) {

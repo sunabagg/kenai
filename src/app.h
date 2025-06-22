@@ -41,7 +41,7 @@ namespace sunaba
 
         // Mobdebug support
         void initMobdebug();
-        void startMobdebug(const std::string& host = "localhost", int port = 8172);
+        void startMobdebug(const String& host = "localhost", int port = 8172);
         void stopMobdebug();
         
         // Lua file loading
