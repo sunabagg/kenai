@@ -115,6 +115,8 @@ int App::loadFileRequire(lua_State* L) {
          L, "Error: failed to load file: " + String(filename));
         return 0;
     }
+
+    luaL_loadbuffer(L, file.c_str(), file.size(), filename.c_str());
 }
 
 void App::initState(bool sandboxed) {
