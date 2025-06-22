@@ -286,7 +286,8 @@ void App::loadAndExecuteSbx(const String &path) {
     auto luabinname = headerDict.get("luabin", "main.lua");
     zipio->pathUri = String(headerDict.get("rootUrl", "app://")).utf8().get_data();
 
-    std::string luabinPath = String(String(zipio->pathUri.c_str()).replace("://", ".") + String(luabinname)).utf8().get_data();
+    //std::string luabinPath = String(String(zipio->pathUri.c_str()).replace("://", ".") + String(luabinname)).utf8().get_data();
+    std::string luabinPath = String(String(zipio->pathUri.c_str()) + String(luabinname)).utf8().get_data();
 
     //UtilityFunctions::print("Loading Lua binary: " + String(luabinPath.c_str()));
 
