@@ -98,9 +98,7 @@ int App::loadFileRequire(lua_State* L) {
         return 0;
     }
 
-    if (!String(filename).ends_with(".lua") && ioInterface->fileExists(String(String(filename) + ".lua").utf8().get_data())) {
-        filename =  String(String(filename) + ".lua").utf8().get_data();
-    }
+    filename = ioInterface->getFilePathFromLuaRequirePath(filename).c_str();
 
     if (!ioInterface->fileExists(filename)) {
         sol::stack::push(
