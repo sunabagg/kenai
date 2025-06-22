@@ -9,6 +9,7 @@
 #include <godot_cpp/classes/os.hpp>
 #include <godot_cpp/classes/json.hpp>
 #include <godot_cpp/classes/os.hpp>
+#include <godot_cpp/classes/project_settings.hpp>
 #ifdef USE_PORTABLE_FILE_DIALOGS
 #include "portable-file-dialogs.h"
 #endif
@@ -204,6 +205,10 @@ void App::initState(bool sandboxed) {
         return createScene();
     });
 
+
+    auto fsio = FileSystemIo::create(ProjectSettings::get_singleton()->globalize_path("res://corelib/").utf8().get_data(), "corelib://");
+    //UtilityFunctions::print(fsio->basePath.c_str());
+    ioManager->add(fsio);
     //sol::error *e = nullptr;
 }
 
