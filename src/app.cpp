@@ -89,11 +89,24 @@ int App::loadFileRequire(lua_State* L) {
         UtilityFunctions::print("Error: filename is empty");
         return 0;
     }
-    
-    String filePath = ProjectSettings::get_singleton()->globalize_path(filename);
+
+    auto ioInterface = IoIndex::getIoManager(global_state);
+    if (!ioInterface) {
+        UtilityFunctions::print("Error: IoManager not found");
+        return 0;
+    }
+
     if (!String(filename).ends_with(".lua")) {
         filename =  String(String(filename) + ".lua").utf8().get_data();
     }
+
+    if (!ioInterface->fileExists(filename)) {
+        UtilityFunctions::print("Error: file does not exist: " + String(filename));
+        return 0;
+    }
+    
+    auto file = ioInterface->loadText(filename);
+    
 }
 
 void App::initState(bool sandboxed) {
