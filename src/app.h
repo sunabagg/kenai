@@ -14,8 +14,6 @@
 
 using namespace godot;
 
-int LoadFileRequire(lua_State* L);
-
 namespace sunaba
 {
     class App : public Node {
@@ -40,6 +38,8 @@ namespace sunaba
         void start( const String &path );
 
         sunaba::core::Scene* createScene();
+
+        int loadFileRequire(lua_State* L);
     };
 }
 
