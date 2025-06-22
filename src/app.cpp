@@ -127,11 +127,13 @@ void App::initState(bool sandboxed) {
             sol::lib::count, sol::lib::math, sol::lib::string,
             sol::lib::table, sol::lib::utf8, sol::lib::package, 
             sol::lib::os, sol::lib::io, sol::lib::debug );
+        global_state["sandboxed"] = false;
     }
     else {
         global_state.open_libraries( sol::lib::base, sol::lib::bit32, sol::lib::coroutine,
             sol::lib::count, sol::lib::math, sol::lib::string,
             sol::lib::table, sol::lib::utf8, sol::lib::package);
+        global_state["sandboxed"] = true;
     }
 
     global_state.clear_package_loaders();
