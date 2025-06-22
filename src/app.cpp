@@ -47,6 +47,7 @@ extern "C" {
 #ifdef USE_LUASEC
 extern "C" {
     extern int luaopen_ssl_core(lua_State *L);
+    extern int luaopen_ssl_x509(lua_State *L);
 }
 #endif
 #include <sol/sol.hpp>
