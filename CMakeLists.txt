@@ -466,16 +466,9 @@ if (USE_LUAJIT)
             godot-cpp
             ${LUAJIT_STATIC_LIBRARIES}
             sol2
-    )
-    
-    # Link luasocket and luasec
-    if (NOT EMSCRIPTEN)
-        target_link_libraries(${PROJECT_NAME}
-            PRIVATE
-                luasocket::static
+            luasocket::static
                 luasec::ssl
-        )
-    endif()
+    )
 else()
     if (EMSCRIPTEN)
         target_link_libraries(${PROJECT_NAME}
