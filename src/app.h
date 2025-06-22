@@ -6,12 +6,15 @@
 #define APP_H
 
 #include <godot_cpp/classes/node.hpp>
+#define SOL_ALL_SAFETIES_ON 1
 #include <sol/state.hpp>
 
 #include "core/scene_system.h"
 #include "core/io/io_manager.h"
 
 using namespace godot;
+
+int LoadFileRequire(lua_State* L);
 
 namespace sunaba
 {
