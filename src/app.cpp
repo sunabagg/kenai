@@ -98,7 +98,7 @@ int App::loadFileRequire(lua_State* L) {
         return 0;
     }
 
-    if (!String(filename).ends_with(".lua")) {
+    if (!String(filename).ends_with(".lua") && ioInterface->fileExists(String(String(filename) + ".lua").utf8().get_data())) {
         filename =  String(String(filename) + ".lua").utf8().get_data();
     }
 
@@ -137,7 +137,7 @@ void App::initState(bool sandboxed) {
     }
 
     global_state.clear_package_loaders();
-    global_state.add_package_loader(App::loadFileRequire);
+    global_state.add_package_loader(&App::loadFileRequire);
 
         lua_State* L = global_state.lua_state();
 // hack fix for PUC-Rio Lua
@@ -292,8 +292,7 @@ void App::loadAndExecuteSbx(const String &path) {
 
     //UtilityFunctions::print("Loading Lua binary: " + String(luabinPath.c_str()));
 
-    std::string script = ioManager->loadText(luabinPath);
-    sol::protected_function_result result = global_state.safe_script(script, sol::script_pass_on_error);
+    sol::protected_function_result result = global_state.safe_script(String(String("require('") + String(luabinPath.c_str()) + (String("')"))).utf8().get_data(), sol::script_pass_on_error);
     
     if ( !result.valid() ) {
         sol::error err = result;
@@ -322,7 +321,7 @@ void App::start( const String &path) {
     //UtilityFunctions::print(fsio->basePath.c_str());
     ioManager->add(fsio);
 
-    sol::protected_function_result result = global_state.safe_script_file("app://main.lua", sol::script_pass_on_error);
+    sol::protected_function_result result = global_state.safe_script("require('app://main.lua')", sol::script_pass_on_error);
     
     if ( !result.valid() ) {
         sol::error err = result;
