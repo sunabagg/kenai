@@ -81,6 +81,21 @@ void App::_ready() {
     }
 }
 
+int App::loadFileRequire(lua_State* L) {
+    // This function is used to load a file and require it in Lua
+    // It should return 1 if successful, 0 otherwise
+    const char* filename = luaL_checkstring(L, 1);
+    if (!filename || strlen(filename) == 0) {
+        UtilityFunctions::print("Error: filename is empty");
+        return 0;
+    }
+    
+    String filePath = ProjectSettings::get_singleton()->globalize_path(filename);
+    if (!String(filename).ends_with(".lua")) {
+        filename =  String(String(filename) + ".lua").utf8().get_data();
+    }
+}
+
 void App::initState(bool sandboxed) {
     if (!sandboxed) {
         global_state.open_libraries( sol::lib::base, sol::lib::bit32, sol::lib::coroutine,
