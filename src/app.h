@@ -39,7 +39,14 @@ namespace sunaba
 
         sunaba::core::Scene* createScene();
 
-        int loadFileRequire(lua_State* L);
+        // Mobdebug support
+        void initMobdebug();
+        void startMobdebug(const std::string& host = "localhost", int port = 8172);
+        void stopMobdebug();
+        
+        // Lua file loading
+        static int loadFileRequire(lua_State* L);
+    private:
     };
 }
 

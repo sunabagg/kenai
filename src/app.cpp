@@ -60,6 +60,8 @@ void App::_bind_methods() {
     ClassDB::bind_method(D_METHOD("start", "path"), &App::start);
     ClassDB::bind_method(D_METHOD("init_state", "sandboxed"), &App::initState);
     ClassDB::bind_method(D_METHOD("load_and_execute_sbx", "path"), &App::loadAndExecuteSbx);
+    ClassDB::bind_method(D_METHOD("start_mobdebug", "host", "port"), &App::startMobdebug);
+    ClassDB::bind_method(D_METHOD("stop_mobdebug"), &App::stopMobdebug);
 }
 
 void free_global_state(App* app) {
@@ -91,14 +93,17 @@ int App::loadFileRequire(lua_State* L) {
         return 0;
     }
 
-    auto ioInterface = IoIndex::getIoManager(global_state);
+    // Get the sol::state from the lua_State
+    sol::state_view lua(L);
+    
+    auto ioInterface = IoIndex::getIoManager(lua);
     if (!ioInterface) {
         sol::stack::push(
 	     L, "Error: IoManager not found");
         return 0;
     }
 
-    filename = ioInterface->getFilePathFromLuaRequirePath(filename).c_str();
+    //filename = ioInterface->getFilePathFromLuaRequirePath(filename).c_str();
 
     if (!ioInterface->fileExists(filename)) {
         sol::stack::push(
@@ -134,7 +139,7 @@ void App::initState(bool sandboxed) {
         global_state["sandboxed"] = true;
     }
 
-    global_state.clear_package_loaders();
+    //global_state.clear_package_loaders();
     global_state.add_package_loader(&App::loadFileRequire);
 
         lua_State* L = global_state.lua_state();
@@ -159,6 +164,9 @@ void App::initState(bool sandboxed) {
         lua_pop(L, 2);
         //
 #endif
+        
+        // Initialize mobdebug support
+        initMobdebug();
     } 
 
     global_state["print"] = [this]( sol::variadic_args args ) {
@@ -291,7 +299,28 @@ void App::loadAndExecuteSbx(const String &path) {
 
     //UtilityFunctions::print("Loading Lua binary: " + String(luabinPath.c_str()));
 
+    auto execDir = OS::get_singleton()->get_executable_path().get_base_dir();
+    if (OS::get_singleton()->get_name() == "macOS") {
+        // On macOS, the executable path is usually in Contents/MacOS/ directory
+        execDir = execDir.replace("/MacOS", "/Resources/").replace("\\MacOS", "\\Resources");
+    }
+    global_state["execDir"] = execDir.utf8().get_data();
+    global_state.script("package.path = package.path .. ';' .. execDir .. '/?.lua'");
+    global_state.script("print(package.path)");
+
     global_state["luaBinPath"] = luabinPath;
+    
+    // Auto-start mobdebug if environment variable is set
+    auto debugEnv = std::getenv("SUNABA_DEBUG");
+    if (debugEnv && std::string(debugEnv) == "1") {
+        UtilityFunctions::print("Debug mode enabled, starting MobDebug...");
+        auto hostEnv = std::getenv("MOBDEBUG_HOST");
+        auto portEnv = std::getenv("MOBDEBUG_PORT");
+        std::string host = hostEnv ? std::string(hostEnv) : "localhost";
+        int port = portEnv ? std::atoi(portEnv) : 8172;
+        startMobdebug(host, port);
+    }
+    
     std::string script = ioManager->loadText(luabinPath);
     sol::protected_function_result result = global_state.safe_script(script, sol::script_pass_on_error);
     
@@ -321,6 +350,17 @@ void App::start( const String &path) {
     auto fsio = FileSystemIo::create(path.utf8().get_data(), "app://");
     //UtilityFunctions::print(fsio->basePath.c_str());
     ioManager->add(fsio);
+
+    // Auto-start mobdebug if environment variable is set
+    auto debugEnv = std::getenv("SUNABA_DEBUG");
+    if (debugEnv && std::string(debugEnv) == "1") {
+        UtilityFunctions::print("Debug mode enabled, starting MobDebug...");
+        auto hostEnv = std::getenv("MOBDEBUG_HOST");
+        auto portEnv = std::getenv("MOBDEBUG_PORT");
+        std::string host = hostEnv ? std::string(hostEnv) : "localhost";
+        int port = portEnv ? std::atoi(portEnv) : 8172;
+        startMobdebug(host, port);
+    }
 
     std::string script = ioManager->loadText("app://main.lua");
     sol::protected_function_result result = global_state.safe_script(script, sol::script_pass_on_error);
@@ -353,4 +393,86 @@ Scene* App::createScene() {
     add_child(sceneNode);
     scene->viewport = get_viewport();
     return scene;
+}
+
+void App::initMobdebug() {
+    // Initialize mobdebug environment variables and functions
+    global_state.set_function("start_mobdebug", [this](sol::optional<std::string> host, sol::optional<int> port) {
+        std::string mobdebug_host = host.value_or("localhost");
+        int mobdebug_port = port.value_or(8172);
+        startMobdebug(mobdebug_host, mobdebug_port);
+    });
+    
+    global_state.set_function("stop_mobdebug", [this]() {
+        stopMobdebug();
+    });
+    
+    // Set up mobdebug environment
+    global_state["MOBDEBUG_HOST"] = "localhost";
+    global_state["MOBDEBUG_PORT"] = 8172;
+    
+    // Add mobdebug to package path if it exists
+    std::string mobdebug_script = R"(
+        -- Try to require mobdebug safely
+        local function try_require_mobdebug()
+            local success, mobdebug = pcall(require, 'mobdebug')
+            if success then
+                _G.mobdebug = mobdebug
+                print("MobDebug loaded successfully")
+                return true
+            else
+                print("MobDebug not found or failed to load: " .. tostring(mobdebug))
+                return false
+            end
+        end
+        
+        -- Helper function to start debugging
+        function start_debugging(host, port)
+            if _G.mobdebug then
+                _G.mobdebug.start(host or MOBDEBUG_HOST, port or MOBDEBUG_PORT)
+                print("MobDebug started on " .. (host or MOBDEBUG_HOST) .. ":" .. (port or MOBDEBUG_PORT))
+            else
+                print("MobDebug not available")
+            end
+        end
+        
+        -- Helper function to stop debugging
+        function stop_debugging()
+            if _G.mobdebug then
+                _G.mobdebug.done()
+                print("MobDebug stopped")
+            end
+        end
+        
+        -- Try to load mobdebug
+        try_require_mobdebug()
+    )";
+    
+    sol::protected_function_result result = global_state.safe_script(mobdebug_script, sol::script_pass_on_error);
+    if (!result.valid()) {
+        sol::error err = result;
+        UtilityFunctions::print("MobDebug initialization error: " + String(err.what()));
+    }
+}
+
+void App::startMobdebug(const std::string& host, int port) {
+    global_state["MOBDEBUG_HOST"] = host;
+    global_state["MOBDEBUG_PORT"] = port;
+    
+    std::string start_script = "start_debugging('" + host + "', " + std::to_string(port) + ")";
+    sol::protected_function_result result = global_state.safe_script(start_script, sol::script_pass_on_error);
+    
+    if (!result.valid()) {
+        sol::error err = result;
+        UtilityFunctions::print("Failed to start MobDebug: " + String(err.what()));
+    }
+}
+
+void App::stopMobdebug() {
+    sol::protected_function_result result = global_state.safe_script("stop_debugging()", sol::script_pass_on_error);
+    
+    if (!result.valid()) {
+        sol::error err = result;
+        UtilityFunctions::print("Failed to stop MobDebug: " + String(err.what()));
+    }
 }
