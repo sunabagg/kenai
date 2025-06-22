@@ -180,6 +180,19 @@ void App::initState(bool sandboxed) {
         lua_pop(L, 2);
         //
 #endif
+
+#ifdef USE_LUASEC
+        lua_getglobal(L, "package");
+        lua_getfield(L, -1, "preload");
+
+        lua_pushcfunction(L, luaopen_ssl_core);
+        lua_setfield(L, -2, "ssl.core");
+
+        lua_pushcfunction(L, luaopen_ssl_x509);
+        lua_setfield(L, -2, "ssl.x509");
+        
+        lua_pop(L, 2);
+#endif
         
         // Initialize mobdebug support
         initMobdebug();
