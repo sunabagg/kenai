@@ -26,3 +26,34 @@ void sunaba::core::io::bindIoInterface(sol::state& lua) {
         "directoryExists", &IoInterface::directoryExists
     );
 }
+
+std::string sunaba::core::io::IoInterface::getLuaRequirePath(const std::string &path) const {
+        // Convert a file path to a Lua require path
+        // This is typically done by replacing slashes with dots and removing the file extension
+        std::string requirePath = StringUtils::replace(StringUtils::replace(path, "://", "."), "/", ".");
+        if (StringUtils::endsWith(requirePath,".lua")) {
+            requirePath = requirePath.substr(0, requirePath.size() - 4);
+        }
+        return requirePath;
+}
+
+std::string sunaba::core::io::IoInterface::getFilePathFromLuaRequirePath(const std::string &path) const {
+    // Convert a Lua require path back to a file path
+    // This is typically done by replacing dots with slashes and adding the .lua extension
+    auto filePathArray = String(path.c_str()).split(".");
+
+    String newFilePath = filePathArray[0];
+    newFilePath += "://";
+    for (size_t i = 1; i < filePathArray.size(); ++i) {
+        newFilePath += filePathArray[i];
+        if (i < filePathArray.size() - 1) {
+            newFilePath += "/";
+        }
+    }
+        
+    if(fileExists(String(newFilePath + ".lua").utf8().get_data())) {
+        newFilePath += ".lua";
+    }
+
+    return newFilePath.utf8().get_data();
+}

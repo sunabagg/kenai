@@ -139,13 +139,5 @@ namespace sunaba::core::io {
         return false;
     }
 
-    std::string getLuaRequirePath(const std::string &path) {
-        // Convert a file path to a Lua require path
-        // This is typically done by replacing slashes with dots and removing the file extension
-        std::string requirePath = StringUtils::replace(StringUtils::replace(path, "://", "."), "/", ".");
-        if (StringUtils::endsWith(requirePath,".lua")) {
-            requirePath = requirePath.substr(0, requirePath.size() - 4);
-        }
-        return requirePath;
-    }
+    
 }
