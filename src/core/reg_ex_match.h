@@ -36,7 +36,7 @@ namespace sunaba::core {
             // Setter for the RegExMatch node
             void setRegExMatch(godot::Ref<GodotRegExMatch> match) {
                 reg_ex_match = match;
-                reg_ex_match->reference();
+                //reg_ex_match->reference();
             }
 
             Dictionary getNames() const {
