@@ -309,16 +309,39 @@ if (BUILD_SHARED_LIBS)
 endif (BUILD_SHARED_LIBS)
 
 if (CMAKE_INSTALL_PREFIX)
-  # Instead of installing, add the targets to the build directory
-  add_subdirectory(src)
-  add_library(luv MODULE ${luv_sources})
-  add_library(luv_static STATIC ${luv_sources})
-
-  # Set the include directories
-  target_include_directories(luv PUBLIC src)
-  target_include_directories(luv_static PUBLIC src)
-
-  # Set the library directories
-  set_target_properties(luv PROPERTIES LIBRARY_OUTPUT_DIRECTORY ${CMAKE_CURRENT_BINARY_DIR})
-  set_target_properties(luv_static PROPERTIES ARCHIVE_OUTPUT_DIRECTORY ${CMAKE_CURRENT_BINARY_DIR})
+  if (BUILD_MODULE)
+    install(TARGETS luv
+      ARCHIVE DESTINATION "${MODULE_INSTALL_LIB_DIR}"
+      LIBRARY DESTINATION "${MODULE_INSTALL_LIB_DIR}"
+    )
+  endif (BUILD_MODULE)
+  if (BUILD_STATIC_LIBS)
+    install(TARGETS libluv_a
+      ARCHIVE DESTINATION "${STATICLIBS_INSTALL_LIB_DIR}"
+      LIBRARY DESTINATION "${STATICLIBS_INSTALL_LIB_DIR}"
+    )
+    install(
+      FILES src/luv.h src/util.h src/lhandle.h src/lreq.h
+      DESTINATION "${STATICLIBS_INSTALL_INC_DIR}"
+    )
+  endif (BUILD_STATIC_LIBS)
+  if (BUILD_SHARED_LIBS)
+    install(TARGETS libluv
+      RUNTIME DESTINATION "${SHAREDLIBS_INSTALL_BIN_DIR}"
+      ARCHIVE DESTINATION "${SHAREDLIBS_INSTALL_LIB_DIR}"
+      LIBRARY DESTINATION "${SHAREDLIBS_INSTALL_LIB_DIR}"
+    )
+    if(UNIX OR MINGW)
+      set(prefix ${CMAKE_INSTALL_PREFIX})
+      set(includedir ${SHAREDLIBS_INSTALL_INC_DIR})
+      set(libdir ${SHAREDLIBS_INSTALL_LIB_DIR})
+      configure_file(libluv.pc.in ${CMAKE_CURRENT_BINARY_DIR}/libluv.pc @ONLY)
+      install(FILES ${CMAKE_CURRENT_BINARY_DIR}/libluv.pc
+        DESTINATION ${SHAREDLIBS_INSTALL_LIB_DIR}/pkgconfig)
+    endif()
+    install(
+      FILES src/luv.h src/util.h src/lhandle.h src/lreq.h
+      DESTINATION "${SHAREDLIBS_INSTALL_INC_DIR}"
+    )
+  endif (BUILD_SHARED_LIBS)
 endif (CMAKE_INSTALL_PREFIX)
