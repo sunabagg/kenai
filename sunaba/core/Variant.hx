@@ -16,7 +16,7 @@ abstract Variant(VariantNative) from VariantNative to VariantNative {
     }
     @:from
     public static function fromInt(value:Int):Variant {
-        return VariantNative.fromInt64(value);
+        return VariantNative.fromInt(value);
     }
     @:to
     public inline function toInt():Int64 {

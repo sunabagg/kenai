@@ -13,6 +13,8 @@ extern class VariantNative {
     @:native("new")
     public static function fromInt64(value:Int64):VariantNative;
     @:native("new")
+    public static function fromInt(value:Int):VariantNative;
+    @:native("new")
     public static function fromFloat32(vale:Float):VariantNative;
     @:native("new")
     public static function fromFloat64(value:Float):VariantNative;
