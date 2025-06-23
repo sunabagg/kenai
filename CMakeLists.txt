@@ -462,6 +462,14 @@ if (NOT EMSCRIPTEN)
     set(BUILD_SHARED_LIBS OFF CACHE BOOL "" FORCE)
     set(LUA_BUILD_TYPE System CACHE STRING "" FORCE)
     add_subdirectory( extern/luv )
+    target_include_directories( ${PROJECT_NAME}
+        PRIVATE
+            extern/luv/src
+    )
+    target_compile_definitions( ${PROJECT_NAME}
+        PRIVATE
+            USE_LUV
+    )
 endif()
 
 # Link the libraries
@@ -473,6 +481,7 @@ if (USE_LUAJIT)
             sol2
             luasocket::static
             luasec::ssl
+            libluv_a
     )
 else()
     if (EMSCRIPTEN)
@@ -490,6 +499,7 @@ else()
                 sol2
                 luasocket::static
                 luasec::ssl
+                libluv_a
         )
     endif()
 endif()
