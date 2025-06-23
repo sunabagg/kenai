@@ -457,7 +457,10 @@ if (NOT EMSCRIPTEN)
         PRIVATE
             USE_LUASEC
     )
-    #add_subdirectory( extern/luv )
+    set(LUV_INCLUDE_LUA ON CACHE BOOL "" FORCE)
+    set(LUV_INCLUDE_LIBUV ON CACHE BOOL "" FORCE)
+    set(BUILD_SHARED_LIBS OFF CACHE BOOL "" FORCE)
+    add_subdirectory( extern/luv )
 endif()
 
 # Link the libraries
