@@ -457,7 +457,7 @@ if (NOT EMSCRIPTEN)
         PRIVATE
             USE_LUASEC
     )
-    add_subdirectory( extern/luv )
+    #add_subdirectory( extern/luv )
 endif()
 
 # Link the libraries
