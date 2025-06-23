@@ -457,10 +457,17 @@ if (NOT EMSCRIPTEN)
         PRIVATE
             USE_LUASEC
     )
+    set(BUILD_MODULE OFF CACHE BOOL "" FORCE)
     set(LUV_INCLUDE_LUA ON CACHE BOOL "" FORCE)
     set(LUV_INCLUDE_LIBUV ON CACHE BOOL "" FORCE)
     set(BUILD_SHARED_LIBS OFF CACHE BOOL "" FORCE)
-    set(LUA_BUILD_TYPE System CACHE STRING "" FORCE)
+    set(BUILD_STATIC_LIBS ON CACHE BOOL "" FORCE)
+    if (NOT APPLE)
+        set(LUA_BUILD_TYPE System CACHE STRING "" FORCE)
+    else()
+        set(USE_LUAJIT OFF CACHE BOOL "" FORCE)
+        set(WITH_LUA_ENGINE STREQUAL Lua CACHE BOOL "" FORCE)
+    endif()
     add_subdirectory( extern/luv )
     target_include_directories( ${PROJECT_NAME}
         PRIVATE
