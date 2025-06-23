@@ -40,7 +40,7 @@ class EReg {
             godotPattern = "(?m)" + r; // Add multiline modifier if not present
         }
 
-        var error = regex.compile(godotPattern);
+        var error = regex.compile(godotPattern, true);
         if (error != Error.ok) {
             throw "Failed to compile regex pattern: " + r;
         }
@@ -55,7 +55,7 @@ class EReg {
 	**/
 	public function match(s:String):Bool {
         lastInput = s;
-		lastMatch = regex.search(s);
+		lastMatch = regex.search(s, 0, -1);
         if (lastMatch == null) {
             return false; // No match found or invalid match
         }
@@ -154,7 +154,7 @@ class EReg {
 	**/
 	public function matchSub(s:String, pos:Int, len:Int = -1):Bool {
 		lastInput = s;
-        lastMatch = regex.search(s, pos);
+        lastMatch = regex.search(s, pos, -1);
         if (lastMatch == null) {
             return false; // No match found or invalid match
         }
@@ -182,7 +182,7 @@ class EReg {
 	public function split(s:String):Array<String> {
 		var result:Array<String> = [];
         var lastIndex = 0;
-        var searchAllTable = regex.searchAll(s);
+        var searchAllTable = regex.searchAll(s, 0, -1);
         var matches:Array<RegExMatch> = Table.toArray(searchAllTable);
         for (match in matches) {
             if (match.isNull()) continue; // Skip invalid matches
@@ -209,7 +209,7 @@ class EReg {
 		If `s` or `by` are null, the result is unspecified.
 	**/
 	public function replace(s:String, by:String):String {
-		return regex.sub(s, by);
+		return regex.sub(s, by, false, 0, -1);
 	}
 
 	/**
@@ -229,8 +229,8 @@ class EReg {
 	public function map(s:String, f:EReg->String):String {
 		var result:String = "";
         var lastIndex = 0;
-        var searchAllTable = regex.searchAll(s);
-        var matches:Array<RegExMatch> = Table.toArray(searchAllTable);
+        var searchAllVector = regex.searchAll(s, 0, -1);
+        var matches:Array<RegExMatch> = searchAllVector.toArray();
 
         for (match in matches) {
             var start = match.getStart(0);
