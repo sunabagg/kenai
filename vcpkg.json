@@ -7,6 +7,7 @@
       "name": "luajit",
       "version>=": "2023-01-04#5"
     },
-    "openssl"
+    "openssl",
+    "luv"
   ]
 }
