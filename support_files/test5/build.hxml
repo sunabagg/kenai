@@ -1,7 +1,0 @@
---class-path src
---main support_files.test5.src.Main
--D lua-vanilla
--D source-map
---lua main.lua
---library sunaba-core
---xml types.xml
