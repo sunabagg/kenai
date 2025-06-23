@@ -1,9 +1,12 @@
 {
-  "name" : "sunaba",
-  "version-string" : "1.0.0",
-  "builtin-baseline" : "4b3b6201414638abfcd8ef4629dfbd958985667e",
-  "dependencies" : [ {
-    "name" : "luajit",
-    "version>=" : "2023-01-04#5"
-  } ]
+  "name": "sunaba",
+  "version-string": "1.0.0",
+  "builtin-baseline": "4b3b6201414638abfcd8ef4629dfbd958985667e",
+  "dependencies": [
+    {
+      "name": "luajit",
+      "version>=": "2023-01-04#5"
+    },
+    "openssl"
+  ]
 }
