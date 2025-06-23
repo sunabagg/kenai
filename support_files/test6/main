@@ -788,18 +788,30 @@ end
 Main.new = {}
 Main.__name__ = true
 Main.main = function() 
-  local url = "https://httpbin.org/post";
-  local http = __sys_Http.new(url);
-  http:setParameter("username", "haxeuser");
-  http:setParameter("password", "secret");
-  http.onData = function(self,data) 
-    __haxe_Log.trace("Response from POST:", _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="support_files/test6/src/Main.hx",lineNumber=13,className="Main",methodName="main"}));
-    __haxe_Log.trace(data, _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="support_files/test6/src/Main.hx",lineNumber=14,className="Main",methodName="main"}));
-   end;
-  http.onError = function(self,error) 
-    __haxe_Log.trace(Std.string("POST Error: ") .. Std.string(error), _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="support_files/test6/src/Main.hx",lineNumber=18,className="Main",methodName="main"}));
-   end;
-  http:request(true);
+  local _hx_status, _hx_result = pcall(function() 
+  
+      local url = "https://httpbin.org/post";
+      local http = __sys_Http.new(url);
+      http:setParameter("username", "haxeuser");
+      http:setParameter("password", "secret");
+      http.onData = function(self,data) 
+        __haxe_Log.trace("Response from POST:", _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="support_files/test6/src/Main.hx",lineNumber=14,className="Main",methodName="main"}));
+        __haxe_Log.trace(data, _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="support_files/test6/src/Main.hx",lineNumber=15,className="Main",methodName="main"}));
+       end;
+      http.onError = function(self,error) 
+        __haxe_Log.trace(Std.string("POST Error: ") .. Std.string(error), _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="support_files/test6/src/Main.hx",lineNumber=19,className="Main",methodName="main"}));
+       end;
+      http:request(true);
+    return _hx_pcall_default
+  end)
+  if not _hx_status and _hx_result == "_hx_pcall_break" then
+  elseif not _hx_status then 
+    local _g = _hx_result;
+    local e = __haxe_Exception.caught(_g);
+    __haxe_Log.trace(e, _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="support_files/test6/src/Main.hx",lineNumber=25,className="Main",methodName="main"}));
+  elseif _hx_result ~= _hx_pcall_default then
+    return _hx_result
+  end;
 end
 
 Math.new = {}
