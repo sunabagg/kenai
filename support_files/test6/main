@@ -621,7 +621,7 @@ EReg.super = function(self,r,opt)
   if (String.prototype.indexOf(opt, "m") ~= -1) then 
     godotPattern = Std.string("(?m)") .. Std.string(r);
   end;
-  local error = self.regex:compile(godotPattern);
+  local error = self.regex:compile(godotPattern, true);
   if (error ~= 0) then 
     _G.error(__haxe_Exception.thrown(Std.string("Failed to compile regex pattern: ") .. Std.string(r)),0);
   end;
@@ -642,7 +642,7 @@ end
 EReg.prototype = _hx_e();
 EReg.prototype.match = function(self,s) 
   self.lastInput = s;
-  self.lastMatch = self.regex:search(s);
+  self.lastMatch = self.regex:search(s, 0, -1);
   if (self.lastMatch == nil) then 
     do return false end;
   else
@@ -682,7 +682,7 @@ EReg.prototype.matchSub = function(self,s,pos,len)
     len = -1;
   end;
   self.lastInput = s;
-  self.lastMatch = self.regex:search(s, pos);
+  self.lastMatch = self.regex:search(s, pos, -1);
   if (self.lastMatch == nil) then 
     do return false end;
   end;
@@ -691,9 +691,23 @@ end
 EReg.prototype.split = function(self,s) 
   local result = _hx_tab_array({}, 0);
   local lastIndex = 0;
-  local searchAllTable = self.regex:searchAll(s);
+  local searchAllTable = self.regex:searchAll(s, 0, -1);
+  local s1 = searchAllTable;
+  local table = table;
+  local _g = 0;
+  local _g1 = __sunaba_core__Vector_Vector_Impl_.size(s1);
+  while (_g < _g1) do _hx_do_first_1 = false;
+    
+    _g = _g + 1;
+    local i = _g - 1;
+    local value = __sunaba_core__Vector_Vector_Impl_.get(s1, i);
+    if (value == nil) then 
+      _G.error(__haxe_Exception.thrown(Std.string("Vector.toTable: null value at index ") .. Std.string(i)),0);
+    end;
+    table[i] = value;
+  end;
   local length = nil;
-  local tab = __lua_PairTools.copy(searchAllTable);
+  local tab = __lua_PairTools.copy(table);
   local length = length;
   local matches;
   if (length == nil) then 
@@ -731,29 +745,27 @@ EReg.prototype.split = function(self,s)
   do return result end
 end
 EReg.prototype.replace = function(self,s,by) 
-  do return self.regex:sub(s, by) end
+  do return self.regex:sub(s, by, false, 0, -1) end
 end
 EReg.prototype.map = function(self,s,f) 
   local result = "";
   local lastIndex = 0;
-  local searchAllTable = self.regex:searchAll(s);
-  local length = nil;
-  local tab = __lua_PairTools.copy(searchAllTable);
-  local length = length;
-  local matches;
-  if (length == nil) then 
-    length = _hx_table.maxn(tab);
-    if (length > 0) then 
-      local head = tab[1];
-      _G.table.remove(tab, 1);
-      tab[0] = head;
-      matches = _hx_tab_array(tab, length);
-    else
-      matches = _hx_tab_array({}, 0);
+  local searchAllVector = self.regex:searchAll(s, 0, -1);
+  local s1 = searchAllVector;
+  local array = _hx_tab_array({}, 0);
+  local _g = 0;
+  local _g1 = __sunaba_core__Vector_Vector_Impl_.size(s1);
+  while (_g < _g1) do _hx_do_first_1 = false;
+    
+    _g = _g + 1;
+    local i = _g - 1;
+    local value = __sunaba_core__Vector_Vector_Impl_.get(s1, i);
+    if (value == nil) then 
+      _G.error(__haxe_Exception.thrown(Std.string("Vector.toArray: null value at index ") .. Std.string(i)),0);
     end;
-  else
-    matches = _hx_tab_array(tab, length);
+    array:push(value);
   end;
+  local matches = array;
   local _g = 0;
   while (_g < matches.length) do _hx_do_first_1 = false;
     

@@ -8482,10 +8482,7 @@
 	<c path="String"/>
 	<x path="Int"/>
 	<x path="Int"/>
-	<c path="lua.Table">
-		<x path="Int"/>
-		<c path="sunaba.core.RegExMatch"/>
-	</c>
+	<x path="sunaba.core.Vector"><c path="sunaba.core.RegExMatch"/></x>
 </f></searchAll>
 		<sub public="1" set="method"><f a="subject:replacemtn:?all:?offset:?end">
 	<c path="String"/>
@@ -10193,6 +10190,7 @@
 			<m n=":to"/>
 		</meta>
 	</toTable>
+	<meta><m n=":directlyUsed"/></meta>
 </class></impl>
 	</abstract>
 	<class path="sunaba.core._Vector.Vector_Impl_" params="" file="/Users/lucasabbas/sunaba/sunaba/core/Vector.hx" private="1" module="sunaba.core.Vector" final="1">
@@ -10250,6 +10248,7 @@
 				<m n=":to"/>
 			</meta>
 		</toTable>
+		<meta><m n=":directlyUsed"/></meta>
 	</class>
 	<class path="sunaba.core.Vector2" params="" file="/Users/lucasabbas/sunaba/sunaba/core/Vector2.hx" extern="1">
 		<zero public="1" set="method" static="1">
