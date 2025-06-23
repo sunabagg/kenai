@@ -1,0 +1,4 @@
+--class-path src
+--main Main
+--library hxnodejs
+--js main.js
