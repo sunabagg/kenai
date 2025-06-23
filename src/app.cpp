@@ -50,6 +50,12 @@ extern "C" {
     extern int luaopen_ssl_x509(lua_State *L);
 }
 #endif
+
+#ifdef USE_LUV
+extern "C" {
+    extern int luaopen_luv(lua_State *L);
+}
+#endif
 #include <sol/sol.hpp>
 #include <cstdlib>
 #include <string>
@@ -191,6 +197,16 @@ void App::initState(bool sandboxed) {
         lua_pushcfunction(L, luaopen_ssl_x509);
         lua_setfield(L, -2, "ssl.x509");
         
+        lua_pop(L, 2);
+#endif
+
+#ifdef USE_LUV
+        lua_getglobal(L, "package");
+        lua_getfield(L, -1, "preload");
+
+        lua_pushcfunction(L, luaopen_luv);
+        lua_setfield(L, -2, "luv");
+
         lua_pop(L, 2);
 #endif
         
