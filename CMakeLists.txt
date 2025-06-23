@@ -460,6 +460,7 @@ if (NOT EMSCRIPTEN)
     set(LUV_INCLUDE_LUA ON CACHE BOOL "" FORCE)
     set(LUV_INCLUDE_LIBUV ON CACHE BOOL "" FORCE)
     set(BUILD_SHARED_LIBS OFF CACHE BOOL "" FORCE)
+    set(LUA_BUILD_TYPE System CACHE STRING "" FORCE)
     add_subdirectory( extern/luv )
 endif()
 
