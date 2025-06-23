@@ -172,10 +172,10 @@ void App::initState(bool sandboxed) {
         lua_getfield(L, -1, "preload");
     
         lua_pushcfunction(L, luaopen_socket_core);
-        lua_setfield(L, -2, "socket.core");
+        lua_setfield(L, -2, "socket");
     
         lua_pushcfunction(L, luaopen_mime_core);
-        lua_setfield(L, -2, "mime.core");
+        lua_setfield(L, -2, "mime");
     
         lua_pop(L, 2);
         //
