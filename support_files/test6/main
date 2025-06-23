@@ -788,7 +788,7 @@ end
 Main.new = {}
 Main.__name__ = true
 Main.main = function() 
-  local url = "https://httpbin.org/post";
+  local url = "http://httpbin.org/post";
   local http = __sys_Http.new(url);
   http:setParameter("username", "haxeuser");
   http:setParameter("password", "secret");
