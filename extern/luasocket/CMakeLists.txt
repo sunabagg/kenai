@@ -249,7 +249,8 @@ if(LUASOCKET_BUILD_UNIX AND NOT WIN32)
 endif()
 
 # Serial support
-if(LUASOCKET_BUILD_SERIAL)
+if(LUASOCKET_BUILD_SERIAL AND NOT WIN32)
+
     if(LUASOCKET_BUILD_STATIC)
         add_library(luasocket_serial_static STATIC ${SERIAL_SOURCES})
         target_include_directories(luasocket_serial_static 
@@ -298,7 +299,8 @@ if(LUASOCKET_BUILD_STATIC)
         target_link_libraries(luasocket_static INTERFACE luasocket_unix_static)
     endif()
     
-    if(LUASOCKET_BUILD_SERIAL)
+    if(LUASOCKET_BUILD_SERIAL AND NOT WIN32)
+
         target_link_libraries(luasocket_static INTERFACE luasocket_serial_static)
     endif()
     
@@ -330,7 +332,8 @@ if(LUASOCKET_BUILD_SHARED)
         target_link_libraries(luasocket_shared INTERFACE luasocket_unix_shared)
     endif()
     
-    if(LUASOCKET_BUILD_SERIAL)
+    if(LUASOCKET_BUILD_SERIAL AND NOT WIN32)
+
         target_link_libraries(luasocket_shared INTERFACE luasocket_serial_shared)
     endif()
     
@@ -411,7 +414,8 @@ if(LUASOCKET_INSTALL AND (NOT LUASOCKET_IS_SUBPROJECT OR LUASOCKET_FORCE_INSTALL
             )
         endif()
         
-        if(LUASOCKET_BUILD_SERIAL)
+        if(LUASOCKET_BUILD_SERIAL AND NOT WIN32)
+
             install(TARGETS luasocket_serial_static
                 EXPORT luasocketTargets
                 ARCHIVE DESTINATION ${CMAKE_INSTALL_LIBDIR}
@@ -436,7 +440,8 @@ if(LUASOCKET_INSTALL AND (NOT LUASOCKET_IS_SUBPROJECT OR LUASOCKET_FORCE_INSTALL
             )
         endif()
         
-        if(LUASOCKET_BUILD_SERIAL)
+        if(LUASOCKET_BUILD_SERIAL AND NOT WIN32)
+
             install(TARGETS luasocket_serial_shared
                 EXPORT luasocketTargets
                 LIBRARY DESTINATION ${CMAKE_INSTALL_LIBDIR}
