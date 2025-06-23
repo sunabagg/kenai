@@ -64,9 +64,10 @@ if(LUASEC_BUILD_SHARED)
     target_compile_options(ssl_shared PRIVATE
         -Wall
         -pedantic
-        -O2
         -fPIC
     )
+
+    
     
     # Install shared library (only when not a subdirectory or LUASEC_INSTALL is ON)
     if(NOT LUASEC_IS_SUBPROJECT OR LUASEC_INSTALL)

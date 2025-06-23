@@ -27,7 +27,6 @@ set_target_properties(luasocket_static PROPERTIES
 target_compile_options(luasocket_static PRIVATE
     -Wall
     -pedantic
-    -O2
     -fPIC
 )
 
