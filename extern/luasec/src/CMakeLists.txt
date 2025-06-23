@@ -105,7 +105,6 @@ if(LUASEC_BUILD_STATIC)
     target_compile_options(ssl_static PRIVATE
         -Wall
         -pedantic
-        -O2
         -fPIC
     )
     
