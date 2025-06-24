@@ -127,7 +127,16 @@ else (LUA)
     if (USE_LUAJIT)
       # We only link the libs on Windows, so find_package fully succeeding
       # is only required on Windows
-      add_subdirectory( ${CMAKE_CURRENT_SOURCE_DIR}/extern/lua )
+            if (WIN32 OR CYGWIN)
+        find_package(LuaJIT REQUIRED)
+        link_directories(${LUAJIT_LIBRARIES})
+      else()
+        find_package(LuaJIT)
+      endif()
+      if(NOT LUAJIT_INCLUDE_DIR)
+        message( FATAL_ERROR "Failed to find LuaJIT headers. Variable `LUAJIT_INCLUDE_DIR' expected to be defined.")
+      endif()
+      include_directories(${LUAJIT_INCLUDE_DIR})
     else (USE_LUAJIT)
       # We only link the libs on Windows, so find_package fully succeeding
       # is only required on Windows
