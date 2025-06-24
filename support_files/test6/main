@@ -193,7 +193,6 @@ local Std = _hx_e()
 local StringTools = _hx_e()
 __haxe_IMap = _hx_e()
 __haxe_Exception = _hx_e()
-__haxe__Int32_Int32_Impl_ = _hx_e()
 __haxe__Int64____Int64 = _hx_e()
 __haxe_Log = _hx_e()
 __haxe_NativeStackTrace = _hx_e()
@@ -802,7 +801,7 @@ Main.__name__ = true
 Main.main = function() 
   local _hx_status, _hx_result = pcall(function() 
   
-      local url = "https://httpbin.org/post";
+      local url = "http://httpbin.org/post";
       local http = __sys_Http.new(url);
       http:setParameter("username", "haxeuser");
       http:setParameter("password", "secret");
@@ -1173,28 +1172,8 @@ end
 
 __haxe_Exception.prototype.__class__ =  __haxe_Exception
 
-__haxe__Int32_Int32_Impl_.new = {}
-__haxe__Int32_Int32_Impl_.__name__ = true
-__haxe__Int32_Int32_Impl_.shr = function(a,b) 
-  do return __haxe__Int32_Int32_Impl_.clamp(_hx_bit.arshift(a,b)) end;
-end
-__haxe__Int32_Int32_Impl_.clamp = function(x) 
-  do return _hx_bit_clamp(x) end;
-end
-
-__haxe__Int64____Int64.new = function(high,low) 
-  local self = _hx_new(__haxe__Int64____Int64.prototype)
-  __haxe__Int64____Int64.super(self,high,low)
-  return self
-end
-__haxe__Int64____Int64.super = function(self,high,low) 
-  self.high = high;
-  self.low = low;
-end
+__haxe__Int64____Int64.new = {}
 __haxe__Int64____Int64.__name__ = true
-__haxe__Int64____Int64.prototype = _hx_e();
-
-__haxe__Int64____Int64.prototype.__class__ =  __haxe__Int64____Int64
 
 __haxe_Log.new = {}
 __haxe_Log.__name__ = true
@@ -2042,7 +2021,7 @@ __sunaba_core__Variant_Variant_Impl_.toString = function(this1)
   do return this1:asString() end;
 end
 __sunaba_core__Variant_Variant_Impl_.fromInt = function(value) 
-  do return Variant.new(__haxe__Int64____Int64.new(__haxe__Int32_Int32_Impl_.shr(value, 31), value)) end;
+  do return Variant.new(value) end;
 end
 __sunaba_core__Variant_Variant_Impl_.toInt = function(this1) 
   do return this1:asInt64() end;
@@ -3204,28 +3183,6 @@ end
 __sys_net_SocketOutput.prototype.__class__ =  __sys_net_SocketOutput
 __sys_net_SocketOutput.__super__ = __haxe_io_Output
 setmetatable(__sys_net_SocketOutput.prototype,{__index=__haxe_io_Output.prototype})
-local hasBit32, bit32 = pcall(require, 'bit32')
-if hasBit32 then --if we are on Lua 5.1, bit32 will be the default.
-  _hx_bit_raw = bit32
-  _hx_bit = setmetatable({}, { __index = _hx_bit_raw })
-  -- lua 5.2 weirdness
-  _hx_bit.bnot = function(...) return _hx_bit_clamp(_hx_bit_raw.bnot(...)) end
-  _hx_bit.bxor = function(...) return _hx_bit_clamp(_hx_bit_raw.bxor(...)) end
-else
-  --If we do not have bit32, fallback to 'bit'
-  local hasBit, bit = pcall(require, 'bit')
-  if not hasBit then
-    error("Failed to load bit or bit32")
-  end
-  _hx_bit_raw = bit
-  _hx_bit = setmetatable({}, { __index = _hx_bit_raw })
-end
-
--- see https://github.com/HaxeFoundation/haxe/issues/8849
-_hx_bit.bor = function(...) return _hx_bit_clamp(_hx_bit_raw.bor(...)) end
-_hx_bit.band = function(...) return _hx_bit_clamp(_hx_bit_raw.band(...)) end
-_hx_bit.arshift = function(...) return _hx_bit_clamp(_hx_bit_raw.arshift(...)) end
-
 if _hx_bit_raw then
     _hx_bit_clamp = function(v)
     if v <= 2147483647 and v >= -2147483648 then

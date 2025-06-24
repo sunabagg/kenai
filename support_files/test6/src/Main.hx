@@ -3,7 +3,7 @@ package;
 class Main {
     static function main() {
         try {
-            var url = "https://httpbin.org/post";
+            var url = "http://httpbin.org/post";
             var http = new haxe.Http(url);
 
             // Add form parameters

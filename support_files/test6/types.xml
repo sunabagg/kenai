@@ -1517,43 +1517,8 @@
 		<haxe_doc>Int32 provides a 32-bit integer with consistent overflow behavior across
 	all platforms.</haxe_doc>
 		<meta><m n=":transitive"/></meta>
-		<impl><class path="haxe._Int32.Int32_Impl_" params="" file="/usr/local/lib/haxe/std/haxe/Int32.hx" private="1" module="haxe.Int32" final="1">
-	<shr set="method" line="209" static="1">
-		<f a="a:b">
-			<x path="haxe.Int32"/>
-			<x path="haxe.Int32"/>
-			<x path="haxe.Int32"/>
-		</f>
-		<meta><m n=":op"><e><![CDATA[A >> B]]></e></m></meta>
-	</shr>
-	<clamp set="method" line="267" static="1"><f a="x">
-	<x path="Int"/>
-	<x path="Int"/>
-</f></clamp>
-	<meta>
-		<m n=":keep"/>
-		<m n=":directlyUsed"/>
-	</meta>
-</class></impl>
+		<impl><class path="haxe._Int32.Int32_Impl_" params="" file="/usr/local/lib/haxe/std/haxe/Int32.hx" private="1" module="haxe.Int32" final="1"><meta><m n=":keep"/></meta></class></impl>
 	</abstract>
-	<class path="haxe._Int32.Int32_Impl_" params="" file="/usr/local/lib/haxe/std/haxe/Int32.hx" private="1" module="haxe.Int32" final="1">
-		<shr set="method" line="209" static="1">
-			<f a="a:b">
-				<x path="haxe.Int32"/>
-				<x path="haxe.Int32"/>
-				<x path="haxe.Int32"/>
-			</f>
-			<meta><m n=":op"><e><![CDATA[A >> B]]></e></m></meta>
-		</shr>
-		<clamp set="method" line="267" static="1"><f a="x">
-	<x path="Int"/>
-	<x path="Int"/>
-</f></clamp>
-		<meta>
-			<m n=":keep"/>
-			<m n=":directlyUsed"/>
-		</meta>
-	</class>
 	<abstract path="haxe.Int64" params="" file="/usr/local/lib/haxe/std/haxe/Int64.hx">
 		<from>
 			<icast><t path="haxe._Int64.__Int64"/></icast>
@@ -1572,19 +1537,7 @@
 	the same underlying type, even though it might be different on
 	specific platforms.</haxe_doc>
 	</typedef>
-	<class path="haxe._Int64.___Int64" params="" file="/usr/local/lib/haxe/std/haxe/Int64.hx" private="1" module="haxe.Int64">
-		<high public="1"><x path="haxe.Int32"/></high>
-		<low public="1"><x path="haxe.Int32"/></low>
-		<new public="1" get="inline" set="null" line="473"><f a="high:low">
-	<x path="haxe.Int32"/>
-	<x path="haxe.Int32"/>
-	<x path="Void"/>
-</f></new>
-		<meta>
-			<m n=":keep"/>
-			<m n=":directlyUsed"/>
-		</meta>
-	</class>
+	<class path="haxe._Int64.___Int64" params="" file="/usr/local/lib/haxe/std/haxe/Int64.hx" private="1" module="haxe.Int64"><meta><m n=":keep"/></meta></class>
 	<class path="haxe.Log" params="" file="/usr/local/lib/haxe/std/haxe/Log.hx">
 		<formatOutput public="1" set="method" line="33" static="1">
 			<f a="v:infos">
@@ -9810,6 +9763,13 @@
 			</f>
 			<meta><m n=":native"><e>"new"</e></m></meta>
 		</fromInt64>
+		<fromInt public="1" set="method" static="1">
+			<f a="value">
+				<x path="Int"/>
+				<c path="sunaba.core.VariantNative"/>
+			</f>
+			<meta><m n=":native"><e>"new"</e></m></meta>
+		</fromInt>
 		<fromFloat32 public="1" set="method" static="1">
 			<f a="vale">
 				<x path="Float"/>
