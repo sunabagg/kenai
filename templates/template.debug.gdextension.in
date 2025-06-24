@@ -12,3 +12,12 @@ macos.debug = "lib/Darwin-Universal/lib${PROJECT_NAME}-d.dylib"
 windows.debug.x86_64 = "lib/Windows-AMD64/${LIB_PREFIX}${PROJECT_NAME}-d.dll"
 android.debug.arm64 = "lib/Android-arm64-v8a/lib${PROJECT_NAME}-d.so"
 android.debug.arm32 = "lib/Android-armv7-a/lib${PROJECT_NAME}-d.so"
+
+[dependencies]
+windows.x86_64 = { 
+    "res://lib/Windows-AMD64/legacy.dll": "",
+    "res://lib/Windows-AMD64/libcrypto-3-x64.dll": "",
+    "res://lib/Windows-AMD64/libssl-3-x64.dll": "",
+    "res://lib/Windows-AMD64/lua51.dll": "",
+    "res://lib/Windows-AMD64/luv.dll": "",
+}
