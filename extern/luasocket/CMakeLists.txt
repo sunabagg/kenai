@@ -42,8 +42,10 @@ endif()
 
 # Find Lua - make it optional if parent project already found it
 if(NOT TARGET Lua::Lua AND NOT LUA_FOUND)
-    find_package(Lua REQUIRED)
+    #find_package(Lua REQUIRED)
 endif()
+
+set (LUA_INCLUDE_DIR ${CMAKE_SOURCE_DIR}extern/lua-5.1.5)
 
 # Set debug mode
 if(LUASOCKET_DEBUG)

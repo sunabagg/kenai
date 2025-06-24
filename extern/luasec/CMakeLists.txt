@@ -31,7 +31,7 @@ find_package(OpenSSL REQUIRED)
 if(NOT TARGET lua OR NOT DEFINED LUA_INCLUDE_DIR)
     find_package(Lua QUIET)
     if(NOT LUA_FOUND)
-        pkg_check_modules(LUA REQUIRED lua5.1)
+        #pkg_check_modules(LUA REQUIRED lua5.1)
     endif()
 endif()
 
