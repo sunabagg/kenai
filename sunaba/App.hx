@@ -14,6 +14,11 @@ class App {
         return GlobalObjectStack.getSingleton();
     }
 
+    public var execDir(get, default): String;
+    private function get_execDir(): String {
+        return untyped __lua__("_G.execDir");
+    }
+
     public function new() {
         GlobalObjectStack.initSingleton();
         init();
