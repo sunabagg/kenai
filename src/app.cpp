@@ -143,6 +143,9 @@ void App::initState(bool sandboxed) {
             sol::lib::count, sol::lib::math, sol::lib::string,
             sol::lib::table, sol::lib::utf8, sol::lib::package, 
             sol::lib::os, sol::lib::io, sol::lib::debug );
+#ifndef USE_PUCRIO_LUA
+            global_state.open_libraries( sol::lib::ffi );
+#endif
         global_state["sandboxed"] = false;
     }
     else {
