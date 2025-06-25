@@ -4,4 +4,5 @@ package sunaba.core;
 extern class SubViewport extends Viewport {
     public var renderTargetClearMode: Int;
     public var renderTargetUpdateMode: Int;
+    public var size: Vector2i;
 }
