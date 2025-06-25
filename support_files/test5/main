@@ -1358,7 +1358,7 @@ EReg.super = function(self,r,opt)
   if (String.prototype.indexOf(opt, "m") ~= -1) then 
     godotPattern = Std.string("(?m)") .. Std.string(r);
   end;
-  local error = self.regex:compile(godotPattern);
+  local error = self.regex:compile(godotPattern, true);
   if (error ~= 0) then 
     _G.error(__haxe_Exception.thrown(Std.string("Failed to compile regex pattern: ") .. Std.string(r)),0);
   end;
@@ -1379,7 +1379,7 @@ end
 EReg.prototype = _hx_e();
 EReg.prototype.match = function(self,s) 
   self.lastInput = s;
-  self.lastMatch = self.regex:search(s);
+  self.lastMatch = self.regex:search(s, 0, -1);
   if (self.lastMatch == nil) then 
     do return false end;
   else
@@ -1419,7 +1419,7 @@ EReg.prototype.matchSub = function(self,s,pos,len)
     len = -1;
   end;
   self.lastInput = s;
-  self.lastMatch = self.regex:search(s, pos);
+  self.lastMatch = self.regex:search(s, pos, -1);
   if (self.lastMatch == nil) then 
     do return false end;
   end;
@@ -1428,9 +1428,23 @@ end
 EReg.prototype.split = function(self,s) 
   local result = _hx_tab_array({}, 0);
   local lastIndex = 0;
-  local searchAllTable = self.regex:searchAll(s);
+  local searchAllTable = self.regex:searchAll(s, 0, -1);
+  local s1 = searchAllTable;
+  local table = table;
+  local _g = 0;
+  local _g1 = __lucidfx_core__Vector_Vector_Impl_.size(s1);
+  while (_g < _g1) do _hx_do_first_1 = false;
+    
+    _g = _g + 1;
+    local i = _g - 1;
+    local value = __lucidfx_core__Vector_Vector_Impl_.get(s1, i);
+    if (value == nil) then 
+      _G.error(__haxe_Exception.thrown(Std.string("Vector.toTable: null value at index ") .. Std.string(i)),0);
+    end;
+    table[i] = value;
+  end;
   local length = nil;
-  local tab = __lua_PairTools.copy(searchAllTable);
+  local tab = __lua_PairTools.copy(table);
   local length = length;
   local matches;
   if (length == nil) then 
@@ -1468,29 +1482,27 @@ EReg.prototype.split = function(self,s)
   do return result end
 end
 EReg.prototype.replace = function(self,s,by) 
-  do return self.regex:sub(s, by) end
+  do return self.regex:sub(s, by, false, 0, -1) end
 end
 EReg.prototype.map = function(self,s,f) 
   local result = "";
   local lastIndex = 0;
-  local searchAllTable = self.regex:searchAll(s);
-  local length = nil;
-  local tab = __lua_PairTools.copy(searchAllTable);
-  local length = length;
-  local matches;
-  if (length == nil) then 
-    length = _hx_table.maxn(tab);
-    if (length > 0) then 
-      local head = tab[1];
-      _G.table.remove(tab, 1);
-      tab[0] = head;
-      matches = _hx_tab_array(tab, length);
-    else
-      matches = _hx_tab_array({}, 0);
+  local searchAllVector = self.regex:searchAll(s, 0, -1);
+  local s1 = searchAllVector;
+  local array = _hx_tab_array({}, 0);
+  local _g = 0;
+  local _g1 = __lucidfx_core__Vector_Vector_Impl_.size(s1);
+  while (_g < _g1) do _hx_do_first_1 = false;
+    
+    _g = _g + 1;
+    local i = _g - 1;
+    local value = __lucidfx_core__Vector_Vector_Impl_.get(s1, i);
+    if (value == nil) then 
+      _G.error(__haxe_Exception.thrown(Std.string("Vector.toArray: null value at index ") .. Std.string(i)),0);
     end;
-  else
-    matches = _hx_tab_array(tab, length);
+    array:push(value);
   end;
+  local matches = array;
   local _g = 0;
   while (_g < matches.length) do _hx_do_first_1 = false;
     
@@ -1525,12 +1537,15 @@ end
 __lucidfx_App.prototype.get_globalObjectStack = function(self) 
   do return __lucidfx_core_GlobalObjectStack.getSingleton() end
 end
+__lucidfx_App.prototype.get_execDir = function(self) 
+  do return _G.execDir end
+end
 __lucidfx_App.prototype.init = function(self) 
 end
 
 __lucidfx_App.prototype.__class__ =  __lucidfx_App
 
-__lucidfx_App.prototype.__properties__ =  {get_globalObjectStack="get_globalObjectStack",get_rootElement="get_rootElement"}
+__lucidfx_App.prototype.__properties__ =  {get_execDir="get_execDir",get_globalObjectStack="get_globalObjectStack",get_rootElement="get_rootElement"}
 
 Main.new = function() 
   local self = _hx_new(Main.prototype)
@@ -1556,7 +1571,7 @@ Main.prototype.init = function(self)
   elseif not _hx_status then 
     local _g = _hx_result;
     local e = __haxe_Exception.caught(_g):unwrap();
-    __haxe_Log.trace(Std.string("Error initializing ClickerCounter: ") .. Std.string(Std.string(e)), _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="/Users/lucasabbas/lucidfx/support_files/test5/src/Main.hx",lineNumber=15,className="Main",methodName="init"}));
+    __haxe_Log.trace(Std.string("Error initializing ClickerCounter: ") .. Std.string(Std.string(e)), _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="/home/mintkat/lucidfx/support_files/test5/src/Main.hx",lineNumber=15,className="Main",methodName="init"}));
   elseif _hx_result ~= _hx_pcall_default then
     return _hx_result
   end;
@@ -3816,7 +3831,7 @@ __lucidfx_core__Variant_Variant_Impl_.toString = function(this1)
   do return this1:asString() end;
 end
 __lucidfx_core__Variant_Variant_Impl_.fromInt = function(value) 
-  do return Variant.new(__haxe__Int64____Int64.new(__haxe__Int32_Int32_Impl_.shr(value, 31), value)) end;
+  do return Variant.new(value) end;
 end
 __lucidfx_core__Variant_Variant_Impl_.toInt = function(this1) 
   do return this1:asInt64() end;
