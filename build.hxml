@@ -1,4 +1,4 @@
---library 
+--library sunaba-core
 --class-path api
 --lua main.lua
 -D lua-vanilla
