@@ -461,6 +461,19 @@ class Widget {
                             throw "Failed to load image from file for field '" + attributeName + "' in element '" + Type.getClassName(Type.getClass(element)) + "'";
                         }
                     }
+                    else if (attributeName == "checkable") {
+                        var checkable : Bool = false;
+                        if (attributeValue == "true") {
+                            checkable = true;
+                        }
+                        else if (attributeValue == "false") {
+                            checkable = false;
+                        }
+                        else {
+                            throw "Invalid boolean value for field '" + attributeName + "' in element 'PopupMenu'";
+                        }
+                        menu.setItemAsCheckable(id, checkable);
+                    }
                 }
             }
         }
