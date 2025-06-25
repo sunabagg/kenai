@@ -186,7 +186,7 @@ install_header ( src/lua.h src/lualib.h src/lauxlib.h etc/lua51.hpp ${CMAKE_CURR
 install_doc ( doc/ )
 install_foo ( etc/ )
 install_test ( test/ )
-install(FILES lua.h lualib.h lauxlib.h DESTINATION include/lua51)
+install(FILES src/lua.h src/lualib.h src/lauxlib.h DESTINATION include/lua51)
 
 
 ## TESTS
