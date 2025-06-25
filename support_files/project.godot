@@ -17,8 +17,9 @@ boot_splash/bg_color=Color(1, 1, 1, 1)
 boot_splash/fullsize=false
 boot_splash/image="uid://v1hovss1wlyu"
 config/icon="uid://bws1eg3mse6nh"
+config/macos_native_icon="res://LfxMacIcon.icns"
 config/windows_native_icon="res://lucidfx.ico"
-config/icon.macos="uid://bipasi4ii6raj"
+config/icon.macos="uid://dmwt5bdexy5dl"
 
 [display]
 
