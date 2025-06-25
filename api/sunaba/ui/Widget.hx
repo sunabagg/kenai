@@ -513,6 +513,19 @@ class Widget {
                         }
                         menu.setItemChecked(id, checked);
                     }
+                    else if (attributeName == 'disabled') {
+                        var disabled : Bool = false;
+                        if (attributeValue == "true") {
+                            disabled = true;
+                        }
+                        else if (attributeValue == "false") {
+                            disabled = false;
+                        }
+                        else {
+                            throw "Invalid boolean value for field '" + attributeName + "' in menuItem";
+                        }
+                        menu.setItemDisabled(id, disabled);
+                    }
                 }
             }
         }
