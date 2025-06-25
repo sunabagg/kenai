@@ -446,6 +446,21 @@ class Widget {
                 for (attrib in attributes) {
                     var attributeName = attrib;
                     var attributeValue = attributes.get(attributeName);
+                    if (attributeName == "icon") {
+                        var image = Image.loadFromFile(attributeValue);
+                        if (image != null) {
+                            var texture = ImageTexture.createFromImage(image);
+                            if (texture != null) {
+                                menu.setItemIcon(id, texture);
+                            }
+                            else {
+                                throw "Failed to create Texture2D from image for field '" + attributeName + "' in element '" + Type.getClassName(Type.getClass(element)) + "'";
+                            }
+                        }
+                        else {
+                            throw "Failed to load image from file for field '" + attributeName + "' in element '" + Type.getClassName(Type.getClass(element)) + "'";
+                        }
+                    }
                 }
             }
         }
