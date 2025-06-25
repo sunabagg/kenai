@@ -116,6 +116,34 @@
             "visualizerFile": "${workspaceFolder}/.vscode/godot.natvis"
         },
         {
+            "name": "Linux Launch (Local) (test6)",
+            "type": "cppdbg",
+            "request": "launch",
+            "program": "${env:HOME}/Applications/godot/godot",
+            "args": [
+                "--verbose",
+                "${workspaceFolder}/support_files/test6/bin/test6.sbx"
+            ],
+            "cwd": "${command:cmake.buildDirectory}/sunaba",
+            "preLaunchTask": "CMake: build",
+            "internalConsoleOptions": "openOnSessionStart",
+            "visualizerFile": "${workspaceFolder}/.vscode/godot.natvis"
+        },
+        {
+            "name": "Linux Launch (Local) (test7)",
+            "type": "cppdbg",
+            "request": "launch",
+            "program": "${env:HOME}/Applications/godot/godot",
+            "args": [
+                "--verbose",
+                "${workspaceFolder}/support_files/test7/bin/test7.sbx"
+            ],
+            "cwd": "${command:cmake.buildDirectory}/sunaba",
+            "preLaunchTask": "CMake: build",
+            "internalConsoleOptions": "openOnSessionStart",
+            "visualizerFile": "${workspaceFolder}/.vscode/godot.natvis"
+        },
+        {
             "name": "macOS Launch (Local)",
             "type": "lldb-dap",
             "request": "launch",
@@ -135,6 +163,19 @@
             "args": [
                 "--verbose",
                 "/Users/lucasabbas/sunaba/support_files/test6/bin/test6.sbx"
+            ],
+            "cwd": "${command:cmake.buildDirectory}/sunaba",
+            "preLaunchTask": "CMake: build",
+            "internalConsoleOptions": "openOnSessionStart",
+        },
+        {
+            "name": "macOS Launch (Local) (test7)",
+            "type": "lldb-dap",
+            "request": "launch",
+            "program": "/Applications/Godot.app/Contents/MacOS/Godot",
+            "args": [
+                "--verbose",
+                "/Users/lucasabbas/sunaba/support_files/test7/bin/test7.sbx"
             ],
             "cwd": "${command:cmake.buildDirectory}/sunaba",
             "preLaunchTask": "CMake: build",
