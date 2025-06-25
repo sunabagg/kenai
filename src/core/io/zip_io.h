@@ -20,7 +20,7 @@ namespace sunaba::core::io {
             errorCode = zip_reader->open(path.c_str());
         }
 
-        godot::Error getErrorCode() const override {
+        godot::Error getErrorCode() const {
             return errorCode;
         }
 
