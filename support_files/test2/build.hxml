@@ -2,4 +2,4 @@
 --main Main
 -D lua-vanilla
 --lua main.lua
---library sunaba-core
+--library sunaba
