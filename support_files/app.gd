@@ -13,7 +13,7 @@ func _init() -> void:
 	if not sbx_path.is_empty():
 		load_and_execute_sbx(sbx_path)
 	else:
-		load_and_execute_sbx("res://test5/bin/test5.sbx")
+		load_and_execute_sbx("res://test5.sbx")
 
 func _ready() -> void:
 	if (DisplayServer.is_dark_mode()):
