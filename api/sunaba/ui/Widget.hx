@@ -1,5 +1,6 @@
 package sunaba.ui;
 
+import sunaba.desktop.PopupMenu;
 import sunaba.core.GlobalObjectStack;
 import haxe.DynamicAccess;
 import sunaba.core.FontFile;
@@ -173,7 +174,12 @@ class Widget {
             if (instance != null) {
                 var element : Element = cast instance;
                 setObjectValues(element, xml);
-                constructChildren(element, xml);
+                if (className == "PopupMenu") {
+                    constructMenu(PopupMenu.toPopupMenu(element), xml);
+                }
+                else {
+                    constructChildren(element, xml);
+                }
                 if (element.name == null) {
                     var nameAtt = xml.get("name");
                     if (nameAtt != null) {
@@ -427,6 +433,10 @@ class Widget {
                 }
             }
         }
+    }
+
+    private function constructMenu(menu: PopupMenu, xml: Xml) {
+        
     }
 
     private function constructChildren(element: Element, xml: Xml): Void {
