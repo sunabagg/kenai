@@ -438,7 +438,7 @@ class Widget {
     private function constructMenu(menu: PopupMenu, xml: Xml) {
         var children = xml.elements();
         for (child in children) {
-            if (child.nodeName == "MenuItem") {
+            if (child.nodeName == "menuItem") {
                 var attributes = child.attributes;
                 var label = attributes.get("label");
                 var id = menu.itemCount;
