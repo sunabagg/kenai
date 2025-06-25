@@ -27,6 +27,10 @@ namespace sunaba::core {
                 setSubViewport(subViewport);
             }
 
+            SubViewportNode* getSubViewport() {
+                return this->subViewport;
+            }
+
             void setSubViewport(SubViewportNode* subViewport) {
                 this->subViewport = subViewport;
                 this->setViewport(subViewport);
