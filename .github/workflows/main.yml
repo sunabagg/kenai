@@ -41,7 +41,7 @@ jobs:
       - name: Install Dependencies (Windows)
         if: matrix.config.os == 'windows-latest'
         run: |
-          choco upgrade ccache ninja pkgconf -y
+          choco upgrade ccache ninja pkgconfiglite -y
 
       - name: Setup MSVC (Windows)
         if: matrix.config.os == 'windows-latest'
