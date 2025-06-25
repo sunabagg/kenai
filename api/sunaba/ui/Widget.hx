@@ -443,13 +443,13 @@ class Widget {
         var children = xml.elements();
         for (child in children) {
             if (child.nodeName == "menuItem") {
-                var attributes = child.attributes;
-                var label = attributes.get("label");
+                var attributes = child.attributes();
+                var label = xml.get("label");
                 var id = menu.itemCount;
                 menu.addItem(label, id);
                 for (attrib in attributes) {
                     var attributeName = attrib;
-                    var attributeValue = attributes.get(attributeName);
+                    var attributeValue = xml.get(attributeName);
                     if (attributeName == "icon") {
                         var image = Image.loadFromFile(attributeValue);
                         if (image != null) {
@@ -458,11 +458,11 @@ class Widget {
                                 menu.setItemIcon(id, texture);
                             }
                             else {
-                                throw "Failed to create Texture2D from image for field '" + attributeName + "' in element '" + Type.getClassName(Type.getClass(element)) + "'";
+                                throw "Failed to create Texture2D from image for field '" + attributeName + "' in menuItem";
                             }
                         }
                         else {
-                            throw "Failed to load image from file for field '" + attributeName + "' in element '" + Type.getClassName(Type.getClass(element)) + "'";
+                            throw "Failed to load image from file for field '" + attributeName + "' in menuItem";
                         }
                     }
                     else if (attributeName == "checkable") {
