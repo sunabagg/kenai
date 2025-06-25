@@ -1,6 +1,6 @@
 {
     "name" : "lucidfx",
-    "classPath": "",
+    "classPath": "api",
     "dependencies": {
     }
 }
