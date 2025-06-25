@@ -12,10 +12,16 @@ namespace sunaba::core::io {
     class ZipIo : public IoInterface {
     private:
         godot::Ref<godot::ZIPReader> zip_reader;
+
+        godot::Error errorCode = godot::Error::OK;
     public:
         ZipIo(const std::string &path) {
             zip_reader  = godot::Ref<godot::ZIPReader>(memnew(godot::ZIPReader));
-            zip_reader->open(path.c_str());
+            errorCode = zip_reader->open(path.c_str());
+        }
+
+        godot::Error getErrorCode() const override {
+            return errorCode;
         }
 
         std::string getFilePath(const std::string &path) const override {
