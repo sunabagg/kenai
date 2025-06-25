@@ -10,6 +10,10 @@ namespace sunaba::core {
             "renderTargetClearMode", sol::property(
                 &SubViewport::getRenderTargetClearMode,
                 &SubViewport::setRenderTargetClearMode
+            ),
+            "renderTargetUpdateMode", sol::property(
+                &SubViewport::getRenderTargetUpdateMode,
+                &SubViewport::setRenderTargetUpdateMode
             )
         );
     }
