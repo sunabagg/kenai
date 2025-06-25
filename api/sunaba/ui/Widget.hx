@@ -487,6 +487,19 @@ class Widget {
                         }
                         menu.setItemAsRadioCheckable(id, radioCheckable);
                     }
+                    else if (attributeName == "separator") {
+                        var separator : Bool = false;
+                        if (attributeValue == "true") {
+                            separator = true;
+                        }
+                        else if (attributeValue == "false") {
+                            separator = false;
+                        }
+                        else {
+                            throw "Invalid boolean value for field '" + attributeName + "' in element 'PopupMenu'";
+                        }
+                        menu.setItemAsSeparator(id, separator);
+                    }
                 }
             }
         }
