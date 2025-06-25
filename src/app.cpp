@@ -319,6 +319,7 @@ void App::loadAndExecuteSbx(const String &path) {
     }
     if (!path.ends_with(".sbx")) {
         UtilityFunctions::print("Error: path must end with .sbx");
+        get_tree()->quit();
         return;
     }
     if (!godot::FileAccess::file_exists(path)) {
