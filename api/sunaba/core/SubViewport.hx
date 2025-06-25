@@ -7,4 +7,6 @@ extern class SubViewport extends Viewport {
     public var size: Vector2i;
     public var size2dOverride: Vector2i;
     public var size2dOverrideStretch: Bool;
+    @:native("cast")
+    public static function toSubViewport(type: Dynamic): SubViewport;
 }
