@@ -1,6 +1,6 @@
 #include "lua_bind.h"
 
-void sunaba::core::bind_quaternion(sol::state& lua) {
+void lucidfx::core::bind_quaternion(sol::state& lua) {
     lua.new_usertype<godot::Quaternion> (
         "Quaternion",
         sol::constructors<Quaternion(), Quaternion(float, float, float, float)>(),

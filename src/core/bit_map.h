@@ -13,7 +13,7 @@
 
 using namespace godot;
 
-namespace sunaba::core {
+namespace lucidfx::core {
     void bindBitMap(sol::state &lua);
 
     class BitMap : public Resource {

@@ -1,11 +1,11 @@
 #include "style_box_texture.h"
 
-void sunaba::ui::bindStyleBoxTexture(sol::state_view& lua) {
+void lucidfx::ui::bindStyleBoxTexture(sol::state_view& lua) {
     lua.new_usertype<StyleBoxTexture>("StyleBoxTexture",
         "new", sol::factories(
             []() { return new StyleBoxTexture(); }
         ),
-        sol::base_classes, sol::bases<sunaba::core::BaseObject, sunaba::core::Resource, sunaba::ui::StyleBox>(),
+        sol::base_classes, sol::bases<lucidfx::core::BaseObject, lucidfx::core::Resource, lucidfx::ui::StyleBox>(),
         "axisStretchHorizontal", sol::property(&StyleBoxTexture::getAxisStretchHorizontal, &StyleBoxTexture::setAxisStretchHorizontal),
         "axisStretchVertical", sol::property(&StyleBoxTexture::getAxisStretchVertical, &StyleBoxTexture::setAxisStretchVertical),
         "drawCenter", sol::property(&StyleBoxTexture::isDrawCenter, &StyleBoxTexture::setDrawCenter),
@@ -25,7 +25,7 @@ void sunaba::ui::bindStyleBoxTexture(sol::state_view& lua) {
         "getTextureMargin", &StyleBoxTexture::getTextureMargin,
         "setTextureMarginAll", &StyleBoxTexture::setTextureMarginAll,
         "setTextureMargin", &StyleBoxTexture::setTextureMargin,
-        "cast", [](sunaba::core::Resource* p_resource) {
+        "cast", [](lucidfx::core::Resource* p_resource) {
             return new StyleBoxTexture(godot::Object::cast_to<GodotStyleBoxTexture>(p_resource->getResource()));
         }
     );

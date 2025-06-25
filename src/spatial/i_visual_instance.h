@@ -6,9 +6,9 @@
 #include "../core/scene_system.h"
 
 using namespace godot;
-using namespace sunaba::core;
+using namespace lucidfx::core;
 
-namespace sunaba::spatial
+namespace lucidfx::spatial
 {
     void bindVisualInstance(sol::state& lua);
 

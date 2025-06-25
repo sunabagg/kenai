@@ -10,9 +10,9 @@
 #include "container.h"
 
 using namespace godot;
-using namespace sunaba::ui;
+using namespace lucidfx::ui;
 
-namespace sunaba::ui {
+namespace lucidfx::ui {
     void bindPanelContainer(sol::state& lua);
 
     class PanelContainer;
@@ -24,7 +24,7 @@ namespace sunaba::ui {
                 // Bind methods specific to PanelContainerProxy
             }
         public:
-            sunaba::ui::PanelContainer* element = nullptr;
+            lucidfx::ui::PanelContainer* element = nullptr;
 
             void onInit() {
                 // Initialize the NodeProxy instance

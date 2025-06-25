@@ -6,7 +6,7 @@
 
 #include "io_interface.h"
 
-namespace sunaba::core::io {
+namespace lucidfx::core::io {
     void bindZipIo(sol::state& lua);
 
     class ZipIo : public IoInterface {
@@ -34,6 +34,6 @@ namespace sunaba::core::io {
         std::vector<std::string> getFileList(const std::string &path, const std::string &extension = "", const bool recursive = true) const override;
         bool directoryExists(const std::string &path) const override;
     };
-} // namespace sunaba::core::io 
+} // namespace lucidfx::core::io 
 
 #endif

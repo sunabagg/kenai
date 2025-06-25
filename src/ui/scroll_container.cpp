@@ -1,6 +1,6 @@
 #include "scroll_container.h"
 
-namespace sunaba::ui {
+namespace lucidfx::ui {
     void ScrollContainerProxy::_enter_tree() {
         if (element != nullptr) {
             element->enterTree();
@@ -134,7 +134,7 @@ namespace sunaba::ui {
             "new", sol::factories(
                 []() { return new ScrollContainer(); }
             ),
-            sol::base_classes, sol::bases<BaseObject, Element, sunaba::core::CanvasItem, Control, Container>(),
+            sol::base_classes, sol::bases<BaseObject, Element, lucidfx::core::CanvasItem, Control, Container>(),
             "clipContents", sol::property(&ScrollContainer::isClippingContents, &ScrollContainer::setClipContents),
             "drawFocusBorder", sol::property(&ScrollContainer::getDrawFocusBorder, &ScrollContainer::setDrawFocusBorder),
             "followFocus", sol::property(&ScrollContainer::isFollowingFocus, &ScrollContainer::setFollowFocus),

@@ -1,6 +1,6 @@
 #include "lua_bind.h"
 
-void sunaba::core::bind_array_list(sol::state& lua) {
+void lucidfx::core::bind_array_list(sol::state& lua) {
     lua.new_usertype<Array>("ArrayList",
         sol::constructors<Array()>(),
         "append", &Array::append,

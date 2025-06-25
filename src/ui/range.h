@@ -12,9 +12,9 @@
 #include "../core/event.h"
 
 using namespace godot;
-using namespace sunaba::core;
+using namespace lucidfx::core;
 
-namespace sunaba::ui {
+namespace lucidfx::ui {
     void bindRange(sol::state& lua);
 
     class Range;
@@ -25,7 +25,7 @@ namespace sunaba::ui {
                 // Bind methods specific to RangeProxy
             }
         public:
-            sunaba::ui::Range* element = nullptr;
+            lucidfx::ui::Range* element = nullptr;
 
             void onInit() {
                 // Initialize the NodeProxy instance
@@ -59,7 +59,7 @@ namespace sunaba::ui {
         protected:
             static void _bind_methods();
         public:
-            sunaba::ui::Range* element = nullptr;
+            lucidfx::ui::Range* element = nullptr;
 
             RangeSignalWrapper() = default;
             ~RangeSignalWrapper() = default;
@@ -68,7 +68,7 @@ namespace sunaba::ui {
             void value_changed(double value);
     };
 
-    class Range : public sunaba::ui::Control {
+    class Range : public lucidfx::ui::Control {
         private:
             RangeNode* range = nullptr; // Pointer to the Range instance
 

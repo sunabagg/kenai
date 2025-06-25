@@ -7,7 +7,7 @@
 
 using namespace godot;
 
-namespace sunaba::core{
+namespace lucidfx::core{
     struct GodotObjectProxy
     {
         Object* object;

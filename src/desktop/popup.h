@@ -12,9 +12,9 @@
 #include "../core/event.h"
 
 using namespace godot;
-using namespace sunaba::core;
+using namespace lucidfx::core;
 
-namespace sunaba::desktop {
+namespace lucidfx::desktop {
     void bindPopup(sol::state &lua);
 
     class Popup;
@@ -24,7 +24,7 @@ namespace sunaba::desktop {
         protected:
             static void _bind_methods() {}
         public:
-            sunaba::desktop::Popup* element = nullptr;
+            lucidfx::desktop::Popup* element = nullptr;
 
             void onInit() {
                 // Initialize the NodeProxy instance
@@ -48,7 +48,7 @@ namespace sunaba::desktop {
         protected:
             static void _bind_methods();
         public:
-            sunaba::desktop::Popup* element = nullptr;
+            lucidfx::desktop::Popup* element = nullptr;
 
             PopupSignalWrapper() = default;
             ~PopupSignalWrapper() = default;
@@ -56,7 +56,7 @@ namespace sunaba::desktop {
             void popup_hide();
     };
 
-    class Popup : public sunaba::desktop::Window {
+    class Popup : public lucidfx::desktop::Window {
         private:
             PopupNode* popup = nullptr; // Pointer to the Popup instance
             PopupSignalWrapper* popupSignalWrapper = nullptr;
@@ -145,7 +145,7 @@ namespace sunaba::desktop {
                     popupSignalWrapper = nullptr;
                 }
                 popup = nullptr;
-                sunaba::desktop::Window::onFree();
+                lucidfx::desktop::Window::onFree();
             }
     };
 }

@@ -10,12 +10,12 @@
 #include "input_event_from_window.h"
 
 using namespace godot;
-using namespace sunaba::core;
+using namespace lucidfx::core;
 
-namespace sunaba::input {
+namespace lucidfx::input {
     void bindInputEventScreenTouch(sol::state_view& lua);
 
-    class InputEventScreenTouch : public sunaba::input::InputEventFromWindow {
+    class InputEventScreenTouch : public lucidfx::input::InputEventFromWindow {
     private:
         GodotInputEventScreenTouch* event;
     public:

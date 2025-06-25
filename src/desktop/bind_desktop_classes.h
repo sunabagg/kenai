@@ -3,7 +3,7 @@
 
 #include <sol/sol.hpp>
 
-namespace sunaba::desktop
+namespace lucidfx::desktop
 {
     void bindDesktopClasses(sol::state& lua);
 }

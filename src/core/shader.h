@@ -13,7 +13,7 @@
 
 using namespace godot;
 
-namespace sunaba::core {
+namespace lucidfx::core {
     void bindShader(sol::state &lua);
 
     class Shader : public Resource {

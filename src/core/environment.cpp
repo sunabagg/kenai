@@ -1,6 +1,6 @@
 #include "environment.h"
 
-void sunaba::core::bindEnvironment(sol::state_view& lua) {
+void lucidfx::core::bindEnvironment(sol::state_view& lua) {
     lua.new_usertype<Environment>("Environment",
         "new", sol::factories(
             []() { return new Environment(); }

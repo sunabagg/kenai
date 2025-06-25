@@ -13,9 +13,9 @@
 #include "../desktop/popup_menu.h"
 
 using namespace godot;
-using namespace sunaba::core;
+using namespace lucidfx::core;
 
-namespace sunaba::ui {
+namespace lucidfx::ui {
     void bindMenuButton(sol::state& lua);
 
     class MenuButton;
@@ -27,7 +27,7 @@ namespace sunaba::ui {
                 // Binding methods for MenuButtonProxy
             }
         public:
-            sunaba::ui::MenuButton* element = nullptr;
+            lucidfx::ui::MenuButton* element = nullptr;
 
             void _enter_tree() override;
             void _exit_tree() override;
@@ -67,7 +67,7 @@ namespace sunaba::ui {
         protected:
             static void _bind_methods();
         public:
-            sunaba::ui::MenuButton* element = nullptr;
+            lucidfx::ui::MenuButton* element = nullptr;
 
             MenuButtonSignalWrapper() = default;
             ~MenuButtonSignalWrapper() = default;
@@ -173,8 +173,8 @@ namespace sunaba::ui {
                 aboutToPopupEvent = event;
             }
 
-            sunaba::desktop::PopupMenu* getPopup() {
-                return new sunaba::desktop::PopupMenu(menu_button->get_popup());
+            lucidfx::desktop::PopupMenu* getPopup() {
+                return new lucidfx::desktop::PopupMenu(menu_button->get_popup());
             }
 
             void setDisableShortcuts(bool p_disabled) {

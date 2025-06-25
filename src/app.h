@@ -14,7 +14,7 @@
 
 using namespace godot;
 
-namespace sunaba
+namespace lucidfx
 {
     class App : public Node {
         GDCLASS(App, Node)
@@ -26,7 +26,7 @@ namespace sunaba
 
         sol::state global_state;
 
-        sunaba::core::io::IoManager* ioManager;
+        lucidfx::core::io::IoManager* ioManager;
 
         void _ready() override;
         void _process(double delta) override;
@@ -37,7 +37,7 @@ namespace sunaba
 
         void start( const String &path );
 
-        sunaba::core::Scene* createScene();
+        lucidfx::core::Scene* createScene();
 
         // Mobdebug support
         void initMobdebug();

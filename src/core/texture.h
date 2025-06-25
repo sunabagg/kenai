@@ -1,5 +1,5 @@
-#ifndef SUNABA_TEXTURE_H
-#define SUNABA_TEXTURE_H
+#ifndef LUCIDFX_TEXTURE_H
+#define LUCIDFX_TEXTURE_H
 
 #include <godot_cpp/classes/texture.hpp>
 #include <godot_cpp/variant/variant.hpp>
@@ -11,7 +11,7 @@
 
 using namespace godot;
 
-namespace sunaba::core {
+namespace lucidfx::core {
     void bindTexture(sol::state &lua);
 
     class Texture : public Resource {
@@ -42,4 +42,4 @@ namespace sunaba::core {
     };
 }
 
-#endif // SUNABA_TEXTURE_H
+#endif // LUCIDFX_TEXTURE_H

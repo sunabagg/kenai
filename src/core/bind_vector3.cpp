@@ -1,6 +1,6 @@
 #include "lua_bind.h"
 
-void sunaba::core::bind_vector3(sol::state& lua) {
+void lucidfx::core::bind_vector3(sol::state& lua) {
     lua.new_usertype<godot::Vector3>(
         "Vector3",
         sol::constructors<Vector3(), Vector3(float, float, float)>(),

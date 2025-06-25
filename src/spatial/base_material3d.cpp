@@ -1,11 +1,11 @@
 #include "base_material3d.h"
 
-void sunaba::spatial::bindBaseMaterial3D(sol::state_view& lua) {
-    auto ut = lua.new_usertype<sunaba::spatial::BaseMaterial3D>("BaseMaterial3D",
+void lucidfx::spatial::bindBaseMaterial3D(sol::state_view& lua) {
+    auto ut = lua.new_usertype<lucidfx::spatial::BaseMaterial3D>("BaseMaterial3D",
         "new", sol::factories(
-            []() { return new sunaba::spatial::BaseMaterial3D(); }
+            []() { return new lucidfx::spatial::BaseMaterial3D(); }
         ),
-        sol::base_classes, sol::bases<sunaba::core::BaseObject, sunaba::core::Resource, sunaba::core::Material>(),
+        sol::base_classes, sol::bases<lucidfx::core::BaseObject, lucidfx::core::Resource, lucidfx::core::Material>(),
         "albedoColor", sol::property(&BaseMaterial3D::getAlbedoColor, &BaseMaterial3D::setAlbedoColor),
         "albedoTexture", sol::property(&BaseMaterial3D::getAlbedoTexture, &BaseMaterial3D::setAlbedoTexture),
         "albedoTextureForceSrgb", sol::property(&BaseMaterial3D::getAlbedoTextureForceSrgb, &BaseMaterial3D::setAlbedoTextureForceSrgb),
@@ -124,7 +124,7 @@ void sunaba::spatial::bindBaseMaterial3D(sol::state_view& lua) {
         "vertexColorIsSrgb", sol::property(&BaseMaterial3D::getVertexColorIsSrgb, &BaseMaterial3D::setVertexColorIsSrgb),
         "vertexColorUseAsAlbedo", sol::property(&BaseMaterial3D::getVertexColorUseAsAlbedo, &BaseMaterial3D::setVertexColorUseAsAlbedo),
         //"setTexture", &BaseMaterial3D::setTexture,
-        "cast", [](sunaba::core::Resource* res) {
+        "cast", [](lucidfx::core::Resource* res) {
             return new BaseMaterial3D(
                 Object::cast_to<GodotBaseMaterial3D>(res->getResource())
             );

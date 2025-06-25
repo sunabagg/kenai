@@ -13,10 +13,10 @@
 
 using namespace godot;
 
-namespace sunaba::spatial {
+namespace lucidfx::spatial {
     void bindWorld3D(sol::state_view& lua);
 
-    class World3D : public sunaba::core::Resource {
+    class World3D : public lucidfx::core::Resource {
     private:
         GodotWorld3D* world = nullptr;
     public:
@@ -46,11 +46,11 @@ namespace sunaba::spatial {
             world->set_camera_attributes(ca->getCameraAttributes());
         }
 
-        sunaba::core::Environment* getEnvironment() {
-            return new sunaba::core::Environment(world->get_environment().ptr());
+        lucidfx::core::Environment* getEnvironment() {
+            return new lucidfx::core::Environment(world->get_environment().ptr());
         }
 
-        void setEnvironment(sunaba::core::Environment* env) {
+        void setEnvironment(lucidfx::core::Environment* env) {
             world->set_environment(env->getEnvironment());
         }
     };

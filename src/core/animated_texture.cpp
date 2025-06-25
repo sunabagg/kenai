@@ -1,39 +1,39 @@
 #include "animated_texture.h"
 
-void sunaba::core::bindAnimatedTexture(sol::state &lua) {
-    lua.new_usertype<sunaba::core::AnimatedTexture>("AnimatedTexture",
+void lucidfx::core::bindAnimatedTexture(sol::state &lua) {
+    lua.new_usertype<lucidfx::core::AnimatedTexture>("AnimatedTexture",
         "new", sol::factories(
-            []() { return new sunaba::core::AnimatedTexture(); }
+            []() { return new lucidfx::core::AnimatedTexture(); }
         ),
-        sol::base_classes, sol::bases<sunaba::core::BaseObject, sunaba::core::Resource, sunaba::core::Texture, sunaba::core::Texture2D>(),
+        sol::base_classes, sol::bases<lucidfx::core::BaseObject, lucidfx::core::Resource, lucidfx::core::Texture, lucidfx::core::Texture2D>(),
         "currentFrame", sol::property(
-            &sunaba::core::AnimatedTexture::getCurrentFrame, 
-            &sunaba::core::AnimatedTexture::setCurrentFrame
+            &lucidfx::core::AnimatedTexture::getCurrentFrame, 
+            &lucidfx::core::AnimatedTexture::setCurrentFrame
         ),
         "frames", sol::property(
-            &sunaba::core::AnimatedTexture::getFrames, 
-            &sunaba::core::AnimatedTexture::setFrames
+            &lucidfx::core::AnimatedTexture::getFrames, 
+            &lucidfx::core::AnimatedTexture::setFrames
         ),
         "oneShot", sol::property(
-            &sunaba::core::AnimatedTexture::getOneShot, 
-            &sunaba::core::AnimatedTexture::setOneShot
+            &lucidfx::core::AnimatedTexture::getOneShot, 
+            &lucidfx::core::AnimatedTexture::setOneShot
         ),
         "frames", sol::property(
-            &sunaba::core::AnimatedTexture::getFrames, 
-            &sunaba::core::AnimatedTexture::setFrames
+            &lucidfx::core::AnimatedTexture::getFrames, 
+            &lucidfx::core::AnimatedTexture::setFrames
         ),
         "pause", sol::property(
-            &sunaba::core::AnimatedTexture::getPause,
-            &sunaba::core::AnimatedTexture::setPause
+            &lucidfx::core::AnimatedTexture::getPause,
+            &lucidfx::core::AnimatedTexture::setPause
         ),
         "speedScale", sol::property(
-            &sunaba::core::AnimatedTexture::getSpeedScale, 
-            &sunaba::core::AnimatedTexture::setSpeedScale
+            &lucidfx::core::AnimatedTexture::getSpeedScale, 
+            &lucidfx::core::AnimatedTexture::setSpeedScale
         ),
-        "getFrameDuration", &sunaba::core::AnimatedTexture::getFrameDuration,
-        "getFrameTexture", &sunaba::core::AnimatedTexture::getFrameTexture,
-        "setFrameDuration", &sunaba::core::AnimatedTexture::setFrameDuration,
-        "setFrameTexture", &sunaba::core::AnimatedTexture::setFrameTexture,
+        "getFrameDuration", &lucidfx::core::AnimatedTexture::getFrameDuration,
+        "getFrameTexture", &lucidfx::core::AnimatedTexture::getFrameTexture,
+        "setFrameDuration", &lucidfx::core::AnimatedTexture::setFrameDuration,
+        "setFrameTexture", &lucidfx::core::AnimatedTexture::setFrameTexture,
         "cast", [](Resource* instance) {
             return new AnimatedTexture(godot::Object::cast_to<GodotAnimatedTexture>(instance->getResource()));
         }

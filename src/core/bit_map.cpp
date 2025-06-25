@@ -1,23 +1,23 @@
 #include "bit_map.h"
 
-void sunaba::core::bindBitMap(sol::state &lua) {
-    lua.new_usertype<sunaba::core::BitMap>("BitMap",
+void lucidfx::core::bindBitMap(sol::state &lua) {
+    lua.new_usertype<lucidfx::core::BitMap>("BitMap",
         "new", sol::factories(
-            []() { return new sunaba::core::BitMap(); }),
-        sol::base_classes, sol::bases<sunaba::core::BaseObject, sunaba::core::Resource>(),
-        "convertToImage", &sunaba::core::BitMap::convertToImage,
-        "create", &sunaba::core::BitMap::create,
-        "createFromImageAlpha", &sunaba::core::BitMap::createFromImageAlpha,
-        "getBit", &sunaba::core::BitMap::getBit,
-        "getBitv", &sunaba::core::BitMap::getBitv,
-        "getSize", &sunaba::core::BitMap::getSize,
-        "getTrueBitCount", &sunaba::core::BitMap::getTrueBitCount,
-        "growMask", &sunaba::core::BitMap::growMask,
-        "opaqueToPolygons", &sunaba::core::BitMap::opaqueToPolygons,
-        "resize", &sunaba::core::BitMap::resize,
-        "setBit", &sunaba::core::BitMap::setBit,
-        "setBitRect", &sunaba::core::BitMap::setBitRect,
-        "setBitv", &sunaba::core::BitMap::setBitv,
+            []() { return new lucidfx::core::BitMap(); }),
+        sol::base_classes, sol::bases<lucidfx::core::BaseObject, lucidfx::core::Resource>(),
+        "convertToImage", &lucidfx::core::BitMap::convertToImage,
+        "create", &lucidfx::core::BitMap::create,
+        "createFromImageAlpha", &lucidfx::core::BitMap::createFromImageAlpha,
+        "getBit", &lucidfx::core::BitMap::getBit,
+        "getBitv", &lucidfx::core::BitMap::getBitv,
+        "getSize", &lucidfx::core::BitMap::getSize,
+        "getTrueBitCount", &lucidfx::core::BitMap::getTrueBitCount,
+        "growMask", &lucidfx::core::BitMap::growMask,
+        "opaqueToPolygons", &lucidfx::core::BitMap::opaqueToPolygons,
+        "resize", &lucidfx::core::BitMap::resize,
+        "setBit", &lucidfx::core::BitMap::setBit,
+        "setBitRect", &lucidfx::core::BitMap::setBitRect,
+        "setBitv", &lucidfx::core::BitMap::setBitv,
         "cast", [](Resource* instance) {
             return new BitMap(godot::Object::cast_to<GodotBitMap>(instance->getResource()));
         }

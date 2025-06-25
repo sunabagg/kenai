@@ -12,9 +12,9 @@
 #include "../core/event.h"
 
 #include "../core/stl_function_wrapper.h"
-using namespace sunaba::core;
+using namespace lucidfx::core;
 
-namespace sunaba::ui {
+namespace lucidfx::ui {
     void bindBaseButton(sol::state &lua);
 
     class BaseButton;
@@ -28,7 +28,7 @@ namespace sunaba::ui {
                 // Binding methods for BaseButtonProxy
             }
         public:
-            sunaba::ui::BaseButton* element = nullptr;
+            lucidfx::ui::BaseButton* element = nullptr;
 
             void onInit() {
                 // Initialize the NodeProxy instance
@@ -74,7 +74,7 @@ namespace sunaba::ui {
         protected:
             static void _bind_methods();
         public:
-            sunaba::ui::BaseButton* element = nullptr;
+            lucidfx::ui::BaseButton* element = nullptr;
 
             BaseButtonSignalWrapper() = default;
             ~BaseButtonSignalWrapper() = default;
@@ -85,7 +85,7 @@ namespace sunaba::ui {
             void button_up();
     };
 
-    class BaseButton : public sunaba::ui::Control {
+    class BaseButton : public lucidfx::ui::Control {
         private:
             BaseButtonNode* base_button = nullptr;
 
@@ -188,11 +188,11 @@ namespace sunaba::ui {
                 base_button->set_keep_pressed_outside(enabled);
             }
 
-            sunaba::input::Shortcut* getShortcut() {
-                return new sunaba::input::Shortcut(base_button->get_shortcut().ptr());
+            lucidfx::input::Shortcut* getShortcut() {
+                return new lucidfx::input::Shortcut(base_button->get_shortcut().ptr());
             }
 
-            void setShortcut(sunaba::input::Shortcut* shortcut) {
+            void setShortcut(lucidfx::input::Shortcut* shortcut) {
                 base_button->set_shortcut(shortcut->getShortcut());
             }
 

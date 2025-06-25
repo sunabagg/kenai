@@ -198,8 +198,8 @@ __haxe_iterators_ArrayKeyValueIterator = _hx_e()
 __lua_Boot = _hx_e()
 __lua_UserData = _hx_e()
 __lua_Thread = _hx_e()
-__sunaba_core_Behavior = _hx_e()
-__sunaba_core_ObjectUtils = _hx_e()
+__lucidfx_core_Behavior = _hx_e()
+__lucidfx_core_ObjectUtils = _hx_e()
 __support_files_test2_src_DeltaTimePrinter = _hx_e()
 
 local _hx_bind, _hx_bit, _hx_staticToInstance, _hx_funcToField, _hx_maxn, _hx_print, _hx_apply_self, _hx_box_mr, _hx_bit_clamp, _hx_table, _hx_bit_raw
@@ -1079,12 +1079,12 @@ __lua_UserData.__name__ = "lua.UserData"
 __lua_Thread.new = {}
 __lua_Thread.__name__ = "lua.Thread"
 
-__sunaba_core_Behavior.new = function() 
-  local self = _hx_new(__sunaba_core_Behavior.prototype)
-  __sunaba_core_Behavior.super(self)
+__lucidfx_core_Behavior.new = function() 
+  local self = _hx_new(__lucidfx_core_Behavior.prototype)
+  __lucidfx_core_Behavior.super(self)
   return self
 end
-__sunaba_core_Behavior.super = function(self) 
+__lucidfx_core_Behavior.super = function(self) 
   local type = Type.getClass(self);
   if (type == nil) then 
     _G.error(__haxe_Exception.thrown("Behavior must be a class"),0);
@@ -1094,17 +1094,17 @@ __sunaba_core_Behavior.super = function(self)
   comp:setScriptType(type);
   comp:setScriptInstance(self);
 end
-__sunaba_core_Behavior.__name__ = "sunaba.core.Behavior"
-__sunaba_core_Behavior.prototype = _hx_e();
-__sunaba_core_Behavior.prototype.onInit = function(self) 
+__lucidfx_core_Behavior.__name__ = "lucidfx.core.Behavior"
+__lucidfx_core_Behavior.prototype = _hx_e();
+__lucidfx_core_Behavior.prototype.onInit = function(self) 
 end
-__sunaba_core_Behavior.prototype.onReady = function(self) 
+__lucidfx_core_Behavior.prototype.onReady = function(self) 
 end
-__sunaba_core_Behavior.prototype.onUpdate = function(self,deltaTime) 
+__lucidfx_core_Behavior.prototype.onUpdate = function(self,deltaTime) 
 end
-__sunaba_core_Behavior.prototype.onPhysicsUpdate = function(self,delatTime) 
+__lucidfx_core_Behavior.prototype.onPhysicsUpdate = function(self,delatTime) 
 end
-__sunaba_core_Behavior.prototype.getComponentNG = function(self,type,entity) 
+__lucidfx_core_Behavior.prototype.getComponentNG = function(self,type,entity) 
   if (entity == nil) then 
     entity = self.component.entity;
   end;
@@ -1124,7 +1124,7 @@ __sunaba_core_Behavior.prototype.getComponentNG = function(self,type,entity)
   end;
   do return nil end
 end
-__sunaba_core_Behavior.prototype.addComponentNG = function(self,type,entity) 
+__lucidfx_core_Behavior.prototype.addComponentNG = function(self,type,entity) 
   local compType = type;
   if (compType ~= nil) then 
     local component = Type.createInstance(compType, _hx_tab_array({}, 0));
@@ -1142,7 +1142,7 @@ __sunaba_core_Behavior.prototype.addComponentNG = function(self,type,entity)
   end;
   _G.error(__haxe_Exception.thrown("Invalid Component"),0);
 end
-__sunaba_core_Behavior.prototype.removeComponent = function(self,type,entity) 
+__lucidfx_core_Behavior.prototype.removeComponent = function(self,type,entity) 
   if (entity == nil) then 
     entity = self.component.entity;
   end;
@@ -1162,21 +1162,21 @@ __sunaba_core_Behavior.prototype.removeComponent = function(self,type,entity)
   end;
 end
 
-__sunaba_core_Behavior.prototype.__class__ =  __sunaba_core_Behavior
+__lucidfx_core_Behavior.prototype.__class__ =  __lucidfx_core_Behavior
 
-__sunaba_core_ObjectUtils.new = {}
-__sunaba_core_ObjectUtils.__name__ = "sunaba.core.ObjectUtils"
-__sunaba_core_ObjectUtils.castObjectAs_getComponent_T = function(_type,object) 
+__lucidfx_core_ObjectUtils.new = {}
+__lucidfx_core_ObjectUtils.__name__ = "lucidfx.core.ObjectUtils"
+__lucidfx_core_ObjectUtils.castObjectAs_getComponent_T = function(_type,object) 
   local obj = _type.cast(object);
   if (obj == nil) then 
     _G.error(__haxe_Exception.thrown(Std.string("Object is not of type ") .. Std.string(Std.string(_type))),0);
   end;
   do return obj end;
 end
-__sunaba_core_ObjectUtils.getName = function(object) 
+__lucidfx_core_ObjectUtils.getName = function(object) 
   do return object.__name end;
 end
-__sunaba_core_ObjectUtils.typeInheritsFrom = function(type1,type2) 
+__lucidfx_core_ObjectUtils.typeInheritsFrom = function(type1,type2) 
   local type1Name = type1.__name;
   if (type1Name == nil) then 
     type1Name = type1.__name__;
@@ -1214,7 +1214,7 @@ __support_files_test2_src_DeltaTimePrinter.new = function()
   return self
 end
 __support_files_test2_src_DeltaTimePrinter.super = function(self) 
-  __sunaba_core_Behavior.super(self);
+  __lucidfx_core_Behavior.super(self);
 end
 __support_files_test2_src_DeltaTimePrinter.__name__ = "support_files.test2.src.DeltaTimePrinter"
 __support_files_test2_src_DeltaTimePrinter.prototype = _hx_e();
@@ -1226,8 +1226,8 @@ __support_files_test2_src_DeltaTimePrinter.prototype.onInit = function(self)
 end
 
 __support_files_test2_src_DeltaTimePrinter.prototype.__class__ =  __support_files_test2_src_DeltaTimePrinter
-__support_files_test2_src_DeltaTimePrinter.__super__ = __sunaba_core_Behavior
-setmetatable(__support_files_test2_src_DeltaTimePrinter.prototype,{__index=__sunaba_core_Behavior.prototype})
+__support_files_test2_src_DeltaTimePrinter.__super__ = __lucidfx_core_Behavior
+setmetatable(__support_files_test2_src_DeltaTimePrinter.prototype,{__index=__lucidfx_core_Behavior.prototype})
 if _hx_bit_raw then
     _hx_bit_clamp = function(v)
     if v <= 2147483647 and v >= -2147483648 then

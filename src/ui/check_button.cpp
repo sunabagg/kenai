@@ -1,6 +1,6 @@
 #include "check_button.h"
 
-namespace sunaba::ui {
+namespace lucidfx::ui {
     void CheckButtonProxy::_enter_tree() {
         if (this->element != nullptr) {
             this->element->enterTree();
@@ -122,7 +122,7 @@ namespace sunaba::ui {
             "new", sol::factories(
                 []() { return new CheckButton(); }
             ),
-            sol::base_classes, sol::bases<BaseObject, Element, sunaba::core::CanvasItem, Control, sunaba::ui::BaseButton, Button>(),
+            sol::base_classes, sol::bases<BaseObject, Element, lucidfx::core::CanvasItem, Control, lucidfx::ui::BaseButton, Button>(),
             "alignment", sol::property(
                 &CheckButton::getAlignment,
                 &CheckButton::setAlignment
@@ -131,7 +131,7 @@ namespace sunaba::ui {
                 &CheckButton::getToggleMode,
                 &CheckButton::setToggleMode
             ),
-            "cast", [](sunaba::core::Element* e) {
+            "cast", [](lucidfx::core::Element* e) {
                 CheckButtonNode* check_button_node = Object::cast_to<CheckButtonNode>(e->getNode());
                 return new CheckButton(check_button_node);
             }

@@ -4,7 +4,7 @@
 #include "io_manager.h"
 #include <sol/sol.hpp>
 #include <map>
-namespace sunaba::core::io {
+namespace lucidfx::core::io {
     class IoIndex {
     private:
         static std::map<sol::state_view, IoManager*> ioManagers;

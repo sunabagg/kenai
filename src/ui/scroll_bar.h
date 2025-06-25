@@ -10,9 +10,9 @@
 #include "range.h"
 
 using namespace godot;
-using namespace sunaba::core;
+using namespace lucidfx::core;
 
-namespace sunaba::ui {
+namespace lucidfx::ui {
     void bindScrollBar(sol::state& lua);
 
     class ScrollBar;
@@ -25,7 +25,7 @@ namespace sunaba::ui {
                 BIND_VIRTUAL_METHOD(ScrollBarProxy, _value_changed, 373806689);
             }
         public:
-            sunaba::ui::ScrollBar* element = nullptr;
+            lucidfx::ui::ScrollBar* element = nullptr;
 
             void onInit() {
                 // Initialize the NodeProxy instance
@@ -54,7 +54,7 @@ namespace sunaba::ui {
             void _value_changed(double value) override;
     };
 
-    class ScrollBar : public sunaba::ui::Range {
+    class ScrollBar : public lucidfx::ui::Range {
         private:
             ScrollBarNode* scrollBar = nullptr; // Pointer to the ScrollBar instance
 

@@ -3,9 +3,9 @@
 #include "../string_utils.h"
 
 using namespace godot;
-using namespace sunaba::core;
+using namespace lucidfx::core;
 
-namespace sunaba::core::io {
+namespace lucidfx::core::io {
     void bindFileSystemIo(sol::state& lua) {
         lua.new_usertype<FileSystemIo>(
             "FileSystemIo",

@@ -1,6 +1,6 @@
 #include "item_list.h"
 
-namespace sunaba::ui {
+namespace lucidfx::ui {
     void ItemListProxy::_enter_tree() {
         if (this->element != nullptr) {
             this->element->enterTree();
@@ -172,7 +172,7 @@ namespace sunaba::ui {
             "new", sol::factories(
                 []() { return new ItemList(); }
             ),
-            sol::base_classes, sol::bases<BaseObject, Element, sunaba::core::CanvasItem, Control>(),
+            sol::base_classes, sol::bases<BaseObject, Element, lucidfx::core::CanvasItem, Control>(),
             "allowReselect", sol::property(&ItemList::getAllowReselect, &ItemList::setAllowReselect),
             "allowRmbSelect", sol::property(&ItemList::getAllowRmbSelect, &ItemList::setAllowRmbSelect),
             "allowSearch", sol::property(&ItemList::getAllowSearch, &ItemList::setAllowSearch),

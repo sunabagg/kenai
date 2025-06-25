@@ -1,11 +1,11 @@
 #include "noise.h"
 
-void sunaba::core::bindNoise(sol::state_view& lua) {
+void lucidfx::core::bindNoise(sol::state_view& lua) {
         lua.new_usertype<Noise>("Noise",
             "new", sol::factories(
                 []() { return new Noise(); }
             ),
-            sol::base_classes, sol::bases<sunaba::core::BaseObject, sunaba::core::Resource>(),
+            sol::base_classes, sol::bases<lucidfx::core::BaseObject, lucidfx::core::Resource>(),
             "getImage", &Noise::getImage,
             "getImage3d", &Noise::getImage3d,
             "getNoise1d", &Noise::getNoise1d,

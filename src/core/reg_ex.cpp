@@ -1,6 +1,6 @@
 #include "reg_ex.h"
 
-namespace sunaba::core {
+namespace lucidfx::core {
     void bindRegEx(sol::state& lua) {
         lua.new_usertype<RegEx>("RegEx",
             "new", sol::factories(

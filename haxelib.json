@@ -1,6 +1,6 @@
 {
-    "name" : "sunaba",
-    "classPath": "",
+    "name" : "lucidfx",
+    "classPath": "api",
     "dependencies": {
     }
 }

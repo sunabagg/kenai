@@ -1,16 +1,16 @@
 package;
 
-import sunaba.ui.Button;
-import sunaba.ui.Button.ButtonAbstract;
-import sunaba.ui.Label;
-import sunaba.ui.Widget;
+import lucidfx.ui.Button;
+import lucidfx.ui.Button.ButtonAbstract;
+import lucidfx.ui.Label;
+import lucidfx.ui.Widget;
 
 class ClickerCounter extends Widget {
     var label: Label;
     var counter: Int = 0;
     
     override function init() {
-        load("app://assets/ClickerCounter.suml");
+        load("app://assets/ClickerCounter.lxml");
         var labelElement = rootElement.find(
             "centerContainer/vboxContainer/clickCounterLabel"
         );

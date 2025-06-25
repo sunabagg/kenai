@@ -1,6 +1,6 @@
 #include "popup_panel.h"
 
-namespace sunaba::desktop {
+namespace lucidfx::desktop {
     void PopupPanelProxy::_enter_tree() {
         if (this->element != nullptr) {
             this->element->enterTree();
@@ -67,7 +67,7 @@ namespace sunaba::desktop {
             "new", sol::factories(
                 []() { return new PopupPanel(); }
             ),
-            sol::base_classes, sol::bases<BaseObject, Element, sunaba::core::Viewport, Window, Popup>(),
+            sol::base_classes, sol::bases<BaseObject, Element, lucidfx::core::Viewport, Window, Popup>(),
             "transparent", sol::property(&PopupPanel::getTransparent, &PopupPanel::setTransparent),
             "transparentBg", sol::property(&PopupPanel::getTransparentBg, &PopupPanel::setTransparentBg),
             "cast", [](Element* e) {

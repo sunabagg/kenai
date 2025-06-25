@@ -1,5 +1,5 @@
-#ifndef SUNABA_IMAGE_H
-#define SUNABA_IMAGE_H
+#ifndef LUCIDFX_IMAGE_H
+#define LUCIDFX_IMAGE_H
 
 #include <godot_cpp/classes/image.hpp>
 #include <godot_cpp/variant/variant.hpp>
@@ -13,9 +13,9 @@
 #include "io/io_index.h"
 
 using namespace godot;
-using namespace sunaba::core::io;
+using namespace lucidfx::core::io;
 
-namespace sunaba::core {
+namespace lucidfx::core {
     void bindImage(sol::state &lua);
 
     class Image : public Resource {
@@ -405,4 +405,4 @@ namespace sunaba::core {
     };
 }
 
-#endif  // SUNABA_IMAGE_H
+#endif  // LUCIDFX_IMAGE_H

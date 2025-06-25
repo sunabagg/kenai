@@ -16,7 +16,7 @@ public partial class Main : Node
 	{
 		var bindgenPath = ProjectSettings.GlobalizePath("res://");
 		rootPath = bindgenPath + "/../";
-		apiCodePath = rootPath + "sunaba/";
+		apiCodePath = rootPath + "lucidfx/";
 
 		xmlPath = rootPath + "xmlgdapi/";
 		
@@ -49,7 +49,7 @@ public partial class Main : Node
 			{
 				var enumName = type.Name;
 				var codeFile = apiCodePath + enumName + ".hx";
-				var packageName = "sunaba";
+				var packageName = "lucidfx";
 
 				var stringBuilder = new System.Text.StringBuilder();
 				stringBuilder.AppendLine("package " + packageName + ";");
@@ -174,7 +174,7 @@ public partial class Main : Node
 							enumName = enumName.Replace("editor", String.Empty);
 						}
 
-						var codeDir = enumPath.Replace(apiCodePath, "sunaba/");
+						var codeDir = enumPath.Replace(apiCodePath, "lucidfx/");
 						var codeFile = enumPath + "/" + enumName + ".hx";
 
 						var packageName = codeDir.Replace("/", ".");

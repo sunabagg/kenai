@@ -3,7 +3,7 @@
 
 #include "io_interface.h"
 
-namespace sunaba::core::io {
+namespace lucidfx::core::io {
     void bindSystemIoInterface(sol::state& lua);
 
     class SystemIoInterface : public IoInterface {

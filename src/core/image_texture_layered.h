@@ -12,10 +12,10 @@
 
 using namespace godot;
 
-namespace sunaba::core {
+namespace lucidfx::core {
     void bindImageTextureLayered(sol::state_view& lua);
 
-    class ImageTextureLayered : public sunaba::core::TextureLayered {
+    class ImageTextureLayered : public lucidfx::core::TextureLayered {
     private:
         GodotImageTextureLayered* texture = nullptr;
     public:

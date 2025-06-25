@@ -11,7 +11,7 @@
 
 using namespace godot;
 
-namespace sunaba::spatial {
+namespace lucidfx::spatial {
     void bindStandardMaterial3D(sol::state_view& lua);
 
     class StandardMaterial3D : public BaseMaterial3D {

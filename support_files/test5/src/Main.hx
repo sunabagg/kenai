@@ -1,6 +1,6 @@
 package;
 
-import sunaba.App;
+import lucidfx.App;
 
 class Main extends App {
     public static function main() {

@@ -10,7 +10,7 @@
 #include "button.h"
 
 
-namespace sunaba::ui {
+namespace lucidfx::ui {
     void bindCheckButton(sol::state& lua);
     
     class CheckButton;
@@ -22,7 +22,7 @@ namespace sunaba::ui {
                 // Bind methods specific to CheckButtonProxy
             }
         public:
-            sunaba::ui::CheckButton* element = nullptr;
+            lucidfx::ui::CheckButton* element = nullptr;
 
             void _enter_tree() override;
             void _exit_tree() override;
@@ -55,7 +55,7 @@ namespace sunaba::ui {
             void _toggled(bool p_toggled_on) override;
     };
 
-    class CheckButton : public sunaba::ui::Button {
+    class CheckButton : public lucidfx::ui::Button {
         private:
             CheckButtonNode* check_button = nullptr;
 

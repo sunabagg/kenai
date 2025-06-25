@@ -16,9 +16,9 @@
 #include "../desktop/popup_menu.h"
 
 using namespace godot;
-using namespace sunaba::core;
+using namespace lucidfx::core;
 
-namespace sunaba::ui {
+namespace lucidfx::ui {
     void bindTextEdit(sol::state &lua);
 
     class TextEdit;
@@ -30,7 +30,7 @@ namespace sunaba::ui {
                 // Bind methods specific to TextEditProxy
             }
         public:
-            sunaba::ui::TextEdit* element = nullptr;
+            lucidfx::ui::TextEdit* element = nullptr;
 
             void onInit() {
                 // Initialize the NodeProxy instance
@@ -84,7 +84,7 @@ namespace sunaba::ui {
         protected:
             static void _bind_methods();
         public:
-            sunaba::ui::TextEdit* element = nullptr;
+            lucidfx::ui::TextEdit* element = nullptr;
 
             TextEditSignalWrapper() = default;
             ~TextEditSignalWrapper() = default;
@@ -808,8 +808,8 @@ namespace sunaba::ui {
                 return text_edit->get_line_count();
             }
 
-            sunaba::core::Texture2D* getLineGutterIcon(int line, int gutter) {
-                return new sunaba::core::Texture2D(text_edit->get_line_gutter_icon(line, gutter).ptr());
+            lucidfx::core::Texture2D* getLineGutterIcon(int line, int gutter) {
+                return new lucidfx::core::Texture2D(text_edit->get_line_gutter_icon(line, gutter).ptr());
             }
 
             Color getLineGutterItemColor(int line, int gutter) {
@@ -866,8 +866,8 @@ namespace sunaba::ui {
                 return text_edit->get_local_mouse_pos();
             }
 
-            sunaba::desktop::PopupMenu* getMenu() {
-                return new sunaba::desktop::PopupMenu(text_edit->get_menu());
+            lucidfx::desktop::PopupMenu* getMenu() {
+                return new lucidfx::desktop::PopupMenu(text_edit->get_menu());
             }
 
             int getMinimapLineAtPos(Vector2i pos) {
@@ -1187,7 +1187,7 @@ namespace sunaba::ui {
                 text_edit->set_line_gutter_clickable(line, gutter, clickable);
             }
 
-            void setLineGutterIcon(int line, int gutter, sunaba::core::Texture2D* icon) {
+            void setLineGutterIcon(int line, int gutter, lucidfx::core::Texture2D* icon) {
                 godot::Texture2D* texture = icon->getTexture2D();
                 Ref<godot::Texture2D> ref_texture = Ref<godot::Texture2D>(texture);
                 text_edit->set_line_gutter_icon(line, gutter, ref_texture);

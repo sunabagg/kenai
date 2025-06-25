@@ -1,0 +1,44 @@
+package lucidfx;
+
+enum abstract Format(Int) from Int to Int {
+	var l8 = 0;
+	var la8 = 1;
+	var r8 = 2;
+	var rg8 = 3;
+	var rgb8 = 4;
+	var rgba8 = 5;
+	var rgba4444 = 6;
+	var rgb565 = 7;
+	var rf = 8;
+	var rgf = 9;
+	var rgbf = 10;
+	var rgbaf = 11;
+	var rh = 12;
+	var rgh = 13;
+	var rgbh = 14;
+	var rgbah = 15;
+	var rgbe9995 = 16;
+	var dxt1 = 17;
+	var dxt3 = 18;
+	var dxt5 = 19;
+	var rgtcR = 20;
+	var rgtcRg = 21;
+	var bptcRgba = 22;
+	var bptcRgbf = 23;
+	var bptcRgbfu = 24;
+	var etc = 25;
+	var etc2r11 = 26;
+	var etc2r11s = 27;
+	var etc2Rg11 = 28;
+	var etc2Rg11s = 29;
+	var etc2Rgb8 = 30;
+	var etc2Rgba8 = 31;
+	var etc2Rgb8a1 = 32;
+	var etc2RaAsRg = 33;
+	var dxt5RaAsRg = 34;
+	var astc4x4 = 35;
+	var astc4x4Hdr = 36;
+	var astc8x8 = 37;
+	var astc8x8Hdr = 38;
+	var max = 39;
+}

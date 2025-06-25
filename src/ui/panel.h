@@ -10,9 +10,9 @@
 #include "control.h"
 
 using namespace godot;
-using namespace sunaba::core;
+using namespace lucidfx::core;
 
-namespace sunaba::ui {
+namespace lucidfx::ui {
     void bindPanel(sol::state& lua);
 
     class Panel;
@@ -24,7 +24,7 @@ namespace sunaba::ui {
                 // Bind methods specific to PanelProxy
             }
         public:
-            sunaba::ui::Panel* element = nullptr;
+            lucidfx::ui::Panel* element = nullptr;
 
             void onInit() {
                 // Initialize the NodeProxy instance
@@ -51,7 +51,7 @@ namespace sunaba::ui {
             TypedArray<Vector3i> _structured_text_parser(const Array &args, const String &text) const override;
     };
 
-    class Panel : public sunaba::ui::Control {
+    class Panel : public lucidfx::ui::Control {
         private:
             PanelNode* panel = nullptr; // Pointer to the Panel instance
             void connectPanelSignals() {

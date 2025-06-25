@@ -3,7 +3,7 @@
 
 #include <sol/sol.hpp>
 
-namespace sunaba::core::io {
+namespace lucidfx::core::io {
     void bindBinaryClasses(sol::state& lua);
 }
 

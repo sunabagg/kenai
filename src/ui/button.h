@@ -10,7 +10,7 @@
 #include "base_button.h"
 #include "../core/texture2d.h"
 
-namespace sunaba::ui {
+namespace lucidfx::ui {
     void bindButton(sol::state& lua);
 
     class Button;
@@ -22,7 +22,7 @@ namespace sunaba::ui {
                 // Bind methods specific to ButtonProxy
             }
         public:
-            sunaba::ui::Button* element = nullptr;
+            lucidfx::ui::Button* element = nullptr;
 
             void _enter_tree() override;
             void _exit_tree() override;
@@ -59,7 +59,7 @@ namespace sunaba::ui {
             void _toggled(bool p_toggled_on) override;
     };
 
-    class Button : public sunaba::ui::BaseButton {
+    class Button : public lucidfx::ui::BaseButton {
         private:
             ButtonNode* button = nullptr;
 
@@ -132,11 +132,11 @@ namespace sunaba::ui {
                 button->set_flat(enabled);
             }
 
-            sunaba::core::Texture2D* getIcon() {
-                return new sunaba::core::Texture2D(button->get_button_icon().ptr());
+            lucidfx::core::Texture2D* getIcon() {
+                return new lucidfx::core::Texture2D(button->get_button_icon().ptr());
             }
 
-            void setIcon(sunaba::core::Texture2D* texture) {
+            void setIcon(lucidfx::core::Texture2D* texture) {
                 Ref<godot::Texture2D> textureRef = Ref<godot::Texture2D>(texture->getTexture());
                 button->set_button_icon(textureRef);
             }

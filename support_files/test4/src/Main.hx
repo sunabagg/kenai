@@ -1,14 +1,14 @@
 package support_files.test4.src;
 
-import sunaba.SizeFlags;
-import sunaba.LayoutPresetMode;
-import sunaba.App;
-import sunaba.ui.Control;
-import sunaba.ui.CenterContainer;
-import sunaba.ui.Panel;
-import sunaba.ui.Label;
-import sunaba.ui.VboxContainer;
-import sunaba.LayoutPreset;
+import lucidfx.SizeFlags;
+import lucidfx.LayoutPresetMode;
+import lucidfx.App;
+import lucidfx.ui.Control;
+import lucidfx.ui.CenterContainer;
+import lucidfx.ui.Panel;
+import lucidfx.ui.Label;
+import lucidfx.ui.VboxContainer;
+import lucidfx.LayoutPreset;
 
 class Main extends App{
     public static function main() {
@@ -58,7 +58,7 @@ class Main extends App{
         label.verticalAlignment = 1;
         label.horizontalAlignment = 1;
 
-        var button = new sunaba.ui.Button();
+        var button = new lucidfx.ui.Button();
         vboxContainer.addChild(button);
         button.text = "Click Me!";
 

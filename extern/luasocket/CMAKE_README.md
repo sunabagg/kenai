@@ -149,16 +149,16 @@ The CMake build system automatically handles platform-specific differences:
 - **macOS/FreeBSD**: Adds `UNIX_HAS_SUN_LEN` definition
 - **Solaris**: Links with `nsl`, `socket`, and `resolv` libraries
 
-### Integration with Sunaba Project
+### Integration with Lucidfx Project
 
-To integrate with the main Sunaba project, you can add this to your main `CMakeLists.txt`:
+To integrate with the main Lucidfx project, you can add this to your main `CMakeLists.txt`:
 
 ```cmake
 # Add LuaSocket as a subdirectory
 add_subdirectory(extern/luasocket)
 
 # In your target that needs socket functionality:
-target_link_libraries(your_sunaba_target 
+target_link_libraries(your_lucidfx_target 
     PRIVATE 
         luasocket::static
         # ... other dependencies

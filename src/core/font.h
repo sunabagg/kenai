@@ -1,5 +1,5 @@
-#ifndef SUNABA_FONT_H
-#define SUNABA_FONT_H
+#ifndef LUCIDFX_FONT_H
+#define LUCIDFX_FONT_H
 
 #include <godot_cpp/classes/font.hpp>
 #include <godot_cpp/variant/variant.hpp>
@@ -12,7 +12,7 @@
 
 using namespace godot;
 
-namespace sunaba::core {
+namespace lucidfx::core {
     void bindFont(sol::state &lua);
 
     class Font : public Resource {
@@ -150,4 +150,4 @@ namespace sunaba::core {
     };
 }
 
-#endif // SUNABA_FONT_H
+#endif // LUCIDFX_FONT_H

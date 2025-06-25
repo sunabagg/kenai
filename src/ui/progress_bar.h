@@ -10,9 +10,9 @@
 #include "range.h"
 
 using namespace godot;
-using namespace sunaba::core;
+using namespace lucidfx::core;
 
-namespace sunaba::ui {
+namespace lucidfx::ui {
     void bindProgressBar(sol::state& lua);
 
     class ProgressBar;
@@ -24,7 +24,7 @@ namespace sunaba::ui {
                 // Bind methods specific to ProgressBarProxy
             }
         public:
-            sunaba::ui::ProgressBar* element = nullptr;
+            lucidfx::ui::ProgressBar* element = nullptr;
 
             void onInit() {
                 // Initialize the NodeProxy instance
@@ -53,7 +53,7 @@ namespace sunaba::ui {
             void _value_changed(double value) override;
     };
 
-    class ProgressBar : public sunaba::ui::Range {
+    class ProgressBar : public lucidfx::ui::Range {
         private:
             ProgressBarNode* progressBar = nullptr; // Pointer to the ProgressBar instance
             void connectProgressBarSignals() {

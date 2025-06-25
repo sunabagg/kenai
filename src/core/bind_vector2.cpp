@@ -1,6 +1,6 @@
 #include "lua_bind.h"
 
-void sunaba::core::bind_vector2(sol::state& lua) {
+void lucidfx::core::bind_vector2(sol::state& lua) {
     lua.new_usertype<Vector2>(
         "Vector2",
         sol::constructors<Vector2(), Vector2(float, float)>(),

@@ -1,11 +1,11 @@
 #include "gradient.h"
 
-void sunaba::core::bindGradient(sol::state_view& lua) {
+void lucidfx::core::bindGradient(sol::state_view& lua) {
         lua.new_usertype<Gradient>("Gradient",
             "new", sol::factories(
                 []() { return new Gradient(); }
             ),
-            sol::base_classes, sol::bases<sunaba::core::BaseObject, sunaba::core::Resource>(),
+            sol::base_classes, sol::bases<lucidfx::core::BaseObject, lucidfx::core::Resource>(),
             "colors", sol::property(&Gradient::getColors, &Gradient::setColors),
             "interpolationColorSpace", sol::property(&Gradient::getInterpolationColorSpace, &Gradient::setInterpolationColorSpace),
             "interpolationMode", sol::property(&Gradient::getInterpolationMode, &Gradient::setInterpolationMode),

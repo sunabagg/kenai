@@ -1,6 +1,6 @@
 #include "tree.h"
 
-namespace sunaba::ui {
+namespace lucidfx::ui {
     void TreeProxy::_enter_tree() {
         if (this->element != nullptr) {
             this->element->enterTree();
@@ -268,7 +268,7 @@ namespace sunaba::ui {
             "new", sol::factories(
                 []() { return new Tree(); }
             ),
-            sol::base_classes, sol::bases<BaseObject, Element, sunaba::core::CanvasItem, Control>(),
+            sol::base_classes, sol::bases<BaseObject, Element, lucidfx::core::CanvasItem, Control>(),
             "allowReselect", sol::property(
                 &Tree::getAllowReselect,
                 &Tree::setAllowReselect

@@ -1,12 +1,12 @@
 #include "audio_stream_ogg_vorbis.h"
 
-void sunaba::audio::bindAudioStreamOggVorbis(sol::state_view& lua) {
+void lucidfx::audio::bindAudioStreamOggVorbis(sol::state_view& lua) {
     lua.new_usertype<AudioStreamOggVorbis>("AudioStreamOggVorbis",
        "new", sol::factories([]() {
             return new AudioStreamOggVorbis();
         }),
-        sol::base_classes, sol::bases<sunaba::core::BaseObject, sunaba::core::Resource, AudioStream>(),
-        "cast", [](sunaba::core::Resource* resource) { 
+        sol::base_classes, sol::bases<lucidfx::core::BaseObject, lucidfx::core::Resource, AudioStream>(),
+        "cast", [](lucidfx::core::Resource* resource) { 
             return new AudioStreamOggVorbis(
                 Object::cast_to<GodotAudioStreamOggVorbis>(
                     resource->getResource()

@@ -10,9 +10,9 @@
 #include "audio_stream.h"
 
 using namespace godot;
-using namespace sunaba::core;
+using namespace lucidfx::core;
 
-namespace sunaba::audio {
+namespace lucidfx::audio {
     void bindAudioStreamSynchronized(sol::state_view& lua);
 
     class AudioStreamSynchronized : public AudioStream {

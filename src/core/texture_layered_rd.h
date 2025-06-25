@@ -11,7 +11,7 @@
 
 using namespace godot;
 
-namespace sunaba::core {
+namespace lucidfx::core {
     void bindTextureLayeredRD(sol::state &lua);
 
     class TextureLayeredRD : public TextureLayered {

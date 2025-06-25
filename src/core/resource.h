@@ -1,5 +1,5 @@
-#ifndef SUNABA_RESOURCE_H
-#define SUNABA_RESOURCE_H
+#ifndef LUCIDFX_RESOURCE_H
+#define LUCIDFX_RESOURCE_H
 
 #include <godot_cpp/variant/variant.hpp>
 #include <godot_cpp/classes/resource.hpp>
@@ -9,7 +9,7 @@
 
 #include "base_object.h"
 
-namespace sunaba::core {
+namespace lucidfx::core {
     void bindResource(sol::state &lua);
 
     class Resource : public BaseObject {
@@ -52,4 +52,4 @@ namespace sunaba::core {
     };
 }
 
-#endif // SUNABA_RESOURCE_H
+#endif // LUCIDFX_RESOURCE_H

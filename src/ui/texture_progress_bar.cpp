@@ -1,6 +1,6 @@
 #include "texture_progress_bar.h"
 
-namespace sunaba::ui {
+namespace lucidfx::ui {
 
     void TextureProgressBarProxy::_enter_tree() {
         if (this->element != nullptr) {
@@ -128,7 +128,7 @@ namespace sunaba::ui {
             "new", sol::factories(
                 []() { return new TextureProgressBar(); }
             ),
-            sol::base_classes, sol::bases<BaseObject, Element, sunaba::core::CanvasItem, Control, Range>(),
+            sol::base_classes, sol::bases<BaseObject, Element, lucidfx::core::CanvasItem, Control, Range>(),
             "fillMode", sol::property(&TextureProgressBar::getFillMode, &TextureProgressBar::setFillMode),
             "mouseFilter", sol::property(&TextureProgressBar::getMouseFilter, &TextureProgressBar::setMouseFilter),
             "ninePatchStretch", sol::property(&TextureProgressBar::getNinePatchStretch, &TextureProgressBar::setNinePatchStretch),
@@ -156,4 +156,4 @@ namespace sunaba::ui {
         );
     }
 
-} // namespace sunaba::ui
+} // namespace lucidfx::ui

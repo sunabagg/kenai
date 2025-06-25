@@ -1,6 +1,6 @@
 #include "progress_bar.h"
 
-namespace sunaba::ui {
+namespace lucidfx::ui {
     void ProgressBarProxy::_enter_tree() {
         if (element != nullptr) {
             element->enterTree();
@@ -126,7 +126,7 @@ namespace sunaba::ui {
             "new", sol::factories(
                 []() { return new ProgressBar(); }
             ),
-            sol::base_classes, sol::bases<BaseObject, Element, sunaba::core::CanvasItem, Control, Range>(),
+            sol::base_classes, sol::bases<BaseObject, Element, lucidfx::core::CanvasItem, Control, Range>(),
             "editorPreviewIndeterminate", sol::property(&ProgressBar::isEditorPreviewIndeterminate, &ProgressBar::setEditorPreviewIndeterminate),
             "fillMode", sol::property(&ProgressBar::getFillMode, &ProgressBar::setFillMode),
             "indeterminate", sol::property(&ProgressBar::getIndeterminate, &ProgressBar::setIndeterminate),

@@ -1,6 +1,6 @@
 #include "lua_bind.h"
 
-void sunaba::core::bind_basis(sol::state& lua) {
+void lucidfx::core::bind_basis(sol::state& lua) {
     lua.new_usertype<godot::Basis>(
         "Basis",
         sol::constructors<Basis(), Basis(Vector3, Vector3, Vector3)>(),

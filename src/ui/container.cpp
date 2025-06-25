@@ -1,6 +1,6 @@
 #include "container.h"
 
-namespace sunaba::ui {
+namespace lucidfx::ui {
     void ContainerProxy::_enter_tree() {
         if (this->element != nullptr) {
             this->element->enterTree();
@@ -143,7 +143,7 @@ namespace sunaba::ui {
             "new", sol::factories(
                 []() { return new Container(); }
             ),
-            sol::base_classes, sol::bases<BaseObject, Element, sunaba::core::CanvasItem, Control>(),
+            sol::base_classes, sol::bases<BaseObject, Element, lucidfx::core::CanvasItem, Control>(),
             "mouseFilter", sol::property(
                 &Container::getMouseFilter,
                 &Container::setMouseFilter

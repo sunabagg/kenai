@@ -12,7 +12,7 @@
 
 using namespace godot;
 
-namespace sunaba::core {
+namespace lucidfx::core {
     void bindMaterial(sol::state_view& lua);
 
     class Material : public Resource {

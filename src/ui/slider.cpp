@@ -1,6 +1,6 @@
 #include "slider.h"
 
-namespace sunaba::ui {
+namespace lucidfx::ui {
     void SliderProxy::_enter_tree() {
         if (element != nullptr) {
             element->enterTree();
@@ -147,7 +147,7 @@ namespace sunaba::ui {
             "new", sol::factories(
                 []() { return new Slider(); }
             ),
-            sol::base_classes, sol::bases<BaseObject, Element, sunaba::core::CanvasItem, Control, Range>(),
+            sol::base_classes, sol::bases<BaseObject, Element, lucidfx::core::CanvasItem, Control, Range>(),
             "editable", sol::property(&Slider::isEditable, &Slider::setEditable),
             "focusMode", sol::property(&Slider::getFocusMode, &Slider::setFocusMode),
             "scrollable", sol::property(&Slider::getScrollable, &Slider::setScrollable),

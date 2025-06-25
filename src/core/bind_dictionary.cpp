@@ -1,6 +1,6 @@
 #include "lua_bind.h"
 
-void sunaba::core::bind_dictionary(sol::state& lua) {
+void lucidfx::core::bind_dictionary(sol::state& lua) {
     lua.new_usertype<Dictionary>("Dictionary",
         sol::constructors<Dictionary()>(),
         "assign", &Dictionary::assign,

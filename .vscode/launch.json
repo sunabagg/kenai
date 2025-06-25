@@ -22,7 +22,7 @@
             "args": [
                 "--verbose"
             ],
-            "cwd": "${command:cmake.buildDirectory}/sunaba",
+            "cwd": "${command:cmake.buildDirectory}/lucidfx",
             "preLaunchTask": "CMake: build",
             "internalConsoleOptions": "openOnSessionStart",
             "console": "internalConsole",
@@ -41,9 +41,9 @@
             "program": "godot",
             "args": [
                 "--verbose",
-                "${workspaceFolder}/support_files/test6/bin/test6.sbx"
+                "${workspaceFolder}/support_files/test6/bin/test6.lfx"
             ],
-            "cwd": "${command:cmake.buildDirectory}/sunaba",
+            "cwd": "${command:cmake.buildDirectory}/lucidfx",
             "preLaunchTask": "CMake: build",
             "internalConsoleOptions": "openOnSessionStart",
             "console": "internalConsole",
@@ -62,9 +62,9 @@
             "program": "godot",
             "args": [
                 "--verbose",
-                "${workspaceFolder}/support_files/test7/bin/test7.sbx"
+                "${workspaceFolder}/support_files/test7/bin/test7.lfx"
             ],
-            "cwd": "${command:cmake.buildDirectory}/sunaba",
+            "cwd": "${command:cmake.buildDirectory}/lucidfx",
             "preLaunchTask": "CMake: build",
             "internalConsoleOptions": "openOnSessionStart",
             "console": "internalConsole",
@@ -85,7 +85,7 @@
             "args": [
                 "--verbose"
             ],
-            "cwd": "${command:cmake.buildDirectory}/sunaba",
+            "cwd": "${command:cmake.buildDirectory}/lucidfx",
             "preLaunchTask": "CMake: build",
             "internalConsoleOptions": "openOnSessionStart",
             "visualizerFile": "${workspaceFolder}/.vscode/godot.natvis"
@@ -98,7 +98,7 @@
             "args": [
                 "--verbose"
             ],
-            "cwd": "${command:cmake.buildDirectory}/sunaba",
+            "cwd": "${command:cmake.buildDirectory}/lucidfx",
             "preLaunchTask": "CMake: build",
             "internalConsoleOptions": "openOnSessionStart"
         },
@@ -110,7 +110,7 @@
             "args": [
                 "--verbose"
             ],
-            "cwd": "${command:cmake.buildDirectory}/sunaba",
+            "cwd": "${command:cmake.buildDirectory}/lucidfx",
             "preLaunchTask": "CMake: build",
             "internalConsoleOptions": "openOnSessionStart",
             "visualizerFile": "${workspaceFolder}/.vscode/godot.natvis"
@@ -123,7 +123,7 @@
             "args": [
                 "--verbose"
             ],
-            "cwd": "${command:cmake.buildDirectory}/sunaba",
+            "cwd": "${command:cmake.buildDirectory}/lucidfx",
             "preLaunchTask": "CMake: build",
             "internalConsoleOptions": "openOnSessionStart",
         },
@@ -134,9 +134,9 @@
             "program": "/Applications/Godot.app/Contents/MacOS/Godot",
             "args": [
                 "--verbose",
-                "/Users/lucasabbas/sunaba/support_files/test6/bin/test6.sbx"
+                "/Users/lucasabbas/lucidfx/support_files/test6/bin/test6.lfx"
             ],
-            "cwd": "${command:cmake.buildDirectory}/sunaba",
+            "cwd": "${command:cmake.buildDirectory}/lucidfx",
             "preLaunchTask": "CMake: build",
             "internalConsoleOptions": "openOnSessionStart",
         }

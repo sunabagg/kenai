@@ -2,7 +2,7 @@ package;
 
 import sys.io.File;
 import sys.FileSystem;
-import sunaba.App;
+import lucidfx.App;
 
 class Main extends App {
     static function main() {

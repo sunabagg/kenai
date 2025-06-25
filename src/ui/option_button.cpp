@@ -1,6 +1,6 @@
 #include "option_button.h"
 
-namespace sunaba::ui {
+namespace lucidfx::ui {
     void OptionButtonProxy::_enter_tree() {
         if (element != nullptr) {
             element->enterTree();
@@ -153,7 +153,7 @@ namespace sunaba::ui {
             "new", sol::factories(
                 []() { return new OptionButton(); }
             ),
-            sol::base_classes, sol::bases<BaseObject, Element, sunaba::core::CanvasItem, Control, BaseButton, Button>(),
+            sol::base_classes, sol::bases<BaseObject, Element, lucidfx::core::CanvasItem, Control, BaseButton, Button>(),
             "actionMode", sol::property(
                 &OptionButton::getActionMode,
                 &OptionButton::setActionMode

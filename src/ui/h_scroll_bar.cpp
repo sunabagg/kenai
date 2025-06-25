@@ -1,6 +1,6 @@
 #include "h_scroll_bar.h"
 
-namespace sunaba::ui {
+namespace lucidfx::ui {
     void HScrollBarProxy::_enter_tree() {
         if (element != nullptr) {
             element->enterTree();
@@ -126,7 +126,7 @@ namespace sunaba::ui {
             "new", sol::factories(
                 []() { return new HScrollBar(); }
             ),
-            sol::base_classes, sol::bases<BaseObject, Element, sunaba::core::CanvasItem, Control, Range, ScrollBar>(),
+            sol::base_classes, sol::bases<BaseObject, Element, lucidfx::core::CanvasItem, Control, Range, ScrollBar>(),
             "cast", [] (Element* element) {
                 HScrollBarNode* hScrollBarNode = Object::cast_to<HScrollBarNode>(element->getNode());
                 return new HScrollBar(hScrollBarNode);

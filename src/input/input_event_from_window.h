@@ -10,12 +10,12 @@
 #include "input_event.h"
 
 using namespace godot;
-using namespace sunaba::core;
+using namespace lucidfx::core;
 
-namespace sunaba::input {
+namespace lucidfx::input {
     void bindInputEventFromWindow(sol::state_view& lua);
 
-    class InputEventFromWindow : public sunaba::input::InputEvent {
+    class InputEventFromWindow : public lucidfx::input::InputEvent {
     private:
         GodotInputEventFromWindow* event;
     public:

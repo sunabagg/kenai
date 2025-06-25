@@ -15,9 +15,9 @@
 #include "binary_data.h"
 
 using namespace godot;
-using namespace sunaba::core;
+using namespace lucidfx::core;
 
-namespace sunaba::core::io {
+namespace lucidfx::core::io {
 
     void bindIoInterface(sol::state& lua);
 

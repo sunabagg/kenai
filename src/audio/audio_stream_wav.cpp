@@ -1,12 +1,12 @@
 #include "audio_stream_wav.h"
 
-void sunaba::audio::bindAudioStreamWav(sol::state_view& lua) {
+void lucidfx::audio::bindAudioStreamWav(sol::state_view& lua) {
     lua.new_usertype<AudioStreamWav>("AudioStreamWav",
         "new", sol::factories([]() {
             return new AudioStreamWav();
         }),
-        sol::base_classes, sol::bases<sunaba::core::BaseObject, sunaba::core::Resource, AudioStream>(),
-        "cast", [](sunaba::core::Resource* resource) { 
+        sol::base_classes, sol::bases<lucidfx::core::BaseObject, lucidfx::core::Resource, AudioStream>(),
+        "cast", [](lucidfx::core::Resource* resource) { 
             return new AudioStreamWav(
                 Object::cast_to<AudioStreamWAV>(
                     resource->getResource()

@@ -4,7 +4,7 @@
 #include "popup_panel.h"
 #include "popup_menu.h"
 
-namespace sunaba::desktop {
+namespace lucidfx::desktop {
     void bindDesktopClasses(sol::state& lua) {
         bindWindow(lua);
         bindPopup(lua);

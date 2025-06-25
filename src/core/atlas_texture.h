@@ -12,7 +12,7 @@
 
 using namespace godot;
 
-namespace sunaba::core {
+namespace lucidfx::core {
     void bindAtlasTexture(sol::state &lua);
 
     class AtlasTexture : public Texture2D {

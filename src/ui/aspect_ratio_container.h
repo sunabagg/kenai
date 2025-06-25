@@ -12,9 +12,9 @@
 #include "../core/event.h"
 
 using namespace godot;
-using namespace sunaba::core;
+using namespace lucidfx::core;
 
-namespace sunaba::ui {
+namespace lucidfx::ui {
     void bindAspectRatioContainer(sol::state &lua);
 
     class AspectRatioContainer;
@@ -26,7 +26,7 @@ namespace sunaba::ui {
                 // Bind methods specific to AspectRatioContainerProxy
             }
         public:
-            sunaba::ui::AspectRatioContainer* element = nullptr;
+            lucidfx::ui::AspectRatioContainer* element = nullptr;
 
             void onInit() {
                 // Initialize the NodeProxy instance

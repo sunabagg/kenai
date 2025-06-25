@@ -11,9 +11,9 @@
 #include "../core/texture2d.h"
 
 using namespace godot;
-using namespace sunaba::core;
+using namespace lucidfx::core;
 
-namespace sunaba::ui {
+namespace lucidfx::ui {
     void bindTextureProgressBar(sol::state &lua);
 
     class TextureProgressBar;
@@ -25,7 +25,7 @@ namespace sunaba::ui {
                 // Bind methods specific to TextureProgressBarProxy
             }
         public:
-            sunaba::ui::TextureProgressBar* element = nullptr;
+            lucidfx::ui::TextureProgressBar* element = nullptr;
 
             void onInit() {
                 // Initialize the NodeProxy instance
@@ -184,19 +184,19 @@ namespace sunaba::ui {
                 proxy->set_stretch_margin(Side::SIDE_TOP, value);
             }
             
-            sunaba::core::Texture2D* getTextureOver() {
-                return new sunaba::core::Texture2D(proxy->get_over_texture().ptr());
+            lucidfx::core::Texture2D* getTextureOver() {
+                return new lucidfx::core::Texture2D(proxy->get_over_texture().ptr());
             }
 
-            void setTextureOver(sunaba::core::Texture2D* texture) {
+            void setTextureOver(lucidfx::core::Texture2D* texture) {
                 proxy->set_over_texture(texture->getTexture2D());
             }
 
-            sunaba::core::Texture2D* getTextureProgress() {
-                return new sunaba::core::Texture2D(proxy->get_progress_texture().ptr());
+            lucidfx::core::Texture2D* getTextureProgress() {
+                return new lucidfx::core::Texture2D(proxy->get_progress_texture().ptr());
             }
 
-            void setTextureProgress(sunaba::core::Texture2D* texture) {
+            void setTextureProgress(lucidfx::core::Texture2D* texture) {
                 proxy->set_progress_texture(texture->getTexture2D());
             }
 
@@ -208,11 +208,11 @@ namespace sunaba::ui {
                 proxy->set_texture_progress_offset(offset);
             }
 
-            sunaba::core::Texture2D* getTextureUnder() {
-                return new sunaba::core::Texture2D(proxy->get_under_texture().ptr());
+            lucidfx::core::Texture2D* getTextureUnder() {
+                return new lucidfx::core::Texture2D(proxy->get_under_texture().ptr());
             }
 
-            void setTextureUnder(sunaba::core::Texture2D* texture) {
+            void setTextureUnder(lucidfx::core::Texture2D* texture) {
                 proxy->set_under_texture(texture->getTexture2D());
             }
 

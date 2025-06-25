@@ -7,9 +7,9 @@
 #include "transform.h"
 
 using namespace godot;
-using namespace sunaba::core;
+using namespace lucidfx::core;
 
-namespace sunaba::spatial {
+namespace lucidfx::spatial {
     void bindCamera(sol::state& lua);
 
     class Camera : public Component {

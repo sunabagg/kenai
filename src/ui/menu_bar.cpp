@@ -1,6 +1,6 @@
 #include "menu_bar.h"
 
-namespace sunaba::ui {
+namespace lucidfx::ui {
     void MenuBarProxy::_enter_tree() {
         if (element != nullptr) {
             element->enterTree();
@@ -120,7 +120,7 @@ namespace sunaba::ui {
             "new", sol::factories(
                 []() { return new MenuBar(); }
             ),
-            sol::base_classes, sol::bases<BaseObject, Element, sunaba::core::CanvasItem, sunaba::ui::Control>(),
+            sol::base_classes, sol::bases<BaseObject, Element, lucidfx::core::CanvasItem, lucidfx::ui::Control>(),
             "flat", sol::property(&MenuBar::isFlat, &MenuBar::setFlat),
             "language", sol::property(&MenuBar::getLanguage, &MenuBar::setLanguage),
             "preferGlobalMenu", sol::property(&MenuBar::isPreferGlobalMenu, &MenuBar::setPreferGlobalMenu),

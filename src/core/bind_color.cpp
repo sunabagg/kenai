@@ -1,6 +1,6 @@
 #include "lua_bind.h"
 
-void sunaba::core::bind_color(sol::state& lua) {
+void lucidfx::core::bind_color(sol::state& lua) {
     lua.new_usertype<godot::Color>(
         "Color",
         sol::constructors<

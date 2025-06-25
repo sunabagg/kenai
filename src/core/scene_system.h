@@ -20,7 +20,7 @@
 
 #include "base_object.h"
 
-namespace sunaba::core
+namespace lucidfx::core
 {
     void bindSceneSystem(sol::state& lua);
     

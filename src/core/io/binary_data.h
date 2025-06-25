@@ -9,7 +9,7 @@
 
 using namespace godot;
 
-namespace sunaba::core::io {
+namespace lucidfx::core::io {
     void bindBinaryData(sol::state& lua);
 
     class BinaryData {

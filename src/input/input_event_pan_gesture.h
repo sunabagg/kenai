@@ -10,12 +10,12 @@
 #include "input_event_gesture.h"
 
 using namespace godot;
-using namespace sunaba::core;
+using namespace lucidfx::core;
 
-namespace sunaba::input {
+namespace lucidfx::input {
     void bindInputEventPanGesture(sol::state_view& lua);
 
-    class InputEventPanGesture : public sunaba::input::InputEventGesture {
+    class InputEventPanGesture : public lucidfx::input::InputEventGesture {
     private:
         GodotInputEventPanGesture* event;
     public:

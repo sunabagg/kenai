@@ -12,12 +12,12 @@
 #include "input_event.h"
 
 using namespace godot;
-using namespace sunaba::core;
+using namespace lucidfx::core;
 
-namespace sunaba::input {
+namespace lucidfx::input {
     void bindShortcut(sol::state& lua);
 
-    class Shortcut : public sunaba::core::Resource {
+    class Shortcut : public lucidfx::core::Resource {
     private:
         GodotShortcut* _godotShortcut;
     public:

@@ -1,6 +1,6 @@
 #include "window.h"
 
-namespace sunaba::desktop {
+namespace lucidfx::desktop {
     void WindowProxy::_enter_tree() {
         if (this->element != nullptr) {
             this->element->enterTree();
@@ -159,7 +159,7 @@ namespace sunaba::desktop {
             "new", sol::factories(
                 []() { return new Window(); }
             ),
-            sol::base_classes, sol::bases<BaseObject, Element, sunaba::core::Viewport>(),
+            sol::base_classes, sol::bases<BaseObject, Element, lucidfx::core::Viewport>(),
             "alwaysOnTop", sol::property(
                 &Window::getAlwaysOnTop,
                 &Window::setAlwaysOnTop

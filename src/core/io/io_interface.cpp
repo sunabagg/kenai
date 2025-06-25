@@ -3,7 +3,7 @@
 
 using namespace godot;
 
-void sunaba::core::io::bindIoInterface(sol::state& lua) {
+void lucidfx::core::io::bindIoInterface(sol::state& lua) {
     lua.new_usertype<IoInterface>(
         "IoInterface",
         sol::no_constructor,
@@ -28,7 +28,7 @@ void sunaba::core::io::bindIoInterface(sol::state& lua) {
     );
 }
 
-std::string sunaba::core::io::IoInterface::getLuaRequirePath(const std::string &path) const {
+std::string lucidfx::core::io::IoInterface::getLuaRequirePath(const std::string &path) const {
         // Convert a file path to a Lua require path
         // This is typically done by replacing slashes with dots and removing the file extension
         std::string requirePath = StringUtils::replace(StringUtils::replace(path, "://", "."), "/", ".");
@@ -38,7 +38,7 @@ std::string sunaba::core::io::IoInterface::getLuaRequirePath(const std::string &
         return requirePath;
 }
 
-std::string sunaba::core::io::IoInterface::getFilePathFromLuaRequirePath(const std::string &path) const {
+std::string lucidfx::core::io::IoInterface::getFilePathFromLuaRequirePath(const std::string &path) const {
     // Convert a Lua require path back to a file path
     // This is typically done by replacing dots with slashes and adding the .lua extension
     auto filePathArray = String(path.c_str()).split(".");

@@ -1,11 +1,11 @@
 #include "style_box_flat.h"
 
-void sunaba::ui::bindStyleBoxFlat(sol::state_view& lua) {
+void lucidfx::ui::bindStyleBoxFlat(sol::state_view& lua) {
     lua.new_usertype<StyleBoxFlat>("StyleBoxFlat",
         "new", sol::factories(
             []() { return new StyleBoxFlat(); }
         ),
-        sol::base_classes, sol::bases<sunaba::core::BaseObject, sunaba::core::Resource, sunaba::ui::StyleBox>(),
+        sol::base_classes, sol::bases<lucidfx::core::BaseObject, lucidfx::core::Resource, lucidfx::ui::StyleBox>(),
         "antiAliasing", sol::property(&StyleBoxFlat::getAntiAliasing, &StyleBoxFlat::setAntiAliasing),
         "antiAliasingSize", sol::property(&StyleBoxFlat::getAntiAliasingSize, &StyleBoxFlat::setAntiAliasingSize),
         "bgColor", sol::property(&StyleBoxFlat::getBgColor, &StyleBoxFlat::setBgColor),
@@ -32,7 +32,7 @@ void sunaba::ui::bindStyleBoxFlat(sol::state_view& lua) {
         "shadowSize", sol::property(&StyleBoxFlat::getShadowSize, &StyleBoxFlat::setShadowSize),
         "shadowOffset", sol::property(&StyleBoxFlat::getShadowOffset, &StyleBoxFlat::setShadowOffset),
         "skew", sol::property(&StyleBoxFlat::GetSkew, &StyleBoxFlat::SetSkew),
-        "cast", [](sunaba::core::Resource* p_resource) {
+        "cast", [](lucidfx::core::Resource* p_resource) {
             return new StyleBoxFlat(godot::Object::cast_to<GodotStyleBoxFlat>(p_resource->getResource()));
         }
     );

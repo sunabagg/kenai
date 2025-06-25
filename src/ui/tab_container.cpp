@@ -1,6 +1,6 @@
 #include "tab_container.h"
 
-namespace sunaba::ui {
+namespace lucidfx::ui {
     void TabContainerProxy::_enter_tree() {
         if (this->element != nullptr) {
             this->element->enterTree();
@@ -199,7 +199,7 @@ namespace sunaba::ui {
             "new", sol::factories(
                 []() { return new TabContainer(); }
             ),
-            sol::base_classes, sol::bases<BaseObject, Element, sunaba::core::CanvasItem, Control, Container>(),
+            sol::base_classes, sol::bases<BaseObject, Element, lucidfx::core::CanvasItem, Control, Container>(),
             "allTabsInFront", sol::property(&TabContainer::getAllTabsInFront, &TabContainer::setAllTabsInFront),
             "clipTabs", sol::property(&TabContainer::getClipTabs, &TabContainer::setClipTabs),
             "currentTab", sol::property(&TabContainer::getCurrentTab, &TabContainer::setCurrentTab),
