@@ -16,7 +16,7 @@ extern class MenuButton extends Button {
 
 abstract MenuButtonAbstract(MenuButton) from MenuButton to MenuButton {
     @:from
-    public static function fromElement(element: sunaba.core.Element): sunaba.ui.MenuButton {
+    public static function fromElement(element: sunaba.core.Element): MenuButtonAbstract {
         var menuButton = sunaba.ui.MenuButton.toMenuButton(element);
         if (menuButton.isNull()) {
             return null;
