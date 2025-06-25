@@ -470,7 +470,7 @@ class Widget {
                             checkable = false;
                         }
                         else {
-                            throw "Invalid boolean value for field '" + attributeName + "' in element 'PopupMenu'";
+                            throw "Invalid boolean value for field '" + attributeName + "' in menuItem";
                         }
                         menu.setItemAsCheckable(id, checkable);
                     }
@@ -483,7 +483,7 @@ class Widget {
                             radioCheckable = false;
                         }
                         else {
-                            throw "Invalid boolean value for field '" + attributeName + "' in element 'PopupMenu'";
+                            throw "Invalid boolean value for field '" + attributeName + "' in menuItem";
                         }
                         menu.setItemAsRadioCheckable(id, radioCheckable);
                     }
@@ -496,7 +496,7 @@ class Widget {
                             separator = false;
                         }
                         else {
-                            throw "Invalid boolean value for field '" + attributeName + "' in element 'PopupMenu'";
+                            throw "Invalid boolean value for field '" + attributeName + "' in menuItem";
                         }
                         menu.setItemAsSeparator(id, separator);
                     }
