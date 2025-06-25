@@ -15,9 +15,8 @@ run/main_scene="res://App.tscn"
 config/features=PackedStringArray("4.4", "GL Compatibility")
 boot_splash/bg_color=Color(1, 1, 1, 1)
 boot_splash/fullsize=false
-boot_splash/image="uid://tqi54djfy3ia"
-config/icon="uid://bcnaj1jhop8y"
-config/macos_native_icon="res://Lucidfx-macOS.icns"
+boot_splash/image="uid://v1hovss1wlyu"
+config/icon="uid://bws1eg3mse6nh"
 config/windows_native_icon="res://lucidfx.ico"
 config/icon.macos="uid://bipasi4ii6raj"
 
