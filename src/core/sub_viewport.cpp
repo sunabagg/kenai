@@ -5,7 +5,8 @@ namespace sunaba::core {
         lua.new_usertype<SubViewport>("SubViewport",
             "new", sol::factories(
                 []() { return new SubViewport; }
-            )
+            ),
+            sol::base_classes, sol::bases<BaseObject, Element, Viewport()
         );
     }
 }
