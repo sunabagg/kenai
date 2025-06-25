@@ -8,6 +8,12 @@ class Main extends App{
     }
 
     override function init() {
-        trace("Hello, World!");
+        try {
+            var aWidget = new AdvancedWidget();
+            rootElement.addChild(aWidget.rootElement);
+        }
+        catch( e: Dynamic) {
+            trace(e);
+        }
     }
 }
