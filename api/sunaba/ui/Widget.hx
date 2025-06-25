@@ -436,7 +436,10 @@ class Widget {
     }
 
     private function constructMenu(menu: PopupMenu, xml: Xml) {
-        
+        var children = xml.elements();
+        for (child in children) {
+            
+        }
     }
 
     private function constructChildren(element: Element, xml: Xml): Void {
