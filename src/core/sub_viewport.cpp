@@ -14,6 +14,10 @@ namespace sunaba::core {
             "renderTargetUpdateMode", sol::property(
                 &SubViewport::getRenderTargetUpdateMode,
                 &SubViewport::setRenderTargetUpdateMode
+            ),
+            "size", sol::property(
+                &SubViewport::getSize,
+                &SubViewport::setSize
             )
         );
     }
