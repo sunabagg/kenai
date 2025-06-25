@@ -177,6 +177,10 @@ class Widget {
                 if (className == "PopupMenu") {
                     constructMenu(PopupMenu.toPopupMenu(element), xml);
                 }
+                else if (className == "MenuButton") {
+                    var menuButton = MenuButton.toMenuButton(element);
+                    constructMenu(menuButton.getPopup(), xml);
+                }
                 else {
                     constructChildren(element, xml);
                 }
