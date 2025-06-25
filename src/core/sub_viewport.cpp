@@ -6,7 +6,11 @@ namespace sunaba::core {
             "new", sol::factories(
                 []() { return new SubViewport; }
             ),
-            sol::base_classes, sol::bases<BaseObject, Element, Viewport()
+            sol::base_classes, sol::bases<BaseObject, Element, Viewport>(),
+            "renderTargetClearMode", sol::property(
+                &SubViewport::getRenderTargetClearMode,
+                &SubViewport::setRenderTargetClearMode
+            )
         );
     }
 }
