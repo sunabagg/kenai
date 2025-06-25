@@ -51,6 +51,10 @@ namespace sunaba::core {
             void setRenderTargetUpdateMode(int value) {
                 subViewport->set_update_mode(static_cast<SubViewportNode::UpdateMode>(value));
             }
+
+            Vector2i getSize() {
+                return subViewport->get_size();
+            }
     };
 }
 
