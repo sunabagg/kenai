@@ -77,7 +77,7 @@ class Widget {
         
         var firstElement = xml.firstElement();
         if (firstElement != null) {
-            if (firstElement.nodeName == "suml") {
+            if (firstElement.nodeName == "lxml") {
                 var fullScreenAtt = firstElement.get("fullscreen");
                 if (fullScreenAtt == "true") {
                     rootElement.setAnchorsAndOffsetsPreset(LayoutPreset.fullRect, LayoutPresetMode.keepSize, 0);

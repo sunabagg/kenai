@@ -3448,7 +3448,7 @@ __lucidfx_ui_Widget.prototype.instantiate = function(self,xml)
         return _hx_1
       end )()))),0);
     end;
-    if (firstElement.nodeName == "suml") then 
+    if (firstElement.nodeName == "lxml") then 
       local fullScreenAtt = firstElement:get("fullscreen");
       if (fullScreenAtt == "true") then 
         self.rootElement:setAnchorsAndOffsetsPreset(15, 3, 0);
@@ -4076,7 +4076,7 @@ __support_files_test5_src_ClickerCounter.__name__ = "support_files.test5.src.Cli
 __support_files_test5_src_ClickerCounter.prototype = _hx_e();
 __support_files_test5_src_ClickerCounter.prototype.init = function(self) 
   local _gthis = self;
-  self:load("app://assets/ClickerCounter.suml");
+  self:load("app://assets/ClickerCounter.lxml");
   local labelElement = self.rootElement:find("centerContainer/vboxContainer/clickCounterLabel");
   if (labelElement:isNull()) then 
     _G.error(__haxe_Exception.thrown("Label element not found in ClickerCounter layout."),0);
