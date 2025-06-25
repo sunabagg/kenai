@@ -441,6 +441,7 @@ class Widget {
             if (child.nodeName == "MenuItem") {
                 var attributes = child.attributes;
                 var label = attributes.get("label");
+                var id = menu.itemCount;
             }
         }
     }
