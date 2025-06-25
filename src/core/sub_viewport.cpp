@@ -26,7 +26,11 @@ namespace sunaba::core {
             "size2dOverrideStretch", sol::property(
                 &SubViewport::getSize2dOverrideStretch,
                 &SubViewport::setSize2dOverrideStretch
-            )
+            ),
+            "cast", [](Element* e) {
+                SubViewportNode* subViewport = Object::cast_to<SubViewportNode>(e->getNode());
+                return new SubViewport(subViewport);
+            }
         );
     }
 }
