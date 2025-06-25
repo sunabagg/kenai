@@ -18,6 +18,10 @@ namespace sunaba::core {
             "size", sol::property(
                 &SubViewport::getSize,
                 &SubViewport::setSize
+            ),
+            "size2dOverride", sol::property(
+                &SubViewport::getSize2dOverride,
+                &SubViewport::setSize2dOverride
             )
         );
     }
