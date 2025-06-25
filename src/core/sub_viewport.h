@@ -71,6 +71,10 @@ namespace sunaba::core {
             bool getSize2dOverrideStretch() {
                 return subViewport->is_size_2d_override_stretch_enabled();
             }
+
+            void setSize2dOverrideStretch(bool value) {
+                subViewport->set_size_2d_override_stretch(value);
+            }
     };
 }
 
