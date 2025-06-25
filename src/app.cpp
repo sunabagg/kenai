@@ -10,6 +10,8 @@
 #include <godot_cpp/classes/json.hpp>
 #include <godot_cpp/classes/os.hpp>
 #include <godot_cpp/classes/project_settings.hpp>
+#include <godot_cpp/classes/file_access.hpp>
+#include <godot_cpp/classes/scene_tree.hpp>
 #ifdef USE_PORTABLE_FILE_DIALOGS
 #include "portable-file-dialogs.h"
 #endif
@@ -317,6 +319,11 @@ void App::loadAndExecuteSbx(const String &path) {
     }
     if (!path.ends_with(".sbx")) {
         UtilityFunctions::print("Error: path must end with .sbx");
+        return;
+    }
+    if (!godot::FileAccess::file_exists(path)) {
+        UtilityFunctions::print("Error: file does not exist");
+        get_tree()->quit();
         return;
     }
     auto zipio = new ZipIo(path.utf8().get_data());
