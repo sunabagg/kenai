@@ -12,10 +12,20 @@ namespace lucidfx::core::io {
     class ZipIo : public IoInterface {
     private:
         godot::Ref<godot::ZIPReader> zip_reader;
+
+        bool failed = false;
     public:
         ZipIo(const std::string &path) {
             zip_reader  = godot::Ref<godot::ZIPReader>(memnew(godot::ZIPReader));
-            zip_reader->open(path.c_str());
+            auto err = zip_reader->open(path.c_str());
+            if (err != godot::Error::OK) {
+                UtilityFunctions::printerr(err);
+                failed = true;
+            }
+        }
+
+        bool hasFailed() {
+            return failed;
         }
 
         std::string getFilePath(const std::string &path) const override {
