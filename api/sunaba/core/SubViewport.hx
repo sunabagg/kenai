@@ -10,3 +10,14 @@ extern class SubViewport extends Viewport {
     @:native("cast")
     public static function toSubViewport(type: Dynamic): SubViewport;
 }
+
+abstract SubViewportAbstract(SubViewport) from SubViewport to SubViewport {
+    @:from
+    public static function fromElement(element: Element): ViewportAbstract {
+        var viewport = SubViewport.toSubViewport(element);
+        if (viewport.isNull()) {
+            return null;
+        }
+        return viewport;
+    }
+}
