@@ -1,4 +1,4 @@
-package sunaba..ui;
+package lucidware..ui;
 
 enum abstract CheckButtonAutowrapMode(Int) from Int to Int {
 	var off = 0;

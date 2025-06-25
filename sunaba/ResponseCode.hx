@@ -1,4 +1,4 @@
-package sunaba;
+package lucidware;
 
 enum abstract ResponseCode(Int) from Int to Int {
 	var continue = 100;

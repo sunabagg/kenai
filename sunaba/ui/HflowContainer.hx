@@ -1,4 +1,4 @@
-package sunaba.ui;
+package lucidware.ui;
 
 @:native("HflowContainer")
 extern class HflowContainer extends FlowContainer {
@@ -8,7 +8,7 @@ extern class HflowContainer extends FlowContainer {
 
 abstract HflowContainerAbstract(HflowContainer) from HflowContainer to HflowContainer {
     @:from
-    public static function fromElement(element: sunaba.core.Element): HflowContainerAbstract {
+    public static function fromElement(element: lucidware.core.Element): HflowContainerAbstract {
         var hflow = HflowContainer.toHFlowContainer(element);
         if (hflow.isNull()) {
             return null;

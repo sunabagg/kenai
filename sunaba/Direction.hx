@@ -1,4 +1,4 @@
-package sunaba;
+package lucidware;
 
 enum abstract Direction(Int) from Int to Int {
 	var auto = 0;

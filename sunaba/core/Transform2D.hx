@@ -1,4 +1,4 @@
-package sunaba.core;
+package lucidware.core;
 
 @:native("Transform2D")
 extern class Transform2D {

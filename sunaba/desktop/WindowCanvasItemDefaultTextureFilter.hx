@@ -1,4 +1,4 @@
-package sunaba..desktop;
+package lucidware..desktop;
 
 enum abstract WindowCanvasItemDefaultTextureFilter(Int) from Int to Int {
 	var nearest = 0;

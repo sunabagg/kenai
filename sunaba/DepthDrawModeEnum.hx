@@ -1,4 +1,4 @@
-package sunaba;
+package lucidware;
 
 enum abstract DepthDrawModeEnum(Int) from Int to Int {
 	var opaqueOnly = 0;

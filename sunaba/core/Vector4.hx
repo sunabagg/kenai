@@ -1,4 +1,4 @@
-package sunaba.core;
+package lucidware.core;
 
 @:native("Vector4")
 extern class Vector4 {

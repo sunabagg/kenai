@@ -1,4 +1,4 @@
-package sunaba..ui;
+package lucidware..ui;
 
 enum abstract SeparatorMouseDefaultCursorShape(Int) from Int to Int {
 	var arrow = 0;

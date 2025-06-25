@@ -5,7 +5,7 @@
 #include "capsule.h"
 #include "mesh_renderer.h"
 
-void sunaba::spatial::mesh::bindMeshClasses(sol::state& lua) {
+void lucidware::spatial::mesh::bindMeshClasses(sol::state& lua) {
     bindMeshRenderer(lua);
     bindBox(lua);
     bindSphere(lua);

@@ -1,4 +1,4 @@
-package sunaba..spatial.physics;
+package lucidware..spatial.physics;
 
 enum abstract CollisionShape3DRotationOrder(Int) from Int to Int {
 	var xyz = 0;

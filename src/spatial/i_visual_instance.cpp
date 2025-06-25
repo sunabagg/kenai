@@ -1,6 +1,6 @@
 #include "i_visual_instance.h"
 
-void sunaba::spatial::bindVisualInstance(sol::state& lua) {
+void lucidware::spatial::bindVisualInstance(sol::state& lua) {
     lua.new_usertype<IVisualInstance>(
         "IVisualInstance",
         "new", sol::factories(

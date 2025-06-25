@@ -1,4 +1,4 @@
-package sunaba;
+package lucidware;
 
 enum abstract Parameter(Int) from Int to Int {
 	var initialLinearVelocity = 0;

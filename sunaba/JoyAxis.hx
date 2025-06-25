@@ -1,4 +1,4 @@
-package sunaba;
+package lucidware;
 
 enum abstract JoyAxis(Int) from Int to Int {
 	var leftX = 0;

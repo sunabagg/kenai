@@ -1,4 +1,4 @@
-package sunaba;
+package lucidware;
 
 enum abstract WindowMode(Int) from Int to Int {
 	var windowed = 0;

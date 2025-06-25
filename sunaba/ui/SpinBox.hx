@@ -1,4 +1,4 @@
-package sunaba.ui;
+package lucidware.ui;
 
 @:native("SpinBox")
 extern class SpinBox extends Range{
@@ -10,15 +10,15 @@ extern class SpinBox extends Range{
     public var suffix: String;
     public var updateOnTextChanged: Bool;
     public function apply(): Void;
-    public function getLineEdit(): sunaba.ui.LineEdit;
+    public function getLineEdit(): lucidware.ui.LineEdit;
     @:native("cast")
-    public static function toSpinBox(obj: Dynamic): sunaba.ui.SpinBox;
+    public static function toSpinBox(obj: Dynamic): lucidware.ui.SpinBox;
 }
 
 abstract SpinBoxAbstract(SpinBox) from SpinBox to SpinBox {
     @:from
-    public static function fromElement(element: sunaba.core.Element): sunaba.ui.SpinBox {
-        var spinBox = sunaba.ui.SpinBox.toSpinBox(element);
+    public static function fromElement(element: lucidware.core.Element): lucidware.ui.SpinBox {
+        var spinBox = lucidware.ui.SpinBox.toSpinBox(element);
         if (spinBox.isNull()) {
             return null;
         }

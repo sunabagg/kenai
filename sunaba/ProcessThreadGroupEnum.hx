@@ -1,4 +1,4 @@
-package sunaba;
+package lucidware;
 
 enum abstract ProcessThreadGroupEnum(Int) from Int to Int {
 	var inherit = 0;

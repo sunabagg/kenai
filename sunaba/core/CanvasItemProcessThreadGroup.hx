@@ -1,4 +1,4 @@
-package sunaba..core;
+package lucidware..core;
 
 enum abstract CanvasItemProcessThreadGroup(Int) from Int to Int {
 	var inherit = 0;

@@ -1,4 +1,4 @@
-package sunaba;
+package lucidware;
 
 enum abstract KeyLocation(Int) from Int to Int {
 	var unspecified = 0;

@@ -1,17 +1,17 @@
 #include "texture_layered.h"
 
-void sunaba::core::bindTextureLayered(sol::state &lua) {
-    lua.new_usertype<sunaba::core::TextureLayered>("TextureLayered",
+void lucidware::core::bindTextureLayered(sol::state &lua) {
+    lua.new_usertype<lucidware::core::TextureLayered>("TextureLayered",
         "new", sol::factories(
-            []() { return new sunaba::core::TextureLayered(); }
+            []() { return new lucidware::core::TextureLayered(); }
         ),
-        sol::base_classes, sol::bases<sunaba::core::BaseObject, sunaba::core::Resource, sunaba::core::Texture>(),
-        "getFormat", &sunaba::core::TextureLayered::getFormat,
-        "getHeight", &sunaba::core::TextureLayered::getHeight,
-        "getLayerData", &sunaba::core::TextureLayered::getLayerData,
-        "getLayeredType", &sunaba::core::TextureLayered::getLayeredType,
-        "getLayers", &sunaba::core::TextureLayered::getLayers,
-        "getWidth", &sunaba::core::TextureLayered::getWidth,
+        sol::base_classes, sol::bases<lucidware::core::BaseObject, lucidware::core::Resource, lucidware::core::Texture>(),
+        "getFormat", &lucidware::core::TextureLayered::getFormat,
+        "getHeight", &lucidware::core::TextureLayered::getHeight,
+        "getLayerData", &lucidware::core::TextureLayered::getLayerData,
+        "getLayeredType", &lucidware::core::TextureLayered::getLayeredType,
+        "getLayers", &lucidware::core::TextureLayered::getLayers,
+        "getWidth", &lucidware::core::TextureLayered::getWidth,
         "cast", [](Resource* instance) {
             return new TextureLayered(godot::Object::cast_to<GodotTextureLayered>(instance->getResource()));
         }

@@ -1,4 +1,4 @@
-package sunaba;
+package lucidware;
 
 enum abstract MotionRangeEnum(Int) from Int to Int {
 	var unobstructed = 0;

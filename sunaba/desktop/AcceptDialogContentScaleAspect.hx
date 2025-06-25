@@ -1,4 +1,4 @@
-package sunaba..desktop;
+package lucidware..desktop;
 
 enum abstract AcceptDialogContentScaleAspect(Int) from Int to Int {
 	var ignore = 0;

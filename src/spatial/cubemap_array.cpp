@@ -1,13 +1,13 @@
 #include "cubemap_array.h"
 
-void sunaba::spatial::bindCubemapArray(sol::state_view& lua) {
-    lua.new_usertype<sunaba::spatial::CubemapArray>("CubemapArray",
+void lucidware::spatial::bindCubemapArray(sol::state_view& lua) {
+    lua.new_usertype<lucidware::spatial::CubemapArray>("CubemapArray",
         "new", sol::factories(
-            []() { return new sunaba::spatial::CubemapArray(); }
+            []() { return new lucidware::spatial::CubemapArray(); }
         ),
-        sol::base_classes, sol::bases<sunaba::core::BaseObject, sunaba::core::Resource, sunaba::core::Texture, sunaba::core::TextureLayered, sunaba::core::ImageTextureLayered>(),
+        sol::base_classes, sol::bases<lucidware::core::BaseObject, lucidware::core::Resource, lucidware::core::Texture, lucidware::core::TextureLayered, lucidware::core::ImageTextureLayered>(),
         "createPlaceholder", &CubemapArray::createPlaceholder,
-        "cast", [](sunaba::core::Resource* instance) {
+        "cast", [](lucidware::core::Resource* instance) {
             return new CubemapArray(godot::Object::cast_to<GodotCubemapArray>(instance->getResource()));
         }
     );

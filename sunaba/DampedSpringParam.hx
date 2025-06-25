@@ -1,4 +1,4 @@
-package sunaba;
+package lucidware;
 
 enum abstract DampedSpringParam(Int) from Int to Int {
 	var restLength = 0;

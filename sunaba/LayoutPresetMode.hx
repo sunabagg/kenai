@@ -1,4 +1,4 @@
-package sunaba;
+package lucidware;
 
 enum abstract LayoutPresetMode(Int) from Int to Int {
 	var minsize = 0;

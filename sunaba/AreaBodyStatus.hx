@@ -1,4 +1,4 @@
-package sunaba;
+package lucidware;
 
 enum abstract AreaBodyStatus(Int) from Int to Int {
 	var added = 0;

@@ -1,4 +1,4 @@
-package sunaba;
+package lucidware;
 
 enum abstract SwitchModeEnum(Int) from Int to Int {
 	var immediate = 0;

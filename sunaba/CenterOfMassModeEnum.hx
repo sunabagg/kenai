@@ -1,4 +1,4 @@
-package sunaba;
+package lucidware;
 
 enum abstract CenterOfMassModeEnum(Int) from Int to Int {
 	var auto = 0;

@@ -1,13 +1,13 @@
-package sunaba.ui;
+package lucidware.ui;
 
-import sunaba.core.Event;
-import sunaba.core.Element;
+import lucidware.core.Event;
+import lucidware.core.Element;
 
 @:native("Container")
 extern class Container extends Control {
     public var preSortChildren: Event;
     public var sortChildren: Event;
-    public function fitChildInRect(child: Control, rect: sunaba.core.Rect2): Void;
+    public function fitChildInRect(child: Control, rect: lucidware.core.Rect2): Void;
     public function queueSort(): Void;
     public function getAllowedSizeFlagsHorizontal(): lua.Table<Int,Int>;
     public function getAllowedSizeFlagsVertical(): lua.Table<Int,Int>;
@@ -17,7 +17,7 @@ extern class Container extends Control {
 
 abstract ContainerAbstarct(Container) from Container to Container {
     @:from
-    public static function fromElement(element: sunaba.core.Element): ContainerAbstarct {
+    public static function fromElement(element: lucidware.core.Element): ContainerAbstarct {
         var container = Container.toContainer(element);
         if (container.isNull()) {
             return null;

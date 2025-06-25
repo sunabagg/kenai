@@ -1,4 +1,4 @@
-package sunaba;
+package lucidware;
 
 enum abstract SkeletonRigEnum(Int) from Int to Int {
 	var openxr = 0;

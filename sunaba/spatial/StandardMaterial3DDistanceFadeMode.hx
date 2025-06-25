@@ -1,4 +1,4 @@
-package sunaba..spatial;
+package lucidware..spatial;
 
 enum abstract StandardMaterial3DDistanceFadeMode(Int) from Int to Int {
 	var disabled = 0;

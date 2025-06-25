@@ -1,8 +1,8 @@
-package sunaba.core;
+package lucidware.core;
 
-import sunaba.spatial.World3D;
-import sunaba.ui.Control;
-import sunaba.input.InputEvent;
+import lucidware.spatial.World3D;
+import lucidware.ui.Control;
+import lucidware.input.InputEvent;
 
 @:native("Viewport")
 extern class Viewport extends Element {

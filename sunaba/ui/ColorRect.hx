@@ -1,7 +1,7 @@
-package sunaba.ui;
+package lucidware.ui;
 
-import sunaba.core.Color;
-import sunaba.core.Element;
+import lucidware.core.Color;
+import lucidware.core.Element;
 
 @:native("ColorRect")
 extern class ColorRect extends Control {
@@ -12,7 +12,7 @@ extern class ColorRect extends Control {
 
 abstract ColorRectAbstract(ColorRect) from ColorRect to ColorRect {
     @:from
-    public static function fromElement(element: sunaba.core.Element): ColorRectAbstract {
+    public static function fromElement(element: lucidware.core.Element): ColorRectAbstract {
         var rect = ColorRect.toColorRect(element);
         if (rect.isNull()) {
             return null;

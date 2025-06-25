@@ -1,4 +1,4 @@
-package sunaba;
+package lucidware;
 
 enum abstract TextureSourceEnum(Int) from Int to Int {
 	var none = 0;

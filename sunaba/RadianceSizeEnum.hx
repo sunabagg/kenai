@@ -1,4 +1,4 @@
-package sunaba;
+package lucidware;
 
 enum abstract RadianceSizeEnum(Int) from Int to Int {
 	var size32 = 0;

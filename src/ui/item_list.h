@@ -15,9 +15,9 @@
 #include "v_scroll_bar.h"
 
 using namespace godot;
-using namespace sunaba::core;
+using namespace lucidware::core;
 
-namespace sunaba::ui {
+namespace lucidware::ui {
     void bindItemList(sol::state &lua);
 
     class ItemList;
@@ -27,7 +27,7 @@ namespace sunaba::ui {
         protected:
             static void _bind_methods() {}
         public:
-            sunaba::ui::ItemList* element = nullptr;
+            lucidware::ui::ItemList* element = nullptr;
 
             void onInit() {
                 // Initialize the NodeProxy instance
@@ -308,12 +308,12 @@ namespace sunaba::ui {
                 multiSelectedEvent = event;
             }
 
-            int addIconItem(sunaba::core::Texture2D* texture, bool selectable = true) {
+            int addIconItem(lucidware::core::Texture2D* texture, bool selectable = true) {
                 Ref<godot::Texture2D> textureRef = Ref<godot::Texture2D>(texture->getTexture());
                 return item_list->add_icon_item(textureRef, selectable);
             }
 
-            int addItem(std::string text, sunaba::core::Texture2D* icon = nullptr, bool selectable = true) {
+            int addItem(std::string text, lucidware::core::Texture2D* icon = nullptr, bool selectable = true) {
                 Ref<godot::Texture2D> textureRef;
                 if (icon != nullptr) {
                     textureRef = Ref<godot::Texture2D>(icon->getTexture());
@@ -361,9 +361,9 @@ namespace sunaba::ui {
                 return item_list->get_item_custom_fg_color(index);
             }
 
-            sunaba::core::Texture2D* getItemIcon(int index) {
+            lucidware::core::Texture2D* getItemIcon(int index) {
                 Ref<godot::Texture2D> textureRef = item_list->get_item_icon(index);
-                return new sunaba::core::Texture2D(textureRef.ptr());
+                return new lucidware::core::Texture2D(textureRef.ptr());
             }
 
             Color getItemIconModulate(int index) {
@@ -463,7 +463,7 @@ namespace sunaba::ui {
                 item_list->set_item_disabled(index, disabled);
             }
 
-            void setItemIcon(int index, sunaba::core::Texture2D* texture) {
+            void setItemIcon(int index, lucidware::core::Texture2D* texture) {
                 Ref<godot::Texture2D> textureRef = Ref<godot::Texture2D>(texture->getTexture());
                 item_list->set_item_icon(index, textureRef);
             }

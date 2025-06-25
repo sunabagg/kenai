@@ -1,4 +1,4 @@
-package sunaba.ui;
+package lucidware.ui;
 
 @:native("StyleBoxLine")
 extern class StyleBoxLine extends StyleBox {
@@ -20,4 +20,4 @@ abstract StyleBoxLineAbstract(StyleBoxLine) from StyleBoxLine to StyleBoxLine {
         }
         return styleBoxLine;
     }
-} // end package sunaba.ui
+} // end package lucidware.ui

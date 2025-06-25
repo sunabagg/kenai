@@ -1,4 +1,4 @@
-package sunaba;
+package lucidware;
 
 enum abstract TtsUtteranceEvent(Int) from Int to Int {
 	var started = 0;

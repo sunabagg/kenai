@@ -11,7 +11,7 @@
 
 using namespace godot;
 
-namespace sunaba::spatial {
+namespace lucidware::spatial {
     void bindBoxOccluder3D(sol::state_view& lua);
 
     class BoxOccluder : public Occluder3D {

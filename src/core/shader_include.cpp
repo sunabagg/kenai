@@ -1,14 +1,14 @@
 #include "shader_include.h"
 
-void sunaba::core::bindShaderInclude(sol::state &lua) {
-    lua.new_usertype<sunaba::core::ShaderInclude>("ShaderInclude",
+void lucidware::core::bindShaderInclude(sol::state &lua) {
+    lua.new_usertype<lucidware::core::ShaderInclude>("ShaderInclude",
         "new", sol::factories(
-            []() { return new sunaba::core::ShaderInclude(); }
+            []() { return new lucidware::core::ShaderInclude(); }
         ),
-        sol::base_classes, sol::bases<sunaba::core::BaseObject, sunaba::core::Resource>(),
+        sol::base_classes, sol::bases<lucidware::core::BaseObject, lucidware::core::Resource>(),
         "code", sol::property(
-            &sunaba::core::ShaderInclude::getCode, 
-            &sunaba::core::ShaderInclude::setCode
+            &lucidware::core::ShaderInclude::getCode, 
+            &lucidware::core::ShaderInclude::setCode
         ),
         "cast", [](Resource* instance) {
             return new ShaderInclude(godot::Object::cast_to<GodotShaderInclude>(instance->getResource()));

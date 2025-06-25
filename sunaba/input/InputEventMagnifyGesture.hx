@@ -1,4 +1,4 @@
-package sunaba.input;
+package lucidware.input;
 
 @:native("InputEventMagnifyGesture")
 extern class InputEventMagnifyGesture extends InputEventGesture {
@@ -16,4 +16,4 @@ abstract InputEventMagnifyGestureAbstract(InputEventMagnifyGesture) from InputEv
         }
         return inputEventMagnifyGesture;
     }
-} // end package sunaba.input
+} // end package lucidware.input

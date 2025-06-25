@@ -1,6 +1,6 @@
-package sunaba.spatial;
+package lucidware.spatial;
 
-import sunaba.core.Vector3;
+import lucidware.core.Vector3;
 
 @:native("ArrayOccluder3D")
 extern class ArrayOccluder3D extends Occluder3D {
@@ -20,4 +20,4 @@ abstract ArrayOccluder3DAbstract(ArrayOccluder3D) from ArrayOccluder3D to ArrayO
         }
         return arrayOccluder3D;
     }
-} // end package sunaba.spatial
+} // end package lucidware.spatial

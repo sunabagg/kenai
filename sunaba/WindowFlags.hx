@@ -1,4 +1,4 @@
-package sunaba;
+package lucidware;
 
 enum abstract WindowFlags(Int) from Int to Int {
 	var resizeDisabled = 0;

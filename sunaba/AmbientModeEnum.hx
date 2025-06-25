@@ -1,4 +1,4 @@
-package sunaba;
+package lucidware;
 
 enum abstract AmbientModeEnum(Int) from Int to Int {
 	var disabled = 0;

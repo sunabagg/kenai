@@ -1,4 +1,4 @@
-package sunaba;
+package lucidware;
 
 enum abstract ParsedGeometryTypeEnum(Int) from Int to Int {
 	var meshInstances = 0;

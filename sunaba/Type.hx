@@ -1,4 +1,4 @@
-package sunaba;
+package lucidware;
 
 enum abstract Type(Int) from Int to Int {
 	var vertex = 0;

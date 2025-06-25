@@ -1,4 +1,4 @@
-package sunaba.core;
+package lucidware.core;
 
 @:native("Entity")
 extern class Entity extends BaseObject {

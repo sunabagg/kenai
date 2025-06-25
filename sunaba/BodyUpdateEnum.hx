@@ -1,4 +1,4 @@
-package sunaba;
+package lucidware;
 
 enum abstract BodyUpdateEnum(Int) from Int to Int {
 	var upperBody = 1;

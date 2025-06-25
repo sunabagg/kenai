@@ -1,4 +1,4 @@
-package sunaba;
+package lucidware;
 
 enum abstract CursorShape(Int) from Int to Int {
 	var arrow = 0;

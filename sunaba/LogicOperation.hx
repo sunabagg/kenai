@@ -1,4 +1,4 @@
-package sunaba;
+package lucidware;
 
 enum abstract LogicOperation(Int) from Int to Int {
 	var clear = 0;

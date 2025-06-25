@@ -1,4 +1,4 @@
-package sunaba;
+package lucidware;
 
 enum abstract PanningSchemeEnum(Int) from Int to Int {
 	var zooms = 0;

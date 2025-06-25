@@ -1,4 +1,4 @@
-package sunaba..core;
+package lucidware..core;
 
 enum abstract ViewportPhysicsInterpolationMode(Int) from Int to Int {
 	var inherit = 0;

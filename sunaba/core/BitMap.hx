@@ -1,4 +1,4 @@
-package sunaba.core;
+package lucidware.core;
 
 @:native("BitMap")
 extern class BitMap extends Resource {

@@ -1,4 +1,4 @@
-package sunaba..spatial;
+package lucidware..spatial;
 
 enum abstract StandardMaterial3DShadingMode(Int) from Int to Int {
 	var unshaded = 0;

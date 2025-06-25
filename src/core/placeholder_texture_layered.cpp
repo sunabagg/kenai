@@ -1,18 +1,18 @@
 #include "placeholder_texture_layered.h"
 
-void sunaba::core::bindPlaceholderTextureLayered(sol::state &lua) {
-    lua.new_usertype<sunaba::core::PlaceholderTextureLayered>("PlaceholderTextureLayered",
+void lucidware::core::bindPlaceholderTextureLayered(sol::state &lua) {
+    lua.new_usertype<lucidware::core::PlaceholderTextureLayered>("PlaceholderTextureLayered",
         "new", sol::factories(
-            []() { return new sunaba::core::PlaceholderTextureLayered(); }
+            []() { return new lucidware::core::PlaceholderTextureLayered(); }
         ),
-        sol::base_classes, sol::bases<sunaba::core::BaseObject, sunaba::core::Resource, sunaba::core::Texture, sunaba::core::TextureLayered>(),
+        sol::base_classes, sol::bases<lucidware::core::BaseObject, lucidware::core::Resource, lucidware::core::Texture, lucidware::core::TextureLayered>(),
         "layers", sol::property(
-            &sunaba::core::PlaceholderTextureLayered::getLayers,
-            &sunaba::core::PlaceholderTextureLayered::setLayers
+            &lucidware::core::PlaceholderTextureLayered::getLayers,
+            &lucidware::core::PlaceholderTextureLayered::setLayers
         ),
         "size", sol::property(
-            &sunaba::core::PlaceholderTextureLayered::getSize,
-            &sunaba::core::PlaceholderTextureLayered::setSize
+            &lucidware::core::PlaceholderTextureLayered::getSize,
+            &lucidware::core::PlaceholderTextureLayered::setSize
         ),
         "cast", [](Resource* instance) {
             return new PlaceholderTextureLayered(godot::Object::cast_to<GodotPlaceholderTextureLayered>(instance->getResource()));

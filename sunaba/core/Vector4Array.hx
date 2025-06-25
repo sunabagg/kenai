@@ -1,4 +1,4 @@
-package sunaba.core;
+package lucidware.core;
 
 abstract Vector4Array<T>(lua.Table<Int, Vector4>) from lua.Table<Int, Vector4> to lua.Table<Int, Vector4> {
     @:to

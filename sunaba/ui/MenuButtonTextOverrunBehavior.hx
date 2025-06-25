@@ -1,4 +1,4 @@
-package sunaba..ui;
+package lucidware..ui;
 
 enum abstract MenuButtonTextOverrunBehavior(Int) from Int to Int {
 	var noTrimming = 0;

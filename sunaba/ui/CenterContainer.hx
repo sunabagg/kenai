@@ -1,6 +1,6 @@
-package sunaba.ui;
+package lucidware.ui;
 
-import sunaba.core.Element;
+import lucidware.core.Element;
 
 @:native("CenterContainer")
 extern class CenterContainer extends Container {
@@ -12,7 +12,7 @@ extern class CenterContainer extends Container {
 
 abstract CenterContainerAbstract(CenterContainer) from CenterContainer to CenterContainer {
     @:from
-    public static function fromElement(element: sunaba.core.Element): CenterContainerAbstract {
+    public static function fromElement(element: lucidware.core.Element): CenterContainerAbstract {
         var container = CenterContainer.toCenterContainer(element);
         if (container.isNull()) {
             return null;

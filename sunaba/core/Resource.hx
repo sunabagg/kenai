@@ -1,4 +1,4 @@
-package sunaba.core;
+package lucidware.core;
 
 @:native("Resource")
 extern class Resource extends BaseObject {

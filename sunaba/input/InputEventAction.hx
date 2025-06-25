@@ -1,4 +1,4 @@
-package sunaba.input;
+package lucidware.input;
 
 @:native("InputEventAction")
 extern class InputEventAction extends InputEvent {

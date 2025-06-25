@@ -1,4 +1,4 @@
-package sunaba.input;
+package lucidware.input;
 
 @:native("InputEventMidi")
 extern class InputEventMidi extends InputEvent {
@@ -23,4 +23,4 @@ abstract InputEventMidiAbstract(InputEventMidi) from InputEventMidi to InputEven
         }
         return inputEventMidi;
     }
-} // end package sunaba.input
+} // end package lucidware.input

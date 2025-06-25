@@ -1,4 +1,4 @@
-package sunaba..animation;
+package lucidware..animation;
 
 enum abstract AnimationTreeCallbackModeMethod(Int) from Int to Int {
 	var deferred = 0;

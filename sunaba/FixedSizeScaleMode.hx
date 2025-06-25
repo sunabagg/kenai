@@ -1,4 +1,4 @@
-package sunaba;
+package lucidware;
 
 enum abstract FixedSizeScaleMode(Int) from Int to Int {
 	var disable = 0;

@@ -1,4 +1,4 @@
-package sunaba;
+package lucidware;
 
 enum abstract JustificationFlag(Int) from Int to Int {
 	var none = 0;

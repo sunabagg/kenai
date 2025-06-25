@@ -1,4 +1,4 @@
-package sunaba..spatial;
+package lucidware..spatial;
 
 enum abstract StandardMaterial3DAOTextureChannel(Int) from Int to Int {
 	var red = 0;

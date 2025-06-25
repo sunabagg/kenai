@@ -1,4 +1,4 @@
-package sunaba..spatial;
+package lucidware..spatial;
 
 enum abstract SpringBoneCollision3DRotationOrder(Int) from Int to Int {
 	var xyz = 0;

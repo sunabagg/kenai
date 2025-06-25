@@ -1,4 +1,4 @@
-package sunaba;
+package lucidware;
 
 enum abstract InitializationLevel(Int) from Int to Int {
 	var core = 0;

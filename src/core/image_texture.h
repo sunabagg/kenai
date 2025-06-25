@@ -1,5 +1,5 @@
-#ifndef SUNABA_IMAGE_TEXTURE_H
-#define SUNABA_IMAGE_TEXTURE_H
+#ifndef LUCIDWARE_IMAGE_TEXTURE_H
+#define LUCIDWARE_IMAGE_TEXTURE_H
 
 #include <godot_cpp/classes/image_texture.hpp>
 #include <godot_cpp/variant/variant.hpp>
@@ -13,9 +13,9 @@
 #include "io/io_index.h"
 
 using namespace godot;
-using namespace sunaba::core::io;
+using namespace lucidware::core::io;
 
-namespace sunaba::core {
+namespace lucidware::core {
     void bindImageTexture(sol::state &lua);
 
     class ImageTexture : public Texture2D {
@@ -71,4 +71,4 @@ namespace sunaba::core {
     };
 }
 
-#endif // SUNABA_IMAGE_TEXTURE_H
+#endif // LUCIDWARE_IMAGE_TEXTURE_H

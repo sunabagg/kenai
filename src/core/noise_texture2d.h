@@ -14,7 +14,7 @@
 
 using namespace godot;
 
-namespace sunaba::core {
+namespace lucidware::core {
     void bindNoiseTexture2D(sol::state_view& lua);
 
     class NoiseTexture2D : public Texture2D {

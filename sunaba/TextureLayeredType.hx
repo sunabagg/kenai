@@ -1,4 +1,4 @@
-package sunaba;
+package lucidware;
 
 enum abstract TextureLayeredType(Int) from Int to Int {
 	var layered2dArray = 0;

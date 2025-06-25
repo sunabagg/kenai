@@ -1,4 +1,4 @@
-package sunaba;
+package lucidware;
 
 enum abstract EmitFlags(Int) from Int to Int {
 	var position = 1;

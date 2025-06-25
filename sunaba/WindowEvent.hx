@@ -1,4 +1,4 @@
-package sunaba;
+package lucidware;
 
 enum abstract WindowEvent(Int) from Int to Int {
 	var mouseEnter = 0;

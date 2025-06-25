@@ -1,4 +1,4 @@
-package sunaba.core;
+package lucidware.core;
 
 @:native("TextureLayered")
 extern class TextureLayered extends Texture {
@@ -22,4 +22,4 @@ abstract TextureLayeredAbstract(TextureLayered) from TextureLayered to TextureLa
         }
         return textureLayered;
     } 
-} // end package sunaba.core
+} // end package lucidware.core

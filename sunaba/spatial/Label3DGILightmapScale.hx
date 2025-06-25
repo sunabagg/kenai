@@ -1,4 +1,4 @@
-package sunaba..spatial;
+package lucidware..spatial;
 
 enum abstract Label3DGILightmapScale(Int) from Int to Int {
 	var scale1x = 0;

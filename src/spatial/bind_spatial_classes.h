@@ -3,7 +3,7 @@
 
 #include <sol/sol.hpp>
 
-namespace sunaba::spatial
+namespace lucidware::spatial
 {
     void bindSpatialClasses(sol::state& lua);
 }

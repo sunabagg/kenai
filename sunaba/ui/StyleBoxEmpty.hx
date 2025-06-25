@@ -1,6 +1,6 @@
-package sunaba.ui;
+package lucidware.ui;
 
-import sunaba.core.Resource;
+import lucidware.core.Resource;
 
 @:native("StyleBoxEmpty")
 extern class StyleBoxEmpty extends StyleBox {
@@ -17,4 +17,4 @@ abstract StyleBoxEmptyAbstract(StyleBoxEmpty) from StyleBoxEmpty to StyleBoxEmpt
         }
         return styleBoxEmpty;
     }
-} // end package sunaba.ui
+} // end package lucidware.ui

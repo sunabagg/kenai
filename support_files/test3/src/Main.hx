@@ -1,8 +1,8 @@
-import sunaba.core.*;
-import sunaba.spatial.Camera;
-import sunaba.spatial.SpatialTransform;
-import sunaba.spatial.mesh.MeshRenderer;
-import sunaba.spatial.mesh.Box;
+import lucidware.core.*;
+import lucidware.spatial.Camera;
+import lucidware.spatial.SpatialTransform;
+import lucidware.spatial.mesh.MeshRenderer;
+import lucidware.spatial.mesh.Box;
 import RotateComponent;
 
 class Main {

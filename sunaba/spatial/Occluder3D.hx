@@ -1,7 +1,7 @@
-package sunaba.spatial;
+package lucidware.spatial;
 
-import sunaba.core.Resource;
-import sunaba.core.Vector3;
+import lucidware.core.Resource;
+import lucidware.core.Vector3;
 
 @:native("Occluder3D")
 extern class Occluder3D extends Resource {
@@ -20,4 +20,4 @@ abstract Occluder3DAbstract(Occluder3D) from Occluder3D to Occluder3D {
         }
         return occluder3D;
     }
-} // end package sunaba.spatial
+} // end package lucidware.spatial

@@ -1,12 +1,12 @@
 #include "audio_stream_polyphonic.h"
 
-void sunaba::audio::bindAudioStreamPolyphonic(sol::state_view& lua) {
+void lucidware::audio::bindAudioStreamPolyphonic(sol::state_view& lua) {
     lua.new_usertype<AudioStreamPolyphonic>("AudioStreamPolyphonic",
         "new", sol::factories([]() {
             return new AudioStreamPolyphonic();
         }),
-        sol::base_classes, sol::bases<sunaba::core::BaseObject, sunaba::core::Resource, AudioStream>(),
-        "cast", [](sunaba::core::Resource* resource) { 
+        sol::base_classes, sol::bases<lucidware::core::BaseObject, lucidware::core::Resource, AudioStream>(),
+        "cast", [](lucidware::core::Resource* resource) { 
             return new AudioStreamPolyphonic(
                 Object::cast_to<GodotAudioStreamPolyphonic>(
                     resource->getResource()

@@ -3,9 +3,9 @@
 #include "system_io_interface.h"
 
 using namespace godot;
-using namespace sunaba::core;
+using namespace lucidware::core;
 
-namespace sunaba::core::io {
+namespace lucidware::core::io {
     void bindFileSystemIo(sol::state& lua);
 
     class FileSystemIo : public SystemIoInterface {

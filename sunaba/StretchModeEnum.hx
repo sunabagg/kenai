@@ -1,4 +1,4 @@
-package sunaba;
+package lucidware;
 
 enum abstract StretchModeEnum(Int) from Int to Int {
 	var scale = 0;

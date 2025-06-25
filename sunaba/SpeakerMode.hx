@@ -1,4 +1,4 @@
-package sunaba;
+package lucidware;
 
 enum abstract SpeakerMode(Int) from Int to Int {
 	var modeStereo = 0;

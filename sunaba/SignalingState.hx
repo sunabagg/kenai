@@ -1,4 +1,4 @@
-package sunaba;
+package lucidware;
 
 enum abstract SignalingState(Int) from Int to Int {
 	var stable = 0;

@@ -1,4 +1,4 @@
-package sunaba..spatial.physics;
+package lucidware..spatial.physics;
 
 enum abstract CollisionObject3DRotationEditMode(Int) from Int to Int {
 	var euler = 0;

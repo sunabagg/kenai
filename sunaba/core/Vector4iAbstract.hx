@@ -1,4 +1,4 @@
-package sunaba.core;
+package lucidware.core;
 
 abstract Vector4iAbstract(Vector4i) from Vector4i to Vector4i {
     public function new(x : Int = 0, y : Int = 0, z : Int = 0, w : Int = 0) {

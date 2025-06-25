@@ -1,4 +1,4 @@
-package sunaba;
+package lucidware;
 
 enum abstract EulerOrder(Int) from Int to Int {
 	var xyz = 0;

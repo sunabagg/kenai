@@ -1,7 +1,7 @@
-package sunaba.ui;
+package lucidware.ui;
 
-import sunaba.core.Resource;
-import sunaba.core.Vector2;
+import lucidware.core.Resource;
+import lucidware.core.Vector2;
 
 @:native("StyleBox")
 extern class StyleBox extends Resource {
@@ -28,4 +28,4 @@ abstract StyleBoxAbstract(StyleBox) from StyleBox to StyleBox {
         }
         return styleBox;
     }
-} // end package sunaba.ui
+} // end package lucidware.ui

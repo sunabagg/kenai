@@ -1,7 +1,7 @@
 package;
 
-import sunaba.core.Behavior;
-import sunaba.spatial.SpatialTransform;
+import lucidware.core.Behavior;
+import lucidware.spatial.SpatialTransform;
 import haxe.Exception;
 
 class RotateComponent extends Behavior {

@@ -1,4 +1,4 @@
-package sunaba.spatial;
+package lucidware.spatial;
 
 @:native("IGeometryInstance")
 extern class IGeometryInstance extends IVisualInstance {

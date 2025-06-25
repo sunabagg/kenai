@@ -2,7 +2,7 @@
 
 using namespace godot;
 
-namespace sunaba::core {
+namespace lucidware::core {
     template<typename ref_t>
     Variant to_variant(const sol::basic_object<ref_t>& object) {
         if (object.template is<bool>()) {

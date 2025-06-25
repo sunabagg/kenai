@@ -1,4 +1,4 @@
-package sunaba..desktop;
+package lucidware..desktop;
 
 enum abstract StatusIndicatorProcessThreadMessages(Int) from Int to Int {
 	var messages = 1;

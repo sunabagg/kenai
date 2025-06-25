@@ -1,8 +1,8 @@
-package sunaba.spatial;
+package lucidware.spatial;
 
-import sunaba.core.Texture2D;
-import sunaba.core.Material;
-import sunaba.core.Color;
+import lucidware.core.Texture2D;
+import lucidware.core.Material;
+import lucidware.core.Color;
 
 @:native("ProceduralSkyMaterial")
 extern class ProceduralSkyMaterial extends Material {
@@ -32,4 +32,4 @@ abstract ProceduralSkyMaterialAbstract(ProceduralSkyMaterial) from ProceduralSky
         }
         return proceduralSkyMaterial;
     } 
-} // end package sunaba.spatial
+} // end package lucidware.spatial

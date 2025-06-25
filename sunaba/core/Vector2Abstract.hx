@@ -1,4 +1,4 @@
-package sunaba.core;
+package lucidware.core;
 
 abstract Vector2Abstract(Vector2) from Vector2 to Vector2 {
     public function new(x : Float = 0, y : Float = 0) {

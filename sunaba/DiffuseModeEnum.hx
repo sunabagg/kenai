@@ -1,4 +1,4 @@
-package sunaba;
+package lucidware;
 
 enum abstract DiffuseModeEnum(Int) from Int to Int {
 	var burley = 0;

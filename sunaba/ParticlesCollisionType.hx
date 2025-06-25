@@ -1,4 +1,4 @@
-package sunaba;
+package lucidware;
 
 enum abstract ParticlesCollisionType(Int) from Int to Int {
 	var sphereAttract = 0;

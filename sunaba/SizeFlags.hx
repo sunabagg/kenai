@@ -1,4 +1,4 @@
-package sunaba;
+package lucidware;
 
 enum abstract SizeFlags(Int) from Int to Int {
 	var shrinkBegin = 0;

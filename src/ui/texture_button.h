@@ -12,9 +12,9 @@
 #include "../core/texture2d.h"
 
 using namespace godot;
-using namespace sunaba::core;
+using namespace lucidware::core;
 
-namespace sunaba::ui {
+namespace lucidware::ui {
     void bindTextureButton(sol::state &lua);
 
     class TextureButton;
@@ -26,7 +26,7 @@ namespace sunaba::ui {
                 // Bind methods specific to TextureButtonProxy
             }
         public:
-            sunaba::ui::TextureButton* element = nullptr;
+            lucidware::ui::TextureButton* element = nullptr;
 
             void onInit() {
                 // Initialize the NodeProxy instance
@@ -134,51 +134,51 @@ namespace sunaba::ui {
                 this->texture_button->set_stretch_mode(static_cast<TextureButtonNode::StretchMode>(mode));
             }
 
-            sunaba::core::BitMap* getTextureClickMask() const {
-                return new sunaba::core::BitMap(this->texture_button->get_click_mask().ptr());
+            lucidware::core::BitMap* getTextureClickMask() const {
+                return new lucidware::core::BitMap(this->texture_button->get_click_mask().ptr());
             }
 
-            void setTextureClickMask(sunaba::core::BitMap* mask) {
+            void setTextureClickMask(lucidware::core::BitMap* mask) {
                 this->texture_button->set_click_mask(mask->getBitMap());
             }
 
-            sunaba::core::Texture2D* getTextureDisabled() const {
-                return new sunaba::core::Texture2D(this->texture_button->get_texture_disabled().ptr());
+            lucidware::core::Texture2D* getTextureDisabled() const {
+                return new lucidware::core::Texture2D(this->texture_button->get_texture_disabled().ptr());
             }
 
-            void setTextureDisabled(sunaba::core::Texture2D* texture) {
+            void setTextureDisabled(lucidware::core::Texture2D* texture) {
                 this->texture_button->set_texture_disabled(texture->getTexture2D());
             }
 
-            sunaba::core::Texture2D* getTextureFocused() const {
-                return new sunaba::core::Texture2D(this->texture_button->get_texture_focused().ptr());
+            lucidware::core::Texture2D* getTextureFocused() const {
+                return new lucidware::core::Texture2D(this->texture_button->get_texture_focused().ptr());
             }
 
-            void setTextureFocused(sunaba::core::Texture2D* texture) {
+            void setTextureFocused(lucidware::core::Texture2D* texture) {
                 this->texture_button->set_texture_focused(texture->getTexture2D());
             }
 
-            sunaba::core::Texture2D* getTextureHover() const {
-                return new sunaba::core::Texture2D(this->texture_button->get_texture_hover().ptr());
+            lucidware::core::Texture2D* getTextureHover() const {
+                return new lucidware::core::Texture2D(this->texture_button->get_texture_hover().ptr());
             }
 
-            void setTextureHover(sunaba::core::Texture2D* texture) {
+            void setTextureHover(lucidware::core::Texture2D* texture) {
                 this->texture_button->set_texture_hover(texture->getTexture2D());
             }
 
-            sunaba::core::Texture2D* getTextureNormal() const {
-                return new sunaba::core::Texture2D(this->texture_button->get_texture_normal().ptr());
+            lucidware::core::Texture2D* getTextureNormal() const {
+                return new lucidware::core::Texture2D(this->texture_button->get_texture_normal().ptr());
             }
 
-            void setTextureNormal(sunaba::core::Texture2D* texture) {
+            void setTextureNormal(lucidware::core::Texture2D* texture) {
                 this->texture_button->set_texture_normal(texture->getTexture2D());
             }
 
-            sunaba::core::Texture2D* getTexturePressed() const {
-                return new sunaba::core::Texture2D(this->texture_button->get_texture_pressed().ptr());
+            lucidware::core::Texture2D* getTexturePressed() const {
+                return new lucidware::core::Texture2D(this->texture_button->get_texture_pressed().ptr());
             }
 
-            void setTexturePressed(sunaba::core::Texture2D* texture) {
+            void setTexturePressed(lucidware::core::Texture2D* texture) {
                 this->texture_button->set_texture_pressed(texture->getTexture2D());
             }
     };

@@ -11,9 +11,9 @@
 #include "../core/texture2d.h"
 
 using namespace godot;
-using namespace sunaba::core;
+using namespace lucidware::core;
 
-namespace sunaba::ui {
+namespace lucidware::ui {
     void bindTextureRect(sol::state &lua);
 
     class TextureRect;
@@ -25,7 +25,7 @@ namespace sunaba::ui {
                 // Bind methods specific to TextureRectProxy
             }
         public:
-            sunaba::ui::TextureRect* element = nullptr;
+            lucidware::ui::TextureRect* element = nullptr;
 
             void onInit() {
                 // Initialize the NodeProxy instance
@@ -62,7 +62,7 @@ namespace sunaba::ui {
             TypedArray<Vector3i> _structured_text_parser(const Array &args, const String &text) const override;
     };
 
-    class TextureRect : public sunaba::ui::Control {
+    class TextureRect : public lucidware::ui::Control {
         private:
             TextureRectNode* texture_rect = nullptr; // Pointer to the TextureRect instance
         public:
@@ -129,11 +129,11 @@ namespace sunaba::ui {
                 texture_rect->set_stretch_mode(static_cast<TextureRectNode::StretchMode>(p_stretch_mode));
             }
 
-            sunaba::core::Texture2D* getTexture() {
-                return new sunaba::core::Texture2D(texture_rect->get_texture().ptr());
+            lucidware::core::Texture2D* getTexture() {
+                return new lucidware::core::Texture2D(texture_rect->get_texture().ptr());
             }
 
-            void setTexture(sunaba::core::Texture2D* texture) {
+            void setTexture(lucidware::core::Texture2D* texture) {
                 texture_rect->set_texture(texture->getTexture2D());
             }
     };

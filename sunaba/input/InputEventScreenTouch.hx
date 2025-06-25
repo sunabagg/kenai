@@ -1,4 +1,4 @@
-package sunaba.input;
+package lucidware.input;
 
 @:native("InputEventScreenTouch")
 extern class InputEventScreenTouch extends InputEventFromWindow {
@@ -20,4 +20,4 @@ abstract InputEventScreenTouchAbstract(InputEventScreenTouch) from InputEventScr
         }
         return inputEventScreenTouch;
     }
-} // end package sunaba.input
+} // end package lucidware.input

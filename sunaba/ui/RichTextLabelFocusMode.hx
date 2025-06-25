@@ -1,4 +1,4 @@
-package sunaba..ui;
+package lucidware..ui;
 
 enum abstract RichTextLabelFocusMode(Int) from Int to Int {
 	var none = 0;

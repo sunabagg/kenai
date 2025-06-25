@@ -36,7 +36,7 @@
 #ifdef USE_LUASOCKET
 #include <luasocket.h>
 // Declare the symbol reference function
-extern void sunaba_ensure_luasocket_symbols();
+extern void lucidware_ensure_luasocket_symbols();
 
 // Forward declaration for mime.core Lua module initializer
 extern "C" {
@@ -63,9 +63,9 @@ extern "C" {
 #include <memory>
 #include <stdexcept>
 
-using namespace sunaba;
-using namespace sunaba::core;
-using namespace sunaba::core::io;
+using namespace lucidware;
+using namespace lucidware::core;
+using namespace lucidware::core::io;
 using namespace godot;
 
 
@@ -176,7 +176,7 @@ void App::initState(bool sandboxed) {
     if (!sandboxed) {
 #ifdef USE_LUASOCKET
         // Ensure luasocket symbols are linked
-        sunaba_ensure_luasocket_symbols();
+        lucidware_ensure_luasocket_symbols();
         lua_getglobal(L, "package");
         lua_getfield(L, -1, "preload");
     
@@ -283,22 +283,22 @@ void App::initState(bool sandboxed) {
     };
 
     //UtilityFunctions::print("Hello, World!");
-    //sunaba::core::
-    sunaba::input::bindInputClasses(global_state);
-    sunaba::core::bindCoreClasses(global_state);
-    sunaba::spatial::bindSpatialClasses(global_state);
-    sunaba::ui::bindUIClasses(global_state);
-    sunaba::desktop::bindDesktopClasses(global_state);
+    //lucidware::core::
+    lucidware::input::bindInputClasses(global_state);
+    lucidware::core::bindCoreClasses(global_state);
+    lucidware::spatial::bindSpatialClasses(global_state);
+    lucidware::ui::bindUIClasses(global_state);
+    lucidware::desktop::bindDesktopClasses(global_state);
 
-    auto* rootElement = new sunaba::core::Element(this);
+    auto* rootElement = new lucidware::core::Element(this);
     rootElement->isRootElement = true;
     global_state["rootElement"] = rootElement;
     ioManager = new IoManager();
     IoIndex::bindIoManger(global_state, ioManager);
     global_state.set("ioManager", ioManager);
 
-    ////sunaba::core::bind_all_godot_classes( global_state );
-    //sunaba::core::initialize_lua( global_state );
+    ////lucidware::core::bind_all_godot_classes( global_state );
+    //lucidware::core::initialize_lua( global_state );
 
     global_state.set_function( "createScene", [this]() {
         return createScene();
@@ -350,7 +350,7 @@ void App::loadAndExecuteSbx(const String &path) {
     global_state["luaBinPath"] = luabinPath;
     
     // Auto-start mobdebug if environment variable is set
-    auto debugEnv = std::getenv("SUNABA_DEBUG");
+    auto debugEnv = std::getenv("LUCIDWARE_DEBUG");
     if (debugEnv && std::string(debugEnv) == "1") {
         UtilityFunctions::print("Debug mode enabled, starting MobDebug...");
         auto hostEnv = std::getenv("MOBDEBUG_HOST");
@@ -391,7 +391,7 @@ void App::start( const String &path) {
     ioManager->add(fsio);
 
     // Auto-start mobdebug if environment variable is set
-    auto debugEnv = std::getenv("SUNABA_DEBUG");
+    auto debugEnv = std::getenv("LUCIDWARE_DEBUG");
     if (debugEnv && std::string(debugEnv) == "1") {
         UtilityFunctions::print("Debug mode enabled, starting MobDebug...");
         auto hostEnv = std::getenv("MOBDEBUG_HOST");

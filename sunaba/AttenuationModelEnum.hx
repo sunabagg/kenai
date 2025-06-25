@@ -1,4 +1,4 @@
-package sunaba;
+package lucidware;
 
 enum abstract AttenuationModelEnum(Int) from Int to Int {
 	var inverseDistance = 0;

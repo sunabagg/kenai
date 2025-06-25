@@ -1,4 +1,4 @@
-package sunaba.core;
+package lucidware.core;
 
 class Behavior {
     public var component : Component;

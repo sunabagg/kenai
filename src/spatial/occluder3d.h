@@ -10,12 +10,12 @@
 #include "../core/resource.h"
 
 using namespace godot;
-using namespace sunaba::core;
+using namespace lucidware::core;
 
-namespace sunaba::spatial {
+namespace lucidware::spatial {
     void bindOccluder3D(sol::state_view& lua);
 
-    class Occluder3D : public sunaba::core::Resource {
+    class Occluder3D : public lucidware::core::Resource {
     private:
         GodotOccluder3D* occluder = nullptr;
     public:

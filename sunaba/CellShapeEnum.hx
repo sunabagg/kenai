@@ -1,4 +1,4 @@
-package sunaba;
+package lucidware;
 
 enum abstract CellShapeEnum(Int) from Int to Int {
 	var square = 0;

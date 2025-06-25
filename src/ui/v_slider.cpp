@@ -1,6 +1,6 @@
 #include "v_slider.h"
 
-namespace sunaba::ui {
+namespace lucidware::ui {
     void VSliderProxy::_enter_tree() {
         if (element != nullptr) {
             element->enterTree();
@@ -126,7 +126,7 @@ namespace sunaba::ui {
             "new", sol::factories(
                 []() { return new VSlider(); }
             ),
-            sol::base_classes, sol::bases<BaseObject, Element, sunaba::core::CanvasItem, Control, Range, Slider>(),
+            sol::base_classes, sol::bases<BaseObject, Element, lucidware::core::CanvasItem, Control, Range, Slider>(),
             "cast", [] (Element* element) {
                 VSliderNode* vSlider = Object::cast_to<VSliderNode>(element->getNode());
                 return new VSlider(vSlider);

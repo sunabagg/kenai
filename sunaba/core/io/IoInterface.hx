@@ -1,6 +1,6 @@
-package sunaba.core.io;
+package lucidware.core.io;
 
-import sunaba.core.BaseObject;
+import lucidware.core.BaseObject;
 
 @:native("IoInterface")
 extern class IoInterface extends BaseObject {

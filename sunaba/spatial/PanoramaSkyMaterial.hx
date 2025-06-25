@@ -1,7 +1,7 @@
-package sunaba.spatial;
+package lucidware.spatial;
 
-import sunaba.core.Material;
-import sunaba.core.Texture2D;
+import lucidware.core.Material;
+import lucidware.core.Texture2D;
 
 @:native("PanoramaSkyMaterial")
 extern class PanoramaSkyMaterial extends Material {
@@ -21,4 +21,4 @@ abstract PanoramaSkyMaterialAbstract(PanoramaSkyMaterial) from PanoramaSkyMateri
         }
         return panoramaSkyMaterial;
     } 
-} // end package sunaba.spatial
+} // end package lucidware.spatial

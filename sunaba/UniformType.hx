@@ -1,4 +1,4 @@
-package sunaba;
+package lucidware;
 
 enum abstract UniformType(Int) from Int to Int {
 	var sampler = 0;

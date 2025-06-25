@@ -1,4 +1,4 @@
-package sunaba;
+package lucidware;
 
 enum abstract PhysicsInterpolationModeEnum(Int) from Int to Int {
 	var inherit = 0;

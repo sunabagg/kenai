@@ -1,4 +1,4 @@
-package sunaba;
+package lucidware;
 
 enum abstract InstanceFlags(Int) from Int to Int {
 	var useBakedLight = 0;

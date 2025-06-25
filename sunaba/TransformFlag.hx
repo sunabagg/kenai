@@ -1,4 +1,4 @@
-package sunaba;
+package lucidware;
 
 enum abstract TransformFlag(Int) from Int to Int {
 	var position = 1;

@@ -1,4 +1,4 @@
-package sunaba..spatial.xr;
+package lucidware..spatial.xr;
 
 enum abstract OpenXRCompositionLayerRotationOrder(Int) from Int to Int {
 	var xyz = 0;

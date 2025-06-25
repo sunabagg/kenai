@@ -1,4 +1,4 @@
-package sunaba..animation;
+package lucidware..animation;
 
 enum abstract AnimationPlayerCallbackModeDiscrete(Int) from Int to Int {
 	var dominant = 0;

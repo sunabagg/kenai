@@ -1,4 +1,4 @@
-package sunaba;
+package lucidware;
 
 enum abstract JointFlags(Int) from Int to Int {
 	var orientationValid = 1;

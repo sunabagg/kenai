@@ -13,7 +13,7 @@
 #include "../input/input_event.h"
 #include "stl_function_wrapper.h"
 
-namespace sunaba::core {
+namespace lucidware::core {
     void bindCanvasItem(sol::state &lua);
 
     class CanvasItem;
@@ -23,7 +23,7 @@ namespace sunaba::core {
         protected:
             static void _bind_methods() {}
         public:
-            sunaba::core::CanvasItem* element = nullptr;  
+            lucidware::core::CanvasItem* element = nullptr;  
     
             void _enter_tree() override;
             void _exit_tree() override;
@@ -43,7 +43,7 @@ namespace sunaba::core {
         protected:
             static void _bind_methods();
         public:
-            sunaba::core::CanvasItem* element = nullptr;
+            lucidware::core::CanvasItem* element = nullptr;
 
             CanvasItemSignalWrapper() = default;
             ~CanvasItemSignalWrapper() = default;
@@ -477,7 +477,7 @@ namespace sunaba::core {
             );
         }
 
-        void drawStyleBox(sunaba::ui::StyleBox* styleBox, Rect2 rect) {
+        void drawStyleBox(lucidware::ui::StyleBox* styleBox, Rect2 rect) {
             canvas_item->draw_style_box(styleBox->getStyleBox(), rect);
         }
 
@@ -560,8 +560,8 @@ namespace sunaba::core {
             return canvas_item->make_canvas_position_local(pos);
         }
 
-        sunaba::input::InputEvent* makeInputLocal(sunaba::input::InputEvent* event) {
-            return new sunaba::input::InputEvent(canvas_item->make_input_local(event->getInputEvent()).ptr());
+        lucidware::input::InputEvent* makeInputLocal(lucidware::input::InputEvent* event) {
+            return new lucidware::input::InputEvent(canvas_item->make_input_local(event->getInputEvent()).ptr());
         }
 
         void moveToFront() {

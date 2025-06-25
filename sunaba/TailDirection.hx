@@ -1,4 +1,4 @@
-package sunaba;
+package lucidware;
 
 enum abstract TailDirection(Int) from Int to Int {
 	var averageChildren = 0;

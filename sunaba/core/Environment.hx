@@ -1,6 +1,6 @@
-package sunaba.core;
+package lucidware.core;
 
-import sunaba.spatial.Sky;
+import lucidware.spatial.Sky;
 
 @:native("Environment")
 extern class Environment extends Resource {
@@ -115,4 +115,4 @@ abstract EnvironmentAbstract(Environment) from Environment to Environment {
         }
         return environment;
     } 
-} // end package sunaba.core
+} // end package lucidware.core

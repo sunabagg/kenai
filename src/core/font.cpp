@@ -1,37 +1,37 @@
 #include "font.h"
 
-void sunaba::core::bindFont(sol::state &lua) {
-    lua.new_usertype<sunaba::core::Font>("Font",
+void lucidware::core::bindFont(sol::state &lua) {
+    lua.new_usertype<lucidware::core::Font>("Font",
         "new", sol::factories(
-            []() { return new sunaba::core::Font(); }
+            []() { return new lucidware::core::Font(); }
         ),
-        sol::base_classes, sol::bases<sunaba::core::BaseObject, sunaba::core::Resource>(),
+        sol::base_classes, sol::bases<lucidware::core::BaseObject, lucidware::core::Resource>(),
         "fallbacks", sol::property(
-            &sunaba::core::Font::getFallbacks, 
-            &sunaba::core::Font::setFallbacks
+            &lucidware::core::Font::getFallbacks, 
+            &lucidware::core::Font::setFallbacks
         ),
-        "getAscent", &sunaba::core::Font::getAscent,
-        "getCharSize", &sunaba::core::Font::getCharSize,
-        "getDescent", &sunaba::core::Font::getDescent,
-        "getFaceCount", &sunaba::core::Font::getFaceCount,
-        "getFontName", &sunaba::core::Font::getFontName,
-        "getFontStyle", &sunaba::core::Font::getFontStyle,
-        "getFontWeight", &sunaba::core::Font::getFontWeight,
-        "getHeight", &sunaba::core::Font::getHeight,
-        "getMultilineStringSize", &sunaba::core::Font::getMultilineStringSize,
-        "getOpentypeFeatures", &sunaba::core::Font::getOpentypeFeatures,
-        "getOtNameStrings", &sunaba::core::Font::getOtNameStrings,
-        "getSpacing", &sunaba::core::Font::getSpacing,
-        "getStringSize", &sunaba::core::Font::getStringSize,
-        "getSupportedChars", &sunaba::core::Font::getSupportedChars,
-        "getSupportedFeatureList", &sunaba::core::Font::getSupportedFeatureList,
-        "getSupportedVariationList", &sunaba::core::Font::getSupportedVariationList,
-        "getUnderlinePosition", &sunaba::core::Font::getUnderlinePosition,
-        "getUnderlineThickness", &sunaba::core::Font::getUnderlineThickness,
-        "hasChar", &sunaba::core::Font::hasChar,
-        "isLanguageSupported", &sunaba::core::Font::isLanguageSupported,
-        "isScriptSupported", &sunaba::core::Font::isScriptSupported,
-        "setCacheCapacity", &sunaba::core::Font::setCacheCapacity,
+        "getAscent", &lucidware::core::Font::getAscent,
+        "getCharSize", &lucidware::core::Font::getCharSize,
+        "getDescent", &lucidware::core::Font::getDescent,
+        "getFaceCount", &lucidware::core::Font::getFaceCount,
+        "getFontName", &lucidware::core::Font::getFontName,
+        "getFontStyle", &lucidware::core::Font::getFontStyle,
+        "getFontWeight", &lucidware::core::Font::getFontWeight,
+        "getHeight", &lucidware::core::Font::getHeight,
+        "getMultilineStringSize", &lucidware::core::Font::getMultilineStringSize,
+        "getOpentypeFeatures", &lucidware::core::Font::getOpentypeFeatures,
+        "getOtNameStrings", &lucidware::core::Font::getOtNameStrings,
+        "getSpacing", &lucidware::core::Font::getSpacing,
+        "getStringSize", &lucidware::core::Font::getStringSize,
+        "getSupportedChars", &lucidware::core::Font::getSupportedChars,
+        "getSupportedFeatureList", &lucidware::core::Font::getSupportedFeatureList,
+        "getSupportedVariationList", &lucidware::core::Font::getSupportedVariationList,
+        "getUnderlinePosition", &lucidware::core::Font::getUnderlinePosition,
+        "getUnderlineThickness", &lucidware::core::Font::getUnderlineThickness,
+        "hasChar", &lucidware::core::Font::hasChar,
+        "isLanguageSupported", &lucidware::core::Font::isLanguageSupported,
+        "isScriptSupported", &lucidware::core::Font::isScriptSupported,
+        "setCacheCapacity", &lucidware::core::Font::setCacheCapacity,
         "cast", [](Resource* instance) {
             return new Font(godot::Object::cast_to<GodotFont>(instance->getResource()));
         }

@@ -1,4 +1,4 @@
-package sunaba;
+package lucidware;
 
 enum abstract PipelineSpecializationConstantType(Int) from Int to Int {
 	var bool = 0;

@@ -1,4 +1,4 @@
-package sunaba.core;
+package lucidware.core;
 
 @:native("BaseObject")
 extern class BaseObject {

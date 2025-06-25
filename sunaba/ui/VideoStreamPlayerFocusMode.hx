@@ -1,4 +1,4 @@
-package sunaba..ui;
+package lucidware..ui;
 
 enum abstract VideoStreamPlayerFocusMode(Int) from Int to Int {
 	var none = 0;

@@ -1,4 +1,4 @@
-package sunaba..desktop;
+package lucidware..desktop;
 
 enum abstract AcceptDialogMode(Int) from Int to Int {
 	var windowed = 0;

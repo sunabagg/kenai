@@ -1,6 +1,6 @@
-package sunaba.spatial;
+package lucidware.spatial;
 
-import sunaba.core.Vector2;
+import lucidware.core.Vector2;
 
 @:native("PolygonOccluder3D")
 extern class PolygonOccluder3D extends Occluder3D {
@@ -18,4 +18,4 @@ abstract PolygonOccluder3DAbstract(PolygonOccluder3D) from PolygonOccluder3D to 
         }
         return polygonOccluder3D;
     } 
-} // end package sunaba.spatial
+} // end package lucidware.spatial

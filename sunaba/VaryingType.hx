@@ -1,4 +1,4 @@
-package sunaba;
+package lucidware;
 
 enum abstract VaryingType(Int) from Int to Int {
 	var float = 0;

@@ -1,4 +1,4 @@
-package sunaba.spatial;
+package lucidware.spatial;
 
 @:native("OrmMaterial3D")
 extern class OrmMaterial3D extends BaseMaterial3D {
@@ -15,4 +15,4 @@ abstract OrmMaterial3DAbstract(OrmMaterial3D) from OrmMaterial3D to OrmMaterial3
         }
         return ormMaterial3D;
     } 
-} // end package sunaba.spatial
+} // end package lucidware.spatial

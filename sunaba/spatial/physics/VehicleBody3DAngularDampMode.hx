@@ -1,4 +1,4 @@
-package sunaba..spatial.physics;
+package lucidware..spatial.physics;
 
 enum abstract VehicleBody3DAngularDampMode(Int) from Int to Int {
 	var combine = 0;

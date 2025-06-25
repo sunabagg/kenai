@@ -1,4 +1,4 @@
-package sunaba..desktop;
+package lucidware..desktop;
 
 enum abstract StatusIndicatorPhysicsInterpolationMode(Int) from Int to Int {
 	var inherit = 0;

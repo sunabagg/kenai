@@ -1,7 +1,7 @@
-package sunaba.ui;
+package lucidware.ui;
 
-import sunaba.core.Resource;
-import sunaba.core.Event;
+import lucidware.core.Resource;
+import lucidware.core.Event;
 
 @:native("ButtonGroup")
 extern class ButtonGroup extends Resource {

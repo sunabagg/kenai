@@ -1,6 +1,6 @@
 #include "lua_bind.h"
 
-void sunaba::core::bind_aabb(sol::state& lua) {
+void lucidware::core::bind_aabb(sol::state& lua) {
     lua.new_usertype<godot::AABB>(
         "AABB",
         sol::constructors<

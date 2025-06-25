@@ -1,4 +1,4 @@
-package sunaba;
+package lucidware;
 
 enum abstract PlatformOnLeaveEnum(Int) from Int to Int {
 	var addVelocity = 0;

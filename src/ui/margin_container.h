@@ -10,9 +10,9 @@
 #include "container.h"
 
 using namespace godot;
-using namespace sunaba::core;
+using namespace lucidware::core;
 
-namespace sunaba::ui {
+namespace lucidware::ui {
     void bindMarginContainer(sol::state &lua);
 
     class MarginContainer;
@@ -24,7 +24,7 @@ namespace sunaba::ui {
                 // Bind methods specific to MarginContainerProxy
             }
         public:
-            sunaba::ui::MarginContainer* element = nullptr;
+            lucidware::ui::MarginContainer* element = nullptr;
 
             void onInit() {
                 // Initialize the NodeProxy instance

@@ -1,4 +1,4 @@
-package sunaba;
+package lucidware;
 
 enum abstract TransferModeEnum(Int) from Int to Int {
 	var unreliable = 0;

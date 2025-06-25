@@ -1,4 +1,4 @@
-package sunaba..spatial.navigation;
+package lucidware..spatial.navigation;
 
 enum abstract NavigationAgent3DAutoTranslateMode(Int) from Int to Int {
 	var inherit = 0;

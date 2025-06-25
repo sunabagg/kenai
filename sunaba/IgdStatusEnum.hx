@@ -1,4 +1,4 @@
-package sunaba;
+package lucidware;
 
 enum abstract IgdStatusEnum(Int) from Int to Int {
 	var ok = 0;

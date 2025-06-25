@@ -1,4 +1,4 @@
-package sunaba;
+package lucidware;
 
 enum abstract DecalTexture(Int) from Int to Int {
 	var albedo = 0;

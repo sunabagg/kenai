@@ -12,7 +12,7 @@
 
 using namespace godot;
 
-namespace sunaba::core {
+namespace lucidware::core {
     void bindCanvasItemMaterial(sol::state_view& lua);
 
     class CanvasItemMaterial : public Material {

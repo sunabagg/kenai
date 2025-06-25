@@ -1,6 +1,6 @@
-package sunaba.core;
+package lucidware.core;
 
-import sunaba.core.io.BinaryData;
+import lucidware.core.io.BinaryData;
 import lua.Table;
 import haxe.Int32;
 import haxe.Int64;

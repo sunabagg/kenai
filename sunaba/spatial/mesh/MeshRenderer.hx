@@ -1,7 +1,7 @@
-package sunaba.spatial.mesh;
+package lucidware.spatial.mesh;
 
-import sunaba.spatial.IGeometryInstance;
-import sunaba.core.Entity;
+import lucidware.spatial.IGeometryInstance;
+import lucidware.core.Entity;
 
 @:native("MeshRenderer")
 extern class MeshRenderer extends IGeometryInstance {

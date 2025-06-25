@@ -11,7 +11,7 @@
 
 using namespace godot;
 
-namespace sunaba::core {
+namespace lucidware::core {
     void bindShaderInclude(sol::state &lua);
 
     class ShaderInclude : public Resource {

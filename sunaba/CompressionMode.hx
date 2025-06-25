@@ -1,4 +1,4 @@
-package sunaba;
+package lucidware;
 
 enum abstract CompressionMode(Int) from Int to Int {
 	var lossless = 0;

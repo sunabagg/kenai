@@ -10,9 +10,9 @@
 #include "box_container.h"
 
 using namespace godot;
-using namespace sunaba::core;
+using namespace lucidware::core;
 
-namespace sunaba::ui {
+namespace lucidware::ui {
     void bindHBoxContainer(sol::state &lua);
 
     class HBoxContainer;
@@ -24,7 +24,7 @@ namespace sunaba::ui {
                 // Bind methods specific to HBoxContainerProxy
             }
         public:
-            sunaba::ui::HBoxContainer* element = nullptr;
+            lucidware::ui::HBoxContainer* element = nullptr;
 
             void onInit() {
                 // Initialize the NodeProxy instance

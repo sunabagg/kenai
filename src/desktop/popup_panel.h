@@ -10,9 +10,9 @@
 #include "popup.h"
 
 using namespace godot;
-using namespace sunaba::core;
+using namespace lucidware::core;
 
-namespace sunaba::desktop {
+namespace lucidware::desktop {
     void bindPopupPanel(sol::state& lua);
 
     class PopupPanel;
@@ -22,7 +22,7 @@ namespace sunaba::desktop {
         protected:
             static void _bind_methods() {}
         public:
-            sunaba::desktop::PopupPanel* element = nullptr;
+            lucidware::desktop::PopupPanel* element = nullptr;
 
             void onInit() {
                 // Initialize the NodeProxy instance
@@ -41,7 +41,7 @@ namespace sunaba::desktop {
             Vector2 _get_contents_minimum_size() const override;
     };
 
-    class PopupPanel : public sunaba::desktop::Popup {
+    class PopupPanel : public lucidware::desktop::Popup {
         private:
             PopupPanelNode* popup = nullptr; // Pointer to the Popup instance
             void connectPopupSignals() {
@@ -92,6 +92,6 @@ namespace sunaba::desktop {
                 popup->set_transparent_background(transparent);
             }
         };
-} // namespace sunaba::desktop
+} // namespace lucidware::desktop
 
 #endif // POPUP_PANEL_H

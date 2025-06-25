@@ -1,8 +1,8 @@
-package sunaba.spatial;
+package lucidware.spatial;
 
-import sunaba.core.Resource;
-import sunaba.core.Texture;
-import sunaba.core.Image;
+import lucidware.core.Resource;
+import lucidware.core.Texture;
+import lucidware.core.Image;
 
 @:native("Texture3D")
 extern class Texture3D extends Texture {
@@ -26,4 +26,4 @@ abstract Texture3DAbstract(Texture3D) from Texture3D to Texture3D {
         }
         return texture;
     } 
-} // end package sunaba.spatial
+} // end package lucidware.spatial

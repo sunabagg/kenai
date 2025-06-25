@@ -1,4 +1,4 @@
-package sunaba;
+package lucidware;
 
 enum abstract GlowBlendModeEnum(Int) from Int to Int {
 	var additive = 0;

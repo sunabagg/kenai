@@ -1,4 +1,4 @@
-package sunaba.core;
+package lucidware.core;
 
 @:native("Texture2D")
 extern class Texture2D extends Texture {

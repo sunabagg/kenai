@@ -1,4 +1,4 @@
-package sunaba;
+package lucidware;
 
 enum abstract LightOmniShadowMode(Int) from Int to Int {
 	var dualParaboloid = 0;

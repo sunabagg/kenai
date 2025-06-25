@@ -1,4 +1,4 @@
-package sunaba..spatial.lighting;
+package lucidware..spatial.lighting;
 
 enum abstract SpotLight3DLightBakeMode(Int) from Int to Int {
 	var disabled = 0;

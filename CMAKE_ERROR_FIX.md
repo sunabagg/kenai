@@ -16,11 +16,11 @@ The error occurred because:
 ## Solution Applied
 
 ### 1. Added C Language Support
-**File:** `/Users/lucasabbas/sunaba/CMakeLists.txt`
+**File:** `/Users/lucasabbas/lucidware/CMakeLists.txt`
 
 **Before:**
 ```cmake
-project( sunaba
+project( lucidware
     LANGUAGES
         CXX
     VERSION
@@ -30,7 +30,7 @@ project( sunaba
 
 **After:**
 ```cmake
-project( sunaba
+project( lucidware
     LANGUAGES
         C
         CXX

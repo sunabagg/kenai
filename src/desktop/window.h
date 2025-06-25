@@ -14,9 +14,9 @@
 #include "../ui/style_box.h"
 
 using namespace godot;
-using namespace sunaba::core;
+using namespace lucidware::core;
 
-namespace sunaba::desktop {
+namespace lucidware::desktop {
     void bindWindow(sol::state &lua);
 
     class Window;
@@ -26,7 +26,7 @@ namespace sunaba::desktop {
         protected:
             static void _bind_methods() {}
         public:
-            sunaba::desktop::Window* element = nullptr;
+            lucidware::desktop::Window* element = nullptr;
 
             void onInit() {
                 // Initialize the NodeProxy instance
@@ -50,7 +50,7 @@ namespace sunaba::desktop {
         protected:
             static void _bind_methods();
         public:
-            sunaba::desktop::Window* element = nullptr;
+            lucidware::desktop::Window* element = nullptr;
 
             WindowSignalWrapper() = default;
             ~WindowSignalWrapper() = default;
@@ -68,7 +68,7 @@ namespace sunaba::desktop {
             void title_changed();
     };
 
-    class Window : public sunaba::core::Viewport {
+    class Window : public lucidware::core::Viewport {
         private:
             WindowNode* window = nullptr; // Pointer to the Window instance
             WindowSignalWrapper* windowSignalWrapper = nullptr;
@@ -320,11 +320,11 @@ namespace sunaba::desktop {
                 window->set_size(size);
             }
 
-            sunaba::ui::Theme* getTheme() {
-                return new sunaba::ui::Theme(window->get_theme().ptr());
+            lucidware::ui::Theme* getTheme() {
+                return new lucidware::ui::Theme(window->get_theme().ptr());
             }
 
-            void setTheme(sunaba::ui::Theme* theme) {
+            void setTheme(lucidware::ui::Theme* theme) {
                 window->set_theme(Ref<godot::Theme>(theme->getTheme()));
             }
 
@@ -517,7 +517,7 @@ namespace sunaba::desktop {
                 window->add_theme_constant_override(name.c_str(), constant);
             }
 
-            void addThemeFontOverride(std::string name, sunaba::core::Font* font) {
+            void addThemeFontOverride(std::string name, lucidware::core::Font* font) {
                 window->add_theme_font_override(name.c_str(), font->getFont());
             }
 
@@ -525,11 +525,11 @@ namespace sunaba::desktop {
                 window->add_theme_font_size_override(name.c_str(), size);
             }
 
-            void addThemeIconOverride(std::string name, sunaba::core::Texture2D* icon) {
+            void addThemeIconOverride(std::string name, lucidware::core::Texture2D* icon) {
                 window->add_theme_icon_override(name.c_str(), Ref<godot::Texture2D>(icon->getTexture()));
             }
 
-            void addThemeStyleBoxOverride(std::string name, sunaba::ui::StyleBox* stylebox) {
+            void addThemeStyleBoxOverride(std::string name, lucidware::ui::StyleBox* stylebox) {
                 window->add_theme_stylebox_override(name.c_str(), Ref<godot::StyleBox>(stylebox->getStyleBox()));
             }
 
@@ -577,28 +577,28 @@ namespace sunaba::desktop {
                 return window->get_theme_default_base_scale();
             }
 
-            sunaba::core::Font* getThemeDefaultFont() {
-                return new sunaba::core::Font(window->get_theme_default_font().ptr());
+            lucidware::core::Font* getThemeDefaultFont() {
+                return new lucidware::core::Font(window->get_theme_default_font().ptr());
             }
 
             int getThemeDefaultFontSize() {
                 return window->get_theme_default_font_size();
             }
 
-            sunaba::core::Font* getThemeFont(std::string name, std::string type = "&") {
-                return new sunaba::core::Font(window->get_theme_font(name.c_str(), type.c_str()).ptr());
+            lucidware::core::Font* getThemeFont(std::string name, std::string type = "&") {
+                return new lucidware::core::Font(window->get_theme_font(name.c_str(), type.c_str()).ptr());
             }
 
             int getThemeFontSize(std::string name, std::string type = "&") {
                 return window->get_theme_font_size(name.c_str(), type.c_str());
             }
 
-            sunaba::core::Texture2D* getThemeIcon(std::string name, std::string type = "&") {
-                return new sunaba::core::Texture2D(window->get_theme_icon(name.c_str(), type.c_str()).ptr());
+            lucidware::core::Texture2D* getThemeIcon(std::string name, std::string type = "&") {
+                return new lucidware::core::Texture2D(window->get_theme_icon(name.c_str(), type.c_str()).ptr());
             }
 
-            sunaba::ui::StyleBox* getThemeStyleBox(std::string name, std::string type = "&") {
-                return new sunaba::ui::StyleBox(window->get_theme_stylebox(name.c_str(), type.c_str()).ptr());
+            lucidware::ui::StyleBox* getThemeStyleBox(std::string name, std::string type = "&") {
+                return new lucidware::ui::StyleBox(window->get_theme_stylebox(name.c_str(), type.c_str()).ptr());
             }
 
             int getWindowId() {

@@ -10,9 +10,9 @@
 #include "slider.h"
 
 using namespace godot;
-using namespace sunaba::core;
+using namespace lucidware::core;
 
-namespace sunaba::ui {
+namespace lucidware::ui {
     void bindVSlider(sol::state &lua);
 
     class VSlider;
@@ -24,7 +24,7 @@ namespace sunaba::ui {
                 // Bind methods specific to VSliderProxy
             }
         public:
-            sunaba::ui::VSlider* element = nullptr;
+            lucidware::ui::VSlider* element = nullptr;
 
             void onInit() {
                 // Initialize the NodeProxy instance
@@ -53,7 +53,7 @@ namespace sunaba::ui {
             void _value_changed(double value) override;
     };
 
-    class VSlider : public sunaba::ui::Slider {
+    class VSlider : public lucidware::ui::Slider {
         private:
             VSliderNode* vSlider = nullptr; // Pointer to the VSlider instance
             void connectVSliderSignals() {

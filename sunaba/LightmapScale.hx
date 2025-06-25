@@ -1,4 +1,4 @@
-package sunaba;
+package lucidware;
 
 enum abstract LightmapScale(Int) from Int to Int {
 	var scale1x = 0;

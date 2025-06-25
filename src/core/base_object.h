@@ -7,7 +7,7 @@
 
 #include <lua.h>
 
-namespace sunaba::core
+namespace lucidware::core
 {
     //static void generateBaseObjectUsertype(lua_State* L);
 

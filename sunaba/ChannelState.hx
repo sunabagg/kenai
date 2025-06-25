@@ -1,4 +1,4 @@
-package sunaba;
+package lucidware;
 
 enum abstract ChannelState(Int) from Int to Int {
 	var connecting = 0;

@@ -13,7 +13,7 @@
 
 using namespace godot;
 
-namespace sunaba::core {
+namespace lucidware::core {
     void bindLabelSettings(sol::state &lua);
 
     class LabelSettings : public Resource {

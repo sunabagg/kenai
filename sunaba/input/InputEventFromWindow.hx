@@ -1,11 +1,11 @@
-package sunaba.input;
+package lucidware.input;
 
 @:native("InputEventFromWindow")
 extern class InputEventFromWindow extends InputEvent {
     public var windowId: Int;
     @:native("cast")
     public static function castFrom(res: Dynamic): InputEventFromWindow;
-} // end package sunaba.input
+} // end package lucidware.input
 
 abstract InputEventFromWindowAbstract(InputEventFromWindow) from InputEventFromWindow to InputEventFromWindow {
     @:from

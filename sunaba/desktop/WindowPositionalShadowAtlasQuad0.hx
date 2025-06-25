@@ -1,4 +1,4 @@
-package sunaba..desktop;
+package lucidware..desktop;
 
 enum abstract WindowPositionalShadowAtlasQuad0(Int) from Int to Int {
 	var disabled = 0;

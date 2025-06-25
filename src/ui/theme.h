@@ -16,12 +16,12 @@
 #include "style_box.h"
 
 using namespace godot;
-using namespace sunaba::core;
+using namespace lucidware::core;
 
-namespace sunaba::ui {
+namespace lucidware::ui {
     void bindTheme(sol::state_view& lua);
 
-    class Theme : public sunaba::core::Resource {
+    class Theme : public lucidware::core::Resource {
     private:
         GodotTheme* theme;
     public:
@@ -77,11 +77,11 @@ namespace sunaba::ui {
             theme->set_default_base_scale(scale);
         }
 
-        sunaba::core::Font* getDefaultFont() {
-            return new sunaba::core::Font(theme->get_default_font().ptr());
+        lucidware::core::Font* getDefaultFont() {
+            return new lucidware::core::Font(theme->get_default_font().ptr());
         }
 
-        void setDefaultFont(sunaba::core::Font* font) {
+        void setDefaultFont(lucidware::core::Font* font) {
             theme->set_default_font(font->getFont());
         }
 
@@ -177,8 +177,8 @@ namespace sunaba::ui {
             return list;
         }
 
-        sunaba::core::Font* getFont(const std::string& name, const std::string& type) {
-            return new sunaba::core::Font(theme->get_font(name.c_str(), type.c_str()).ptr());
+        lucidware::core::Font* getFont(const std::string& name, const std::string& type) {
+            return new lucidware::core::Font(theme->get_font(name.c_str(), type.c_str()).ptr());
         }
 
         std::vector<std::string> getFontList(const std::string& type) {
@@ -221,8 +221,8 @@ namespace sunaba::ui {
             return list;
         }
 
-        sunaba::core::Texture2D* getIcon(const std::string& name, const std::string& type) {
-            return new sunaba::core::Texture2D(theme->get_icon(name.c_str(), type.c_str()).ptr());
+        lucidware::core::Texture2D* getIcon(const std::string& name, const std::string& type) {
+            return new lucidware::core::Texture2D(theme->get_icon(name.c_str(), type.c_str()).ptr());
         }
 
         std::vector<std::string> getIconList(const std::string& type) {
@@ -243,8 +243,8 @@ namespace sunaba::ui {
             return list;
         }
 
-        sunaba::ui::StyleBox* getStyleBox(const std::string& name, const std::string& type) {
-            return new sunaba::ui::StyleBox(theme->get_stylebox(name.c_str(), type.c_str()).ptr());
+        lucidware::ui::StyleBox* getStyleBox(const std::string& name, const std::string& type) {
+            return new lucidware::ui::StyleBox(theme->get_stylebox(name.c_str(), type.c_str()).ptr());
         }
 
         std::vector<std::string> getStyleBoxList(const std::string& type) {
@@ -266,7 +266,7 @@ namespace sunaba::ui {
         }
 
         sol::stack_object getThemeItem(lua_State* L, int dataType, const std::string& name, const std::string& type) {
-            return sunaba::core::to_lua(L, theme->get_theme_item(static_cast<GodotTheme::DataType>(dataType), name.c_str(), type.c_str()));
+            return lucidware::core::to_lua(L, theme->get_theme_item(static_cast<GodotTheme::DataType>(dataType), name.c_str(), type.c_str()));
         }
 
         std::vector<std::string> getThemeItemList(int dataType, const std::string& type) {
@@ -397,7 +397,7 @@ namespace sunaba::ui {
             theme->set_constant(name.c_str(), type.c_str(), constant);
         }
 
-        void setFont(const std::string& name, const std::string& type, sunaba::core::Font* font) {
+        void setFont(const std::string& name, const std::string& type, lucidware::core::Font* font) {
             theme->set_font(name.c_str(), type.c_str(), font->getFont());
         }
 
@@ -405,11 +405,11 @@ namespace sunaba::ui {
             theme->set_font_size(name.c_str(), type.c_str(), size);
         }
 
-        void setIcon(const std::string& name, const std::string& type, sunaba::core::Texture2D* icon) {
+        void setIcon(const std::string& name, const std::string& type, lucidware::core::Texture2D* icon) {
             theme->set_icon(name.c_str(), type.c_str(), godot::Ref<GodotTexture2D>(icon->getTexture()));
         }
 
-        void setStyleBox(const std::string& name, const std::string& type, sunaba::ui::StyleBox* styleBox) {
+        void setStyleBox(const std::string& name, const std::string& type, lucidware::ui::StyleBox* styleBox) {
             theme->set_stylebox(name.c_str(), type.c_str(), godot::Ref<GodotStyleBox>(styleBox->getStyleBox()));
         }
 

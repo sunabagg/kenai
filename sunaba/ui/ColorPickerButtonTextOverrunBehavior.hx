@@ -1,4 +1,4 @@
-package sunaba..ui;
+package lucidware..ui;
 
 enum abstract ColorPickerButtonTextOverrunBehavior(Int) from Int to Int {
 	var noTrimming = 0;

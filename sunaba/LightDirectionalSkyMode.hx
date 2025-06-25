@@ -1,4 +1,4 @@
-package sunaba;
+package lucidware;
 
 enum abstract LightDirectionalSkyMode(Int) from Int to Int {
 	var lightAndSky = 0;

@@ -1,4 +1,4 @@
-package sunaba;
+package lucidware;
 
 enum abstract MotionModeEnum(Int) from Int to Int {
 	var grounded = 0;

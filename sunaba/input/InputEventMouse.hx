@@ -1,6 +1,6 @@
-package sunaba.input;
+package lucidware.input;
 
-import sunaba.core.Vector2;
+import lucidware.core.Vector2;
 
 @:native("InputEventMouse")
 extern class InputEventMouse extends InputEventWithModifiers {
@@ -20,4 +20,4 @@ abstract InputEventMouseAbstract(InputEventMouse) from InputEventMouse to InputE
         }
         return inputEventMouse;
     }
-} // end package sunaba.input
+} // end package lucidware.input

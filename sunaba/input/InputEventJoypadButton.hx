@@ -1,4 +1,4 @@
-package sunaba.input;
+package lucidware.input;
 
 @:native("InputEventJoypadButton")
 extern class InputEventJoypadButton extends InputEvent {
@@ -18,4 +18,4 @@ abstract InputEventJoypadButtonAbstract(InputEventJoypadButton) from InputEventJ
         }
         return inputEventJoypadButton;
     }
-} // end package sunaba.input
+} // end package lucidware.input

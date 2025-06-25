@@ -10,7 +10,7 @@
 #include <godot_cpp/variant/variant.hpp>
 #include <godot_cpp/variant/basis.hpp>
 
-void sunaba::core::bind_varaint(sol::state& lua) {
+void lucidware::core::bind_varaint(sol::state& lua) {
     lua.new_usertype<Variant>("Variant",
         sol::constructors<
             Variant(), 
@@ -215,7 +215,7 @@ void sunaba::core::bind_varaint(sol::state& lua) {
                     return proxy->base_object;
                 }
             }
-            return static_cast<sunaba::core::BaseObject*>(nullptr);
+            return static_cast<lucidware::core::BaseObject*>(nullptr);
          },
         "tostring", [](const Variant& v) { return std::string((v.operator String()).utf8().get_data()); }
     );

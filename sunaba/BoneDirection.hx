@@ -1,4 +1,4 @@
-package sunaba;
+package lucidware;
 
 enum abstract BoneDirection(Int) from Int to Int {
 	var plusX = 0;

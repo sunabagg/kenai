@@ -1,6 +1,6 @@
 #include "lua_bind.h"
 
-void sunaba::core::bind_rect2i(sol::state &lua) {
+void lucidware::core::bind_rect2i(sol::state &lua) {
     lua.new_usertype<godot::Rect2i>(
         "Rect2i", 
         sol::constructors<

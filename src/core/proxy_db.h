@@ -9,7 +9,7 @@
 
 #include "element.h"
 
-namespace sunaba::core
+namespace lucidware::core
 {
     class ProxyDb
     {

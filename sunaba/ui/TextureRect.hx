@@ -1,7 +1,7 @@
-package sunaba.ui;
+package lucidware.ui;
 
-import sunaba.core.Texture2D;
-import sunaba.core.Element;
+import lucidware.core.Texture2D;
+import lucidware.core.Element;
 
 @:native("TextureRect")
 extern class TextureRect extends Control {

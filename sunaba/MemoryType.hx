@@ -1,4 +1,4 @@
-package sunaba;
+package lucidware;
 
 enum abstract MemoryType(Int) from Int to Int {
 	var textures = 0;

@@ -1,4 +1,4 @@
-package sunaba;
+package lucidware;
 
 enum abstract TileOffsetAxisEnum(Int) from Int to Int {
 	var horizontal = 0;

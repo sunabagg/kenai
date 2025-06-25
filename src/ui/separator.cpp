@@ -1,6 +1,6 @@
 #include "separator.h"
 
-namespace sunaba::ui
+namespace lucidware::ui
 {
     void SeparatorProxy::_enter_tree()
     {
@@ -157,11 +157,11 @@ namespace sunaba::ui
             "new", sol::factories(
                 []() { return new Separator(); }
             ),
-            sol::base_classes, sol::bases<BaseObject, Element, sunaba::core::CanvasItem, Control>(),
+            sol::base_classes, sol::bases<BaseObject, Element, lucidware::core::CanvasItem, Control>(),
             "cast", [] (Element* element) {
                 SeparatorNode* separator = Object::cast_to<SeparatorNode>(element->getNode());
                 return new Separator(separator);
             }
         );
     }
-} // namespace sunaba::ui
+} // namespace lucidware::ui

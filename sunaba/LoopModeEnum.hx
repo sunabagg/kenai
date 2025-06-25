@@ -1,4 +1,4 @@
-package sunaba;
+package lucidware;
 
 enum abstract LoopModeEnum(Int) from Int to Int {
 	var disabled = 0;

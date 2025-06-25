@@ -1,12 +1,12 @@
 #include "audio_stream_playlist.h"
 
-void sunaba::audio::bindAudioStreamPlaylist(sol::state_view& lua) {
+void lucidware::audio::bindAudioStreamPlaylist(sol::state_view& lua) {
     lua.new_usertype<AudioStreamPlaylist>("AudioStreamPlaylist",
         "new", sol::factories([]() {
             return new AudioStreamPlaylist();
         }),
-        sol::base_classes, sol::bases<sunaba::core::BaseObject, sunaba::core::Resource, AudioStream>(),
-        "cast", [](sunaba::core::Resource* resource) { 
+        sol::base_classes, sol::bases<lucidware::core::BaseObject, lucidware::core::Resource, AudioStream>(),
+        "cast", [](lucidware::core::Resource* resource) { 
             return new AudioStreamPlaylist(
                 Object::cast_to<GodotAudioStreamPlaylist>(
                     resource->getResource()

@@ -1,4 +1,4 @@
-package sunaba;
+package lucidware;
 
 enum abstract TangentMode(Int) from Int to Int {
 	var free = 0;

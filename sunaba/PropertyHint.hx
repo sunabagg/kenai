@@ -1,4 +1,4 @@
-package sunaba;
+package lucidware;
 
 enum abstract PropertyHint(Int) from Int to Int {
 	var none = 0;

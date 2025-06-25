@@ -1,4 +1,4 @@
-package sunaba;
+package lucidware;
 
 enum abstract SourceGeometryModeEnum(Int) from Int to Int {
 	var rootNodeChildren = 0;

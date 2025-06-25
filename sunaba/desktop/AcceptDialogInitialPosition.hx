@@ -1,4 +1,4 @@
-package sunaba..desktop;
+package lucidware..desktop;
 
 enum abstract AcceptDialogInitialPosition(Int) from Int to Int {
 	var absolute = 0;

@@ -10,9 +10,9 @@
 #include "control.h"
 
 using namespace godot;
-using namespace sunaba::core;
+using namespace lucidware::core;
 
-namespace sunaba::ui {
+namespace lucidware::ui {
     void bindReferenceRect(sol::state& lua);
 
     class ReferenceRect;
@@ -24,7 +24,7 @@ namespace sunaba::ui {
                 // Bind methods specific to ReferenceRectProxy
             }
         public:
-            sunaba::ui::ReferenceRect* element = nullptr;
+            lucidware::ui::ReferenceRect* element = nullptr;
 
             void onInit() {
                 // Initialize the NodeProxy instance
@@ -51,7 +51,7 @@ namespace sunaba::ui {
             TypedArray<Vector3i> _structured_text_parser(const Array &args, const String &text) const override;
     };
 
-    class ReferenceRect : public sunaba::ui::Control {
+    class ReferenceRect : public lucidware::ui::Control {
         private:
             ReferenceRectNode* referenceRect = nullptr; // Pointer to the ReferenceRect instance
 

@@ -1,6 +1,6 @@
 #include "capsule.h"
 
-void sunaba::spatial::mesh::bindCapsule(sol::state& lua) {
+void lucidware::spatial::mesh::bindCapsule(sol::state& lua) {
     lua.new_usertype<Capsule>(
         "Capsule",
         "new", sol::factories(

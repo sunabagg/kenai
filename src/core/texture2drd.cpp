@@ -1,6 +1,6 @@
 #include "texture2drd.h"
 
-void sunaba::core::bindTexture2DRD(sol::state &lua) {
+void lucidware::core::bindTexture2DRD(sol::state &lua) {
     lua.new_usertype<Texture2DRD>("Texture2DRD",
         "new", sol::factories(
             []() { return new Texture2DRD(); }

@@ -38,11 +38,11 @@
 #include "reg_ex_match.h"
 #include "reg_ex.h"
 
-void sunaba::core::bindCoreClasses(sol::state& lua) {
-    sunaba::core::io::bindBinaryClasses(lua);
+void lucidware::core::bindCoreClasses(sol::state& lua) {
+    lucidware::core::io::bindBinaryClasses(lua);
     bind_base_types(lua);
     bindSceneSystem(lua);
-    sunaba::core::io::bindIoClasses(lua);
+    lucidware::core::io::bindIoClasses(lua);
     bindEvent(lua);
 
     bindResource(lua);

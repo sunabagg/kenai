@@ -1,6 +1,6 @@
-package sunaba.core;
+package lucidware.core;
 
-import sunaba.core.Color;
+import lucidware.core.Color;
 
 abstract ColorArray(lua.Table<Int, Color>) from lua.Table<Int, Color> to lua.Table<Int, Color> {
     @:to

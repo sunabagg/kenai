@@ -1,4 +1,4 @@
-package sunaba;
+package lucidware;
 
 enum abstract LastWrapAlignmentMode(Int) from Int to Int {
 	var inherit = 0;

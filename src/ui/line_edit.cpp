@@ -1,6 +1,6 @@
 #include "line_edit.h"
 
-namespace sunaba::ui {
+namespace lucidware::ui {
     void LineEditProxy::_enter_tree() {
         if (this->element != nullptr) {
             this->element->enterTree();
@@ -159,7 +159,7 @@ namespace sunaba::ui {
             "new", sol::factories(
                 []() { return new LineEdit(); }
             ),
-            sol::base_classes, sol::bases<BaseObject, Element, sunaba::core::CanvasItem, Control>(),
+            sol::base_classes, sol::bases<BaseObject, Element, lucidware::core::CanvasItem, Control>(),
             "alignment", sol::property(&LineEdit::getAlignment, &LineEdit::setAlignment),
             "caretBlink", sol::property(&LineEdit::getCaretBlink, &LineEdit::setCaretBlink),
             "carentBlinkInterval", sol::property(&LineEdit::getCaretBlinkInterval, &LineEdit::setCaretBlinkInterval),

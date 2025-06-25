@@ -1,6 +1,6 @@
-package sunaba.spatial;
+package lucidware.spatial;
 
-import sunaba.core.Resource;
+import lucidware.core.Resource;
 
 @:native("CameraAttributes")
 extern class CameraAttributes extends Resource {
@@ -22,4 +22,4 @@ abstract CameraAttributesAbstract(CameraAttributes) from CameraAttributes to Cam
         }
         return cameraAttributes;
     }
-} // end package sunaba.spatial
+} // end package lucidware.spatial

@@ -11,13 +11,13 @@
 #include "../core/image.h"
 
 using namespace godot;
-using namespace sunaba::core;
+using namespace lucidware::core;
 
 
-namespace sunaba::spatial {
+namespace lucidware::spatial {
     void bindTexture3D(sol::state_view& lua);
 
-    class Texture3D : public sunaba::core::Texture {
+    class Texture3D : public lucidware::core::Texture {
     private:
         GodotTexture3D* texture = nullptr;
     public:
@@ -39,19 +39,19 @@ namespace sunaba::spatial {
             setTexture(texture);
         }
 
-        sunaba::core::Resource* createPlaceholder() {
-            return new sunaba::core::Resource(
+        lucidware::core::Resource* createPlaceholder() {
+            return new lucidware::core::Resource(
                 texture->create_placeholder().ptr()
             );
         }
 
-        std::vector<sunaba::core::Image> getData() {
-            std::vector<sunaba::core::Image> images;
+        std::vector<lucidware::core::Image> getData() {
+            std::vector<lucidware::core::Image> images;
             TypedArray<GodotImage> arr = texture->get_data();
             for (int i = 0; i < arr.size(); i++) {
                 Ref<GodotImage> img = arr[i];
                 if (img.is_valid()) {
-                    images.push_back(sunaba::core::Image(img.ptr()));
+                    images.push_back(lucidware::core::Image(img.ptr()));
                 }
             }
             return images;

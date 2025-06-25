@@ -3,7 +3,7 @@
 
 #include <sol/sol.hpp>
 
-namespace sunaba::input {
+namespace lucidware::input {
     void bindInputClasses(sol::state& lua);
 }
 

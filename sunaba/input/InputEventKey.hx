@@ -1,4 +1,4 @@
-package sunaba.input;
+package lucidware.input;
 
 @:native("InputEventKey")
 extern class InputEventKey extends InputEventWithModifiers {
@@ -28,4 +28,4 @@ abstract InputEventKeyAbstract(InputEventKey) from InputEventKey to InputEventKe
         }
         return inputEventKey;
     }
-} // end package sunaba.input
+} // end package lucidware.input

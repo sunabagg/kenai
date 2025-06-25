@@ -1,4 +1,4 @@
-package sunaba;
+package lucidware;
 
 enum abstract ColorModeType(Int) from Int to Int {
 	var rgb = 0;

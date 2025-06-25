@@ -1,6 +1,6 @@
 #include "link_button.h"
 
-namespace sunaba::ui {
+namespace lucidware::ui {
     void LinkButtonProxy::_enter_tree() {
         if (element != nullptr) {
             element->enterTree();
@@ -129,13 +129,13 @@ namespace sunaba::ui {
 
     void bindLinkButton(sol::state &lua) {
         using namespace sol;
-        using namespace sunaba::ui;
+        using namespace lucidware::ui;
 
         lua.new_usertype<LinkButton>("LinkButton",
             "new", sol::factories(
                 []() { return new LinkButton(); }
             ),
-            sol::base_classes, sol::bases<BaseObject, Element, sunaba::core::CanvasItem, sunaba::ui::Control, sunaba::ui::BaseButton>(),
+            sol::base_classes, sol::bases<BaseObject, Element, lucidware::core::CanvasItem, lucidware::ui::Control, lucidware::ui::BaseButton>(),
             "focusMode", sol::property(
                 &LinkButton::getFocusMode,
                 &LinkButton::setFocusMode

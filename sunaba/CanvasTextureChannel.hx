@@ -1,4 +1,4 @@
-package sunaba;
+package lucidware;
 
 enum abstract CanvasTextureChannel(Int) from Int to Int {
 	var diffuse = 0;

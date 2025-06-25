@@ -1,4 +1,4 @@
-package sunaba;
+package lucidware;
 
 enum abstract Param(Int) from Int to Int {
 	var linearLimitUpper = 0;

@@ -12,7 +12,7 @@
 
 using namespace godot;
 
-namespace sunaba::core {
+namespace lucidware::core {
     void bindTranslation(sol::state &lua);
 
     class Translation : public Resource {

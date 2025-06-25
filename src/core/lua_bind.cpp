@@ -12,9 +12,9 @@
 #include "lua_function_wrapper.h"
 
 using namespace godot;
-using namespace sunaba::core;
+using namespace lucidware::core;
 
-void sunaba::core::bind_class_to_lua(sol::state& lua, const String& class_name) {
+void lucidware::core::bind_class_to_lua(sol::state& lua, const String& class_name) {
     // Get class info
     if (!ClassDB::class_exists(class_name)) {
         godot::UtilityFunctions::print("Class not found: ", class_name);
@@ -38,7 +38,7 @@ void sunaba::core::bind_class_to_lua(sol::state& lua, const String& class_name) 
             String signal_name = key_string.substr(7);
             auto connect_func = [obj, signal_name](sol::stack_object func) {
                 auto function = func.as<sol::function>();
-                Callable callable = sunaba::core::create_callable_from_lua_function(function);
+                Callable callable = lucidware::core::create_callable_from_lua_function(function);
                 obj->connect(signal_name, callable);
                 return callable;
             };
@@ -204,9 +204,9 @@ void sunaba::core::bind_class_to_lua(sol::state& lua, const String& class_name) 
 
         auto connect_func = [class_name, signal](godot::Object* obj, sol::variadic_args va) {
             auto function = va[0].as<sol::function>();
-            Callable callable = sunaba::core::create_callable_from_lua_function(function);
+            Callable callable = lucidware::core::create_callable_from_lua_function(function);
             obj->connect(signal["name"], callable);
-            //sunaba::core::SignalDB::add_signal(obj, signal["name"], callable);
+            //lucidware::core::SignalDB::add_signal(obj, signal["name"], callable);
             return callable;
         };
 
@@ -215,14 +215,14 @@ void sunaba::core::bind_class_to_lua(sol::state& lua, const String& class_name) 
         auto disconnect_func = [class_name, signal](godot::Object* obj, sol::variadic_args va) {
             Callable callable = va[0].as<Callable>();
             obj->disconnect(signal["name"], callable);
-            //sunaba::core::SignalDB::remove_signal(obj, signal["name"]);
+            //lucidware::core::SignalDB::remove_signal(obj, signal["name"]);
         };
 
         ut.set(("disconnect_" + signal_name).utf8().get_data(), disconnect_func);
     }*/
 }
 
-void sunaba::core::bind_all_godot_classes(sol::state& lua) {
+void lucidware::core::bind_all_godot_classes(sol::state& lua) {
     auto all_classes = ClassDB::get_class_list();
 
     for (const String& class_name : all_classes) {
@@ -236,7 +236,7 @@ void sunaba::core::bind_all_godot_classes(sol::state& lua) {
     }
 }
 
-void sunaba::core::initialize_lua(sol::state& lua) {
+void lucidware::core::initialize_lua(sol::state& lua) {
     bind_all_godot_classes(lua);
 
     lua.script(R"(

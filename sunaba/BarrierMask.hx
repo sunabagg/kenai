@@ -1,4 +1,4 @@
-package sunaba;
+package lucidware;
 
 enum abstract BarrierMask(Int) from Int to Int {
 	var vertex = 1;

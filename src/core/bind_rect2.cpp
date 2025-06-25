@@ -1,6 +1,6 @@
 #include "lua_bind.h"
 
-void sunaba::core::bind_rect2(sol::state& lua) {
+void lucidware::core::bind_rect2(sol::state& lua) {
     lua.new_usertype<Rect2>(
         "Rect2",
         sol::constructors<

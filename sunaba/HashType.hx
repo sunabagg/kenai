@@ -1,4 +1,4 @@
-package sunaba;
+package lucidware;
 
 enum abstract HashType(Int) from Int to Int {
 	var md5 = 0;

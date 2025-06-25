@@ -1,6 +1,6 @@
-package sunaba.spatial;
+package lucidware.spatial;
 
-import sunaba.core.ImageTextureLayered;
+import lucidware.core.ImageTextureLayered;
 
 @:native("CubemapArray")
 extern class CubemapArray extends ImageTextureLayered {
@@ -18,4 +18,4 @@ abstract CubemapArrayAbstract(CubemapArray) from CubemapArray to CubemapArray {
         }
         return cubemapArray;
     } 
-} // end package sunaba.spatial
+} // end package lucidware.spatial

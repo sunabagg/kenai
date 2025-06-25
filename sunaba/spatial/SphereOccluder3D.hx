@@ -1,4 +1,4 @@
-package sunaba.spatial;
+package lucidware.spatial;
 
 @:native("SphereOccluder3D")
 extern class SphereOccluder3D extends Occluder3D {
@@ -16,4 +16,4 @@ abstract SphereOccluder3DAbstract(SphereOccluder3D) from SphereOccluder3D to Sph
         }
         return sphereOccluder;
     } 
-} // end package sunaba.spatial
+} // end package lucidware.spatial

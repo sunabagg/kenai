@@ -1,9 +1,9 @@
-package sunaba.spatial;
+package lucidware.spatial;
 
-import sunaba.core.Texture2D;
-import sunaba.core.Vector2;
-import sunaba.core.Transform3D;
-import sunaba.core.Resource;
+import lucidware.core.Texture2D;
+import lucidware.core.Vector2;
+import lucidware.core.Transform3D;
+import lucidware.core.Resource;
 
 @:native("SkeletonProfile")
 extern class SkeletonProfile extends Resource {
@@ -44,4 +44,4 @@ abstract SkeletonProfileAbstract(SkeletonProfile) from SkeletonProfile to Skelet
         }
         return skeletonProfile;
     } 
-} // end package sunaba.spatial
+} // end package lucidware.spatial

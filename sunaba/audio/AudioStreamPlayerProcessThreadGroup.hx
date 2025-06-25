@@ -1,4 +1,4 @@
-package sunaba..audio;
+package lucidware..audio;
 
 enum abstract AudioStreamPlayerProcessThreadGroup(Int) from Int to Int {
 	var inherit = 0;

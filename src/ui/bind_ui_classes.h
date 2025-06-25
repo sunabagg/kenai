@@ -3,7 +3,7 @@
 
 #include <sol/sol.hpp>
 
-namespace sunaba::ui
+namespace lucidware::ui
 {
     void bindUIClasses(sol::state& lua);
 }

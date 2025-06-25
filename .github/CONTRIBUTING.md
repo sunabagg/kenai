@@ -1,6 +1,6 @@
 # Introduction
 
->First off, thank you for considering contributing to Sunaba. [source: [Active Admin](https://github.com/activeadmin/activeadmin/blob/master/CONTRIBUTING.md)]
+>First off, thank you for considering contributing to Lucidware. [source: [Active Admin](https://github.com/activeadmin/activeadmin/blob/master/CONTRIBUTING.md)]
 
 >Following these guidelines helps to communicate that you respect the time of the developers managing and developing this open source project. In return, they should reciprocate that respect in addressing your issue, assessing changes, and helping you finalize your pull requests. [source: [Hoodie](https://github.com/hoodiehq/hoodie/blob/master/CONTRIBUTING.md)]
 

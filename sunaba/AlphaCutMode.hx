@@ -1,4 +1,4 @@
-package sunaba;
+package lucidware;
 
 enum abstract AlphaCutMode(Int) from Int to Int {
 	var disabled = 0;

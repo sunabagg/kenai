@@ -10,9 +10,9 @@
 #include "syntax_highlighter.h"
 
 using namespace godot;
-using namespace sunaba::core;
+using namespace lucidware::core;
 
-namespace sunaba::ui {
+namespace lucidware::ui {
     void bindCodeHighlighter(sol::state &lua);
 
     class CodeEdit;

@@ -11,12 +11,12 @@
 #include "../core/texture2d.h"
 
 using namespace godot;
-using namespace sunaba::core;
+using namespace lucidware::core;
 
-namespace sunaba::spatial {
+namespace lucidware::spatial {
     void bindBaseMaterial3D(sol::state_view& lua);
 
-    class BaseMaterial3D : public sunaba::core::Material {
+    class BaseMaterial3D : public lucidware::core::Material {
     private:
         GodotBaseMaterial3D* material = nullptr;
     public:
@@ -46,15 +46,15 @@ namespace sunaba::spatial {
             material->set_albedo(*color);
         }
 
-        sunaba::core::Texture2D* getAlbedoTexture() {
-            return new sunaba::core::Texture2D(
+        lucidware::core::Texture2D* getAlbedoTexture() {
+            return new lucidware::core::Texture2D(
                 material->get_texture(
                     GodotBaseMaterial3D::TextureParam::TEXTURE_ALBEDO
                 ).ptr()
             );
         }
 
-        void setAlbedoTexture(sunaba::core::Texture2D* texture) {
+        void setAlbedoTexture(lucidware::core::Texture2D* texture) {
             material->set_texture(
                 GodotBaseMaterial3D::TextureParam::TEXTURE_ALBEDO,
                 texture->getTexture2D()
@@ -135,15 +135,15 @@ namespace sunaba::spatial {
             material->set_feature(GodotBaseMaterial3D::FEATURE_ANISOTROPY, enable);
         }
 
-        sunaba::core::Texture2D* getAnisotropyFlowmap() {
-            return new sunaba::core::Texture2D(
+        lucidware::core::Texture2D* getAnisotropyFlowmap() {
+            return new lucidware::core::Texture2D(
                 material->get_texture(
                     GodotBaseMaterial3D::TextureParam::TEXTURE_FLOWMAP
                 ).ptr()
             );
         }
 
-        void setAnisotropyFlowmap(sunaba::core::Texture2D* texture) {
+        void setAnisotropyFlowmap(lucidware::core::Texture2D* texture) {
             material->set_texture(
                 GodotBaseMaterial3D::TextureParam::TEXTURE_FLOWMAP,
                 texture->getTexture2D()
@@ -174,15 +174,15 @@ namespace sunaba::spatial {
             material->set_flag(GodotBaseMaterial3D::FLAG_AO_ON_UV2, enable);
         }
 
-        sunaba::core::Texture2D* getAoTexture() {
-            return new sunaba::core::Texture2D(
+        lucidware::core::Texture2D* getAoTexture() {
+            return new lucidware::core::Texture2D(
                 material->get_texture(
                     GodotBaseMaterial3D::TextureParam::TEXTURE_AMBIENT_OCCLUSION
                 ).ptr()
             );
         }
 
-        void setAoTexture(sunaba::core::Texture2D* texture) {
+        void setAoTexture(lucidware::core::Texture2D* texture) {
             material->set_texture(
                 GodotBaseMaterial3D::TextureParam::TEXTURE_AMBIENT_OCCLUSION,
                 texture->getTexture2D()
@@ -213,15 +213,15 @@ namespace sunaba::spatial {
             material->set_feature(GodotBaseMaterial3D::FEATURE_BACKLIGHT, enable);
         }
 
-        sunaba::core::Texture2D* getBacklightTexture() {
-            return new sunaba::core::Texture2D(
+        lucidware::core::Texture2D* getBacklightTexture() {
+            return new lucidware::core::Texture2D(
                 material->get_texture(
                     GodotBaseMaterial3D::TextureParam::TEXTURE_BACKLIGHT
                 ).ptr()
             );
         }
 
-        void setBacklightTexture(sunaba::core::Texture2D* texture) {
+        void setBacklightTexture(lucidware::core::Texture2D* texture) {
             material->set_texture(
                 GodotBaseMaterial3D::TextureParam::TEXTURE_BACKLIGHT,
                 texture->getTexture2D()
@@ -276,15 +276,15 @@ namespace sunaba::spatial {
             material->set_clearcoat_roughness(value);
         }
 
-        sunaba::core::Texture2D* getClearcoatTexture() {
-            return new sunaba::core::Texture2D(
+        lucidware::core::Texture2D* getClearcoatTexture() {
+            return new lucidware::core::Texture2D(
                 material->get_texture(
                     GodotBaseMaterial3D::TextureParam::TEXTURE_CLEARCOAT
                 ).ptr()
             );
         }
 
-        void setClearcoatTexture(sunaba::core::Texture2D* texture) {
+        void setClearcoatTexture(lucidware::core::Texture2D* texture) {
             material->set_texture(
                 GodotBaseMaterial3D::TextureParam::TEXTURE_CLEARCOAT,
                 texture->getTexture2D()
@@ -307,15 +307,15 @@ namespace sunaba::spatial {
             material->set_depth_draw_mode(static_cast<GodotBaseMaterial3D::DepthDrawMode>(mode));
         }
 
-        sunaba::core::Texture2D* getDetailAlbedo() {
-            return new sunaba::core::Texture2D(
+        lucidware::core::Texture2D* getDetailAlbedo() {
+            return new lucidware::core::Texture2D(
                 material->get_texture(
                     GodotBaseMaterial3D::TextureParam::TEXTURE_DETAIL_ALBEDO
                 ).ptr()
             );
         }
 
-        void setDetailAlbedo(sunaba::core::Texture2D* texture) {
+        void setDetailAlbedo(lucidware::core::Texture2D* texture) {
             material->set_texture(
                 GodotBaseMaterial3D::TextureParam::TEXTURE_DETAIL_ALBEDO,
                 texture->getTexture2D()
@@ -338,30 +338,30 @@ namespace sunaba::spatial {
             material->set_feature(GodotBaseMaterial3D::FEATURE_DETAIL, enable);
         }
 
-        sunaba::core::Texture2D* getDetailMask() {
-            return new sunaba::core::Texture2D(
+        lucidware::core::Texture2D* getDetailMask() {
+            return new lucidware::core::Texture2D(
                 material->get_texture(
                     GodotBaseMaterial3D::TextureParam::TEXTURE_DETAIL_MASK
                 ).ptr()
             );
         }
 
-        void setDetailMask(sunaba::core::Texture2D* texture) {
+        void setDetailMask(lucidware::core::Texture2D* texture) {
             material->set_texture(
                 GodotBaseMaterial3D::TextureParam::TEXTURE_DETAIL_MASK,
                 texture->getTexture2D()
             );
         }
 
-        sunaba::core::Texture2D* getDetailNormal() {
-            return new sunaba::core::Texture2D(
+        lucidware::core::Texture2D* getDetailNormal() {
+            return new lucidware::core::Texture2D(
                 material->get_texture(
                     GodotBaseMaterial3D::TextureParam::TEXTURE_DETAIL_NORMAL
                 ).ptr()
             );
         }
 
-        void setDetailNormal(sunaba::core::Texture2D* texture) {
+        void setDetailNormal(lucidware::core::Texture2D* texture) {
             material->set_texture(
                 GodotBaseMaterial3D::TextureParam::TEXTURE_DETAIL_NORMAL,
                 texture->getTexture2D()
@@ -480,15 +480,15 @@ namespace sunaba::spatial {
             material->set_emission_operator(static_cast<GodotBaseMaterial3D::EmissionOperator>(operator_));
         }
 
-        sunaba::core::Texture2D* getEmissionTexture() {
-            return new sunaba::core::Texture2D(
+        lucidware::core::Texture2D* getEmissionTexture() {
+            return new lucidware::core::Texture2D(
                 material->get_texture(
                     GodotBaseMaterial3D::TextureParam::TEXTURE_EMISSION
                 ).ptr()
             );
         }
 
-        void setEmissionTexture(sunaba::core::Texture2D* texture) {
+        void setEmissionTexture(lucidware::core::Texture2D* texture) {
             material->set_texture(
                 GodotBaseMaterial3D::TextureParam::TEXTURE_EMISSION,
                 texture->getTexture2D()
@@ -583,15 +583,15 @@ namespace sunaba::spatial {
             material->set_heightmap_scale(scale);
         }
 
-        sunaba::core::Texture2D* getHeightmapTexture() {
-            return new sunaba::core::Texture2D(
+        lucidware::core::Texture2D* getHeightmapTexture() {
+            return new lucidware::core::Texture2D(
                 material->get_texture(
                     GodotBaseMaterial3D::TextureParam::TEXTURE_HEIGHTMAP
                 ).ptr()
             );
         }
 
-        void setHeightmapTexture(sunaba::core::Texture2D* texture) {
+        void setHeightmapTexture(lucidware::core::Texture2D* texture) {
             material->set_texture(
                 GodotBaseMaterial3D::TextureParam::TEXTURE_HEIGHTMAP,
                 texture->getTexture2D()
@@ -614,15 +614,15 @@ namespace sunaba::spatial {
             material->set_specular(value);
         }
 
-        sunaba::core::Texture2D* getMetallicTexture() {
-            return new sunaba::core::Texture2D(
+        lucidware::core::Texture2D* getMetallicTexture() {
+            return new lucidware::core::Texture2D(
                 material->get_texture(
                     GodotBaseMaterial3D::TextureParam::TEXTURE_METALLIC
                 ).ptr()
             );
         }
 
-        void setMetallicTexture(sunaba::core::Texture2D* texture) {
+        void setMetallicTexture(lucidware::core::Texture2D* texture) {
             material->set_texture(
                 GodotBaseMaterial3D::TextureParam::TEXTURE_METALLIC,
                 texture->getTexture2D()
@@ -677,30 +677,30 @@ namespace sunaba::spatial {
             material->set_normal_scale(scale);
         }
 
-        sunaba::core::Texture2D* getNormalTexture() {
-            return new sunaba::core::Texture2D(
+        lucidware::core::Texture2D* getNormalTexture() {
+            return new lucidware::core::Texture2D(
                 material->get_texture(
                     GodotBaseMaterial3D::TextureParam::TEXTURE_NORMAL
                 ).ptr()
             );
         }
 
-        void setNormalTexture(sunaba::core::Texture2D* texture) {
+        void setNormalTexture(lucidware::core::Texture2D* texture) {
             material->set_texture(
                 GodotBaseMaterial3D::TextureParam::TEXTURE_NORMAL,
                 texture->getTexture2D()
             );
         }
 
-        sunaba::core::Texture2D* getOrmTexture() {
-            return new sunaba::core::Texture2D(
+        lucidware::core::Texture2D* getOrmTexture() {
+            return new lucidware::core::Texture2D(
                 material->get_texture(
                     GodotBaseMaterial3D::TextureParam::TEXTURE_ORM
                 ).ptr()
             );
         }
 
-        void setOrmTexture(sunaba::core::Texture2D* texture) {
+        void setOrmTexture(lucidware::core::Texture2D* texture) {
             material->set_texture(
                 GodotBaseMaterial3D::TextureParam::TEXTURE_ORM,
                 texture->getTexture2D()
@@ -771,15 +771,15 @@ namespace sunaba::spatial {
             material->set_refraction(scale);
         }
 
-        sunaba::core::Texture2D* getRefractionTexture() {
-            return new sunaba::core::Texture2D(
+        lucidware::core::Texture2D* getRefractionTexture() {
+            return new lucidware::core::Texture2D(
                 material->get_texture(
                     GodotBaseMaterial3D::TextureParam::TEXTURE_REFRACTION
                 ).ptr()
             );
         }
 
-        void setRefractionTexture(sunaba::core::Texture2D* texture) {
+        void setRefractionTexture(lucidware::core::Texture2D* texture) {
             material->set_texture(
                 GodotBaseMaterial3D::TextureParam::TEXTURE_REFRACTION,
                 texture->getTexture2D()
@@ -810,15 +810,15 @@ namespace sunaba::spatial {
             material->set_feature(GodotBaseMaterial3D::FEATURE_RIM, enable);
         }
 
-        sunaba::core::Texture2D* getRimTexture() {
-            return new sunaba::core::Texture2D(
+        lucidware::core::Texture2D* getRimTexture() {
+            return new lucidware::core::Texture2D(
                 material->get_texture(
                     GodotBaseMaterial3D::TextureParam::TEXTURE_RIM
                 ).ptr()
             );
         }
 
-        void setRimTexture(sunaba::core::Texture2D* texture) {
+        void setRimTexture(lucidware::core::Texture2D* texture) {
             material->set_texture(
                 GodotBaseMaterial3D::TextureParam::TEXTURE_RIM,
                 texture->getTexture2D()
@@ -841,15 +841,15 @@ namespace sunaba::spatial {
             material->set_roughness(value);
         }
 
-        sunaba::core::Texture2D* getRoughnessTexture() {
-            return new sunaba::core::Texture2D(
+        lucidware::core::Texture2D* getRoughnessTexture() {
+            return new lucidware::core::Texture2D(
                 material->get_texture(
                     GodotBaseMaterial3D::TextureParam::TEXTURE_ROUGHNESS
                 ).ptr()
             );
         }
 
-        void setRoughnessTexture(sunaba::core::Texture2D* texture) {
+        void setRoughnessTexture(lucidware::core::Texture2D* texture) {
             material->set_texture(
                 GodotBaseMaterial3D::TextureParam::TEXTURE_ROUGHNESS,
                 texture->getTexture2D()
@@ -912,15 +912,15 @@ namespace sunaba::spatial {
             material->set_subsurface_scattering_strength(value);
         }
 
-        sunaba::core::Texture2D* getSubsurfScatterTexture() {
-            return new sunaba::core::Texture2D(
+        lucidware::core::Texture2D* getSubsurfScatterTexture() {
+            return new lucidware::core::Texture2D(
                 material->get_texture(
                     GodotBaseMaterial3D::TextureParam::TEXTURE_SUBSURFACE_SCATTERING
                 ).ptr()
             );
         }
 
-        void setSubsurfScatterTexture(sunaba::core::Texture2D* texture) {
+        void setSubsurfScatterTexture(lucidware::core::Texture2D* texture) {
             material->set_texture(
                 GodotBaseMaterial3D::TextureParam::TEXTURE_SUBSURFACE_SCATTERING,
                 texture->getTexture2D()
@@ -959,15 +959,15 @@ namespace sunaba::spatial {
             material->set_feature(GodotBaseMaterial3D::FEATURE_SUBSURFACE_TRANSMITTANCE, enable);
         }
 
-        sunaba::core::Texture2D* getSubsurfScatterTransmittanceTexture() {
-            return new sunaba::core::Texture2D(
+        lucidware::core::Texture2D* getSubsurfScatterTransmittanceTexture() {
+            return new lucidware::core::Texture2D(
                 material->get_texture(
                     GodotBaseMaterial3D::TextureParam::TEXTURE_SUBSURFACE_TRANSMITTANCE
                 ).ptr()
             );
         }
 
-        void setSubsurfScatterTransmittanceTexture(sunaba::core::Texture2D* texture) {
+        void setSubsurfScatterTransmittanceTexture(lucidware::core::Texture2D* texture) {
             material->set_texture(
                 GodotBaseMaterial3D::TextureParam::TEXTURE_SUBSURFACE_TRANSMITTANCE,
                 texture->getTexture2D()
@@ -1118,8 +1118,8 @@ namespace sunaba::spatial {
             return material->get_flag(static_cast<GodotBaseMaterial3D::Flags>(flag));
         }
 
-        sunaba::core::Texture2D* getTexture(int param) {
-            return new sunaba::core::Texture2D(
+        lucidware::core::Texture2D* getTexture(int param) {
+            return new lucidware::core::Texture2D(
                 material->get_texture(static_cast<GodotBaseMaterial3D::TextureParam>(param)).ptr()
             );
         }
@@ -1132,7 +1132,7 @@ namespace sunaba::spatial {
             material->set_flag(static_cast<GodotBaseMaterial3D::Flags>(flag), enable);
         }
 
-        void setTexture(int param, sunaba::core::Texture2D* texture) {
+        void setTexture(int param, lucidware::core::Texture2D* texture) {
             material->set_texture(
                 static_cast<GodotBaseMaterial3D::TextureParam>(param),
                 texture->getTexture2D()

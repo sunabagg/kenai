@@ -1,4 +1,4 @@
-package sunaba..animation;
+package lucidware..animation;
 
 enum abstract AnimationMixerProcessThreadGroup(Int) from Int to Int {
 	var inherit = 0;

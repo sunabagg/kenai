@@ -13,9 +13,9 @@
 #include "../core/event.h"
 
 using namespace godot;
-using namespace sunaba::core;
+using namespace lucidware::core;
 
-namespace sunaba::ui {
+namespace lucidware::ui {
     void bindTree(sol::state& lua);
 
     class Tree;
@@ -25,7 +25,7 @@ namespace sunaba::ui {
         protected:
             static void _bind_methods() {}
         public:
-            sunaba::ui::Tree* element = nullptr;
+            lucidware::ui::Tree* element = nullptr;
 
             void onInit() {
                 // Initialize the NodeProxy instance
@@ -67,7 +67,7 @@ namespace sunaba::ui {
         protected:
             static void _bind_methods();
         public:
-            sunaba::ui::Tree* element = nullptr;
+            lucidware::ui::Tree* element = nullptr;
 
             TreeSignalWrapper() = default;
             ~TreeSignalWrapper() = default;

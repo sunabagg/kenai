@@ -1,4 +1,4 @@
-package sunaba..animation;
+package lucidware..animation;
 
 enum abstract AnimationMixerProcessThreadMessages(Int) from Int to Int {
 	var messages = 1;

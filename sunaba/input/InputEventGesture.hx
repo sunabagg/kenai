@@ -1,4 +1,4 @@
-package sunaba.input;
+package lucidware.input;
 
 @:native("InputEventGesture")
 extern class InputEventGesture extends InputEventWithModifiers {

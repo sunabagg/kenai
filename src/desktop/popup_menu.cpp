@@ -1,6 +1,6 @@
 #include "popup_menu.h"
 
-namespace sunaba::desktop {
+namespace lucidware::desktop {
     void PopupMenuProxy::_enter_tree() {
         if (this->element != nullptr) {
             this->element->enterTree();
@@ -105,7 +105,7 @@ namespace sunaba::desktop {
             "new", sol::factories(
                 []() { return new PopupMenu(); }
             ),
-            sol::base_classes, sol::bases<BaseObject, Element, sunaba::core::Viewport, Window, Popup>(),
+            sol::base_classes, sol::bases<BaseObject, Element, lucidware::core::Viewport, Window, Popup>(),
             "allowSearch", sol::property(&PopupMenu::getAllowSearch, &PopupMenu::setAllowSearch),
             "hideOnCheckableItemSelection", sol::property(&PopupMenu::getHideOnCheckableItemSelection, &PopupMenu::setHideOnCheckableItemSelection),
             "hideOnItemSelection", sol::property(&PopupMenu::getHideOnItemSelection, &PopupMenu::setHideOnItemSelection),

@@ -1,7 +1,7 @@
-package sunaba.spatial;
+package lucidware.spatial;
 
-import sunaba.core.Resource;
-import sunaba.core.Vector3;
+import lucidware.core.Resource;
+import lucidware.core.Vector3;
 
 @:native("Curve3D")
 extern class Curve3D extends Resource {
@@ -46,4 +46,4 @@ abstract Curve3DAbstract(Curve3D) from Curve3D to Curve3D {
         }
         return curve3D;
     } 
-} // end package sunaba.spatial
+} // end package lucidware.spatial

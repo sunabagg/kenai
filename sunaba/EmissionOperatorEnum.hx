@@ -1,4 +1,4 @@
-package sunaba;
+package lucidware;
 
 enum abstract EmissionOperatorEnum(Int) from Int to Int {
 	var add = 0;

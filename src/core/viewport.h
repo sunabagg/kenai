@@ -16,7 +16,7 @@
 
 using namespace godot;
 
-namespace sunaba::core {
+namespace lucidware::core {
     void bindViewport(sol::state &lua);
 
     class Viewport;
@@ -26,7 +26,7 @@ namespace sunaba::core {
         protected:
             static void _bind_methods() {}
         public:
-            sunaba::core::Viewport* element = nullptr;
+            lucidware::core::Viewport* element = nullptr;
 
             void onInit() {
                 // Initialize the NodeProxy instance
@@ -48,7 +48,7 @@ namespace sunaba::core {
         protected:
             static void _bind_methods();
         public:
-            sunaba::core::Viewport* element = nullptr;
+            lucidware::core::Viewport* element = nullptr;
 
             ViewportSignalWrapper() = default;
             ~ViewportSignalWrapper() = default;
@@ -465,11 +465,11 @@ namespace sunaba::core {
                 viewport->set_vrs_update_mode(static_cast<godot::Viewport::VRSUpdateMode>(mode));
             }
 
-            sunaba::spatial::World3D* getWorld3D() {
-                return new sunaba::spatial::World3D(viewport->get_world_3d().ptr());
+            lucidware::spatial::World3D* getWorld3D() {
+                return new lucidware::spatial::World3D(viewport->get_world_3d().ptr());
             }
 
-            void setWorld3D(sunaba::spatial::World3D* world) {
+            void setWorld3D(lucidware::spatial::World3D* world) {
                 viewport->set_world_3d(Ref<godot::World3D>(world->getWorld3D()));
             }
 
@@ -488,8 +488,8 @@ namespace sunaba::core {
                 sizeChangedEvent = event;
             }
 
-            sunaba::spatial::World3D* findWorld3D() {
-                return new sunaba::spatial::World3D(viewport->find_world_3d().ptr());
+            lucidware::spatial::World3D* findWorld3D() {
+                return new lucidware::spatial::World3D(viewport->find_world_3d().ptr());
             }
 
             bool getCanvasCullMaskBit(int layer) {
@@ -537,12 +537,12 @@ namespace sunaba::core {
                 return viewport->gui_get_drag_data();
             }
 
-            sunaba::ui::Control* guiGetFocusOwner() {
-                return new sunaba::ui::Control(viewport->gui_get_focus_owner());
+            lucidware::ui::Control* guiGetFocusOwner() {
+                return new lucidware::ui::Control(viewport->gui_get_focus_owner());
             }
 
-            sunaba::ui::Control* guiGetHoveredControl() {
-                return new sunaba::ui::Control(viewport->gui_get_hovered_control());
+            lucidware::ui::Control* guiGetHoveredControl() {
+                return new lucidware::ui::Control(viewport->gui_get_hovered_control());
             }
 
             bool guiIsDragSuccessful() {
@@ -565,7 +565,7 @@ namespace sunaba::core {
                 viewport->notify_mouse_entered();
             }
 
-            void pushInput(sunaba::input::InputEvent* event, bool inLocalCoords = false) {
+            void pushInput(lucidware::input::InputEvent* event, bool inLocalCoords = false) {
                 viewport->push_input(event->getInputEvent(), inLocalCoords);
             }
 
@@ -573,7 +573,7 @@ namespace sunaba::core {
                 viewport->push_text_input(text.c_str());
             }
 
-            void pushUnhandledInput(sunaba::input::InputEvent* event, bool inLocalCoords = false) {
+            void pushUnhandledInput(lucidware::input::InputEvent* event, bool inLocalCoords = false) {
                 viewport->push_unhandled_input(event->getInputEvent(), inLocalCoords);
             }
 

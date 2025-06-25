@@ -1,4 +1,4 @@
-package sunaba..spatial;
+package lucidware..spatial;
 
 enum abstract StandardMaterial3DAlphaAntialiasingMode(Int) from Int to Int {
 	var off = 0;

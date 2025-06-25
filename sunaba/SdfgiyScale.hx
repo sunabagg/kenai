@@ -1,4 +1,4 @@
-package sunaba;
+package lucidware;
 
 enum abstract SdfgiyScale(Int) from Int to Int {
 	var scale50Percent = 0;

@@ -1,4 +1,4 @@
-package sunaba.core;
+package lucidware.core;
 
 abstract FloatArray(lua.Table<Int, Float>) from lua.Table<Int, Float> to lua.Table<Int, Float> {
     @:to

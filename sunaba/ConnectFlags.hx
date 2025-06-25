@@ -1,4 +1,4 @@
-package sunaba;
+package lucidware;
 
 enum abstract ConnectFlags(Int) from Int to Int {
 	var deferred = 1;

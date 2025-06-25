@@ -1,4 +1,4 @@
-package sunaba;
+package lucidware;
 
 enum abstract BoneUpdateEnum(Int) from Int to Int {
 	var full = 0;

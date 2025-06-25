@@ -65,7 +65,7 @@
 #include "color_rect.h"
 #include "rich_text_label.h"
 
-void sunaba::ui::bindUIClasses(sol::state& lua) {
+void lucidware::ui::bindUIClasses(sol::state& lua) {
     bindStyleBox(lua);
     bindStyleBoxEmpty(lua);
     bindStyleBoxFlat(lua);

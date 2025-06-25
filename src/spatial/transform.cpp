@@ -1,9 +1,9 @@
 #include "transform.h"
 
-using namespace sunaba::core;
+using namespace lucidware::core;
 using namespace godot;
 
-namespace sunaba::spatial {
+namespace lucidware::spatial {
 
     void bindSpatialTransform(sol::state& lua) {
         lua.new_usertype<SpatialTransform>("SpatialTransform",  

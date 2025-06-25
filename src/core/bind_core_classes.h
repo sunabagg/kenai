@@ -3,7 +3,7 @@
 
 #include <sol/sol.hpp>
 
-namespace sunaba::core
+namespace lucidware::core
 {
     void bindCoreClasses(sol::state& lua);
 }

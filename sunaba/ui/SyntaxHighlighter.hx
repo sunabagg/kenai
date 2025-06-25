@@ -1,7 +1,7 @@
-package sunaba.ui;
+package lucidware.ui;
 
-import sunaba.core.Resource;
-import sunaba.core.Dictionary;
+import lucidware.core.Resource;
+import lucidware.core.Dictionary;
 
 @:native("SyntaxHighlighter")
 extern class SyntaxHighlighter extends Resource {

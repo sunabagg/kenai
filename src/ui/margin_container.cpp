@@ -1,6 +1,6 @@
 #include "margin_container.h"
 
-namespace sunaba::ui {
+namespace lucidware::ui {
     void MarginContainerProxy::_enter_tree() {
         if (element != nullptr) {
             element->enterTree();
@@ -134,7 +134,7 @@ namespace sunaba::ui {
             "new", sol::factories(
                 []() { return new MarginContainer(); }
             ),
-            sol::base_classes, sol::bases<BaseObject, Element, sunaba::core::CanvasItem, Control, Container>(),
+            sol::base_classes, sol::bases<BaseObject, Element, lucidware::core::CanvasItem, Control, Container>(),
             "cast", [](Element* e) {
                 MarginContainerNode* node = Object::cast_to<MarginContainerNode>(e->getNode());
                 return new MarginContainer(node);

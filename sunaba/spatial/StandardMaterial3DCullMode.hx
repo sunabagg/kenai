@@ -1,4 +1,4 @@
-package sunaba..spatial;
+package lucidware..spatial;
 
 enum abstract StandardMaterial3DCullMode(Int) from Int to Int {
 	var back = 0;

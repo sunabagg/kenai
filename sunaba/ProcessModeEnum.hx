@@ -1,4 +1,4 @@
-package sunaba;
+package lucidware;
 
 enum abstract ProcessModeEnum(Int) from Int to Int {
 	var automatic = 0;

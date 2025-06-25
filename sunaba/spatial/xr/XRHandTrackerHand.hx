@@ -1,4 +1,4 @@
-package sunaba..spatial.xr;
+package lucidware..spatial.xr;
 
 enum abstract XRHandTrackerHand(Int) from Int to Int {
 	var unknown = 0;

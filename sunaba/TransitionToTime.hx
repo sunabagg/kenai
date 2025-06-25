@@ -1,4 +1,4 @@
-package sunaba;
+package lucidware;
 
 enum abstract TransitionToTime(Int) from Int to Int {
 	var samePosition = 0;

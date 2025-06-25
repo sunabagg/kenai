@@ -8,10 +8,10 @@
 #include "../../core/scene_system.h"
 
 using namespace godot;
-using namespace sunaba::core;
-using namespace sunaba::spatial;
+using namespace lucidware::core;
+using namespace lucidware::spatial;
 
-namespace sunaba::spatial::mesh
+namespace lucidware::spatial::mesh
 {
     void bindMeshRenderer(sol::state& lua);
 

@@ -1,4 +1,4 @@
-package sunaba;
+package lucidware;
 
 enum abstract ConditionEnum(Int) from Int to Int {
 	var all = 0;

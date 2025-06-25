@@ -1,6 +1,6 @@
 #include "tab_bar.h"
 
-namespace sunaba::ui {
+namespace lucidware::ui {
     void TabBarProxy::_enter_tree() {
         if (element) {
             element->enterTree();
@@ -202,7 +202,7 @@ namespace sunaba::ui {
             "new", sol::factories(
                 []() { return new TabBar(); }
             ),
-            sol::base_classes, sol::bases<BaseObject, Element, sunaba::core::CanvasItem, Control>(),
+            sol::base_classes, sol::bases<BaseObject, Element, lucidware::core::CanvasItem, Control>(),
             "clipTabs", sol::property(
                 &TabBar::getClipTabs,
                 &TabBar::setClipTabs
@@ -320,4 +320,4 @@ namespace sunaba::ui {
             }
         );
     }
-} // namespace sunaba::ui
+} // namespace lucidware::ui

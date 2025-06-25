@@ -1,4 +1,4 @@
-package sunaba;
+package lucidware;
 
 enum abstract CodeCompletionKind(Int) from Int to Int {
 	var class = 0;

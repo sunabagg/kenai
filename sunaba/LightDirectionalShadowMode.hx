@@ -1,4 +1,4 @@
-package sunaba;
+package lucidware;
 
 enum abstract LightDirectionalShadowMode(Int) from Int to Int {
 	var orthogonal = 0;

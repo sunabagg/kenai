@@ -1,6 +1,6 @@
-package sunaba.ui;
+package lucidware.ui;
 
-import sunaba.core.Vector2;
+import lucidware.core.Vector2;
 
 @:native("Tree")
 extern class Tree extends Control {

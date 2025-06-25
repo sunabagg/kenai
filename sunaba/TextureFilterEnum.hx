@@ -1,4 +1,4 @@
-package sunaba;
+package lucidware;
 
 enum abstract TextureFilterEnum(Int) from Int to Int {
 	var default = 0;

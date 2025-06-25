@@ -1,6 +1,6 @@
-package sunaba.spatial;
+package lucidware.spatial;
 
-import sunaba.core.Material;
+import lucidware.core.Material;
 
 @:native("StandardMaterial3D")
 extern class StandardMaterial3D extends Material {
@@ -17,4 +17,4 @@ abstract StandardMaterial3DAbstract(StandardMaterial3D) from StandardMaterial3D 
         }
         return standardMaterial;
     } 
-} // end package sunaba.spatial
+} // end package lucidware.spatial

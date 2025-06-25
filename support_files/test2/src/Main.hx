@@ -1,6 +1,6 @@
 package support_files.test2.src;
 
-import sunaba.core.*;
+import lucidware.core.*;
 import support_files.test2.src.DeltaTimePrinter;
 
 class Main {

@@ -1,6 +1,6 @@
 #include "split_container.h"
 
-namespace sunaba::ui {
+namespace lucidware::ui {
     void SplitContainerProxy::_enter_tree() {
         if (this->element != nullptr) {
             this->element->enterTree();
@@ -134,7 +134,7 @@ namespace sunaba::ui {
             "new", sol::factories(
                 []() { return new SplitContainer(); }
             ),
-            sol::base_classes, sol::bases<BaseObject, Element, sunaba::core::CanvasItem, Control, Container>(),
+            sol::base_classes, sol::bases<BaseObject, Element, lucidware::core::CanvasItem, Control, Container>(),
             "collapsed", sol::property(&SplitContainer::getCollapsed, &SplitContainer::setCollapsed),
             "dragAreaHighlightInEditor", sol::property(&SplitContainer::getDragAreaHighlightInEditor, &SplitContainer::setDragAreaHighlightInEditor),
             "dragAreaMarginBegin", sol::property(&SplitContainer::getDragAreaMarginBegin, &SplitContainer::setDragAreaMarginBegin),

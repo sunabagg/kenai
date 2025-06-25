@@ -1,11 +1,11 @@
 #include "shader_material.h"
 
-void sunaba::core::bindShaderMaterial(sol::state_view& lua) {
+void lucidware::core::bindShaderMaterial(sol::state_view& lua) {
         lua.new_usertype<ShaderMaterial>("ShaderMaterial",
             "new", sol::factories(
                 []() { return new ShaderMaterial(); }
             ),
-            sol::base_classes, sol::bases<sunaba::core::BaseObject, sunaba::core::Resource, sunaba::core::Material>(),
+            sol::base_classes, sol::bases<lucidware::core::BaseObject, lucidware::core::Resource, lucidware::core::Material>(),
             "shader", sol::property(&ShaderMaterial::getShader, &ShaderMaterial::setShader),
             "getShaderIntParam", &ShaderMaterial::getShaderIntParam,
             "setShaderIntParam", &ShaderMaterial::setShaderIntParam,

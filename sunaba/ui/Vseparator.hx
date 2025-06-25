@@ -1,15 +1,15 @@
-package sunaba.ui;
+package lucidware.ui;
 
 @:native("Vseparator")
 extern class Vseparator extends Control {
     @:native("cast")
-    public static function toVSeparator(obj: Dynamic): sunaba.ui.Vseparator;
+    public static function toVSeparator(obj: Dynamic): lucidware.ui.Vseparator;
 }
 
 abstract VseparatorAbstract(Vseparator) from Vseparator to Vseparator {
     @:from
-    public static function fromElement(element: sunaba.core.Element): sunaba.ui.Vseparator {
-        var vSeparator = sunaba.ui.Vseparator.toVSeparator(element);
+    public static function fromElement(element: lucidware.core.Element): lucidware.ui.Vseparator {
+        var vSeparator = lucidware.ui.Vseparator.toVSeparator(element);
         if (vSeparator.isNull()) {
             return null;
         }

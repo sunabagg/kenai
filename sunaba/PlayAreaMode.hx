@@ -1,4 +1,4 @@
-package sunaba;
+package lucidware;
 
 enum abstract PlayAreaMode(Int) from Int to Int {
 	var unknown = 0;

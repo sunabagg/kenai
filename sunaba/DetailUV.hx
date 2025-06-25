@@ -1,4 +1,4 @@
-package sunaba;
+package lucidware;
 
 enum abstract DetailUV(Int) from Int to Int {
 	var uv1 = 0;

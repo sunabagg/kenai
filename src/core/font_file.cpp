@@ -1,137 +1,137 @@
 #include "font_file.h"
 
-void sunaba::core::bindFontFile(sol::state &lua) {
-    lua.new_usertype<sunaba::core::FontFile>("FontFile",
+void lucidware::core::bindFontFile(sol::state &lua) {
+    lua.new_usertype<lucidware::core::FontFile>("FontFile",
         "new", sol::factories(
-            []() { return new sunaba::core::FontFile(); }
+            []() { return new lucidware::core::FontFile(); }
         ),
-        sol::base_classes, sol::bases<sunaba::core::BaseObject, sunaba::core::Resource, sunaba::core::Font>(),
+        sol::base_classes, sol::bases<lucidware::core::BaseObject, lucidware::core::Resource, lucidware::core::Font>(),
 
         "allowSystemFallback", sol::property(
-            &sunaba::core::FontFile::getAllowSystemFallback,
-            &sunaba::core::FontFile::setAllowSystemFallback
+            &lucidware::core::FontFile::getAllowSystemFallback,
+            &lucidware::core::FontFile::setAllowSystemFallback
         ),
         "antialiasing", sol::property(
-            &sunaba::core::FontFile::getAntialiasing,
-            &sunaba::core::FontFile::setAntialiasing
+            &lucidware::core::FontFile::getAntialiasing,
+            &lucidware::core::FontFile::setAntialiasing
         ),
         "data", sol::property(
-            &sunaba::core::FontFile::getData,
-            &sunaba::core::FontFile::setData
+            &lucidware::core::FontFile::getData,
+            &lucidware::core::FontFile::setData
         ),
         "disableEmbeddedBitmaps", sol::property(
-            &sunaba::core::FontFile::getDisableEmbeddedBitmaps,
-            &sunaba::core::FontFile::setDisableEmbeddedBitmaps
+            &lucidware::core::FontFile::getDisableEmbeddedBitmaps,
+            &lucidware::core::FontFile::setDisableEmbeddedBitmaps
         ),
         "fixedSize", sol::property(
-            &sunaba::core::FontFile::getFixedSize,
-            &sunaba::core::FontFile::setFixedSize
+            &lucidware::core::FontFile::getFixedSize,
+            &lucidware::core::FontFile::setFixedSize
         ),
         "fixedSizeScaleMode", sol::property(
-            &sunaba::core::FontFile::getFixedSizeScaleMode,
-            &sunaba::core::FontFile::setFixedSizeScaleMode
+            &lucidware::core::FontFile::getFixedSizeScaleMode,
+            &lucidware::core::FontFile::setFixedSizeScaleMode
         ),
         "fontName", sol::property(
-            &sunaba::core::FontFile::getFontName,
-            &sunaba::core::FontFile::setFontName
+            &lucidware::core::FontFile::getFontName,
+            &lucidware::core::FontFile::setFontName
         ),
         "fontStretch", sol::property(
-            &sunaba::core::FontFile::getFontStretch,
-            &sunaba::core::FontFile::setFontStretch
+            &lucidware::core::FontFile::getFontStretch,
+            &lucidware::core::FontFile::setFontStretch
         ),
         "fontStyle", sol::property(
-            &sunaba::core::FontFile::getFontStyle,
-            &sunaba::core::FontFile::setFontStyle
+            &lucidware::core::FontFile::getFontStyle,
+            &lucidware::core::FontFile::setFontStyle
         ),
         "fontWeight", sol::property(
-            &sunaba::core::FontFile::getFontWeight,
-            &sunaba::core::FontFile::setFontWeight
+            &lucidware::core::FontFile::getFontWeight,
+            &lucidware::core::FontFile::setFontWeight
         ),
         "forceAutohinter", sol::property(
-            &sunaba::core::FontFile::getForceAutohinter,
-            &sunaba::core::FontFile::setForceAutohinter
+            &lucidware::core::FontFile::getForceAutohinter,
+            &lucidware::core::FontFile::setForceAutohinter
         ),
         "generateMipmaps", sol::property(
-            &sunaba::core::FontFile::getGenerateMipmaps,
-            &sunaba::core::FontFile::setGenerateMipmaps
+            &lucidware::core::FontFile::getGenerateMipmaps,
+            &lucidware::core::FontFile::setGenerateMipmaps
         ),
         "hinting", sol::property(
-            &sunaba::core::FontFile::getHinting,
-            &sunaba::core::FontFile::setHinting
+            &lucidware::core::FontFile::getHinting,
+            &lucidware::core::FontFile::setHinting
         ),
         "msdfPixelRange", sol::property(
-            &sunaba::core::FontFile::getMsdfPixelRange,
-            &sunaba::core::FontFile::setMsdfPixelRange
+            &lucidware::core::FontFile::getMsdfPixelRange,
+            &lucidware::core::FontFile::setMsdfPixelRange
         ),
         "msdfSize", sol::property(
-            &sunaba::core::FontFile::getMsdfSize,
-            &sunaba::core::FontFile::setMsdfSize
+            &lucidware::core::FontFile::getMsdfSize,
+            &lucidware::core::FontFile::setMsdfSize
         ),
         "multichannelSignedDistanceField", sol::property(
-            &sunaba::core::FontFile::getMultichannelSignedDistanceField,
-            &sunaba::core::FontFile::setMultichannelSignedDistanceField
+            &lucidware::core::FontFile::getMultichannelSignedDistanceField,
+            &lucidware::core::FontFile::setMultichannelSignedDistanceField
         ),
         "opentypeFeatureOverrides", sol::property(
-            &sunaba::core::FontFile::getOpentypeFeatureOverrides,
-            &sunaba::core::FontFile::setOpentypeFeatureOverrides
+            &lucidware::core::FontFile::getOpentypeFeatureOverrides,
+            &lucidware::core::FontFile::setOpentypeFeatureOverrides
         ),
         "oversampling", sol::property(
-            &sunaba::core::FontFile::getOversampling,
-            &sunaba::core::FontFile::setOversampling
+            &lucidware::core::FontFile::getOversampling,
+            &lucidware::core::FontFile::setOversampling
         ),
         "styleName", sol::property(
-            &sunaba::core::FontFile::getStyleName,
-            &sunaba::core::FontFile::setStyleName
+            &lucidware::core::FontFile::getStyleName,
+            &lucidware::core::FontFile::setStyleName
         ),
         "subpixelPositioning", sol::property(
-            &sunaba::core::FontFile::getSubpixelPositioning,
-            &sunaba::core::FontFile::setSubpixelPositioning
+            &lucidware::core::FontFile::getSubpixelPositioning,
+            &lucidware::core::FontFile::setSubpixelPositioning
         ),
-        "clearCache", &sunaba::core::FontFile::clearCache,
-        "clearGlyphs", &sunaba::core::FontFile::clearGlyphs,
-        "clearKerningMap", &sunaba::core::FontFile::clearKerningMap,
-        "getFallbacks", &sunaba::core::FontFile::getFallbacks,
-        "getFaceIndex", &sunaba::core::FontFile::getFaceIndex,
-        "getFontName", &sunaba::core::FontFile::getFontName,
-        "getGlyphAdvance", &sunaba::core::FontFile::getGlyphAdvance,
-        "getGlyphIndex", &sunaba::core::FontFile::getGlyphIndex,
-        "getGlyphList", &sunaba::core::FontFile::getGlyphList,
-        "getGlyphOffset", &sunaba::core::FontFile::getGlyphOffset,
-        "getGlyphSize", &sunaba::core::FontFile::getGlyphSize,
-        "getKerning", &sunaba::core::FontFile::getKerning,
-        "getKerningList", &sunaba::core::FontFile::getKerningList,
-        "getLanguageSupportOverride", &sunaba::core::FontFile::getLanguageSupportOverride,
-        "getScriptSupportOverride", &sunaba::core::FontFile::getScriptSupportOverride,
-        "getMsdfPixelRange", &sunaba::core::FontFile::getMsdfPixelRange,
-        "getMsdfSize", &sunaba::core::FontFile::getMsdfSize,
-        "getOversampling", &sunaba::core::FontFile::getOversampling,
-        "getSizeCacheList", &sunaba::core::FontFile::getSizeCacheList,
-        "getTextureCount", &sunaba::core::FontFile::getTextureCount,
-        "getTextureImage", &sunaba::core::FontFile::getTextureImage,
-        "getTextureOffsets", &sunaba::core::FontFile::getTextureOffsets,
-        "getTransform", &sunaba::core::FontFile::getTransform,
-        "getVariationCoordinates", &sunaba::core::FontFile::getVariationCoordinates,
-        "isLanguageSupported", &sunaba::core::FontFile::isLanguageSupported,
-        "isScriptSupported", &sunaba::core::FontFile::isScriptSupported,
-        "loadBitmapFont", &sunaba::core::FontFile::loadBitmapFont,
-        "loadDynamicFont", &sunaba::core::FontFile::loadDynamicFont,
-        "setCacheCapacity", &sunaba::core::FontFile::setCacheCapacity,
-        "setFallbacks", &sunaba::core::FontFile::setFallbacks,
-        "setFontName", &sunaba::core::FontFile::setFontName,
-        "setFontStyle", &sunaba::core::FontFile::setFontStyle,
-        "setFontWeight", &sunaba::core::FontFile::setFontWeight,
-        "setGlyphAdvance", &sunaba::core::FontFile::setGlyphAdvance,
-        "setGlyphOffset", &sunaba::core::FontFile::setGlyphOffset,
-        "setGlyphSize", &sunaba::core::FontFile::setGlyphSize,
-        "setGlyphTextureIndex", &sunaba::core::FontFile::setGlyphTextureIndex,
-        "setGlyphUvRect", &sunaba::core::FontFile::setGlyphUvRect,
-        "setKerning", &sunaba::core::FontFile::setKerning,
-        "setLanguageSupportOverride", &sunaba::core::FontFile::setLanguageSupportOverride,
-        "setScriptSupportOverride", &sunaba::core::FontFile::setScriptSupportOverride,
-        "setTextureImage", &sunaba::core::FontFile::setTextureImage,
-        "setTextureOffsets", &sunaba::core::FontFile::setTextureOffsets,
-        "setTransform", &sunaba::core::FontFile::setTransform,
-        "setVariationCoordinates", &sunaba::core::FontFile::setVariationCoordinates,
+        "clearCache", &lucidware::core::FontFile::clearCache,
+        "clearGlyphs", &lucidware::core::FontFile::clearGlyphs,
+        "clearKerningMap", &lucidware::core::FontFile::clearKerningMap,
+        "getFallbacks", &lucidware::core::FontFile::getFallbacks,
+        "getFaceIndex", &lucidware::core::FontFile::getFaceIndex,
+        "getFontName", &lucidware::core::FontFile::getFontName,
+        "getGlyphAdvance", &lucidware::core::FontFile::getGlyphAdvance,
+        "getGlyphIndex", &lucidware::core::FontFile::getGlyphIndex,
+        "getGlyphList", &lucidware::core::FontFile::getGlyphList,
+        "getGlyphOffset", &lucidware::core::FontFile::getGlyphOffset,
+        "getGlyphSize", &lucidware::core::FontFile::getGlyphSize,
+        "getKerning", &lucidware::core::FontFile::getKerning,
+        "getKerningList", &lucidware::core::FontFile::getKerningList,
+        "getLanguageSupportOverride", &lucidware::core::FontFile::getLanguageSupportOverride,
+        "getScriptSupportOverride", &lucidware::core::FontFile::getScriptSupportOverride,
+        "getMsdfPixelRange", &lucidware::core::FontFile::getMsdfPixelRange,
+        "getMsdfSize", &lucidware::core::FontFile::getMsdfSize,
+        "getOversampling", &lucidware::core::FontFile::getOversampling,
+        "getSizeCacheList", &lucidware::core::FontFile::getSizeCacheList,
+        "getTextureCount", &lucidware::core::FontFile::getTextureCount,
+        "getTextureImage", &lucidware::core::FontFile::getTextureImage,
+        "getTextureOffsets", &lucidware::core::FontFile::getTextureOffsets,
+        "getTransform", &lucidware::core::FontFile::getTransform,
+        "getVariationCoordinates", &lucidware::core::FontFile::getVariationCoordinates,
+        "isLanguageSupported", &lucidware::core::FontFile::isLanguageSupported,
+        "isScriptSupported", &lucidware::core::FontFile::isScriptSupported,
+        "loadBitmapFont", &lucidware::core::FontFile::loadBitmapFont,
+        "loadDynamicFont", &lucidware::core::FontFile::loadDynamicFont,
+        "setCacheCapacity", &lucidware::core::FontFile::setCacheCapacity,
+        "setFallbacks", &lucidware::core::FontFile::setFallbacks,
+        "setFontName", &lucidware::core::FontFile::setFontName,
+        "setFontStyle", &lucidware::core::FontFile::setFontStyle,
+        "setFontWeight", &lucidware::core::FontFile::setFontWeight,
+        "setGlyphAdvance", &lucidware::core::FontFile::setGlyphAdvance,
+        "setGlyphOffset", &lucidware::core::FontFile::setGlyphOffset,
+        "setGlyphSize", &lucidware::core::FontFile::setGlyphSize,
+        "setGlyphTextureIndex", &lucidware::core::FontFile::setGlyphTextureIndex,
+        "setGlyphUvRect", &lucidware::core::FontFile::setGlyphUvRect,
+        "setKerning", &lucidware::core::FontFile::setKerning,
+        "setLanguageSupportOverride", &lucidware::core::FontFile::setLanguageSupportOverride,
+        "setScriptSupportOverride", &lucidware::core::FontFile::setScriptSupportOverride,
+        "setTextureImage", &lucidware::core::FontFile::setTextureImage,
+        "setTextureOffsets", &lucidware::core::FontFile::setTextureOffsets,
+        "setTransform", &lucidware::core::FontFile::setTransform,
+        "setVariationCoordinates", &lucidware::core::FontFile::setVariationCoordinates,
         "cast", [](Resource* instance) {
             return new FontFile(godot::Object::cast_to<GodotFontFile>(instance->getResource()));
         }

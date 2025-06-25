@@ -1,4 +1,4 @@
-package sunaba;
+package lucidware;
 
 enum abstract PathSegmentType(Int) from Int to Int {
 	var region = 0;

@@ -1,4 +1,4 @@
-package sunaba;
+package lucidware;
 
 enum abstract AreaParameter(Int) from Int to Int {
 	var gravityOverrideMode = 0;

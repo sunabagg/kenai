@@ -1,4 +1,4 @@
-package sunaba;
+package lucidware;
 
 enum abstract PrimitiveType(Int) from Int to Int {
 	var points = 0;

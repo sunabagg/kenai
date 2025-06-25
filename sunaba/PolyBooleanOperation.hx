@@ -1,4 +1,4 @@
-package sunaba;
+package lucidware;
 
 enum abstract PolyBooleanOperation(Int) from Int to Int {
 	var union = 0;

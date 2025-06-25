@@ -1,4 +1,4 @@
-package sunaba;
+package lucidware;
 
 enum abstract DeviceType(Int) from Int to Int {
 	var other = 0;

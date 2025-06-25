@@ -12,9 +12,9 @@
 #include <vector>
 
 using namespace godot;
-using namespace sunaba::core;
+using namespace lucidware::core;
 
-void sunaba::core::bind_base_types(sol::state& lua) {
+void lucidware::core::bind_base_types(sol::state& lua) {
     bind_varaint(lua);
     bind_array_list(lua);
     bind_dictionary(lua);

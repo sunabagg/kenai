@@ -4,10 +4,10 @@
 #include "viewport.h"
 #include "../desktop/window.h"
 
-using namespace sunaba::core;
+using namespace lucidware::core;
 using namespace godot;
 
-void sunaba::core::bindElement(sol::state &lua) {
+void lucidware::core::bindElement(sol::state &lua) {
     lua.new_usertype<Element>(
         "Element",
         "new", sol::factories(
@@ -107,66 +107,66 @@ void sunaba::core::bindElement(sol::state &lua) {
     );
 }
 
-void sunaba::core::Element::setProxyDb(Node* p_node) {
+void lucidware::core::Element::setProxyDb(Node* p_node) {
     node = p_node;
     ProxyDb::addElement(node, this);
 }
 
-void sunaba::core::NodeProxy::_enter_tree() {
+void lucidware::core::NodeProxy::_enter_tree() {
     if (this->element != nullptr) {
         this->element->enterTree();
     }
 }
 
-void sunaba::core::NodeProxy::_exit_tree() {
+void lucidware::core::NodeProxy::_exit_tree() {
     if (this->element != nullptr) {
         this->element->exitTree();
     }
 }
 
-void sunaba::core::NodeProxy::_ready() {
+void lucidware::core::NodeProxy::_ready() {
     if (this->element != nullptr) {
         this->element->ready();
     }
 }
 
-void sunaba::core::NodeProxy::_process(double delta) {
+void lucidware::core::NodeProxy::_process(double delta) {
     if (this->element != nullptr) {
         this->element->process(delta);
     }
 }
 
-void sunaba::core::NodeProxy::_physics_process(double delta) {
+void lucidware::core::NodeProxy::_physics_process(double delta) {
     if (this->element != nullptr) {
         this->element->physicsProcess(delta);
     }
 }
 
-void sunaba::core::NodeProxy::_input(const Ref<InputEvent>& event) {
+void lucidware::core::NodeProxy::_input(const Ref<InputEvent>& event) {
     if (this->element != nullptr) {
         this->element->input(event);
     }
 }
 
-void sunaba::core::NodeProxy::_unhandled_input(const Ref<InputEvent>& event) {
+void lucidware::core::NodeProxy::_unhandled_input(const Ref<InputEvent>& event) {
     if (this->element != nullptr) {
         this->element->unhandledInput(event);
     }
 }
 
-void sunaba::core::NodeProxy::_unhandled_key_input(const Ref<InputEvent>& event) {
+void lucidware::core::NodeProxy::_unhandled_key_input(const Ref<InputEvent>& event) {
     if (this->element != nullptr) {
         this->element->unhandledKeyInput(event);
     }
 }
 
-void sunaba::core::NodeProxy::_shortcut_input(const Ref<InputEvent>& event) {
+void lucidware::core::NodeProxy::_shortcut_input(const Ref<InputEvent>& event) {
     if (this->element != nullptr) {
         this->element->shortcutInput(event);
     }
 }
 
-sunaba::core::Viewport* sunaba::core::Element::getViewport() {
+lucidware::core::Viewport* lucidware::core::Element::getViewport() {
     if (node == nullptr) {
         return nullptr;
     }
@@ -177,7 +177,7 @@ sunaba::core::Viewport* sunaba::core::Element::getViewport() {
     return new Viewport(viewport);
 }
 
-sunaba::desktop::Window* sunaba::core::Element::getWindow() {
+lucidware::desktop::Window* lucidware::core::Element::getWindow() {
     if (node == nullptr) {
         return nullptr;
     }
@@ -185,10 +185,10 @@ sunaba::desktop::Window* sunaba::core::Element::getWindow() {
     if (window == nullptr) {
         return nullptr;
     }
-    return new sunaba::desktop::Window(window);
+    return new lucidware::desktop::Window(window);
 }
 
-namespace sunaba::core {
+namespace lucidware::core {
     void NodeSignalWrapper::_bind_methods() {
         ClassDB::bind_method(D_METHOD("child_entered_tree", "child"), &NodeSignalWrapper::child_entered_tree);
         ClassDB::bind_method(D_METHOD("child_exited_tree", "child"), &NodeSignalWrapper::child_exited_tree);

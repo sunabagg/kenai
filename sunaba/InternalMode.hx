@@ -1,4 +1,4 @@
-package sunaba;
+package lucidware;
 
 enum abstract InternalMode(Int) from Int to Int {
 	var disabled = 0;

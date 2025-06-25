@@ -1,4 +1,4 @@
-package sunaba;
+package lucidware;
 
 enum abstract MixModeEnum(Int) from Int to Int {
 	var blend = 0;

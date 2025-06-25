@@ -1,6 +1,6 @@
-package sunaba.ui;
+package lucidware.ui;
 
-import sunaba.core.Element;
+import lucidware.core.Element;
 
 @:native("AspectRatioContainer")
 extern class AspectRatioContainer extends Container {
@@ -14,7 +14,7 @@ extern class AspectRatioContainer extends Container {
 
 abstract AspectRatioContainerAbstract(AspectRatioContainer) from AspectRatioContainer to AspectRatioContainer {
     @:from
-    public static function fromElement(element: sunaba.core.Element): AspectRatioContainerAbstract {
+    public static function fromElement(element: lucidware.core.Element): AspectRatioContainerAbstract {
         var container = AspectRatioContainer.toAspectRatioContainer(element);
         if (container.isNull()) {
             return null;

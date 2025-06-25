@@ -1,6 +1,6 @@
-package sunaba.input;
+package lucidware.input;
 
-import sunaba.core.Resource;
+import lucidware.core.Resource;
 
 @:native("InputEvent")
 extern class InputEvent extends Resource {
@@ -31,4 +31,4 @@ abstract InputEventAbstract(InputEvent) from InputEvent to InputEvent {
         }
         return inputEvent;
     } 
-} // end package sunaba.core
+} // end package lucidware.core

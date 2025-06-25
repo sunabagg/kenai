@@ -1,4 +1,4 @@
-package sunaba..spatial;
+package lucidware..spatial;
 
 enum abstract StandardMaterial3DBlendMode(Int) from Int to Int {
 	var mix = 0;

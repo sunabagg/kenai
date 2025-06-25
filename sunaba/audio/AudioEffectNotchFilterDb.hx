@@ -1,4 +1,4 @@
-package sunaba..audio;
+package lucidware..audio;
 
 enum abstract AudioEffectNotchFilterDb(Int) from Int to Int {
 	var filter6Db = 0;

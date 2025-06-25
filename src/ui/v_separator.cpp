@@ -1,6 +1,6 @@
 #include "v_separator.h"
 
-namespace sunaba::ui {
+namespace lucidware::ui {
     void VSeparatorProxy::_enter_tree() {
         if (element != nullptr) {
             element->enterTree();
@@ -120,7 +120,7 @@ namespace sunaba::ui {
             "new", sol::factories(
                 []() { return new VSeparator(); }
             ),
-            sol::base_classes, sol::bases<BaseObject, Element, sunaba::core::CanvasItem, Control, Separator>(),
+            sol::base_classes, sol::bases<BaseObject, Element, lucidware::core::CanvasItem, Control, Separator>(),
             "cast", [] (Element* element) {
                 VSeparatorNode* vSeparator = Object::cast_to<VSeparatorNode>(element->getNode());
                 return new VSeparator(vSeparator);

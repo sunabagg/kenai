@@ -10,9 +10,9 @@
 #include "base_button.h"
 
 using namespace godot;
-using namespace sunaba::core;
+using namespace lucidware::core;
 
-namespace sunaba::ui {
+namespace lucidware::ui {
     void bindLinkButton(sol::state &lua);
 
     class LinkButton;
@@ -24,7 +24,7 @@ namespace sunaba::ui {
                 // Bind methods specific to LinkButtonProxy
             }
         public:
-            sunaba::ui::LinkButton* element = nullptr;
+            lucidware::ui::LinkButton* element = nullptr;
 
             void onInit() {
                 // Initialize the NodeProxy instance

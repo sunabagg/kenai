@@ -1,4 +1,4 @@
-package sunaba;
+package lucidware;
 
 enum abstract LayoutDirectionEnum(Int) from Int to Int {
 	var inherited = 0;

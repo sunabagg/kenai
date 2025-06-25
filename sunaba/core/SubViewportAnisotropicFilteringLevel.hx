@@ -1,4 +1,4 @@
-package sunaba..core;
+package lucidware..core;
 
 enum abstract SubViewportAnisotropicFilteringLevel(Int) from Int to Int {
 	var disabled = 0;

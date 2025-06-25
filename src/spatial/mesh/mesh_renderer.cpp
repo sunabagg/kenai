@@ -1,9 +1,9 @@
 #include "mesh_renderer.h"
 
 using namespace godot;
-using namespace sunaba::core;
+using namespace lucidware::core;
 
-void sunaba::spatial::mesh::bindMeshRenderer(sol::state& lua) {
+void lucidware::spatial::mesh::bindMeshRenderer(sol::state& lua) {
     lua.new_usertype<MeshRenderer>(
         "MeshRenderer",
         "new", sol::factories(

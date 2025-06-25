@@ -1,6 +1,6 @@
 #include "popup.h"
 
-namespace sunaba::desktop {
+namespace lucidware::desktop {
     void PopupProxy::_enter_tree() {
         if (this->element != nullptr) {
             this->element->enterTree();
@@ -78,7 +78,7 @@ namespace sunaba::desktop {
             "new", sol::factories(
                 []() { return new Popup(); }
             ),
-            sol::base_classes, sol::bases<BaseObject, Element, sunaba::core::Viewport, sunaba::desktop::Window>(),
+            sol::base_classes, sol::bases<BaseObject, Element, lucidware::core::Viewport, lucidware::desktop::Window>(),
             "borderless", sol::property(
                 &Popup::getBorderless,
                 &Popup::setBorderless

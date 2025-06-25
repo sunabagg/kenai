@@ -1,7 +1,7 @@
-package sunaba.spatial.mesh;
+package lucidware.spatial.mesh;
 
-import sunaba.core.Vector3;
-import sunaba.core.Component;
+import lucidware.core.Vector3;
+import lucidware.core.Component;
 
 @:native("Box")
 extern class Box extends Component {
@@ -9,5 +9,5 @@ extern class Box extends Component {
     public var subdivideDepth : Int;
     public var subdivideWidth : Int;
     public var subdivideHeight : Int;
-    public static function getFromEntity(entity : sunaba.core.Entity) : Box;
+    public static function getFromEntity(entity : lucidware.core.Entity) : Box;
 }

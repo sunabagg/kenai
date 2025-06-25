@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bipasi4ii6raj"
-path="res://.godot/imported/Sunaba-macOS.png-e09193cc088b064f339327c74bcf6e3d.ctex"
+path="res://.godot/imported/Lucidware-macOS.png-e09193cc088b064f339327c74bcf6e3d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sunaba-macOS.png"
-dest_files=["res://.godot/imported/Sunaba-macOS.png-e09193cc088b064f339327c74bcf6e3d.ctex"]
+source_file="res://Lucidware-macOS.png"
+dest_files=["res://.godot/imported/Lucidware-macOS.png-e09193cc088b064f339327c74bcf6e3d.ctex"]
 
 [params]
 

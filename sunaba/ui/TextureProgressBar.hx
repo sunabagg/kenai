@@ -1,9 +1,9 @@
-package sunaba.ui;
+package lucidware.ui;
 
-import sunaba.core.Vector2;
-import sunaba.core.Texture2D;
-import sunaba.core.Color;
-import sunaba.core.Element;
+import lucidware.core.Vector2;
+import lucidware.core.Texture2D;
+import lucidware.core.Color;
+import lucidware.core.Element;
 
 @:native("TextureProgressBar")
 extern class TextureProgressBar extends Range {

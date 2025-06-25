@@ -1,4 +1,4 @@
-package sunaba..ui;
+package lucidware..ui;
 
 enum abstract CodeEditStructuredTextBidiOverride(Int) from Int to Int {
 	var default = 0;

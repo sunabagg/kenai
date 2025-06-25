@@ -10,14 +10,14 @@
 
 #include "stl_function_wrapper.h"
 
-using namespace sunaba::core;
+using namespace lucidware::core;
 using namespace godot;
 
-namespace sunaba::desktop {
+namespace lucidware::desktop {
     class Window;
 }
 
-namespace sunaba::core {
+namespace lucidware::core {
     void bindElement(sol::state &lua);
 
     class Element; // Forward declaration
@@ -168,7 +168,7 @@ namespace sunaba::core {
             if (scriptInstance != sol::lua_nil) {
                 auto func = scriptInstance["input"].get<sol::function>();
                 if (func) {
-                    sunaba::input::InputEvent* eventObj = new sunaba::input::InputEvent(event.ptr());
+                    lucidware::input::InputEvent* eventObj = new lucidware::input::InputEvent(event.ptr());
                     func(scriptInstance, eventObj);
                 }
             }
@@ -178,7 +178,7 @@ namespace sunaba::core {
             if (scriptInstance != sol::lua_nil) {
                 auto func = scriptInstance["unhandledInput"].get<sol::function>();
                 if (func) {
-                    sunaba::input::InputEvent* eventObj = new sunaba::input::InputEvent(event.ptr());
+                    lucidware::input::InputEvent* eventObj = new lucidware::input::InputEvent(event.ptr());
                     func(scriptInstance, eventObj);
                 }
             }
@@ -188,7 +188,7 @@ namespace sunaba::core {
             if (scriptInstance != sol::lua_nil) {
                 auto func = scriptInstance["unhandledKeyInput"].get<sol::function>();
                 if (func) {
-                    sunaba::input::InputEvent* eventObj = new sunaba::input::InputEvent(event.ptr());
+                    lucidware::input::InputEvent* eventObj = new lucidware::input::InputEvent(event.ptr());
                     func(scriptInstance, eventObj);
                 }
             }
@@ -198,7 +198,7 @@ namespace sunaba::core {
             if (scriptInstance != sol::lua_nil) {
                 auto func = scriptInstance["shortcutInput"].get<sol::function>();
                 if (func) {
-                    sunaba::input::InputEvent* eventObj = new sunaba::input::InputEvent(event.ptr());
+                    lucidware::input::InputEvent* eventObj = new lucidware::input::InputEvent(event.ptr());
                     func(scriptInstance, eventObj);
                 }
             }
@@ -310,7 +310,7 @@ namespace sunaba::core {
 
         Viewport* getViewport();
 
-        sunaba::desktop::Window* getWindow();
+        lucidware::desktop::Window* getWindow();
     };
 }
 

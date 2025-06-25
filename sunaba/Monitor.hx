@@ -1,4 +1,4 @@
-package sunaba;
+package lucidware;
 
 enum abstract Monitor(Int) from Int to Int {
 	var timeFps = 0;

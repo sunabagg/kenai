@@ -1,7 +1,7 @@
-package sunaba.spatial;
+package lucidware.spatial;
 
-import sunaba.core.Color;
-import sunaba.core.Material;
+import lucidware.core.Color;
+import lucidware.core.Material;
 
 @:native("FogMaterial")
 extern class FogMaterial extends Material {
@@ -23,4 +23,4 @@ abstract FogMaterialAbstract(FogMaterial) from FogMaterial to FogMaterial {
         }
         return fogMaterial;
     } 
-} // end package sunaba.spatial
+} // end package lucidware.spatial

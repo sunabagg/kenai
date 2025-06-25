@@ -1,4 +1,4 @@
-package sunaba;
+package lucidware;
 
 enum abstract KeyModifierMask(Int) from Int to Int {
 	var codeMask = 8388607;

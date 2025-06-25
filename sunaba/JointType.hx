@@ -1,4 +1,4 @@
-package sunaba;
+package lucidware;
 
 enum abstract JointType(Int) from Int to Int {
 	var pin = 0;

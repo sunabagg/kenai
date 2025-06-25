@@ -6,7 +6,7 @@
 
 using namespace godot;
 
-namespace sunaba::core {
+namespace lucidware::core {
     class BaseObjectProxy : public Object {
         GDCLASS(BaseObjectProxy, Object);
     protected:

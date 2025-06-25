@@ -1,4 +1,4 @@
-package sunaba;
+package lucidware;
 
 enum abstract EnvironmentGlowBlendMode(Int) from Int to Int {
 	var additive = 0;

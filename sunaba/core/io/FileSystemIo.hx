@@ -1,4 +1,4 @@
-package sunaba.core.io;
+package lucidware.core.io;
 
 @:native("FileSystemIo")
 extern class FileSystemIo extends SystemIoInterface {

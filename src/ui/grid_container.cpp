@@ -1,6 +1,6 @@
 #include "grid_container.h"
 
-namespace sunaba::ui {
+namespace lucidware::ui {
     void GridContainerProxy::_enter_tree() {
         if (this->element != nullptr) {
             this->element->enterTree();
@@ -134,7 +134,7 @@ namespace sunaba::ui {
             "new", sol::factories(
                 []() { return new GridContainer(); }
             ),
-            sol::base_classes, sol::bases<BaseObject, Element, sunaba::core::CanvasItem, Control, Container>(),
+            sol::base_classes, sol::bases<BaseObject, Element, lucidware::core::CanvasItem, Control, Container>(),
             "columns", sol::property(&GridContainer::getColumns, &GridContainer::setColumns),
             "cast", [](Element* element) {
                 GridContainerNode* node = Object::cast_to<GridContainerNode>(element->getNode());

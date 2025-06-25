@@ -1,4 +1,4 @@
-package sunaba..spatial.physics;
+package lucidware..spatial.physics;
 
 enum abstract PhysicsBody3DDisableMode(Int) from Int to Int {
 	var remove = 0;

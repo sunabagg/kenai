@@ -1,6 +1,6 @@
-package sunaba.core;
+package lucidware.core;
 
-import sunaba.core.Color;
+import lucidware.core.Color;
 
 abstract ColorAbstract(Color) from Color to Color {
     @:op(a.b) public function fieldRead(name:String) {

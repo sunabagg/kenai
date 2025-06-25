@@ -1,6 +1,6 @@
 #include "byte.h"
 
-void sunaba::core::io ::bindByte(sol::state& lua) {
+void lucidware::core::io ::bindByte(sol::state& lua) {
     lua.new_usertype<Byte>("Byte",
         //sol::constructors<Byte(), Byte(double), Byte(int)>(),
         "new", sol::factories(

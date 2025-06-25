@@ -1,6 +1,6 @@
-package sunaba.core;
+package lucidware.core;
 
-import sunaba.core.io.BinaryData;
+import lucidware.core.io.BinaryData;
 
 @:native("FontFile")
 extern class FontFile extends Font {

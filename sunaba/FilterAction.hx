@@ -1,4 +1,4 @@
-package sunaba;
+package lucidware;
 
 enum abstract FilterAction(Int) from Int to Int {
 	var ignore = 0;

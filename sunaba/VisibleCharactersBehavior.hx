@@ -1,4 +1,4 @@
-package sunaba;
+package lucidware;
 
 enum abstract VisibleCharactersBehavior(Int) from Int to Int {
 	var charsBeforeShaping = 0;

@@ -1,4 +1,4 @@
-package sunaba..spatial.navigation;
+package lucidware..spatial.navigation;
 
 enum abstract NavigationLink3DRotationEditMode(Int) from Int to Int {
 	var euler = 0;

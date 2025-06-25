@@ -1,4 +1,4 @@
-package sunaba..spatial;
+package lucidware..spatial;
 
 enum abstract SpriteBase3DGILightmapScale(Int) from Int to Int {
 	var scale1x = 0;

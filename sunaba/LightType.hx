@@ -1,4 +1,4 @@
-package sunaba;
+package lucidware;
 
 enum abstract LightType(Int) from Int to Int {
 	var directional = 0;

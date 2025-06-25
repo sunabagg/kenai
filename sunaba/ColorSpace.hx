@@ -1,4 +1,4 @@
-package sunaba;
+package lucidware;
 
 enum abstract ColorSpace(Int) from Int to Int {
 	var srgb = 0;

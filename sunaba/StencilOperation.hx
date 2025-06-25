@@ -1,4 +1,4 @@
-package sunaba;
+package lucidware;
 
 enum abstract StencilOperation(Int) from Int to Int {
 	var keep = 0;

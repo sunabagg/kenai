@@ -1,4 +1,4 @@
-package sunaba;
+package lucidware;
 
 enum abstract SamplePartitionTypeEnum(Int) from Int to Int {
 	var convexPartition = 0;

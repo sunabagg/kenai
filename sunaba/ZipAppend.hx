@@ -1,4 +1,4 @@
-package sunaba;
+package lucidware;
 
 enum abstract ZipAppend(Int) from Int to Int {
 	var create = 0;

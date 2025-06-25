@@ -1,4 +1,4 @@
-package sunaba;
+package lucidware;
 
 enum abstract ResolutionEnum(Int) from Int to Int {
 	var resolution16 = 0;

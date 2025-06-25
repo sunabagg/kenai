@@ -1,4 +1,4 @@
-package sunaba;
+package lucidware;
 
 enum abstract RenderPrimitive(Int) from Int to Int {
 	var points = 0;

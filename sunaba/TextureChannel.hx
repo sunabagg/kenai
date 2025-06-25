@@ -1,4 +1,4 @@
-package sunaba;
+package lucidware;
 
 enum abstract TextureChannel(Int) from Int to Int {
 	var red = 0;

@@ -1,4 +1,4 @@
-package sunaba..ui;
+package lucidware..ui;
 
 enum abstract HSplitContainerDraggerVisibility(Int) from Int to Int {
 	var visible = 0;

@@ -1,11 +1,11 @@
 #include "noise_texture2d.h"
 
-void sunaba::core::bindNoiseTexture2D(sol::state_view& lua) {
+void lucidware::core::bindNoiseTexture2D(sol::state_view& lua) {
     lua.new_usertype<NoiseTexture2D>("NoiseTexture2D",
         "new", sol::factories(
             []() { return new NoiseTexture2D(); }
         ),
-        sol::base_classes, sol::bases<sunaba::core::BaseObject, sunaba::core::Resource, sunaba::core::Texture, sunaba::core::Texture2D>(),
+        sol::base_classes, sol::bases<lucidware::core::BaseObject, lucidware::core::Resource, lucidware::core::Texture, lucidware::core::Texture2D>(),
         "normalMap", sol::property(&NoiseTexture2D::isAsNormalMap, &NoiseTexture2D::setAsNormalMap),
         "bumpStrength", sol::property(&NoiseTexture2D::getBumpStrength, &NoiseTexture2D::setBumpStrength),
         "colorRamp", sol::property(&NoiseTexture2D::getColorRamp, &NoiseTexture2D::setColorRamp),

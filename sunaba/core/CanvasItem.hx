@@ -1,7 +1,7 @@
-package sunaba.core;
+package lucidware.core;
 
-import sunaba.ui.StyleBox;
-import sunaba.input.InputEvent;
+import lucidware.ui.StyleBox;
+import lucidware.input.InputEvent;
 
 @:native("Element")
 extern class CanvasItem extends Element {

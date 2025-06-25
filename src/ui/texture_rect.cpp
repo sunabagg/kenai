@@ -1,6 +1,6 @@
 #include "texture_rect.h"
 
-namespace sunaba::ui {
+namespace lucidware::ui {
 
     void TextureRectProxy::_enter_tree() {
         if (this->element != nullptr) {
@@ -121,7 +121,7 @@ namespace sunaba::ui {
             "new", sol::factories(
                 []() { return new TextureRect(); }
             ),
-            sol::base_classes, sol::bases<BaseObject, Element, sunaba::core::CanvasItem, Control>(),
+            sol::base_classes, sol::bases<BaseObject, Element, lucidware::core::CanvasItem, Control>(),
             "expandMode", sol::property(&TextureRect::getExpandMode, &TextureRect::setExpandMode),
             "flipH", sol::property(&TextureRect::getFlipH, &TextureRect::setFlipH),
             "flipV", sol::property(&TextureRect::getFlipV, &TextureRect::setFlipV),

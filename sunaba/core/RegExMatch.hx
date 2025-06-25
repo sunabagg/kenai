@@ -1,4 +1,4 @@
-package sunaba.core;
+package lucidware.core;
 
 @:native("RegExMatch")
 extern class RegExMatch extends BaseObject {

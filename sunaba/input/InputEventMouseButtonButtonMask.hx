@@ -1,4 +1,4 @@
-package sunaba..input;
+package lucidware..input;
 
 enum abstract InputEventMouseButtonButtonMask(Int) from Int to Int {
 	var left = 1;

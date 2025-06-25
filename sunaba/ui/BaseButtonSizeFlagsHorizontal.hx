@@ -1,4 +1,4 @@
-package sunaba..ui;
+package lucidware..ui;
 
 enum abstract BaseButtonSizeFlagsHorizontal(Int) from Int to Int {
 	var shrinkBegin = 0;

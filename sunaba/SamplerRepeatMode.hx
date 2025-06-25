@@ -1,4 +1,4 @@
-package sunaba;
+package lucidware;
 
 enum abstract SamplerRepeatMode(Int) from Int to Int {
 	var repeat = 0;

@@ -1,4 +1,4 @@
-package sunaba..spatial.xr;
+package lucidware..spatial.xr;
 
 enum abstract XRCamera3DDopplerTracking(Int) from Int to Int {
 	var disabled = 0;

@@ -1,4 +1,4 @@
-package sunaba;
+package lucidware;
 
 enum abstract UnixPermissionFlags(Int) from Int to Int {
 	var executeOther = 1;

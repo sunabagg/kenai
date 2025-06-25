@@ -1,4 +1,4 @@
-package sunaba;
+package lucidware;
 
 enum abstract ErrorCode(Int) from Int to Int {
 	var parseError = -32700;

@@ -1,11 +1,11 @@
 #include "skin.h"
 
-void sunaba::spatial::bindSkin(sol::state_view& lua) {
-    lua.new_usertype<sunaba::spatial::Skin>("Skin",
+void lucidware::spatial::bindSkin(sol::state_view& lua) {
+    lua.new_usertype<lucidware::spatial::Skin>("Skin",
         "new", sol::factories(
-            []() { return new sunaba::spatial::Skin(); }
+            []() { return new lucidware::spatial::Skin(); }
         ),
-        sol::base_classes, sol::bases<sunaba::core::BaseObject, sunaba::core::Resource>(),
+        sol::base_classes, sol::bases<lucidware::core::BaseObject, lucidware::core::Resource>(),
         "addBind", &Skin::addBind,
         "addNamedBind", &Skin::addNamedBind,
         "clearBinds", &Skin::clearBinds,
@@ -17,7 +17,7 @@ void sunaba::spatial::bindSkin(sol::state_view& lua) {
         "setBindCount", &Skin::setBindCount,
         "setBindName", &Skin::setBindName,
         "setBindPose", &Skin::setBindPose,
-        "cast", [](sunaba::core::Resource* instance) {
+        "cast", [](lucidware::core::Resource* instance) {
             return new Skin(godot::Object::cast_to<GodotSkin>(instance->getResource()));
         }
     );

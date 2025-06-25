@@ -1,7 +1,7 @@
-import sunaba.core.Variant;
-import sunaba.Error;
-import sunaba.core.RegExMatch;
-import sunaba.core.RegEx;
+import lucidware.core.Variant;
+import lucidware.Error;
+import lucidware.core.RegExMatch;
+import lucidware.core.RegEx;
 import lua.Table;
 
 @:coreApi

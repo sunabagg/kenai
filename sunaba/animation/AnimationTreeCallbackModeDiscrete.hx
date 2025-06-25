@@ -1,4 +1,4 @@
-package sunaba..animation;
+package lucidware..animation;
 
 enum abstract AnimationTreeCallbackModeDiscrete(Int) from Int to Int {
 	var dominant = 0;

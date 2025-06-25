@@ -1,7 +1,7 @@
-package sunaba.ui;
+package lucidware.ui;
 
-import sunaba.core.Dictionary;
-import sunaba.core.Color;
+import lucidware.core.Dictionary;
+import lucidware.core.Color;
 
 @:native("CodeHighlighter")
 extern class CodeHighlighter extends SyntaxHighlighter {

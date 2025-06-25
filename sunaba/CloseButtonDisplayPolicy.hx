@@ -1,4 +1,4 @@
-package sunaba;
+package lucidware;
 
 enum abstract CloseButtonDisplayPolicy(Int) from Int to Int {
 	var showNever = 0;

@@ -12,9 +12,9 @@
 #include "../core/event.h"
 
 using namespace godot;
-using namespace sunaba::core;
+using namespace lucidware::core;
 
-namespace sunaba::ui {
+namespace lucidware::ui {
     void bindSplitContainer(sol::state& lua);
 
     class SplitContainer;
@@ -26,7 +26,7 @@ namespace sunaba::ui {
                 // Bind methods specific to SplitContainerProxy
             }
         public:
-            sunaba::ui::SplitContainer* element = nullptr;
+            lucidware::ui::SplitContainer* element = nullptr;
 
             void onInit() {
                 // Initialize the NodeProxy instance

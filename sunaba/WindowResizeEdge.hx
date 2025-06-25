@@ -1,4 +1,4 @@
-package sunaba;
+package lucidware;
 
 enum abstract WindowResizeEdge(Int) from Int to Int {
 	var topLeft = 0;

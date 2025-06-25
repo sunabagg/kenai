@@ -1,4 +1,4 @@
-package sunaba;
+package lucidware;
 
 enum abstract TextureUsageBits(Int) from Int to Int {
 	var samplingBit = 1;

@@ -1,6 +1,6 @@
-package sunaba.ui;
+package lucidware.ui;
 
-import sunaba.desktop.PopupMenu;
+import lucidware.desktop.PopupMenu;
 
 @:native("LineEdit")
 extern class LineEdit extends Control {
@@ -25,22 +25,22 @@ extern class LineEdit extends Control {
     public var middleMousePasteEnabled: Bool;
     public var mouseDefaultCursorShape: Int;
     public var placeholderText: String;
-    public var rightIcon: sunaba.core.Texture2D;
+    public var rightIcon: lucidware.core.Texture2D;
     public var secret: Bool;
     public var secretCharacter: String;
     public var selectAllOnFocus: Bool;
     public var selectingEnabled: Bool;
     public var shortcutKeysEnabled: Bool;
     public var structuredTextBidiOverride: Int;
-    public var structuredTextBidiOverrideOptions: sunaba.core.ArrayList;
+    public var structuredTextBidiOverrideOptions: lucidware.core.ArrayList;
     public var text: String;
     public var textDirection: Int;
     public var virtualKeyboardEnabled: Bool;
     public var virtualKeyboardType: Int;
-    public var editingToggled: sunaba.core.Event;
-    public var textChangeRejected: sunaba.core.Event;
-    public var textChanged: sunaba.core.Event;
-    public var textSubmitted: sunaba.core.Event;
+    public var editingToggled: lucidware.core.Event;
+    public var textChangeRejected: lucidware.core.Event;
+    public var textChanged: lucidware.core.Event;
+    public var textSubmitted: lucidware.core.Event;
     public function applyIme(): Void;
     public function cancelIme(): Void;
     public function clear(): Void;
@@ -68,7 +68,7 @@ extern class LineEdit extends Control {
 
 abstract LineEditAbstract(LineEdit) from LineEdit to LineEdit {
     @:from
-    public static function fromElement(element: sunaba.core.Element): LineEdit {
+    public static function fromElement(element: lucidware.core.Element): LineEdit {
         var lineEdit = LineEdit.toLineEdit(element);
         if (lineEdit.isNull()){
             return null;

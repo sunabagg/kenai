@@ -1,14 +1,14 @@
 #include "resource.h"
 
-void sunaba::core::bindResource(sol::state &lua) {
-    lua.new_usertype<sunaba::core::Resource>("Resource",
+void lucidware::core::bindResource(sol::state &lua) {
+    lua.new_usertype<lucidware::core::Resource>("Resource",
         "new", sol::factories(
-            []() { return new sunaba::core::Resource(); }
+            []() { return new lucidware::core::Resource(); }
         ),
-        sol::base_classes, sol::bases<sunaba::core::BaseObject>(),
-        "duplicate", &sunaba::core::Resource::duplicate,
-        "emitChanged", &sunaba::core::Resource::emitChanged,
-        "isNull", &sunaba::core::Resource::isNull,
+        sol::base_classes, sol::bases<lucidware::core::BaseObject>(),
+        "duplicate", &lucidware::core::Resource::duplicate,
+        "emitChanged", &lucidware::core::Resource::emitChanged,
+        "isNull", &lucidware::core::Resource::isNull,
         "cast", [](Resource* instance) {
             return new Resource(godot::Object::cast_to<GodotResource>(instance->getResource()));
         }

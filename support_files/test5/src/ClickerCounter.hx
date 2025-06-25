@@ -1,9 +1,9 @@
 package;
 
-import sunaba.ui.Button;
-import sunaba.ui.Button.ButtonAbstract;
-import sunaba.ui.Label;
-import sunaba.ui.Widget;
+import lucidware.ui.Button;
+import lucidware.ui.Button.ButtonAbstract;
+import lucidware.ui.Label;
+import lucidware.ui.Widget;
 
 class ClickerCounter extends Widget {
     var label: Label;

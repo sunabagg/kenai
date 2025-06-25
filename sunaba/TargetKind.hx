@@ -1,4 +1,4 @@
-package sunaba;
+package lucidware;
 
 enum abstract TargetKind(Int) from Int to Int {
 	var static = 0;

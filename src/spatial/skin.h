@@ -11,10 +11,10 @@
 
 using namespace godot;
 
-namespace sunaba::spatial {
+namespace lucidware::spatial {
     void bindSkin(sol::state_view& lua);
 
-    class Skin : public sunaba::core::Resource {
+    class Skin : public lucidware::core::Resource {
     private:
         GodotSkin* skin = nullptr;
     public:

@@ -1,4 +1,4 @@
-package sunaba..spatial;
+package lucidware..spatial;
 
 enum abstract StandardMaterial3DDepthDrawMode(Int) from Int to Int {
 	var opaqueOnly = 0;

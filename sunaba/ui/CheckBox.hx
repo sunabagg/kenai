@@ -1,6 +1,6 @@
-package sunaba.ui;
+package lucidware.ui;
 
-import sunaba.core.Element;
+import lucidware.core.Element;
 
 @:native("CheckBox")
 extern class CheckBox extends Button {

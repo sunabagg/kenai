@@ -1,4 +1,4 @@
-package sunaba;
+package lucidware;
 
 enum abstract Operator(Int) from Int to Int {
 	var equal = 0;

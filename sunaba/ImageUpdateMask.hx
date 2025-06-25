@@ -1,4 +1,4 @@
-package sunaba;
+package lucidware;
 
 enum abstract ImageUpdateMask(Int) from Int to Int {
 	var texture = 1;

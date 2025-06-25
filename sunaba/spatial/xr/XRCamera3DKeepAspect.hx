@@ -1,4 +1,4 @@
-package sunaba..spatial.xr;
+package lucidware..spatial.xr;
 
 enum abstract XRCamera3DKeepAspect(Int) from Int to Int {
 	var width = 0;

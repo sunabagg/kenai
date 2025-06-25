@@ -1,8 +1,8 @@
-package sunaba.ui;
+package lucidware.ui;
 
-import sunaba.core.LabelSettings;
-import sunaba.core.ArrayList;
-import sunaba.core.Rect2;
+import lucidware.core.LabelSettings;
+import lucidware.core.ArrayList;
+import lucidware.core.Rect2;
 
 @:native("Label")
 extern class Label extends Control {
@@ -36,7 +36,7 @@ extern class Label extends Control {
 
 abstract LabelAbstract(Label) from Label to Label {
     @:from
-    public static function fromElement(element: sunaba.core.Element): LabelAbstract {
+    public static function fromElement(element: lucidware.core.Element): LabelAbstract {
         var label = Label.toLabel(element);
         if (label.isNull()){
             return null;

@@ -11,9 +11,9 @@
 #include "../input/input_event.h"
 
 using namespace godot;
-using namespace sunaba::core;
+using namespace lucidware::core;
 
-namespace sunaba::ui {
+namespace lucidware::ui {
     void bindSubViewportContainer(sol::state &lua);
 
     class SubViewportContainer;
@@ -25,7 +25,7 @@ namespace sunaba::ui {
                 // Bind methods specific to SubViewportContainerProxy
             }
         public:
-            sunaba::ui::SubViewportContainer* element = nullptr;
+            lucidware::ui::SubViewportContainer* element = nullptr;
 
             void onInit() {
                 // Initialize the NodeProxy instance
@@ -129,7 +129,7 @@ namespace sunaba::ui {
                 if (scriptInstance != sol::lua_nil) {
                     auto func = scriptInstance["propagateInputEvent"].get<sol::function>();
                     if (func) {
-                        sunaba::input::InputEvent* inputEvent = new sunaba::input::InputEvent(event.ptr());
+                        lucidware::input::InputEvent* inputEvent = new lucidware::input::InputEvent(event.ptr());
                         auto result = func(scriptInstance, inputEvent);
                         return result.get<bool>();
                     }

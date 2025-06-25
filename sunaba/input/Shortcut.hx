@@ -1,6 +1,6 @@
-package sunaba.input;
+package lucidware.input;
 
-import sunaba.core.Resource;
+import lucidware.core.Resource;
 
 @:native("InputEventShortcut")
 extern class Shortcut extends Resource {
@@ -21,4 +21,4 @@ abstract ShortcutAbstract(Shortcut) from Shortcut to Shortcut {
         }
         return shortcut;
     }
-} // end package sunaba.input
+} // end package lucidware.input

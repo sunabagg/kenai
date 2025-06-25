@@ -1,12 +1,12 @@
 #include "texture_cubemap_array_rd.h"
 
-void sunaba::core::bindTextureCubemapArrayRD(sol::state &lua) {
-    lua.new_usertype<sunaba::core::TextureCubemapArrayRD>("TextureCubemapArrayRD",
+void lucidware::core::bindTextureCubemapArrayRD(sol::state &lua) {
+    lua.new_usertype<lucidware::core::TextureCubemapArrayRD>("TextureCubemapArrayRD",
         "new", sol::factories(
-            []() { return new sunaba::core::TextureCubemapArrayRD(); }
+            []() { return new lucidware::core::TextureCubemapArrayRD(); }
         ),
-        sol::base_classes, sol::bases<sunaba::core::BaseObject, sunaba::core::Resource, sunaba::core::Texture, sunaba::core::TextureLayered, sunaba::core::TextureLayeredRD>(),
-        "cast", [](sunaba::core::Resource* instance) {
+        sol::base_classes, sol::bases<lucidware::core::BaseObject, lucidware::core::Resource, lucidware::core::Texture, lucidware::core::TextureLayered, lucidware::core::TextureLayeredRD>(),
+        "cast", [](lucidware::core::Resource* instance) {
             return new TextureCubemapArrayRD(godot::Object::cast_to<GodotTextureCubemapArrayRD>(instance->getResource()));
         }
     );

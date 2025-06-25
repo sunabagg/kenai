@@ -1,4 +1,4 @@
-package sunaba;
+package lucidware;
 
 enum abstract MixTargetEnum(Int) from Int to Int {
 	var stereo = 0;

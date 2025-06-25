@@ -1,4 +1,4 @@
-package sunaba..ui;
+package lucidware..ui;
 
 enum abstract GraphEditGrowHorizontal(Int) from Int to Int {
 	var begin = 0;

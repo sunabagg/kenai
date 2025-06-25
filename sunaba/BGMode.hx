@@ -1,4 +1,4 @@
-package sunaba;
+package lucidware;
 
 enum abstract BGMode(Int) from Int to Int {
 	var clearColor = 0;

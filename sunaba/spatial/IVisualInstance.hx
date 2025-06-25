@@ -1,6 +1,6 @@
-package sunaba.spatial;
+package lucidware.spatial;
 
-import sunaba.core.Component;
+import lucidware.core.Component;
 
 @:native("IVisualInstance")
 extern class IVisualInstance extends Component {

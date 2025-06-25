@@ -1,4 +1,4 @@
-package sunaba;
+package lucidware;
 
 enum abstract HandJoint(Int) from Int to Int {
 	var palm = 0;

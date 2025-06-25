@@ -1,4 +1,4 @@
-package sunaba;
+package lucidware;
 
 enum abstract MultimeshPhysicsInterpolationQuality(Int) from Int to Int {
 	var fast = 0;

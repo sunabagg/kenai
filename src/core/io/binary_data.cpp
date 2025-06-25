@@ -1,6 +1,6 @@
 #include "binary_data.h"
 
-void sunaba::core::io::bindBinaryData(sol::state& lua) {
+void lucidware::core::io::bindBinaryData(sol::state& lua) {
     lua.new_usertype<BinaryData>("BinaryData",
         //sol::constructors<BinaryData(), BinaryData(const sol::table)>(),
         "new", sol::factories(

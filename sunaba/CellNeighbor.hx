@@ -1,4 +1,4 @@
-package sunaba;
+package lucidware;
 
 enum abstract CellNeighbor(Int) from Int to Int {
 	var rightSide = 0;

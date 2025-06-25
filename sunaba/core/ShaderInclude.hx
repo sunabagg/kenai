@@ -1,4 +1,4 @@
-package sunaba.core;
+package lucidware.core;
 
 @:native("ShaderInclude")
 extern class ShaderInclude extends Resource {

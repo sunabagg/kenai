@@ -1,4 +1,4 @@
-package sunaba;
+package lucidware;
 
 enum abstract Hands(Int) from Int to Int {
 	var left = 0;

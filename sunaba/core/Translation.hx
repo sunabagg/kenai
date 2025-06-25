@@ -1,4 +1,4 @@
-package sunaba.core;
+package lucidware.core;
 
 @:native("Translation")
 extern class Translation extends Resource {
@@ -24,4 +24,4 @@ abstract TranslationAbstract(Translation) from Translation to Translation {
         }
         return translation;
     } 
-} // end package sunaba.core
+} // end package lucidware.core

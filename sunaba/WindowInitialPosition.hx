@@ -1,4 +1,4 @@
-package sunaba;
+package lucidware;
 
 enum abstract WindowInitialPosition(Int) from Int to Int {
 	var absolute = 0;

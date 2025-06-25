@@ -1,4 +1,4 @@
-package sunaba;
+package lucidware;
 
 enum abstract Method(Int) from Int to Int {
 	var get = 0;

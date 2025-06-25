@@ -1,6 +1,6 @@
-package sunaba.desktop;
+package lucidware.desktop;
 
-import sunaba.core.Event;
+import lucidware.core.Event;
 
 @:native("Popup")
 extern class Popup extends Window {
@@ -11,7 +11,7 @@ extern class Popup extends Window {
 
 abstract PopupAbstract(Popup) from Popup to Popup {
     @:from
-    public static function fromElement(element: sunaba.core.Element): PopupAbstract {
+    public static function fromElement(element: lucidware.core.Element): PopupAbstract {
         var popup = Popup.toPopup(element);
         if (popup.isNull()) {
             return null;

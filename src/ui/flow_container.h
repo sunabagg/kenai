@@ -10,9 +10,9 @@
 #include "container.h"
 
 using namespace godot;
-using namespace sunaba::core;
+using namespace lucidware::core;
 
-namespace sunaba::ui {
+namespace lucidware::ui {
     void bindFlowContainer(sol::state& lua);
 
     class FlowContainer;
@@ -24,7 +24,7 @@ namespace sunaba::ui {
                 // Bind methods specific to FlowContainerProxy
             }
         public:
-            sunaba::ui::FlowContainer* element = nullptr;
+            lucidware::ui::FlowContainer* element = nullptr;
 
             void onInit() {
                 // Initialize the NodeProxy instance

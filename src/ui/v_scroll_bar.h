@@ -10,9 +10,9 @@
 #include "scroll_bar.h"
 
 using namespace godot;
-using namespace sunaba::core;
+using namespace lucidware::core;
 
-namespace sunaba::ui {
+namespace lucidware::ui {
     void bindVScrollBar(sol::state& lua);
 
     class VScrollBar;
@@ -24,7 +24,7 @@ namespace sunaba::ui {
                 // Bind methods specific to VScrollBarProxy
             }
         public:
-            sunaba::ui::VScrollBar* element = nullptr;
+            lucidware::ui::VScrollBar* element = nullptr;
 
             void onInit() {
                 // Initialize the NodeProxy instance
@@ -52,7 +52,7 @@ namespace sunaba::ui {
             void _value_changed(double value) override;
     };
 
-    class VScrollBar : public sunaba::ui::ScrollBar {
+    class VScrollBar : public lucidware::ui::ScrollBar {
         private:
             VScrollBarNode* vScrollBar = nullptr; // Pointer to the VScrollBar instance
 

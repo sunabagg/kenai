@@ -11,9 +11,9 @@
 #include "../desktop/popup_menu.h"
 
 using namespace godot;
-using namespace sunaba::core;
+using namespace lucidware::core;
 
-namespace sunaba::ui {
+namespace lucidware::ui {
     void bindMenuBar(sol::state &lua);
 
     class MenuBar;
@@ -25,7 +25,7 @@ namespace sunaba::ui {
                 // Bind methods specific to MenuBarProxy
             }
         public:
-            sunaba::ui::MenuBar* element = nullptr;
+            lucidware::ui::MenuBar* element = nullptr;
 
             void onInit() {
                 // Initialize the NodeProxy instance
@@ -52,7 +52,7 @@ namespace sunaba::ui {
             TypedArray<Vector3i> _structured_text_parser(const Array &args, const String &text) const override;
     };
 
-    class MenuBar : public sunaba::ui::Control {
+    class MenuBar : public lucidware::ui::Control {
         private:
             MenuBarNode* menuBar = nullptr; // Pointer to the MenuBar instance
             void connectMenuBarSignals() {
@@ -138,8 +138,8 @@ namespace sunaba::ui {
             return menuBar->get_menu_count();
         }
 
-        sunaba::desktop::PopupMenu* getMenuPopup(int32_t p_menu) {
-            return new sunaba::desktop::PopupMenu(menuBar->get_menu_popup(p_menu));
+        lucidware::desktop::PopupMenu* getMenuPopup(int32_t p_menu) {
+            return new lucidware::desktop::PopupMenu(menuBar->get_menu_popup(p_menu));
         }
 
         std::string getMenuTitle(int32_t p_menu) {

@@ -1,4 +1,4 @@
-package sunaba..spatial.physics;
+package lucidware..spatial.physics;
 
 enum abstract VehicleBody3DFreezeMode(Int) from Int to Int {
 	var static = 0;

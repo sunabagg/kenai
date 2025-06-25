@@ -1,4 +1,4 @@
-package sunaba..spatial.xr;
+package lucidware..spatial.xr;
 
 enum abstract XRFaceModifier3DRotationEditMode(Int) from Int to Int {
 	var euler = 0;

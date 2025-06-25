@@ -1,4 +1,4 @@
-package sunaba.input;
+package lucidware.input;
 
 @:native("InputEventPanGesture")
 extern class InputEventPanGesture extends InputEventGesture {
@@ -16,4 +16,4 @@ abstract InputEventPanGestureAbstract(InputEventPanGesture) from InputEventPanGe
         }
         return inputEventPanGesture;
     }
-} // end package sunaba.input
+} // end package lucidware.input

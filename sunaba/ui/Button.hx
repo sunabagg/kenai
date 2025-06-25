@@ -1,7 +1,7 @@
-package sunaba.ui;
+package lucidware.ui;
 
-import sunaba.core.Element;
-import sunaba.core.Texture2D;
+import lucidware.core.Element;
+import lucidware.core.Texture2D;
 
 @:native("Button")
 extern class Button extends BaseButton {

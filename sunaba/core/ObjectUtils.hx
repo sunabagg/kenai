@@ -1,4 +1,4 @@
-package sunaba.core;
+package lucidware.core;
 
 class ObjectUtils {
     public static function getName(object : Any) {

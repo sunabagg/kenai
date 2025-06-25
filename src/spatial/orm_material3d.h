@@ -10,12 +10,12 @@
 #include "base_material3d.h"
 
 using namespace godot;
-using namespace sunaba::core;
+using namespace lucidware::core;
 
-namespace sunaba::spatial {
+namespace lucidware::spatial {
     void bindOrmMaterial3D(sol::state_view& lua);
 
-    class OrmMaterial3D : public sunaba::spatial::BaseMaterial3D {
+    class OrmMaterial3D : public lucidware::spatial::BaseMaterial3D {
     private:
         GodotOrmMaterial3D* material = nullptr;
     public:

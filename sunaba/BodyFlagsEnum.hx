@@ -1,4 +1,4 @@
-package sunaba;
+package lucidware;
 
 enum abstract BodyFlagsEnum(Int) from Int to Int {
 	var upperBodySupported = 1;

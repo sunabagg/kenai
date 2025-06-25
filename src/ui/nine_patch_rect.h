@@ -13,9 +13,9 @@
 #include "../core/texture2d.h"
 
 using namespace godot;
-using namespace sunaba::core;
+using namespace lucidware::core;
 
-namespace sunaba::ui {
+namespace lucidware::ui {
     void bindNinePatchRect(sol::state& lua);
 
     class NinePatchRect;
@@ -27,7 +27,7 @@ namespace sunaba::ui {
                 // Bind methods specific to NinePatchRectProxy
             }
         public:
-            sunaba::ui::NinePatchRect* element = nullptr;
+            lucidware::ui::NinePatchRect* element = nullptr;
 
             void onInit() {
                 // Initialize the NodeProxy instance
@@ -184,11 +184,11 @@ namespace sunaba::ui {
                 ninePatchRect->set_region_rect(rect);
             }
 
-            sunaba::core::Texture2D* getTexture() {
-                return new sunaba::core::Texture2D(ninePatchRect->get_texture().ptr());
+            lucidware::core::Texture2D* getTexture() {
+                return new lucidware::core::Texture2D(ninePatchRect->get_texture().ptr());
             }
 
-            void setTexture(sunaba::core::Texture2D* texture) {
+            void setTexture(lucidware::core::Texture2D* texture) {
                 ninePatchRect->set_texture(Ref<godot::Texture2D>(texture->getTexture()));
             }
 

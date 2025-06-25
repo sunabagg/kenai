@@ -1,4 +1,4 @@
-package sunaba;
+package lucidware;
 
 enum abstract JointParam(Int) from Int to Int {
 	var bias = 0;

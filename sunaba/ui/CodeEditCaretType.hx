@@ -1,4 +1,4 @@
-package sunaba..ui;
+package lucidware..ui;
 
 enum abstract CodeEditCaretType(Int) from Int to Int {
 	var line = 0;

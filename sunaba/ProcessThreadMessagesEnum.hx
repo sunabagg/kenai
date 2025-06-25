@@ -1,4 +1,4 @@
-package sunaba;
+package lucidware;
 
 enum abstract ProcessThreadMessagesEnum(Int) from Int to Int {
 	var messages = 1;

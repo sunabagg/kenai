@@ -1,10 +1,10 @@
-package sunaba.spatial;
+package lucidware.spatial;
 
-import sunaba.core.Vector2;
-import sunaba.core.Vector3;
-import sunaba.core.Component;
-import sunaba.core.Vector2;
-import sunaba.core.Vector3;
+import lucidware.core.Vector2;
+import lucidware.core.Vector3;
+import lucidware.core.Component;
+import lucidware.core.Vector2;
+import lucidware.core.Vector3;
 
 @:native("Camera")
 extern class Camera extends Component {
@@ -34,5 +34,5 @@ extern class Camera extends Component {
     public function setOrthagonal(size : Float, zNear : Float, zFar : Float) : Void;
     public function setPerspective(fov : Float, zNear : Float, zFar : Float) : Void;
     public function unprojectPosition(position : Vector3) : Vector2;
-    public static function getFromEntity(entity : sunaba.core.Entity) : Camera;
+    public static function getFromEntity(entity : lucidware.core.Entity) : Camera;
 }

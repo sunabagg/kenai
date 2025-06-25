@@ -1,7 +1,7 @@
-package sunaba.spatial;
+package lucidware.spatial;
 
-import sunaba.core.Resource;
-import sunaba.core.Material;
+import lucidware.core.Resource;
+import lucidware.core.Material;
 
 @:native("Sky")
 extern class Sky extends Resource {
@@ -21,4 +21,4 @@ abstract SkyAbstract(Sky) from Sky to Sky {
         }
         return sky;
     } 
-} // end package sunaba.spatial
+} // end package lucidware.spatial

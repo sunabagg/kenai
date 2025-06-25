@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bp6bxqy54sn08"
-path="res://.godot/imported/SunabaLogoV2.png-580ea0d26358c9ab26bce703440750ff.ctex"
+path="res://.godot/imported/LucidwareLogoV2.png-580ea0d26358c9ab26bce703440750ff.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://SunabaLogoV2.png"
-dest_files=["res://.godot/imported/SunabaLogoV2.png-580ea0d26358c9ab26bce703440750ff.ctex"]
+source_file="res://LucidwareLogoV2.png"
+dest_files=["res://.godot/imported/LucidwareLogoV2.png-580ea0d26358c9ab26bce703440750ff.ctex"]
 
 [params]
 

@@ -1,4 +1,4 @@
-package sunaba;
+package lucidware;
 
 enum abstract ModeFlags(Int) from Int to Int {
 	var read = 1;

@@ -1,4 +1,4 @@
-package sunaba.core;
+package lucidware.core;
 
 @:native("SystemFont")
 extern class SystemFont extends Font {

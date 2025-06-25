@@ -11,12 +11,12 @@
 #include "input_event_with_modifiers.h"
 
 using namespace godot;
-using namespace sunaba::core;
+using namespace lucidware::core;
 
-namespace sunaba::input {
+namespace lucidware::input {
     void bindInputEventKey(sol::state_view& lua);
 
-    class InputEventKey : public sunaba::input::InputEventWithModifiers {
+    class InputEventKey : public lucidware::input::InputEventWithModifiers {
     private:
         GodotInputEventKey* event;
     public:

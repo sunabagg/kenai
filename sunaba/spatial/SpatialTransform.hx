@@ -1,12 +1,12 @@
-package sunaba.spatial;
+package lucidware.spatial;
 
-import sunaba.core.Vector3;
-import sunaba.core.Transform3D;
-import sunaba.core.Quaternion;
-import sunaba.core.Vector3;
-import sunaba.core.Basis;
-import sunaba.core.Component;
-import sunaba.core.Entity;
+import lucidware.core.Vector3;
+import lucidware.core.Transform3D;
+import lucidware.core.Quaternion;
+import lucidware.core.Vector3;
+import lucidware.core.Basis;
+import lucidware.core.Component;
+import lucidware.core.Entity;
 
 @:native("SpatialTransform")
 extern class SpatialTransform extends Component {

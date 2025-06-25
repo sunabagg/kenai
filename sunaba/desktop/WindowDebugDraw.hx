@@ -1,4 +1,4 @@
-package sunaba..desktop;
+package lucidware..desktop;
 
 enum abstract WindowDebugDraw(Int) from Int to Int {
 	var disabled = 0;

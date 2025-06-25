@@ -13,7 +13,7 @@
 
 using namespace godot;
 
-namespace sunaba::core {
+namespace lucidware::core {
     void bindTextureLayered(sol::state &lua);
 
     class TextureLayered : public Texture {

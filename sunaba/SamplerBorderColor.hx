@@ -1,4 +1,4 @@
-package sunaba;
+package lucidware;
 
 enum abstract SamplerBorderColor(Int) from Int to Int {
 	var floatTransparentBlack = 0;

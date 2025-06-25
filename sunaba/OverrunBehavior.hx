@@ -1,4 +1,4 @@
-package sunaba;
+package lucidware;
 
 enum abstract OverrunBehavior(Int) from Int to Int {
 	var noTrimming = 0;

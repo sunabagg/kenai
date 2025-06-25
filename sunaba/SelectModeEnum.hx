@@ -1,4 +1,4 @@
-package sunaba;
+package lucidware;
 
 enum abstract SelectModeEnum(Int) from Int to Int {
 	var single = 0;

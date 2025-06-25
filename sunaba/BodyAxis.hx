@@ -1,4 +1,4 @@
-package sunaba;
+package lucidware;
 
 enum abstract BodyAxis(Int) from Int to Int {
 	var linearX = 1;

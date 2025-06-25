@@ -1,4 +1,4 @@
-package sunaba..ui;
+package lucidware..ui;
 
 enum abstract VideoStreamPlayerTooltipAutoTranslateMode(Int) from Int to Int {
 	var inherit = 0;

@@ -1,4 +1,4 @@
-package sunaba;
+package lucidware;
 
 enum abstract godot_error_handler_type(Int) from Int to Int {
 	var errHandlerError = 0;

@@ -15,7 +15,7 @@
 
 using namespace godot;
 
-namespace sunaba::core {
+namespace lucidware::core {
     void bindEvent(sol::state &lua);
 
     class TableMethodNamePair {

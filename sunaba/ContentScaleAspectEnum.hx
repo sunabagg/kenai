@@ -1,4 +1,4 @@
-package sunaba;
+package lucidware;
 
 enum abstract ContentScaleAspectEnum(Int) from Int to Int {
 	var ignore = 0;

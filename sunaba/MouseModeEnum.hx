@@ -1,4 +1,4 @@
-package sunaba;
+package lucidware;
 
 enum abstract MouseModeEnum(Int) from Int to Int {
 	var visible = 0;

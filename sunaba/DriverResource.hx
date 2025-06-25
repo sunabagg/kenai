@@ -1,4 +1,4 @@
-package sunaba;
+package lucidware;
 
 enum abstract DriverResource(Int) from Int to Int {
 	var logicalDevice = 0;

@@ -1,4 +1,4 @@
-package sunaba;
+package lucidware;
 
 enum abstract GatheringState(Int) from Int to Int {
 	var new = 0;

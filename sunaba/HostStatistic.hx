@@ -1,4 +1,4 @@
-package sunaba;
+package lucidware;
 
 enum abstract HostStatistic(Int) from Int to Int {
 	var sentData = 0;

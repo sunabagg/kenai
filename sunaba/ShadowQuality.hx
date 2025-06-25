@@ -1,4 +1,4 @@
-package sunaba;
+package lucidware;
 
 enum abstract ShadowQuality(Int) from Int to Int {
 	var hard = 0;

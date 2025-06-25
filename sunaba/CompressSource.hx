@@ -1,4 +1,4 @@
-package sunaba;
+package lucidware;
 
 enum abstract CompressSource(Int) from Int to Int {
 	var generic = 0;

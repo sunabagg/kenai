@@ -1,4 +1,4 @@
-package sunaba;
+package lucidware;
 
 enum abstract MetaUnderline(Int) from Int to Int {
 	var never = 0;

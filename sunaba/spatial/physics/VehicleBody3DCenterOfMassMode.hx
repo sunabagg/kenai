@@ -1,4 +1,4 @@
-package sunaba..spatial.physics;
+package lucidware..spatial.physics;
 
 enum abstract VehicleBody3DCenterOfMassMode(Int) from Int to Int {
 	var auto = 0;

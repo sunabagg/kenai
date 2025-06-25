@@ -13,14 +13,14 @@
       "generator": "Ninja",
       "hidden": true,
       "environment": {
-        "PROJECT_NAME": "sunaba"
+        "PROJECT_NAME": "lucidware"
       }
     },
     {
       "name": "windows-debug",
       "displayName": "64bit Windows Debug",
       "inherits": "default",
-      "binaryDir": "${sourceDir}/../build_sunaba_Windows-AMD64",
+      "binaryDir": "${sourceDir}/../build_lucidware_Windows-AMD64",
       "condition": {
         "type": "equals",
         "lhs": "${hostSystemName}",
@@ -44,7 +44,7 @@
       "name": "windows-debug-mingw",
       "displayName": "64bit Windows Debug (Mingw)",
       "inherits": "default",
-      "binaryDir": "${sourceDir}/../build_sunaba_mingw_Windows-AMD64",
+      "binaryDir": "${sourceDir}/../build_lucidware_mingw_Windows-AMD64",
       "condition": {
         "type": "equals",
         "lhs": "${hostSystemName}",
@@ -84,7 +84,7 @@
       "name": "linux-debug",
       "displayName": "64bit Linux Debug",
       "inherits": "default",
-      "binaryDir": "${sourceDir}/../build_sunaba_Linux-x86_64",
+      "binaryDir": "${sourceDir}/../build_lucidware_Linux-x86_64",
       "condition": {
         "type": "equals",
         "lhs": "${hostSystemName}",
@@ -108,7 +108,7 @@
       "name": "macOS-debug",
       "displayName": "64bit macOS Debug",
       "inherits": "default",
-      "binaryDir": "${sourceDir}/../build_sunaba_Darwin-Universal",
+      "binaryDir": "${sourceDir}/../build_lucidware_Darwin-Universal",
       "condition": {
         "type": "equals",
         "lhs": "${hostSystemName}",

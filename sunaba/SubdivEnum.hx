@@ -1,4 +1,4 @@
-package sunaba;
+package lucidware;
 
 enum abstract SubdivEnum(Int) from Int to Int {
 	var subdiv64 = 0;

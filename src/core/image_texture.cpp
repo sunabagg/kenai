@@ -1,17 +1,17 @@
 #include "image_texture.h"
 
-void sunaba::core::bindImageTexture(sol::state &lua) {
-    lua.new_usertype<sunaba::core::ImageTexture>("ImageTexture",
+void lucidware::core::bindImageTexture(sol::state &lua) {
+    lua.new_usertype<lucidware::core::ImageTexture>("ImageTexture",
         "new", sol::factories(
-            []() { return new sunaba::core::ImageTexture(); }
+            []() { return new lucidware::core::ImageTexture(); }
         ),
-        sol::base_classes, sol::bases<sunaba::core::BaseObject, sunaba::core::Resource, sunaba::core::Texture, sunaba::core::Texture2D>(),
+        sol::base_classes, sol::bases<lucidware::core::BaseObject, lucidware::core::Resource, lucidware::core::Texture, lucidware::core::Texture2D>(),
         "image", sol::property(
-            &sunaba::core::ImageTexture::getImage, 
-            &sunaba::core::ImageTexture::setImage
+            &lucidware::core::ImageTexture::getImage, 
+            &lucidware::core::ImageTexture::setImage
         ),
-        "createFromImage", &sunaba::core::ImageTexture::createFromImage,
-        "getFormat", &sunaba::core::ImageTexture::getFormat,
+        "createFromImage", &lucidware::core::ImageTexture::createFromImage,
+        "getFormat", &lucidware::core::ImageTexture::getFormat,
         "cast", [](Resource* instance) {
             return new ImageTexture(godot::Object::cast_to<GodotImageTexture>(instance->getResource()));
         }

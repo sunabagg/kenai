@@ -10,9 +10,9 @@
 #include "occluder3d.h"
 
 using namespace godot;
-using namespace sunaba::core;
+using namespace lucidware::core;
 
-namespace sunaba::spatial {
+namespace lucidware::spatial {
     void bindPolygonOccluder3D(sol::state_view& lua);
 
     class PolygonOccluder3D : public Occluder3D {

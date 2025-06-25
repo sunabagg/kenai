@@ -10,9 +10,9 @@
 #include "audio_stream.h"
 
 using namespace godot;
-using namespace sunaba::core;
+using namespace lucidware::core;
 
-namespace sunaba::audio {
+namespace lucidware::audio {
     void bindAudioStreamPolyphonic(sol::state_view& lua);
 
     class AudioStreamPolyphonic : public AudioStream {

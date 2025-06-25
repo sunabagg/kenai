@@ -12,9 +12,9 @@
 #include "../core/event.h"
 
 using namespace godot;
-using namespace sunaba::core;
+using namespace lucidware::core;
 
-namespace sunaba::ui {
+namespace lucidware::ui {
     void bindSlider(sol::state &lua);
 
     class Slider;
@@ -24,7 +24,7 @@ namespace sunaba::ui {
         protected:
             static void _bind_methods() {}
         public:
-            sunaba::ui::Slider* element = nullptr;
+            lucidware::ui::Slider* element = nullptr;
 
             void onInit() {
                 // Initialize the NodeProxy instance
@@ -68,7 +68,7 @@ namespace sunaba::ui {
         protected:
             static void _bind_methods();
         public:
-            sunaba::ui::Slider* element = nullptr;
+            lucidware::ui::Slider* element = nullptr;
 
             SliderSignalWrapper() = default;
             ~SliderSignalWrapper() = default;
@@ -77,7 +77,7 @@ namespace sunaba::ui {
             void drag_started();
     };
 
-    class Slider : public sunaba::ui::Range {
+    class Slider : public lucidware::ui::Range {
         private:
             SliderNode* slider = nullptr; // Pointer to the Slider instance
             SliderSignalWrapper* sliderSignalWrapper = nullptr;

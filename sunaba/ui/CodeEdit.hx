@@ -1,12 +1,12 @@
-package sunaba.ui;
+package lucidware.ui;
 
-import sunaba.core.Dictionary;
-import sunaba.core.Event;
-import sunaba.core.Color;
-import sunaba.core.Resource;
-import sunaba.core.Variant;
-import sunaba.core.Vector2;
-import sunaba.core.Element;
+import lucidware.core.Dictionary;
+import lucidware.core.Event;
+import lucidware.core.Color;
+import lucidware.core.Resource;
+import lucidware.core.Variant;
+import lucidware.core.Vector2;
+import lucidware.core.Element;
 
 @:native("CodeEdit")
 extern class CodeEdit extends TextEdit {

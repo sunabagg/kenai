@@ -1,4 +1,4 @@
-package sunaba;
+package lucidware;
 
 enum abstract ModeEnum(Int) from Int to Int {
 	var windowed = 0;

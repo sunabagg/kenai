@@ -11,7 +11,7 @@
 
 using namespace godot;
 
-namespace sunaba::core {
+namespace lucidware::core {
     void bindPlaceholderTextureLayered(sol::state &lua);
 
     class PlaceholderTextureLayered : public TextureLayered {
