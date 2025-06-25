@@ -442,6 +442,11 @@ class Widget {
                 var attributes = child.attributes;
                 var label = attributes.get("label");
                 var id = menu.itemCount;
+                menu.addItem(label, id);
+                for (attrib in attributes) {
+                    var attributeName = attrib;
+                    var attributeValue = attributes.get(attributeName);
+                }
             }
         }
     }
