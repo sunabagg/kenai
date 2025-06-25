@@ -35,6 +35,10 @@ namespace sunaba::core {
                 this->subViewport = subViewport;
                 this->setViewport(subViewport);
             }
+
+            int getRenderTargetClearMode() {
+                return subViewport->get_clear_mode();
+            }
     };
 }
 
