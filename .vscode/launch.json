@@ -41,7 +41,7 @@
             "program": "godot",
             "args": [
                 "--verbose",
-                "${workspaceFolder}/support_files/test6/bin/test6.sbx"
+                "${workspaceFolder}/tests/test6/bin/test6.sbx"
             ],
             "cwd": "${command:cmake.buildDirectory}/sunaba",
             "preLaunchTask": "CMake: build",
@@ -62,7 +62,7 @@
             "program": "godot",
             "args": [
                 "--verbose",
-                "${workspaceFolder}/support_files/test7/bin/test7.sbx"
+                "${workspaceFolder}/tests/test7/bin/test7.sbx"
             ],
             "cwd": "${command:cmake.buildDirectory}/sunaba",
             "preLaunchTask": "CMake: build",
@@ -83,7 +83,7 @@
             "program": "godot",
             "args": [
                 "--verbose",
-                "${workspaceFolder}/support_files/test8/bin/test8.sbx"
+                "${workspaceFolder}/tests/test8/bin/test8.sbx"
             ],
             "cwd": "${command:cmake.buildDirectory}/sunaba",
             "preLaunchTask": "CMake: build",
@@ -143,7 +143,7 @@
             "program": "${env:HOME}/Applications/godot/godot",
             "args": [
                 "--verbose",
-                "${workspaceFolder}/support_files/test6/bin/test6.sbx"
+                "${workspaceFolder}/tests/test6/bin/test6.sbx"
             ],
             "cwd": "${command:cmake.buildDirectory}/sunaba",
             "preLaunchTask": "CMake: build",
@@ -157,7 +157,7 @@
             "program": "${env:HOME}/Applications/godot/godot",
             "args": [
                 "--verbose",
-                "${workspaceFolder}/support_files/test7/bin/test7.sbx"
+                "${workspaceFolder}/tests/test7/bin/test7.sbx"
             ],
             "cwd": "${command:cmake.buildDirectory}/sunaba",
             "preLaunchTask": "CMake: build",
@@ -171,7 +171,7 @@
             "program": "${env:HOME}/Applications/godot/godot",
             "args": [
                 "--verbose",
-                "${workspaceFolder}/support_files/test8/bin/test8.sbx"
+                "${workspaceFolder}/tests/test8/bin/test8.sbx"
             ],
             "cwd": "${command:cmake.buildDirectory}/sunaba",
             "preLaunchTask": "CMake: build",
@@ -197,7 +197,7 @@
             "program": "/Applications/Godot.app/Contents/MacOS/Godot",
             "args": [
                 "--verbose",
-                "/Users/lucasabbas/sunaba/support_files/test6/bin/test6.sbx"
+                "/Users/lucasabbas/sunaba/tests/test6/bin/test6.sbx"
             ],
             "cwd": "${command:cmake.buildDirectory}/sunaba",
             "preLaunchTask": "CMake: build",
@@ -210,7 +210,7 @@
             "program": "/Applications/Godot.app/Contents/MacOS/Godot",
             "args": [
                 "--verbose",
-                "/Users/lucasabbas/sunaba/support_files/test7/bin/test7.sbx"
+                "/Users/lucasabbas/sunaba/tests/test7/bin/test7.sbx"
             ],
             "cwd": "${command:cmake.buildDirectory}/sunaba",
             "preLaunchTask": "CMake: build",
@@ -223,7 +223,7 @@
             "program": "/Applications/Godot.app/Contents/MacOS/Godot",
             "args": [
                 "--verbose",
-                "/Users/lucasabbas/sunaba/support_files/test8/bin/test8.sbx"
+                "/Users/lucasabbas/sunaba/tests/test8/bin/test8.sbx"
             ],
             "cwd": "${command:cmake.buildDirectory}/sunaba",
             "preLaunchTask": "CMake: build",
