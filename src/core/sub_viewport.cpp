@@ -22,6 +22,10 @@ namespace sunaba::core {
             "size2dOverride", sol::property(
                 &SubViewport::getSize2dOverride,
                 &SubViewport::setSize2dOverride
+            ),
+            "size2dOverrideStretch", sol::property(
+                &SubViewport::getSize2dOverrideStretch,
+                &SubViewport::setSize2dOverrideStretch
             )
         );
     }
