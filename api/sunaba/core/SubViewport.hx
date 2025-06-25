@@ -6,4 +6,5 @@ extern class SubViewport extends Viewport {
     public var renderTargetUpdateMode: Int;
     public var size: Vector2i;
     public var size2dOverride: Vector2i;
+    public var size2dOverrideStretch: Bool;
 }
