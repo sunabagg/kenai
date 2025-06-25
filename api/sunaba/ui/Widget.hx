@@ -439,7 +439,8 @@ class Widget {
         var children = xml.elements();
         for (child in children) {
             if (child.nodeName == "MenuItem") {
-                
+                var attributes = child.attributes;
+                var label = attributes.get("label");
             }
         }
     }
