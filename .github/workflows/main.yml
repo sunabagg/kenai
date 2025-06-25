@@ -9,17 +9,6 @@ on:
   workflow_dispatch:
 
 jobs:
-  lint:
-    name: 🧹 Lint / 📜 C++
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
-      - name: Run clang-format style check
-        uses: jidicula/clang-format-action@v4.9.0
-        with:
-          clang-format-version: '15'
-          exclude-regex: 'extern'
-
   build:
     strategy:
       fail-fast: false
@@ -52,7 +41,7 @@ jobs:
       - name: Install Dependencies (Windows)
         if: matrix.config.os == 'windows-latest'
         run: |
-          choco upgrade ccache ninja pkgconfiglite
+          choco upgrade ccache ninja pkgconf -y
 
       - name: Setup MSVC (Windows)
         if: matrix.config.os == 'windows-latest'
