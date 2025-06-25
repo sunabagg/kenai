@@ -59,6 +59,10 @@ namespace sunaba::core {
             void setSize(const Vector2i& value) {
                 subViewport->set_size(value);
             }
+
+            Vector2i getSize2dOverride() {
+                return subViewport->get_size_2d_override();
+            }
     };
 }
 
