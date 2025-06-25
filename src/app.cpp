@@ -328,6 +328,11 @@ void App::loadAndExecuteSbx(const String &path) {
         return;
     }
     auto zipio = new ZipIo(path.utf8().get_data());
+    if (zipio->getErrorCode() != godot::Error::OK) {
+        UtilityFunctions::print("Error: failed to open sbx file");
+        get_tree()->quit();
+        return;
+    }
     zipio->pathUri = "temp://";
     ioManager->add(zipio);
 
