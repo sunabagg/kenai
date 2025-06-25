@@ -43,6 +43,10 @@ namespace sunaba::core {
             void setRenderTargetClearMode(int value) {
                 subViewport->set_clear_mode(static_cast<SubViewportNode::ClearMode>(value));
             }
+
+            int getRenderTargetUpdateMode() {
+                return subViewport->get_update_mode();
+            }
     };
 }
 
