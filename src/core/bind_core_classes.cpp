@@ -37,6 +37,7 @@
 #include "viewport.h"
 #include "reg_ex_match.h"
 #include "reg_ex.h"
+#include "sub_viewport.h"
 
 void sunaba::core::bindCoreClasses(sol::state& lua) {
     sunaba::core::io::bindBinaryClasses(lua);
@@ -77,4 +78,6 @@ void sunaba::core::bindCoreClasses(sol::state& lua) {
 
     bindRegExMatch(lua);
     bindRegEx(lua);
+
+    bindSubViewport(lua);
 }
