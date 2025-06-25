@@ -55,6 +55,10 @@ namespace sunaba::core {
             Vector2i getSize() {
                 return subViewport->get_size();
             }
+
+            void setSize(const Vector2i& value) {
+                subViewport->set_size(value);
+            }
     };
 }
 
