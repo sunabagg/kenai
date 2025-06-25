@@ -72,7 +72,7 @@ using namespace godot;
 void App::_bind_methods() {
     ClassDB::bind_method(D_METHOD("start", "path"), &App::start);
     ClassDB::bind_method(D_METHOD("init_state", "sandboxed"), &App::initState);
-    ClassDB::bind_method(D_METHOD("load_and_execute_sbx", "path"), &App::loadAndExecuteSbx);
+    ClassDB::bind_method(D_METHOD("load_and_execute_lfx", "path"), &App::loadAndExecuteSbx);
     ClassDB::bind_method(D_METHOD("start_mobdebug", "host", "port"), &App::startMobdebug);
     ClassDB::bind_method(D_METHOD("stop_mobdebug"), &App::stopMobdebug);
 }
@@ -315,8 +315,8 @@ void App::loadAndExecuteSbx(const String &path) {
     if (path == "") {
         return;
     }
-    if (!path.ends_with(".sbx")) {
-        UtilityFunctions::print("Error: path must end with .sbx");
+    if (!path.ends_with(".lfx")) {
+        UtilityFunctions::print("Error: path must end with .lfx");
         return;
     }
     auto zipio = new ZipIo(path.utf8().get_data());

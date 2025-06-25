@@ -41,7 +41,7 @@
             "program": "godot",
             "args": [
                 "--verbose",
-                "${workspaceFolder}/support_files/test6/bin/test6.sbx"
+                "${workspaceFolder}/support_files/test6/bin/test6.lfx"
             ],
             "cwd": "${command:cmake.buildDirectory}/lucidfx",
             "preLaunchTask": "CMake: build",
@@ -62,7 +62,7 @@
             "program": "godot",
             "args": [
                 "--verbose",
-                "${workspaceFolder}/support_files/test7/bin/test7.sbx"
+                "${workspaceFolder}/support_files/test7/bin/test7.lfx"
             ],
             "cwd": "${command:cmake.buildDirectory}/lucidfx",
             "preLaunchTask": "CMake: build",
@@ -134,7 +134,7 @@
             "program": "/Applications/Godot.app/Contents/MacOS/Godot",
             "args": [
                 "--verbose",
-                "/Users/lucasabbas/lucidfx/support_files/test6/bin/test6.sbx"
+                "/Users/lucasabbas/lucidfx/support_files/test6/bin/test6.lfx"
             ],
             "cwd": "${command:cmake.buildDirectory}/lucidfx",
             "preLaunchTask": "CMake: build",
