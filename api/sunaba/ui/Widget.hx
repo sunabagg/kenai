@@ -500,6 +500,19 @@ class Widget {
                         }
                         menu.setItemAsSeparator(id, separator);
                     }
+                    else if (attributeName == "checked") {
+                        var checked : Bool = false;
+                        if (attributeValue == "true") {
+                            checked = true;
+                        }
+                        else if (attributeValue == "false") {
+                            checked = false;
+                        }
+                        else {
+                            throw "Invalid boolean value for field '" + attributeName + "' in menuItem";
+                        }
+                        menu.setItemChecked(id, checked);
+                    }
                 }
             }
         }
