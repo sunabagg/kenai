@@ -91,7 +91,7 @@ jobs:
         if: matrix.build_type == 'Debug'
         uses: actions/upload-artifact@v4
         with:
-          name: ${{ github.event.repository.name }}-Debug
+          name: ${{ github.event.repository.name }}-${{ matrix.config.name }}-Debug
           path: |
             ${{ github.workspace }}/install-${{ matrix.build_type }}/*
 
@@ -99,6 +99,6 @@ jobs:
         if: matrix.build_type == 'Release'
         uses: actions/upload-artifact@v4
         with:
-          name: ${{ github.event.repository.name }}-Release
+          name: ${{ github.event.repository.name }}-${{ matrix.config.name }}-Release
           path: |
             ${{ github.workspace }}/install-${{ matrix.build_type }}/*
