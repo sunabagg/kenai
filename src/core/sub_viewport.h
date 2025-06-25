@@ -47,6 +47,10 @@ namespace sunaba::core {
             int getRenderTargetUpdateMode() {
                 return subViewport->get_update_mode();
             }
+
+            void setRenderTargetUpdateMode(int value) {
+                subViewport->set_update_mode(static_cast<SubViewportNode::UpdateMode>(value));
+            }
     };
 }
 
