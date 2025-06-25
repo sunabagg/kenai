@@ -814,7 +814,7 @@ Main.prototype.init = function(self)
         local contents = __sys_io_File.getContent(testTextPath);
         _G.print(Std.string(contents));
       else
-        __haxe_Log.trace(Std.string("File not found: ") .. Std.string(testTextPath), _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="support_files/test7/src/Main.hx",lineNumber=20,className="Main",methodName="init"}));
+        __haxe_Log.trace(Std.string("File not found: ") .. Std.string(testTextPath), _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="Main.hx",lineNumber=20,className="Main",methodName="init"}));
       end;
     return _hx_pcall_default
   end)
@@ -822,7 +822,7 @@ Main.prototype.init = function(self)
   elseif not _hx_status then 
     local _g = _hx_result;
     local e = __haxe_Exception.caught(_g);
-    __haxe_Log.trace(e, _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="support_files/test7/src/Main.hx",lineNumber=24,className="Main",methodName="init"}));
+    __haxe_Log.trace(e, _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="Main.hx",lineNumber=24,className="Main",methodName="init"}));
   elseif _hx_result ~= _hx_pcall_default then
     return _hx_result
   end;
