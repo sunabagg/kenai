@@ -77,6 +77,27 @@
             "visualizerFile": "${workspaceFolder}/.vscode/godot.natvis"
         },
         {
+            "name": "Windows Launch (test8)",
+            "type": "cppvsdbg",
+            "request": "launch",
+            "program": "godot",
+            "args": [
+                "--verbose",
+                "${workspaceFolder}/support_files/test8/bin/test8.sbx"
+            ],
+            "cwd": "${command:cmake.buildDirectory}/sunaba",
+            "preLaunchTask": "CMake: build",
+            "internalConsoleOptions": "openOnSessionStart",
+            "console": "internalConsole",
+            "environment": [
+                {
+                    "name": "Path",
+                    "value": "${env:Path};"
+                }
+            ],
+            "visualizerFile": "${workspaceFolder}/.vscode/godot.natvis"
+        },
+        {
             "name": "Linux Launch",
             "type": "cppdbg",
             "request": "launch",
@@ -144,6 +165,20 @@
             "visualizerFile": "${workspaceFolder}/.vscode/godot.natvis"
         },
         {
+            "name": "Linux Launch (Local) (test8)",
+            "type": "cppdbg",
+            "request": "launch",
+            "program": "${env:HOME}/Applications/godot/godot",
+            "args": [
+                "--verbose",
+                "${workspaceFolder}/support_files/test8/bin/test8.sbx"
+            ],
+            "cwd": "${command:cmake.buildDirectory}/sunaba",
+            "preLaunchTask": "CMake: build",
+            "internalConsoleOptions": "openOnSessionStart",
+            "visualizerFile": "${workspaceFolder}/.vscode/godot.natvis"
+        },
+        {
             "name": "macOS Launch (Local)",
             "type": "lldb-dap",
             "request": "launch",
@@ -180,7 +215,19 @@
             "cwd": "${command:cmake.buildDirectory}/sunaba",
             "preLaunchTask": "CMake: build",
             "internalConsoleOptions": "openOnSessionStart",
+        },
+        {
+            "name": "macOS Launch (Local) (test8)",
+            "type": "lldb-dap",
+            "request": "launch",
+            "program": "/Applications/Godot.app/Contents/MacOS/Godot",
+            "args": [
+                "--verbose",
+                "/Users/lucasabbas/sunaba/support_files/test8/bin/test8.sbx"
+            ],
+            "cwd": "${command:cmake.buildDirectory}/sunaba",
+            "preLaunchTask": "CMake: build",
+            "internalConsoleOptions": "openOnSessionStart",
         }
-
     ]
 }
