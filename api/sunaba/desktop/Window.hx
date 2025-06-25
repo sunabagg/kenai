@@ -137,7 +137,7 @@ extern class Window extends Viewport {
     public static function toWindow(type: Dynamic): Window;
 }
 
-abstarct WindowAbstract(Window) from Window to Window {
+abstract WindowAbstract(Window) from Window to Window {
     @:from
     public static function fromElement(element: sunaba.core.Element): WindowAbstract {
         var win = Window.toWindow(element);
