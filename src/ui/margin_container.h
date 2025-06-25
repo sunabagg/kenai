@@ -10,9 +10,9 @@
 #include "container.h"
 
 using namespace godot;
-using namespace lucidware::core;
+using namespace lucidfx::core;
 
-namespace lucidware::ui {
+namespace lucidfx::ui {
     void bindMarginContainer(sol::state &lua);
 
     class MarginContainer;
@@ -24,7 +24,7 @@ namespace lucidware::ui {
                 // Bind methods specific to MarginContainerProxy
             }
         public:
-            lucidware::ui::MarginContainer* element = nullptr;
+            lucidfx::ui::MarginContainer* element = nullptr;
 
             void onInit() {
                 // Initialize the NodeProxy instance

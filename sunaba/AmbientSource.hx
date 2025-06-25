@@ -1,4 +1,4 @@
-package lucidware;
+package lucidfx;
 
 enum abstract AmbientSource(Int) from Int to Int {
 	var bg = 0;

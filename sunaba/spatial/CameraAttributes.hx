@@ -1,6 +1,6 @@
-package lucidware.spatial;
+package lucidfx.spatial;
 
-import lucidware.core.Resource;
+import lucidfx.core.Resource;
 
 @:native("CameraAttributes")
 extern class CameraAttributes extends Resource {
@@ -22,4 +22,4 @@ abstract CameraAttributesAbstract(CameraAttributes) from CameraAttributes to Cam
         }
         return cameraAttributes;
     }
-} // end package lucidware.spatial
+} // end package lucidfx.spatial

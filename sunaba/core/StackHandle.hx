@@ -1,4 +1,4 @@
-package lucidware.core;
+package lucidfx.core;
 
 class StackHandle {
     public var object : Dynamic;

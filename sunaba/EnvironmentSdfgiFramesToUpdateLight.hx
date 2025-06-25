@@ -1,4 +1,4 @@
-package lucidware;
+package lucidfx;
 
 enum abstract EnvironmentSdfgiFramesToUpdateLight(Int) from Int to Int {
 	var in1Frame = 0;

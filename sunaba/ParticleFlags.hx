@@ -1,4 +1,4 @@
-package lucidware;
+package lucidfx;
 
 enum abstract ParticleFlags(Int) from Int to Int {
 	var alignYToVelocity = 0;

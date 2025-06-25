@@ -1,4 +1,4 @@
-package lucidware;
+package lucidfx;
 
 enum abstract RenderInfoType(Int) from Int to Int {
 	var visible = 0;

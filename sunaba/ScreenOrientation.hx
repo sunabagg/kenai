@@ -1,4 +1,4 @@
-package lucidware;
+package lucidfx;
 
 enum abstract ScreenOrientation(Int) from Int to Int {
 	var landscape = 0;

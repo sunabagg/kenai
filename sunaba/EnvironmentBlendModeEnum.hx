@@ -1,4 +1,4 @@
-package lucidware;
+package lucidfx;
 
 enum abstract EnvironmentBlendModeEnum(Int) from Int to Int {
 	var opaque = 0;

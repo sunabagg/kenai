@@ -1,4 +1,4 @@
-package lucidware;
+package lucidfx;
 
 enum abstract ShadowMode(Int) from Int to Int {
 	var dualParaboloid = 0;

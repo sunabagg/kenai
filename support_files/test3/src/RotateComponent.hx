@@ -1,7 +1,7 @@
 package;
 
-import lucidware.core.Behavior;
-import lucidware.spatial.SpatialTransform;
+import lucidfx.core.Behavior;
+import lucidfx.spatial.SpatialTransform;
 import haxe.Exception;
 
 class RotateComponent extends Behavior {

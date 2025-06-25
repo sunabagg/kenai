@@ -10,9 +10,9 @@
 #include "popup.h"
 
 using namespace godot;
-using namespace lucidware::core;
+using namespace lucidfx::core;
 
-namespace lucidware::desktop {
+namespace lucidfx::desktop {
     void bindPopupPanel(sol::state& lua);
 
     class PopupPanel;
@@ -22,7 +22,7 @@ namespace lucidware::desktop {
         protected:
             static void _bind_methods() {}
         public:
-            lucidware::desktop::PopupPanel* element = nullptr;
+            lucidfx::desktop::PopupPanel* element = nullptr;
 
             void onInit() {
                 // Initialize the NodeProxy instance
@@ -41,7 +41,7 @@ namespace lucidware::desktop {
             Vector2 _get_contents_minimum_size() const override;
     };
 
-    class PopupPanel : public lucidware::desktop::Popup {
+    class PopupPanel : public lucidfx::desktop::Popup {
         private:
             PopupPanelNode* popup = nullptr; // Pointer to the Popup instance
             void connectPopupSignals() {
@@ -92,6 +92,6 @@ namespace lucidware::desktop {
                 popup->set_transparent_background(transparent);
             }
         };
-} // namespace lucidware::desktop
+} // namespace lucidfx::desktop
 
 #endif // POPUP_PANEL_H

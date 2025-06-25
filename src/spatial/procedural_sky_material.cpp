@@ -1,11 +1,11 @@
 #include "procedural_sky_material.h"
 
-void lucidware::spatial::bindProceduralSkyMaterial(sol::state_view& lua) {
-    lua.new_usertype<lucidware::spatial::ProceduralSkyMaterial>("ProceduralSkyMaterial",
+void lucidfx::spatial::bindProceduralSkyMaterial(sol::state_view& lua) {
+    lua.new_usertype<lucidfx::spatial::ProceduralSkyMaterial>("ProceduralSkyMaterial",
         "new", sol::factories(
-            []() { return new lucidware::spatial::ProceduralSkyMaterial(); }
+            []() { return new lucidfx::spatial::ProceduralSkyMaterial(); }
         ),
-        sol::base_classes, sol::bases<lucidware::core::BaseObject, lucidware::core::Resource, lucidware::core::Material>(),
+        sol::base_classes, sol::bases<lucidfx::core::BaseObject, lucidfx::core::Resource, lucidfx::core::Material>(),
         "energyMultiplier", sol::property(&ProceduralSkyMaterial::getEnergyMultiplier, &ProceduralSkyMaterial::setEnergyMultiplier),
         "groundBottomColor", sol::property(&ProceduralSkyMaterial::getGroundBottomColor, &ProceduralSkyMaterial::setGroundBottomColor),
         "groundCurve", sol::property(&ProceduralSkyMaterial::getGroundCurve, &ProceduralSkyMaterial::setGroundCurve),
@@ -20,7 +20,7 @@ void lucidware::spatial::bindProceduralSkyMaterial(sol::state_view& lua) {
         "sunAngleMax", sol::property(&ProceduralSkyMaterial::getSunAngleMax, &ProceduralSkyMaterial::setSunAngleMax),
         "sunCurve", sol::property(&ProceduralSkyMaterial::getSunCurve, &ProceduralSkyMaterial::setSunCurve),
         "useDebanding", sol::property(&ProceduralSkyMaterial::getUseDebanding, &ProceduralSkyMaterial::setUseDebanding),
-        "cast", [](lucidware::core::Resource* instance) {
+        "cast", [](lucidfx::core::Resource* instance) {
             return new ProceduralSkyMaterial(godot::Object::cast_to<GodotProceduralSkyMaterial>(instance->getResource()));
         }
     );

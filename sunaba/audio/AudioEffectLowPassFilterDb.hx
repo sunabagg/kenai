@@ -1,4 +1,4 @@
-package lucidware..audio;
+package lucidfx..audio;
 
 enum abstract AudioEffectLowPassFilterDb(Int) from Int to Int {
 	var filter6Db = 0;

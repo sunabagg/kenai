@@ -1,9 +1,9 @@
-package lucidware.spatial;
+package lucidfx.spatial;
 
-import lucidware.core.Texture2D;
-import lucidware.core.Vector2;
-import lucidware.core.Transform3D;
-import lucidware.core.Resource;
+import lucidfx.core.Texture2D;
+import lucidfx.core.Vector2;
+import lucidfx.core.Transform3D;
+import lucidfx.core.Resource;
 
 @:native("SkeletonProfile")
 extern class SkeletonProfile extends Resource {
@@ -44,4 +44,4 @@ abstract SkeletonProfileAbstract(SkeletonProfile) from SkeletonProfile to Skelet
         }
         return skeletonProfile;
     } 
-} // end package lucidware.spatial
+} // end package lucidfx.spatial

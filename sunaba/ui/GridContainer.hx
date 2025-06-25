@@ -1,4 +1,4 @@
-package lucidware.ui;
+package lucidfx.ui;
 
 @:native("GridContainer")
 extern class GridContainer extends Container {
@@ -9,7 +9,7 @@ extern class GridContainer extends Container {
 
 abstract GridContainerAbstract(GridContainer) from GridContainer to GridContainer {
     @:from
-    public static function fromElement(element: lucidware.core.Element): GridContainerAbstract {
+    public static function fromElement(element: lucidfx.core.Element): GridContainerAbstract {
         var grid = GridContainer.toGridContainer(element);
         if (grid.isNull()) {
             return null;

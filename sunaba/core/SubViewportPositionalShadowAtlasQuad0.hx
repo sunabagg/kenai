@@ -1,4 +1,4 @@
-package lucidware..core;
+package lucidfx..core;
 
 enum abstract SubViewportPositionalShadowAtlasQuad0(Int) from Int to Int {
 	var disabled = 0;

@@ -1,4 +1,4 @@
-package lucidware;
+package lucidfx;
 
 enum abstract DrawMode(Int) from Int to Int {
 	var normal = 0;

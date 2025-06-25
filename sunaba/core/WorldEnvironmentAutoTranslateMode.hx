@@ -1,4 +1,4 @@
-package lucidware..core;
+package lucidfx..core;
 
 enum abstract WorldEnvironmentAutoTranslateMode(Int) from Int to Int {
 	var inherit = 0;

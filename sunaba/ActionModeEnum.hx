@@ -1,4 +1,4 @@
-package lucidware;
+package lucidfx;
 
 enum abstract ActionModeEnum(Int) from Int to Int {
 	var press = 0;

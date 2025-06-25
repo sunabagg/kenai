@@ -1,4 +1,4 @@
-package lucidware;
+package lucidfx;
 
 enum abstract ResolutionEnum(Int) from Int to Int {
 	var resolution16 = 0;

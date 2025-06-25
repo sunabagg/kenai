@@ -1,6 +1,6 @@
 package;
 
-import lucidware.App;
+import lucidfx.App;
 
 class Main extends App {
     public static function main() {

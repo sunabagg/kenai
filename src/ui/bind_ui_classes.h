@@ -3,7 +3,7 @@
 
 #include <sol/sol.hpp>
 
-namespace lucidware::ui
+namespace lucidfx::ui
 {
     void bindUIClasses(sol::state& lua);
 }

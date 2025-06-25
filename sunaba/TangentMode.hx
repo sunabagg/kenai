@@ -1,4 +1,4 @@
-package lucidware;
+package lucidfx;
 
 enum abstract TangentMode(Int) from Int to Int {
 	var free = 0;

@@ -1,8 +1,8 @@
-package lucidware.core;
+package lucidfx.core;
 
-import lucidware.spatial.World3D;
-import lucidware.ui.Control;
-import lucidware.input.InputEvent;
+import lucidfx.spatial.World3D;
+import lucidfx.ui.Control;
+import lucidfx.input.InputEvent;
 
 @:native("Viewport")
 extern class Viewport extends Element {

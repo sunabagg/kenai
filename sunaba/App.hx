@@ -1,7 +1,7 @@
-package lucidware;
+package lucidfx;
 
-import lucidware.core.GlobalObjectStack;
-import lucidware.core.Element;
+import lucidfx.core.GlobalObjectStack;
+import lucidfx.core.Element;
 
 class App {
     public var rootElement(get, default): Element;

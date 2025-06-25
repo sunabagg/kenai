@@ -1,4 +1,4 @@
-package lucidware.core;
+package lucidfx.core;
 
 @:native("LabelSettings")
 extern class LabelSettings extends Resource {

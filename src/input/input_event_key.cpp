@@ -1,11 +1,11 @@
 #include "input_event_key.h"
 
-void lucidware::input::bindInputEventKey(sol::state_view& lua) {
+void lucidfx::input::bindInputEventKey(sol::state_view& lua) {
     lua.new_usertype<InputEventKey>("InputEventKey",
         "new", sol::factories(
             []() { return new InputEventKey(); }
         ),
-        sol::base_classes, sol::bases<lucidware::core::BaseObject, lucidware::core::Resource, lucidware::input::InputEvent, lucidware::input::InputEventFromWindow, lucidware::input::InputEventWithModifiers>(),
+        sol::base_classes, sol::bases<lucidfx::core::BaseObject, lucidfx::core::Resource, lucidfx::input::InputEvent, lucidfx::input::InputEventFromWindow, lucidfx::input::InputEventWithModifiers>(),
         "echo", sol::property(&InputEventKey::isEcho, &InputEventKey::setEcho),
         "keyLabel", sol::property(&InputEventKey::getKeyLabel, &InputEventKey::setKeyLabel),
         "location", sol::property(&InputEventKey::getLocation, &InputEventKey::setLocation),
@@ -18,7 +18,7 @@ void lucidware::input::bindInputEventKey(sol::state_view& lua) {
         "getKeyLabelWithModifiers", &InputEventKey::getKeyLabelWithModifiers,
         "getKeycodeWithModifiers", &InputEventKey::getKeycodeWithModifiers,
         "getPhysicalKeycodeWithModifiers", &InputEventKey::getPhysicalKeycodeWithModifiers,
-        "cast", [](lucidware::core::Resource* instance) {
+        "cast", [](lucidfx::core::Resource* instance) {
             return new InputEventKey(godot::Object::cast_to<GodotInputEventKey>(instance->getResource()));
         }
     );

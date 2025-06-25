@@ -1,12 +1,12 @@
-package lucidware.spatial;
+package lucidfx.spatial;
 
-import lucidware.core.Vector3;
-import lucidware.core.Transform3D;
-import lucidware.core.Quaternion;
-import lucidware.core.Vector3;
-import lucidware.core.Basis;
-import lucidware.core.Component;
-import lucidware.core.Entity;
+import lucidfx.core.Vector3;
+import lucidfx.core.Transform3D;
+import lucidfx.core.Quaternion;
+import lucidfx.core.Vector3;
+import lucidfx.core.Basis;
+import lucidfx.core.Component;
+import lucidfx.core.Entity;
 
 @:native("SpatialTransform")
 extern class SpatialTransform extends Component {

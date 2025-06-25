@@ -1,7 +1,7 @@
-package lucidware.ui;
+package lucidfx.ui;
 
-import lucidware.core.Color;
-import lucidware.core.Element;
+import lucidfx.core.Color;
+import lucidfx.core.Element;
 
 @:native("ColorRect")
 extern class ColorRect extends Control {
@@ -12,7 +12,7 @@ extern class ColorRect extends Control {
 
 abstract ColorRectAbstract(ColorRect) from ColorRect to ColorRect {
     @:from
-    public static function fromElement(element: lucidware.core.Element): ColorRectAbstract {
+    public static function fromElement(element: lucidfx.core.Element): ColorRectAbstract {
         var rect = ColorRect.toColorRect(element);
         if (rect.isNull()) {
             return null;

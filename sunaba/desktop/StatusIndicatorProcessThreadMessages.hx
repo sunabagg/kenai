@@ -1,4 +1,4 @@
-package lucidware..desktop;
+package lucidfx..desktop;
 
 enum abstract StatusIndicatorProcessThreadMessages(Int) from Int to Int {
 	var messages = 1;

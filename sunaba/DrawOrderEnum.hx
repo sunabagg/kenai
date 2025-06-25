@@ -1,4 +1,4 @@
-package lucidware;
+package lucidfx;
 
 enum abstract DrawOrderEnum(Int) from Int to Int {
 	var index = 0;

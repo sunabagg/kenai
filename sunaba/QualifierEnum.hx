@@ -1,4 +1,4 @@
-package lucidware;
+package lucidfx;
 
 enum abstract QualifierEnum(Int) from Int to Int {
 	var none = 0;

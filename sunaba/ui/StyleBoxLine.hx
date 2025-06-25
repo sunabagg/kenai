@@ -1,4 +1,4 @@
-package lucidware.ui;
+package lucidfx.ui;
 
 @:native("StyleBoxLine")
 extern class StyleBoxLine extends StyleBox {
@@ -20,4 +20,4 @@ abstract StyleBoxLineAbstract(StyleBoxLine) from StyleBoxLine to StyleBoxLine {
         }
         return styleBoxLine;
     }
-} // end package lucidware.ui
+} // end package lucidfx.ui

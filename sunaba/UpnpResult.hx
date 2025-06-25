@@ -1,4 +1,4 @@
-package lucidware;
+package lucidfx;
 
 enum abstract UpnpResult(Int) from Int to Int {
 	var success = 0;

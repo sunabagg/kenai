@@ -1,6 +1,6 @@
 #include "label.h"
 
-namespace lucidware::ui {
+namespace lucidfx::ui {
     void LabelProxy::_enter_tree() {
         if (this->element != nullptr) {
             this->element->enterTree();
@@ -120,7 +120,7 @@ namespace lucidware::ui {
             "new", sol::factories(
                 []() { return new Label(); }
             ),
-            sol::base_classes, sol::bases<BaseObject, Element, lucidware::core::CanvasItem, Control>(),
+            sol::base_classes, sol::bases<BaseObject, Element, lucidfx::core::CanvasItem, Control>(),
             "autowrapMode", sol::property(&Label::getAutowrapMode, &Label::setAutowrapMode),
             "clipText", sol::property(&Label::getClipText, &Label::setClipText),
             "ellipsisChar", sol::property(&Label::getEllipsisChar, &Label::setEllipsisChar),

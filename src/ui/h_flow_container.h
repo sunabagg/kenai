@@ -10,9 +10,9 @@
 #include "flow_container.h"
 
 using namespace godot;
-using namespace lucidware::core;
+using namespace lucidfx::core;
 
-namespace lucidware::ui {
+namespace lucidfx::ui {
     void bindHFlowContainer(sol::state &lua);
 
     class HFlowContainer;
@@ -24,7 +24,7 @@ namespace lucidware::ui {
                 // Bind methods specific to HFlowContainerProxy
             }
         public:
-            lucidware::ui::HFlowContainer* element = nullptr;
+            lucidfx::ui::HFlowContainer* element = nullptr;
 
             void onInit() {
                 // Initialize the NodeProxy instance

@@ -1,4 +1,4 @@
-package lucidware..spatial;
+package lucidfx..spatial;
 
 enum abstract StandardMaterial3DMetallicTextureChannel(Int) from Int to Int {
 	var red = 0;

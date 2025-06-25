@@ -10,7 +10,7 @@
 #include "control.h"
 
 using namespace godot;
-namespace lucidware::ui {
+namespace lucidfx::ui {
     void bindColorRect(sol::state &lua);
 
     class ColorRect;
@@ -22,7 +22,7 @@ namespace lucidware::ui {
                 // Bind methods specific to ColorRectProxy
             }
         public:
-            lucidware::ui::ColorRect* element = nullptr;
+            lucidfx::ui::ColorRect* element = nullptr;
 
             void onInit() {
                 // Initialize the NodeProxy instance

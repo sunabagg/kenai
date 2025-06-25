@@ -13,10 +13,10 @@
 #include "../core/convert_godot_lua.h"
 
 using namespace godot;
-using namespace lucidware::core;
-using namespace lucidware::core::io;
+using namespace lucidfx::core;
+using namespace lucidfx::core::io;
 
-namespace lucidware::audio {
+namespace lucidfx::audio {
     void bindAudioStreamWav(sol::state_view& lua);
 
     class AudioStreamWav : public AudioStream {

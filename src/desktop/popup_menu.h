@@ -15,9 +15,9 @@
 #include "../core/texture2d.h"
 
 using namespace godot;
-using namespace lucidware::core;
+using namespace lucidfx::core;
 
-namespace lucidware::desktop {
+namespace lucidfx::desktop {
     void bindPopupMenu(sol::state& lua);
 
     class PopupMenu;
@@ -27,7 +27,7 @@ namespace lucidware::desktop {
         protected:
             static void _bind_methods() {}
     public:
-        lucidware::desktop::PopupMenu* element = nullptr;
+        lucidfx::desktop::PopupMenu* element = nullptr;
 
         void onInit() {
             // Initialize the NodeProxy instance
@@ -51,7 +51,7 @@ namespace lucidware::desktop {
         protected:
             static void _bind_methods();
         public:
-            lucidware::desktop::PopupMenu* element = nullptr;
+            lucidfx::desktop::PopupMenu* element = nullptr;
 
             PopupMenuSignalWrapper() = default;
             ~PopupMenuSignalWrapper() = default;
@@ -215,7 +215,7 @@ namespace lucidware::desktop {
                 menuChangedEvent = event;
             }
 
-            bool activateItemByEvent(lucidware::input::InputEvent* event, bool forGlobalOnly = false) {
+            bool activateItemByEvent(lucidfx::input::InputEvent* event, bool forGlobalOnly = false) {
                 return popup_menu->activate_item_by_event(event->getInputEvent(), forGlobalOnly);
             }
 
@@ -223,31 +223,31 @@ namespace lucidware::desktop {
                 popup_menu->add_check_item(label.c_str(), id, static_cast<godot::Key>(accel));
             }
 
-            void addCheckShortcut(lucidware::input::Shortcut* shortcut, int id  = -1, bool global = false) {
+            void addCheckShortcut(lucidfx::input::Shortcut* shortcut, int id  = -1, bool global = false) {
                 popup_menu->add_check_shortcut(shortcut->getShortcut(), id, global);
             }
 
-            void addIconCheckItem(lucidware::core::Texture2D* texture, std::string label, int id = -1, int accel = 0) {
+            void addIconCheckItem(lucidfx::core::Texture2D* texture, std::string label, int id = -1, int accel = 0) {
                 popup_menu->add_icon_check_item(texture->getTexture2D(), label.c_str(), id, static_cast<godot::Key>(accel));
             }
 
-            void addIconCheckShortcut(lucidware::core::Texture2D* texture, lucidware::input::Shortcut* shortcut, int id = -1, bool global = false) {
+            void addIconCheckShortcut(lucidfx::core::Texture2D* texture, lucidfx::input::Shortcut* shortcut, int id = -1, bool global = false) {
                 popup_menu->add_icon_check_shortcut(texture->getTexture2D(), shortcut->getShortcut(), id, global);
             }
 
-            void addIconItem(lucidware::core::Texture2D* texture, std::string label, int id = -1, int accel = 0) {
+            void addIconItem(lucidfx::core::Texture2D* texture, std::string label, int id = -1, int accel = 0) {
                 popup_menu->add_icon_item(texture->getTexture2D(), label.c_str(), id, static_cast<godot::Key>(accel));
             } 
 
-            void addIconRadioCheckItem(lucidware::core::Texture2D* texture, std::string label, int id = -1, int accel = 0) {
+            void addIconRadioCheckItem(lucidfx::core::Texture2D* texture, std::string label, int id = -1, int accel = 0) {
                 popup_menu->add_icon_radio_check_item(texture->getTexture2D(), label.c_str(), id, static_cast<godot::Key>(accel));
             }
 
-            void addIconRadioCheckShortcut(lucidware::core::Texture2D* texture, lucidware::input::Shortcut* shortcut, int id = -1, bool global = false) {
+            void addIconRadioCheckShortcut(lucidfx::core::Texture2D* texture, lucidfx::input::Shortcut* shortcut, int id = -1, bool global = false) {
                 popup_menu->add_icon_radio_check_shortcut(texture->getTexture2D(), shortcut->getShortcut(), id, global);
             }
 
-            void addIconShortcut(lucidware::core::Texture2D* texture, lucidware::input::Shortcut* shortcut, int id = -1, bool global = false, bool allowEcho = false) {
+            void addIconShortcut(lucidfx::core::Texture2D* texture, lucidfx::input::Shortcut* shortcut, int id = -1, bool global = false, bool allowEcho = false) {
                 popup_menu->add_icon_shortcut(texture->getTexture2D(), shortcut->getShortcut(), id, global, allowEcho);
             }
 
@@ -263,7 +263,7 @@ namespace lucidware::desktop {
                 popup_menu->add_radio_check_item(label.c_str(), id, static_cast<godot::Key>(accel));
             }
 
-            void addRadioCheckShortcut(lucidware::input::Shortcut* shortcut, int id = -1, bool global = false) {
+            void addRadioCheckShortcut(lucidfx::input::Shortcut* shortcut, int id = -1, bool global = false) {
                 popup_menu->add_radio_check_shortcut(shortcut->getShortcut(), id, global);
             }
 
@@ -271,7 +271,7 @@ namespace lucidware::desktop {
                 popup_menu->add_separator(label.c_str(), id);
             }
 
-            void addShortcut(lucidware::input::Shortcut* shortcut, int id = -1, bool global = false, bool allowEcho = false) {
+            void addShortcut(lucidfx::input::Shortcut* shortcut, int id = -1, bool global = false, bool allowEcho = false) {
                 popup_menu->add_shortcut(shortcut->getShortcut(), id, global, allowEcho);
             }
 
@@ -295,8 +295,8 @@ namespace lucidware::desktop {
                 return popup_menu->get_item_accelerator(index);
             }
 
-            lucidware::core::Texture2D* getItemIcon(int index) const {
-                return new lucidware::core::Texture2D(popup_menu->get_item_icon(index).ptr());
+            lucidfx::core::Texture2D* getItemIcon(int index) const {
+                return new lucidfx::core::Texture2D(popup_menu->get_item_icon(index).ptr());
             }
 
             int getItemIconMaxWidth(int index) const {
@@ -335,8 +335,8 @@ namespace lucidware::desktop {
                 return popup_menu->get_item_multistate_max(index);
             }
 
-            lucidware::input::Shortcut* getItemShortcut(int index) const {
-                return new lucidware::input::Shortcut(popup_menu->get_item_shortcut(index).ptr());
+            lucidfx::input::Shortcut* getItemShortcut(int index) const {
+                return new lucidfx::input::Shortcut(popup_menu->get_item_shortcut(index).ptr());
             }
 
             std::string getItemSubmenu(int index) const {
@@ -427,7 +427,7 @@ namespace lucidware::desktop {
                 popup_menu->set_item_disabled(index, disabled);
             }
 
-            void setItemIcon(int index, lucidware::core::Texture2D* texture) {
+            void setItemIcon(int index, lucidfx::core::Texture2D* texture) {
                 popup_menu->set_item_icon(index, texture->getTexture2D());
             }
 
@@ -463,7 +463,7 @@ namespace lucidware::desktop {
                 popup_menu->set_item_multistate_max(index, maxStates);
             }
 
-            void setItemShortcut(int index, lucidware::input::Shortcut* shortcut, bool global = false) {
+            void setItemShortcut(int index, lucidfx::input::Shortcut* shortcut, bool global = false) {
                 popup_menu->set_item_shortcut(index, shortcut->getShortcut(), global);
             }
 

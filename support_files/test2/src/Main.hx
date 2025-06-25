@@ -1,6 +1,6 @@
 package support_files.test2.src;
 
-import lucidware.core.*;
+import lucidfx.core.*;
 import support_files.test2.src.DeltaTimePrinter;
 
 class Main {

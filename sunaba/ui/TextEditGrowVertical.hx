@@ -1,4 +1,4 @@
-package lucidware..ui;
+package lucidfx..ui;
 
 enum abstract TextEditGrowVertical(Int) from Int to Int {
 	var begin = 0;

@@ -1,11 +1,11 @@
 #include "theme.h"
 
-void lucidware::ui::bindTheme(sol::state_view& lua) {
+void lucidfx::ui::bindTheme(sol::state_view& lua) {
     lua.new_usertype<Theme>("Theme",
         "new", sol::factories(
             []() { return new Theme(); }
         ),
-        sol::base_classes, sol::bases<lucidware::core::BaseObject, lucidware::core::Resource>(),
+        sol::base_classes, sol::bases<lucidfx::core::BaseObject, lucidfx::core::Resource>(),
         "defaultBaseScale", sol::property(&Theme::getDefaultBaseScale, &Theme::setDefaultBaseScale),
         "defaultFont", sol::property(&Theme::getDefaultFont, &Theme::setDefaultFont),
         "defaultFontSize", sol::property(&Theme::getDefaultFontSize, &Theme::setDefaultFontSize),
@@ -72,7 +72,7 @@ void lucidware::ui::bindTheme(sol::state_view& lua) {
         "setThemeItem", &Theme::setThemeItem,
         "setTypeVariation", &Theme::setTypeVariation,
         "getDefaultTheme", &Theme::getDefaultTheme,
-        "cast", [](lucidware::core::Resource* res) {
+        "cast", [](lucidfx::core::Resource* res) {
             return new Theme(Object::cast_to<GodotTheme>(res->getResource()));
         }
     );

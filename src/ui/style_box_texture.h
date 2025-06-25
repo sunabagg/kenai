@@ -11,9 +11,9 @@
 #include "../core/texture2d.h"
 
 using namespace godot;
-using namespace lucidware::core;
+using namespace lucidfx::core;
 
-namespace lucidware::ui {
+namespace lucidfx::ui {
     void bindStyleBoxTexture(sol::state_view& lua);
 
     class StyleBoxTexture : public StyleBox {
@@ -110,11 +110,11 @@ namespace lucidware::ui {
             p_style_box_texture->set_region_rect(region_rect);
         }
 
-        lucidware::core::Texture2D* getTexture() {
-            return new lucidware::core::Texture2D(p_style_box_texture->get_texture().ptr());
+        lucidfx::core::Texture2D* getTexture() {
+            return new lucidfx::core::Texture2D(p_style_box_texture->get_texture().ptr());
         }
 
-        void setTexture(lucidware::core::Texture2D* texture) {
+        void setTexture(lucidfx::core::Texture2D* texture) {
             p_style_box_texture->set_texture(Ref<GodotTexture2D>(texture->getTexture()));
         }
 

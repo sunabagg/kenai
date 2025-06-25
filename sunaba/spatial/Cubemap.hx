@@ -1,6 +1,6 @@
-package lucidware.spatial;
+package lucidfx.spatial;
 
-import lucidware.core.ImageTextureLayered;
+import lucidfx.core.ImageTextureLayered;
 
 @:native("Cubemap")
 extern class Cubemap extends ImageTextureLayered {
@@ -18,4 +18,4 @@ abstract CubemapAbstract(Cubemap) from Cubemap to Cubemap {
         }
         return cubemap;
     } 
-} // end package lucidware.spatial
+} // end package lucidfx.spatial

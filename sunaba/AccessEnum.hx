@@ -1,4 +1,4 @@
-package lucidware;
+package lucidfx;
 
 enum abstract AccessEnum(Int) from Int to Int {
 	var resources = 0;

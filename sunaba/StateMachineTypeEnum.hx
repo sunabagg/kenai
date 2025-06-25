@@ -1,4 +1,4 @@
-package lucidware;
+package lucidfx;
 
 enum abstract StateMachineTypeEnum(Int) from Int to Int {
 	var root = 0;

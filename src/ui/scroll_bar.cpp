@@ -1,6 +1,6 @@
 #include "scroll_bar.h"
 
-namespace lucidware::ui {
+namespace lucidfx::ui {
     void ScrollBarProxy::_enter_tree() {
         if (element != nullptr) {
             element->enterTree();
@@ -126,7 +126,7 @@ namespace lucidware::ui {
             "new", sol::factories(
                 []() { return new ScrollBar(); }
             ),
-            sol::base_classes, sol::bases<BaseObject, Element, lucidware::core::CanvasItem, Control, Range>(),
+            sol::base_classes, sol::bases<BaseObject, Element, lucidfx::core::CanvasItem, Control, Range>(),
             "customStep", sol::property(&ScrollBar::getCustomStep, &ScrollBar::setCustomStep),
             "step", sol::property(&ScrollBar::getStep, &ScrollBar::setStep),
             "scrolling", sol::property(&ScrollBar::getScrollingEvent, &ScrollBar::setScrollingEvent),

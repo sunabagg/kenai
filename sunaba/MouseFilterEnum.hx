@@ -1,4 +1,4 @@
-package lucidware;
+package lucidfx;
 
 enum abstract MouseFilterEnum(Int) from Int to Int {
 	var stop = 0;

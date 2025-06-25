@@ -1,4 +1,4 @@
-package lucidware;
+package lucidfx;
 
 enum abstract InitialAction(Int) from Int to Int {
 	var load = 0;

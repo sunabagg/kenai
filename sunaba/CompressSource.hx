@@ -1,4 +1,4 @@
-package lucidware;
+package lucidfx;
 
 enum abstract CompressSource(Int) from Int to Int {
 	var generic = 0;

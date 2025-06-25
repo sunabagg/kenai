@@ -1,7 +1,7 @@
-package lucidware.spatial.mesh;
+package lucidfx.spatial.mesh;
 
-import lucidware.spatial.IGeometryInstance;
-import lucidware.core.Entity;
+import lucidfx.spatial.IGeometryInstance;
+import lucidfx.core.Entity;
 
 @:native("MeshRenderer")
 extern class MeshRenderer extends IGeometryInstance {

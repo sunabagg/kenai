@@ -1,4 +1,4 @@
-package lucidware;
+package lucidfx;
 
 enum abstract RotationMode(Int) from Int to Int {
 	var resetFullRotation = 0;

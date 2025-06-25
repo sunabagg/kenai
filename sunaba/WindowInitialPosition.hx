@@ -1,4 +1,4 @@
-package lucidware;
+package lucidfx;
 
 enum abstract WindowInitialPosition(Int) from Int to Int {
 	var absolute = 0;

@@ -1,4 +1,4 @@
-package lucidware;
+package lucidfx;
 
 enum abstract TextOverrunFlag(Int) from Int to Int {
 	var noTrim = 0;

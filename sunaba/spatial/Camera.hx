@@ -1,10 +1,10 @@
-package lucidware.spatial;
+package lucidfx.spatial;
 
-import lucidware.core.Vector2;
-import lucidware.core.Vector3;
-import lucidware.core.Component;
-import lucidware.core.Vector2;
-import lucidware.core.Vector3;
+import lucidfx.core.Vector2;
+import lucidfx.core.Vector3;
+import lucidfx.core.Component;
+import lucidfx.core.Vector2;
+import lucidfx.core.Vector3;
 
 @:native("Camera")
 extern class Camera extends Component {
@@ -34,5 +34,5 @@ extern class Camera extends Component {
     public function setOrthagonal(size : Float, zNear : Float, zFar : Float) : Void;
     public function setPerspective(fov : Float, zNear : Float, zFar : Float) : Void;
     public function unprojectPosition(position : Vector3) : Vector2;
-    public static function getFromEntity(entity : lucidware.core.Entity) : Camera;
+    public static function getFromEntity(entity : lucidfx.core.Entity) : Camera;
 }

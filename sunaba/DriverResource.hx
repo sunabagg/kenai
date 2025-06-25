@@ -1,4 +1,4 @@
-package lucidware;
+package lucidfx;
 
 enum abstract DriverResource(Int) from Int to Int {
 	var logicalDevice = 0;

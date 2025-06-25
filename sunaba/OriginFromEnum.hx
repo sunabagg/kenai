@@ -1,4 +1,4 @@
-package lucidware;
+package lucidfx;
 
 enum abstract OriginFromEnum(Int) from Int to Int {
 	var self = 0;

@@ -1,4 +1,4 @@
-package lucidware.core;
+package lucidfx.core;
 
 @:native("FontVariation")
 extern class FontVariation extends Font {

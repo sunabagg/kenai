@@ -1,4 +1,4 @@
-package lucidware;
+package lucidfx;
 
 enum abstract G6DofJointAxisFlag(Int) from Int to Int {
 	var enableLinearLimit = 0;

@@ -12,10 +12,10 @@
 #include "../core/io/io_index.h"
 
 using namespace godot;
-using namespace lucidware::core;
-using namespace lucidware::core::io;
+using namespace lucidfx::core;
+using namespace lucidfx::core::io;
 
-namespace lucidware::audio {
+namespace lucidfx::audio {
     void bindAudioStreamOggVorbis(sol::state_view& lua);
 
     class AudioStreamOggVorbis : public AudioStream {

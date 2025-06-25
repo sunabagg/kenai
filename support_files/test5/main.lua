@@ -211,43 +211,43 @@ __lua_Boot = _hx_e()
 __lua_UserData = _hx_e()
 __lua_PairTools = _hx_e()
 __lua_Thread = _hx_e()
-__lucidware_App = _hx_e()
-__lucidware_core_ArrayListIterator = _hx_e()
-__lucidware_core__ArrayList_ArrayListAbstract_Impl_ = _hx_e()
-__lucidware_core__CanvasItem_CanvasItemAbstract_Impl_ = _hx_e()
-__lucidware_core_DictionaryIterator = _hx_e()
-__lucidware_core__Dictionary_DictionaryAbstract_Impl_ = _hx_e()
-__lucidware_core__Element_ElementAbstract_Impl_ = _hx_e()
-__lucidware_core__Environment_EnvironmentAbstract_Impl_ = _hx_e()
-__lucidware_core__Event_EventAbstract_Impl_ = _hx_e()
-__lucidware_core__Font_FontAbstract_Impl_ = _hx_e()
-__lucidware_core__FontFile_FontFileAbstract_Impl_ = _hx_e()
-__lucidware_core_GlobalObjectStack = _hx_e()
-__lucidware_core__Image_ImageAbstarct_Impl_ = _hx_e()
-__lucidware_core__ImageTexture_ImageTextureAbstract_Impl_ = _hx_e()
-__lucidware_core__LabelSettings_LabelSettingsAbstract_Impl_ = _hx_e()
-__lucidware_core__Material_MaterialAbstract_Impl_ = _hx_e()
-__lucidware_core__Resource_ResourceAbstarct_Impl_ = _hx_e()
-__lucidware_core_StackHandle = _hx_e()
-__lucidware_core__StringArray_StringArray_Impl_ = _hx_e()
-__lucidware_core__Texture_TextureAbstract_Impl_ = _hx_e()
-__lucidware_core__Texture2D_Texture2DAbstract_Impl_ = _hx_e()
-__lucidware_core__Variant_Variant_Impl_ = _hx_e()
-__lucidware_core__Vector_Vector_Impl_ = _hx_e()
-__lucidware_core__Viewport_ViewportAbstract_Impl_ = _hx_e()
-__lucidware_input__InputEvent_InputEventAbstract_Impl_ = _hx_e()
-__lucidware_input__Shortcut_ShortcutAbstract_Impl_ = _hx_e()
-__lucidware_spatial__CameraAttributes_CameraAttributesAbstract_Impl_ = _hx_e()
-__lucidware_spatial__Sky_SkyAbstract_Impl_ = _hx_e()
-__lucidware_spatial__World3D_World3DAbstract_Impl_ = _hx_e()
-__lucidware_ui__BaseButton_BaseButtonAbstract_Impl_ = _hx_e()
-__lucidware_ui__Button_ButtonAbstract_Impl_ = _hx_e()
-__lucidware_ui__ButtonGroup_ButtonGroupAbstract_Impl_ = _hx_e()
-__lucidware_ui__Control_ControlAbstract_Impl_ = _hx_e()
-__lucidware_ui__Label_LabelAbstract_Impl_ = _hx_e()
-__lucidware_ui__StyleBox_StyleBoxAbstract_Impl_ = _hx_e()
-__lucidware_ui__Theme_ThemeAbstract_Impl_ = _hx_e()
-__lucidware_ui_Widget = _hx_e()
+__lucidfx_App = _hx_e()
+__lucidfx_core_ArrayListIterator = _hx_e()
+__lucidfx_core__ArrayList_ArrayListAbstract_Impl_ = _hx_e()
+__lucidfx_core__CanvasItem_CanvasItemAbstract_Impl_ = _hx_e()
+__lucidfx_core_DictionaryIterator = _hx_e()
+__lucidfx_core__Dictionary_DictionaryAbstract_Impl_ = _hx_e()
+__lucidfx_core__Element_ElementAbstract_Impl_ = _hx_e()
+__lucidfx_core__Environment_EnvironmentAbstract_Impl_ = _hx_e()
+__lucidfx_core__Event_EventAbstract_Impl_ = _hx_e()
+__lucidfx_core__Font_FontAbstract_Impl_ = _hx_e()
+__lucidfx_core__FontFile_FontFileAbstract_Impl_ = _hx_e()
+__lucidfx_core_GlobalObjectStack = _hx_e()
+__lucidfx_core__Image_ImageAbstarct_Impl_ = _hx_e()
+__lucidfx_core__ImageTexture_ImageTextureAbstract_Impl_ = _hx_e()
+__lucidfx_core__LabelSettings_LabelSettingsAbstract_Impl_ = _hx_e()
+__lucidfx_core__Material_MaterialAbstract_Impl_ = _hx_e()
+__lucidfx_core__Resource_ResourceAbstarct_Impl_ = _hx_e()
+__lucidfx_core_StackHandle = _hx_e()
+__lucidfx_core__StringArray_StringArray_Impl_ = _hx_e()
+__lucidfx_core__Texture_TextureAbstract_Impl_ = _hx_e()
+__lucidfx_core__Texture2D_Texture2DAbstract_Impl_ = _hx_e()
+__lucidfx_core__Variant_Variant_Impl_ = _hx_e()
+__lucidfx_core__Vector_Vector_Impl_ = _hx_e()
+__lucidfx_core__Viewport_ViewportAbstract_Impl_ = _hx_e()
+__lucidfx_input__InputEvent_InputEventAbstract_Impl_ = _hx_e()
+__lucidfx_input__Shortcut_ShortcutAbstract_Impl_ = _hx_e()
+__lucidfx_spatial__CameraAttributes_CameraAttributesAbstract_Impl_ = _hx_e()
+__lucidfx_spatial__Sky_SkyAbstract_Impl_ = _hx_e()
+__lucidfx_spatial__World3D_World3DAbstract_Impl_ = _hx_e()
+__lucidfx_ui__BaseButton_BaseButtonAbstract_Impl_ = _hx_e()
+__lucidfx_ui__Button_ButtonAbstract_Impl_ = _hx_e()
+__lucidfx_ui__ButtonGroup_ButtonGroupAbstract_Impl_ = _hx_e()
+__lucidfx_ui__Control_ControlAbstract_Impl_ = _hx_e()
+__lucidfx_ui__Label_LabelAbstract_Impl_ = _hx_e()
+__lucidfx_ui__StyleBox_StyleBoxAbstract_Impl_ = _hx_e()
+__lucidfx_ui__Theme_ThemeAbstract_Impl_ = _hx_e()
+__lucidfx_ui_Widget = _hx_e()
 __support_files_test5_src_ClickerCounter = _hx_e()
 __support_files_test5_src_Main = _hx_e()
 
@@ -655,28 +655,28 @@ EReg.prototype.matched = function(self,n)
   if ((self.lastMatch == nil) or self.lastMatch:isNull()) then 
     do return "" end;
   end;
-  local nVariant = __lucidware_core__Variant_Variant_Impl_.fromInt(n);
+  local nVariant = __lucidfx_core__Variant_Variant_Impl_.fromInt(n);
   do return self.lastMatch:getString(nVariant) end
 end
 EReg.prototype.matchedLeft = function(self) 
   if ((self.lastMatch == nil) or self.lastMatch:isNull()) then 
     do return "" end;
   end;
-  do return String.prototype.substr(self.lastInput, 0, self.lastMatch:getStart(__lucidware_core__Variant_Variant_Impl_.fromInt(0))) end
+  do return String.prototype.substr(self.lastInput, 0, self.lastMatch:getStart(__lucidfx_core__Variant_Variant_Impl_.fromInt(0))) end
 end
 EReg.prototype.matchedRight = function(self) 
   if ((self.lastMatch == nil) or self.lastMatch:isNull()) then 
     do return "" end;
   end;
-  local endPos = self.lastMatch:getEnd(__lucidware_core__Variant_Variant_Impl_.fromInt(0));
+  local endPos = self.lastMatch:getEnd(__lucidfx_core__Variant_Variant_Impl_.fromInt(0));
   do return String.prototype.substr(self.lastInput, endPos) end
 end
 EReg.prototype.matchedPos = function(self) 
   if ((self.lastMatch == nil) or self.lastMatch:isNull()) then 
     do return _hx_o({__fields__={pos=true,len=true},pos=-1,len=0}) end;
   end;
-  local start = self.lastMatch:getStart(__lucidware_core__Variant_Variant_Impl_.fromInt(0));
-  local _end = self.lastMatch:getEnd(__lucidware_core__Variant_Variant_Impl_.fromInt(0)) - start;
+  local start = self.lastMatch:getStart(__lucidfx_core__Variant_Variant_Impl_.fromInt(0));
+  local _end = self.lastMatch:getEnd(__lucidfx_core__Variant_Variant_Impl_.fromInt(0)) - start;
   do return _hx_o({__fields__={pos=true,len=true},pos=start,len=_end - start}) end
 end
 EReg.prototype.matchSub = function(self,s,pos,len) 
@@ -720,9 +720,9 @@ EReg.prototype.split = function(self,s)
     if (match:isNull()) then 
       break;
     end;
-    local start = match:getStart(__lucidware_core__Variant_Variant_Impl_.fromInt(0));
+    local start = match:getStart(__lucidfx_core__Variant_Variant_Impl_.fromInt(0));
     result:push(String.prototype.substr(s, lastIndex, start - lastIndex));
-    lastIndex = match:getEnd(__lucidware_core__Variant_Variant_Impl_.fromInt(0));until true
+    lastIndex = match:getEnd(__lucidfx_core__Variant_Variant_Impl_.fromInt(0));until true
     if _hx_continue_1 then 
     _hx_continue_1 = false;
     break;
@@ -761,8 +761,8 @@ EReg.prototype.map = function(self,s,f)
     
     local match = matches[_g];
     _g = _g + 1;
-    local start = match:getStart(__lucidware_core__Variant_Variant_Impl_.fromInt(0));
-    local _end = match:getEnd(__lucidware_core__Variant_Variant_Impl_.fromInt(0));
+    local start = match:getStart(__lucidfx_core__Variant_Variant_Impl_.fromInt(0));
+    local _end = match:getEnd(__lucidfx_core__Variant_Variant_Impl_.fromInt(0));
     result = Std.string(result) .. Std.string(String.prototype.substr(s, lastIndex, start - lastIndex));
     result = Std.string(result) .. Std.string(f(self));
     lastIndex = _end;
@@ -2649,45 +2649,45 @@ end
 __lua_Thread.new = {}
 __lua_Thread.__name__ = "lua.Thread"
 
-__lucidware_App.new = function() 
-  local self = _hx_new(__lucidware_App.prototype)
-  __lucidware_App.super(self)
+__lucidfx_App.new = function() 
+  local self = _hx_new(__lucidfx_App.prototype)
+  __lucidfx_App.super(self)
   return self
 end
-__lucidware_App.super = function(self) 
-  __lucidware_core_GlobalObjectStack.initSingleton();
+__lucidfx_App.super = function(self) 
+  __lucidfx_core_GlobalObjectStack.initSingleton();
   self:init();
 end
-__lucidware_App.__name__ = "lucidware.App"
-__lucidware_App.prototype = _hx_e();
-__lucidware_App.prototype.get_rootElement = function(self) 
+__lucidfx_App.__name__ = "lucidfx.App"
+__lucidfx_App.prototype = _hx_e();
+__lucidfx_App.prototype.get_rootElement = function(self) 
   do return _G.rootElement end
 end
-__lucidware_App.prototype.get_globalObjectStack = function(self) 
-  do return __lucidware_core_GlobalObjectStack.getSingleton() end
+__lucidfx_App.prototype.get_globalObjectStack = function(self) 
+  do return __lucidfx_core_GlobalObjectStack.getSingleton() end
 end
-__lucidware_App.prototype.init = function(self) 
+__lucidfx_App.prototype.init = function(self) 
 end
 
-__lucidware_App.prototype.__class__ =  __lucidware_App
+__lucidfx_App.prototype.__class__ =  __lucidfx_App
 
-__lucidware_App.prototype.__properties__ =  {get_globalObjectStack="get_globalObjectStack",get_rootElement="get_rootElement"}
+__lucidfx_App.prototype.__properties__ =  {get_globalObjectStack="get_globalObjectStack",get_rootElement="get_rootElement"}
 
-__lucidware_core_ArrayListIterator.new = function(array) 
-  local self = _hx_new(__lucidware_core_ArrayListIterator.prototype)
-  __lucidware_core_ArrayListIterator.super(self,array)
+__lucidfx_core_ArrayListIterator.new = function(array) 
+  local self = _hx_new(__lucidfx_core_ArrayListIterator.prototype)
+  __lucidfx_core_ArrayListIterator.super(self,array)
   return self
 end
-__lucidware_core_ArrayListIterator.super = function(self,array) 
+__lucidfx_core_ArrayListIterator.super = function(self,array) 
   self.index = 0;
   self.array = array;
 end
-__lucidware_core_ArrayListIterator.__name__ = "lucidware.core.ArrayListIterator"
-__lucidware_core_ArrayListIterator.prototype = _hx_e();
-__lucidware_core_ArrayListIterator.prototype.hasNext = function(self) 
+__lucidfx_core_ArrayListIterator.__name__ = "lucidfx.core.ArrayListIterator"
+__lucidfx_core_ArrayListIterator.prototype = _hx_e();
+__lucidfx_core_ArrayListIterator.prototype.hasNext = function(self) 
   do return self.index < self.array:size() end
 end
-__lucidware_core_ArrayListIterator.prototype.next = function(self) 
+__lucidfx_core_ArrayListIterator.prototype.next = function(self) 
   if (self:hasNext()) then 
     local value = self.array:get(self.index);
     self.index = self.index + 1;
@@ -2697,23 +2697,23 @@ __lucidware_core_ArrayListIterator.prototype.next = function(self)
   end;
 end
 
-__lucidware_core_ArrayListIterator.prototype.__class__ =  __lucidware_core_ArrayListIterator
+__lucidfx_core_ArrayListIterator.prototype.__class__ =  __lucidfx_core_ArrayListIterator
 
-__lucidware_core__ArrayList_ArrayListAbstract_Impl_.new = {}
-__lucidware_core__ArrayList_ArrayListAbstract_Impl_.__name__ = "lucidware.core._ArrayList.ArrayListAbstract_Impl_"
-__lucidware_core__ArrayList_ArrayListAbstract_Impl_.get = function(this1,index) 
+__lucidfx_core__ArrayList_ArrayListAbstract_Impl_.new = {}
+__lucidfx_core__ArrayList_ArrayListAbstract_Impl_.__name__ = "lucidfx.core._ArrayList.ArrayListAbstract_Impl_"
+__lucidfx_core__ArrayList_ArrayListAbstract_Impl_.get = function(this1,index) 
   do return this1:get(index) end;
 end
-__lucidware_core__ArrayList_ArrayListAbstract_Impl_.set = function(this1,index,value) 
+__lucidfx_core__ArrayList_ArrayListAbstract_Impl_.set = function(this1,index,value) 
   this1:set(index, value);
 end
-__lucidware_core__ArrayList_ArrayListAbstract_Impl_.getArray = function(this1,index) 
+__lucidfx_core__ArrayList_ArrayListAbstract_Impl_.getArray = function(this1,index) 
   do return this1:get(index) end;
 end
-__lucidware_core__ArrayList_ArrayListAbstract_Impl_.setArray = function(this1,index,value) 
+__lucidfx_core__ArrayList_ArrayListAbstract_Impl_.setArray = function(this1,index,value) 
   this1:set(index, value);
 end
-__lucidware_core__ArrayList_ArrayListAbstract_Impl_.forEach = function(this1,callback) 
+__lucidfx_core__ArrayList_ArrayListAbstract_Impl_.forEach = function(this1,callback) 
   local _g = 0;
   local _g1 = this1:size();
   while (_g < _g1) do _hx_do_first_1 = false;
@@ -2723,7 +2723,7 @@ __lucidware_core__ArrayList_ArrayListAbstract_Impl_.forEach = function(this1,cal
     callback(this1:get(i));
   end;
 end
-__lucidware_core__ArrayList_ArrayListAbstract_Impl_.toArray = function(this1) 
+__lucidfx_core__ArrayList_ArrayListAbstract_Impl_.toArray = function(this1) 
   local result = Array.new();
   local _g = 0;
   local _g1 = this1:size();
@@ -2735,7 +2735,7 @@ __lucidware_core__ArrayList_ArrayListAbstract_Impl_.toArray = function(this1)
   end;
   do return result end;
 end
-__lucidware_core__ArrayList_ArrayListAbstract_Impl_.fromArray = function(array) 
+__lucidfx_core__ArrayList_ArrayListAbstract_Impl_.fromArray = function(array) 
   local result = ArrayList.new();
   local _g = 0;
   while (_g < array.length) do _hx_do_first_1 = false;
@@ -2746,13 +2746,13 @@ __lucidware_core__ArrayList_ArrayListAbstract_Impl_.fromArray = function(array)
   end;
   do return result end;
 end
-__lucidware_core__ArrayList_ArrayListAbstract_Impl_.iterator = function(this1) 
-  do return __lucidware_core_ArrayListIterator.new(this1) end;
+__lucidfx_core__ArrayList_ArrayListAbstract_Impl_.iterator = function(this1) 
+  do return __lucidfx_core_ArrayListIterator.new(this1) end;
 end
 
-__lucidware_core__CanvasItem_CanvasItemAbstract_Impl_.new = {}
-__lucidware_core__CanvasItem_CanvasItemAbstract_Impl_.__name__ = "lucidware.core._CanvasItem.CanvasItemAbstract_Impl_"
-__lucidware_core__CanvasItem_CanvasItemAbstract_Impl_.fromElement = function(element) 
+__lucidfx_core__CanvasItem_CanvasItemAbstract_Impl_.new = {}
+__lucidfx_core__CanvasItem_CanvasItemAbstract_Impl_.__name__ = "lucidfx.core._CanvasItem.CanvasItemAbstract_Impl_"
+__lucidfx_core__CanvasItem_CanvasItemAbstract_Impl_.fromElement = function(element) 
   local cItem = Element.cast(element);
   if (cItem:isNull()) then 
     do return nil end;
@@ -2760,21 +2760,21 @@ __lucidware_core__CanvasItem_CanvasItemAbstract_Impl_.fromElement = function(ele
   do return cItem end;
 end
 
-__lucidware_core_DictionaryIterator.new = function(dict) 
-  local self = _hx_new(__lucidware_core_DictionaryIterator.prototype)
-  __lucidware_core_DictionaryIterator.super(self,dict)
+__lucidfx_core_DictionaryIterator.new = function(dict) 
+  local self = _hx_new(__lucidfx_core_DictionaryIterator.prototype)
+  __lucidfx_core_DictionaryIterator.super(self,dict)
   return self
 end
-__lucidware_core_DictionaryIterator.super = function(self,dict) 
+__lucidfx_core_DictionaryIterator.super = function(self,dict) 
   self.index = 0;
   self.dict = dict;
 end
-__lucidware_core_DictionaryIterator.__name__ = "lucidware.core.DictionaryIterator"
-__lucidware_core_DictionaryIterator.prototype = _hx_e();
-__lucidware_core_DictionaryIterator.prototype.hasNext = function(self) 
+__lucidfx_core_DictionaryIterator.__name__ = "lucidfx.core.DictionaryIterator"
+__lucidfx_core_DictionaryIterator.prototype = _hx_e();
+__lucidfx_core_DictionaryIterator.prototype.hasNext = function(self) 
   do return self.index < self.dict:size() end
 end
-__lucidware_core_DictionaryIterator.prototype.next = function(self) 
+__lucidfx_core_DictionaryIterator.prototype.next = function(self) 
   if (self:hasNext()) then 
     local key = self.dict:keys():get(self.index);
     self.index = self.index + 1;
@@ -2784,23 +2784,23 @@ __lucidware_core_DictionaryIterator.prototype.next = function(self)
   end;
 end
 
-__lucidware_core_DictionaryIterator.prototype.__class__ =  __lucidware_core_DictionaryIterator
+__lucidfx_core_DictionaryIterator.prototype.__class__ =  __lucidfx_core_DictionaryIterator
 
-__lucidware_core__Dictionary_DictionaryAbstract_Impl_.new = {}
-__lucidware_core__Dictionary_DictionaryAbstract_Impl_.__name__ = "lucidware.core._Dictionary.DictionaryAbstract_Impl_"
-__lucidware_core__Dictionary_DictionaryAbstract_Impl_.get = function(this1,key) 
+__lucidfx_core__Dictionary_DictionaryAbstract_Impl_.new = {}
+__lucidfx_core__Dictionary_DictionaryAbstract_Impl_.__name__ = "lucidfx.core._Dictionary.DictionaryAbstract_Impl_"
+__lucidfx_core__Dictionary_DictionaryAbstract_Impl_.get = function(this1,key) 
   do return this1:get(key) end;
 end
-__lucidware_core__Dictionary_DictionaryAbstract_Impl_.set = function(this1,key,value) 
+__lucidfx_core__Dictionary_DictionaryAbstract_Impl_.set = function(this1,key,value) 
   this1:set(key, value);
 end
-__lucidware_core__Dictionary_DictionaryAbstract_Impl_.getArray = function(this1,key) 
+__lucidfx_core__Dictionary_DictionaryAbstract_Impl_.getArray = function(this1,key) 
   do return this1:get(key) end;
 end
-__lucidware_core__Dictionary_DictionaryAbstract_Impl_.setArray = function(this1,key,value) 
+__lucidfx_core__Dictionary_DictionaryAbstract_Impl_.setArray = function(this1,key,value) 
   this1:set(key, value);
 end
-__lucidware_core__Dictionary_DictionaryAbstract_Impl_.forEach = function(this1,func) 
+__lucidfx_core__Dictionary_DictionaryAbstract_Impl_.forEach = function(this1,func) 
   local keys = this1:keys();
   local _g = 0;
   local _g1 = keys:size();
@@ -2812,13 +2812,13 @@ __lucidware_core__Dictionary_DictionaryAbstract_Impl_.forEach = function(this1,f
     func(key, this1:get(key));
   end;
 end
-__lucidware_core__Dictionary_DictionaryAbstract_Impl_.iterator = function(this1) 
-  do return __lucidware_core_DictionaryIterator.new(this1) end;
+__lucidfx_core__Dictionary_DictionaryAbstract_Impl_.iterator = function(this1) 
+  do return __lucidfx_core_DictionaryIterator.new(this1) end;
 end
 
-__lucidware_core__Element_ElementAbstract_Impl_.new = {}
-__lucidware_core__Element_ElementAbstract_Impl_.__name__ = "lucidware.core._Element.ElementAbstract_Impl_"
-__lucidware_core__Element_ElementAbstract_Impl_.fromElement = function(element) 
+__lucidfx_core__Element_ElementAbstract_Impl_.new = {}
+__lucidfx_core__Element_ElementAbstract_Impl_.__name__ = "lucidfx.core._Element.ElementAbstract_Impl_"
+__lucidfx_core__Element_ElementAbstract_Impl_.fromElement = function(element) 
   local element = Element.cast(element);
   if (element:isNull()) then 
     do return nil end;
@@ -2826,9 +2826,9 @@ __lucidware_core__Element_ElementAbstract_Impl_.fromElement = function(element)
   do return element end;
 end
 
-__lucidware_core__Environment_EnvironmentAbstract_Impl_.new = {}
-__lucidware_core__Environment_EnvironmentAbstract_Impl_.__name__ = "lucidware.core._Environment.EnvironmentAbstract_Impl_"
-__lucidware_core__Environment_EnvironmentAbstract_Impl_.fromResource = function(resource) 
+__lucidfx_core__Environment_EnvironmentAbstract_Impl_.new = {}
+__lucidfx_core__Environment_EnvironmentAbstract_Impl_.__name__ = "lucidfx.core._Environment.EnvironmentAbstract_Impl_"
+__lucidfx_core__Environment_EnvironmentAbstract_Impl_.fromResource = function(resource) 
   local environment = Environment.cast(resource);
   if (environment:isNull()) then 
     do return nil end;
@@ -2836,19 +2836,19 @@ __lucidware_core__Environment_EnvironmentAbstract_Impl_.fromResource = function(
   do return environment end;
 end
 
-__lucidware_core__Event_EventAbstract_Impl_.new = {}
-__lucidware_core__Event_EventAbstract_Impl_.__name__ = "lucidware.core._Event.EventAbstract_Impl_"
-__lucidware_core__Event_EventAbstract_Impl_.callNoArgs = function(this1) 
+__lucidfx_core__Event_EventAbstract_Impl_.new = {}
+__lucidfx_core__Event_EventAbstract_Impl_.__name__ = "lucidfx.core._Event.EventAbstract_Impl_"
+__lucidfx_core__Event_EventAbstract_Impl_.callNoArgs = function(this1) 
   this1:emit();
 end
-__lucidware_core__Event_EventAbstract_Impl_.call = function(this1,...) 
+__lucidfx_core__Event_EventAbstract_Impl_.call = function(this1,...) 
   local args = {...}
   this1:emit(_hx_table.unpack(args));
 end
 
-__lucidware_core__Font_FontAbstract_Impl_.new = {}
-__lucidware_core__Font_FontAbstract_Impl_.__name__ = "lucidware.core._Font.FontAbstract_Impl_"
-__lucidware_core__Font_FontAbstract_Impl_.fromResource = function(resource) 
+__lucidfx_core__Font_FontAbstract_Impl_.new = {}
+__lucidfx_core__Font_FontAbstract_Impl_.__name__ = "lucidfx.core._Font.FontAbstract_Impl_"
+__lucidfx_core__Font_FontAbstract_Impl_.fromResource = function(resource) 
   local font = Font.cast(resource);
   if (font:isNull()) then 
     do return nil end;
@@ -2856,9 +2856,9 @@ __lucidware_core__Font_FontAbstract_Impl_.fromResource = function(resource)
   do return font end;
 end
 
-__lucidware_core__FontFile_FontFileAbstract_Impl_.new = {}
-__lucidware_core__FontFile_FontFileAbstract_Impl_.__name__ = "lucidware.core._FontFile.FontFileAbstract_Impl_"
-__lucidware_core__FontFile_FontFileAbstract_Impl_.fromResource = function(resource) 
+__lucidfx_core__FontFile_FontFileAbstract_Impl_.new = {}
+__lucidfx_core__FontFile_FontFileAbstract_Impl_.__name__ = "lucidfx.core._FontFile.FontFileAbstract_Impl_"
+__lucidfx_core__FontFile_FontFileAbstract_Impl_.fromResource = function(resource) 
   local font = FontFile.cast(resource);
   if (font:isNull()) then 
     do return nil end;
@@ -2866,19 +2866,19 @@ __lucidware_core__FontFile_FontFileAbstract_Impl_.fromResource = function(resour
   do return font end;
 end
 
-__lucidware_core_GlobalObjectStack.new = function() 
-  local self = _hx_new(__lucidware_core_GlobalObjectStack.prototype)
-  __lucidware_core_GlobalObjectStack.super(self)
+__lucidfx_core_GlobalObjectStack.new = function() 
+  local self = _hx_new(__lucidfx_core_GlobalObjectStack.prototype)
+  __lucidfx_core_GlobalObjectStack.super(self)
   return self
 end
-__lucidware_core_GlobalObjectStack.super = function(self) 
+__lucidfx_core_GlobalObjectStack.super = function(self) 
   self.stack = _hx_tab_array({}, 0);
 end
-__lucidware_core_GlobalObjectStack.__name__ = "lucidware.core.GlobalObjectStack"
-__lucidware_core_GlobalObjectStack.getSingleton = function() 
+__lucidfx_core_GlobalObjectStack.__name__ = "lucidfx.core.GlobalObjectStack"
+__lucidfx_core_GlobalObjectStack.getSingleton = function() 
   local gos = _G.globalObjectStack;
   if (gos == nil) then 
-    __lucidware_core_GlobalObjectStack.initSingleton();
+    __lucidfx_core_GlobalObjectStack.initSingleton();
     gos = _G.globalObjectStack;
     if (gos == nil) then 
       _G.error(__haxe_Exception.thrown("GlobalObjectStack is not initialized"),0);
@@ -2886,17 +2886,17 @@ __lucidware_core_GlobalObjectStack.getSingleton = function()
   end;
   do return gos end;
 end
-__lucidware_core_GlobalObjectStack.initSingleton = function() 
-  local singleton = __lucidware_core_GlobalObjectStack.new();
+__lucidfx_core_GlobalObjectStack.initSingleton = function() 
+  local singleton = __lucidfx_core_GlobalObjectStack.new();
   _G.globalObjectStack = singleton;
 end
-__lucidware_core_GlobalObjectStack.prototype = _hx_e();
+__lucidfx_core_GlobalObjectStack.prototype = _hx_e();
 
-__lucidware_core_GlobalObjectStack.prototype.__class__ =  __lucidware_core_GlobalObjectStack
+__lucidfx_core_GlobalObjectStack.prototype.__class__ =  __lucidfx_core_GlobalObjectStack
 
-__lucidware_core__Image_ImageAbstarct_Impl_.new = {}
-__lucidware_core__Image_ImageAbstarct_Impl_.__name__ = "lucidware.core._Image.ImageAbstarct_Impl_"
-__lucidware_core__Image_ImageAbstarct_Impl_.fromResource = function(resource) 
+__lucidfx_core__Image_ImageAbstarct_Impl_.new = {}
+__lucidfx_core__Image_ImageAbstarct_Impl_.__name__ = "lucidfx.core._Image.ImageAbstarct_Impl_"
+__lucidfx_core__Image_ImageAbstarct_Impl_.fromResource = function(resource) 
   local img = Image.cast(resource);
   if (img:isNull()) then 
     do return nil end;
@@ -2904,9 +2904,9 @@ __lucidware_core__Image_ImageAbstarct_Impl_.fromResource = function(resource)
   do return img end;
 end
 
-__lucidware_core__ImageTexture_ImageTextureAbstract_Impl_.new = {}
-__lucidware_core__ImageTexture_ImageTextureAbstract_Impl_.__name__ = "lucidware.core._ImageTexture.ImageTextureAbstract_Impl_"
-__lucidware_core__ImageTexture_ImageTextureAbstract_Impl_.fromResource = function(resource) 
+__lucidfx_core__ImageTexture_ImageTextureAbstract_Impl_.new = {}
+__lucidfx_core__ImageTexture_ImageTextureAbstract_Impl_.__name__ = "lucidfx.core._ImageTexture.ImageTextureAbstract_Impl_"
+__lucidfx_core__ImageTexture_ImageTextureAbstract_Impl_.fromResource = function(resource) 
   local imgTxt = ImageTexture.cast(resource);
   if (imgTxt:isNull()) then 
     do return nil end;
@@ -2914,9 +2914,9 @@ __lucidware_core__ImageTexture_ImageTextureAbstract_Impl_.fromResource = functio
   do return imgTxt end;
 end
 
-__lucidware_core__LabelSettings_LabelSettingsAbstract_Impl_.new = {}
-__lucidware_core__LabelSettings_LabelSettingsAbstract_Impl_.__name__ = "lucidware.core._LabelSettings.LabelSettingsAbstract_Impl_"
-__lucidware_core__LabelSettings_LabelSettingsAbstract_Impl_.fromResource = function(resource) 
+__lucidfx_core__LabelSettings_LabelSettingsAbstract_Impl_.new = {}
+__lucidfx_core__LabelSettings_LabelSettingsAbstract_Impl_.__name__ = "lucidfx.core._LabelSettings.LabelSettingsAbstract_Impl_"
+__lucidfx_core__LabelSettings_LabelSettingsAbstract_Impl_.fromResource = function(resource) 
   local labelsettings = LabelSettings.cast(resource);
   if (labelsettings:isNull()) then 
     do return nil end;
@@ -2924,9 +2924,9 @@ __lucidware_core__LabelSettings_LabelSettingsAbstract_Impl_.fromResource = funct
   do return labelsettings end;
 end
 
-__lucidware_core__Material_MaterialAbstract_Impl_.new = {}
-__lucidware_core__Material_MaterialAbstract_Impl_.__name__ = "lucidware.core._Material.MaterialAbstract_Impl_"
-__lucidware_core__Material_MaterialAbstract_Impl_.fromResource = function(resource) 
+__lucidfx_core__Material_MaterialAbstract_Impl_.new = {}
+__lucidfx_core__Material_MaterialAbstract_Impl_.__name__ = "lucidfx.core._Material.MaterialAbstract_Impl_"
+__lucidfx_core__Material_MaterialAbstract_Impl_.fromResource = function(resource) 
   local material = Material.cast(resource);
   if (material:isNull()) then 
     do return nil end;
@@ -2934,9 +2934,9 @@ __lucidware_core__Material_MaterialAbstract_Impl_.fromResource = function(resour
   do return material end;
 end
 
-__lucidware_core__Resource_ResourceAbstarct_Impl_.new = {}
-__lucidware_core__Resource_ResourceAbstarct_Impl_.__name__ = "lucidware.core._Resource.ResourceAbstarct_Impl_"
-__lucidware_core__Resource_ResourceAbstarct_Impl_.fromResource = function(resource) 
+__lucidfx_core__Resource_ResourceAbstarct_Impl_.new = {}
+__lucidfx_core__Resource_ResourceAbstarct_Impl_.__name__ = "lucidfx.core._Resource.ResourceAbstarct_Impl_"
+__lucidfx_core__Resource_ResourceAbstarct_Impl_.fromResource = function(resource) 
   local res = Resource.cast(resource);
   if (res:isNull()) then 
     do return nil end;
@@ -2944,22 +2944,22 @@ __lucidware_core__Resource_ResourceAbstarct_Impl_.fromResource = function(resour
   do return res end;
 end
 
-__lucidware_core_StackHandle.new = function(object) 
-  local self = _hx_new(__lucidware_core_StackHandle.prototype)
-  __lucidware_core_StackHandle.super(self,object)
+__lucidfx_core_StackHandle.new = function(object) 
+  local self = _hx_new(__lucidfx_core_StackHandle.prototype)
+  __lucidfx_core_StackHandle.super(self,object)
   return self
 end
-__lucidware_core_StackHandle.super = function(self,object) 
+__lucidfx_core_StackHandle.super = function(self,object) 
   self.object = object;
 end
-__lucidware_core_StackHandle.__name__ = "lucidware.core.StackHandle"
-__lucidware_core_StackHandle.prototype = _hx_e();
+__lucidfx_core_StackHandle.__name__ = "lucidfx.core.StackHandle"
+__lucidfx_core_StackHandle.prototype = _hx_e();
 
-__lucidware_core_StackHandle.prototype.__class__ =  __lucidware_core_StackHandle
+__lucidfx_core_StackHandle.prototype.__class__ =  __lucidfx_core_StackHandle
 
-__lucidware_core__StringArray_StringArray_Impl_.new = {}
-__lucidware_core__StringArray_StringArray_Impl_.__name__ = "lucidware.core._StringArray.StringArray_Impl_"
-__lucidware_core__StringArray_StringArray_Impl_.toArray = function(this1) 
+__lucidfx_core__StringArray_StringArray_Impl_.new = {}
+__lucidfx_core__StringArray_StringArray_Impl_.__name__ = "lucidfx.core._StringArray.StringArray_Impl_"
+__lucidfx_core__StringArray_StringArray_Impl_.toArray = function(this1) 
   local table = this1;
   local length = nil;
   local tab = __lua_PairTools.copy(table);
@@ -2978,7 +2978,7 @@ __lucidware_core__StringArray_StringArray_Impl_.toArray = function(this1)
     do return _hx_tab_array(tab, length) end;
   end;
 end
-__lucidware_core__StringArray_StringArray_Impl_.fromArray = function(array) 
+__lucidfx_core__StringArray_StringArray_Impl_.fromArray = function(array) 
   local ret = ({});
   local _g = 0;
   local _g1 = array.length;
@@ -2992,9 +2992,9 @@ __lucidware_core__StringArray_StringArray_Impl_.fromArray = function(array)
   do return result end;
 end
 
-__lucidware_core__Texture_TextureAbstract_Impl_.new = {}
-__lucidware_core__Texture_TextureAbstract_Impl_.__name__ = "lucidware.core._Texture.TextureAbstract_Impl_"
-__lucidware_core__Texture_TextureAbstract_Impl_.fromResource = function(resource) 
+__lucidfx_core__Texture_TextureAbstract_Impl_.new = {}
+__lucidfx_core__Texture_TextureAbstract_Impl_.__name__ = "lucidfx.core._Texture.TextureAbstract_Impl_"
+__lucidfx_core__Texture_TextureAbstract_Impl_.fromResource = function(resource) 
   local txt = Texture.cast(resource);
   if (txt:isNull()) then 
     do return nil end;
@@ -3002,9 +3002,9 @@ __lucidware_core__Texture_TextureAbstract_Impl_.fromResource = function(resource
   do return txt end;
 end
 
-__lucidware_core__Texture2D_Texture2DAbstract_Impl_.new = {}
-__lucidware_core__Texture2D_Texture2DAbstract_Impl_.__name__ = "lucidware.core._Texture2D.Texture2DAbstract_Impl_"
-__lucidware_core__Texture2D_Texture2DAbstract_Impl_.fromResource = function(resource) 
+__lucidfx_core__Texture2D_Texture2DAbstract_Impl_.new = {}
+__lucidfx_core__Texture2D_Texture2DAbstract_Impl_.__name__ = "lucidfx.core._Texture2D.Texture2DAbstract_Impl_"
+__lucidfx_core__Texture2D_Texture2DAbstract_Impl_.fromResource = function(resource) 
   local txt = Texture2D.cast(resource);
   if (txt:isNull()) then 
     do return nil end;
@@ -3012,205 +3012,205 @@ __lucidware_core__Texture2D_Texture2DAbstract_Impl_.fromResource = function(reso
   do return txt end;
 end
 
-__lucidware_core__Variant_Variant_Impl_.new = {}
-__lucidware_core__Variant_Variant_Impl_.__name__ = "lucidware.core._Variant.Variant_Impl_"
-__lucidware_core__Variant_Variant_Impl_.fromString = function(value) 
+__lucidfx_core__Variant_Variant_Impl_.new = {}
+__lucidfx_core__Variant_Variant_Impl_.__name__ = "lucidfx.core._Variant.Variant_Impl_"
+__lucidfx_core__Variant_Variant_Impl_.fromString = function(value) 
   do return Variant.new(value) end;
 end
-__lucidware_core__Variant_Variant_Impl_.toString = function(this1) 
+__lucidfx_core__Variant_Variant_Impl_.toString = function(this1) 
   do return this1:asString() end;
 end
-__lucidware_core__Variant_Variant_Impl_.fromInt = function(value) 
+__lucidfx_core__Variant_Variant_Impl_.fromInt = function(value) 
   do return Variant.new(__haxe__Int64____Int64.new(__haxe__Int32_Int32_Impl_.shr(value, 31), value)) end;
 end
-__lucidware_core__Variant_Variant_Impl_.toInt = function(this1) 
+__lucidfx_core__Variant_Variant_Impl_.toInt = function(this1) 
   do return this1:asInt64() end;
 end
-__lucidware_core__Variant_Variant_Impl_.fromInt64 = function(value) 
+__lucidfx_core__Variant_Variant_Impl_.fromInt64 = function(value) 
   do return Variant.new(value) end;
 end
-__lucidware_core__Variant_Variant_Impl_.toInt64 = function(this1) 
+__lucidfx_core__Variant_Variant_Impl_.toInt64 = function(this1) 
   do return this1:asInt64() end;
 end
-__lucidware_core__Variant_Variant_Impl_.fromInt32 = function(value) 
+__lucidfx_core__Variant_Variant_Impl_.fromInt32 = function(value) 
   do return Variant.new(value) end;
 end
-__lucidware_core__Variant_Variant_Impl_.toInt32 = function(this1) 
+__lucidfx_core__Variant_Variant_Impl_.toInt32 = function(this1) 
   do return this1:asInt32() end;
 end
-__lucidware_core__Variant_Variant_Impl_.fromFloat = function(value) 
+__lucidfx_core__Variant_Variant_Impl_.fromFloat = function(value) 
   do return Variant.new(value) end;
 end
-__lucidware_core__Variant_Variant_Impl_.toFloat = function(this1) 
+__lucidfx_core__Variant_Variant_Impl_.toFloat = function(this1) 
   do return this1:asFloat64() end;
 end
-__lucidware_core__Variant_Variant_Impl_.fromBool = function(value) 
+__lucidfx_core__Variant_Variant_Impl_.fromBool = function(value) 
   do return Variant.new(value) end;
 end
-__lucidware_core__Variant_Variant_Impl_.toBool = function(this1) 
+__lucidfx_core__Variant_Variant_Impl_.toBool = function(this1) 
   do return this1:asBool() end;
 end
-__lucidware_core__Variant_Variant_Impl_.fromVector2 = function(value) 
+__lucidfx_core__Variant_Variant_Impl_.fromVector2 = function(value) 
   do return Variant.new(value) end;
 end
-__lucidware_core__Variant_Variant_Impl_.toVector2 = function(this1) 
+__lucidfx_core__Variant_Variant_Impl_.toVector2 = function(this1) 
   do return this1:asVector2() end;
 end
-__lucidware_core__Variant_Variant_Impl_.fromVector3 = function(value) 
+__lucidfx_core__Variant_Variant_Impl_.fromVector3 = function(value) 
   do return Variant.new(value) end;
 end
-__lucidware_core__Variant_Variant_Impl_.toVector3 = function(this1) 
+__lucidfx_core__Variant_Variant_Impl_.toVector3 = function(this1) 
   do return this1:asVector3() end;
 end
-__lucidware_core__Variant_Variant_Impl_.fromVector4 = function(value) 
+__lucidfx_core__Variant_Variant_Impl_.fromVector4 = function(value) 
   do return Variant.new(value) end;
 end
-__lucidware_core__Variant_Variant_Impl_.toVector4 = function(this1) 
+__lucidfx_core__Variant_Variant_Impl_.toVector4 = function(this1) 
   do return this1:asVector4() end;
 end
-__lucidware_core__Variant_Variant_Impl_.fromVector2i = function(value) 
+__lucidfx_core__Variant_Variant_Impl_.fromVector2i = function(value) 
   do return Variant.new(value) end;
 end
-__lucidware_core__Variant_Variant_Impl_.toVector2i = function(this1) 
+__lucidfx_core__Variant_Variant_Impl_.toVector2i = function(this1) 
   do return this1:asVector2i() end;
 end
-__lucidware_core__Variant_Variant_Impl_.fromVector3i = function(value) 
+__lucidfx_core__Variant_Variant_Impl_.fromVector3i = function(value) 
   do return Variant.new(value) end;
 end
-__lucidware_core__Variant_Variant_Impl_.toVector3i = function(this1) 
+__lucidfx_core__Variant_Variant_Impl_.toVector3i = function(this1) 
   do return this1:asVector3i() end;
 end
-__lucidware_core__Variant_Variant_Impl_.fromVector4i = function(value) 
+__lucidfx_core__Variant_Variant_Impl_.fromVector4i = function(value) 
   do return Variant.new(value) end;
 end
-__lucidware_core__Variant_Variant_Impl_.toVector4i = function(this1) 
+__lucidfx_core__Variant_Variant_Impl_.toVector4i = function(this1) 
   do return this1:asVector4i() end;
 end
-__lucidware_core__Variant_Variant_Impl_.fromColor = function(value) 
+__lucidfx_core__Variant_Variant_Impl_.fromColor = function(value) 
   do return Variant.new(value) end;
 end
-__lucidware_core__Variant_Variant_Impl_.toColor = function(this1) 
+__lucidfx_core__Variant_Variant_Impl_.toColor = function(this1) 
   do return this1:asColor() end;
 end
-__lucidware_core__Variant_Variant_Impl_.fromRect2 = function(value) 
+__lucidfx_core__Variant_Variant_Impl_.fromRect2 = function(value) 
   do return Variant.new(value) end;
 end
-__lucidware_core__Variant_Variant_Impl_.toRect2 = function(this1) 
+__lucidfx_core__Variant_Variant_Impl_.toRect2 = function(this1) 
   do return this1:asRect2() end;
 end
-__lucidware_core__Variant_Variant_Impl_.fromRect2i = function(value) 
+__lucidfx_core__Variant_Variant_Impl_.fromRect2i = function(value) 
   do return Variant.new(value) end;
 end
-__lucidware_core__Variant_Variant_Impl_.toRect2i = function(this1) 
+__lucidfx_core__Variant_Variant_Impl_.toRect2i = function(this1) 
   do return this1:asRect2i() end;
 end
-__lucidware_core__Variant_Variant_Impl_.fromBasis = function(value) 
+__lucidfx_core__Variant_Variant_Impl_.fromBasis = function(value) 
   do return Variant.new(value) end;
 end
-__lucidware_core__Variant_Variant_Impl_.toBasis = function(this1) 
+__lucidfx_core__Variant_Variant_Impl_.toBasis = function(this1) 
   do return this1:asBasis() end;
 end
-__lucidware_core__Variant_Variant_Impl_.fromTransform2D = function(value) 
+__lucidfx_core__Variant_Variant_Impl_.fromTransform2D = function(value) 
   do return Variant.new(value) end;
 end
-__lucidware_core__Variant_Variant_Impl_.toTransform2D = function(this1) 
+__lucidfx_core__Variant_Variant_Impl_.toTransform2D = function(this1) 
   do return this1:asTransform2D() end;
 end
-__lucidware_core__Variant_Variant_Impl_.fromTransform3D = function(value) 
+__lucidfx_core__Variant_Variant_Impl_.fromTransform3D = function(value) 
   do return Variant.new(value) end;
 end
-__lucidware_core__Variant_Variant_Impl_.toTransform3D = function(this1) 
+__lucidfx_core__Variant_Variant_Impl_.toTransform3D = function(this1) 
   do return this1:asTransform3D() end;
 end
-__lucidware_core__Variant_Variant_Impl_.fromQuaternion = function(value) 
+__lucidfx_core__Variant_Variant_Impl_.fromQuaternion = function(value) 
   do return Variant.new(value) end;
 end
-__lucidware_core__Variant_Variant_Impl_.toQuaternion = function(this1) 
+__lucidfx_core__Variant_Variant_Impl_.toQuaternion = function(this1) 
   do return this1:asQuaternion() end;
 end
-__lucidware_core__Variant_Variant_Impl_.fromElement = function(value) 
+__lucidfx_core__Variant_Variant_Impl_.fromElement = function(value) 
   do return Variant.fromElement(value) end;
 end
-__lucidware_core__Variant_Variant_Impl_.toElement = function(this1) 
+__lucidfx_core__Variant_Variant_Impl_.toElement = function(this1) 
   do return this1:asElement() end;
 end
-__lucidware_core__Variant_Variant_Impl_.fromResource = function(value) 
+__lucidfx_core__Variant_Variant_Impl_.fromResource = function(value) 
   do return Variant.fromResource(value) end;
 end
-__lucidware_core__Variant_Variant_Impl_.toResource = function(this1) 
+__lucidfx_core__Variant_Variant_Impl_.toResource = function(this1) 
   do return this1:asResource() end;
 end
-__lucidware_core__Variant_Variant_Impl_.fromByteArray = function(value) 
+__lucidfx_core__Variant_Variant_Impl_.fromByteArray = function(value) 
   do return Variant.fromByteArray(value) end;
 end
-__lucidware_core__Variant_Variant_Impl_.toByteArray = function(this1) 
+__lucidfx_core__Variant_Variant_Impl_.toByteArray = function(this1) 
   do return this1:asByteArray() end;
 end
-__lucidware_core__Variant_Variant_Impl_.fromIntArray64 = function(value) 
+__lucidfx_core__Variant_Variant_Impl_.fromIntArray64 = function(value) 
   do return Variant.fromIntArray64(value) end;
 end
-__lucidware_core__Variant_Variant_Impl_.toIntArray64 = function(this1) 
+__lucidfx_core__Variant_Variant_Impl_.toIntArray64 = function(this1) 
   do return this1:asIntArray64() end;
 end
-__lucidware_core__Variant_Variant_Impl_.fromFloatArray64 = function(value) 
+__lucidfx_core__Variant_Variant_Impl_.fromFloatArray64 = function(value) 
   do return Variant.fromFloatArray64(value) end;
 end
-__lucidware_core__Variant_Variant_Impl_.toFloatArray64 = function(this1) 
+__lucidfx_core__Variant_Variant_Impl_.toFloatArray64 = function(this1) 
   do return this1:asFloatArray64() end;
 end
-__lucidware_core__Variant_Variant_Impl_.fromStringArray = function(value) 
+__lucidfx_core__Variant_Variant_Impl_.fromStringArray = function(value) 
   do return Variant.fromStringArray(value) end;
 end
-__lucidware_core__Variant_Variant_Impl_.toStringArray = function(this1) 
+__lucidfx_core__Variant_Variant_Impl_.toStringArray = function(this1) 
   do return this1:asStringArray() end;
 end
-__lucidware_core__Variant_Variant_Impl_.fromVector2Array = function(value) 
+__lucidfx_core__Variant_Variant_Impl_.fromVector2Array = function(value) 
   do return Variant.fromVector2Array(value) end;
 end
-__lucidware_core__Variant_Variant_Impl_.toVector2Array = function(this1) 
+__lucidfx_core__Variant_Variant_Impl_.toVector2Array = function(this1) 
   do return this1:asVector2Array() end;
 end
-__lucidware_core__Variant_Variant_Impl_.fromVector3Array = function(value) 
+__lucidfx_core__Variant_Variant_Impl_.fromVector3Array = function(value) 
   do return Variant.fromVector3Array(value) end;
 end
-__lucidware_core__Variant_Variant_Impl_.toVector3Array = function(this1) 
+__lucidfx_core__Variant_Variant_Impl_.toVector3Array = function(this1) 
   do return this1:asVector3Array() end;
 end
-__lucidware_core__Variant_Variant_Impl_.fromVector4Array = function(value) 
+__lucidfx_core__Variant_Variant_Impl_.fromVector4Array = function(value) 
   do return Variant.fromVector4Array(value) end;
 end
-__lucidware_core__Variant_Variant_Impl_.toVector4Array = function(this1) 
+__lucidfx_core__Variant_Variant_Impl_.toVector4Array = function(this1) 
   do return this1:asVector4Array() end;
 end
 
-__lucidware_core__Vector_Vector_Impl_.new = {}
-__lucidware_core__Vector_Vector_Impl_.__name__ = "lucidware.core._Vector.Vector_Impl_"
-__lucidware_core__Vector_Vector_Impl_._new = function() 
-  do return lucidware.core.VectorNative() end;
+__lucidfx_core__Vector_Vector_Impl_.new = {}
+__lucidfx_core__Vector_Vector_Impl_.__name__ = "lucidfx.core._Vector.Vector_Impl_"
+__lucidfx_core__Vector_Vector_Impl_._new = function() 
+  do return lucidfx.core.VectorNative() end;
 end
-__lucidware_core__Vector_Vector_Impl_.size = function(this1) 
+__lucidfx_core__Vector_Vector_Impl_.size = function(this1) 
   local s = this1;
   do return #s end;
 end
-__lucidware_core__Vector_Vector_Impl_.get = function(this1,index) 
+__lucidfx_core__Vector_Vector_Impl_.get = function(this1,index) 
   local s = this1;
   do return s[index] end;
 end
-__lucidware_core__Vector_Vector_Impl_.set = function(this1,index,value) 
+__lucidfx_core__Vector_Vector_Impl_.set = function(this1,index,value) 
   local s = this1;
   s[index] = value;
   do return value end;
 end
-__lucidware_core__Vector_Vector_Impl_.toArray = function(this1) 
+__lucidfx_core__Vector_Vector_Impl_.toArray = function(this1) 
   local s = this1;
   local array = _hx_tab_array({}, 0);
   local _g = 0;
-  local _g1 = __lucidware_core__Vector_Vector_Impl_.size(s);
+  local _g1 = __lucidfx_core__Vector_Vector_Impl_.size(s);
   while (_g < _g1) do _hx_do_first_1 = false;
     
     _g = _g + 1;
     local i = _g - 1;
-    local value = __lucidware_core__Vector_Vector_Impl_.get(s, i);
+    local value = __lucidfx_core__Vector_Vector_Impl_.get(s, i);
     if (value == nil) then 
       _G.error(__haxe_Exception.thrown(Std.string("Vector.toArray: null value at index ") .. Std.string(i)),0);
     end;
@@ -3218,16 +3218,16 @@ __lucidware_core__Vector_Vector_Impl_.toArray = function(this1)
   end;
   do return array end;
 end
-__lucidware_core__Vector_Vector_Impl_.toTable = function(this1) 
+__lucidfx_core__Vector_Vector_Impl_.toTable = function(this1) 
   local s = this1;
   local table = table;
   local _g = 0;
-  local _g1 = __lucidware_core__Vector_Vector_Impl_.size(s);
+  local _g1 = __lucidfx_core__Vector_Vector_Impl_.size(s);
   while (_g < _g1) do _hx_do_first_1 = false;
     
     _g = _g + 1;
     local i = _g - 1;
-    local value = __lucidware_core__Vector_Vector_Impl_.get(s, i);
+    local value = __lucidfx_core__Vector_Vector_Impl_.get(s, i);
     if (value == nil) then 
       _G.error(__haxe_Exception.thrown(Std.string("Vector.toTable: null value at index ") .. Std.string(i)),0);
     end;
@@ -3236,9 +3236,9 @@ __lucidware_core__Vector_Vector_Impl_.toTable = function(this1)
   do return table end;
 end
 
-__lucidware_core__Viewport_ViewportAbstract_Impl_.new = {}
-__lucidware_core__Viewport_ViewportAbstract_Impl_.__name__ = "lucidware.core._Viewport.ViewportAbstract_Impl_"
-__lucidware_core__Viewport_ViewportAbstract_Impl_.fromElement = function(element) 
+__lucidfx_core__Viewport_ViewportAbstract_Impl_.new = {}
+__lucidfx_core__Viewport_ViewportAbstract_Impl_.__name__ = "lucidfx.core._Viewport.ViewportAbstract_Impl_"
+__lucidfx_core__Viewport_ViewportAbstract_Impl_.fromElement = function(element) 
   local viewport = Viewport.cast(element);
   if (viewport:isNull()) then 
     do return nil end;
@@ -3246,9 +3246,9 @@ __lucidware_core__Viewport_ViewportAbstract_Impl_.fromElement = function(element
   do return viewport end;
 end
 
-__lucidware_input__InputEvent_InputEventAbstract_Impl_.new = {}
-__lucidware_input__InputEvent_InputEventAbstract_Impl_.__name__ = "lucidware.input._InputEvent.InputEventAbstract_Impl_"
-__lucidware_input__InputEvent_InputEventAbstract_Impl_.fromResource = function(resource) 
+__lucidfx_input__InputEvent_InputEventAbstract_Impl_.new = {}
+__lucidfx_input__InputEvent_InputEventAbstract_Impl_.__name__ = "lucidfx.input._InputEvent.InputEventAbstract_Impl_"
+__lucidfx_input__InputEvent_InputEventAbstract_Impl_.fromResource = function(resource) 
   local inputEvent = InputEvent.cast(resource);
   if (inputEvent:isNull()) then 
     do return nil end;
@@ -3256,9 +3256,9 @@ __lucidware_input__InputEvent_InputEventAbstract_Impl_.fromResource = function(r
   do return inputEvent end;
 end
 
-__lucidware_input__Shortcut_ShortcutAbstract_Impl_.new = {}
-__lucidware_input__Shortcut_ShortcutAbstract_Impl_.__name__ = "lucidware.input._Shortcut.ShortcutAbstract_Impl_"
-__lucidware_input__Shortcut_ShortcutAbstract_Impl_.fromResource = function(resource) 
+__lucidfx_input__Shortcut_ShortcutAbstract_Impl_.new = {}
+__lucidfx_input__Shortcut_ShortcutAbstract_Impl_.__name__ = "lucidfx.input._Shortcut.ShortcutAbstract_Impl_"
+__lucidfx_input__Shortcut_ShortcutAbstract_Impl_.fromResource = function(resource) 
   local shortcut = InputEventShortcut.cast(resource);
   if (shortcut:isNull()) then 
     do return nil end;
@@ -3266,9 +3266,9 @@ __lucidware_input__Shortcut_ShortcutAbstract_Impl_.fromResource = function(resou
   do return shortcut end;
 end
 
-__lucidware_spatial__CameraAttributes_CameraAttributesAbstract_Impl_.new = {}
-__lucidware_spatial__CameraAttributes_CameraAttributesAbstract_Impl_.__name__ = "lucidware.spatial._CameraAttributes.CameraAttributesAbstract_Impl_"
-__lucidware_spatial__CameraAttributes_CameraAttributesAbstract_Impl_.fromResource = function(resource) 
+__lucidfx_spatial__CameraAttributes_CameraAttributesAbstract_Impl_.new = {}
+__lucidfx_spatial__CameraAttributes_CameraAttributesAbstract_Impl_.__name__ = "lucidfx.spatial._CameraAttributes.CameraAttributesAbstract_Impl_"
+__lucidfx_spatial__CameraAttributes_CameraAttributesAbstract_Impl_.fromResource = function(resource) 
   local cameraAttributes = CameraAttributes.cast(resource);
   if (cameraAttributes:isNull()) then 
     do return nil end;
@@ -3276,9 +3276,9 @@ __lucidware_spatial__CameraAttributes_CameraAttributesAbstract_Impl_.fromResourc
   do return cameraAttributes end;
 end
 
-__lucidware_spatial__Sky_SkyAbstract_Impl_.new = {}
-__lucidware_spatial__Sky_SkyAbstract_Impl_.__name__ = "lucidware.spatial._Sky.SkyAbstract_Impl_"
-__lucidware_spatial__Sky_SkyAbstract_Impl_.fromResource = function(resource) 
+__lucidfx_spatial__Sky_SkyAbstract_Impl_.new = {}
+__lucidfx_spatial__Sky_SkyAbstract_Impl_.__name__ = "lucidfx.spatial._Sky.SkyAbstract_Impl_"
+__lucidfx_spatial__Sky_SkyAbstract_Impl_.fromResource = function(resource) 
   local sky = Sky.cast(resource);
   if (sky:isNull()) then 
     do return nil end;
@@ -3286,9 +3286,9 @@ __lucidware_spatial__Sky_SkyAbstract_Impl_.fromResource = function(resource)
   do return sky end;
 end
 
-__lucidware_spatial__World3D_World3DAbstract_Impl_.new = {}
-__lucidware_spatial__World3D_World3DAbstract_Impl_.__name__ = "lucidware.spatial._World3D.World3DAbstract_Impl_"
-__lucidware_spatial__World3D_World3DAbstract_Impl_.fromResource = function(resource) 
+__lucidfx_spatial__World3D_World3DAbstract_Impl_.new = {}
+__lucidfx_spatial__World3D_World3DAbstract_Impl_.__name__ = "lucidfx.spatial._World3D.World3DAbstract_Impl_"
+__lucidfx_spatial__World3D_World3DAbstract_Impl_.fromResource = function(resource) 
   local world3D = World3D.cast(resource);
   if (world3D:isNull()) then 
     do return nil end;
@@ -3296,9 +3296,9 @@ __lucidware_spatial__World3D_World3DAbstract_Impl_.fromResource = function(resou
   do return world3D end;
 end
 
-__lucidware_ui__BaseButton_BaseButtonAbstract_Impl_.new = {}
-__lucidware_ui__BaseButton_BaseButtonAbstract_Impl_.__name__ = "lucidware.ui._BaseButton.BaseButtonAbstract_Impl_"
-__lucidware_ui__BaseButton_BaseButtonAbstract_Impl_.fromElement = function(element) 
+__lucidfx_ui__BaseButton_BaseButtonAbstract_Impl_.new = {}
+__lucidfx_ui__BaseButton_BaseButtonAbstract_Impl_.__name__ = "lucidfx.ui._BaseButton.BaseButtonAbstract_Impl_"
+__lucidfx_ui__BaseButton_BaseButtonAbstract_Impl_.fromElement = function(element) 
   local btn = BaseButton.cast(element);
   if (btn:isNull()) then 
     do return nil end;
@@ -3306,9 +3306,9 @@ __lucidware_ui__BaseButton_BaseButtonAbstract_Impl_.fromElement = function(eleme
   do return btn end;
 end
 
-__lucidware_ui__Button_ButtonAbstract_Impl_.new = {}
-__lucidware_ui__Button_ButtonAbstract_Impl_.__name__ = "lucidware.ui._Button.ButtonAbstract_Impl_"
-__lucidware_ui__Button_ButtonAbstract_Impl_.fromElement = function(element) 
+__lucidfx_ui__Button_ButtonAbstract_Impl_.new = {}
+__lucidfx_ui__Button_ButtonAbstract_Impl_.__name__ = "lucidfx.ui._Button.ButtonAbstract_Impl_"
+__lucidfx_ui__Button_ButtonAbstract_Impl_.fromElement = function(element) 
   local btn = Button.cast(element);
   if (btn:isNull()) then 
     do return nil end;
@@ -3316,9 +3316,9 @@ __lucidware_ui__Button_ButtonAbstract_Impl_.fromElement = function(element)
   do return btn end;
 end
 
-__lucidware_ui__ButtonGroup_ButtonGroupAbstract_Impl_.new = {}
-__lucidware_ui__ButtonGroup_ButtonGroupAbstract_Impl_.__name__ = "lucidware.ui._ButtonGroup.ButtonGroupAbstract_Impl_"
-__lucidware_ui__ButtonGroup_ButtonGroupAbstract_Impl_.fromResource = function(resource) 
+__lucidfx_ui__ButtonGroup_ButtonGroupAbstract_Impl_.new = {}
+__lucidfx_ui__ButtonGroup_ButtonGroupAbstract_Impl_.__name__ = "lucidfx.ui._ButtonGroup.ButtonGroupAbstract_Impl_"
+__lucidfx_ui__ButtonGroup_ButtonGroupAbstract_Impl_.fromResource = function(resource) 
   local bg = ButtonGroup.cast(resource);
   if (bg:isNull()) then 
     do return nil end;
@@ -3326,9 +3326,9 @@ __lucidware_ui__ButtonGroup_ButtonGroupAbstract_Impl_.fromResource = function(re
   do return bg end;
 end
 
-__lucidware_ui__Control_ControlAbstract_Impl_.new = {}
-__lucidware_ui__Control_ControlAbstract_Impl_.__name__ = "lucidware.ui._Control.ControlAbstract_Impl_"
-__lucidware_ui__Control_ControlAbstract_Impl_.fromElement = function(element) 
+__lucidfx_ui__Control_ControlAbstract_Impl_.new = {}
+__lucidfx_ui__Control_ControlAbstract_Impl_.__name__ = "lucidfx.ui._Control.ControlAbstract_Impl_"
+__lucidfx_ui__Control_ControlAbstract_Impl_.fromElement = function(element) 
   local cItem = Control.cast(element);
   if (cItem:isNull()) then 
     do return nil end;
@@ -3336,9 +3336,9 @@ __lucidware_ui__Control_ControlAbstract_Impl_.fromElement = function(element)
   do return cItem end;
 end
 
-__lucidware_ui__Label_LabelAbstract_Impl_.new = {}
-__lucidware_ui__Label_LabelAbstract_Impl_.__name__ = "lucidware.ui._Label.LabelAbstract_Impl_"
-__lucidware_ui__Label_LabelAbstract_Impl_.fromElement = function(element) 
+__lucidfx_ui__Label_LabelAbstract_Impl_.new = {}
+__lucidfx_ui__Label_LabelAbstract_Impl_.__name__ = "lucidfx.ui._Label.LabelAbstract_Impl_"
+__lucidfx_ui__Label_LabelAbstract_Impl_.fromElement = function(element) 
   local label = Label.cast(element);
   if (label:isNull()) then 
     do return nil end;
@@ -3346,9 +3346,9 @@ __lucidware_ui__Label_LabelAbstract_Impl_.fromElement = function(element)
   do return label end;
 end
 
-__lucidware_ui__StyleBox_StyleBoxAbstract_Impl_.new = {}
-__lucidware_ui__StyleBox_StyleBoxAbstract_Impl_.__name__ = "lucidware.ui._StyleBox.StyleBoxAbstract_Impl_"
-__lucidware_ui__StyleBox_StyleBoxAbstract_Impl_.fromResource = function(resource) 
+__lucidfx_ui__StyleBox_StyleBoxAbstract_Impl_.new = {}
+__lucidfx_ui__StyleBox_StyleBoxAbstract_Impl_.__name__ = "lucidfx.ui._StyleBox.StyleBoxAbstract_Impl_"
+__lucidfx_ui__StyleBox_StyleBoxAbstract_Impl_.fromResource = function(resource) 
   local styleBox = StyleBox.cast(resource);
   if (styleBox:isNull()) then 
     do return nil end;
@@ -3356,9 +3356,9 @@ __lucidware_ui__StyleBox_StyleBoxAbstract_Impl_.fromResource = function(resource
   do return styleBox end;
 end
 
-__lucidware_ui__Theme_ThemeAbstract_Impl_.new = {}
-__lucidware_ui__Theme_ThemeAbstract_Impl_.__name__ = "lucidware.ui._Theme.ThemeAbstract_Impl_"
-__lucidware_ui__Theme_ThemeAbstract_Impl_.fromResource = function(resource) 
+__lucidfx_ui__Theme_ThemeAbstract_Impl_.new = {}
+__lucidfx_ui__Theme_ThemeAbstract_Impl_.__name__ = "lucidfx.ui._Theme.ThemeAbstract_Impl_"
+__lucidfx_ui__Theme_ThemeAbstract_Impl_.fromResource = function(resource) 
   local theme = Theme.cast(resource);
   if (theme:isNull()) then 
     do return nil end;
@@ -3366,23 +3366,23 @@ __lucidware_ui__Theme_ThemeAbstract_Impl_.fromResource = function(resource)
   do return theme end;
 end
 
-__lucidware_ui_Widget.new = function() 
-  local self = _hx_new(__lucidware_ui_Widget.prototype)
-  __lucidware_ui_Widget.super(self)
+__lucidfx_ui_Widget.new = function() 
+  local self = _hx_new(__lucidfx_ui_Widget.prototype)
+  __lucidfx_ui_Widget.super(self)
   return self
 end
-__lucidware_ui_Widget.super = function(self) 
+__lucidfx_ui_Widget.super = function(self) 
   self.elementdb = _hx_tab_array({}, 0);
   self.keepChildren = false;
   self.io = _G.ioManager;
   self.rootElement = Control.new();
   self:init();
 end
-__lucidware_ui_Widget.__name__ = "lucidware.ui.Widget"
-__lucidware_ui_Widget.prototype = _hx_e();
-__lucidware_ui_Widget.prototype.init = function(self) 
+__lucidfx_ui_Widget.__name__ = "lucidfx.ui.Widget"
+__lucidfx_ui_Widget.prototype = _hx_e();
+__lucidfx_ui_Widget.prototype.init = function(self) 
 end
-__lucidware_ui_Widget.prototype.load = function(self,path) 
+__lucidfx_ui_Widget.prototype.load = function(self,path) 
   local file = self.io:loadText(path);
   if ((file ~= nil) and (#file > 0)) then 
     local _hx_status, _hx_result = pcall(function() 
@@ -3404,21 +3404,21 @@ __lucidware_ui_Widget.prototype.load = function(self,path)
     _G.error(__haxe_Exception.thrown(Std.string("Failed to load file: ") .. Std.string(path)),0);
   end;
 end
-__lucidware_ui_Widget.prototype.parseMarkup = function(self,markup) 
+__lucidfx_ui_Widget.prototype.parseMarkup = function(self,markup) 
   local xml = Xml.parse(markup);
   self:instantiate(xml);
 end
-__lucidware_ui_Widget.prototype.instantiate = function(self,xml) 
+__lucidfx_ui_Widget.prototype.instantiate = function(self,xml) 
   if ((self.rootElement ~= nil) and not self.keepChildren) then 
     local s = self.rootElement:getChildren();
     local array = _hx_tab_array({}, 0);
     local _g = 0;
-    local _g1 = __lucidware_core__Vector_Vector_Impl_.size(s);
+    local _g1 = __lucidfx_core__Vector_Vector_Impl_.size(s);
     while (_g < _g1) do _hx_do_first_1 = false;
       
       _g = _g + 1;
       local i = _g - 1;
-      local value = __lucidware_core__Vector_Vector_Impl_.get(s, i);
+      local value = __lucidfx_core__Vector_Vector_Impl_.get(s, i);
       if (value == nil) then 
         _G.error(__haxe_Exception.thrown(Std.string("Vector.toArray: null value at index ") .. Std.string(i)),0);
       end;
@@ -3551,14 +3551,14 @@ __lucidware_ui_Widget.prototype.instantiate = function(self,xml)
     end;
   end;
 end
-__lucidware_ui_Widget.prototype.constructNodes = function(self,nodes) 
+__lucidfx_ui_Widget.prototype.constructNodes = function(self,nodes) 
   local node = nodes;
   while (node:hasNext()) do _hx_do_first_1 = false;
     
     local node = node:next();
     local element = self:construct(node);
     self.elementdb:push(element);
-    __lucidware_core_GlobalObjectStack.getSingleton().stack:push(__lucidware_core_StackHandle.new(element));
+    __lucidfx_core_GlobalObjectStack.getSingleton().stack:push(__lucidfx_core_StackHandle.new(element));
     if ((element ~= nil) and (element:isNull() == false)) then 
       self.rootElement:addChild(element);
     else
@@ -3575,7 +3575,7 @@ __lucidware_ui_Widget.prototype.constructNodes = function(self,nodes)
     end;
   end;
 end
-__lucidware_ui_Widget.prototype.construct = function(self,xml) 
+__lucidfx_ui_Widget.prototype.construct = function(self,xml) 
   if (xml.nodeType ~= Xml.Element) then 
     _G.error(__haxe_Exception.thrown(Std.string("Bad node type, expected Element but found ") .. Std.string(((function() 
       local _hx_1
@@ -3605,7 +3605,7 @@ __lucidware_ui_Widget.prototype.construct = function(self,xml)
   end;
   _G.error(__haxe_Exception.thrown(Std.string("Unknown element class: ") .. Std.string(className)),0);
 end
-__lucidware_ui_Widget.prototype.setObjectValues = function(self,element,xml) 
+__lucidfx_ui_Widget.prototype.setObjectValues = function(self,element,xml) 
   local attributes = xml:attributes();
   local attribute = attributes;
   local _hx_continue_1 = false;
@@ -3899,7 +3899,7 @@ __lucidware_ui_Widget.prototype.setObjectValues = function(self,element,xml)
             local snakeCaseName = self:camelToSnake(attributeName);
             if (control:hasThemeConstantOverride(snakeCaseName)) then 
               local x = Std.parseInt(attributeValue);
-              control:addThemeConstantOverride(snakeCaseName, __lucidware_core__Variant_Variant_Impl_.fromInt64(__haxe__Int64____Int64.new(__haxe__Int32_Int32_Impl_.shr(x, 31), x)));
+              control:addThemeConstantOverride(snakeCaseName, __lucidfx_core__Variant_Variant_Impl_.fromInt64(__haxe__Int64____Int64.new(__haxe__Int32_Int32_Impl_.shr(x, 31), x)));
               break;
             else
               if (control:hasThemeFontSizeOverride(snakeCaseName)) then 
@@ -3962,7 +3962,7 @@ __lucidware_ui_Widget.prototype.setObjectValues = function(self,element,xml)
     
   end;
 end
-__lucidware_ui_Widget.prototype.constructChildren = function(self,element,xml) 
+__lucidfx_ui_Widget.prototype.constructChildren = function(self,element,xml) 
   local children = xml:elements();
   local child = children;
   while (child:hasNext()) do _hx_do_first_1 = false;
@@ -3985,7 +3985,7 @@ __lucidware_ui_Widget.prototype.constructChildren = function(self,element,xml)
     end;
   end;
 end
-__lucidware_ui_Widget.prototype.hasField = function(self,object,field) 
+__lucidfx_ui_Widget.prototype.hasField = function(self,object,field) 
   local obj = object;
   if (not obj[field] ~= nil) then 
     local o = obj;
@@ -4018,33 +4018,33 @@ __lucidware_ui_Widget.prototype.hasField = function(self,object,field)
     do return true end;
   end;
 end
-__lucidware_ui_Widget.prototype.field = function(self,obj,field) 
+__lucidfx_ui_Widget.prototype.field = function(self,obj,field) 
   if (obj[field] ~= nil) then 
     do return obj[field] end;
   end;
   do return Reflect.field(obj, field) end
 end
-__lucidware_ui_Widget.prototype.setProperty = function(self,obj,field,value) 
+__lucidfx_ui_Widget.prototype.setProperty = function(self,obj,field,value) 
   if (obj[field] ~= nil) then 
     obj[field] = value;
   else
     Reflect.setProperty(obj, field, value);
   end;
 end
-__lucidware_ui_Widget.prototype.isAnElementClass = function(self,classInfo) 
+__lucidfx_ui_Widget.prototype.isAnElementClass = function(self,classInfo) 
   local isTrue = classInfo['isElementType'] ~= nil;
   if (isTrue == true) then 
     do return true end;
   end;
   do return false end
 end
-__lucidware_ui_Widget.prototype.camelToPascal = function(self,str) 
+__lucidfx_ui_Widget.prototype.camelToPascal = function(self,str) 
   if ((str == nil) or (#str == 0)) then 
     do return str end;
   end;
   do return Std.string(_G.string.upper(_G.string.sub(str, 1, 1))) .. Std.string(String.prototype.substr(str, 1)) end
 end
-__lucidware_ui_Widget.prototype.camelToSnake = function(self,input) 
+__lucidfx_ui_Widget.prototype.camelToSnake = function(self,input) 
   local result = "";
   local _g = 0;
   local _g1 = #input;
@@ -4061,7 +4061,7 @@ __lucidware_ui_Widget.prototype.camelToSnake = function(self,input)
   do return result end
 end
 
-__lucidware_ui_Widget.prototype.__class__ =  __lucidware_ui_Widget
+__lucidfx_ui_Widget.prototype.__class__ =  __lucidfx_ui_Widget
 
 __support_files_test5_src_ClickerCounter.new = function() 
   local self = _hx_new(__support_files_test5_src_ClickerCounter.prototype)
@@ -4070,7 +4070,7 @@ __support_files_test5_src_ClickerCounter.new = function()
 end
 __support_files_test5_src_ClickerCounter.super = function(self) 
   self.counter = 0;
-  __lucidware_ui_Widget.super(self);
+  __lucidfx_ui_Widget.super(self);
 end
 __support_files_test5_src_ClickerCounter.__name__ = "support_files.test5.src.ClickerCounter"
 __support_files_test5_src_ClickerCounter.prototype = _hx_e();
@@ -4082,7 +4082,7 @@ __support_files_test5_src_ClickerCounter.prototype.init = function(self)
     _G.error(__haxe_Exception.thrown("Label element not found in ClickerCounter layout."),0);
   end;
   self.label = Label.cast(labelElement);
-  local buttonA = __lucidware_ui__Button_ButtonAbstract_Impl_.fromElement(self.rootElement:find("centerContainer/vboxContainer/clickerButton"));
+  local buttonA = __lucidfx_ui__Button_ButtonAbstract_Impl_.fromElement(self.rootElement:find("centerContainer/vboxContainer/clickerButton"));
   local button = buttonA;
   button.pressed:connect(function() 
     _gthis:onClick();
@@ -4096,8 +4096,8 @@ __support_files_test5_src_ClickerCounter.prototype.onClick = function(self)
 end
 
 __support_files_test5_src_ClickerCounter.prototype.__class__ =  __support_files_test5_src_ClickerCounter
-__support_files_test5_src_ClickerCounter.__super__ = __lucidware_ui_Widget
-setmetatable(__support_files_test5_src_ClickerCounter.prototype,{__index=__lucidware_ui_Widget.prototype})
+__support_files_test5_src_ClickerCounter.__super__ = __lucidfx_ui_Widget
+setmetatable(__support_files_test5_src_ClickerCounter.prototype,{__index=__lucidfx_ui_Widget.prototype})
 
 __support_files_test5_src_Main.new = function() 
   local self = _hx_new(__support_files_test5_src_Main.prototype)
@@ -4105,7 +4105,7 @@ __support_files_test5_src_Main.new = function()
   return self
 end
 __support_files_test5_src_Main.super = function(self) 
-  __lucidware_App.super(self);
+  __lucidfx_App.super(self);
 end
 __support_files_test5_src_Main.__name__ = "support_files.test5.src.Main"
 __support_files_test5_src_Main.main = function() 
@@ -4118,9 +4118,9 @@ __support_files_test5_src_Main.prototype.init = function(self)
 end
 
 __support_files_test5_src_Main.prototype.__class__ =  __support_files_test5_src_Main
-__support_files_test5_src_Main.__super__ = __lucidware_App
-setmetatable(__support_files_test5_src_Main.prototype,{__index=__lucidware_App.prototype})
-setmetatable(__support_files_test5_src_Main.prototype.__properties__,{__index=__lucidware_App.prototype.__properties__})
+__support_files_test5_src_Main.__super__ = __lucidfx_App
+setmetatable(__support_files_test5_src_Main.prototype,{__index=__lucidfx_App.prototype})
+setmetatable(__support_files_test5_src_Main.prototype.__properties__,{__index=__lucidfx_App.prototype.__properties__})
 local hasBit32, bit32 = pcall(require, 'bit32')
 if hasBit32 then --if we are on Lua 5.1, bit32 will be the default.
   _hx_bit_raw = bit32

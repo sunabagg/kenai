@@ -1,4 +1,4 @@
-package lucidware;
+package lucidfx;
 
 enum abstract SdfOversizeEnum(Int) from Int to Int {
 	var oversize100Percent = 0;

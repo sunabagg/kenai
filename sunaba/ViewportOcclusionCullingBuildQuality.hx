@@ -1,4 +1,4 @@
-package lucidware;
+package lucidfx;
 
 enum abstract ViewportOcclusionCullingBuildQuality(Int) from Int to Int {
 	var low = 0;

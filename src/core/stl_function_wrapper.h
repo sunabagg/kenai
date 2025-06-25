@@ -11,7 +11,7 @@
 
 using namespace godot;
 
-namespace lucidware::core {
+namespace lucidfx::core {
     class StlFunctionWrapper : public Object {
         GDCLASS(StlFunctionWrapper, Object);
     private:

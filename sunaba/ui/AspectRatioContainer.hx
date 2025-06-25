@@ -1,6 +1,6 @@
-package lucidware.ui;
+package lucidfx.ui;
 
-import lucidware.core.Element;
+import lucidfx.core.Element;
 
 @:native("AspectRatioContainer")
 extern class AspectRatioContainer extends Container {
@@ -14,7 +14,7 @@ extern class AspectRatioContainer extends Container {
 
 abstract AspectRatioContainerAbstract(AspectRatioContainer) from AspectRatioContainer to AspectRatioContainer {
     @:from
-    public static function fromElement(element: lucidware.core.Element): AspectRatioContainerAbstract {
+    public static function fromElement(element: lucidfx.core.Element): AspectRatioContainerAbstract {
         var container = AspectRatioContainer.toAspectRatioContainer(element);
         if (container.isNull()) {
             return null;

@@ -1,4 +1,4 @@
-package lucidware;
+package lucidfx;
 
 enum abstract TargetKind(Int) from Int to Int {
 	var static = 0;

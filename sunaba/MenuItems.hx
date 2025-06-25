@@ -1,4 +1,4 @@
-package lucidware;
+package lucidfx;
 
 enum abstract MenuItems(Int) from Int to Int {
 	var cut = 0;

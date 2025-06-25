@@ -2,7 +2,7 @@
 #include "lua_function_wrapper.h"
 
 using namespace godot;
-using namespace lucidware::core;
+using namespace lucidfx::core;
 
 
 sol::object GodotObjectProxy::get(sol::stack_object key, sol::this_state L) {

@@ -1,4 +1,4 @@
-package lucidware;
+package lucidfx;
 
 enum abstract FeedDataType(Int) from Int to Int {
 	var noimage = 0;

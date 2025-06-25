@@ -1,4 +1,4 @@
-package lucidware;
+package lucidfx;
 
 enum abstract BlendShapeEntry(Int) from Int to Int {
 	var eyeLookOutRight = 0;

@@ -1,4 +1,4 @@
-package lucidware;
+package lucidfx;
 
 enum abstract ThreadLoadStatus(Int) from Int to Int {
 	var invalidResource = 0;

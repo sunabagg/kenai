@@ -1,4 +1,4 @@
-package lucidware;
+package lucidfx;
 
 enum abstract GlowBlendModeEnum(Int) from Int to Int {
 	var additive = 0;

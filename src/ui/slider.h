@@ -12,9 +12,9 @@
 #include "../core/event.h"
 
 using namespace godot;
-using namespace lucidware::core;
+using namespace lucidfx::core;
 
-namespace lucidware::ui {
+namespace lucidfx::ui {
     void bindSlider(sol::state &lua);
 
     class Slider;
@@ -24,7 +24,7 @@ namespace lucidware::ui {
         protected:
             static void _bind_methods() {}
         public:
-            lucidware::ui::Slider* element = nullptr;
+            lucidfx::ui::Slider* element = nullptr;
 
             void onInit() {
                 // Initialize the NodeProxy instance
@@ -68,7 +68,7 @@ namespace lucidware::ui {
         protected:
             static void _bind_methods();
         public:
-            lucidware::ui::Slider* element = nullptr;
+            lucidfx::ui::Slider* element = nullptr;
 
             SliderSignalWrapper() = default;
             ~SliderSignalWrapper() = default;
@@ -77,7 +77,7 @@ namespace lucidware::ui {
             void drag_started();
     };
 
-    class Slider : public lucidware::ui::Range {
+    class Slider : public lucidfx::ui::Range {
         private:
             SliderNode* slider = nullptr; // Pointer to the Slider instance
             SliderSignalWrapper* sliderSignalWrapper = nullptr;

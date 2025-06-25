@@ -1,4 +1,4 @@
-package lucidware;
+package lucidfx;
 
 enum abstract Direction(Int) from Int to Int {
 	var auto = 0;

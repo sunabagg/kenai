@@ -1,4 +1,4 @@
-package lucidware;
+package lucidfx;
 
 enum abstract EmissionShapeEnum(Int) from Int to Int {
 	var point = 0;

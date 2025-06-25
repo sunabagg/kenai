@@ -1,9 +1,9 @@
-package lucidware.ui;
+package lucidfx.ui;
 
-import lucidware.core.Element;
-import lucidware.input.Shortcut;
-import lucidware.core.Resource;
-import lucidware.core.Event;
+import lucidfx.core.Element;
+import lucidfx.input.Shortcut;
+import lucidfx.core.Resource;
+import lucidfx.core.Event;
 
 @:native("BaseButton")
 extern class BaseButton extends Control {

@@ -1,4 +1,4 @@
-package lucidware..ui;
+package lucidfx..ui;
 
 enum abstract ButtonActionMode(Int) from Int to Int {
 	var press = 0;

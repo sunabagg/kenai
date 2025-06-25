@@ -1,4 +1,4 @@
-package lucidware..ui;
+package lucidfx..ui;
 
 enum abstract BaseButtonLayoutDirection(Int) from Int to Int {
 	var inherited = 0;

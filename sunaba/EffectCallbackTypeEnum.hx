@@ -1,4 +1,4 @@
-package lucidware;
+package lucidfx;
 
 enum abstract EffectCallbackTypeEnum(Int) from Int to Int {
 	var preOpaque = 0;

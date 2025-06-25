@@ -1,6 +1,6 @@
-package lucidware.spatial;
+package lucidfx.spatial;
 
-import lucidware.core.Component;
+import lucidfx.core.Component;
 
 @:native("IVisualInstance")
 extern class IVisualInstance extends Component {

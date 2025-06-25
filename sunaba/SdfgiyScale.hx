@@ -1,4 +1,4 @@
-package lucidware;
+package lucidfx;
 
 enum abstract SdfgiyScale(Int) from Int to Int {
 	var scale50Percent = 0;

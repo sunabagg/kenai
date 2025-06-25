@@ -1,4 +1,4 @@
-package lucidware;
+package lucidfx;
 
 enum abstract CellularDistanceFunctionEnum(Int) from Int to Int {
 	var euclidean = 0;

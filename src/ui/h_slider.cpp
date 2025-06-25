@@ -1,6 +1,6 @@
 #include "h_slider.h"
 
-namespace lucidware::ui {
+namespace lucidfx::ui {
     void HSliderProxy::_enter_tree() {
         if (element != nullptr) {
             element->enterTree();
@@ -127,7 +127,7 @@ namespace lucidware::ui {
             "new", sol::factories(
                 []() { return new HSlider(); }
             ),
-            sol::base_classes, sol::bases<BaseObject, Element, lucidware::core::CanvasItem, Range, Slider>(),
+            sol::base_classes, sol::bases<BaseObject, Element, lucidfx::core::CanvasItem, Range, Slider>(),
             "cast", [] (Element* element) {
                 HSliderNode* hSlider = Object::cast_to<HSliderNode>(element->getNode());
                 return new HSlider(hSlider);

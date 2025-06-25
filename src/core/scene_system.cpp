@@ -1,8 +1,8 @@
 #include "scene_system.h"
 
-using namespace lucidware::core;
+using namespace lucidfx::core;
 
-void lucidware::core::bindSceneSystem(sol::state& lua)
+void lucidfx::core::bindSceneSystem(sol::state& lua)
 {
     lua.new_usertype<BaseObject>(
         "BaseObject", 
@@ -84,11 +84,11 @@ void lucidware::core::bindSceneSystem(sol::state& lua)
 
 // hacky way to get around the fact that 
 // we can't use the scene removeEntity function in the header file
-void lucidware::core::Entity::removeFromScene() {
+void lucidfx::core::Entity::removeFromScene() {
     scene->removeEntity(this);
 }
 
-void lucidware::core::Component::onFree()  {
+void lucidfx::core::Component::onFree()  {
     if (entity != nullptr) {
         entity->removeComponent(this);
     }

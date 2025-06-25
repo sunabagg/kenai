@@ -1,7 +1,7 @@
-package lucidware.ui;
+package lucidfx.ui;
 
-import lucidware.core.Texture2D;
-import lucidware.core.Element;
+import lucidfx.core.Texture2D;
+import lucidfx.core.Element;
 
 @:native("TextureRect")
 extern class TextureRect extends Control {

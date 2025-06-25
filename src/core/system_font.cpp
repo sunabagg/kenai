@@ -1,11 +1,11 @@
 #include "system_font.h"
 
-void lucidware::core::bindSystemFont(sol::state_view& lua) {
+void lucidfx::core::bindSystemFont(sol::state_view& lua) {
     lua.new_usertype<SystemFont>("SystemFont",
         "new", sol::factories(
             []() { return new SystemFont(); }
         ),
-        sol::base_classes, sol::bases<lucidware::core::BaseObject, lucidware::core::Resource, lucidware::core::Font>(),
+        sol::base_classes, sol::bases<lucidfx::core::BaseObject, lucidfx::core::Resource, lucidfx::core::Font>(),
         "allowSystemFallback", sol::property(&SystemFont::getAllowSystemFallback, &SystemFont::setAllowSystemFallback),
         "antialiasing", sol::property(&SystemFont::getAntialiasing, &SystemFont::setAntialiasing),
         "disableEmbeddedBitmaps", sol::property(&SystemFont::getDisableEmbeddedBitmaps, &SystemFont::setDisableEmbeddedBitmaps),

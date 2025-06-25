@@ -10,9 +10,9 @@
 #include "camera_attributes.h"
 
 using namespace godot;
-using namespace lucidware::core;
+using namespace lucidfx::core;
 
-namespace lucidware::spatial {
+namespace lucidfx::spatial {
     void bindCameraAttributesPhysical(sol::state_view& lua);
 
     class CameraAttributesPhysical : public CameraAttributes {

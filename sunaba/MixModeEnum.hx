@@ -1,4 +1,4 @@
-package lucidware;
+package lucidfx;
 
 enum abstract MixModeEnum(Int) from Int to Int {
 	var blend = 0;

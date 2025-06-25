@@ -2,7 +2,7 @@
 #include "byte.h"
 #include "binary_data.h"
 
-void lucidware::core::io::bindBinaryClasses(sol::state& lua) {
+void lucidfx::core::io::bindBinaryClasses(sol::state& lua) {
     bindByte(lua);
     bindBinaryData(lua);
 }

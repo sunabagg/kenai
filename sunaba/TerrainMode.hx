@@ -1,4 +1,4 @@
-package lucidware;
+package lucidfx;
 
 enum abstract TerrainMode(Int) from Int to Int {
 	var cornersAndSides = 0;

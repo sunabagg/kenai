@@ -1,4 +1,4 @@
-package lucidware..desktop;
+package lucidfx..desktop;
 
 enum abstract WindowDebugDraw(Int) from Int to Int {
 	var disabled = 0;

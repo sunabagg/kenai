@@ -1,6 +1,6 @@
 #include "check_box.h"
 
-namespace lucidware::ui {
+namespace lucidfx::ui {
     void CheckBoxProxy::_enter_tree() {
         if (this->element != nullptr) {
             this->element->enterTree();
@@ -139,7 +139,7 @@ namespace lucidware::ui {
             "new", sol::factories(
                 []() { return new CheckBox(); }
             ),
-            sol::base_classes, sol::bases<lucidware::core::BaseObject, Element, lucidware::core::CanvasItem, Control, BaseButton, Button>(),
+            sol::base_classes, sol::bases<lucidfx::core::BaseObject, Element, lucidfx::core::CanvasItem, Control, BaseButton, Button>(),
             "alignment", sol::property(
                 &CheckBox::getAlignment,
                 &CheckBox::setAlignment
@@ -148,7 +148,7 @@ namespace lucidware::ui {
                 &CheckBox::getToggleMode,
                 &CheckBox::setToggleMode
             ),
-            "cast", [](lucidware::core::Element* e) {
+            "cast", [](lucidfx::core::Element* e) {
                 CheckBoxNode* checkBox = Object::cast_to<CheckBoxNode>(e->getNode());
                 return new CheckBox(checkBox);
             }

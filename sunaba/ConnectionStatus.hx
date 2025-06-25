@@ -1,4 +1,4 @@
-package lucidware;
+package lucidfx;
 
 enum abstract ConnectionStatus(Int) from Int to Int {
 	var disconnected = 0;

@@ -1,4 +1,4 @@
-package lucidware;
+package lucidfx;
 
 enum abstract VrsUpdateModeEnum(Int) from Int to Int {
 	var disabled = 0;

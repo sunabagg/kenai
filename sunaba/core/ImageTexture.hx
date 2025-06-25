@@ -1,4 +1,4 @@
-package lucidware.core;
+package lucidfx.core;
 
 @:native("ImageTexture")
 extern class ImageTexture extends Texture2D {

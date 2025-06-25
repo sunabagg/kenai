@@ -1,4 +1,4 @@
-package lucidware..spatial.xr;
+package lucidfx..spatial.xr;
 
 enum abstract XRCamera3DProjection(Int) from Int to Int {
 	var perspective = 0;

@@ -1,4 +1,4 @@
-package lucidware..core;
+package lucidfx..core;
 
 enum abstract WorldEnvironmentProcessMode(Int) from Int to Int {
 	var inherit = 0;

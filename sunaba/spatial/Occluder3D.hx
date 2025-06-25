@@ -1,7 +1,7 @@
-package lucidware.spatial;
+package lucidfx.spatial;
 
-import lucidware.core.Resource;
-import lucidware.core.Vector3;
+import lucidfx.core.Resource;
+import lucidfx.core.Vector3;
 
 @:native("Occluder3D")
 extern class Occluder3D extends Resource {
@@ -20,4 +20,4 @@ abstract Occluder3DAbstract(Occluder3D) from Occluder3D to Occluder3D {
         }
         return occluder3D;
     }
-} // end package lucidware.spatial
+} // end package lucidfx.spatial

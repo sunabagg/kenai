@@ -1,4 +1,4 @@
-package lucidware;
+package lucidfx;
 
 enum abstract ListType(Int) from Int to Int {
 	var numbers = 0;

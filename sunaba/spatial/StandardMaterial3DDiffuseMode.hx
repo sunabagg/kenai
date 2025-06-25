@@ -1,4 +1,4 @@
-package lucidware..spatial;
+package lucidfx..spatial;
 
 enum abstract StandardMaterial3DDiffuseMode(Int) from Int to Int {
 	var burley = 0;

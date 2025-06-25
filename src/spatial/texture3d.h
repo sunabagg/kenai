@@ -11,13 +11,13 @@
 #include "../core/image.h"
 
 using namespace godot;
-using namespace lucidware::core;
+using namespace lucidfx::core;
 
 
-namespace lucidware::spatial {
+namespace lucidfx::spatial {
     void bindTexture3D(sol::state_view& lua);
 
-    class Texture3D : public lucidware::core::Texture {
+    class Texture3D : public lucidfx::core::Texture {
     private:
         GodotTexture3D* texture = nullptr;
     public:
@@ -39,19 +39,19 @@ namespace lucidware::spatial {
             setTexture(texture);
         }
 
-        lucidware::core::Resource* createPlaceholder() {
-            return new lucidware::core::Resource(
+        lucidfx::core::Resource* createPlaceholder() {
+            return new lucidfx::core::Resource(
                 texture->create_placeholder().ptr()
             );
         }
 
-        std::vector<lucidware::core::Image> getData() {
-            std::vector<lucidware::core::Image> images;
+        std::vector<lucidfx::core::Image> getData() {
+            std::vector<lucidfx::core::Image> images;
             TypedArray<GodotImage> arr = texture->get_data();
             for (int i = 0; i < arr.size(); i++) {
                 Ref<GodotImage> img = arr[i];
                 if (img.is_valid()) {
-                    images.push_back(lucidware::core::Image(img.ptr()));
+                    images.push_back(lucidfx::core::Image(img.ptr()));
                 }
             }
             return images;

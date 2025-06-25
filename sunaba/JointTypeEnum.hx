@@ -1,4 +1,4 @@
-package lucidware;
+package lucidfx;
 
 enum abstract JointTypeEnum(Int) from Int to Int {
 	var none = 0;

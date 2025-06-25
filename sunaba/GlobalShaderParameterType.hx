@@ -1,4 +1,4 @@
-package lucidware;
+package lucidfx;
 
 enum abstract GlobalShaderParameterType(Int) from Int to Int {
 	var bool = 0;

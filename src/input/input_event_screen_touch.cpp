@@ -1,11 +1,11 @@
 #include "input_event_screen_touch.h"
 
-void lucidware::input::bindInputEventScreenTouch(sol::state_view& lua) {
-    lua.new_usertype<lucidware::input::InputEventScreenTouch>("InputEventScreenTouch",
+void lucidfx::input::bindInputEventScreenTouch(sol::state_view& lua) {
+    lua.new_usertype<lucidfx::input::InputEventScreenTouch>("InputEventScreenTouch",
         "new", sol::factories(
-            []() { return new lucidware::input::InputEventScreenTouch(); }
+            []() { return new lucidfx::input::InputEventScreenTouch(); }
         ),
-        sol::base_classes, sol::bases<lucidware::core::BaseObject, lucidware::core::Resource, lucidware::input::InputEvent, lucidware::input::InputEventFromWindow>(),
+        sol::base_classes, sol::bases<lucidfx::core::BaseObject, lucidfx::core::Resource, lucidfx::input::InputEvent, lucidfx::input::InputEventFromWindow>(),
         "canceled", sol::property(
             &InputEventScreenTouch::isCanceled,
             &InputEventScreenTouch::setCanceled
@@ -26,7 +26,7 @@ void lucidware::input::bindInputEventScreenTouch(sol::state_view& lua) {
             &InputEventScreenTouch::isPressed,
             &InputEventScreenTouch::setPressed
         ),
-        "cast", [](lucidware::core::Resource* instance) {
+        "cast", [](lucidfx::core::Resource* instance) {
             return new InputEventScreenTouch(godot::Object::cast_to<GodotInputEventScreenTouch>(instance->getResource()));
         }
     );

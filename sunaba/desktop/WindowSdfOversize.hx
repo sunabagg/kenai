@@ -1,4 +1,4 @@
-package lucidware..desktop;
+package lucidfx..desktop;
 
 enum abstract WindowSdfOversize(Int) from Int to Int {
 	var oversize100Percent = 0;

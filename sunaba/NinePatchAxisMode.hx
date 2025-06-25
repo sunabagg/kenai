@@ -1,4 +1,4 @@
-package lucidware;
+package lucidfx;
 
 enum abstract NinePatchAxisMode(Int) from Int to Int {
 	var stretch = 0;

@@ -1,7 +1,7 @@
-package lucidware.ui;
+package lucidfx.ui;
 
-import lucidware.core.Dictionary;
-import lucidware.core.Color;
+import lucidfx.core.Dictionary;
+import lucidfx.core.Color;
 
 @:native("CodeHighlighter")
 extern class CodeHighlighter extends SyntaxHighlighter {

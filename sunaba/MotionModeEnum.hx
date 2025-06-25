@@ -1,4 +1,4 @@
-package lucidware;
+package lucidfx;
 
 enum abstract MotionModeEnum(Int) from Int to Int {
 	var grounded = 0;

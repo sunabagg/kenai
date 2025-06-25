@@ -1,6 +1,6 @@
-package lucidware.core;
+package lucidfx.core;
 
-import lucidware.core.Color;
+import lucidfx.core.Color;
 
 abstract ColorAbstract(Color) from Color to Color {
     @:op(a.b) public function fieldRead(name:String) {

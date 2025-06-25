@@ -14,9 +14,9 @@
 #include "v_scroll_bar.h"
 
 using namespace godot;
-using namespace lucidware::core;
+using namespace lucidfx::core;
 
-namespace lucidware::ui {
+namespace lucidfx::ui {
     void bindScrollContainer(sol::state& lua);
 
     class ScrollContainer;
@@ -26,7 +26,7 @@ namespace lucidware::ui {
             static void _bind_methods() {
             }
         public:
-            lucidware::ui::ScrollContainer* element = nullptr;
+            lucidfx::ui::ScrollContainer* element = nullptr;
 
             void onInit() {
                 // Initialize the NodeProxy instance
@@ -56,7 +56,7 @@ namespace lucidware::ui {
             PackedInt32Array _get_allowed_size_flags_vertical() const override;
     };
 
-    class ScrollContainer : public lucidware::ui::Container {
+    class ScrollContainer : public lucidfx::ui::Container {
         private:
             ScrollContainerNode* scrollContainer = nullptr; // Pointer to the ScrollContainer instance
 

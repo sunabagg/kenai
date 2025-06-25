@@ -1,4 +1,4 @@
-package lucidware;
+package lucidfx;
 
 enum abstract LoadStatus(Int) from Int to Int {
 	var ok = 0;

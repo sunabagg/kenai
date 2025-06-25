@@ -1,4 +1,4 @@
-package lucidware.core;
+package lucidfx.core;
 
 abstract Vector2iAbstract(Vector2i) from Vector2i to Vector2i {
     public function new(x : Int = 0, y : Int = 0) {

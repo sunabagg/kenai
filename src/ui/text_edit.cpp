@@ -1,6 +1,6 @@
 #include "text_edit.h"
 
-namespace lucidware::ui {
+namespace lucidfx::ui {
     void TextEditProxy::_enter_tree() {
         if (this->element != nullptr) {
             this->element->enterTree();
@@ -219,7 +219,7 @@ namespace lucidware::ui {
             "new", sol::factories(
                 []() { return new TextEdit(); }
             ),
-            sol::base_classes, sol::bases<BaseObject, Element, lucidware::core::CanvasItem, Control>(),
+            sol::base_classes, sol::bases<BaseObject, Element, lucidfx::core::CanvasItem, Control>(),
             "autowrapMode", sol::property(
                 &TextEdit::getAutowrapMode,
                 &TextEdit::setAutowrapMode

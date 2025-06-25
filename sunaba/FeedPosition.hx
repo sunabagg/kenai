@@ -1,4 +1,4 @@
-package lucidware;
+package lucidfx;
 
 enum abstract FeedPosition(Int) from Int to Int {
 	var unspecified = 0;

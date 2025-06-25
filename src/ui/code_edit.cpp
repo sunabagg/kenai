@@ -1,6 +1,6 @@
 #include "code_edit.h"
 
-namespace lucidware::ui {
+namespace lucidfx::ui {
     void CodeEditProxy::_enter_tree() {
         if (this->element != nullptr) {
             this->element->enterTree();
@@ -220,7 +220,7 @@ namespace lucidware::ui {
             "new", sol::factories(
                 []() { return new CodeEdit(); }
             ),
-            sol::base_classes, sol::bases<BaseObject, Element, lucidware::core::CanvasItem, Control, TextEdit>(),
+            sol::base_classes, sol::bases<BaseObject, Element, lucidfx::core::CanvasItem, Control, TextEdit>(),
             "autoBraceCompletionEnabled", sol::property(
                 &CodeEdit::getAutoBraceCompletionEnabled,
                 &CodeEdit::setAutoBraceCompletionEnabled

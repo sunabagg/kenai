@@ -1,6 +1,6 @@
-package lucidware.core;
+package lucidfx.core;
 
-import lucidware.spatial.Sky;
+import lucidfx.spatial.Sky;
 
 @:native("Environment")
 extern class Environment extends Resource {
@@ -115,4 +115,4 @@ abstract EnvironmentAbstract(Environment) from Environment to Environment {
         }
         return environment;
     } 
-} // end package lucidware.core
+} // end package lucidfx.core

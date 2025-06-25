@@ -11,9 +11,9 @@
 #include "line_edit.h"
 
 using namespace godot;
-using namespace lucidware::core;
+using namespace lucidfx::core;
 
-namespace lucidware::ui {
+namespace lucidfx::ui {
     void bindSpinBox(sol::state& lua);
 
     class SpinBox;
@@ -25,7 +25,7 @@ namespace lucidware::ui {
                 // Bind methods specific to SpinBoxProxy
             }
         public:
-            lucidware::ui::SpinBox* element = nullptr;
+            lucidfx::ui::SpinBox* element = nullptr;
 
             void onInit() {
                 // Initialize the NodeProxy instance
@@ -53,7 +53,7 @@ namespace lucidware::ui {
             void _value_changed(double value) override;
     };
 
-    class SpinBox : public lucidware::ui::Range {
+    class SpinBox : public lucidfx::ui::Range {
         private:
             SpinBoxNode* spinBox = nullptr; // Pointer to the SpinBox instance
             void connectSpinBoxSignals() {

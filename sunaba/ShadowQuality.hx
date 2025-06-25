@@ -1,4 +1,4 @@
-package lucidware;
+package lucidfx;
 
 enum abstract ShadowQuality(Int) from Int to Int {
 	var hard = 0;

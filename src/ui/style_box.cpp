@@ -1,15 +1,15 @@
 #include "style_box.h"
 
-void lucidware::ui::bindStyleBox(sol::state &lua) {
+void lucidfx::ui::bindStyleBox(sol::state &lua) {
     using namespace sol;
-    using namespace lucidware::ui;
+    using namespace lucidfx::ui;
 
     lua.new_usertype<StyleBox>("StyleBox",
         sol::constructors<StyleBox()>(),
         "new", sol::factories(
             []() { return new StyleBox(); }
         ),
-        sol::base_classes, sol::bases<lucidware::core::BaseObject, lucidware::core::Resource>(),
+        sol::base_classes, sol::bases<lucidfx::core::BaseObject, lucidfx::core::Resource>(),
         "contentMarginTop", sol::property(&StyleBox::getContentMarginTop, &StyleBox::setContentMarginTop),
         "contentMarginBottom", sol::property(&StyleBox::getContentMarginBottom, &StyleBox::setContentMarginBottom),
         "contentMarginLeft", sol::property(&StyleBox::getContentMarginLeft, &StyleBox::setContentMarginLeft),
@@ -20,7 +20,7 @@ void lucidware::ui::bindStyleBox(sol::state &lua) {
         "getOffset", &StyleBox::getOffset,
         "setContentMargin", &StyleBox::setContentMargin,
         "setContentMarginAll", &StyleBox::setContentMarginAll,
-        "cast", [](lucidware::core::Resource* p_resource) {
+        "cast", [](lucidfx::core::Resource* p_resource) {
             return new StyleBox(godot::Object::cast_to<GodotStyleBox>(p_resource->getResource()));
         }
     );

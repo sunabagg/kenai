@@ -1,4 +1,4 @@
-package lucidware..spatial;
+package lucidfx..spatial;
 
 enum abstract AnimatedSprite3DBillboard(Int) from Int to Int {
 	var disabled = 0;

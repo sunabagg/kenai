@@ -1,6 +1,6 @@
 #include "nine_patch_rect.h"
 
-namespace lucidware::ui {
+namespace lucidfx::ui {
     void NinePatchRectProxy::_enter_tree() {
         if (element != nullptr) {
             element->enterTree();
@@ -120,7 +120,7 @@ namespace lucidware::ui {
             "new", sol::factories(
                 []() { return new NinePatchRect(); }
             ),
-            sol::base_classes, sol::bases<BaseObject, Element, lucidware::core::CanvasItem, Control>(),
+            sol::base_classes, sol::bases<BaseObject, Element, lucidfx::core::CanvasItem, Control>(),
             "axisStretchHorizontal", sol::property(
                 &NinePatchRect::getAxisStretchHorizontal,
                 &NinePatchRect::setAxisStretchHorizontal

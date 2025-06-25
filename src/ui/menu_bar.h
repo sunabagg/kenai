@@ -11,9 +11,9 @@
 #include "../desktop/popup_menu.h"
 
 using namespace godot;
-using namespace lucidware::core;
+using namespace lucidfx::core;
 
-namespace lucidware::ui {
+namespace lucidfx::ui {
     void bindMenuBar(sol::state &lua);
 
     class MenuBar;
@@ -25,7 +25,7 @@ namespace lucidware::ui {
                 // Bind methods specific to MenuBarProxy
             }
         public:
-            lucidware::ui::MenuBar* element = nullptr;
+            lucidfx::ui::MenuBar* element = nullptr;
 
             void onInit() {
                 // Initialize the NodeProxy instance
@@ -52,7 +52,7 @@ namespace lucidware::ui {
             TypedArray<Vector3i> _structured_text_parser(const Array &args, const String &text) const override;
     };
 
-    class MenuBar : public lucidware::ui::Control {
+    class MenuBar : public lucidfx::ui::Control {
         private:
             MenuBarNode* menuBar = nullptr; // Pointer to the MenuBar instance
             void connectMenuBarSignals() {
@@ -138,8 +138,8 @@ namespace lucidware::ui {
             return menuBar->get_menu_count();
         }
 
-        lucidware::desktop::PopupMenu* getMenuPopup(int32_t p_menu) {
-            return new lucidware::desktop::PopupMenu(menuBar->get_menu_popup(p_menu));
+        lucidfx::desktop::PopupMenu* getMenuPopup(int32_t p_menu) {
+            return new lucidfx::desktop::PopupMenu(menuBar->get_menu_popup(p_menu));
         }
 
         std::string getMenuTitle(int32_t p_menu) {

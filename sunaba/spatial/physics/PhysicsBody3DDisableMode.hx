@@ -1,4 +1,4 @@
-package lucidware..spatial.physics;
+package lucidfx..spatial.physics;
 
 enum abstract PhysicsBody3DDisableMode(Int) from Int to Int {
 	var remove = 0;

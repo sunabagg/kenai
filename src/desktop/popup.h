@@ -12,9 +12,9 @@
 #include "../core/event.h"
 
 using namespace godot;
-using namespace lucidware::core;
+using namespace lucidfx::core;
 
-namespace lucidware::desktop {
+namespace lucidfx::desktop {
     void bindPopup(sol::state &lua);
 
     class Popup;
@@ -24,7 +24,7 @@ namespace lucidware::desktop {
         protected:
             static void _bind_methods() {}
         public:
-            lucidware::desktop::Popup* element = nullptr;
+            lucidfx::desktop::Popup* element = nullptr;
 
             void onInit() {
                 // Initialize the NodeProxy instance
@@ -48,7 +48,7 @@ namespace lucidware::desktop {
         protected:
             static void _bind_methods();
         public:
-            lucidware::desktop::Popup* element = nullptr;
+            lucidfx::desktop::Popup* element = nullptr;
 
             PopupSignalWrapper() = default;
             ~PopupSignalWrapper() = default;
@@ -56,7 +56,7 @@ namespace lucidware::desktop {
             void popup_hide();
     };
 
-    class Popup : public lucidware::desktop::Window {
+    class Popup : public lucidfx::desktop::Window {
         private:
             PopupNode* popup = nullptr; // Pointer to the Popup instance
             PopupSignalWrapper* popupSignalWrapper = nullptr;
@@ -145,7 +145,7 @@ namespace lucidware::desktop {
                     popupSignalWrapper = nullptr;
                 }
                 popup = nullptr;
-                lucidware::desktop::Window::onFree();
+                lucidfx::desktop::Window::onFree();
             }
     };
 }

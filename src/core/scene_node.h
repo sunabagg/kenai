@@ -7,7 +7,7 @@
 #include "scene_system.h"
 
 using namespace godot;
-namespace lucidware::core {
+namespace lucidfx::core {
     
     class SceneNode : public godot::Node {
         GDCLASS(SceneNode, Node)

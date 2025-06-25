@@ -1,4 +1,4 @@
-package lucidware.input;
+package lucidfx.input;
 
 @:native("InputEventKey")
 extern class InputEventKey extends InputEventWithModifiers {
@@ -28,4 +28,4 @@ abstract InputEventKeyAbstract(InputEventKey) from InputEventKey to InputEventKe
         }
         return inputEventKey;
     }
-} // end package lucidware.input
+} // end package lucidfx.input

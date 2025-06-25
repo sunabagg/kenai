@@ -1,4 +1,4 @@
-package lucidware..ui;
+package lucidfx..ui;
 
 enum abstract ButtonButtonMask(Int) from Int to Int {
 	var left = 1;

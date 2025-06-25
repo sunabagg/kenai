@@ -1,9 +1,9 @@
 package;
 
-import lucidware.ui.Button;
-import lucidware.ui.Button.ButtonAbstract;
-import lucidware.ui.Label;
-import lucidware.ui.Widget;
+import lucidfx.ui.Button;
+import lucidfx.ui.Button.ButtonAbstract;
+import lucidfx.ui.Label;
+import lucidfx.ui.Widget;
 
 class ClickerCounter extends Widget {
     var label: Label;

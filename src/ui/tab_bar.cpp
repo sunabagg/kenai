@@ -1,6 +1,6 @@
 #include "tab_bar.h"
 
-namespace lucidware::ui {
+namespace lucidfx::ui {
     void TabBarProxy::_enter_tree() {
         if (element) {
             element->enterTree();
@@ -202,7 +202,7 @@ namespace lucidware::ui {
             "new", sol::factories(
                 []() { return new TabBar(); }
             ),
-            sol::base_classes, sol::bases<BaseObject, Element, lucidware::core::CanvasItem, Control>(),
+            sol::base_classes, sol::bases<BaseObject, Element, lucidfx::core::CanvasItem, Control>(),
             "clipTabs", sol::property(
                 &TabBar::getClipTabs,
                 &TabBar::setClipTabs
@@ -320,4 +320,4 @@ namespace lucidware::ui {
             }
         );
     }
-} // namespace lucidware::ui
+} // namespace lucidfx::ui

@@ -1,4 +1,4 @@
-package lucidware;
+package lucidfx;
 
 enum abstract TileShapeEnum(Int) from Int to Int {
 	var square = 0;

@@ -1,4 +1,4 @@
-package lucidware;
+package lucidfx;
 
 enum abstract ReflectionSource(Int) from Int to Int {
 	var bg = 0;

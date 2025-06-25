@@ -1,4 +1,4 @@
-package lucidware..animation;
+package lucidfx..animation;
 
 enum abstract AnimationMixerProcessThreadMessages(Int) from Int to Int {
 	var messages = 1;

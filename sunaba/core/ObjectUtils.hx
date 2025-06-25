@@ -1,4 +1,4 @@
-package lucidware.core;
+package lucidfx.core;
 
 class ObjectUtils {
     public static function getName(object : Any) {

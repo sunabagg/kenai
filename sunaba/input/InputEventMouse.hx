@@ -1,6 +1,6 @@
-package lucidware.input;
+package lucidfx.input;
 
-import lucidware.core.Vector2;
+import lucidfx.core.Vector2;
 
 @:native("InputEventMouse")
 extern class InputEventMouse extends InputEventWithModifiers {
@@ -20,4 +20,4 @@ abstract InputEventMouseAbstract(InputEventMouse) from InputEventMouse to InputE
         }
         return inputEventMouse;
     }
-} // end package lucidware.input
+} // end package lucidfx.input

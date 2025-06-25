@@ -1,4 +1,4 @@
-package lucidware;
+package lucidfx;
 
 enum abstract WriteModeEnum(Int) from Int to Int {
 	var text = 0;

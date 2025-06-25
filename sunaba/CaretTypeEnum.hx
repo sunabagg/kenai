@@ -1,4 +1,4 @@
-package lucidware;
+package lucidfx;
 
 enum abstract CaretTypeEnum(Int) from Int to Int {
 	var line = 0;

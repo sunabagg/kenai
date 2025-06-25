@@ -1,4 +1,4 @@
-package lucidware;
+package lucidfx;
 
 enum abstract SwitchModeEnum(Int) from Int to Int {
 	var immediate = 0;

@@ -1,4 +1,4 @@
-package lucidware.core.io;
+package lucidfx.core.io;
 
 @:native("SystemIoInterface")
 extern class SystemIoInterface extends IoInterface {

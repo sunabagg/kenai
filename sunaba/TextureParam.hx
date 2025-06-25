@@ -1,4 +1,4 @@
-package lucidware;
+package lucidfx;
 
 enum abstract TextureParam(Int) from Int to Int {
 	var albedo = 0;

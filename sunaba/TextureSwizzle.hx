@@ -1,4 +1,4 @@
-package lucidware;
+package lucidfx;
 
 enum abstract TextureSwizzle(Int) from Int to Int {
 	var identity = 0;

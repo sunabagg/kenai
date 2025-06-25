@@ -7,7 +7,7 @@
 #include "zip_io.h"
 
 
-void lucidware::core::io::bindIoClasses(sol::state& lua) {
+void lucidfx::core::io::bindIoClasses(sol::state& lua) {
     bindIoInterface(lua);
     bindSystemIoInterface(lua);
     bindFileSystemIo(lua);

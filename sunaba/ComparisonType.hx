@@ -1,4 +1,4 @@
-package lucidware;
+package lucidfx;
 
 enum abstract ComparisonType(Int) from Int to Int {
 	var scalar = 0;

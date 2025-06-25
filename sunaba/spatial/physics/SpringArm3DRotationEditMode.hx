@@ -1,4 +1,4 @@
-package lucidware..spatial.physics;
+package lucidfx..spatial.physics;
 
 enum abstract SpringArm3DRotationEditMode(Int) from Int to Int {
 	var euler = 0;

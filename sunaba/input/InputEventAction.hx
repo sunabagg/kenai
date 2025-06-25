@@ -1,4 +1,4 @@
-package lucidware.input;
+package lucidfx.input;
 
 @:native("InputEventAction")
 extern class InputEventAction extends InputEvent {

@@ -1,4 +1,4 @@
-package lucidware;
+package lucidfx;
 
 enum abstract FixedSizeScaleMode(Int) from Int to Int {
 	var disable = 0;

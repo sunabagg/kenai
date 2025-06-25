@@ -1,7 +1,7 @@
-package lucidware.spatial;
+package lucidfx.spatial;
 
-import lucidware.core.Resource;
-import lucidware.core.Environment;
+import lucidfx.core.Resource;
+import lucidfx.core.Environment;
 
 @:native("World3D")
 extern class World3D extends Resource {
@@ -20,4 +20,4 @@ abstract World3DAbstract(World3D) from World3D to World3D {
         }
         return world3D;
     }
-} // end package lucidware.spatial
+} // end package lucidfx.spatial

@@ -1,14 +1,14 @@
-package lucidware.ui;
+package lucidfx.ui;
 
-import lucidware.core.ArrayList;
-import lucidware.core.Variant;
-import lucidware.core.Rect2;
-import lucidware.core.Color;
-import lucidware.core.Vector2i;
-import lucidware.core.Vector2;
-import lucidware.desktop.PopupMenu;
-import lucidware.core.Dictionary;
-import lucidware.core.Font;
+import lucidfx.core.ArrayList;
+import lucidfx.core.Variant;
+import lucidfx.core.Rect2;
+import lucidfx.core.Color;
+import lucidfx.core.Vector2i;
+import lucidfx.core.Vector2;
+import lucidfx.desktop.PopupMenu;
+import lucidfx.core.Dictionary;
+import lucidfx.core.Font;
 
 @:native("PanelContainer")
 extern class RichTextLabel extends Control {
@@ -41,11 +41,11 @@ extern class RichTextLabel extends Control {
     public var visibleCharacters: Int;
     public var visibleCharactersBehavior: Int;
     public var visibleRatio: Float;
-    public var finished: lucidware.core.Event;
-    public var metaClicked: lucidware.core.Event;
-    public var metaHoverEnded: lucidware.core.Event;
-    public var metaHoverStarted: lucidware.core.Event;
-    public function addImage(image: lucidware.core.Texture2D, ?width: Int, ?height: Int, ?color: Color, ?inlineAlign: Int, ?region: Rect2, ?key: Variant, ?pad: Bool, ?tooltip: String, ?sizeInPercent: Bool ): Void;
+    public var finished: lucidfx.core.Event;
+    public var metaClicked: lucidfx.core.Event;
+    public var metaHoverEnded: lucidfx.core.Event;
+    public var metaHoverStarted: lucidfx.core.Event;
+    public function addImage(image: lucidfx.core.Texture2D, ?width: Int, ?height: Int, ?color: Color, ?inlineAlign: Int, ?region: Rect2, ?key: Variant, ?pad: Bool, ?tooltip: String, ?sizeInPercent: Bool ): Void;
     public function addText(text: String): Void;
     public function appendText(bbcode: String): Void;
     public function clear(): Void;
@@ -113,15 +113,15 @@ extern class RichTextLabel extends Control {
     public function setCellBorderColor(color: Color): Void;
     public function setCellSizeOverride(minSize: Vector2, maxSize: Vector2): Void;
     public function setTableColumnExpand(column: Int, expand: Bool, ?ratio: Int, ?shrink: Bool): Void;
-    public function updateImage(key: Variant, mask: Int, image: lucidware.core.Texture2D, ?width: Int, ?height: Int, ?color: Color, ?inlineAlign: Int, ?region: Rect2, ?pad: Bool, ?tooltip: String, ?sizeInPercent: Bool): Void;
+    public function updateImage(key: Variant, mask: Int, image: lucidfx.core.Texture2D, ?width: Int, ?height: Int, ?color: Color, ?inlineAlign: Int, ?region: Rect2, ?pad: Bool, ?tooltip: String, ?sizeInPercent: Bool): Void;
     @:native("cast")
-    public static function toRichTextLabel(obj: Dynamic): lucidware.ui.RichTextLabel;
+    public static function toRichTextLabel(obj: Dynamic): lucidfx.ui.RichTextLabel;
 }
 
 abstract RichTextLabelAbstract(RichTextLabel) from RichTextLabel to RichTextLabel {
     @:from
-    public static function fromElement(element: lucidware.core.Element): lucidware.ui.RichTextLabel {
-        var richTextLabel = lucidware.ui.RichTextLabel.toRichTextLabel(element);
+    public static function fromElement(element: lucidfx.core.Element): lucidfx.ui.RichTextLabel {
+        var richTextLabel = lucidfx.ui.RichTextLabel.toRichTextLabel(element);
         if (richTextLabel.isNull()) {
             return null;
         }

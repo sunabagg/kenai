@@ -1,4 +1,4 @@
-package lucidware;
+package lucidfx;
 
 enum abstract ProcessInfo(Int) from Int to Int {
 	var activeObjects = 0;

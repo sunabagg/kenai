@@ -1,4 +1,4 @@
-package lucidware..desktop;
+package lucidfx..desktop;
 
 enum abstract StatusIndicatorProcessThreadGroup(Int) from Int to Int {
 	var inherit = 0;

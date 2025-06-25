@@ -1,4 +1,4 @@
-package lucidware;
+package lucidfx;
 
 enum abstract PlayModeEnum(Int) from Int to Int {
 	var forward = 0;

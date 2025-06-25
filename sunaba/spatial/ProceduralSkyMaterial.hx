@@ -1,8 +1,8 @@
-package lucidware.spatial;
+package lucidfx.spatial;
 
-import lucidware.core.Texture2D;
-import lucidware.core.Material;
-import lucidware.core.Color;
+import lucidfx.core.Texture2D;
+import lucidfx.core.Material;
+import lucidfx.core.Color;
 
 @:native("ProceduralSkyMaterial")
 extern class ProceduralSkyMaterial extends Material {
@@ -32,4 +32,4 @@ abstract ProceduralSkyMaterialAbstract(ProceduralSkyMaterial) from ProceduralSky
         }
         return proceduralSkyMaterial;
     } 
-} // end package lucidware.spatial
+} // end package lucidfx.spatial

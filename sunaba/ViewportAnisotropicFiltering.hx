@@ -1,4 +1,4 @@
-package lucidware;
+package lucidfx;
 
 enum abstract ViewportAnisotropicFiltering(Int) from Int to Int {
 	var disabled = 0;

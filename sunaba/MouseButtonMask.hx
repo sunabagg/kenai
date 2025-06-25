@@ -1,4 +1,4 @@
-package lucidware;
+package lucidfx;
 
 enum abstract MouseButtonMask(Int) from Int to Int {
 	var left = 1;

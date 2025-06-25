@@ -1,4 +1,4 @@
-package lucidware..spatial.navigation;
+package lucidfx..spatial.navigation;
 
 enum abstract NavigationAgent3DProcessThreadMessages(Int) from Int to Int {
 	var messages = 1;

@@ -1,12 +1,12 @@
-package lucidware.ui;
+package lucidfx.ui;
 
-import lucidware.core.Dictionary;
-import lucidware.core.Event;
-import lucidware.core.Color;
-import lucidware.core.Resource;
-import lucidware.core.Variant;
-import lucidware.core.Vector2;
-import lucidware.core.Element;
+import lucidfx.core.Dictionary;
+import lucidfx.core.Event;
+import lucidfx.core.Color;
+import lucidfx.core.Resource;
+import lucidfx.core.Variant;
+import lucidfx.core.Vector2;
+import lucidfx.core.Element;
 
 @:native("CodeEdit")
 extern class CodeEdit extends TextEdit {

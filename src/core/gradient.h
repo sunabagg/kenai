@@ -12,10 +12,10 @@
 
 using namespace godot;
 
-namespace lucidware::core {
+namespace lucidfx::core {
     void bindGradient(sol::state_view& lua);
 
-    class Gradient : public lucidware::core::Resource {
+    class Gradient : public lucidfx::core::Resource {
     private:
         GodotGradient* gradient;
     public:

@@ -1,4 +1,4 @@
-package lucidware;
+package lucidfx;
 
 enum abstract FontStyle(Int) from Int to Int {
 	var bold = 1;

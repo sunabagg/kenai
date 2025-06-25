@@ -14,9 +14,9 @@
 #include "v_scroll_bar.h"
 
 using namespace godot;
-using namespace lucidware::core;
+using namespace lucidfx::core;
 
-namespace lucidware::ui {
+namespace lucidfx::ui {
     void bindRichTextLabel(sol::state &lua);
 
     class RichTextLabel;
@@ -28,7 +28,7 @@ namespace lucidware::ui {
                 // Bind methods specific to RichTextLabelProxy
             }
         public:
-            lucidware::ui::RichTextLabel* element = nullptr;
+            lucidfx::ui::RichTextLabel* element = nullptr;
 
             void onInit() {
                 // Initialize the NodeProxy instance
@@ -70,7 +70,7 @@ namespace lucidware::ui {
         protected:
             static void _bind_methods();
         public:
-            lucidware::ui::RichTextLabel* element = nullptr;
+            lucidfx::ui::RichTextLabel* element = nullptr;
 
             RichTextLabelSignalWrapper() = default;
             ~RichTextLabelSignalWrapper() = default;
@@ -400,7 +400,7 @@ namespace lucidware::ui {
                 metaHoverStartedEvent = event;
             }
 
-            void addImage(lucidware::core::Texture2D* image, int width = 0, int height = 0, Color color = Color(1, 1, 1, 1), int inlineAlign = 5, Rect2 region = Rect2(0, 0, 0, 0), Variant key = Variant(), bool pad = false, std::string tooltip = "''", bool sizeInPercent = false) {
+            void addImage(lucidfx::core::Texture2D* image, int width = 0, int height = 0, Color color = Color(1, 1, 1, 1), int inlineAlign = 5, Rect2 region = Rect2(0, 0, 0, 0), Variant key = Variant(), bool pad = false, std::string tooltip = "''", bool sizeInPercent = false) {
                 rich_text_label->add_image(image->getTexture2D(), width, height, color, static_cast<InlineAlignment>(inlineAlign), region, key, pad, String(tooltip.c_str()), sizeInPercent);
             }
 
@@ -448,8 +448,8 @@ namespace lucidware::ui {
                 return rich_text_label->get_line_range(line);
             }
 
-            lucidware::desktop::PopupMenu* getMenu() {
-                return new lucidware::desktop::PopupMenu(rich_text_label->get_menu());
+            lucidfx::desktop::PopupMenu* getMenu() {
+                return new lucidfx::desktop::PopupMenu(rich_text_label->get_menu());
             }
 
             int getParagraphCount() const {
@@ -574,7 +574,7 @@ namespace lucidware::ui {
 
             //void pushCustomfx
 
-            void pushDropcap(std::string string, lucidware::core::Font* font, int size, Rect2 dropcapMargins = Rect2(0, 0, 0, 0), Color color = Color(1, 1, 1, 1), int outlineSize = 0, Color outlineColor = Color(0, 0, 0, 0)) {
+            void pushDropcap(std::string string, lucidfx::core::Font* font, int size, Rect2 dropcapMargins = Rect2(0, 0, 0, 0), Color color = Color(1, 1, 1, 1), int outlineSize = 0, Color outlineColor = Color(0, 0, 0, 0)) {
                 rich_text_label->push_dropcap(String(string.c_str()), font->getFont(), size, dropcapMargins, color, outlineSize, outlineColor);
             }
 
@@ -582,7 +582,7 @@ namespace lucidware::ui {
                 rich_text_label->push_fgcolor(fgcolor);
             }
 
-            void pushFont(lucidware::core::Font* font, int fontSize = 0) {
+            void pushFont(lucidfx::core::Font* font, int fontSize = 0) {
                 rich_text_label->push_font(font->getFont(), fontSize);
             }
 
@@ -690,7 +690,7 @@ namespace lucidware::ui {
                 rich_text_label->set_table_column_expand(column, expand, ratio, shrink);
             }
 
-            void updateImage(Variant key, int mask, lucidware::core::Texture2D* image, int width = 0, int height = 0, Color color = Color(1, 1, 1, 1), int inlineAlign = 5, Rect2 region = Rect2(0, 0, 0, 0), bool pad = false, std::string tooltip = "", bool sizeInPercent = false) {
+            void updateImage(Variant key, int mask, lucidfx::core::Texture2D* image, int width = 0, int height = 0, Color color = Color(1, 1, 1, 1), int inlineAlign = 5, Rect2 region = Rect2(0, 0, 0, 0), bool pad = false, std::string tooltip = "", bool sizeInPercent = false) {
                 rich_text_label->update_image(key, mask, image->getTexture2D(), width, height, color, static_cast<InlineAlignment>(inlineAlign), region, pad, String(tooltip.c_str()), sizeInPercent);
             }
 

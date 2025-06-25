@@ -1,4 +1,4 @@
-package lucidware..input;
+package lucidfx..input;
 
 enum abstract InputEventMouseMotionButtonMask(Int) from Int to Int {
 	var left = 1;

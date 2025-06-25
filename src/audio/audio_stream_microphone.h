@@ -10,9 +10,9 @@
 #include "audio_stream.h"
 
 using namespace godot;
-using namespace lucidware::core;
+using namespace lucidfx::core;
 
-namespace lucidware::audio {
+namespace lucidfx::audio {
     void bindAudioStreamMicrophone(sol::state_view& lua);
 
     class AudioStreamMicrophone : public AudioStream {

@@ -1,6 +1,6 @@
 #include "button.h"
 
-namespace lucidware::ui {
+namespace lucidfx::ui {
     void ButtonProxy::_enter_tree() {
         if (this->element != nullptr) {
             this->element->enterTree();
@@ -141,13 +141,13 @@ namespace lucidware::ui {
 
     void bindButton(sol::state &lua) {
         using namespace sol;
-        using namespace lucidware::ui;
+        using namespace lucidfx::ui;
 
         lua.new_usertype<Button>("Button",
             "new", sol::factories(
                 []() { return new Button(); }
             ),
-            sol::base_classes, sol::bases<BaseObject, Element, lucidware::core::CanvasItem, lucidware::ui::Control, lucidware::ui::BaseButton>(),
+            sol::base_classes, sol::bases<BaseObject, Element, lucidfx::core::CanvasItem, lucidfx::ui::Control, lucidfx::ui::BaseButton>(),
             "alignment", sol::property(
                 &Button::getAlignment,
                 &Button::setAlignment
@@ -196,7 +196,7 @@ namespace lucidware::ui {
                 &Button::getVerticalIconAlignment,
                 &Button::setVerticalIconAlignment
             ),
-            "cast", [](lucidware::core::Element* e) {
+            "cast", [](lucidfx::core::Element* e) {
                 ButtonNode* button = Object::cast_to<ButtonNode>(e->getNode());
                 return new Button(button);
             }

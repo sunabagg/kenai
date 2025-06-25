@@ -1,4 +1,4 @@
-package lucidware;
+package lucidfx;
 
 enum abstract DomainWarpTypeEnum(Int) from Int to Int {
 	var simplex = 0;

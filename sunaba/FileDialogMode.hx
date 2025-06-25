@@ -1,4 +1,4 @@
-package lucidware;
+package lucidfx;
 
 enum abstract FileDialogMode(Int) from Int to Int {
 	var openFile = 0;

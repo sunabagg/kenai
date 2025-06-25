@@ -1,4 +1,4 @@
-package lucidware;
+package lucidfx;
 
 enum abstract BakeChannels(Int) from Int to Int {
 	var albedoAlpha = 0;

@@ -10,7 +10,7 @@
 
 using namespace godot;
 
-namespace lucidware::tests
+namespace lucidfx::tests
 {
     class SceneTest : public Node {
         GDCLASS(SceneTest, Node)

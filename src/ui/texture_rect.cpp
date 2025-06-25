@@ -1,6 +1,6 @@
 #include "texture_rect.h"
 
-namespace lucidware::ui {
+namespace lucidfx::ui {
 
     void TextureRectProxy::_enter_tree() {
         if (this->element != nullptr) {
@@ -121,7 +121,7 @@ namespace lucidware::ui {
             "new", sol::factories(
                 []() { return new TextureRect(); }
             ),
-            sol::base_classes, sol::bases<BaseObject, Element, lucidware::core::CanvasItem, Control>(),
+            sol::base_classes, sol::bases<BaseObject, Element, lucidfx::core::CanvasItem, Control>(),
             "expandMode", sol::property(&TextureRect::getExpandMode, &TextureRect::setExpandMode),
             "flipH", sol::property(&TextureRect::getFlipH, &TextureRect::setFlipH),
             "flipV", sol::property(&TextureRect::getFlipV, &TextureRect::setFlipV),

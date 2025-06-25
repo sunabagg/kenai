@@ -10,12 +10,12 @@
 #include "../core/resource.h"
 
 using namespace godot;
-using namespace lucidware::core;
+using namespace lucidfx::core;
 
-namespace lucidware::audio {
+namespace lucidfx::audio {
     void bindAudioStream(sol::state_view& lua);
 
-    class AudioStream : public lucidware::core::Resource {
+    class AudioStream : public lucidfx::core::Resource {
     private:
         GodotAudioStream* audioStream;
     public:

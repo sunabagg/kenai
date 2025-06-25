@@ -1,4 +1,4 @@
-package lucidware;
+package lucidfx;
 
 enum abstract CacheMode(Int) from Int to Int {
 	var ignore = 0;

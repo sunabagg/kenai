@@ -1,4 +1,4 @@
-package lucidware;
+package lucidfx;
 
 enum abstract PortType(Int) from Int to Int {
 	var scalar = 0;

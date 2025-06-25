@@ -2,9 +2,9 @@
 #include "../core/scene_system.h"
 
 using namespace godot;
-using namespace lucidware::core;
+using namespace lucidfx::core;
 
-namespace lucidware::spatial
+namespace lucidfx::spatial
 {
     void bindCamera(sol::state& lua){
         lua.new_usertype<Camera>(

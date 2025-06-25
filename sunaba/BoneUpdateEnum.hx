@@ -1,4 +1,4 @@
-package lucidware;
+package lucidfx;
 
 enum abstract BoneUpdateEnum(Int) from Int to Int {
 	var full = 0;

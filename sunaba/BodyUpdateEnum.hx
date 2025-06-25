@@ -1,4 +1,4 @@
-package lucidware;
+package lucidfx;
 
 enum abstract BodyUpdateEnum(Int) from Int to Int {
 	var upperBody = 1;

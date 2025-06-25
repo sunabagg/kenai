@@ -1,4 +1,4 @@
-package lucidware;
+package lucidfx;
 
 enum abstract ParticlesCollisionHeightfieldResolution(Int) from Int to Int {
 	var resolution256 = 0;

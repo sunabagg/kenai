@@ -1,4 +1,4 @@
-package lucidware.input;
+package lucidfx.input;
 
 @:native("InputEventWithModifiers")
 extern class InputEventWithModifiers extends InputEventFromWindow {
@@ -22,4 +22,4 @@ abstract InputEventWithModifiersAbstract(InputEventWithModifiers) from InputEven
         }
         return inputEventWithModifiers;
     }
-} // end package lucidware.input
+} // end package lucidfx.input

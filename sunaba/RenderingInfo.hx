@@ -1,4 +1,4 @@
-package lucidware;
+package lucidfx;
 
 enum abstract RenderingInfo(Int) from Int to Int {
 	var totalObjectsInFrame = 0;

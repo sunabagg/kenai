@@ -1,4 +1,4 @@
-package lucidware;
+package lucidfx;
 
 enum abstract ExpandModeEnum(Int) from Int to Int {
 	var keepSize = 0;

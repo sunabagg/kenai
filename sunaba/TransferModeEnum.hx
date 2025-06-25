@@ -1,4 +1,4 @@
-package lucidware;
+package lucidfx;
 
 enum abstract TransferModeEnum(Int) from Int to Int {
 	var unreliable = 0;

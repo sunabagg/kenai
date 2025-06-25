@@ -1,4 +1,4 @@
-package lucidware;
+package lucidfx;
 
 enum abstract ChannelState(Int) from Int to Int {
 	var connecting = 0;

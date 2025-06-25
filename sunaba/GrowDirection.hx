@@ -1,4 +1,4 @@
-package lucidware;
+package lucidfx;
 
 enum abstract GrowDirection(Int) from Int to Int {
 	var begin = 0;

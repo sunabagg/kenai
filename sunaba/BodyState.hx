@@ -1,4 +1,4 @@
-package lucidware;
+package lucidfx;
 
 enum abstract BodyState(Int) from Int to Int {
 	var transform = 0;

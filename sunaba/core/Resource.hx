@@ -1,4 +1,4 @@
-package lucidware.core;
+package lucidfx.core;
 
 @:native("Resource")
 extern class Resource extends BaseObject {

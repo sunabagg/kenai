@@ -1,4 +1,4 @@
-package lucidware;
+package lucidfx;
 
 enum abstract TrackerType(Int) from Int to Int {
 	var head = 1;

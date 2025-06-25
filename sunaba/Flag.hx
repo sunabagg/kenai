@@ -1,4 +1,4 @@
-package lucidware;
+package lucidfx;
 
 enum abstract Flag(Int) from Int to Int {
 	var useLimit = 0;

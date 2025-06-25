@@ -1,9 +1,9 @@
 #include "mesh_renderer.h"
 
 using namespace godot;
-using namespace lucidware::core;
+using namespace lucidfx::core;
 
-void lucidware::spatial::mesh::bindMeshRenderer(sol::state& lua) {
+void lucidfx::spatial::mesh::bindMeshRenderer(sol::state& lua) {
     lua.new_usertype<MeshRenderer>(
         "MeshRenderer",
         "new", sol::factories(

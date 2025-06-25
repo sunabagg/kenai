@@ -1,4 +1,4 @@
-package lucidware..desktop;
+package lucidfx..desktop;
 
 enum abstract AcceptDialogInitialPosition(Int) from Int to Int {
 	var absolute = 0;

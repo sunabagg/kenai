@@ -1,4 +1,4 @@
-package lucidware..core;
+package lucidfx..core;
 
 enum abstract SubViewportScaling3DMode(Int) from Int to Int {
 	var bilinear = 0;

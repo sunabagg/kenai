@@ -1,4 +1,4 @@
-package lucidware;
+package lucidfx;
 
 enum abstract OverrunBehavior(Int) from Int to Int {
 	var noTrimming = 0;

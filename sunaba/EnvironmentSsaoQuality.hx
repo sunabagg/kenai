@@ -1,4 +1,4 @@
-package lucidware;
+package lucidfx;
 
 enum abstract EnvironmentSsaoQuality(Int) from Int to Int {
 	var veryLow = 0;

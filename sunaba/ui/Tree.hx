@@ -1,6 +1,6 @@
-package lucidware.ui;
+package lucidfx.ui;
 
-import lucidware.core.Vector2;
+import lucidfx.core.Vector2;
 
 @:native("Tree")
 extern class Tree extends Control {

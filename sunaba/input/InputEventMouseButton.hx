@@ -1,4 +1,4 @@
-package lucidware.input;
+package lucidfx.input;
 
 @:native("InputEventMouseButton")
 extern class InputEventMouseButton extends InputEventMouse {
@@ -20,4 +20,4 @@ abstract InputEventMouseButtonAbstract(InputEventMouseButton) from InputEventMou
         }
         return inputEventMouseButton;
     }
-} // end package lucidware.input
+} // end package lucidfx.input

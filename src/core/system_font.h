@@ -14,7 +14,7 @@
 
 using namespace godot;
 
-namespace lucidware::core {
+namespace lucidfx::core {
     void bindSystemFont(sol::state_view& lua);
 
     class SystemFont : public Font {

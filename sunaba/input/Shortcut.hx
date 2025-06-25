@@ -1,6 +1,6 @@
-package lucidware.input;
+package lucidfx.input;
 
-import lucidware.core.Resource;
+import lucidfx.core.Resource;
 
 @:native("InputEventShortcut")
 extern class Shortcut extends Resource {
@@ -21,4 +21,4 @@ abstract ShortcutAbstract(Shortcut) from Shortcut to Shortcut {
         }
         return shortcut;
     }
-} // end package lucidware.input
+} // end package lucidfx.input

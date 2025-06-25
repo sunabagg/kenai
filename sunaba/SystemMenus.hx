@@ -1,4 +1,4 @@
-package lucidware;
+package lucidfx;
 
 enum abstract SystemMenus(Int) from Int to Int {
 	var invalidMenuId = 0;

@@ -1,8 +1,8 @@
-package lucidware.ui;
+package lucidfx.ui;
 
-import lucidware.core.Color;
-import lucidware.core.Rect2;
-import lucidware.core.Texture2D;
+import lucidfx.core.Color;
+import lucidfx.core.Rect2;
+import lucidfx.core.Texture2D;
 
 @:native("StyleBoxTexture")
 extern class StyleBoxTexture extends StyleBox {
@@ -39,4 +39,4 @@ abstract StyleBoxTextureAbstract(StyleBoxTexture) from StyleBoxTexture to StyleB
         }
         return styleBoxTexture;
     }
-} // end package lucidware.ui
+} // end package lucidfx.ui

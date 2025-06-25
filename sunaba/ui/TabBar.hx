@@ -1,10 +1,10 @@
-package lucidware.ui;
+package lucidfx.ui;
 
-import lucidware.core.Event;
-import lucidware.core.Texture2D;
-import lucidware.core.Variant;
-import lucidware.core.Rect2;
-import lucidware.core.Vector2;
+import lucidfx.core.Event;
+import lucidfx.core.Texture2D;
+import lucidfx.core.Variant;
+import lucidfx.core.Rect2;
+import lucidfx.core.Vector2;
 
 @:native("TabBar")
 extern class TabBar extends Control {
@@ -66,7 +66,7 @@ extern class TabBar extends Control {
 
 abstract TabBarAbstract(TabBar) from TabBar to TabBar {
     @:from
-    public static function fromElement(element: lucidware.core.Element): TabBarAbstract {
+    public static function fromElement(element: lucidfx.core.Element): TabBarAbstract {
         var tabbar = TabBar.toTabBar(element);
         if (tabbar.isNull()) {
             return null;

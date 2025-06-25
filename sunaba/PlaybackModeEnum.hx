@@ -1,4 +1,4 @@
-package lucidware;
+package lucidfx;
 
 enum abstract PlaybackModeEnum(Int) from Int to Int {
 	var randomNoRepeats = 0;

@@ -10,12 +10,12 @@
 #include "../core/resource.h"
 
 using namespace godot;
-using namespace lucidware::core;
+using namespace lucidfx::core;
 
-namespace lucidware::ui {
+namespace lucidfx::ui {
     void bindStyleBox(sol::state &lua);
 
-    class StyleBox : public lucidware::core::Resource {
+    class StyleBox : public lucidfx::core::Resource {
     private:
         GodotStyleBox* style_box = nullptr; // Pointer to the StyleBox instance
     public:

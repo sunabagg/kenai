@@ -1,4 +1,4 @@
-package lucidware;
+package lucidfx;
 
 enum abstract PinJointParam(Int) from Int to Int {
 	var bias = 0;

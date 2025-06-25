@@ -1,4 +1,4 @@
-package lucidware.core;
+package lucidfx.core;
 
 @:native("Entity")
 extern class Entity extends BaseObject {

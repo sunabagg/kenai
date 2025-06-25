@@ -1,10 +1,10 @@
-package lucidware.ui;
+package lucidfx.ui;
 
-import lucidware.core.Resource;
-import lucidware.core.Font;
-import lucidware.core.Texture2D;
-import lucidware.core.Color;
-import lucidware.core.Variant;
+import lucidfx.core.Resource;
+import lucidfx.core.Font;
+import lucidfx.core.Texture2D;
+import lucidfx.core.Color;
+import lucidfx.core.Variant;
 
 @:native("Theme")
 extern class Theme extends Resource {
@@ -90,4 +90,4 @@ abstract ThemeAbstract(Theme) from Theme to Theme {
         }
         return theme;
     }
-} // end package lucidware.ui
+} // end package lucidfx.ui

@@ -14,10 +14,10 @@
 
 using namespace godot;
 
-namespace lucidware::spatial {
+namespace lucidfx::spatial {
     void bindFogMaterial(sol::state_view& lua);
 
-    class FogMaterial : public lucidware::core::Material {
+    class FogMaterial : public lucidfx::core::Material {
     private:
         GodotFogMaterial* fogMaterial;
     public:

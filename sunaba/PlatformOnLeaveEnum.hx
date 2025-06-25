@@ -1,4 +1,4 @@
-package lucidware;
+package lucidfx;
 
 enum abstract PlatformOnLeaveEnum(Int) from Int to Int {
 	var addVelocity = 0;

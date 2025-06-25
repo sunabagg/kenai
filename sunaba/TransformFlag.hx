@@ -1,4 +1,4 @@
-package lucidware;
+package lucidfx;
 
 enum abstract TransformFlag(Int) from Int to Int {
 	var position = 1;

@@ -1,6 +1,6 @@
 #include "spin_box.h"
 
-namespace lucidware::ui {
+namespace lucidfx::ui {
     void SpinBoxProxy::_enter_tree() {
         if (element != nullptr) {
             element->enterTree();
@@ -126,7 +126,7 @@ namespace lucidware::ui {
             "new", sol::factories(
                 []() { return new SpinBox(); }
             ),
-            sol::base_classes, sol::bases<BaseObject, Element, lucidware::core::CanvasItem, Control, Range>(),
+            sol::base_classes, sol::bases<BaseObject, Element, lucidfx::core::CanvasItem, Control, Range>(),
             "alignment", sol::property(&SpinBox::getAlignment, &SpinBox::setAlignment),
             "customArrowStep", sol::property(&SpinBox::getCustomArrowStep, &SpinBox::setCustomArrowStep),
             "editable", sol::property(&SpinBox::isEditable, &SpinBox::setEditable),

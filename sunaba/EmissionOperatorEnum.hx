@@ -1,4 +1,4 @@
-package lucidware;
+package lucidfx;
 
 enum abstract EmissionOperatorEnum(Int) from Int to Int {
 	var add = 0;

@@ -1,4 +1,4 @@
-package lucidware;
+package lucidfx;
 
 enum abstract IconModeEnum(Int) from Int to Int {
 	var top = 0;

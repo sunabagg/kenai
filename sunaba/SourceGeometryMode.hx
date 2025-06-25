@@ -1,4 +1,4 @@
-package lucidware;
+package lucidfx;
 
 enum abstract SourceGeometryMode(Int) from Int to Int {
 	var rootNodeChildren = 0;

@@ -15,9 +15,9 @@
 #include "v_scroll_bar.h"
 
 using namespace godot;
-using namespace lucidware::core;
+using namespace lucidfx::core;
 
-namespace lucidware::ui {
+namespace lucidfx::ui {
     void bindItemList(sol::state &lua);
 
     class ItemList;
@@ -27,7 +27,7 @@ namespace lucidware::ui {
         protected:
             static void _bind_methods() {}
         public:
-            lucidware::ui::ItemList* element = nullptr;
+            lucidfx::ui::ItemList* element = nullptr;
 
             void onInit() {
                 // Initialize the NodeProxy instance
@@ -308,12 +308,12 @@ namespace lucidware::ui {
                 multiSelectedEvent = event;
             }
 
-            int addIconItem(lucidware::core::Texture2D* texture, bool selectable = true) {
+            int addIconItem(lucidfx::core::Texture2D* texture, bool selectable = true) {
                 Ref<godot::Texture2D> textureRef = Ref<godot::Texture2D>(texture->getTexture());
                 return item_list->add_icon_item(textureRef, selectable);
             }
 
-            int addItem(std::string text, lucidware::core::Texture2D* icon = nullptr, bool selectable = true) {
+            int addItem(std::string text, lucidfx::core::Texture2D* icon = nullptr, bool selectable = true) {
                 Ref<godot::Texture2D> textureRef;
                 if (icon != nullptr) {
                     textureRef = Ref<godot::Texture2D>(icon->getTexture());
@@ -361,9 +361,9 @@ namespace lucidware::ui {
                 return item_list->get_item_custom_fg_color(index);
             }
 
-            lucidware::core::Texture2D* getItemIcon(int index) {
+            lucidfx::core::Texture2D* getItemIcon(int index) {
                 Ref<godot::Texture2D> textureRef = item_list->get_item_icon(index);
-                return new lucidware::core::Texture2D(textureRef.ptr());
+                return new lucidfx::core::Texture2D(textureRef.ptr());
             }
 
             Color getItemIconModulate(int index) {
@@ -463,7 +463,7 @@ namespace lucidware::ui {
                 item_list->set_item_disabled(index, disabled);
             }
 
-            void setItemIcon(int index, lucidware::core::Texture2D* texture) {
+            void setItemIcon(int index, lucidfx::core::Texture2D* texture) {
                 Ref<godot::Texture2D> textureRef = Ref<godot::Texture2D>(texture->getTexture());
                 item_list->set_item_icon(index, textureRef);
             }

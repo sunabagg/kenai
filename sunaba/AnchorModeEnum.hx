@@ -1,4 +1,4 @@
-package lucidware;
+package lucidfx;
 
 enum abstract AnchorModeEnum(Int) from Int to Int {
 	var fixedTopLeft = 0;

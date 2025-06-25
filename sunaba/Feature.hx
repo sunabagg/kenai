@@ -1,4 +1,4 @@
-package lucidware;
+package lucidfx;
 
 enum abstract Feature(Int) from Int to Int {
 	var simpleLayout = 1;

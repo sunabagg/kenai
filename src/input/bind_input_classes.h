@@ -3,7 +3,7 @@
 
 #include <sol/sol.hpp>
 
-namespace lucidware::input {
+namespace lucidfx::input {
     void bindInputClasses(sol::state& lua);
 }
 

@@ -1,6 +1,6 @@
-package lucidware.ui;
+package lucidfx.ui;
 
-import lucidware.desktop.PopupMenu;
+import lucidfx.desktop.PopupMenu;
 
 @:native("MenuBar")
 extern class MenuBar extends Control {
@@ -23,13 +23,13 @@ extern class MenuBar extends Control {
     public function setMenuTitle(index: Int, title: String): Void;
     public function setMenuTooltip(index: Int, tooltip: String): Void;
     @:native("cast")
-    public static function toMenuBar(obj: Dynamic): lucidware.ui.MenuBar;
+    public static function toMenuBar(obj: Dynamic): lucidfx.ui.MenuBar;
 }
 
 abstract MenuBarAbstract(MenuBar) from MenuBar to MenuBar {
     @:from
-    public static function fromElement(element: lucidware.core.Element): lucidware.ui.MenuBar {
-        var menuBar = lucidware.ui.MenuBar.toMenuBar(element);
+    public static function fromElement(element: lucidfx.core.Element): lucidfx.ui.MenuBar {
+        var menuBar = lucidfx.ui.MenuBar.toMenuBar(element);
         if (menuBar.isNull()) {
             return null;
         }

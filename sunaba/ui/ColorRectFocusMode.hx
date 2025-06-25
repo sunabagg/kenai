@@ -1,4 +1,4 @@
-package lucidware..ui;
+package lucidfx..ui;
 
 enum abstract ColorRectFocusMode(Int) from Int to Int {
 	var none = 0;

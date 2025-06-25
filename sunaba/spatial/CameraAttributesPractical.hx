@@ -1,4 +1,4 @@
-package lucidware.spatial;
+package lucidfx.spatial;
 
 @:native("CameraAttributes")
 extern class CameraAttributesPractical extends CameraAttributes {
@@ -24,4 +24,4 @@ abstract CameraAttributesPracticalAbstract(CameraAttributesPractical) from Camer
         }
         return cameraAttributesPractical;
     }
-} // end package lucidware.spatial
+} // end package lucidfx.spatial

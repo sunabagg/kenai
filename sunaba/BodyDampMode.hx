@@ -1,4 +1,4 @@
-package lucidware;
+package lucidfx;
 
 enum abstract BodyDampMode(Int) from Int to Int {
 	var combine = 0;

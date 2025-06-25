@@ -1,7 +1,7 @@
-package lucidware.spatial;
+package lucidfx.spatial;
 
-import lucidware.core.Resource;
-import lucidware.core.Material;
+import lucidfx.core.Resource;
+import lucidfx.core.Material;
 
 @:native("Sky")
 extern class Sky extends Resource {
@@ -21,4 +21,4 @@ abstract SkyAbstract(Sky) from Sky to Sky {
         }
         return sky;
     } 
-} // end package lucidware.spatial
+} // end package lucidfx.spatial

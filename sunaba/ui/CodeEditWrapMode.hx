@@ -1,4 +1,4 @@
-package lucidware..ui;
+package lucidfx..ui;
 
 enum abstract CodeEditWrapMode(Int) from Int to Int {
 	var none = 0;

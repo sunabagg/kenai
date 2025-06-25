@@ -1,4 +1,4 @@
-package lucidware.core;
+package lucidfx.core;
 
 @:native("ShaderMaterial")
 extern class ShaderMaterial extends Material {

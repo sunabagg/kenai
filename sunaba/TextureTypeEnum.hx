@@ -1,4 +1,4 @@
-package lucidware;
+package lucidfx;
 
 enum abstract TextureTypeEnum(Int) from Int to Int {
 	var data = 0;

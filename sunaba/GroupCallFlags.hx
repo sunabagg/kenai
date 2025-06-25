@@ -1,4 +1,4 @@
-package lucidware;
+package lucidfx;
 
 enum abstract GroupCallFlags(Int) from Int to Int {
 	var default = 0;

@@ -1,4 +1,4 @@
-package lucidware;
+package lucidfx;
 
 enum abstract CompositorEffectFlags(Int) from Int to Int {
 	var accessResolvedColor = 1;

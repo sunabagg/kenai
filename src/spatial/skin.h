@@ -11,10 +11,10 @@
 
 using namespace godot;
 
-namespace lucidware::spatial {
+namespace lucidfx::spatial {
     void bindSkin(sol::state_view& lua);
 
-    class Skin : public lucidware::core::Resource {
+    class Skin : public lucidfx::core::Resource {
     private:
         GodotSkin* skin = nullptr;
     public:

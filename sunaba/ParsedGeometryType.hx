@@ -1,4 +1,4 @@
-package lucidware;
+package lucidfx;
 
 enum abstract ParsedGeometryType(Int) from Int to Int {
 	var meshInstances = 0;

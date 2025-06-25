@@ -1,4 +1,4 @@
-package lucidware;
+package lucidfx;
 
 enum abstract SelectModeEnum(Int) from Int to Int {
 	var single = 0;

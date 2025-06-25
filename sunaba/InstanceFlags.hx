@@ -1,4 +1,4 @@
-package lucidware;
+package lucidfx;
 
 enum abstract InstanceFlags(Int) from Int to Int {
 	var useBakedLight = 0;

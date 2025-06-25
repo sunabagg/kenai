@@ -1,7 +1,7 @@
-package lucidware.ui;
+package lucidfx.ui;
 
-import lucidware.core.Resource;
-import lucidware.core.Vector2;
+import lucidfx.core.Resource;
+import lucidfx.core.Vector2;
 
 @:native("StyleBox")
 extern class StyleBox extends Resource {
@@ -28,4 +28,4 @@ abstract StyleBoxAbstract(StyleBox) from StyleBox to StyleBox {
         }
         return styleBox;
     }
-} // end package lucidware.ui
+} // end package lucidfx.ui

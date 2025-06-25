@@ -1,7 +1,7 @@
-import lucidware.core.Variant;
-import lucidware.Error;
-import lucidware.core.RegExMatch;
-import lucidware.core.RegEx;
+import lucidfx.core.Variant;
+import lucidfx.Error;
+import lucidfx.core.RegExMatch;
+import lucidfx.core.RegEx;
 import lua.Table;
 
 @:coreApi

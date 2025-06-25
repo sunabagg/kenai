@@ -16,7 +16,7 @@
 
 using namespace godot;
 
-namespace lucidware::core {
+namespace lucidfx::core {
     class LuaFunctionWrapper : public Object {
         GDCLASS(LuaFunctionWrapper, Object);
     private:

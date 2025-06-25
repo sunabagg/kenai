@@ -1,4 +1,4 @@
-package lucidware;
+package lucidfx;
 
 enum abstract BodyFlagsEnum(Int) from Int to Int {
 	var upperBodySupported = 1;

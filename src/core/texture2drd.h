@@ -11,7 +11,7 @@
 
 using namespace godot;
 
-namespace lucidware::core {
+namespace lucidfx::core {
     void bindTexture2DRD(sol::state &lua);
 
     class Texture2DRD : public Texture2D {

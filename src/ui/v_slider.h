@@ -10,9 +10,9 @@
 #include "slider.h"
 
 using namespace godot;
-using namespace lucidware::core;
+using namespace lucidfx::core;
 
-namespace lucidware::ui {
+namespace lucidfx::ui {
     void bindVSlider(sol::state &lua);
 
     class VSlider;
@@ -24,7 +24,7 @@ namespace lucidware::ui {
                 // Bind methods specific to VSliderProxy
             }
         public:
-            lucidware::ui::VSlider* element = nullptr;
+            lucidfx::ui::VSlider* element = nullptr;
 
             void onInit() {
                 // Initialize the NodeProxy instance
@@ -53,7 +53,7 @@ namespace lucidware::ui {
             void _value_changed(double value) override;
     };
 
-    class VSlider : public lucidware::ui::Slider {
+    class VSlider : public lucidfx::ui::Slider {
         private:
             VSliderNode* vSlider = nullptr; // Pointer to the VSlider instance
             void connectVSliderSignals() {

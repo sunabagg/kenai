@@ -12,9 +12,9 @@
 #include "../core/event.h"
 
 #include "../core/stl_function_wrapper.h"
-using namespace lucidware::core;
+using namespace lucidfx::core;
 
-namespace lucidware::ui {
+namespace lucidfx::ui {
     void bindBaseButton(sol::state &lua);
 
     class BaseButton;
@@ -28,7 +28,7 @@ namespace lucidware::ui {
                 // Binding methods for BaseButtonProxy
             }
         public:
-            lucidware::ui::BaseButton* element = nullptr;
+            lucidfx::ui::BaseButton* element = nullptr;
 
             void onInit() {
                 // Initialize the NodeProxy instance
@@ -74,7 +74,7 @@ namespace lucidware::ui {
         protected:
             static void _bind_methods();
         public:
-            lucidware::ui::BaseButton* element = nullptr;
+            lucidfx::ui::BaseButton* element = nullptr;
 
             BaseButtonSignalWrapper() = default;
             ~BaseButtonSignalWrapper() = default;
@@ -85,7 +85,7 @@ namespace lucidware::ui {
             void button_up();
     };
 
-    class BaseButton : public lucidware::ui::Control {
+    class BaseButton : public lucidfx::ui::Control {
         private:
             BaseButtonNode* base_button = nullptr;
 
@@ -188,11 +188,11 @@ namespace lucidware::ui {
                 base_button->set_keep_pressed_outside(enabled);
             }
 
-            lucidware::input::Shortcut* getShortcut() {
-                return new lucidware::input::Shortcut(base_button->get_shortcut().ptr());
+            lucidfx::input::Shortcut* getShortcut() {
+                return new lucidfx::input::Shortcut(base_button->get_shortcut().ptr());
             }
 
-            void setShortcut(lucidware::input::Shortcut* shortcut) {
+            void setShortcut(lucidfx::input::Shortcut* shortcut) {
                 base_button->set_shortcut(shortcut->getShortcut());
             }
 

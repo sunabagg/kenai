@@ -1,4 +1,4 @@
-package lucidware;
+package lucidfx;
 
 enum abstract WindowMode(Int) from Int to Int {
 	var windowed = 0;

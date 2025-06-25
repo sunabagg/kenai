@@ -1,15 +1,15 @@
-package lucidware.ui;
+package lucidfx.ui;
 
-import lucidware.core.ArrayList;
-import lucidware.core.Event;
-import lucidware.core.Vector2;
-import lucidware.core.Vector2i;
-import lucidware.core.Color;
-import lucidware.core.Texture2D;
-import lucidware.desktop.PopupMenu;
-import lucidware.core.Rect2i;
-import lucidware.core.Variant;
-import lucidware.core.Element;
+import lucidfx.core.ArrayList;
+import lucidfx.core.Event;
+import lucidfx.core.Vector2;
+import lucidfx.core.Vector2i;
+import lucidfx.core.Color;
+import lucidfx.core.Texture2D;
+import lucidfx.desktop.PopupMenu;
+import lucidfx.core.Rect2i;
+import lucidfx.core.Variant;
+import lucidfx.core.Element;
 
 @:native("TextEdit")
 extern class TextEdit extends Control {

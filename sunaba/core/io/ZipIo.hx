@@ -1,4 +1,4 @@
-package lucidware.core.io;
+package lucidfx.core.io;
 
 @:native("ZipIo")
 extern class ZipIo extends IoInterface {

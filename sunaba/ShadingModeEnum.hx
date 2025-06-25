@@ -1,4 +1,4 @@
-package lucidware;
+package lucidfx;
 
 enum abstract ShadingModeEnum(Int) from Int to Int {
 	var unshaded = 0;

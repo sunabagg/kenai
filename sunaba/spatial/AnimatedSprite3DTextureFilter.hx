@@ -1,4 +1,4 @@
-package lucidware..spatial;
+package lucidfx..spatial;
 
 enum abstract AnimatedSprite3DTextureFilter(Int) from Int to Int {
 	var nearest = 0;

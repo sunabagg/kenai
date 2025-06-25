@@ -1,4 +1,4 @@
-package lucidware;
+package lucidfx;
 
 enum abstract FunctionEnum(Int) from Int to Int {
 	var normalize = 0;

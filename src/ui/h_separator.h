@@ -10,9 +10,9 @@
 #include "separator.h"
 
 using namespace godot;
-using namespace lucidware::core;
+using namespace lucidfx::core;
 
-namespace lucidware::ui {
+namespace lucidfx::ui {
     void bindHSeparator(sol::state& lua);
 
     class HSeparator;
@@ -24,7 +24,7 @@ namespace lucidware::ui {
                 // Bind methods specific to HSeparatorProxy
             }
         public:
-            lucidware::ui::HSeparator* element = nullptr;
+            lucidfx::ui::HSeparator* element = nullptr;
 
             void onInit() {
                 // Initialize the NodeProxy instance
@@ -51,7 +51,7 @@ namespace lucidware::ui {
             TypedArray<Vector3i> _structured_text_parser(const Array &args, const String &text) const override;
     };
 
-    class HSeparator : public lucidware::ui::Separator {
+    class HSeparator : public lucidfx::ui::Separator {
         private:
             HSeparatorNode* hSeparator = nullptr; // Pointer to the HSeparator instance
 

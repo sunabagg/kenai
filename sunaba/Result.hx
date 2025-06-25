@@ -1,4 +1,4 @@
-package lucidware;
+package lucidfx;
 
 enum abstract Result(Int) from Int to Int {
 	var success = 0;

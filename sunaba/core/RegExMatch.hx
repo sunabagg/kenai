@@ -1,4 +1,4 @@
-package lucidware.core;
+package lucidfx.core;
 
 @:native("RegExMatch")
 extern class RegExMatch extends BaseObject {

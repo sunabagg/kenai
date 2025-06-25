@@ -1,4 +1,4 @@
-package lucidware;
+package lucidfx;
 
 enum abstract JointType(Int) from Int to Int {
 	var pin = 0;

@@ -1,7 +1,7 @@
-package lucidware.ui;
+package lucidfx.ui;
 
-import lucidware.core.Resource;
-import lucidware.core.Event;
+import lucidfx.core.Resource;
+import lucidfx.core.Event;
 
 @:native("ButtonGroup")
 extern class ButtonGroup extends Resource {

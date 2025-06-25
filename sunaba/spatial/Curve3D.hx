@@ -1,7 +1,7 @@
-package lucidware.spatial;
+package lucidfx.spatial;
 
-import lucidware.core.Resource;
-import lucidware.core.Vector3;
+import lucidfx.core.Resource;
+import lucidfx.core.Vector3;
 
 @:native("Curve3D")
 extern class Curve3D extends Resource {
@@ -46,4 +46,4 @@ abstract Curve3DAbstract(Curve3D) from Curve3D to Curve3D {
         }
         return curve3D;
     } 
-} // end package lucidware.spatial
+} // end package lucidfx.spatial

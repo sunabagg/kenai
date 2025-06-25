@@ -1,4 +1,4 @@
-package lucidware;
+package lucidfx;
 
 enum abstract GraphemeFlag(Int) from Int to Int {
 	var valid = 1;

@@ -1,4 +1,4 @@
-package lucidware..spatial.navigation;
+package lucidfx..spatial.navigation;
 
 enum abstract NavigationRegion3DRotationEditMode(Int) from Int to Int {
 	var euler = 0;

@@ -1,4 +1,4 @@
-package lucidware;
+package lucidfx;
 
 enum abstract PickerShapeType(Int) from Int to Int {
 	var hsvRectangle = 0;

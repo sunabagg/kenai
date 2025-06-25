@@ -1,4 +1,4 @@
-package lucidware.input;
+package lucidfx.input;
 
 @:native("InputEventMagnifyGesture")
 extern class InputEventMagnifyGesture extends InputEventGesture {
@@ -16,4 +16,4 @@ abstract InputEventMagnifyGestureAbstract(InputEventMagnifyGesture) from InputEv
         }
         return inputEventMagnifyGesture;
     }
-} // end package lucidware.input
+} // end package lucidfx.input

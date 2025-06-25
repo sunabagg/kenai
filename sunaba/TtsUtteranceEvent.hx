@@ -1,4 +1,4 @@
-package lucidware;
+package lucidfx;
 
 enum abstract TtsUtteranceEvent(Int) from Int to Int {
 	var started = 0;

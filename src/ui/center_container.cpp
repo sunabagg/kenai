@@ -1,6 +1,6 @@
 #include "center_container.h"
 
-namespace lucidware::ui {
+namespace lucidfx::ui {
     void CenterContainerProxy::_enter_tree() {
         if (this->element != nullptr) {
             this->element->enterTree();
@@ -134,7 +134,7 @@ namespace lucidware::ui {
             "new", sol::factories(
                 []() { return new CenterContainer(); }
             ),
-            sol::base_classes, sol::bases<BaseObject, Element, lucidware::core::CanvasItem, Control, Container>(),
+            sol::base_classes, sol::bases<BaseObject, Element, lucidfx::core::CanvasItem, Control, Container>(),
             "useTopLeft", sol::property(
                 &CenterContainer::isUsingTopLeft, 
                 &CenterContainer::setUseTopLeft

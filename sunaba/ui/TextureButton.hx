@@ -1,8 +1,8 @@
-package lucidware.ui;
+package lucidfx.ui;
 
-import lucidware.core.BitMap;
-import lucidware.core.Texture2D;
-import lucidware.core.Element;
+import lucidfx.core.BitMap;
+import lucidfx.core.Texture2D;
+import lucidfx.core.Element;
 
 @Native("TextureButton")
 extern class TextureButton extends BaseButton {

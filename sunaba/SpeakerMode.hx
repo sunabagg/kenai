@@ -1,4 +1,4 @@
-package lucidware;
+package lucidfx;
 
 enum abstract SpeakerMode(Int) from Int to Int {
 	var modeStereo = 0;

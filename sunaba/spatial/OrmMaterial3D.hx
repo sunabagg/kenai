@@ -1,4 +1,4 @@
-package lucidware.spatial;
+package lucidfx.spatial;
 
 @:native("OrmMaterial3D")
 extern class OrmMaterial3D extends BaseMaterial3D {
@@ -15,4 +15,4 @@ abstract OrmMaterial3DAbstract(OrmMaterial3D) from OrmMaterial3D to OrmMaterial3
         }
         return ormMaterial3D;
     } 
-} // end package lucidware.spatial
+} // end package lucidfx.spatial

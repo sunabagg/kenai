@@ -1,11 +1,11 @@
-package lucidware.desktop;
+package lucidfx.desktop;
 
-import lucidware.core.Event;
-import lucidware.input.InputEvent;
-import lucidware.input.Shortcut;
-import lucidware.core.Texture2D;
-import lucidware.core.Color;
-import lucidware.core.Variant;
+import lucidfx.core.Event;
+import lucidfx.input.InputEvent;
+import lucidfx.input.Shortcut;
+import lucidfx.core.Texture2D;
+import lucidfx.core.Color;
+import lucidfx.core.Variant;
 
 @:native("PopupMenu")
 extern class PopupMenu extends Popup {

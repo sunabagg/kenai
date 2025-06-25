@@ -1,4 +1,4 @@
-package lucidware.core.io;
+package lucidfx.core.io;
 
 @:native("BinaryData")
 // BinaryData is a class that represents a binary data buffer.

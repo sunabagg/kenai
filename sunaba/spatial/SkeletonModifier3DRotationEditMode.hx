@@ -1,4 +1,4 @@
-package lucidware..spatial;
+package lucidfx..spatial;
 
 enum abstract SkeletonModifier3DRotationEditMode(Int) from Int to Int {
 	var euler = 0;

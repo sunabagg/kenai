@@ -1,4 +1,4 @@
-package lucidware.spatial;
+package lucidfx.spatial;
 
 @:native("Texture3DRD")
 extern class Texture3DRD extends Texture3D {
@@ -15,4 +15,4 @@ abstract Texture3DRDAbstract(Texture3DRD) from Texture3DRD to Texture3DRD {
         }
         return texture3d;
     } 
-} // end package lucidware.spatial
+} // end package lucidfx.spatial

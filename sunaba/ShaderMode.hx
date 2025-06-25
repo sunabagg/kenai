@@ -1,4 +1,4 @@
-package lucidware;
+package lucidfx;
 
 enum abstract ShaderMode(Int) from Int to Int {
 	var spatial = 0;

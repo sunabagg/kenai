@@ -1,4 +1,4 @@
-package lucidware;
+package lucidfx;
 
 enum abstract LightDirectionalSkyMode(Int) from Int to Int {
 	var lightAndSky = 0;

@@ -1,4 +1,4 @@
-package lucidware.core;
+package lucidfx.core;
 
 @:native("SystemFont")
 extern class SystemFont extends Font {

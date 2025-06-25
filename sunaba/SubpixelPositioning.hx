@@ -1,4 +1,4 @@
-package lucidware;
+package lucidfx;
 
 enum abstract SubpixelPositioning(Int) from Int to Int {
 	var disabled = 0;

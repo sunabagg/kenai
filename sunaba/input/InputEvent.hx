@@ -1,6 +1,6 @@
-package lucidware.input;
+package lucidfx.input;
 
-import lucidware.core.Resource;
+import lucidfx.core.Resource;
 
 @:native("InputEvent")
 extern class InputEvent extends Resource {
@@ -31,4 +31,4 @@ abstract InputEventAbstract(InputEvent) from InputEvent to InputEvent {
         }
         return inputEvent;
     } 
-} // end package lucidware.core
+} // end package lucidfx.core

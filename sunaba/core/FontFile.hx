@@ -1,6 +1,6 @@
-package lucidware.core;
+package lucidfx.core;
 
-import lucidware.core.io.BinaryData;
+import lucidfx.core.io.BinaryData;
 
 @:native("FontFile")
 extern class FontFile extends Font {

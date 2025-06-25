@@ -16,7 +16,7 @@
 #include "input_event_screen_touch.h"
 #include "shortcut.h"
 
-void lucidware::input::bindInputClasses(sol::state& lua) {
+void lucidfx::input::bindInputClasses(sol::state& lua) {
     bindInputEvent(lua);
     bindInputEventFromWindow(lua);
     bindInputEventWithModifiers(lua);

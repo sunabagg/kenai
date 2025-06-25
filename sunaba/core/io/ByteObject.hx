@@ -1,4 +1,4 @@
-package lucidware.core.io;
+package lucidfx.core.io;
 
 @:native("Byte")
 extern class ByteObject  {

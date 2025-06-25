@@ -57,7 +57,7 @@ if ( APPLE )
 endif()
 
 # Main project information
-project( lucidware
+project( lucidfx
     LANGUAGES
         C
         CXX

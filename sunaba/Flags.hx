@@ -1,4 +1,4 @@
-package lucidware;
+package lucidfx;
 
 enum abstract Flags(Int) from Int to Int {
 	var resizeDisabled = 0;

@@ -1,4 +1,4 @@
-package lucidware;
+package lucidfx;
 
 enum abstract HostStatistic(Int) from Int to Int {
 	var sentData = 0;

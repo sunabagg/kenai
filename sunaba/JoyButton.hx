@@ -1,4 +1,4 @@
-package lucidware;
+package lucidfx;
 
 enum abstract JoyButton(Int) from Int to Int {
 	var a = 0;

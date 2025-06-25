@@ -1,4 +1,4 @@
-package lucidware;
+package lucidfx;
 
 enum abstract ConeTwistJointParam(Int) from Int to Int {
 	var swingSpan = 0;

@@ -1,4 +1,4 @@
-package lucidware;
+package lucidfx;
 
 enum abstract EulerOrder(Int) from Int to Int {
 	var xyz = 0;

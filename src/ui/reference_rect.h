@@ -10,9 +10,9 @@
 #include "control.h"
 
 using namespace godot;
-using namespace lucidware::core;
+using namespace lucidfx::core;
 
-namespace lucidware::ui {
+namespace lucidfx::ui {
     void bindReferenceRect(sol::state& lua);
 
     class ReferenceRect;
@@ -24,7 +24,7 @@ namespace lucidware::ui {
                 // Bind methods specific to ReferenceRectProxy
             }
         public:
-            lucidware::ui::ReferenceRect* element = nullptr;
+            lucidfx::ui::ReferenceRect* element = nullptr;
 
             void onInit() {
                 // Initialize the NodeProxy instance
@@ -51,7 +51,7 @@ namespace lucidware::ui {
             TypedArray<Vector3i> _structured_text_parser(const Array &args, const String &text) const override;
     };
 
-    class ReferenceRect : public lucidware::ui::Control {
+    class ReferenceRect : public lucidfx::ui::Control {
         private:
             ReferenceRectNode* referenceRect = nullptr; // Pointer to the ReferenceRect instance
 

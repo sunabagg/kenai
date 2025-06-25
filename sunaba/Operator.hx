@@ -1,4 +1,4 @@
-package lucidware;
+package lucidfx;
 
 enum abstract Operator(Int) from Int to Int {
 	var equal = 0;

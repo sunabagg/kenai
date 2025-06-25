@@ -1,8 +1,8 @@
-package lucidware.spatial;
+package lucidfx.spatial;
 
-import lucidware.core.Resource;
-import lucidware.core.Texture;
-import lucidware.core.Image;
+import lucidfx.core.Resource;
+import lucidfx.core.Texture;
+import lucidfx.core.Image;
 
 @:native("Texture3D")
 extern class Texture3D extends Texture {
@@ -26,4 +26,4 @@ abstract Texture3DAbstract(Texture3D) from Texture3D to Texture3D {
         }
         return texture;
     } 
-} // end package lucidware.spatial
+} // end package lucidfx.spatial

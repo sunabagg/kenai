@@ -3,7 +3,7 @@
 
 #include <sol/sol.hpp>
 
-namespace lucidware::core
+namespace lucidfx::core
 {
     void bindCoreClasses(sol::state& lua);
 }

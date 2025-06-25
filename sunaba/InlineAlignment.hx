@@ -1,4 +1,4 @@
-package lucidware;
+package lucidfx;
 
 enum abstract InlineAlignment(Int) from Int to Int {
 	var topTo = 0;

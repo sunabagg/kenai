@@ -1,4 +1,4 @@
-package lucidware;
+package lucidfx;
 
 enum abstract GltfObjectModelType(Int) from Int to Int {
 	var unknown = 0;

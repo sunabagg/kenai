@@ -12,10 +12,10 @@
 
 #include "../core/scene_system.h"
 
-using namespace lucidware::core;
+using namespace lucidfx::core;
 using namespace godot;
 
-namespace lucidware::spatial
+namespace lucidfx::spatial
 {
     void bindSpatialTransform( sol::state& lua );
 

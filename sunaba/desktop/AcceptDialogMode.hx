@@ -1,4 +1,4 @@
-package lucidware..desktop;
+package lucidfx..desktop;
 
 enum abstract AcceptDialogMode(Int) from Int to Int {
 	var windowed = 0;

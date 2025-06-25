@@ -1,4 +1,4 @@
-package lucidware;
+package lucidfx;
 
 enum abstract TransparencyEnum(Int) from Int to Int {
 	var disabled = 0;

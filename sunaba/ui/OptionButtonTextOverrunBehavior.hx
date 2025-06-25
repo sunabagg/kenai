@@ -1,4 +1,4 @@
-package lucidware..ui;
+package lucidfx..ui;
 
 enum abstract OptionButtonTextOverrunBehavior(Int) from Int to Int {
 	var noTrimming = 0;

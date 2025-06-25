@@ -1,4 +1,4 @@
-package lucidware;
+package lucidfx;
 
 enum abstract ArrayFormat(Int) from Int to Int {
 	var flagFormatVersion1 = 0;

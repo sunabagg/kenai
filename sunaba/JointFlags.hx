@@ -1,4 +1,4 @@
-package lucidware;
+package lucidfx;
 
 enum abstract JointFlags(Int) from Int to Int {
 	var orientationValid = 1;

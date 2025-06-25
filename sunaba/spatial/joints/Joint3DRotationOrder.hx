@@ -1,4 +1,4 @@
-package lucidware..spatial.joints;
+package lucidfx..spatial.joints;
 
 enum abstract Joint3DRotationOrder(Int) from Int to Int {
 	var xyz = 0;

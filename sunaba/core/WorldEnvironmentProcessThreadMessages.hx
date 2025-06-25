@@ -1,4 +1,4 @@
-package lucidware..core;
+package lucidfx..core;
 
 enum abstract WorldEnvironmentProcessThreadMessages(Int) from Int to Int {
 	var messages = 1;

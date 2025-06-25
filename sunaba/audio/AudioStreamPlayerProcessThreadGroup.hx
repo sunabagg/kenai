@@ -1,4 +1,4 @@
-package lucidware..audio;
+package lucidfx..audio;
 
 enum abstract AudioStreamPlayerProcessThreadGroup(Int) from Int to Int {
 	var inherit = 0;

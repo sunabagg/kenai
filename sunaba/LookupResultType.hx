@@ -1,4 +1,4 @@
-package lucidware;
+package lucidfx;
 
 enum abstract LookupResultType(Int) from Int to Int {
 	var scriptLocation = 0;

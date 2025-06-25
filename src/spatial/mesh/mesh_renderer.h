@@ -8,10 +8,10 @@
 #include "../../core/scene_system.h"
 
 using namespace godot;
-using namespace lucidware::core;
-using namespace lucidware::spatial;
+using namespace lucidfx::core;
+using namespace lucidfx::spatial;
 
-namespace lucidware::spatial::mesh
+namespace lucidfx::spatial::mesh
 {
     void bindMeshRenderer(sol::state& lua);
 

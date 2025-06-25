@@ -1,4 +1,4 @@
-package lucidware;
+package lucidfx;
 
 enum abstract EnvironmentBG(Int) from Int to Int {
 	var clearColor = 0;

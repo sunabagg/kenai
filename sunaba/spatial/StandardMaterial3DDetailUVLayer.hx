@@ -1,4 +1,4 @@
-package lucidware..spatial;
+package lucidfx..spatial;
 
 enum abstract StandardMaterial3DDetailUVLayer(Int) from Int to Int {
 	var uv1 = 0;

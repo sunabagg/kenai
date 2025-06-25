@@ -1,7 +1,7 @@
-package lucidware.core;
+package lucidfx.core;
 
-import lucidware.ui.StyleBox;
-import lucidware.input.InputEvent;
+import lucidfx.ui.StyleBox;
+import lucidfx.input.InputEvent;
 
 @:native("Element")
 extern class CanvasItem extends Element {

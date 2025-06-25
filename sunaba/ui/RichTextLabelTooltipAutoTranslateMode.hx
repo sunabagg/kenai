@@ -1,4 +1,4 @@
-package lucidware..ui;
+package lucidfx..ui;
 
 enum abstract RichTextLabelTooltipAutoTranslateMode(Int) from Int to Int {
 	var inherit = 0;

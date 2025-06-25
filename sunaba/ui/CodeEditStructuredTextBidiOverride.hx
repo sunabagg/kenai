@@ -1,4 +1,4 @@
-package lucidware..ui;
+package lucidfx..ui;
 
 enum abstract CodeEditStructuredTextBidiOverride(Int) from Int to Int {
 	var default = 0;

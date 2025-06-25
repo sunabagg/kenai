@@ -1,6 +1,6 @@
 #include "font_variation.h"
 
-void lucidware::core::bindFontVariation(sol::state &lua) {
+void lucidfx::core::bindFontVariation(sol::state &lua) {
     lua.new_usertype<FontVariation>("FontVariation",
         "new", sol::factories(
             []() { return new FontVariation(); }

@@ -1,4 +1,4 @@
-package lucidware;
+package lucidfx;
 
 enum abstract ProcessThreadMessagesEnum(Int) from Int to Int {
 	var messages = 1;

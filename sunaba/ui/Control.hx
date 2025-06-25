@@ -1,14 +1,14 @@
-package lucidware.ui;
+package lucidfx.ui;
 
-import lucidware.core.CanvasItem;
-import lucidware.core.Vector2;
-import lucidware.core.Element;
-import lucidware.core.Variant;
-import lucidware.core.Color;
-import lucidware.core.Font;
-import lucidware.core.Texture2D;
-import lucidware.core.Rect2;
-import lucidware.core.Event;
+import lucidfx.core.CanvasItem;
+import lucidfx.core.Vector2;
+import lucidfx.core.Element;
+import lucidfx.core.Variant;
+import lucidfx.core.Color;
+import lucidfx.core.Font;
+import lucidfx.core.Texture2D;
+import lucidfx.core.Rect2;
+import lucidfx.core.Event;
 
 @:native("Control")
 extern class Control extends CanvasItem {

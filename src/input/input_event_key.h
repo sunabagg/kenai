@@ -11,12 +11,12 @@
 #include "input_event_with_modifiers.h"
 
 using namespace godot;
-using namespace lucidware::core;
+using namespace lucidfx::core;
 
-namespace lucidware::input {
+namespace lucidfx::input {
     void bindInputEventKey(sol::state_view& lua);
 
-    class InputEventKey : public lucidware::input::InputEventWithModifiers {
+    class InputEventKey : public lucidfx::input::InputEventWithModifiers {
     private:
         GodotInputEventKey* event;
     public:

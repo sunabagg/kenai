@@ -1,6 +1,6 @@
 #include "reg_ex_match.h"
 
-namespace lucidware::core {
+namespace lucidfx::core {
     void bindRegExMatch(sol::state& lua) {
         lua.new_usertype<RegExMatch>("RegExMatch",
             "new", sol::factories(

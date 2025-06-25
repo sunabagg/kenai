@@ -1,4 +1,4 @@
-package lucidware..spatial.xr;
+package lucidfx..spatial.xr;
 
 enum abstract XROrigin3DRotationEditMode(Int) from Int to Int {
 	var euler = 0;

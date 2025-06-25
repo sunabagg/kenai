@@ -10,12 +10,12 @@
 #include "input_event_gesture.h"
 
 using namespace godot;
-using namespace lucidware::core;
+using namespace lucidfx::core;
 
-namespace lucidware::input {
+namespace lucidfx::input {
     void bindInputEventMagnifyGesture(sol::state_view& lua);
 
-    class InputEventMagnifyGesture : public lucidware::input::InputEventGesture {
+    class InputEventMagnifyGesture : public lucidfx::input::InputEventGesture {
     private:
         GodotInputEventMagnifyGesture* event;
     public:

@@ -7,9 +7,9 @@
 #include "mesh_renderer.h"
 
 using namespace godot;
-using namespace lucidware::core;
+using namespace lucidfx::core;
 
-namespace lucidware::spatial::mesh {
+namespace lucidfx::spatial::mesh {
 
     void bindBox(sol::state& lua);
 

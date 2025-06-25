@@ -1,6 +1,6 @@
-package lucidware.spatial;
+package lucidfx.spatial;
 
-import lucidware.core.Vector2;
+import lucidfx.core.Vector2;
 
 @:native("PolygonOccluder3D")
 extern class PolygonOccluder3D extends Occluder3D {
@@ -18,4 +18,4 @@ abstract PolygonOccluder3DAbstract(PolygonOccluder3D) from PolygonOccluder3D to 
         }
         return polygonOccluder3D;
     } 
-} // end package lucidware.spatial
+} // end package lucidfx.spatial

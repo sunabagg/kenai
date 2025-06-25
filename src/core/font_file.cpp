@@ -1,137 +1,137 @@
 #include "font_file.h"
 
-void lucidware::core::bindFontFile(sol::state &lua) {
-    lua.new_usertype<lucidware::core::FontFile>("FontFile",
+void lucidfx::core::bindFontFile(sol::state &lua) {
+    lua.new_usertype<lucidfx::core::FontFile>("FontFile",
         "new", sol::factories(
-            []() { return new lucidware::core::FontFile(); }
+            []() { return new lucidfx::core::FontFile(); }
         ),
-        sol::base_classes, sol::bases<lucidware::core::BaseObject, lucidware::core::Resource, lucidware::core::Font>(),
+        sol::base_classes, sol::bases<lucidfx::core::BaseObject, lucidfx::core::Resource, lucidfx::core::Font>(),
 
         "allowSystemFallback", sol::property(
-            &lucidware::core::FontFile::getAllowSystemFallback,
-            &lucidware::core::FontFile::setAllowSystemFallback
+            &lucidfx::core::FontFile::getAllowSystemFallback,
+            &lucidfx::core::FontFile::setAllowSystemFallback
         ),
         "antialiasing", sol::property(
-            &lucidware::core::FontFile::getAntialiasing,
-            &lucidware::core::FontFile::setAntialiasing
+            &lucidfx::core::FontFile::getAntialiasing,
+            &lucidfx::core::FontFile::setAntialiasing
         ),
         "data", sol::property(
-            &lucidware::core::FontFile::getData,
-            &lucidware::core::FontFile::setData
+            &lucidfx::core::FontFile::getData,
+            &lucidfx::core::FontFile::setData
         ),
         "disableEmbeddedBitmaps", sol::property(
-            &lucidware::core::FontFile::getDisableEmbeddedBitmaps,
-            &lucidware::core::FontFile::setDisableEmbeddedBitmaps
+            &lucidfx::core::FontFile::getDisableEmbeddedBitmaps,
+            &lucidfx::core::FontFile::setDisableEmbeddedBitmaps
         ),
         "fixedSize", sol::property(
-            &lucidware::core::FontFile::getFixedSize,
-            &lucidware::core::FontFile::setFixedSize
+            &lucidfx::core::FontFile::getFixedSize,
+            &lucidfx::core::FontFile::setFixedSize
         ),
         "fixedSizeScaleMode", sol::property(
-            &lucidware::core::FontFile::getFixedSizeScaleMode,
-            &lucidware::core::FontFile::setFixedSizeScaleMode
+            &lucidfx::core::FontFile::getFixedSizeScaleMode,
+            &lucidfx::core::FontFile::setFixedSizeScaleMode
         ),
         "fontName", sol::property(
-            &lucidware::core::FontFile::getFontName,
-            &lucidware::core::FontFile::setFontName
+            &lucidfx::core::FontFile::getFontName,
+            &lucidfx::core::FontFile::setFontName
         ),
         "fontStretch", sol::property(
-            &lucidware::core::FontFile::getFontStretch,
-            &lucidware::core::FontFile::setFontStretch
+            &lucidfx::core::FontFile::getFontStretch,
+            &lucidfx::core::FontFile::setFontStretch
         ),
         "fontStyle", sol::property(
-            &lucidware::core::FontFile::getFontStyle,
-            &lucidware::core::FontFile::setFontStyle
+            &lucidfx::core::FontFile::getFontStyle,
+            &lucidfx::core::FontFile::setFontStyle
         ),
         "fontWeight", sol::property(
-            &lucidware::core::FontFile::getFontWeight,
-            &lucidware::core::FontFile::setFontWeight
+            &lucidfx::core::FontFile::getFontWeight,
+            &lucidfx::core::FontFile::setFontWeight
         ),
         "forceAutohinter", sol::property(
-            &lucidware::core::FontFile::getForceAutohinter,
-            &lucidware::core::FontFile::setForceAutohinter
+            &lucidfx::core::FontFile::getForceAutohinter,
+            &lucidfx::core::FontFile::setForceAutohinter
         ),
         "generateMipmaps", sol::property(
-            &lucidware::core::FontFile::getGenerateMipmaps,
-            &lucidware::core::FontFile::setGenerateMipmaps
+            &lucidfx::core::FontFile::getGenerateMipmaps,
+            &lucidfx::core::FontFile::setGenerateMipmaps
         ),
         "hinting", sol::property(
-            &lucidware::core::FontFile::getHinting,
-            &lucidware::core::FontFile::setHinting
+            &lucidfx::core::FontFile::getHinting,
+            &lucidfx::core::FontFile::setHinting
         ),
         "msdfPixelRange", sol::property(
-            &lucidware::core::FontFile::getMsdfPixelRange,
-            &lucidware::core::FontFile::setMsdfPixelRange
+            &lucidfx::core::FontFile::getMsdfPixelRange,
+            &lucidfx::core::FontFile::setMsdfPixelRange
         ),
         "msdfSize", sol::property(
-            &lucidware::core::FontFile::getMsdfSize,
-            &lucidware::core::FontFile::setMsdfSize
+            &lucidfx::core::FontFile::getMsdfSize,
+            &lucidfx::core::FontFile::setMsdfSize
         ),
         "multichannelSignedDistanceField", sol::property(
-            &lucidware::core::FontFile::getMultichannelSignedDistanceField,
-            &lucidware::core::FontFile::setMultichannelSignedDistanceField
+            &lucidfx::core::FontFile::getMultichannelSignedDistanceField,
+            &lucidfx::core::FontFile::setMultichannelSignedDistanceField
         ),
         "opentypeFeatureOverrides", sol::property(
-            &lucidware::core::FontFile::getOpentypeFeatureOverrides,
-            &lucidware::core::FontFile::setOpentypeFeatureOverrides
+            &lucidfx::core::FontFile::getOpentypeFeatureOverrides,
+            &lucidfx::core::FontFile::setOpentypeFeatureOverrides
         ),
         "oversampling", sol::property(
-            &lucidware::core::FontFile::getOversampling,
-            &lucidware::core::FontFile::setOversampling
+            &lucidfx::core::FontFile::getOversampling,
+            &lucidfx::core::FontFile::setOversampling
         ),
         "styleName", sol::property(
-            &lucidware::core::FontFile::getStyleName,
-            &lucidware::core::FontFile::setStyleName
+            &lucidfx::core::FontFile::getStyleName,
+            &lucidfx::core::FontFile::setStyleName
         ),
         "subpixelPositioning", sol::property(
-            &lucidware::core::FontFile::getSubpixelPositioning,
-            &lucidware::core::FontFile::setSubpixelPositioning
+            &lucidfx::core::FontFile::getSubpixelPositioning,
+            &lucidfx::core::FontFile::setSubpixelPositioning
         ),
-        "clearCache", &lucidware::core::FontFile::clearCache,
-        "clearGlyphs", &lucidware::core::FontFile::clearGlyphs,
-        "clearKerningMap", &lucidware::core::FontFile::clearKerningMap,
-        "getFallbacks", &lucidware::core::FontFile::getFallbacks,
-        "getFaceIndex", &lucidware::core::FontFile::getFaceIndex,
-        "getFontName", &lucidware::core::FontFile::getFontName,
-        "getGlyphAdvance", &lucidware::core::FontFile::getGlyphAdvance,
-        "getGlyphIndex", &lucidware::core::FontFile::getGlyphIndex,
-        "getGlyphList", &lucidware::core::FontFile::getGlyphList,
-        "getGlyphOffset", &lucidware::core::FontFile::getGlyphOffset,
-        "getGlyphSize", &lucidware::core::FontFile::getGlyphSize,
-        "getKerning", &lucidware::core::FontFile::getKerning,
-        "getKerningList", &lucidware::core::FontFile::getKerningList,
-        "getLanguageSupportOverride", &lucidware::core::FontFile::getLanguageSupportOverride,
-        "getScriptSupportOverride", &lucidware::core::FontFile::getScriptSupportOverride,
-        "getMsdfPixelRange", &lucidware::core::FontFile::getMsdfPixelRange,
-        "getMsdfSize", &lucidware::core::FontFile::getMsdfSize,
-        "getOversampling", &lucidware::core::FontFile::getOversampling,
-        "getSizeCacheList", &lucidware::core::FontFile::getSizeCacheList,
-        "getTextureCount", &lucidware::core::FontFile::getTextureCount,
-        "getTextureImage", &lucidware::core::FontFile::getTextureImage,
-        "getTextureOffsets", &lucidware::core::FontFile::getTextureOffsets,
-        "getTransform", &lucidware::core::FontFile::getTransform,
-        "getVariationCoordinates", &lucidware::core::FontFile::getVariationCoordinates,
-        "isLanguageSupported", &lucidware::core::FontFile::isLanguageSupported,
-        "isScriptSupported", &lucidware::core::FontFile::isScriptSupported,
-        "loadBitmapFont", &lucidware::core::FontFile::loadBitmapFont,
-        "loadDynamicFont", &lucidware::core::FontFile::loadDynamicFont,
-        "setCacheCapacity", &lucidware::core::FontFile::setCacheCapacity,
-        "setFallbacks", &lucidware::core::FontFile::setFallbacks,
-        "setFontName", &lucidware::core::FontFile::setFontName,
-        "setFontStyle", &lucidware::core::FontFile::setFontStyle,
-        "setFontWeight", &lucidware::core::FontFile::setFontWeight,
-        "setGlyphAdvance", &lucidware::core::FontFile::setGlyphAdvance,
-        "setGlyphOffset", &lucidware::core::FontFile::setGlyphOffset,
-        "setGlyphSize", &lucidware::core::FontFile::setGlyphSize,
-        "setGlyphTextureIndex", &lucidware::core::FontFile::setGlyphTextureIndex,
-        "setGlyphUvRect", &lucidware::core::FontFile::setGlyphUvRect,
-        "setKerning", &lucidware::core::FontFile::setKerning,
-        "setLanguageSupportOverride", &lucidware::core::FontFile::setLanguageSupportOverride,
-        "setScriptSupportOverride", &lucidware::core::FontFile::setScriptSupportOverride,
-        "setTextureImage", &lucidware::core::FontFile::setTextureImage,
-        "setTextureOffsets", &lucidware::core::FontFile::setTextureOffsets,
-        "setTransform", &lucidware::core::FontFile::setTransform,
-        "setVariationCoordinates", &lucidware::core::FontFile::setVariationCoordinates,
+        "clearCache", &lucidfx::core::FontFile::clearCache,
+        "clearGlyphs", &lucidfx::core::FontFile::clearGlyphs,
+        "clearKerningMap", &lucidfx::core::FontFile::clearKerningMap,
+        "getFallbacks", &lucidfx::core::FontFile::getFallbacks,
+        "getFaceIndex", &lucidfx::core::FontFile::getFaceIndex,
+        "getFontName", &lucidfx::core::FontFile::getFontName,
+        "getGlyphAdvance", &lucidfx::core::FontFile::getGlyphAdvance,
+        "getGlyphIndex", &lucidfx::core::FontFile::getGlyphIndex,
+        "getGlyphList", &lucidfx::core::FontFile::getGlyphList,
+        "getGlyphOffset", &lucidfx::core::FontFile::getGlyphOffset,
+        "getGlyphSize", &lucidfx::core::FontFile::getGlyphSize,
+        "getKerning", &lucidfx::core::FontFile::getKerning,
+        "getKerningList", &lucidfx::core::FontFile::getKerningList,
+        "getLanguageSupportOverride", &lucidfx::core::FontFile::getLanguageSupportOverride,
+        "getScriptSupportOverride", &lucidfx::core::FontFile::getScriptSupportOverride,
+        "getMsdfPixelRange", &lucidfx::core::FontFile::getMsdfPixelRange,
+        "getMsdfSize", &lucidfx::core::FontFile::getMsdfSize,
+        "getOversampling", &lucidfx::core::FontFile::getOversampling,
+        "getSizeCacheList", &lucidfx::core::FontFile::getSizeCacheList,
+        "getTextureCount", &lucidfx::core::FontFile::getTextureCount,
+        "getTextureImage", &lucidfx::core::FontFile::getTextureImage,
+        "getTextureOffsets", &lucidfx::core::FontFile::getTextureOffsets,
+        "getTransform", &lucidfx::core::FontFile::getTransform,
+        "getVariationCoordinates", &lucidfx::core::FontFile::getVariationCoordinates,
+        "isLanguageSupported", &lucidfx::core::FontFile::isLanguageSupported,
+        "isScriptSupported", &lucidfx::core::FontFile::isScriptSupported,
+        "loadBitmapFont", &lucidfx::core::FontFile::loadBitmapFont,
+        "loadDynamicFont", &lucidfx::core::FontFile::loadDynamicFont,
+        "setCacheCapacity", &lucidfx::core::FontFile::setCacheCapacity,
+        "setFallbacks", &lucidfx::core::FontFile::setFallbacks,
+        "setFontName", &lucidfx::core::FontFile::setFontName,
+        "setFontStyle", &lucidfx::core::FontFile::setFontStyle,
+        "setFontWeight", &lucidfx::core::FontFile::setFontWeight,
+        "setGlyphAdvance", &lucidfx::core::FontFile::setGlyphAdvance,
+        "setGlyphOffset", &lucidfx::core::FontFile::setGlyphOffset,
+        "setGlyphSize", &lucidfx::core::FontFile::setGlyphSize,
+        "setGlyphTextureIndex", &lucidfx::core::FontFile::setGlyphTextureIndex,
+        "setGlyphUvRect", &lucidfx::core::FontFile::setGlyphUvRect,
+        "setKerning", &lucidfx::core::FontFile::setKerning,
+        "setLanguageSupportOverride", &lucidfx::core::FontFile::setLanguageSupportOverride,
+        "setScriptSupportOverride", &lucidfx::core::FontFile::setScriptSupportOverride,
+        "setTextureImage", &lucidfx::core::FontFile::setTextureImage,
+        "setTextureOffsets", &lucidfx::core::FontFile::setTextureOffsets,
+        "setTransform", &lucidfx::core::FontFile::setTransform,
+        "setVariationCoordinates", &lucidfx::core::FontFile::setVariationCoordinates,
         "cast", [](Resource* instance) {
             return new FontFile(godot::Object::cast_to<GodotFontFile>(instance->getResource()));
         }

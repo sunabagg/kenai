@@ -1,6 +1,6 @@
 #include "lua_bind.h"
 
-void lucidware::core::bind_vector2i(sol::state& lua) {
+void lucidfx::core::bind_vector2i(sol::state& lua) {
     lua.new_usertype<godot::Vector2i>(
         "Vector2i", 
         sol::constructors<

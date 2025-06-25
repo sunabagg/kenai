@@ -1,4 +1,4 @@
-package lucidware;
+package lucidfx;
 
 enum abstract RotationEditModeEnum(Int) from Int to Int {
 	var euler = 0;

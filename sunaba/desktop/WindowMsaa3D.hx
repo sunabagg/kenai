@@ -1,4 +1,4 @@
-package lucidware..desktop;
+package lucidfx..desktop;
 
 enum abstract WindowMsaa3D(Int) from Int to Int {
 	var disabled = 0;

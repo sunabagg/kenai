@@ -1,4 +1,4 @@
-package lucidware;
+package lucidfx;
 
 enum abstract ModeFlags(Int) from Int to Int {
 	var read = 1;

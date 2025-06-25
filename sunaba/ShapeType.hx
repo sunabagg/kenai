@@ -1,4 +1,4 @@
-package lucidware;
+package lucidfx;
 
 enum abstract ShapeType(Int) from Int to Int {
 	var worldBoundary = 0;

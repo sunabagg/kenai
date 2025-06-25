@@ -1,4 +1,4 @@
-package lucidware;
+package lucidfx;
 
 enum abstract UnixPermissionFlags(Int) from Int to Int {
 	var executeOther = 1;

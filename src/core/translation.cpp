@@ -1,23 +1,23 @@
 #include "translation.h"
 
-void lucidware::core::bindTranslation(sol::state &lua) {
-    lua.new_usertype<lucidware::core::Translation>("Translation",
+void lucidfx::core::bindTranslation(sol::state &lua) {
+    lua.new_usertype<lucidfx::core::Translation>("Translation",
         "new", sol::factories(
-            []() { return new lucidware::core::Translation(); }
+            []() { return new lucidfx::core::Translation(); }
         ),
-        sol::base_classes, sol::bases<lucidware::core::Resource>(),
+        sol::base_classes, sol::bases<lucidfx::core::Resource>(),
         "locale", sol::property(
-            &lucidware::core::Translation::getLocale,
-            &lucidware::core::Translation::setLocale
+            &lucidfx::core::Translation::getLocale,
+            &lucidfx::core::Translation::setLocale
         ),
-        "addMessage", &lucidware::core::Translation::addMessage,
-        "addPluralMessage", &lucidware::core::Translation::addPluralMessage,
-        "eraseMessage", &lucidware::core::Translation::eraseMessage,
-        "getMessage", &lucidware::core::Translation::getMessage,
-        "getMessageCount", &lucidware::core::Translation::getMessageCount,
-        "getMessageList", &lucidware::core::Translation::getMessageList,
-        "getPluralMessage", &lucidware::core::Translation::getPluralMessage,
-        "getTranslatedMessageList", &lucidware::core::Translation::getTranslatedMessageList,
+        "addMessage", &lucidfx::core::Translation::addMessage,
+        "addPluralMessage", &lucidfx::core::Translation::addPluralMessage,
+        "eraseMessage", &lucidfx::core::Translation::eraseMessage,
+        "getMessage", &lucidfx::core::Translation::getMessage,
+        "getMessageCount", &lucidfx::core::Translation::getMessageCount,
+        "getMessageList", &lucidfx::core::Translation::getMessageList,
+        "getPluralMessage", &lucidfx::core::Translation::getPluralMessage,
+        "getTranslatedMessageList", &lucidfx::core::Translation::getTranslatedMessageList,
         "cast", [](Resource* instance) {
             return new Translation(godot::Object::cast_to<GodotTranslation>(instance->getResource()));
         }

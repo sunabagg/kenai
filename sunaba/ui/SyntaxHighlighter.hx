@@ -1,7 +1,7 @@
-package lucidware.ui;
+package lucidfx.ui;
 
-import lucidware.core.Resource;
-import lucidware.core.Dictionary;
+import lucidfx.core.Resource;
+import lucidfx.core.Dictionary;
 
 @:native("SyntaxHighlighter")
 extern class SyntaxHighlighter extends Resource {

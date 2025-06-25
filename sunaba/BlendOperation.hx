@@ -1,4 +1,4 @@
-package lucidware;
+package lucidfx;
 
 enum abstract BlendOperation(Int) from Int to Int {
 	var add = 0;

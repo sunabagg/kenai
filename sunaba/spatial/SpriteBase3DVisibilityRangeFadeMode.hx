@@ -1,4 +1,4 @@
-package lucidware..spatial;
+package lucidfx..spatial;
 
 enum abstract SpriteBase3DVisibilityRangeFadeMode(Int) from Int to Int {
 	var disabled = 0;

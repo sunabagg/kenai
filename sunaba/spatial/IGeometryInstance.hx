@@ -1,4 +1,4 @@
-package lucidware.spatial;
+package lucidfx.spatial;
 
 @:native("IGeometryInstance")
 extern class IGeometryInstance extends IVisualInstance {

@@ -1,4 +1,4 @@
-package lucidware..ui;
+package lucidfx..ui;
 
 enum abstract CheckBoxTextDirection(Int) from Int to Int {
 	var auto = 0;

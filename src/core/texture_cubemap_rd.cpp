@@ -1,12 +1,12 @@
 #include "texture_cubemap_rd.h"
 
-void lucidware::core::bindTextureCubemapRD(sol::state &lua) {
-    lua.new_usertype<lucidware::core::TextureCubemapRD>("TextureCubemapRD",
+void lucidfx::core::bindTextureCubemapRD(sol::state &lua) {
+    lua.new_usertype<lucidfx::core::TextureCubemapRD>("TextureCubemapRD",
         "new", sol::factories(
-            []() { return new lucidware::core::TextureCubemapRD(); }
+            []() { return new lucidfx::core::TextureCubemapRD(); }
         ),
-        sol::base_classes, sol::bases<lucidware::core::BaseObject, lucidware::core::Resource, lucidware::core::Texture, lucidware::core::TextureLayered, lucidware::core::TextureLayeredRD>(),
-        "cast", [](lucidware::core::Resource* instance) {
+        sol::base_classes, sol::bases<lucidfx::core::BaseObject, lucidfx::core::Resource, lucidfx::core::Texture, lucidfx::core::TextureLayered, lucidfx::core::TextureLayeredRD>(),
+        "cast", [](lucidfx::core::Resource* instance) {
             return new TextureCubemapRD(godot::Object::cast_to<GodotTextureCubemapRD>(instance->getResource()));
         }
     );

@@ -1,4 +1,4 @@
-package lucidware;
+package lucidfx;
 
 enum abstract Error(Int) from Int to Int {
 	var ok = 0;

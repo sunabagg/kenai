@@ -1,4 +1,4 @@
-package lucidware;
+package lucidfx;
 
 enum abstract FinalAction(Int) from Int to Int {
 	var store = 0;

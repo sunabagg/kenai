@@ -1,4 +1,4 @@
-package lucidware;
+package lucidfx;
 
 enum abstract InitializationLevel(Int) from Int to Int {
 	var core = 0;

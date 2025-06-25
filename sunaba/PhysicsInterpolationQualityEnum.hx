@@ -1,4 +1,4 @@
-package lucidware;
+package lucidfx;
 
 enum abstract PhysicsInterpolationQualityEnum(Int) from Int to Int {
 	var fast = 0;

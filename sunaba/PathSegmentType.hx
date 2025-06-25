@@ -1,4 +1,4 @@
-package lucidware;
+package lucidfx;
 
 enum abstract PathSegmentType(Int) from Int to Int {
 	var region = 0;

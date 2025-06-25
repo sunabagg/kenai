@@ -1,4 +1,4 @@
-package lucidware;
+package lucidfx;
 
 enum abstract EaseType(Int) from Int to Int {
 	var in = 0;

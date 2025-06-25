@@ -1,4 +1,4 @@
-package lucidware;
+package lucidfx;
 
 enum abstract Method(Int) from Int to Int {
 	var get = 0;

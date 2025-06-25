@@ -10,12 +10,12 @@
 #include "input_event.h"
 
 using namespace godot;
-using namespace lucidware::core;
+using namespace lucidfx::core;
 
-namespace lucidware::input {
+namespace lucidfx::input {
     void bindInputEventJoypadMotion(sol::state_view& lua);
 
-    class InputEventJoypadMotion : public lucidware::input::InputEvent {
+    class InputEventJoypadMotion : public lucidfx::input::InputEvent {
     private:
         GodotInputEventJoypadMotion* event;
     public:

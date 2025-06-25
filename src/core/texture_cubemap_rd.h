@@ -11,7 +11,7 @@
 
 using namespace godot;
 
-namespace lucidware::core {
+namespace lucidfx::core {
     void bindTextureCubemapRD(sol::state &lua);
 
     class TextureCubemapRD : public TextureLayeredRD {

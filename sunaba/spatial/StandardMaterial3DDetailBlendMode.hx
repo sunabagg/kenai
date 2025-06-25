@@ -1,4 +1,4 @@
-package lucidware..spatial;
+package lucidfx..spatial;
 
 enum abstract StandardMaterial3DDetailBlendMode(Int) from Int to Int {
 	var mix = 0;

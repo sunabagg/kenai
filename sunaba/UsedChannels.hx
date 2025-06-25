@@ -1,4 +1,4 @@
-package lucidware;
+package lucidfx;
 
 enum abstract UsedChannels(Int) from Int to Int {
 	var l = 0;

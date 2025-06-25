@@ -1,4 +1,4 @@
-package lucidware;
+package lucidfx;
 
 enum abstract SubdivEnum(Int) from Int to Int {
 	var subdiv64 = 0;

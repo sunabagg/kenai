@@ -1,4 +1,4 @@
-package lucidware..core;
+package lucidfx..core;
 
 enum abstract SubViewportCanvasItemDefaultTextureRepeat(Int) from Int to Int {
 	var disabled = 0;

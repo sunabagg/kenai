@@ -1,4 +1,4 @@
-package lucidware.core;
+package lucidfx.core;
 
 @:native("TextureLayered")
 extern class TextureLayered extends Texture {
@@ -22,4 +22,4 @@ abstract TextureLayeredAbstract(TextureLayered) from TextureLayered to TextureLa
         }
         return textureLayered;
     } 
-} // end package lucidware.core
+} // end package lucidfx.core

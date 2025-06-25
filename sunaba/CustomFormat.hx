@@ -1,4 +1,4 @@
-package lucidware;
+package lucidfx;
 
 enum abstract CustomFormat(Int) from Int to Int {
 	var rgba8Unorm = 0;

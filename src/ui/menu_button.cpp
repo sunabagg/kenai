@@ -1,6 +1,6 @@
 #include "menu_button.h"
 
-namespace lucidware::ui {
+namespace lucidfx::ui {
     void MenuButtonProxy::_enter_tree() {
         if (element != nullptr) {
             element->enterTree();
@@ -140,13 +140,13 @@ namespace lucidware::ui {
 
     void bindMenuButton(sol::state &lua) {
         using namespace sol;
-        using namespace lucidware::ui;
+        using namespace lucidfx::ui;
 
         lua.new_usertype<MenuButton>("MenuButton",
             "new", sol::factories(
                 []() { return new MenuButton(); }
             ),
-            sol::base_classes, sol::bases<BaseObject, Element, lucidware::core::CanvasItem, lucidware::ui::Control, lucidware::ui::BaseButton, Button>(),
+            sol::base_classes, sol::bases<BaseObject, Element, lucidfx::core::CanvasItem, lucidfx::ui::Control, lucidfx::ui::BaseButton, Button>(),
             "actionMode", sol::property(
                 &MenuButton::getActionMode,
                 &MenuButton::setActionMode

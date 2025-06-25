@@ -1,4 +1,4 @@
-package lucidware..spatial.xr;
+package lucidfx..spatial.xr;
 
 enum abstract OpenXRHandRotationEditMode(Int) from Int to Int {
 	var euler = 0;

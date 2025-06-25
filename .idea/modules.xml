@@ -2,8 +2,8 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/lucidware.iml" filepath="$PROJECT_DIR$/.idea/lucidware.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/lucidware2.iml" filepath="$PROJECT_DIR$/.idea/lucidware2.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/lucidfx.iml" filepath="$PROJECT_DIR$/.idea/lucidfx.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/lucidfx2.iml" filepath="$PROJECT_DIR$/.idea/lucidfx2.iml" />
     </modules>
   </component>
 </project>

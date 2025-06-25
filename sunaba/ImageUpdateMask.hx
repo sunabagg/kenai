@@ -1,4 +1,4 @@
-package lucidware;
+package lucidfx;
 
 enum abstract ImageUpdateMask(Int) from Int to Int {
 	var texture = 1;

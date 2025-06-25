@@ -1,4 +1,4 @@
-package lucidware;
+package lucidfx;
 
 enum abstract ProcessModeEnum(Int) from Int to Int {
 	var automatic = 0;

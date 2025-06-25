@@ -1,6 +1,6 @@
 #include "range.h"
 
-namespace lucidware::ui {
+namespace lucidfx::ui {
     void RangeProxy::_enter_tree() {
         if (element != nullptr) {
             element->enterTree();
@@ -146,7 +146,7 @@ namespace lucidware::ui {
             "new", sol::factories(
                 []() { return new Range(); }
             ),
-            sol::base_classes, sol::bases<BaseObject, Element, lucidware::core::CanvasItem, Control>(),
+            sol::base_classes, sol::bases<BaseObject, Element, lucidfx::core::CanvasItem, Control>(),
             "allowGreater", sol::property(&Range::getAllowGreater, &Range::setAllowGreater),
             "allowLesser", sol::property(&Range::getAllowLesser, &Range::setAllowLesser),
             "expEdit", sol::property(&Range::getExpEdit, &Range::setExpEdit),

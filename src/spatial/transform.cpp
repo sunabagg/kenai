@@ -1,9 +1,9 @@
 #include "transform.h"
 
-using namespace lucidware::core;
+using namespace lucidfx::core;
 using namespace godot;
 
-namespace lucidware::spatial {
+namespace lucidfx::spatial {
 
     void bindSpatialTransform(sol::state& lua) {
         lua.new_usertype<SpatialTransform>("SpatialTransform",  

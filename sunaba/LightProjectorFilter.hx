@@ -1,4 +1,4 @@
-package lucidware;
+package lucidfx;
 
 enum abstract LightProjectorFilter(Int) from Int to Int {
 	var nearest = 0;

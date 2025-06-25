@@ -1,4 +1,4 @@
-package lucidware;
+package lucidfx;
 
 enum abstract Orientation(Int) from Int to Int {
 	var horizontal = 0;

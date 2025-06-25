@@ -10,7 +10,7 @@
 #include "control.h"
 #include "../core/label_settings.h"
 
-namespace lucidware::ui {
+namespace lucidfx::ui {
     void bindLabel(sol::state &lua);
 
     class Label;
@@ -22,7 +22,7 @@ namespace lucidware::ui {
                 // Bind methods specific to LabelProxy
             }
         public:
-            lucidware::ui::Label* element = nullptr;
+            lucidfx::ui::Label* element = nullptr;
 
             void onInit() {
                 // Initialize the NodeProxy instance
@@ -120,12 +120,12 @@ namespace lucidware::ui {
                 label_node->set_justification_flags(static_cast<godot::BitField<godot::TextServer::JustificationFlag>>(flags));
             }
 
-            lucidware::core::LabelSettings* getLabelSettings() {
+            lucidfx::core::LabelSettings* getLabelSettings() {
                 Ref<godot::LabelSettings> settings = label_node->get_label_settings();
-                return new lucidware::core::LabelSettings(settings.ptr());
+                return new lucidfx::core::LabelSettings(settings.ptr());
             }
 
-            void setLabelSettings(lucidware::core::LabelSettings* settings) {
+            void setLabelSettings(lucidfx::core::LabelSettings* settings) {
                 Ref<godot::LabelSettings> settingsRef = Ref<godot::LabelSettings>(settings->getLabelSettings());
                 label_node->set_label_settings(settingsRef);
             }

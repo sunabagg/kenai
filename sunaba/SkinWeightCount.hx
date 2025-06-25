@@ -1,4 +1,4 @@
-package lucidware;
+package lucidfx;
 
 enum abstract SkinWeightCount(Int) from Int to Int {
 	var skin4Weights = 0;

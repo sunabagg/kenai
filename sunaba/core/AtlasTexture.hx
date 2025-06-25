@@ -1,4 +1,4 @@
-package lucidware.core;
+package lucidfx.core;
 
 @:native("AtlasTexture")
 extern class AtlasTexture extends Texture {

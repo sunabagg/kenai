@@ -11,12 +11,12 @@
 #include "../core/material.h"
 
 using namespace godot;
-using namespace lucidware::core;
+using namespace lucidfx::core;
 
-namespace lucidware::spatial {
+namespace lucidfx::spatial {
     void bindSky(sol::state_view& lua);
 
-    class Sky : public lucidware::core::Resource {
+    class Sky : public lucidfx::core::Resource {
     private:
         GodotSky* sky = nullptr;
     public:
@@ -54,11 +54,11 @@ namespace lucidware::spatial {
             sky->set_radiance_size(static_cast<GodotSky::RadianceSize>(size));
         }
 
-        lucidware::core::Material* getSkyMaterial() {
-            return new lucidware::core::Material(sky->get_material().ptr());
+        lucidfx::core::Material* getSkyMaterial() {
+            return new lucidfx::core::Material(sky->get_material().ptr());
         }
 
-        void setSkyMaterial(lucidware::core::Material* material) {
+        void setSkyMaterial(lucidfx::core::Material* material) {
             sky->set_material(material->getMaterial());
         }
     };

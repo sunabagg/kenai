@@ -1,4 +1,4 @@
-package lucidware.input;
+package lucidfx.input;
 
 @:native("InputEventMidi")
 extern class InputEventMidi extends InputEvent {
@@ -23,4 +23,4 @@ abstract InputEventMidiAbstract(InputEventMidi) from InputEventMidi to InputEven
         }
         return inputEventMidi;
     }
-} // end package lucidware.input
+} // end package lucidfx.input

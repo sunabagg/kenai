@@ -1,4 +1,4 @@
-package lucidware;
+package lucidfx;
 
 enum abstract TransitionToTime(Int) from Int to Int {
 	var samePosition = 0;

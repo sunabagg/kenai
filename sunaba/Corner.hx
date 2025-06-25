@@ -1,4 +1,4 @@
-package lucidware;
+package lucidfx;
 
 enum abstract Corner(Int) from Int to Int {
 	var topLeft = 0;

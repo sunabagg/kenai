@@ -1,4 +1,4 @@
-package lucidware.spatial;
+package lucidfx.spatial;
 
 @native("BoxOccluder3D")
 extern class BoxOccluder3D extends Occluder3D {
@@ -16,4 +16,4 @@ abstract BoxOccluder3DAbstract(BoxOccluder3D) from BoxOccluder3D to BoxOccluder3
         }
         return boxOccluder3D;
     }
-} // end package lucidware.spatial
+} // end package lucidfx.spatial

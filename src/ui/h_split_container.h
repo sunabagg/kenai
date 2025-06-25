@@ -10,9 +10,9 @@
 #include "split_container.h"
 
 using namespace godot;
-using namespace lucidware::core;
+using namespace lucidfx::core;
 
-namespace lucidware::ui {
+namespace lucidfx::ui {
     void bindHSplitContainer(sol::state &lua);
 
     class HSplitContainer;
@@ -24,7 +24,7 @@ namespace lucidware::ui {
                 // Bind methods specific to HSplitContainerProxy
             }
         public:
-            lucidware::ui::HSplitContainer* element = nullptr;
+            lucidfx::ui::HSplitContainer* element = nullptr;
 
             void onInit() {
                 // Initialize the NodeProxy instance

@@ -1,9 +1,9 @@
-package lucidware.spatial;
+package lucidfx.spatial;
 
-import lucidware.core.Vector3;
-import lucidware.core.Material;
-import lucidware.core.Color;
-import lucidware.core.Texture2D;
+import lucidfx.core.Vector3;
+import lucidfx.core.Material;
+import lucidfx.core.Color;
+import lucidfx.core.Texture2D;
 
 @:native("BaseMaterial3D")
 extern class BaseMaterial3D extends Material {
@@ -143,4 +143,4 @@ abstract BaseMaterial3DAbstract(BaseMaterial3D) from BaseMaterial3D to BaseMater
         }
         return baseMaterial3D;
     }
-} // end package lucidware.spatial
+} // end package lucidfx.spatial

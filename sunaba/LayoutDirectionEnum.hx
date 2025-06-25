@@ -1,4 +1,4 @@
-package lucidware;
+package lucidfx;
 
 enum abstract LayoutDirectionEnum(Int) from Int to Int {
 	var inherited = 0;

@@ -1,4 +1,4 @@
-package lucidware;
+package lucidfx;
 
 enum abstract VaryingType(Int) from Int to Int {
 	var float = 0;

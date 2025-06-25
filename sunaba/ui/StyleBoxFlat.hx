@@ -1,6 +1,6 @@
-package lucidware.ui;
+package lucidfx.ui;
 
-import lucidware.core.Vector2;
+import lucidfx.core.Vector2;
 
 @:native("StyleBoxFlat")
 extern class StyleBoxFlat extends StyleBox {
@@ -48,4 +48,4 @@ abstract StyleBoxFlatAbstract(StyleBoxFlat) from StyleBoxFlat to StyleBoxFlat {
         }
         return styleBoxFlat;
     }
-} // end package lucidware.ui
+} // end package lucidfx.ui

@@ -1,4 +1,4 @@
-package lucidware;
+package lucidfx;
 
 enum abstract FillModeEnum(Int) from Int to Int {
 	var leftToRight = 0;

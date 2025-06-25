@@ -1,4 +1,4 @@
-package lucidware.input;
+package lucidfx.input;
 
 @:native("InputEventJoypadMotion")
 extern class InputEventJoypadMotion extends InputEvent {
@@ -17,4 +17,4 @@ abstract InputEventJoypadMotionAbstract(InputEventJoypadMotion) from InputEventJ
         }
         return inputEventJoypadMotion;
     }
-} // end package lucidware.input
+} // end package lucidfx.input

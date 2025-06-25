@@ -1,4 +1,4 @@
-package lucidware;
+package lucidfx;
 
 enum abstract LayeredType(Int) from Int to Int {
 	var type2dArray = 0;

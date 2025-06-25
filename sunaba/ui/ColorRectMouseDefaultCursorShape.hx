@@ -1,4 +1,4 @@
-package lucidware..ui;
+package lucidfx..ui;
 
 enum abstract ColorRectMouseDefaultCursorShape(Int) from Int to Int {
 	var arrow = 0;

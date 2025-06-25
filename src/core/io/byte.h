@@ -3,7 +3,7 @@
 
 #include <sol/sol.hpp>
 
-namespace lucidware::core::io {
+namespace lucidfx::core::io {
     void bindByte(sol::state& lua);
 
     class Byte{

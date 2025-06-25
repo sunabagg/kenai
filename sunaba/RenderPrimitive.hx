@@ -1,4 +1,4 @@
-package lucidware;
+package lucidfx;
 
 enum abstract RenderPrimitive(Int) from Int to Int {
 	var points = 0;

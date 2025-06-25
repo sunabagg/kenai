@@ -1,4 +1,4 @@
-package lucidware..spatial;
+package lucidfx..spatial;
 
 enum abstract Sprite3DAlphaAntialiasingMode(Int) from Int to Int {
 	var off = 0;

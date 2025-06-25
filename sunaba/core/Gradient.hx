@@ -1,4 +1,4 @@
-package lucidware.core;
+package lucidfx.core;
 
 @:native("Gradient")
 extern class Gradient extends Resource {

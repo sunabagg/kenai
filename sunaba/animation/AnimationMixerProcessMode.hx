@@ -1,4 +1,4 @@
-package lucidware..animation;
+package lucidfx..animation;
 
 enum abstract AnimationMixerProcessMode(Int) from Int to Int {
 	var inherit = 0;

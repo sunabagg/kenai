@@ -1,4 +1,4 @@
-package lucidware;
+package lucidfx;
 
 enum abstract TextureUsageBits(Int) from Int to Int {
 	var samplingBit = 1;

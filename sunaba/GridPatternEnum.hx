@@ -1,4 +1,4 @@
-package lucidware;
+package lucidfx;
 
 enum abstract GridPatternEnum(Int) from Int to Int {
 	var lines = 0;

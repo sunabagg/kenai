@@ -1,12 +1,12 @@
 #include "audio_stream_randomizer.h"
 
-void lucidware::audio::bindAudioStreamRandomizer(sol::state_view& lua) {
+void lucidfx::audio::bindAudioStreamRandomizer(sol::state_view& lua) {
     lua.new_usertype<AudioStreamRandomizer>("AudioStreamRandomizer",
         "new", sol::factories([]() {
             return new AudioStreamRandomizer();
         }),
-        sol::base_classes, sol::bases<lucidware::core::BaseObject, lucidware::core::Resource, AudioStream>(),
-        "cast", [](lucidware::core::Resource* resource) { 
+        sol::base_classes, sol::bases<lucidfx::core::BaseObject, lucidfx::core::Resource, AudioStream>(),
+        "cast", [](lucidfx::core::Resource* resource) { 
             return new AudioStreamRandomizer(
                 Object::cast_to<GodotAudioStreamRandomizer>(
                     resource->getResource()

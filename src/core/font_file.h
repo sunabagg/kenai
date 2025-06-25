@@ -1,5 +1,5 @@
-#ifndef LUCIDWARE_FONT_FILE_H
-#define LUCIDWARE_FONT_FILE_H
+#ifndef LUCIDFX_FONT_FILE_H
+#define LUCIDFX_FONT_FILE_H
 
 #include <godot_cpp/classes/font_file.hpp>
 #include <godot_cpp/variant/variant.hpp>
@@ -16,9 +16,9 @@
 #include "io/binary_data.h"
 
 using namespace godot;
-using namespace lucidware::core::io;
+using namespace lucidfx::core::io;
 
-namespace lucidware::core {
+namespace lucidfx::core {
     void bindFontFile(sol::state &lua);
 
     class FontFile : public Font {
@@ -545,4 +545,4 @@ namespace lucidware::core {
     };
 }
 
-#endif // LUCIDWARE_FONT_FILE_H
+#endif // LUCIDFX_FONT_FILE_H

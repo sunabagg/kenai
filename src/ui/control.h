@@ -14,9 +14,9 @@
 
 #include "../core/stl_function_wrapper.h"
 
-using namespace lucidware::core;
+using namespace lucidfx::core;
 
-namespace lucidware::ui {
+namespace lucidfx::ui {
     void bindControl(sol::state &lua);
 
     class Control;
@@ -28,7 +28,7 @@ namespace lucidware::ui {
                 // Bind methods specific to ControlProxy
             }
         public:
-            lucidware::ui::Control* element = nullptr;
+            lucidfx::ui::Control* element = nullptr;
 
             void onInit() {
                 // Initialize the NodeProxy instance
@@ -70,7 +70,7 @@ namespace lucidware::ui {
         protected:
             static void _bind_methods();
         public:
-            lucidware::ui::Control* element = nullptr;
+            lucidfx::ui::Control* element = nullptr;
 
             ControlSignalWrapper() = default;
             ~ControlSignalWrapper() = default;
@@ -86,7 +86,7 @@ namespace lucidware::ui {
             void theme_changed();
     };
 
-    class Control : public lucidware::core::CanvasItem {
+    class Control : public lucidfx::core::CanvasItem {
         private:
             ControlNode* control = nullptr; // Pointer to the Control instance
             ControlSignalWrapper* controlSignalWrapper = nullptr;
@@ -520,7 +520,7 @@ namespace lucidware::ui {
                 if (scriptInstance != sol::lua_nil) {
                     auto func = scriptInstance["guiInput"].get<sol::function>();
                     if (func) {
-                        lucidware::input::InputEvent* eventObj = new lucidware::input::InputEvent(event.ptr());
+                        lucidfx::input::InputEvent* eventObj = new lucidfx::input::InputEvent(event.ptr());
                         func(scriptInstance, eventObj);
                     }
                 }
@@ -558,7 +558,7 @@ namespace lucidware::ui {
                 control->add_theme_constant_override(name, constant);
             }
 
-            void addThemeFontOverride(String name, lucidware::core::Font* font) {
+            void addThemeFontOverride(String name, lucidfx::core::Font* font) {
                 Ref<godot::Font> fontRef = Ref<godot::Font>(font->getFont());
                 control->add_theme_font_override(name, fontRef);
             }
@@ -567,12 +567,12 @@ namespace lucidware::ui {
                 control->add_theme_font_size_override(name, size);
             }
 
-            void addThemeIconOverride(String name, lucidware::core::Texture2D* texture) {
+            void addThemeIconOverride(String name, lucidfx::core::Texture2D* texture) {
                 Ref<godot::Texture2D> textureRef = Ref<godot::Texture2D>(texture->getTexture());
                 control->add_theme_icon_override(name, textureRef);
             }
 
-            void addThemeStyleboxOverride(String name, lucidware::ui::StyleBox* styleBox) {
+            void addThemeStyleboxOverride(String name, lucidfx::ui::StyleBox* styleBox) {
                 Ref<godot::StyleBox> styleBoxRef = Ref<godot::StyleBox>(styleBox->getStyleBox());
                 control->add_theme_stylebox_override(name, styleBoxRef);
             }
@@ -665,24 +665,24 @@ namespace lucidware::ui {
                 return control->get_theme_default_base_scale();
             }
 
-            lucidware::core::Font* getThemeDefaultFont() {
-                return new lucidware::core::Font(control->get_theme_default_font().ptr());
+            lucidfx::core::Font* getThemeDefaultFont() {
+                return new lucidfx::core::Font(control->get_theme_default_font().ptr());
             }
 
             int getThemeDefaultFontSize() {
                 return control->get_theme_default_font_size();
             }
 
-            lucidware::core::Font* getThemeFont(std::string name, std::string type = String(StringName("&")).utf8().get_data()) {
-                return new lucidware::core::Font(control->get_theme_font(name.c_str(), type.c_str()).ptr());
+            lucidfx::core::Font* getThemeFont(std::string name, std::string type = String(StringName("&")).utf8().get_data()) {
+                return new lucidfx::core::Font(control->get_theme_font(name.c_str(), type.c_str()).ptr());
             }
 
             int getThemeFontSize(std::string name, std::string type = String(StringName("&")).utf8().get_data()) {
                 return control->get_theme_font_size(name.c_str(), type.c_str());
             }
 
-            lucidware::core::Texture2D* getThemeIcon(std::string name, std::string type = String(StringName("&")).utf8().get_data()) {
-                return new lucidware::core::Texture2D(control->get_theme_icon(name.c_str(), type.c_str()).ptr());
+            lucidfx::core::Texture2D* getThemeIcon(std::string name, std::string type = String(StringName("&")).utf8().get_data()) {
+                return new lucidfx::core::Texture2D(control->get_theme_icon(name.c_str(), type.c_str()).ptr());
             }
 
             StyleBox* getThemeStylebox(std::string name, std::string type = String(StringName("&")).utf8().get_data()) {

@@ -1,4 +1,4 @@
-package lucidware;
+package lucidfx;
 
 enum abstract PolyJoinType(Int) from Int to Int {
 	var square = 0;

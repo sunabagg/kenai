@@ -1,4 +1,4 @@
-package lucidware;
+package lucidfx;
 
 enum abstract RootNodeModeEnum(Int) from Int to Int {
 	var singleRoot = 0;

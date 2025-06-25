@@ -1,7 +1,7 @@
 #include "base_button.h"
 #include "button_group.h"
 
-namespace lucidware::ui {
+namespace lucidfx::ui {
     void BaseButtonProxy::_enter_tree() {
         if (this->element != nullptr) {
             this->element->enterTree();
@@ -184,7 +184,7 @@ namespace lucidware::ui {
             "new", sol::factories(
                 []() { return new BaseButton(); }
             ),
-            sol::base_classes, sol::bases<BaseObject, Element, lucidware::core::CanvasItem, Control>(),
+            sol::base_classes, sol::bases<BaseObject, Element, lucidfx::core::CanvasItem, Control>(),
             "actionMode", sol::property(
                 &BaseButton::getActionMode,
                 &BaseButton::setActionMode

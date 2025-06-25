@@ -1,4 +1,4 @@
-package lucidware;
+package lucidfx;
 
 enum abstract CompressionMode(Int) from Int to Int {
 	var lossless = 0;

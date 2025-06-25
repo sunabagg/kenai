@@ -1,4 +1,4 @@
-package lucidware..animation;
+package lucidfx..animation;
 
 enum abstract AnimationMixerPhysicsInterpolationMode(Int) from Int to Int {
 	var inherit = 0;

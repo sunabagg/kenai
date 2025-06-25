@@ -12,9 +12,9 @@
 #include "../core/font.h"
 
 using namespace godot;
-using namespace lucidware::core;
+using namespace lucidfx::core;
 
-namespace lucidware::ui {
+namespace lucidfx::ui {
     void bindTreeItem(sol::state& lua);
 
     class Tree;
@@ -75,7 +75,7 @@ namespace lucidware::ui {
                 tree_item->set_visible(visible);
             }
 
-            void addButton(int column, lucidware::core::Texture2D* button, int id = -1, bool disabled = false, std::string toolTipText = "") {
+            void addButton(int column, lucidfx::core::Texture2D* button, int id = -1, bool disabled = false, std::string toolTipText = "") {
                 tree_item->add_button(column, Ref<godot::Texture2D>(button->getTexture2D()), id, disabled, toolTipText.c_str());
             }
 
@@ -115,8 +115,8 @@ namespace lucidware::ui {
                 return tree_item->get_autowrap_mode(column);
             }
 
-            lucidware::core::Texture2D* getButton(int column, int idx) const {
-                return new lucidware::core::Texture2D(tree_item->get_button(column, idx).ptr());
+            lucidfx::core::Texture2D* getButton(int column, int idx) const {
+                return new lucidfx::core::Texture2D(tree_item->get_button(column, idx).ptr());
             }
 
             int getButtonById(int column, int id) const {
@@ -167,8 +167,8 @@ namespace lucidware::ui {
                 return tree_item->get_custom_color(column);
             }
 
-            lucidware::core::Font* getCustomFont(int column) const {
-                return new lucidware::core::Font(tree_item->get_custom_font(column).ptr());
+            lucidfx::core::Font* getCustomFont(int column) const {
+                return new lucidfx::core::Font(tree_item->get_custom_font(column).ptr());
             }
 
             int getCustomFontSize(int column) const {
@@ -184,8 +184,8 @@ namespace lucidware::ui {
                 return new TreeItem(tree_item->get_first_child());
             }
 
-            lucidware::core::Texture2D* getIcon(int column) const {
-                return new lucidware::core::Texture2D(tree_item->get_icon(column).ptr());
+            lucidfx::core::Texture2D* getIcon(int column) const {
+                return new lucidfx::core::Texture2D(tree_item->get_icon(column).ptr());
             }
 
             int getIconMaxWidth(int column) const {
@@ -196,8 +196,8 @@ namespace lucidware::ui {
                 return tree_item->get_icon_modulate(column);
             }
 
-            lucidware::core::Texture2D* getIconOverlay(int column) const {
-                return new lucidware::core::Texture2D(tree_item->get_icon_overlay(column).ptr());
+            lucidfx::core::Texture2D* getIconOverlay(int column) const {
+                return new lucidfx::core::Texture2D(tree_item->get_icon_overlay(column).ptr());
             }
 
             Rect2 getIconRegion(int column) const {
@@ -354,7 +354,7 @@ namespace lucidware::ui {
                 tree_item->set_autowrap_mode(column, static_cast<TextServer::AutowrapMode>(mode));
             }
 
-            void setButton(int column, int buttonIdx, lucidware::core::Texture2D* button) {
+            void setButton(int column, int buttonIdx, lucidfx::core::Texture2D* button) {
                 tree_item->set_button(column, buttonIdx, Ref<godot::Texture2D>(button->getTexture2D()));
             }
 
@@ -394,7 +394,7 @@ namespace lucidware::ui {
                 tree_item->set_custom_color(column, color);
             }
             
-            void setCustomFont(int column, lucidware::core::Font* font) {
+            void setCustomFont(int column, lucidfx::core::Font* font) {
                 tree_item->set_custom_font(column, Ref<godot::Font>(font->getFont()));
             }
 
@@ -414,7 +414,7 @@ namespace lucidware::ui {
                 tree_item->set_expand_right(column, expand);
             }
 
-            void setIcon(int column, lucidware::core::Texture2D* texture) {
+            void setIcon(int column, lucidfx::core::Texture2D* texture) {
                 tree_item->set_icon(column, Ref<godot::Texture2D>(texture->getTexture2D()));
             }
 
@@ -426,7 +426,7 @@ namespace lucidware::ui {
                 tree_item->set_icon_modulate(column, modulate);
             }
 
-            void setIconOverlay(int column, lucidware::core::Texture2D* texture) {
+            void setIconOverlay(int column, lucidfx::core::Texture2D* texture) {
                 tree_item->set_icon_overlay(column, Ref<godot::Texture2D>(texture->getTexture2D()));
             }
 

@@ -1,13 +1,13 @@
-package lucidware.ui;
+package lucidfx.ui;
 
-import lucidware.core.Color;
-import lucidware.core.BaseObject;
-import lucidware.core.Texture2D;
-import lucidware.core.Font;
-import lucidware.core.Rect2;
-import lucidware.core.Variant;
-import lucidware.core.Dictionary;
-import lucidware.core.ArrayList;
+import lucidfx.core.Color;
+import lucidfx.core.BaseObject;
+import lucidfx.core.Texture2D;
+import lucidfx.core.Font;
+import lucidfx.core.Rect2;
+import lucidfx.core.Variant;
+import lucidfx.core.Dictionary;
+import lucidfx.core.ArrayList;
 
 @:native("TreeItem")
 extern class TreeItem extends BaseObject {

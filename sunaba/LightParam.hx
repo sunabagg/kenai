@@ -1,4 +1,4 @@
-package lucidware;
+package lucidfx;
 
 enum abstract LightParam(Int) from Int to Int {
 	var energy = 0;

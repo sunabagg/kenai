@@ -1,4 +1,4 @@
-package lucidware;
+package lucidfx;
 
 enum abstract SpaceParameter(Int) from Int to Int {
 	var contactRecycleRadius = 0;

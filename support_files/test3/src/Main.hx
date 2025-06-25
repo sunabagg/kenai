@@ -1,8 +1,8 @@
-import lucidware.core.*;
-import lucidware.spatial.Camera;
-import lucidware.spatial.SpatialTransform;
-import lucidware.spatial.mesh.MeshRenderer;
-import lucidware.spatial.mesh.Box;
+import lucidfx.core.*;
+import lucidfx.spatial.Camera;
+import lucidfx.spatial.SpatialTransform;
+import lucidfx.spatial.mesh.MeshRenderer;
+import lucidfx.spatial.mesh.Box;
 import RotateComponent;
 
 class Main {

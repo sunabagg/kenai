@@ -1,11 +1,11 @@
 #include "input_event.h"
 
-void lucidware::input::bindInputEvent(sol::state_view& lua) {
+void lucidfx::input::bindInputEvent(sol::state_view& lua) {
     lua.new_usertype<InputEvent>("InputEvent",
         "new", sol::factories(
             []() { return new InputEvent(); }
         ),
-        sol::base_classes, sol::bases<lucidware::core::Resource>(),
+        sol::base_classes, sol::bases<lucidfx::core::Resource>(),
         "device", sol::property(&InputEvent::getDevice, &InputEvent::setDevice),
         "accumulate", &InputEvent::accumulate,
         "asText", &InputEvent::asText,
@@ -20,7 +20,7 @@ void lucidware::input::bindInputEvent(sol::state_view& lua) {
         "isPressed", &InputEvent::isPressed,
         "isReleased", &InputEvent::isReleased,
         "xformedBy", &InputEvent::xformedBy,
-        "cast", [](lucidware::core::Resource* instance) {
+        "cast", [](lucidfx::core::Resource* instance) {
             return new InputEvent(godot::Object::cast_to<GodotInputEvent>(instance->getResource()));
         }
     );

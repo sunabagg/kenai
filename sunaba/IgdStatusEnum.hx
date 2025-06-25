@@ -1,4 +1,4 @@
-package lucidware;
+package lucidfx;
 
 enum abstract IgdStatusEnum(Int) from Int to Int {
 	var ok = 0;

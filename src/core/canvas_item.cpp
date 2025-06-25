@@ -1,56 +1,56 @@
 #include "canvas_item.h"
 
-namespace lucidware::core {
+namespace lucidfx::core {
 
-    void lucidware::core::CanvasItemProxy::_enter_tree() {
+    void lucidfx::core::CanvasItemProxy::_enter_tree() {
         if (this->element != nullptr) {
             this->element->enterTree();
         }
     }
     
-    void lucidware::core::CanvasItemProxy::_exit_tree() {
+    void lucidfx::core::CanvasItemProxy::_exit_tree() {
         if (this->element != nullptr) {
             this->element->exitTree();
         }
     }
     
-    void lucidware::core::CanvasItemProxy::_ready() {
+    void lucidfx::core::CanvasItemProxy::_ready() {
         if (this->element != nullptr) {
             this->element->ready();
         }
     }
     
-    void lucidware::core::CanvasItemProxy::_process(double delta) {
+    void lucidfx::core::CanvasItemProxy::_process(double delta) {
         if (this->element != nullptr) {
             this->element->process(delta);
         }
     }
     
-    void lucidware::core::CanvasItemProxy::_physics_process(double delta) {
+    void lucidfx::core::CanvasItemProxy::_physics_process(double delta) {
         if (this->element != nullptr) {
             this->element->physicsProcess(delta);
         }
     }
     
-    void lucidware::core::CanvasItemProxy::_input(const Ref<InputEvent>& event) {
+    void lucidfx::core::CanvasItemProxy::_input(const Ref<InputEvent>& event) {
         if (this->element != nullptr) {
             this->element->input(event);
         }
     }
     
-    void lucidware::core::CanvasItemProxy::_unhandled_input(const Ref<InputEvent>& event) {
+    void lucidfx::core::CanvasItemProxy::_unhandled_input(const Ref<InputEvent>& event) {
         if (this->element != nullptr) {
             this->element->unhandledInput(event);
         }
     }
     
-    void lucidware::core::CanvasItemProxy::_unhandled_key_input(const Ref<InputEvent>& event) {
+    void lucidfx::core::CanvasItemProxy::_unhandled_key_input(const Ref<InputEvent>& event) {
         if (this->element != nullptr) {
             this->element->unhandledKeyInput(event);
         }
     }
     
-    void lucidware::core::CanvasItemProxy::_shortcut_input(const Ref<InputEvent>& event) {
+    void lucidfx::core::CanvasItemProxy::_shortcut_input(const Ref<InputEvent>& event) {
         if (this->element != nullptr) {
             this->element->shortcutInput(event);
         }

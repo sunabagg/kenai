@@ -1,4 +1,4 @@
-package lucidware;
+package lucidfx;
 
 enum abstract FogVolumeShape(Int) from Int to Int {
 	var ellipsoid = 0;

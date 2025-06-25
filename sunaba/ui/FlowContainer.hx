@@ -1,4 +1,4 @@
-package lucidware.ui;
+package lucidfx.ui;
 
 @:native("FlowContainer")
 extern class FlowContainer extends Container {
@@ -13,7 +13,7 @@ extern class FlowContainer extends Container {
 
 abstract FlowContainerAbstract(FlowContainer) from FlowContainer to FlowContainer {
     @:from
-    public static function fromElement(element: lucidware.core.Element): FlowContainerAbstract {
+    public static function fromElement(element: lucidfx.core.Element): FlowContainerAbstract {
         var container = FlowContainer.toFlowContainer(element);
         if (container.isNull()) {
             return null;

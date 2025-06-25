@@ -1,4 +1,4 @@
-package lucidware;
+package lucidfx;
 
 enum abstract StencilOperation(Int) from Int to Int {
 	var keep = 0;

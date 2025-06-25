@@ -1,4 +1,4 @@
-package lucidware.core;
+package lucidfx.core;
 
 @:native("Translation")
 extern class Translation extends Resource {
@@ -24,4 +24,4 @@ abstract TranslationAbstract(Translation) from Translation to Translation {
         }
         return translation;
     } 
-} // end package lucidware.core
+} // end package lucidfx.core

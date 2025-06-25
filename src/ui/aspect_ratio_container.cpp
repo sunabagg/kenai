@@ -1,6 +1,6 @@
 #include "aspect_ratio_container.h"
 
-namespace lucidware::ui {
+namespace lucidfx::ui {
     void AspectRatioContainerProxy::_enter_tree() {
         if (this->element != nullptr) {
             this->element->enterTree();
@@ -134,7 +134,7 @@ namespace lucidware::ui {
             "new", sol::factories(
                 []() { return new AspectRatioContainer(); }
             ),
-            sol::base_classes, sol::bases<BaseObject, Element, lucidware::core::CanvasItem, Control, Container>(),
+            sol::base_classes, sol::bases<BaseObject, Element, lucidfx::core::CanvasItem, Control, Container>(),
             "alignmentHorizontal", sol::property(
                 &AspectRatioContainer::getAlignmentHorizontal,
                 &AspectRatioContainer::setAlignmentHorizontal

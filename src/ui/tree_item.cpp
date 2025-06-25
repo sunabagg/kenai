@@ -1,7 +1,7 @@
 #include "tree_item.h"
 #include "tree.h"
 
-namespace lucidware::ui {
+namespace lucidfx::ui {
     Tree* TreeItem::getTree() const {
         return new Tree(tree_item->get_tree());
     }

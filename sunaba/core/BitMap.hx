@@ -1,4 +1,4 @@
-package lucidware.core;
+package lucidfx.core;
 
 @:native("BitMap")
 extern class BitMap extends Resource {

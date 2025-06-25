@@ -1,4 +1,4 @@
-package lucidware;
+package lucidfx;
 
 enum abstract TrackerHand(Int) from Int to Int {
 	var unknown = 0;

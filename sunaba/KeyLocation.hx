@@ -1,4 +1,4 @@
-package lucidware;
+package lucidfx;
 
 enum abstract KeyLocation(Int) from Int to Int {
 	var unspecified = 0;

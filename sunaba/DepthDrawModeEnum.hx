@@ -1,4 +1,4 @@
-package lucidware;
+package lucidfx;
 
 enum abstract DepthDrawModeEnum(Int) from Int to Int {
 	var opaqueOnly = 0;

@@ -1,7 +1,7 @@
-package lucidware.spatial;
+package lucidfx.spatial;
 
-import lucidware.core.Transform3D;
-import lucidware.core.Resource;
+import lucidfx.core.Transform3D;
+import lucidfx.core.Resource;
 
 @:native("Skin")
 extern class Skin extends Resource {
@@ -29,4 +29,4 @@ abstract SkinAbstract(Skin) from Skin to Skin {
         }
         return skin;
     } 
-} // end package lucidware.spatial
+} // end package lucidfx.spatial

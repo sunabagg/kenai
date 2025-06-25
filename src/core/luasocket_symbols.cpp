@@ -18,7 +18,7 @@ extern "C" {
 }
 
 // Dummy function to ensure symbols are linked
-void lucidware_ensure_luasocket_symbols() {
+void lucidfx_ensure_luasocket_symbols() {
     // These pointers ensure the symbols are referenced and linked
     volatile void* ptr1 = (void*)luaopen_socket_core;
     volatile void* ptr2 = (void*)luaopen_mime_core;

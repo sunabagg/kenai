@@ -3,7 +3,7 @@
 
 #include <sol/sol.hpp>
 
-namespace lucidware::spatial
+namespace lucidfx::spatial
 {
     void bindSpatialClasses(sol::state& lua);
 }

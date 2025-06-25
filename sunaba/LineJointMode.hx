@@ -1,4 +1,4 @@
-package lucidware;
+package lucidfx;
 
 enum abstract LineJointMode(Int) from Int to Int {
 	var sharp = 0;

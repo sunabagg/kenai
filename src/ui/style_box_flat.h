@@ -10,9 +10,9 @@
 #include "style_box.h"
 
 using namespace godot;
-using namespace lucidware::core;
+using namespace lucidfx::core;
 
-namespace lucidware::ui {
+namespace lucidfx::ui {
     void bindStyleBoxFlat(sol::state_view &lua);
 
     class StyleBoxFlat : public StyleBox {

@@ -1,4 +1,4 @@
-package lucidware;
+package lucidfx;
 
 enum abstract CloseButtonDisplayPolicy(Int) from Int to Int {
 	var showNever = 0;

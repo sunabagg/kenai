@@ -1,4 +1,4 @@
-package lucidware..ui;
+package lucidfx..ui;
 
 enum abstract ItemListSizeFlagsHorizontal(Int) from Int to Int {
 	var shrinkBegin = 0;

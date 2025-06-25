@@ -1,4 +1,4 @@
-package lucidware.spatial;
+package lucidfx.spatial;
 
 @:native("SkeletonProfileHumanoid")
 extern class SkeletonProfileHumanoid extends SkeletonProfile {
@@ -19,4 +19,4 @@ abstract SkeletonProfileHumanoidAbstract(SkeletonProfileHumanoid) from SkeletonP
         }
         return skeletonProfile;
     } 
-} // end package lucidware.spatial
+} // end package lucidfx.spatial

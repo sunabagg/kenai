@@ -1,4 +1,4 @@
-package lucidware;
+package lucidfx;
 
 enum abstract TrackingStatus(Int) from Int to Int {
 	var normalTracking = 0;

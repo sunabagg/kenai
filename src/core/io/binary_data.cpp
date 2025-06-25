@@ -1,6 +1,6 @@
 #include "binary_data.h"
 
-void lucidware::core::io::bindBinaryData(sol::state& lua) {
+void lucidfx::core::io::bindBinaryData(sol::state& lua) {
     lua.new_usertype<BinaryData>("BinaryData",
         //sol::constructors<BinaryData(), BinaryData(const sol::table)>(),
         "new", sol::factories(

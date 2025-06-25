@@ -1,4 +1,4 @@
-package lucidware;
+package lucidfx;
 
 enum abstract TreeCellMode(Int) from Int to Int {
 	var string = 0;

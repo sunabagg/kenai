@@ -1,11 +1,11 @@
-package lucidware.ui;
+package lucidfx.ui;
 
-import lucidware.core.Event;
-import lucidware.desktop.Popup;
-import lucidware.core.Texture2D;
-import lucidware.core.Vector2;
-import lucidware.core.Variant;
-import lucidware.core.Element;
+import lucidfx.core.Event;
+import lucidfx.desktop.Popup;
+import lucidfx.core.Texture2D;
+import lucidfx.core.Vector2;
+import lucidfx.core.Variant;
+import lucidfx.core.Element;
 
 @:native("TabContainer")
 extern class TabContainer extends Container {

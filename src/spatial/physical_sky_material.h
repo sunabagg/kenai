@@ -11,12 +11,12 @@
 #include "../core/texture2d.h"
 
 using namespace godot;
-using namespace lucidware::core;
+using namespace lucidfx::core;
 
-namespace lucidware::spatial {
+namespace lucidfx::spatial {
     void bindPhysicalSkyMaterial(sol::state_view& lua);
 
-    class PhysicalSkyMaterial : public lucidware::core::Material {
+    class PhysicalSkyMaterial : public lucidfx::core::Material {
     private:
         GodotPhysicalSkyMaterial* material = nullptr;
     public:
@@ -78,13 +78,13 @@ namespace lucidware::spatial {
             material->set_mie_eccentricity(eccentricity);
         }
 
-        lucidware::core::Texture2D* getNightSky() {
-            return new lucidware::core::Texture2D(
+        lucidfx::core::Texture2D* getNightSky() {
+            return new lucidfx::core::Texture2D(
                 material->get_night_sky().ptr()
             );
         }
 
-        void setNightSky(lucidware::core::Texture2D* texture) {
+        void setNightSky(lucidfx::core::Texture2D* texture) {
             material->set_night_sky(texture->getTexture2D());
         }
 

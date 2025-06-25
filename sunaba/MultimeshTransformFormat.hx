@@ -1,4 +1,4 @@
-package lucidware;
+package lucidfx;
 
 enum abstract MultimeshTransformFormat(Int) from Int to Int {
 	var transform2d = 0;

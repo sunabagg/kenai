@@ -1,4 +1,4 @@
-package lucidware;
+package lucidfx;
 
 enum abstract SkeletonRigEnum(Int) from Int to Int {
 	var openxr = 0;

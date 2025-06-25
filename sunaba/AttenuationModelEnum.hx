@@ -1,4 +1,4 @@
-package lucidware;
+package lucidfx;
 
 enum abstract AttenuationModelEnum(Int) from Int to Int {
 	var inverseDistance = 0;

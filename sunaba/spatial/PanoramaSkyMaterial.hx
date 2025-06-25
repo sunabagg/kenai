@@ -1,7 +1,7 @@
-package lucidware.spatial;
+package lucidfx.spatial;
 
-import lucidware.core.Material;
-import lucidware.core.Texture2D;
+import lucidfx.core.Material;
+import lucidfx.core.Texture2D;
 
 @:native("PanoramaSkyMaterial")
 extern class PanoramaSkyMaterial extends Material {
@@ -21,4 +21,4 @@ abstract PanoramaSkyMaterialAbstract(PanoramaSkyMaterial) from PanoramaSkyMateri
         }
         return panoramaSkyMaterial;
     } 
-} // end package lucidware.spatial
+} // end package lucidfx.spatial

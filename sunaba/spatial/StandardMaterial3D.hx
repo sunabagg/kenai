@@ -1,6 +1,6 @@
-package lucidware.spatial;
+package lucidfx.spatial;
 
-import lucidware.core.Material;
+import lucidfx.core.Material;
 
 @:native("StandardMaterial3D")
 extern class StandardMaterial3D extends Material {
@@ -17,4 +17,4 @@ abstract StandardMaterial3DAbstract(StandardMaterial3D) from StandardMaterial3D 
         }
         return standardMaterial;
     } 
-} // end package lucidware.spatial
+} // end package lucidfx.spatial

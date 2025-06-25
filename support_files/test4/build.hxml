@@ -3,4 +3,4 @@
 -D lua-vanilla
 -D source-map
 --lua main.lua
---library lucidware-core
+--library lucidfx-core

@@ -1,6 +1,6 @@
 #include "rich_text_label.h"
 
-namespace lucidware::ui {
+namespace lucidfx::ui {
     void RichTextLabelProxy::_enter_tree() {
         if (element != nullptr) {
             element->enterTree();
@@ -158,7 +158,7 @@ namespace lucidware::ui {
             "new", sol::factories(
                 []() { return new RichTextLabel(); }
             ),
-            sol::base_classes, sol::bases<BaseObject, Element, lucidware::core::CanvasItem, Control>(),
+            sol::base_classes, sol::bases<BaseObject, Element, lucidfx::core::CanvasItem, Control>(),
             "autowrapMode", sol::property(
                 &RichTextLabel::getAutowrapMode,
                 &RichTextLabel::setAutowrapMode
@@ -369,4 +369,4 @@ namespace lucidware::ui {
             }
         );
     }
-} // namespace lucidware::ui
+} // namespace lucidfx::ui

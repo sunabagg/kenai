@@ -1,4 +1,4 @@
-package lucidware..spatial.navigation;
+package lucidfx..spatial.navigation;
 
 enum abstract NavigationLink3DRotationOrder(Int) from Int to Int {
 	var xyz = 0;

@@ -1,4 +1,4 @@
-package lucidware;
+package lucidfx;
 
 enum abstract BGMode(Int) from Int to Int {
 	var clearColor = 0;

@@ -1,4 +1,4 @@
-package lucidware;
+package lucidfx;
 
 enum abstract ViewportSdfOversize(Int) from Int to Int {
 	var oversize100Percent = 0;

@@ -11,12 +11,12 @@
 #include "../core/texture2d.h"
 
 using namespace godot;
-using namespace lucidware::core;
+using namespace lucidfx::core;
 
-namespace lucidware::spatial {
+namespace lucidfx::spatial {
     void bindPanoramaSkyMaterial(sol::state_view& lua);
 
-    class PanoramaSkyMaterial : public lucidware::core::Material {
+    class PanoramaSkyMaterial : public lucidfx::core::Material {
     private:
         GodotPanoramaSkyMaterial* material = nullptr;
     public:
@@ -54,13 +54,13 @@ namespace lucidware::spatial {
             material->set_filtering_enabled(enable);
         }
 
-        lucidware::core::Texture2D* getPanorama() {
-            return new lucidware::core::Texture2D(
+        lucidfx::core::Texture2D* getPanorama() {
+            return new lucidfx::core::Texture2D(
                 material->get_panorama().ptr()
             );
         }
 
-        void setPanorama(lucidware::core::Texture2D* texture) {
+        void setPanorama(lucidfx::core::Texture2D* texture) {
             material->set_panorama(texture->getTexture2D());
         }
     };

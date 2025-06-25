@@ -1,6 +1,6 @@
-package lucidware.core.io;
+package lucidfx.core.io;
 
-import lucidware.core.BaseObject;
+import lucidfx.core.BaseObject;
 
 @:native("IoInterface")
 extern class IoInterface extends BaseObject {

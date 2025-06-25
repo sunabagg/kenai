@@ -1,4 +1,4 @@
-package lucidware.core;
+package lucidfx.core;
 
 class Behavior {
     public var component : Component;

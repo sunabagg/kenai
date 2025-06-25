@@ -1,4 +1,4 @@
-package lucidware.input;
+package lucidfx.input;
 
 @:native("InputEventGesture")
 extern class InputEventGesture extends InputEventWithModifiers {

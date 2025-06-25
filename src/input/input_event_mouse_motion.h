@@ -10,12 +10,12 @@
 #include "input_event_mouse.h"
 
 using namespace godot;
-using namespace lucidware::core;
+using namespace lucidfx::core;
 
-namespace lucidware::input {
+namespace lucidfx::input {
     void bindInputEventMouseMotion(sol::state_view& lua);
 
-    class InputEventMouseMotion : public lucidware::input::InputEventMouse {
+    class InputEventMouseMotion : public lucidfx::input::InputEventMouse {
     private:
         GodotInputEventMouseMotion* event;
     public:

@@ -1,4 +1,4 @@
-package lucidware;
+package lucidfx;
 
 enum abstract BakeError(Int) from Int to Int {
 	var ok = 0;

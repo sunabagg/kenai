@@ -1,4 +1,4 @@
-package lucidware;
+package lucidfx;
 
 enum abstract EnvironmentToneMapper(Int) from Int to Int {
 	var linear = 0;

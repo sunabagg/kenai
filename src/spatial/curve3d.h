@@ -10,12 +10,12 @@
 #include "../core/resource.h"
 
 using namespace godot;
-using namespace lucidware::core;
+using namespace lucidfx::core;
 
-namespace lucidware::spatial {
+namespace lucidfx::spatial {
     void bindCurve3D(sol::state_view& lua);
 
-    class Curve3D : public lucidware::core::Resource {
+    class Curve3D : public lucidfx::core::Resource {
     private:
         GodotCurve3D* curve = nullptr;
     public:

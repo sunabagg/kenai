@@ -1,8 +1,8 @@
-package lucidware.ui;
+package lucidfx.ui;
 
-import lucidware.core.LabelSettings;
-import lucidware.core.ArrayList;
-import lucidware.core.Rect2;
+import lucidfx.core.LabelSettings;
+import lucidfx.core.ArrayList;
+import lucidfx.core.Rect2;
 
 @:native("Label")
 extern class Label extends Control {
@@ -36,7 +36,7 @@ extern class Label extends Control {
 
 abstract LabelAbstract(Label) from Label to Label {
     @:from
-    public static function fromElement(element: lucidware.core.Element): LabelAbstract {
+    public static function fromElement(element: lucidfx.core.Element): LabelAbstract {
         var label = Label.toLabel(element);
         if (label.isNull()){
             return null;

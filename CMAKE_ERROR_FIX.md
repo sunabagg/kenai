@@ -16,11 +16,11 @@ The error occurred because:
 ## Solution Applied
 
 ### 1. Added C Language Support
-**File:** `/Users/lucasabbas/lucidware/CMakeLists.txt`
+**File:** `/Users/lucasabbas/lucidfx/CMakeLists.txt`
 
 **Before:**
 ```cmake
-project( lucidware
+project( lucidfx
     LANGUAGES
         CXX
     VERSION
@@ -30,7 +30,7 @@ project( lucidware
 
 **After:**
 ```cmake
-project( lucidware
+project( lucidfx
     LANGUAGES
         C
         CXX

@@ -7,7 +7,7 @@
 
 #include <lua.h>
 
-namespace lucidware::core
+namespace lucidfx::core
 {
     //static void generateBaseObjectUsertype(lua_State* L);
 

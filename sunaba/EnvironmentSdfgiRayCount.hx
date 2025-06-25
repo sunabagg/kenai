@@ -1,4 +1,4 @@
-package lucidware;
+package lucidfx;
 
 enum abstract EnvironmentSdfgiRayCount(Int) from Int to Int {
 	var count4 = 0;

@@ -1,4 +1,4 @@
-package lucidware;
+package lucidfx;
 
 enum abstract TextureChannel(Int) from Int to Int {
 	var red = 0;

@@ -8,11 +8,11 @@
 #include <godot_cpp/variant/utility_functions.hpp>
 #include <godot_cpp/classes/engine.hpp>
 
-using namespace lucidware::core;
-using namespace lucidware::spatial;
-using namespace lucidware::spatial::mesh;
+using namespace lucidfx::core;
+using namespace lucidfx::spatial;
+using namespace lucidfx::spatial::mesh;
 
-namespace lucidware::tests
+namespace lucidfx::tests
 {
     void printEntity(Entity* entity, String indent) {
         godot::UtilityFunctions::print(indent + "Entity: " + entity->name.c_str());

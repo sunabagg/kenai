@@ -1,4 +1,4 @@
-package lucidware;
+package lucidfx;
 
 enum abstract MethodFlags(Int) from Int to Int {
 	var normal = 1;

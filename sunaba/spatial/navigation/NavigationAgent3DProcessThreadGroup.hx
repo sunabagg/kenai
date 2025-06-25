@@ -1,4 +1,4 @@
-package lucidware..spatial.navigation;
+package lucidfx..spatial.navigation;
 
 enum abstract NavigationAgent3DProcessThreadGroup(Int) from Int to Int {
 	var inherit = 0;

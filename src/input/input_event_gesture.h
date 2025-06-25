@@ -10,12 +10,12 @@
 #include "input_event_with_modifiers.h"
 
 using namespace godot;
-using namespace lucidware::core;
+using namespace lucidfx::core;
 
-namespace lucidware::input {
+namespace lucidfx::input {
     void bindInputEventGesture(sol::state_view& lua);
 
-    class InputEventGesture : public lucidware::input::InputEventWithModifiers {
+    class InputEventGesture : public lucidfx::input::InputEventWithModifiers {
     private:
         GodotInputEventGesture* event;
     public:

@@ -1,4 +1,4 @@
-package lucidware;
+package lucidfx;
 
 enum abstract RepeatEnum(Int) from Int to Int {
 	var none = 0;

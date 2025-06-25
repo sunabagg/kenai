@@ -1,4 +1,4 @@
-package lucidware;
+package lucidfx;
 
 enum abstract Camera2DProcessCallback(Int) from Int to Int {
 	var physics = 0;

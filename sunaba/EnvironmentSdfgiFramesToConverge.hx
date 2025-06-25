@@ -1,4 +1,4 @@
-package lucidware;
+package lucidfx;
 
 enum abstract EnvironmentSdfgiFramesToConverge(Int) from Int to Int {
 	var in5Frames = 0;

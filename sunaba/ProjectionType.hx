@@ -1,4 +1,4 @@
-package lucidware;
+package lucidfx;
 
 enum abstract ProjectionType(Int) from Int to Int {
 	var perspective = 0;

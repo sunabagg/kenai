@@ -1,12 +1,12 @@
 #include "orm_material3d.h"
 
-void lucidware::spatial::bindOrmMaterial3D(sol::state_view& lua) {
-    lua.new_usertype<lucidware::spatial::OrmMaterial3D>("OrmMaterial3D",
+void lucidfx::spatial::bindOrmMaterial3D(sol::state_view& lua) {
+    lua.new_usertype<lucidfx::spatial::OrmMaterial3D>("OrmMaterial3D",
         "new", sol::factories(
-            []() { return new lucidware::spatial::OrmMaterial3D(); }
+            []() { return new lucidfx::spatial::OrmMaterial3D(); }
         ),
-        sol::base_classes, sol::bases<lucidware::core::BaseObject, lucidware::core::Resource, lucidware::core::Material, lucidware::spatial::BaseMaterial3D>(),
-        "cast", [](lucidware::core::Resource* instance) {
+        sol::base_classes, sol::bases<lucidfx::core::BaseObject, lucidfx::core::Resource, lucidfx::core::Material, lucidfx::spatial::BaseMaterial3D>(),
+        "cast", [](lucidfx::core::Resource* instance) {
             return new OrmMaterial3D(godot::Object::cast_to<GodotOrmMaterial3D>(instance->getResource()));
         }
     );

@@ -1,4 +1,4 @@
-package lucidware;
+package lucidfx;
 
 enum abstract StdHandleType(Int) from Int to Int {
 	var invalid = 0;

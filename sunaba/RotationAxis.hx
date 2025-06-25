@@ -1,4 +1,4 @@
-package lucidware;
+package lucidfx;
 
 enum abstract RotationAxis(Int) from Int to Int {
 	var x = 0;

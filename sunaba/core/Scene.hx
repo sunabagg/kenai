@@ -1,4 +1,4 @@
-package lucidware.core;
+package lucidfx.core;
 
 @:native("Scene")
 extern class Scene extends BaseObject {

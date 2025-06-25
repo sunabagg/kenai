@@ -1,4 +1,4 @@
-package lucidware;
+package lucidfx;
 
 enum abstract HandMotionRange(Int) from Int to Int {
 	var unobstructed = 0;

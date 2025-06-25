@@ -1,6 +1,6 @@
 #include "texture_button.h"
 
-namespace lucidware::ui {
+namespace lucidfx::ui {
 
     void TextureButtonProxy::_enter_tree() {
         if (this->element != nullptr) {
@@ -133,7 +133,7 @@ namespace lucidware::ui {
             "new", sol::factories(
                 []() { return new TextureButton(); }
             ),
-            sol::base_classes, sol::bases<BaseObject, Element, lucidware::core::CanvasItem, Control, BaseButton>(),
+            sol::base_classes, sol::bases<BaseObject, Element, lucidfx::core::CanvasItem, Control, BaseButton>(),
             "flipH", sol::property(&TextureButton::getFlipH, &TextureButton::setFlipH),
             "flipV", sol::property(&TextureButton::getFlipV, &TextureButton::setFlipV),
             "ignoreTextureSize", sol::property(
@@ -175,4 +175,4 @@ namespace lucidware::ui {
         );
     }
 
-} // namespace lucidware::ui
+} // namespace lucidfx::ui

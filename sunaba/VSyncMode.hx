@@ -1,4 +1,4 @@
-package lucidware;
+package lucidfx;
 
 enum abstract VSyncMode(Int) from Int to Int {
 	var disabled = 0;

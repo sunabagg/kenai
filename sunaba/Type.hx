@@ -1,4 +1,4 @@
-package lucidware;
+package lucidfx;
 
 enum abstract Type(Int) from Int to Int {
 	var vertex = 0;

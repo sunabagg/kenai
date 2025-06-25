@@ -1,4 +1,4 @@
-package lucidware;
+package lucidfx;
 
 enum abstract MouseButton(Int) from Int to Int {
 	var none = 0;

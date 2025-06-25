@@ -1,6 +1,6 @@
 #include "h_box_container.h"
 
-namespace lucidware::ui {
+namespace lucidfx::ui {
     void HBoxContainerProxy::_enter_tree() {
         if (this->element != nullptr) {
             this->element->enterTree();
@@ -134,7 +134,7 @@ namespace lucidware::ui {
             "new", sol::factories(
                 []() { return new HBoxContainer(); }
             ),
-            sol::base_classes, sol::bases<BaseObject, Element, lucidware::core::CanvasItem, Control, Container, BoxContainer>(),
+            sol::base_classes, sol::bases<BaseObject, Element, lucidfx::core::CanvasItem, Control, Container, BoxContainer>(),
             "cast", [](Element* element) {
                 HBoxContainerNode* node = Object::cast_to<HBoxContainerNode>(element->getNode());
                 return new HBoxContainer(node);

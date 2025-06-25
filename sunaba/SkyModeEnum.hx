@@ -1,4 +1,4 @@
-package lucidware;
+package lucidfx;
 
 enum abstract SkyModeEnum(Int) from Int to Int {
 	var lightAndSky = 0;

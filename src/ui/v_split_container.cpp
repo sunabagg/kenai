@@ -1,6 +1,6 @@
 #include "v_split_container.h"
 
-namespace lucidware::ui {
+namespace lucidfx::ui {
     void VSplitContainerProxy::_enter_tree() {
         if (this->element != nullptr) {
             this->element->enterTree();
@@ -134,7 +134,7 @@ namespace lucidware::ui {
             "new", sol::factories(
                 []() { return new VSplitContainer(); }
             ),
-            sol::base_classes, sol::bases<BaseObject, Element, lucidware::core::CanvasItem, Control, Container, SplitContainer>(),
+            sol::base_classes, sol::bases<BaseObject, Element, lucidfx::core::CanvasItem, Control, Container, SplitContainer>(),
             "cast", [](Element* element) {
                 VSplitContainerNode* node = Object::cast_to<VSplitContainerNode>(element->getNode());
                 return new VSplitContainer(node);

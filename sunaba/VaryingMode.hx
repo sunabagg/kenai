@@ -1,4 +1,4 @@
-package lucidware;
+package lucidfx;
 
 enum abstract VaryingMode(Int) from Int to Int {
 	var vertexToFragLight = 0;

@@ -13,9 +13,9 @@
 #include "../core/texture2d.h"
 
 using namespace godot;
-using namespace lucidware::core;
+using namespace lucidfx::core;
 
-namespace lucidware::ui {
+namespace lucidfx::ui {
     void bindTabBar(sol::state &lua);
 
     class TabBar;
@@ -25,7 +25,7 @@ namespace lucidware::ui {
         protected:
             static void _bind_methods() {}
         public:
-            lucidware::ui::TabBar* element = nullptr;
+            lucidfx::ui::TabBar* element = nullptr;
 
             void onInit() {
                 // Initialize the NodeProxy instance
@@ -67,7 +67,7 @@ namespace lucidware::ui {
         protected:
             static void _bind_methods();
         public:
-            lucidware::ui::TabBar* element = nullptr;
+            lucidfx::ui::TabBar* element = nullptr;
 
             TabBarSignalWrapper() = default;
             ~TabBarSignalWrapper() = default;
@@ -292,7 +292,7 @@ namespace lucidware::ui {
                 tabSelectedEvent = event;
             }
 
-            void addTab(const std::string& name, lucidware::core::Texture2D* icon = nullptr) {
+            void addTab(const std::string& name, lucidfx::core::Texture2D* icon = nullptr) {
                 godot::Texture2D* iconTexture = 
                     icon != nullptr 
                         ? icon->getTexture2D() 
@@ -320,12 +320,12 @@ namespace lucidware::ui {
                 return container->get_previous_tab();
             }
 
-            lucidware::core::Texture2D* getTabButtonIcon(int tab) {
-                return new lucidware::core::Texture2D(container->get_tab_button_icon(tab).ptr());
+            lucidfx::core::Texture2D* getTabButtonIcon(int tab) {
+                return new lucidfx::core::Texture2D(container->get_tab_button_icon(tab).ptr());
             }
 
-            lucidware::core::Texture2D* getTabIcon(int tab) {
-                return new lucidware::core::Texture2D(container->get_tab_icon(tab).ptr());
+            lucidfx::core::Texture2D* getTabIcon(int tab) {
+                return new lucidfx::core::Texture2D(container->get_tab_icon(tab).ptr());
             }
 
             int getTabIconMaxWidth(int tab) {
@@ -388,7 +388,7 @@ namespace lucidware::ui {
                 return container->select_previous_available();
             }
 
-            void setTabButtonIcon(int tab, lucidware::core::Texture2D* icon) {
+            void setTabButtonIcon(int tab, lucidfx::core::Texture2D* icon) {
                 godot::Texture2D* iconTexture = 
                     icon != nullptr 
                         ? icon->getTexture2D() 
@@ -408,7 +408,7 @@ namespace lucidware::ui {
                 container->set_tab_hidden(tab, hidden);
             }
 
-            void setTabIcon(int tab, lucidware::core::Texture2D* icon) {
+            void setTabIcon(int tab, lucidfx::core::Texture2D* icon) {
                 godot::Texture2D* iconTexture = 
                     icon != nullptr 
                         ? icon->getTexture2D() 

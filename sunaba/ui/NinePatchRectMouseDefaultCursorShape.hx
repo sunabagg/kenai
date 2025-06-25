@@ -1,4 +1,4 @@
-package lucidware..ui;
+package lucidfx..ui;
 
 enum abstract NinePatchRectMouseDefaultCursorShape(Int) from Int to Int {
 	var arrow = 0;

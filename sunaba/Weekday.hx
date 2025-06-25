@@ -1,4 +1,4 @@
-package lucidware;
+package lucidfx;
 
 enum abstract Weekday(Int) from Int to Int {
 	var sunday = 0;

@@ -1,4 +1,4 @@
-package lucidware;
+package lucidfx;
 
 enum abstract ShaderLanguage(Int) from Int to Int {
 	var glsl = 0;

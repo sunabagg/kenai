@@ -1,4 +1,4 @@
-package lucidware.core;
+package lucidfx.core;
 
 class GlobalObjectStack {
     public var stack : Array<StackHandle>;

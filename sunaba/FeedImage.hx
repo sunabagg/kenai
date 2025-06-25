@@ -1,4 +1,4 @@
-package lucidware;
+package lucidfx;
 
 enum abstract FeedImage(Int) from Int to Int {
 	var rgbaImage = 0;

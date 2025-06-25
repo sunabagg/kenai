@@ -13,10 +13,10 @@
 
 using namespace godot;
 
-namespace lucidware::core {
+namespace lucidfx::core {
     void bindNoise(sol::state_view& lua);
 
-    class Noise : public lucidware::core::Resource {
+    class Noise : public lucidfx::core::Resource {
     private:
         GodotNoise* noise;
     public:

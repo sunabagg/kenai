@@ -1,4 +1,4 @@
-package lucidware;
+package lucidfx;
 
 enum abstract IndexBufferFormat(Int) from Int to Int {
 	var uint16 = 0;

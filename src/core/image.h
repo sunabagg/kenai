@@ -1,5 +1,5 @@
-#ifndef LUCIDWARE_IMAGE_H
-#define LUCIDWARE_IMAGE_H
+#ifndef LUCIDFX_IMAGE_H
+#define LUCIDFX_IMAGE_H
 
 #include <godot_cpp/classes/image.hpp>
 #include <godot_cpp/variant/variant.hpp>
@@ -13,9 +13,9 @@
 #include "io/io_index.h"
 
 using namespace godot;
-using namespace lucidware::core::io;
+using namespace lucidfx::core::io;
 
-namespace lucidware::core {
+namespace lucidfx::core {
     void bindImage(sol::state &lua);
 
     class Image : public Resource {
@@ -405,4 +405,4 @@ namespace lucidware::core {
     };
 }
 
-#endif  // LUCIDWARE_IMAGE_H
+#endif  // LUCIDFX_IMAGE_H

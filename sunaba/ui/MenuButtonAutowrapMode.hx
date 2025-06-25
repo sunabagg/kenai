@@ -1,4 +1,4 @@
-package lucidware..ui;
+package lucidfx..ui;
 
 enum abstract MenuButtonAutowrapMode(Int) from Int to Int {
 	var off = 0;

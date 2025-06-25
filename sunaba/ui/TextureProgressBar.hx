@@ -1,9 +1,9 @@
-package lucidware.ui;
+package lucidfx.ui;
 
-import lucidware.core.Vector2;
-import lucidware.core.Texture2D;
-import lucidware.core.Color;
-import lucidware.core.Element;
+import lucidfx.core.Vector2;
+import lucidfx.core.Texture2D;
+import lucidfx.core.Color;
+import lucidfx.core.Element;
 
 @:native("TextureProgressBar")
 extern class TextureProgressBar extends Range {

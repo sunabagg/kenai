@@ -1,4 +1,4 @@
-package lucidware;
+package lucidfx;
 
 enum abstract SourceEnum(Int) from Int to Int {
 	var texture = 0;

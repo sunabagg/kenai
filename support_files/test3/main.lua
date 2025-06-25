@@ -185,7 +185,7 @@ local Enum = _hx_e();
 local Array = _hx_e()
 local Main = _hx_e()
 local Math = _hx_e()
-__lucidware_core_Behavior = _hx_e()
+__lucidfx_core_Behavior = _hx_e()
 local RotateComponent = _hx_e()
 local String = _hx_e()
 local Std = _hx_e()
@@ -201,9 +201,9 @@ __haxe_iterators_ArrayKeyValueIterator = _hx_e()
 __lua_Boot = _hx_e()
 __lua_UserData = _hx_e()
 __lua_Thread = _hx_e()
-__lucidware_core_GlobalObjectStack = _hx_e()
-__lucidware_core_ObjectUtils = _hx_e()
-__lucidware_core_StackHandle = _hx_e()
+__lucidfx_core_GlobalObjectStack = _hx_e()
+__lucidfx_core_ObjectUtils = _hx_e()
+__lucidfx_core_StackHandle = _hx_e()
 
 local _hx_bind, _hx_bit, _hx_staticToInstance, _hx_funcToField, _hx_maxn, _hx_print, _hx_apply_self, _hx_box_mr, _hx_bit_clamp, _hx_table, _hx_bit_raw
 local _hx_pcall_default = {};
@@ -562,60 +562,60 @@ Main.main = function()
   local entity1 = Entity.new();
   entity1.name = "Entity1";
   local e1transform = SpatialTransform.new();
-  entity1:addComponent(e1transform, __lucidware_core_ObjectUtils.getName(SpatialTransform));
+  entity1:addComponent(e1transform, __lucidfx_core_ObjectUtils.getName(SpatialTransform));
   scene:addEntity(entity1);
   e1transform.position = Vector3.new(1, 2, 3);
   local child1 = Entity.new();
   child1.name = "Child1";
   local c1transform = SpatialTransform.new();
-  child1:addComponent(c1transform, __lucidware_core_ObjectUtils.getName(SpatialTransform));
+  child1:addComponent(c1transform, __lucidfx_core_ObjectUtils.getName(SpatialTransform));
   entity1:addChild(child1);
   c1transform.position = Vector3.new(4, 5, 6);
   local entity2 = Entity.new();
   entity2.name = "Entity2";
   local e2transform = SpatialTransform.new();
-  entity2:addComponent(e2transform, __lucidware_core_ObjectUtils.getName(SpatialTransform));
+  entity2:addComponent(e2transform, __lucidfx_core_ObjectUtils.getName(SpatialTransform));
   scene:addEntity(entity2);
   e2transform.position = Vector3.new(7, 8, 9);
   local entity3 = Entity.new();
   entity3.name = "Camera";
   local e3transform = SpatialTransform.new();
-  entity3:addComponent(e3transform, __lucidware_core_ObjectUtils.getName(SpatialTransform));
+  entity3:addComponent(e3transform, __lucidfx_core_ObjectUtils.getName(SpatialTransform));
   local camera = Camera.new();
-  entity3:addComponent(camera, __lucidware_core_ObjectUtils.getName(Camera));
+  entity3:addComponent(camera, __lucidfx_core_ObjectUtils.getName(Camera));
   scene:addEntity(entity3);
   e3transform.position = Vector3.new(0, 0, 1);
   local entity4 = Entity.new();
   entity4.name = "Box";
   local e4transform = SpatialTransform.new();
-  entity4:addComponent(e4transform, __lucidware_core_ObjectUtils.getName(SpatialTransform));
+  entity4:addComponent(e4transform, __lucidfx_core_ObjectUtils.getName(SpatialTransform));
   local e4mesh = MeshRenderer.new();
-  entity4:addComponent(e4mesh, __lucidware_core_ObjectUtils.getName(MeshRenderer));
+  entity4:addComponent(e4mesh, __lucidfx_core_ObjectUtils.getName(MeshRenderer));
   local e4box = Box.new();
-  entity4:addComponent(e4box, __lucidware_core_ObjectUtils.getName(Box));
+  entity4:addComponent(e4box, __lucidfx_core_ObjectUtils.getName(Box));
   e4box.size = Vector3.new(1, 1, 1);
   local rotateComponent = RotateComponent.new();
   entity4:addComponent(rotateComponent.component, "RotateComponent");
   scene:addEntity(entity4);
   e4transform.position = Vector3.new(0, 0, -1);
-  __lucidware_core_GlobalObjectStack.initSingleton();
-  local globalObjectStack = __lucidware_core_GlobalObjectStack.getSingleton();
-  globalObjectStack.stack:push(__lucidware_core_StackHandle.new(scene));
-  globalObjectStack.stack:push(__lucidware_core_StackHandle.new(entity1));
-  globalObjectStack.stack:push(__lucidware_core_StackHandle.new(child1));
-  globalObjectStack.stack:push(__lucidware_core_StackHandle.new(entity2));
-  globalObjectStack.stack:push(__lucidware_core_StackHandle.new(entity3));
-  globalObjectStack.stack:push(__lucidware_core_StackHandle.new(entity4));
-  globalObjectStack.stack:push(__lucidware_core_StackHandle.new(e1transform));
-  globalObjectStack.stack:push(__lucidware_core_StackHandle.new(c1transform));
-  globalObjectStack.stack:push(__lucidware_core_StackHandle.new(e2transform));
-  globalObjectStack.stack:push(__lucidware_core_StackHandle.new(e3transform));
-  globalObjectStack.stack:push(__lucidware_core_StackHandle.new(camera));
-  globalObjectStack.stack:push(__lucidware_core_StackHandle.new(e4transform));
-  globalObjectStack.stack:push(__lucidware_core_StackHandle.new(e4mesh));
-  globalObjectStack.stack:push(__lucidware_core_StackHandle.new(e4box));
-  globalObjectStack.stack:push(__lucidware_core_StackHandle.new(rotateComponent.component));
-  globalObjectStack.stack:push(__lucidware_core_StackHandle.new(rotateComponent));
+  __lucidfx_core_GlobalObjectStack.initSingleton();
+  local globalObjectStack = __lucidfx_core_GlobalObjectStack.getSingleton();
+  globalObjectStack.stack:push(__lucidfx_core_StackHandle.new(scene));
+  globalObjectStack.stack:push(__lucidfx_core_StackHandle.new(entity1));
+  globalObjectStack.stack:push(__lucidfx_core_StackHandle.new(child1));
+  globalObjectStack.stack:push(__lucidfx_core_StackHandle.new(entity2));
+  globalObjectStack.stack:push(__lucidfx_core_StackHandle.new(entity3));
+  globalObjectStack.stack:push(__lucidfx_core_StackHandle.new(entity4));
+  globalObjectStack.stack:push(__lucidfx_core_StackHandle.new(e1transform));
+  globalObjectStack.stack:push(__lucidfx_core_StackHandle.new(c1transform));
+  globalObjectStack.stack:push(__lucidfx_core_StackHandle.new(e2transform));
+  globalObjectStack.stack:push(__lucidfx_core_StackHandle.new(e3transform));
+  globalObjectStack.stack:push(__lucidfx_core_StackHandle.new(camera));
+  globalObjectStack.stack:push(__lucidfx_core_StackHandle.new(e4transform));
+  globalObjectStack.stack:push(__lucidfx_core_StackHandle.new(e4mesh));
+  globalObjectStack.stack:push(__lucidfx_core_StackHandle.new(e4box));
+  globalObjectStack.stack:push(__lucidfx_core_StackHandle.new(rotateComponent.component));
+  globalObjectStack.stack:push(__lucidfx_core_StackHandle.new(rotateComponent));
   local _hx_status, _hx_result = pcall(function() 
   
       Main.printScene(scene);
@@ -687,12 +687,12 @@ Math.min = function(a,b)
   end;
 end
 
-__lucidware_core_Behavior.new = function() 
-  local self = _hx_new(__lucidware_core_Behavior.prototype)
-  __lucidware_core_Behavior.super(self)
+__lucidfx_core_Behavior.new = function() 
+  local self = _hx_new(__lucidfx_core_Behavior.prototype)
+  __lucidfx_core_Behavior.super(self)
   return self
 end
-__lucidware_core_Behavior.super = function(self) 
+__lucidfx_core_Behavior.super = function(self) 
   local type = Type.getClass(self);
   if (type == nil) then 
     _G.error(__haxe_Exception.thrown("Behavior must be a class"),0);
@@ -702,15 +702,15 @@ __lucidware_core_Behavior.super = function(self)
   comp:setScriptType(type);
   comp:setScriptInstance(self);
 end
-__lucidware_core_Behavior.__name__ = "lucidware.core.Behavior"
-__lucidware_core_Behavior.prototype = _hx_e();
-__lucidware_core_Behavior.prototype.getComponent_lucidware_spatial_SpatialTransform = function(self,type,entity) 
+__lucidfx_core_Behavior.__name__ = "lucidfx.core.Behavior"
+__lucidfx_core_Behavior.prototype = _hx_e();
+__lucidfx_core_Behavior.prototype.getComponent_lucidfx_spatial_SpatialTransform = function(self,type,entity) 
   if (entity == nil) then 
     entity = self.component.entity;
-    __haxe_Log.trace("Entity is null, using this.component.entity", _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="lucidware/core/Behavior.hx",lineNumber=55,className="lucidware.core.Behavior",methodName="getComponent"}));
+    __haxe_Log.trace("Entity is null, using this.component.entity", _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="lucidfx/core/Behavior.hx",lineNumber=55,className="lucidfx.core.Behavior",methodName="getComponent"}));
   end;
   local behaviorType = type;
-  if (__lucidware_core_ObjectUtils.typeInheritsFrom(type, __lucidware_core_Behavior)) then 
+  if (__lucidfx_core_ObjectUtils.typeInheritsFrom(type, __lucidfx_core_Behavior)) then 
     local behavior = entity:getUserComponent(behaviorType);
     if (behavior ~= nil) then 
       local tBehavior = behavior;
@@ -722,7 +722,7 @@ __lucidware_core_Behavior.prototype.getComponent_lucidware_spatial_SpatialTransf
     local typeName = type.__name;
     local component = entity:getComponentByName(typeName);
     if (component ~= nil) then 
-      local tComponent = __lucidware_core_ObjectUtils.castObjectAs_getComponent_T(type, component);
+      local tComponent = __lucidfx_core_ObjectUtils.castObjectAs_getComponent_T(type, component);
       if (tComponent ~= nil) then 
         do return tComponent end;
       end;
@@ -730,15 +730,15 @@ __lucidware_core_Behavior.prototype.getComponent_lucidware_spatial_SpatialTransf
   end;
   do return nil end
 end
-__lucidware_core_Behavior.prototype.onInit = function(self) 
+__lucidfx_core_Behavior.prototype.onInit = function(self) 
 end
-__lucidware_core_Behavior.prototype.onReady = function(self) 
+__lucidfx_core_Behavior.prototype.onReady = function(self) 
 end
-__lucidware_core_Behavior.prototype.onUpdate = function(self,deltaTime) 
+__lucidfx_core_Behavior.prototype.onUpdate = function(self,deltaTime) 
 end
-__lucidware_core_Behavior.prototype.onPhysicsUpdate = function(self,delatTime) 
+__lucidfx_core_Behavior.prototype.onPhysicsUpdate = function(self,delatTime) 
 end
-__lucidware_core_Behavior.prototype.getComponentNG = function(self,type,entity) 
+__lucidfx_core_Behavior.prototype.getComponentNG = function(self,type,entity) 
   if (entity == nil) then 
     entity = self.component.entity;
   end;
@@ -758,7 +758,7 @@ __lucidware_core_Behavior.prototype.getComponentNG = function(self,type,entity)
   end;
   do return nil end
 end
-__lucidware_core_Behavior.prototype.addComponentNG = function(self,type,entity) 
+__lucidfx_core_Behavior.prototype.addComponentNG = function(self,type,entity) 
   local compType = type;
   if (compType ~= nil) then 
     local component = Type.createInstance(compType, _hx_tab_array({}, 0));
@@ -776,7 +776,7 @@ __lucidware_core_Behavior.prototype.addComponentNG = function(self,type,entity)
   end;
   _G.error(__haxe_Exception.thrown("Invalid Component"),0);
 end
-__lucidware_core_Behavior.prototype.removeComponent = function(self,type,entity) 
+__lucidfx_core_Behavior.prototype.removeComponent = function(self,type,entity) 
   if (entity == nil) then 
     entity = self.component.entity;
   end;
@@ -796,7 +796,7 @@ __lucidware_core_Behavior.prototype.removeComponent = function(self,type,entity)
   end;
 end
 
-__lucidware_core_Behavior.prototype.__class__ =  __lucidware_core_Behavior
+__lucidfx_core_Behavior.prototype.__class__ =  __lucidfx_core_Behavior
 
 RotateComponent.new = function() 
   local self = _hx_new(RotateComponent.prototype)
@@ -804,12 +804,12 @@ RotateComponent.new = function()
   return self
 end
 RotateComponent.super = function(self) 
-  __lucidware_core_Behavior.super(self);
+  __lucidfx_core_Behavior.super(self);
 end
 RotateComponent.__name__ = "RotateComponent"
 RotateComponent.prototype = _hx_e();
 RotateComponent.prototype.onInit = function(self) 
-  self.transform = self:getComponent_lucidware_spatial_SpatialTransform(SpatialTransform);
+  self.transform = self:getComponent_lucidfx_spatial_SpatialTransform(SpatialTransform);
 end
 RotateComponent.prototype.onUpdate = function(self,deltaTime) 
   local rotation = -0.5 * deltaTime;
@@ -817,8 +817,8 @@ RotateComponent.prototype.onUpdate = function(self,deltaTime)
 end
 
 RotateComponent.prototype.__class__ =  RotateComponent
-RotateComponent.__super__ = __lucidware_core_Behavior
-setmetatable(RotateComponent.prototype,{__index=__lucidware_core_Behavior.prototype})
+RotateComponent.__super__ = __lucidfx_core_Behavior
+setmetatable(RotateComponent.prototype,{__index=__lucidfx_core_Behavior.prototype})
 
 String.new = function(string) 
   local self = _hx_new(String.prototype)
@@ -1353,19 +1353,19 @@ __lua_UserData.__name__ = "lua.UserData"
 __lua_Thread.new = {}
 __lua_Thread.__name__ = "lua.Thread"
 
-__lucidware_core_GlobalObjectStack.new = function() 
-  local self = _hx_new(__lucidware_core_GlobalObjectStack.prototype)
-  __lucidware_core_GlobalObjectStack.super(self)
+__lucidfx_core_GlobalObjectStack.new = function() 
+  local self = _hx_new(__lucidfx_core_GlobalObjectStack.prototype)
+  __lucidfx_core_GlobalObjectStack.super(self)
   return self
 end
-__lucidware_core_GlobalObjectStack.super = function(self) 
+__lucidfx_core_GlobalObjectStack.super = function(self) 
   self.stack = _hx_tab_array({}, 0);
 end
-__lucidware_core_GlobalObjectStack.__name__ = "lucidware.core.GlobalObjectStack"
-__lucidware_core_GlobalObjectStack.getSingleton = function() 
+__lucidfx_core_GlobalObjectStack.__name__ = "lucidfx.core.GlobalObjectStack"
+__lucidfx_core_GlobalObjectStack.getSingleton = function() 
   local gos = _G.globalObjectStack;
   if (gos == nil) then 
-    __lucidware_core_GlobalObjectStack.initSingleton();
+    __lucidfx_core_GlobalObjectStack.initSingleton();
     gos = _G.globalObjectStack;
     if (gos == nil) then 
       _G.error(__haxe_Exception.thrown("GlobalObjectStack is not initialized"),0);
@@ -1373,27 +1373,27 @@ __lucidware_core_GlobalObjectStack.getSingleton = function()
   end;
   do return gos end;
 end
-__lucidware_core_GlobalObjectStack.initSingleton = function() 
-  local singleton = __lucidware_core_GlobalObjectStack.new();
+__lucidfx_core_GlobalObjectStack.initSingleton = function() 
+  local singleton = __lucidfx_core_GlobalObjectStack.new();
   _G.globalObjectStack = singleton;
 end
-__lucidware_core_GlobalObjectStack.prototype = _hx_e();
+__lucidfx_core_GlobalObjectStack.prototype = _hx_e();
 
-__lucidware_core_GlobalObjectStack.prototype.__class__ =  __lucidware_core_GlobalObjectStack
+__lucidfx_core_GlobalObjectStack.prototype.__class__ =  __lucidfx_core_GlobalObjectStack
 
-__lucidware_core_ObjectUtils.new = {}
-__lucidware_core_ObjectUtils.__name__ = "lucidware.core.ObjectUtils"
-__lucidware_core_ObjectUtils.castObjectAs_getComponent_T = function(_type,object) 
+__lucidfx_core_ObjectUtils.new = {}
+__lucidfx_core_ObjectUtils.__name__ = "lucidfx.core.ObjectUtils"
+__lucidfx_core_ObjectUtils.castObjectAs_getComponent_T = function(_type,object) 
   local obj = _type.cast(object);
   if (obj == nil) then 
     _G.error(__haxe_Exception.thrown(Std.string("Object is not of type ") .. Std.string(Std.string(_type))),0);
   end;
   do return obj end;
 end
-__lucidware_core_ObjectUtils.getName = function(object) 
+__lucidfx_core_ObjectUtils.getName = function(object) 
   do return object.__name end;
 end
-__lucidware_core_ObjectUtils.typeInheritsFrom = function(type1,type2) 
+__lucidfx_core_ObjectUtils.typeInheritsFrom = function(type1,type2) 
   local type1Name = type1.__name;
   if (type1Name == nil) then 
     type1Name = type1.__name__;
@@ -1425,18 +1425,18 @@ __lucidware_core_ObjectUtils.typeInheritsFrom = function(type1,type2)
   do return false end;
 end
 
-__lucidware_core_StackHandle.new = function(object) 
-  local self = _hx_new(__lucidware_core_StackHandle.prototype)
-  __lucidware_core_StackHandle.super(self,object)
+__lucidfx_core_StackHandle.new = function(object) 
+  local self = _hx_new(__lucidfx_core_StackHandle.prototype)
+  __lucidfx_core_StackHandle.super(self,object)
   return self
 end
-__lucidware_core_StackHandle.super = function(self,object) 
+__lucidfx_core_StackHandle.super = function(self,object) 
   self.object = object;
 end
-__lucidware_core_StackHandle.__name__ = "lucidware.core.StackHandle"
-__lucidware_core_StackHandle.prototype = _hx_e();
+__lucidfx_core_StackHandle.__name__ = "lucidfx.core.StackHandle"
+__lucidfx_core_StackHandle.prototype = _hx_e();
 
-__lucidware_core_StackHandle.prototype.__class__ =  __lucidware_core_StackHandle
+__lucidfx_core_StackHandle.prototype.__class__ =  __lucidfx_core_StackHandle
 if _hx_bit_raw then
     _hx_bit_clamp = function(v)
     if v <= 2147483647 and v >= -2147483648 then

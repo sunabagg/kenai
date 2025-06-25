@@ -1,4 +1,4 @@
-package lucidware;
+package lucidfx;
 
 enum abstract PipelineSource(Int) from Int to Int {
 	var canvas = 0;

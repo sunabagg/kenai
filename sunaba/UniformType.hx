@@ -1,4 +1,4 @@
-package lucidware;
+package lucidfx;
 
 enum abstract UniformType(Int) from Int to Int {
 	var sampler = 0;

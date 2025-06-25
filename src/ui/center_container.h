@@ -12,9 +12,9 @@
 #include "../core/event.h"
 
 using namespace godot;
-using namespace lucidware::core;
+using namespace lucidfx::core;
 
-namespace lucidware::ui {
+namespace lucidfx::ui {
     void bindCenterContainer(sol::state &lua);
 
     class CenterContainer;
@@ -26,7 +26,7 @@ namespace lucidware::ui {
                 // Bind methods specific to CenterContainerProxy
             }
         public:
-            lucidware::ui::CenterContainer* element = nullptr;
+            lucidfx::ui::CenterContainer* element = nullptr;
 
             void onInit() {
                 // Initialize the NodeProxy instance

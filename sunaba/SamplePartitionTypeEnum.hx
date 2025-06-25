@@ -1,4 +1,4 @@
-package lucidware;
+package lucidfx;
 
 enum abstract SamplePartitionTypeEnum(Int) from Int to Int {
 	var convexPartition = 0;

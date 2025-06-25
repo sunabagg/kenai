@@ -1,6 +1,6 @@
 #include "proxy_db.h"
 
-namespace lucidware::core
+namespace lucidfx::core
 {
     std::map<Node*, Element*> ProxyDb::elements;
 }

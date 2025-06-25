@@ -16,12 +16,12 @@
 #include "style_box.h"
 
 using namespace godot;
-using namespace lucidware::core;
+using namespace lucidfx::core;
 
-namespace lucidware::ui {
+namespace lucidfx::ui {
     void bindTheme(sol::state_view& lua);
 
-    class Theme : public lucidware::core::Resource {
+    class Theme : public lucidfx::core::Resource {
     private:
         GodotTheme* theme;
     public:
@@ -77,11 +77,11 @@ namespace lucidware::ui {
             theme->set_default_base_scale(scale);
         }
 
-        lucidware::core::Font* getDefaultFont() {
-            return new lucidware::core::Font(theme->get_default_font().ptr());
+        lucidfx::core::Font* getDefaultFont() {
+            return new lucidfx::core::Font(theme->get_default_font().ptr());
         }
 
-        void setDefaultFont(lucidware::core::Font* font) {
+        void setDefaultFont(lucidfx::core::Font* font) {
             theme->set_default_font(font->getFont());
         }
 
@@ -177,8 +177,8 @@ namespace lucidware::ui {
             return list;
         }
 
-        lucidware::core::Font* getFont(const std::string& name, const std::string& type) {
-            return new lucidware::core::Font(theme->get_font(name.c_str(), type.c_str()).ptr());
+        lucidfx::core::Font* getFont(const std::string& name, const std::string& type) {
+            return new lucidfx::core::Font(theme->get_font(name.c_str(), type.c_str()).ptr());
         }
 
         std::vector<std::string> getFontList(const std::string& type) {
@@ -221,8 +221,8 @@ namespace lucidware::ui {
             return list;
         }
 
-        lucidware::core::Texture2D* getIcon(const std::string& name, const std::string& type) {
-            return new lucidware::core::Texture2D(theme->get_icon(name.c_str(), type.c_str()).ptr());
+        lucidfx::core::Texture2D* getIcon(const std::string& name, const std::string& type) {
+            return new lucidfx::core::Texture2D(theme->get_icon(name.c_str(), type.c_str()).ptr());
         }
 
         std::vector<std::string> getIconList(const std::string& type) {
@@ -243,8 +243,8 @@ namespace lucidware::ui {
             return list;
         }
 
-        lucidware::ui::StyleBox* getStyleBox(const std::string& name, const std::string& type) {
-            return new lucidware::ui::StyleBox(theme->get_stylebox(name.c_str(), type.c_str()).ptr());
+        lucidfx::ui::StyleBox* getStyleBox(const std::string& name, const std::string& type) {
+            return new lucidfx::ui::StyleBox(theme->get_stylebox(name.c_str(), type.c_str()).ptr());
         }
 
         std::vector<std::string> getStyleBoxList(const std::string& type) {
@@ -266,7 +266,7 @@ namespace lucidware::ui {
         }
 
         sol::stack_object getThemeItem(lua_State* L, int dataType, const std::string& name, const std::string& type) {
-            return lucidware::core::to_lua(L, theme->get_theme_item(static_cast<GodotTheme::DataType>(dataType), name.c_str(), type.c_str()));
+            return lucidfx::core::to_lua(L, theme->get_theme_item(static_cast<GodotTheme::DataType>(dataType), name.c_str(), type.c_str()));
         }
 
         std::vector<std::string> getThemeItemList(int dataType, const std::string& type) {
@@ -397,7 +397,7 @@ namespace lucidware::ui {
             theme->set_constant(name.c_str(), type.c_str(), constant);
         }
 
-        void setFont(const std::string& name, const std::string& type, lucidware::core::Font* font) {
+        void setFont(const std::string& name, const std::string& type, lucidfx::core::Font* font) {
             theme->set_font(name.c_str(), type.c_str(), font->getFont());
         }
 
@@ -405,11 +405,11 @@ namespace lucidware::ui {
             theme->set_font_size(name.c_str(), type.c_str(), size);
         }
 
-        void setIcon(const std::string& name, const std::string& type, lucidware::core::Texture2D* icon) {
+        void setIcon(const std::string& name, const std::string& type, lucidfx::core::Texture2D* icon) {
             theme->set_icon(name.c_str(), type.c_str(), godot::Ref<GodotTexture2D>(icon->getTexture()));
         }
 
-        void setStyleBox(const std::string& name, const std::string& type, lucidware::ui::StyleBox* styleBox) {
+        void setStyleBox(const std::string& name, const std::string& type, lucidfx::ui::StyleBox* styleBox) {
             theme->set_stylebox(name.c_str(), type.c_str(), godot::Ref<GodotStyleBox>(styleBox->getStyleBox()));
         }
 

@@ -1,4 +1,4 @@
-package lucidware.input;
+package lucidfx.input;
 
 @:native("InputEventScreenTouch")
 extern class InputEventScreenTouch extends InputEventFromWindow {
@@ -20,4 +20,4 @@ abstract InputEventScreenTouchAbstract(InputEventScreenTouch) from InputEventScr
         }
         return inputEventScreenTouch;
     }
-} // end package lucidware.input
+} // end package lucidfx.input

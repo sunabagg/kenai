@@ -1,4 +1,4 @@
-package lucidware;
+package lucidfx;
 
 enum abstract VisibilityUpdateModeEnum(Int) from Int to Int {
 	var idle = 0;

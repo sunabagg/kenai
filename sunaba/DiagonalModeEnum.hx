@@ -1,4 +1,4 @@
-package lucidware;
+package lucidfx;
 
 enum abstract DiagonalModeEnum(Int) from Int to Int {
 	var always = 0;

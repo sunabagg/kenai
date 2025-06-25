@@ -1,6 +1,6 @@
-package lucidware.ui;
+package lucidfx.ui;
 
-import lucidware.core.Element;
+import lucidfx.core.Element;
 
 @:native("CheckButton")
 extern class CheckButton extends Button {

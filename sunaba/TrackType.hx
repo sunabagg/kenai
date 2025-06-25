@@ -1,4 +1,4 @@
-package lucidware;
+package lucidfx;
 
 enum abstract TrackType(Int) from Int to Int {
 	var value = 0;

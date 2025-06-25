@@ -1,26 +1,26 @@
 #include "atlas_texture.h"
 
-void lucidware::core::bindAtlasTexture(sol::state &lua) {
-    lua.new_usertype<lucidware::core::AtlasTexture>("AtlasTexture",
+void lucidfx::core::bindAtlasTexture(sol::state &lua) {
+    lua.new_usertype<lucidfx::core::AtlasTexture>("AtlasTexture",
         "new", sol::factories(
-            []() { return new lucidware::core::AtlasTexture(); }
+            []() { return new lucidfx::core::AtlasTexture(); }
         ),
-        sol::base_classes, sol::bases<lucidware::core::BaseObject, lucidware::core::Resource, lucidware::core::Texture, lucidware::core::Texture2D>(),
+        sol::base_classes, sol::bases<lucidfx::core::BaseObject, lucidfx::core::Resource, lucidfx::core::Texture, lucidfx::core::Texture2D>(),
         "atlas", sol::property(
-            &lucidware::core::AtlasTexture::getAtlas, 
-            &lucidware::core::AtlasTexture::setAtlas
+            &lucidfx::core::AtlasTexture::getAtlas, 
+            &lucidfx::core::AtlasTexture::setAtlas
         ),
         "filterClip", sol::property(
-            &lucidware::core::AtlasTexture::getFilterClip, 
-            &lucidware::core::AtlasTexture::setFilterClip
+            &lucidfx::core::AtlasTexture::getFilterClip, 
+            &lucidfx::core::AtlasTexture::setFilterClip
         ),
         "margin", sol::property(
-            &lucidware::core::AtlasTexture::getMargin, 
-            &lucidware::core::AtlasTexture::setMargin
+            &lucidfx::core::AtlasTexture::getMargin, 
+            &lucidfx::core::AtlasTexture::setMargin
         ),
         "region", sol::property(
-            &lucidware::core::AtlasTexture::getRegion, 
-            &lucidware::core::AtlasTexture::setRegion
+            &lucidfx::core::AtlasTexture::getRegion, 
+            &lucidfx::core::AtlasTexture::setRegion
         ),
         "cast", [](Resource* instance) {
             return new AtlasTexture(godot::Object::cast_to<GodotAtlasTexture>(instance->getResource()));

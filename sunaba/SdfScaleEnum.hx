@@ -1,4 +1,4 @@
-package lucidware;
+package lucidfx;
 
 enum abstract SdfScaleEnum(Int) from Int to Int {
 	var scale100Percent = 0;

@@ -1,4 +1,4 @@
-package lucidware;
+package lucidfx;
 
 enum abstract SkyMode(Int) from Int to Int {
 	var automatic = 0;

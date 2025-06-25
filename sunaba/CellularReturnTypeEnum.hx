@@ -1,4 +1,4 @@
-package lucidware;
+package lucidfx;
 
 enum abstract CellularReturnTypeEnum(Int) from Int to Int {
 	var cellValue = 0;

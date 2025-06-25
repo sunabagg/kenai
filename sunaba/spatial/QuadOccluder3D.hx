@@ -1,6 +1,6 @@
-package lucidware.spatial;
+package lucidfx.spatial;
 
-import lucidware.core.Vector2;
+import lucidfx.core.Vector2;
 
 @:native("QuadOccluder3D")
 extern class QuadOccluder3D extends Occluder3D {
@@ -18,4 +18,4 @@ abstract QuadOccluder3DAbstract(QuadOccluder3D) from QuadOccluder3D to QuadOcclu
         }
         return quadOccluder3D;
     } 
-} // end package lucidware.spatial
+} // end package lucidfx.spatial

@@ -1,4 +1,4 @@
-package lucidware..desktop;
+package lucidfx..desktop;
 
 enum abstract WindowSdfScale(Int) from Int to Int {
 	var scale100Percent = 0;

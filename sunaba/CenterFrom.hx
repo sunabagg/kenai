@@ -1,4 +1,4 @@
-package lucidware;
+package lucidfx;
 
 enum abstract CenterFrom(Int) from Int to Int {
 	var worldOrigin = 0;

@@ -1,4 +1,4 @@
-package lucidware;
+package lucidfx;
 
 enum abstract godot_variant_call_error_error(Int) from Int to Int {
 	var godotCallErrorCallOk = 0;

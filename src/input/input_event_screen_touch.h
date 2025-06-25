@@ -10,12 +10,12 @@
 #include "input_event_from_window.h"
 
 using namespace godot;
-using namespace lucidware::core;
+using namespace lucidfx::core;
 
-namespace lucidware::input {
+namespace lucidfx::input {
     void bindInputEventScreenTouch(sol::state_view& lua);
 
-    class InputEventScreenTouch : public lucidware::input::InputEventFromWindow {
+    class InputEventScreenTouch : public lucidfx::input::InputEventFromWindow {
     private:
         GodotInputEventScreenTouch* event;
     public:

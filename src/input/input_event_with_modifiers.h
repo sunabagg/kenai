@@ -10,12 +10,12 @@
 #include "input_event_from_window.h"
 
 using namespace godot;
-using namespace lucidware::core;
+using namespace lucidfx::core;
 
-namespace lucidware::input {
+namespace lucidfx::input {
     void bindInputEventWithModifiers(sol::state_view& lua);
 
-    class InputEventWithModifiers : public lucidware::input::InputEventFromWindow {
+    class InputEventWithModifiers : public lucidfx::input::InputEventFromWindow {
     private:
         GodotInputEventWithModifiers* event;
     public:

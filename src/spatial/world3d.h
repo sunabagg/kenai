@@ -13,10 +13,10 @@
 
 using namespace godot;
 
-namespace lucidware::spatial {
+namespace lucidfx::spatial {
     void bindWorld3D(sol::state_view& lua);
 
-    class World3D : public lucidware::core::Resource {
+    class World3D : public lucidfx::core::Resource {
     private:
         GodotWorld3D* world = nullptr;
     public:
@@ -46,11 +46,11 @@ namespace lucidware::spatial {
             world->set_camera_attributes(ca->getCameraAttributes());
         }
 
-        lucidware::core::Environment* getEnvironment() {
-            return new lucidware::core::Environment(world->get_environment().ptr());
+        lucidfx::core::Environment* getEnvironment() {
+            return new lucidfx::core::Environment(world->get_environment().ptr());
         }
 
-        void setEnvironment(lucidware::core::Environment* env) {
+        void setEnvironment(lucidfx::core::Environment* env) {
             world->set_environment(env->getEnvironment());
         }
     };

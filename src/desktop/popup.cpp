@@ -1,6 +1,6 @@
 #include "popup.h"
 
-namespace lucidware::desktop {
+namespace lucidfx::desktop {
     void PopupProxy::_enter_tree() {
         if (this->element != nullptr) {
             this->element->enterTree();
@@ -78,7 +78,7 @@ namespace lucidware::desktop {
             "new", sol::factories(
                 []() { return new Popup(); }
             ),
-            sol::base_classes, sol::bases<BaseObject, Element, lucidware::core::Viewport, lucidware::desktop::Window>(),
+            sol::base_classes, sol::bases<BaseObject, Element, lucidfx::core::Viewport, lucidfx::desktop::Window>(),
             "borderless", sol::property(
                 &Popup::getBorderless,
                 &Popup::setBorderless

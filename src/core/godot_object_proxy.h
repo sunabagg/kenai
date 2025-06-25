@@ -7,7 +7,7 @@
 
 using namespace godot;
 
-namespace lucidware::core{
+namespace lucidfx::core{
     struct GodotObjectProxy
     {
         Object* object;

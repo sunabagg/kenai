@@ -1,4 +1,4 @@
-package lucidware;
+package lucidfx;
 
 enum abstract AnimationProcessCallback(Int) from Int to Int {
 	var physics = 0;

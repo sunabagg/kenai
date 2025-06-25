@@ -1,4 +1,4 @@
-package lucidware;
+package lucidfx;
 
 enum abstract Limit(Int) from Int to Int {
 	var maxBoundUniformSets = 0;

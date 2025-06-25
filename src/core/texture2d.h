@@ -1,5 +1,5 @@
-#ifndef LUCIDWARE_TEXTURE2D_H
-#define LUCIDWARE_TEXTURE2D_H
+#ifndef LUCIDFX_TEXTURE2D_H
+#define LUCIDFX_TEXTURE2D_H
 
 #include <godot_cpp/classes/texture2d.hpp>
 #include <godot_cpp/variant/variant.hpp>
@@ -12,7 +12,7 @@
 
 using namespace godot;
 
-namespace lucidware::core {
+namespace lucidfx::core {
     void bindTexture2D(sol::state &lua);
 
     class Texture2D : public Texture {
@@ -68,4 +68,4 @@ namespace lucidware::core {
     };
 }
 
-#endif // LUCIDWARE_TEXTURE2D_H
+#endif // LUCIDFX_TEXTURE2D_H

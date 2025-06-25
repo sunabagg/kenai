@@ -1,4 +1,4 @@
-package lucidware;
+package lucidfx;
 
 enum abstract StretchModeEnum(Int) from Int to Int {
 	var scale = 0;

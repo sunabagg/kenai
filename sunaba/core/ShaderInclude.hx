@@ -1,4 +1,4 @@
-package lucidware.core;
+package lucidfx.core;
 
 @:native("ShaderInclude")
 extern class ShaderInclude extends Resource {

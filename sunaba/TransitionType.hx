@@ -1,4 +1,4 @@
-package lucidware;
+package lucidfx;
 
 enum abstract TransitionType(Int) from Int to Int {
 	var linear = 0;

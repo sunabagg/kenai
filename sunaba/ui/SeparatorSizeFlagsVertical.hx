@@ -1,4 +1,4 @@
-package lucidware..ui;
+package lucidfx..ui;
 
 enum abstract SeparatorSizeFlagsVertical(Int) from Int to Int {
 	var shrinkBegin = 0;

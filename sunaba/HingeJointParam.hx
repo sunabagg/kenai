@@ -1,4 +1,4 @@
-package lucidware;
+package lucidfx;
 
 enum abstract HingeJointParam(Int) from Int to Int {
 	var bias = 0;

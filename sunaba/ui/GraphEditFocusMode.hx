@@ -1,4 +1,4 @@
-package lucidware..ui;
+package lucidfx..ui;
 
 enum abstract GraphEditFocusMode(Int) from Int to Int {
 	var none = 0;

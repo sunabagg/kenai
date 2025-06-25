@@ -1,4 +1,4 @@
-package lucidware..ui;
+package lucidfx..ui;
 
 enum abstract SeparatorTooltipAutoTranslateMode(Int) from Int to Int {
 	var inherit = 0;

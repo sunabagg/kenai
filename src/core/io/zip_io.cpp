@@ -3,9 +3,9 @@
 #include "../string_utils.h"
 
 using namespace godot;
-using namespace lucidware::core;
+using namespace lucidfx::core;
 
-namespace lucidware::core::io {
+namespace lucidfx::core::io {
     void bindZipIo(sol::state& lua) {
         lua.new_usertype<ZipIo>(
             "ZipIo",
@@ -83,4 +83,4 @@ namespace lucidware::core::io {
         }
         return false; // No files found in the specified directory
     }
-} // namespace lucidware::core::io
+} // namespace lucidfx::core::io

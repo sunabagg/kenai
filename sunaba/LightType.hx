@@ -1,4 +1,4 @@
-package lucidware;
+package lucidfx;
 
 enum abstract LightType(Int) from Int to Int {
 	var directional = 0;

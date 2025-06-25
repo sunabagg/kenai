@@ -11,9 +11,9 @@
 
 using namespace godot;
 
-#define Texture3D lucidware::spatial::Texture3D
+#define Texture3D lucidfx::spatial::Texture3D
 
-namespace lucidware::spatial {
+namespace lucidfx::spatial {
     void bindTexture3DRD(sol::state_view& lua);
 
     class Texture3DRD : public Texture3D {

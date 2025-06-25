@@ -1,4 +1,4 @@
-package lucidware;
+package lucidfx;
 
 enum abstract TileLayoutEnum(Int) from Int to Int {
 	var stacked = 0;

@@ -1,4 +1,4 @@
-package lucidware;
+package lucidfx;
 
 enum abstract SearchFlags(Int) from Int to Int {
 	var matchCase = 1;

@@ -1,4 +1,4 @@
-package lucidware;
+package lucidfx;
 
 enum abstract LayoutPreset(Int) from Int to Int {
 	var topLeft = 0;

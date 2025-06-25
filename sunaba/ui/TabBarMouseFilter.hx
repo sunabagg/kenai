@@ -1,4 +1,4 @@
-package lucidware..ui;
+package lucidfx..ui;
 
 enum abstract TabBarMouseFilter(Int) from Int to Int {
 	var stop = 0;

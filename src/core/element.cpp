@@ -4,10 +4,10 @@
 #include "viewport.h"
 #include "../desktop/window.h"
 
-using namespace lucidware::core;
+using namespace lucidfx::core;
 using namespace godot;
 
-void lucidware::core::bindElement(sol::state &lua) {
+void lucidfx::core::bindElement(sol::state &lua) {
     lua.new_usertype<Element>(
         "Element",
         "new", sol::factories(
@@ -107,66 +107,66 @@ void lucidware::core::bindElement(sol::state &lua) {
     );
 }
 
-void lucidware::core::Element::setProxyDb(Node* p_node) {
+void lucidfx::core::Element::setProxyDb(Node* p_node) {
     node = p_node;
     ProxyDb::addElement(node, this);
 }
 
-void lucidware::core::NodeProxy::_enter_tree() {
+void lucidfx::core::NodeProxy::_enter_tree() {
     if (this->element != nullptr) {
         this->element->enterTree();
     }
 }
 
-void lucidware::core::NodeProxy::_exit_tree() {
+void lucidfx::core::NodeProxy::_exit_tree() {
     if (this->element != nullptr) {
         this->element->exitTree();
     }
 }
 
-void lucidware::core::NodeProxy::_ready() {
+void lucidfx::core::NodeProxy::_ready() {
     if (this->element != nullptr) {
         this->element->ready();
     }
 }
 
-void lucidware::core::NodeProxy::_process(double delta) {
+void lucidfx::core::NodeProxy::_process(double delta) {
     if (this->element != nullptr) {
         this->element->process(delta);
     }
 }
 
-void lucidware::core::NodeProxy::_physics_process(double delta) {
+void lucidfx::core::NodeProxy::_physics_process(double delta) {
     if (this->element != nullptr) {
         this->element->physicsProcess(delta);
     }
 }
 
-void lucidware::core::NodeProxy::_input(const Ref<InputEvent>& event) {
+void lucidfx::core::NodeProxy::_input(const Ref<InputEvent>& event) {
     if (this->element != nullptr) {
         this->element->input(event);
     }
 }
 
-void lucidware::core::NodeProxy::_unhandled_input(const Ref<InputEvent>& event) {
+void lucidfx::core::NodeProxy::_unhandled_input(const Ref<InputEvent>& event) {
     if (this->element != nullptr) {
         this->element->unhandledInput(event);
     }
 }
 
-void lucidware::core::NodeProxy::_unhandled_key_input(const Ref<InputEvent>& event) {
+void lucidfx::core::NodeProxy::_unhandled_key_input(const Ref<InputEvent>& event) {
     if (this->element != nullptr) {
         this->element->unhandledKeyInput(event);
     }
 }
 
-void lucidware::core::NodeProxy::_shortcut_input(const Ref<InputEvent>& event) {
+void lucidfx::core::NodeProxy::_shortcut_input(const Ref<InputEvent>& event) {
     if (this->element != nullptr) {
         this->element->shortcutInput(event);
     }
 }
 
-lucidware::core::Viewport* lucidware::core::Element::getViewport() {
+lucidfx::core::Viewport* lucidfx::core::Element::getViewport() {
     if (node == nullptr) {
         return nullptr;
     }
@@ -177,7 +177,7 @@ lucidware::core::Viewport* lucidware::core::Element::getViewport() {
     return new Viewport(viewport);
 }
 
-lucidware::desktop::Window* lucidware::core::Element::getWindow() {
+lucidfx::desktop::Window* lucidfx::core::Element::getWindow() {
     if (node == nullptr) {
         return nullptr;
     }
@@ -185,10 +185,10 @@ lucidware::desktop::Window* lucidware::core::Element::getWindow() {
     if (window == nullptr) {
         return nullptr;
     }
-    return new lucidware::desktop::Window(window);
+    return new lucidfx::desktop::Window(window);
 }
 
-namespace lucidware::core {
+namespace lucidfx::core {
     void NodeSignalWrapper::_bind_methods() {
         ClassDB::bind_method(D_METHOD("child_entered_tree", "child"), &NodeSignalWrapper::child_entered_tree);
         ClassDB::bind_method(D_METHOD("child_exited_tree", "child"), &NodeSignalWrapper::child_exited_tree);

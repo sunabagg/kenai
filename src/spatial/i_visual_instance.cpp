@@ -1,6 +1,6 @@
 #include "i_visual_instance.h"
 
-void lucidware::spatial::bindVisualInstance(sol::state& lua) {
+void lucidfx::spatial::bindVisualInstance(sol::state& lua) {
     lua.new_usertype<IVisualInstance>(
         "IVisualInstance",
         "new", sol::factories(

@@ -1,4 +1,4 @@
-package lucidware;
+package lucidfx;
 
 enum abstract DrawFlags(Int) from Int to Int {
 	var transparent = 0;

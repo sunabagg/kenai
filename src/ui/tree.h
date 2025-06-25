@@ -13,9 +13,9 @@
 #include "../core/event.h"
 
 using namespace godot;
-using namespace lucidware::core;
+using namespace lucidfx::core;
 
-namespace lucidware::ui {
+namespace lucidfx::ui {
     void bindTree(sol::state& lua);
 
     class Tree;
@@ -25,7 +25,7 @@ namespace lucidware::ui {
         protected:
             static void _bind_methods() {}
         public:
-            lucidware::ui::Tree* element = nullptr;
+            lucidfx::ui::Tree* element = nullptr;
 
             void onInit() {
                 // Initialize the NodeProxy instance
@@ -67,7 +67,7 @@ namespace lucidware::ui {
         protected:
             static void _bind_methods();
         public:
-            lucidware::ui::Tree* element = nullptr;
+            lucidfx::ui::Tree* element = nullptr;
 
             TreeSignalWrapper() = default;
             ~TreeSignalWrapper() = default;

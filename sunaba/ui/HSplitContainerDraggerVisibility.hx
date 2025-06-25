@@ -1,4 +1,4 @@
-package lucidware..ui;
+package lucidfx..ui;
 
 enum abstract HSplitContainerDraggerVisibility(Int) from Int to Int {
 	var visible = 0;

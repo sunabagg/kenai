@@ -1,27 +1,27 @@
-package lucidware.ui;
+package lucidfx.ui;
 
-import lucidware.core.GlobalObjectStack;
+import lucidfx.core.GlobalObjectStack;
 import haxe.DynamicAccess;
-import lucidware.core.FontFile;
-import lucidware.core.Texture;
-import lucidware.core.Image;
-import lucidware.core.ImageTexture;
-import lucidware.core.Texture2D;
-import lucidware.core.Color;
-import lucidware.core.Vector2i;
-import lucidware.core.Vector4;
-import lucidware.core.Vector3;
-import lucidware.core.Vector2;
-import lucidware.core.Vector4i;
-import lucidware.core.Vector3i;
-import lucidware.core.Element;
-import lucidware.ui.Control;
-import lucidware.core.Variant;
-import lucidware.core.FontFile;
+import lucidfx.core.FontFile;
+import lucidfx.core.Texture;
+import lucidfx.core.Image;
+import lucidfx.core.ImageTexture;
+import lucidfx.core.Texture2D;
+import lucidfx.core.Color;
+import lucidfx.core.Vector2i;
+import lucidfx.core.Vector4;
+import lucidfx.core.Vector3;
+import lucidfx.core.Vector2;
+import lucidfx.core.Vector4i;
+import lucidfx.core.Vector3i;
+import lucidfx.core.Element;
+import lucidfx.ui.Control;
+import lucidfx.core.Variant;
+import lucidfx.core.FontFile;
 import lua.Table;
-import lucidware.core.io.IoManager;
-import lucidware.LayoutPreset;
-import lucidware.LayoutPresetMode;
+import lucidfx.core.io.IoManager;
+import lucidfx.LayoutPreset;
+import lucidfx.LayoutPresetMode;
 import Type;
 
 class Widget {
@@ -152,7 +152,7 @@ class Widget {
             elementdb.push(element);
             // stupid hack to make sure the element is added to the global object stack
             // so that the program doesn't fucking crash
-            GlobalObjectStack.getSingleton().stack.push(new lucidware.core.StackHandle(element));
+            GlobalObjectStack.getSingleton().stack.push(new lucidfx.core.StackHandle(element));
             if (element != null && element.isNull() == false) {
                 rootElement.addChild(element);
             }

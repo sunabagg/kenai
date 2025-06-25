@@ -12,7 +12,7 @@
 
 using namespace godot;
 
-namespace lucidware::core {
+namespace lucidfx::core {
     void bindAnimatedTexture(sol::state &lua);
 
     class AnimatedTexture : public Texture2D {

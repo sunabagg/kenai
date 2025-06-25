@@ -1,4 +1,4 @@
-package lucidware;
+package lucidfx;
 
 enum abstract ColorModeType(Int) from Int to Int {
 	var rgb = 0;

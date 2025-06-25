@@ -1,4 +1,4 @@
-package lucidware;
+package lucidfx;
 
 enum abstract GatheringState(Int) from Int to Int {
 	var new = 0;

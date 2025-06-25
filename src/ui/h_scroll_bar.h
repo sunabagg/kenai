@@ -10,9 +10,9 @@
 #include "scroll_bar.h"
 
 using namespace godot;
-using namespace lucidware::core;
+using namespace lucidfx::core;
 
-namespace lucidware::ui {
+namespace lucidfx::ui {
     void bindHScrollBar(sol::state& lua);
 
     class HScrollBar;
@@ -24,7 +24,7 @@ namespace lucidware::ui {
                 // Bind methods specific to HScrollBarProxy
             }
         public:
-            lucidware::ui::HScrollBar* element = nullptr;
+            lucidfx::ui::HScrollBar* element = nullptr;
 
             void onInit() {
                 // Initialize the NodeProxy instance
@@ -52,7 +52,7 @@ namespace lucidware::ui {
             void _value_changed(double value) override;
     };
 
-    class HScrollBar : public lucidware::ui::ScrollBar {
+    class HScrollBar : public lucidfx::ui::ScrollBar {
         private:
             HScrollBarNode* hScrollBar = nullptr; // Pointer to the HScrollBar instance
 

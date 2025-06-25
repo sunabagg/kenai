@@ -1,12 +1,12 @@
 #include "code_highlighter.h"
 
-namespace lucidware::ui {
+namespace lucidfx::ui {
     void bindCodeHighlighter(sol::state &lua) {
         lua.new_usertype<CodeHighlighter>("CodeHighlighter",
             "new", sol::factories(
                 []() { return new CodeHighlighter(); }
             ),
-            sol::base_classes, sol::bases<lucidware::core::BaseObject, lucidware::core::Resource, SyntaxHighlighter>(),
+            sol::base_classes, sol::bases<lucidfx::core::BaseObject, lucidfx::core::Resource, SyntaxHighlighter>(),
             "colorRegions", sol::property(&CodeHighlighter::getColorRegions, &CodeHighlighter::setColorRegions),
             "functionColor", sol::property(&CodeHighlighter::getFunctionColor, &CodeHighlighter::setFunctionColor),
             "keywordColors", sol::property(&CodeHighlighter::getKeywordColors, &CodeHighlighter::setKeywordColors),
@@ -28,7 +28,7 @@ namespace lucidware::ui {
             "removeColorRegion", &CodeHighlighter::removeColorRegion,
             "removeKeywordColor", &CodeHighlighter::removeKeywordColor,
             "removeMemberKeywordColor", &CodeHighlighter::removeMemberKeywordColor,
-            "cast", [](lucidware::core::Resource* p_resource) {
+            "cast", [](lucidfx::core::Resource* p_resource) {
                 return new CodeHighlighter(godot::Object::cast_to<GodotCodeHighlighter>(p_resource->getResource()));
             }
         );

@@ -1,4 +1,4 @@
-package lucidware;
+package lucidfx;
 
 enum abstract FftSizeEnum(Int) from Int to Int {
 	var size256 = 0;

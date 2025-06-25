@@ -14,7 +14,7 @@
 
 using namespace godot;
 
-namespace lucidware
+namespace lucidfx
 {
     class App : public Node {
         GDCLASS(App, Node)
@@ -26,7 +26,7 @@ namespace lucidware
 
         sol::state global_state;
 
-        lucidware::core::io::IoManager* ioManager;
+        lucidfx::core::io::IoManager* ioManager;
 
         void _ready() override;
         void _process(double delta) override;
@@ -37,7 +37,7 @@ namespace lucidware
 
         void start( const String &path );
 
-        lucidware::core::Scene* createScene();
+        lucidfx::core::Scene* createScene();
 
         // Mobdebug support
         void initMobdebug();

@@ -10,12 +10,12 @@
 #include "input_event_from_window.h"
 
 using namespace godot;
-using namespace lucidware::core;
+using namespace lucidfx::core;
 
-namespace lucidware::input {
+namespace lucidfx::input {
     void bindInputEventScreenDrag(sol::state_view& lua);
 
-    class InputEventScreenDrag : public lucidware::input::InputEventFromWindow {
+    class InputEventScreenDrag : public lucidfx::input::InputEventFromWindow {
     private:
         GodotInputEventScreenDrag* event;
     public:

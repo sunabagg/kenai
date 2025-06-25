@@ -1,4 +1,4 @@
-package lucidware.core;
+package lucidfx.core;
 
 abstract BasisAbstract(Basis) from Basis {
     public function new(x : Vector3, y : Vector3, z : Vector3) {

@@ -1,4 +1,4 @@
-package lucidware;
+package lucidfx;
 
 enum abstract SignalingState(Int) from Int to Int {
 	var stable = 0;

@@ -11,7 +11,7 @@
 
 using namespace godot;
 
-namespace lucidware::spatial {
+namespace lucidfx::spatial {
     void bindQuadOccluder3D(sol::state_view& lua);
 
     class QuadOccluder3D : public Occluder3D {

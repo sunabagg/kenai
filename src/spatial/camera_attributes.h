@@ -11,10 +11,10 @@
 
 using namespace godot;
 
-namespace lucidware::spatial {
+namespace lucidfx::spatial {
     void bindCameraAttributes(sol::state_view& lua);
 
-    class CameraAttributes : public lucidware::core::Resource {
+    class CameraAttributes : public lucidfx::core::Resource {
     private:
         GodotCameraAttributes* cameraAttributes = nullptr;
     public:

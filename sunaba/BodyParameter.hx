@@ -1,4 +1,4 @@
-package lucidware;
+package lucidfx;
 
 enum abstract BodyParameter(Int) from Int to Int {
 	var bounce = 0;

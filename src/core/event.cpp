@@ -2,15 +2,15 @@
 
 using namespace godot;
 
-void lucidware::core::bindEvent(sol::state &lua) {
-    lua.new_usertype<lucidware::core::Event>("Event",
+void lucidfx::core::bindEvent(sol::state &lua) {
+    lua.new_usertype<lucidfx::core::Event>("Event",
         "new", sol::factories(
-            []() { return new lucidware::core::Event(); }
+            []() { return new lucidfx::core::Event(); }
         ),
-        sol::base_classes, sol::bases<lucidware::core::BaseObject>(),
-        "connect", &lucidware::core::Event::connectLua,
-        "disconnect", &lucidware::core::Event::disconnectLua,
-        "emit", &lucidware::core::Event::emitLua,
-        "clear", &lucidware::core::Event::clear
+        sol::base_classes, sol::bases<lucidfx::core::BaseObject>(),
+        "connect", &lucidfx::core::Event::connectLua,
+        "disconnect", &lucidfx::core::Event::disconnectLua,
+        "emit", &lucidfx::core::Event::emitLua,
+        "clear", &lucidfx::core::Event::clear
     );
 }

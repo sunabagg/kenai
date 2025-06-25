@@ -1,18 +1,18 @@
 #include "shader.h"
 
-void lucidware::core::bindShader(sol::state& lua) {
-    lua.new_usertype<lucidware::core::Shader>("Shader",
+void lucidfx::core::bindShader(sol::state& lua) {
+    lua.new_usertype<lucidfx::core::Shader>("Shader",
         "new", sol::factories(
-            []() { return new lucidware::core::Shader(); }
+            []() { return new lucidfx::core::Shader(); }
         ),
-        sol::base_classes, sol::bases<lucidware::core::BaseObject, lucidware::core::Resource>(),
+        sol::base_classes, sol::bases<lucidfx::core::BaseObject, lucidfx::core::Resource>(),
         "code", sol::property(
-            &lucidware::core::Shader::getCode,
-            &lucidware::core::Shader::setCode
+            &lucidfx::core::Shader::getCode,
+            &lucidfx::core::Shader::setCode
         ),
-        "defaultTextureParameter", &lucidware::core::Shader::getDefaultTextureParameter,
-        "getMode", &lucidware::core::Shader::getMode,
-        "getShaderUniformList", &lucidware::core::Shader::getShaderUniformList,
+        "defaultTextureParameter", &lucidfx::core::Shader::getDefaultTextureParameter,
+        "getMode", &lucidfx::core::Shader::getMode,
+        "getShaderUniformList", &lucidfx::core::Shader::getShaderUniformList,
         "cast", [](Resource* instance) {
             return new Shader(godot::Object::cast_to<GodotShader>(instance->getResource()));
         }

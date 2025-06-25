@@ -11,7 +11,7 @@
 
 using namespace godot;
 
-namespace lucidware::core {
+namespace lucidfx::core {
     void bindRegExMatch(sol::state& lua);
 
     class RegExMatch : public BaseObject {

@@ -1,4 +1,4 @@
-package lucidware;
+package lucidfx;
 
 enum abstract TargetRayMode(Int) from Int to Int {
 	var unknown = 0;

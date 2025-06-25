@@ -1,4 +1,4 @@
-package lucidware..core;
+package lucidfx..core;
 
 enum abstract SubViewportSdfScale(Int) from Int to Int {
 	var scale100Percent = 0;

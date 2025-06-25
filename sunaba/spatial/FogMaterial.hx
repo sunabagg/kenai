@@ -1,7 +1,7 @@
-package lucidware.spatial;
+package lucidfx.spatial;
 
-import lucidware.core.Color;
-import lucidware.core.Material;
+import lucidfx.core.Color;
+import lucidfx.core.Material;
 
 @:native("FogMaterial")
 extern class FogMaterial extends Material {
@@ -23,4 +23,4 @@ abstract FogMaterialAbstract(FogMaterial) from FogMaterial to FogMaterial {
         }
         return fogMaterial;
     } 
-} // end package lucidware.spatial
+} // end package lucidfx.spatial

@@ -3,7 +3,7 @@
 
 #include <sol/sol.hpp>
 
-namespace lucidware::desktop
+namespace lucidfx::desktop
 {
     void bindDesktopClasses(sol::state& lua);
 }

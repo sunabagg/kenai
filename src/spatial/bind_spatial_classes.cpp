@@ -31,7 +31,7 @@
 #include "../core/environment.h"
 #include "world3d.h"
 
-void lucidware::spatial::bindSpatialClasses(sol::state& lua) {
+void lucidfx::spatial::bindSpatialClasses(sol::state& lua) {
     bindOccluder3D(lua);
     bindArrayOccluder3D(lua);
     bindBaseMaterial3D(lua);

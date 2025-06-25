@@ -1,4 +1,4 @@
-package lucidware..spatial;
+package lucidfx..spatial;
 
 enum abstract Camera3DRotationOrder(Int) from Int to Int {
 	var xyz = 0;

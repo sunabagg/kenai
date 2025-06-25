@@ -1,15 +1,15 @@
-package lucidware.ui;
+package lucidfx.ui;
 
 @:native("HsplitContainer")
 extern class HsplitContainer extends SplitContainer {
     @:native("cast")
-    public static function toHSplitContainer(obj: Dynamic): lucidware.ui.HsplitContainer;
+    public static function toHSplitContainer(obj: Dynamic): lucidfx.ui.HsplitContainer;
 }
 
 abstract HsplitContainerAbstract(HsplitContainer) from HsplitContainer to HsplitContainer {
     @:from
-    public static function fromElement(element: lucidware.core.Element): lucidware.ui.HsplitContainer {
-        var hsplitContainer = lucidware.ui.HsplitContainer.toHSplitContainer(element);
+    public static function fromElement(element: lucidfx.core.Element): lucidfx.ui.HsplitContainer {
+        var hsplitContainer = lucidfx.ui.HsplitContainer.toHSplitContainer(element);
         if (hsplitContainer.isNull()) {
             return null;
         }

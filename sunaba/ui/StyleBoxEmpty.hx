@@ -1,6 +1,6 @@
-package lucidware.ui;
+package lucidfx.ui;
 
-import lucidware.core.Resource;
+import lucidfx.core.Resource;
 
 @:native("StyleBoxEmpty")
 extern class StyleBoxEmpty extends StyleBox {
@@ -17,4 +17,4 @@ abstract StyleBoxEmptyAbstract(StyleBoxEmpty) from StyleBoxEmpty to StyleBoxEmpt
         }
         return styleBoxEmpty;
     }
-} // end package lucidware.ui
+} // end package lucidfx.ui

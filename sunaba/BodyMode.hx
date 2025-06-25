@@ -1,4 +1,4 @@
-package lucidware;
+package lucidfx;
 
 enum abstract BodyMode(Int) from Int to Int {
 	var static = 0;

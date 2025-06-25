@@ -1,7 +1,7 @@
-package lucidware.ui;
+package lucidfx.ui;
 
-import lucidware.core.Element;
-import lucidware.core.Texture2D;
+import lucidfx.core.Element;
+import lucidfx.core.Texture2D;
 
 @:native("Button")
 extern class Button extends BaseButton {

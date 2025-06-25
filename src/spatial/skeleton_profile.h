@@ -10,15 +10,15 @@
 #include "../core/resource.h"
 #include "../core/texture2d.h"
 
-#define Texture2D lucidware::core::Texture2D
+#define Texture2D lucidfx::core::Texture2D
 
 using namespace godot;
-using namespace lucidware::core;
+using namespace lucidfx::core;
 
-namespace lucidware::spatial {
+namespace lucidfx::spatial {
     void bindSkeletonProfile(sol::state_view& lua);
 
-    class SkeletonProfile : public lucidware::core::Resource {
+    class SkeletonProfile : public lucidfx::core::Resource {
     private:
         GodotSkeletonProfile* skeletonProfile = nullptr;
     public:

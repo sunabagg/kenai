@@ -20,7 +20,7 @@
 
 #include "base_object.h"
 
-namespace lucidware::core
+namespace lucidfx::core
 {
     void bindSceneSystem(sol::state& lua);
     

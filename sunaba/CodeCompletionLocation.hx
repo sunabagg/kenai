@@ -1,4 +1,4 @@
-package lucidware;
+package lucidfx;
 
 enum abstract CodeCompletionLocation(Int) from Int to Int {
 	var local = 0;

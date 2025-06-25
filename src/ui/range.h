@@ -12,9 +12,9 @@
 #include "../core/event.h"
 
 using namespace godot;
-using namespace lucidware::core;
+using namespace lucidfx::core;
 
-namespace lucidware::ui {
+namespace lucidfx::ui {
     void bindRange(sol::state& lua);
 
     class Range;
@@ -25,7 +25,7 @@ namespace lucidware::ui {
                 // Bind methods specific to RangeProxy
             }
         public:
-            lucidware::ui::Range* element = nullptr;
+            lucidfx::ui::Range* element = nullptr;
 
             void onInit() {
                 // Initialize the NodeProxy instance
@@ -59,7 +59,7 @@ namespace lucidware::ui {
         protected:
             static void _bind_methods();
         public:
-            lucidware::ui::Range* element = nullptr;
+            lucidfx::ui::Range* element = nullptr;
 
             RangeSignalWrapper() = default;
             ~RangeSignalWrapper() = default;
@@ -68,7 +68,7 @@ namespace lucidware::ui {
             void value_changed(double value);
     };
 
-    class Range : public lucidware::ui::Control {
+    class Range : public lucidfx::ui::Control {
         private:
             RangeNode* range = nullptr; // Pointer to the Range instance
 

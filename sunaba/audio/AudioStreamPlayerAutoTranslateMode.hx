@@ -1,4 +1,4 @@
-package lucidware..audio;
+package lucidfx..audio;
 
 enum abstract AudioStreamPlayerAutoTranslateMode(Int) from Int to Int {
 	var inherit = 0;

@@ -1,4 +1,4 @@
-package lucidware.core;
+package lucidfx.core;
 
 abstract IntArray(lua.Table<Int, Int>) from lua.Table<Int, Int> to lua.Table<Int, Int> {
     @:to

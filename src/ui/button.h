@@ -10,7 +10,7 @@
 #include "base_button.h"
 #include "../core/texture2d.h"
 
-namespace lucidware::ui {
+namespace lucidfx::ui {
     void bindButton(sol::state& lua);
 
     class Button;
@@ -22,7 +22,7 @@ namespace lucidware::ui {
                 // Bind methods specific to ButtonProxy
             }
         public:
-            lucidware::ui::Button* element = nullptr;
+            lucidfx::ui::Button* element = nullptr;
 
             void _enter_tree() override;
             void _exit_tree() override;
@@ -59,7 +59,7 @@ namespace lucidware::ui {
             void _toggled(bool p_toggled_on) override;
     };
 
-    class Button : public lucidware::ui::BaseButton {
+    class Button : public lucidfx::ui::BaseButton {
         private:
             ButtonNode* button = nullptr;
 
@@ -132,11 +132,11 @@ namespace lucidware::ui {
                 button->set_flat(enabled);
             }
 
-            lucidware::core::Texture2D* getIcon() {
-                return new lucidware::core::Texture2D(button->get_button_icon().ptr());
+            lucidfx::core::Texture2D* getIcon() {
+                return new lucidfx::core::Texture2D(button->get_button_icon().ptr());
             }
 
-            void setIcon(lucidware::core::Texture2D* texture) {
+            void setIcon(lucidfx::core::Texture2D* texture) {
                 Ref<godot::Texture2D> textureRef = Ref<godot::Texture2D>(texture->getTexture());
                 button->set_button_icon(textureRef);
             }

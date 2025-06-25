@@ -1,4 +1,4 @@
-package lucidware;
+package lucidfx;
 
 enum abstract CanvasItemTextureRepeat(Int) from Int to Int {
 	var default = 0;

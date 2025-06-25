@@ -10,15 +10,15 @@ config_version=5
 
 [application]
 
-config/name="Lucidware"
+config/name="Lucidfx"
 run/main_scene="res://App.tscn"
 config/features=PackedStringArray("4.4", "GL Compatibility")
 boot_splash/bg_color=Color(1, 1, 1, 1)
 boot_splash/fullsize=false
 boot_splash/image="uid://tqi54djfy3ia"
 config/icon="uid://bcnaj1jhop8y"
-config/macos_native_icon="res://Lucidware-macOS.icns"
-config/windows_native_icon="res://lucidware.ico"
+config/macos_native_icon="res://Lucidfx-macOS.icns"
+config/windows_native_icon="res://lucidfx.ico"
 config/icon.macos="uid://bipasi4ii6raj"
 
 [display]
@@ -27,7 +27,7 @@ window/dpi/allow_hidpi=false
 
 [dotnet]
 
-project/assembly_name="Lucidware"
+project/assembly_name="Lucidfx"
 
 [gui]
 

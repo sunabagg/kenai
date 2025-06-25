@@ -1,4 +1,4 @@
-package lucidware;
+package lucidfx;
 
 enum abstract LastWrapAlignmentMode(Int) from Int to Int {
 	var inherit = 0;

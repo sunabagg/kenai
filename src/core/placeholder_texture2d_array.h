@@ -11,7 +11,7 @@
 
 using namespace godot;
 
-namespace lucidware::core {
+namespace lucidfx::core {
     void bindPlaceholderTexture2DArray(sol::state &lua);
 
     class PlaceholderTexture2DArray : public PlaceholderTextureLayered {

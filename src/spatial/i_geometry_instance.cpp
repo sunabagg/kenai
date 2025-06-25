@@ -1,6 +1,6 @@
 #include "i_geometry_instance.h"
 
-void lucidware::spatial::bindGeometryInstance(sol::state& lua) {
+void lucidfx::spatial::bindGeometryInstance(sol::state& lua) {
     lua.new_usertype<IGeometryInstance>(
         "IGeometryInstance",
         "new", sol::factories(

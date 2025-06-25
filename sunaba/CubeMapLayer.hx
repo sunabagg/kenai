@@ -1,4 +1,4 @@
-package lucidware;
+package lucidfx;
 
 enum abstract CubeMapLayer(Int) from Int to Int {
 	var left = 0;

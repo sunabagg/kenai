@@ -1,4 +1,4 @@
-package lucidware;
+package lucidfx;
 
 enum abstract AxisStretchMode(Int) from Int to Int {
 	var stretch = 0;

@@ -1,5 +1,5 @@
-#ifndef LUCIDWARE_IMAGE_TEXTURE_H
-#define LUCIDWARE_IMAGE_TEXTURE_H
+#ifndef LUCIDFX_IMAGE_TEXTURE_H
+#define LUCIDFX_IMAGE_TEXTURE_H
 
 #include <godot_cpp/classes/image_texture.hpp>
 #include <godot_cpp/variant/variant.hpp>
@@ -13,9 +13,9 @@
 #include "io/io_index.h"
 
 using namespace godot;
-using namespace lucidware::core::io;
+using namespace lucidfx::core::io;
 
-namespace lucidware::core {
+namespace lucidfx::core {
     void bindImageTexture(sol::state &lua);
 
     class ImageTexture : public Texture2D {
@@ -71,4 +71,4 @@ namespace lucidware::core {
     };
 }
 
-#endif // LUCIDWARE_IMAGE_TEXTURE_H
+#endif // LUCIDFX_IMAGE_TEXTURE_H

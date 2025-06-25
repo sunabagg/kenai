@@ -12,9 +12,9 @@
 #include "../core/event.h"
 
 using namespace godot;
-using namespace lucidware::core;
+using namespace lucidfx::core;
 
-namespace lucidware::ui {
+namespace lucidfx::ui {
     void bindCodeEdit(sol::state& lua);
 
     class CodeEdit;
@@ -24,7 +24,7 @@ namespace lucidware::ui {
         protected:
             static void _bind_methods() {}
         public:
-            lucidware::ui::CodeEdit* element = nullptr;
+            lucidfx::ui::CodeEdit* element = nullptr;
 
             void onInit() {
                 // Initialize the NodeProxy instance
@@ -82,7 +82,7 @@ namespace lucidware::ui {
         protected:
             static void _bind_methods();
         public:
-            lucidware::ui::CodeEdit* element = nullptr;
+            lucidfx::ui::CodeEdit* element = nullptr;
 
             CodeEditSignalWrapper() = default;
             ~CodeEditSignalWrapper() = default;
@@ -445,7 +445,7 @@ namespace lucidware::ui {
                 code_edit->add_auto_brace_completion_pair(String(startKey.c_str()), String(endKey.c_str()));
             }
 
-            void addCodeCompletionOption(int type, const std::string& displayText, const std::string& insertText, const Color textColor, lucidware::core::Resource* icon = nullptr, Variant value = Variant(), int location = 1024) {
+            void addCodeCompletionOption(int type, const std::string& displayText, const std::string& insertText, const Color textColor, lucidfx::core::Resource* icon = nullptr, Variant value = Variant(), int location = 1024) {
                 Ref<godot::Resource> iconRef;
                 if (icon != nullptr) {
                     iconRef = Ref<godot::Resource>(icon->getResource());

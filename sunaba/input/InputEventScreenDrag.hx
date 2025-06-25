@@ -1,4 +1,4 @@
-package lucidware.input;
+package lucidfx.input;
 
 @:native("InputEventScreenDrag")
 extern class InputEventScreenDrag extends InputEventFromWindow {
@@ -24,4 +24,4 @@ abstract InputEventScreenDragAbstract(InputEventScreenDrag) from InputEventScree
         }
         return inputEventScreenDrag;
     }
-} // end package lucidware.input
+} // end package lucidfx.input

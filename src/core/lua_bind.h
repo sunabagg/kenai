@@ -10,7 +10,7 @@
 
 using namespace godot;
 
-namespace lucidware::core
+namespace lucidfx::core
 {
     void bind_class_to_lua(sol::state& lua, const String& class_name);
 

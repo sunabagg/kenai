@@ -1,4 +1,4 @@
-package lucidware;
+package lucidfx;
 
 enum abstract AnimationCallbackModeMethod(Int) from Int to Int {
 	var deferred = 0;

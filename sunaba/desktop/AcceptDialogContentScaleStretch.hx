@@ -1,4 +1,4 @@
-package lucidware..desktop;
+package lucidfx..desktop;
 
 enum abstract AcceptDialogContentScaleStretch(Int) from Int to Int {
 	var fractional = 0;

@@ -1,4 +1,4 @@
-package lucidware;
+package lucidfx;
 
 enum abstract HashType(Int) from Int to Int {
 	var md5 = 0;

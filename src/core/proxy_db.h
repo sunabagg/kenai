@@ -9,7 +9,7 @@
 
 #include "element.h"
 
-namespace lucidware::core
+namespace lucidfx::core
 {
     class ProxyDb
     {

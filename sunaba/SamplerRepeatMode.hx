@@ -1,4 +1,4 @@
-package lucidware;
+package lucidfx;
 
 enum abstract SamplerRepeatMode(Int) from Int to Int {
 	var repeat = 0;

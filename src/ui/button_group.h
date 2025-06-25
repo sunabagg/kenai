@@ -11,15 +11,15 @@
 #include "../core/event.h"
 #include "../core/stl_function_wrapper.h"
 
-using namespace lucidware::core;
+using namespace lucidfx::core;
 
-namespace lucidware::ui {
+namespace lucidfx::ui {
 
     class BaseButton;
 
     void bindButtonGroup(sol::state &lua);
 
-    class ButtonGroup : public lucidware::core::Resource {
+    class ButtonGroup : public lucidfx::core::Resource {
     private:
         GodotButtonGroup* button_group = nullptr; // Pointer to the ButtonGroup instance
 

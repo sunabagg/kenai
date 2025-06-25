@@ -10,9 +10,9 @@
 #include "container.h"
 
 using namespace godot;
-using namespace lucidware::core;
+using namespace lucidfx::core;
 
-namespace lucidware::ui {
+namespace lucidfx::ui {
     void bindGridContainer(sol::state &lua);
 
     class GridContainer;
@@ -24,7 +24,7 @@ namespace lucidware::ui {
                 // Bind methods specific to GridContainerProxy
             }
         public:
-            lucidware::ui::GridContainer* element = nullptr;
+            lucidfx::ui::GridContainer* element = nullptr;
 
             void onInit() {
                 // Initialize the NodeProxy instance

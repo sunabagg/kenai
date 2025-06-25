@@ -1,6 +1,6 @@
 #include "link_button.h"
 
-namespace lucidware::ui {
+namespace lucidfx::ui {
     void LinkButtonProxy::_enter_tree() {
         if (element != nullptr) {
             element->enterTree();
@@ -129,13 +129,13 @@ namespace lucidware::ui {
 
     void bindLinkButton(sol::state &lua) {
         using namespace sol;
-        using namespace lucidware::ui;
+        using namespace lucidfx::ui;
 
         lua.new_usertype<LinkButton>("LinkButton",
             "new", sol::factories(
                 []() { return new LinkButton(); }
             ),
-            sol::base_classes, sol::bases<BaseObject, Element, lucidware::core::CanvasItem, lucidware::ui::Control, lucidware::ui::BaseButton>(),
+            sol::base_classes, sol::bases<BaseObject, Element, lucidfx::core::CanvasItem, lucidfx::ui::Control, lucidfx::ui::BaseButton>(),
             "focusMode", sol::property(
                 &LinkButton::getFocusMode,
                 &LinkButton::setFocusMode

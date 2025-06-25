@@ -13,9 +13,9 @@
 #include "../core/texture2d.h"
 
 using namespace godot;
-using namespace lucidware::core;
+using namespace lucidfx::core;
 
-namespace lucidware::ui {
+namespace lucidfx::ui {
     void bindNinePatchRect(sol::state& lua);
 
     class NinePatchRect;
@@ -27,7 +27,7 @@ namespace lucidware::ui {
                 // Bind methods specific to NinePatchRectProxy
             }
         public:
-            lucidware::ui::NinePatchRect* element = nullptr;
+            lucidfx::ui::NinePatchRect* element = nullptr;
 
             void onInit() {
                 // Initialize the NodeProxy instance
@@ -184,11 +184,11 @@ namespace lucidware::ui {
                 ninePatchRect->set_region_rect(rect);
             }
 
-            lucidware::core::Texture2D* getTexture() {
-                return new lucidware::core::Texture2D(ninePatchRect->get_texture().ptr());
+            lucidfx::core::Texture2D* getTexture() {
+                return new lucidfx::core::Texture2D(ninePatchRect->get_texture().ptr());
             }
 
-            void setTexture(lucidware::core::Texture2D* texture) {
+            void setTexture(lucidfx::core::Texture2D* texture) {
                 ninePatchRect->set_texture(Ref<godot::Texture2D>(texture->getTexture()));
             }
 

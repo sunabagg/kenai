@@ -1,4 +1,4 @@
-package lucidware;
+package lucidfx;
 
 enum abstract BlendFactor(Int) from Int to Int {
 	var zero = 0;

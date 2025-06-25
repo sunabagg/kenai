@@ -10,9 +10,9 @@
 #include "slider.h"
 
 using namespace godot;
-using namespace lucidware::core;
+using namespace lucidfx::core;
 
-namespace lucidware::ui {
+namespace lucidfx::ui {
     void bindHSlider(sol::state &lua);
 
     class HSlider;
@@ -24,7 +24,7 @@ namespace lucidware::ui {
                 // Bind methods specific to HSliderProxy
             }
         public:
-            lucidware::ui::HSlider* element = nullptr;
+            lucidfx::ui::HSlider* element = nullptr;
 
             void onInit() {
                 // Initialize the NodeProxy instance
@@ -52,7 +52,7 @@ namespace lucidware::ui {
             void _value_changed(double value) override;
     };
 
-    class HSlider : public lucidware::ui::Slider {
+    class HSlider : public lucidfx::ui::Slider {
         private:
             HSliderNode* hSlider = nullptr; // Pointer to the HSlider instance
             void connectHSliderSignals() {

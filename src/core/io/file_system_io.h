@@ -3,9 +3,9 @@
 #include "system_io_interface.h"
 
 using namespace godot;
-using namespace lucidware::core;
+using namespace lucidfx::core;
 
-namespace lucidware::core::io {
+namespace lucidfx::core::io {
     void bindFileSystemIo(sol::state& lua);
 
     class FileSystemIo : public SystemIoInterface {

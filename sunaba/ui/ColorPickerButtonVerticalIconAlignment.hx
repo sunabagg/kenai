@@ -1,4 +1,4 @@
-package lucidware..ui;
+package lucidfx..ui;
 
 enum abstract ColorPickerButtonVerticalIconAlignment(Int) from Int to Int {
 	var top = 0;

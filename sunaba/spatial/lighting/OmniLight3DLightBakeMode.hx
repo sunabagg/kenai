@@ -1,4 +1,4 @@
-package lucidware..spatial.lighting;
+package lucidfx..spatial.lighting;
 
 enum abstract OmniLight3DLightBakeMode(Int) from Int to Int {
 	var disabled = 0;

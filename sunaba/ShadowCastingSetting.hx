@@ -1,4 +1,4 @@
-package lucidware;
+package lucidfx;
 
 enum abstract ShadowCastingSetting(Int) from Int to Int {
 	var off = 0;

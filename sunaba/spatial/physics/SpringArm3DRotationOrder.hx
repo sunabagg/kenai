@@ -1,4 +1,4 @@
-package lucidware..spatial.physics;
+package lucidfx..spatial.physics;
 
 enum abstract SpringArm3DRotationOrder(Int) from Int to Int {
 	var xyz = 0;

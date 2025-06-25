@@ -1,4 +1,4 @@
-package lucidware..ui;
+package lucidfx..ui;
 
 enum abstract ControlTextureFilter(Int) from Int to Int {
 	var parentNode = 0;

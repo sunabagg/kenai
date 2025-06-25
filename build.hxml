@@ -1,4 +1,4 @@
---library lucidware-core
+--library lucidfx-core
 --class-path .
 --lua main.lua
 -D lua-vanilla

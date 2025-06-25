@@ -1,4 +1,4 @@
-package lucidware;
+package lucidfx;
 
 enum abstract PolyEndType(Int) from Int to Int {
 	var polygon = 0;

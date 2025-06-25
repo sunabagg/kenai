@@ -1,6 +1,6 @@
 #include "margin_container.h"
 
-namespace lucidware::ui {
+namespace lucidfx::ui {
     void MarginContainerProxy::_enter_tree() {
         if (element != nullptr) {
             element->enterTree();
@@ -134,7 +134,7 @@ namespace lucidware::ui {
             "new", sol::factories(
                 []() { return new MarginContainer(); }
             ),
-            sol::base_classes, sol::bases<BaseObject, Element, lucidware::core::CanvasItem, Control, Container>(),
+            sol::base_classes, sol::bases<BaseObject, Element, lucidfx::core::CanvasItem, Control, Container>(),
             "cast", [](Element* e) {
                 MarginContainerNode* node = Object::cast_to<MarginContainerNode>(e->getNode());
                 return new MarginContainer(node);

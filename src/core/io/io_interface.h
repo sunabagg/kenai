@@ -15,9 +15,9 @@
 #include "binary_data.h"
 
 using namespace godot;
-using namespace lucidware::core;
+using namespace lucidfx::core;
 
-namespace lucidware::core::io {
+namespace lucidfx::core::io {
 
     void bindIoInterface(sol::state& lua);
 

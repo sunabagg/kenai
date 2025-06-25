@@ -1,6 +1,6 @@
 #include "viewport.h"
 
-namespace lucidware::core {
+namespace lucidfx::core {
     void ViewportProxy::_enter_tree() {
         if (this->element != nullptr) {
             this->element->enterTree();

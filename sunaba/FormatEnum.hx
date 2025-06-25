@@ -1,4 +1,4 @@
-package lucidware;
+package lucidfx;
 
 enum abstract FormatEnum(Int) from Int to Int {
 	var format8Bits = 0;

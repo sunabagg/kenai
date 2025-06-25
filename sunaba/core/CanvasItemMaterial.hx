@@ -1,4 +1,4 @@
-package lucidware.core;
+package lucidfx.core;
 
 @:native("CanvasItemMaterial")
 extern class CanvasItemMaterial extends Material {
@@ -21,4 +21,4 @@ abstract CanvasItemMaterialAbstract(CanvasItemMaterial) from CanvasItemMaterial 
         }
         return canvasItemMaterial;
     } 
-} // end package lucidware.core
+} // end package lucidfx.core

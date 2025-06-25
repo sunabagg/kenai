@@ -1,4 +1,4 @@
-package lucidware;
+package lucidfx;
 
 enum abstract LogicOperation(Int) from Int to Int {
 	var clear = 0;

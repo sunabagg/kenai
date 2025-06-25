@@ -1,4 +1,4 @@
-package lucidware..ui;
+package lucidfx..ui;
 
 enum abstract PanelLayoutDirection(Int) from Int to Int {
 	var inherited = 0;

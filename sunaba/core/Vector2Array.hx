@@ -1,4 +1,4 @@
-package lucidware.core;
+package lucidfx.core;
 
 abstract Vector2Array<T>(lua.Table<Int, Vector2>) from lua.Table<Int, Vector2> to lua.Table<Int, Vector2> {
     @:to

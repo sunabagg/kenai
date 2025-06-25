@@ -1,4 +1,4 @@
-package lucidware;
+package lucidfx;
 
 enum abstract PathPostProcessing(Int) from Int to Int {
 	var corridorfunnel = 0;

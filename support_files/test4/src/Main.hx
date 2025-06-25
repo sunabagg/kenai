@@ -1,14 +1,14 @@
 package support_files.test4.src;
 
-import lucidware.SizeFlags;
-import lucidware.LayoutPresetMode;
-import lucidware.App;
-import lucidware.ui.Control;
-import lucidware.ui.CenterContainer;
-import lucidware.ui.Panel;
-import lucidware.ui.Label;
-import lucidware.ui.VboxContainer;
-import lucidware.LayoutPreset;
+import lucidfx.SizeFlags;
+import lucidfx.LayoutPresetMode;
+import lucidfx.App;
+import lucidfx.ui.Control;
+import lucidfx.ui.CenterContainer;
+import lucidfx.ui.Panel;
+import lucidfx.ui.Label;
+import lucidfx.ui.VboxContainer;
+import lucidfx.LayoutPreset;
 
 class Main extends App{
     public static function main() {
@@ -58,7 +58,7 @@ class Main extends App{
         label.verticalAlignment = 1;
         label.horizontalAlignment = 1;
 
-        var button = new lucidware.ui.Button();
+        var button = new lucidfx.ui.Button();
         vboxContainer.addChild(button);
         button.text = "Click Me!";
 

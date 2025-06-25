@@ -1,4 +1,4 @@
-package lucidware;
+package lucidfx;
 
 enum abstract ColorDefaultEnum(Int) from Int to Int {
 	var white = 0;

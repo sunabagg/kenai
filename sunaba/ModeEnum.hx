@@ -1,4 +1,4 @@
-package lucidware;
+package lucidfx;
 
 enum abstract ModeEnum(Int) from Int to Int {
 	var windowed = 0;

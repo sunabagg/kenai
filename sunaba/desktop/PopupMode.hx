@@ -1,4 +1,4 @@
-package lucidware..desktop;
+package lucidfx..desktop;
 
 enum abstract PopupMode(Int) from Int to Int {
 	var windowed = 0;

@@ -1,4 +1,4 @@
-package lucidware;
+package lucidfx;
 
 enum abstract DampedSpringParam(Int) from Int to Int {
 	var restLength = 0;

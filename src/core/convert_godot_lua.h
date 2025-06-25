@@ -6,7 +6,7 @@
 
 using namespace godot;
 
-namespace lucidware::core {
+namespace lucidfx::core {
     Variant to_variant(const sol::object& object);
     Variant to_variant(const sol::stack_object& object);
     Variant to_variant(const sol::stack_proxy_base& object);    

@@ -1,4 +1,4 @@
-package lucidware..spatial;
+package lucidfx..spatial;
 
 enum abstract StandardMaterial3DSpecularMode(Int) from Int to Int {
 	var schlickGgx = 0;

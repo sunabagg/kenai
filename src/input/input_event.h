@@ -11,12 +11,12 @@
 #include "../core/convert_godot_lua.h"
 
 using namespace godot;
-using namespace lucidware::core;
+using namespace lucidfx::core;
 
-namespace lucidware::input {
+namespace lucidfx::input {
     void bindInputEvent(sol::state_view& lua);
 
-    class InputEvent : public lucidware::core::Resource {
+    class InputEvent : public lucidfx::core::Resource {
     private:
         GodotInputEvent* event;
     public:

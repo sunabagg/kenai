@@ -1,4 +1,4 @@
-package lucidware..desktop;
+package lucidfx..desktop;
 
 enum abstract WindowPositionalShadowAtlasQuad1(Int) from Int to Int {
 	var disabled = 0;

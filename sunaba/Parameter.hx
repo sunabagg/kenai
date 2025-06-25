@@ -1,4 +1,4 @@
-package lucidware;
+package lucidfx;
 
 enum abstract Parameter(Int) from Int to Int {
 	var initialLinearVelocity = 0;

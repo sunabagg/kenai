@@ -1,4 +1,4 @@
-package lucidware;
+package lucidfx;
 
 enum abstract SpecularModeEnum(Int) from Int to Int {
 	var schlickGgx = 0;

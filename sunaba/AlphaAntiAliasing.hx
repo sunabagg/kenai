@@ -1,4 +1,4 @@
-package lucidware;
+package lucidfx;
 
 enum abstract AlphaAntiAliasing(Int) from Int to Int {
 	var off = 0;
