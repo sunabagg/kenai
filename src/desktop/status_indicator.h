@@ -65,6 +65,10 @@ namespace sunaba::desktop {
                 connectStatusIndicatorSignals();
                 setNode(node); 
             }
+
+            sunaba::core::Texture2D* getIcon() {
+                return new sunaba::core::Texture2D(statusIndicator->get_icon().ptr());
+            }
     };
 }
 
