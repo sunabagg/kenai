@@ -195,6 +195,9 @@ namespace sunaba::desktop {
             Event* getFilesSelectedEvent() {
                 return filesSelectedEvent;
             }
+            void setFilesSelectedEvent(Event* e) {
+                filesSelectedEvent = e;
+            }
     };
 }
 
