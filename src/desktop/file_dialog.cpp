@@ -48,6 +48,10 @@ namespace sunaba::desktop {
             "access", sol::property(
                 &FileDialog::getAccess,
                 &FileDialog::setAccess
+            ),
+            "currentDir", sol::property(
+                &FileDialog::getCurrentDir,
+                &FileDialog::setCurrentDir
             )
         );
     }
