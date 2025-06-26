@@ -93,6 +93,10 @@ namespace sunaba::desktop {
             "fileSelected", sol::property(
                 &FileDialog::getFileSelectedEvent,
                 &FileDialog::setFileSelectedEvent
+            ),
+            "filenameFilterChanged", sol::property(
+                &FileDialog::getFilenameFilterChangedEvent,
+                &FileDialog::setFilenameFilterChangedEvent
             )
         );
     }
