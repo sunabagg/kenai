@@ -268,6 +268,10 @@ namespace sunaba::desktop {
                 fileDialog->invalidate();
             }
 
+            void setOptionDefault(int option, int defaultValueIndex) {
+                fileDialog->set_option_default(option, defaultValueIndex);
+            }
+
             void setOptionValues(int option, std::vector<std::string> values) {
                 PackedStringArray finalValues;
                 for( std::string value : values ) {
