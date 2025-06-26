@@ -208,6 +208,10 @@ namespace sunaba::desktop {
             void setFilesSelectedEvent(Event* e) {
                 filesSelectedEvent = e;
             }
+
+            void addFilter(std::string filter, std::string description = "") {
+                fileDialog->add_filter(filter.c_str(), description.c_str());
+            }
     };
 }
 
