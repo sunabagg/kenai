@@ -14,6 +14,7 @@ target_sources(${PROJECT_NAME} PRIVATE
         file_dialog.h
         file_dialog.cpp
         status_indicator.h
+        status_indicator.cpp
         bind_desktop_classes.h
         bind_desktop_classes.cpp
 )
