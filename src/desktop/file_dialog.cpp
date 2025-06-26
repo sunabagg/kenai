@@ -39,4 +39,12 @@ namespace sunaba::desktop {
             element->filesSelectedEvent->emit(args);
         }
     }
+
+    void bindFileDialog(sol::state& lua) {
+        lua.new_usertype<FileDialog>("FileDialog",
+            "new", sol::factories(
+                []() { return new FileDialog(); }
+            )
+        );
+    }
 }
