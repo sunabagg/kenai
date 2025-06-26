@@ -1,5 +1,6 @@
 package sunaba.desktop;
 
+import sunaba.core.Dictionary;
 import sunaba.ui.LineEdit;
 import sunaba.core.StringArray;
 import sunaba.core.Event;
@@ -31,4 +32,5 @@ extern class FileDialog extends ConfirmationDialog {
     public function getOptionDefault(option: Int): Int;
     public function getOptionName(option: Int): Int;
     public function getOptionValues(option: Int): Int;
+    public function getSelectedOptions(): Dictionary;
 }
