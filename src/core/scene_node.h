@@ -34,6 +34,8 @@ namespace sunaba::core {
         void _shortcut_input(const Ref<InputEvent>& event) override;
     };
 
+    void bindSceneManager(sol::state& lua);
+
     class SceneManager : public Element {
         private:
             SceneNode* sceneNode = nullptr;
