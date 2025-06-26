@@ -9,7 +9,8 @@ namespace sunaba::desktop {
             "cancelButtonText", sol::property(
                 &ConfirmationDialog::getCancelButtonText,
                 &ConfirmationDialog::setCancelButtonText
-            )
+            ),
+            "getCancelButton", &ConfirmationDialog::getCancelButton
         );
     }
 }
