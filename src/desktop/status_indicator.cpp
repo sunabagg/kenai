@@ -40,7 +40,11 @@ namespace sunaba::desktop {
                 &StatusIndicator::getPressedEvent,
                 &StatusIndicator::setPressedEvent
             ),
-            "getRect", &StatusIndicator::getRect
+            "getRect", &StatusIndicator::getRect,
+            "cast", [](Element* e) {
+                StatusIndicatorNode* indicator = Object::cast_to<StatusIndicatorNode>(e->getNode());
+                return new StatusIndicator(indicator);
+            }
         );
     }
 }
