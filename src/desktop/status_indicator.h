@@ -74,6 +74,10 @@ namespace sunaba::desktop {
                 Ref<godot::Texture2D> valueRef = Ref<godot::Texture2D>(value->getTexture2D());
                 statusIndicator->set_icon(valueRef);
             }
+
+            std::string getMenu() {
+                return String(statusIndicator->get_menu()).utf8().get_data();
+            }
     };
 }
 
