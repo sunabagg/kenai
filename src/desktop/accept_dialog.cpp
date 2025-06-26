@@ -38,6 +38,10 @@ namespace sunaba::desktop {
             "dialogAutowrap", sol::property(
                 &AcceptDialog::getDialogAutowrap,
                 &AcceptDialog::setDialogAutowrap
+            ),
+            "dialogCloseOnEscape", sol::property(
+                &AcceptDialog::getDialogCloseOnEscape,
+                &AcceptDialog::setDialogCloseOnEscape
             )
         );
     }
