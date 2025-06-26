@@ -240,6 +240,10 @@ namespace sunaba::desktop {
             int getOptionDefault(int option) {
                 return fileDialog->get_option_default(option);
             }
+
+            std::string getOptionName(int option) {
+                return fileDialog->get_option_name(option).utf8().get_data();
+            }
     };
 }
 
