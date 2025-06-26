@@ -101,7 +101,8 @@ namespace sunaba::desktop {
             "filesSelected", sol::property(
                 &FileDialog::getFilesSelectedEvent,
                 &FileDialog::setFilesSelectedEvent
-            )
+            ),
+            "addFilter", &FileDialog::addFilter
         );
     }
 }
