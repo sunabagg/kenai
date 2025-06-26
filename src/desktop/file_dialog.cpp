@@ -64,6 +64,10 @@ namespace sunaba::desktop {
             "fileMode", sol::property(
                 &FileDialog::getFileMode,
                 &FileDialog::setFileMode
+            ),
+            "filenameFilter", sol::property(
+                &FileDialog::getFilenameFilter,
+                &FileDialog::setFilenameFilter
             )
         );
     }
