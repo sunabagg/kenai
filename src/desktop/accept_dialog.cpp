@@ -34,6 +34,7 @@ namespace sunaba::desktop {
         lua.new_usertype<AcceptDialog>("AcceptDialog",
             "new", sol::factories(
                 []() { return new Window(); }
-            ))
+            )
+        );
     }
 }
