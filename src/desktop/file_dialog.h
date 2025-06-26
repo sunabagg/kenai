@@ -212,6 +212,14 @@ namespace sunaba::desktop {
             void addFilter(std::string filter, std::string description = "") {
                 fileDialog->add_filter(filter.c_str(), description.c_str());
             }
+
+            void addOption(std::string name, std::vector<std::string> valuesVector, int defaultValueIndex) {
+                PackedStringArray values;
+                for (std::string value : valuesVector) {
+                    values.append(value.c_str());
+                }
+                fileDialog->add_option(name.c_str(), values, defaultValueIndex);
+            }
     };
 }
 
