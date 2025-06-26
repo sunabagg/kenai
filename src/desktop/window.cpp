@@ -66,7 +66,7 @@ namespace sunaba::desktop {
         ClassDB::bind_method(D_METHOD("about_to_popup"), &WindowSignalWrapper::about_to_popup);
         ClassDB::bind_method(D_METHOD("close_requested"), &WindowSignalWrapper::close_requested);
         ClassDB::bind_method(D_METHOD("dpi_changed"), &WindowSignalWrapper::dpi_changed);
-        ClassDB::bind_method(D_METHOD("files_dropped"), &WindowSignalWrapper::files_dropped);
+        ClassDB::bind_method(D_METHOD("files_dropped", "files"), &WindowSignalWrapper::files_dropped);
         ClassDB::bind_method(D_METHOD("focus_entered"), &WindowSignalWrapper::focus_entered);
         ClassDB::bind_method(D_METHOD("focus_exited"), &WindowSignalWrapper::focus_exited);
         ClassDB::bind_method(D_METHOD("go_back_requested"), &WindowSignalWrapper::go_back_requested);
