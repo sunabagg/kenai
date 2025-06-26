@@ -142,6 +142,10 @@ namespace sunaba::desktop {
             void setOptionCount(int value) {
                 fileDialog->set_option_count(value);
             }
+
+            std::string getRootSubfolder() {
+                return fileDialog->get_root_subfolder().utf8().get_data();
+            }
     };
 }
 
