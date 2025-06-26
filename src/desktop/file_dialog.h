@@ -190,6 +190,8 @@ namespace sunaba::desktop {
             void setFilenameFilterChangedEvent(Event* e) {
                 filenameFilterChangedEvent = e;
             }
+
+            Event* filesSelectedEvent = new Event();
     };
 }
 
