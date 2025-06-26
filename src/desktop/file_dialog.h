@@ -176,6 +176,9 @@ namespace sunaba::desktop {
             }
 
             Event* fileSelectedEvent = new Event();
+            Event* getFileSelectedEvent() {
+                return fileSelectedEvent;
+            }
     };
 }
 
