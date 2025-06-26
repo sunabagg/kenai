@@ -10,7 +10,11 @@ namespace sunaba::desktop {
                 &ConfirmationDialog::getCancelButtonText,
                 &ConfirmationDialog::setCancelButtonText
             ),
-            "getCancelButton", &ConfirmationDialog::getCancelButton
+            "getCancelButton", &ConfirmationDialog::getCancelButton,
+            "cast", [](Element* e) {
+                ConfirmationDialogNode* node = Object::cast_to<ConfirmationDialogNode>(e->getNode());
+                return new ConfirmationDialog(node);
+            }
         );
     }
 }
