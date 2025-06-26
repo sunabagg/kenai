@@ -93,7 +93,11 @@ namespace sunaba::desktop {
             }
 
             int getFileMode() {
-                fileDialog->get_file_mode();
+                return fileDialog->get_file_mode();
+            }
+            
+            void setFileMode(int value) {
+                fileDialog->set_file_mode(static_cast<FileDialogNode::FileMode>(value));
             }
     };
 }
