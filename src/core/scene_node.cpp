@@ -43,7 +43,10 @@ namespace sunaba::core {
             "new", sol::factories(
                 []() { return new SceneManager(); }
             ),
-            sol::base_classes, sol::bases<BaseObject, Element>()
+            sol::base_classes, sol::bases<BaseObject, Element>(),
+            "scene", sol::readonly_property(
+                &SceneManager::getScene
+            )
         );
     }
 }
