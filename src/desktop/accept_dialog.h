@@ -131,6 +131,9 @@ namespace sunaba::desktop {
             Event* getCustomActionEvent() {
                 return customActionEvent;
             }
+            void setCustomActionEvent(Event* event) {
+                customActionEvent = event;
+            }
 
             sunaba::ui::Button* addButton(std::string text, bool right = false, std::string action = "") {
                 return new sunaba::ui::Button(acceptDialog->add_button(text.c_str(), right, action.c_str()));
