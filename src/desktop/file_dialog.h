@@ -59,6 +59,10 @@ namespace sunaba::desktop {
                 connectFileDialogSignals();
                 setConfirmationDialog(fileDialog);
             }
+
+            int getAccess() {
+                return fileDialog->get_access();
+            }
     };
 }
 
