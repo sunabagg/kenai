@@ -228,6 +228,10 @@ namespace sunaba::desktop {
             void clearFilters() {
                 fileDialog->clear_filters();
             }
+
+            void deselectAll() {
+                fileDialog->deselect_all();
+            }
     };
 }
 
