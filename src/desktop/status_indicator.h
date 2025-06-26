@@ -78,6 +78,10 @@ namespace sunaba::desktop {
             std::string getMenu() {
                 return String(statusIndicator->get_menu()).utf8().get_data();
             }
+
+            void setMenu(std::string value) {
+                statusIndicator->set_menu(NodePath(String(value.c_str())));
+            }
     };
 }
 
