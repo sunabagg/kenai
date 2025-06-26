@@ -45,6 +45,7 @@ namespace sunaba::desktop {
                 }
 
                 fileDialog->connect("dir_selected", Callable(signalWrapper, "dir_selected"));
+                fileDialog->connect("file_selected", Callable(signalWrapper, "file_selected"));
             }
 
         public:
