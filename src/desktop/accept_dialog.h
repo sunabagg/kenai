@@ -83,6 +83,10 @@ namespace sunaba::desktop {
             void setDialogCLoseOnEscape(bool value) {
                 acceptDialog->set_close_on_escape(value);
             }
+
+            bool getDialogHideOnOk() {
+                return acceptDialog->get_hide_on_ok();
+            }
     };
 }
 
