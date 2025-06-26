@@ -184,6 +184,9 @@ namespace sunaba::desktop {
             }
 
             Event* filenameFilterChanged = new Event();
+            Event* getFilenameFilterChanged() {
+                return filenameFilterChanged;
+            }
     };
 }
 
