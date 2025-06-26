@@ -166,6 +166,8 @@ namespace sunaba::desktop {
             void setUseNativeDialog(bool value) {
                 fileDialog->set_use_native_dialog(value);
             }
+
+            Event* dirSelectedEvent;
     };
 }
 
