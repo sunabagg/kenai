@@ -83,6 +83,10 @@ namespace sunaba::desktop {
             void setCurrentFile(std::string value) {
                 fileDialog->set_current_file(value.c_str());
             }
+
+            std::string getCurrentPath() {
+                return fileDialog->get_current_path().utf8().get_data();
+            }
     };
 }
 
