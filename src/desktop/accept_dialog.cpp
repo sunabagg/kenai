@@ -55,6 +55,10 @@ namespace sunaba::desktop {
             "okButtonText", sol::property(
                 &AcceptDialog::getOkButtonText,
                 &AcceptDialog::setOkButtonText
+            ),
+            "canceled", sol::property(
+                &AcceptDialog::getCanceledEvent,
+                &AcceptDialog::setCanceledEvent
             )
         );
     }
