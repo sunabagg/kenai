@@ -71,6 +71,10 @@ namespace sunaba::desktop {
             bool getDialogAutowrap() {
                 return acceptDialog->has_autowrap();
             }
+
+            void setDialogAutowrap(bool value) {
+                acceptDialog->set_autowrap(value);
+            } 
     };
 }
 
