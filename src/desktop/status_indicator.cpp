@@ -31,6 +31,10 @@ namespace sunaba::desktop {
             "tooltip", sol::property(
                 &StatusIndicator::getTooltip,
                 &StatusIndicator::setTooltip
+            ),
+            "visible", sol::property(
+                &StatusIndicator::getVisible,
+                &StatusIndicator::setVisible
             )
         );
     }
