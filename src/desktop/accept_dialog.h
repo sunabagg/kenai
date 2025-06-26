@@ -120,6 +120,9 @@ namespace sunaba::desktop {
             }
 
             Event* confirmedEvent = new Event();
+            Event* getConfirmedEvent() {
+                return confirmedEvent;
+            }
 
             sunaba::ui::Button* addButton(std::string text, bool right = false, std::string action = "") {
                 return new sunaba::ui::Button(acceptDialog->add_button(text.c_str(), right, action.c_str()));
