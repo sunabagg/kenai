@@ -80,6 +80,11 @@ namespace sunaba::desktop {
             "showHiddenFiles", sol::property(
                 &FileDialog::getShowHiddenFiles,
                 &FileDialog::setShowHiddenFiles
+            ),
+
+            "useNativeDialog", sol::property(
+                &FileDialog::getUseNativeDialog,
+                &FileDialog::setUseNativeDialog
             )
         );
     }
