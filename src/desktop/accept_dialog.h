@@ -91,6 +91,10 @@ namespace sunaba::desktop {
             void setDialogHideOnOk(bool value) {
                 acceptDialog->set_hide_on_ok(value);
             }
+
+            std::string getDialogText() {
+                return acceptDialog->get_text().utf8().get_data();
+            }
     };
 }
 
