@@ -32,6 +32,6 @@ abstract AcceptDialogAbstract(AcceptDialog) from AcceptDialog to AcceptDialog {
         if (acceptDialog.isNull()) {
             return null;
         }
-        return acceptDialog
+        return acceptDialog;
     }
 }
