@@ -254,6 +254,10 @@ namespace sunaba::desktop {
                 }
                 return result;
             }
+
+            Dictionary getSelectedOptions() {
+                return fileDialog->get_selected_options();
+            }
     };
 }
 
