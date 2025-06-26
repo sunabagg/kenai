@@ -6,6 +6,7 @@ namespace sunaba::desktop {
             "new", sol::factories(
                 [](){ return new ConfirmationDialog; }
             ),
+            sol::base_classes, sol::bases<BaseObject, Element, sunaba::core::Viewport, Window, AcceptDialog>(),
             "cancelButtonText", sol::property(
                 &ConfirmationDialog::getCancelButtonText,
                 &ConfirmationDialog::setCancelButtonText
