@@ -106,7 +106,9 @@ namespace sunaba::desktop {
                 [](FileDialog* fdialog, std::string filter) {
                     fdialog->addFilter(filter);
                 },
-                [](FileDialog* fdialog, std::string filter, std::string description)
+                [](FileDialog* fdialog, std::string filter, std::string description) {
+                    fdialog->addFilter(filter, description);
+                }
             ),
             "addOptions", &FileDialog::addOption,
             "clearFilenameFilter", &FileDialog::clearFilenameFilter,
