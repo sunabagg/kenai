@@ -19,4 +19,5 @@ extern class FileDialog extends ConfirmationDialog {
     public var useNativeDialog: Bool;
     public var dirSelected: Event;
     public var fileSelected: Event;
+    public var filenameFilterChanged: Event;
 }
