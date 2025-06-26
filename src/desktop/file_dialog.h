@@ -183,9 +183,12 @@ namespace sunaba::desktop {
                 fileSelectedEvent = e;
             }
 
-            Event* filenameFilterChanged = new Event();
-            Event* getFilenameFilterChanged() {
-                return filenameFilterChanged;
+            Event* filenameFilterChangedEvent = new Event();
+            Event* getFilenameFilterChangedEvent() {
+                return filenameFilterChangedEvent;
+            }
+            void setFilenameFilterChangedEvent(Event* e) {
+                filenameFilterChangedEvent = e;
             }
     };
 }
