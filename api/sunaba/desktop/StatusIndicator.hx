@@ -15,4 +15,8 @@ extern class StatusIndicator extends Element {
     public function getRect(): Rect2;
     @:native("cast")
     public static function toStatusIndicator(obj:Any): StatusIndicator;
+} 
+
+abstract StatusIndicatorAbstract(StatusIndicator) from StatusIndicator to StatusIndicator {
+    
 }
