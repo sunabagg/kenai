@@ -87,6 +87,10 @@ namespace sunaba::desktop {
             bool getDialogHideOnOk() {
                 return acceptDialog->get_hide_on_ok();
             }
+
+            void setDialogHideOnOk(bool value) {
+                acceptDialog->set_hide_on_ok(value);
+            }
     };
 }
 
