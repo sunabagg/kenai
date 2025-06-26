@@ -60,6 +60,10 @@ namespace sunaba::desktop {
             "currentPath", sol::property(
                 &FileDialog::getCurrentPath,
                 &FileDialog::setCurrentPath
+            ),
+            "fileMode", sol::property(
+                &FileDialog::getFileMode,
+                &FileDialog::setFileMode
             )
         );
     }
