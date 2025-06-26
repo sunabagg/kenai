@@ -31,7 +31,7 @@ namespace sunaba::desktop {
             void dir_selected(const String& dir);
             void file_selected(const String& path);
             void filename_filter_changed(const String& filter);
-            void files_selected();
+            void files_selected(const PackedStringArray& paths);
     };
 
     class FileDialog : public ConfirmationDialog {
