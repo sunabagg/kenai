@@ -8,6 +8,7 @@ target_sources(${PROJECT_NAME} PRIVATE
         popup_menu.h
         popup_menu.cpp
         accept_dialog.h
+        accept_dialog.cpp
         bind_desktop_classes.h
         bind_desktop_classes.cpp
 )
