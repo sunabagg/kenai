@@ -39,7 +39,8 @@ namespace sunaba::desktop {
             "pressed", sol::property(
                 &StatusIndicator::getPressedEvent,
                 &StatusIndicator::setPressedEvent
-            )
+            ),
+            "getRect", &StatusIndicator::getRect
         );
     }
 }
