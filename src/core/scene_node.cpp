@@ -42,7 +42,8 @@ namespace sunaba::core {
         lua.new_usertype<SceneManager>("SceneManager",
             "new", sol::factories(
                 []() { return new SceneManager(); }
-            )
+            ),
+            sol::base_classes, sol::bases<BaseObject, Element>()
         );
     }
 }
