@@ -103,6 +103,10 @@ namespace sunaba::desktop {
             std::string getOkButtonText() {
                 return acceptDialog->get_ok_button_text().utf8().get_data();
             }
+
+            void setOkButtonText(std::string value) {
+                acceptDialog->set_ok_button_text(value.c_str());
+            }
     };
 }
 
