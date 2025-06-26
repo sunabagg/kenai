@@ -154,6 +154,10 @@ namespace sunaba::desktop {
             bool getShowHiddenFiles() {
                 return fileDialog->is_showing_hidden_files();
             }
+
+            void setShowHiddenFiles(bool value) {
+                fileDialog->set_show_hidden_files(value);
+            }
     };
 }
 
