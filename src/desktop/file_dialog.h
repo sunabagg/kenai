@@ -174,6 +174,8 @@ namespace sunaba::desktop {
             void setDirSelectedEvent(Event* e) {
                 dirSelectedEvent = e;
             }
+
+            Event* fileSelectedEvent = new Event();
     };
 }
 
