@@ -1,5 +1,7 @@
 package sunaba.desktop;
 
+import sunaba.core.StringArray;
+
 @:native("FileDialog")
 extern class FileDialog extends ConfirmationDialog {
     public var access: Int;
@@ -8,4 +10,5 @@ extern class FileDialog extends ConfirmationDialog {
     public var currentPath: String;
     public var fileMode: Int;
     public var filenameFilter: String;
+    public var filters: StringArray;
 }
