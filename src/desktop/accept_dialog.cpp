@@ -80,7 +80,8 @@ namespace sunaba::desktop {
                 }
             ),
             "addCancelButton", &AcceptDialog::addCancelButton,
-            "getLabel", &AcceptDialog::getLabel
+            "getLabel", &AcceptDialog::getLabel,
+            "getOkButton", &AcceptDialog::getOkButton
         );
     }
 }
