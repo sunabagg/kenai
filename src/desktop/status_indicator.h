@@ -30,7 +30,7 @@ namespace sunaba::desktop {
             StatusIndicatorSignalWrapper() = default;
             ~StatusIndicatorSignalWrapper() = default;
 
-            void pressed(int mouse_button, Vector2i mouse_position);
+            void pressed(int mouse_button, const Vector2i& mouse_position);
     };
 
     class StatusIndicator : public Element {
