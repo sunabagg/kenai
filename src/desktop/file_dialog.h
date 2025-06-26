@@ -232,6 +232,10 @@ namespace sunaba::desktop {
             void deselectAll() {
                 fileDialog->deselect_all();
             }
+
+            sunaba::ui::LineEdit* getLineEdit() {
+                return new sunaba::ui::LineEdit(fileDialog->get_line_edit());
+            }
     };
 }
 
