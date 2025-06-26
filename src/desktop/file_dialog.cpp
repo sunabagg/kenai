@@ -45,6 +45,7 @@ namespace sunaba::desktop {
             "new", sol::factories(
                 []() { return new FileDialog(); }
             ),
+            sol::base_classes, sol::bases<BaseObject, Element, sunaba::core::Viewport, Window, AcceptDialog, ConfirmationDialog>(),
             "access", sol::property(
                 &FileDialog::getAccess,
                 &FileDialog::setAccess
