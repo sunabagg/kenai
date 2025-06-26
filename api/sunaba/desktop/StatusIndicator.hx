@@ -8,4 +8,5 @@ import sunaba.core.Event;
 extern class StatusIndicator extends Element {
     public var icon: Texture2D;
     public var menu: String;
+    public var tooltip: String;
 }
