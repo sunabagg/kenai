@@ -7,6 +7,13 @@ namespace sunaba::desktop {
         ClassDB::bind_method(D_METHOD("custom_action", "action"), &AcceptDialogSignalWrapper::custom_action);
     }
 
+    void AcceptDialogSignalWrapper::canceled() {
+        if (element != nullptr) {
+            Array args;
+            element->canceledEvent->emit(args);
+        }
+    }
+
     void AcceptDialogSignalWrapper::confirmed() {
         if (element != nullptr) {
             Array args;
