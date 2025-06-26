@@ -20,4 +20,13 @@ namespace sunaba::desktop {
             element->confirmedEvent->emit(args);
         }
     }
+
+    void AcceptDialogSignalWrapper::custom_action(const StringName& action) {
+        if (element != nullptr) {
+            Array args;
+            String actionGdStr = action;
+            args.append(action);
+            element->customActionEvent->emit(args);
+        }
+    }
 }
