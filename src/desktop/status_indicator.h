@@ -98,6 +98,8 @@ namespace sunaba::desktop {
             void setVisible(bool value) {
                 statusIndicator->set_visible(value);
             }
+
+            Event* pressedEvent = new Event();
     };
 }
 
