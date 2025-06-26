@@ -263,6 +263,10 @@ namespace sunaba::desktop {
             sunaba::ui::VBoxContainer* getVbox() {
                 return new sunaba::ui::VBoxContainer(fileDialog->get_vbox());
             }
+
+            void invalidate() {
+                fileDialog->invalidate();
+            }
     };
 }
 
