@@ -13,4 +13,12 @@ namespace sunaba::desktop {
             element->pressedEvent->emit(args);
         }
     }
+
+    void bindStatusIndicator(sol::state& lua) {
+        lua.new_usertype<StatusIndicator>("StatusIndicator",
+            "new", sol::factories(
+                []() { return new StatusIndicator(); }
+            )
+        );
+    }
 }
