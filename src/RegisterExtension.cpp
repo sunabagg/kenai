@@ -114,7 +114,7 @@ namespace
         godot::ClassDB::register_class<sunaba::desktop::PopupMenuSignalWrapper>();
         godot::ClassDB::register_class<sunaba::desktop::AcceptDialogSignalWrapper>();
         godot::ClassDB::register_class<sunaba::desktop::FileDialogSignalWrapper>();
-        godot::ClassDB::register_class<sunaba::desktop::StatusIndicator>();
+        godot::ClassDB::register_class<sunaba::desktop::StatusIndicatorSignalWrapper>();
 
         godot::ClassDB::register_class<sunaba::ui::ControlSignalWrapper>();
         godot::ClassDB::register_class<sunaba::ui::BaseButtonSignalWrapper>();
