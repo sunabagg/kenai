@@ -102,7 +102,8 @@ namespace sunaba::desktop {
                 &FileDialog::getFilesSelectedEvent,
                 &FileDialog::setFilesSelectedEvent
             ),
-            "addFilter", &FileDialog::addFilter
+            "addFilter", &FileDialog::addFilter,
+            "addOptions", &FileDialog::addOption,
         );
     }
 }
