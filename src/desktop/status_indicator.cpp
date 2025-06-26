@@ -27,6 +27,10 @@ namespace sunaba::desktop {
             "menu", sol::property(
                 &StatusIndicator::getMenu,
                 &StatusIndicator::setMenu
+            ),
+            "tooltip", sol::property(
+                &StatusIndicator::getTooltip,
+                &StatusIndicator::setTooltip
             )
         );
     }
