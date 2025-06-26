@@ -39,4 +39,6 @@ extern class FileDialog extends ConfirmationDialog {
     public function setOptionDefault(option: Int, defaultValueIndex: Int): Void;
     public function setOptionName(option: Int, name: String): Void;
     public function setOptionValues(option: Int, values: StringArray): Void;
+    @:native
+    public static function toFileDialog(obj:Any): FileDialog;
 }
