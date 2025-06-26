@@ -121,6 +121,10 @@ namespace sunaba::desktop {
             sunaba::ui::Label* getLabel() {
                 return new sunaba::ui::Label(acceptDialog->get_label());
             }
+
+            sunaba::ui::Button* getOkButton() {
+                return new sunaba::ui::Button(acceptDialog->get_ok_button());
+            }
     };
 }
 
