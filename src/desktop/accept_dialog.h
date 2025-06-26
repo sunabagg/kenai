@@ -112,6 +112,10 @@ namespace sunaba::desktop {
             sunaba::ui::Button* addButton(std::string text, bool right = false, std::string action = "") {
                 return new sunaba::ui::Button(acceptDialog->add_button(text.c_str(), right, action.c_str()));
             }
+
+            sunaba::ui::Button* addCancelButton(std::string name) {
+                return new sunaba::ui::Button(acceptDialog->add_cancel_button(name.c_str()));
+            }
     };
 }
 
