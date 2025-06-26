@@ -8,6 +8,7 @@
 #define FileDialogNode godot::FileDialog
 
 #include "confirmation_dialog.h"
+#include "../ui/v_box_container.h"
 
 using namespace godot;
 using namespace sunaba::core;
@@ -257,6 +258,10 @@ namespace sunaba::desktop {
 
             Dictionary getSelectedOptions() {
                 return fileDialog->get_selected_options();
+            }
+
+            sunaba::ui::VBoxContainer* getVbox() {
+                return new sunaba::ui::VBoxContainer(fileDialog->get_vbox());
             }
     };
 }
