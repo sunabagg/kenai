@@ -168,6 +168,9 @@ namespace sunaba::desktop {
             }
 
             Event* dirSelectedEvent;
+            Event* getDirSelectedEvent() {
+                return dirSelectedEvent;
+            }
     };
 }
 
