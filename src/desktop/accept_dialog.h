@@ -95,6 +95,10 @@ namespace sunaba::desktop {
             std::string getDialogText() {
                 return acceptDialog->get_text().utf8().get_data();
             }
+
+            void setDialogText(std::string value) {
+                acceptDialog->set_text(value.c_str());
+            }
     };
 }
 
