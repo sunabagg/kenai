@@ -220,6 +220,10 @@ namespace sunaba::desktop {
                 }
                 fileDialog->add_option(name.c_str(), values, defaultValueIndex);
             }
+
+            void clearFilenameFilter() {
+                fileDialog->clear_filename_filter();
+            }
     };
 }
 
