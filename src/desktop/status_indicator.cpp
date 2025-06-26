@@ -35,6 +35,10 @@ namespace sunaba::desktop {
             "visible", sol::property(
                 &StatusIndicator::getVisible,
                 &StatusIndicator::setVisible
+            ),
+            "pressed", sol::property(
+                &StatusIndicator::getPressedEvent,
+                &StatusIndicator::setPressedEvent
             )
         );
     }
