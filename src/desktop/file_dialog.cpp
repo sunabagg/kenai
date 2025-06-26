@@ -72,6 +72,10 @@ namespace sunaba::desktop {
             "optionCount", sol::property(
                 &FileDialog::getOptionCount,
                 &FileDialog::setOptionCount
+            ),
+            "rootSubfolder", sol::property(
+                &FileDialog::getRootSubfolder,
+                &FileDialog::setRootSubfolder
             )
         );
     }
