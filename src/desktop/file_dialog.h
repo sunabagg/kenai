@@ -117,6 +117,15 @@ namespace sunaba::desktop {
                 }
                 return filters;
             }
+
+            void setFilters(std::vector<std::string> value) {
+                PackedStringArray filters;
+                for (std::string filter : value)
+                {
+                    filters.append(filter.c_str());
+                }
+                fileDialog->set_filters(filters);
+            }
     };
 }
 
