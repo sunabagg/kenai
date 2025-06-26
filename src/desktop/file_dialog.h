@@ -126,6 +126,10 @@ namespace sunaba::desktop {
                 }
                 fileDialog->set_filters(filters);
             }
+
+            bool getModeOverridesTitle() {
+                return fileDialog->is_mode_overriding_title();
+            }
     };
 }
 
