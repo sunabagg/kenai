@@ -20,4 +20,5 @@ extern class AcceptDialog extends Window {
     public function getLabel(): Label;
     public function getOkButton(): Button;
     public function registerTextEnter(lineEdit: LineEdit): Void;
+    public function removeButton(button: Button): Void;
 }
