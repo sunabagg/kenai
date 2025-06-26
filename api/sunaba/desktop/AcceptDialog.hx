@@ -1,5 +1,6 @@
 package sunaba.desktop;
 
+import sunaba.ui.LineEdit;
 import sunaba.ui.Label;
 import sunaba.ui.Button;
 import sunaba.core.Event;
@@ -18,4 +19,5 @@ extern class AcceptDialog extends Window {
     public function addCancelButton(name: String): Button;
     public function getLabel(): Label;
     public function getOkButton(): Button;
+    public function registerTextEnter(lineEdit: LineEdit): Void;
 }
