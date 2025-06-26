@@ -9,6 +9,7 @@
 
 #include "window.h"
 #include "../ui/button.h"
+#include "../ui/label.h"
 
 using namespace godot;
 using namespace sunaba::core;
@@ -115,6 +116,10 @@ namespace sunaba::desktop {
 
             sunaba::ui::Button* addCancelButton(std::string name) {
                 return new sunaba::ui::Button(acceptDialog->add_cancel_button(name.c_str()));
+            }
+
+            sunaba::ui::Label* getLabel() {
+                return new sunaba::ui::Label(acceptDialog->get_label());
             }
     };
 }
