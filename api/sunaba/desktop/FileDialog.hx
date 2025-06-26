@@ -28,4 +28,5 @@ extern class FileDialog extends ConfirmationDialog {
     public function clearFilters(): Void;
     public function deselectAll(): Void;
     public function getLineEdit(): LineEdit;
+    public function getOptionDefault(option: Int): Int
 }
