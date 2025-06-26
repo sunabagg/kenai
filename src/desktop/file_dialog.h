@@ -244,6 +244,16 @@ namespace sunaba::desktop {
             std::string getOptionName(int option) {
                 return fileDialog->get_option_name(option).utf8().get_data();
             }
+
+            std::vector<std::string> getOptionValues(int option) {
+                std::vector<std::string> result;
+                auto optionValues = fileDialog->get_option_values(option);
+                for (size_t i = 0; i < optionValues.size(); i++)
+                {
+                    result.push_back(optionValues[i].utf8().get_data());
+                }
+                return result;
+            }
     };
 }
 
