@@ -236,6 +236,10 @@ namespace sunaba::desktop {
             sunaba::ui::LineEdit* getLineEdit() {
                 return new sunaba::ui::LineEdit(fileDialog->get_line_edit());
             }
+
+            int getOptionDefault(int option) {
+                return fileDialog->get_option_default(option);
+            }
     };
 }
 
