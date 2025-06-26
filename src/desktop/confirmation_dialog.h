@@ -44,6 +44,10 @@ namespace sunaba::desktop {
             void setCancelButtonText(std::string value) {
                 confirmDialog->set_cancel_button_text(value.c_str());
             }
+
+            sunaba::ui::Button* getCancelButton() {
+                return new sunaba::ui::Button(confirmDialog->get_cancel_button());
+            }
     };
 }
 
