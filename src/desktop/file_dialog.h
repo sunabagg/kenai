@@ -99,6 +99,10 @@ namespace sunaba::desktop {
             void setFileMode(int value) {
                 fileDialog->set_file_mode(static_cast<FileDialogNode::FileMode>(value));
             }
+
+            std::string getFilenameFilter() {
+                return fileDialog->get_filename_filter().utf8().get_data();
+            }
     };
 }
 
