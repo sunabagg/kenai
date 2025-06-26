@@ -76,6 +76,10 @@ namespace sunaba::desktop {
             "rootSubfolder", sol::property(
                 &FileDialog::getRootSubfolder,
                 &FileDialog::setRootSubfolder
+            ),
+            "showHiddenFiles", sol::property(
+                &FileDialog::getShowHiddenFiles,
+                &FileDialog::setShowHiddenFiles
             )
         );
     }
