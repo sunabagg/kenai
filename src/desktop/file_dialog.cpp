@@ -104,6 +104,7 @@ namespace sunaba::desktop {
             ),
             "addFilter", &FileDialog::addFilter,
             "addOptions", &FileDialog::addOption,
+            "clearFilenameFilter", &FileDialog::clearFilenameFilter
         );
     }
 }
