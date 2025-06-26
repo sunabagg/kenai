@@ -162,6 +162,10 @@ namespace sunaba::desktop {
             bool getUseNativeDialog() {
                 return fileDialog->get_use_native_dialog();
             }
+
+            void setUseNativeDialog(bool value) {
+                fileDialog->set_use_native_dialog(value);
+            }
     };
 }
 
