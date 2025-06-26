@@ -150,6 +150,10 @@ namespace sunaba::desktop {
             void setRootSubfolder(std::string value) {
                 fileDialog->set_root_subfolder(value.c_str());
             }
+
+            bool getShowHiddenFiles() {
+                return fileDialog->is_showing_hidden_files();
+            }
     };
 }
 
