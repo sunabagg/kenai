@@ -45,6 +45,7 @@ namespace sunaba::desktop {
 
                 acceptDialog->connect("canceled", Callable(signalWrapper, "canceled"));
                 acceptDialog->connect("confirmed", Callable(signalWrapper, "confirmed"));
+                acceptDialog->connect("custom_action", Callable(signalWrapper, "custom_action"));
             }
         public:
 
