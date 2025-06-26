@@ -6,4 +6,11 @@ namespace sunaba::desktop {
         ClassDB::bind_method(D_METHOD("confirmed"), &AcceptDialogSignalWrapper::confirmed);
         ClassDB::bind_method(D_METHOD("custom_action", "action"), &AcceptDialogSignalWrapper::custom_action);
     }
+
+    void AcceptDialogSignalWrapper::confirmed() {
+        if (element != nullptr) {
+            Array args;
+            element->confirmedEvent->emit(args);
+        }
+    }
 }
