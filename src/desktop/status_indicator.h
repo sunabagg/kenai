@@ -94,6 +94,10 @@ namespace sunaba::desktop {
             bool getVisible() {
                 return statusIndicator->is_visible();
             }
+
+            void setVisible(bool value) {
+                statusIndicator->set_visible(value);
+            }
     };
 }
 
