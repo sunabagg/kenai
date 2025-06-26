@@ -56,6 +56,10 @@ namespace sunaba::desktop {
             "currentFile", sol::property(
                 &FileDialog::getCurrentFile,
                 &FileDialog::setCurrentFile
+            ),
+            "currentPath", sol::property(
+                &FileDialog::getCurrentPath,
+                &FileDialog::setCurrentPath
             )
         );
     }
