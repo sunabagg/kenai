@@ -14,4 +14,5 @@ extern class AcceptDialog extends Window {
     public var confirmed: Event;
     public var customAction: Event;
     public function addButton(text: String, ?right: Bool, ?action: String): Button;
+    public function addCancelButton(name: String): Button;
 }
