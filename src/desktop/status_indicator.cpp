@@ -23,6 +23,10 @@ namespace sunaba::desktop {
             "icon", sol::property(
                 &StatusIndicator::getIcon,
                 &StatusIndicator::setIcon
+            ),
+            "menu", sol::property(
+                &StatusIndicator::getMenu,
+                &StatusIndicator::setMenu
             )
         );
     }
