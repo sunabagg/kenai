@@ -113,7 +113,8 @@ namespace sunaba::desktop {
             "getOptionValues", &FileDialog::getOptionValues,
             "getSelectedOptions", &FileDialog::getSelectedOptions,
             "getVbox", &FileDialog::getVbox,
-            "invalidate", &FileDialog::invalidate
+            "invalidate", &FileDialog::invalidate,
+            "setOptionDefault", &FileDialog::setOptionDefault
         );
     }
 }
