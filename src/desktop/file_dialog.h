@@ -67,6 +67,10 @@ namespace sunaba::desktop {
             void setAccess(int value) {
                 fileDialog->set_access(static_cast<FileDialogNode::Access>(value));
             }
+
+            std::string getCurrentDir() {
+                return fileDialog->get_current_dir().utf8().get_data();
+            }
     };
 }
 
