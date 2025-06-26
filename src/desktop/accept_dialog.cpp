@@ -46,6 +46,10 @@ namespace sunaba::desktop {
             "dialogHideOnOk", sol::property(
                 &AcceptDialog::getDialogHideOnOk,
                 &AcceptDialog::setDialogHideOnOk
+            ),
+            "dialogText", sol::property(
+                &AcceptDialog::getDialogText,
+                &AcceptDialog::setDialogText
             )
         );
     }
