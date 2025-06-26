@@ -10,6 +10,7 @@
 #include "window.h"
 #include "../ui/button.h"
 #include "../ui/label.h"
+#include "../ui/line_edit.h"
 
 using namespace godot;
 using namespace sunaba::core;
@@ -124,6 +125,10 @@ namespace sunaba::desktop {
 
             sunaba::ui::Button* getOkButton() {
                 return new sunaba::ui::Button(acceptDialog->get_ok_button());
+            }
+
+            void registerTextEnter(sunaba::ui::LineEdit* lineEdit) {
+                acceptDialog->register_text_enter(lineEdit->getLineEditNode());
             }
     };
 }
