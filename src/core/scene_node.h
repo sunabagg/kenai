@@ -5,6 +5,7 @@
 #include <godot_cpp/classes/input_event.hpp>
 
 #include "scene_system.h"
+#include "element.h"
 
 using namespace godot;
 namespace sunaba::core {
@@ -31,6 +32,29 @@ namespace sunaba::core {
         void _unhandled_input(const Ref<InputEvent>& event) override;
         void _unhandled_key_input(const Ref<InputEvent>& event) override;
         void _shortcut_input(const Ref<InputEvent>& event) override;
+    };
+
+    class SceneManager : public Element {
+        private:
+            SceneNode* sceneNode = nullptr;
+        public:
+
+            SceneManager() {
+                setSceneNode(memnew(SceneNode));
+            }
+            
+            SceneManager(SceneNode* node) {
+                setSceneNode(node);
+            }
+
+            SceneNode* getSceneNode() {
+                return sceneNode;
+            }
+
+            void setSceneNode(SceneNode* node) {
+                sceneNode = node;
+                setNode(node);
+            }
     };
 }
 #endif
