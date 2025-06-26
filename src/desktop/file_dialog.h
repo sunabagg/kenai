@@ -138,6 +138,10 @@ namespace sunaba::desktop {
             int getOptionCount() {
                 return fileDialog->get_option_count();
             }
+
+            void setOptionCount(int value) {
+                fileDialog->set_option_count(value);
+            }
     };
 }
 
