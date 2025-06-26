@@ -6,6 +6,7 @@
 #include "accept_dialog.h"
 #include "confirmation_dialog.h"
 #include "file_dialog.h"
+#include "status_indicator.h"
 
 namespace sunaba::desktop {
     void bindDesktopClasses(sol::state& lua) {
@@ -16,5 +17,6 @@ namespace sunaba::desktop {
         bindAcceptDialog(lua);
         bindConfirmationDialog(lua);
         bindFileDialog(lua);
+        bindStatusIndicator(lua);
     }
 }
