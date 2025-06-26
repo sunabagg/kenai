@@ -107,6 +107,16 @@ namespace sunaba::desktop {
             void setFilenameFilter(std::string value) {
                 fileDialog->set_filename_filter(value.c_str());
             }
+
+            std::vector<std::string> getFilters() {
+                std::vector<std::string> filters;
+                PackedStringArray filtersPsa = fileDialog->get_filters();
+                for (size_t i = 0; i < filtersPsa.size(); i++)
+                {
+                    filters.push_back(filtersPsa[i].utf8().get_data());
+                }
+                return filters;
+            }
     };
 }
 
