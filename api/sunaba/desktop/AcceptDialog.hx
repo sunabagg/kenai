@@ -6,4 +6,5 @@ extern class AcceptDialog extends Window {
     public var dialogCloseOnEscape: Bool;
     public var dialogHideOnOk: Bool;
     public var dialogText: String;
+    public var okButtonText: String;
 }
