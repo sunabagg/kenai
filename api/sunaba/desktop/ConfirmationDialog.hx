@@ -6,4 +6,6 @@ import sunaba.ui.Button;
 extern class ConfirmationDialog extends AcceptDialog {
     public var cancelButtonText: String;
     public function getCancelButton(): Button;
+    @:native("cast")
+    public static function toConfirmationDialog(obj:Any): ConfirmationDialog;
 }
