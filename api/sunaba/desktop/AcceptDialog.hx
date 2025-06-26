@@ -1,5 +1,7 @@
 package sunaba.desktop;
 
+import sunaba.core.Event;
+
 @:native("AcceptDialog")
 extern class AcceptDialog extends Window {
     public var dialogAutowrap: Bool;
@@ -7,4 +9,5 @@ extern class AcceptDialog extends Window {
     public var dialogHideOnOk: Bool;
     public var dialogText: String;
     public var okButtonText: String;
+    public var canceled: Event;
 }
