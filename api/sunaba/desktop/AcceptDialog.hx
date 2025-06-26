@@ -1,5 +1,6 @@
 package sunaba.desktop;
 
+import sunaba.ui.Button;
 import sunaba.core.Event;
 
 @:native("AcceptDialog")
@@ -12,4 +13,5 @@ extern class AcceptDialog extends Window {
     public var canceled: Event;
     public var confirmed: Event;
     public var customAction: Event;
+    public function addButton(text: String, ?right: Bool, ?action: String): Button;
 }
