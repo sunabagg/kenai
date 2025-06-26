@@ -42,6 +42,10 @@ namespace sunaba::desktop {
             "dialogCloseOnEscape", sol::property(
                 &AcceptDialog::getDialogCloseOnEscape,
                 &AcceptDialog::setDialogCloseOnEscape
+            ),
+            "dialogHideOnOk", sol::property(
+                &AcceptDialog::getDialogHideOnOk,
+                &AcceptDialog::setDialogHideOnOk
             )
         );
     }
