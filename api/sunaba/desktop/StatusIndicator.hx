@@ -10,4 +10,5 @@ extern class StatusIndicator extends Element {
     public var menu: String;
     public var tooltip: String;
     public var visible: Bool;
+    public var pressed: Event;
 }
