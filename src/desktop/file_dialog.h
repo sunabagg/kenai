@@ -63,6 +63,10 @@ namespace sunaba::desktop {
             int getAccess() {
                 return fileDialog->get_access();
             }
+
+            void setAccess(int value) {
+                fileDialog->set_access(static_cast<FileDialogNode::Access>(value));
+            }
     };
 }
 
