@@ -7,4 +7,5 @@ extern class FileDialog extends ConfirmationDialog {
     public var currentFile: String;
     public var currentPath: String;
     public var fileMode: Int;
+    public var filenameFilter: String;
 }
