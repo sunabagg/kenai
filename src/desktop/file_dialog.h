@@ -272,6 +272,10 @@ namespace sunaba::desktop {
                 fileDialog->set_option_default(option, defaultValueIndex);
             }
 
+            void setOptionName(int option, std::string name) {
+                fileDialog->set_option_name(option, name.c_str());
+            }
+
             void setOptionValues(int option, std::vector<std::string> values) {
                 PackedStringArray finalValues;
                 for( std::string value : values ) {
