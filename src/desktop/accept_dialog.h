@@ -8,6 +8,7 @@
 #define AcceptDialogNode godot::AcceptDialog
 
 #include "window.h"
+#include "../ui/button.h"
 
 using namespace godot;
 using namespace sunaba::core;
@@ -106,6 +107,10 @@ namespace sunaba::desktop {
 
             void setOkButtonText(std::string value) {
                 acceptDialog->set_ok_button_text(value.c_str());
+            }
+
+            sunaba::ui::Button* addButton(std::string text, bool right = false, std::string action = "") {
+                return new sunaba::ui::Button(acceptDialog->add_button(text.c_str(), right, action.c_str()));
             }
     };
 }
