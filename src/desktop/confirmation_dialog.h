@@ -40,6 +40,10 @@ namespace sunaba::desktop {
             std::string getCancelButtonText() {
                 return confirmDialog->get_cancel_button_text().utf8().get_data();
             }
+
+            void setCancelButtonText(std::string value) {
+                confirmDialog->set_cancel_button_text(value.c_str());
+            }
     };
 }
 
