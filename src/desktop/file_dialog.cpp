@@ -44,6 +44,10 @@ namespace sunaba::desktop {
         lua.new_usertype<FileDialog>("FileDialog",
             "new", sol::factories(
                 []() { return new FileDialog(); }
+            ),
+            "access", sol::property(
+                &FileDialog::getAccess,
+                &FileDialog::setAccess
             )
         );
     }
