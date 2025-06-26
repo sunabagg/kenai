@@ -5,6 +5,10 @@ namespace sunaba::desktop {
         lua.new_usertype<ConfirmationDialog>("ConfirmationDialog",
             "new", sol::factories(
                 [](){ return new ConfirmationDialog; }
+            ),
+            "cancelButtonText", sol::property(
+                &ConfirmationDialog::getCancelButtonText,
+                &ConfirmationDialog::setCancelButtonText
             )
         );
     }
