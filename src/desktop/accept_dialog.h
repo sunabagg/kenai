@@ -42,6 +42,8 @@ namespace sunaba::desktop {
                     signalWrapper == memnew(AcceptDialogSignalWrapper);
                     signalWrapper->element = this;
                 }
+
+                acceptDialog->connect("canceled", Callable(signalWrapper, "canceled"));
             }
         public:
 
