@@ -28,8 +28,8 @@ namespace sunaba::desktop {
             FileDialogSignalWrapper() = default;
             ~FileDialogSignalWrapper() = default;
 
-            void dir_selected(const String path);
-            void file_selected();
+            void dir_selected(const String& dir);
+            void file_selected(const String& path);
             void filename_filter_changed(const String& filter);
             void files_selected();
     };
