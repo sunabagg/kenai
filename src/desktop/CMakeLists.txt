@@ -12,6 +12,7 @@ target_sources(${PROJECT_NAME} PRIVATE
         confirmation_dialog.h
         confirmation_dialog.cpp
         file_dialog.h
+        file_dialog.cpp
         bind_desktop_classes.h
         bind_desktop_classes.cpp
 )
