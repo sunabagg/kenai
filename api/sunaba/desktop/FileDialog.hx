@@ -1,5 +1,6 @@
 package sunaba.desktop;
 
+import sunaba.ui.VboxContainer;
 import sunaba.core.Dictionary;
 import sunaba.ui.LineEdit;
 import sunaba.core.StringArray;
@@ -33,4 +34,5 @@ extern class FileDialog extends ConfirmationDialog {
     public function getOptionName(option: Int): Int;
     public function getOptionValues(option: Int): Int;
     public function getSelectedOptions(): Dictionary;
+    public function getVbox(): VboxContainer;
 }
