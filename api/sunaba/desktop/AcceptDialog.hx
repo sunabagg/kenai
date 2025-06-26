@@ -1,5 +1,6 @@
 package sunaba.desktop;
 
+import sunaba.ui.Label;
 import sunaba.ui.Button;
 import sunaba.core.Event;
 
@@ -15,4 +16,5 @@ extern class AcceptDialog extends Window {
     public var customAction: Event;
     public function addButton(text: String, ?right: Bool, ?action: String): Button;
     public function addCancelButton(name: String): Button;
+    public function getLabel(): Label;
 }
