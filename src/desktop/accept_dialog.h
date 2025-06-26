@@ -119,6 +119,8 @@ namespace sunaba::desktop {
                 canceledEvent = event;
             }
 
+            Event* confirmedEvent = new Event();
+
             sunaba::ui::Button* addButton(std::string text, bool right = false, std::string action = "") {
                 return new sunaba::ui::Button(acceptDialog->add_button(text.c_str(), right, action.c_str()));
             }
