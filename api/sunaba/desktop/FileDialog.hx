@@ -21,4 +21,5 @@ extern class FileDialog extends ConfirmationDialog {
     public var fileSelected: Event;
     public var filenameFilterChanged: Event;
     public var filesSelected: Event;
+    public function addFilter(filter: String, ?description: String)
 }
