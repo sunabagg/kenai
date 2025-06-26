@@ -28,6 +28,7 @@ namespace sunaba::desktop {
             ~AcceptDialogSignalWrapper() = default;
 
             void canceled();
+            void confirmed();
     };
 
     class AcceptDialog : public Window {
