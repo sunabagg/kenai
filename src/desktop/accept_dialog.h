@@ -130,6 +130,10 @@ namespace sunaba::desktop {
             void registerTextEnter(sunaba::ui::LineEdit* lineEdit) {
                 acceptDialog->register_text_enter(lineEdit->getLineEditNode());
             }
+
+            void removeButton(sunaba::ui::Button* button) {
+                acceptDialog->remove_button(button->getButton());
+            }
     };
 }
 
