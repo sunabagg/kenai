@@ -134,6 +134,10 @@ namespace sunaba::desktop {
             void setModeOverridesTitle(bool value) {
                 fileDialog->set_mode_overrides_title(value);
             }
+
+            int getOptionCount() {
+                return fileDialog->get_option_count();
+            }
     };
 }
 
