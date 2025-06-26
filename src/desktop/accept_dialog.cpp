@@ -67,6 +67,17 @@ namespace sunaba::desktop {
             "customAction", sol::property(
                 &AcceptDialog::getCustomActionEvent,
                 &AcceptDialog::setCustomActionEvent
+            ),
+            "addButton", sol::factories(
+                [](AcceptDialog* e, std::string text) {
+                    return e->addButton(text);
+                },
+                [](AcceptDialog* e, std::string text, bool right) {
+                    return e->addButton(text, right);
+                },
+                [](AcceptDialog* e, std::string text, bool right, std::string action) {
+                    return e->addButton(text, right, action);
+                }
             )
         );
     }
