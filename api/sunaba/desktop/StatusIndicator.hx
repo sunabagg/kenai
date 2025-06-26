@@ -18,5 +18,12 @@ extern class StatusIndicator extends Element {
 } 
 
 abstract StatusIndicatorAbstract(StatusIndicator) from StatusIndicator to StatusIndicator {
-    
+    @:from
+    public static function fromElement(e:Element): StatusIndicatorAbstract {
+        var indicator = StatusIndicator.toStatusIndicator(e);
+        if (indicator.isNull()) {
+            return null;
+        }
+        return indicator;
+    }
 }
