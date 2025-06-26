@@ -21,4 +21,6 @@ extern class AcceptDialog extends Window {
     public function getOkButton(): Button;
     public function registerTextEnter(lineEdit: LineEdit): Void;
     public function removeButton(button: Button): Void;
+    @:native("cast")
+    public static function toAcceptDialog(obj: Any): AcceptDialog;
 }
