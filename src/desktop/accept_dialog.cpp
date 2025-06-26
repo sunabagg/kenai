@@ -79,7 +79,8 @@ namespace sunaba::desktop {
                     return e->addButton(text, right, action);
                 }
             ),
-            "addCancelButton", &AcceptDialog::addCancelButton
+            "addCancelButton", &AcceptDialog::addCancelButton,
+            "getLabel", &AcceptDialog::getLabel
         );
     }
 }
