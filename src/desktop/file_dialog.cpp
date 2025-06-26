@@ -31,4 +31,12 @@ namespace sunaba::desktop {
             element->filenameFilterChangedEvent->emit(args);
         }
     }
+
+    void FileDialogSignalWrapper::files_selected(const PackedStringArray& paths) {
+        if (element != nullptr) {
+            Array args;
+            args.append(paths);
+            element->filesSelectedEvent->emit(args);
+        }
+    }
 }
