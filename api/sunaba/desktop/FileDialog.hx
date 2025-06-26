@@ -36,4 +36,5 @@ extern class FileDialog extends ConfirmationDialog {
     public function getSelectedOptions(): Dictionary;
     public function getVbox(): VboxContainer;
     public function invalidate(): Void;
+    public function setOptionDefault(option: Int, defaultValueIndex: Int): Void;
 }
