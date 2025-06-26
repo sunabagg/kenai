@@ -21,6 +21,7 @@
 #include "desktop/popup.h"
 #include "desktop/popup_menu.h"
 #include "desktop/popup_panel.h"
+#include "desktop/accept_dialog.h"
 
 #include "ui/control.h"
 #include "ui/base_button.h"
@@ -109,6 +110,7 @@ namespace
         godot::ClassDB::register_class<sunaba::desktop::WindowSignalWrapper>();
         godot::ClassDB::register_class<sunaba::desktop::PopupSignalWrapper>();
         godot::ClassDB::register_class<sunaba::desktop::PopupMenuSignalWrapper>();
+        godot::ClassDB::register_class<sunaba::desktop::AcceptDialogSignalWrapper>();
 
         godot::ClassDB::register_class<sunaba::ui::ControlSignalWrapper>();
         godot::ClassDB::register_class<sunaba::ui::BaseButtonSignalWrapper>();
@@ -125,6 +127,7 @@ namespace
         godot::ClassDB::register_class<sunaba::ui::CodeEditSignalWrapper>();
         godot::ClassDB::register_class<sunaba::ui::TreeSignalWrapper>();
         godot::ClassDB::register_class<sunaba::ui::RichTextLabelSignalWrapper>();
+        
 
         godot::ClassDB::register_class<sunaba::core::NodeProxy>();
         //godot::ClassDB::register_class<sunaba::core::CanvasItemProxy>();
