@@ -90,6 +90,10 @@ namespace sunaba::desktop {
             void setTooltip(std::string value) {
                 statusIndicator->set_tooltip(value.c_str());
             }
+
+            bool getVisible() {
+                return statusIndicator->is_visible();
+            }
     };
 }
 
