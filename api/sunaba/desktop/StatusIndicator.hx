@@ -6,5 +6,5 @@ import sunaba.core.Event;
 
 @:native("StatusIndicator")
 extern class StatusIndicator extends Element {
-    
+    public var icon: Texture2D;
 }
