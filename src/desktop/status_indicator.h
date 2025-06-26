@@ -103,6 +103,9 @@ namespace sunaba::desktop {
             Event* getPressedEvent() {
                 return pressedEvent;
             }
+            void setPressedEvent(Event* e) {
+                pressedEvent = e;
+            }
     };
 }
 
