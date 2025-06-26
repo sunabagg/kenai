@@ -29,6 +29,7 @@ namespace sunaba::desktop {
 
             void canceled();
             void confirmed();
+            void custom_action(const StringName& action);
     };
 
     class AcceptDialog : public Window {
