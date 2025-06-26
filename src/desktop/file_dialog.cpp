@@ -85,6 +85,10 @@ namespace sunaba::desktop {
             "useNativeDialog", sol::property(
                 &FileDialog::getUseNativeDialog,
                 &FileDialog::setUseNativeDialog
+            ),
+            "dirSelected", sol::property(
+                &FileDialog::getDirSelectedEvent,
+                &FileDialog::setDirSelectedEvent
             )
         );
     }
