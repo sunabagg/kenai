@@ -19,7 +19,11 @@ namespace sunaba::desktop {
             "new", sol::factories(
                 []() { return new StatusIndicator(); }
             ),
-            sol::base_classes, sol::bases<BaseObject, Element>()
+            sol::base_classes, sol::bases<BaseObject, Element>(),
+            "icon", sol::property(
+                &StatusIndicator::getIcon,
+                &StatusIndicator::setIcon
+            )
         );
     }
 }
