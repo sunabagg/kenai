@@ -106,6 +106,10 @@ namespace sunaba::desktop {
             void setPressedEvent(Event* e) {
                 pressedEvent = e;
             }
+
+            Rect2 getRect() {
+                return statusIndicator->get_rect();
+            }
     };
 }
 
