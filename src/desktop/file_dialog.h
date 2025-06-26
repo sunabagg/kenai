@@ -103,6 +103,10 @@ namespace sunaba::desktop {
             std::string getFilenameFilter() {
                 return fileDialog->get_filename_filter().utf8().get_data();
             }
+
+            void setFilenameFilter(std::string value) {
+                fileDialog->set_filename_filter(value.c_str());
+            }
     };
 }
 
