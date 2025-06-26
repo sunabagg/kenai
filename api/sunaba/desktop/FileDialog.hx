@@ -25,4 +25,5 @@ extern class FileDialog extends ConfirmationDialog {
     public function addOption(name: String, values: StringArray, defaultValueIndex: Int): Void;
     public function clearFilenameFilter(): Void;
     public function clearFilters(): Void;
+    public function deselectAll(): Void;
 }
