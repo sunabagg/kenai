@@ -42,7 +42,7 @@ namespace sunaba::core {
             SceneManager() {
                 setSceneNode(memnew(SceneNode));
             }
-            
+
             SceneManager(SceneNode* node) {
                 setSceneNode(node);
             }
@@ -54,6 +54,10 @@ namespace sunaba::core {
             void setSceneNode(SceneNode* node) {
                 sceneNode = node;
                 setNode(node);
+            }
+
+            Scene* getScene() {
+                return sceneNode->getScene();
             }
     };
 }
