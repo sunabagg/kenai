@@ -68,6 +68,10 @@ namespace sunaba::desktop {
             "filenameFilter", sol::property(
                 &FileDialog::getFilenameFilter,
                 &FileDialog::setFilenameFilter
+            ),
+            "optionCount", sol::property(
+                &FileDialog::getOptionCount,
+                &FileDialog::setOptionCount
             )
         );
     }
