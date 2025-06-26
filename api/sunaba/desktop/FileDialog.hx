@@ -15,4 +15,5 @@ extern class FileDialog extends ConfirmationDialog {
     public var optionCount: Int;
     public var rootSubfolder: String;
     public var showHiddenFiles: Bool;
+    public var useNativeDialog: Bool;
 }
