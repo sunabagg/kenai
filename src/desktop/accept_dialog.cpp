@@ -51,6 +51,10 @@ namespace sunaba::desktop {
             "dialogText", sol::property(
                 &AcceptDialog::getDialogText,
                 &AcceptDialog::setDialogText
+            ),
+            "okButtonText", sol::property(
+                &AcceptDialog::getOkButtonText,
+                &AcceptDialog::setOkButtonText
             )
         );
     }
