@@ -43,6 +43,8 @@ namespace sunaba::desktop {
                     signalWrapper = memnew(FileDialogSignalWrapper);
                     signalWrapper->element = this;
                 }
+
+                fileDialog->connect("dir_selected", Callable(signalWrapper, "dir_selected"));
             }
 
         public:
