@@ -1,5 +1,6 @@
 package sunaba.desktop;
 
+import sunaba.ui.LineEdit;
 import sunaba.core.StringArray;
 import sunaba.core.Event;
 
@@ -26,4 +27,5 @@ extern class FileDialog extends ConfirmationDialog {
     public function clearFilenameFilter(): Void;
     public function clearFilters(): Void;
     public function deselectAll(): Void;
+    public function getLineEdit(): LineEdit;
 }
