@@ -83,7 +83,11 @@ namespace sunaba::desktop {
             "getLabel", &AcceptDialog::getLabel,
             "getOkButton", &AcceptDialog::getOkButton,
             "registerTextEnter", &AcceptDialog::registerTextEnter,
-            "removeButton", &AcceptDialog::removeButton
+            "removeButton", &AcceptDialog::removeButton,
+            "cast", [](Element* e) {
+                AcceptDialogNode* ad = Object::cast_to<AcceptDialogNode>(e->getNode());
+                return new AcceptDialog(ad);
+            }
         );
     }
 }
