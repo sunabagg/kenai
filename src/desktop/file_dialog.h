@@ -267,6 +267,14 @@ namespace sunaba::desktop {
             void invalidate() {
                 fileDialog->invalidate();
             }
+
+            void setOptionValues(int option, std::vector<std::string> values) {
+                PackedStringArray finalValues;
+                for( std::string value : values ) {
+                    finalValues.append(value.c_str());
+                }
+                fileDialog->set_option_values(option, finalValues);
+            }
     };
 }
 
