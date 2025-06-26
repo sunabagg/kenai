@@ -69,6 +69,11 @@ namespace sunaba::desktop {
             sunaba::core::Texture2D* getIcon() {
                 return new sunaba::core::Texture2D(statusIndicator->get_icon().ptr());
             }
+
+            void setIcon(sunaba::core::Texture2D* value) {
+                Ref<godot::Texture2D> valueRef = Ref<godot::Texture2D>(value->getTexture2D());
+                statusIndicator->set_icon(valueRef);
+            }
     };
 }
 
