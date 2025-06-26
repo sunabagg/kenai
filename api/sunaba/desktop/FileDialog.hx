@@ -1,5 +1,6 @@
 package sunaba.desktop;
 
+import sunaba.core.Element;
 import sunaba.ui.VboxContainer;
 import sunaba.core.Dictionary;
 import sunaba.ui.LineEdit;
@@ -41,4 +42,15 @@ extern class FileDialog extends ConfirmationDialog {
     public function setOptionValues(option: Int, values: StringArray): Void;
     @:native
     public static function toFileDialog(obj:Any): FileDialog;
+}
+
+abstract FileDialogAbstract(FileDialog) from FileDialog to FileDialog {
+    @:from
+    public static function fromElement(e: Element): FileDialogAbstract {
+        var dialog = FileDialog.toFileDialog(e);
+        if (dialog.isNull()) {
+            return null;
+        }
+        return dialog;
+    }
 }
