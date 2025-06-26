@@ -224,6 +224,10 @@ namespace sunaba::desktop {
             void clearFilenameFilter() {
                 fileDialog->clear_filename_filter();
             }
+
+            void clearFilters() {
+                fileDialog->clear_filters();
+            }
     };
 }
 
