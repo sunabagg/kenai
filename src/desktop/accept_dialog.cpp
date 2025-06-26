@@ -78,7 +78,8 @@ namespace sunaba::desktop {
                 [](AcceptDialog* e, std::string text, bool right, std::string action) {
                     return e->addButton(text, right, action);
                 }
-            )
+            ),
+            "addCancelButton", &AcceptDialog::addCancelButton
         );
     }
 }
