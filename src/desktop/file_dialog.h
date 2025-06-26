@@ -146,6 +146,10 @@ namespace sunaba::desktop {
             std::string getRootSubfolder() {
                 return fileDialog->get_root_subfolder().utf8().get_data();
             }
+
+            void setRootSubfolder(std::string value) {
+                fileDialog->set_root_subfolder(value.c_str());
+            }
     };
 }
 
