@@ -18,7 +18,8 @@ namespace sunaba::desktop {
         lua.new_usertype<StatusIndicator>("StatusIndicator",
             "new", sol::factories(
                 []() { return new StatusIndicator(); }
-            )
+            ),
+            sol::base_classes, sol::bases<BaseObject, Element>()
         );
     }
 }
