@@ -11,4 +11,5 @@ extern class FileDialog extends ConfirmationDialog {
     public var fileMode: Int;
     public var filenameFilter: String;
     public var filters: StringArray;
+    public var modeOverridesTitle: Bool;
 }
