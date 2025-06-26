@@ -2,23 +2,25 @@
 
 namespace sunaba::desktop {
     void FileDialogSignalWrapper::_bind_methods() {
-        ClassDB::bind_method(D_METHOD("dir_selected"), &FileDialogSignalWrapper::dir_selected);
-        ClassDB::bind_method(D_METHOD("file_selected"), &FileDialogSignalWrapper::file_selected);
-        ClassDB::bind_method(D_METHOD("filename_filter_changed"), &FileDialogSignalWrapper::filename_filter_changed);
-        ClassDB::bind_method(D_METHOD("files_selected"), &FileDialogSignalWrapper::file_selected);
+        ClassDB::bind_method(D_METHOD("dir_selected", "dir"), &FileDialogSignalWrapper::dir_selected);
+        ClassDB::bind_method(D_METHOD("file_selected", "path"), &FileDialogSignalWrapper::file_selected);
+        ClassDB::bind_method(D_METHOD("filename_filter_changed", "filter"), &FileDialogSignalWrapper::filename_filter_changed);
+        ClassDB::bind_method(D_METHOD("files_selected", "paths"), &FileDialogSignalWrapper::file_selected);
     }
 
-    void FileDialogSignalWrapper::dir_selected() {
+    void FileDialogSignalWrapper::dir_selected(const String& dir) {
         if (element != nullptr) {
             Array args;
-            element->dirSelectedEvent->emit();
+            args.append(dir);
+            element->dirSelectedEvent->emit(args);
         }
     }
 
-    void FileDialogSignalWrapper::file_selected() {
+    void FileDialogSignalWrapper::file_selected(const String& path) {
         if (element != nullptr) {
             Array args;
-            element->fileSelectedEvent->emit();
+            args.append(path);
+            element->fileSelectedEvent->emit(args);
         }
     }
 }
