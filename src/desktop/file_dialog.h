@@ -28,6 +28,7 @@ namespace sunaba::desktop {
             ~FileDialogSignalWrapper() = default;
 
             void dir_selected();
+            void file_selected();
     };
 
     class FileDialog : public ConfirmationDialog {
