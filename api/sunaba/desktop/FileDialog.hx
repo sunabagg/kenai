@@ -1,6 +1,7 @@
 package sunaba.desktop;
 
 import sunaba.core.StringArray;
+import sunaba.core.Event;
 
 @:native("FileDialog")
 extern class FileDialog extends ConfirmationDialog {
@@ -16,4 +17,5 @@ extern class FileDialog extends ConfirmationDialog {
     public var rootSubfolder: String;
     public var showHiddenFiles: Bool;
     public var useNativeDialog: Bool;
+    public var dirSelected: Event;
 }
