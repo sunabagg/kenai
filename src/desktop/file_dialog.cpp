@@ -102,7 +102,12 @@ namespace sunaba::desktop {
                 &FileDialog::getFilesSelectedEvent,
                 &FileDialog::setFilesSelectedEvent
             ),
-            "addFilter", &FileDialog::addFilter,
+            "addFilter", sol::factories(
+                [](FileDialog* fdialog, std::string filter) {
+                    fdialog->addFilter(filter);
+                },
+                [](FileDialog* fdialog, std::string filter, std::string description)
+            ),
             "addOptions", &FileDialog::addOption,
             "clearFilenameFilter", &FileDialog::clearFilenameFilter,
             "clearFilters", &FileDialog::clearFilters,
