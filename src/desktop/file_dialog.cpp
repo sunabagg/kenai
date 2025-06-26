@@ -109,7 +109,8 @@ namespace sunaba::desktop {
             "deselectAll", &FileDialog::deselectAll,
             "getLineEdit", &FileDialog::getLineEdit,
             "getOptionDefault", &FileDialog::getOptionDefault,
-            "getOptionName", &FileDialog::getOptionName
+            "getOptionName", &FileDialog::getOptionName,
+            "getOptionValues", &FileDialog::getOptionValues
         );
     }
 }
