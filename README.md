@@ -42,6 +42,7 @@ $ cmake --install sunaba-build-web
 
 ```sh
 $ cmake -B sunaba-build -G"Visual Studio 17 2022"  -DCMAKE_BUILD_TYPE=Release -DCMAKE_INSTALL_PREFIX=sunaba-install sunaba
+Copy-Item "lua51.lib" -Destination "sunaba-build\lua51.lib"
 $ cmake --build sunaba-build --config Release
 $ cmake --install sunaba-build
 ```
