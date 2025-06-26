@@ -13,4 +13,6 @@ extern class StatusIndicator extends Element {
     public var visible: Bool;
     public var pressed: Event;
     public function getRect(): Rect2;
+    @:native("cast")
+    public static function toStatusIndicator(obj:Any): StatusIndicator;
 }
