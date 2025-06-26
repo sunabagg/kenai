@@ -89,6 +89,10 @@ namespace sunaba::desktop {
             "dirSelected", sol::property(
                 &FileDialog::getDirSelectedEvent,
                 &FileDialog::setDirSelectedEvent
+            ),
+            "fileSelected", sol::property(
+                &FileDialog::getFileSelectedEvent,
+                &FileDialog::setFileSelectedEvent
             )
         );
     }
