@@ -63,6 +63,10 @@ namespace sunaba::desktop {
             "confirmed", sol::property(
                 &AcceptDialog::getConfirmedEvent,
                 &AcceptDialog::setConfirmedEvent
+            ),
+            "customAction", sol::property(
+                &AcceptDialog::getCustomActionEvent,
+                &AcceptDialog::setCustomActionEvent
             )
         );
     }
