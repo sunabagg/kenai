@@ -17,4 +17,5 @@ extern class AcceptDialog extends Window {
     public function addButton(text: String, ?right: Bool, ?action: String): Button;
     public function addCancelButton(name: String): Button;
     public function getLabel(): Label;
+    public function getOkButton(): Button;
 }
