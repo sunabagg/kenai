@@ -59,6 +59,10 @@ namespace sunaba::desktop {
             "canceled", sol::property(
                 &AcceptDialog::getCanceledEvent,
                 &AcceptDialog::setCanceledEvent
+            ),
+            "confirmed", sol::property(
+                &AcceptDialog::getConfirmedEvent,
+                &AcceptDialog::setConfirmedEvent
             )
         );
     }
