@@ -35,6 +35,7 @@ namespace sunaba::desktop {
             "new", sol::factories(
                 []() { return new Window(); }
             ),
+            sol::base_classes, sol::bases<BaseObject, Element, sunaba::core::Viewport, Window>(),
             "dialogAutowrap", sol::property(
                 &AcceptDialog::getDialogAutowrap,
                 &AcceptDialog::setDialogAutowrap
