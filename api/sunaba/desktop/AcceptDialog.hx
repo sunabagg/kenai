@@ -24,3 +24,14 @@ extern class AcceptDialog extends Window {
     @:native("cast")
     public static function toAcceptDialog(obj: Any): AcceptDialog;
 }
+
+abstract AcceptDialogAbstract(AcceptDialog) from AcceptDialog to AcceptDialog {
+    @:from
+    public static function fromElement(element: Element): AcceptDialogAbstract {
+        var acceptDialog = AcceptDialog.toAcceptDialog(element);
+        if (acceptDialog.isNull()) {
+            return null;
+        }
+        return acceptDialog
+    }
+}
