@@ -36,6 +36,10 @@ namespace sunaba::desktop {
                 confirmDialog = node;
                 setAcceptDialog(node);
             }
+
+            std::string getCancelButtonText() {
+                return confirmDialog->get_cancel_button_text().utf8().get_data();
+            }
     };
 }
 
