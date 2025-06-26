@@ -107,7 +107,8 @@ namespace sunaba::desktop {
             "clearFilenameFilter", &FileDialog::clearFilenameFilter,
             "clearFilters", &FileDialog::clearFilters,
             "deselectAll", &FileDialog::deselectAll,
-            "getLineEdit", &FileDialog::getLineEdit
+            "getLineEdit", &FileDialog::getLineEdit,
+            "getOptionDefault", &FileDialog::getOptionDefault
         );
     }
 }
