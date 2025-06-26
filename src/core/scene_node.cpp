@@ -46,7 +46,11 @@ namespace sunaba::core {
             sol::base_classes, sol::bases<BaseObject, Element>(),
             "scene", sol::readonly_property(
                 &SceneManager::getScene
-            )
+            ),
+            "cast", [](Element* e) {
+                SceneNode* sceneNode = Object::cast_to<SceneNode>(e->getNode());
+                return new SceneManager(sceneNode);
+            }
         );
     }
 }
