@@ -82,6 +82,10 @@ namespace sunaba::desktop {
             void setMenu(std::string value) {
                 statusIndicator->set_menu(NodePath(String(value.c_str())));
             }
+
+            std::string getTooltip() {
+                return statusIndicator->get_tooltip().utf8().get_data();
+            }
     };
 }
 
