@@ -37,4 +37,12 @@ namespace sunaba::core {
     void SceneNode::_unhandled_input(const Ref<InputEvent>& event) {}
     void SceneNode::_unhandled_key_input(const Ref<InputEvent>& event) {}
     void SceneNode::_shortcut_input(const Ref<InputEvent>& event) {}
+
+    void bindSceneManager(sol::state& lua) {
+        lua.new_usertype<SceneManager>("SceneManager",
+            "new", sol::factories(
+                []() { return new SceneManager(); }
+            )
+        );
+    }
 }
