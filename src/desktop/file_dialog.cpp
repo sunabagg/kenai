@@ -116,7 +116,11 @@ namespace sunaba::desktop {
             "invalidate", &FileDialog::invalidate,
             "setOptionDefault", &FileDialog::setOptionDefault,
             "setOptionName", &FileDialog::setOptionName,
-            "setOptionValues", &FileDialog::setOptionValues
+            "setOptionValues", &FileDialog::setOptionValues,
+            "cast", [](Element* e) {
+                FileDialogNode* fileDialog = Object::cast_to<FileDialogNode>(e->getNode());
+                return new FileDialogfileDialog);
+            }
         );
     }
 }
