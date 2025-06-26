@@ -67,6 +67,10 @@ namespace sunaba::desktop {
                 connectAcceptDialogSignals();
                 setWindow(aDialog);
             }
+
+            bool getDialogAutowrap() {
+                return acceptDialog->has_autowrap();
+            }
     };
 }
 
