@@ -29,4 +29,11 @@ namespace sunaba::desktop {
             element->customActionEvent->emit(args);
         }
     }
+
+    void bindAcceptDialog(sol::state& lua) {
+        lua.new_usertype<AcceptDialog>("AcceptDialog",
+            "new", sol::factories(
+                []() { return new Window(); }
+            ))
+    }
 }
