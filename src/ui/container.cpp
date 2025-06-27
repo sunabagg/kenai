@@ -151,6 +151,10 @@ namespace sunaba::ui {
             "fitChildInRect", &Container::fitChildInRect,
             "queueSort", &Container::queueSort,
             "cast", [](Element* e) {
+                auto* ce = dynamic_cast<Container*>(e);
+                if (ce != nullptr) {
+                    return ce;
+                }
                 ContainerNode* container = Object::cast_to<ContainerNode>(e->getNode());
                 return new Container(container);
             }
