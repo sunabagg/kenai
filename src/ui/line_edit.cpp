@@ -222,6 +222,10 @@ namespace sunaba::ui {
             "selectAll", &LineEdit::selectAll,
             "unedit", &LineEdit::unedit,
             "cast", [](Element* e) {
+                auto* ce = dynamic_cast<LineEdit*>(e);
+                if (ce != nullptr) {
+                    return ce;
+                }
                 LineEditNode* control = Object::cast_to<LineEditNode>(e->getNode());
                 return new LineEdit(control);
             }
