@@ -1,4 +1,5 @@
 package sunaba.core;
+import Type;
 
 class Behavior {
     public var component : Component;

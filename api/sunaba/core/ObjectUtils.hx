@@ -1,4 +1,5 @@
 package sunaba.core;
+import Type;
 
 class ObjectUtils {
     public static function getName(object : Any) {
