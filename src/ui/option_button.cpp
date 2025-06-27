@@ -216,6 +216,10 @@ namespace sunaba::ui {
             "setItemTooltip", &OptionButton::setItemTooltip,
             "showPopup", &OptionButton::showPopup,
             "cast", [](Element* e) {
+                auto* ce = dynamic_cast<OptionButton*>(e);
+                if (ce != nullptr) {
+                    return ce;
+                }
                 OptionButtonNode* optionButton = Object::cast_to<OptionButtonNode>(e->getNode());
                 return new OptionButton(optionButton);
             }
