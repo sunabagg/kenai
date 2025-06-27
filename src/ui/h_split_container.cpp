@@ -136,8 +136,12 @@ namespace sunaba::ui {
             ),
             sol::base_classes, sol::bases<BaseObject, Element, sunaba::core::CanvasItem, Control, Container, SplitContainer>(),
             "cast", [](Element* element) {
+                auto* ce = dynamic_cast<HSplitContainer*>(element);
+                if (ce != nullptr) {
+                    return ce;
+                }
                 HSplitContainerNode* node = Object::cast_to<HSplitContainerNode>(element->getNode());
-                return HSplitContainer(node);
+                return new HSplitContainer(node);
             }
         );
     }
