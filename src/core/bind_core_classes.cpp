@@ -38,6 +38,7 @@
 #include "reg_ex_match.h"
 #include "reg_ex.h"
 #include "sub_viewport.h"
+#include "scene_node.h"
 
 void sunaba::core::bindCoreClasses(sol::state& lua) {
     sunaba::core::io::bindBinaryClasses(lua);
@@ -73,6 +74,7 @@ void sunaba::core::bindCoreClasses(sol::state& lua) {
     bindTranslation(lua);
 
     bindElement(lua);
+    bindSceneManager(lua);
     bindCanvasItem(lua);
     bindViewport(lua);
 
