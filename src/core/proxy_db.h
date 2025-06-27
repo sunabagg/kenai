@@ -21,18 +21,11 @@ namespace sunaba::core
             elements[node] = element;
         }
  
-        template <typename A, typename B>
-        static A* getElement(B* node) {
+        static Element* getElement(Node* node) {
             if (elements.find(node) != elements.end()) {
-                return static_cast<A>(elements[node]);
+                return elements[node];
             }
-            return new A(node);
-        }
-
-        template <typename A, typename B>
-        static A* cast(Element* e) {
-            B* node = Object::cast_to<B>(e->getNode());
-            return getElement<A, B>(node);
+            return nullptr;
         }
  
         static void removeElement(Node* node) {
