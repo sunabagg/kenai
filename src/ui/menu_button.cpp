@@ -179,6 +179,10 @@ namespace sunaba::ui {
             "setDisableShortcuts", &MenuButton::setDisableShortcuts,
             "showPopup", &MenuButton::showPopup,
             "cast", [](Element* e) {
+                auto* ce = dynamic_cast<MenuButton*>(e);
+                if (ce != nullptr) {
+                    return ce;
+                }
                 MenuButtonNode* menuButton = Object::cast_to<MenuButtonNode>(e->getNode());
                 return new MenuButton(menuButton);
             }
