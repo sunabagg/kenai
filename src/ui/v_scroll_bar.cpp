@@ -128,6 +128,10 @@ namespace sunaba::ui {
             ),
             sol::base_classes, sol::bases<BaseObject, Element, sunaba::core::CanvasItem, Control, Range, ScrollBar>(),
             "cast", [] (Element* element) {
+                auto* ce = dynamic_cast<VScrollBar*>(element);
+                if (ce != nullptr) {
+                    return ce;
+                }
                 VScrollBarNode* vScrollBarNode = Object::cast_to<VScrollBarNode>(element->getNode());
                 return new VScrollBar(vScrollBarNode);
             }
