@@ -173,6 +173,10 @@ namespace sunaba::ui {
                 &LinkButton::setUri
             ),
             "cast", [](Element* e) {
+                auto* ce = dynamic_cast<LinkButton*>(e);
+                if (ce != nullptr) {
+                    return ce;
+                }
                 LinkButtonNode* control = Object::cast_to<LinkButtonNode>(e->getNode());
                 return new LinkButton(control);
             }
