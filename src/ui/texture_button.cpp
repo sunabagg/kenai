@@ -169,6 +169,10 @@ namespace sunaba::ui {
                 &TextureButton::setTexturePressed
             ),
             "cast", [](Element* element) {
+                auto* ce = dynamic_cast<TextureButton*>(element);
+                if (ce != nullptr) {
+                    return ce;
+                }
                 TextureButtonNode* node = Object::cast_to<TextureButtonNode>(element->getNode());
                 return new TextureButton(node);
             }
