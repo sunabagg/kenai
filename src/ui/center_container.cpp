@@ -140,7 +140,7 @@ namespace sunaba::ui {
                 &CenterContainer::setUseTopLeft
             ),
             "cast", [](Element* element) {
-                auto* ce = dynamic_cast<CenterContainer*>(e);
+                auto* ce = dynamic_cast<CenterContainer*>(element);
                 if (ce != nullptr) {
                     return ce;
                 }
