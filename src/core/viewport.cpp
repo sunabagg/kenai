@@ -302,6 +302,10 @@ namespace sunaba::core {
             "updateMouseCursorState", &Viewport::updateMouseCursorState,
             "warpMouse", &Viewport::warpMouse,
             "cast", [](Element* e) {
+                auto* v = dynamic_cast<Viewport*>(e);
+                if (v != nullptr) {
+                    return v;
+                }
                 ViewportNode* viewport = Object::cast_to<ViewportNode>(e->getNode());
                 return new Viewport(viewport);
             }
