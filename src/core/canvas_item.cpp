@@ -245,7 +245,12 @@ namespace sunaba::core {
             "setNotifyTransform", &CanvasItem::setNotifyTransform,
             "show", &CanvasItem::show,
             "cast", [](Element* e) {
-                return dynamic_cast<CanvasItem*>(e);
+                auto* ci = dynamic_cast<CanvasItem*>(e);
+                if (ci != nullptr) {
+                    return ci;
+                }
+                auto* node = Object::cast_to<CanvasItemNode>(e->getNode());
+                return new CanvasItem(node);
             }
         );
     }
