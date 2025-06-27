@@ -58,26 +58,6 @@ class Main extends App {
         scene.addEntity(entity4);
         e4transform.position = new Vector3(0, 0, -1);
 
-        GlobalObjectStack.initSingleton();
-
-        var globalObjectStack = GlobalObjectStack.getSingleton();
-        globalObjectStack.stack.push(new StackHandle(scene));
-        globalObjectStack.stack.push(new StackHandle(entity1));
-        globalObjectStack.stack.push(new StackHandle(child1));
-        globalObjectStack.stack.push(new StackHandle(entity2));
-        globalObjectStack.stack.push(new StackHandle(entity3));
-        globalObjectStack.stack.push(new StackHandle(entity4));
-        globalObjectStack.stack.push(new StackHandle(e1transform));
-        globalObjectStack.stack.push(new StackHandle(c1transform));
-        globalObjectStack.stack.push(new StackHandle(e2transform));
-        globalObjectStack.stack.push(new StackHandle(e3transform));
-        globalObjectStack.stack.push(new StackHandle(camera));
-        globalObjectStack.stack.push(new StackHandle(e4transform));
-        globalObjectStack.stack.push(new StackHandle(e4mesh));
-        globalObjectStack.stack.push(new StackHandle(e4box));
-        globalObjectStack.stack.push(new StackHandle(rotateComponent.component));
-        globalObjectStack.stack.push(new StackHandle(rotateComponent));
-
         try {
             printScene(scene);
         }
