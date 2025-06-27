@@ -137,6 +137,10 @@ namespace sunaba::ui {
             ),
             sol::base_classes, sol::bases<BaseObject, Element, sunaba::core::CanvasItem, Control, Container, FlowContainer>(),
             "cast", [](Element* element) {
+                auto* ce = dynamic_cast<VFlowContainer*>(element);
+                if (ce != nullptr) {
+                    return ce;
+                }
                 VFlowContainerNode* vflowContainerNode = Object::cast_to<VFlowContainerNode>(element->getNode());
                 return new VFlowContainer(vflowContainerNode);
             }
