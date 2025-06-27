@@ -281,6 +281,11 @@ namespace sunaba::ui {
             }
 
             Control* getCurrentTabControl() {
+                auto* e = ProxyDb::getElement(container->get_current_tab_control());
+                if (e != nullptr) {
+                    return dynamic_cast<Control*>(e);
+                }
+
                 return new Control(container->get_current_tab_control());
             }
 
@@ -301,6 +306,10 @@ namespace sunaba::ui {
             }
 
             Control* getTabControl(int tab) {
+                auto* e = ProxyDb::getElement(container->get_tab_control(tab));
+                if (e != nullptr) {
+                    return dynamic_cast<Control*>(e);
+                }
                 return new Control(container->get_tab_control(tab));
             }
 
