@@ -28,6 +28,12 @@ namespace sunaba::core
             }
             return new A(node);
         }
+
+        template <typename A, typename B>
+        static A* cast(Element* e) {
+            B* node = Object::cast_to<B>(e->getNode());
+            return getElement<A, B>(node);
+        }
  
         static void removeElement(Node* node) {
             elements.erase(node);
