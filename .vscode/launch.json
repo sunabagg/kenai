@@ -179,6 +179,20 @@
             "visualizerFile": "${workspaceFolder}/.vscode/godot.natvis"
         },
         {
+            "name": "Linux Launch (Local) (test3)",
+            "type": "cppdbg",
+            "request": "launch",
+            "program": "${env:HOME}/Applications/godot/godot",
+            "args": [
+                "--verbose",
+                "${workspaceFolder}/tests/test3/bin/test3.sbx"
+            ],
+            "cwd": "${command:cmake.buildDirectory}/sunaba",
+            "preLaunchTask": "CMake: build",
+            "internalConsoleOptions": "openOnSessionStart",
+            "visualizerFile": "${workspaceFolder}/.vscode/godot.natvis"
+        },
+        {
             "name": "macOS Launch (Local)",
             "type": "lldb-dap",
             "request": "launch",
