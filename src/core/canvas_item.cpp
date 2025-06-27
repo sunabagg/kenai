@@ -245,7 +245,7 @@ namespace sunaba::core {
             "setNotifyTransform", &CanvasItem::setNotifyTransform,
             "show", &CanvasItem::show,
             "cast", [](Element* e) {
-                return ProxyDb::cast<CanvasItem, CanvasItemNode>(e);
+                return dynamic_cast<CanvasItem*>(e);
             }
         );
     }
