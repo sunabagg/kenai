@@ -245,6 +245,10 @@ namespace sunaba::ui {
             "isHovered", &BaseButton::isHovered,
             "setPressedNoEvent", &BaseButton::setPressedNoEvent,
             "cast", [](Element* e) {
+                auto* ce = dynamic_cast<BaseButton*>(e);
+                if (ce != nullptr) {
+                    return ce;
+                }
                 BaseButtonNode* base_button = Object::cast_to<BaseButtonNode>(e->getNode());
                 return new BaseButton(base_button);
             }
