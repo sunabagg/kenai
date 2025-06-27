@@ -137,6 +137,10 @@ namespace sunaba::ui {
             ),
             sol::base_classes, sol::bases<BaseObject, Element, sunaba::core::CanvasItem, Control, Container, BoxContainer>(),
             "cast", [](Element* element) {
+                auto* ce = dynamic_cast<VBoxContainer*>(element);
+                if (ce != nullptr) {
+                    return ce;
+                }
                 VBoxContainerNode* vbox_container = Object::cast_to<VBoxContainerNode>(element->getNode());
                 return new VBoxContainer(vbox_container);
             }
