@@ -477,6 +477,10 @@ namespace sunaba::ui {
             //"getLine", &TextEdit::getLine,
             
             "cast", [](Element* e) {
+                auto* ce = dynamic_cast<TextEdit*>(e);
+                if (ce != nullptr) {
+                    return ce;
+                }
                 TextEditNode* text_edit = Object::cast_to<TextEditNode>(e->getNode());
                 return new TextEdit(text_edit);
             }
