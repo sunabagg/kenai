@@ -71,6 +71,10 @@ namespace sunaba::desktop {
             "transparent", sol::property(&PopupPanel::getTransparent, &PopupPanel::setTransparent),
             "transparentBg", sol::property(&PopupPanel::getTransparentBg, &PopupPanel::setTransparentBg),
             "cast", [](Element* e) {
+                auto* ce = dynamic_cast<PopupPanel*>(e);
+                if (ce != nullptr) {
+                    return ce;
+                }
                 PopupPanelNode* node = Object::cast_to<PopupPanelNode>(e->getNode());
                 return new PopupPanel(node);
             }
