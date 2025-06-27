@@ -128,6 +128,10 @@ namespace sunaba::ui {
             ),
             sol::base_classes, sol::bases<BaseObject, Element, sunaba::core::CanvasItem, Control, Range, ScrollBar>(),
             "cast", [] (Element* element) {
+                auto* ce = dynamic_cast<HScrollBar*>(element);
+                if (ce != nullptr) {
+                    return ce;
+                }
                 HScrollBarNode* hScrollBarNode = Object::cast_to<HScrollBarNode>(element->getNode());
                 return new HScrollBar(hScrollBarNode);
             }
