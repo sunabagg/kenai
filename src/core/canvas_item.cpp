@@ -1,4 +1,5 @@
 #include "canvas_item.h"
+#include "proxy_db.h"
 
 namespace sunaba::core {
 
@@ -244,8 +245,7 @@ namespace sunaba::core {
             "setNotifyTransform", &CanvasItem::setNotifyTransform,
             "show", &CanvasItem::show,
             "cast", [](Element* e) {
-                CanvasItemNode* canvas_item = Object::cast_to<CanvasItemNode>(e->getNode());
-                return new CanvasItem(canvas_item);
+                return ProxyDb::cast<CanvasItem, CanvasItemNode>(e);
             }
         );
     }
