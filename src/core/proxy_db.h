@@ -11,6 +11,7 @@
 
 namespace sunaba::core
 {
+
     class ProxyDb
     {
     private:
@@ -20,11 +21,12 @@ namespace sunaba::core
             elements[node] = element;
         }
  
-        static Element* getElement(Node* node) {
+        template <typename A, typename B>
+        static A* getElement(B* node) {
             if (elements.find(node) != elements.end()) {
-                return elements[node];
+                return static_cast<A>(elements[node]);
             }
-            return nullptr;
+            return new A(node);
         }
  
         static void removeElement(Node* node) {
