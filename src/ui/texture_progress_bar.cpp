@@ -150,6 +150,10 @@ namespace sunaba::ui {
             "getStretchMargin", &TextureProgressBar::getStretchMargin,
             "setStretchMargin", &TextureProgressBar::setStretchMargin,
             "cast", [](Element* element) {
+                auto* ce = dynamic_cast<TextureProgressBar*>(element);
+                if (ce != nullptr) {
+                    return ce;
+                }
                 TextureProgressBarNode* node = Object::cast_to<TextureProgressBarNode>(element->getNode());
                 return new TextureProgressBar(node);
             }
