@@ -136,6 +136,10 @@ namespace sunaba::ui {
             "suffix", sol::property(&SpinBox::getSuffix, &SpinBox::setSuffix),
             "updateOnTextChanged", sol::property(&SpinBox::getUpdateOnTextChanged, &SpinBox::setUpdateOnTextChanged),
             "cast", [] (Element* element) {
+                auto* ce = dynamic_cast<SpinBox*>(element);
+                if (ce != nullptr) {
+                    return ce;
+                }
                 SpinBoxNode* spinBox = Object::cast_to<SpinBoxNode>(element->getNode());
                 return new SpinBox(spinBox);
             }
