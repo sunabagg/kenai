@@ -140,6 +140,10 @@ namespace sunaba::ui {
             "setMenuTitle", &MenuBar::setMenuTitle,
             "setMenuTooltip", &MenuBar::setMenuTooltip,
             "cast", [](Element* e) {
+                auto* ce = dynamic_cast<MenuBar*>(e);
+                if (ce != nullptr) {
+                    return ce;
+                }
                 MenuBarNode* menuBar = Object::cast_to<MenuBarNode>(e->getNode());
                 return new MenuBar(menuBar);
             }
