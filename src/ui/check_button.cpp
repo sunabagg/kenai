@@ -132,6 +132,10 @@ namespace sunaba::ui {
                 &CheckButton::setToggleMode
             ),
             "cast", [](sunaba::core::Element* e) {
+                auto* ce = dynamic_cast<CheckButton*>(e);
+                if (ce != nullptr) {
+                    return ce;
+                }
                 CheckButtonNode* check_button_node = Object::cast_to<CheckButtonNode>(e->getNode());
                 return new CheckButton(check_button_node);
             }
