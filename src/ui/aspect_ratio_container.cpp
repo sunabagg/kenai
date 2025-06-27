@@ -152,6 +152,10 @@ namespace sunaba::ui {
                 &AspectRatioContainer::setStretchMode
             ),
             "cast", [](Element* e) {
+                auto* ce = dynamic_cast<AspectRatioContainer*>(e);
+                if (ce != nullptr) {
+                    return ce;
+                }
                 AspectRatioContainerNode* control = Object::cast_to<AspectRatioContainerNode>(e->getNode());
                 return new AspectRatioContainer(control);
             }
