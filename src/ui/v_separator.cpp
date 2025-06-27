@@ -122,6 +122,10 @@ namespace sunaba::ui {
             ),
             sol::base_classes, sol::bases<BaseObject, Element, sunaba::core::CanvasItem, Control, Separator>(),
             "cast", [] (Element* element) {
+                auto* ce = dynamic_cast<VSeparator*>(element);
+                if (ce != nullptr) {
+                    return ce;
+                }
                 VSeparatorNode* vSeparator = Object::cast_to<VSeparatorNode>(element->getNode());
                 return new VSeparator(vSeparator);
             }
