@@ -126,6 +126,10 @@ namespace sunaba::desktop {
             "setOptionName", &FileDialog::setOptionName,
             "setOptionValues", &FileDialog::setOptionValues,
             "cast", [](Element* e) {
+                auto* ce = dynamic_cast<FileDialog*>(e);
+                if (ce != nullptr) {
+                    return ce;
+                }
                 FileDialogNode* fileDialog = Object::cast_to<FileDialogNode>(e->getNode());
                 return new FileDialog(fileDialog);
             }
