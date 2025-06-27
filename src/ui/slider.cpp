@@ -157,6 +157,10 @@ namespace sunaba::ui {
             "dragEnded", sol::property(&Slider::getDragEndedEvent, &Slider::setDragEndedEvent),
             "dragStarted", sol::property(&Slider::getDragStartedEvent, &Slider::setDragStartedEvent),
             "cast", [] (Element* element) {
+                auto* ce = dynamic_cast<Slider*>(element);
+                if (ce != nullptr) {
+                    return ce;
+                }
                 SliderNode* slider = Object::cast_to<SliderNode>(element->getNode());
                 return new Slider(slider);
             }
