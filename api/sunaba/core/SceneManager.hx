@@ -8,5 +8,12 @@ extern class SceneManager extends Element {
 }
 
 abstract SceneManagerAbstract(SceneManager) from SceneManager to SceneManager {
-    
+    @:from
+    public static function fromElement(e:Element): SceneManagerAbstract {
+        var manager = SceneManager.toSceneManager(e);
+        if (manager.isNull()) {
+            return null;
+        }
+        return manager;
+    }
 }
