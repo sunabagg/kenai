@@ -1,13 +1,23 @@
+import sunaba.App;
 import sunaba.core.*;
 import sunaba.spatial.Camera;
 import sunaba.spatial.SpatialTransform;
 import sunaba.spatial.mesh.MeshRenderer;
 import sunaba.spatial.mesh.Box;
+import sunaba.core.SceneManager;
 import RotateComponent;
 
-class Main {
+class Main extends App {
     public static function main() {
-        var scene : Scene = untyped __lua__("createScene()");
+        new Main();
+    }
+
+    override function init() {
+        var sceneManager = new SceneManager();
+
+        rootElement.addChild(sceneManager);
+
+        var scene : Scene = sceneManager.scene;
         var entity1 = new Entity();
         entity1.name = "Entity1";
         var e1transform = new SpatialTransform();
