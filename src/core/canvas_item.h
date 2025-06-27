@@ -6,6 +6,7 @@
 #define CanvasItemNode godot::CanvasItem
 
 #include "element.h"
+#include "proxy_db.h"
 #include "material.h"
 #include "font.h"
 #include "texture2d.h"
