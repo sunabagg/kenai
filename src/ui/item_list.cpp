@@ -240,6 +240,10 @@ namespace sunaba::ui {
             "setItemTooltipEnabled", &ItemList::setItemTooltipEnabled,
             "sortItemsByText", &ItemList::sortItemsByText,
             "cast", [](Element* element) {
+                auto* ce = dynamic_cast<ItemList*>(element);
+                if (ce != nullptr) {
+                    return ce;
+                }
                 ItemListNode* node = Object::cast_to<ItemListNode>(element->getNode());
                 return new ItemList(node);
             }
