@@ -6,3 +6,7 @@ extern class SceneManager extends Element {
     @:native("cast")
     public static function toSceneManager(obj:Any): SceneManager;
 }
+
+abstract SceneManagerAbstract(SceneManager) from SceneManager to SceneManager {
+    
+}
