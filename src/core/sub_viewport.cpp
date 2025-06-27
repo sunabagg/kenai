@@ -28,6 +28,10 @@ namespace sunaba::core {
                 &SubViewport::setSize2dOverrideStretch
             ),
             "cast", [](Element* e) {
+                auto* sv = dynamic_cast<SubViewport*>(e);
+                if (sv != nullptr) {
+                    return sv;
+                }
                 SubViewportNode* subViewport = Object::cast_to<SubViewportNode>(e->getNode());
                 return new SubViewport(subViewport);
             }
