@@ -402,6 +402,10 @@ namespace sunaba::ui {
             "unindentLines", &CodeEdit::unindentLines,
             "updateCodeCompletionOptions", &CodeEdit::updateCodeCompletionOptions,
             "cast", [](Element* element) {
+                auto* ce = dynamic_cast<CodeEdit*>(element);
+                if (ce != nullptr) {
+                    return ce;
+                }
                 CodeEditNode* code_edit = Object::cast_to<CodeEditNode>(element->getNode());
                 return new CodeEdit(code_edit);
             }
