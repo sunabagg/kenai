@@ -150,6 +150,10 @@ namespace sunaba::ui {
             "getTotalCharacterCount", &Label::getTotalCharacterCount,
             "getVisibleLineCount", &Label::getVisibleLineCount,
             "cast", [](Element* element) {
+                auto* ce = dynamic_cast<Label*>(element);
+                if (ce != nullptr) {
+                    return ce;
+                }
                 LabelNode* labelNode = Object::cast_to<LabelNode>(element->getNode());
                 return new Label(labelNode);
             }

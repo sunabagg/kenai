@@ -479,6 +479,10 @@ namespace sunaba::ui {
             "updateMinimumSize", &Control::updateMinimumSize,
             "warpMouse", &Control::warpMouse,
             "cast", [](Element* e) {
+                auto* ce = dynamic_cast<Control*>(e);
+                if (ce != nullptr) {
+                    return ce;
+                }
                 ControlNode* control = Object::cast_to<ControlNode>(e->getNode());
                 return new Control(control);
             }

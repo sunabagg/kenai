@@ -85,6 +85,10 @@ namespace sunaba::desktop {
             "registerTextEnter", &AcceptDialog::registerTextEnter,
             "removeButton", &AcceptDialog::removeButton,
             "cast", [](Element* e) {
+                auto* ce = dynamic_cast<AcceptDialog*>(e);
+                if (ce != nullptr) {
+                    return ce;
+                }
                 AcceptDialogNode* ad = Object::cast_to<AcceptDialogNode>(e->getNode());
                 return new AcceptDialog(ad);
             }

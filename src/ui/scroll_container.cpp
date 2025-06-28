@@ -151,6 +151,10 @@ namespace sunaba::ui {
             "getHScrollBar", &ScrollContainer::getHScrollBar,
             "getVScrollBar", &ScrollContainer::getVScrollBar,
             "cast", [] (Element* element) {
+                auto* ce = dynamic_cast<ScrollContainer*>(element);
+                if (ce != nullptr) {
+                    return ce;
+                }
                 ScrollContainerNode* scrollContainer = Object::cast_to<ScrollContainerNode>(element->getNode());
                 return new ScrollContainer(scrollContainer);
             }

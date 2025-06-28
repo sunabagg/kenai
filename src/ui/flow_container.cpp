@@ -153,6 +153,10 @@ namespace sunaba::ui {
             ),
             "getLineCount", &FlowContainer::getLineCount,
             "cast", [](Element* element) {
+                auto* ce = dynamic_cast<FlowContainer*>(element);
+                if (ce != nullptr) {
+                    return ce;
+                }
                 FlowContainerNode* node = Object::cast_to<FlowContainerNode>(element->getNode());
                 return new FlowContainer(node);
             }

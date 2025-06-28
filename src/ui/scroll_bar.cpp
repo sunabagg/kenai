@@ -131,6 +131,10 @@ namespace sunaba::ui {
             "step", sol::property(&ScrollBar::getStep, &ScrollBar::setStep),
             "scrolling", sol::property(&ScrollBar::getScrollingEvent, &ScrollBar::setScrollingEvent),
             "cast", [] (Element* element) {
+                auto* ce = dynamic_cast<ScrollBar*>(element);
+                if (ce != nullptr) {
+                    return ce;
+                }
                 ScrollBarNode* scrollBar = Object::cast_to<ScrollBarNode>(element->getNode());
                 return new ScrollBar(scrollBar);
             }

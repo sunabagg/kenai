@@ -42,6 +42,10 @@ namespace sunaba::desktop {
             ),
             "getRect", &StatusIndicator::getRect,
             "cast", [](Element* e) {
+                auto* ce = dynamic_cast<StatusIndicator*>(e);
+                if (ce != nullptr) {
+                    return ce;
+                }
                 StatusIndicatorNode* indicator = Object::cast_to<StatusIndicatorNode>(e->getNode());
                 return new StatusIndicator(indicator);
             }

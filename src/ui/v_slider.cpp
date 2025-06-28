@@ -128,6 +128,10 @@ namespace sunaba::ui {
             ),
             sol::base_classes, sol::bases<BaseObject, Element, sunaba::core::CanvasItem, Control, Range, Slider>(),
             "cast", [] (Element* element) {
+                auto* ce = dynamic_cast<VSlider*>(element);
+                if (ce != nullptr) {
+                    return ce;
+                }
                 VSliderNode* vSlider = Object::cast_to<VSliderNode>(element->getNode());
                 return new VSlider(vSlider);
             }

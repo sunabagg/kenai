@@ -426,6 +426,10 @@ namespace sunaba::ui {
             "setColumnTitleLanguage", &Tree::setColumnTitleLanguage,
             "setSelected", &Tree::setSelected,
             "cast", [](Element* element) {
+                auto* ce = dynamic_cast<Tree*>(element);
+                if (ce != nullptr) {
+                    return ce;
+                }
                 godot::Tree* treeNode = Object::cast_to<godot::Tree>(element->getNode());
                 return new Tree(treeNode);
             }

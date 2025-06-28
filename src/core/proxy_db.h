@@ -11,6 +11,7 @@
 
 namespace sunaba::core
 {
+
     class ProxyDb
     {
     private:

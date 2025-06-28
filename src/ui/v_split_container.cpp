@@ -136,6 +136,10 @@ namespace sunaba::ui {
             ),
             sol::base_classes, sol::bases<BaseObject, Element, sunaba::core::CanvasItem, Control, Container, SplitContainer>(),
             "cast", [](Element* element) {
+                auto* ce = dynamic_cast<VSplitContainer*>(element);
+                if (ce != nullptr) {
+                    return ce;
+                }
                 VSplitContainerNode* node = Object::cast_to<VSplitContainerNode>(element->getNode());
                 return new VSplitContainer(node);
             }

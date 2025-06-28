@@ -140,6 +140,10 @@ namespace sunaba::ui {
                 &PanelContainer::setMouseFilter
             ),
             "cast", [](Element* e) {
+                auto* ce = dynamic_cast<PanelContainer*>(e);
+                if (ce != nullptr) {
+                    return ce;
+                }
                 PanelContainerNode* panel_container = Object::cast_to<PanelContainerNode>(e->getNode());
                 return new PanelContainer(panel_container);
             }

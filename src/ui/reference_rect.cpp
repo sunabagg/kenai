@@ -124,6 +124,10 @@ namespace sunaba::ui {
             "borderColor", sol::property(&ReferenceRect::getBorderColor, &ReferenceRect::setBorderColor),
             "borderWidth", sol::property(&ReferenceRect::getBorderWidth, &ReferenceRect::setBorderWidth),
             "cast", [] (Element* element) {
+                auto* ce = dynamic_cast<ReferenceRect*>(element);
+                if (ce != nullptr) {
+                    return ce;
+                }
                 ReferenceRectNode* referenceRect = Object::cast_to<ReferenceRectNode>(element->getNode());
                 return new ReferenceRect(referenceRect);
             }

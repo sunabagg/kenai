@@ -149,6 +149,10 @@ namespace sunaba::ui {
                 &CheckBox::setToggleMode
             ),
             "cast", [](sunaba::core::Element* e) {
+                auto* ce = dynamic_cast<CheckBox*>(e);
+                if (ce != nullptr) {
+                    return ce;
+                }
                 CheckBoxNode* checkBox = Object::cast_to<CheckBoxNode>(e->getNode());
                 return new CheckBox(checkBox);
             }

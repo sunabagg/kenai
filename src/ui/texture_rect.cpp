@@ -129,6 +129,10 @@ namespace sunaba::ui {
             "stretchMode", sol::property(&TextureRect::getStretchMode, &TextureRect::setStretchMode),
             "texture", sol::property(&TextureRect::getTexture, &TextureRect::setTexture),
             "cast", [](Element* element) {
+                auto* ce = dynamic_cast<TextureRect*>(element);
+                if (ce != nullptr) {
+                    return ce;
+                }
                 TextureRectNode* node = Object::cast_to<TextureRectNode>(element->getNode());
                 return new TextureRect(node);
             }

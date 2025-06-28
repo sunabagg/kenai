@@ -204,21 +204,9 @@ namespace sunaba::core {
             }
         }
 
-        Element* find(const std::string& name) {
-            NodePath path = NodePath(name.c_str());
-            auto node = getNode()->get_node<Node>(path);
-            if (node != nullptr) {
-                return new Element(node);
-            }
-            return nullptr;
-        }
+        Element* find(const std::string& name);
 
-        Element* getParent() {
-            if (isRootElement) {
-                return nullptr; // If this is the root node, it has no parent
-            }
-            return new Element(getNode()->get_parent());
-        }
+        Element* getParent();
 
         void addChild(Element* child) {
             if (child != nullptr) {
@@ -241,18 +229,7 @@ namespace sunaba::core {
             }
         }
 
-        std::vector<Element*> getChildren() {
-            auto childrenNodes = node->get_children();
-            std::vector<Element*> result;
-            for (int i = 0; i < childrenNodes.size(); ++i) {
-                Node* childNode = Object::cast_to<Node>(childrenNodes[i].operator Object*());
-                if (childNode != nullptr) {
-                    Element* childElement = new Element(childNode);
-                    result.push_back(childElement);
-                }
-            }
-            return result;
-        }
+        std::vector<Element*> getChildren();
 
         virtual void onInit() {
             // Initialization logic for the element

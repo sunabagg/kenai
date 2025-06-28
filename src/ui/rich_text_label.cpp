@@ -364,6 +364,10 @@ namespace sunaba::ui {
             "setTableColumnExpand", &RichTextLabel::setTableColumnExpand,
             "updateImage", &RichTextLabel::updateImage,
             "cast", [](Element* e) {
+                auto* ce = dynamic_cast<RichTextLabel*>(e);
+                if (ce != nullptr) {
+                    return ce;
+                }
                 RichTextLabelNode* node = Object::cast_to<RichTextLabelNode>(e->getNode());
                 return new RichTextLabel(node);
             }

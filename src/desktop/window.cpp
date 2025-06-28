@@ -426,6 +426,10 @@ namespace sunaba::desktop {
             "startDrag", &Window::startDrag,
             "startResize", &Window::startResize,
             "cast", [](Element* e) {
+                auto* ce = dynamic_cast<Window*>(e);
+                if (ce != nullptr) {
+                    return ce;
+                }
                 WindowNode* window = Object::cast_to<WindowNode>(e->getNode());
                 return new Window(window);
             }

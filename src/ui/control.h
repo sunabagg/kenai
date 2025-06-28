@@ -391,6 +391,10 @@ namespace sunaba::ui {
             }
 
             Element* getShortcutContext() {
+                auto* e = ProxyDb::getElement(control->get_shortcut_context());
+                if (e != nullptr) {
+                    return e;
+                }
                 return new Element(control->get_shortcut_context());
             }
 

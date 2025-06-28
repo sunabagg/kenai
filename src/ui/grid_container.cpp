@@ -137,6 +137,10 @@ namespace sunaba::ui {
             sol::base_classes, sol::bases<BaseObject, Element, sunaba::core::CanvasItem, Control, Container>(),
             "columns", sol::property(&GridContainer::getColumns, &GridContainer::setColumns),
             "cast", [](Element* element) {
+                auto* ce = dynamic_cast<GridContainer*>(element);
+                if (ce != nullptr) {
+                    return ce;
+                }
                 GridContainerNode* node = Object::cast_to<GridContainerNode>(element->getNode());
                 return new GridContainer(node);
             }

@@ -192,6 +192,10 @@ namespace sunaba::desktop {
             "toggleItemChecked", &PopupMenu::toggleItemChecked,
             "toggleItemMultistate", &PopupMenu::toggleItemMultistate,
             "cast", [](Element* e) {
+                auto* ce = dynamic_cast<PopupMenu*>(e);
+                if (ce != nullptr) {
+                    return ce;
+                }
                 PopupMenuNode* popup_menu = Object::cast_to<PopupMenuNode>(e->getNode());
                 return new PopupMenu(popup_menu);
             }

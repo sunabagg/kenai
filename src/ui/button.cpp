@@ -197,6 +197,10 @@ namespace sunaba::ui {
                 &Button::setVerticalIconAlignment
             ),
             "cast", [](sunaba::core::Element* e) {
+                auto* ce = dynamic_cast<Button*>(e);
+                if (ce != nullptr) {
+                    return ce;
+                }
                 ButtonNode* button = Object::cast_to<ButtonNode>(e->getNode());
                 return new Button(button);
             }

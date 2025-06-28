@@ -104,6 +104,10 @@ namespace sunaba::desktop {
                 &Popup::setWrapControls
             ),
             "cast", [](Element* e) {
+                auto* ce = dynamic_cast<Popup*>(e);
+                if (ce != nullptr) {
+                    return ce;
+                }
                 PopupNode* popup = Object::cast_to<PopupNode>(e->getNode());
                 return new Popup(popup);
             }
