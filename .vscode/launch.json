@@ -125,7 +125,7 @@
         },
         {
             "name": "Linux Launch (Local)",
-            "type": "cppdbg",
+            "type": "lldb",
             "request": "launch",
             "program": "${env:HOME}/Applications/godot/godot",
             "args": [
@@ -134,11 +134,10 @@
             "cwd": "${command:cmake.buildDirectory}/sunaba",
             "preLaunchTask": "CMake: build",
             "internalConsoleOptions": "openOnSessionStart",
-            "visualizerFile": "${workspaceFolder}/.vscode/godot.natvis"
         },
         {
             "name": "Linux Launch (Local) (test6)",
-            "type": "cppdbg",
+            "type": "lldb",
             "request": "launch",
             "program": "${env:HOME}/Applications/godot/godot",
             "args": [
@@ -148,11 +147,10 @@
             "cwd": "${command:cmake.buildDirectory}/sunaba",
             "preLaunchTask": "CMake: build",
             "internalConsoleOptions": "openOnSessionStart",
-            "visualizerFile": "${workspaceFolder}/.vscode/godot.natvis"
         },
         {
             "name": "Linux Launch (Local) (test7)",
-            "type": "cppdbg",
+            "type": "lldb",
             "request": "launch",
             "program": "${env:HOME}/Applications/godot/godot",
             "args": [
@@ -162,11 +160,10 @@
             "cwd": "${command:cmake.buildDirectory}/sunaba",
             "preLaunchTask": "CMake: build",
             "internalConsoleOptions": "openOnSessionStart",
-            "visualizerFile": "${workspaceFolder}/.vscode/godot.natvis"
         },
         {
             "name": "Linux Launch (Local) (test8)",
-            "type": "cppdbg",
+            "type": "lldb",
             "request": "launch",
             "program": "${env:HOME}/Applications/godot/godot",
             "args": [
@@ -176,11 +173,10 @@
             "cwd": "${command:cmake.buildDirectory}/sunaba",
             "preLaunchTask": "CMake: build",
             "internalConsoleOptions": "openOnSessionStart",
-            "visualizerFile": "${workspaceFolder}/.vscode/godot.natvis"
         },
         {
             "name": "Linux Launch (Local) (test3)",
-            "type": "cppdbg",
+            "type": "lldb",
             "request": "launch",
             "program": "${env:HOME}/Applications/godot/godot",
             "args": [
@@ -190,7 +186,20 @@
             "cwd": "${command:cmake.buildDirectory}/sunaba",
             "preLaunchTask": "CMake: build",
             "internalConsoleOptions": "openOnSessionStart",
-            "visualizerFile": "${workspaceFolder}/.vscode/godot.natvis"
+        },
+        {
+            "name": "Linux Launch (Local) (player)",
+            "type": "lldb",
+            "request": "launch",
+            "program": "${env:HOME}/Applications/godot/godot",
+            "args": [
+                "--verbose",
+                "--path",
+                "${env:HOME}/sunaba-player/template"
+            ],
+            "cwd": "${command:cmake.buildDirectory}/sunaba",
+            "preLaunchTask": "CMake: build",
+            "internalConsoleOptions": "openOnSessionStart",
         },
         {
             "name": "macOS Launch (Local)",
