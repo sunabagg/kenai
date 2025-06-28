@@ -8,4 +8,5 @@ extern class Runtime extends Element {
     public function load(path: String): Void;
     public function initMobdebug(): Void;
     public function startMobdebug(?host: String, ?port: Int): Void;
+    public function stopMobdebug(): Void;
 }
