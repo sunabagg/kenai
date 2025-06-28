@@ -589,4 +589,15 @@ class Widget {
         }
         return result;
     }
+
+    private function getUsertypeName(obj: Any) : String {
+        var metatable = untyped __lua__("getmetatable(obj)");
+        if (metatable != null) {
+            var name : String = untyped __lua__("metatable.__name");
+            if (name != null) {
+                return name;
+            }
+        }
+        return "";
+    }
 }
