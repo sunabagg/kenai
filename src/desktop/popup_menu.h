@@ -80,21 +80,20 @@ namespace sunaba::desktop {
             }
         public:
             PopupMenu() {
-                setPopup(memnew(PopupMenuNode));
+                setPopupMenu(memnew(PopupMenuNode));
                 onInit();
             }
 
             PopupMenu(PopupMenuNode* popup_menu) {
-                setPopup(popup_menu);
-                onInit();
+                setPopupMenu(popup_menu);
             }
 
             PopupMenuNode* getPopupMenu() const {
                 return popup_menu;
             }
 
-            void setPopupMenu(PopupMenuNode* popup_menu) {
-                this->popup_menu = popup_menu;
+            void setPopupMenu(PopupMenuNode* p_menu) {
+                popup_menu = p_menu;
                 connectPopupMenuSignals();
                 setPopup(popup_menu);
             }
@@ -138,7 +137,7 @@ namespace sunaba::desktop {
                 popup_menu->set_hide_on_state_item_selection(hide_on_state_item_selection);
             }
 
-            int getItemCount() const {
+            int32_t getItemCount() const {
                 return popup_menu->get_item_count();
             }
 
