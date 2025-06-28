@@ -295,12 +295,12 @@ namespace sunaba::core {
             "notifyMouseEntered", &Viewport::notifyMouseEntered,
             "pushInput", sol::factories(
                 [](Viewport* v, sunaba::input::InputEvent* event) { v->pushInput(event); },
-                [](Viewport* v, sunaba::input::InputEvent* event, bool inLocalCoords ) { v->pushInput(event, inLocalCoords); },
+                [](Viewport* v, sunaba::input::InputEvent* event, bool inLocalCoords ) { v->pushInput(event, inLocalCoords); }
             ),
             "pushTextInput", &Viewport::pushTextInput,
             "pushUnhandledInput", sol::factories(
                 [](Viewport* v, sunaba::input::InputEvent* event) { v->pushUnhandledInput(event); },
-                [](Viewport* v, sunaba::input::InputEvent* event, bool inLocalCoords ) { v->pushUnhandledInput(event, inLocalCoords); },
+                [](Viewport* v, sunaba::input::InputEvent* event, bool inLocalCoords ) { v->pushUnhandledInput(event, inLocalCoords); }
             ),
             "setCanvasCullMaskBit", &Viewport::setCanvasCullMaskBit,
             "setInputAsHandled", &Viewport::setInputAsHandled,
