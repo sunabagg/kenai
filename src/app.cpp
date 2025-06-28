@@ -291,6 +291,9 @@ void App::initState(bool sandboxed) {
     sunaba::spatial::bindSpatialClasses(global_state);
     sunaba::ui::bindUIClasses(global_state);
     sunaba::desktop::bindDesktopClasses(global_state);
+    if (!sandboxed) {
+        bindRuntime(global_state);
+    }
 
     auto* rootElement = new sunaba::core::Element(this);
     rootElement->isRootElement = true;
