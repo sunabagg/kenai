@@ -1,7 +1,6 @@
 package sunaba.ui;
 
 import sunaba.desktop.PopupMenu;
-import sunaba.core.GlobalObjectStack;
 import haxe.DynamicAccess;
 import sunaba.core.FontFile;
 import sunaba.core.Texture;
