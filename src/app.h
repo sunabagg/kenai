@@ -9,10 +9,11 @@
 #define SOL_ALL_SAFETIES_ON 1
 #include <sol/state.hpp>
 
-#include "core/scene_system.h"
+#include "core/element.h"
 #include "core/io/io_manager.h"
 
 using namespace godot;
+using namespace sunaba::core;
 
 namespace sunaba
 {
@@ -45,6 +46,30 @@ namespace sunaba
         // Lua file loading
         static int loadFileRequire(lua_State* L);
     private:
+    };
+
+    class Runtime : public Element {
+        private:
+            App* app = nullptr;
+            
+        public:
+            Runtime() {
+                setApp(memnew(App));
+                onInit();
+            }
+
+            Runtime(App* a) {
+                setApp(a);
+            }
+
+            App* getApp() {
+                return app;
+            }
+
+            void setApp(App* a) {
+                app = a;
+                setNode(a);
+            }
     };
 }
 
