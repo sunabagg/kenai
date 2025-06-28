@@ -440,7 +440,14 @@ class Widget {
         for (child in children) {
             if (child.nodeName == "menuItem") {
                 var attributes = child.attributes();
-                var label = xml.get("label");
+                var label : String = "<insert-text-here>";
+                for (attrib in attributes) {
+                    var attributeName = attrib;
+                    var attributeValue = xml.get(attributeName);
+                    if (attributeName == "label")
+                        label = attributeValue;
+                }
+                trace(label);
                 var id = menu.itemCount;
                 menu.addItem(label, id);
                 for (attrib in attributes) {
