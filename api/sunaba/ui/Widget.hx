@@ -151,9 +151,6 @@ class Widget {
         for (node in nodes) {
             var element = construct(node);
             elementdb.push(element);
-            // stupid hack to make sure the element is added to the global object stack
-            // so that the program doesn't fucking crash
-            GlobalObjectStack.getSingleton().stack.push(new sunaba.core.StackHandle(element));
             if (element != null && element.isNull() == false) {
                 rootElement.addChild(element);
             }
