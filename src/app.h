@@ -78,6 +78,10 @@ namespace sunaba
             void loadAndExecuteSbx(const std::string &path) {
                 app->loadAndExecuteSbx(path.c_str());
             }
+
+            void initMobdebug() {
+                app->initMobdebug();
+            }
     };
 }
 
