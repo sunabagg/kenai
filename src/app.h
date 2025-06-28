@@ -37,8 +37,6 @@ namespace sunaba
 
         void start( const String &path );
 
-        sunaba::core::Scene* createScene();
-
         // Mobdebug support
         void initMobdebug();
         void startMobdebug(const String& host = "localhost", int port = 8172);

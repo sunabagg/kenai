@@ -302,11 +302,6 @@ void App::initState(bool sandboxed) {
     ////sunaba::core::bind_all_godot_classes( global_state );
     //sunaba::core::initialize_lua( global_state );
 
-    global_state.set_function( "createScene", [this]() {
-        return createScene();
-    });
-
-
     auto fsio = FileSystemIo::create(ProjectSettings::get_singleton()->globalize_path("res://corelib/").utf8().get_data(), "corelib://");
     //UtilityFunctions::print(fsio->basePath.c_str());
     ioManager->add(fsio);
@@ -437,14 +432,6 @@ void App::start( const String &path) {
 
 void App::_process(double delta) {
     global_state.collect_garbage();
-}
-
-Scene* App::createScene() {
-    auto sceneNode = memnew( SceneNode );
-    auto scene = sceneNode->getScene();
-    add_child(sceneNode);
-    scene->viewport = get_viewport();
-    return scene;
 }
 
 void App::initMobdebug() {
