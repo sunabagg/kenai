@@ -263,7 +263,7 @@ class Widget {
                     else if (Std.isOfType(currentValue, String)) {
                         setProperty(element, attributeName, attributeValue);
                     }
-                    else if (Std.isOfType(currentValue, Vector2)) {
+                    else if (getUsertypeName(currentValue) == "Vector2") {
                         var xy = attributeValue.split(",");
                         if (xy.length == 2) {
                             var x = Std.parseFloat(xy[0]);
@@ -274,7 +274,7 @@ class Widget {
                             throw "Invalid Vector2 value for field '" + attributeName + "' in element '" + Type.getClassName(Type.getClass(element)) + "'";
                         }
                     }
-                    else if (Std.isOfType(currentValue, Vector3)) {
+                    else if (getUsertypeName(currentValue) == "Vector3") {
                         var xyz = attributeValue.split(",");
                         if (xyz.length == 3) {
                             var x = Std.parseFloat(xyz[0]);
@@ -286,7 +286,7 @@ class Widget {
                             throw "Invalid Vector3 value for field '" + attributeName + "' in element '" + Type.getClassName(Type.getClass(element)) + "'";
                         }
                     }
-                    else if (Std.isOfType(currentValue, Vector4)) {
+                    else if (getUsertypeName(currentValue) == "Vector4") {
                         var xyzw = attributeValue.split(",");
                         if (xyzw.length == 4) {
                             var x = Std.parseFloat(xyzw[0]);
@@ -299,7 +299,7 @@ class Widget {
                             throw "Invalid Vector4 value for field '" + attributeName + "' in element '" + Type.getClassName(Type.getClass(element)) + "'";
                         }
                     }
-                    else if (Std.isOfType(currentValue, Vector2i)) {
+                    else if (getUsertypeName(currentValue) == "Vector2i") {
                         var xy = attributeValue.split(",");
                         if (xy.length == 2) {
                             var x = Std.parseInt(xy[0]);
@@ -310,7 +310,7 @@ class Widget {
                             throw "Invalid Vector2i value for field '" + attributeName + "' in element '" + Type.getClassName(Type.getClass(element)) + "'";
                         }
                     }
-                    else if (Std.isOfType(currentValue, Vector3i)) {
+                    else if (getUsertypeName(currentValue) == "Vector3i") {
                         var xyz = attributeValue.split(",");
                         if (xyz.length == 3) {
                             var x = Std.parseInt(xyz[0]);
@@ -322,7 +322,7 @@ class Widget {
                             throw "Invalid Vector3i value for field '" + attributeName + "' in element '" + Type.getClassName(Type.getClass(element)) + "'";
                         }
                     }
-                    else if (Std.isOfType(currentValue, Vector4i)) {
+                    else if (getUsertypeName(currentValue) == "Vector4i") {
                         var xyzw = attributeValue.split(",");
                         if (xyzw.length == 4) {
                             var x = Std.parseInt(xyzw[0]);
@@ -335,7 +335,7 @@ class Widget {
                             throw "Invalid Vector4i value for field '" + attributeName + "' in element '" + Type.getClassName(Type.getClass(element)) + "'";
                         }
                     }
-                    else if (Std.isOfType(currentValue, Color)) {
+                    else if (getUsertypeName(currentValue) == "Color") {
                         var color = Color.html(attributeValue);
                         if (color != null) {
                             setProperty(element, attributeName, color);
@@ -344,7 +344,7 @@ class Widget {
                             throw "Invalid Color value for field '" + attributeName + "' in element '" + Type.getClassName(Type.getClass(element)) + "'";
                         }
                     }
-                    else if (Std.isOfType(currentValue, Texture2D)) {
+                    else if (getUsertypeName(currentValue) == "Texture2D") {
                         var image = Image.loadFromFile(attributeValue);
                         if (image != null) {
                             var texture = ImageTexture.createFromImage(image);
@@ -359,7 +359,7 @@ class Widget {
                             throw "Failed to load image from file for field '" + attributeName + "' in element '" + Type.getClassName(Type.getClass(element)) + "'";
                         }
                     }
-                    else if (Std.isOfType(currentValue, Texture)) {
+                    else if (getUsertypeName(currentValue) == "Texture") {
                         var image = Image.loadFromFile(attributeValue);
                         if (image != null) {
                             var texture = ImageTexture.createFromImage(image);
@@ -367,7 +367,7 @@ class Widget {
                                 setProperty(element, attributeName, texture);
                             }
                             else {
-                                throw "Failed to create Texture2D from image for field '" + attributeName + "' in element '" + Type.getClassName(Type.getClass(element)) + "'";
+                                throw "Failed to create Texture from image for field '" + attributeName + "' in element '" + Type.getClassName(Type.getClass(element)) + "'";
                             }
                         }
                         else {
