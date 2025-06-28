@@ -74,6 +74,10 @@ namespace sunaba
             void initState(bool sandboxed = true) {
                 app->initState(sandboxed);
             }
+
+            void loadAndExecuteSbx(const std::string &path) {
+                app->loadAndExecuteSbx(path.c_str());
+            }
     };
 }
 
