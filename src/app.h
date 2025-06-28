@@ -48,6 +48,8 @@ namespace sunaba
     private:
     };
 
+    void bindRuntime(sol::state& lua);
+
     class Runtime : public Element {
         private:
             App* app = nullptr;

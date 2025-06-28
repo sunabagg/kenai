@@ -515,3 +515,27 @@ void App::stopMobdebug() {
         UtilityFunctions::print("Failed to stop MobDebug: " + String(err.what()));
     }
 }
+
+namespace sunaba {
+    void bindRuntime(sol::state& lua) {
+        lua.new_usertype<Runtime>("Runtime"
+            "new", sol::factories(
+                []() { return new Runtime(); }
+            ),
+            sol::base_classes, sol::bases<BaseObject, Element>(),
+            "init", &Runtime::initState,
+            "load", &Runtime::loadAndExecuteSbx,
+            "initMobdebug", &Runtime::initMobdebug,
+            "startMobdebug", &Runtime::startMobdebug,
+            "stopMobdebug", &Runtime::stopMobdebug,
+            "cast", [](Element* element) {
+                auto* ce = dynamic_cast<Runtime*>(element);
+                if (ce != nullptr) {
+                    return ce;
+                }
+                App* node = Object::cast_to<App>(element->getNode());
+                return new Runtime(node);
+            }
+        );
+    }
+}
