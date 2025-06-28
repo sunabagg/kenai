@@ -12,3 +12,13 @@ extern class Runtime extends Element {
     @:native("cast")
     public static function toRuntime(obj: Any): Runtime;
 }
+
+abstract RuntimeAbstract(Runtime) from Runtime to Runtime {
+    @:from
+    public static function fromElement(e: Element): RuntimeAbstract {
+        var runtime = Runtime.toRuntime(e);
+        if (e.isNull())
+            return null;
+        return runtime;
+    }
+}
