@@ -473,14 +473,14 @@ namespace sunaba::core {
                 viewport->set_world_3d(Ref<godot::World3D>(world->getWorld3D()));
             }
 
-            Event* guiFocusChangedEvent;
+            Event* guiFocusChangedEvent = new Event();
             Event* getGuiFocusChangedEvent() {
                 return guiFocusChangedEvent;
             }
             void setGuiFocusChangedEvent(Event* event) {
                 guiFocusChangedEvent = event;
             }
-            Event* sizeChangedEvent;
+            Event* sizeChangedEvent = new Event();
             Event* getSizeChangedEvent() {
                 return sizeChangedEvent;
             }
