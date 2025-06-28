@@ -45,7 +45,6 @@ namespace sunaba
         
         // Lua file loading
         static int loadFileRequire(lua_State* L);
-    private:
     };
 
     void bindRuntime(sol::state& lua);
