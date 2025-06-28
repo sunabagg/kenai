@@ -526,10 +526,17 @@ namespace sunaba {
                 []() { return new Runtime(); }
             ),
             sol::base_classes, sol::bases<BaseObject, Element>(),
-            "init", &Runtime::initState,
+            "init", sol::factories(
+                [](Runtime* rt) { rt->initState(); },
+                [](Runtime* rt, bool sandboxed) { rt->initState(sandboxed); }
+            ),
             "load", &Runtime::loadAndExecuteSbx,
             "initMobdebug", &Runtime::initMobdebug,
-            "startMobdebug", &Runtime::startMobdebug,
+            "startMobdebug", sol::factories(
+                [](Runtime* rt) { rt->startMobdebug(); },
+                [](Runtime* rt, const std::string host ) { rt->startMobdebug(host); },
+                [](Runtime* rt, const std::string host, int port ) { rt->startMobdebug(host, port); }
+            ),
             "stopMobdebug", &Runtime::stopMobdebug,
             "cast", [](Element* element) {
                 auto* ce = dynamic_cast<Runtime*>(element);
