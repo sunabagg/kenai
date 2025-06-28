@@ -9,4 +9,6 @@ extern class Runtime extends Element {
     public function initMobdebug(): Void;
     public function startMobdebug(?host: String, ?port: Int): Void;
     public function stopMobdebug(): Void;
+    @:native("cast")
+    public static function toRuntime(obj: Any): Runtime;
 }
