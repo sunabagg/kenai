@@ -7,4 +7,5 @@ extern class Runtime extends Element {
     public function init(?sandboxed: Bool): Void;
     public function load(path: String): Void;
     public function initMobdebug(): Void;
+    public function startMobdebug(?host: String, ?port: Int): Void;
 }
