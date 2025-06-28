@@ -70,6 +70,10 @@ namespace sunaba
                 app = a;
                 setNode(a);
             }
+
+            void initState(bool sandboxed = true) {
+                app->initState(sandboxed);
+            }
     };
 }
 
