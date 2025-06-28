@@ -82,6 +82,10 @@ namespace sunaba
             void initMobdebug() {
                 app->initMobdebug();
             }
+
+            void startMobdebug(const std::string& host = "localhost", int port = 8172) {
+                app->startMobdebug(host.c_str(), port);
+            }
     };
 }
 
