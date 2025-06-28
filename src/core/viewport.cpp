@@ -293,9 +293,15 @@ namespace sunaba::core {
             "guiReleaseFocus", &Viewport::guiReleaseFocus,
             "isInputHandled", &Viewport::isInputHandled,
             "notifyMouseEntered", &Viewport::notifyMouseEntered,
-            "pushInput", &Viewport::pushInput,
+            "pushInput", sol::factories(
+                [](Viewport* v, sunaba::input::InputEvent* event) { v->pushInput(event); },
+                [](Viewport* v, sunaba::input::InputEvent* event, bool inLocalCoords ) { v->pushInput(event, inLocalCoords); },
+            ),
             "pushTextInput", &Viewport::pushTextInput,
-            "pushUnhandledInput", &Viewport::pushUnhandledInput,
+            "pushUnhandledInput", sol::factories(
+                [](Viewport* v, sunaba::input::InputEvent* event) { v->pushUnhandledInput(event); },
+                [](Viewport* v, sunaba::input::InputEvent* event, bool inLocalCoords ) { v->pushUnhandledInput(event, inLocalCoords); },
+            ),
             "setCanvasCullMaskBit", &Viewport::setCanvasCullMaskBit,
             "setInputAsHandled", &Viewport::setInputAsHandled,
             "setPositionalShadowAtlasQuadrantSubdiv", &Viewport::setPositionalShadowAtlasQuadrantSubdiv,
