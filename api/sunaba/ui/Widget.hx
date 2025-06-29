@@ -432,15 +432,15 @@ class Widget {
                     if (isControl(element)) {
                         var control: Control = cast element;
                         var snakeCaseName = camelToSnake(attributeName);
-                        if (control.hasThemeConstantOverride(snakeCaseName)) {
+                        if (control.hasThemeConstant(snakeCaseName)) {
                             control.addThemeConstantOverride(snakeCaseName, Variant.fromInt64(Std.parseInt(attributeValue)));
                             continue;
                         }
-                        else if (control.hasThemeFontSizeOverride(snakeCaseName)) {
+                        else if (control.hasThemeFontSize(snakeCaseName)) {
                             control.addThemeFontSizeOverride(snakeCaseName, Std.parseFloat(attributeValue));
                             continue;
                         }
-                        else if (control.hasThemeColorOverride(snakeCaseName)) {
+                        else if (control.hasThemeColor(snakeCaseName)) {
                             var color = Color.html(attributeValue);
                             if (color != null) {
                                 control.addThemeColorOverride(snakeCaseName, color);
@@ -450,7 +450,7 @@ class Widget {
                                 throw "Invalid Color value for field '" + attributeName + "' in element '" + Type.getClassName(Type.getClass(element)) + "'";
                             }
                         }
-                        else if (control.hasThemeFontOverride(snakeCaseName)) {
+                        else if (control.hasThemeFont(snakeCaseName)) {
                             var fontFile = new FontFile();
                             var res = fontFile.loadDynamicFont(attributeValue);
                             if (res != 0) {
@@ -462,7 +462,7 @@ class Widget {
                             control.addThemeFontOverride(snakeCaseName, fontFile);
                             continue;
                         }
-                        else if (control.hasThemeIconOverride(snakeCaseName)) {
+                        else if (control.hasThemeIcon(snakeCaseName)) {
                             var image = Image.loadFromFile(attributeValue);
                             if (image != null) {
                                 var texture = ImageTexture.createFromImage(image);
