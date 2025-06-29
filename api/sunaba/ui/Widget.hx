@@ -374,12 +374,7 @@ class Widget {
                             throw "Failed to load image from file for field '" + attributeName + "' in element '" + Type.getClassName(Type.getClass(element)) + "'";
                         }
                     }
-                    else {
-                        throw "Unsupported type for field '" + attributeName + "' in element '" + Type.getClassName(Type.getClass(element)) + "'";
-                    }
-                }
-                else {
-                    if (Std.isOfType(element, Control)) {
+                    else if (isControl(element)) {
                         var control: Control = cast element;
                         var snakeCaseName = camelToSnake(attributeName);
                         if (control.hasThemeConstantOverride(snakeCaseName)) {
@@ -429,7 +424,64 @@ class Widget {
                             }
                         }
                     }
-                    throw "Unknown field '" + attributeName + "' in element '" + Type.getClassName(Type.getClass(element)) + "'";
+                    else {
+                        throw "Unknown field '" + attributeName + "' in element '" + getUsertypeName(element) + "'";
+                    }
+                }
+                else {
+                    if (isControl(element)) {
+                        var control: Control = cast element;
+                        var snakeCaseName = camelToSnake(attributeName);
+                        if (control.hasThemeConstantOverride(snakeCaseName)) {
+                            control.addThemeConstantOverride(snakeCaseName, Variant.fromInt64(Std.parseInt(attributeValue)));
+                            continue;
+                        }
+                        else if (control.hasThemeFontSizeOverride(snakeCaseName)) {
+                            control.addThemeFontSizeOverride(snakeCaseName, Std.parseFloat(attributeValue));
+                            continue;
+                        }
+                        else if (control.hasThemeColorOverride(snakeCaseName)) {
+                            var color = Color.html(attributeValue);
+                            if (color != null) {
+                                control.addThemeColorOverride(snakeCaseName, color);
+                                continue;
+                            }
+                            else {
+                                throw "Invalid Color value for field '" + attributeName + "' in element '" + Type.getClassName(Type.getClass(element)) + "'";
+                            }
+                        }
+                        else if (control.hasThemeFontOverride(snakeCaseName)) {
+                            var fontFile = new FontFile();
+                            var res = fontFile.loadDynamicFont(attributeValue);
+                            if (res != 0) {
+                                res = fontFile.loadBitmapFont(attributeValue);
+                                if (res != 0) {
+                                    throw "Failed to load Font for field '" + attributeName + "' in element '" + Type.getClassName(Type.getClass(element)) + "'";
+                                }
+                            }
+                            control.addThemeFontOverride(snakeCaseName, fontFile);
+                            continue;
+                        }
+                        else if (control.hasThemeIconOverride(snakeCaseName)) {
+                            var image = Image.loadFromFile(attributeValue);
+                            if (image != null) {
+                                var texture = ImageTexture.createFromImage(image);
+                                if (texture != null) {
+                                    control.addThemeIconOverride(snakeCaseName, texture);
+                                    continue;
+                                }
+                                else {
+                                    throw "Failed to create Texture2D from image for field '" + attributeName + "' in element '" + Type.getClassName(Type.getClass(element)) + "'";
+                                }
+                            }
+                            else {
+                                throw "Failed to load image from file for field '" + attributeName + "' in element '" + Type.getClassName(Type.getClass(element)) + "'";
+                            }
+                        }
+                    }
+                    else {
+                        throw "Unsupported type for field '" + attributeName + "' in element '" + getUsertypeName(element) + "'";
+                    }
                 }
             }
         }
@@ -588,6 +640,11 @@ class Widget {
             result += c.toLowerCase();
         }
         return result;
+    }
+
+    private function isControl(e: Element): Bool {
+        var bool : Bool = untyped __lua__("e['hasThemeConstantOverride'] ~= nil");
+        return bool;
     }
 
     private function getUsertypeName(obj: Any) : String {
