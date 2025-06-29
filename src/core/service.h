@@ -4,6 +4,8 @@
 #include <sol/sol.hpp>
 
 namespace sunaba::core {
+    void bindService(sol::state& lua);
+
     class ServiceInstance;
 
     class Service {  
