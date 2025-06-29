@@ -3,6 +3,7 @@ target_sources(${PROJECT_NAME} PRIVATE
         convert_godot_lua.cpp
         base_object.h
         base_object.cpp
+        service.h
         base_object_proxy.h
         stl_function_wrapper.h
         event.h
