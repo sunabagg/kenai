@@ -554,31 +554,31 @@ namespace sunaba::ui {
                 control->accept_event();
             }
 
-            void addThemeColorOverride(String name, Color color) {
-                control->add_theme_color_override(name, color);
+            void addThemeColorOverride(const std::string& name, Color color) {
+                control->add_theme_color_override(name.c_str(), color);
             }
 
-            void addThemeConstantOverride(String name, Variant constant) {
-                control->add_theme_constant_override(name, constant);
+            void addThemeConstantOverride(const std::string& name, Variant constant) {
+                control->add_theme_constant_override(name.c_str(), constant);
             }
 
-            void addThemeFontOverride(String name, sunaba::core::Font* font) {
+            void addThemeFontOverride(const std::string& name, sunaba::core::Font* font) {
                 Ref<godot::Font> fontRef = Ref<godot::Font>(font->getFont());
-                control->add_theme_font_override(name, fontRef);
+                control->add_theme_font_override(name.c_str(), fontRef);
             }
 
-            void addThemeFontSizeOverride(String name, int size) {
-                control->add_theme_font_size_override(name, size);
+            void addThemeFontSizeOverride(const std::string& name, int size) {
+                control->add_theme_font_size_override(name.c_str(), size);
             }
 
-            void addThemeIconOverride(String name, sunaba::core::Texture2D* texture) {
+            void addThemeIconOverride(const std::string& name, sunaba::core::Texture2D* texture) {
                 Ref<godot::Texture2D> textureRef = Ref<godot::Texture2D>(texture->getTexture());
-                control->add_theme_icon_override(name, textureRef);
+                control->add_theme_icon_override(name.c_str(), textureRef);
             }
 
-            void addThemeStyleboxOverride(String name, sunaba::ui::StyleBox* styleBox) {
+            void addThemeStyleboxOverride(const std::string& name, sunaba::ui::StyleBox* styleBox) {
                 Ref<godot::StyleBox> styleBoxRef = Ref<godot::StyleBox>(styleBox->getStyleBox());
-                control->add_theme_stylebox_override(name, styleBoxRef);
+                control->add_theme_stylebox_override(name.c_str(), styleBoxRef);
             }
 
             void beginBulkThemeOveride() {
