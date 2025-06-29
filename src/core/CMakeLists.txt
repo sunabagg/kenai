@@ -4,6 +4,7 @@ target_sources(${PROJECT_NAME} PRIVATE
         base_object.h
         base_object.cpp
         service.h
+        service.cpp
         base_object_proxy.h
         stl_function_wrapper.h
         event.h
