@@ -61,6 +61,7 @@ void sunaba::core::bindCoreClasses(sol::state& lua) {
     bindNoise(lua);
     bindTexture(lua);
     bindTexture2D(lua);
+    bindImageTexture(lua);
     bindAnimatedTexture(lua);
     bindAtlasTexture(lua);
     bindImageTextureLayered(lua);
