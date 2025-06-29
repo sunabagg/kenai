@@ -345,10 +345,10 @@ class Widget {
                         }
                     }
                     else if (getUsertypeName(currentValue) == "sol.sunaba::core::Texture2D") {
-                        var image = Image.loadFromFile(attributeValue);
+                        var image = Image.loadFromFile(io, attributeValue);
                         if (image != null) {
                             var texture = ImageTexture.createFromImage(image);
-                            if (texture != null) {
+                            if (texture != null && !texture.isNull()) {
                                 setProperty(element, attributeName, texture);
                             }
                             else {
@@ -360,10 +360,10 @@ class Widget {
                         }
                     }
                     else if (getUsertypeName(currentValue) == "sol.sunaba::core::Texture") {
-                        var image = Image.loadFromFile(attributeValue);
+                        var image = Image.loadFromFile(io, attributeValue);
                         if (image != null) {
                             var texture = ImageTexture.createFromImage(image);
-                            if (texture != null) {
+                            if (texture != null && !texture.isNull()) {
                                 setProperty(element, attributeName, texture);
                             }
                             else {
@@ -408,10 +408,10 @@ class Widget {
                             continue;
                         }
                         else if (control.hasThemeIconOverride(snakeCaseName)) {
-                            var image = Image.loadFromFile(attributeValue);
+                            var image = Image.loadFromFile(io, attributeValue);
                             if (image != null) {
                                 var texture = ImageTexture.createFromImage(image);
-                                if (texture != null) {
+                                if (texture != null && !texture.isNull()) {
                                     control.addThemeIconOverride(snakeCaseName, texture);
                                     continue;
                                 }
@@ -463,10 +463,10 @@ class Widget {
                             continue;
                         }
                         else if (control.hasThemeIcon(snakeCaseName, "")) {
-                            var image = Image.loadFromFile(attributeValue);
+                            var image = Image.loadFromFile(io, attributeValue);
                             if (image != null) {
                                 var texture = ImageTexture.createFromImage(image);
-                                if (texture != null) {
+                                if (texture != null && !texture.isNull()) {
                                     control.addThemeIconOverride(snakeCaseName, texture);
                                     continue;
                                 }
@@ -499,10 +499,10 @@ class Widget {
                     var attributeName = attrib;
                     var attributeValue = child.get(attributeName);
                     if (attributeName == "icon") {
-                        var image = Image.loadFromFile(attributeValue);
+                        var image = Image.loadFromFile(io, attributeValue);
                         if (image != null) {
                             var texture = ImageTexture.createFromImage(image);
-                            if (texture != null) {
+                            if (texture != null && !texture.isNull()) {
                                 menu.setItemIcon(id, texture);
                             }
                             else {
