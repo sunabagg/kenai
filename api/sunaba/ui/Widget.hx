@@ -433,7 +433,7 @@ class Widget {
                         var control: Control = cast element;
                         var snakeCaseName = camelToSnake(attributeName);
                         if (control.hasThemeConstant(snakeCaseName, "")) {
-                            control.addThemeConstantOverride(snakeCaseName, Variant.fromInt64(Std.parseInt(attributeValue)));
+                            control.addThemeConstantOverride(snakeCaseName, Variant.fromInt(Std.parseInt(attributeValue)));
                             continue;
                         }
                         else if (control.hasThemeFontSize(snakeCaseName, "")) {
