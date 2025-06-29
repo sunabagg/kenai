@@ -1,6 +1,7 @@
 package sunaba.core;
 
 import sunaba.core.io.BinaryData;
+import sunaba.core.io.IoInterface;
 
 @:native("Image")
 extern class Image extends Resource {
@@ -44,9 +45,9 @@ extern class Image extends Resource {
     public function isCompressed() : Bool;
     public function isEmpty() : Bool;
     public function isInvisible() : Bool;
-    public function load(path : String) : Int;
+    public function load(io : IoInterface, path : String) : Int;
     public function loadBmpFromBuffer(buffer : BinaryData) : Int;
-    public static function loadFromFile(path : String) : Image;
+    public static function loadFromFile(io : IoInterface, path : String) : Image;
     public function loadJpegFromBuffer(buffer : BinaryData) : Int;
     public function loadKtxFromBuffer(buffer : BinaryData) : Int;
     public function loadPngFromBuffer(buffer : BinaryData) : Int;
