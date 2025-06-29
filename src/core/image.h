@@ -210,9 +210,8 @@ namespace sunaba::core {
             return image->is_invisible();
         }
 
-        int load(sol::state_view lua_state, const std::string& path) {
-            auto ioManager = IoIndex::getIoManager(lua_state);
-            PackedByteArray data = ioManager->loadBytes(path);
+        int load(IoInterface* io, const std::string& path) {
+            PackedByteArray data = io->loadBytes(path);
             auto pathStr = String(path.c_str());
             if (data.size() > 0) {
                 if (pathStr.ends_with(".bmp")) {
@@ -249,9 +248,9 @@ namespace sunaba::core {
             return image->load_bmp_from_buffer(data->toPackedByteArray());
         }
 
-        static Image* loadFromFile(sol::state_view lua_state, const std::string& path) {
+        static Image* loadFromFile(IoInterface* io, const std::string& path) {
             Image* img = new Image();
-            img->load(lua_state, path);
+            img->load(io, path);
             return img;
         }
 
