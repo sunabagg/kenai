@@ -17,4 +17,5 @@ extern class InputService extends Service {
     public static function flushBufferedEvents(): Void;
     public static function getAccelerometer(): Vector3;
     public static function getActionRawStrength(action: String, ?exactMatch: Bool): Void;
+    public static function getActionStrength(action: String, ?exactMatch: Bool): Void;
 }
