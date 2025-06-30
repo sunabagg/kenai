@@ -248,6 +248,10 @@ namespace sunaba::input {
             static void setGravity(Vector3 value) {
                 getInstance()->set_gravity(value);
             }
+
+            static void setGyroscope(Vector3 value) {
+                getInstance()->set_gyroscope(value);
+            }
     };
 }
 
