@@ -203,12 +203,16 @@ namespace sunaba::input {
                 return getInstance()->is_action_pressed(toStringName(action), exactMatch);
             }
 
-            bool isAnythingPressed() {
+            static bool isAnythingPressed() {
                 return getInstance()->is_anything_pressed();
             }
 
-            bool isJoyButtonPressed(int device, int button) {
+            static bool isJoyButtonPressed(int device, int button) {
                 return getInstance()->is_joy_button_pressed(device, static_cast<JoyButton>(button));
+            }
+
+            static bool isJoyKnown(int device) {
+                return getInstance()->is_joy_known(device);
             }
     };
 }
