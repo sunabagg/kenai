@@ -97,7 +97,10 @@ namespace sunaba::input {
             "isPhysicalKeyPressed", &InputService::isPhysicalKeyPressed,
             "parseInputEvent", &InputService::parseInputEvent,
             "removeJoyMapping", &InputService::removeJoyMapping,
-            "setAccelerometer", &InputService::setAccelerometer
+            "setAccelerometer", &InputService::setAccelerometer,
+            "setCustomMouseCursor", sol::factories(
+                [](sunaba::core::Resource* image) { InputService::setCustomMouseCursor(image); }
+            )
         );
     }
 }
