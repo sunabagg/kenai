@@ -32,6 +32,10 @@ namespace sunaba::input {
             static void setEmulateMouseFromTouch(bool value) {
                 return inputSingleton->set_emulate_touch_from_mouse(value);
             }
+
+            static int getMouseMode() {
+                return inputSingleton->get_mouse_mode();
+            }
     };
 }
 
