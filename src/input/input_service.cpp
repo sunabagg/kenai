@@ -61,7 +61,8 @@ namespace sunaba::input {
             "getConnectedJoypads", &InputService::getConnectedJoypads,
             "getCurrentCursorShape", &InputService::getCurrentCursorShape,
             "getGravity", &InputService::getGravity,
-            "getGyroscope", &InputService::getGyroscope
+            "getGyroscope", &InputService::getGyroscope,
+            "getJoyAxis", &InputService::getJoyAxis
         );
     }
 }
