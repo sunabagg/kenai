@@ -102,6 +102,10 @@ namespace sunaba::input {
                 [](sunaba::core::Resource* image) { InputService::setCustomMouseCursor(image); },
                 [](sunaba::core::Resource* image, int shape) { InputService::setCustomMouseCursor(image, shape); },
                 [](sunaba::core::Resource* image, int shape, Vector2 hotspot) { InputService::setCustomMouseCursor(image, shape, hotspot); }
+            ),
+            "setDefaultCursorShape", sol::factories(
+                []() { InputService::setDeaultCursorShape(); },
+                [](int shape) { InputService::setDeaultCursorShape(shape); }
             )
         );
     }
