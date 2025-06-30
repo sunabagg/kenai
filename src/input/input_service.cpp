@@ -13,4 +13,10 @@ namespace sunaba::input {
             InputService::getJoyConnectionChangedEvent()->emit(args);
         }
     }
+
+    void bindInputService(sol::state& lua) {
+        lua.new_usertype<InputService>("InputService",
+            sol::no_constructor
+        );
+    }
 }
