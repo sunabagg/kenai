@@ -232,6 +232,10 @@ namespace sunaba::input {
                 Ref<godot::InputEvent> ieRef = Ref<godot::InputEvent>(event->getInputEvent());
                 getInstance()->parse_input_event(ieRef);
             }
+
+            static void removeJoyMapping(std::string guid) {
+                getInstance()->remove_joy_mapping(guid.c_str());
+            }
     };
 }
 
