@@ -28,4 +28,5 @@ extern class InputService extends Service {
     public static function getJoyAxis(device: Int, axis: Int): Float;
     public static function getJoyGuid(device: Int): String;
     public static function getJoyInfo(device: Int): Dictionary;
+    public static function getJoyName(device: Int): String;
 }
