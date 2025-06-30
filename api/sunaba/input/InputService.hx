@@ -13,4 +13,5 @@ extern class InputService extends Service {
     public static function actionPress(action: String, ?strength: Float): Void;
     public static function actionRelease(action: String): Void;
     public static function addJoyMapping(mapping: String, ?updateExisting: Bool): Void;
+    public static function flushBufferedEvents(): Void;
 }
