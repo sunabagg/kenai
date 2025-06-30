@@ -46,7 +46,8 @@ namespace sunaba::input {
             "addJoyMapping", sol::factories(
                 [](std::string mapping) { InputService::addJoyMapping(mapping); },
                 [](std::string mapping, bool updateExisting) { InputService::addJoyMapping(mapping, updateExisting); }
-            )
+            ),
+            "flushBufferedEvents", InputService::flushBufferedEvents
         );
     }
 }
