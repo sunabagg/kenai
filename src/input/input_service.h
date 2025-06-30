@@ -163,6 +163,10 @@ namespace sunaba::input {
                 return getInstance()->get_joy_name(device).utf8().get_data();
             }
 
+            static float getJoyVibrationDuration(int device) {
+                return getInstance()->get_joy_vibration_duration(device);
+            }
+
             static Vector2 getJoyVibrationStrength(int device) {
                 return getInstance()->get_joy_vibration_strength(device);
             }
