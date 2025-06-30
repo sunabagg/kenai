@@ -154,6 +154,10 @@ namespace sunaba::input {
             std::string getJoyGuid(int device) {
                 return getInstance()->get_joy_guid(device).utf8().get_data();
             }
+
+            Dictionary getJoyInfo(int device) {
+                return getInstance()->get_joy_info(device);
+            }
     };
 }
 
