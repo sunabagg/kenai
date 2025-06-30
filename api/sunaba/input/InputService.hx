@@ -1,5 +1,6 @@
 package sunaba.input;
 
+import sunaba.core.Resource;
 import sunaba.core.Vector2;
 import sunaba.core.Dictionary;
 import sunaba.core.Vector;
@@ -50,4 +51,5 @@ extern class InputService extends Service {
     public static function parseInputEvent(event: InputEvent): Void;
     public static function removeJoyMapping(guid: String): Void;
     public static function setAccelerometer(value: Vector3): Void;
+    public static function setCustomMouseCursor(image: Resource, ?shape: Int, ?hotspot: Vector2): Void;
 }
