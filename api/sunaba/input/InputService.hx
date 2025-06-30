@@ -47,4 +47,5 @@ extern class InputService extends Service {
     public static function isKeyPressed(keycode: Int): Bool;
     public static function isMouseButtonPressed(button: Int): Bool;
     public static function isPhysicalKeyPressed(keycode: Int): Bool;
+    public static function parseInputEvent(event: InputEvent): Void;
 }
