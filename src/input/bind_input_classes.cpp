@@ -14,6 +14,7 @@
 #include "input_event_mouse_motion.h"
 #include "input_event_screen_drag.h"
 #include "input_event_screen_touch.h"
+#include "input_service.h"
 #include "shortcut.h"
 
 void sunaba::input::bindInputClasses(sol::state& lua) {
@@ -32,5 +33,6 @@ void sunaba::input::bindInputClasses(sol::state& lua) {
     bindInputEventMouseMotion(lua);
     bindInputEventScreenDrag(lua);
     bindInputEventScreenTouch(lua);
+    bindInputService(lua);
     bindShortcut(lua);
 }
