@@ -28,7 +28,15 @@ namespace sunaba::input {
     class InputService : public Service {
         private:
             static Input* inputSingleton;
+            static InputServiceSignalWrapper* signalWrapper;
 
+            static void connectInputServiceSignals() {
+                if (signalWrapper == nullptr) {
+                    signalWrapper = new InputServiceSignalWrapper();
+                }
+
+                inputSingleton->connect("joy_connection_changed", Callable(signalWrapper, "joy_connection_changed"));
+            }
         public:
             static Input* getInstance() {
                 if (inputSingleton == nullptr) {
