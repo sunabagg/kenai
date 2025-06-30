@@ -95,6 +95,10 @@ namespace sunaba::input {
             static void actionRelease(std::string action) {
                 inputSingleton->action_release(StringName(String(action.c_str())));
             }
+
+            void addJoyMapping(std::string mapping, bool updateExisting = false) {
+                inputSingleton->add_joy_mapping(mapping.c_str(), updateExisting);
+            }
     };
 }
 
