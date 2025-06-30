@@ -214,6 +214,10 @@ namespace sunaba::input {
             static bool isJoyKnown(int device) {
                 return getInstance()->is_joy_known(device);
             }
+
+            static bool isKeyLabelPressed(int keycode) {
+                return getInstance()->is_key_label_pressed(static_cast<Key>(keycode));
+            }
     };
 }
 
