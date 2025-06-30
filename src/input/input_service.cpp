@@ -96,7 +96,8 @@ namespace sunaba::input {
             "isMouseButtonPressed", &InputService::isMouseButtonPressed,
             "isPhysicalKeyPressed", &InputService::isPhysicalKeyPressed,
             "parseInputEvent", &InputService::parseInputEvent,
-            "removeJoyMapping", &InputService::removeJoyMapping
+            "removeJoyMapping", &InputService::removeJoyMapping,
+            "setAccelerometer", &InputService::setAccelerometer
         );
     }
 }
