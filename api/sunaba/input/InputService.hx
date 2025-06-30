@@ -54,4 +54,5 @@ extern class InputService extends Service {
     public static function setCustomMouseCursor(image: Resource, ?shape: Int, ?hotspot: Vector2): Void;
     public static function setDefaultCursorShape(?shape: Int): Void;
     public static function setGravity(value: Vector3): Void;
+    public static function setGyroscope(value: Vector3): Void;
 }
