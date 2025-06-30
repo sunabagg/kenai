@@ -25,4 +25,5 @@ extern class InputService extends Service {
     public static function getGravity(): Vector3;
     public static function getGyroscope(): Vector3;
     public static function getJoyAxis(device: Int, axis: Int): Float;
+    public static function getJoyGuid(device: Int): String;
 }
