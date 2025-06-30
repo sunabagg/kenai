@@ -236,6 +236,10 @@ namespace sunaba::input {
             static void removeJoyMapping(std::string guid) {
                 getInstance()->remove_joy_mapping(guid.c_str());
             }
+
+            static void setAccelerometer(Vector3 value) {
+                getInstance()->set_accelerometer(value);
+            }
     };
 }
 
