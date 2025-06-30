@@ -29,6 +29,10 @@ namespace sunaba::input {
             "mouseMode", sol::property(
                 &InputService::getMouseMode,
                 &InputService::setMouseMode
+            ),
+            "useAccumulatedInput", sol::property(
+                &InputService::getUseAccumulatedInput,
+                &InputService::setUseAccumulatedInput
             )
         );
     }
