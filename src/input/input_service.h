@@ -103,6 +103,10 @@ namespace sunaba::input {
             void flushBufferedEvents() {
                 inputSingleton->flush_buffered_events();
             }
+
+            Vector3 getAccelerometer() {
+                return inputSingleton->get_accelerometer();
+            }
     };
 }
 
