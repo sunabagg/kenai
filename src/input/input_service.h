@@ -198,6 +198,10 @@ namespace sunaba::input {
             static bool isActionJustReleased(std::string action, bool exactMatch = false) {
                 return getInstance()->is_action_just_released(toStringName(action), exactMatch);
             }
+
+            static bool isActionPressed(std::string action, bool exactMatch = false) {
+                return getInstance()->is_action_pressed(toStringName(action), exactMatch);
+            }
     };
 }
 
