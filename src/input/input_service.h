@@ -249,6 +249,10 @@ namespace sunaba::input {
                 getInstance()->set_custom_mouse_cursor(Ref<godot::Resource>(image->getResource()), static_cast<Input::CursorShape>(shape), hotspot);
             }
 
+            static void setDeaultCursorShape(int shape = 0) {
+                getInstance()->set_default_cursor_shape(static_cast<Input::CursorShape>(shape));
+            }
+
             static void setGravity(Vector3 value) {
                 getInstance()->set_gravity(value);
             }
