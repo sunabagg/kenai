@@ -106,7 +106,8 @@ namespace sunaba::input {
             "setDefaultCursorShape", sol::factories(
                 []() { InputService::setDeaultCursorShape(); },
                 [](int shape) { InputService::setDeaultCursorShape(shape); }
-            )
+            ),
+            "setGravity", &InputService::setGravity
         );
     }
 }
