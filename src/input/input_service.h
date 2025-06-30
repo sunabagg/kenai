@@ -68,6 +68,10 @@ namespace sunaba::input {
             static void setJoyConnectionChangedEvent(Event* e) {
                 joyConnectionChangedEvent = e;
             }
+
+            static void actionPress(std::string action, float strength = 1.0f) {
+                inputSingleton->action_press(StringName(String(action.c_str())), strength);
+            }
     };
 }
 
