@@ -55,4 +55,5 @@ extern class InputService extends Service {
     public static function setDefaultCursorShape(?shape: Int): Void;
     public static function setGravity(value: Vector3): Void;
     public static function setGyroscope(value: Vector3): Void;
+    public static function setMagnetometer(value: Vector3): Void;
 }
