@@ -24,6 +24,10 @@ namespace sunaba::input {
                 }
                 return inputSingleton;
             }
+
+            static bool getEmulateMouseFromTouch() {
+                return inputSingleton->is_emulating_mouse_from_touch();
+            }
     };
 }
 
