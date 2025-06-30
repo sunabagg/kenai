@@ -134,6 +134,10 @@ namespace sunaba::input {
                 }
                 return resultVector;
             }
+
+            int getCurrentCursorShape() {
+                return getInstance()->get_current_cursor_shape();
+            }
     };
 }
 
