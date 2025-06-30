@@ -6,4 +6,5 @@ import sunaba.core.Service;
 extern class InputService extends Service {
     public var emulateMouseFromTouch: Bool;
     public var emulateTouchFromMouse: Bool;
+    public var mouseMode: Int;
 }
