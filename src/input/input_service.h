@@ -40,6 +40,10 @@ namespace sunaba::input {
             static void setMouseMode(int value) {
                 inputSingleton->set_mouse_mode(static_cast<Input::MouseMode>(value));
             }
+
+            static bool getUseAccumulatedInput() {
+                return inputSingleton->is_using_accumulated_input();
+            }
     };
 }
 
