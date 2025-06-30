@@ -265,8 +265,12 @@ namespace sunaba::input {
                 getInstance()->start_joy_vibration(device, weakMagnitude, strongMagnitude, duration);
             }
 
-            void vibrateHandheld(int durationMs = 500, float amplitude = -1.0) {
+            static void vibrateHandheld(int durationMs = 500, float amplitude = -1.0) {
                 getInstance()->vibrate_handheld(durationMs, amplitude);
+            }
+
+            static void warpMouse(Vector2 position) {
+                getInstance()->warp_mouse(position);
             }
     };
 }
