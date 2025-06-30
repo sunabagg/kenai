@@ -114,7 +114,8 @@ namespace sunaba::input {
             "startJoyVibration", sol::factories(
                 [](int device, float weakMagnitude, float strongMagnitude) { InputService::startJoyVibration(device, weakMagnitude, strongMagnitude); },
                 [](int device, float weakMagnitude, float strongMagnitude, float duration) { InputService::startJoyVibration(device, weakMagnitude, strongMagnitude, duration); }
-            )
+            ),
+            "stopJoyVibration", &InputService::stopJoyVibration
         );
     }
 }
