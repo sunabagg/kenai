@@ -16,7 +16,8 @@ namespace sunaba::input {
 
     void bindInputService(sol::state& lua) {
         lua.new_usertype<InputService>("InputService",
-            sol::no_constructor
+            sol::no_constructor,
+            sol::base_classes, sol::bases<Service>()
         );
     }
 }
