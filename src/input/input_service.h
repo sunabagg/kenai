@@ -112,7 +112,9 @@ namespace sunaba::input {
                 return inputSingleton->get_accelerometer();
             }
 
-            
+            float getActionRawStrength(std::string action, bool exactMatch = false) {
+                return inputSingleton->get_action_raw_strength(toStringName(action), exactMatch);
+            }
     };
 }
 
