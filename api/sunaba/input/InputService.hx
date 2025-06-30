@@ -40,4 +40,5 @@ extern class InputService extends Service {
     public static function isActionJustPressed(action: String, ?exactMatch: Bool): Bool;
     public static function isActionJustReleased(action: String, ?exactMatch: Bool): Bool;
     public static function isActionPressed(action: String, ?exactMatch: Bool): Bool;
+    public static function isAnythingPressed(): Bool;
 }
