@@ -178,6 +178,10 @@ namespace sunaba::input {
             static Vector2 getLastMouseVelocity() {
                 return getInstance()->get_last_mouse_velocity();
             }
+
+            static Vector3 getMagnetometer() {
+                return getInstance()->get_magnetometer();
+            }
     };
 }
 
