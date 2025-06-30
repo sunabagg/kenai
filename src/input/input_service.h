@@ -83,6 +83,10 @@ namespace sunaba::input {
             static void actionPress(std::string action, float strength = 1.0f) {
                 inputSingleton->action_press(StringName(String(action.c_str())), strength);
             }
+
+            static void actionRelease(std::string action) {
+                inputSingleton->action_release(StringName(String(action.c_str())));
+            }
     };
 }
 
