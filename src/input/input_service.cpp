@@ -4,4 +4,13 @@ namespace sunaba::input {
     void InputServiceSignalWrapper::_bind_methods() {
         ClassDB::bind_method(D_METHOD("joy_connection_changed", "device", "connected"), &InputServiceSignalWrapper::joy_connection_changed);
     }
+
+    void InputServiceSignalWrapper::joy_connection_changed(int device, bool connected) {
+        if (InputService::getJoyConnectionChangedEvent() != nullptr) {
+            Array args;
+            args.append(device);
+            args.append(connected);
+            InputService::getJoyConnectionChangedEvent()->emit(args);
+        }
+    }
 }
