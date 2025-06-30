@@ -115,7 +115,12 @@ namespace sunaba::input {
                 [](int device, float weakMagnitude, float strongMagnitude) { InputService::startJoyVibration(device, weakMagnitude, strongMagnitude); },
                 [](int device, float weakMagnitude, float strongMagnitude, float duration) { InputService::startJoyVibration(device, weakMagnitude, strongMagnitude, duration); }
             ),
-            "stopJoyVibration", &InputService::stopJoyVibration
+            "stopJoyVibration", &InputService::stopJoyVibration,
+            "vibrateHandheld", sol::factories(
+                []() { InputService::vibrateHandheld(); },
+                [](int durationMs) { InputService::vibrateHandheld(durationMs); },
+                [](int durationMs, float amplitude) { InputService::vibrateHandheld(durationMs, amplitude); }
+            )
         );
     }
 }
