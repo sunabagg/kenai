@@ -16,6 +16,7 @@ extern class InputService extends Service {
     public static function addJoyMapping(mapping: String, ?updateExisting: Bool): Void;
     public static function flushBufferedEvents(): Void;
     public static function getAccelerometer(): Vector3;
-    public static function getActionRawStrength(action: String, ?exactMatch: Bool): Void;
-    public static function getActionStrength(action: String, ?exactMatch: Bool): Void;
+    public static function getActionRawStrength(action: String, ?exactMatch: Bool): Float;
+    public static function getActionStrength(action: String, ?exactMatch: Bool): Float;
+    public static function getAxis(negativeAction: String, positiveAction: String): Float;
 }
