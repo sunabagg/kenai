@@ -6,6 +6,7 @@
 #include <sol/sol.hpp>
 
 #include "../core/service.h"
+#include "../core/event.h"
 
 using namespace godot;
 using namespace sunaba::core;
@@ -56,6 +57,8 @@ namespace sunaba::input {
             static void setUseAccumulatedInput(bool value) {
                 inputSingleton->set_use_accumulated_input(value);
             }
+
+            static Event* joyConnectionChangedEvent;
     };
 }
 
