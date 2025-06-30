@@ -108,6 +108,7 @@ namespace sunaba::input {
                 [](int shape) { InputService::setDeaultCursorShape(shape); }
             ),
             "setGravity", &InputService::setGravity,
+            "setGyroscope", &InputService::setGyroscope,
             "setMagnetometer", &InputService::setMagnetometer
         );
     }
