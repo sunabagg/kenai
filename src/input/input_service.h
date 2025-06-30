@@ -142,6 +142,10 @@ namespace sunaba::input {
             static Vector3 getGravity() {
                 return getInstance()->get_gravity();
             }
+
+            static Vector3 getGyroscope() {
+                return getInstance()->get_gyroscope();
+            }
     };
 }
 
