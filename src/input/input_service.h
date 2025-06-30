@@ -260,6 +260,10 @@ namespace sunaba::input {
             static bool shouldIgnoreDevice(int venderId, int productId) {
                 getInstance()->should_ignore_device(venderId, productId);
             }
+
+            static void startJoyVibration(int device, float weakMagnitude, float strongMagnitude, float duration = 0) {
+                getInstance()->start_joy_vibration(device, weakMagnitude, strongMagnitude, duration);
+            }
     };
 }
 
