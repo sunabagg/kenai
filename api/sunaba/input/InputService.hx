@@ -52,4 +52,5 @@ extern class InputService extends Service {
     public static function removeJoyMapping(guid: String): Void;
     public static function setAccelerometer(value: Vector3): Void;
     public static function setCustomMouseCursor(image: Resource, ?shape: Int, ?hotspot: Vector2): Void;
+    public static function setDefaultCursorShape(?shape: Int): Void;
 }
