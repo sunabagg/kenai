@@ -56,7 +56,8 @@ namespace sunaba::input {
             "getActionStrength", sol::factories(
                 [](std::string action) { InputService::getActionStrength(action); },
                 [](std::string action, bool exactMatch) { InputService::getActionStrength(action, exactMatch); }
-            )
+            ),
+            "getAxis", &InputService::getAxis
         );
     }
 }
