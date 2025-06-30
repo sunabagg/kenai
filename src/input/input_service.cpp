@@ -88,7 +88,8 @@ namespace sunaba::input {
                 [](std::string action) { return InputService::isActionPressed(action); },
                 [](std::string action, bool exactMatch) { return InputService::isActionPressed(action, exactMatch); }
             ),
-            "isAnythingPressed", &InputService::isAnythingPressed
+            "isAnythingPressed", &InputService::isAnythingPressed,
+            "isJoyButtonPressed", &InputService::isJoyButtonPressed
         );
     }
 }
