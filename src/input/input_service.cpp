@@ -110,7 +110,11 @@ namespace sunaba::input {
             "setGravity", &InputService::setGravity,
             "setGyroscope", &InputService::setGyroscope,
             "setMagnetometer", &InputService::setMagnetometer,
-            "shouldIgnoreDevice", &InputService::shouldIgnoreDevice
+            "shouldIgnoreDevice", &InputService::shouldIgnoreDevice,
+            "startJoyVibration", sol::factories(
+                [](int device, float weakMagnitude, float strongMagnitude) { InputService::startJoyVibration(device, weakMagnitude, strongMagnitude); },
+                [](int device, float weakMagnitude, float strongMagnitude, float duration) { InputService::startJoyVibration(device, weakMagnitude, strongMagnitude, duration); }
+            )
         );
     }
 }
