@@ -1,5 +1,6 @@
 package sunaba.input;
 
+import sunaba.core.Vector3;
 import sunaba.core.Event;
 import sunaba.core.Service;
 
@@ -14,4 +15,5 @@ extern class InputService extends Service {
     public static function actionRelease(action: String): Void;
     public static function addJoyMapping(mapping: String, ?updateExisting: Bool): Void;
     public static function flushBufferedEvents(): Void;
+    public static function getAccelerometer(): Vector3;
 }
