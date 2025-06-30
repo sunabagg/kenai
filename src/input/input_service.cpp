@@ -42,12 +42,13 @@ namespace sunaba::input {
                 [](std::string action) { InputService::actionPress(action); },
                 [](std::string action, float strength) { InputService::actionPress(action, strength); }
             ),
-            "actionRelease", InputService::actionRelease,
+            "actionRelease", &InputService::actionRelease,
             "addJoyMapping", sol::factories(
                 [](std::string mapping) { InputService::addJoyMapping(mapping); },
                 [](std::string mapping, bool updateExisting) { InputService::addJoyMapping(mapping, updateExisting); }
             ),
-            "flushBufferedEvents", InputService::flushBufferedEvents
+            "flushBufferedEvents", &InputService::flushBufferedEvents,
+            "getAccelerometer", &InputService::getAccelerometer
         );
     }
 }
