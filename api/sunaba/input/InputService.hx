@@ -49,4 +49,5 @@ extern class InputService extends Service {
     public static function isPhysicalKeyPressed(keycode: Int): Bool;
     public static function parseInputEvent(event: InputEvent): Void;
     public static function removeJoyMapping(guid: String): Void;
+    public static function setAccelerometer(value: Vector3): Void;
 }
