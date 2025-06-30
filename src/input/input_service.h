@@ -59,6 +59,12 @@ namespace sunaba::input {
             }
 
             static Event* joyConnectionChangedEvent;
+            static Event* getJoyConnectionChangedEvent() {
+                if (joyConnectionChangedEvent == nullptr) {
+                    joyConnectionChangedEvent = new Event();
+                }
+                return joyConnectionChangedEvent;
+            }
     };
 }
 
