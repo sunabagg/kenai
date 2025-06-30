@@ -59,4 +59,5 @@ extern class InputService extends Service {
     public static function shouldIgnoreDevice(venderID: Int, productID: Int): Bool;
     public static function startJoyVibration(device: Int, weakMagnitude: Float, strongMagnitude: Float, ?duration: Float): Void;
     public static function stopJoyVibration(device: Int): Void;
+    public static function vibrateHandheld(?durationMs: Int, ?amplitude: Float): Void;
 }
