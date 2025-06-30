@@ -150,6 +150,10 @@ namespace sunaba::input {
             static float getJoyAxis(int device, int axis) {
                 return getInstance()->get_joy_axis(device, static_cast<JoyAxis>(axis));
             }
+
+            std::string getJoyGuid(int device) {
+                return getInstance()->get_joy_guid(device).utf8().get_data();
+            }
     };
 }
 
