@@ -36,4 +36,5 @@ extern class InputService extends Service {
     public static function getLastMouseVelocity(): Vector2;
     public static function getMagnetometer(): Vector3;
     public static function getMouseButtonMask(): Int;
+    public static function getVector(negativeX: String, positiveX: String, negativeY: String, positiveY: String): Vector2;
 }
