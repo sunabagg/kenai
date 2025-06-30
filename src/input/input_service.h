@@ -256,6 +256,10 @@ namespace sunaba::input {
             static void setMagnetometer(Vector3 value) {
                 getInstance()->set_magnetometer(value);
             }
+
+            static bool shouldIgnoreDevice(int venderId, int productId) {
+                getInstance()->should_ignore_device(venderId, productId);
+            }
     };
 }
 
