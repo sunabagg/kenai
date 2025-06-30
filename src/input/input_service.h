@@ -11,6 +11,10 @@
 using namespace godot;
 using namespace sunaba::core;
 
+StringName toStringName(std::string str) {
+    return StringName(String(str.c_str()));
+}
+
 namespace sunaba::input {
     void bindInputService(sol::state& lua);
 
@@ -107,6 +111,8 @@ namespace sunaba::input {
             Vector3 getAccelerometer() {
                 return inputSingleton->get_accelerometer();
             }
+
+            
     };
 }
 
