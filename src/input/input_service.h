@@ -115,6 +115,10 @@ namespace sunaba::input {
             float getActionRawStrength(std::string action, bool exactMatch = false) {
                 return inputSingleton->get_action_raw_strength(toStringName(action), exactMatch);
             }
+
+            float getActionStrength(std::string action, bool exactMatch = false) {
+                inputSingleton->get_action_strength(toStringName(action), exactMatch);
+            }
     };
 }
 
