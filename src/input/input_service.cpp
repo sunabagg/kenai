@@ -68,7 +68,8 @@ namespace sunaba::input {
             "getJoyName", &InputService::getJoyName,
             "getJoyVibrationDuration", &InputService::getJoyVibrationDuration,
             "getJoyVibrationStrength", &InputService::getJoyVibrationStrength,
-            "getLastMouseScreenVelocity", &InputService::getLastMouseScreenVelocity
+            "getLastMouseScreenVelocity", &InputService::getLastMouseScreenVelocity,
+            "getLastMouseVelocity", &InputService::getLastMouseVelocity
         );
     }
 }
