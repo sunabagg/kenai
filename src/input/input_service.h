@@ -45,40 +45,41 @@ namespace sunaba::input {
             static Input* getInstance() {
                 if (inputSingleton == nullptr) {
                     inputSingleton = Input::get_singleton();
+                    connectInputServiceSignals();
                 }
                 return inputSingleton;
             }
 
             static bool getEmulateMouseFromTouch() {
-                return inputSingleton->is_emulating_mouse_from_touch();
+                return getInstance()->is_emulating_mouse_from_touch();
             }
 
             static void setEmulateMouseFromTouch(bool value) {
-                inputSingleton->set_emulate_touch_from_mouse(value);
+                getInstance()->set_emulate_touch_from_mouse(value);
             }
 
             static bool getEmulateTouchFromMouse() {
-                return inputSingleton->is_emulating_touch_from_mouse();
+                return getInstance()->is_emulating_touch_from_mouse();
             }
 
             static void setEmulateTouchFromMouse(bool value) {
-                inputSingleton->set_emulate_touch_from_mouse(value);
+                getInstance()->set_emulate_touch_from_mouse(value);
             }
 
             static int getMouseMode() {
-                return inputSingleton->get_mouse_mode();
+                return getInstance()->get_mouse_mode();
             }
 
             static void setMouseMode(int value) {
-                inputSingleton->set_mouse_mode(static_cast<Input::MouseMode>(value));
+                getInstance()->set_mouse_mode(static_cast<Input::MouseMode>(value));
             }
 
             static bool getUseAccumulatedInput() {
-                return inputSingleton->is_using_accumulated_input();
+                return getInstance()->is_using_accumulated_input();
             }
 
             static void setUseAccumulatedInput(bool value) {
-                inputSingleton->set_use_accumulated_input(value);
+                getInstance()->set_use_accumulated_input(value);
             }
 
             static Event* joyConnectionChangedEvent;
@@ -93,39 +94,39 @@ namespace sunaba::input {
             }
 
             static void actionPress(std::string action, float strength = 1.0f) {
-                inputSingleton->action_press(toStringName(action), strength);
+                getInstance()->action_press(toStringName(action), strength);
             }
 
             static void actionRelease(std::string action) {
-                inputSingleton->action_release(toStringName(action));
+                getInstance()->action_release(toStringName(action));
             }
 
             static void addJoyMapping(std::string mapping, bool updateExisting = false) {
-                inputSingleton->add_joy_mapping(mapping.c_str(), updateExisting);
+                getInstance()->add_joy_mapping(mapping.c_str(), updateExisting);
             }
 
             static void flushBufferedEvents() {
-                inputSingleton->flush_buffered_events();
+                getInstance()->flush_buffered_events();
             }
 
             static Vector3 getAccelerometer() {
-                return inputSingleton->get_accelerometer();
+                return getInstance()->get_accelerometer();
             }
 
             static float getActionRawStrength(std::string action, bool exactMatch = false) {
-                return inputSingleton->get_action_raw_strength(toStringName(action), exactMatch);
+                return getInstance()->get_action_raw_strength(toStringName(action), exactMatch);
             }
 
             static float getActionStrength(std::string action, bool exactMatch = false) {
-                inputSingleton->get_action_strength(toStringName(action), exactMatch);
+                getInstance()->get_action_strength(toStringName(action), exactMatch);
             }
 
             static float getAxis(std::string negativeAction, std::string positiveAction) {
-                return inputSingleton->get_axis(toStringName(negativeAction), toStringName(positiveAction));
+                return getInstance()->get_axis(toStringName(negativeAction), toStringName(positiveAction));
             }
 
             static std::vector<int> getConnectedJoypads() {
-                auto result = inputSingleton->get_connected_joypads();
+                auto result = getInstance()->get_connected_joypads();
                 std::vector<int> resultVector;
                 for (size_t i = 0; i < result.size(); i++)
                 {
