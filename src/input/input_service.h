@@ -14,6 +14,17 @@ using namespace sunaba::core;
 namespace sunaba::input {
     void bindInputService(sol::state& lua);
 
+    class InputServiceSignalWrapper : public Object {
+        GDCLASS(InputServiceSignalWrapper, Object)
+        protected:
+            static void _bind_methods();
+        public:
+            InputServiceSignalWrapper() = default;
+            ~InputServiceSignalWrapper() = default;
+
+            void joy_connection_changed(int device, bool connected);
+    };
+
     class InputService : public Service {
         private:
             static Input* inputSingleton;
