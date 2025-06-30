@@ -25,6 +25,10 @@ namespace sunaba::input {
             "emulateTouchFromMouse", sol::property(
                 &InputService::getEmulateTouchFromMouse,
                 &InputService::setEmulateTouchFromMouse
+            ),
+            "mouseMode", sol::property(
+                &InputService::getMouseMode,
+                &InputService::setMouseMode
             )
         );
     }
