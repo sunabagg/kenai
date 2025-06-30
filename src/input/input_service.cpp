@@ -72,7 +72,10 @@ namespace sunaba::input {
             "getLastMouseVelocity", &InputService::getLastMouseVelocity,
             "getMagnetometer", &InputService::getMagnetometer,
             "getMouseButtonMask", &InputService::getMouseButtonMask,
-            "getVector", &InputService::getVector
+            "getVector",sol::factories(
+                [](std::string negativeX, std::string positiveX, std::string negativeY, std::string positiveY) { return InputService::getVector(negativeX, positiveX, negativeY, positiveY); },
+                [](std::string negativeX, std::string positiveX, std::string negativeY, std::string positiveY, bool deadzone) { return InputService::getVector(negativeX, positiveX, negativeY, positiveY, deadzone); }
+            )
         );
     }
 }
