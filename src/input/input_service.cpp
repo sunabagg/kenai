@@ -33,6 +33,10 @@ namespace sunaba::input {
             "useAccumulatedInput", sol::property(
                 &InputService::getUseAccumulatedInput,
                 &InputService::setUseAccumulatedInput
+            ),
+            "joyConnectionChanged", sol::property(
+                &InputService::getJoyConnectionChangedEvent,
+                &InputService::setJoyConnectionChangedEvent
             )
         );
     }
