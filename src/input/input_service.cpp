@@ -64,7 +64,8 @@ namespace sunaba::input {
             "getGyroscope", &InputService::getGyroscope,
             "getJoyAxis", &InputService::getJoyAxis,
             "getJoyGuid", &InputService::getJoyGuid,
-            "getJoyInfo", &InputService::getJoyInfo
+            "getJoyInfo", &InputService::getJoyInfo,
+            "getJoyName", &InputService::getJoyName
         );
     }
 }
