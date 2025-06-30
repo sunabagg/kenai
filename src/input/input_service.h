@@ -44,6 +44,10 @@ namespace sunaba::input {
             static bool getUseAccumulatedInput() {
                 return inputSingleton->is_using_accumulated_input();
             }
+
+            static void setUseAccumulatedInput(bool value) {
+                inputSingleton->set_use_accumulated_input(value);
+            }
     };
 }
 
