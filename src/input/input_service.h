@@ -222,6 +222,10 @@ namespace sunaba::input {
             static bool isMouseButtonPressed(int button) {
                 return getInstance()->is_mouse_button_pressed(static_cast<MouseButton>(button));
             }
+
+            static bool isPhysicalKeyPressed(int keycode) {
+                return getInstance()->is_physical_key_pressed(static_cast<Key>(keycode));
+            }
     };
 }
 
