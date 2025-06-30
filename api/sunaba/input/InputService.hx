@@ -33,4 +33,5 @@ extern class InputService extends Service {
     public static function getJoyVibrationDuration(device: Int): Float;
     public static function getJoyVibrationStrength(device: Int): Vector2;
     public static function getLastMouseScreenVelocity(): Vector2;
+    public static function getLastMouseVelocity(): Vector2;
 }
