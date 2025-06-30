@@ -4,8 +4,8 @@ import sunaba.core.Service;
 
 @:native("InputService")
 extern class InputService extends Service {
-    public var emulateMouseFromTouch: Bool;
-    public var emulateTouchFromMouse: Bool;
-    public var mouseMode: Int;
-    public var useAccumulatedInput: Bool;
+    public static var emulateMouseFromTouch: Bool;
+    public static var emulateTouchFromMouse: Bool;
+    public static var mouseMode: Int;
+    public static var useAccumulatedInput: Bool;
 }
