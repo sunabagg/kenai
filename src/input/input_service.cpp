@@ -58,7 +58,8 @@ namespace sunaba::input {
                 [](std::string action, bool exactMatch) { InputService::getActionStrength(action, exactMatch); }
             ),
             "getAxis", &InputService::getAxis,
-            "getConnectedJoypads", &InputService::getConnectedJoypads
+            "getConnectedJoypads", &InputService::getConnectedJoypads,
+            "getCurrentCursorShape", &InputService::getCurrentCursorShape
         );
     }
 }
