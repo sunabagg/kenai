@@ -252,6 +252,10 @@ namespace sunaba::input {
             static void setGyroscope(Vector3 value) {
                 getInstance()->set_gyroscope(value);
             }
+
+            static void setMagnetometer(Vector3 value) {
+                getInstance()->set_magnetometer(value);
+            }
     };
 }
 
