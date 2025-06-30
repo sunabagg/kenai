@@ -25,6 +25,8 @@
 #include "desktop/file_dialog.h"
 #include "desktop/status_indicator.h"
 
+#include "input/input_service.h"
+
 #include "ui/control.h"
 #include "ui/base_button.h"
 #include "ui/container.h"
@@ -115,6 +117,8 @@ namespace
         godot::ClassDB::register_class<sunaba::desktop::AcceptDialogSignalWrapper>();
         godot::ClassDB::register_class<sunaba::desktop::FileDialogSignalWrapper>();
         godot::ClassDB::register_class<sunaba::desktop::StatusIndicatorSignalWrapper>();
+
+        godot::ClassDB::register_class<sunaba::input::InputServiceSignalWrapper>();
 
         godot::ClassDB::register_class<sunaba::ui::ControlSignalWrapper>();
         godot::ClassDB::register_class<sunaba::ui::BaseButtonSignalWrapper>();
