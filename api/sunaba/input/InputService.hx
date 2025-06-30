@@ -1,5 +1,6 @@
 package sunaba.input;
 
+import sunaba.core.Vector;
 import sunaba.core.Vector3;
 import sunaba.core.Event;
 import sunaba.core.Service;
@@ -19,4 +20,5 @@ extern class InputService extends Service {
     public static function getActionRawStrength(action: String, ?exactMatch: Bool): Float;
     public static function getActionStrength(action: String, ?exactMatch: Bool): Float;
     public static function getAxis(negativeAction: String, positiveAction: String): Float;
+    public static function getConnectedJoypads(): Vector<Int>;
 }
