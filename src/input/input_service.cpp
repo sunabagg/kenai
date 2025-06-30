@@ -41,7 +41,8 @@ namespace sunaba::input {
             "actionPress", sol::factories(
                 [](std::string action) { InputService::actionPress(action); },
                 [](std::string action, float strength) { InputService::actionPress(action, strength); }
-            )
+            ),
+            "actionRelease", InputService::actionRelease
         );
     }
 }
