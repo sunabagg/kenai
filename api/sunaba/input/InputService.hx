@@ -21,4 +21,5 @@ extern class InputService extends Service {
     public static function getActionStrength(action: String, ?exactMatch: Bool): Float;
     public static function getAxis(negativeAction: String, positiveAction: String): Float;
     public static function getConnectedJoypads(): Vector<Int>;
+    public static function getCurrentCursorShape(): Int;
 }
