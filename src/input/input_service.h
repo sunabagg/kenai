@@ -182,6 +182,10 @@ namespace sunaba::input {
             static Vector3 getMagnetometer() {
                 return getInstance()->get_magnetometer();
             }
+
+            static int getMouseButtonMask() {
+                return getInstance()->get_mouse_button_mask();
+            }
     };
 }
 
