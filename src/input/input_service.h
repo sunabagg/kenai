@@ -37,7 +37,7 @@ namespace sunaba::input {
 
             static void connectInputServiceSignals() {
                 if (signalWrapper == nullptr) {
-                    signalWrapper = new InputServiceSignalWrapper();
+                    signalWrapper = memnew(InputServiceSignalWrapper);
                 }
 
                 inputSingleton->connect("joy_connection_changed", Callable(signalWrapper, "joy_connection_changed"));
