@@ -99,6 +99,10 @@ namespace sunaba::input {
             void addJoyMapping(std::string mapping, bool updateExisting = false) {
                 inputSingleton->add_joy_mapping(mapping.c_str(), updateExisting);
             }
+
+            void flushBufferedEvents() {
+                inputSingleton->flush_buffered_events();
+            }
     };
 }
 
