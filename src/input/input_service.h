@@ -151,16 +151,20 @@ namespace sunaba::input {
                 return getInstance()->get_joy_axis(device, static_cast<JoyAxis>(axis));
             }
 
-            std::string getJoyGuid(int device) {
+            static std::string getJoyGuid(int device) {
                 return getInstance()->get_joy_guid(device).utf8().get_data();
             }
 
-            Dictionary getJoyInfo(int device) {
+            static Dictionary getJoyInfo(int device) {
                 return getInstance()->get_joy_info(device);
             }
 
-            std::string getJoyName(int device) {
+            static std::string getJoyName(int device) {
                 return getInstance()->get_joy_name(device).utf8().get_data();
+            }
+
+            static Vector2 getJoyVibrationStrength(int device) {
+                return getInstance()->get_joy_vibration_strength(device);
             }
     };
 }
