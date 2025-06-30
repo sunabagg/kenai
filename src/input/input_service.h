@@ -135,8 +135,12 @@ namespace sunaba::input {
                 return resultVector;
             }
 
-            int getCurrentCursorShape() {
+            static int getCurrentCursorShape() {
                 return getInstance()->get_current_cursor_shape();
+            }
+
+            static Vector3 getGravity() {
+                return getInstance()->get_gravity();
             }
     };
 }
