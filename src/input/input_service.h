@@ -100,28 +100,38 @@ namespace sunaba::input {
                 inputSingleton->action_release(toStringName(action));
             }
 
-            void addJoyMapping(std::string mapping, bool updateExisting = false) {
+            static void addJoyMapping(std::string mapping, bool updateExisting = false) {
                 inputSingleton->add_joy_mapping(mapping.c_str(), updateExisting);
             }
 
-            void flushBufferedEvents() {
+            static void flushBufferedEvents() {
                 inputSingleton->flush_buffered_events();
             }
 
-            Vector3 getAccelerometer() {
+            static Vector3 getAccelerometer() {
                 return inputSingleton->get_accelerometer();
             }
 
-            float getActionRawStrength(std::string action, bool exactMatch = false) {
+            static float getActionRawStrength(std::string action, bool exactMatch = false) {
                 return inputSingleton->get_action_raw_strength(toStringName(action), exactMatch);
             }
 
-            float getActionStrength(std::string action, bool exactMatch = false) {
+            static float getActionStrength(std::string action, bool exactMatch = false) {
                 inputSingleton->get_action_strength(toStringName(action), exactMatch);
             }
 
-            float getAxis(std::string negativeAction, std::string positiveAction) {
+            static float getAxis(std::string negativeAction, std::string positiveAction) {
                 return inputSingleton->get_axis(toStringName(negativeAction), toStringName(positiveAction));
+            }
+
+            static std::vector<int> getConnectedJoypads() {
+                auto result = inputSingleton->get_connected_joypads();
+                std::vector<int> resultVector;
+                for (size_t i = 0; i < result.size(); i++)
+                {
+                    resultVector.push_back(result[i]);
+                }
+                return resultVector;
             }
     };
 }
