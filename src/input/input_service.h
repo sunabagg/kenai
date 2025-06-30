@@ -202,6 +202,10 @@ namespace sunaba::input {
             static bool isActionPressed(std::string action, bool exactMatch = false) {
                 return getInstance()->is_action_pressed(toStringName(action), exactMatch);
             }
+
+            bool isAnythingPressed() {
+                return getInstance()->is_anything_pressed();
+            }
     };
 }
 
