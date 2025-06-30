@@ -170,6 +170,10 @@ namespace sunaba::input {
             static Vector2 getJoyVibrationStrength(int device) {
                 return getInstance()->get_joy_vibration_strength(device);
             }
+
+            static Vector2 getLastMouseScreenVelocity() {
+                return getInstance()->get_last_mouse_screen_velocity();
+            }
     };
 }
 
