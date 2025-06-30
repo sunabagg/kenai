@@ -75,6 +75,10 @@ namespace sunaba::input {
             "getVector",sol::factories(
                 [](std::string negativeX, std::string positiveX, std::string negativeY, std::string positiveY) { return InputService::getVector(negativeX, positiveX, negativeY, positiveY); },
                 [](std::string negativeX, std::string positiveX, std::string negativeY, std::string positiveY, bool deadzone) { return InputService::getVector(negativeX, positiveX, negativeY, positiveY, deadzone); }
+            ),
+            "isActionJustPressed", sol::factories(
+                [](std::string action) { return InputService::isActionJustPressed(action); },
+                [](std::string action, bool exactMatch) { return InputService::isActionJustPressed(action, exactMatch); }
             )
         );
     }
