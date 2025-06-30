@@ -1,0 +1,30 @@
+#ifndef INPUT_SERVICE_H
+#define INPUT_SERVICE_H
+
+#include <godot_cpp/classes/input.hpp>
+#include <godot_cpp/variant/variant.hpp>
+#include <sol/sol.hpp>
+
+#include "../core/service.h"
+
+using namespace godot;
+using namespace sunaba::core;
+
+namespace sunaba::input {
+    void bindInputService(sol::state& lua);
+
+    class InputService : public Service {
+        private:
+            static Input* inputSingleton;
+
+        public:
+            static Input* getInstance() {
+                if (inputSingleton == nullptr) {
+                    inputSingleton = Input::get_singleton();
+                }
+                return inputSingleton;
+            }
+    };
+}
+
+#endif
