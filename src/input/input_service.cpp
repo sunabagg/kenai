@@ -48,7 +48,11 @@ namespace sunaba::input {
                 [](std::string mapping, bool updateExisting) { InputService::addJoyMapping(mapping, updateExisting); }
             ),
             "flushBufferedEvents", &InputService::flushBufferedEvents,
-            "getAccelerometer", &InputService::getAccelerometer
+            "getAccelerometer", &InputService::getAccelerometer,
+            "getActionRawStrength", sol::factories(
+                [](std::string action) { InputService::getActionRawStrength(action); },
+                [](std::string action, bool exactMatch) { InputService::getActionRawStrength(action, exactMatch); }
+            )
         );
     }
 }
