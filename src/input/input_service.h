@@ -146,6 +146,10 @@ namespace sunaba::input {
             static Vector3 getGyroscope() {
                 return getInstance()->get_gyroscope();
             }
+
+            static float getJoyAxis(int device, int axis) {
+                return getInstance()->get_joy_axis(device, static_cast<JoyAxis>(axis));
+            }
     };
 }
 
