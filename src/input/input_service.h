@@ -187,8 +187,12 @@ namespace sunaba::input {
                 return getInstance()->get_mouse_button_mask();
             }
 
-            Vector2 getVector(std::string negativeX, std::string positiveX, std::string negativeY, std::string positiveY, float deadzone = -1.0) {
+            static Vector2 getVector(std::string negativeX, std::string positiveX, std::string negativeY, std::string positiveY, float deadzone = -1.0) {
                 return getInstance()->get_vector(toStringName(negativeX), toStringName(positiveX), toStringName(negativeY), toStringName(positiveY), deadzone);
+            }
+
+            static bool isActionJustPressed(std::string action, bool exactMatch = false) {
+                return getInstance()->is_action_just_pressed(toStringName(action), exactMatch);
             }
     };
 }
