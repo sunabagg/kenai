@@ -119,6 +119,10 @@ namespace sunaba::input {
             float getActionStrength(std::string action, bool exactMatch = false) {
                 inputSingleton->get_action_strength(toStringName(action), exactMatch);
             }
+
+            float getAxis(std::string negativeAction, std::string positiveAction) {
+                return inputSingleton->get_axis(toStringName(negativeAction), toStringName(positiveAction));
+            }
     };
 }
 
