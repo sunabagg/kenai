@@ -38,4 +38,5 @@ extern class InputService extends Service {
     public static function getMouseButtonMask(): Int;
     public static function getVector(negativeX: String, positiveX: String, negativeY: String, positiveY: String): Vector2;
     public static function isActionJustPressed(action: String, ?exactMatch: Bool): Bool;
+    public static function isActionJustReleased(action: String, ?exactMatch: Bool): Bool;
 }
