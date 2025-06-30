@@ -174,6 +174,10 @@ namespace sunaba::input {
             static Vector2 getLastMouseScreenVelocity() {
                 return getInstance()->get_last_mouse_screen_velocity();
             }
+
+            static Vector2 getLastMouseVelocity() {
+                return getInstance()->get_last_mouse_velocity();
+            }
     };
 }
 
