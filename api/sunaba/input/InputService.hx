@@ -56,4 +56,5 @@ extern class InputService extends Service {
     public static function setGravity(value: Vector3): Void;
     public static function setGyroscope(value: Vector3): Void;
     public static function setMagnetometer(value: Vector3): Void;
+    public static function shouldIgnoreDevice(venderID: Int, productID: Int): Bool;
 }
