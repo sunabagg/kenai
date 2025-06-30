@@ -66,7 +66,8 @@ namespace sunaba::input {
             "getJoyGuid", &InputService::getJoyGuid,
             "getJoyInfo", &InputService::getJoyInfo,
             "getJoyName", &InputService::getJoyName,
-            "getJoyVibrationDuration", &InputService::getJoyVibrationDuration
+            "getJoyVibrationDuration", &InputService::getJoyVibrationDuration,
+            "getJoyVibrationStrength", &InputService::getJoyVibrationStrength
         );
     }
 }
