@@ -273,6 +273,10 @@ namespace sunaba::input {
                 getInstance()->start_joy_vibration(device, weakMagnitude, strongMagnitude, duration);
             }
 
+            static void stopJoyVibration(int device) {
+                getInstance()->stop_joy_vibration(device);
+            }
+
             static void vibrateHandheld(int durationMs = 500, float amplitude = -1.0) {
                 getInstance()->vibrate_handheld(durationMs, amplitude);
             }
