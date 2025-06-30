@@ -87,7 +87,8 @@ namespace sunaba::input {
             "isActionPressed", sol::factories(
                 [](std::string action) { return InputService::isActionPressed(action); },
                 [](std::string action, bool exactMatch) { return InputService::isActionPressed(action, exactMatch); }
-            )
+            ),
+            "isAnythingPressed", &InputService::isAnythingPressed
         );
     }
 }
