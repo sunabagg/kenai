@@ -44,4 +44,5 @@ extern class InputService extends Service {
     public static function isJoyButtonPressed(device: Int, button: Int): Bool;
     public static function isJoyKnown(device: Int): Bool;
     public static function isKeyLabelPressed(keycode: Int): Bool;
+    public static function isKeyPressed(keycode: Int): Bool;
 }
