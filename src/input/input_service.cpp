@@ -120,7 +120,8 @@ namespace sunaba::input {
                 []() { InputService::vibrateHandheld(); },
                 [](int durationMs) { InputService::vibrateHandheld(durationMs); },
                 [](int durationMs, float amplitude) { InputService::vibrateHandheld(durationMs, amplitude); }
-            )
+            ),
+            "warpMouse", &InputService::warpMouse
         );
     }
 }
