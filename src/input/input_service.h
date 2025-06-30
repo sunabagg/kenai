@@ -7,6 +7,7 @@
 
 #include "../core/service.h"
 #include "../core/event.h"
+#include "input_event.h"
 
 using namespace godot;
 using namespace sunaba::core;
@@ -225,6 +226,11 @@ namespace sunaba::input {
 
             static bool isPhysicalKeyPressed(int keycode) {
                 return getInstance()->is_physical_key_pressed(static_cast<Key>(keycode));
+            }
+
+            static void parseInputEvent(InputEvent* event) {
+                Ref<godot::InputEvent> ieRef = Ref<godot::InputEvent>(event->getInputEvent());
+                getInstance()->parse_input_event(ieRef);
             }
     };
 }
