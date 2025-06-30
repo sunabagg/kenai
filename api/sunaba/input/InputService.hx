@@ -1,5 +1,6 @@
 package sunaba.input;
 
+import sunaba.core.Vector2;
 import sunaba.core.Dictionary;
 import sunaba.core.Vector;
 import sunaba.core.Vector3;
@@ -30,4 +31,5 @@ extern class InputService extends Service {
     public static function getJoyInfo(device: Int): Dictionary;
     public static function getJoyName(device: Int): String;
     public static function getJoyVibrationDuration(device: Int): Float;
+    public static function getJoyVibrationStrength(device: Int): Vector2;
 }
