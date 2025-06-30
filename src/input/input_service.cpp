@@ -109,7 +109,8 @@ namespace sunaba::input {
             ),
             "setGravity", &InputService::setGravity,
             "setGyroscope", &InputService::setGyroscope,
-            "setMagnetometer", &InputService::setMagnetometer
+            "setMagnetometer", &InputService::setMagnetometer,
+            "shouldIgnoreDevice", &InputService::shouldIgnoreDevice
         );
     }
 }
