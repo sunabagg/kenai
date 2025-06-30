@@ -92,7 +92,8 @@ namespace sunaba::input {
             "isJoyButtonPressed", &InputService::isJoyButtonPressed,
             "isJoyKnown", &InputService::isJoyKnown,
             "isKeyLabelPressed", &InputService::isKeyLabelPressed,
-            "isKeyPressed", &InputService::isKeyPressed
+            "isKeyPressed", &InputService::isKeyPressed,
+            "isMouseButtonPressed", &InputService::isMouseButtonPressed
         );
     }
 }
