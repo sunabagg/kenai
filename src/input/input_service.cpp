@@ -71,7 +71,8 @@ namespace sunaba::input {
             "getLastMouseScreenVelocity", &InputService::getLastMouseScreenVelocity,
             "getLastMouseVelocity", &InputService::getLastMouseVelocity,
             "getMagnetometer", &InputService::getMagnetometer,
-            "getMouseButtonMask", &InputService::getMouseButtonMask
+            "getMouseButtonMask", &InputService::getMouseButtonMask,
+            "getVector", &InputService::getVector
         );
     }
 }
