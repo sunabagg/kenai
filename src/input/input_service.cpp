@@ -99,7 +99,9 @@ namespace sunaba::input {
             "removeJoyMapping", &InputService::removeJoyMapping,
             "setAccelerometer", &InputService::setAccelerometer,
             "setCustomMouseCursor", sol::factories(
-                [](sunaba::core::Resource* image) { InputService::setCustomMouseCursor(image); }
+                [](sunaba::core::Resource* image) { InputService::setCustomMouseCursor(image); },
+                [](sunaba::core::Resource* image, int shape) { InputService::setCustomMouseCursor(image, shape); },
+                [](sunaba::core::Resource* image, int shape, Vector2 hotspot) { InputService::setCustomMouseCursor(image, shape, hotspot); }
             )
         );
     }
