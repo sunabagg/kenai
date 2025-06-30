@@ -32,6 +32,7 @@ target_sources(${PROJECT_NAME} PRIVATE
         input_event_screen_touch.h
         input_event_screen_touch.cpp
         input_service.h
+        input_service.cpp
         shortcut.h
         shortcut.cpp
         bind_input_classes.h
