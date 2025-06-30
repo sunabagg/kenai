@@ -11,4 +11,5 @@ extern class InputService extends Service {
     public static var useAccumulatedInput: Bool;
     public static var joyConnectionChanged: Event;
     public static function actionPress(action: String, ?strength: Float): Void;
+    public static function actionRelease(action: String): Void;
 }
