@@ -57,4 +57,5 @@ extern class InputService extends Service {
     public static function setGyroscope(value: Vector3): Void;
     public static function setMagnetometer(value: Vector3): Void;
     public static function shouldIgnoreDevice(venderID: Int, productID: Int): Bool;
+    public static function startJoyVibration(device: Int, weakMagnitude: Float, strongMagnitude: Float, ?duration: Float): Void;
 }
