@@ -34,9 +34,9 @@ namespace sunaba::input {
                 &InputService::getUseAccumulatedInput,
                 &InputService::setUseAccumulatedInput
             ),
-            "joyConnectionChanged", sol::property(
-                &InputService::getJoyConnectionChangedEvent,
-                &InputService::setJoyConnectionChangedEvent
+            "joyConnectionChanged", sol::readonly_property(
+                &InputService::getJoyConnectionChangedEvent//,
+                //&InputService::setJoyConnectionChangedEvent
             ),
             "actionPress", sol::factories(
                 [](std::string action) { InputService::actionPress(action); },

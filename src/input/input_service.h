@@ -12,10 +12,6 @@
 using namespace godot;
 using namespace sunaba::core;
 
-StringName toStringName(std::string str) {
-    return StringName(String(str.c_str()));
-}
-
 namespace sunaba::input {
     void bindInputService(sol::state& lua);
 
@@ -41,6 +37,10 @@ namespace sunaba::input {
                 }
 
                 inputSingleton->connect("joy_connection_changed", Callable(signalWrapper, "joy_connection_changed"));
+            }
+
+            static StringName toStringName(std::string str) {
+                return StringName(String(str.c_str()));
             }
         public:
             static Input* getInstance() {
