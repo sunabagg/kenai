@@ -29,10 +29,6 @@ window/dpi/allow_hidpi=false
 
 project/assembly_name="Sunaba"
 
-[gui]
-
-theme/custom="uid://l77ckodjfb54"
-
 [physics]
 
 3d/physics_engine="Jolt Physics"
