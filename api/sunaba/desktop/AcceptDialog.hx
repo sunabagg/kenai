@@ -4,6 +4,7 @@ import sunaba.ui.LineEdit;
 import sunaba.ui.Label;
 import sunaba.ui.Button;
 import sunaba.core.Event;
+import sunaba.core.Element;
 
 @:native("AcceptDialog")
 extern class AcceptDialog extends Window {

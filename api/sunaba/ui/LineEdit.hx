@@ -68,7 +68,7 @@ extern class LineEdit extends Control {
 
 abstract LineEditAbstract(LineEdit) from LineEdit to LineEdit {
     @:from
-    public static function fromElement(element: sunaba.core.Element): LineEdit {
+    public static function fromElement(element: sunaba.core.Element): LineEditAbstract {
         var lineEdit = LineEdit.toLineEdit(element);
         if (lineEdit.isNull()){
             return null;
