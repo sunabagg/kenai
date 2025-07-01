@@ -4,7 +4,7 @@
 #include "theme.h"
 
 namespace sunaba::ui {
-    Theme* global_theme = nullptr;
+    Theme* globalTheme = nullptr;
 }
 
 #endif
