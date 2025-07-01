@@ -1,5 +1,16 @@
 #include "input_service.h"
 
+#ifdef _WIN32
+
+// Add this definition at global scope (outside any function/namespace)
+godot::Input *sunaba::input::InputService::inputSingleton = nullptr;
+sunaba::input::InputServiceSignalWrapper *sunaba::input::InputService::signalWrapper = nullptr;
+sunaba::core::Event *sunaba::input::InputService::joyConnectionChangedEvent = nullptr;
+
+#endif // _WIN32
+
+
+
 namespace sunaba::input {
     void InputServiceSignalWrapper::_bind_methods() {
         ClassDB::bind_method(D_METHOD("joy_connection_changed", "device", "connected"), &InputServiceSignalWrapper::joy_connection_changed);
