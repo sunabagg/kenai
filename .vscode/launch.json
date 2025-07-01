@@ -188,6 +188,19 @@
             "internalConsoleOptions": "openOnSessionStart",
         },
         {
+            "name": "Linux Launch (Local) (test9)",
+            "type": "lldb",
+            "request": "launch",
+            "program": "${env:HOME}/Applications/godot/godot",
+            "args": [
+                "--verbose",
+                "${workspaceFolder}/tests/test9/bin/test9.sbx"
+            ],
+            "cwd": "${command:cmake.buildDirectory}/sunaba",
+            "preLaunchTask": "CMake: build",
+            "internalConsoleOptions": "openOnSessionStart",
+        },
+        {
             "name": "Linux Launch (Local) (player)",
             "type": "lldb",
             "request": "launch",
