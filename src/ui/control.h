@@ -132,7 +132,7 @@ namespace sunaba::ui {
             // Setter for the Control node
             void setControl(ControlNode* p_node) {
                 control = p_node;
-                control->set_theme(Ref<godot::Theme>(globalTheme->getTheme()));
+                control->set_theme(Ref<godot::Theme>(uiGlobals::getGlobalTheme()->getTheme()));
                 connectControlSignals();
                 setCanvasItem(control);
             }

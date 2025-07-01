@@ -4,7 +4,17 @@
 #include "theme.h"
 
 namespace sunaba::ui {
-    Theme* globalTheme = nullptr;
+    class uiGlobals {
+        private:
+            static Theme* globalTheme;
+        public:
+            static Theme* getGlobalTheme() {
+                return globalTheme;
+            }
+            static void setGlobalTheme(Theme* theme) {
+                globalTheme = theme;
+            }
+    };
 }
 
 #endif

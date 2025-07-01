@@ -82,8 +82,8 @@ void App::_bind_methods() {
 }
 
 void App::setTheme(Ref<Theme> theme) {
-    sunaba::ui::globalTheme = new sunaba::ui::Theme(theme.ptr());
-    global_state["theme"] = sunaba::ui::globalTheme;
+    sunaba::ui::uiGlobals::setGlobalTheme(new sunaba::ui::Theme(theme.ptr()));
+    global_state["theme"] = sunaba::ui::uiGlobals::getGlobalTheme();
 }
 
 void free_global_state(App* app) {

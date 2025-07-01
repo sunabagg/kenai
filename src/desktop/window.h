@@ -109,7 +109,7 @@ namespace sunaba::desktop {
 
             void setWindow(WindowNode* window) {
                 this->window = window;
-                this->window->set_theme(Ref<godot::Theme>(sunaba::ui::globalTheme->getTheme()));
+                this->window->set_theme(Ref<godot::Theme>(sunaba::ui::uiGlobals::getGlobalTheme()->getTheme()));
                 connectWindowSignals();
                 setViewport(window);
             }
