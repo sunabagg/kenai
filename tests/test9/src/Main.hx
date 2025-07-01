@@ -13,8 +13,6 @@ class Main extends App{
 
     override function init() {
         try {
-            //var aWidget = new AdvancedWidget();
-            //rootElement.addChild(aWidget.rootElement);
             var sceneManager = new SceneManager();
             rootElement.addChild(sceneManager);
             var scene : Scene = sceneManager.scene;
