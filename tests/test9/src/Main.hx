@@ -23,8 +23,6 @@ class Main extends App{
             scene.addEntity(entity);
             var inputTest = new InputTest();
             entity.addComponent(inputTest.component, "InputTest");
-            //var deltaTimePrinter : DeltaTimePrinter = new DeltaTimePrinter();
-            //entity.addComponent(deltaTimePrinter.component, "DeltaTimePrinter");
         }
         catch( e: Dynamic) {
             trace(e);
