@@ -9,6 +9,7 @@
 
 #include "../core/viewport.h"
 #include "../ui/theme.h"
+#include "../ui/global_theme.h"
 #include "../core/font.h"
 #include "../core/texture2d.h"
 #include "../ui/style_box.h"
@@ -108,6 +109,7 @@ namespace sunaba::desktop {
 
             void setWindow(WindowNode* window) {
                 this->window = window;
+                this->window->set_theme(Ref<godot::Theme>(sunaba::ui::globalTheme->getTheme()));
                 connectWindowSignals();
                 setViewport(window);
             }
