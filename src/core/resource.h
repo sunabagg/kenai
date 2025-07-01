@@ -35,7 +35,9 @@ namespace sunaba::core {
         // Setter for the Resource node
         void setResource(GodotResource* res) {
             resource = res;
-            resource->reference();
+            if (resource != nullptr) {
+                resource->reference();
+            }
         }
 
         Resource* duplicate(const bool subresources = false) {

@@ -37,7 +37,7 @@ namespace sunaba::audio {
 
         void setAudioStreamWav(AudioStreamWAV* a) {
             audioStreamWav = a;
-            audioStreamWav->reference();
+            //audioStreamWav->reference();
             setAudioStream(audioStreamWav);
         }
 

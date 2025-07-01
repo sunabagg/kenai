@@ -33,7 +33,7 @@ namespace sunaba::input {
 
         void setInputEventScreenTouch(GodotInputEventScreenTouch* e) {
             event = e;
-            event->reference();
+            //event->reference();
             setInputEventFromWindow(e);
         }
 

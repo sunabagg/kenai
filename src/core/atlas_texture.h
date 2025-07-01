@@ -37,7 +37,7 @@ namespace sunaba::core {
         // Setter for the AtlasTexture node
         void setAtlasTexture(GodotAtlasTexture* atlasTexture) {
             this->atlasTexture = atlasTexture;
-            atlasTexture->reference();
+            //atlasTexture->reference();
             setTexture(atlasTexture);
         }
 

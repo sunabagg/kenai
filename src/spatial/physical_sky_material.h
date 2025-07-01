@@ -34,7 +34,7 @@ namespace sunaba::spatial {
 
         void setPhysicalSkyMaterial(GodotPhysicalSkyMaterial* m) {
             material = m;
-            material->reference();
+            //material->reference();
             setMaterial(material);
         }
 

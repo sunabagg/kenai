@@ -36,7 +36,7 @@ namespace sunaba::core {
         // Setter for the PlaceholderTextureLayered node
         void setPlaceholderTextureLayered(GodotPlaceholderTextureLayered* placeholderTextureLayered) {
             this->placeholderTextureLayered = placeholderTextureLayered;
-            placeholderTextureLayered->reference();
+            //placeholderTextureLayered->reference();
             setTexture(placeholderTextureLayered);
         }
 

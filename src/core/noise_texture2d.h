@@ -35,7 +35,7 @@ namespace sunaba::core {
 
         void setNoiseTexture2D(GodotNoiseTexture2D* t) {
             texture = t;
-            texture->reference();
+            //texture->reference();
             setTexture2D(t);
         }
 

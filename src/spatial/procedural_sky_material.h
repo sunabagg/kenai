@@ -35,7 +35,7 @@ namespace sunaba::spatial {
 
         void setProceduralSkyMaterial(GodotProceduralSkyMaterial* m) {
             proceduralSkyMaterial = m;
-            proceduralSkyMaterial->reference();
+            //proceduralSkyMaterial->reference();
             setMaterial(proceduralSkyMaterial);
         }
 

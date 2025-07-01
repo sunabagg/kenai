@@ -37,7 +37,7 @@ namespace sunaba::core {
         // Setter for the Font node
         void setFont(GodotFont* fnt) {
             font = fnt;
-            font->reference();
+            //font->reference();
             setResource(font);
         }
 

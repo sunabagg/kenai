@@ -37,7 +37,7 @@ namespace sunaba::core {
         // Setter for the FontVariation node
         void setFontVariation(GodotFontVariation* fontVariation) {
             this->fontVariation = fontVariation;
-            fontVariation->reference();
+            //fontVariation->reference();
             setFont(fontVariation);
         } 
         

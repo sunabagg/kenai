@@ -36,7 +36,7 @@ namespace sunaba::core {
         // Setter for the PlaceholderTexture2D node
         void setPlaceholderTexture2D(GodotPlaceholderTexture2D* placeholderTexture2D) {
             this->placeholderTexture2D = placeholderTexture2D;
-            placeholderTexture2D->reference();
+            //placeholderTexture2D->reference();
             setTexture(placeholderTexture2D);
         }
 

@@ -36,7 +36,7 @@ namespace sunaba::audio {
 
         void setAudioStreamOggVorbis(GodotAudioStreamOggVorbis* a) {
             audioStreamOggVorbis = a;
-            audioStreamOggVorbis->reference();
+            //audioStreamOggVorbis->reference();
             setAudioStream(audioStreamOggVorbis);
         }
 

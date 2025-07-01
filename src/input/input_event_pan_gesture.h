@@ -33,7 +33,7 @@ namespace sunaba::input {
 
         void setInputEventPanGesture(GodotInputEventPanGesture* e) {
             event = e;
-            event->reference();
+            //event->reference();
             setInputEventGesture(e);
         }
 

@@ -33,7 +33,7 @@ namespace sunaba::spatial {
 
         void setCurve3D(GodotCurve3D* c) {
             curve = c;
-            curve->reference();
+            //curve->reference();
             setResource(curve);
         }
 

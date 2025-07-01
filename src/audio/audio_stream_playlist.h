@@ -33,7 +33,7 @@ namespace sunaba::audio {
 
         void setAudioStreamPlaylist(GodotAudioStreamPlaylist* a) {
             audioStreamPlaylist = a;
-            audioStreamPlaylist->reference();
+            //audioStreamPlaylist->reference();
             setAudioStream(audioStreamPlaylist);
         }
 

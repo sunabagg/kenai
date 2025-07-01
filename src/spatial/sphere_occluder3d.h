@@ -32,7 +32,7 @@ namespace sunaba::spatial {
 
         void setSphereOccluder3D(GodotSphereOccluder3D* o) {
             sphere_occluder = o;
-            sphere_occluder->reference();
+            //sphere_occluder->reference();
             setResource(sphere_occluder);
         }
 

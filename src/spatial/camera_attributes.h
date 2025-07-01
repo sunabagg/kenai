@@ -32,7 +32,7 @@ namespace sunaba::spatial {
 
         void setCameraAttributes(GodotCameraAttributes* ca) {
             cameraAttributes = ca;
-            cameraAttributes->reference();
+            //cameraAttributes->reference();
             setResource(cameraAttributes);
         }
 

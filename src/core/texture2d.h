@@ -37,7 +37,7 @@ namespace sunaba::core {
         // Setter for the Texture2D node
         void setTexture2D(GodotTexture2D* tex) {
             texture2D = tex;
-            texture2D->reference();
+            //texture2D->reference();
             setTexture(texture2D);
         }
 

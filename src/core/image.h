@@ -40,7 +40,7 @@ namespace sunaba::core {
         // Setter for the Image node
         void setImage(GodotImage* img) {
             image = img;
-            image->reference();
+            //image->reference();
             setResource(image);
         }
 

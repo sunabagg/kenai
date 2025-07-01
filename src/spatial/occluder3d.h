@@ -33,7 +33,7 @@ namespace sunaba::spatial {
 
         void setOccluder3D(GodotOccluder3D* o) {
             occluder = o;
-            occluder->reference();
+            //occluder->reference();
             setResource(occluder);
         }
 

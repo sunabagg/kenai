@@ -36,7 +36,7 @@ namespace sunaba::core {
         // Setter for the Texture2DRD node
         void setTexture2DRD(GodotTexture2DRD* texture2dRD) {
             this->texture2dRD = texture2dRD;
-            texture2dRD->reference();
+            //texture2dRD->reference();
             setTexture2D(texture2dRD);
         }
     };

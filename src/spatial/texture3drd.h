@@ -34,7 +34,7 @@ namespace sunaba::spatial {
 
         void setTexture3DRD(GodotTexture3DRD* t) {
             texture = t;
-            texture->reference();
+            //texture->reference();
             setTexture3D(texture);
         }
     };

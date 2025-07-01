@@ -34,7 +34,7 @@ namespace sunaba::input {
 
         void setInputEventAction(GodotInputEventAction* e) {
             event = e;
-            event->reference();
+            //event->reference();
             setInputEvent(e);
         }
 

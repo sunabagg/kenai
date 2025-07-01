@@ -35,7 +35,7 @@ namespace sunaba::input {
 
         void setShortcut(GodotShortcut* godotShortcut) {
             _godotShortcut = godotShortcut;
-            _godotShortcut->reference();
+            //_godotShortcut->reference();
             setResource(_godotShortcut);
         }
 

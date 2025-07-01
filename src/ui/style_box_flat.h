@@ -33,7 +33,7 @@ namespace sunaba::ui {
 
         void setStyleBoxFlat(GodotStyleBoxFlat* p_style_box_flat) {
             this->p_style_box_flat = p_style_box_flat;
-            p_style_box_flat->reference();
+            //p_style_box_flat->reference();
             setStyleBox(p_style_box_flat);
         }
 

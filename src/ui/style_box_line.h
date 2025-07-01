@@ -33,7 +33,7 @@ namespace sunaba::ui {
 
         void setStyleBoxLine(GodotStyleBoxLine* p_style_box_line) {
             this->p_style_box_line = p_style_box_line;
-            p_style_box_line->reference();
+            //p_style_box_line->reference();
             setStyleBox(p_style_box_line);
         }
 

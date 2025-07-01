@@ -34,7 +34,7 @@ namespace sunaba::spatial {
 
         void setSky(GodotSky* s) {
             sky = s;
-            sky->reference();
+            //sky->reference();
             setResource(sky);
         }
 

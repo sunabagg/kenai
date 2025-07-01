@@ -38,7 +38,7 @@ namespace sunaba::core {
         // Setter for the Shader node
         void setShader(GodotShader* shader) {
             this->shader = shader;
-            shader->reference();
+            //shader->reference();
             setResource(shader);
         }
 

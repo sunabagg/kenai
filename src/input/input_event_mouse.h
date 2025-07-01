@@ -33,7 +33,7 @@ namespace sunaba::input {
 
         void setInputEventMouse(GodotInputEventMouse* e) {
             event = e;
-            event->reference();
+            //event->reference();
             setInputEventWithModifiers(e);
         }
 

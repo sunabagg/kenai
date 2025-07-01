@@ -33,7 +33,7 @@ namespace sunaba::audio {
 
         void setAudioStreamMicrophone(GodotAudioStreamMicrophone* a) {
             audioStreamMicrophone = a;
-            audioStreamMicrophone->reference();
+            //audioStreamMicrophone->reference();
             setAudioStream(audioStreamMicrophone);
         }
     };

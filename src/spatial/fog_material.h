@@ -36,7 +36,7 @@ namespace sunaba::spatial {
 
         void setFogMaterial(GodotFogMaterial* m) {
             fogMaterial = m;
-            fogMaterial->reference();
+            //fogMaterial->reference();
             setMaterial(fogMaterial);
         }
 

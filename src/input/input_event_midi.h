@@ -33,7 +33,7 @@ namespace sunaba::input {
 
         void setInputEventMidi(GodotInputEventMidi* e) {
             event = e;
-            event->reference();
+            //event->reference();
             setInputEvent(e);
         }
 

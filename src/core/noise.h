@@ -34,7 +34,7 @@ namespace sunaba::core {
         
         void setNoise(GodotNoise* n) {
             noise = n;
-            noise->reference();
+            //noise->reference();
             setResource(n);
         }
 

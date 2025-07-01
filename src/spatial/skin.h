@@ -32,7 +32,7 @@ namespace sunaba::spatial {
 
         void setSkin(GodotSkin* s) {
             skin = s;
-            skin->reference();
+            //skin->reference();
             setResource(skin);
         }
 

@@ -33,7 +33,7 @@ namespace sunaba::spatial {
 
         void setOrmMaterial(GodotOrmMaterial3D* m) {
             material = m;
-            material->reference();
+            //material->reference();
             setBaseMaterial3D(material);
         }
     };

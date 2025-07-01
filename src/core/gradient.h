@@ -33,7 +33,7 @@ namespace sunaba::core {
 
         void setGradient(GodotGradient* g) {
             gradient = g;
-            gradient->reference();
+            //gradient->reference();
             setResource(g);
         }
 

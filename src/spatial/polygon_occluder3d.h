@@ -33,7 +33,7 @@ namespace sunaba::spatial {
 
         void setPolygonOccluder3D(GodotPolygonOccluder3D* ao) {
             arrayOccluder = ao;
-            arrayOccluder->reference();
+            //arrayOccluder->reference();
             setOccluder3D(arrayOccluder);
         }
 

@@ -33,7 +33,7 @@ namespace sunaba::input {
 
         void setInputEventMagnifyGesture(GodotInputEventMagnifyGesture* e) {
             event = e;
-            event->reference();
+            //event->reference();
             setInputEventGesture(e);
         }
 

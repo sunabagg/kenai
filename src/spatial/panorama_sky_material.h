@@ -34,7 +34,7 @@ namespace sunaba::spatial {
 
         void setPanoramaSkyMaterial(GodotPanoramaSkyMaterial* m) {
             material = m;
-            material->reference();
+            //material->reference();
             setMaterial(material);
         }
 

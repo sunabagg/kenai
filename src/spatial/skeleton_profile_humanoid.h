@@ -34,7 +34,7 @@ namespace sunaba::spatial {
 
         void setSkeletonProfileHumanoid(GodotSkeletonProfile* sp) {
             skeletonProfile = sp;
-            skeletonProfile->reference();
+            //skeletonProfile->reference();
             setSkeletonProfile(skeletonProfile);
         }
 

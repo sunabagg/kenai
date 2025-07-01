@@ -33,7 +33,7 @@ namespace sunaba::core {
 
         void setImageTextureLayered(GodotImageTextureLayered* t) {
             texture = t;
-            texture->reference();
+            //texture->reference();
             setTextureLayered(texture);
         }
 

@@ -33,7 +33,7 @@ namespace sunaba::audio {
 
         void setAudioStreamSynchronized(GodotAudioStreamSynchronized* a) {
             audioStreamSynchronized = a;
-            audioStreamSynchronized->reference();
+            //audioStreamSynchronized->reference();
             setAudioStream(audioStreamSynchronized);
         }
 

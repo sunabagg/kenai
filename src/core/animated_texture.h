@@ -37,7 +37,7 @@ namespace sunaba::core {
         // Setter for the AnimatedTexture node
         void setAnimatedTexture(GodotAnimatedTexture* animatedTexture) {
             this->animatedTexture = animatedTexture;
-            animatedTexture->reference();
+            //animatedTexture->reference();
             setTexture(animatedTexture);
         }
 

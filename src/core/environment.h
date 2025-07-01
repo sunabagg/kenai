@@ -35,7 +35,7 @@ namespace sunaba::core {
 
         void setEnvironment(GodotEnvironment* env) {
             environment = env;
-            environment->reference();
+            //environment->reference();
             setResource(env);
         }
 

@@ -65,7 +65,7 @@ namespace sunaba::ui {
 
         void setTheme(GodotTheme* t) {
             theme = t;
-            theme->reference();
+            //theme->reference();
             setResource(theme);
         }
 

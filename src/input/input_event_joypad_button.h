@@ -33,7 +33,7 @@ namespace sunaba::input {
 
         void setInputEventJoypadButton(GodotInputEventJoypadButton* e) {
             event = e;
-            event->reference();
+            //event->reference();
             setInputEvent(e);
         }
 

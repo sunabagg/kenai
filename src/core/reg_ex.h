@@ -33,7 +33,7 @@ namespace sunaba::core {
 
             void setRegEx(godot::Ref<GodotRegEx> regex) {
                 reg_ex = regex;
-                reg_ex->reference();
+                //reg_ex->reference();
             }
 
             void clear() {

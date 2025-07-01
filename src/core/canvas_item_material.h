@@ -34,7 +34,7 @@ namespace sunaba::core {
 
         void setCanvasItemMaterial(GodotCanvasItemMaterial* m) {
             canvasItemMaterial = m;
-            canvasItemMaterial->reference();
+            //canvasItemMaterial->reference();
             setMaterial(canvasItemMaterial);
         }
 

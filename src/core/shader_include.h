@@ -36,7 +36,7 @@ namespace sunaba::core {
         // Setter for the Shader node
         void setShader(GodotShaderInclude* shaderInclude) {
             this->shaderInclude = shaderInclude;
-            shaderInclude->reference();
+            //shaderInclude->reference();
             setResource(shaderInclude);
         }
 

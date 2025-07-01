@@ -37,7 +37,7 @@ namespace sunaba::core {
         // Setter for the Translation node
         void setTranslation(GodotTranslation* translation) {
             this->translation = translation;
-            translation->reference();
+            //translation->reference();
             setResource(translation);
         }
 

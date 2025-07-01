@@ -34,7 +34,7 @@ namespace sunaba::ui {
 
         void setStyleBoxTexture(GodotStyleBoxTexture* p_style_box_texture) {
             this->p_style_box_texture = p_style_box_texture;
-            p_style_box_texture->reference();
+            //p_style_box_texture->reference();
             setStyleBox(p_style_box_texture);
         }
 

@@ -32,7 +32,7 @@ namespace sunaba::spatial {
 
         void setQuadOccluder3D(GodotQuadOccluder3D* qo) {
             quadOccluder = qo;
-            quadOccluder->reference();
+            //quadOccluder->reference();
             setOccluder3D(quadOccluder);
         }
 

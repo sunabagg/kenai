@@ -34,7 +34,7 @@ namespace sunaba::core {
 
         void setMaterial(GodotMaterial* m) {
             material = m;
-            material->reference();
+            //material->reference();
             setResource(material);
         }
 

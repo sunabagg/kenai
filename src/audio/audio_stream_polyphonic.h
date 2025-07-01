@@ -33,7 +33,7 @@ namespace sunaba::audio {
 
         void setAudioStreamPolyphonic(GodotAudioStreamPolyphonic* a) {
             audioStreamPolyphonic = a;
-            audioStreamPolyphonic->reference();
+            //audioStreamPolyphonic->reference();
             setAudioStream(audioStreamPolyphonic);
         }
 

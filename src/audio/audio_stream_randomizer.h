@@ -33,7 +33,7 @@ namespace sunaba::audio {
 
         void setAudioStreamRandomizer(GodotAudioStreamRandomizer* a) {
             audioStreamRandomizer = a;
-            audioStreamRandomizer->reference();
+            //audioStreamRandomizer->reference();
             setAudioStream(audioStreamRandomizer);
         }
 

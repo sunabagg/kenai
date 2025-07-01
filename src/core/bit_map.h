@@ -38,7 +38,7 @@ namespace sunaba::core {
         // Setter for the BitMap node
         void setBitMap(GodotBitMap* bitMap) {
             this->bitMap = bitMap;
-            bitMap->reference();
+            //bitMap->reference();
             setResource(bitMap);
         }
 

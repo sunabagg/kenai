@@ -33,7 +33,7 @@ namespace sunaba::spatial {
 
         void setCameraAttributesPhysical(GodotCameraAttributesPhysical* cap) {
             cameraAttributesPhysical = cap;
-            cameraAttributesPhysical->reference();
+            //cameraAttributesPhysical->reference();
             setResource(cameraAttributesPhysical);
         }
 

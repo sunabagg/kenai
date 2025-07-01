@@ -38,7 +38,7 @@ namespace sunaba::core {
         // Setter for the LabelSettings node
         void setLabelSettings(GodotLabelSettings* labelSettings) {
             this->labelSettings = labelSettings;
-            labelSettings->reference();
+            //labelSettings->reference();
             setResource(labelSettings);
         }
 

@@ -34,7 +34,7 @@ namespace sunaba::spatial {
 
         void setWorld3D(GodotWorld3D* w) {
             world = w;
-            world->reference();
+            //world->reference();
             setResource(world);
         }
 

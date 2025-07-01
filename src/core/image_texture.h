@@ -40,7 +40,7 @@ namespace sunaba::core {
         // Setter for the ImageTexture node
         void setImageTexture(GodotImageTexture* imgTex) {
             imageTexture = imgTex;
-            imageTexture->reference();
+            //imageTexture->reference();
             setTexture2D(imageTexture);
         }
 

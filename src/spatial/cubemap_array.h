@@ -33,7 +33,7 @@ namespace sunaba::spatial {
 
         void setCubemapArray(GodotCubemapArray* c) {
             cubemapArray = c;
-            cubemapArray->reference();
+            //cubemapArray->reference();
             setImageTextureLayered(cubemapArray);
         }
 

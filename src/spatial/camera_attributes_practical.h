@@ -33,7 +33,7 @@ namespace sunaba::spatial {
 
         void setCameraAttributesPractical(GodotCameraAttributesPractical* cap) {
             cameraAttributesPractical = cap;
-            cameraAttributesPractical->reference();
+            //cameraAttributesPractical->reference();
             setResource(cameraAttributesPractical);
         }
 

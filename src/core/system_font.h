@@ -35,7 +35,7 @@ namespace sunaba::core {
 
         void setSystemFont(GodotSystemFont* f) {
             font = f;
-            font->reference();
+            //font->reference();
             setFont(f);
         }
 
