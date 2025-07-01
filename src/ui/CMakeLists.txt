@@ -130,6 +130,7 @@ target_sources(${PROJECT_NAME} PRIVATE
         rich_text_label.h
         rich_text_label.cpp
         global_theme.h
+        global_theme.cpp
 )
 
 target_include_directories( ${PROJECT_NAME}
