@@ -7,7 +7,7 @@ on:
   #    - '*.md'
   
   schedule:
-    - cron: '0 9 * * *' # run at 9 AM UTC/ 1 AM AKDT
+    - cron: '0 8 * * *' # run at 8 AM UTC/ 12 AM AKDT
 
   workflow_dispatch:
 
