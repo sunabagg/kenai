@@ -42,7 +42,7 @@ namespace sunaba::desktop {
         
             void connectAcceptDialogSignals() {
                 if (this->signalWrapper == nullptr) {
-                    signalWrapper == memnew(AcceptDialogSignalWrapper);
+                    signalWrapper = memnew(AcceptDialogSignalWrapper);
                     signalWrapper->element = this;
                 }
 
