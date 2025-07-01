@@ -27,6 +27,7 @@
 #include "input/bind_input_classes.h"
 #include "spatial/bind_spatial_classes.h"
 #include "ui/bind_ui_classes.h"
+#include "ui/global_theme.h"
 #include "desktop/bind_desktop_classes.h"
 #ifdef _WIN32 // hack fix for MSVC. TODO: this is dumb
 //#include <hxluasimdjson.cpp>
@@ -77,6 +78,12 @@ void App::_bind_methods() {
     ClassDB::bind_method(D_METHOD("load_and_execute_sbx", "path"), &App::loadAndExecuteSbx);
     ClassDB::bind_method(D_METHOD("start_mobdebug", "host", "port"), &App::startMobdebug);
     ClassDB::bind_method(D_METHOD("stop_mobdebug"), &App::stopMobdebug);
+    ClassDB::bind_method(D_METHOD("set_theme", "theme"), &App::setTheme);
+}
+
+void App::setTheme(Ref<Theme> theme) {
+    sunaba::ui::globalTheme = new sunaba::ui::Theme(theme.ptr());
+    global_state["theme"] = sunaba::ui::globalTheme;
 }
 
 void free_global_state(App* app) {
