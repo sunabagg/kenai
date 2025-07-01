@@ -11,6 +11,7 @@
 #include "../core/font.h"
 #include "../core/texture2d.h"
 #include "theme.h"
+#include "global_theme.h"
 
 #include "../core/stl_function_wrapper.h"
 
@@ -131,6 +132,7 @@ namespace sunaba::ui {
             // Setter for the Control node
             void setControl(ControlNode* p_node) {
                 control = p_node;
+                control->set_theme(Ref<godot::Theme>(globalTheme->getTheme()));
                 connectControlSignals();
                 setCanvasItem(control);
             }
