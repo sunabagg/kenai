@@ -1,13 +1,13 @@
 #include "input_service.h"
 
-#ifdef _WIN32
+#ifdef MSVC
 
 // Add this definition at global scope (outside any function/namespace)
 godot::Input *sunaba::input::InputService::inputSingleton = nullptr;
 sunaba::input::InputServiceSignalWrapper *sunaba::input::InputService::signalWrapper = nullptr;
 sunaba::core::Event *sunaba::input::InputService::joyConnectionChangedEvent = nullptr;
 
-#endif // _WIN32
+#endif // MSVC
 
 
 

@@ -479,6 +479,13 @@ if (NOT EMSCRIPTEN)
     )
 endif()
 
+if( MSVC )
+    target_compile_definitions( ${PROJECT_NAME}
+        PRIVATE
+            MSVC
+    )
+endif()
+
 # Link the libraries
 if (USE_LUAJIT)
     target_link_libraries(${PROJECT_NAME}
