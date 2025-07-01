@@ -33,7 +33,7 @@ namespace sunaba::desktop {
     void bindAcceptDialog(sol::state& lua) {
         lua.new_usertype<AcceptDialog>("AcceptDialog",
             "new", sol::factories(
-                []() { return new Window(); }
+                []() { return new AcceptDialog(); }
             ),
             sol::base_classes, sol::bases<BaseObject, Element, sunaba::core::Viewport, Window>(),
             "dialogAutowrap", sol::property(
