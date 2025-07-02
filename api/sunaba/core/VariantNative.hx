@@ -69,7 +69,7 @@ extern class VariantNative {
     public static function getTypeName(type: Int):String;
     public function asString():String;
     public function asInt32():Int32;
-    public function asInt64():Int64;
+    public function asInt():Int;
     public function asFloat32():Float;
     public function asFloat64():Float;
     public function asBool():Bool;
