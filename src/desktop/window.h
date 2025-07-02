@@ -2,6 +2,7 @@
 #define WINDOW_H
 
 #include <godot_cpp/classes/window.hpp>
+#include <godot_cpp/classes/display_server.hpp>
 #include <godot_cpp/variant/variant.hpp>
 #include <sol/sol.hpp>
 
@@ -92,6 +93,12 @@ namespace sunaba::desktop {
                 this->window->connect("title_changed", Callable(this->windowSignalWrapper, "title_changed"));
             }
 
+            void setWindowDpiScale() {
+                int displayScale = DisplayServer::get_singleton()->screen_get_dpi();
+                float fractionalScale = displayScale * 0.01f;
+                window->set_content_scale_factor(fractionalScale);
+            }
+
         public:
             Window() {
                 setWindow(memnew(WindowNode));
@@ -111,6 +118,7 @@ namespace sunaba::desktop {
                 this->window = window;
                 this->window->set_theme(Ref<godot::Theme>(sunaba::ui::uiGlobals::getGlobalTheme()->getTheme()));
                 connectWindowSignals();
+                setWindowDpiScale();
                 setViewport(window);
             }
 
@@ -118,6 +126,7 @@ namespace sunaba::desktop {
                 this->window = window;
                 window->element = this;
                 connectWindowSignals();
+                setWindowDpiScale();
                 setViewport(window);
             }
 
