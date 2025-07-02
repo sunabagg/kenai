@@ -136,14 +136,7 @@ namespace sunaba::core {
                             if (!lua_listener.valid()) {
                                 continue; // Skip invalid listeners
                             }
-                            sol::state_view lua_state = sol::state_view(lua_listener.lua_state());
-                            //lua_State* L = lua_state.lua_state();
-                            if (!lua_state || lua_state.lua_state() == nullptr) {
-                                continue; // Skip if the Lua state is invalid
-                            }
-                            sol::table lua_args = lua_state.create_table(1, 0);
-                            lua_args[0] = sol::make_object(lua_state.lua_state(), args);
-                            callLuaListener(lua_listener, lua_args);
+                            lua_listener(args);
                         }
                     }
                 }
