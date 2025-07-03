@@ -533,7 +533,7 @@ void App::stopMobdebug() {
 
 namespace sunaba {
     void bindRuntime(sol::state& lua) {
-        lua.new_usertype<Runtime>("Runtime"
+        auto ut = lua.new_usertype<Runtime>("Runtime"
             "new", sol::factories(
                 []() { return new Runtime(); }
             ),
@@ -559,5 +559,6 @@ namespace sunaba {
                 return new Runtime(node);
             }
         );
+        lua["Runtime"] = ut;
     }
 }
