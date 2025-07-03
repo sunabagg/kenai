@@ -79,6 +79,7 @@ void App::_bind_methods() {
     ClassDB::bind_method(D_METHOD("start_mobdebug", "host", "port"), &App::startMobdebug);
     ClassDB::bind_method(D_METHOD("stop_mobdebug"), &App::stopMobdebug);
     ClassDB::bind_method(D_METHOD("set_theme", "theme"), &App::setTheme);
+    ADD_SIGNAL(MethodInfo("on_exit"));
 }
 
 void App::setTheme(Ref<Theme> theme) {
@@ -289,6 +290,10 @@ void App::initState(bool sandboxed) {
             }
         }
         godot::UtilityFunctions::print( msg );
+    };
+
+    global_state["exit"] = [this]() {
+        this->emit_signal("on_exit");
     };
 
     //UtilityFunctions::print("Hello, World!");
