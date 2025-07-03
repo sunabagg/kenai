@@ -17,6 +17,6 @@ abstract ConfirmationDialogAbstract(ConfirmationDialog) from ConfirmationDialog 
         var cd = ConfirmationDialog.toConfirmationDialog(e);
         if (cd.isNull())
             return null;
-        returncd;
+        return cd;
     }
 }
