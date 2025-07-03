@@ -13,7 +13,7 @@ extern class SubViewport extends Viewport {
 
 abstract SubViewportAbstract(SubViewport) from SubViewport to SubViewport {
     @:from
-    public static function fromElement(element: Element): ViewportAbstract {
+    public static function fromElement(element: Element): SubViewportAbstract {
         var viewport = SubViewport.toSubViewport(element);
         if (viewport.isNull()) {
             return null;
