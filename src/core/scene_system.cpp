@@ -8,7 +8,7 @@ void sunaba::core::bindSceneSystem(sol::state& lua)
         "BaseObject", 
         "new", sol::factories(
             []() { return new BaseObject(); }
-        )
+        ),
         sol::meta_function::garbage_collect, sol::destructor([](BaseObject* b) {  }),
         "onFree", &BaseObject::onFree,
         "free", &BaseObject::free
