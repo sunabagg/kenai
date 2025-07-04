@@ -5,7 +5,7 @@ namespace sunaba::core {
     godot::OS* PlatformService::osSingleton = nullptr;
 
     void bindPlatformService(sol::state& lua) {
-        lua.new_usertype<PlatformService>("PlatformService",
+        auto ut = lua.new_usertype<PlatformService>("PlatformService",
             sol::no_constructor,
             sol::base_classes, sol::bases<Service>(),
             "name", sol::readonly_property(
@@ -18,5 +18,6 @@ namespace sunaba::core {
                 &PlatformService::getOSName
             )
         );
+        lua["PlatformService"] = ut;
     }
 }
