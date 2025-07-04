@@ -8,7 +8,7 @@ namespace sunaba::core {
         lua.new_usertype<PlatformService>("PlatformService",
             sol::no_constructor,
             sol::base_classes, sol::bases<Service>(),
-            "platformName", sol::readonly_property(
+            "name", sol::readonly_property(
                 &PlatformService::getPlatformName
             ),
             "deviceType", sol::readonly_property(
