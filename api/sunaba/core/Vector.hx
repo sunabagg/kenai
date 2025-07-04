@@ -45,7 +45,7 @@ abstract Vector<T>(VectorNative<T>) from VectorNative<T> to VectorNative<T> {
     public inline function toArray():Array<T> {
         var s: Vector<T> = this;
         var array: Array<T> = [];
-        for (i in 1...s.size()) {
+        for (i in 1...(s.size() + 1)) {
             var value = s.get(i);
             if (value == null) {
                 throw "Vector.toArray: null value at index " + i;
