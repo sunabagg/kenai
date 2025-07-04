@@ -543,6 +543,10 @@ namespace sunaba {
                 []() { return new Runtime(); }
             ),
             sol::base_classes, sol::bases<BaseObject, Element>(),
+            "args", sol::property(
+                &Runtime::getArgs,
+                &Runtime::setArgs
+            ),
             "init", sol::factories(
                 [](Runtime* rt) { rt->initState(); },
                 [](Runtime* rt, bool sandboxed) { rt->initState(sandboxed); }
