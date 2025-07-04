@@ -1,6 +1,6 @@
 package sunaba;
 
-enum abstract DeviceType(Int) from Int to Int {
+enum abstract GpuDeviceType(Int) from Int to Int {
 	var other = 0;
 	var integratedGpu = 1;
 	var discreteGpu = 2;
