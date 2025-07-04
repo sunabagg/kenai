@@ -48,7 +48,7 @@ abstract Vector<T>(VectorNative<T>) from VectorNative<T> to VectorNative<T> {
         for (i in 0...s.size()) {
             var value = s.get(i);
             if (value == null) {
-                throw "Vector.toArray: null value at index " + i;
+                continue;//throw "Vector.toArray: null value at index " + i;
             }
             array.push(value);
         }
