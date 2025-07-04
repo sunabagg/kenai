@@ -2,4 +2,21 @@
 
 namespace sunaba::core {
     std::string PlatformService::platformName = "Sunaba";
+    godot::OS* PlatformService::osSingleton = nullptr;
+
+    void bindPlatformService(sol::state& lua) {
+        lua.new_usertype<PlatformService>("PlatformService",
+            sol::no_constructor,
+            sol::base_classes, sol::bases<Service>(),
+            "platformName", sol::readonly_property(
+                &PlatformService::getPlatformName
+            ),
+            "deviceType", sol::readonly_property(
+                &PlatformService::getDeviceType
+            ),
+            "osName", sol::readonly_property(
+                &PlatformService::getOSName
+            )
+        );
+    }
 }
