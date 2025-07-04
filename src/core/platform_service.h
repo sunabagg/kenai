@@ -32,6 +32,33 @@ namespace sunaba::core {
                 return platformName;
             }
 
+            static const int getDeviceType() {
+                if (getOS()->has_feature("mobile")) {
+                    return 1;
+                }
+                else if (getOS()->get_name() == "Windows" || getOS()->get_name() == "Linux" || getOS()->get_name() == "macOS") {
+                    return 0;
+                }
+                else if (getOS()->get_name() == "Android") {
+                    return 1;
+                }
+                else if (getOS()->get_name() == "iOS") {
+                    return 1;
+                }
+                else if (getOS()->get_name() == "HTML5") {
+                    return 2;
+                }
+                else if (getOS()->get_name() == "Web") {
+                    return 2;
+                }
+                else if (getOS()->get_name() == "visionOS") {
+                    return 3;
+                }
+                else {
+                    return -1; // Unknown or unsupported device type
+                }
+            }
+
     };
 }
 #endif // PLATFORM_SERVICE_H
