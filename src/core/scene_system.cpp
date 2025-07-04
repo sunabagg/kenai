@@ -6,7 +6,9 @@ void sunaba::core::bindSceneSystem(sol::state& lua)
 {
     lua.new_usertype<BaseObject>(
         "BaseObject", 
-        sol::constructors<BaseObject()>(), 
+        "new", sol::factories(
+            []() { return new BaseObject(); }
+        )
         sol::meta_function::garbage_collect, sol::destructor([](BaseObject* b) {  }),
         "onFree", &BaseObject::onFree,
         "free", &BaseObject::free
@@ -25,7 +27,9 @@ void sunaba::core::bindSceneSystem(sol::state& lua)
     );
     lua.new_usertype<Entity>(
         "Entity", 
-        sol::constructors<Entity()>(),
+        "new", sol::factories(
+            []() { return new Entity(); }
+        ),
         sol::base_classes, sol::bases<BaseObject>(),
         sol::meta_function::garbage_collect, sol::destructor([](Entity* e) {  }),
         "name",sol::property( 
