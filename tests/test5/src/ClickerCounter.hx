@@ -10,7 +10,7 @@ class ClickerCounter extends Widget {
     var counter: Int = 0;
     
     override function init() {
-        load("app://assets/ClickerCounter.suml");
+        load("app://ClickerCounter.suml");
         var labelElement = rootElement.find(
             "centerContainer/vboxContainer/clickCounterLabel"
         );

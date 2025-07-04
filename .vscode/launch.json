@@ -240,6 +240,19 @@
             "internalConsoleOptions": "openOnSessionStart",
         },
         {
+            "name": "macOS Launch (Local) (test5)",
+            "type": "lldb-dap",
+            "request": "launch",
+            "program": "/Applications/Godot.app/Contents/MacOS/Godot",
+            "args": [
+                "--verbose",
+                "/Users/lucasabbas/sunaba/tests/test5/bin/test5.sbx"
+            ],
+            "cwd": "${command:cmake.buildDirectory}/sunaba",
+            "preLaunchTask": "CMake: build",
+            "internalConsoleOptions": "openOnSessionStart",
+        },
+        {
             "name": "macOS Launch (Local) (test6)",
             "type": "lldb-dap",
             "request": "launch",
