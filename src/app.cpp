@@ -79,6 +79,9 @@ void App::_bind_methods() {
     ClassDB::bind_method(D_METHOD("start_mobdebug", "host", "port"), &App::startMobdebug);
     ClassDB::bind_method(D_METHOD("stop_mobdebug"), &App::stopMobdebug);
     ClassDB::bind_method(D_METHOD("set_theme", "theme"), &App::setTheme);
+    ClassDB::bind_method(D_METHOD("set_args", "_args"), &App::setArgs);
+    ClassDB::bind_method(D_METHOD("get_args"), &App::getArgs);
+    ADD_PROPERTY(PropertyInfo(Variant::PACKED_STRING_ARRAY, "args"), "set_args", "get_args");
     ADD_SIGNAL(MethodInfo("on_exit"));
 }
 
@@ -382,6 +385,8 @@ void App::loadAndExecuteSbx(const String &path) {
         int port = portEnv ? std::atoi(portEnv) : 8172;
         startMobdebug(host.c_str(), port);
     }
+
+    global_state["__args"] = args;
     
     sol::protected_function_result result = global_state.safe_script("require('" + luabinPath + "')", sol::script_pass_on_error);
     
@@ -422,6 +427,8 @@ void App::start( const String &path) {
         int port = portEnv ? std::atoi(portEnv) : 8172;
         startMobdebug(host.c_str(), port);
     }
+
+    global_state["__args"] = args;
 
     sol::protected_function_result result = global_state.safe_script("require('app://main.lua')", sol::script_pass_on_error);
     
