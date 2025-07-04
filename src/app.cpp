@@ -383,8 +383,7 @@ void App::loadAndExecuteSbx(const String &path) {
         startMobdebug(host.c_str(), port);
     }
     
-    std::string script = ioManager->loadText(luabinPath);
-    sol::protected_function_result result = global_state.safe_script(script, sol::script_pass_on_error);
+    sol::protected_function_result result = global_state.safe_script("require('" + luabinPath + "')", sol::script_pass_on_error);
     
     if ( !result.valid() ) {
         sol::error err = result;
@@ -424,8 +423,7 @@ void App::start( const String &path) {
         startMobdebug(host.c_str(), port);
     }
 
-    std::string script = ioManager->loadText("app://main.lua");
-    sol::protected_function_result result = global_state.safe_script(script, sol::script_pass_on_error);
+    sol::protected_function_result result = global_state.safe_script("require('app://main.lua')", sol::script_pass_on_error);
     
     if ( !result.valid() ) {
         sol::error err = result;
