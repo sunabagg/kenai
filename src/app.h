@@ -97,6 +97,14 @@ namespace sunaba
                 setNode(a);
             }
 
+            std::vector<std::string> getArgs() {
+                return app->args;
+            }
+
+            void setArgs(std::vector<std::string> args) {
+                app->args = args;
+            }
+
             void initState(bool sandboxed = true) {
                 app->initState(sandboxed);
             }
