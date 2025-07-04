@@ -61,6 +61,10 @@ namespace sunaba::core {
                 return DEVICE_TYPE_UNKNOWN; // Unknown or unsupported device type
             }
 
+            static const std::string getOSName() {
+                return getOS()->get_name().utf8().get_data();
+            }
+
     };
 }
 #endif // PLATFORM_SERVICE_H
