@@ -40,6 +40,7 @@
 #include "sub_viewport.h"
 #include "scene_node.h"
 #include "service.h"
+#include "platform_service.h"
 
 void sunaba::core::bindCoreClasses(sol::state& lua) {
     sunaba::core::io::bindBinaryClasses(lua);
@@ -48,6 +49,7 @@ void sunaba::core::bindCoreClasses(sol::state& lua) {
     sunaba::core::io::bindIoClasses(lua);
     bindEvent(lua);
     bindService(lua);
+    bindPlatformService(lua);
 
     bindResource(lua);
     bindFont(lua);
