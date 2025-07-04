@@ -9,6 +9,12 @@
 #include "service.h"
 #include <Version.h>
 
+#define DEVICE_TYPE_DESKTOP 0
+#define DEVICE_TYPE_MOBILE 1
+#define DEVICE_TYPE_WEB 2
+#define DEVICE_TYPE_XR 3
+#define DEVICE_TYPE_UNKNOWN -1
+
 using namespace godot;
 
 namespace sunaba::core {
@@ -33,30 +39,26 @@ namespace sunaba::core {
             }
 
             static const int getDeviceType() {
-                if (getOS()->has_feature("mobile")) {
-                    return 1;
-                }
-                else if (getOS()->get_name() == "Windows" || getOS()->get_name() == "Linux" || getOS()->get_name() == "macOS") {
-                    return 0;
+                if (getOS()->get_name() == "Windows" || getOS()->get_name() == "Linux" || getOS()->get_name() == "macOS") {
+                    return DEVICE_TYPE_DESKTOP;
                 }
                 else if (getOS()->get_name() == "Android") {
-                    return 1;
+                    return DEVICE_TYPE_MOBILE;
                 }
                 else if (getOS()->get_name() == "iOS") {
-                    return 1;
+                    return DEVICE_TYPE_MOBILE;
                 }
                 else if (getOS()->get_name() == "HTML5") {
-                    return 2;
+                    return DEVICE_TYPE_WEB;
                 }
                 else if (getOS()->get_name() == "Web") {
-                    return 2;
+                    return DEVICE_TYPE_WEB;
                 }
                 else if (getOS()->get_name() == "visionOS") {
-                    return 3;
+                    return DEVICE_TYPE_XR;
                 }
-                else {
-                    return -1; // Unknown or unsupported device type
-                }
+                    
+                return DEVICE_TYPE_UNKNOWN; // Unknown or unsupported device type
             }
 
     };
