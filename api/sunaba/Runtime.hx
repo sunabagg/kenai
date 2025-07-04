@@ -1,9 +1,11 @@
 package sunaba;
 
+import sunaba.core.Vector;
 import sunaba.core.Element;
 
 @:native("Runtime")
 extern class Runtime extends Element {
+    public var args: Vector<String>;
     public function init(?sandboxed: Bool): Void;
     public function load(path: String): Void;
     public function initMobdebug(): Void;
