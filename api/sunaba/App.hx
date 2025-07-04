@@ -20,4 +20,8 @@ class App {
     public function init() {
         
     }
+
+    public static function exit() {
+        untyped __lua__("_G.exit()");
+    }
 }
