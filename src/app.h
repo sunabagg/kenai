@@ -9,6 +9,8 @@
 #include <godot_cpp/classes/theme.hpp>
 #define SOL_ALL_SAFETIES_ON 1
 #include <sol/state.hpp>
+#include <string>
+#include <vector>
 
 #include "core/element.h"
 #include "core/io/io_manager.h"
@@ -25,6 +27,26 @@ namespace sunaba
     public:
         App();
         ~App();
+
+        std::vector<std::string> args;
+
+        PackedStringArray getArgs() {
+            PackedStringArray result;
+            for(std::string arg : args) {
+                result.append(arg.c_str());
+            }
+            return result;
+        }
+        void setArgs(PackedStringArray argsPsa) {
+            std::vector<std::string> argsVec;
+            for (size_t i = 0; i < argsPsa.size(); i++)
+            {
+                String arg = argsPsa[i];
+                std::string argStr = arg.utf8().get_data();
+                argsVec.push_back(argStr);
+            }
+            args = argsVec;
+        }
 
         sol::state global_state;
 
