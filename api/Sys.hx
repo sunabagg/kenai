@@ -28,6 +28,7 @@ import lua.lib.luv.Misc;
 import sys.io.FileInput;
 import sys.io.FileOutput;
 import sunaba.core.Vector;
+import sunaba.core.PlatformService;
 
 @:coreApi
 class Sys {
@@ -67,7 +68,7 @@ class Sys {
 	}
 
 	static function getSystemName():String {
-		return lua.Boot.systemName();
+		return PlatformService.osName;
 	}
 
 	public static function systemName():String {
