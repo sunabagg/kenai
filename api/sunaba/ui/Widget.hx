@@ -495,7 +495,7 @@ class Widget {
                 var attributes = child.attributes();
                 var label : String = child.get("label");
                 var id = menu.itemCount;
-                menu.addItem(label, id);
+                menu.addItem(label, id, 0);
                 for (attrib in attributes) {
                     var attributeName = attrib;
                     var attributeValue = child.get(attributeName);
