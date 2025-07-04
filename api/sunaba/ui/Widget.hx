@@ -34,6 +34,7 @@ class Widget {
         io = untyped __lua__("_G.ioManager");
         rootElement = new Control();
         rootElement.theme = Theme.getDefaultTheme();
+        rootElement.scriptInstance = this;
 
         init();
     }

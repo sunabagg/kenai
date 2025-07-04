@@ -25,6 +25,14 @@ void sunaba::core::bindElement(sol::state &lua) {
                     e->getNode()->set_name(name.c_str());
             }
         ),
+        "scriptInstance", sol::property(
+            [](Element* e) {
+                return e->scriptInstance;
+            },
+            [](Element* e, sol::table table) {
+                e->scriptInstance = table;
+            }
+        ),
         "childEnteredTree", sol::property(
             [](Element* e) {
                 return e->childEnteredTree;
