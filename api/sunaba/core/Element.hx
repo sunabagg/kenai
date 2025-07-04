@@ -1,4 +1,5 @@
 package sunaba.core;
+import sunaba.desktop.Window;
 
 @:native("Element")
 extern class Element extends BaseObject {
@@ -21,6 +22,7 @@ extern class Element extends BaseObject {
     public function getChildren(): Vector<Element>;
     public function isNull(): Bool;
     public function getViewport(): Viewport;
+    public function getWindow(): Window;
     public function delete(): Void;
     @:native("cast")
     public static function castElement(obj:Dynamic): Element;
