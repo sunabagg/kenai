@@ -171,6 +171,7 @@ namespace sunaba::ui {
                         return arr;
                     }
                 }
+                return PackedInt32Array();
             }
 
             PackedInt32Array getAllowedSizeFlagsVertical() const {
@@ -186,6 +187,7 @@ namespace sunaba::ui {
                         return arr;
                     }
                 }
+                return PackedInt32Array();
             }
 
             void onFree() override {
