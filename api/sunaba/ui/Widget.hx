@@ -71,6 +71,10 @@ class Widget {
             for (i in 0... children.length) {
                 var child = children[i];
                 if (child != null) {
+                    if (child.name == "EventHandler") {
+                        // Skip the event handler node
+                        continue;
+                    }
                     child.delete();
                 }
             }
