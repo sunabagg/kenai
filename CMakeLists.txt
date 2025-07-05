@@ -87,6 +87,10 @@ target_compile_features( ${PROJECT_NAME}
 set( LIB_ARCH ${CMAKE_SYSTEM_PROCESSOR} )
 if ( APPLE )
     set( LIB_ARCH "universal" )
+elseif ( WIN32 )
+    if ( ${CMAKE_SYSTEM_PROCESSOR} STREQUAL "ARM64" )
+        set( LIB_ARCH "arm64" )
+    endif()    
 elseif ( ANDROID )
     set( LIB_ARCH ${CMAKE_ANDROID_ARCH_ABI} )
     # Disable FORTIFY_SOURCE to prevent buffer overflow crashes in Lua strchr calls

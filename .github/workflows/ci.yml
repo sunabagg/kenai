@@ -73,12 +73,26 @@ jobs:
           ${{ github.workspace }}/vcpkg/vcpkg install
 
       - name: Configure
+        if: matrix.config.os == 'macos-latest' || matrix.config.os == 'ubuntu-22.04' || matrix.config.os == 'windows-latest'
+        # For Windows Arm, we handle configuration separately
         run: >
           mkdir GDExtension-build
 
           cmake
           -B GDExtension-build
           -G "Ninja"
+          -DCMAKE_BUILD_TYPE=${{ matrix.build_type }}
+          --install-prefix ${{ github.workspace }}/install-${{ matrix.build_type }}
+        
+      - name: Configure (Windows Arm)
+        if: matrix.config.os == 'windows-11-arm'
+        run: >
+          mkdir GDExtension-build
+
+          cmake
+          -B GDExtension-build
+          -G "Ninja"
+          -A ARM64
           -DCMAKE_BUILD_TYPE=${{ matrix.build_type }}
           --install-prefix ${{ github.workspace }}/install-${{ matrix.build_type }}
           .
