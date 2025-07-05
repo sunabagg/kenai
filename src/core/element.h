@@ -245,6 +245,7 @@ namespace sunaba::core {
         void setNode(Node* p_node) {
             node = p_node;
             auto* eventHandler = memnew(NodeProxy);
+            eventHandler->set_name("EventHandler");
             eventHandler->element = this;
             node->add_child(eventHandler);
             connectElementSignals();
