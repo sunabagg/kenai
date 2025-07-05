@@ -87,10 +87,6 @@ jobs:
         if: matrix.config.os == 'windows-latest'
         run: Copy-Item "${{ github.workspace }}\lua51.lib" -Destination "${{ github.workspace }}\GDExtension-build\lua51.lib"
 
-      - name: Copy luajit lib (Windows Arm)
-        if: matrix.config.os == 'windows-11-arm'
-        run: Copy-Item "${{ github.workspace }}\vcpkg\installed\x64-arm\debug\lib\lua51.lib" -Destination "${{ github.workspace }}\GDExtension-build\lua51.lib"
-
       - name: Build
         run: cmake --build GDExtension-build
 
