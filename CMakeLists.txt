@@ -188,6 +188,7 @@ if (EMSCRIPTEN)
         -sSUPPORT_LONGJMP=emscripten#fixed exception handling related errors
         -flto=full#fixed lto errors
         -pthread#fixed shared memory errors
+        -shared
         #removed -fno-exceptions
     )
 
@@ -220,6 +221,8 @@ if (EMSCRIPTEN)
     set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wno-error=sign-compare")
     set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wno-error=comment")
     set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wno-error=array-bounds")
+
+    
 endif()
 
 set( GODOT_CPP_SYSTEM_HEADERS ON CACHE BOOL "" FORCE )
@@ -513,4 +516,14 @@ else()
                 libluv_a
         )
     endif()
+endif()
+
+# Set output file extension and shared library properties based on platform
+if (EMSCRIPTEN)
+    set_target_properties(${PROJECT_NAME} PROPERTIES
+        SUFFIX ".wasm"
+        OUTPUT_NAME "${PROJECT_NAME}"
+        PREFIX "lib"
+        LINK_FLAGS "-sSIDE_MODULE=1 -shared"
+    )
 endif()
