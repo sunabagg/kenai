@@ -29,12 +29,21 @@ class Widget {
     public var io: IoManager;
     public var keepChildren: Bool = false;
     private var elementdb = [];
+    private var eventHandlers: Array<Element> = [];
 
     public function new() {
         io = untyped __lua__("_G.ioManager");
         rootElement = new Control();
         rootElement.theme = Theme.getDefaultTheme();
         rootElement.scriptInstance = this;
+        // hack to make sure event handlers dont get deleted
+        var children : Array<Element> = rootElement.getChildren();
+        for (i in 0... children.length) {
+            var child = children[i];
+            if (child != null) {
+                eventHandlers.push(child);
+            }
+        }
 
         init();
     }
@@ -71,7 +80,9 @@ class Widget {
             for (i in 0... children.length) {
                 var child = children[i];
                 if (child != null) {
-                    if (child.name == "EventHandler") {
+                    // Check if the child is an EventHandler node
+                    if (eventHandlers.indexOf(child) != -1) {
+                        trace("Skipping EventHandler node: " + child.name);
                         // Skip the event handler node
                         continue;
                     }
