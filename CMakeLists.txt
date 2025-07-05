@@ -327,11 +327,11 @@ set(CMAKE_PREFIX_PATH "${CMAKE_PREFIX_PATH};${CMAKE_SOURCE_DIR}/vcpkg_installed/
 #        "extern/luau/EqSat/include"
 #        "extern/luau/Ast/include")
 
-option(USE_LUAJIT "Use LuaJIT" OFF)
+option(USE_LUAJIT "Use LuaJIT" ON)
 
-#if (EMSCRIPTEN OR APPLE OR ANDROID)
-#    set(USE_LUAJIT OFF)
-#endif()
+if (EMSCRIPTEN OR APPLE OR ANDROID)
+    set(USE_LUAJIT OFF)
+endif()
 
 if (USE_LUAJIT)
     # Include the PkgConfig module

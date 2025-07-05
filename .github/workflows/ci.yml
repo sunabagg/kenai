@@ -36,7 +36,7 @@ jobs:
 
       - name: Install Dependencies (macOS)
         if: matrix.config.os == 'macos-latest'
-        run: brew install ccache ninja pkgconf lua
+        run: brew install ccache ninja pkgconf lua luajit
 
       - name: Install Dependencies (Linux)
         if: matrix.config.os == 'ubuntu-22.04'
