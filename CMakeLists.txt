@@ -184,7 +184,7 @@ endif()
 if (EMSCRIPTEN)
     target_compile_options( ${PROJECT_NAME}
         PUBLIC
-        -sSIDE_MODULE=2#not sure if this had some effect
+        -sSIDE_MODULE=1#not sure if this had some effect
         -sSUPPORT_LONGJMP=emscripten#fixed exception handling related errors
         -flto=full#fixed lto errors
         -pthread#fixed shared memory errors
@@ -194,6 +194,7 @@ if (EMSCRIPTEN)
     target_link_options( ${PROJECT_NAME}
         INTERFACE
         -sWASM_BIGINT
+        -sSIDE_MODULE=1
         -sSUPPORT_LONGJMP=emscripten#same stuff here
         -fvisibility=hidden
         -shared
