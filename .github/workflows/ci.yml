@@ -54,6 +54,7 @@ jobs:
         uses: ilammy/msvc-dev-cmd@v1
 
       - name: ccache
+        if: matrix.config.os != 'windows-11-arm' 
         uses: hendrikmuhs/ccache-action@v1.2
         with:
           max-size: '10G'
