@@ -248,8 +248,8 @@ namespace sunaba::core {
             canvas_item->draw_char_outline(font->getFont(), pos, chr.c_str(), fontSize, size, modulate);
         }
         
-        void drawCircle(Vector2 center, float radius, Color color, float width = 1.0f, bool antiAliased = false) {
-            canvas_item->draw_circle(center, radius, color, width, antiAliased);
+        void drawCircle(Vector2 center, float radius, Color color, bool filled = true, float width = 1.0f, bool antiAliased = false) {
+            canvas_item->draw_circle(center, radius, color, filled, width, antiAliased);
         }
 
         void drawColoredPolygon(std::vector<Vector2> points, Color color, std::vector<Vector2> uvs = {}, Texture2D* texture = nullptr) {
