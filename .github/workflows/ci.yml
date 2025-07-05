@@ -45,12 +45,12 @@ jobs:
           sudo apt-get install -y ccache ninja-build pkg-config libluajit-5.1-2 libluajit-5.1-dev libluajit-5.1-common luajit linux-libc-dev
 
       - name: Install Dependencies (Windows)
-        if: matrix.config.os == 'windows-latest'
+        if: matrix.config.os == 'windows-latest' || matrix.config.os == 'windows-11-arm'
         run: |
           choco upgrade ccache ninja pkgconfiglite -y
 
       - name: Setup MSVC (Windows)
-        if: matrix.config.os == 'windows-latest'
+        if: matrix.config.os == 'windows-latest' || matrix.config.os == 'windows-11-arm'
         uses: ilammy/msvc-dev-cmd@v1
 
       - name: ccache
@@ -82,10 +82,13 @@ jobs:
           --install-prefix ${{ github.workspace }}/install-${{ matrix.build_type }}
           .
       
-      - name: Copy luajit lib (Windows)
+      - name: Copy luajit lib (Windows x64)
         if: matrix.config.os == 'windows-latest'
         run: Copy-Item "${{ github.workspace }}\lua51.lib" -Destination "${{ github.workspace }}\GDExtension-build\lua51.lib"
 
+      - name: Copy luajit lib (Windows Arm)
+        if: matrix.config.os == 'windows-11-arm'
+        run: Copy-Item "${{ github.workspace }}\vcpkg\installed\x64-arm\debug\lib\lua51.lib" -Destination "${{ github.workspace }}\GDExtension-build\lua51.lib"
 
       - name: Build
         run: cmake --build GDExtension-build
