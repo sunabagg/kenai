@@ -98,6 +98,28 @@
             "visualizerFile": "${workspaceFolder}/.vscode/godot.natvis"
         },
         {
+            "name": "Windows Launch (player)",
+            "type": "cppvsdbg",
+            "request": "launch",
+            "program": "godot",
+            "args": [
+                "--verbose",
+                "--path",
+                "${workspaceFolder}/../sunaba-player/template"
+            ],
+            "cwd": "${command:cmake.buildDirectory}/sunaba",
+            "preLaunchTask": "CMake: build",
+            "internalConsoleOptions": "openOnSessionStart",
+            "console": "internalConsole",
+            "environment": [
+                {
+                    "name": "Path",
+                    "value": "${env:Path};"
+                }
+            ],
+            "visualizerFile": "${workspaceFolder}/.vscode/godot.natvis"
+        },
+        {
             "name": "Linux Launch",
             "type": "cppdbg",
             "request": "launch",
