@@ -482,6 +482,7 @@ namespace sunaba::ui {
                         return result.get<bool>();
                     }
                 }
+                return false;
             }
 
             void dropData(Vector2 position, Variant data) {
@@ -500,6 +501,7 @@ namespace sunaba::ui {
                         return func(scriptInstance, position);
                     }
                 }
+                return Variant(); // Return an empty Variant if no script is set or function not found
             }
 
             Vector2 _getMinimumSize() {
@@ -510,6 +512,7 @@ namespace sunaba::ui {
                         return result.get<Vector2>();
                     }
                 }
+                return Vector2(); // Return an empty Vector2 if no script is set or function not found
             }
 
             std::string _getTooltip(Vector2 position) {
@@ -520,6 +523,7 @@ namespace sunaba::ui {
                         return result.get<std::string>();
                     }
                 }
+                return "";
             }
 
             void guiInput(Ref<InputEvent> event) {
@@ -540,6 +544,7 @@ namespace sunaba::ui {
                         return result.get<bool>();
                     }
                 }
+                return false; // Return false if no script is set or function not found
             }
 
             TypedArray<Vector3i> structuredTextParser(const Array &args, const String &text) {
@@ -550,6 +555,7 @@ namespace sunaba::ui {
                         return result.get<TypedArray<Vector3i>>();
                     }
                 }
+                return TypedArray<Vector3i>(); // Return an empty TypedArray if no script is set or function not found
             }
 
             void acceptEvent() {
