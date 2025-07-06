@@ -167,9 +167,9 @@ void sunaba::core::bind_varaint(sol::state& lua) {
         },
         "asStringArray", [](const Variant& v) { 
             PackedStringArray packed_data = v;
-            std::vector<String> data;
+            std::vector<std::string> data;
             for (int i = 0; i < packed_data.size(); ++i) {
-                data.push_back(packed_data[i]);
+                data.push_back(packed_data[i].utf8().get_data());
             }
             return data;
         },
