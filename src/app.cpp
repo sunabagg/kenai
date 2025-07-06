@@ -175,9 +175,7 @@ void App::initState(bool sandboxed) {
         execDir = execDir.replace("/MacOS", "/Resources/").replace("\\MacOS", "\\Resources");
     }
     auto execFile = OS::get_singleton()->get_executable_path().get_file();
-    UtilityFunctions::print("Executable path: " + execDir + "/" + execFile);
     auto shareDir = OS::get_singleton()->get_executable_path().replace("bin/" + execFile, "share/sunaba");
-    UtilityFunctions::print("Share directory: " + shareDir);
     if (DirAccess::dir_exists_absolute(shareDir)) {
         execDir = shareDir;
         global_state["shareDir"] = shareDir.utf8().get_data();
