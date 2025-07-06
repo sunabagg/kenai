@@ -71,7 +71,7 @@ abstract Vector<T>(VectorNative<T>) from VectorNative<T> to VectorNative<T> {
 
     @:from
     @:generic
-    public static function fromTable<A>(table:Vector<A>):Vector<A> {
+    public static function fromTable<A>(table:Table<Int, A>):Vector<A> {
         var vector: Vector<A> = untyped __lua__("table");
         return vector;
     }
