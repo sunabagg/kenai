@@ -42,17 +42,17 @@ extern class FontFile extends Font {
     public function getFaceIndex(cacheIndex : Int) : Int;
     public function getGlyphAdvance(cacheIndex : Int, size : Int, glyphIndex : Int) : Vector2;
     public function getGlyphIndex(size : Int, chr : Int, variationSelecttor: Int) : Int;
-    public function getGlyphList(cacheIndex : Int, size : Vector2i) : lua.Table<Int, Int>;
+    public function getGlyphList(cacheIndex : Int, size : Vector2i) : lua.Vector<Int>;
     public function getGlyphOffset(cacheIndex : Int, size : Vector2i, glyphIndex : Int) : Vector2;
     public function getGlyphSize(cacheIndex : Int, size : Vector2i, glyphIndex : Int) : Vector2;
     public function getGlyphTextureIndex(cacheIndex : Int, size : Vector2i, glyphIndex : Int) : Int;
     public function getGlyphUvRect(cacheIndex : Int, size : Vector2i, glyphIndex : Int) : Rect2;
     public function getKerning(cacheIndex : Int, size : Int, glyphPair : Vector2i) : Vector2;
-    public function getKerningList(cacheIndex : Int, size : Vector2i) : lua.Table<Int, Vector2i>;
+    public function getKerningList(cacheIndex : Int, size : Vector2i) : lua.Vector<Vector2i>;
     public function getLanguageSupportOverride(lang : String) : Bool;
     public function getScriptSupportOverride(script : String) : Bool;
-    public function getScriptSupportOverrides() : lua.Table<Int, String>;
-    public function getSizeCacheList(cacheIndex: Int): lua.Table<Int, Vector2i>;
+    public function getScriptSupportOverrides() : lua.Vector<String>;
+    public function getSizeCacheList(cacheIndex: Int): lua.Vector<Vector2i>;
     public function getTextureCount(cacheIndex : Int, size : Vector2i) : Int;
     public function getTextureImage(cacheIndex : Int, size : Vector2i, textureIndex : Int) : Image;
     public function getVariationCoordinates(cacheIndex : Int) : Map<Any, Any>;
@@ -85,7 +85,7 @@ extern class FontFile extends Font {
     public function setLanguageSupportOverride(lang : String, supported : Bool) : Void;
     public function setScriptSupportOverride(script : String, supported : Bool) : Void;
     public function setTextureImage(cacheIndex : Int, size : Vector2i, textureIndex : Int, image : Image) : Void;
-    public function setTextureOffsets(cacheIndex : Int, size : Vector2i, textureIndex : Int, offsets : lua.Table<Int, Vector2i>) : Void;
+    public function setTextureOffsets(cacheIndex : Int, size : Vector2i, textureIndex : Int, offsets : lua.Vector<Vector2i>) : Void;
     public function setVariationCoordinates(cacheIndex : Int, coordinates : Dictionary) : Void;
     @:native("cast")
     public static function castFrom(type: Dynamic) : FontFile;

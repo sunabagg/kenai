@@ -2,10 +2,10 @@ package sunaba.core;
 
 import sunaba.core.Color;
 
-abstract ColorArray(lua.Table<Int, Color>) from lua.Table<Int, Color> to lua.Table<Int, Color> {
+abstract ColorArray(lua.Vector<Color>) from lua.Vector<Color> to lua.Vector<Color> {
     @:to
     public inline function toArray(): Array<Color> {
-        var table : lua.Table<Int, Color> = this;
+        var table : lua.Vector<Color> = this;
         return lua.Table.toArray(table);
     }
 

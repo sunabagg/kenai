@@ -2,7 +2,7 @@ package sunaba.core;
 
 @:native("Font")
 extern class Font extends Resource {
-    public var fallbacks: lua.Table<Int, Font>;
+    public var fallbacks: lua.Vector<Font>;
     public function getAscent(fontSize : Int) : Float;
     public function getCharSize(chr : Int, fontsize : Int) : Vector2;
     public function getDescent(fontSize : Int) : Float;

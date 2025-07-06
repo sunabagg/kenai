@@ -1,9 +1,9 @@
 package sunaba.core;
 
-abstract IntArray(lua.Table<Int, Int>) from lua.Table<Int, Int> to lua.Table<Int, Int> {
+abstract IntArray(lua.Vector<Int>) from lua.Vector<Int> to lua.Vector<Int> {
     @:to
     public inline function toArray(): Array<Int> {
-        var table : lua.Table<Int, Int> = this;
+        var table : lua.Vector<Int> = this;
         return lua.Table.toArray(table);
     }
 

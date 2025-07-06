@@ -5,8 +5,8 @@ import sunaba.core.Vector3;
 
 @:native("Occluder3D")
 extern class Occluder3D extends Resource {
-    public function getIndices(): lua.Table<Int, Int>;
-    public function getVertices(): lua.Table<Int, Vector3>;
+    public function getIndices(): lua.Vector<Int>;
+    public function getVertices(): lua.Vector<Vector3>;
     @:native("cast")
     public static function castFrom(res: Dynamic): Occluder3D;
 }

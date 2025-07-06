@@ -2,10 +2,10 @@ package sunaba.core;
 
 import lua.Table;
 
-abstract StringArray(Table<Int, String>) from Table<Int, String> to Table<Int, String> {
+abstract StringArray(Vector<String>) from Vector<String> to Vector<String> {
     @:to
     public inline function toArray(): Array<String> {
-        var table : Table<Int, String> = this;
+        var table : Vector<String> = this;
         return Table.toArray(table);
     }
 

@@ -55,14 +55,14 @@ extern class VariantNative {
     //@:native("new")
     //public static function fromArrayList(value:ArrayList):Variant;
     public static function fromByteArray(value:BinaryData):VariantNative;
-    public static function fromIntArray(value:Table<Int, Int>): VariantNative;
-    public static function fromIntArray64(value:Table<Int, Int>): VariantNative;
-    public static function fromFloatArray(value:Table<Int, Float>): VariantNative;
-    public static function fromFloatArray64(value:Table<Int, Float>): VariantNative;
-    public static function fromStringArray(value:Table<Int, String>): VariantNative;
-    public static function fromVector2Array(value:Table<Int, Vector2>): VariantNative;
-    public static function fromVector3Array(value:Table<Int, Vector3>): VariantNative;
-    public static function fromVector4Array(value:Table<Int, Vector4>): VariantNative;
+    public static function fromIntArray(value:Vector<Int>): VariantNative;
+    public static function fromIntArray64(value:Vector<Int>): VariantNative;
+    public static function fromFloatArray(value:Vector<Float>): VariantNative;
+    public static function fromFloatArray64(value:Vector<Float>): VariantNative;
+    public static function fromStringArray(value:Vector<String>): VariantNative;
+    public static function fromVector2Array(value:Vector<Vector2>): VariantNative;
+    public static function fromVector3Array(value:Vector<Vector3>): VariantNative;
+    public static function fromVector4Array(value:Vector<Vector4>): VariantNative;
     public static function fromElement(value:Element): VariantNative;
     public static function fromResource(value:Resource): VariantNative;
     public function getType():Int;
@@ -90,14 +90,14 @@ extern class VariantNative {
     //public function asDictionary():Dictionary;
     //public function asArrayList():ArrayList;
     public function asByteArray():BinaryData;
-    public function asIntArray():Table<Int, Int>;
-    public function asIntArray64():lua.Table<Int, Int>;
-    public function asFloatArray():Table<Int, Float>;
-    public function asFloatArray64():lua.Table<Int, Float>;
-    public function asStringArray():Table<Int, String>;
-    public function asVector2Array():Table<Int, Vector2>;
-    public function asVector3Array():Table<Int, Vector3>;
-    public function asVector4Array():Table<Int, Vector4>;
+    public function asIntArray():Vector<Int>;
+    public function asIntArray64():lua.Vector<Int>;
+    public function asFloatArray():Vector<Float>;
+    public function asFloatArray64():lua.Vector<Float>;
+    public function asStringArray():Vector<String>;
+    public function asVector2Array():Vector<Vector2>;
+    public function asVector3Array():Vector<Vector3>;
+    public function asVector4Array():Vector<Vector4>;
     public function asElement():Element;
     public function asResource():Resource;
     @:native("tostring")

@@ -10,7 +10,7 @@ extern class BitMap extends Resource {
     public function getSize() : Vector2i;
     public function getTrueBitCount() : Int;
     public function growMask(pixels : Int, rect : Rect2i) : Void;
-    public function opaqueToPolygons(rect : Rect2i, epsilon : Float) : lua.Table<Int, Vector2i>;
+    public function opaqueToPolygons(rect : Rect2i, epsilon : Float) : lua.Vector<Vector2i>;
     public function resize(size : Vector2i) : Void;
     public function setBit(x : Int, y : Int, bit : Bool) : Void;
     public function setBitRect(rect : Rect2i, bit : Bool) : Void;

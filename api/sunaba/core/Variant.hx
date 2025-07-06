@@ -191,69 +191,69 @@ abstract Variant(VariantNative) from VariantNative to VariantNative {
         return this.asByteArray();
     }
     /*@:from
-    public static function fromIntArray(value:Table<Int, Int>):VariantAbstract {
+    public static function fromIntArray(value:Vector<Int>):VariantAbstract {
         return Variant.fromIntArray(value);
     }
     @:to
-    public static function toIntArray(value:VariantAbstract):Table<Int, Int> {
+    public static function toIntArray(value:VariantAbstract):Vector<Int> {
         return value.asIntArray();
     }
     */
     @:from
-    public static function fromIntArray64(value:lua.Table<Int, Int>):Variant {
+    public static function fromIntArray64(value:lua.Vector<Int>):Variant {
         return VariantNative.fromIntArray64(value);
     }
     @:to
-    public inline function toIntArray64():Table<Int, Int> {
+    public inline function toIntArray64():Vector<Int> {
         return this.asIntArray64();
     }
     /*@:from
-    public static function fromFloatArray(value:Table<Int, Float>):VariantAbstract {
+    public static function fromFloatArray(value:Vector<Float>):VariantAbstract {
         return Variant.fromFloatArray(value);
     }
     @:to
-    public static function toFloatArray(value:VariantAbstract):Table<Int, Float> {
+    public static function toFloatArray(value:VariantAbstract):Vector<Float> {
         return value.asFloatArray();
     }*/
     @:from
-    public static function fromFloatArray64(value:Table<Int, Float>):Variant {
+    public static function fromFloatArray64(value:Vector<Float>):Variant {
         return VariantNative.fromFloatArray64(value);
     }
     @:to
-    public inline function toFloatArray64():Table<Int, Float> {
+    public inline function toFloatArray64():Vector<Float> {
         return this.asFloatArray64();
     }
     @:from
-    public static function fromStringArray(value:Table<Int, String>):Variant {
+    public static function fromStringArray(value:Vector<String>):Variant {
         return VariantNative.fromStringArray(value);
     }
     @:to
-    public inline function toStringArray():Table<Int, String> {
+    public inline function toStringArray():Vector<String> {
         return this.asStringArray();
     }
     @:from
-    public static function fromVector2Array(value:Table<Int, Vector2>):Variant {
+    public static function fromVector2Array(value:Vector<Vector2>):Variant {
         return VariantNative.fromVector2Array(value);
     }
     @:to
-    public inline function toVector2Array():Table<Int, Vector2> {
+    public inline function toVector2Array():Vector<Vector2> {
         return this.asVector2Array();
     }
     @:from
-    public static function fromVector3Array(value:Table<Int, Vector3>):Variant {
+    public static function fromVector3Array(value:Vector<Vector3>):Variant {
         return VariantNative.fromVector3Array(value);
     }
     @:to
-    public inline function toVector3Array():Table<Int, Vector3> {
+    public inline function toVector3Array():Vector<Vector3> {
         return this.asVector3Array();
     }
 
     @:from
-    public static function fromVector4Array(value:Table<Int, Vector4>):Variant {
+    public static function fromVector4Array(value:Vector<Vector4>):Variant {
         return VariantNative.fromVector4Array(value);
     }
     @:to
-    public inline function toVector4Array():Table<Int, Vector4> {
+    public inline function toVector4Array():Vector<Vector4> {
         return this.asVector4Array();
     }
 }

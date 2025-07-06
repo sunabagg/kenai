@@ -7,7 +7,7 @@ import sunaba.core.Image;
 @:native("Texture3D")
 extern class Texture3D extends Texture {
     public function createPlaceholder(): Resource;
-    public function getData(): lua.Table<Int, Image>;
+    public function getData(): lua.Vector<Image>;
     public function getDepth(): Int;
     public function getFormat(): Int;
     public function getHeight(): Int;

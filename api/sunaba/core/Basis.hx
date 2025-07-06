@@ -2,7 +2,7 @@ package sunaba.core;
 
 @:native("Basis")
 extern class Basis {
-    public var rows: lua.Table<Int, Vector3>;
+    public var rows: lua.Vector<Vector3>;
     public function new(x : Vector3, y : Vector3, z : Vector3);
     @:native("new")
     public static function zero() : Basis;
