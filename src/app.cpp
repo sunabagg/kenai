@@ -11,6 +11,7 @@
 #include <godot_cpp/classes/os.hpp>
 #include <godot_cpp/classes/project_settings.hpp>
 #include <godot_cpp/classes/file_access.hpp>
+#include <godot_cpp/classes/dir_access.hpp>
 #include <godot_cpp/classes/scene_tree.hpp>
 #ifdef USE_PORTABLE_FILE_DIALOGS
 #include "portable-file-dialogs.h"
@@ -173,6 +174,17 @@ void App::initState(bool sandboxed) {
         // On macOS, the executable path is usually in Contents/MacOS/ directory
         execDir = execDir.replace("/MacOS", "/Resources/").replace("\\MacOS", "\\Resources");
     }
+    auto execFile = OS::get_singleton()->get_executable_path().get_file();
+    auto shareDir = execDir.replace("bin/" + execFile, "share/sunaba");
+    if (DirAccess::dir_exists_absolute(shareDir)) {
+        execDir = shareDir;
+        global_state["shareDir"] = shareDir.utf8().get_data();
+        global_state.script("package.path = package.path .. ';' .. shareDir .. '/?.lua'");
+    }
+    else {
+        global_state["shareDir"] = sol::lua_nil;
+    }
+    
     global_state["execDir"] = execDir.utf8().get_data();
     global_state.script("package.path = package.path .. ';' .. execDir .. '/?.lua'");
     global_state.script("print(package.path)");
