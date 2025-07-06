@@ -91,9 +91,9 @@ extern class VariantNative {
     //public function asArrayList():ArrayList;
     public function asByteArray():BinaryData;
     public function asIntArray():Vector<Int>;
-    public function asIntArray64():lua.Vector<Int>;
+    public function asIntArray64():sunaba.core.Vector<Int>;
     public function asFloatArray():Vector<Float>;
-    public function asFloatArray64():lua.Vector<Float>;
+    public function asFloatArray64():sunaba.core.Vector<Float>;
     public function asStringArray():Vector<String>;
     public function asVector2Array():Vector<Vector2>;
     public function asVector3Array():Vector<Vector3>;

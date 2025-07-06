@@ -12,9 +12,9 @@ extern class Curve3D extends Resource {
     public function addPoint(pos: Vector3, _in: Vector3 = Vector3.zero(), out: Vector3 = Vector3.zero(), index: Int = 1): Void;
     public function clearPoints(): Void;
     public function getBakedLength(): Float;
-    public function getBakedPoints(): lua.Vector<Vector3>;
-    public function getBakedTilts(): lua.Vector<Float>;
-    public function getBakedUpVectors(): lua.Vector<Vector3>;
+    public function getBakedPoints(): sunaba.core.Vector<Vector3>;
+    public function getBakedTilts(): sunaba.core.Vector<Float>;
+    public function getBakedUpVectors(): sunaba.core.Vector<Vector3>;
     public function getClosestOffset(point: Vector3): Float;
     public function getClosestPoint(point: Vector3): Vector3;
     public function getPointIn(index: Int): Vector3;
@@ -31,8 +31,8 @@ extern class Curve3D extends Resource {
     public function setPointOut(index: Int, out: Vector3): Void;
     public function setPointPosition(index: Int, pos: Vector3): Void;
     public function setPointTilt(index: Int, tilt: Float): Void;
-    public function tessellate(maxStages: Int = 5, toleranceDegrees: Float = 4.0): lua.Vector<Vector3>;
-    public function tessellateEvenLength(maxStages: Int = 5, toleranceLength: Float = 0.2): lua.Vector<Vector3>;
+    public function tessellate(maxStages: Int = 5, toleranceDegrees: Float = 4.0): sunaba.core.Vector<Vector3>;
+    public function tessellateEvenLength(maxStages: Int = 5, toleranceLength: Float = 0.2): sunaba.core.Vector<Vector3>;
     @:native("cast")
     public static function castFrom(type: Dynamic): Curve3D;
 }

@@ -200,7 +200,7 @@ abstract Variant(VariantNative) from VariantNative to VariantNative {
     }
     */
     @:from
-    public static function fromIntArray64(value:lua.Vector<Int>):Variant {
+    public static function fromIntArray64(value:sunaba.core.Vector<Int>):Variant {
         return VariantNative.fromIntArray64(value);
     }
     @:to

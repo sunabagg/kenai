@@ -2,10 +2,10 @@ package sunaba.core;
 
 @:native("Gradient")
 extern class Gradient extends Resource {
-    public var colors: lua.Vector<Color>;
+    public var colors: sunaba.core.Vector<Color>;
     public var interpolationColorSpace: Int;
     public var interpolationMode: Int;
-    public var offsets: lua.Vector<Float>;
+    public var offsets: sunaba.core.Vector<Float>;
     public function addPoint(offset: Float, color: Color) : Void;
     public function getColor(point: Float) : Color;
     public function getOffset(point: Int) : Float;

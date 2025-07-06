@@ -8,9 +8,9 @@ extern class Translation extends Resource {
     public function eraseMessage(srcMsg: String, context: String): Void;
     public function getMessage(srcMsg: String, context: String = ""): String;
     public function getMessageCount(): Int;
-    public function getMessageList(): lua.Vector<String>;
+    public function getMessageList(): sunaba.core.Vector<String>;
     public function getPluralMessage(srcMsg: String, srcPluralMsg: String, n: Int, context: String): String;
-    public function getTRanslatedMessageList(): lua.Vector<String>;
+    public function getTRanslatedMessageList(): sunaba.core.Vector<String>;
     @:native("cast")
     public static function castFrom(type: Dynamic) : Translation;
 }

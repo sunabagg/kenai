@@ -1,9 +1,9 @@
 package sunaba.core;
 
-abstract Vector3Array<T>(lua.Vector<Vector3>) from lua.Vector<Vector3> to lua.Vector<Vector3> {
+abstract Vector3Array<T>(sunaba.core.Vector<Vector3>) from sunaba.core.Vector<Vector3> to sunaba.core.Vector<Vector3> {
     @:to
     public inline function toArray(): Array<Vector3> {
-        var table : lua.Vector<Vector3> = this;
+        var table : sunaba.core.Vector<Vector3> = this;
         return lua.Table.toArray(table);
     }
 

@@ -4,7 +4,7 @@ import sunaba.core.Vector2;
 
 @:native("PolygonOccluder3D")
 extern class PolygonOccluder3D extends Occluder3D {
-    public var polygon: lua.Vector<Vector2>;
+    public var polygon: sunaba.core.Vector<Vector2>;
     @:native("cast")
     public static function castFrom(type: Dynamic): PolygonOccluder3D;
 }

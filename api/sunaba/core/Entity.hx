@@ -22,9 +22,9 @@ extern class Entity extends BaseObject {
 
     public function getComponentByName(name : String) : Component;
 
-    public function getComponentsByType(type : Class<Component>) : lua.Vector<Component>;
+    public function getComponentsByType(type : Class<Component>) : sunaba.core.Vector<Component>;
 
-    public function getUserComponentsByType(type : Class<Behavior>) : lua.Vector<Behavior>;
+    public function getUserComponentsByType(type : Class<Behavior>) : sunaba.core.Vector<Behavior>;
 
     public function addChild(child: Entity): Void;
 
