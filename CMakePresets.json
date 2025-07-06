@@ -40,6 +40,30 @@
         "CMAKE_BUILD_TYPE": "Debug"
       }
     },
+	{
+      "name": "windows-arm-debug",
+      "displayName": "Arm64 Windows Debug",
+      "inherits": "default",
+      "binaryDir": "${sourceDir}/../build_sunaba_Windows-AMD64",
+      "condition": {
+        "type": "equals",
+        "lhs": "${hostSystemName}",
+        "rhs": "Windows"
+      },
+      "toolset": {
+        "value": "host=arm64",
+        "strategy": "external"
+      },
+      "architecture": {
+        "value": "arm64",
+        "strategy": "external"
+      },
+      "cacheVariables": {
+        "CMAKE_C_COMPILER": "cl.exe",
+        "CMAKE_CXX_COMPILER": "cl.exe",
+        "CMAKE_BUILD_TYPE": "Debug"
+      }
+    },
     {
       "name": "windows-debug-mingw",
       "displayName": "64bit Windows Debug (Mingw)",
@@ -68,6 +92,14 @@
       "name": "windows-release",
       "displayName": "64bit Windows Release",
       "inherits": "windows-debug",
+      "cacheVariables": {
+        "CMAKE_BUILD_TYPE": "Release"
+      }
+    },
+	{
+      "name": "windows-arm-release",
+      "displayName": "Arm64 Windows Release",
+      "inherits": "windows-arm-debug",
       "cacheVariables": {
         "CMAKE_BUILD_TYPE": "Release"
       }

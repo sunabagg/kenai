@@ -5,7 +5,8 @@
   "dependencies": [
     {
       "name": "luajit",
-      "version>=": "2023-01-04#5"
+      "version>=": "2023-01-04#5",
+      "platform": "x64 & windows"
     },
     "openssl"
   ]
