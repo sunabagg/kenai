@@ -183,7 +183,7 @@ class EReg {
 		var result:Array<String> = [];
         var lastIndex = 0;
         var searchAllTable = regex.searchAll(s, 0, -1);
-        var matches:Array<RegExMatch> = Table.toArray(searchAllTable);
+        var matches:Array<RegExMatch> = searchAllTable.toArray();
         for (match in matches) {
             if (match.isNull()) continue; // Skip invalid matches
             var start = match.getStart(0);

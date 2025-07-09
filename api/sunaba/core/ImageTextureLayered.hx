@@ -2,7 +2,7 @@ package sunaba.core;
 
 @:native("ImageTextureLayered")
 extern class ImageTextureLayered extends TextureLayered {
-    public function createFromImages(images: lua.Table<Int, Image>) : Int;
+    public function createFromImages(images: sunaba.core.Vector<Image>) : Int;
     public function updateLayer(image: Image, layer: Int) : Void;
     @:native("cast")
     public static function castFrom(type: Dynamic) : ImageTextureLayered;

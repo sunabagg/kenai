@@ -4,7 +4,7 @@ import sunaba.core.Resource;
 
 @:native("InputEventShortcut")
 extern class Shortcut extends Resource {
-    public var events: lua.Table<Int, InputEvent>;
+    public var events: sunaba.core.Vector<InputEvent>;
     public function getAsText(): String;
     public function hasValidEvent(): Bool;
     public function matchesEvent(event: InputEvent): Bool;

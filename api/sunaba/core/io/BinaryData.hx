@@ -6,7 +6,7 @@ extern class BinaryData {
     public function new();
 
     @:native("new")
-    public static function fromTable(table : lua.Table<Int, Float>) : BinaryData;
+    public static function fromTable(table : sunaba.core.Vector<Float>) : BinaryData;
 
     public function size() : Int;
 
@@ -20,5 +20,5 @@ extern class BinaryData {
 
     public function insert(index : Int, value : ByteObject) : Void;
 
-    public function toTable() : lua.Table<Int, Float>;
+    public function toTable() : sunaba.core.Vector<Float>;
 }

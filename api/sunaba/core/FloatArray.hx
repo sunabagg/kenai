@@ -1,9 +1,9 @@
 package sunaba.core;
 
-abstract FloatArray(lua.Table<Int, Float>) from lua.Table<Int, Float> to lua.Table<Int, Float> {
+abstract FloatArray(sunaba.core.Vector<Float>) from sunaba.core.Vector<Float> to sunaba.core.Vector<Float> {
     @:to
     public inline function toArray(): Array<Float> {
-        var table : lua.Table<Int, Float> = this;
+        var table : sunaba.core.Vector<Float> = this;
         return lua.Table.toArray(table);
     }
 

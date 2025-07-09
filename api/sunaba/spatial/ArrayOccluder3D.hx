@@ -4,9 +4,9 @@ import sunaba.core.Vector3;
 
 @:native("ArrayOccluder3D")
 extern class ArrayOccluder3D extends Occluder3D {
-    public var indices: lua.Table<Int, Int>;
-    public var vertices: lua.Table<Int, Vector3>;
-    public function setArrays(vertices: lua.Table<Int, Vector3>, indices: lua.Table<Int, Int>): Void;
+    public var indices: sunaba.core.Vector<Int>;
+    public var vertices: sunaba.core.Vector<Vector3>;
+    public function setArrays(vertices: sunaba.core.Vector<Vector3>, indices: sunaba.core.Vector<Int>): Void;
     @:native("cast")
     public static function castFrom(res: Dynamic): ArrayOccluder3D;
 }

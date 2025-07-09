@@ -22,7 +22,7 @@ extern class Camera extends Component {
     public var vOffset : Float;
     public function clearCurrent() : Void;
     public function getCullMaskValue(index : Int) : Bool;
-    //public function getFrustum() : lua.Table<Int, Plane>;
+    //public function getFrustum() : sunaba.core.Vector<Plane>;
     public function isPositionBehind(position : Vector3) : Bool;
     public function makeCurrent() : Void;
     public function projectLocalRayNormal(screenPoint : Vector2) : Vector3;
