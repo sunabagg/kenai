@@ -38,7 +38,7 @@ namespace sunaba::core {
         void _unhandled_input(const Ref<InputEvent>& event) override;
         void _unhandled_key_input(const Ref<InputEvent>& event) override;
         void _shortcut_input(const Ref<InputEvent>& event) override;
-        void _notification(int what) override;
+        void _notification(int what);
     };
 
     class NodeSignalWrapper : public Object {
