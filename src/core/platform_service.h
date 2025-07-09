@@ -66,7 +66,7 @@ namespace sunaba::core {
             }
 
             static int shellOpen(const std::string _uri) {
-                String uri = String(_uri.c_str()).uri_encode();
+                String uri = String(_uri.c_str());
                 Error err = getOS()->shell_open(uri);
                 return err;
             }
