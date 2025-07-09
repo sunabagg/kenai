@@ -26,11 +26,10 @@ windows.x86_64 = {
     "res://lib/Windows-AMD64/libcrypto-3-x64.dll": "",
     "res://lib/Windows-AMD64/libssl-3-x64.dll": "",
     "res://lib/Windows-AMD64/lua51.dll": "",
-    "res://lib/Windows-AMD64/luv.dll": "",
+    "res://lib/Windows-AMD64/luv.dll": ""
 }
 windows.arm64 = { 
     "res://lib/Windows-ARM64/legacy.dll": "",
     "res://lib/Windows-ARM64/libcrypto-3-arm64.dll": "",
-    "res://lib/Windows-ARM64/libssl-3-arm64.dll": "",
-    "res://lib/Windows-ARM64/luv.dll": "",
+    "res://lib/Windows-ARM64/libssl-3-arm64.dll": ""
 }
