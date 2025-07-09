@@ -51,11 +51,9 @@ jobs:
 
       - name: Install Scoop (Windows)
         if: matrix.config.os == 'windows-latest' || matrix.config.os == 'windows-11-arm'
-        uses: ScoopInstaller/GithubActions@main
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          SKIP_UPDATED: '1'
-          THROW_ERROR: '0'
+        run: |
+          Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser
+          Invoke-RestMethod -Uri https://get.scoop.sh | Invoke-Expression
 
       - name: Install OpenSSL (Windows Arm)
         if: matrix.config.os == 'windows-11-arm'
