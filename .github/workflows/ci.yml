@@ -50,7 +50,7 @@ jobs:
           choco upgrade ccache ninja pkgconfiglite -y
 
       - name: Setup MSVC (Windows)
-        if: matrix.config.os == 'windows-latest'
+        if: matrix.config.os == 'windows-latest' || matrix.config.os == 'windows-11-arm'
         uses: ilammy/msvc-dev-cmd@v1
 
       - name: ccache
