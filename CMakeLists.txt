@@ -327,10 +327,19 @@ set(CMAKE_PREFIX_PATH "${CMAKE_PREFIX_PATH};${CMAKE_SOURCE_DIR}/vcpkg_installed/
 #        "extern/luau/EqSat/include"
 #        "extern/luau/Ast/include")
 
-option(USE_LUAJIT "Use LuaJIT" ON)
+option(USE_LUAJIT "Use LuaJIT" OFF)
 
 if (EMSCRIPTEN OR APPLE OR ANDROID)
     set(USE_LUAJIT OFF)
+elseif(WIN32 AND ${CMAKE_SYSTEM_PROCESSOR} MATCHES "AMD64|x86_64|x64")
+    # Use LuaJIT on Windows x64 only (not ARM64)
+    set(USE_LUAJIT ON)
+elseif(WIN32 AND ${CMAKE_SYSTEM_PROCESSOR} MATCHES "ARM64|arm64")
+    # LuaJIT doesn't support Windows ARM64
+    set(USE_LUAJIT OFF)
+elseif (CMAKE_SYSTEM_NAME STREQUAL "Linux" AND ${CMAKE_SYSTEM_PROCESSOR} MATCHES "x86_64|aarch64")
+    # Use LuaJIT on Linux x64 and ARM64
+    set(USE_LUAJIT ON)
 endif()
 
 if (USE_LUAJIT)
@@ -362,11 +371,13 @@ if (USE_LUAJIT)
     add_compile_definitions( USE_LUAJIT )
     # Include directories for LuaJIT
     include_directories(${LUAJIT_INCLUDE_DIRS})
+    message(STATUS "Using LuaJIT on ${CMAKE_SYSTEM_NAME} ${CMAKE_SYSTEM_PROCESSOR}")
 else() #
     add_compile_definitions( USE_PUCRIO_LUA )
     #include_directories ( ${LUA_INCLUDE_DIR} )
     include_directories( ${CMAKE_SOURCE_DIR}/extern/lua-5.1.5/include() )
     include_directories ( ${CMAKE_SOURCE_DIR}/extern/lua-5.1.5/src )
+    message(STATUS "Using PUC Rio Lua on ${CMAKE_SYSTEM_NAME} ${CMAKE_SYSTEM_PROCESSOR}")
 endif()
 
 if (NOT EMSCRIPTEN AND NOT ANDROID)
@@ -448,6 +459,7 @@ if (NOT EMSCRIPTEN)
             USE_LUASOCKET
     )
     set( LUASEC_WITH_LUASOCKET OFF )
+    find_package(OpenSSL REQUIRED)
     add_subdirectory( extern/luasec )
     target_include_directories( ${PROJECT_NAME}
         PRIVATE
@@ -466,7 +478,11 @@ if (NOT EMSCRIPTEN)
         set(LUA_BUILD_TYPE System CACHE STRING "" FORCE)
     else()
         set(USE_LUAJIT OFF CACHE BOOL "" FORCE)
-        set(WITH_LUA_ENGINE STREQUAL Lua CACHE BOOL "" FORCE)
+        set(WITH_LUA_ENGINE Lua CACHE STRING "" FORCE)
+    endif()
+    # Force luv to use Lua instead of LuaJIT on Windows ARM64
+    if(WIN32 AND ${CMAKE_SYSTEM_PROCESSOR} MATCHES "ARM64|arm64")
+        set(WITH_LUA_ENGINE Lua CACHE STRING "" FORCE)
     endif()
     add_subdirectory( extern/luv )
     target_include_directories( ${PROJECT_NAME}
@@ -487,7 +503,7 @@ if( MSVC )
 endif()
 
 # Link the libraries
-if (USE_LUAJIT)
+if (USE_LUAJIT AND LUAJIT_FOUND)
     target_link_libraries(${PROJECT_NAME}
         PRIVATE
             godot-cpp
@@ -495,6 +511,8 @@ if (USE_LUAJIT)
             sol2
             luasocket::static
             luasec::ssl
+            OpenSSL::SSL
+            OpenSSL::Crypto
             libluv_a
     )
 else()
@@ -513,6 +531,8 @@ else()
                 sol2
                 luasocket::static
                 luasec::ssl
+                OpenSSL::SSL
+                OpenSSL::Crypto
                 libluv_a
         )
     endif()
