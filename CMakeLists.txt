@@ -331,6 +331,10 @@ option(USE_LUAJIT "Use LuaJIT" ON)
 
 if (EMSCRIPTEN OR APPLE OR ANDROID)
     set(USE_LUAJIT OFF)
+elseif(WIN32 AND ${CMAKE_SYSTEM_PROCESSOR} MATCHES "ARM64|aarch64")
+    message(STATUS "Disabling LuaJIT on Windows ARM64")
+    # Disable LuaJIT on Windows ARM64
+    set(USE_LUAJIT OFF)
 endif()
 
 if (USE_LUAJIT)

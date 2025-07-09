@@ -45,7 +45,11 @@ if(NOT TARGET Lua::Lua AND NOT LUA_FOUND)
     #find_package(Lua REQUIRED)
 endif()
 
-set (LUA_INCLUDE_DIR ${CMAKE_SOURCE_DIR}extern/lua-5.1.5)
+set (LUA_INCLUDE_DIR ${CMAKE_SOURCE_DIR}extern/lua-5.1.5/src)
+if (USE_LUAJIT)
+    include_directories(${LUAJIT_INCLUDE_DIRS})
+    set(LUA_INCLUDE_DIR ${LUAJIT_INCLUDE_DIRS})
+endif()
 
 # Set debug mode
 if(LUASOCKET_DEBUG)

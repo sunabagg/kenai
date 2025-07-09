@@ -43,9 +43,8 @@
 	{
       "name": "windows-arm-debug",
       "displayName": "Arm64 Windows Debug",
-      "generator": "Visual Studio 17 2022",
       "inherits": "default",
-      "binaryDir": "${sourceDir}/../build_sunaba_Windows-AMD64",
+      "binaryDir": "${sourceDir}/../build_sunaba_Windows-ARM64",
       "condition": {
         "type": "equals",
         "lhs": "${hostSystemName}",
@@ -63,7 +62,7 @@
         "CMAKE_C_COMPILER": "cl.exe",
         "CMAKE_CXX_COMPILER": "cl.exe",
         "CMAKE_BUILD_TYPE": "Debug",
-        "CMAKE_TOOLCHAIN_FILE": "$env{VCPKG_ROOT}/scripts/buildsystems/vcpkg.cmake",
+        "USE_LUAJIT": "OFF",
         "CMAKE_MAXIMUM_RECURSION_DEPTH": "999999999"
       }
     },
