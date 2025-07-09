@@ -68,7 +68,10 @@ class Sys {
 	}
 
 	static function getSystemName():String {
-		return PlatformService.osName;
+		var osName = PlatformService.osName;
+		if (osName == "macOS")
+			return "Mac";
+		return osName;
 	}
 
 	public static function systemName():String {
