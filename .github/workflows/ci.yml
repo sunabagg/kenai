@@ -49,18 +49,6 @@ jobs:
         run: |
           choco upgrade ccache ninja pkgconfiglite openssl -y
 
-      - name: Install Scoop (Windows)
-        if: matrix.config.os == 'windows-latest' || matrix.config.os == 'windows-11-arm'
-        run: |
-          Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser
-          Invoke-RestMethod -Uri https://get.scoop.sh | Invoke-Expression
-
-      - name: Install OpenSSL (Windows Arm)
-        if: matrix.config.os == 'windows-11-arm'
-        run: |
-          scoop install openssl
-          scoop install pkgconfiglite
-
       - name: Setup MSVC (Windows)
         if: matrix.config.os == 'windows-latest' || matrix.config.os == 'windows-11-arm'
         uses: ilammy/msvc-dev-cmd@v1
@@ -105,7 +93,7 @@ jobs:
           cmake
           -B GDExtension-build
           -G "Visual Studio 17 2022"
-          -A ARM64
+          -A arm64
           -DCMAKE_BUILD_TYPE=${{ matrix.build_type }}
           --install-prefix ${{ github.workspace }}/install-${{ matrix.build_type }}
           -DUSE_LUAJIT=OFF
