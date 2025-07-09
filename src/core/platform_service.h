@@ -65,6 +65,12 @@ namespace sunaba::core {
                 return getOS()->get_name().utf8().get_data();
             }
 
+            static int shellOpen(const std::string _uri) {
+                String uri = String(_uri.c_str()).uri_encode();
+                Error err = getOS()->shell_open(uri);
+                return err;
+            }
+
     };
 }
 #endif // PLATFORM_SERVICE_H
