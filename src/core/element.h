@@ -38,6 +38,7 @@ namespace sunaba::core {
         void _unhandled_input(const Ref<InputEvent>& event) override;
         void _unhandled_key_input(const Ref<InputEvent>& event) override;
         void _shortcut_input(const Ref<InputEvent>& event) override;
+        void _notification(int what) override;
     };
 
     class NodeSignalWrapper : public Object {
@@ -200,6 +201,16 @@ namespace sunaba::core {
                 if (func) {
                     sunaba::input::InputEvent* eventObj = new sunaba::input::InputEvent(event.ptr());
                     func(scriptInstance, eventObj);
+                }
+            }
+        }
+
+        void notification(int what) {
+            if (scriptInstance != sol::lua_nil) {
+                auto func = scriptInstance["notification"].get<sol::function>();
+                if (func) {
+                    sol::object whatObj = sol::make_object(scriptInstance.lua_state(), what);
+                    func(scriptInstance, whatObj);
                 }
             }
         }
