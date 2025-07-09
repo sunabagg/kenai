@@ -96,7 +96,7 @@ jobs:
           -A ARM64
           -DCMAKE_BUILD_TYPE=${{ matrix.build_type }}
           --install-prefix ${{ github.workspace }}/install-${{ matrix.build_type }}
-          -DUSE_LUAJIT=OFF
+          -D USE_LUAJIT=OFF
       
       - name: Copy luajit lib (Windows)
         if: matrix.config.os == 'windows-latest'
