@@ -10,11 +10,13 @@ Example = "icons/Example.svg"
 linux.debug.x86_64 = "lib/Linux-x86_64/lib${PROJECT_NAME}-d.so"
 macos.debug = "lib/Darwin-Universal/lib${PROJECT_NAME}-d.dylib"
 windows.debug.x86_64 = "lib/Windows-AMD64/${LIB_PREFIX}${PROJECT_NAME}-d.dll"
+windows.debug.arm64 = "lib/Windows-ARM64/${LIB_PREFIX}${PROJECT_NAME}-d.dll"
 android.debug.arm64 = "lib/Android-arm64-v8a/lib${PROJECT_NAME}-d.so"
 android.debug.arm32 = "lib/Android-armv7-a/lib${PROJECT_NAME}-d.so"
 linux.release.x86_64 = "lib/Linux-x86_64/lib${PROJECT_NAME}.so"
 macos.release = "lib/Darwin-universal/lib${PROJECT_NAME}.dylib"
 windows.release.x86_64 = "lib/Windows-AMD64/${LIB_PREFIX}${PROJECT_NAME}.dll"
+windows.release.arm64 = "lib/Windows-ARM64/${LIB_PREFIX}${PROJECT_NAME}.dll"
 android.arm64 = "lib/Android-arm64-v8a/lib${PROJECT_NAME}.so"
 android.arm32 = "lib/Android-armv7-a/lib${PROJECT_NAME}.so"
 
@@ -24,5 +26,10 @@ windows.x86_64 = {
     "res://lib/Windows-AMD64/libcrypto-3-x64.dll": "",
     "res://lib/Windows-AMD64/libssl-3-x64.dll": "",
     "res://lib/Windows-AMD64/lua51.dll": "",
-    "res://lib/Windows-AMD64/luv.dll": "",
+    "res://lib/Windows-AMD64/luv.dll": ""
+}
+windows.arm64 = { 
+    "res://lib/Windows-ARM64/legacy.dll": "",
+    "res://lib/Windows-ARM64/libcrypto-3-arm64.dll": "",
+    "res://lib/Windows-ARM64/libssl-3-arm64.dll": ""
 }
