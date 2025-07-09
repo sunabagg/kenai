@@ -21,7 +21,7 @@ jobs:
           - { name: '🍏 macOS Clang', os: macos-latest }
           - { name: '🐧 Linux GCC', os: ubuntu-22.04 }
           - { name: '🪟 Windows MSVC', os: windows-latest }
-          - { name: '🪟 Windows Arm MSVC', os: windows-11-arm }
+          - { name: '💪🪟 Windows Arm MSVC', os: windows-11-arm }
 
     name: 🛠 Build / ${{ matrix.config.name }} (${{ matrix.build_type }})
     runs-on: ${{ matrix.config.os }}
@@ -92,7 +92,7 @@ jobs:
 
           cmake
           -B GDExtension-build
-          -G "Visual Studio 17 2022"
+          -G "Ninja"
           -A ARM64
           -DCMAKE_BUILD_TYPE=${{ matrix.build_type }}
           --install-prefix ${{ github.workspace }}/install-${{ matrix.build_type }}
