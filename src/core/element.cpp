@@ -174,6 +174,12 @@ void sunaba::core::NodeProxy::_shortcut_input(const Ref<InputEvent>& event) {
     }
 }
 
+void sunaba::core::NodeProxy::_notification(int what) {
+    if (this->element != nullptr) {
+        this->element->notification(what);
+    }
+}
+
 sunaba::core::Viewport* sunaba::core::Element::getViewport() {
     if (node == nullptr) {
         return nullptr;
