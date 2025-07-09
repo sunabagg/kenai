@@ -96,11 +96,15 @@ jobs:
           -A ARM64
           -DCMAKE_BUILD_TYPE=${{ matrix.build_type }}
           --install-prefix ${{ github.workspace }}/install-${{ matrix.build_type }}
-          -D USE_LUAJIT=OFF
+          -DUSE_LUAJIT=OFF
       
       - name: Copy luajit lib (Windows)
         if: matrix.config.os == 'windows-latest'
         run: Copy-Item "${{ github.workspace }}\lua51.lib" -Destination "${{ github.workspace }}\GDExtension-build\lua51.lib"
+
+      - name: Copy luajit lib (Windows ARM64)
+        if: matrix.config.os == 'windows-11-arm'
+        run: Copy-Item "${{ github.workspace }}\lua51-arm64.lib" -Destination "${{ github.workspace }}\GDExtension-build\lua51.lib"
 
 
       - name: Build
