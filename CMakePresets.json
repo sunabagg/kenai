@@ -43,6 +43,7 @@
 	{
       "name": "windows-arm-debug",
       "displayName": "Arm64 Windows Debug",
+      "generator": "Visual Studio 17 2022",
       "inherits": "default",
       "binaryDir": "${sourceDir}/../build_sunaba_Windows-ARM64",
       "condition": {
