@@ -327,14 +327,16 @@ set(CMAKE_PREFIX_PATH "${CMAKE_PREFIX_PATH};${CMAKE_SOURCE_DIR}/vcpkg_installed/
 #        "extern/luau/EqSat/include"
 #        "extern/luau/Ast/include")
 
-option(USE_LUAJIT "Use LuaJIT" ON)
+option(USE_LUAJIT "Use LuaJIT" OFF)
 
 if (EMSCRIPTEN OR APPLE OR ANDROID)
     set(USE_LUAJIT OFF)
-elseif(WIN32 AND ${CMAKE_SYSTEM_PROCESSOR} MATCHES "ARM64|aarch64")
-    message(STATUS "Disabling LuaJIT on Windows ARM64")
-    # Disable LuaJIT on Windows ARM64
-    set(USE_LUAJIT OFF)
+elseif(WIN32 AND ${CMAKE_SYSTEM_PROCESSOR} MATCHES "AMD64|x86_64|x64")
+    # Use LuaJIT on Windows x64
+    set(USE_LUAJIT ON)
+elseif (CMAKE_SYSTEM_NAME STREQUAL "Linux" AND ${CMAKE_SYSTEM_PROCESSOR} MATCHES "x86_64|aarch64")
+    # Use LuaJIT on Linux x64 and ARM64
+    set(USE_LUAJIT ON)
 endif()
 
 if (USE_LUAJIT)
