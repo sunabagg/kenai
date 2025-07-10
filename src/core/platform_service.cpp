@@ -17,7 +17,8 @@ namespace sunaba::core {
             "osName", sol::readonly_property(
                 &PlatformService::getOSName
             ),
-            "shellOpen", &PlatformService::shellOpen
+            "shellOpen", &PlatformService::shellOpen,
+            "hasFeature", &PlatformService::hasFeature
         );
         lua["PlatformService"] = ut;
     }
