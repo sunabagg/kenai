@@ -71,6 +71,10 @@ namespace sunaba::core {
                 return err;
             }
 
+            static bool hasFeature(const std::string& feature) {
+                return getOS()->has_feature(String(feature.c_str()));
+            }
+
     };
 }
 #endif // PLATFORM_SERVICE_H
