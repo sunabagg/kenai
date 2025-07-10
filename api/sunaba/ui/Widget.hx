@@ -82,7 +82,6 @@ class Widget {
                 if (child != null) {
                     // Check if the child is an EventHandler node
                     if (eventHandlers.indexOf(child) != -1) {
-                        trace("Skipping EventHandler node: " + child.name);
                         // Skip the event handler node
                         continue;
                     }
