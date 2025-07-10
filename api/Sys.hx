@@ -86,11 +86,11 @@ class Sys {
 	}
 
 	@:deprecated("Use programPath instead") public static function executablePath():String {
-		return Misc.exepath();
+		return untyped __lua__("_G.execPath");
 	}
 
 	public inline static function programPath():String {
-		return haxe.io.Path.join([getCwd(), Lua.arg[0]]);
+		return untyped __lua__("_G.execPath");
 	}
 
 	public inline static function getCwd():String
