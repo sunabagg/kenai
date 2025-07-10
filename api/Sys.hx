@@ -44,7 +44,18 @@ class Sys {
 
 	public inline static function args():Array<String> {
 		var vargs : Vector<String> = untyped __lua__("_G.__args");
-		var args = vargs.toArray();
+		var args = new Array<String>();
+		for (i in 1...vargs.size() + 1) {
+			// Skip null arguments
+			if (vargs.get(i) == null) {
+				continue;
+			} else {
+				var arg = vargs.get(i);
+				if (arg == null)
+					arg = "";
+				args.push(arg);
+			}
+		}
 		return args;
 	}
 
