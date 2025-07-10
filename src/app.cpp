@@ -172,8 +172,8 @@ void App::initState(bool sandboxed) {
     auto execPath = OS::get_singleton()->get_executable_path();
     global_state["execPath"] = execPath.utf8().get_data();
 
-    auto resPath = ProjectSettings::get_singleton()->globalize_path("res://");
-    global_state["resPath"] = resPath.utf8().get_data();
+    auto resDir = ProjectSettings::get_singleton()->globalize_path("res://");
+    global_state["resDir"] = resDir.utf8().get_data();
 
     auto execDir = execPath.get_base_dir();
     if (OS::get_singleton()->get_name() == "macOS") {

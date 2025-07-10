@@ -8,9 +8,19 @@ class App {
         return untyped __lua__("_G.rootElement");
     }
 
-    public var execDir(get, default): String;
-    private function get_execDir(): String {
+    public static var execDir(get, default): String;
+    private static function get_execDir(): String {
         return untyped __lua__("_G.execDir");
+    }
+
+    public static var resDir(get, default): String;
+    private static function get_resDir(): String {
+        return untyped __lua__("_G.resDir");
+    }
+    
+    public static var shareDir(get, default): String;
+    private static function get_shareDir(): String {
+        return untyped __lua__("_G.shareDir");
     }
 
     public function new() {
