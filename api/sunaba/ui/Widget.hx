@@ -229,9 +229,6 @@ class Widget {
             else {
                 if (hasField(element, attributeName)) {
                     var currentValue = field(element, attributeName);
-                    if (attributeName == "icon") {
-                        trace(getUsertypeName(currentValue));
-                    }
                     if (Std.isOfType(currentValue, Bool)) {
                         var b : Bool = false;
                         if (attributeValue == "true") {
