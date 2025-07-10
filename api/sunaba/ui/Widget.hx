@@ -359,7 +359,7 @@ class Widget {
                             throw "Invalid Color value for field '" + attributeName + "' in element '" + Type.getClassName(Type.getClass(element)) + "'";
                         }
                     }
-                    else if (getUsertypeName(currentValue) == "sol.sunaba::core::Texture2D") {
+                    else if (getUsertypeName(currentValue) == "sol.sunaba::core::Texture2D*") {
                         var image = Image.loadFromFile(io, attributeValue);
                         if (image != null) {
                             var texture = ImageTexture.createFromImage(image);
@@ -374,7 +374,7 @@ class Widget {
                             throw "Failed to load image from file for field '" + attributeName + "' in element '" + Type.getClassName(Type.getClass(element)) + "'";
                         }
                     }
-                    else if (getUsertypeName(currentValue) == "sol.sunaba::core::Texture") {
+                    else if (getUsertypeName(currentValue) == "sol.sunaba::core::Texture*") {
                         var image = Image.loadFromFile(io, attributeValue);
                         if (image != null) {
                             var texture = ImageTexture.createFromImage(image);
