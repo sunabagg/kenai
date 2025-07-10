@@ -229,6 +229,9 @@ class Widget {
             else {
                 if (hasField(element, attributeName)) {
                     var currentValue = field(element, attributeName);
+                    if (attributeName == "icon") {
+                        trace(getUsertypeName(currentValue));
+                    }
                     if (Std.isOfType(currentValue, Bool)) {
                         var b : Bool = false;
                         if (attributeValue == "true") {
@@ -359,7 +362,7 @@ class Widget {
                             throw "Invalid Color value for field '" + attributeName + "' in element '" + Type.getClassName(Type.getClass(element)) + "'";
                         }
                     }
-                    else if (getUsertypeName(currentValue) == "sol.sunaba::core::Texture2D*") {
+                    else if (StringTools.contains(getUsertypeName(currentValue), "sol.sunaba::core::Texture2D")) {
                         var image = Image.loadFromFile(io, attributeValue);
                         if (image != null) {
                             var texture = ImageTexture.createFromImage(image);
@@ -374,7 +377,7 @@ class Widget {
                             throw "Failed to load image from file for field '" + attributeName + "' in element '" + Type.getClassName(Type.getClass(element)) + "'";
                         }
                     }
-                    else if (getUsertypeName(currentValue) == "sol.sunaba::core::Texture*") {
+                    else if (StringTools.contains(getUsertypeName(currentValue), "sol.sunaba::core::Texture")) {
                         var image = Image.loadFromFile(io, attributeValue);
                         if (image != null) {
                             var texture = ImageTexture.createFromImage(image);
