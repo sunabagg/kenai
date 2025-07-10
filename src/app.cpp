@@ -342,6 +342,20 @@ void App::initState(bool sandboxed) {
     //UtilityFunctions::print(fsio->basePath.c_str());
     ioManager->add(fsio);
     //sol::error *e = nullptr;
+
+    global_state["loadInternalTheme"] = [this](const std::string &themeName) -> sunaba::ui::Theme* {
+        auto res = ResourceLoader::get_singleton()->load(String("res://corelib/themes/" + String(themeName.c_str()) + ".tres"));
+        if (res.is_null()) {
+            UtilityFunctions::print("Error: failed to load theme: " + String(themeName.c_str()));
+            return nullptr;
+        }
+        Ref<Theme> theme = res;
+        if (theme.is_null()) {
+            UtilityFunctions::print("Error: resource is not a Theme: " + String(themeName.c_str()));
+            return nullptr;
+        }
+        return new sunaba::ui::Theme(theme.ptr());
+    };
 }
 
 void App::loadAndExecuteSbx(const String &path) {
