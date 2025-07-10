@@ -169,13 +169,16 @@ void App::initState(bool sandboxed) {
         global_state["sandboxed"] = true;
     }
 
-    auto execDir = OS::get_singleton()->get_executable_path().get_base_dir();
+    auto execPath = OS::get_singleton()->get_executable_path();
+    global_state["execPath"] = execPath.utf8().get_data();
+
+    auto execDir = execPath.get_base_dir();
     if (OS::get_singleton()->get_name() == "macOS") {
         // On macOS, the executable path is usually in Contents/MacOS/ directory
         execDir = execDir.replace("/MacOS", "/Resources/").replace("\\MacOS", "\\Resources");
     }
-    auto execFile = OS::get_singleton()->get_executable_path().get_file();
-    auto shareDir = OS::get_singleton()->get_executable_path().replace("bin/" + execFile, "share/sunaba");
+    auto execFile = execPath.get_file();
+    auto shareDir = execPath.replace("bin/" + execFile, "share/sunaba");
     if (DirAccess::dir_exists_absolute(shareDir)) {
         execDir = shareDir;
         global_state["shareDir"] = shareDir.utf8().get_data();
