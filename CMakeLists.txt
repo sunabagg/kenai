@@ -331,6 +331,9 @@ option(USE_LUAJIT "Use LuaJIT" OFF)
 
 if (EMSCRIPTEN OR APPLE OR ANDROID)
     set(USE_LUAJIT OFF)
+elseif(__COMPILER_GNU AND WIN32)
+    # Use LuaJIT on Linux x64 and ARM64
+    set(USE_LUAJIT OFF)
 elseif(WIN32 AND ${CMAKE_SYSTEM_PROCESSOR} MATCHES "AMD64|x86_64|x64")
     # Use LuaJIT on Windows x64 only (not ARM64)
     set(USE_LUAJIT ON)
