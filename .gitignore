@@ -19,6 +19,7 @@ sunaba-windows-install/*
 sunaba-install-windows/*
 sunaba-web-install/*
 openssl-mingw/*
+openssl-3.1.4/*
 openssl-3.1.4.tar.gz
 out/*
 .vs/*

@@ -35,11 +35,23 @@ if [ ! -f "${OPENSSL_DIR}/lib/libssl.a" ]; then
         --cross-compile-prefix=${MINGW_PREFIX}- \
         --prefix="${OPENSSL_DIR}" \
         no-shared \
-        no-async
+        no-async \
+        no-tests
     
     # Build and install
     make -j$(nproc)
     make install_sw
+    
+    # Verify the build was successful
+    if [ ! -f "${OPENSSL_DIR}/lib/libssl.a" ] || [ ! -f "${OPENSSL_DIR}/lib/libcrypto.a" ]; then
+        echo "ERROR: OpenSSL build failed - libraries not found"
+        echo "Expected files:"
+        echo "  ${OPENSSL_DIR}/lib/libssl.a"
+        echo "  ${OPENSSL_DIR}/lib/libcrypto.a"
+        echo "Actual contents of ${OPENSSL_DIR}/lib:"
+        ls -la "${OPENSSL_DIR}/lib/" || echo "Directory does not exist"
+        exit 1
+    fi
     
     cd ..
     rm -rf "openssl-${OPENSSL_VERSION}"
@@ -54,6 +66,20 @@ rm -rf sunaba-build-windows sunaba-install-windows
 
 # Configure with custom OpenSSL path
 echo "Configuring build with custom OpenSSL..."
+
+# Verify OpenSSL files exist before proceeding
+echo "Verifying OpenSSL installation..."
+if [ ! -f "${OPENSSL_DIR}/lib/libssl.a" ]; then
+    echo "ERROR: ${OPENSSL_DIR}/lib/libssl.a not found"
+    exit 1
+fi
+if [ ! -f "${OPENSSL_DIR}/lib/libcrypto.a" ]; then
+    echo "ERROR: ${OPENSSL_DIR}/lib/libcrypto.a not found"
+    exit 1
+fi
+echo "OpenSSL libraries found:"
+ls -la "${OPENSSL_DIR}/lib/lib*.a"
+
 cmake -B sunaba-build-windows \
     -DCMAKE_TOOLCHAIN_FILE="${PWD}/cmake/mingw-w64-toolchain.cmake" \
     -DCMAKE_BUILD_TYPE=Release \
@@ -63,6 +89,7 @@ cmake -B sunaba-build-windows \
     -DOPENSSL_CRYPTO_LIBRARY="${OPENSSL_DIR}/lib/libcrypto.a" \
     -DOPENSSL_SSL_LIBRARY="${OPENSSL_DIR}/lib/libssl.a" \
     -DCMAKE_PREFIX_PATH="${OPENSSL_DIR}" \
+    -DCMAKE_VERBOSE_MAKEFILE=ON \
     -G "Unix Makefiles" \
     .
 
