@@ -1,6 +1,15 @@
-name: CI
+name: Build (Windows)
 
 on:
+  push:
+    paths-ignore:
+      - '.gitignore'
+      - '*.md'
+      - '*.hx'
+  
+  schedule:
+    - cron: '0 8 * * *' # run at 8 AM UTC/ 12 AM AKDT
+
   workflow_dispatch:
 
 jobs:
@@ -10,8 +19,6 @@ jobs:
       matrix:
         build_type: ['Debug', 'Release']
         config:
-          - { name: '🍏 macOS Clang', os: macos-latest }
-          - { name: '🐧 Linux GCC', os: ubuntu-22.04 }
           - { name: '🪟 Windows MSVC', os: windows-latest }
           #- { name: '💪🪟 Windows Arm MSVC', os: windows-11-arm }
 
