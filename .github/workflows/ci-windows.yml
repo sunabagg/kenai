@@ -32,6 +32,17 @@ jobs:
           submodules: recursive
           lfs: true
           
+
+      - name: Install Dependencies (macOS)
+        if: matrix.config.os == 'macos-latest'
+        run: brew install ccache ninja pkgconf lua
+
+      - name: Install Dependencies (Linux)
+        if: matrix.config.os == 'ubuntu-22.04'
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y ccache ninja-build pkg-config libluajit-5.1-2 libluajit-5.1-dev libluajit-5.1-common luajit linux-libc-dev
+
       - name: Install Dependencies (Windows)
         if: matrix.config.os == 'windows-latest' || matrix.config.os == 'windows-11-arm'
         run: |
@@ -61,7 +72,7 @@ jobs:
           ${{ github.workspace }}/vcpkg/vcpkg install
 
       - name: Configure
-        if: matrix.config.os == 'windows-latest'
+        if: matrix.config.os == 'macos-latest' || matrix.config.os == 'ubuntu-22.04' || matrix.config.os == 'windows-latest'
         # For Windows Arm, we handle configuration separately
         run: >
           mkdir GDExtension-build
