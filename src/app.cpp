@@ -40,7 +40,7 @@
 #ifdef USE_LUASOCKET
 #include <luasocket.h>
 // Declare the symbol reference function
-extern void sunaba_ensure_luasocket_symbols();
+extern void kenai_ensure_luasocket_symbols();
 
 // Forward declaration for mime.core Lua module initializer
 extern "C" {
@@ -67,9 +67,9 @@ extern "C" {
 #include <memory>
 #include <stdexcept>
 
-using namespace sunaba;
-using namespace sunaba::core;
-using namespace sunaba::core::io;
+using namespace kenai;
+using namespace kenai::core;
+using namespace kenai::core::io;
 using namespace godot;
 
 
@@ -87,8 +87,8 @@ void App::_bind_methods() {
 }
 
 void App::setTheme(Ref<Theme> theme) {
-    sunaba::ui::uiGlobals::setGlobalTheme(new sunaba::ui::Theme(theme.ptr()));
-    global_state["theme"] = sunaba::ui::uiGlobals::getGlobalTheme();
+    kenai::ui::uiGlobals::setGlobalTheme(new kenai::ui::Theme(theme.ptr()));
+    global_state["theme"] = kenai::ui::uiGlobals::getGlobalTheme();
 }
 
 void free_global_state(App* app) {
@@ -181,7 +181,7 @@ void App::initState(bool sandboxed) {
         execDir = execDir.replace("/MacOS", "/Resources/").replace("\\MacOS", "\\Resources");
     }
     auto execFile = execPath.get_file();
-    auto shareDir = execPath.replace("bin/" + execFile, "share/sunaba");
+    auto shareDir = execPath.replace("bin/" + execFile, "share/kenai");
     if (DirAccess::dir_exists_absolute(shareDir)) {
         execDir = shareDir;
         global_state["shareDir"] = shareDir.utf8().get_data();
@@ -207,7 +207,7 @@ void App::initState(bool sandboxed) {
     if (!sandboxed) {
 #ifdef USE_LUASOCKET
         // Ensure luasocket symbols are linked
-        sunaba_ensure_luasocket_symbols();
+        kenai_ensure_luasocket_symbols();
         lua_getglobal(L, "package");
         lua_getfield(L, -1, "preload");
     
@@ -318,32 +318,32 @@ void App::initState(bool sandboxed) {
     };
 
     //UtilityFunctions::print("Hello, World!");
-    //sunaba::core::
-    sunaba::input::bindInputClasses(global_state);
-    sunaba::core::bindCoreClasses(global_state);
-    sunaba::spatial::bindSpatialClasses(global_state);
-    sunaba::ui::bindUIClasses(global_state);
-    sunaba::desktop::bindDesktopClasses(global_state);
+    //kenai::core::
+    kenai::input::bindInputClasses(global_state);
+    kenai::core::bindCoreClasses(global_state);
+    kenai::spatial::bindSpatialClasses(global_state);
+    kenai::ui::bindUIClasses(global_state);
+    kenai::desktop::bindDesktopClasses(global_state);
     if (!sandboxed) {
         bindRuntime(global_state);
     }
 
-    auto* rootElement = new sunaba::core::Element(this);
+    auto* rootElement = new kenai::core::Element(this);
     rootElement->isRootElement = true;
     global_state["rootElement"] = rootElement;
     ioManager = new IoManager();
     IoIndex::bindIoManger(global_state, ioManager);
     global_state.set("ioManager", ioManager);
 
-    ////sunaba::core::bind_all_godot_classes( global_state );
-    //sunaba::core::initialize_lua( global_state );
+    ////kenai::core::bind_all_godot_classes( global_state );
+    //kenai::core::initialize_lua( global_state );
 
     auto fsio = FileSystemIo::create(ProjectSettings::get_singleton()->globalize_path("res://corelib/").utf8().get_data(), "corelib://");
     //UtilityFunctions::print(fsio->basePath.c_str());
     ioManager->add(fsio);
     //sol::error *e = nullptr;
 
-    global_state["loadInternalTheme"] = [this](const std::string &themeName) -> sunaba::ui::Theme* {
+    global_state["loadInternalTheme"] = [this](const std::string &themeName) -> kenai::ui::Theme* {
         auto res = ResourceLoader::get_singleton()->load(String("res://corelib/themes/" + String(themeName.c_str()) + ".tres"));
         if (res.is_null()) {
             UtilityFunctions::print("Error: failed to load theme: " + String(themeName.c_str()));
@@ -354,7 +354,7 @@ void App::initState(bool sandboxed) {
             UtilityFunctions::print("Error: resource is not a Theme: " + String(themeName.c_str()));
             return nullptr;
         }
-        return new sunaba::ui::Theme(theme.ptr());
+        return new kenai::ui::Theme(theme.ptr());
     };
 }
 
@@ -403,7 +403,7 @@ void App::loadAndExecuteSbx(const String &path) {
     global_state["luaBinPath"] = luabinPath;
     
     // Auto-start mobdebug if environment variable is set
-    auto debugEnv = std::getenv("SUNABA_DEBUG");
+    auto debugEnv = std::getenv("KENAI_DEBUG");
     if (debugEnv && std::string(debugEnv) == "1") {
         UtilityFunctions::print("Debug mode enabled, starting MobDebug...");
         auto hostEnv = std::getenv("MOBDEBUG_HOST");
@@ -445,7 +445,7 @@ void App::start( const String &path) {
     ioManager->add(fsio);
 
     // Auto-start mobdebug if environment variable is set
-    auto debugEnv = std::getenv("SUNABA_DEBUG");
+    auto debugEnv = std::getenv("KENAI_DEBUG");
     if (debugEnv && std::string(debugEnv) == "1") {
         UtilityFunctions::print("Debug mode enabled, starting MobDebug...");
         auto hostEnv = std::getenv("MOBDEBUG_HOST");
@@ -563,7 +563,7 @@ void App::stopMobdebug() {
     }
 }
 
-namespace sunaba {
+namespace kenai {
     void bindRuntime(sol::state& lua) {
         auto ut = lua.new_usertype<Runtime>("Runtime"
             "new", sol::factories(

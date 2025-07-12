@@ -13,7 +13,7 @@
 
 using namespace godot;
 
-namespace sunaba::core {
+namespace kenai::core {
     void bindTextureLayered(sol::state &lua);
 
     class TextureLayered : public Texture {

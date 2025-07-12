@@ -14,9 +14,9 @@
 #include "../desktop/popup.h"
 
 using namespace godot;
-using namespace sunaba::core;
+using namespace kenai::core;
 
-namespace sunaba::ui {
+namespace kenai::ui {
     void bindTabContainer(sol::state &lua);
 
     class TabContainer;
@@ -28,7 +28,7 @@ namespace sunaba::ui {
                 // Bind methods specific to TabContainerProxy
             }
         public:
-            sunaba::ui::TabContainer* element = nullptr;
+            kenai::ui::TabContainer* element = nullptr;
 
             void onInit() {
                 // Initialize the NodeProxy instance
@@ -74,7 +74,7 @@ namespace sunaba::ui {
         protected:
             static void _bind_methods();
         public:
-            sunaba::ui::TabContainer* element = nullptr;
+            kenai::ui::TabContainer* element = nullptr;
 
             TabContainerSignalWrapper() = default;
             ~TabContainerSignalWrapper() = default;
@@ -289,8 +289,8 @@ namespace sunaba::ui {
                 return new Control(container->get_current_tab_control());
             }
 
-            sunaba::desktop::Popup* getPopup() {
-                return new sunaba::desktop::Popup(container->get_popup());
+            kenai::desktop::Popup* getPopup() {
+                return new kenai::desktop::Popup(container->get_popup());
             }
 
             int getPreviousTab() {
@@ -301,8 +301,8 @@ namespace sunaba::ui {
                 return new TabBar(container->get_tab_bar());
             }
 
-            sunaba::core::Texture2D* getTabButtonIcon(int tab) {
-                return new sunaba::core::Texture2D(container->get_tab_button_icon(tab).ptr());
+            kenai::core::Texture2D* getTabButtonIcon(int tab) {
+                return new kenai::core::Texture2D(container->get_tab_button_icon(tab).ptr());
             }
 
             Control* getTabControl(int tab) {
@@ -317,8 +317,8 @@ namespace sunaba::ui {
                 return container->get_tab_count();
             }
 
-            sunaba::core::Texture2D* getTabIcon(int tab) {
-                return new sunaba::core::Texture2D(container->get_tab_icon(tab).ptr());
+            kenai::core::Texture2D* getTabIcon(int tab) {
+                return new kenai::core::Texture2D(container->get_tab_icon(tab).ptr());
             }
 
             int getTabIconMaxWidth(int tab) {
@@ -365,7 +365,7 @@ namespace sunaba::ui {
                 container->set_popup(popup->getNode());
             }
 
-            void setTabButtonIcon(int tab, sunaba::core::Texture2D* icon) {
+            void setTabButtonIcon(int tab, kenai::core::Texture2D* icon) {
                 godot::Texture2D* iconTexture = 
                     icon != nullptr 
                         ? icon->getTexture2D() 
@@ -385,7 +385,7 @@ namespace sunaba::ui {
                 container->set_tab_hidden(tab, hidden);
             }
 
-            void setTabIcon(int tab, sunaba::core::Texture2D* icon) {
+            void setTabIcon(int tab, kenai::core::Texture2D* icon) {
                 godot::Texture2D* iconTexture = 
                     icon != nullptr 
                         ? icon->getTexture2D() 

@@ -17,7 +17,7 @@
 #include "input_service.h"
 #include "shortcut.h"
 
-void sunaba::input::bindInputClasses(sol::state& lua) {
+void kenai::input::bindInputClasses(sol::state& lua) {
     bindInputEvent(lua);
     bindInputEventFromWindow(lua);
     bindInputEventWithModifiers(lua);

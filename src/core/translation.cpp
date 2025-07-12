@@ -1,23 +1,23 @@
 #include "translation.h"
 
-void sunaba::core::bindTranslation(sol::state &lua) {
-    lua.new_usertype<sunaba::core::Translation>("Translation",
+void kenai::core::bindTranslation(sol::state &lua) {
+    lua.new_usertype<kenai::core::Translation>("Translation",
         "new", sol::factories(
-            []() { return new sunaba::core::Translation(); }
+            []() { return new kenai::core::Translation(); }
         ),
-        sol::base_classes, sol::bases<sunaba::core::Resource>(),
+        sol::base_classes, sol::bases<kenai::core::Resource>(),
         "locale", sol::property(
-            &sunaba::core::Translation::getLocale,
-            &sunaba::core::Translation::setLocale
+            &kenai::core::Translation::getLocale,
+            &kenai::core::Translation::setLocale
         ),
-        "addMessage", &sunaba::core::Translation::addMessage,
-        "addPluralMessage", &sunaba::core::Translation::addPluralMessage,
-        "eraseMessage", &sunaba::core::Translation::eraseMessage,
-        "getMessage", &sunaba::core::Translation::getMessage,
-        "getMessageCount", &sunaba::core::Translation::getMessageCount,
-        "getMessageList", &sunaba::core::Translation::getMessageList,
-        "getPluralMessage", &sunaba::core::Translation::getPluralMessage,
-        "getTranslatedMessageList", &sunaba::core::Translation::getTranslatedMessageList,
+        "addMessage", &kenai::core::Translation::addMessage,
+        "addPluralMessage", &kenai::core::Translation::addPluralMessage,
+        "eraseMessage", &kenai::core::Translation::eraseMessage,
+        "getMessage", &kenai::core::Translation::getMessage,
+        "getMessageCount", &kenai::core::Translation::getMessageCount,
+        "getMessageList", &kenai::core::Translation::getMessageList,
+        "getPluralMessage", &kenai::core::Translation::getPluralMessage,
+        "getTranslatedMessageList", &kenai::core::Translation::getTranslatedMessageList,
         "cast", [](Resource* instance) {
             return new Translation(godot::Object::cast_to<GodotTranslation>(instance->getResource()));
         }

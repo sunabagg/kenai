@@ -10,14 +10,14 @@
 
 #include "stl_function_wrapper.h"
 
-using namespace sunaba::core;
+using namespace kenai::core;
 using namespace godot;
 
-namespace sunaba::desktop {
+namespace kenai::desktop {
     class Window;
 }
 
-namespace sunaba::core {
+namespace kenai::core {
     void bindElement(sol::state &lua);
 
     class Element; // Forward declaration
@@ -169,7 +169,7 @@ namespace sunaba::core {
             if (scriptInstance != sol::lua_nil) {
                 auto func = scriptInstance["input"].get<sol::function>();
                 if (func) {
-                    sunaba::input::InputEvent* eventObj = new sunaba::input::InputEvent(event.ptr());
+                    kenai::input::InputEvent* eventObj = new kenai::input::InputEvent(event.ptr());
                     func(scriptInstance, eventObj);
                 }
             }
@@ -179,7 +179,7 @@ namespace sunaba::core {
             if (scriptInstance != sol::lua_nil) {
                 auto func = scriptInstance["unhandledInput"].get<sol::function>();
                 if (func) {
-                    sunaba::input::InputEvent* eventObj = new sunaba::input::InputEvent(event.ptr());
+                    kenai::input::InputEvent* eventObj = new kenai::input::InputEvent(event.ptr());
                     func(scriptInstance, eventObj);
                 }
             }
@@ -189,7 +189,7 @@ namespace sunaba::core {
             if (scriptInstance != sol::lua_nil) {
                 auto func = scriptInstance["unhandledKeyInput"].get<sol::function>();
                 if (func) {
-                    sunaba::input::InputEvent* eventObj = new sunaba::input::InputEvent(event.ptr());
+                    kenai::input::InputEvent* eventObj = new kenai::input::InputEvent(event.ptr());
                     func(scriptInstance, eventObj);
                 }
             }
@@ -199,7 +199,7 @@ namespace sunaba::core {
             if (scriptInstance != sol::lua_nil) {
                 auto func = scriptInstance["shortcutInput"].get<sol::function>();
                 if (func) {
-                    sunaba::input::InputEvent* eventObj = new sunaba::input::InputEvent(event.ptr());
+                    kenai::input::InputEvent* eventObj = new kenai::input::InputEvent(event.ptr());
                     func(scriptInstance, eventObj);
                 }
             }
@@ -302,7 +302,7 @@ namespace sunaba::core {
 
         Viewport* getViewport();
 
-        sunaba::desktop::Window* getWindow();
+        kenai::desktop::Window* getWindow();
     };
 }
 

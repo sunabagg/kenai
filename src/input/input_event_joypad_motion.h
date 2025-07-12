@@ -10,12 +10,12 @@
 #include "input_event.h"
 
 using namespace godot;
-using namespace sunaba::core;
+using namespace kenai::core;
 
-namespace sunaba::input {
+namespace kenai::input {
     void bindInputEventJoypadMotion(sol::state_view& lua);
 
-    class InputEventJoypadMotion : public sunaba::input::InputEvent {
+    class InputEventJoypadMotion : public kenai::input::InputEvent {
     private:
         GodotInputEventJoypadMotion* event;
     public:

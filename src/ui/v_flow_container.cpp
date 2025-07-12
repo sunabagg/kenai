@@ -1,6 +1,6 @@
 #include "v_flow_container.h"
 
-namespace sunaba::ui {
+namespace kenai::ui {
 
     void VFlowContainerProxy::_enter_tree() {
         if (this->element != nullptr) {
@@ -135,7 +135,7 @@ namespace sunaba::ui {
             "new", sol::factories(
                 []() { return new VFlowContainer(); }
             ),
-            sol::base_classes, sol::bases<BaseObject, Element, sunaba::core::CanvasItem, Control, Container, FlowContainer>(),
+            sol::base_classes, sol::bases<BaseObject, Element, kenai::core::CanvasItem, Control, Container, FlowContainer>(),
             "cast", [](Element* element) {
                 auto* ce = dynamic_cast<VFlowContainer*>(element);
                 if (ce != nullptr) {
@@ -146,4 +146,4 @@ namespace sunaba::ui {
             }
         );
     }
-} // namespace sunaba::ui
+} // namespace kenai::ui

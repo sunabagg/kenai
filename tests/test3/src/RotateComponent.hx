@@ -1,7 +1,7 @@
 package;
 
-import sunaba.core.Behavior;
-import sunaba.spatial.SpatialTransform;
+import kenai.core.Behavior;
+import kenai.spatial.SpatialTransform;
 import haxe.Exception;
 
 class RotateComponent extends Behavior {

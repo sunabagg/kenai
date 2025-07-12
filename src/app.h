@@ -16,9 +16,9 @@
 #include "core/io/io_manager.h"
 
 using namespace godot;
-using namespace sunaba::core;
+using namespace kenai::core;
 
-namespace sunaba
+namespace kenai
 {
     class App : public Node {
         GDCLASS(App, Node)
@@ -50,7 +50,7 @@ namespace sunaba
 
         sol::state global_state;
 
-        sunaba::core::io::IoManager* ioManager;
+        kenai::core::io::IoManager* ioManager;
 
         void _ready() override;
         void _process(double delta) override;

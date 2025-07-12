@@ -1,8 +1,8 @@
 #include "scene_system.h"
 
-using namespace sunaba::core;
+using namespace kenai::core;
 
-void sunaba::core::bindSceneSystem(sol::state& lua)
+void kenai::core::bindSceneSystem(sol::state& lua)
 {
     lua.new_usertype<BaseObject>(
         "BaseObject", 
@@ -88,11 +88,11 @@ void sunaba::core::bindSceneSystem(sol::state& lua)
 
 // hacky way to get around the fact that 
 // we can't use the scene removeEntity function in the header file
-void sunaba::core::Entity::removeFromScene() {
+void kenai::core::Entity::removeFromScene() {
     scene->removeEntity(this);
 }
 
-void sunaba::core::Component::onFree()  {
+void kenai::core::Component::onFree()  {
     if (entity != nullptr) {
         entity->removeComponent(this);
     }

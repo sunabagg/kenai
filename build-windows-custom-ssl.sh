@@ -1,10 +1,10 @@
 #!/bin/bash
 
-# Cross-compile Sunaba for Windows, building OpenSSL from source if needed
+# Cross-compile Kenai for Windows, building OpenSSL from source if needed
 
 set -e
 
-echo "Cross-compiling Sunaba for Windows with custom OpenSSL..."
+echo "Cross-compiling Kenai for Windows with custom OpenSSL..."
 
 # Install basic MinGW tools
 echo "Installing MinGW tools..."
@@ -62,7 +62,7 @@ else
 fi
 
 # Clean previous builds
-rm -rf sunaba-build-windows sunaba-install-windows
+rm -rf kenai-build-windows kenai-install-windows
 
 # Configure with custom OpenSSL path
 echo "Configuring build with custom OpenSSL..."
@@ -80,10 +80,10 @@ fi
 echo "OpenSSL libraries found:"
 ls -la "${OPENSSL_DIR}/lib/lib*.a"
 
-cmake -B sunaba-build-windows \
+cmake -B kenai-build-windows \
     -DCMAKE_TOOLCHAIN_FILE="${PWD}/cmake/mingw-w64-toolchain.cmake" \
     -DCMAKE_BUILD_TYPE=Release \
-    -DCMAKE_INSTALL_PREFIX=sunaba-install-windows \
+    -DCMAKE_INSTALL_PREFIX=kenai-install-windows \
     -DOPENSSL_ROOT_DIR="${OPENSSL_DIR}" \
     -DOPENSSL_INCLUDE_DIR="${OPENSSL_DIR}/include" \
     -DOPENSSL_CRYPTO_LIBRARY="${OPENSSL_DIR}/lib/libcrypto.a" \
@@ -95,11 +95,11 @@ cmake -B sunaba-build-windows \
 
 # Build
 echo "Building..."
-cmake --build sunaba-build-windows --parallel $(nproc)
+cmake --build kenai-build-windows --parallel $(nproc)
 
 # Install
 echo "Installing..."
-cmake --install sunaba-build-windows
+cmake --install kenai-build-windows
 
-echo "Cross-compilation complete! Output in sunaba-install-windows/"
+echo "Cross-compilation complete! Output in kenai-install-windows/"
 echo "Windows binaries ready for deployment."

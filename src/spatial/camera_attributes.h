@@ -11,10 +11,10 @@
 
 using namespace godot;
 
-namespace sunaba::spatial {
+namespace kenai::spatial {
     void bindCameraAttributes(sol::state_view& lua);
 
-    class CameraAttributes : public sunaba::core::Resource {
+    class CameraAttributes : public kenai::core::Resource {
     private:
         GodotCameraAttributes* cameraAttributes = nullptr;
     public:

@@ -12,9 +12,9 @@
 #include "../core/event.h"
 
 using namespace godot;
-using namespace sunaba::core;
+using namespace kenai::core;
 
-namespace sunaba::desktop {
+namespace kenai::desktop {
     void bindStatusIndicator(sol::state& lua);
 
     class StatusIndicator;
@@ -66,11 +66,11 @@ namespace sunaba::desktop {
                 setNode(node); 
             }
 
-            sunaba::core::Texture2D* getIcon() {
-                return new sunaba::core::Texture2D(statusIndicator->get_icon().ptr());
+            kenai::core::Texture2D* getIcon() {
+                return new kenai::core::Texture2D(statusIndicator->get_icon().ptr());
             }
 
-            void setIcon(sunaba::core::Texture2D* value) {
+            void setIcon(kenai::core::Texture2D* value) {
                 Ref<godot::Texture2D> valueRef = Ref<godot::Texture2D>(value->getTexture2D());
                 statusIndicator->set_icon(valueRef);
             }

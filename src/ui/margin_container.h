@@ -10,9 +10,9 @@
 #include "container.h"
 
 using namespace godot;
-using namespace sunaba::core;
+using namespace kenai::core;
 
-namespace sunaba::ui {
+namespace kenai::ui {
     void bindMarginContainer(sol::state &lua);
 
     class MarginContainer;
@@ -24,7 +24,7 @@ namespace sunaba::ui {
                 // Bind methods specific to MarginContainerProxy
             }
         public:
-            sunaba::ui::MarginContainer* element = nullptr;
+            kenai::ui::MarginContainer* element = nullptr;
 
             void onInit() {
                 // Initialize the NodeProxy instance

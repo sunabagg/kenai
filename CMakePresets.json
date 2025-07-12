@@ -13,14 +13,14 @@
       "generator": "Ninja",
       "hidden": true,
       "environment": {
-        "PROJECT_NAME": "sunaba"
+        "PROJECT_NAME": "kenai"
       }
     },
     {
       "name": "windows-debug",
       "displayName": "64bit Windows Debug",
       "inherits": "default",
-      "binaryDir": "${sourceDir}/../build_sunaba_Windows-AMD64",
+      "binaryDir": "${sourceDir}/../build_kenai_Windows-AMD64",
       "condition": {
         "type": "equals",
         "lhs": "${hostSystemName}",
@@ -45,7 +45,7 @@
       "displayName": "Arm64 Windows Debug",
       "generator": "Visual Studio 17 2022",
       "inherits": "default",
-      "binaryDir": "${sourceDir}/../build_sunaba_Windows-ARM64",
+      "binaryDir": "${sourceDir}/../build_kenai_Windows-ARM64",
       "condition": {
         "type": "equals",
         "lhs": "${hostSystemName}",
@@ -71,7 +71,7 @@
       "name": "windows-debug-mingw",
       "displayName": "64bit Windows Debug (Mingw)",
       "inherits": "default",
-      "binaryDir": "${sourceDir}/../build_sunaba_mingw_Windows-AMD64",
+      "binaryDir": "${sourceDir}/../build_kenai_mingw_Windows-AMD64",
       "condition": {
         "type": "equals",
         "lhs": "${hostSystemName}",
@@ -119,7 +119,7 @@
       "name": "linux-debug",
       "displayName": "64bit Linux Debug",
       "inherits": "default",
-      "binaryDir": "${sourceDir}/../build_sunaba_Linux-x86_64",
+      "binaryDir": "${sourceDir}/../build_kenai_Linux-x86_64",
       "condition": {
         "type": "equals",
         "lhs": "${hostSystemName}",
@@ -143,7 +143,7 @@
       "name": "macOS-debug",
       "displayName": "64bit macOS Debug",
       "inherits": "default",
-      "binaryDir": "${sourceDir}/../build_sunaba_Darwin-Universal",
+      "binaryDir": "${sourceDir}/../build_kenai_Darwin-Universal",
       "condition": {
         "type": "equals",
         "lhs": "${hostSystemName}",

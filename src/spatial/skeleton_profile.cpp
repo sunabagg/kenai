@@ -1,11 +1,11 @@
 #include "skeleton_profile.h"
 
-void sunaba::spatial::bindSkeletonProfile(sol::state_view& lua) {
-    lua.new_usertype<sunaba::spatial::SkeletonProfile>("SkeletonProfile",
+void kenai::spatial::bindSkeletonProfile(sol::state_view& lua) {
+    lua.new_usertype<kenai::spatial::SkeletonProfile>("SkeletonProfile",
         "new", sol::factories(
-            []() { return new sunaba::spatial::SkeletonProfile(); }
+            []() { return new kenai::spatial::SkeletonProfile(); }
         ),
-        sol::base_classes, sol::bases<sunaba::core::BaseObject, sunaba::core::Resource>(),
+        sol::base_classes, sol::bases<kenai::core::BaseObject, kenai::core::Resource>(),
         "boneSize", sol::property(&SkeletonProfile::getBoneSize, &SkeletonProfile::setBoneSize),
         "groupSize", sol::property(&SkeletonProfile::getGroupSize, &SkeletonProfile::setGroupSize),
         "rootBone", sol::property(&SkeletonProfile::getRootBone, &SkeletonProfile::setRootBone),
@@ -30,7 +30,7 @@ void sunaba::spatial::bindSkeletonProfile(sol::state_view& lua) {
         "setReferencePose", &SkeletonProfile::setReferencePose,
         "setTailDirection", &SkeletonProfile::setTailDirection,
         "setTexture", &SkeletonProfile::setTexture,
-        "cast", [](sunaba::core::Resource* instance) {
+        "cast", [](kenai::core::Resource* instance) {
             return new SkeletonProfile(godot::Object::cast_to<GodotSkeletonProfile>(instance->getResource()));
         }
     );

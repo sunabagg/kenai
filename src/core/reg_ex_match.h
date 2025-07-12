@@ -11,7 +11,7 @@
 
 using namespace godot;
 
-namespace sunaba::core {
+namespace kenai::core {
     void bindRegExMatch(sol::state& lua);
 
     class RegExMatch : public BaseObject {

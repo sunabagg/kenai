@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<kxml fullscreen="true" name="test8widget">
+    <head>
+    </head>
+    <body>
+        <panel
+            fullRect="true"
+            offsetBottom="-10"
+            offsetTop="10"
+            offsetLeft="-10"
+            offsetRight="10"/>
+    </body>
+</kxml>

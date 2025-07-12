@@ -11,9 +11,9 @@
 #include "../ui/v_box_container.h"
 
 using namespace godot;
-using namespace sunaba::core;
+using namespace kenai::core;
 
-namespace sunaba::desktop {
+namespace kenai::desktop {
     void bindFileDialog(sol::state& lua);
 
     class FileDialog;
@@ -234,8 +234,8 @@ namespace sunaba::desktop {
                 fileDialog->deselect_all();
             }
 
-            sunaba::ui::LineEdit* getLineEdit() {
-                return new sunaba::ui::LineEdit(fileDialog->get_line_edit());
+            kenai::ui::LineEdit* getLineEdit() {
+                return new kenai::ui::LineEdit(fileDialog->get_line_edit());
             }
 
             int getOptionDefault(int option) {
@@ -260,8 +260,8 @@ namespace sunaba::desktop {
                 return fileDialog->get_selected_options();
             }
 
-            sunaba::ui::VBoxContainer* getVbox() {
-                return new sunaba::ui::VBoxContainer(fileDialog->get_vbox());
+            kenai::ui::VBoxContainer* getVbox() {
+                return new kenai::ui::VBoxContainer(fileDialog->get_vbox());
             }
 
             void invalidate() {

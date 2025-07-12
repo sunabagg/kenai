@@ -1,6 +1,6 @@
 #include "button.h"
 
-namespace sunaba::ui {
+namespace kenai::ui {
     void ButtonProxy::_enter_tree() {
         if (this->element != nullptr) {
             this->element->enterTree();
@@ -141,13 +141,13 @@ namespace sunaba::ui {
 
     void bindButton(sol::state &lua) {
         using namespace sol;
-        using namespace sunaba::ui;
+        using namespace kenai::ui;
 
         lua.new_usertype<Button>("Button",
             "new", sol::factories(
                 []() { return new Button(); }
             ),
-            sol::base_classes, sol::bases<BaseObject, Element, sunaba::core::CanvasItem, sunaba::ui::Control, sunaba::ui::BaseButton>(),
+            sol::base_classes, sol::bases<BaseObject, Element, kenai::core::CanvasItem, kenai::ui::Control, kenai::ui::BaseButton>(),
             "alignment", sol::property(
                 &Button::getAlignment,
                 &Button::setAlignment
@@ -196,7 +196,7 @@ namespace sunaba::ui {
                 &Button::getVerticalIconAlignment,
                 &Button::setVerticalIconAlignment
             ),
-            "cast", [](sunaba::core::Element* e) {
+            "cast", [](kenai::core::Element* e) {
                 auto* ce = dynamic_cast<Button*>(e);
                 if (ce != nullptr) {
                     return ce;

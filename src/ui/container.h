@@ -12,9 +12,9 @@
 #include "../core/event.h"
 
 using namespace godot;
-using namespace sunaba::core;
+using namespace kenai::core;
 
-namespace sunaba::ui {
+namespace kenai::ui {
     void bindContainer(sol::state &lua);
 
     class Container;
@@ -26,7 +26,7 @@ namespace sunaba::ui {
                 // Bind methods specific to ContainerProxy
             }
         public:
-            sunaba::ui::Container* element = nullptr;
+            kenai::ui::Container* element = nullptr;
 
             void onInit() {
                 // Initialize the NodeProxy instance
@@ -72,7 +72,7 @@ namespace sunaba::ui {
         protected:
             static void _bind_methods();
         public:
-            sunaba::ui::Container* element = nullptr;
+            kenai::ui::Container* element = nullptr;
 
             ContainerSignalWrapper() = default;
             ~ContainerSignalWrapper() = default;

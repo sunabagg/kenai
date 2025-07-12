@@ -1,4 +1,4 @@
-# Sunaba
+# Kenai
 
 work in progress game engine
 
@@ -25,17 +25,17 @@ Here's an example of how to build & install a release version (use the terminal 
 #### Not MSVC or Emscripten
 
 ```sh
-$ cmake -B sunaba-build -DCMAKE_BUILD_TYPE=Release -DCMAKE_INSTALL_PREFIX=sunaba-install sunaba
-$ cmake --build sunaba-build --parallel
-$ cmake --install sunaba-build
+$ cmake -B kenai-build -DCMAKE_BUILD_TYPE=Release -DCMAKE_INSTALL_PREFIX=kenai-install kenai
+$ cmake --build kenai-build --parallel
+$ cmake --install kenai-build
 ```
 
 #### Emscripten
 
 ```sh
-$ emcmake cmake -B sunaba-build-web -S . -DCMAKE_BUILD_TYPE=Release -DCMAKE_INSTALL_PREFIX=sunaba-install-web
-$ cmake --build sunaba-build-web 
-$ cmake --install sunaba-build-web
+$ emcmake cmake -B kenai-build-web -S . -DCMAKE_BUILD_TYPE=Release -DCMAKE_INSTALL_PREFIX=kenai-install-web
+$ cmake --build kenai-build-web 
+$ cmake --install kenai-build-web
 ```
 
 > **Note:**
@@ -46,10 +46,10 @@ $ cmake --install sunaba-build-web
 #### MSVC
 
 ```sh
-$ cmake -B sunaba-build -G"Visual Studio 17 2022"  -DCMAKE_BUILD_TYPE=Release -DCMAKE_INSTALL_PREFIX=sunaba-install sunaba
-Copy-Item "lua51.lib" -Destination "sunaba-build\lua51.lib"
-$ cmake --build sunaba-build --config Release
-$ cmake --install sunaba-build
+$ cmake -B kenai-build -G"Visual Studio 17 2022"  -DCMAKE_BUILD_TYPE=Release -DCMAKE_INSTALL_PREFIX=kenai-install kenai
+Copy-Item "lua51.lib" -Destination "kenai-build\lua51.lib"
+$ cmake --build kenai-build --config Release
+$ cmake --install kenai-build
 ```
 
 This tells CMake to use `Visual Studio 2022`. There is a list of Visual Studio generators [on the CMake site](https://cmake.org/cmake/help/latest/manual/cmake-generators.7.html#visual-studio-generators) - pick the one you are using.

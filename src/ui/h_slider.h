@@ -10,9 +10,9 @@
 #include "slider.h"
 
 using namespace godot;
-using namespace sunaba::core;
+using namespace kenai::core;
 
-namespace sunaba::ui {
+namespace kenai::ui {
     void bindHSlider(sol::state &lua);
 
     class HSlider;
@@ -24,7 +24,7 @@ namespace sunaba::ui {
                 // Bind methods specific to HSliderProxy
             }
         public:
-            sunaba::ui::HSlider* element = nullptr;
+            kenai::ui::HSlider* element = nullptr;
 
             void onInit() {
                 // Initialize the NodeProxy instance
@@ -52,7 +52,7 @@ namespace sunaba::ui {
             void _value_changed(double value) override;
     };
 
-    class HSlider : public sunaba::ui::Slider {
+    class HSlider : public kenai::ui::Slider {
         private:
             HSliderNode* hSlider = nullptr; // Pointer to the HSlider instance
             void connectHSliderSignals() {

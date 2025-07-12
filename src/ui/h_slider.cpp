@@ -1,6 +1,6 @@
 #include "h_slider.h"
 
-namespace sunaba::ui {
+namespace kenai::ui {
     void HSliderProxy::_enter_tree() {
         if (element != nullptr) {
             element->enterTree();
@@ -127,7 +127,7 @@ namespace sunaba::ui {
             "new", sol::factories(
                 []() { return new HSlider(); }
             ),
-            sol::base_classes, sol::bases<BaseObject, Element, sunaba::core::CanvasItem, Range, Slider>(),
+            sol::base_classes, sol::bases<BaseObject, Element, kenai::core::CanvasItem, Range, Slider>(),
             "cast", [] (Element* element) {
                 auto* ce = dynamic_cast<HSlider*>(element);
                 if (ce != nullptr) {

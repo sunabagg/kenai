@@ -10,9 +10,9 @@
 #include "control.h"
 
 using namespace godot;
-using namespace sunaba::core;
+using namespace kenai::core;
 
-namespace sunaba::ui {
+namespace kenai::ui {
     void bindSeparator(sol::state& lua);
 
     class Separator;
@@ -24,7 +24,7 @@ namespace sunaba::ui {
                 // Bind methods specific to SeparatorProxy
             }
         public:
-            sunaba::ui::Separator* element = nullptr;
+            kenai::ui::Separator* element = nullptr;
 
             void onInit() {
                 // Initialize the NodeProxy instance
@@ -51,7 +51,7 @@ namespace sunaba::ui {
             TypedArray<Vector3i> _structured_text_parser(const Array &args, const String &text) const override;
     };
 
-    class Separator : public sunaba::ui::Control {
+    class Separator : public kenai::ui::Control {
         private:
             SeparatorNode* separator = nullptr; // Pointer to the Separator instance
 

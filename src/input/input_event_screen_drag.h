@@ -10,12 +10,12 @@
 #include "input_event_from_window.h"
 
 using namespace godot;
-using namespace sunaba::core;
+using namespace kenai::core;
 
-namespace sunaba::input {
+namespace kenai::input {
     void bindInputEventScreenDrag(sol::state_view& lua);
 
-    class InputEventScreenDrag : public sunaba::input::InputEventFromWindow {
+    class InputEventScreenDrag : public kenai::input::InputEventFromWindow {
     private:
         GodotInputEventScreenDrag* event;
     public:

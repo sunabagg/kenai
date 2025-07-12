@@ -1,6 +1,6 @@
 #include "margin_container.h"
 
-namespace sunaba::ui {
+namespace kenai::ui {
     void MarginContainerProxy::_enter_tree() {
         if (element != nullptr) {
             element->enterTree();
@@ -134,7 +134,7 @@ namespace sunaba::ui {
             "new", sol::factories(
                 []() { return new MarginContainer(); }
             ),
-            sol::base_classes, sol::bases<BaseObject, Element, sunaba::core::CanvasItem, Control, Container>(),
+            sol::base_classes, sol::bases<BaseObject, Element, kenai::core::CanvasItem, Control, Container>(),
             "cast", [](Element* e) {
                 auto* ce = dynamic_cast<MarginContainer*>(e);
                 if (ce != nullptr) {

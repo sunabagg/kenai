@@ -1,11 +1,11 @@
 #include "curve3d.h"
 
-void sunaba::spatial::bindCurve3D(sol::state_view& lua) {
-    lua.new_usertype<sunaba::spatial::Curve3D>("Curve3D",
+void kenai::spatial::bindCurve3D(sol::state_view& lua) {
+    lua.new_usertype<kenai::spatial::Curve3D>("Curve3D",
         "new", sol::factories(
-            []() { return new sunaba::spatial::Curve3D(); }
+            []() { return new kenai::spatial::Curve3D(); }
         ),
-        sol::base_classes, sol::bases<sunaba::core::BaseObject, sunaba::core::Resource>(),
+        sol::base_classes, sol::bases<kenai::core::BaseObject, kenai::core::Resource>(),
         "bakeInterval", sol::property(&Curve3D::getBakeInterval, &Curve3D::setBakeInterval),
         "closed", sol::property(&Curve3D::getClosed, &Curve3D::setClosed),
         "pointCount", sol::property(&Curve3D::getPointCount, &Curve3D::setPointCount),
@@ -34,7 +34,7 @@ void sunaba::spatial::bindCurve3D(sol::state_view& lua) {
         "setPointTilt", &Curve3D::setPointTilt,
         "tessellate", &Curve3D::tessellate,
         "tessellateEvenLength", &Curve3D::tessellateEvenLength,
-        "cast", [](sunaba::core::Resource* instance) {
+        "cast", [](kenai::core::Resource* instance) {
             return new Curve3D(godot::Object::cast_to<GodotCurve3D>(instance->getResource()));
         }
     );

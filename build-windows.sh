@@ -1,10 +1,10 @@
 #!/bin/bash
 
-# Cross-compile Sunaba for Windows using MinGW-w64
+# Cross-compile Kenai for Windows using MinGW-w64
 
 set -e
 
-echo "Cross-compiling Sunaba for Windows..."
+echo "Cross-compiling Kenai for Windows..."
 
 # Check if vcpkg is available
 if [ ! -d "vcpkg" ]; then
@@ -33,10 +33,10 @@ else
 fi
 
 # Clean previous builds
-rm -rf sunaba-build-windows sunaba-install-windows
+rm -rf kenai-build-windows kenai-install-windows
 
 # Configure with vcpkg toolchain
-cmake -B sunaba-build-windows \
+cmake -B kenai-build-windows \
     -DCMAKE_TOOLCHAIN_FILE="${PWD}/vcpkg/scripts/buildsystems/vcpkg.cmake" \
     -DVCPKG_TARGET_TRIPLET=${VCPKG_TRIPLET} \
     -DVCPKG_HOST_TRIPLET=x64-linux \
@@ -45,15 +45,15 @@ cmake -B sunaba-build-windows \
     -DCMAKE_CXX_COMPILER=x86_64-w64-mingw32-g++ \
     -DCMAKE_RC_COMPILER=x86_64-w64-mingw32-windres \
     -DCMAKE_BUILD_TYPE=Release \
-    -DCMAKE_INSTALL_PREFIX=sunaba-install-windows \
+    -DCMAKE_INSTALL_PREFIX=kenai-install-windows \
     -G "Unix Makefiles" \
     .
 
 # Build
-cmake --build sunaba-build-windows --parallel $(nproc)
+cmake --build kenai-build-windows --parallel $(nproc)
 
 # Install
-cmake --install sunaba-build-windows
+cmake --install kenai-build-windows
 
-echo "Cross-compilation complete! Output in sunaba-install-windows/"
+echo "Cross-compilation complete! Output in kenai-install-windows/"
 echo "Windows binaries ready for deployment."

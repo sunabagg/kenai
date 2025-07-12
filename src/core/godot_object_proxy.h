@@ -7,7 +7,7 @@
 
 using namespace godot;
 
-namespace sunaba::core{
+namespace kenai::core{
     struct GodotObjectProxy
     {
         Object* object;

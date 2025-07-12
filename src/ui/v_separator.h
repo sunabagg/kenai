@@ -10,9 +10,9 @@
 #include "separator.h"
 
 using namespace godot;
-using namespace sunaba::core;
+using namespace kenai::core;
 
-namespace sunaba::ui {
+namespace kenai::ui {
     void bindVSeparator(sol::state& lua);
 
     class VSeparator;
@@ -24,7 +24,7 @@ namespace sunaba::ui {
                 // Bind methods specific to VSeparatorProxy
             }
         public:
-            sunaba::ui::VSeparator* element = nullptr;
+            kenai::ui::VSeparator* element = nullptr;
 
             void onInit() {
                 // Initialize the NodeProxy instance
@@ -51,7 +51,7 @@ namespace sunaba::ui {
             TypedArray<Vector3i> _structured_text_parser(const Array &args, const String &text) const override;
     };
 
-    class VSeparator : public sunaba::ui::Separator {
+    class VSeparator : public kenai::ui::Separator {
         private:
             VSeparatorNode* vSeparator = nullptr; // Pointer to the VSeparator instance
 

@@ -1,4 +1,4 @@
---library sunaba
+--library kenai
 --class-path api
 --lua main.lua
 -D lua-vanilla

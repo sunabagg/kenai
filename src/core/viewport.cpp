@@ -1,6 +1,6 @@
 #include "viewport.h"
 
-namespace sunaba::core {
+namespace kenai::core {
     void ViewportProxy::_enter_tree() {
         if (this->element != nullptr) {
             this->element->enterTree();
@@ -294,13 +294,13 @@ namespace sunaba::core {
             "isInputHandled", &Viewport::isInputHandled,
             "notifyMouseEntered", &Viewport::notifyMouseEntered,
             "pushInput", sol::factories(
-                [](Viewport* v, sunaba::input::InputEvent* event) { v->pushInput(event); },
-                [](Viewport* v, sunaba::input::InputEvent* event, bool inLocalCoords ) { v->pushInput(event, inLocalCoords); }
+                [](Viewport* v, kenai::input::InputEvent* event) { v->pushInput(event); },
+                [](Viewport* v, kenai::input::InputEvent* event, bool inLocalCoords ) { v->pushInput(event, inLocalCoords); }
             ),
             "pushTextInput", &Viewport::pushTextInput,
             "pushUnhandledInput", sol::factories(
-                [](Viewport* v, sunaba::input::InputEvent* event) { v->pushUnhandledInput(event); },
-                [](Viewport* v, sunaba::input::InputEvent* event, bool inLocalCoords ) { v->pushUnhandledInput(event, inLocalCoords); }
+                [](Viewport* v, kenai::input::InputEvent* event) { v->pushUnhandledInput(event); },
+                [](Viewport* v, kenai::input::InputEvent* event, bool inLocalCoords ) { v->pushUnhandledInput(event, inLocalCoords); }
             ),
             "setCanvasCullMaskBit", &Viewport::setCanvasCullMaskBit,
             "setInputAsHandled", &Viewport::setInputAsHandled,

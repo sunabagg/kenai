@@ -2,9 +2,9 @@
 #include "../core/scene_system.h"
 
 using namespace godot;
-using namespace sunaba::core;
+using namespace kenai::core;
 
-namespace sunaba::spatial
+namespace kenai::spatial
 {
     void bindCamera(sol::state& lua){
         lua.new_usertype<Camera>(

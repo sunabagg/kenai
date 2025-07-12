@@ -100,42 +100,42 @@ namespace
             return;
         }
 
-        godot::ClassDB::register_class<sunaba::App>();
-        godot::ClassDB::register_class<sunaba::tests::SceneTest>();
-        godot::ClassDB::register_class<sunaba::core::SceneNode>();
-        godot::ClassDB::register_class<sunaba::core::NodeProxy>();
-        //godot::ClassDB::register_class<sunaba::core::EventBridge>();
-        godot::ClassDB::register_class<sunaba::core::BaseObjectProxy>();
-        godot::ClassDB::register_class<sunaba::core::StlFunctionWrapper>();
+        godot::ClassDB::register_class<kenai::App>();
+        godot::ClassDB::register_class<kenai::tests::SceneTest>();
+        godot::ClassDB::register_class<kenai::core::SceneNode>();
+        godot::ClassDB::register_class<kenai::core::NodeProxy>();
+        //godot::ClassDB::register_class<kenai::core::EventBridge>();
+        godot::ClassDB::register_class<kenai::core::BaseObjectProxy>();
+        godot::ClassDB::register_class<kenai::core::StlFunctionWrapper>();
 
-        godot::ClassDB::register_class<sunaba::core::NodeSignalWrapper>();
-        godot::ClassDB::register_class<sunaba::core::CanvasItemSignalWrapper>();
-        godot::ClassDB::register_class<sunaba::core::ViewportSignalWrapper>();
+        godot::ClassDB::register_class<kenai::core::NodeSignalWrapper>();
+        godot::ClassDB::register_class<kenai::core::CanvasItemSignalWrapper>();
+        godot::ClassDB::register_class<kenai::core::ViewportSignalWrapper>();
 
-        godot::ClassDB::register_class<sunaba::desktop::WindowSignalWrapper>();
-        godot::ClassDB::register_class<sunaba::desktop::PopupSignalWrapper>();
-        godot::ClassDB::register_class<sunaba::desktop::PopupMenuSignalWrapper>();
-        godot::ClassDB::register_class<sunaba::desktop::AcceptDialogSignalWrapper>();
-        godot::ClassDB::register_class<sunaba::desktop::FileDialogSignalWrapper>();
-        godot::ClassDB::register_class<sunaba::desktop::StatusIndicatorSignalWrapper>();
+        godot::ClassDB::register_class<kenai::desktop::WindowSignalWrapper>();
+        godot::ClassDB::register_class<kenai::desktop::PopupSignalWrapper>();
+        godot::ClassDB::register_class<kenai::desktop::PopupMenuSignalWrapper>();
+        godot::ClassDB::register_class<kenai::desktop::AcceptDialogSignalWrapper>();
+        godot::ClassDB::register_class<kenai::desktop::FileDialogSignalWrapper>();
+        godot::ClassDB::register_class<kenai::desktop::StatusIndicatorSignalWrapper>();
 
-        godot::ClassDB::register_class<sunaba::input::InputServiceSignalWrapper>();
+        godot::ClassDB::register_class<kenai::input::InputServiceSignalWrapper>();
 
-        godot::ClassDB::register_class<sunaba::ui::ControlSignalWrapper>();
-        godot::ClassDB::register_class<sunaba::ui::BaseButtonSignalWrapper>();
-        godot::ClassDB::register_class<sunaba::ui::ContainerSignalWrapper>();
-        godot::ClassDB::register_class<sunaba::ui::ItemListSignalWrapper>();
-        godot::ClassDB::register_class<sunaba::ui::LineEditSignalWrapper>();
-        godot::ClassDB::register_class<sunaba::ui::MenuButtonSignalWrapper>();
-        godot::ClassDB::register_class<sunaba::ui::OptionButtonSignalWrapper>();
-        godot::ClassDB::register_class<sunaba::ui::RangeSignalWrapper>();
-        godot::ClassDB::register_class<sunaba::ui::SliderSignalWrapper>();
-        godot::ClassDB::register_class<sunaba::ui::TabBarSignalWrapper>();
-        godot::ClassDB::register_class<sunaba::ui::TabContainerSignalWrapper>();
-        godot::ClassDB::register_class<sunaba::ui::TextEditSignalWrapper>();
-        godot::ClassDB::register_class<sunaba::ui::CodeEditSignalWrapper>();
-        godot::ClassDB::register_class<sunaba::ui::TreeSignalWrapper>();
-        godot::ClassDB::register_class<sunaba::ui::RichTextLabelSignalWrapper>();
+        godot::ClassDB::register_class<kenai::ui::ControlSignalWrapper>();
+        godot::ClassDB::register_class<kenai::ui::BaseButtonSignalWrapper>();
+        godot::ClassDB::register_class<kenai::ui::ContainerSignalWrapper>();
+        godot::ClassDB::register_class<kenai::ui::ItemListSignalWrapper>();
+        godot::ClassDB::register_class<kenai::ui::LineEditSignalWrapper>();
+        godot::ClassDB::register_class<kenai::ui::MenuButtonSignalWrapper>();
+        godot::ClassDB::register_class<kenai::ui::OptionButtonSignalWrapper>();
+        godot::ClassDB::register_class<kenai::ui::RangeSignalWrapper>();
+        godot::ClassDB::register_class<kenai::ui::SliderSignalWrapper>();
+        godot::ClassDB::register_class<kenai::ui::TabBarSignalWrapper>();
+        godot::ClassDB::register_class<kenai::ui::TabContainerSignalWrapper>();
+        godot::ClassDB::register_class<kenai::ui::TextEditSignalWrapper>();
+        godot::ClassDB::register_class<kenai::ui::CodeEditSignalWrapper>();
+        godot::ClassDB::register_class<kenai::ui::TreeSignalWrapper>();
+        godot::ClassDB::register_class<kenai::ui::RichTextLabelSignalWrapper>();
     }
 
     /// @brief Called by Godot to let us do any cleanup.

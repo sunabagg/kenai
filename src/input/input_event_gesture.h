@@ -10,12 +10,12 @@
 #include "input_event_with_modifiers.h"
 
 using namespace godot;
-using namespace sunaba::core;
+using namespace kenai::core;
 
-namespace sunaba::input {
+namespace kenai::input {
     void bindInputEventGesture(sol::state_view& lua);
 
-    class InputEventGesture : public sunaba::input::InputEventWithModifiers {
+    class InputEventGesture : public kenai::input::InputEventWithModifiers {
     private:
         GodotInputEventGesture* event;
     public:

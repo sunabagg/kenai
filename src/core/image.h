@@ -1,5 +1,5 @@
-#ifndef SUNABA_IMAGE_H
-#define SUNABA_IMAGE_H
+#ifndef KENAI_IMAGE_H
+#define KENAI_IMAGE_H
 
 #include <godot_cpp/classes/image.hpp>
 #include <godot_cpp/variant/variant.hpp>
@@ -13,9 +13,9 @@
 #include "io/io_index.h"
 
 using namespace godot;
-using namespace sunaba::core::io;
+using namespace kenai::core::io;
 
-namespace sunaba::core {
+namespace kenai::core {
     void bindImage(sol::state &lua);
 
     class Image : public Resource {
@@ -404,4 +404,4 @@ namespace sunaba::core {
     };
 }
 
-#endif  // SUNABA_IMAGE_H
+#endif  // KENAI_IMAGE_H

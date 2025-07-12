@@ -7,7 +7,7 @@
 
 using namespace godot;
 
-namespace sunaba::core {
+namespace kenai::core {
     class StringUtils
     {
     public:

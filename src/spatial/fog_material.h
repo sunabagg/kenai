@@ -14,10 +14,10 @@
 
 using namespace godot;
 
-namespace sunaba::spatial {
+namespace kenai::spatial {
     void bindFogMaterial(sol::state_view& lua);
 
-    class FogMaterial : public sunaba::core::Material {
+    class FogMaterial : public kenai::core::Material {
     private:
         GodotFogMaterial* fogMaterial;
     public:

@@ -3,7 +3,7 @@
 
 #include <sol/sol.hpp>
 
-namespace sunaba::spatial
+namespace kenai::spatial
 {
     void bindSpatialClasses(sol::state& lua);
 }

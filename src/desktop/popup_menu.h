@@ -15,9 +15,9 @@
 #include "../core/texture2d.h"
 
 using namespace godot;
-using namespace sunaba::core;
+using namespace kenai::core;
 
-namespace sunaba::desktop {
+namespace kenai::desktop {
     void bindPopupMenu(sol::state& lua);
 
     class PopupMenu;
@@ -27,7 +27,7 @@ namespace sunaba::desktop {
         protected:
             static void _bind_methods() {}
     public:
-        sunaba::desktop::PopupMenu* element = nullptr;
+        kenai::desktop::PopupMenu* element = nullptr;
 
         void onInit() {
             // Initialize the NodeProxy instance
@@ -51,7 +51,7 @@ namespace sunaba::desktop {
         protected:
             static void _bind_methods();
         public:
-            sunaba::desktop::PopupMenu* element = nullptr;
+            kenai::desktop::PopupMenu* element = nullptr;
 
             PopupMenuSignalWrapper() = default;
             ~PopupMenuSignalWrapper() = default;
@@ -214,7 +214,7 @@ namespace sunaba::desktop {
                 menuChangedEvent = event;
             }
 
-            bool activateItemByEvent(sunaba::input::InputEvent* event, bool forGlobalOnly = false) {
+            bool activateItemByEvent(kenai::input::InputEvent* event, bool forGlobalOnly = false) {
                 return popup_menu->activate_item_by_event(event->getInputEvent(), forGlobalOnly);
             }
 
@@ -222,31 +222,31 @@ namespace sunaba::desktop {
                 popup_menu->add_check_item(label.c_str(), id, static_cast<godot::Key>(accel));
             }
 
-            void addCheckShortcut(sunaba::input::Shortcut* shortcut, int id  = -1, bool global = false) {
+            void addCheckShortcut(kenai::input::Shortcut* shortcut, int id  = -1, bool global = false) {
                 popup_menu->add_check_shortcut(shortcut->getShortcut(), id, global);
             }
 
-            void addIconCheckItem(sunaba::core::Texture2D* texture, std::string label, int id = -1, int accel = 0) {
+            void addIconCheckItem(kenai::core::Texture2D* texture, std::string label, int id = -1, int accel = 0) {
                 popup_menu->add_icon_check_item(texture->getTexture2D(), label.c_str(), id, static_cast<godot::Key>(accel));
             }
 
-            void addIconCheckShortcut(sunaba::core::Texture2D* texture, sunaba::input::Shortcut* shortcut, int id = -1, bool global = false) {
+            void addIconCheckShortcut(kenai::core::Texture2D* texture, kenai::input::Shortcut* shortcut, int id = -1, bool global = false) {
                 popup_menu->add_icon_check_shortcut(texture->getTexture2D(), shortcut->getShortcut(), id, global);
             }
 
-            void addIconItem(sunaba::core::Texture2D* texture, std::string label, int id = -1, int accel = 0) {
+            void addIconItem(kenai::core::Texture2D* texture, std::string label, int id = -1, int accel = 0) {
                 popup_menu->add_icon_item(texture->getTexture2D(), label.c_str(), id, static_cast<godot::Key>(accel));
             } 
 
-            void addIconRadioCheckItem(sunaba::core::Texture2D* texture, std::string label, int id = -1, int accel = 0) {
+            void addIconRadioCheckItem(kenai::core::Texture2D* texture, std::string label, int id = -1, int accel = 0) {
                 popup_menu->add_icon_radio_check_item(texture->getTexture2D(), label.c_str(), id, static_cast<godot::Key>(accel));
             }
 
-            void addIconRadioCheckShortcut(sunaba::core::Texture2D* texture, sunaba::input::Shortcut* shortcut, int id = -1, bool global = false) {
+            void addIconRadioCheckShortcut(kenai::core::Texture2D* texture, kenai::input::Shortcut* shortcut, int id = -1, bool global = false) {
                 popup_menu->add_icon_radio_check_shortcut(texture->getTexture2D(), shortcut->getShortcut(), id, global);
             }
 
-            void addIconShortcut(sunaba::core::Texture2D* texture, sunaba::input::Shortcut* shortcut, int id = -1, bool global = false, bool allowEcho = false) {
+            void addIconShortcut(kenai::core::Texture2D* texture, kenai::input::Shortcut* shortcut, int id = -1, bool global = false, bool allowEcho = false) {
                 popup_menu->add_icon_shortcut(texture->getTexture2D(), shortcut->getShortcut(), id, global, allowEcho);
             }
 
@@ -262,7 +262,7 @@ namespace sunaba::desktop {
                 popup_menu->add_radio_check_item(label.c_str(), id, static_cast<godot::Key>(accel));
             }
 
-            void addRadioCheckShortcut(sunaba::input::Shortcut* shortcut, int id = -1, bool global = false) {
+            void addRadioCheckShortcut(kenai::input::Shortcut* shortcut, int id = -1, bool global = false) {
                 popup_menu->add_radio_check_shortcut(shortcut->getShortcut(), id, global);
             }
 
@@ -270,7 +270,7 @@ namespace sunaba::desktop {
                 popup_menu->add_separator(label.c_str(), id);
             }
 
-            void addShortcut(sunaba::input::Shortcut* shortcut, int id = -1, bool global = false, bool allowEcho = false) {
+            void addShortcut(kenai::input::Shortcut* shortcut, int id = -1, bool global = false, bool allowEcho = false) {
                 popup_menu->add_shortcut(shortcut->getShortcut(), id, global, allowEcho);
             }
 
@@ -294,8 +294,8 @@ namespace sunaba::desktop {
                 return popup_menu->get_item_accelerator(index);
             }
 
-            sunaba::core::Texture2D* getItemIcon(int index) const {
-                return new sunaba::core::Texture2D(popup_menu->get_item_icon(index).ptr());
+            kenai::core::Texture2D* getItemIcon(int index) const {
+                return new kenai::core::Texture2D(popup_menu->get_item_icon(index).ptr());
             }
 
             int getItemIconMaxWidth(int index) const {
@@ -334,8 +334,8 @@ namespace sunaba::desktop {
                 return popup_menu->get_item_multistate_max(index);
             }
 
-            sunaba::input::Shortcut* getItemShortcut(int index) const {
-                return new sunaba::input::Shortcut(popup_menu->get_item_shortcut(index).ptr());
+            kenai::input::Shortcut* getItemShortcut(int index) const {
+                return new kenai::input::Shortcut(popup_menu->get_item_shortcut(index).ptr());
             }
 
             std::string getItemSubmenu(int index) const {
@@ -426,7 +426,7 @@ namespace sunaba::desktop {
                 popup_menu->set_item_disabled(index, disabled);
             }
 
-            void setItemIcon(int index, sunaba::core::Texture2D* texture) {
+            void setItemIcon(int index, kenai::core::Texture2D* texture) {
                 popup_menu->set_item_icon(index, texture->getTexture2D());
             }
 
@@ -462,7 +462,7 @@ namespace sunaba::desktop {
                 popup_menu->set_item_multistate_max(index, maxStates);
             }
 
-            void setItemShortcut(int index, sunaba::input::Shortcut* shortcut, bool global = false) {
+            void setItemShortcut(int index, kenai::input::Shortcut* shortcut, bool global = false) {
                 popup_menu->set_item_shortcut(index, shortcut->getShortcut(), global);
             }
 

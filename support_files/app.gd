@@ -13,7 +13,7 @@ func _init() -> void:
 	var args = OS.get_cmdline_args()
 	var sbx_path = ""
 	for arg in args:
-		if (arg.ends_with(".sbx") and (arg.is_absolute_path() || arg.is_relative_path())):
+		if ((arg.ends_with(".sbx") || arg.ends_with(".knx")) and (arg.is_absolute_path() || arg.is_relative_path())):
 			sbx_path = arg
 	if not sbx_path.is_empty():
 		load_and_execute_sbx(sbx_path)

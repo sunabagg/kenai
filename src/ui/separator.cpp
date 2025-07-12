@@ -1,6 +1,6 @@
 #include "separator.h"
 
-namespace sunaba::ui
+namespace kenai::ui
 {
     void SeparatorProxy::_enter_tree()
     {
@@ -157,7 +157,7 @@ namespace sunaba::ui
             "new", sol::factories(
                 []() { return new Separator(); }
             ),
-            sol::base_classes, sol::bases<BaseObject, Element, sunaba::core::CanvasItem, Control>(),
+            sol::base_classes, sol::bases<BaseObject, Element, kenai::core::CanvasItem, Control>(),
             "cast", [] (Element* element) {
                 auto* ce = dynamic_cast<Separator*>(element);
                 if (ce != nullptr) {
@@ -168,4 +168,4 @@ namespace sunaba::ui
             }
         );
     }
-} // namespace sunaba::ui
+} // namespace kenai::ui

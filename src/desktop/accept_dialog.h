@@ -13,9 +13,9 @@
 #include "../ui/line_edit.h"
 
 using namespace godot;
-using namespace sunaba::core;
+using namespace kenai::core;
 
-namespace sunaba::desktop {
+namespace kenai::desktop {
     void bindAcceptDialog(sol::state& lua);
     
     class AcceptDialog;
@@ -25,7 +25,7 @@ namespace sunaba::desktop {
         protected:
             static void _bind_methods();
         public:
-            sunaba::desktop::AcceptDialog* element = nullptr;
+            kenai::desktop::AcceptDialog* element = nullptr;
 
             AcceptDialogSignalWrapper() = default;
             ~AcceptDialogSignalWrapper() = default;
@@ -135,27 +135,27 @@ namespace sunaba::desktop {
                 customActionEvent = event;
             }
 
-            sunaba::ui::Button* addButton(std::string text, bool right = false, std::string action = "") {
-                return new sunaba::ui::Button(acceptDialog->add_button(text.c_str(), right, action.c_str()));
+            kenai::ui::Button* addButton(std::string text, bool right = false, std::string action = "") {
+                return new kenai::ui::Button(acceptDialog->add_button(text.c_str(), right, action.c_str()));
             }
 
-            sunaba::ui::Button* addCancelButton(std::string name) {
-                return new sunaba::ui::Button(acceptDialog->add_cancel_button(name.c_str()));
+            kenai::ui::Button* addCancelButton(std::string name) {
+                return new kenai::ui::Button(acceptDialog->add_cancel_button(name.c_str()));
             }
 
-            sunaba::ui::Label* getLabel() {
-                return new sunaba::ui::Label(acceptDialog->get_label());
+            kenai::ui::Label* getLabel() {
+                return new kenai::ui::Label(acceptDialog->get_label());
             }
 
-            sunaba::ui::Button* getOkButton() {
-                return new sunaba::ui::Button(acceptDialog->get_ok_button());
+            kenai::ui::Button* getOkButton() {
+                return new kenai::ui::Button(acceptDialog->get_ok_button());
             }
 
-            void registerTextEnter(sunaba::ui::LineEdit* lineEdit) {
+            void registerTextEnter(kenai::ui::LineEdit* lineEdit) {
                 acceptDialog->register_text_enter(lineEdit->getLineEditNode());
             }
 
-            void removeButton(sunaba::ui::Button* button) {
+            void removeButton(kenai::ui::Button* button) {
                 acceptDialog->remove_button(button->getButton());
             }
     };

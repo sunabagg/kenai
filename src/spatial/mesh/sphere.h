@@ -7,9 +7,9 @@
 #include "mesh_renderer.h"
 
 using namespace godot;
-using namespace sunaba::core;
+using namespace kenai::core;
 
-namespace sunaba::spatial::mesh {
+namespace kenai::spatial::mesh {
     void bindSphere(sol::state& lua);
 
     class Sphere : public Component {

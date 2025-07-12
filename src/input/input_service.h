@@ -10,9 +10,9 @@
 #include "input_event.h"
 
 using namespace godot;
-using namespace sunaba::core;
+using namespace kenai::core;
 
-namespace sunaba::input {
+namespace kenai::input {
     void bindInputService(sol::state& lua);
 
     class InputServiceSignalWrapper : public Object {
@@ -245,7 +245,7 @@ namespace sunaba::input {
                 getInstance()->set_accelerometer(value);
             }
 
-            static void setCustomMouseCursor(sunaba::core::Resource* image, int shape = 0, Vector2 hotspot = Vector2(0, 0)) {
+            static void setCustomMouseCursor(kenai::core::Resource* image, int shape = 0, Vector2 hotspot = Vector2(0, 0)) {
                 getInstance()->set_custom_mouse_cursor(Ref<godot::Resource>(image->getResource()), static_cast<Input::CursorShape>(shape), hotspot);
             }
 

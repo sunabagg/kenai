@@ -22,7 +22,7 @@
             "args": [
                 "--verbose"
             ],
-            "cwd": "${command:cmake.buildDirectory}/sunaba",
+            "cwd": "${command:cmake.buildDirectory}/kenai",
             "preLaunchTask": "CMake: build",
             "internalConsoleOptions": "openOnSessionStart",
             "console": "internalConsole",
@@ -43,7 +43,7 @@
                 "--verbose",
                 "${workspaceFolder}/tests/test6/bin/test6.sbx"
             ],
-            "cwd": "${command:cmake.buildDirectory}/sunaba",
+            "cwd": "${command:cmake.buildDirectory}/kenai",
             "preLaunchTask": "CMake: build",
             "internalConsoleOptions": "openOnSessionStart",
             "console": "internalConsole",
@@ -64,7 +64,7 @@
                 "--verbose",
                 "${workspaceFolder}/tests/test7/bin/test7.sbx"
             ],
-            "cwd": "${command:cmake.buildDirectory}/sunaba",
+            "cwd": "${command:cmake.buildDirectory}/kenai",
             "preLaunchTask": "CMake: build",
             "internalConsoleOptions": "openOnSessionStart",
             "console": "internalConsole",
@@ -85,7 +85,7 @@
                 "--verbose",
                 "${workspaceFolder}/tests/test8/bin/test8.sbx"
             ],
-            "cwd": "${command:cmake.buildDirectory}/sunaba",
+            "cwd": "${command:cmake.buildDirectory}/kenai",
             "preLaunchTask": "CMake: build",
             "internalConsoleOptions": "openOnSessionStart",
             "console": "internalConsole",
@@ -105,9 +105,9 @@
             "args": [
                 "--verbose",
                 "--path",
-                "${workspaceFolder}/../sunaba-player/template"
+                "${workspaceFolder}/../kenai-player/template"
             ],
-            "cwd": "${command:cmake.buildDirectory}/sunaba",
+            "cwd": "${command:cmake.buildDirectory}/kenai",
             "preLaunchTask": "CMake: build",
             "internalConsoleOptions": "openOnSessionStart",
             "console": "internalConsole",
@@ -128,7 +128,7 @@
             "args": [
                 "--verbose"
             ],
-            "cwd": "${command:cmake.buildDirectory}/sunaba",
+            "cwd": "${command:cmake.buildDirectory}/kenai",
             "preLaunchTask": "CMake: build",
             "internalConsoleOptions": "openOnSessionStart",
             "visualizerFile": "${workspaceFolder}/.vscode/godot.natvis"
@@ -141,7 +141,7 @@
             "args": [
                 "--verbose"
             ],
-            "cwd": "${command:cmake.buildDirectory}/sunaba",
+            "cwd": "${command:cmake.buildDirectory}/kenai",
             "preLaunchTask": "CMake: build",
             "internalConsoleOptions": "openOnSessionStart"
         },
@@ -153,7 +153,7 @@
             "args": [
                 "--verbose"
             ],
-            "cwd": "${command:cmake.buildDirectory}/sunaba",
+            "cwd": "${command:cmake.buildDirectory}/kenai",
             "preLaunchTask": "CMake: build",
             "internalConsoleOptions": "openOnSessionStart",
         },
@@ -166,7 +166,7 @@
                 "--verbose",
                 "${workspaceFolder}/tests/test5/bin/test5.sbx"
             ],
-            "cwd": "${command:cmake.buildDirectory}/sunaba",
+            "cwd": "${command:cmake.buildDirectory}/kenai",
             "preLaunchTask": "CMake: build",
             "internalConsoleOptions": "openOnSessionStart",
         },
@@ -179,7 +179,7 @@
                 "--verbose",
                 "${workspaceFolder}/tests/test6/bin/test6.sbx"
             ],
-            "cwd": "${command:cmake.buildDirectory}/sunaba",
+            "cwd": "${command:cmake.buildDirectory}/kenai",
             "preLaunchTask": "CMake: build",
             "internalConsoleOptions": "openOnSessionStart",
         },
@@ -192,7 +192,7 @@
                 "--verbose",
                 "${workspaceFolder}/tests/test7/bin/test7.sbx"
             ],
-            "cwd": "${command:cmake.buildDirectory}/sunaba",
+            "cwd": "${command:cmake.buildDirectory}/kenai",
             "preLaunchTask": "CMake: build",
             "internalConsoleOptions": "openOnSessionStart",
         },
@@ -205,7 +205,7 @@
                 "--verbose",
                 "${workspaceFolder}/tests/test8/bin/test8.sbx"
             ],
-            "cwd": "${command:cmake.buildDirectory}/sunaba",
+            "cwd": "${command:cmake.buildDirectory}/kenai",
             "preLaunchTask": "CMake: build",
             "internalConsoleOptions": "openOnSessionStart",
         },
@@ -218,7 +218,7 @@
                 "--verbose",
                 "${workspaceFolder}/tests/test3/bin/test3.sbx"
             ],
-            "cwd": "${command:cmake.buildDirectory}/sunaba",
+            "cwd": "${command:cmake.buildDirectory}/kenai",
             "preLaunchTask": "CMake: build",
             "internalConsoleOptions": "openOnSessionStart",
         },
@@ -231,7 +231,7 @@
                 "--verbose",
                 "${workspaceFolder}/tests/test9/bin/test9.sbx"
             ],
-            "cwd": "${command:cmake.buildDirectory}/sunaba",
+            "cwd": "${command:cmake.buildDirectory}/kenai",
             "preLaunchTask": "CMake: build",
             "internalConsoleOptions": "openOnSessionStart",
         },
@@ -243,9 +243,9 @@
             "args": [
                 "--verbose",
                 "--path",
-                "${env:HOME}/sunaba-player/template"
+                "${env:HOME}/kenai-player/template"
             ],
-            "cwd": "${command:cmake.buildDirectory}/sunaba",
+            "cwd": "${command:cmake.buildDirectory}/kenai",
             "preLaunchTask": "CMake: build",
             "internalConsoleOptions": "openOnSessionStart",
         },
@@ -257,7 +257,7 @@
             "args": [
                 "--verbose"
             ],
-            "cwd": "${command:cmake.buildDirectory}/sunaba",
+            "cwd": "${command:cmake.buildDirectory}/kenai",
             "preLaunchTask": "CMake: build",
             "internalConsoleOptions": "openOnSessionStart",
         },
@@ -268,9 +268,9 @@
             "program": "/Applications/Godot.app/Contents/MacOS/Godot",
             "args": [
                 "--verbose",
-                "/Users/lucasabbas/sunaba/tests/test3/bin/test3.sbx"
+                "/Users/lucasabbas/kenai/tests/test3/bin/test3.sbx"
             ],
-            "cwd": "${command:cmake.buildDirectory}/sunaba",
+            "cwd": "${command:cmake.buildDirectory}/kenai",
             "preLaunchTask": "CMake: build",
             "internalConsoleOptions": "openOnSessionStart",
         },
@@ -281,9 +281,9 @@
             "program": "/Applications/Godot.app/Contents/MacOS/Godot",
             "args": [
                 "--verbose",
-                "/Users/lucasabbas/sunaba/tests/test5/bin/test5.sbx"
+                "/Users/lucasabbas/kenai/tests/test5/bin/test5.sbx"
             ],
-            "cwd": "${command:cmake.buildDirectory}/sunaba",
+            "cwd": "${command:cmake.buildDirectory}/kenai",
             "preLaunchTask": "CMake: build",
             "internalConsoleOptions": "openOnSessionStart",
         },
@@ -294,9 +294,9 @@
             "program": "/Applications/Godot.app/Contents/MacOS/Godot",
             "args": [
                 "--verbose",
-                "/Users/lucasabbas/sunaba/tests/test6/bin/test6.sbx"
+                "/Users/lucasabbas/kenai/tests/test6/bin/test6.sbx"
             ],
-            "cwd": "${command:cmake.buildDirectory}/sunaba",
+            "cwd": "${command:cmake.buildDirectory}/kenai",
             "preLaunchTask": "CMake: build",
             "internalConsoleOptions": "openOnSessionStart",
         },
@@ -307,9 +307,9 @@
             "program": "/Applications/Godot.app/Contents/MacOS/Godot",
             "args": [
                 "--verbose",
-                "/Users/lucasabbas/sunaba/tests/test7/bin/test7.sbx"
+                "/Users/lucasabbas/kenai/tests/test7/bin/test7.sbx"
             ],
-            "cwd": "${command:cmake.buildDirectory}/sunaba",
+            "cwd": "${command:cmake.buildDirectory}/kenai",
             "preLaunchTask": "CMake: build",
             "internalConsoleOptions": "openOnSessionStart",
         },
@@ -320,9 +320,9 @@
             "program": "/Applications/Godot.app/Contents/MacOS/Godot",
             "args": [
                 "--verbose",
-                "/Users/lucasabbas/sunaba/tests/test8/bin/test8.sbx"
+                "/Users/lucasabbas/kenai/tests/test8/bin/test8.sbx"
             ],
-            "cwd": "${command:cmake.buildDirectory}/sunaba",
+            "cwd": "${command:cmake.buildDirectory}/kenai",
             "preLaunchTask": "CMake: build",
             "internalConsoleOptions": "openOnSessionStart",
         }

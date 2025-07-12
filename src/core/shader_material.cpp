@@ -1,11 +1,11 @@
 #include "shader_material.h"
 
-void sunaba::core::bindShaderMaterial(sol::state_view& lua) {
+void kenai::core::bindShaderMaterial(sol::state_view& lua) {
         lua.new_usertype<ShaderMaterial>("ShaderMaterial",
             "new", sol::factories(
                 []() { return new ShaderMaterial(); }
             ),
-            sol::base_classes, sol::bases<sunaba::core::BaseObject, sunaba::core::Resource, sunaba::core::Material>(),
+            sol::base_classes, sol::bases<kenai::core::BaseObject, kenai::core::Resource, kenai::core::Material>(),
             "shader", sol::property(&ShaderMaterial::getShader, &ShaderMaterial::setShader),
             "getShaderIntParam", &ShaderMaterial::getShaderIntParam,
             "setShaderIntParam", &ShaderMaterial::setShaderIntParam,

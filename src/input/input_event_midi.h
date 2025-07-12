@@ -10,12 +10,12 @@
 #include "input_event.h"
 
 using namespace godot;
-using namespace sunaba::core;
+using namespace kenai::core;
 
-namespace sunaba::input {
+namespace kenai::input {
     void bindInputEventMidi(sol::state_view& lua);
 
-    class InputEventMidi : public sunaba::input::InputEvent {
+    class InputEventMidi : public kenai::input::InputEvent {
     private:
         GodotInputEventMidi* event;
     public:

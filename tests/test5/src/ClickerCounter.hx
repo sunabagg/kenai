@@ -1,16 +1,16 @@
 package;
 
-import sunaba.ui.Button;
-import sunaba.ui.Button.ButtonAbstract;
-import sunaba.ui.Label;
-import sunaba.ui.Widget;
+import kenai.ui.Button;
+import kenai.ui.Button.ButtonAbstract;
+import kenai.ui.Label;
+import kenai.ui.Widget;
 
 class ClickerCounter extends Widget {
     var label: Label;
     var counter: Int = 0;
     
     override function init() {
-        load("app://ClickerCounter.suml");
+        load("app://ClickerCounter.kxml");
         var labelElement = rootElement.find(
             "centerContainer/vboxContainer/clickCounterLabel"
         );

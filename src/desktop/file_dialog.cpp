@@ -1,6 +1,6 @@
 #include "file_dialog.h"
 
-namespace sunaba::desktop {
+namespace kenai::desktop {
     void FileDialogSignalWrapper::_bind_methods() {
         ClassDB::bind_method(D_METHOD("dir_selected", "dir"), &FileDialogSignalWrapper::dir_selected);
         ClassDB::bind_method(D_METHOD("file_selected", "path"), &FileDialogSignalWrapper::file_selected);
@@ -45,7 +45,7 @@ namespace sunaba::desktop {
             "new", sol::factories(
                 []() { return new FileDialog(); }
             ),
-            sol::base_classes, sol::bases<BaseObject, Element, sunaba::core::Viewport, Window, AcceptDialog, ConfirmationDialog>(),
+            sol::base_classes, sol::bases<BaseObject, Element, kenai::core::Viewport, Window, AcceptDialog, ConfirmationDialog>(),
             "access", sol::property(
                 &FileDialog::getAccess,
                 &FileDialog::setAccess

@@ -11,12 +11,12 @@
 #include "../core/texture2d.h"
 
 using namespace godot;
-using namespace sunaba::core;
+using namespace kenai::core;
 
-namespace sunaba::spatial {
+namespace kenai::spatial {
     void bindPhysicalSkyMaterial(sol::state_view& lua);
 
-    class PhysicalSkyMaterial : public sunaba::core::Material {
+    class PhysicalSkyMaterial : public kenai::core::Material {
     private:
         GodotPhysicalSkyMaterial* material = nullptr;
     public:
@@ -78,13 +78,13 @@ namespace sunaba::spatial {
             material->set_mie_eccentricity(eccentricity);
         }
 
-        sunaba::core::Texture2D* getNightSky() {
-            return new sunaba::core::Texture2D(
+        kenai::core::Texture2D* getNightSky() {
+            return new kenai::core::Texture2D(
                 material->get_night_sky().ptr()
             );
         }
 
-        void setNightSky(sunaba::core::Texture2D* texture) {
+        void setNightSky(kenai::core::Texture2D* texture) {
             material->set_night_sky(texture->getTexture2D());
         }
 

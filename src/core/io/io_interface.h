@@ -15,9 +15,9 @@
 #include "binary_data.h"
 
 using namespace godot;
-using namespace sunaba::core;
+using namespace kenai::core;
 
-namespace sunaba::core::io {
+namespace kenai::core::io {
 
     void bindIoInterface(sol::state& lua);
 

@@ -10,9 +10,9 @@
 #include "syntax_highlighter.h"
 
 using namespace godot;
-using namespace sunaba::core;
+using namespace kenai::core;
 
-namespace sunaba::ui {
+namespace kenai::ui {
     void bindCodeHighlighter(sol::state &lua);
 
     class CodeEdit;

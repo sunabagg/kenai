@@ -13,10 +13,10 @@
 #include "../core/convert_godot_lua.h"
 
 using namespace godot;
-using namespace sunaba::core;
-using namespace sunaba::core::io;
+using namespace kenai::core;
+using namespace kenai::core::io;
 
-namespace sunaba::audio {
+namespace kenai::audio {
     void bindAudioStreamWav(sol::state_view& lua);
 
     class AudioStreamWav : public AudioStream {

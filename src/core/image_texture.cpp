@@ -1,17 +1,17 @@
 #include "image_texture.h"
 
-void sunaba::core::bindImageTexture(sol::state &lua) {
-    lua.new_usertype<sunaba::core::ImageTexture>("ImageTexture",
+void kenai::core::bindImageTexture(sol::state &lua) {
+    lua.new_usertype<kenai::core::ImageTexture>("ImageTexture",
         "new", sol::factories(
-            []() { return new sunaba::core::ImageTexture(); }
+            []() { return new kenai::core::ImageTexture(); }
         ),
-        sol::base_classes, sol::bases<sunaba::core::BaseObject, sunaba::core::Resource, sunaba::core::Texture, sunaba::core::Texture2D>(),
+        sol::base_classes, sol::bases<kenai::core::BaseObject, kenai::core::Resource, kenai::core::Texture, kenai::core::Texture2D>(),
         "image", sol::property(
-            &sunaba::core::ImageTexture::getImage, 
-            &sunaba::core::ImageTexture::setImage
+            &kenai::core::ImageTexture::getImage, 
+            &kenai::core::ImageTexture::setImage
         ),
-        "createFromImage", &sunaba::core::ImageTexture::createFromImage,
-        "getFormat", &sunaba::core::ImageTexture::getFormat,
+        "createFromImage", &kenai::core::ImageTexture::createFromImage,
+        "getFormat", &kenai::core::ImageTexture::getFormat,
         "cast", [](Resource* instance) {
             return new ImageTexture(godot::Object::cast_to<GodotImageTexture>(instance->getResource()));
         }

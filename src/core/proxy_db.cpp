@@ -1,6 +1,6 @@
 #include "proxy_db.h"
 
-namespace sunaba::core
+namespace kenai::core
 {
     std::map<Node*, Element*> ProxyDb::elements;
 }

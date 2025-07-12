@@ -4,9 +4,9 @@
 #include "../string_utils.h"
 
 using namespace godot;
-using namespace sunaba::core;
+using namespace kenai::core;
 
-namespace sunaba::core::io {
+namespace kenai::core::io {
     void bindIoManager(sol::state& lua) {
         lua.new_usertype<IoManager>(
             "IoManager",

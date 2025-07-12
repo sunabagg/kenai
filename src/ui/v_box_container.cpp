@@ -1,6 +1,6 @@
 #include "v_box_container.h"
 
-namespace sunaba::ui {
+namespace kenai::ui {
     
     void VBoxContainerProxy::_enter_tree() {
         if (this->element != nullptr) {
@@ -135,7 +135,7 @@ namespace sunaba::ui {
             "new", sol::factories(
                 []() { return new VBoxContainer(); }
             ),
-            sol::base_classes, sol::bases<BaseObject, Element, sunaba::core::CanvasItem, Control, Container, BoxContainer>(),
+            sol::base_classes, sol::bases<BaseObject, Element, kenai::core::CanvasItem, Control, Container, BoxContainer>(),
             "cast", [](Element* element) {
                 auto* ce = dynamic_cast<VBoxContainer*>(element);
                 if (ce != nullptr) {
@@ -147,4 +147,4 @@ namespace sunaba::ui {
         );
     }
 
-} // namespace sunaba::ui
+} // namespace kenai::ui

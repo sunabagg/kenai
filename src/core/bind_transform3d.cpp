@@ -1,6 +1,6 @@
 #include "lua_bind.h"
 
-void sunaba::core::bind_transform3d(sol::state& lua) {
+void kenai::core::bind_transform3d(sol::state& lua) {
     lua.new_usertype<godot::Transform3D>(
         "Transform3D",
         sol::constructors<Transform3D(), Transform3D(Basis, Vector3)>(),

@@ -15,9 +15,9 @@
 
 #include "../core/stl_function_wrapper.h"
 
-using namespace sunaba::core;
+using namespace kenai::core;
 
-namespace sunaba::ui {
+namespace kenai::ui {
     void bindControl(sol::state &lua);
 
     class Control;
@@ -29,7 +29,7 @@ namespace sunaba::ui {
                 // Bind methods specific to ControlProxy
             }
         public:
-            sunaba::ui::Control* element = nullptr;
+            kenai::ui::Control* element = nullptr;
 
             void onInit() {
                 // Initialize the NodeProxy instance
@@ -71,7 +71,7 @@ namespace sunaba::ui {
         protected:
             static void _bind_methods();
         public:
-            sunaba::ui::Control* element = nullptr;
+            kenai::ui::Control* element = nullptr;
 
             ControlSignalWrapper() = default;
             ~ControlSignalWrapper() = default;
@@ -87,7 +87,7 @@ namespace sunaba::ui {
             void theme_changed();
     };
 
-    class Control : public sunaba::core::CanvasItem {
+    class Control : public kenai::core::CanvasItem {
         private:
             ControlNode* control = nullptr; // Pointer to the Control instance
             ControlSignalWrapper* controlSignalWrapper = nullptr;
@@ -530,7 +530,7 @@ namespace sunaba::ui {
                 if (scriptInstance != sol::lua_nil) {
                     auto func = scriptInstance["guiInput"].get<sol::function>();
                     if (func) {
-                        sunaba::input::InputEvent* eventObj = new sunaba::input::InputEvent(event.ptr());
+                        kenai::input::InputEvent* eventObj = new kenai::input::InputEvent(event.ptr());
                         func(scriptInstance, eventObj);
                     }
                 }
@@ -570,7 +570,7 @@ namespace sunaba::ui {
                 control->add_theme_constant_override(name.c_str(), constant);
             }
 
-            void addThemeFontOverride(std::string name, sunaba::core::Font* font) {
+            void addThemeFontOverride(std::string name, kenai::core::Font* font) {
                 Ref<godot::Font> fontRef = Ref<godot::Font>(font->getFont());
                 control->add_theme_font_override(name.c_str(), fontRef);
             }
@@ -579,12 +579,12 @@ namespace sunaba::ui {
                 control->add_theme_font_size_override(name.c_str(), size);
             }
 
-            void addThemeIconOverride(std::string name, sunaba::core::Texture2D* texture) {
+            void addThemeIconOverride(std::string name, kenai::core::Texture2D* texture) {
                 Ref<godot::Texture2D> textureRef = Ref<godot::Texture2D>(texture->getTexture());
                 control->add_theme_icon_override(name.c_str(), textureRef);
             }
 
-            void addThemeStyleboxOverride(std::string name, sunaba::ui::StyleBox* styleBox) {
+            void addThemeStyleboxOverride(std::string name, kenai::ui::StyleBox* styleBox) {
                 Ref<godot::StyleBox> styleBoxRef = Ref<godot::StyleBox>(styleBox->getStyleBox());
                 control->add_theme_stylebox_override(name.c_str(), styleBoxRef);
             }
@@ -677,24 +677,24 @@ namespace sunaba::ui {
                 return control->get_theme_default_base_scale();
             }
 
-            sunaba::core::Font* getThemeDefaultFont() {
-                return new sunaba::core::Font(control->get_theme_default_font().ptr());
+            kenai::core::Font* getThemeDefaultFont() {
+                return new kenai::core::Font(control->get_theme_default_font().ptr());
             }
 
             int getThemeDefaultFontSize() {
                 return control->get_theme_default_font_size();
             }
 
-            sunaba::core::Font* getThemeFont(std::string name, std::string type = String(StringName("&")).utf8().get_data()) {
-                return new sunaba::core::Font(control->get_theme_font(name.c_str(), type.c_str()).ptr());
+            kenai::core::Font* getThemeFont(std::string name, std::string type = String(StringName("&")).utf8().get_data()) {
+                return new kenai::core::Font(control->get_theme_font(name.c_str(), type.c_str()).ptr());
             }
 
             int getThemeFontSize(std::string name, std::string type = String(StringName("&")).utf8().get_data()) {
                 return control->get_theme_font_size(name.c_str(), type.c_str());
             }
 
-            sunaba::core::Texture2D* getThemeIcon(std::string name, std::string type = String(StringName("&")).utf8().get_data()) {
-                return new sunaba::core::Texture2D(control->get_theme_icon(name.c_str(), type.c_str()).ptr());
+            kenai::core::Texture2D* getThemeIcon(std::string name, std::string type = String(StringName("&")).utf8().get_data()) {
+                return new kenai::core::Texture2D(control->get_theme_icon(name.c_str(), type.c_str()).ptr());
             }
 
             StyleBox* getThemeStylebox(std::string name, std::string type = String(StringName("&")).utf8().get_data()) {

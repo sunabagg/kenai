@@ -1,6 +1,6 @@
 #include "sphere.h"
 
-void sunaba::spatial::mesh::bindSphere(sol::state& lua) {
+void kenai::spatial::mesh::bindSphere(sol::state& lua) {
     lua.new_usertype<Sphere>(
         "Sphere",
         "new", sol::factories(

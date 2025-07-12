@@ -1,7 +1,7 @@
-import sunaba.core.Variant;
-import sunaba.Error;
-import sunaba.core.RegExMatch;
-import sunaba.core.RegEx;
+import kenai.core.Variant;
+import kenai.Error;
+import kenai.core.RegExMatch;
+import kenai.core.RegEx;
 import lua.Table;
 
 @:coreApi

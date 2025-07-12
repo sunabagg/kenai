@@ -12,9 +12,9 @@
 #include "../core/texture2d.h"
 
 using namespace godot;
-using namespace sunaba::core;
+using namespace kenai::core;
 
-namespace sunaba::ui {
+namespace kenai::ui {
     void bindTextureButton(sol::state &lua);
 
     class TextureButton;
@@ -26,7 +26,7 @@ namespace sunaba::ui {
                 // Bind methods specific to TextureButtonProxy
             }
         public:
-            sunaba::ui::TextureButton* element = nullptr;
+            kenai::ui::TextureButton* element = nullptr;
 
             void onInit() {
                 // Initialize the NodeProxy instance
@@ -134,51 +134,51 @@ namespace sunaba::ui {
                 this->texture_button->set_stretch_mode(static_cast<TextureButtonNode::StretchMode>(mode));
             }
 
-            sunaba::core::BitMap* getTextureClickMask() const {
-                return new sunaba::core::BitMap(this->texture_button->get_click_mask().ptr());
+            kenai::core::BitMap* getTextureClickMask() const {
+                return new kenai::core::BitMap(this->texture_button->get_click_mask().ptr());
             }
 
-            void setTextureClickMask(sunaba::core::BitMap* mask) {
+            void setTextureClickMask(kenai::core::BitMap* mask) {
                 this->texture_button->set_click_mask(mask->getBitMap());
             }
 
-            sunaba::core::Texture2D* getTextureDisabled() const {
-                return new sunaba::core::Texture2D(this->texture_button->get_texture_disabled().ptr());
+            kenai::core::Texture2D* getTextureDisabled() const {
+                return new kenai::core::Texture2D(this->texture_button->get_texture_disabled().ptr());
             }
 
-            void setTextureDisabled(sunaba::core::Texture2D* texture) {
+            void setTextureDisabled(kenai::core::Texture2D* texture) {
                 this->texture_button->set_texture_disabled(texture->getTexture2D());
             }
 
-            sunaba::core::Texture2D* getTextureFocused() const {
-                return new sunaba::core::Texture2D(this->texture_button->get_texture_focused().ptr());
+            kenai::core::Texture2D* getTextureFocused() const {
+                return new kenai::core::Texture2D(this->texture_button->get_texture_focused().ptr());
             }
 
-            void setTextureFocused(sunaba::core::Texture2D* texture) {
+            void setTextureFocused(kenai::core::Texture2D* texture) {
                 this->texture_button->set_texture_focused(texture->getTexture2D());
             }
 
-            sunaba::core::Texture2D* getTextureHover() const {
-                return new sunaba::core::Texture2D(this->texture_button->get_texture_hover().ptr());
+            kenai::core::Texture2D* getTextureHover() const {
+                return new kenai::core::Texture2D(this->texture_button->get_texture_hover().ptr());
             }
 
-            void setTextureHover(sunaba::core::Texture2D* texture) {
+            void setTextureHover(kenai::core::Texture2D* texture) {
                 this->texture_button->set_texture_hover(texture->getTexture2D());
             }
 
-            sunaba::core::Texture2D* getTextureNormal() const {
-                return new sunaba::core::Texture2D(this->texture_button->get_texture_normal().ptr());
+            kenai::core::Texture2D* getTextureNormal() const {
+                return new kenai::core::Texture2D(this->texture_button->get_texture_normal().ptr());
             }
 
-            void setTextureNormal(sunaba::core::Texture2D* texture) {
+            void setTextureNormal(kenai::core::Texture2D* texture) {
                 this->texture_button->set_texture_normal(texture->getTexture2D());
             }
 
-            sunaba::core::Texture2D* getTexturePressed() const {
-                return new sunaba::core::Texture2D(this->texture_button->get_texture_pressed().ptr());
+            kenai::core::Texture2D* getTexturePressed() const {
+                return new kenai::core::Texture2D(this->texture_button->get_texture_pressed().ptr());
             }
 
-            void setTexturePressed(sunaba::core::Texture2D* texture) {
+            void setTexturePressed(kenai::core::Texture2D* texture) {
                 this->texture_button->set_texture_pressed(texture->getTexture2D());
             }
     };

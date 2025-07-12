@@ -42,11 +42,11 @@
 #include "service.h"
 #include "platform_service.h"
 
-void sunaba::core::bindCoreClasses(sol::state& lua) {
-    sunaba::core::io::bindBinaryClasses(lua);
+void kenai::core::bindCoreClasses(sol::state& lua) {
+    kenai::core::io::bindBinaryClasses(lua);
     bind_base_types(lua);
     bindSceneSystem(lua);
-    sunaba::core::io::bindIoClasses(lua);
+    kenai::core::io::bindIoClasses(lua);
     bindEvent(lua);
     bindService(lua);
     bindPlatformService(lua);
