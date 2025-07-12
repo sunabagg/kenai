@@ -13,7 +13,7 @@
 using namespace godot;
 
 
-namespace sunaba::spatial {
+namespace kenai::spatial {
     void bindSkeletonProfileHumanoid(sol::state_view& lua);
 
     class SkeletonProfileHumanoid : public SkeletonProfile {

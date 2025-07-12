@@ -1,14 +1,14 @@
 #include "resource.h"
 
-void sunaba::core::bindResource(sol::state &lua) {
-    lua.new_usertype<sunaba::core::Resource>("Resource",
+void kenai::core::bindResource(sol::state &lua) {
+    lua.new_usertype<kenai::core::Resource>("Resource",
         "new", sol::factories(
-            []() { return new sunaba::core::Resource(); }
+            []() { return new kenai::core::Resource(); }
         ),
-        sol::base_classes, sol::bases<sunaba::core::BaseObject>(),
-        "duplicate", &sunaba::core::Resource::duplicate,
-        "emitChanged", &sunaba::core::Resource::emitChanged,
-        "isNull", &sunaba::core::Resource::isNull,
+        sol::base_classes, sol::bases<kenai::core::BaseObject>(),
+        "duplicate", &kenai::core::Resource::duplicate,
+        "emitChanged", &kenai::core::Resource::emitChanged,
+        "isNull", &kenai::core::Resource::isNull,
         "cast", [](Resource* instance) {
             return new Resource(godot::Object::cast_to<GodotResource>(instance->getResource()));
         }

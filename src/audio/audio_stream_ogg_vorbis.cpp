@@ -1,12 +1,12 @@
 #include "audio_stream_ogg_vorbis.h"
 
-void sunaba::audio::bindAudioStreamOggVorbis(sol::state_view& lua) {
+void kenai::audio::bindAudioStreamOggVorbis(sol::state_view& lua) {
     lua.new_usertype<AudioStreamOggVorbis>("AudioStreamOggVorbis",
        "new", sol::factories([]() {
             return new AudioStreamOggVorbis();
         }),
-        sol::base_classes, sol::bases<sunaba::core::BaseObject, sunaba::core::Resource, AudioStream>(),
-        "cast", [](sunaba::core::Resource* resource) { 
+        sol::base_classes, sol::bases<kenai::core::BaseObject, kenai::core::Resource, AudioStream>(),
+        "cast", [](kenai::core::Resource* resource) { 
             return new AudioStreamOggVorbis(
                 Object::cast_to<GodotAudioStreamOggVorbis>(
                     resource->getResource()

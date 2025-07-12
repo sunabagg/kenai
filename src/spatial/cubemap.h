@@ -10,12 +10,12 @@
 #include "../core/image_texture_layered.h"
 
 using namespace godot;
-using namespace sunaba::core;
+using namespace kenai::core;
 
-namespace sunaba::spatial {
+namespace kenai::spatial {
     void bindCubemap(sol::state_view& lua);
 
-    class Cubemap : public sunaba::core::ImageTextureLayered {
+    class Cubemap : public kenai::core::ImageTextureLayered {
     private:
         GodotCubemap* cubemap = nullptr;
     public:
@@ -37,8 +37,8 @@ namespace sunaba::spatial {
             setImageTextureLayered(cubemap);
         }
 
-        sunaba::core::Resource* createPlaceholder() {
-            return new sunaba::core::Resource(
+        kenai::core::Resource* createPlaceholder() {
+            return new kenai::core::Resource(
                 cubemap->create_placeholder().ptr()
             );
         }

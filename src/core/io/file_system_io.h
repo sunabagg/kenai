@@ -3,9 +3,9 @@
 #include "system_io_interface.h"
 
 using namespace godot;
-using namespace sunaba::core;
+using namespace kenai::core;
 
-namespace sunaba::core::io {
+namespace kenai::core::io {
     void bindFileSystemIo(sol::state& lua);
 
     class FileSystemIo : public SystemIoInterface {

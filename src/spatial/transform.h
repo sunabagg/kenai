@@ -12,10 +12,10 @@
 
 #include "../core/scene_system.h"
 
-using namespace sunaba::core;
+using namespace kenai::core;
 using namespace godot;
 
-namespace sunaba::spatial
+namespace kenai::spatial
 {
     void bindSpatialTransform( sol::state& lua );
 

@@ -1,8 +1,8 @@
 package;
 
-import sunaba.Key;
-import sunaba.core.Behavior;
-import sunaba.input.InputService;
+import kenai.Key;
+import kenai.core.Behavior;
+import kenai.input.InputService;
 
 class InputTest extends Behavior{
     override function onUpdate(deltaTime: Float) : Void {

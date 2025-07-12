@@ -2,15 +2,15 @@
 
 using namespace godot;
 
-void sunaba::core::bindEvent(sol::state &lua) {
-    lua.new_usertype<sunaba::core::Event>("Event",
+void kenai::core::bindEvent(sol::state &lua) {
+    lua.new_usertype<kenai::core::Event>("Event",
         "new", sol::factories(
-            []() { return new sunaba::core::Event(); }
+            []() { return new kenai::core::Event(); }
         ),
-        sol::base_classes, sol::bases<sunaba::core::BaseObject>(),
-        "connect", &sunaba::core::Event::connectLua,
-        "disconnect", &sunaba::core::Event::disconnectLua,
-        "emit", &sunaba::core::Event::emitLua,
-        "clear", &sunaba::core::Event::clear
+        sol::base_classes, sol::bases<kenai::core::BaseObject>(),
+        "connect", &kenai::core::Event::connectLua,
+        "disconnect", &kenai::core::Event::disconnectLua,
+        "emit", &kenai::core::Event::emitLua,
+        "clear", &kenai::core::Event::clear
     );
 }

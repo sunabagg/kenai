@@ -1,6 +1,6 @@
 #include "texture_button.h"
 
-namespace sunaba::ui {
+namespace kenai::ui {
 
     void TextureButtonProxy::_enter_tree() {
         if (this->element != nullptr) {
@@ -133,7 +133,7 @@ namespace sunaba::ui {
             "new", sol::factories(
                 []() { return new TextureButton(); }
             ),
-            sol::base_classes, sol::bases<BaseObject, Element, sunaba::core::CanvasItem, Control, BaseButton>(),
+            sol::base_classes, sol::bases<BaseObject, Element, kenai::core::CanvasItem, Control, BaseButton>(),
             "flipH", sol::property(&TextureButton::getFlipH, &TextureButton::setFlipH),
             "flipV", sol::property(&TextureButton::getFlipV, &TextureButton::setFlipV),
             "ignoreTextureSize", sol::property(
@@ -179,4 +179,4 @@ namespace sunaba::ui {
         );
     }
 
-} // namespace sunaba::ui
+} // namespace kenai::ui

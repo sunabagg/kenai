@@ -10,12 +10,12 @@
 #include "../core/resource.h"
 
 using namespace godot;
-using namespace sunaba::core;
+using namespace kenai::core;
 
-namespace sunaba::spatial {
+namespace kenai::spatial {
     void bindCurve3D(sol::state_view& lua);
 
-    class Curve3D : public sunaba::core::Resource {
+    class Curve3D : public kenai::core::Resource {
     private:
         GodotCurve3D* curve = nullptr;
     public:

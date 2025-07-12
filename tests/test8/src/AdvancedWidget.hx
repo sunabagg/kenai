@@ -1,6 +1,6 @@
 package;
 
-import sunaba.ui.Widget;
+import kenai.ui.Widget;
 
 class AdvancedWidget extends Widget {
     override function init() {

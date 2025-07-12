@@ -1,12 +1,12 @@
 #include "confirmation_dialog.h"
 
-namespace sunaba::desktop {
+namespace kenai::desktop {
     void bindConfirmationDialog(sol::state& lua) {
         lua.new_usertype<ConfirmationDialog>("ConfirmationDialog",
             "new", sol::factories(
                 [](){ return new ConfirmationDialog; }
             ),
-            sol::base_classes, sol::bases<BaseObject, Element, sunaba::core::Viewport, Window, AcceptDialog>(),
+            sol::base_classes, sol::bases<BaseObject, Element, kenai::core::Viewport, Window, AcceptDialog>(),
             "cancelButtonText", sol::property(
                 &ConfirmationDialog::getCancelButtonText,
                 &ConfirmationDialog::setCancelButtonText

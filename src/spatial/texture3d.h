@@ -11,13 +11,13 @@
 #include "../core/image.h"
 
 using namespace godot;
-using namespace sunaba::core;
+using namespace kenai::core;
 
 
-namespace sunaba::spatial {
+namespace kenai::spatial {
     void bindTexture3D(sol::state_view& lua);
 
-    class Texture3D : public sunaba::core::Texture {
+    class Texture3D : public kenai::core::Texture {
     private:
         GodotTexture3D* texture = nullptr;
     public:
@@ -39,19 +39,19 @@ namespace sunaba::spatial {
             setTexture(texture);
         }
 
-        sunaba::core::Resource* createPlaceholder() {
-            return new sunaba::core::Resource(
+        kenai::core::Resource* createPlaceholder() {
+            return new kenai::core::Resource(
                 texture->create_placeholder().ptr()
             );
         }
 
-        std::vector<sunaba::core::Image> getData() {
-            std::vector<sunaba::core::Image> images;
+        std::vector<kenai::core::Image> getData() {
+            std::vector<kenai::core::Image> images;
             TypedArray<GodotImage> arr = texture->get_data();
             for (int i = 0; i < arr.size(); i++) {
                 Ref<GodotImage> img = arr[i];
                 if (img.is_valid()) {
-                    images.push_back(sunaba::core::Image(img.ptr()));
+                    images.push_back(kenai::core::Image(img.ptr()));
                 }
             }
             return images;

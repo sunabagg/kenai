@@ -2,7 +2,7 @@
 #include "byte.h"
 #include "binary_data.h"
 
-void sunaba::core::io::bindBinaryClasses(sol::state& lua) {
+void kenai::core::io::bindBinaryClasses(sol::state& lua) {
     bindByte(lua);
     bindBinaryData(lua);
 }

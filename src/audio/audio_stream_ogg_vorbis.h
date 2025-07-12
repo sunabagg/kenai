@@ -12,10 +12,10 @@
 #include "../core/io/io_index.h"
 
 using namespace godot;
-using namespace sunaba::core;
-using namespace sunaba::core::io;
+using namespace kenai::core;
+using namespace kenai::core::io;
 
-namespace sunaba::audio {
+namespace kenai::audio {
     void bindAudioStreamOggVorbis(sol::state_view& lua);
 
     class AudioStreamOggVorbis : public AudioStream {

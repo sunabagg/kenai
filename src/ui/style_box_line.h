@@ -10,9 +10,9 @@
 #include "style_box.h"
 
 using namespace godot;
-using namespace sunaba::core;
+using namespace kenai::core;
 
-namespace sunaba::ui {
+namespace kenai::ui {
     void bindStyleBoxLine(sol::state_view& lua);
 
     class StyleBoxLine : public StyleBox {

@@ -12,7 +12,7 @@
 
 using namespace godot;
 
-namespace sunaba::core {
+namespace kenai::core {
     void bindAtlasTexture(sol::state &lua);
 
     class AtlasTexture : public Texture2D {

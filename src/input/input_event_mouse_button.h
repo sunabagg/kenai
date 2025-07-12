@@ -10,12 +10,12 @@
 #include "input_event_mouse.h"
 
 using namespace godot;
-using namespace sunaba::core;
+using namespace kenai::core;
 
-namespace sunaba::input {
+namespace kenai::input {
     void bindInputEventMouseButton(sol::state_view& lua);
 
-    class InputEventMouseButton : public sunaba::input::InputEventMouse {
+    class InputEventMouseButton : public kenai::input::InputEventMouse {
     private:
         GodotInputEventMouseButton* event;
     public:

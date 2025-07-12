@@ -1,6 +1,6 @@
 #include "v_split_container.h"
 
-namespace sunaba::ui {
+namespace kenai::ui {
     void VSplitContainerProxy::_enter_tree() {
         if (this->element != nullptr) {
             this->element->enterTree();
@@ -134,7 +134,7 @@ namespace sunaba::ui {
             "new", sol::factories(
                 []() { return new VSplitContainer(); }
             ),
-            sol::base_classes, sol::bases<BaseObject, Element, sunaba::core::CanvasItem, Control, Container, SplitContainer>(),
+            sol::base_classes, sol::bases<BaseObject, Element, kenai::core::CanvasItem, Control, Container, SplitContainer>(),
             "cast", [](Element* element) {
                 auto* ce = dynamic_cast<VSplitContainer*>(element);
                 if (ce != nullptr) {

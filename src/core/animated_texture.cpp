@@ -1,39 +1,39 @@
 #include "animated_texture.h"
 
-void sunaba::core::bindAnimatedTexture(sol::state &lua) {
-    lua.new_usertype<sunaba::core::AnimatedTexture>("AnimatedTexture",
+void kenai::core::bindAnimatedTexture(sol::state &lua) {
+    lua.new_usertype<kenai::core::AnimatedTexture>("AnimatedTexture",
         "new", sol::factories(
-            []() { return new sunaba::core::AnimatedTexture(); }
+            []() { return new kenai::core::AnimatedTexture(); }
         ),
-        sol::base_classes, sol::bases<sunaba::core::BaseObject, sunaba::core::Resource, sunaba::core::Texture, sunaba::core::Texture2D>(),
+        sol::base_classes, sol::bases<kenai::core::BaseObject, kenai::core::Resource, kenai::core::Texture, kenai::core::Texture2D>(),
         "currentFrame", sol::property(
-            &sunaba::core::AnimatedTexture::getCurrentFrame, 
-            &sunaba::core::AnimatedTexture::setCurrentFrame
+            &kenai::core::AnimatedTexture::getCurrentFrame, 
+            &kenai::core::AnimatedTexture::setCurrentFrame
         ),
         "frames", sol::property(
-            &sunaba::core::AnimatedTexture::getFrames, 
-            &sunaba::core::AnimatedTexture::setFrames
+            &kenai::core::AnimatedTexture::getFrames, 
+            &kenai::core::AnimatedTexture::setFrames
         ),
         "oneShot", sol::property(
-            &sunaba::core::AnimatedTexture::getOneShot, 
-            &sunaba::core::AnimatedTexture::setOneShot
+            &kenai::core::AnimatedTexture::getOneShot, 
+            &kenai::core::AnimatedTexture::setOneShot
         ),
         "frames", sol::property(
-            &sunaba::core::AnimatedTexture::getFrames, 
-            &sunaba::core::AnimatedTexture::setFrames
+            &kenai::core::AnimatedTexture::getFrames, 
+            &kenai::core::AnimatedTexture::setFrames
         ),
         "pause", sol::property(
-            &sunaba::core::AnimatedTexture::getPause,
-            &sunaba::core::AnimatedTexture::setPause
+            &kenai::core::AnimatedTexture::getPause,
+            &kenai::core::AnimatedTexture::setPause
         ),
         "speedScale", sol::property(
-            &sunaba::core::AnimatedTexture::getSpeedScale, 
-            &sunaba::core::AnimatedTexture::setSpeedScale
+            &kenai::core::AnimatedTexture::getSpeedScale, 
+            &kenai::core::AnimatedTexture::setSpeedScale
         ),
-        "getFrameDuration", &sunaba::core::AnimatedTexture::getFrameDuration,
-        "getFrameTexture", &sunaba::core::AnimatedTexture::getFrameTexture,
-        "setFrameDuration", &sunaba::core::AnimatedTexture::setFrameDuration,
-        "setFrameTexture", &sunaba::core::AnimatedTexture::setFrameTexture,
+        "getFrameDuration", &kenai::core::AnimatedTexture::getFrameDuration,
+        "getFrameTexture", &kenai::core::AnimatedTexture::getFrameTexture,
+        "setFrameDuration", &kenai::core::AnimatedTexture::setFrameDuration,
+        "setFrameTexture", &kenai::core::AnimatedTexture::setFrameTexture,
         "cast", [](Resource* instance) {
             return new AnimatedTexture(godot::Object::cast_to<GodotAnimatedTexture>(instance->getResource()));
         }

@@ -1,15 +1,15 @@
 #include "style_box_empty.h"
 
-void sunaba::ui::bindStyleBoxEmpty(sol::state &lua) {
+void kenai::ui::bindStyleBoxEmpty(sol::state &lua) {
     using namespace sol;
-    using namespace sunaba::ui;
+    using namespace kenai::ui;
 
     lua.new_usertype<StyleBoxEmpty>("StyleBoxEmpty",
         "new", sol::factories(
             []() { return new StyleBoxEmpty(); }
         ),
-        sol::base_classes, sol::bases<sunaba::core::BaseObject, sunaba::core::Resource, sunaba::ui::StyleBox>(),
-        "cast", [](sunaba::core::Resource* p_resource) {
+        sol::base_classes, sol::bases<kenai::core::BaseObject, kenai::core::Resource, kenai::ui::StyleBox>(),
+        "cast", [](kenai::core::Resource* p_resource) {
             return new StyleBoxEmpty(godot::Object::cast_to<GodotStyleBoxEmpty>(p_resource->getResource()));
         }
     );

@@ -7,9 +7,9 @@
 #include "i_visual_instance.h"
 
 using namespace godot;
-using namespace sunaba::core;
+using namespace kenai::core;
 
-namespace sunaba::spatial
+namespace kenai::spatial
 {
     void bindGeometryInstance(sol::state& lua);
 

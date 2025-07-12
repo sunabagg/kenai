@@ -10,12 +10,12 @@
 #include "../core/resource.h"
 
 using namespace godot;
-using namespace sunaba::core;
+using namespace kenai::core;
 
-namespace sunaba::audio {
+namespace kenai::audio {
     void bindAudioStream(sol::state_view& lua);
 
-    class AudioStream : public sunaba::core::Resource {
+    class AudioStream : public kenai::core::Resource {
     private:
         GodotAudioStream* audioStream;
     public:

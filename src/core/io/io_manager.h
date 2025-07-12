@@ -3,7 +3,7 @@
 
 #include "io_interface.h"
 
-namespace sunaba::core::io {
+namespace kenai::core::io {
     void bindIoManager(sol::state& lua);
 
     class IoManager : public IoInterface {

@@ -1,6 +1,6 @@
 #include "accept_dialog.h"
 
-namespace sunaba::desktop {
+namespace kenai::desktop {
     void AcceptDialogSignalWrapper::_bind_methods() {
         ClassDB::bind_method(D_METHOD("canceled"), &AcceptDialogSignalWrapper::canceled);
         ClassDB::bind_method(D_METHOD("confirmed"), &AcceptDialogSignalWrapper::confirmed);
@@ -35,7 +35,7 @@ namespace sunaba::desktop {
             "new", sol::factories(
                 []() { return new AcceptDialog(); }
             ),
-            sol::base_classes, sol::bases<BaseObject, Element, sunaba::core::Viewport, Window>(),
+            sol::base_classes, sol::bases<BaseObject, Element, kenai::core::Viewport, Window>(),
             "dialogAutowrap", sol::property(
                 &AcceptDialog::getDialogAutowrap,
                 &AcceptDialog::setDialogAutowrap

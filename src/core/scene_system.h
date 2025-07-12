@@ -20,7 +20,7 @@
 
 #include "base_object.h"
 
-namespace sunaba::core
+namespace kenai::core
 {
     void bindSceneSystem(sol::state& lua);
     

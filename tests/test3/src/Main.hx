@@ -1,10 +1,10 @@
-import sunaba.App;
-import sunaba.core.*;
-import sunaba.spatial.Camera;
-import sunaba.spatial.SpatialTransform;
-import sunaba.spatial.mesh.MeshRenderer;
-import sunaba.spatial.mesh.Box;
-import sunaba.core.SceneManager;
+import kenai.App;
+import kenai.core.*;
+import kenai.spatial.Camera;
+import kenai.spatial.SpatialTransform;
+import kenai.spatial.mesh.MeshRenderer;
+import kenai.spatial.mesh.Box;
+import kenai.core.SceneManager;
 import RotateComponent;
 
 class Main extends App {

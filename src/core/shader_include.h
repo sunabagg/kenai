@@ -11,7 +11,7 @@
 
 using namespace godot;
 
-namespace sunaba::core {
+namespace kenai::core {
     void bindShaderInclude(sol::state &lua);
 
     class ShaderInclude : public Resource {

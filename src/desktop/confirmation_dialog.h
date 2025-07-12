@@ -10,9 +10,9 @@
 #include "accept_dialog.h"
 
 using namespace godot;
-using namespace sunaba::core;
+using namespace kenai::core;
 
-namespace sunaba::desktop {
+namespace kenai::desktop {
     void bindConfirmationDialog(sol::state& lua);
 
     class ConfirmationDialog : public AcceptDialog {
@@ -45,8 +45,8 @@ namespace sunaba::desktop {
                 confirmDialog->set_cancel_button_text(value.c_str());
             }
 
-            sunaba::ui::Button* getCancelButton() {
-                return new sunaba::ui::Button(confirmDialog->get_cancel_button());
+            kenai::ui::Button* getCancelButton() {
+                return new kenai::ui::Button(confirmDialog->get_cancel_button());
             }
     };
 }

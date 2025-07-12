@@ -12,7 +12,7 @@
 
 using namespace godot;
 
-namespace sunaba::core {
+namespace kenai::core {
     void bindRegEx(sol::state& lua);
 
     class RegEx: public BaseObject {

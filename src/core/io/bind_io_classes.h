@@ -3,7 +3,7 @@
 
 #include <sol/sol.hpp>
 
-namespace sunaba::core::io {
+namespace kenai::core::io {
     void bindIoClasses(sol::state& lua);
 }
 

@@ -13,10 +13,10 @@
 
 using namespace godot;
 
-namespace sunaba::core {
+namespace kenai::core {
     void bindNoise(sol::state_view& lua);
 
-    class Noise : public sunaba::core::Resource {
+    class Noise : public kenai::core::Resource {
     private:
         GodotNoise* noise;
     public:

@@ -11,12 +11,12 @@
 #include "input_event_with_modifiers.h"
 
 using namespace godot;
-using namespace sunaba::core;
+using namespace kenai::core;
 
-namespace sunaba::input {
+namespace kenai::input {
     void bindInputEventKey(sol::state_view& lua);
 
-    class InputEventKey : public sunaba::input::InputEventWithModifiers {
+    class InputEventKey : public kenai::input::InputEventWithModifiers {
     private:
         GodotInputEventKey* event;
     public:

@@ -10,9 +10,9 @@
 #include "audio_stream.h"
 
 using namespace godot;
-using namespace sunaba::core;
+using namespace kenai::core;
 
-namespace sunaba::audio {
+namespace kenai::audio {
     void bindAudioStreamPolyphonic(sol::state_view& lua);
 
     class AudioStreamPolyphonic : public AudioStream {

@@ -4,7 +4,7 @@
 
 set -e
 
-echo "Cross-compiling Sunaba for Windows using MinGW-w64..."
+echo "Cross-compiling Kenai for Windows using MinGW-w64..."
 
 # Install required packages
 echo "Installing MinGW packages..."
@@ -23,13 +23,13 @@ if [ ! -f "$MINGW_PREFIX/lib/libssl.a" ]; then
 fi
 
 # Clean previous builds
-rm -rf sunaba-build-windows sunaba-install-windows
+rm -rf kenai-build-windows kenai-install-windows
 
 # Configure with minimal dependencies
-cmake -B sunaba-build-windows \
+cmake -B kenai-build-windows \
     -DCMAKE_TOOLCHAIN_FILE="${PWD}/cmake/mingw-w64-toolchain.cmake" \
     -DCMAKE_BUILD_TYPE=Release \
-    -DCMAKE_INSTALL_PREFIX=sunaba-install-windows \
+    -DCMAKE_INSTALL_PREFIX=kenai-install-windows \
     -DOPENSSL_ROOT_DIR="$MINGW_PREFIX" \
     -DOpenSSL_DIR="$MINGW_PREFIX/lib/cmake/OpenSSL" \
     -G "Unix Makefiles" \
@@ -37,11 +37,11 @@ cmake -B sunaba-build-windows \
 
 # Build
 echo "Building..."
-cmake --build sunaba-build-windows --parallel $(nproc)
+cmake --build kenai-build-windows --parallel $(nproc)
 
 # Install
 echo "Installing..."
-cmake --install sunaba-build-windows
+cmake --install kenai-build-windows
 
-echo "Cross-compilation complete! Output in sunaba-install-windows/"
+echo "Cross-compilation complete! Output in kenai-install-windows/"
 echo "Windows binaries ready for deployment."

@@ -3,7 +3,7 @@
 
 #include <sol/sol.hpp>
 
-namespace sunaba::core {
+namespace kenai::core {
     void bindService(sol::state& lua);
 
     class ServiceInstance;

@@ -11,12 +11,12 @@
 #include "../core/texture2d.h"
 
 using namespace godot;
-using namespace sunaba::core;
+using namespace kenai::core;
 
-namespace sunaba::spatial {
+namespace kenai::spatial {
     void bindPanoramaSkyMaterial(sol::state_view& lua);
 
-    class PanoramaSkyMaterial : public sunaba::core::Material {
+    class PanoramaSkyMaterial : public kenai::core::Material {
     private:
         GodotPanoramaSkyMaterial* material = nullptr;
     public:
@@ -54,13 +54,13 @@ namespace sunaba::spatial {
             material->set_filtering_enabled(enable);
         }
 
-        sunaba::core::Texture2D* getPanorama() {
-            return new sunaba::core::Texture2D(
+        kenai::core::Texture2D* getPanorama() {
+            return new kenai::core::Texture2D(
                 material->get_panorama().ptr()
             );
         }
 
-        void setPanorama(sunaba::core::Texture2D* texture) {
+        void setPanorama(kenai::core::Texture2D* texture) {
             material->set_panorama(texture->getTexture2D());
         }
     };

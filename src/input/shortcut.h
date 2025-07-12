@@ -12,12 +12,12 @@
 #include "input_event.h"
 
 using namespace godot;
-using namespace sunaba::core;
+using namespace kenai::core;
 
-namespace sunaba::input {
+namespace kenai::input {
     void bindShortcut(sol::state& lua);
 
-    class Shortcut : public sunaba::core::Resource {
+    class Shortcut : public kenai::core::Resource {
     private:
         GodotShortcut* _godotShortcut;
     public:

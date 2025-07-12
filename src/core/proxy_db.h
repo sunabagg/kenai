@@ -9,7 +9,7 @@
 
 #include "element.h"
 
-namespace sunaba::core
+namespace kenai::core
 {
 
     class ProxyDb

@@ -57,7 +57,7 @@ if ( APPLE )
 endif()
 
 # Main project information
-project( sunaba
+project( kenai
     LANGUAGES
         C
         CXX

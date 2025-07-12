@@ -8,7 +8,7 @@
 #include "element.h"
 
 using namespace godot;
-namespace sunaba::core {
+namespace kenai::core {
     
     class SceneNode : public godot::Node {
         GDCLASS(SceneNode, Node)

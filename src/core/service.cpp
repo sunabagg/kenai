@@ -1,6 +1,6 @@
 #include "service.h"
 
-namespace sunaba::core {
+namespace kenai::core {
     void bindService(sol::state& lua) {
         lua.new_usertype<Service>("Service", sol::no_constructor);
     }

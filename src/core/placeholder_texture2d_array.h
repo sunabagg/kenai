@@ -11,7 +11,7 @@
 
 using namespace godot;
 
-namespace sunaba::core {
+namespace kenai::core {
     void bindPlaceholderTexture2DArray(sol::state &lua);
 
     class PlaceholderTexture2DArray : public PlaceholderTextureLayered {

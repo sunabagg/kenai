@@ -1,11 +1,11 @@
 #include "system_font.h"
 
-void sunaba::core::bindSystemFont(sol::state_view& lua) {
+void kenai::core::bindSystemFont(sol::state_view& lua) {
     lua.new_usertype<SystemFont>("SystemFont",
         "new", sol::factories(
             []() { return new SystemFont(); }
         ),
-        sol::base_classes, sol::bases<sunaba::core::BaseObject, sunaba::core::Resource, sunaba::core::Font>(),
+        sol::base_classes, sol::bases<kenai::core::BaseObject, kenai::core::Resource, kenai::core::Font>(),
         "allowSystemFallback", sol::property(&SystemFont::getAllowSystemFallback, &SystemFont::setAllowSystemFallback),
         "antialiasing", sol::property(&SystemFont::getAntialiasing, &SystemFont::setAntialiasing),
         "disableEmbeddedBitmaps", sol::property(&SystemFont::getDisableEmbeddedBitmaps, &SystemFont::setDisableEmbeddedBitmaps),

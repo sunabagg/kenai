@@ -1,5 +1,5 @@
 #include "global_theme.h"
 
-namespace sunaba::ui {
+namespace kenai::ui {
     Theme* uiGlobals::globalTheme = nullptr;
 }

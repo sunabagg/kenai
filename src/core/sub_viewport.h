@@ -11,7 +11,7 @@
 
 using namespace godot;
 
-namespace sunaba::core {
+namespace kenai::core {
     void bindSubViewport(sol::state &lua);
 
     class SubViewport : public Viewport {

@@ -1,10 +1,10 @@
 package;
 
-import sunaba.input.InputEvent;
-import sunaba.App;
-import sunaba.core.Scene;
-import sunaba.core.SceneManager;
-import sunaba.core.Entity;
+import kenai.input.InputEvent;
+import kenai.App;
+import kenai.core.Scene;
+import kenai.core.SceneManager;
+import kenai.core.Entity;
 
 class Main extends App{
     public static function main() {

@@ -1,11 +1,11 @@
 #include "label_settings.h"
 
-void sunaba::core::bindLabelSettings(sol::state &lua) {
+void kenai::core::bindLabelSettings(sol::state &lua) {
     lua.new_usertype<LabelSettings>("LabelSettings",
         "new", sol::factories(
             []() { return new LabelSettings(); }
         ),
-        sol::base_classes, sol::bases<sunaba::core::BaseObject, sunaba::core::Resource>(),
+        sol::base_classes, sol::bases<kenai::core::BaseObject, kenai::core::Resource>(),
         "font", sol::property(&LabelSettings::getFont, &LabelSettings::setFont),
         "fontColor", sol::property(&LabelSettings::getFontColor, &LabelSettings::setFontColor),
         "fontSize", sol::property(&LabelSettings::getFontSize, &LabelSettings::setFontSize),

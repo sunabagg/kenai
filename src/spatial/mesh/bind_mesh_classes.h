@@ -3,7 +3,7 @@
 
 #include <sol/sol.hpp>
 
-namespace sunaba::spatial::mesh
+namespace kenai::spatial::mesh
 {
     void bindMeshClasses(sol::state& lua);
 }
