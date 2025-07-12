@@ -37,21 +37,6 @@ jobs:
         if: matrix.config.os == 'macos-latest'
         run: brew install ccache ninja pkgconf lua
 
-      - name: Install Dependencies (Linux)
-        if: matrix.config.os == 'ubuntu-22.04'
-        run: |
-          sudo apt-get update
-          sudo apt-get install -y ccache ninja-build pkg-config libluajit-5.1-2 libluajit-5.1-dev libluajit-5.1-common luajit linux-libc-dev
-
-      - name: Install Dependencies (Windows)
-        if: matrix.config.os == 'windows-latest' || matrix.config.os == 'windows-11-arm'
-        run: |
-          choco upgrade ccache ninja pkgconfiglite openssl -y
-
-      - name: Setup MSVC (Windows)
-        if: matrix.config.os == 'windows-latest' || matrix.config.os == 'windows-11-arm'
-        uses: ilammy/msvc-dev-cmd@v1
-
       - name: ccache
         if: matrix.config.os != 'windows-11-arm'
         uses: hendrikmuhs/ccache-action@v1.2
@@ -72,7 +57,7 @@ jobs:
           ${{ github.workspace }}/vcpkg/vcpkg install
 
       - name: Configure
-        if: matrix.config.os == 'macos-latest' || matrix.config.os == 'ubuntu-22.04' || matrix.config.os == 'windows-latest'
+        if: matrix.config.os == 'macos-latest'
         # For Windows Arm, we handle configuration separately
         run: >
           mkdir GDExtension-build
@@ -83,29 +68,7 @@ jobs:
           -DCMAKE_BUILD_TYPE=${{ matrix.build_type }}
           --install-prefix ${{ github.workspace }}/install-${{ matrix.build_type }}
           .
-      
-      - name: Configure (Windows Arm)
-        if: matrix.config.os == 'windows-11-arm'
-        run: >
-          mkdir GDExtension-build
-
-          cmake
-          -B GDExtension-build
-          -G "Visual Studio 17 2022"
-          -A arm64
-          -DCMAKE_BUILD_TYPE=${{ matrix.build_type }}
-          --install-prefix ${{ github.workspace }}/install-${{ matrix.build_type }}
-          -DUSE_LUAJIT=OFF
-      
-      - name: Copy luajit lib (Windows)
-        if: matrix.config.os == 'windows-latest'
-        run: Copy-Item "${{ github.workspace }}\lua51.lib" -Destination "${{ github.workspace }}\GDExtension-build\lua51.lib"
-
-      - name: Copy luajit lib (Windows ARM64)
-        if: matrix.config.os == 'windows-11-arm'
-        run: Copy-Item "${{ github.workspace }}\lua51-arm64.lib" -Destination "${{ github.workspace }}\GDExtension-build\lua51.lib"
-
-
+          
       - name: Build
         run: cmake --build GDExtension-build
 
