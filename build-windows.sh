@@ -17,7 +17,7 @@ fi
 
 # Install Windows dependencies with vcpkg
 echo "Installing Windows dependencies..."
-./vcpkg/vcpkg install openssl:x64-mingw-static --triplet x64-mingw-static
+./vcpkg/vcpkg install --triplet x64-mingw-static
 
 # Clean previous builds
 rm -rf sunaba-build-windows sunaba-install-windows
