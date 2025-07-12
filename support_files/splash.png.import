@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://tqi54djfy3ia"
-path="res://.godot/imported/KenaiLogoV2Small.png-2f338edbb371605c304757464eb0726a.ctex"
+uid="uid://bnr1og5oakxv1"
+path="res://.godot/imported/splash.png-929ed8a00b89ba36c51789452f874c77.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://KenaiLogoV2Small.png"
-dest_files=["res://.godot/imported/KenaiLogoV2Small.png-2f338edbb371605c304757464eb0726a.ctex"]
+source_file="res://splash.png"
+dest_files=["res://.godot/imported/splash.png-929ed8a00b89ba36c51789452f874c77.ctex"]
 
 [params]
 

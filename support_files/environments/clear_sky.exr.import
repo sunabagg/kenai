@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://blqmntg584env"
 path.bptc="res://.godot/imported/clear_sky.exr-c41d05e2d52660ebc88165f26ca813bf.bptc.ctex"
+path.astc="res://.godot/imported/clear_sky.exr-c41d05e2d52660ebc88165f26ca813bf.astc.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://environments/clear_sky.exr"
-dest_files=["res://.godot/imported/clear_sky.exr-c41d05e2d52660ebc88165f26ca813bf.bptc.ctex"]
+dest_files=["res://.godot/imported/clear_sky.exr-c41d05e2d52660ebc88165f26ca813bf.bptc.ctex", "res://.godot/imported/clear_sky.exr-c41d05e2d52660ebc88165f26ca813bf.astc.ctex"]
 
 [params]
 
