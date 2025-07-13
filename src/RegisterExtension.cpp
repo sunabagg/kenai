@@ -17,6 +17,8 @@
 #include "core/canvas_item.h"
 #include "core/viewport.h"
 
+#include "core/io/moon_console.h"
+
 #include "desktop/window.h"
 #include "desktop/popup.h"
 #include "desktop/popup_menu.h"
@@ -136,6 +138,8 @@ namespace
         godot::ClassDB::register_class<sunaba::ui::CodeEditSignalWrapper>();
         godot::ClassDB::register_class<sunaba::ui::TreeSignalWrapper>();
         godot::ClassDB::register_class<sunaba::ui::RichTextLabelSignalWrapper>();
+
+        godot::ClassDB::register_class<sunaba::core::io::MoonConsole>();
     }
 
     /// @brief Called by Godot to let us do any cleanup.
