@@ -334,6 +334,10 @@ void App::initState(bool sandboxed) {
             }
             return std::string(stdin.utf8().get_data());
         };
+
+        global_state["__clearScreen"] = [this]() {
+            OS::get_singleton()->execute("clear", PackedStringArray(), Array(), false, false);
+        };
     }
 
     auto* rootElement = new sunaba::core::Element(this);
