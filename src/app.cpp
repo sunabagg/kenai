@@ -328,11 +328,11 @@ void App::initState(bool sandboxed) {
         bindRuntime(global_state);
 
         global_state["__stdin"] = [this]() {
-            auto stdin = OS::get_singleton()->read_string_from_stdin(1024);
-            if (stdin.is_empty()) {
+            String __stdin = OS::get_singleton()->read_string_from_stdin(1024);
+            if (__stdin.is_empty()) {
                 return std::string(""); // Return empty string if stdin is empty
             }
-            return std::string(stdin.utf8().get_data());
+            return std::string(__stdin.utf8().get_data());
         };
 
         global_state["__clearScreen"] = [this]() {
