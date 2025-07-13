@@ -67,6 +67,18 @@ namespace sunaba::core::io {
                     printColor(log, clrstr);
                 };
 
+                console["A"] = [this](sol::variadic_args args) {
+                    std::vector<std::string> argsv;
+                    for (const auto& arg: args) {
+                        if (arg.is<std::string>()) {
+                            if (arg.as<std::string>() != "") {
+                                argsv.push_back(arg.as<std::string>());
+                            }
+                        }
+                    }
+                    return argsv;
+                };
+
                 console["cd"] = [this](std::string dir) {
                     if (!ioInterface->directoryExists(dir)) {
                         printErr(String("ERROR: invalid dir").utf8().get_data());
