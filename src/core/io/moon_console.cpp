@@ -10,6 +10,9 @@ namespace sunaba::core::io {
             "ioInterface", sol::property(
                 &Console::getIoInterface,
                 &Console::setIoInterface
+            ),
+            "logs", sol::readonly_property(
+                &Console::getLogs
             )
         );
     }
