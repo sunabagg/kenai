@@ -46,6 +46,10 @@ namespace sunaba::networking {
             bool isValid() {
                 return packetPeer.is_valid();
             }
+
+            int getAvailablePacketCount() {
+                return packetPeer->get_available_packet_count();
+            }
     }
 }
 
