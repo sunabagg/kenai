@@ -229,6 +229,10 @@ namespace sunaba::core::io {
             std::vector<std::string> getLogs() {
                 return moonConsole->logs;
             }
+
+            sol::function getLogHandler() {
+                return moonConsole->logHandler;
+            }
     };
 }
 
