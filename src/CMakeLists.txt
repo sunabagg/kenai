@@ -12,6 +12,7 @@ add_subdirectory( spatial )
 add_subdirectory( tests )
 add_subdirectory( ui )
 add_subdirectory( audio )
+add_subdirectory( networking )
 
 target_include_directories( ${PROJECT_NAME}
     PRIVATE
