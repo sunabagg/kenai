@@ -117,49 +117,50 @@ namespace sunaba::core::io {
                     return str;
                 };
 
-                auto& cmdFunc = [this](std::string commandName, std::vector<std::string> args) {
+                auto& cmdFunc = [this](const std::string& commandName, const std::vector<std::string>& args) {
                     this->cmd(commandName, args);
                 };
 
                 console["cmd"] = cmdFunc;
                 console["$"] = cmdFunc;
 
-                console["eval"] = [this](std::string code) {
+                console["eval"] = [this](const std::string& code) {
                     int res = this->eval(code);
                     return res;
                 };
                 console["OK"] = Error::OK;
                 console["FAILED"] = Error::FAILED;
 
-                console["addcmd"] = [this](std::string cmdName, sol::function func) {
+                console["addcmd"] = [this](const std::string& cmdName, sol::function func) {
                     addCommand(cmdName, func);
                 };
             }
 
-            Color getLogColor(std::string log) {
-                return logColors[log.c_str()];
+            Color& getLogColor(const std::string& log) {
+                return Color(logColors[log.c_str()]);
             }
 
-            void print(std::string log) {
+            void print(const std::string& log) {
                 logs.push_back(log);
                 logColors[log.c_str()] = Color("#ffffff");
                 logHandler(log);
             }
 
-            void printErr(std::string error) {
+            void printErr(const std::string& error) {
                 logs.push_back(error);
                 logColors[error.c_str()] = Color("#ff5733");
                 logHandler(error);
             }
 
-            void printColor(std::string log, std::string clrstr) {
+            void printColor(const std::string& log, const std::string& clrstr) {
                 Color& color = Color(clrstr.c_str());
                 logs.push_back(log);
                 logColors[log.c_str()] = color;
                 logHandler(log);
             }
 
-            Error cmd(std::string commandName, std::vector<std::string> args) {
+            Error cmd(const std::string& cmdName, const std::vector<std::string>& args) {
+                std::string commandName = cmdName;
                 if (ioInterface != nullptr) {
                     if (!String(commandName.c_str()).contains("://")) {
                         if (ioInterface->fileExists(currentDir + commandName)) {
@@ -189,7 +190,7 @@ namespace sunaba::core::io {
                 return static_cast<Error>(errorcode);
             }
 
-            Error eval(std::string code) {
+            Error eval(const std::string& code) {
                 sol::protected_function_result result = console.safe_script(code);
                 if (!result.valid()) {
                     sol::error err = result;
@@ -202,7 +203,7 @@ namespace sunaba::core::io {
                 }
             }
 
-            void addCommand(std::string cmdName, sol::function func) {
+            void addCommand(const std::string& cmdName, sol::function func) {
                 cmdNames.push_back(cmdName);
                 cmdFunctions.push_back(func);
             }
@@ -251,11 +252,11 @@ namespace sunaba::core::io {
                 moonConsole->logHandler = func;
             }
 
-            void addCommand(std::string cmdName, sol::function func) {
+            void addCommand(const std::string& cmdName, sol::function func) {
                 moonConsole->addCommand(cmdName, func);
             }
 
-            Color& getLogColor(std::string log) {
+            Color& getLogColor(const std::string& log) {
                 Color& color = moonConsole->getLogColor(log);
                 return color;
             }
