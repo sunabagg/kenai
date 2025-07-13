@@ -51,6 +51,7 @@ class ConsoleWidget extends Widget {
                 output.scrollFollowing = true; // Automatically scroll to the bottom
             }
         });
+        console.eval("cd('app://')"); // Set the initial working directory
         console.eval("print('Welcome to the Sunaba Console!')");
     }
 }
