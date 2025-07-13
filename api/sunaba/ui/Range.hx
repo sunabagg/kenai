@@ -25,7 +25,7 @@ extern class Range extends Control {
 
 abstract RangeAbstract(Range) from Range to Range {
     @:from
-    public static function fromElement(element: sunaba.core.Element): sunaba.ui.Range {
+    public static function fromElement(element: sunaba.core.Element): RangeAbstract {
         var range = sunaba.ui.Range.toRange(element);
         if (range.isNull()) {
             return null;
