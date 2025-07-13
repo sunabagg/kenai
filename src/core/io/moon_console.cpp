@@ -17,7 +17,8 @@ namespace sunaba::core::io {
             "logHandler", sol::property(
                 &Console::getLogHandler,
                 &Console::setLogHandler
-            )
+            ),
+            "addCommand", &Console::addCommand
         );
     }
 }
