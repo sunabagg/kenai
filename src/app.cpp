@@ -82,7 +82,7 @@ void App::_bind_methods() {
     ClassDB::bind_method(D_METHOD("set_theme", "theme"), &App::setTheme);
     ClassDB::bind_method(D_METHOD("set_args", "_args"), &App::setArgs);
     ClassDB::bind_method(D_METHOD("get_args"), &App::getArgs);
-    ClassDB::bind_method(D_METHOD("libopen", "path", "uri"), &App::godot_libopen);
+    ClassDB::bind_method(D_METHOD("libopen", "path"), &App::godot_libopen);
     ADD_PROPERTY(PropertyInfo(Variant::PACKED_STRING_ARRAY, "args"), "set_args", "get_args");
     ADD_SIGNAL(MethodInfo("on_exit"));
 }
@@ -374,12 +374,12 @@ void App::initState(bool sandboxed) {
         return new sunaba::ui::Theme(theme.ptr());
     };
 
-    global_state["libopen"] = [this](const std::string &path, const std::string &uri = "") {
-        this->libopen(path, uri);
+    global_state["libopen"] = [this](const std::string &path) {
+        this->libopen(path);
     };
 }
 
-void App::libopen(const std::string& path, const std::string& uri) {
+void App::libopen(const std::string& path) {
     std::string dlpath = path;
     if (dlpath.empty()) {
         UtilityFunctions::print("Error: path is empty");
@@ -433,7 +433,31 @@ void App::libopen(const std::string& path, const std::string& uri) {
         UtilityFunctions::print("Error: failed to open zip file: " + String(path.c_str()));
         return;
     }
-    zipio->pathUri = uri.empty() ? "temp://" : uri;
+    
+    zipio->pathUri = "temp://";
+    auto& headerJsonPath = "temp://header.json";
+    if (!zipio->fileExists(headerJsonPath)) {
+        UtilityFunctions::print("Error: header.json not found in the zip file: " + String(path.c_str()));
+        return;
+    }
+
+    auto headerJsonStr = zipio->loadText(headerJsonPath);
+    if (headerJsonStr.empty()) {
+        UtilityFunctions::print("Error: failed to load header.json from the zip file: " + String(path.c_str()));
+        return;
+    }
+
+    auto headerJson = godot::Ref<JSON>(memnew(JSON));
+    auto parseResult = headerJson->parse_string(headerJsonStr.c_str());
+    Dictionary headerDict = parseResult;
+    auto type = headerDict["type"];
+    if (type != "library") {
+        UtilityFunctions::print("Error: type must be 'library' in header.json: " + String(path.c_str()));
+        return;
+    }
+
+    auto rootUrl = headerDict.get("rootUrl", "temp://");
+    zipio->pathUri = String(rootUrl).utf8().get_data();
     ioManager->add(zipio);
 }
 
