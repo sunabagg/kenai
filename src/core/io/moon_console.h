@@ -50,6 +50,10 @@ namespace sunaba::core::io {
                     print(log.utf8().get_data());
                 };
 
+                console["printColor"] = [this](std::string log, std::string clrstr) {
+                    printColor(log, clrstr);
+                };
+
                 console["cd"] = [this](std::string dir) {
                     if (!ioInterface->directoryExists(dir)) {
                         printErr(String("ERROR: invalid dir").utf8().get_data());
@@ -72,6 +76,12 @@ namespace sunaba::core::io {
             void printErr(std::string error) {
                 logs.push_back(error);
                 logColors[error.c_str()] = Color("#ff5733");
+            }
+
+            void printColor(std::string log, std::string clrstr) {
+                Color& color = Color(clrstr.c_str());
+                logs.push_back(log);
+                logColors[log.c_str()] = color;
             }
     };
 
