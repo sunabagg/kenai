@@ -37,6 +37,19 @@ namespace sunaba::core::io {
                     sol::lib::table
                 );
 
+                console["print"] = [this](sol::variadic_args args) {
+                    String log;
+                    for (const auto& arg: args) {
+                        if (arg.is<std::string>()) {
+                            if (!log.is_empty()) {
+                                log += " ";
+                            }
+                            log += arg.as<std::string>().c_str();
+                        }
+                    }
+                    print(log.utf8().get_data());
+                };
+
                 console["cd"] = [this](std::string dir) {
                     if (!ioInterface->directoryExists(dir)) {
                         printErr(String("ERROR: invalid dir").utf8().get_data());
@@ -49,6 +62,11 @@ namespace sunaba::core::io {
 
             Color getLogColor(std::string log) {
                 return logColors[log.c_str()];
+            }
+
+            void print(std::string log) {
+                logs.push_back(log);
+                logColors[log.c_str()] = Color("#ffffff");
             }
 
             void printErr(std::string error) {
