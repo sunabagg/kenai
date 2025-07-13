@@ -244,6 +244,14 @@ namespace sunaba::core::io {
                 return moonConsole->logs;
             }
 
+            std::string getCurrentDir() {
+                return moonConsole->currentDir;
+            }
+
+            void setCurrentDir(const std::string& dir) {
+                moonConsole->currentDir = dir;
+            }
+
             sol::function getLogHandler() {
                 return moonConsole->logHandler;
             }
