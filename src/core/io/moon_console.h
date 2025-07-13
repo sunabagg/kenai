@@ -15,7 +15,7 @@ namespace sunaba::core::io {
     {
         GDCLASS(MoonConsole, Node)
         protected:
-            static void _bind_methods();
+            static void _bind_methods() {}
         public:
             sol::state console;
 
@@ -84,12 +84,22 @@ namespace sunaba::core::io {
                 };
 
                 console["cd"] = [this](std::string dir) {
+                    if (ioInterface == nullptr) return;
                     if (!ioInterface->directoryExists(dir)) {
                         printErr(String("Error: invalid dir").utf8().get_data());
                     }
                     else {
                         currentDir = dir;
                     }
+                };
+
+                console["cat"] = [this](std::string path) {
+                    std::string empty = "";
+                    if (ioInterface == nullptr) return empty;
+                    if (!ioInterface->fileExists(path)) return empty;
+                    auto str = ioInterface->loadText(path);
+                    print(str);
+                    return str;
                 };
 
                 auto& cmdFunc = [this](std::string commandName, std::vector<std::string> args) {
