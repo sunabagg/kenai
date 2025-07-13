@@ -8,4 +8,5 @@ extern class Console extends Element {
     public final logs: Vector<String>;
     public var logHandler: Function;
     public function addCommand(cmdNamd: String, func: Function): Void;
+    public function getLogColor(log: String): Color;
 }
