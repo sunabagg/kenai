@@ -24,6 +24,8 @@ namespace sunaba::core::io {
             std::string currentDir;
 
             std::vector<std::string> logs;
+
+            sol::function logHandler = sol::lua_nil;
             
             TypedDictionary<String, Color> logColors;
 
@@ -133,17 +135,20 @@ namespace sunaba::core::io {
             void print(std::string log) {
                 logs.push_back(log);
                 logColors[log.c_str()] = Color("#ffffff");
+                logHandler(log);
             }
 
             void printErr(std::string error) {
                 logs.push_back(error);
                 logColors[error.c_str()] = Color("#ff5733");
+                logHandler(error);
             }
 
             void printColor(std::string log, std::string clrstr) {
                 Color& color = Color(clrstr.c_str());
                 logs.push_back(log);
                 logColors[log.c_str()] = color;
+                logHandler(log);
             }
 
             Error cmd(std::string commandName, std::vector<std::string> args) {
