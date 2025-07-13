@@ -38,6 +38,14 @@ namespace sunaba::networking {
             void setPacketPeer(Ref<GodotPacketPeer> peer) {
                 packetPeer = peer;
             }
+
+            bool isNull() {
+                return packetPeer.is_null();
+            }
+
+            bool isValid() {
+                return packetPeer.is_valid();
+            }
     }
 }
 
