@@ -12,7 +12,7 @@ extern class ScrollBar extends Range {
 
 abstract ScrollBarAbstract(ScrollBar) from ScrollBar to ScrollBar {
     @:from
-    public static function fromElement(element: sunaba.core.Element): sunaba.ui.ScrollBar {
+    public static function fromElement(element: sunaba.core.Element): ScrollBarAbstract {
         var scrollBar = sunaba.ui.ScrollBar.toScrollBar(element);
         if (scrollBar.isNull()) {
             return null;
