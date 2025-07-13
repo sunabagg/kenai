@@ -242,6 +242,10 @@ namespace sunaba::core::io {
                 moonConsole->cmdNames.push_back(cmdName);
                 moonConsole->cmdFunctions.push_back(func);
             }
+
+            Color& getLogColor(std::string log) {
+                return moonConsole->getLogColor(log);
+            }
     };
 }
 
