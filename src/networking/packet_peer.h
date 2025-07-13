@@ -58,7 +58,11 @@ namespace sunaba::networking {
             int getAvailablePacketCount() {
                 return packetPeer->get_available_packet_count();
             }
-    }
+
+            BinaryData* getPacket() {
+                return new BinaryData(packetPeer->get_packet());
+            }
+    };
 }
 
 #endif //PACKET_PEER_H
