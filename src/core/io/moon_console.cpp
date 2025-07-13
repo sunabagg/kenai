@@ -18,7 +18,8 @@ namespace sunaba::core::io {
                 &Console::getLogHandler,
                 &Console::setLogHandler
             ),
-            "addCommand", &Console::addCommand
+            "addCommand", &Console::addCommand,
+            "getLogColor", &Console::getLogColor
         );
     }
 }
