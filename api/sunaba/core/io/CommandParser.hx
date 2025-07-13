@@ -16,7 +16,6 @@ class CommandParser {
             }
         }
 
-        var command : Command = { name: cmdname, args: cmdargs };
-        return command;
+        return { name: cmdname, args: cmdargs };
     }
 }
