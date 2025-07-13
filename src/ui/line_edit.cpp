@@ -157,7 +157,9 @@ namespace sunaba::ui {
     void bindLineEdit(sol::state& lua) {
         lua.new_usertype<LineEdit>("LineEdit",
             "new", sol::factories(
-                []() { return new LineEdit(); }
+                []() { 
+                    return new LineEdit(); 
+                }
             ),
             sol::base_classes, sol::bases<BaseObject, Element, sunaba::core::CanvasItem, Control>(),
             "alignment", sol::property(&LineEdit::getAlignment, &LineEdit::setAlignment),
@@ -221,7 +223,7 @@ namespace sunaba::ui {
             "select", &LineEdit::select,
             "selectAll", &LineEdit::selectAll,
             "unedit", &LineEdit::unedit,
-            "cast", [](Element* e) {
+            "cast", [](Element* e) -> LineEdit* {
                 auto* ce = dynamic_cast<LineEdit*>(e);
                 if (ce != nullptr) {
                     return ce;
