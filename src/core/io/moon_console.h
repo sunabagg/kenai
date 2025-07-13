@@ -1,6 +1,8 @@
 #ifndef MOON_CONSOLE_H
 #define MOON_CONSOLE_H
 
+#include <godot_cpp/variant/typed_dictionary.hpp>
+
 #include "../element.h"
 #include "io_manager.h"
 
@@ -19,6 +21,10 @@ namespace sunaba::core::io {
             
             std::string currentDir;
 
+            std::vector<std::string> logs;
+            
+            TypedDictionary<int, Color> logColors;
+
             MoonConsole() {
                 console.open_libraries( 
                     sol::lib::base,
@@ -28,6 +34,19 @@ namespace sunaba::core::io {
                     sol::lib::string,
                     sol::lib::table
                 );
+            }
+
+            Color getLogColor(std::string log) {
+                auto index = 0;
+                for (size_t i = 0; i < logs.size(); i++)
+                {
+                    if (logs[i] == log) {
+                        index = i;
+                        break;
+                    }
+                }
+                
+                return logColors[index];
             }
     };
 
