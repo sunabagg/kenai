@@ -225,6 +225,10 @@ namespace sunaba::core::io {
             void setIoInterface(IoInterface* io) {
                 moonConsole->ioInterface = io;
             }
+
+            std::vector<std::string> getLogs() {
+                return moonConsole->logs;
+            }
     };
 }
 
