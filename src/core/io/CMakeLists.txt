@@ -19,6 +19,7 @@ target_sources(${PROJECT_NAME} PRIVATE
         io_index.cpp
         zip_io.h
         zip_io.cpp
+        moon_console.h
 )
 
 target_include_directories( ${PROJECT_NAME}
