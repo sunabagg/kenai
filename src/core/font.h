@@ -26,7 +26,7 @@ namespace sunaba::core {
 
         // Constructor with no parameters
         Font() {
-            setFont(memnew(GodotFont));
+            //setFont(memnew(GodotFont));
         }
 
         // Getter for the Font node
