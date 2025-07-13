@@ -120,7 +120,7 @@ extern class RichTextLabel extends Control {
 
 abstract RichTextLabelAbstract(RichTextLabel) from RichTextLabel to RichTextLabel {
     @:from
-    public static function fromElement(element: sunaba.core.Element): sunaba.ui.RichTextLabel {
+    public static function fromElement(element: sunaba.core.Element): RichTextLabelAbstract {
         var richTextLabel = sunaba.ui.RichTextLabel.toRichTextLabel(element);
         if (richTextLabel.isNull()) {
             return null;
