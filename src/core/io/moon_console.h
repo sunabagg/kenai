@@ -102,6 +102,9 @@ namespace sunaba::core::io {
                 console["cat"] = [this](std::string path) {
                     std::string empty = "";
                     if (ioInterface == nullptr) return empty;
+                    if (ioInterface->fileExists(currentDir + path)) {
+                        path = currentDir + path;
+                    }
                     if (!ioInterface->fileExists(path)) return empty;
                     auto str = ioInterface->loadText(path);
                     print(str);
