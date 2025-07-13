@@ -86,15 +86,18 @@ namespace sunaba::ui {
 
             void setPanelContainer(PanelContainerNode* panel_container) {
                 this->panel_container = panel_container;
+                if (panel_container == nullptr) {
+                    return;
+                }
                 connectPanelContainerSignals();
-                setControl(panel_container);
+                setContainer(panel_container);
             }
 
             void setPanelContainer(PanelContainerProxy* panel_container) {
                 this->panel_container = panel_container;
                 panel_container->element = this;
                 connectPanelContainerSignals();
-                setControl(panel_container);
+                setContainer(panel_container);
             }
 
             int getMouseFilter() const {
