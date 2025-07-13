@@ -1,10 +1,11 @@
 package sunaba.core.io;
 
-import haxe.macro.Expr.Function;
+import haxe.Constraints.Function;
 
 @:native("Console")
 extern class Console extends Element {
     public var ioInterface: IoInterface;
     public final logs: Vector<String>;
     public var logHandler: Function;
+    public function addCommand(cmdNamd: String, func: Function): Void;
 }
