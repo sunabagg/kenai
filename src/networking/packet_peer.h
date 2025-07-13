@@ -62,6 +62,10 @@ namespace sunaba::networking {
             BinaryData* getPacket() {
                 return new BinaryData(packetPeer->get_packet());
             }
+
+            int getPacketError() {
+                return packetPeer->get_packet_error();
+            }
     };
 }
 
