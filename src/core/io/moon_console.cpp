@@ -6,7 +6,11 @@ namespace sunaba::core::io {
             "new", sol::factories(
                 []() { return new Console(); }
             ),
-            sol::base_classes, sol::bases<BaseObject, Element>()
+            sol::base_classes, sol::bases<BaseObject, Element>(),
+            "ioInterface", sol::property(
+                &Console::getIoInterface,
+                &Console::setIoInterface
+            )
         );
     }
 }
