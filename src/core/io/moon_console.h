@@ -221,6 +221,10 @@ namespace sunaba::core::io {
             IoInterface* getIoInterface() {
                 return moonConsole->ioInterface;
             }
+
+            void setIoInterface(IoInterface* io) {
+                moonConsole->ioInterface = io;
+            }
     };
 }
 
