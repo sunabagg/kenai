@@ -1,5 +1,7 @@
 package;
 
+import sunaba.core.Font;
+import sunaba.core.FontFile;
 import sunaba.core.Vector;
 import sunaba.core.ArrayList;
 import sunaba.core.io.Console;
@@ -16,6 +18,9 @@ class ConsoleWidget extends Widget {
     override function init() {
         load("app://Console.suml");
         output = RichTextLabel.toRichTextLabel(rootElement.find("vbox/control/output"));
+        output.fitContent = true;
+        output.selectionEnabled = true;
+        output.contextMenuEnabled = true;
         var i = rootElement.find("vbox/input");
         if (i == null) {
             trace("Input element not found in ConsoleWidget");
