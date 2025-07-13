@@ -40,7 +40,31 @@
         "CMAKE_BUILD_TYPE": "Debug"
       }
     },
-	{
+    {
+      "name": "windows32-debug",
+      "displayName": "32bit Windows Debug",
+      "inherits": "default",
+      "binaryDir": "${sourceDir}/../build_sunaba_Windows-IA32",
+      "condition": {
+        "type": "equals",
+        "lhs": "${hostSystemName}",
+        "rhs": "Windows"
+      },
+      "toolset": {
+        "value": "host=x86",
+        "strategy": "external"
+      },
+      "architecture": {
+        "value": "x86",
+        "strategy": "external"
+      },
+      "cacheVariables": {
+        "CMAKE_C_COMPILER": "cl.exe",
+        "CMAKE_CXX_COMPILER": "cl.exe",
+        "CMAKE_BUILD_TYPE": "Debug"
+      }
+    },
+	  {
       "name": "windows-arm-debug",
       "displayName": "Arm64 Windows Debug",
       "generator": "Visual Studio 17 2022",
@@ -99,7 +123,15 @@
         "CMAKE_BUILD_TYPE": "Release"
       }
     },
-	{
+    {
+      "name": "windows32-release",
+      "displayName": "32bit Windows Release",
+      "inherits": "windows32-debug",
+      "cacheVariables": {
+        "CMAKE_BUILD_TYPE": "Release"
+      }
+    },
+	  {
       "name": "windows-arm-release",
       "displayName": "Arm64 Windows Release",
       "inherits": "windows-arm-debug",
