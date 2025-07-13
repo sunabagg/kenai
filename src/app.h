@@ -70,6 +70,12 @@ namespace sunaba
         
         // Lua file loading
         static int loadFileRequire(lua_State* L);
+
+        void godot_libopen(const String& path, const String& uri = "") {
+            this->libopen(path.utf8().get_data(), uri.utf8().get_data());
+        }
+
+        void libopen(const std::string& path, const std::string& uri);
     };
 
     void bindRuntime(sol::state& lua);
@@ -123,6 +129,10 @@ namespace sunaba
 
             void stopMobdebug() {
                 app->stopMobdebug();
+            }
+
+            void libopen(const std::string& path, const std::string& uri) {
+                app->libopen(path, uri);
             }
     };
 }

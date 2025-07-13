@@ -82,6 +82,7 @@ void App::_bind_methods() {
     ClassDB::bind_method(D_METHOD("set_theme", "theme"), &App::setTheme);
     ClassDB::bind_method(D_METHOD("set_args", "_args"), &App::setArgs);
     ClassDB::bind_method(D_METHOD("get_args"), &App::getArgs);
+    ClassDB::bind_method(D_METHOD("libopen", "path", "uri"), &App::godot_libopen);
     ADD_PROPERTY(PropertyInfo(Variant::PACKED_STRING_ARRAY, "args"), "set_args", "get_args");
     ADD_SIGNAL(MethodInfo("on_exit"));
 }
@@ -372,6 +373,68 @@ void App::initState(bool sandboxed) {
         }
         return new sunaba::ui::Theme(theme.ptr());
     };
+
+    global_state["libopen"] = [this](const std::string &path, const std::string &uri = "") {
+        this->libopen(path, uri);
+    };
+}
+
+void App::libopen(const std::string& path, const std::string& uri) {
+    std::string dlpath = path;
+    if (dlpath.empty()) {
+        UtilityFunctions::print("Error: path is empty");
+        return;
+    }
+
+    auto execPath = OS::get_singleton()->get_executable_path();
+
+    auto resDir = ProjectSettings::get_singleton()->globalize_path("res://");
+
+    auto execDir = execPath.get_base_dir();
+    if (OS::get_singleton()->get_name() == "macOS") {
+        // On macOS, the executable path is usually in Contents/MacOS/ directory
+        execDir = execDir.replace("/MacOS", "/Resources/").replace("\\MacOS", "\\Resources");
+    }
+    auto execFile = execPath.get_file();
+    auto shareDir = execPath.replace("bin/" + execFile, "share/sunaba");
+    if (DirAccess::dir_exists_absolute(shareDir)) {
+        execDir = shareDir;
+        global_state.script("package.path = package.path .. ';' .. shareDir .. '/?.lua'");
+    }
+
+    if (FileAccess::file_exists(execDir + "/" + dlpath.c_str())) {
+        // If the file exists in the executable directory, use it
+        dlpath = String(execDir + "/" + dlpath.c_str()).utf8().get_data();
+    } else if (FileAccess::file_exists(resDir + "/" + dlpath.c_str())) {
+        // If the file exists in the resource directory, use it
+        dlpath = String(resDir + "/" + dlpath.c_str()).utf8().get_data();
+    } else if (FileAccess::file_exists(shareDir + "/" + dlpath.c_str())) {
+        // If the file exists in the share directory, use it
+        dlpath = String(shareDir + "/" + dlpath.c_str()).utf8().get_data();
+    } else if (FileAccess::file_exists(dlpath.c_str())) {
+        // If the file exists in the current working directory, use it
+        // This is useful for testing purposes
+        dlpath = String(dlpath.c_str()).utf8().get_data();
+    } else {
+        UtilityFunctions::print("Error: file does not exist: " + String(dlpath.c_str()));
+        return;
+    }
+
+    if (path.empty()) {
+        UtilityFunctions::print("Error: path is empty");
+        return;
+    }
+    if (!FileAccess::file_exists(path.c_str())) {
+        UtilityFunctions::print("Error: file does not exist: " + String(path.c_str()));
+        return;
+    }
+    auto zipio = new ZipIo(path);
+    if (zipio->getErrorCode() != Error::OK) {
+        UtilityFunctions::print("Error: failed to open zip file: " + String(path.c_str()));
+        return;
+    }
+    zipio->pathUri = uri.empty() ? "temp://" : uri;
+    ioManager->add(zipio);
 }
 
 void App::loadAndExecuteSbx(const String &path) {
