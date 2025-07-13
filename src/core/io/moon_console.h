@@ -27,6 +27,10 @@ namespace sunaba::core::io {
             
             TypedDictionary<String, Color> logColors;
 
+            std::vector<std::string> cmdNames;
+
+            std::vector<sol::function> cmdFunctions;
+
             MoonConsole() {
                 console.open_libraries( 
                     sol::lib::base,
@@ -87,6 +91,13 @@ namespace sunaba::core::io {
                         currentDir = dir;
                     }
                 };
+
+                auto& cmdFunc = [this](std::string commandName, std::vector<std::string> args) {
+                    this->cmd(commandName, args);
+                };
+
+                console["cmd"] = cmdFunc;
+                console["$"] = cmdFunc;
             }
 
             Color getLogColor(std::string log) {
@@ -107,6 +118,18 @@ namespace sunaba::core::io {
                 Color& color = Color(clrstr.c_str());
                 logs.push_back(log);
                 logColors[log.c_str()] = color;
+            }
+
+            void cmd(std::string commandName, std::vector<std::string> args) {
+                sol::function func;
+                for (size_t i = 0; i < cmdNames.size(); i++)
+                {
+                    if (cmdNames[i] == commandName) {
+                        func = cmdFunctions[i];
+                    }
+                }
+                
+                func(args);
             }
     };
 
