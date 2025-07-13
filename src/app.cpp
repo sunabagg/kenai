@@ -326,6 +326,14 @@ void App::initState(bool sandboxed) {
     sunaba::desktop::bindDesktopClasses(global_state);
     if (!sandboxed) {
         bindRuntime(global_state);
+
+        global_state["__stdin"] = [this]() {
+            auto stdin = OS::get_singleton()->read_string_from_stdin(1024);
+            if (stdin.is_empty()) {
+                return std::string(""); // Return empty string if stdin is empty
+            }
+            return std::string(stdin.utf8().get_data());
+        };
     }
 
     auto* rootElement = new sunaba::core::Element(this);
