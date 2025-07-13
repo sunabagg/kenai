@@ -1,5 +1,5 @@
 {
-    "name": "test5",
+    "name": "test10",
     "version": "1.0",
     "type": "executable",
     "rootUrl": "app://",
@@ -10,9 +10,7 @@
     "entrypoint": "Main",
     "luabin": "main",
     "libraries": [
-        "codegen"
     ],
     "compilerFlags": [
-        "-D absolute-path"
     ]
 }

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<suml fullscreen="true" name="console">
+    <head>
+    </head>
+    <body>
+        <panel
+            fullRect="true"
+            offsetBottom="-10"
+            offsetTop="10"
+            offsetLeft="-10"
+            offsetRight="10"/>
+        <vboxContainer
+            fullRect="true"
+            name="consoleContainer">
+            <control
+                name="control"
+                sizeFlagsVertical="3">
+                <richTextLabel 
+                    name="output"
+                    fullRect="true"
+                    offsetBottom="10"
+                    offsetTop="-10"
+                    offsetLeft="10"
+                    offsetRight="-10"/>
+            </control>
+            <lineEdit
+                name="lineEdit"/>
+        </vboxContainer>
+    </body>
+</suml>
