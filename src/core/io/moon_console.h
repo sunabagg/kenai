@@ -1,7 +1,11 @@
 #ifndef MOON_CONSOLE_H
 #define MOON_CONSOLE_H
 
-#include <godot_cpp/variant/typed_dictionary.hpp>
+#include <godot_cpp/classes/node.hpp>
+#include <godot_cpp/variant/dictionary.hpp>
+#include <godot_cpp/variant/color.hpp>
+#include <godot_cpp/variant/string.hpp>
+#include <sol/sol.hpp>
 
 #include "../element.h"
 #include "io_interface.h"
@@ -27,7 +31,7 @@ namespace sunaba::core::io {
 
             sol::function logHandler = sol::lua_nil;
             
-            TypedDictionary<String, Color> logColors;
+            Dictionary logColors;
 
             std::vector<std::string> cmdNames;
 
