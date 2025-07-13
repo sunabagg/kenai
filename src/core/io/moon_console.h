@@ -126,6 +126,10 @@ namespace sunaba::core::io {
                 };
                 console["OK"] = Error::OK;
                 console["FAILED"] = Error::FAILED;
+
+                console["addcmd"] = [this](std::string cmdName, sol::function func) {
+                    addCommand(cmdName, func);
+                };
             }
 
             Color getLogColor(std::string log) {
@@ -193,6 +197,11 @@ namespace sunaba::core::io {
                     return Error::OK;
                 }
             }
+
+            void addCommand(std::string cmdName, sol::function func) {
+                cmdNames.push_back(cmdName);
+                cmdFunctions.push_back(func);
+            }
     };
 
     void bindConsole(sol::state& lua);
@@ -239,8 +248,7 @@ namespace sunaba::core::io {
             }
 
             void addCommand(std::string cmdName, sol::function func) {
-                moonConsole->cmdNames.push_back(cmdName);
-                moonConsole->cmdFunctions.push_back(func);
+                moonConsole->addCommand(cmdName, func);
             }
 
             Color& getLogColor(std::string log) {
