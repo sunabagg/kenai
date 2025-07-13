@@ -137,7 +137,20 @@ namespace sunaba::core::io {
                 logColors[log.c_str()] = color;
             }
 
-            void cmd(std::string commandName, std::vector<std::string> args) {
+            Error cmd(std::string commandName, std::vector<std::string> args) {
+                if (ioInterface != nullptr) {
+                    if (!String(commandName.c_str()).contains("://")) {
+                        if (ioInterface->fileExists(currentDir + commandName)) {
+                            commandName = currentDir + commandName;
+                        }
+                    }
+                    if (ioInterface->fileExists(commandName)) {
+                        console["__args__"] = args;
+                        auto code = ioInterface->loadText(commandName);
+                        return eval(code);
+                    }
+                }
+                
                 sol::function func;
                 for (size_t i = 0; i < cmdNames.size(); i++)
                 {
@@ -146,7 +159,9 @@ namespace sunaba::core::io {
                     }
                 }
                 
-                func(args);
+                auto res = func(args);
+                int errorcode = res.get<int>();
+                return static_cast<Error>(errorcode);
             }
 
             Error eval(std::string code) {
