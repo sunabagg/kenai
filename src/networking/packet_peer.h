@@ -51,6 +51,10 @@ namespace sunaba::networking {
                 return packetPeer->get_encode_buffer_max_size();
             }
 
+            void setEncodeBufferMaxSize(int val) {
+                packetPeer->set_encode_buffer_max_size(val);
+            }
+
             int getAvailablePacketCount() {
                 return packetPeer->get_available_packet_count();
             }
