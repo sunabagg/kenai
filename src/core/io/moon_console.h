@@ -85,7 +85,7 @@ namespace sunaba::core::io {
 
                 console["cd"] = [this](std::string dir) {
                     if (!ioInterface->directoryExists(dir)) {
-                        printErr(String("ERROR: invalid dir").utf8().get_data());
+                        printErr(String("Error: invalid dir").utf8().get_data());
                     }
                     else {
                         currentDir = dir;
@@ -98,6 +98,13 @@ namespace sunaba::core::io {
 
                 console["cmd"] = cmdFunc;
                 console["$"] = cmdFunc;
+
+                console["eval"] = [this](std::string code) {
+                    int res = this->eval(code);
+                    return res;
+                };
+                console["OK"] = Error::OK;
+                console["FAILED"] = Error::FAILED;
             }
 
             Color getLogColor(std::string log) {
@@ -130,6 +137,19 @@ namespace sunaba::core::io {
                 }
                 
                 func(args);
+            }
+
+            Error eval(std::string code) {
+                sol::protected_function_result result = console.safe_script(code);
+                if (!result.valid()) {
+                    sol::error err = result;
+                    String errstr = String( "Error: " ) + err.what();
+                    printErr(errstr.utf8().get_data());
+                    return Error::FAILED;
+                }
+                else {
+                    return Error::OK;
+                }
             }
     };
 
