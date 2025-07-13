@@ -74,6 +74,10 @@ namespace sunaba::networking {
             int putPacket(const BinaryData* packet) {
                 return packetPeer->put_packet(packet->toPackedByteArray());
             }
+
+            int putVar(const Variant& var, bool fullObjects = false) {
+                return packetPeer->put_var(var, fullObjects);
+            }
     };
 }
 
