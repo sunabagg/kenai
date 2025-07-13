@@ -233,6 +233,10 @@ namespace sunaba::core::io {
             sol::function getLogHandler() {
                 return moonConsole->logHandler;
             }
+
+            void setLogHandler(sol::function func) {
+                moonConsole->logHandler = func;
+            }
     };
 }
 
