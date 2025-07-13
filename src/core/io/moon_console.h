@@ -85,6 +85,12 @@ namespace sunaba::core::io {
 
                 console["cd"] = [this](std::string dir) {
                     if (ioInterface == nullptr) return;
+                    if (ioInterface->directoryExists(currentDir + dir + "/")) {
+                        dir = currentDir + dir + "/";
+                    }
+                    if (!String(dir.c_str()).ends_with("/")) {
+                        dir = dir + "/";
+                    }
                     if (!ioInterface->directoryExists(dir)) {
                         printErr(String("Error: invalid dir").utf8().get_data());
                     }
