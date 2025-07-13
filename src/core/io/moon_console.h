@@ -217,6 +217,10 @@ namespace sunaba::core::io {
                 moonConsole = mc;
                 setNode(mc);
             }
+
+            IoInterface* getIoInterface() {
+                return moonConsole->ioInterface;
+            }
     };
 }
 
