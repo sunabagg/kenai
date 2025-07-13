@@ -21,7 +21,15 @@ namespace sunaba::core::io {
             "addCommand", &Console::addCommand,
             "getLogColor", &Console::getLogColor,
             "cmd", &Console::cmd,
-            "eval", &Console::eval
+            "eval", &Console::eval,
+            "cast", [](Element* e) {
+                auto* c = dynamic_cast<Console*>(e);
+                if (c != nullptr) {
+                    return c;
+                }
+                MoonConsole* mc = Object::cast_to<MoonConsole>(e->getNode());
+                return new Console(mc);
+            }
         );
     }
 }
