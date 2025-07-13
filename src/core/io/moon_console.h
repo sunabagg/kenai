@@ -195,6 +195,29 @@ namespace sunaba::core::io {
             }
     };
 
+    void bindMoonConsole(sol::state& lua);
+
+    class MoonConsoleElement : public Element {
+        private:
+            MoonConsole* moonConsole = nullptr;
+        public:
+            MoonConsoleElement() {
+                setMoonConsole(memnew(MoonConsole));
+            }
+
+            MoonConsoleElement(MoonConsole* mc) {
+                setMoonConsole(mc);
+            }
+
+            MoonConsole* getMoonConsole() {
+                return moonConsole;
+            }
+
+            void setMoonConsole(MoonConsole* mc) {
+                moonConsole = mc;
+                setNode(mc);
+            }
+    };
 }
 
 #endif
