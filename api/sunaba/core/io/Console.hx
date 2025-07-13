@@ -14,3 +14,14 @@ extern class Console extends Element {
     @:native("cast")
     public static function toConsole(obj:Any): Console;
 }
+
+abstract ConsoleAbstract(Console) from Console to Console {
+    @:from
+    public static function fromElement(e:Element) : ConsoleAbstract {
+        var console = Console.toConsole(e);
+        if (console.isNull()) {
+            return null;
+        }
+        return console;
+    }
+}
