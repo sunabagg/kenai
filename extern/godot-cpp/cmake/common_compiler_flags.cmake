@@ -68,7 +68,7 @@ function(common_compiler_flags)
         PUBLIC
             # Disable exception handling. Godot doesn't use exceptions anywhere, and this
             # saves around 20% of binary size and very significant build time.
-            $<${DISABLE_EXCEPTIONS}:$<${NOT_MSVC}:-fno-exceptions>>
+            #$<${DISABLE_EXCEPTIONS}:$<${NOT_MSVC}:-fno-exceptions>>
 
             # Enabling Debug Symbols
             $<${DEBUG_SYMBOLS}:
