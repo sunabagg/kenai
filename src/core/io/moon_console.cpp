@@ -14,6 +14,10 @@ namespace sunaba::core::io {
             "logs", sol::readonly_property(
                 &Console::getLogs
             ),
+            "currentDir", sol::property(
+                &Console::getCurrentDir,
+                &Console::setCurrentDir
+            ),
             "logHandler", sol::property(
                 &Console::getLogHandler,
                 &Console::setLogHandler
