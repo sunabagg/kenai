@@ -261,11 +261,11 @@ namespace sunaba::core::io {
                 return color;
             }
 
-            int cmd(std::string commandName, std::vector<std::string> args) {
+            int cmd(const std::string& commandName, const std::vector<std::string>& args) {
                 return moonConsole->cmd(commandName, args);
             }
 
-            int eval(std::string code) {
+            int eval(const std::string& code) {
                 return moonConsole->eval(code);
             }
     };
