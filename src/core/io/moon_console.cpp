@@ -13,6 +13,10 @@ namespace sunaba::core::io {
             ),
             "logs", sol::readonly_property(
                 &Console::getLogs
+            ),
+            "logHandler", sol::property(
+                &Console::getLogHandler,
+                &Console::setLogHandler
             )
         );
     }
