@@ -338,6 +338,10 @@ void App::initState(bool sandboxed) {
         global_state["__clearScreen"] = [this]() {
             OS::get_singleton()->execute("clear", PackedStringArray(), Array(), false, false);
         };
+
+        global_state["printraw"] = [](const std::string& str) {
+            UtilityFunctions::printraw(str.c_str());
+        }
     }
 
     auto* rootElement = new sunaba::core::Element(this);
