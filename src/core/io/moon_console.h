@@ -19,13 +19,13 @@ namespace sunaba::core::io {
         public:
             sol::state console;
 
-            IoInterface ioInterface;
+            IoInterface* ioInterface;
             
             std::string currentDir;
 
             std::vector<std::string> logs;
             
-            TypedDictionary<int, Color> logColors;
+            TypedDictionary<String, Color> logColors;
 
             MoonConsole() {
                 console.open_libraries( 
@@ -36,19 +36,24 @@ namespace sunaba::core::io {
                     sol::lib::string,
                     sol::lib::table
                 );
+
+                console["cd"] = [this](std::string dir) {
+                    if (!ioInterface->directoryExists(dir)) {
+                        printErr(String("ERROR: invalid dir").utf8().get_data());
+                    }
+                    else {
+                        currentDir = dir;
+                    }
+                };
             }
 
             Color getLogColor(std::string log) {
-                auto index = 0;
-                for (size_t i = 0; i < logs.size(); i++)
-                {
-                    if (logs[i] == log) {
-                        index = i;
-                        break;
-                    }
-                }
-                
-                return logColors[index];
+                return logColors[log.c_str()];
+            }
+
+            void printErr(std::string error) {
+                logs.push_back(error);
+                logColors[error.c_str()] = Color("#ff5733");
             }
     };
 
