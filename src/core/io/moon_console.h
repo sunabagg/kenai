@@ -50,6 +50,19 @@ namespace sunaba::core::io {
                     print(log.utf8().get_data());
                 };
 
+                console["printErr"] = [this](sol::variadic_args args) {
+                    String log;
+                    for (const auto& arg: args) {
+                        if (arg.is<std::string>()) {
+                            if (!log.is_empty()) {
+                                log += " ";
+                            }
+                            log += arg.as<std::string>().c_str();
+                        }
+                    }
+                    printErr(log.utf8().get_data());
+                };
+
                 console["printColor"] = [this](std::string log, std::string clrstr) {
                     printColor(log, clrstr);
                 };
