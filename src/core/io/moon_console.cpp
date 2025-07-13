@@ -20,7 +20,8 @@ namespace sunaba::core::io {
             ),
             "addCommand", &Console::addCommand,
             "getLogColor", &Console::getLogColor,
-            "cmd", &Console::cmd
+            "cmd", &Console::cmd,
+            "eval", &Console::eval
         );
     }
 }
