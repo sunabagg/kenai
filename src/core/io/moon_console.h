@@ -117,7 +117,7 @@ namespace sunaba::core::io {
                     return str;
                 };
 
-                auto& cmdFunc = [this](const std::string& commandName, const std::vector<std::string>& args) {
+                auto cmdFunc = [this](const std::string& commandName, const std::vector<std::string>& args) {
                     this->cmd(commandName, args);
                 };
 
@@ -136,7 +136,7 @@ namespace sunaba::core::io {
                 };
             }
 
-            Color& getLogColor(const std::string& log) {
+            Color getLogColor(const std::string& log) {
                 return Color(logColors[log.c_str()]);
             }
 
@@ -153,7 +153,7 @@ namespace sunaba::core::io {
             }
 
             void printColor(const std::string& log, const std::string& clrstr) {
-                Color& color = Color(clrstr.c_str());
+                Color color = Color(clrstr.c_str());
                 logs.push_back(log);
                 logColors[log.c_str()] = color;
                 logHandler(log);
@@ -256,9 +256,8 @@ namespace sunaba::core::io {
                 moonConsole->addCommand(cmdName, func);
             }
 
-            Color& getLogColor(const std::string& log) {
-                Color& color = moonConsole->getLogColor(log);
-                return color;
+            Color getLogColor(const std::string& log) {
+                return moonConsole->getLogColor(log);
             }
 
             int cmd(const std::string& commandName, const std::vector<std::string>& args) {
