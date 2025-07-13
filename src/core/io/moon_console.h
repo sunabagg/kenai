@@ -256,7 +256,8 @@ namespace sunaba::core::io {
             }
 
             Color& getLogColor(std::string log) {
-                return moonConsole->getLogColor(log);
+                Color& color = moonConsole->getLogColor(log);
+                return color;
             }
 
             int cmd(std::string commandName, std::vector<std::string> args) {
