@@ -250,6 +250,10 @@ namespace sunaba::core::io {
             int cmd(std::string commandName, std::vector<std::string> args) {
                 return moonConsole->cmd(commandName, args);
             }
+
+            int eval(std::string code) {
+                return moonConsole->eval(code);
+            }
     };
 }
 
