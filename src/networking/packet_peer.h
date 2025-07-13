@@ -66,6 +66,10 @@ namespace sunaba::networking {
             int getPacketError() {
                 return packetPeer->get_packet_error();
             }
+
+            Variant getVar(bool allowObjects = false) {
+                return packetPeer->get_var(allowObjects);
+            }
     };
 }
 
