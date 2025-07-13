@@ -153,6 +153,9 @@ namespace sunaba::core::io {
                             commandName = currentDir + commandName;
                         }
                     }
+                    if (String(commandName.c_str()).begins_with("./")) {
+                        commandName = String(commandName.c_str()).replace("./", currentDir.c_str()).utf8().get_data();
+                    }
                     if (ioInterface->fileExists(commandName)) {
                         console["__args__"] = args;
                         auto code = ioInterface->loadText(commandName);
