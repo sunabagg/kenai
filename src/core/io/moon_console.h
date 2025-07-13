@@ -4,7 +4,7 @@
 #include <godot_cpp/variant/typed_dictionary.hpp>
 
 #include "../element.h"
-#include "io_manager.h"
+#include "io_interface.h"
 
 using namespace godot;
 using namespace sunaba::core::io;
@@ -18,6 +18,8 @@ namespace sunaba::core::io {
             static void _bind_methods();
         public:
             sol::state console;
+
+            IoInterface ioInterface;
             
             std::string currentDir;
 
