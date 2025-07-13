@@ -2,6 +2,10 @@
 
 namespace sunaba::core::io {
     void bindConsole(sol::state& lua) {
-        lua.new_usertype<Console>("Console");
+        lua.new_usertype<Console>("Console",
+            "new", sol::factories(
+                []() { return new Console(); }
+            )
+        );
     }
 }
