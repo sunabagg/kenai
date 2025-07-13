@@ -70,6 +70,10 @@ namespace sunaba::networking {
             Variant getVar(bool allowObjects = false) {
                 return packetPeer->get_var(allowObjects);
             }
+
+            int putPacket(const BinaryData* packet) {
+                return packetPeer->put_packet(packet->toPackedByteArray());
+            }
     };
 }
 
