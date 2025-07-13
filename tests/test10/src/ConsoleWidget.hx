@@ -1,5 +1,6 @@
 package;
 
+import sunaba.core.Color;
 import sunaba.core.Font;
 import sunaba.core.FontFile;
 import sunaba.core.Vector;
@@ -8,6 +9,7 @@ import sunaba.core.io.Console;
 import sunaba.ui.Widget;
 import sunaba.ui.RichTextLabel;
 import sunaba.ui.LineEdit;
+import sunaba.ui.ColorRect;
 
 class ConsoleWidget extends Widget {
     private var output:RichTextLabel;
@@ -17,10 +19,14 @@ class ConsoleWidget extends Widget {
 
     override function init() {
         load("app://Console.suml");
+        var txt : String = "";
+
         output = RichTextLabel.toRichTextLabel(rootElement.find("vbox/control/output"));
         output.fitContent = true;
         output.selectionEnabled = true;
         output.contextMenuEnabled = true;
+        output.bbcodeEnabled = true;
+        var outputColor = output.getThemeColor('default_color');
         var i = rootElement.find("vbox/input");
         if (i == null) {
             trace("Input element not found in ConsoleWidget");
@@ -31,15 +37,21 @@ class ConsoleWidget extends Widget {
         console.ioInterface = io;
         rootElement.addChild(console);
         console.logHandler = (log: String) -> {
-            output.pushMono();
-            output.appendText(log + "\n");
-                output.scrollFollowing = true; // Automatically scroll to the bottom
+            txt += log + "\n";
+            output.parseBBCode('[code]' + txt + '[/code]');
+            output.scrollFollowing = true; // Automatically scroll to the bottom
         };
         input.textSubmitted.connect((args: ArrayList) -> {
             var textvar = args.get(0);
             var text = textvar.toString();
             if (text != "") {
-                console.eval(text);
+                try {
+                    console.eval(text);
+                }
+                catch(e) {
+                    txt = txt + '[color=red]Error: command failed[/color]\n';
+                    output.parseBBCode('[code]' + txt + '[/code]');
+                }
                 input.clear();
             }
         });
@@ -47,12 +59,11 @@ class ConsoleWidget extends Widget {
             var arr = args.toArray();
             if (arr.length > 0) {
                 var text = arr.join(" ");
-                output.pushMono();
-                output.appendText(text + "\n");
+                txt += text + "\n";
                 output.scrollFollowing = true; // Automatically scroll to the bottom
             } else {
-                output.pushMono();
-                output.appendText("Usage: echo <text>\n");
+                txt += "Usage: echo <text>\n";
+                output.parseBBCode('[code]' + txt + '[/code]');
                 output.scrollFollowing = true; // Automatically scroll to the bottom
             }
         });
