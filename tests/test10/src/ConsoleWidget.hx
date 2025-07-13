@@ -1,5 +1,6 @@
 package;
 
+import sunaba.core.Vector;
 import sunaba.core.ArrayList;
 import sunaba.core.io.Console;
 import sunaba.ui.Widget;
@@ -22,21 +23,32 @@ class ConsoleWidget extends Widget {
         }
         input = LineEdit.toLineEdit(rootElement.find("vbox/input"));
         console = new Console();
+        console.ioInterface = io;
         rootElement.addChild(console);
         console.logHandler = (log: String) -> {
-            try {
-                trace("Console log: " + log);
-                output.appendText(log + "\n");
+            output.pushMono();
+            output.appendText(log + "\n");
                 output.scrollFollowing = true; // Automatically scroll to the bottom
-            } catch (e: Dynamic) {
-                trace("Error appending log to output: " + e);
-            }
         };
         input.textSubmitted.connect((args: ArrayList) -> {
             var textvar = args.get(0);
             var text = textvar.toString();
             if (text != "") {
-                trace("Console input: " + text);
+                console.eval(text);
+                input.clear();
+            }
+        });
+        console.addCommand("echo", (args: Vector<String>) -> {
+            var arr = args.toArray();
+            if (arr.length > 0) {
+                var text = arr.join(" ");
+                output.pushMono();
+                output.appendText(text + "\n");
+                output.scrollFollowing = true; // Automatically scroll to the bottom
+            } else {
+                output.pushMono();
+                output.appendText("Usage: echo <text>\n");
+                output.scrollFollowing = true; // Automatically scroll to the bottom
             }
         });
         console.eval("print('Welcome to the Sunaba Console!')");
