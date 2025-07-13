@@ -10,7 +10,7 @@ import sunaba.desktop.PopupMenu;
 import sunaba.core.Dictionary;
 import sunaba.core.Font;
 
-@:native("PanelContainer")
+@:native("RichTextLabel")
 extern class RichTextLabel extends Control {
     public var autowrapMode: Int;
     public var bbcodeEnabled: Bool;
