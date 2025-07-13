@@ -237,6 +237,11 @@ namespace sunaba::core::io {
             void setLogHandler(sol::function func) {
                 moonConsole->logHandler = func;
             }
+
+            void addCommand(std::string cmdName, sol::function func) {
+                moonConsole->cmdNames.push_back(cmdName);
+                moonConsole->cmdFunctions.push_back(func);
+            }
     };
 }
 
