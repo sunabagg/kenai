@@ -1,2 +1,11 @@
 #include "packet_peer.h"
 
+namespace sunaba::networking {
+    void bindPacketPeer(sol::state& lua) {
+        lua.new_usertype<PacketPeer>("PacketPeer",
+            "new", sol::factories(
+                []() { return new PacketPeer(); }
+            )
+        );
+    }
+}
