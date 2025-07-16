@@ -57,7 +57,7 @@ This tells CMake to use `Visual Studio 2022`. There is a list of Visual Studio g
 #### IOS
 
 ```sh
-$ cmake -B sunaba-build-ios -G Xcode -DCMAKE_TOOLCHAIN_FILE=$(pwd)/cmake/ios.toolchain.cmake -DPLATFORM=OS64 -DIPHONEOS_DEPLOYMENT_TARGET=18.5 -DCMAKE_BUILD_TYPE=Release -DCMAKE_INSTALL_PREFIX=sunaba-install-ios .
+$ cmake -B sunaba-build-ios -G Xcode -DCMAKE_TOOLCHAIN_FILE="$(pwd)/cmake/ios.toolchain.cmake" -DPLATFORM=OS64 -DIPHONEOS_DEPLOYMENT_TARGET=18.5 -DCMAKE_BUILD_TYPE=Release -DCMAKE_INSTALL_PREFIX=sunaba-install-ios .
 $ cmake --build sunaba-build-ios --config Release
 $ cmake --install sunaba-build-ios
 ```
@@ -65,7 +65,7 @@ $ cmake --install sunaba-build-ios
 #### IOS (Simulator)
 
 ```sh
-$ cmake -B sunaba-build-ios-sim -G Xcode -DCMAKE_TOOLCHAIN_FILE=$(pwd)/cmake/ios.toolchain.cmake -DPLATFORM=SIMULATORARM64 -DIPHONEOS_DEPLOYMENT_TARGET=18.5 -DCMAKE_BUILD_TYPE=Release -DCMAKE_INSTALL_PREFIX=sunaba-install-ios-sim .
+$ cmake -B sunaba-build-ios-sim -G Xcode -DCMAKE_TOOLCHAIN_FILE="$(pwd)/cmake/ios.toolchain.cmake" -DPLATFORM=SIMULATORARM64 -DIPHONEOS_DEPLOYMENT_TARGET=18.5 -DCMAKE_BUILD_TYPE=Release -DCMAKE_INSTALL_PREFIX=sunaba-install-ios-sim .
 $ cmake --build sunaba-build-ios-sim --config Release
 $ cmake --install sunaba-build-ios-sim
 ```
