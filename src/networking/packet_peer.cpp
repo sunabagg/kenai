@@ -6,7 +6,8 @@ namespace sunaba::networking {
             "new", sol::factories(
                 []() { return new PacketPeer(); }
             ),
-            sol::base_classes, sol::bases<BaseObject>()
+            sol::base_classes, sol::bases<BaseObject>(),
+            "isNull", &PacketPeer::isNull,
         );
     }
 }
