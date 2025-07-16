@@ -5,7 +5,8 @@ namespace sunaba::networking {
         lua.new_usertype<PacketPeer>("PacketPeer",
             "new", sol::factories(
                 []() { return new PacketPeer(); }
-            )
+            ),
+            sol::base_classes, sol::bases<BaseObject>()
         );
     }
 }
