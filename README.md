@@ -70,6 +70,13 @@ $ cmake --build sunaba-build-ios-sim --config Release
 $ cmake --install sunaba-build-ios-sim
 ```
 
+#### ANDROID
+
+```sh
+$ cmake -B sunaba-android-build -DCMAKE_BUILD_TYPE=Release -DCMAKE_INSTALL_PREFIX=sunaba-android-install -DCMAKE_SYSTEM_NAME=Android -DCMAKE_ANDROID_NDK=/Users/lucasabbas/Library/Android/sdk/ndk/29.0.13599879 -DCMAKE_ANDROID_ARCH_ABI=arm64-v8a
+$ cmake --build sunaba-android-build --config Release
+$ cmake --install sunaba-android-build
+
 ### Cmake Options
 
 This template defines the following additional CMake options:
