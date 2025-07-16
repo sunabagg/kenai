@@ -8,6 +8,7 @@ namespace sunaba::networking {
             ),
             sol::base_classes, sol::bases<BaseObject>(),
             "isNull", &PacketPeer::isNull,
+            "isValid", &PacketPeer::isValid
         );
     }
 }
