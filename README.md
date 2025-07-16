@@ -52,6 +52,14 @@ $ cmake --build sunaba-build --config Release
 $ cmake --install sunaba-build
 ```
 
+#### IOS
+
+```sh
+$ cmake -B sunaba-build-ios -G Xcode -DCMAKE_TOOLCHAIN_FILE=./cmake/ios.toolchain.cmake -DCMAKE_BUILD_TYPE=Release -DCMAKE_INSTALL_PREFIX=sunaba-install-ios sunaba
+$ cmake --build sunaba-build-ios --config Release
+$ cmake --install sunaba-build-ios
+```
+
 This tells CMake to use `Visual Studio 2022`. There is a list of Visual Studio generators [on the CMake site](https://cmake.org/cmake/help/latest/manual/cmake-generators.7.html#visual-studio-generators) - pick the one you are using.
 
 ### Cmake Options
