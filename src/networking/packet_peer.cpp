@@ -12,7 +12,8 @@ namespace sunaba::networking {
             "encodeBufferMaxSize", sol::property(
                 &PacketPeer::getEncodeBufferMaxSize,
                 &PacketPeer::setEncodeBufferMaxSize
-            )
+            ),
+            "getAvailablePacketCount", &PacketPeer::getAvailablePacketCount
         );
     }
 }
