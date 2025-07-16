@@ -14,7 +14,8 @@ namespace sunaba::networking {
                 &PacketPeer::setEncodeBufferMaxSize
             ),
             "getAvailablePacketCount", &PacketPeer::getAvailablePacketCount,
-            "getPacket", &PacketPeer::getPacket
+            "getPacket", &PacketPeer::getPacket,
+            "getPacketError", &PacketPeer::getPacketError
         );
     }
 }
