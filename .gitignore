@@ -20,6 +20,8 @@ sunaba-install-windows/*
 sunaba-web-install/*
 sunaba-build-ios/*
 sunaba-install-ios/*
+sunaba-build-ios-sim/*
+sunaba-install-ios-sim/*
 openssl-mingw/*
 openssl-3.1.4/*
 openssl-3.1.4.tar.gz

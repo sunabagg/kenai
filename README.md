@@ -52,6 +52,8 @@ $ cmake --build sunaba-build --config Release
 $ cmake --install sunaba-build
 ```
 
+This tells CMake to use `Visual Studio 2022`. There is a list of Visual Studio generators [on the CMake site](https://cmake.org/cmake/help/latest/manual/cmake-generators.7.html#visual-studio-generators) - pick the one you are using.
+
 #### IOS
 
 ```sh
@@ -60,7 +62,13 @@ $ cmake --build sunaba-build-ios --config Release
 $ cmake --install sunaba-build-ios
 ```
 
-This tells CMake to use `Visual Studio 2022`. There is a list of Visual Studio generators [on the CMake site](https://cmake.org/cmake/help/latest/manual/cmake-generators.7.html#visual-studio-generators) - pick the one you are using.
+#### IOS (Simulator)
+
+```sh
+$ cmake -B sunaba-build-ios-sim -G Xcode -DCMAKE_TOOLCHAIN_FILE=$(pwd)/cmake/ios.toolchain.cmake -DPLATFORM=SIMULATORARM64 -DIPHONEOS_DEPLOYMENT_TARGET=18.5 -DCMAKE_BUILD_TYPE=Release -DCMAKE_INSTALL_PREFIX=sunaba-install-ios-sim .
+$ cmake --build sunaba-build-ios-sim --config Release
+$ cmake --install sunaba-build-ios-sim
+```
 
 ### Cmake Options
 
