@@ -16,7 +16,8 @@ namespace sunaba::networking {
             "getAvailablePacketCount", &PacketPeer::getAvailablePacketCount,
             "getPacket", &PacketPeer::getPacket,
             "getPacketError", &PacketPeer::getPacketError,
-            "getVar", &PacketPeer::getVar
+            "getVar", &PacketPeer::getVar,
+            "putPacket", &PacketPeer::putPacket
         );
     }
 }
