@@ -8,7 +8,11 @@ namespace sunaba::networking {
             ),
             sol::base_classes, sol::bases<BaseObject>(),
             "isNull", &PacketPeer::isNull,
-            "isValid", &PacketPeer::isValid
+            "isValid", &PacketPeer::isValid,
+            "encodeBufferMaxSize", sol::property(
+                &PacketPeer::getEncodeBufferMaxSize,
+                &PacketPeer::setEncodeBufferMaxSize
+            )
         );
     }
 }
