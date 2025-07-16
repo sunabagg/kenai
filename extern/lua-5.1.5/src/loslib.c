@@ -34,9 +34,22 @@ static int os_pushresult (lua_State *L, int i, const char *filename) {
   }
 }
 
+#if defined(__APPLE__) && defined(__MACH__)
+    #include <TargetConditionals.h>
+    #if TARGET_OS_IPHONE
+        #define IS_IOS 1
+    #else
+        #define IS_IOS 0
+    #endif
+#else
+    #define IS_IOS 0
+#endif
 
 static int os_execute (lua_State *L) {
+#ifdef IS_IOS
+#else
   lua_pushinteger(L, system(luaL_optstring(L, 1, NULL)));
+#endif
   return 1;
 }
 
