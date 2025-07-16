@@ -55,7 +55,7 @@ $ cmake --install sunaba-build
 #### IOS
 
 ```sh
-$ cmake -B sunaba-build-ios -G Xcode -DCMAKE_TOOLCHAIN_FILE=./cmake/ios.toolchain.cmake -DCMAKE_BUILD_TYPE=Release -DCMAKE_INSTALL_PREFIX=sunaba-install-ios sunaba
+$ cmake -B sunaba-build-ios -G Xcode -DCMAKE_TOOLCHAIN_FILE=$(pwd)/cmake/ios.toolchain.cmake -DPLATFORM=OS64 -DIPHONEOS_DEPLOYMENT_TARGET=18.5 -DCMAKE_BUILD_TYPE=Release -DCMAKE_INSTALL_PREFIX=sunaba-install-ios .
 $ cmake --build sunaba-build-ios --config Release
 $ cmake --install sunaba-build-ios
 ```
