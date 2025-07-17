@@ -28,6 +28,15 @@ namespace sunaba::core::io {
             loadArchive(bytes);
         }
 
+        ZipIo(PackedByteArray byteArray) {
+            BinaryData* bytes = new BinaryData(byteArray);
+            loadArchive(bytes);
+        }
+
+        ZipIo(BinaryData* bytes) {
+            loadArchive(bytes)
+        }
+
         godot::Error getErrorCode() const {
             return errorCode;
         }
