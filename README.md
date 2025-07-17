@@ -73,7 +73,7 @@ $ cmake --install sunaba-build-ios-sim
 #### Android
 
 ```sh
-$ cmake -B sunaba-android-build -DCMAKE_BUILD_TYPE=Release -DCMAKE_INSTALL_PREFIX=sunaba-android-install -DCMAKE_SYSTEM_NAME=Android -DCMAKE_ANDROID_NDK=/path/to/android/ndk-DCMAKE_ANDROID_ARCH_ABI=arm64-v8a
+$ cmake -B sunaba-android-build -DCMAKE_BUILD_TYPE=Release -DCMAKE_INSTALL_PREFIX=sunaba-android-install -DCMAKE_SYSTEM_NAME=Android -DCMAKE_ANDROID_NDK=/path/to/android/ndk -DCMAKE_ANDROID_ARCH_ABI=arm64-v8a
 $ cmake --build sunaba-android-build --config Release
 $ cmake --install sunaba-android-build
 
