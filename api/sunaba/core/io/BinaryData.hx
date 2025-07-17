@@ -33,3 +33,11 @@ function BinaryDataToBytes(binaryData: BinaryData) : Bytes {
     }
     return bytes;
 }
+
+function BytesToBinaryData(bytes: Bytes) : BinaryData {
+    var binaryData = new BinaryData();
+    for (i in 0...bytes.length) {
+        binaryData.append(ByteObject.fromInt(bytes.get(i)));
+    }
+    return binaryData;
+}
