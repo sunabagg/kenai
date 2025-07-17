@@ -159,4 +159,18 @@ namespace sunaba::core::io {
         }
         IoInterface::deleteDirectory(path);
     }
+
+    bool CustomIoInterface::directoryExists(const std::string &path) const {
+        if (object != sol::lua_nil) {
+            if (object["directoryExists"].is<sol::function>() == false) {
+                return false;
+            }
+            auto func = object["directoryExists"].get<sol::function>();
+            if (func) {
+                auto result = func.call(path);
+                return result.get<bool>();
+            }
+        }
+        return IoInterface::directoryExists(path);
+    }
 }
