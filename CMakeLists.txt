@@ -131,8 +131,6 @@ add_custom_command(
             ${BUILD_OUTPUT_DIR}
 )
 
-# Create and include version info file from git
-include( GitVersionInfo )
 
 # Install library, extension file, and support files in ${CMAKE_INSTALL_PREFIX}/${PROJECT_NAME}
 set( INSTALL_DIR "${CMAKE_INSTALL_PREFIX}/${PROJECT_NAME}/" )

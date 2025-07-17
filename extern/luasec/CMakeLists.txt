@@ -24,7 +24,7 @@ else()
 endif()
 
 # Find required packages
-find_package(PkgConfig REQUIRED)
+#find_package(PkgConfig REQUIRED)
 find_package(OpenSSL REQUIRED)
 
 # Try to find Lua (only if not provided by parent project)
