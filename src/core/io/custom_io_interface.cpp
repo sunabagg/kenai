@@ -145,4 +145,18 @@ namespace sunaba::core::io {
         }
         return IoInterface::createDirectory(path);
     }
+
+    void CustomIoInterface::deleteDirectory(const std::string &path) const {
+        if (object != sol::lua_nil) {
+            if (object["deleteDirectory"].is<sol::function>() == false) {
+                return;
+            }
+            auto func = object["deleteDirectory"].get<sol::function>();
+            if (func) {
+                func.call(path);
+                return;
+            }
+        }
+        IoInterface::deleteDirectory(path);
+    }
 }
