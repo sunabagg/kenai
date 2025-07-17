@@ -58,4 +58,18 @@ namespace sunaba::core::io {
         }
         return IoInterface::loadText(path);
     }
+
+    void CustomIoInterface::saveText(const std::string &path, const std::string &text) const {
+        if (object != sol::lua_nil) {
+            if (object["saveText"].is<sol::function>() == false) {
+                return;
+            }
+            auto func = object["saveText"].get<sol::function>();
+            if (func) {
+                func.call(path, text);
+                return;
+            }
+        }
+        IoInterface::saveText(path, text);
+    }
 }
