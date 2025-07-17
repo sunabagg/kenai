@@ -54,6 +54,7 @@ namespace sunaba::core::io {
         }
 
         void loadArchive(BinaryData* bytes) {
+            a = archive_read_new();
             std::vector<uint8_t> bufferVec = bytes->toVector();
             archive_read_support_format_zip(a);
             r = archive_read_open_memory(a, bufferVec.data(), bufferVec.size());
