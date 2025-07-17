@@ -6,6 +6,7 @@ target_sources(${PROJECT_NAME} PRIVATE
         system_io_interface.cpp
         file_system_io.cpp
         io_manager.cpp
+        custom_io_interface.h
         bind_io_classes.cpp
         io_index.cpp
         zip_io.cpp
