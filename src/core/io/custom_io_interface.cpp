@@ -89,4 +89,18 @@ namespace sunaba::core::io {
         }
         return IoInterface::loadBytes(path);
     }
+
+    void CustomIoInterface::saveBytes(const std::string &path, const PackedByteArray &bytes) const {
+        if (object != sol::lua_nil) {
+            if (object["saveBytes"].is<sol::function>() == false) {
+                return;
+            }
+            auto func = object["saveBytes"].get<sol::function>();
+            if (func) {
+                func.call(path, new BinaryData(bytes));
+                return;
+            }
+        }
+        IoInterface::saveBytes(path, bytes);
+    }
 }
