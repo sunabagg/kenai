@@ -7,7 +7,6 @@
 #include <sol/sol.hpp>
 
 #include "service.h"
-#include <Version.h>
 
 #define DEVICE_TYPE_DESKTOP 0
 #define DEVICE_TYPE_MOBILE 1
