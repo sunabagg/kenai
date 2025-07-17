@@ -1,5 +1,7 @@
 package sunaba.core.io;
 
+import haxe.io.Bytes;
+
 @:native("BinaryData")
 // BinaryData is a class that represents a binary data buffer.
 extern class BinaryData {
@@ -21,4 +23,13 @@ extern class BinaryData {
     public function insert(index : Int, value : ByteObject) : Void;
 
     public function toTable() : sunaba.core.Vector<Float>;
+}
+
+function BinaryDataToBytes(binaryData: BinaryData) : Bytes {
+    var size = binaryData.size();
+    var bytes = Bytes.alloc(size);
+    for (i in 0...size) {
+        bytes.set(i, binaryData.get(i).getInt());
+    }
+    return bytes;
 }
