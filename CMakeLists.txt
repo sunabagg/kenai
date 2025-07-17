@@ -474,17 +474,19 @@ if (NOT EMSCRIPTEN)
         PRIVATE
             USE_LUASOCKET
     )
-    set( LUASEC_WITH_LUASOCKET OFF )
-    find_package(OpenSSL REQUIRED)
-    add_subdirectory( extern/luasec )
-    target_include_directories( ${PROJECT_NAME}
-        PRIVATE
-            extern/luasec/src 
-    )
-    target_compile_definitions( ${PROJECT_NAME}
-        PRIVATE
-            USE_LUASEC
-    )
+    if (NOT ANDROID) 
+        set( LUASEC_WITH_LUASOCKET OFF )
+        find_package(OpenSSL REQUIRED)
+        add_subdirectory( extern/luasec )
+        target_include_directories( ${PROJECT_NAME}
+            PRIVATE
+                extern/luasec/src 
+        )
+        target_compile_definitions( ${PROJECT_NAME}
+            PRIVATE
+                USE_LUASEC
+        )
+    endif()
     set(BUILD_MODULE OFF CACHE BOOL "" FORCE)
     set(LUV_INCLUDE_LUA ON CACHE BOOL "" FORCE)
     set(LUV_INCLUDE_LIBUV ON CACHE BOOL "" FORCE)
@@ -538,6 +540,15 @@ else()
                 godot-cpp
                 liblua_static
                 sol2
+        )
+    elseif(ANDROID)
+        target_link_libraries(${PROJECT_NAME}
+            PRIVATE
+                godot-cpp
+                liblua_static
+                sol2
+                luasocket::static
+                libluv_a
         )
     else()
         target_link_libraries(${PROJECT_NAME}
