@@ -309,6 +309,14 @@ endif ()
 
 # Set the CMAKE_PREFIX_PATH to include the Vcpkg installed directory
 set(CMAKE_PREFIX_PATH "${CMAKE_PREFIX_PATH};${CMAKE_SOURCE_DIR}/vcpkg_installed/x64-windows")
+if (IOS)
+    message("Build on iOS")
+    if (${PLATFORM} STREQUAL "OS64")
+        set(CMAKE_PREFIX_PATH "${CMAKE_PREFIX_PATH};${CMAKE_SOURCE_DIR}/vcpkg_installed/arm64-ios")
+    elseif(${PLATFORM} STREQUAL "SIMULATORARM64")
+        set(CMAKE_PREFIX_PATH "${CMAKE_PREFIX_PATH};${CMAKE_SOURCE_DIR}/vcpkg_installed/arm64-ios-simulator")
+    endif()
+endif()
 
 #option(LUAU_BUILD_CLI "" OFF)
 #option(LUAU_BUILD_TESTS "" OFF)
