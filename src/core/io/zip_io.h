@@ -24,6 +24,7 @@ namespace sunaba::core::io {
         ZipIo(const std::string &path) {
             auto fileAccess = godot::FileAccess::open(path.c_str(), FileAccess::ModeFlags::READ);
             auto byteArray = fileAccess->get_buffer(fileAccess->get_length());
+            fileAccess->close();
             BinaryData* bytes = new BinaryData(byteArray);
             loadArchive(bytes);
         }
