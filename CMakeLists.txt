@@ -68,16 +68,6 @@ project( sunaba
 # Create our library
 add_library( ${PROJECT_NAME} SHARED src/dummy.cpp)
 add_subdirectory( src )
-add_subdirectory( src/core )
-add_subdirectory( src/core/io )
-add_subdirectory( src/desktop )
-add_subdirectory( src/input )
-add_subdirectory( src/spatial )
-add_subdirectory( src/spatial/mesh )
-add_subdirectory( src/tests )
-add_subdirectory( src/ui )
-add_subdirectory( src/audio )
-add_subdirectory( src/networking )
 
 target_compile_features( ${PROJECT_NAME}
     PRIVATE
