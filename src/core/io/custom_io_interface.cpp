@@ -117,4 +117,18 @@ namespace sunaba::core::io {
         }
         return IoInterface::getFileList(path, extension, recursive);
     }
+
+    void CustomIoInterface::deleteFile(const std::string &path) const {
+        if (object != sol::lua_nil) {
+            if (object["deleteFile"].is<sol::function>() == false) {
+                return;
+            }
+            auto func = object["deleteFile"].get<sol::function>();
+            if (func) {
+                func.call(path);
+                return;
+            }
+        }
+        IoInterface::deleteFile(path);
+    }
 }
