@@ -7,6 +7,7 @@ target_sources(${PROJECT_NAME} PRIVATE
         file_system_io.cpp
         io_manager.cpp
         custom_io_interface.h
+        custom_io_interface.cpp
         bind_io_classes.cpp
         io_index.cpp
         zip_io.cpp
