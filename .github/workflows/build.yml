@@ -120,7 +120,7 @@ jobs:
         with:
           name: ${{ github.event.repository.name }}-${{ matrix.config.os }}-Debug
           path: |
-            ${{ github.workspace }}/install-${{ matrix.build_type }}/*
+            ${{ github.workspace }}/install-${{ matrix.build_type }}/sunaba/*
 
       - name: Upload artifact (Release)
         if: matrix.build_type == 'Release'
@@ -128,4 +128,4 @@ jobs:
         with:
           name: ${{ github.event.repository.name }}-${{ matrix.config.os }}-Release
           path: |
-            ${{ github.workspace }}/install-${{ matrix.build_type }}/*
+            ${{ github.workspace }}/install-${{ matrix.build_type }}/sunaba/*
