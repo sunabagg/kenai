@@ -10,7 +10,7 @@ namespace sunaba::core::io {
 
     class CustomIoInterface : public IoInterface {
     private:
-        sol::table object;
+        sol::table object = sol::lua_nil;
     public:
 
         sol::table getObject() {
