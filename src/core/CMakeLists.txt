@@ -1,19 +1,10 @@
 target_sources(${PROJECT_NAME} PRIVATE
-        convert_godot_lua.h
         convert_godot_lua.cpp
-        base_object.h
         base_object.cpp
-        service.h
         service.cpp
-        base_object_proxy.h
-        stl_function_wrapper.h
-        event.h
         event.cpp
-        scene_system.h
         scene_system.cpp
-        scene_node.h
         scene_node.cpp
-        lua_bind.h
         lua_bind.cpp
         type_bind.cpp
         bind_varaint.cpp
@@ -32,94 +23,48 @@ target_sources(${PROJECT_NAME} PRIVATE
         bind_transform3d.cpp
         bind_aabb.cpp
         bind_color.cpp
-        sol_gdstr.h
-        lua_function_wrapper.h
-        bind_core_classes.h
         bind_core_classes.cpp
-        string_utils.h
-        resource.h
         resource.cpp
-        texture.h
         texture.cpp
-        image.h
         image.cpp
-        texture2d.h
         texture2d.cpp
-        image_texture.h
         image_texture.cpp
-        font.h
         font.cpp
-        font_file.h
         font_file.cpp
-        font_variation.h
         font_variation.cpp
-        bit_map.h
         bit_map.cpp
-        animated_texture.h
         animated_texture.cpp
-        shader_include.h
         shader_include.cpp
-        shader.h
         shader.cpp
-        texture_layered.h
         texture_layered.cpp
-        texture_layered_rd.h
         texture_layered_rd.cpp
-        texture_cubemap_rd.h
         texture_cubemap_rd.cpp
-        texture_cubemap_array_rd.h
         texture_cubemap_array_rd.cpp
-        atlas_texture.h
         atlas_texture.cpp
-        label_settings.h
         label_settings.cpp
-        texture2drd.h
         texture2drd.cpp
-        placeholder_texture2d.h
         placeholder_texture2d.cpp
-        placeholder_texture_layered.h
         placeholder_texture_layered.cpp
-        placeholder_texture2d_array.h
         placeholder_texture2d_array.cpp
-        translation.h
         translation.cpp
-        material.h
         material.cpp
-        canvas_item_material.h
         canvas_item_material.cpp
-        system_font.h
         system_font.cpp
-        shader_material.h
         shader_material.cpp
-        noise.h
         noise.cpp
-        gradient.h
         gradient.cpp
-        noise_texture2d.h
         noise_texture2d.cpp
-        image_texture_layered.h
         image_texture_layered.cpp
-        environment.h
         environment.cpp
-        element.h
         element.cpp
-        proxy_db.h
         proxy_db.cpp
-        canvas_item.h
         canvas_item.cpp
-        viewport.h
         viewport.cpp
-        reg_ex_match.h
         reg_ex_match.cpp
-        reg_ex.h
         reg_ex.cpp
-        sub_viewport.h
         sub_viewport.cpp
-        platform_service.h
         platform_service.cpp
 )
-
-add_subdirectory(io)
 
 target_include_directories( ${PROJECT_NAME}
         PRIVATE

@@ -1,41 +1,22 @@
 target_sources(${PROJECT_NAME} PRIVATE
-        input_event.h
         input_event.cpp
-        input_event_with_modifiers.h
         input_event_with_modifiers.cpp
-        input_event_action.h
         input_event_action.cpp
-        input_event_from_window.h
         input_event_from_window.cpp
-        input_event_gesture.h
         input_event_gesture.cpp
-        input_event_joypad_button.h
         input_event_joypad_button.cpp
-        input_event_joypad_motion.h
         input_event_joypad_motion.cpp
-        input_event_key.h
         input_event_key.cpp
-        input_event_magnify_gesture.h
         input_event_magnify_gesture.cpp
-        input_event_midi.h
         input_event_midi.cpp
-        input_event_mouse.h
         input_event_mouse.cpp
-        input_event_mouse_button.h
         input_event_mouse_button.cpp
-        input_event_mouse_motion.h
         input_event_mouse_motion.cpp
-        input_event_pan_gesture.h
         input_event_pan_gesture.cpp
-        input_event_screen_drag.h
         input_event_screen_drag.cpp
-        input_event_screen_touch.h
         input_event_screen_touch.cpp
-        input_service.h
         input_service.cpp
-        shortcut.h
         shortcut.cpp
-        bind_input_classes.h
         bind_input_classes.cpp
 )
 

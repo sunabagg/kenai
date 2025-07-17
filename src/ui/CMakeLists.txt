@@ -1,43 +1,43 @@
 target_sources(${PROJECT_NAME} PRIVATE
-        style_box.h
         style_box.cpp
-        style_box_empty.h
         style_box_empty.cpp
-        style_box_flat.h
         style_box_flat.cpp
-        style_box_line.h
         style_box_line.cpp
-        style_box_texture.h
         style_box_texture.cpp
-        theme.h
         theme.cpp
-        control.h
         control.cpp
-        base_button.h
         base_button.cpp
-        button_group.h
         button_group.cpp
-        button.h
         button.cpp
-        check_box.h
         check_box.cpp
-        check_button.h
         check_button.cpp
-        container.h
         container.cpp
-        aspect_ratio_container.h
         aspect_ratio_container.cpp
-        box_container.h
         box_container.cpp
-        center_container.h
         center_container.cpp
-        flow_container.h
         flow_container.cpp
-        bind_ui_classes.h
         bind_ui_classes.cpp
-        grid_container.h
         grid_container.cpp
-        h_box_container.h
+        style_box.cpp
+        style_box_empty.cpp
+        style_box_flat.cpp
+        style_box_line.cpp
+        style_box_texture.cpp
+        theme.cpp
+        control.cpp
+        base_button.cpp
+        button_group.cpp
+        button.cpp
+        check_box.cpp
+        check_button.cpp
+        container.cpp
+        aspect_ratio_container.cpp
+        box_container.cpp
+        center_container.cpp
+        flow_container.cpp
+        bind_ui_classes.cpp
+        grid_container.cpp
+        h_box_container.cpp
         h_box_container.cpp
         h_flow_container.h
         h_flow_container.cpp

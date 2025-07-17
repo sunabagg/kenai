@@ -1,5 +1,4 @@
 target_sources(${PROJECT_NAME} PRIVATE
-        scene_test.h
         scene_test.cpp
 )
 
