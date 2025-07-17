@@ -1967,8 +1967,12 @@ int uv_interface_addresses(uv_interface_address_t** addresses, int* count) {
   *count = 0;
   *addresses = NULL;
 
+  #if !defined(__ANDROID__)
   if (getifaddrs(&addrs))
     return UV__ERR(errno);
+  #else
+  return 0;
+  #endif
 
   /* Count the number of interfaces */
   namelen = 0;
@@ -1981,14 +1985,18 @@ int uv_interface_addresses(uv_interface_address_t** addresses, int* count) {
   }
 
   if (*count == 0) {
+    #if !defined(__ANDROID__)
     freeifaddrs(addrs);
+    #endif
     return 0;
   }
 
   /* Make sure the memory is initiallized to zero using calloc() */
   *addresses = uv__calloc(1, *count * sizeof(**addresses) + namelen);
   if (*addresses == NULL) {
+    #if !defined(__ANDROID__)
     freeifaddrs(addrs);
+    #endif
     return UV_ENOMEM;
   }
 
@@ -2039,7 +2047,9 @@ int uv_interface_addresses(uv_interface_address_t** addresses, int* count) {
     }
   }
 
+  #if !defined(__ANDROID__)
   freeifaddrs(addrs);
+  #endif
 
   return 0;
 }

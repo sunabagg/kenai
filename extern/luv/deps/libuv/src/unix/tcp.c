@@ -253,6 +253,7 @@ static int uv__ipv6_link_local_scope_id(void) {
   struct ifaddrs* ifa;
   struct ifaddrs* p;
 
+#if !defined(__ANDROID__)
   if (getifaddrs(&ifa))
     return 0;
 
@@ -268,6 +269,7 @@ static int uv__ipv6_link_local_scope_id(void) {
   }
 
   freeifaddrs(ifa);
+#endif
 #endif /* defined(_AIX) */
 
   return rv;

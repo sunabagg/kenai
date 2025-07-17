@@ -150,26 +150,25 @@ void uv_barrier_destroy(uv_barrier_t* barrier) {
 
 #else
 
+
+#if !defined(__ANDROID__)
 int uv_barrier_init(uv_barrier_t* barrier, unsigned int count) {
   return UV__ERR(pthread_barrier_init(barrier, NULL, count));
 }
 
-
 int uv_barrier_wait(uv_barrier_t* barrier) {
   int rc;
-
   rc = pthread_barrier_wait(barrier);
   if (rc != 0)
     if (rc != PTHREAD_BARRIER_SERIAL_THREAD)
       abort();
-
   return rc == PTHREAD_BARRIER_SERIAL_THREAD;
 }
-
 
 void uv_barrier_destroy(uv_barrier_t* barrier) {
   if (pthread_barrier_destroy(barrier))
     abort();
 }
+#endif
 
 #endif
