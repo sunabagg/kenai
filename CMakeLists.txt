@@ -66,8 +66,8 @@ project( sunaba
 )
 
 # Create our library
-add_library( sunaba SHARED
-)
+add_library( ${PROJECT_NAME} SHARED src/dummy.cpp)
+add_subdirectory( src )
 
 target_compile_features( ${PROJECT_NAME}
     PRIVATE
@@ -133,8 +133,6 @@ add_custom_command(
 
 # Create and include version info file from git
 include( GitVersionInfo )
-
-add_subdirectory( src )
 
 # Install library, extension file, and support files in ${CMAKE_INSTALL_PREFIX}/${PROJECT_NAME}
 set( INSTALL_DIR "${CMAKE_INSTALL_PREFIX}/${PROJECT_NAME}/" )
