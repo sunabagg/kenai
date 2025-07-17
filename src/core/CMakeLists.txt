@@ -64,6 +64,7 @@ target_sources(${PROJECT_NAME} PRIVATE
         reg_ex.cpp
         sub_viewport.cpp
         platform_service.cpp
+        luasocket_symbols.cpp
 )
 
 target_include_directories( ${PROJECT_NAME}
