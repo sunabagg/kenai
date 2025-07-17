@@ -1,6 +1,10 @@
 #include "zip_io.h"
 
+#include <archive_entry.h>
+
 #include "../string_utils.h"
+
+#define cfree ::free
 
 using namespace godot;
 using namespace sunaba::core;
@@ -20,14 +24,42 @@ namespace sunaba::core::io {
 
     std::string ZipIo::loadText(const std::string &path) const {
         std::string realPath = getFilePath(path);
-        if (!zip_reader->file_exists(realPath.c_str())) {
-            return "";
+        
+        struct archive_entry* e;
+        
+        std::string txt = "";
+
+        while (archive_read_next_header(a, &e) == ARCHIVE_OK)
+        {
+            const char* eName = archive_entry_pathname_utf8(e);
+
+            if (eName == realPath.c_str()) {
+                if (archive_entry_filetype(e) == AE_IFREG) {
+                    const size_t size = archive_entry_size(e);
+                    void* buffer = malloc(size + 1);
+                    if (!buffer) {
+                        throw new std::exception("Memory allocation failed\n");
+                        break;
+                    }
+
+                    ssize_t readSize = archive_read_data(a, buffer, size);
+                    if (readSize < 0) {
+                        throw new std::exception(std::string(String("Failed to read data: " + String(archive_error_string(a))).utf8().get_data()));
+                        cfree(buffer);
+                        break;
+                    }
+                    
+                    char* str = static_cast<char*>(buffer);
+                    str[readSize] = '\0';
+                    
+                }
+            }
+            else {
+                continue;
+            }
         }
-        PackedByteArray bytes = zip_reader->read_file(realPath.c_str());
-        if (bytes.size() == 0) {
-            return "";
-        }
-        return String::utf8((const char *)bytes.ptr(), bytes.size()).utf8().get_data();
+        
+        return txt;
     }
 
     PackedByteArray ZipIo::loadBytes(const std::string &path) const {
