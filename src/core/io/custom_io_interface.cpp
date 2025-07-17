@@ -43,4 +43,19 @@ namespace sunaba::core::io {
         }
         return pathUri + path; // Fallback to default behavior
     }
+
+    std::string CustomIoInterface::loadText(const std::string &path) const {
+        if (object != sol::lua_nil) {
+            if (object["loadText"].is<sol::function>() == false) {
+                return "";
+            }
+            auto func = object["loadText"].get<sol::function>();
+            if (func) {
+                auto result = func.call(path);
+                std::string resStr = result.get<std::string>();
+                return resStr;
+            }
+        }
+        return IoInterface::loadText(path);
+    }
 }
