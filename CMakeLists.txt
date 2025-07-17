@@ -404,7 +404,7 @@ endif()
 # Find the sol2 package
 add_subdirectory( extern/sol2 )
 
-include_directories( ${CMAKE_SOURCE_DIR}/extern/hx-lua-simdjson/src )
+add_subdirectory( extern/libarchive )
 
 #add_library( hxsimdjson STATIC 
 #    extern/hx-lua-simdjson/src/hxluasimdjson.h
@@ -532,6 +532,7 @@ if (USE_LUAJIT AND LUAJIT_FOUND)
             OpenSSL::SSL
             OpenSSL::Crypto
             libluv_a
+            archive_static
     )
 else()
     if (EMSCRIPTEN)
@@ -540,6 +541,7 @@ else()
                 godot-cpp
                 liblua_static
                 sol2
+                archive_static
         )
     elseif(ANDROID)
         target_link_libraries(${PROJECT_NAME}
@@ -549,6 +551,7 @@ else()
                 sol2
                 luasocket::static
                 libluv_a
+                archive_static
         )
     else()
         target_link_libraries(${PROJECT_NAME}
@@ -561,6 +564,7 @@ else()
                 OpenSSL::SSL
                 OpenSSL::Crypto
                 libluv_a
+                archive_static
         )
     endif()
 endif()
