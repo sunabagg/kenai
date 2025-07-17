@@ -66,16 +66,8 @@ project( sunaba
 )
 
 # Create our library
-add_library( ${PROJECT_NAME} SHARED
-        src/core/base_object.cpp
-        src/core/base_object.h
-        src/app.cpp
-        src/app.h
-        src/core/scene_system.h
-        src/core/lua_bind.h
-        src/core/lua_bind.cpp
-        src/core/lua_function_wrapper.h
-        src/core/luasocket_symbols.cpp)
+add_library( sunaba SHARED
+)
 
 target_compile_features( ${PROJECT_NAME}
     PRIVATE
@@ -319,7 +311,10 @@ if (IOS)
 elseif(APPLE)
     set(CMAKE_PREFIX_PATH "${CMAKE_PREFIX_PATH};${CMAKE_SOURCE_DIR}/vcpkg_installed/arm64-osx;${CMAKE_SOURCE_DIR}/vcpkg_installed/x64-osx")
 elseif(ANDROID)
+    message("is Andorid")
     set(CMAKE_PREFIX_PATH "${CMAKE_PREFIX_PATH};${CMAKE_SOURCE_DIR}/vcpkg_installed/arm64-android;${CMAKE_SOURCE_DIR}/vcpkg_installed/arm-android;;${CMAKE_SOURCE_DIR}/vcpkg_installed/arm-neon-android;;${CMAKE_SOURCE_DIR}/vcpkg_installed/x64-android;${CMAKE_SOURCE_DIR}/vcpkg_installed/x86-android")
+    #set(OPENSSL_ROOT_DIR "${CMAKE_SOURCE_DIR}/vcpkg_installed/arm64-android;${CMAKE_SOURCE_DIR}/vcpkg_installed/arm-android;${CMAKE_SOURCE_DIR}/vcpkg_installed/arm-neon-android;${CMAKE_SOURCE_DIR}/vcpkg_installed/x64-android;${CMAKE_SOURCE_DIR}/vcpkg_installed/x86-android")
+    #set(OPENSSL_USE_STATIC_LIBS TRUE)
 endif()
 
 #option(LUAU_BUILD_CLI "" OFF)
