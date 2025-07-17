@@ -13,4 +13,19 @@ namespace sunaba::core::io {
             )
         );
     }
+
+    std::string CustomIoInterface::getFileUri(const std::string &path) const {
+        if (object != sol::lua_nil) {
+            if (object["getFileUri"].is<sol::function>() == false) {
+                return "";
+            }
+            auto func = object["getFileUri"].get<sol::function>();
+            if (func) {
+                auto result = func.call(path);
+                std::string resStr = result.get<std::string>();
+                return resStr;
+            }
+        }
+        return "";
+    }
 }
