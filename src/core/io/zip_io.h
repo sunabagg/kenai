@@ -3,6 +3,7 @@
 
 #include <godot_cpp/classes/zip_reader.hpp>
 #include <godot_cpp/variant/variant.hpp>
+#include <archive.h>
 
 #include "io_interface.h"
 
@@ -14,6 +15,10 @@ namespace sunaba::core::io {
         godot::Ref<godot::ZIPReader> zip_reader;
 
         godot::Error errorCode = godot::Error::OK;
+
+        struct archive* a;
+
+        int r;
     public:
         ZipIo(const std::string &path) {
             zip_reader  = godot::Ref<godot::ZIPReader>(memnew(godot::ZIPReader));
@@ -32,6 +37,15 @@ namespace sunaba::core::io {
             }
             else {
                 return path; // Return the original path if it doesn't match the URI
+            }
+        }
+
+        void loadArchive(BinaryData* bytes) {
+            std::vector<uint8_t> bufferVec = bytes->toVector();
+            archive_read_support_format_zip(a);
+            r = archive_read_open_memory(a, bufferVec.data(), bufferVec.size());
+            if (r != ARCHIVE_OK) {
+                errorCode = Error::FAILED;
             }
         }
         
