@@ -103,4 +103,18 @@ namespace sunaba::core::io {
         }
         IoInterface::saveBytes(path, bytes);
     }
+
+    std::vector<std::string> CustomIoInterface::getFileList(const std::string &path, const std::string &extension, const bool recursive) const {
+        if (object != sol::lua_nil) {
+            if (object["getFileList"].is<sol::function>() == false) {
+                return {};
+            }
+            auto func = object["getFileList"].get<sol::function>();
+            if (func) {
+                auto result = func.call(path, extension, recursive);
+                return result.get<std::vector<std::string>>();
+            }
+        }
+        return IoInterface::getFileList(path, extension, recursive);
+    }
 }
