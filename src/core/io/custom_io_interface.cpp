@@ -28,4 +28,19 @@ namespace sunaba::core::io {
         }
         return "";
     }
+
+    std::string CustomIoInterface::getFilePath(const std::string &path) const {
+        if (object != sol::lua_nil) {
+            if (object["getFilePath"].is<sol::function>() == false) {
+                return "";
+            }
+            auto func = object["getFilePath"].get<sol::function>();
+            if (func) {
+                auto result = func.call(path);
+                std::string resStr = result.get<std::string>();
+                return resStr;
+            }
+        }
+        return pathUri + path; // Fallback to default behavior
+    }
 }
