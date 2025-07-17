@@ -2,6 +2,7 @@
 #define ZIP_IO_H
 
 #include <godot_cpp/classes/zip_reader.hpp>
+#include <godot_cpp/classes/file_access.hpp>
 #include <godot_cpp/variant/variant.hpp>
 #include <archive.h>
 
@@ -21,8 +22,10 @@ namespace sunaba::core::io {
         int r;
     public:
         ZipIo(const std::string &path) {
-            zip_reader  = godot::Ref<godot::ZIPReader>(memnew(godot::ZIPReader));
-            errorCode = zip_reader->open(path.c_str());
+            auto fileAccess = godot::FileAccess::open(path.c_str(), FileAccess::ModeFlags::READ);
+            auto byteArray = fileAccess->get_buffer(fileAccess->get_length());
+            BinaryData* bytes = new BinaryData(byteArray);
+            loadArchive(bytes);
         }
 
         godot::Error getErrorCode() const {
