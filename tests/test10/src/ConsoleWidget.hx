@@ -66,13 +66,9 @@ class ConsoleWidget extends Widget {
             var arr = args.toArray();
             if (arr.length > 0) {
                 var text = arr.join(" ");
-                txt += text + "\n";
-                output.parseBBCode('[code]' + txt + '[/code]');
-                output.scrollFollowing = true; // Automatically scroll to the bottom
+                console.print(text);
             } else {
-                txt += "Usage: echo <text>\n";
-                output.parseBBCode('[code]' + txt + '[/code]');
-                output.scrollFollowing = true; // Automatically scroll to the bottom
+                console.print("Usage: echo <text>");
             }
             return Error.ok;
         });
@@ -84,9 +80,7 @@ class ConsoleWidget extends Widget {
                     ConsoleCmd(command, console);
                     return Error.ok;
                 } else {
-                    txt += "Usage: com <command>\n";
-                    output.parseBBCode('[code]' + txt + '[/code]');
-                    output.scrollFollowing = true; // Automatically scroll to the bottom
+                    console.print("Usage: com <command>");
                     return Error.ok;
                 }
             }
@@ -100,6 +94,7 @@ class ConsoleWidget extends Widget {
             return Error.failed;
         });
         console.eval("_G.com = function(command) _G.cmd('com', A(command)) end");
+        console.eval("_G.c = function(command) _G.cmd('com', A(command)) end");
         console.eval("cd('app://')"); // Set the initial working directory
         console.eval("print('Welcome to the Sunaba Console!')");
     }
