@@ -12,6 +12,10 @@ extern class Console extends Element {
     public function getLogColor(log: String): Color;
     public function cmd(command: String, args: Vector<String>): Error;
     public function eval(code: String): Error;
+    public function print(str: String): Void;
+    public function printErr(str: String): Void;
+    public function printColor(str: String, color: String): Void;
+
     @:native("cast")
     public static function toConsole(obj:Any): Console;
 }
