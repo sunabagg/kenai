@@ -185,9 +185,16 @@ namespace sunaba::core::io {
                     }
                 }
                 
-                auto res = func(args);
-                int errorcode = res.get<int>();
-                return static_cast<Error>(errorcode);
+                try {
+                    auto res = func(args);
+                    int errorcode = res.get<int>();
+                    return static_cast<Error>(errorcode);
+                }
+                catch (const sol::error& e) {
+                    String errstr = String("Error: Command '") + commandName.c_str() + "' must return an integer.";
+                    printErr(errstr.utf8().get_data());
+                    return Error::FAILED;
+                }
             }
 
             Error eval(const std::string& code) {
