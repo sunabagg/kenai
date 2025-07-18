@@ -190,7 +190,7 @@ namespace sunaba::core::io {
                     int errorcode = res.get<int>();
                     return static_cast<Error>(errorcode);
                 }
-                catch (const sol::error& e) {
+                catch (...) {
                     String errstr = String("Error: Command '") + commandName.c_str() + "' must return an integer.";
                     printErr(errstr.utf8().get_data());
                     return Error::FAILED;
@@ -281,6 +281,18 @@ namespace sunaba::core::io {
 
             int eval(const std::string& code) {
                 return moonConsole->eval(code);
+            }
+
+            void print(const std::string& log) {
+                moonConsole->print(log);
+            }
+
+            void printErr(const std::string& error) {
+                moonConsole->printErr(error);
+            }
+
+            void printColor(const std::string& log, const std::string& clrstr) {
+                moonConsole->printColor(log, clrstr);
             }
     };
 }

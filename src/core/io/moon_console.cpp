@@ -26,6 +26,9 @@ namespace sunaba::core::io {
             "getLogColor", &Console::getLogColor,
             "cmd", &Console::cmd,
             "eval", &Console::eval,
+            "print", &Console::print,
+            "printErr", &Console::printErr,
+            "printColor", &Console::printColor,
             "cast", [](Element* e) {
                 auto* c = dynamic_cast<Console*>(e);
                 if (c != nullptr) {
