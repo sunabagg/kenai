@@ -87,6 +87,13 @@ namespace sunaba
         void set_std_input(const String& input) {
             _stdInput = input.utf8().get_data();
             global_state["__stdinput"] = _stdInput;
+            auto stdinHandleVar = global_state["stdin"];
+            if (stdinHandleVar.valid() && stdinHandleVar.is<sol::function>()) {
+                sol::function stdinHandle = stdinHandleVar.get<sol::function>();
+                stdinHandle(_stdInput);
+            } else {
+                print_line("Error: stdin handle is not a valid function.");
+            }
         }
     };
 
