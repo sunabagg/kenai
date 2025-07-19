@@ -82,6 +82,8 @@ void App::_bind_methods() {
     ClassDB::bind_method(D_METHOD("set_theme", "theme"), &App::setTheme);
     ClassDB::bind_method(D_METHOD("set_args", "_args"), &App::setArgs);
     ClassDB::bind_method(D_METHOD("get_args"), &App::getArgs);
+    ClassDB::bind_method(D_METHOD("get_std_input"), &App::get_std_input);
+    ClassDB::bind_method(D_METHOD("set_std_input", "input"), &App::set_std_input);
     ClassDB::bind_method(D_METHOD("libopen", "path"), &App::godot_libopen);
     ADD_PROPERTY(PropertyInfo(Variant::PACKED_STRING_ARRAY, "args"), "set_args", "get_args");
     ADD_PROPERTY(PropertyInfo(Variant::STRING, "std_input"), "set_std_input", "get_std_input");
