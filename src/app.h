@@ -76,6 +76,18 @@ namespace sunaba
         }
 
         void libopen(const std::string& path);
+
+        std::string _stdInput;
+
+        String get_std_input() {
+            String result = _stdInput.c_str();
+            return result;
+        }
+
+        void set_std_input(const String& input) {
+            _stdInput = input.utf8().get_data();
+            global_state["__stdinput"] = _stdInput;
+        }
     };
 
     void bindRuntime(sol::state& lua);

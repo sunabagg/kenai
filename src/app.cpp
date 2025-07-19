@@ -84,6 +84,7 @@ void App::_bind_methods() {
     ClassDB::bind_method(D_METHOD("get_args"), &App::getArgs);
     ClassDB::bind_method(D_METHOD("libopen", "path"), &App::godot_libopen);
     ADD_PROPERTY(PropertyInfo(Variant::PACKED_STRING_ARRAY, "args"), "set_args", "get_args");
+    ADD_PROPERTY(PropertyInfo(Variant::STRING, "std_input"), "set_std_input", "get_std_input");
     ADD_SIGNAL(MethodInfo("on_exit"));
 }
 
@@ -194,7 +195,7 @@ void App::initState(bool sandboxed) {
     
     global_state["execDir"] = execDir.utf8().get_data();
     global_state.script("package.path = package.path .. ';' .. execDir .. '/?.lua'");
-    global_state.script("print(package.path)");
+    //global_state.script("print(package.path)");
 
     //global_state.clear_package_loaders();
     global_state.add_package_loader(&App::loadFileRequire);
@@ -607,7 +608,7 @@ void App::initMobdebug() {
             local success, mobdebug = pcall(require, 'mobdebug')
             if success then
                 _G.mobdebug = mobdebug
-                print("MobDebug loaded successfully")
+                --print("MobDebug loaded successfully")
                 return true
             else
                 print("MobDebug not found or failed to load: " .. tostring(mobdebug))
