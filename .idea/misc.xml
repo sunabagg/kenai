@@ -1,10 +1,9 @@
-<?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="CMakePythonSetting">
     <option name="pythonIntegrationState" value="YES" />
   </component>
   <component name="CMakeWorkspace" PROJECT_DIR="$PROJECT_DIR$" />
-  <component name="ProjectRootManager" version="2" languageLevel="JDK_24" project-jdk-name="Android API 35, extension level 13 Platform" project-jdk-type="Android SDK">
-    <output url="file:///sunaba-android" />
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_24" project-jdk-name="Android API 34.0, extension level 7 Platform" project-jdk-type="Android SDK">
+    <output url="file://C:/ProgramData/Microsoft/Windows/Start Menu/Programs/Android Studio/sunaba-android" />
   </component>
 </project>
