@@ -482,17 +482,17 @@ if (NOT EMSCRIPTEN)
             USE_LUASOCKET
     )
     if (NOT ANDROID) 
-        set( LUASEC_WITH_LUASOCKET OFF )
-        find_package(OpenSSL REQUIRED)
-        add_subdirectory( extern/luasec )
-        target_include_directories( ${PROJECT_NAME}
-            PRIVATE
-                extern/luasec/src 
-        )
-        target_compile_definitions( ${PROJECT_NAME}
-            PRIVATE
-                USE_LUASEC
-        )
+        #set( LUASEC_WITH_LUASOCKET OFF )
+        #find_package(OpenSSL REQUIRED)
+        #add_subdirectory( extern/luasec )
+        #target_include_directories( ${PROJECT_NAME}
+        #    PRIVATE
+        #        extern/luasec/src 
+        #)
+        #target_compile_definitions( ${PROJECT_NAME}
+        #    PRIVATE
+        #        USE_LUASEC
+        #)
     endif()
     set(BUILD_MODULE OFF CACHE BOOL "" FORCE)
     set(LUV_INCLUDE_LUA ON CACHE BOOL "" FORCE)
@@ -564,9 +564,9 @@ else()
                 liblua_static
                 sol2
                 luasocket::static
-                luasec::ssl
-                OpenSSL::SSL
-                OpenSSL::Crypto
+                #luasec::ssl
+                #OpenSSL::SSL
+                #OpenSSL::Crypto
                 libluv_a
         )
     endif()
