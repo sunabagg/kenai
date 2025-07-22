@@ -1,6 +1,9 @@
 package sunaba.ui;
 
 import sunaba.core.Vector2;
+import sunaba.core.Element;
+import sunaba.core.Event;
+import sunaba.core.Rect2;
 
 @:native("Tree")
 extern class Tree extends Control {
@@ -13,7 +16,6 @@ extern class Tree extends Control {
     public var columns: Int;
     public var dropModeFlags: Int;
     public var enableRecursiveFolding: Bool;
-    public var focusMode: Bool;
     public var hideFolding: Bool;
     public var hideRoot: Bool;
     public var scrollHorizontalEnabled: Bool;
@@ -75,7 +77,7 @@ extern class Tree extends Control {
 
 abstract TreeAbstract(Tree) from Tree to Tree {
     @:from
-    public static function fromElement(element: Element): ControlAbstract {
+    public static function fromElement(element: Element): TreeAbstract {
         var tree: Tree = Tree.toTree(element);
         if (tree.isNull()) {
             return null;
