@@ -72,6 +72,9 @@ void sunaba::core::bind_varaint(sol::state& lua) {
             }
             return Variant(packed_data);
          },
+        "fromString", [](const std::string& str) { 
+            return Variant(String(str.c_str()));
+         },
         "fromVector2Array", [](const std::vector<Vector2>& data) { 
             PackedVector2Array packed_data;
             for (const auto& item : data) {

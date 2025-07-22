@@ -18,7 +18,6 @@ extern class VariantNative {
     public static function fromFloat32(vale:Float):VariantNative;
     @:native("new")
     public static function fromFloat64(value:Float):VariantNative;
-    @:native("new")
     public static function fromString(value:String):VariantNative;
     @:native("new")
     public static function fromBool(value:Bool):VariantNative;
