@@ -80,7 +80,7 @@ jobs:
           vcpkgJsonGlob: '**/vcpkg.json'
         
       
-      - name: Install vcpkg dependencies (x64)
+      - name: Install vcpkg dependencies
         if: matrix.config.os != 'windows-11-arm'
         run: |
           ${{ github.workspace }}/vcpkg/vcpkg install
@@ -100,7 +100,6 @@ jobs:
           -B GDExtension-build
           -G "Ninja"
           -DCMAKE_BUILD_TYPE=${{ matrix.build_type }}
-          -DCMAKE_TOOLCHAIN_FILE=${{ github.workspace }}/vcpkg/scripts/buildsystems/vcpkg.cmake
           --install-prefix ${{ github.workspace }}/install-${{ matrix.build_type }}
           .
       
@@ -114,7 +113,6 @@ jobs:
           -G "Visual Studio 17 2022"
           -A arm64
           -DCMAKE_BUILD_TYPE=${{ matrix.build_type }}
-          -DCMAKE_TOOLCHAIN_FILE=${{ github.workspace }}/vcpkg/scripts/buildsystems/vcpkg.cmake
           -DVCPKG_TARGET_TRIPLET=arm64-windows
           --install-prefix ${{ github.workspace }}/install-${{ matrix.build_type }}
           -DUSE_LUAJIT=OFF
