@@ -22,7 +22,7 @@ jobs:
           - { name: '🍏 macOS Clang', os: macos-latest }
           - { name: '🐧 Linux GCC', os: ubuntu-22.04 }
           - { name: '🪟 Windows MSVC', os: windows-latest }
-          #- { name: '💪🪟 Windows Arm MSVC', os: windows-11-arm }
+          - { name: '💪🪟 Windows Arm MSVC', os: windows-11-arm }
 
     name: 🛠 Build / ${{ matrix.config.name }} (${{ matrix.build_type }})
     runs-on: ${{ matrix.config.os }}
