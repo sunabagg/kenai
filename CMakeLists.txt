@@ -535,9 +535,9 @@ if (USE_LUAJIT AND LUAJIT_FOUND)
             ${LUAJIT_STATIC_LIBRARIES}
             sol2
             luasocket::static
-            luasec::ssl
-            OpenSSL::SSL
-            OpenSSL::Crypto
+            #luasec::ssl
+            #OpenSSL::SSL
+            #OpenSSL::Crypto
             libluv_a
     )
 else()
