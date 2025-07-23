@@ -148,3 +148,10 @@ jobs:
           name: ${{ github.event.repository.name }}-${{ matrix.config.os }}-Release
           path: |
             ${{ github.workspace }}/install-${{ matrix.build_type }}/sunaba/*
+      
+      - name: Release
+        uses: softprops/action-gh-release@v2
+        if: github.ref_type == 'tag'
+        with:
+          files: |
+            ${{ github.workspace }}/install-${{ matrix.build_type }}/sunaba/*
