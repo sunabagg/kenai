@@ -60,7 +60,7 @@ extern class TabContainer extends Container {
 
 abstract TabConatinerAbstract(TabContainer) from TabContainer to TabContainer {
     @:from
-    public static function fromElement(element: Element): ControlAbstract {
+    public static function fromElement(element: Element): TabConatinerAbstract {
         var tbContainer = TabContainer.toTabContainer(element);
         if (tbContainer.isNull()) {
             return null;
