@@ -157,21 +157,42 @@ jobs:
         uses: actions/download-artifact@v4
         with:
           name: ${{ github.event.repository.name }}-${{ matrix.config.os }}-Release
-          path: ${{ github.workspace }}
+          path: ${{ github.workspace }}/release-temp
       
       - name: Download artifact (Debug)
         if: matrix.build_type == 'Debug'
         uses: actions/download-artifact@v4
         with:
           name: ${{ github.event.repository.name }}-${{ matrix.config.os }}-Debug
-          path: ${{ github.workspace }}
+          path: ${{ github.workspace }}/debug-temp
+
+      - name: Create archive (Debug)
+        if: matrix.build_type == 'Debug'
+        run: |
+          cd ${{ github.workspace }}/debug-temp
+          if [ "${{ runner.os }}" == "Windows" ]; then
+            7z a -tzip ${{ github.workspace }}/${{ github.event.repository.name }}-${{ matrix.config.os }}-Debug.zip *
+          else
+            tar -czf ${{ github.workspace }}/${{ github.event.repository.name }}-${{ matrix.config.os }}-Debug.tar.gz *
+          fi
+
+      - name: Create archive (Release)
+        if: matrix.build_type == 'Release'
+        run: |
+          cd ${{ github.workspace }}/release-temp
+          if [ "${{ runner.os }}" == "Windows" ]; then
+            7z a -tzip ${{ github.workspace }}/${{ github.event.repository.name }}-${{ matrix.config.os }}-Release.zip *
+          else
+            tar -czf ${{ github.workspace }}/${{ github.event.repository.name }}-${{ matrix.config.os }}-Release.tar.gz *
+          fi
 
       - name: Upload binaries (Debug)
         if: matrix.build_type == 'Debug'
         uses: svenstaro/upload-release-action@v2
         with:
           repo_token: ${{ secrets.GITHUB_TOKEN }}
-          file: ${{ github.workspace }}/${{ github.event.repository.name }}-${{ matrix.config.os }}-Debug
+          file: ${{ github.workspace }}/${{ github.event.repository.name }}-${{ matrix.config.os }}-Debug.*
+          file_glob: true
           tag: nightly
           overwrite: true
 
@@ -180,6 +201,7 @@ jobs:
         uses: svenstaro/upload-release-action@v2
         with:
           repo_token: ${{ secrets.GITHUB_TOKEN }}
-          file: ${{ github.workspace }}/${{ github.event.repository.name }}-${{ matrix.config.os }}-Release
+          file: ${{ github.workspace }}/${{ github.event.repository.name }}-${{ matrix.config.os }}-Release.*
+          file_glob: true
           tag: nightly
           overwrite: true
