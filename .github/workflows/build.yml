@@ -148,3 +148,25 @@ jobs:
           name: ${{ github.event.repository.name }}-${{ matrix.config.os }}-Release
           path: |
             ${{ github.workspace }}/install-${{ matrix.build_type }}/sunaba/*
+
+      - name: Upload binaries (Debug)
+        if: matrix.build_type == 'Debug'
+        uses: svenstaro/upload-release-action@v2
+        with:
+          repo_token: ${{ secrets.GITHUB_TOKEN }}
+          file: ${{ github.workspace }}/install-${{ matrix.build_type }}/sunaba/*
+          tag: nightly    
+          file_glob: true
+          overwrite: true
+          asset_name: ${{ github.event.repository.name }}-${{ matrix.config.os }}-Debug
+
+      - name: Upload binaries (Release)
+        if: matrix.build_type == 'Release'
+        uses: svenstaro/upload-release-action@v2
+        with:
+          repo_token: ${{ secrets.GITHUB_TOKEN }}
+          file: ${{ github.workspace }}/install-${{ matrix.build_type }}/sunaba/*
+          tag: nightly    
+          file_glob: true
+          overwrite: true
+          asset_name: ${{ github.event.repository.name }}-${{ matrix.config.os }}-Release
