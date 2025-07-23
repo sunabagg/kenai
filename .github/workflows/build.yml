@@ -149,9 +149,20 @@ jobs:
           path: |
             ${{ github.workspace }}/install-${{ matrix.build_type }}/sunaba/*
       
-      - name: Release
+      - name: Publish (Debug)
+        if: matrix.build_type == 'Debug'
         uses: softprops/action-gh-release@v2
-        if: github.ref_type == 'tag'
         with:
+          name: ${{ github.event.repository.name }}-${{ matrix.config.os }}-Debug
+          tag_name: nightly
+          files: |
+            ${{ github.workspace }}/install-${{ matrix.build_type }}/sunaba/*
+      
+      - name: Publish (Release)
+        if: matrix.build_type == 'Release'
+        uses: softprops/action-gh-release@v2
+        with:
+          name: ${{ github.event.repository.name }}-${{ matrix.config.os }}-Release
+          tag_name: nightly
           files: |
             ${{ github.workspace }}/install-${{ matrix.build_type }}/sunaba/*
