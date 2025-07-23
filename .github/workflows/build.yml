@@ -166,25 +166,29 @@ jobs:
           name: ${{ github.event.repository.name }}-${{ matrix.config.os }}-Debug
           path: ${{ github.workspace }}/debug-temp
 
-      - name: Create archive (Debug)
-        if: matrix.build_type == 'Debug'
+      - name: Create archive (Debug) - Windows
+        if: matrix.build_type == 'Debug' && runner.os == 'Windows'
         run: |
           cd ${{ github.workspace }}/debug-temp
-          if [ "${{ runner.os }}" == "Windows" ]; then
-            7z a -tzip ${{ github.workspace }}/${{ github.event.repository.name }}-${{ matrix.config.os }}-Debug.zip *
-          else
-            tar -czf ${{ github.workspace }}/${{ github.event.repository.name }}-${{ matrix.config.os }}-Debug.tar.gz *
-          fi
+          Compress-Archive -Path * -DestinationPath ${{ github.workspace }}/${{ github.event.repository.name }}-${{ matrix.config.os }}-Debug.zip
 
-      - name: Create archive (Release)
-        if: matrix.build_type == 'Release'
+      - name: Create archive (Debug) - Unix
+        if: matrix.build_type == 'Debug' && runner.os != 'Windows'
+        run: |
+          cd ${{ github.workspace }}/debug-temp
+          tar -czf ${{ github.workspace }}/${{ github.event.repository.name }}-${{ matrix.config.os }}-Debug.tar.gz *
+
+      - name: Create archive (Release) - Windows
+        if: matrix.build_type == 'Release' && runner.os == 'Windows'
         run: |
           cd ${{ github.workspace }}/release-temp
-          if [ "${{ runner.os }}" == "Windows" ]; then
-            7z a -tzip ${{ github.workspace }}/${{ github.event.repository.name }}-${{ matrix.config.os }}-Release.zip *
-          else
-            tar -czf ${{ github.workspace }}/${{ github.event.repository.name }}-${{ matrix.config.os }}-Release.tar.gz *
-          fi
+          Compress-Archive -Path * -DestinationPath ${{ github.workspace }}/${{ github.event.repository.name }}-${{ matrix.config.os }}-Release.zip
+
+      - name: Create archive (Release) - Unix
+        if: matrix.build_type == 'Release' && runner.os != 'Windows'
+        run: |
+          cd ${{ github.workspace }}/release-temp
+          tar -czf ${{ github.workspace }}/${{ github.event.repository.name }}-${{ matrix.config.os }}-Release.tar.gz *
 
       - name: Upload binaries (Debug)
         if: matrix.build_type == 'Debug'
