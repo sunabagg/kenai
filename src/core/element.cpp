@@ -104,7 +104,14 @@ void sunaba::core::bindElement(sol::state &lua) {
         "getParent", &Element::getParent,
         "addChild", &Element::addChild,
         "removeChild", &Element::removeChild,
-        "getIndex", &Element::getIndex,
+        "getIndex", sol::factories(
+            [](Element* e) {
+                return e->getIndex();
+            },
+            [](Element* e, bool includeInternal) {
+                return e->getIndex(includeInternal);
+            }
+        )
         "getChildren", &Element::getChildren,
         "isNull", &Element::isNull,
         "getViewport", &Element::getViewport,
