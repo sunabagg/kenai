@@ -13,7 +13,6 @@ extern class Color {
     public static function rgb(r : Float, g : Float, b : Float): Color;
     @:native("new")
     public static function fromColorAndAlpha(color : Color, a : Float): Color;
-    @:native("new")
     public static function code(code : String, a : Float = 1.0): Color;
     public function blend(ove : Color) : Color;
     public function clamp(min : Color = null, max : Color = null) : Color;
