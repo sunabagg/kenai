@@ -7,7 +7,7 @@ void sunaba::core::bind_color(sol::state& lua) {
             Color(), 
             Color(float, float, float),
             Color(float, float, float, float),
-            Color(Color, float),
+            Color(Color, float)>(),
         "r", &Color::r,
         "g", &Color::g,
         "b", &Color::b,
