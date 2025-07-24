@@ -285,6 +285,20 @@
             "internalConsoleOptions": "openOnSessionStart",
         },
         {
+            "name": "Linux Launch (Local) (studio)",
+            "type": "lldb",
+            "request": "launch",
+            "program": "${env:HOME}/Applications/godot/godot",
+            "args": [
+                "--verbose",
+                "--path",
+                "${env:HOME}/sunaba-studio/template"
+            ],
+            "cwd": "${command:cmake.buildDirectory}/sunaba",
+            "preLaunchTask": "CMake: build",
+            "internalConsoleOptions": "openOnSessionStart",
+        },
+        {
             "name": "macOS Launch (Local)",
             "type": "lldb-dap",
             "request": "launch",
