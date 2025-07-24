@@ -19,6 +19,7 @@ extern class Element extends BaseObject {
     public function addChild(child: Element): Void;
     public function addSibling(sibling: Element): Void;
     public function removeChild(child: Element): Void;
+    public function getIndex(includeInternal: Bool = false): Int;
     public function getChildren(): Vector<Element>;
     public function isNull(): Bool;
     public function getViewport(): Viewport;
