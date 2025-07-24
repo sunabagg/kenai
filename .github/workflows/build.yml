@@ -156,7 +156,7 @@ jobs:
         if: matrix.build_type == 'Debug' && runner.os == 'Windows'
         run: |
           cd ${{ github.workspace }}/install-${{ matrix.build_type }}/sunaba/
-          Compress-Archive -Path * -DestinationPath ${{ github.workspace }}/${{ github.event.repository.name }}-${{ matrix.config.os }}-Debug.zip
+          Compress-Archive -Path * -DestinationPath ${{ github.workspace }}/${{ github.event.repository.name }}-${{ matrix.config.os }}-Debug.zip -CompressionLevel NoCompression
 
       - name: Create archive (Debug) - Unix
         if: matrix.build_type == 'Debug' && runner.os != 'Windows'
@@ -168,7 +168,7 @@ jobs:
         if: matrix.build_type == 'Release' && runner.os == 'Windows'
         run: |
           cd ${{ github.workspace }}/install-${{ matrix.build_type }}/sunaba/
-          Compress-Archive -Path * -DestinationPath ${{ github.workspace }}/${{ github.event.repository.name }}-${{ matrix.config.os }}-Release.zip
+          Compress-Archive -Path * -DestinationPath ${{ github.workspace }}/${{ github.event.repository.name }}-${{ matrix.config.os }}-Release.zip -CompressionLevel NoCompression
 
       - name: Create archive (Release) - Unix
         if: matrix.build_type == 'Release' && runner.os != 'Windows'
