@@ -449,6 +449,7 @@ namespace sunaba::ui {
             "cancelIme", &TextEdit::cancelIme,
             "centerViewportToCaret", &TextEdit::centerViewportToCaret,
             "clear", &TextEdit::clear,
+            "clearUndoHistory", &TextEdit::clearUndoHistory,
             "collapseCarets", &TextEdit::collapseCarets,
             "copy", &TextEdit::copy,
             "cut", &TextEdit::cut,
