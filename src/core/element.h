@@ -249,6 +249,10 @@ namespace sunaba::core {
 
         Element* getParent();
 
+        int getIndex(bool includeInternal = false) {
+            return node != nullptr ? node->get_index(includeInternal) : -1;
+        }
+
         void addChild(Element* child) {
             if (child != nullptr) {
                 if (node != nullptr) {
