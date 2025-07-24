@@ -152,42 +152,28 @@ jobs:
           path: |
             ${{ github.workspace }}/install-${{ matrix.build_type }}/sunaba/*
 
-      - name: Download artifact (Release)
-        if: matrix.build_type == 'Release'
-        uses: actions/download-artifact@v4
-        with:
-          name: ${{ github.event.repository.name }}-${{ matrix.config.os }}-Release
-          path: ${{ github.workspace }}/release-temp
-      
-      - name: Download artifact (Debug)
-        if: matrix.build_type == 'Debug'
-        uses: actions/download-artifact@v4
-        with:
-          name: ${{ github.event.repository.name }}-${{ matrix.config.os }}-Debug
-          path: ${{ github.workspace }}/debug-temp
-
       - name: Create archive (Debug) - Windows
         if: matrix.build_type == 'Debug' && runner.os == 'Windows'
         run: |
-          cd ${{ github.workspace }}/debug-temp
+          cd ${{ github.workspace }}/install-${{ matrix.build_type }}/sunaba/*
           Compress-Archive -Path * -DestinationPath ${{ github.workspace }}/${{ github.event.repository.name }}-${{ matrix.config.os }}-Debug.zip
 
       - name: Create archive (Debug) - Unix
         if: matrix.build_type == 'Debug' && runner.os != 'Windows'
         run: |
-          cd ${{ github.workspace }}/debug-temp
+          cd ${{ github.workspace }}/install-${{ matrix.build_type }}/sunaba/*
           zip -r ${{ github.workspace }}/${{ github.event.repository.name }}-${{ matrix.config.os }}-Debug.zip *
 
       - name: Create archive (Release) - Windows
         if: matrix.build_type == 'Release' && runner.os == 'Windows'
         run: |
-          cd ${{ github.workspace }}/release-temp
+          cd ${{ github.workspace }}/install-${{ matrix.build_type }}/sunaba/*
           Compress-Archive -Path * -DestinationPath ${{ github.workspace }}/${{ github.event.repository.name }}-${{ matrix.config.os }}-Release.zip
 
       - name: Create archive (Release) - Unix
         if: matrix.build_type == 'Release' && runner.os != 'Windows'
         run: |
-          cd ${{ github.workspace }}/release-temp
+          cd ${{ github.workspace }}/install-${{ matrix.build_type }}/sunaba/*
           zip -r ${{ github.workspace }}/${{ github.event.repository.name }}-${{ matrix.config.os }}-Release.zip *
 
       - name: Upload binaries (Debug)
