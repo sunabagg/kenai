@@ -324,6 +324,7 @@ namespace sunaba::core {
         virtual void onNodeFree()  {}
 
         virtual void onFree() override {
+            _delete();
             if (nodeSignalWrapper != nullptr) {
                 memdelete(nodeSignalWrapper);
                 nodeSignalWrapper = nullptr;
