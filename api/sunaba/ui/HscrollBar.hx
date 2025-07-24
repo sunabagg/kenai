@@ -8,7 +8,7 @@ extern class HscrollBar extends ScrollBar {
 
 abstract HscrollBarAbstract(HscrollBar) from HscrollBar to HscrollBar {
     @:from
-    public static function fromElement(element: sunaba.core.Element): sunaba.ui.HscrollBar {
+    public static function fromElement(element: sunaba.core.Element): HscrollBarAbstract {
         var hScrollBar = sunaba.ui.HscrollBar.toHScrollBar(element);
         if (hScrollBar.isNull()) {
             return null;
