@@ -111,7 +111,7 @@ void sunaba::core::bindElement(sol::state &lua) {
             [](Element* e, bool includeInternal) {
                 return e->getIndex(includeInternal);
             }
-        )
+        ),
         "getChildren", &Element::getChildren,
         "isNull", &Element::isNull,
         "getViewport", &Element::getViewport,
