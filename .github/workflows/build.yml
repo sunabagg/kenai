@@ -176,7 +176,7 @@ jobs:
         if: matrix.build_type == 'Debug' && runner.os != 'Windows'
         run: |
           cd ${{ github.workspace }}/debug-temp
-          tar -czf ${{ github.workspace }}/${{ github.event.repository.name }}-${{ matrix.config.os }}-Debug.tar.gz *
+          zip -r ${{ github.workspace }}/${{ github.event.repository.name }}-${{ matrix.config.os }}-Debug.zip *
 
       - name: Create archive (Release) - Windows
         if: matrix.build_type == 'Release' && runner.os == 'Windows'
@@ -188,7 +188,7 @@ jobs:
         if: matrix.build_type == 'Release' && runner.os != 'Windows'
         run: |
           cd ${{ github.workspace }}/release-temp
-          tar -czf ${{ github.workspace }}/${{ github.event.repository.name }}-${{ matrix.config.os }}-Release.tar.gz *
+          zip -r ${{ github.workspace }}/${{ github.event.repository.name }}-${{ matrix.config.os }}-Release.zip *
 
       - name: Upload binaries (Debug)
         if: matrix.build_type == 'Debug'
