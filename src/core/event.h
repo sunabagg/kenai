@@ -10,6 +10,7 @@
 #include <godot_cpp/godot.hpp>
 #include <sol/sol.hpp>
 #include <vector>
+#include <godot_cpp/classes/os.hpp>
 #ifdef USE_PORTABLE_FILE_DIALOGS
 #include "portable-file-dialogs.h"
 #endif
