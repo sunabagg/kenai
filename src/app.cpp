@@ -397,7 +397,7 @@ void App::initState(bool sandboxed) {
     global_state["__warnd"] = [](const std::string &err) {
 #ifdef USE_PORTABLE_FILE_DIALOGS
             auto msgBox = pfd::message(
-                "Error", err, pfd::choice::ok, pfd::icon::warning
+                "Warning", err, pfd::choice::ok, pfd::icon::warning
             );
             msgBox.result();
 #else
@@ -410,7 +410,7 @@ void App::initState(bool sandboxed) {
     global_state["__infod"] = [](const std::string &err) {
 #ifdef USE_PORTABLE_FILE_DIALOGS
             auto msgBox = pfd::message(
-                "Error", err, pfd::choice::ok, pfd::icon::info
+                "Info", err, pfd::choice::ok, pfd::icon::info
             );
             msgBox.result();
 #else
