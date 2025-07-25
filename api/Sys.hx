@@ -1,5 +1,6 @@
 /*
  * Copyright (C)2005-2019 Haxe Foundation
+ * Copyright (C)2025 mintkat
  *
  * Permission is hereby granted, free of charge, to any person obtaining a
  * copy of this software and associated documentation files (the "Software"),
@@ -19,7 +20,64 @@
  * FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER
  * DEALINGS IN THE SOFTWARE.
  */
+#if SANDBOXED
+import sys.io.FileInput;
+import sys.io.FileOutput;
+import sunaba.core.Vector;
+import sunaba.core.PlatformService;
 
+@:coreApi
+class Sys {
+	static var _system_name:String;
+
+	public static inline function print(v:Dynamic):Void {
+		return lua.Lib.print(v);
+	}
+
+	public static inline function println(v:Dynamic):Void {
+		return lua.Lib.println(v);
+	}
+
+	public inline static function args():Array<String> {
+		var vargs : Vector<String> = untyped __lua__("_G.__args");
+		var args = new Array<String>();
+		for (i in 1...vargs.size() + 1) {
+			// Skip null arguments
+			if (vargs.get(i) == null) {
+				continue;
+			} else {
+				var arg = vargs.get(i);
+				if (arg == null)
+					arg = "";
+				args.push(arg);
+			}
+		}
+		return args;
+	}
+
+	static function getSystemName():String {
+		var osName = PlatformService.osName;
+		if (osName == "macOS")
+			return "Mac";
+		return osName;
+	}
+
+	public static function systemName():String {
+		if (_system_name == null)
+			_system_name = getSystemName();
+		return _system_name;
+	}
+
+	@:deprecated("Use programPath instead") public static function executablePath():String {
+		return untyped __lua__("_G.execPath");
+	}
+
+	public inline static function programPath():String {
+		return untyped __lua__("_G.execPath");
+	}
+
+}
+#else
 import lua.Boot;
 import lua.Io;
 import lua.Lua;
@@ -153,3 +211,4 @@ class Sys {
 	}
 #end
 }
+#end
