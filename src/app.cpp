@@ -380,6 +380,19 @@ void App::initState(bool sandboxed) {
     global_state["libopen"] = [this](const std::string &path) {
         this->libopen(path);
     };
+
+    global_state["__errord"] = [](const std::string &err) {
+#ifdef USE_PORTABLE_FILE_DIALOGS
+            auto msgBox = pfd::message(
+                "Error", err, pfd::choice::ok, pfd::icon::error
+            );
+            msgBox.result();
+#else
+            OS::get_singleton()->alert(
+                err.c_str(), "Error"
+            );
+#endif
+    };
 }
 
 void App::libopen(const std::string& path) {
