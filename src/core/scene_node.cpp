@@ -2,6 +2,10 @@
 
 #include <godot_cpp/classes/engine.hpp>
 #include <godot_cpp/variant/utility_functions.hpp>
+#include <godot_cpp/classes/os.hpp>
+#ifdef USE_PORTABLE_FILE_DIALOGS
+#include "portable-file-dialogs.h"
+#endif
 
 namespace sunaba::core {
     SceneNode::SceneNode() {
@@ -20,17 +24,59 @@ namespace sunaba::core {
             return;
         }
         if (scene != nullptr) {
-            scene->ready();
+            try {
+                scene->ready();
+            }
+            catch (const sol::error& err) {
+#ifdef USE_PORTABLE_FILE_DIALOGS
+                auto msgBox = pfd::message(
+                    "Error", err.what(), pfd::choice::ok, pfd::icon::error
+                );
+                msgBox.result();
+#else
+                OS::get_singleton()->alert(
+                    err.what(), "Error"
+                );
+#endif
+            }
         }
     }
     void SceneNode::_process(double delta) {
         if (scene != nullptr) {
-            scene->update(delta);
+            try {
+                scene->update(delta);
+            }
+            catch (const sol::error& err) {
+#ifdef USE_PORTABLE_FILE_DIALOGS
+                auto msgBox = pfd::message(
+                    "Error", err.what(), pfd::choice::ok, pfd::icon::error
+                );
+                msgBox.result();
+#else
+                OS::get_singleton()->alert(
+                    err.what(), "Error"
+                );
+#endif
+            }
         }
     }
     void SceneNode::_physics_process(double delta) {
         if (scene != nullptr) {
-            scene->physicsUpdate(delta);
+            try {
+                scene->physicsUpdate(delta);
+            }
+            catch (const sol::error& err) {
+#ifdef USE_PORTABLE_FILE_DIALOGS
+                auto msgBox = pfd::message(
+                    "Error", err.what(), pfd::choice::ok, pfd::icon::error
+                );
+                msgBox.result();
+#else
+                OS::get_singleton()->alert(
+                    err.what(), "Error"
+                );
+#endif
+            }
         }
     }
     void SceneNode::_input(const Ref<InputEvent>& event) {}
