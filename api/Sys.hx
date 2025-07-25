@@ -23,8 +23,11 @@
 import lua.Boot;
 import lua.Io;
 import lua.Lua;
+#if LUA_VANILLA
+#else
 import lua.lib.luv.Os;
 import lua.lib.luv.Misc;
+#end
 import sys.io.FileInput;
 import sys.io.FileOutput;
 import sunaba.core.Vector;
@@ -91,10 +94,13 @@ class Sys {
 		return _system_name;
 	}
 
+#if LUA_VANILLA
+#else
 	public static function environment():Map<String, String> {
 		var env = lua.lib.luv.Os.environ();
 		return lua.Table.toMap(env);
 	}
+#end
 
 	@:deprecated("Use programPath instead") public static function executablePath():String {
 		return untyped __lua__("_G.execPath");
@@ -124,9 +130,11 @@ class Sys {
 		// TODO Verify
 		return lua.Os.setlocale(loc) != null;
 	}
-
+#if LUA_VANILLA
+#else
 	public static function sleep(seconds:Float):Void
 		lua.lib.luv.Thread.sleep(Math.floor(seconds * 1000));
+#end
 
 	public inline static function stderr():haxe.io.Output
 		return @:privateAccess new FileOutput(Io.stderr);
@@ -137,8 +145,11 @@ class Sys {
 	public inline static function stdout():haxe.io.Output
 		return @:privateAccess new FileOutput(Io.stdout);
 
+#if LUA_VANILLA
+#else
 	public static function time():Float {
 		var stamp = lua.lib.luv.Misc.gettimeofday();
 		return stamp.seconds + (stamp.microseconds / 1000000);
 	}
+#end
 }
