@@ -10,6 +10,9 @@
 #include <godot_cpp/godot.hpp>
 #include <sol/sol.hpp>
 #include <vector>
+#ifdef USE_PORTABLE_FILE_DIALOGS
+#include "portable-file-dialogs.h"
+#endif
 
 #include "base_object.h"
 
@@ -34,8 +37,22 @@ namespace sunaba::core {
             
             void callLuaListener(sol::function listener, sol::table args) {
                 // Call the Lua listener function with the provided arguments
-                auto solargs = sol::as_args(args);
+                try {
+                    auto solargs = sol::as_args(args);
                 listener(solargs);
+                }
+                 catch (const sol::error& err) {
+#ifdef USE_PORTABLE_FILE_DIALOGS
+                    auto msgBox = pfd::message(
+                        "Error", err.what(), pfd::choice::ok, pfd::icon::error
+                    );
+                    msgBox.result();
+#else
+                    OS::get_singleton()->alert(
+                        err.what(), "Error"
+                    );
+#endif
+                }
             }
 
             bool hasLuaListeners = false;
