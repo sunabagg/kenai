@@ -381,41 +381,41 @@ void App::initState(bool sandboxed) {
         this->libopen(path);
     };
 
-    global_state["__errord"] = [](const std::string &err) {
+    global_state["__errord"] = [](const std::string &err, const std::string& title) {
 #ifdef USE_PORTABLE_FILE_DIALOGS
             auto msgBox = pfd::message(
-                "Error", err, pfd::choice::ok, pfd::icon::error
+                title, err, pfd::choice::ok, pfd::icon::error
             );
             msgBox.result();
 #else
             OS::get_singleton()->alert(
-                err.c_str(), "Error"
+                err.c_str(), title.c_str()
             );
 #endif
     };
 
-    global_state["__warnd"] = [](const std::string &err) {
+    global_state["__warnd"] = [](const std::string &msg, const std::string& title) {
 #ifdef USE_PORTABLE_FILE_DIALOGS
             auto msgBox = pfd::message(
-                "Warning", err, pfd::choice::ok, pfd::icon::warning
+                title, msg, pfd::choice::ok, pfd::icon::warning
             );
             msgBox.result();
 #else
             OS::get_singleton()->alert(
-                err.c_str(), "Warning"
+                msg.c_str(), title.c_str()
             );
 #endif
     };
 
-    global_state["__infod"] = [](const std::string &err) {
+    global_state["__infod"] = [](const std::string &msg, const std::string& title) {
 #ifdef USE_PORTABLE_FILE_DIALOGS
             auto msgBox = pfd::message(
-                "Info", err, pfd::choice::ok, pfd::icon::info
+                title, msg, pfd::choice::ok, pfd::icon::info
             );
             msgBox.result();
 #else
             OS::get_singleton()->alert(
-                err.c_str(), "Info"
+                msg.c_str(), title.c_str()
             );
 #endif
     };
