@@ -41,7 +41,7 @@ namespace sunaba::core {
                     auto solargs = sol::as_args(args);
                 listener(solargs);
                 }
-                 catch (const sol::error& err) {
+                catch (const sol::error& err) {
 #ifdef USE_PORTABLE_FILE_DIALOGS
                     auto msgBox = pfd::message(
                         "Error", err.what(), pfd::choice::ok, pfd::icon::error
