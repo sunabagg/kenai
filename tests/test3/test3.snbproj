@@ -12,6 +12,7 @@
         "codegen"
     ],
     "compilerFlags": [
-        "-D absolute-path"
+        "-D absolute-path",
+        "-D SANDBOXED"
     ]
 }

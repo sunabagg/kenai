@@ -76,6 +76,66 @@ class Sys {
 		return untyped __lua__("_G.execPath");
 	}
 
+	public static function command(cmd:String, ?args:Array<String>):Int {
+		throw "Sys.command is not available in sandboxed mode.";
+	}
+
+	public inline static function cpuTime():Float {
+		throw "Sys.cpuTime is not available in sandboxed mode.";
+	}
+
+	public inline static function exit(code:Int):Void {
+		throw "Sys.exit is not available in sandboxed mode.";
+	}
+
+	public inline static function getChar(echo:Bool):Int {
+		throw "Sys.getChar is not available in sandboxed mode.";
+	}
+
+	public inline static function getCwd():String {
+		throw "Sys.getCwd is not available in sandboxed mode.";
+	}
+
+	public inline static function setCwd(s:String):Void {
+		throw "Sys.setCwd is not available in sandboxed mode.";
+	}
+
+	public inline static function getEnv(s:String):String {
+		throw "Sys.getEnv is not available in sandboxed mode.";
+	}
+
+	public inline static function putEnv(s:String, v:Null<String>):Void {
+		throw "Sys.putEnv is not available in sandboxed mode.";
+	}
+
+	public inline static function setTimeLocale(loc:String):Bool {
+		throw "Sys.setTimeLocale is not available in sandboxed mode.";
+	}
+
+	public inline static function stderr():haxe.io.Output {
+		throw "Sys.stderr is not available in sandboxed mode.";
+	}
+
+	public inline static function stdin():haxe.io.Input {
+		throw "Sys.stdin is not available in sandboxed mode.";
+	}
+
+	public inline static function stdout():haxe.io.Output {
+		throw "Sys.stdout is not available in sandboxed mode.";
+	}
+
+	public inline static function time():Float {
+		throw "Sys.time is not available in sandboxed mode.";
+	}
+
+	public static function environment():Map<String, String> {
+		throw "Sys.environment is not available in sandboxed mode.";
+	}
+
+	public static function sleep(seconds:Float):Void {
+		throw "Sys.sleep is not available in sandboxed mode.";
+	}
+
 }
 #else
 import lua.Boot;
