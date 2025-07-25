@@ -1,5 +1,5 @@
 package sunaba;
 
-function InfoD(err: String): Void {
-    untyped __lua__("_G.__infod(err)");
+function InfoD(msg: String, title: String = "Information"): Void {
+    untyped __lua__("_G.__infod(msg, title)");
 }
