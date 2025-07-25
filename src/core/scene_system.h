@@ -17,10 +17,6 @@
 #include <godot_cpp/classes/viewport.hpp>
 #include <godot_cpp/classes/node.hpp>
 #include <godot_cpp/variant/utility_functions.hpp>
-#include <godot_cpp/classes/os.hpp>
-#ifdef USE_PORTABLE_FILE_DIALOGS
-#include "portable-file-dialogs.h"
-#endif
 
 #include "base_object.h"
 
@@ -101,63 +97,21 @@ namespace sunaba::core
             if (scriptInstance == sol::lua_nil) return;
             auto func = scriptInstance["onInit"].get<sol::function>();
             if (!func) return;
-            try {
-                func(scriptInstance);
-            }
-            catch (const sol::error& err) {
-#ifdef USE_PORTABLE_FILE_DIALOGS
-                auto msgBox = pfd::message(
-                    "Error", err.what(), pfd::choice::ok, pfd::icon::error
-                );
-                msgBox.result();
-#else
-                OS::get_singleton()->alert(
-                    err.what(), "Error"
-                );
-#endif
-            }
+            func(scriptInstance);
         }
 
         virtual void onEnterTree() {
             if (scriptInstance == sol::lua_nil) return;
             auto func = scriptInstance["onEnterTree"].get<sol::function>();
             if (!func) return;
-            try {
-            	func(scriptInstance);
-            }
-            catch (const sol::error& err) {
-#ifdef USE_PORTABLE_FILE_DIALOGS
-                auto msgBox = pfd::message(
-                    "Error", err.what(), pfd::choice::ok, pfd::icon::error
-                );
-                msgBox.result();
-#else
-                OS::get_singleton()->alert(
-                    err.what(), "Error"
-                );
-#endif
-            }
+            func(scriptInstance);
         }
 
         virtual void onReady() {
             if (scriptInstance == sol::lua_nil) return;
             auto func = scriptInstance["onReady"].get<sol::function>();
             if (!func) return;
-            try {
-            	func(scriptInstance);
-            }
-            catch (const sol::error& err) {
-#ifdef USE_PORTABLE_FILE_DIALOGS
-                auto msgBox = pfd::message(
-                    "Error", err.what(), pfd::choice::ok, pfd::icon::error
-                );
-                msgBox.result();
-#else
-                OS::get_singleton()->alert(
-                    err.what(), "Error"
-                );
-#endif
-            }
+            func(scriptInstance);
         }
 
         virtual void onUpdate(double delta) {
@@ -166,21 +120,7 @@ namespace sunaba::core
             if (!func) return;
             
             sol::object deltaObj = sol::make_object(scriptInstance.lua_state(), delta);
-            try {
-            	func(scriptInstance, deltaObj);
-            }
-            catch (const sol::error& err) {
-#ifdef USE_PORTABLE_FILE_DIALOGS
-                auto msgBox = pfd::message(
-                    "Error", err.what(), pfd::choice::ok, pfd::icon::error
-                );
-                msgBox.result();
-#else
-                OS::get_singleton()->alert(
-                    err.what(), "Error"
-                );
-#endif
-            }
+            func(scriptInstance, deltaObj);
         }
 
         virtual void onPhysicsUpdate(double delta) {
@@ -189,42 +129,14 @@ namespace sunaba::core
             if (!func) return;
             
             sol::object deltaObj = sol::make_object(scriptInstance.lua_state(), delta);
-            try {
-            	func(scriptInstance, deltaObj);
-            }
-            catch (const sol::error& err) {
-#ifdef USE_PORTABLE_FILE_DIALOGS
-                auto msgBox = pfd::message(
-                    "Error", err.what(), pfd::choice::ok, pfd::icon::error
-                );
-                msgBox.result();
-#else
-                OS::get_singleton()->alert(
-                    err.what(), "Error"
-                );
-#endif
-            }
+            func(scriptInstance, deltaObj);
         }
 
         virtual void onExitTree() {
             if (scriptInstance == sol::lua_nil) return;
             auto func = scriptInstance["onExitTree"].get<sol::function>();
             if (!func) return;
-            try {
-            	func(scriptInstance);
-            }
-            catch (const sol::error& err) {
-#ifdef USE_PORTABLE_FILE_DIALOGS
-                auto msgBox = pfd::message(
-                    "Error", err.what(), pfd::choice::ok, pfd::icon::error
-                );
-                msgBox.result();
-#else
-                OS::get_singleton()->alert(
-                    err.what(), "Error"
-                );
-#endif
-            }
+            func(scriptInstance);
         }
 
         sol::table getScriptType() {
