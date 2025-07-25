@@ -393,6 +393,32 @@ void App::initState(bool sandboxed) {
             );
 #endif
     };
+
+    global_state["__warnd"] = [](const std::string &err) {
+#ifdef USE_PORTABLE_FILE_DIALOGS
+            auto msgBox = pfd::message(
+                "Error", err, pfd::choice::ok, pfd::icon::warning
+            );
+            msgBox.result();
+#else
+            OS::get_singleton()->alert(
+                err.c_str(), "Error"
+            );
+#endif
+    };
+
+    global_state["__infod"] = [](const std::string &err) {
+#ifdef USE_PORTABLE_FILE_DIALOGS
+            auto msgBox = pfd::message(
+                "Error", err, pfd::choice::ok, pfd::icon::info
+            );
+            msgBox.result();
+#else
+            OS::get_singleton()->alert(
+                err.c_str(), "Error"
+            );
+#endif
+    };
 }
 
 void App::libopen(const std::string& path) {
