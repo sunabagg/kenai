@@ -10,7 +10,6 @@
 
 #include "stl_function_wrapper.h"
 
-using namespace sunaba::core;
 using namespace godot;
 
 namespace sunaba::desktop {
@@ -137,7 +136,21 @@ namespace sunaba::core {
                 }
                 auto func = scriptInstance["exitTree"].get<sol::function>();
                 if (func) {
+                    try {
                     func(scriptInstance);
+                    }
+                    catch (const sol::error& err) {
+#ifdef USE_PORTABLE_FILE_DIALOGS
+                        auto msgBox = pfd::message(
+                            "Error", err.what(), pfd::choice::ok, pfd::icon::error
+                        );
+                        msgBox.result();
+#else
+                        OS::get_singleton()->alert(
+                            err.what(), "Error"
+                        );
+#endif
+                    }
                 }
             }
         }
@@ -149,7 +162,22 @@ namespace sunaba::core {
                 }
                 auto func = scriptInstance["ready"].get<sol::function>();
                 if (func) {
-                    func(scriptInstance);
+                    try {
+                        func(scriptInstance);
+                    }
+                    catch (const sol::error& err) {
+#ifdef USE_PORTABLE_FILE_DIALOGS
+                        auto msgBox = pfd::message(
+                            "Error", err.what(), pfd::choice::ok, pfd::icon::error
+                        );
+                        msgBox.result();
+#else
+                        OS::get_singleton()->alert(
+                            err.what(), "Error"
+                        );
+#endif
+                    }
+                    
                 }
             }
         }
@@ -162,7 +190,21 @@ namespace sunaba::core {
                 auto func = scriptInstance["process"].get<sol::function>();
                 if (func) {
                     sol::object deltaObj = sol::make_object(scriptInstance.lua_state(), delta);
-                    func(scriptInstance, deltaObj);
+                    try {
+                        func(scriptInstance, deltaObj);
+                	}
+                	catch (const sol::error& err) {
+#ifdef USE_PORTABLE_FILE_DIALOGS
+                    	auto msgBox = pfd::message(
+                        	"Error", err.what(), pfd::choice::ok, pfd::icon::error
+                    	);
+                    	msgBox.result();
+#else
+                    	OS::get_singleton()->alert(
+                        	err.what(), "Error"
+                    	);
+#endif
+                	}
                 }
             }
         }
@@ -175,7 +217,21 @@ namespace sunaba::core {
                 auto func = scriptInstance["physicsProcess"].get<sol::function>();
                 if (func) {
                     sol::object deltaObj = sol::make_object(scriptInstance.lua_state(), delta);
-                    func(scriptInstance, deltaObj);
+                    try {
+                        func(scriptInstance, deltaObj);
+                	}
+                	catch (const sol::error& err) {
+#ifdef USE_PORTABLE_FILE_DIALOGS
+                    	auto msgBox = pfd::message(
+                        	"Error", err.what(), pfd::choice::ok, pfd::icon::error
+                    	);
+                    	msgBox.result();
+#else
+                    	OS::get_singleton()->alert(
+                        	err.what(), "Error"
+                    	);
+#endif
+                	}
                 }
             }
         }
@@ -188,7 +244,21 @@ namespace sunaba::core {
                 auto func = scriptInstance["input"].get<sol::function>();
                 if (func) {
                     sunaba::input::InputEvent* eventObj = new sunaba::input::InputEvent(event.ptr());
-                    func(scriptInstance, eventObj);
+                    try {
+                        func(scriptInstance, eventObj);
+                    }
+                    catch (const sol::error& err) {
+#ifdef USE_PORTABLE_FILE_DIALOGS
+                    	auto msgBox = pfd::message(
+                        	"Error", err.what(), pfd::choice::ok, pfd::icon::error
+                    	);
+                    	msgBox.result();
+#else
+                    	OS::get_singleton()->alert(
+                        	err.what(), "Error"
+                    	);
+#endif
+                	}
                 }
             }
         }
@@ -201,7 +271,21 @@ namespace sunaba::core {
                 auto func = scriptInstance["unhandledInput"].get<sol::function>();
                 if (func) {
                     sunaba::input::InputEvent* eventObj = new sunaba::input::InputEvent(event.ptr());
-                    func(scriptInstance, eventObj);
+                    try {
+                        func(scriptInstance, eventObj);
+                    }
+                    catch (const sol::error& err) {
+#ifdef USE_PORTABLE_FILE_DIALOGS
+                    	auto msgBox = pfd::message(
+                        	"Error", err.what(), pfd::choice::ok, pfd::icon::error
+                    	);
+                    	msgBox.result();
+#else
+                    	OS::get_singleton()->alert(
+                        	err.what(), "Error"
+                    	);
+#endif
+                	}
                 }
             }
         }
@@ -214,7 +298,21 @@ namespace sunaba::core {
                 auto func = scriptInstance["unhandledKeyInput"].get<sol::function>();
                 if (func) {
                     sunaba::input::InputEvent* eventObj = new sunaba::input::InputEvent(event.ptr());
-                    func(scriptInstance, eventObj);
+                    try {
+                        func(scriptInstance, eventObj);
+                    }
+                    catch (const sol::error& err) {
+#ifdef USE_PORTABLE_FILE_DIALOGS
+                    	auto msgBox = pfd::message(
+                        	"Error", err.what(), pfd::choice::ok, pfd::icon::error
+                    	);
+                    	msgBox.result();
+#else
+                    	OS::get_singleton()->alert(
+                        	err.what(), "Error"
+                    	);
+#endif
+                	}
                 }
             }
         }
@@ -227,7 +325,21 @@ namespace sunaba::core {
                 auto func = scriptInstance["shortcutInput"].get<sol::function>();
                 if (func) {
                     sunaba::input::InputEvent* eventObj = new sunaba::input::InputEvent(event.ptr());
-                    func(scriptInstance, eventObj);
+                    try {
+                        func(scriptInstance, eventObj);
+                    }
+                    catch (const sol::error& err) {
+#ifdef USE_PORTABLE_FILE_DIALOGS
+                    	auto msgBox = pfd::message(
+                        	"Error", err.what(), pfd::choice::ok, pfd::icon::error
+                    	);
+                    	msgBox.result();
+#else
+                    	OS::get_singleton()->alert(
+                        	err.what(), "Error"
+                    	);
+#endif
+                	}
                 }
             }
         }
@@ -240,7 +352,21 @@ namespace sunaba::core {
                 auto func = scriptInstance["notification"].get<sol::function>();
                 if (func) {
                     sol::object whatObj = sol::make_object(scriptInstance.lua_state(), what);
-                    func(scriptInstance, whatObj);
+                    try {
+                        func(scriptInstance, whatObj);
+                    }
+                    catch (const sol::error& err) {
+#ifdef USE_PORTABLE_FILE_DIALOGS
+                    	auto msgBox = pfd::message(
+                        	"Error", err.what(), pfd::choice::ok, pfd::icon::error
+                    	);
+                    	msgBox.result();
+#else
+                    	OS::get_singleton()->alert(
+                        	err.what(), "Error"
+                    	);
+#endif
+                	}
                 }
             }
         }
