@@ -402,7 +402,7 @@ void App::initState(bool sandboxed) {
             msgBox.result();
 #else
             OS::get_singleton()->alert(
-                err.c_str(), "Error"
+                err.c_str(), "Warning"
             );
 #endif
     };
@@ -415,7 +415,7 @@ void App::initState(bool sandboxed) {
             msgBox.result();
 #else
             OS::get_singleton()->alert(
-                err.c_str(), "Error"
+                err.c_str(), "Info"
             );
 #endif
     };
