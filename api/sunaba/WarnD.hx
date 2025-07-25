@@ -1,5 +1,5 @@
 package sunaba;
 
-function WarnD(err: String): Void {
-    untyped __lua__("_G.__warnd(err)");
+function WarnD(msg: String, title: String = "Warning"): Void {
+    untyped __lua__("_G.__warnd(msg, title)");
 }
