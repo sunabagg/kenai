@@ -27,7 +27,7 @@ jobs:
       matrix:
         build_type: ['Debug', 'Release']
         config:
-          #- { name: '🍏 macOS Clang', os: macos-latest }
+          - { name: '🍏 macOS Clang', os: macos-latest }
           - { name: '🐧 Linux GCC', os: ubuntu-22.04 }
           - { name: '🪟 Windows MSVC', os: windows-latest }
           #- { name: '💪🪟 Windows Arm MSVC', os: windows-11-arm }
