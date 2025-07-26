@@ -97,6 +97,11 @@ if ( APPLE )
     set( LIB_ARCH "universal" )
 elseif ( ANDROID )
     set( LIB_ARCH ${CMAKE_ANDROID_ARCH_ABI} )
+elseif ( WIN32 AND CMAKE_GENERATOR_PLATFORM STREQUAL "arm64" )
+    # For Windows ARM64 cross-compilation, CMAKE_SYSTEM_PROCESSOR might still be AMD64
+    set( LIB_ARCH "ARM64" )
+endif()
+if ( ANDROID )
     # Disable FORTIFY_SOURCE to prevent buffer overflow crashes in Lua strchr calls
     set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=0")
     set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=0")
