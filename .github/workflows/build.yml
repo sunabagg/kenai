@@ -15,10 +15,14 @@ on:
 permissions:
   contents: write
 
+concurrency:
+  group: ${{ github.ref }}
+  cancel-in-progress: true
+
 jobs:
   build:
     strategy:
-      fail-fast: false
+      fail-fast: true
       matrix:
         build_type: ['Debug', 'Release']
         config:

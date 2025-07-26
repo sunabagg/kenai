@@ -38,8 +38,10 @@ endif()
 # Add paths to modules
 list( APPEND CMAKE_MODULE_PATH "${CMAKE_CURRENT_SOURCE_DIR}/cmake/" )
 
-# Turn on link time optimization for everything
-set( CMAKE_INTERPROCEDURAL_OPTIMIZATION_RELEASE ON )
+# Turn on link time optimization for everything (disabled for Emscripten)
+if(NOT EMSCRIPTEN)
+    set( CMAKE_INTERPROCEDURAL_OPTIMIZATION_RELEASE ON )
+endif()
 
 # Output compile commands to compile_commands.json (for debugging CMake issues)
 set( CMAKE_EXPORT_COMPILE_COMMANDS ON )
@@ -54,6 +56,10 @@ endif()
 # Note that CMAKE_OSX_ARCHITECTURES must be set before project().
 if ( APPLE )
     set( CMAKE_OSX_ARCHITECTURES "x86_64;arm64" CACHE STRING "" )
+endif()
+
+if (EMSCRIPTEN)
+    set( CMAKE_SYSTEM_PROCESSOR "wasm32" CACHE STRING "" )
 endif()
 
 # Main project information
@@ -180,89 +186,71 @@ if ( NOT EXISTS "${CMAKE_CURRENT_LIST_DIR}/extern/godot-cpp/Makefile" )
 endif()
 
 if (EMSCRIPTEN)
+    # Reduce optimization to prevent compiler crashes  
+    set(CMAKE_INTERPROCEDURAL_OPTIMIZATION_RELEASE OFF)
+    set(CMAKE_INTERPROCEDURAL_OPTIMIZATION OFF)
+    
+    # Use minimal optimization
+    set(CMAKE_CXX_FLAGS_RELEASE "-O0 -DNDEBUG")
+    set(CMAKE_C_FLAGS_RELEASE "-O0 -DNDEBUG")
+    set(CMAKE_CXX_FLAGS_DEBUG "-O0 -g")
+    set(CMAKE_C_FLAGS_DEBUG "-O0 -g")
+    
+    # Override Emscripten's exception handling settings
+    set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -fwasm-exceptions")
+    
     target_compile_options( ${PROJECT_NAME}
         PUBLIC
-        -sSIDE_MODULE=1#not sure if this had some effect
-        -sSUPPORT_LONGJMP=emscripten#fixed exception handling related errors
-        -flto=full#fixed lto errors
-        -pthread#fixed shared memory errors
+        -sSIDE_MODULE=1
+        -pthread
         -shared
-        #removed -fno-exceptions
+        -fno-lto  # Explicitly disable LTO
+        -fwasm-exceptions  # Use WebAssembly exceptions instead of setjmp/longjmp
+        -Wno-error=macro-redefined
+        -Wno-error=implicit-function-declaration
+        -Wno-error=unknown-warning-option
     )
 
     target_link_options( ${PROJECT_NAME}
         INTERFACE
         -sWASM_BIGINT
         -sSIDE_MODULE=1
-        -sSUPPORT_LONGJMP=emscripten#same stuff here
         -fvisibility=hidden
         -shared
-        -flto=full
         -pthread
+        -fno-lto  # Explicitly disable LTO
+        -fwasm-exceptions  # Use WebAssembly exceptions
     )
-
-    set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wno-error=macro-redefined")
-    set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wno-error=implicit-function-declaration")
-    set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wno-error=unknown-warning-option")
-
-    # Add this before the add_subdirectory( extern/quickjs ) line
-    set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wno-error=pedantic -Wno-error=cast-function-type")
-
-    # Add this line to disable treating warnings as errors
-    set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wno-error=shadow")
-    set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wno-error=deprecated-declarations")
-    set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wno-error=unused-function")
-    set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wno-error=missing-field-initializers")
-    set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wno-error=return-type")
-    set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wno-error=address")
-    set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wno-error=pedantic")
-    set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wno-error=sign-compare")
-    set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wno-error=comment")
-    set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wno-error=array-bounds")
-
-    
 endif()
 
 set( GODOT_CPP_SYSTEM_HEADERS ON CACHE BOOL "" FORCE )
 
 if ( __COMPILER_GNU OR GCC OR CLANG OR APPLE )
-    # Add this before the add_subdirectory( extern/quickjs ) line
-    set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wno-error=pedantic -Wno-error=cast-function-type")
-    
-
-
-    # Add this line to disable treating warnings as errors
-    set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wno-error=shadow")
-    set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wno-error=deprecated-declarations")
-    set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wno-error=unused-function")
-    set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wno-error=missing-field-initializers")
-    set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wno-error=return-type")
-    set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wno-error=address")
-    set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wno-error=pedantic")
-    set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wno-error=sign-compare")
-    set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wno-error=comment")
-    set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wno-error=array-bounds")
-    set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -g")
-
+    # Consolidated warning suppression flags
     target_compile_options( ${PROJECT_NAME}
         PUBLIC
         -Wno-error=pedantic
         -Wno-error=cast-function-type
+        -Wno-error=duplicated-branches
         -Wno-error=shadow
         -Wno-error=deprecated-declarations
         -Wno-error=unused-function
         -Wno-error=missing-field-initializers
         -Wno-error=return-type
         -Wno-error=address
-        -Wno-error=pedantic
         -Wno-error=sign-compare
         -Wno-error=comment
         -Wno-error=array-bounds
         -fpermissive
         -fexceptions
         -ftemplate-backtrace-limit=0
-            -D_GLIBCXX_USE_CXX11_ABI=1
+        -D_GLIBCXX_USE_CXX11_ABI=1
     )
+    
+    # Add debug symbols for non-release builds
+    if(CMAKE_BUILD_TYPE STREQUAL "Debug")
+        target_compile_options( ${PROJECT_NAME} PUBLIC -g )
+    endif()
 endif()
 
 if ( MSVC )
@@ -574,10 +562,12 @@ endif()
 
 # Set output file extension and shared library properties based on platform
 if (EMSCRIPTEN)
+    # Disable all optimizations for Emscripten builds to prevent compiler crashes
     set_target_properties(${PROJECT_NAME} PROPERTIES
         SUFFIX ".wasm"
         OUTPUT_NAME "${PROJECT_NAME}"
         PREFIX "lib"
-        LINK_FLAGS "-sSIDE_MODULE=1 -shared"
+        INTERPROCEDURAL_OPTIMIZATION FALSE
+        LINK_FLAGS "-sSIDE_MODULE=1 -shared -O1 -fno-lto"
     )
 endif()
