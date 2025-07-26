@@ -147,8 +147,7 @@ jobs:
         run: cmake --install GDExtension-build
 
       - name: Upload artifact (Debug)
-        if: matrix.build_type == 'Debug'
-        if: matrix.config.os != 'windows-11-arm'
+        if: matrix.build_type == 'Debug' && matrix.config.os != 'windows-11-arm'
         uses: actions/upload-artifact@v4
         with:
           name: ${{ github.event.repository.name }}-${{ matrix.config.os }}-Debug
@@ -156,8 +155,7 @@ jobs:
             ${{ github.workspace }}/install-${{ matrix.build_type }}/sunaba/*
 
       - name: Upload artifact (Release)
-        if: matrix.build_type != 'Release'
-        if: matrix.config.os != 'windows-11-arm'
+        if: matrix.build_type != 'Release' && matrix.config.os != 'windows-11-arm'
         uses: actions/upload-artifact@v4
         with:
           name: ${{ github.event.repository.name }}-${{ matrix.config.os }}-Release
@@ -165,8 +163,7 @@ jobs:
             ${{ github.workspace }}/install-${{ matrix.build_type }}/sunaba/*
         
       - name: Upload artifact (Windows Arm64) (Debug)
-        if: matrix.build_type == 'Debug'
-        if: matrix.config.os == 'windows-11-arm'
+        if: matrix.build_type == 'Debug' && matrix.config.os == 'windows-11-arm'
         uses: actions/upload-artifact@v4
         with:
           name: ${{ github.event.repository.name }}-${{ matrix.config.os }}-Debug
@@ -174,8 +171,7 @@ jobs:
             ${{ github.workspace }}/GDExtension-build/sunaba/*
 
       - name: Upload artifact (Windows Arm64) (Release)
-        if: matrix.build_type != 'Release'
-        if: matrix.config.os == 'windows-11-arm'
+        if: matrix.build_type != 'Release' && matrix.config.os == 'windows-11-arm'
         uses: actions/upload-artifact@v4
         with:
           name: ${{ github.event.repository.name }}-${{ matrix.config.os }}-Release
