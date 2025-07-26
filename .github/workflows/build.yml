@@ -107,6 +107,7 @@ jobs:
           -B GDExtension-build
           -G "Ninja"
           -DCMAKE_BUILD_TYPE=${{ matrix.build_type }}
+          -D CMAKE_C_COMPILER_LAUNCHER=ccache 
           -D CMAKE_CXX_COMPILER_LAUNCHER=ccache
           --install-prefix ${{ github.workspace }}/install-${{ matrix.build_type }}
           .
@@ -122,6 +123,7 @@ jobs:
           -A arm64
           -DCMAKE_BUILD_TYPE=${{ matrix.build_type }}
           -DVCPKG_TARGET_TRIPLET=arm64-windows
+          -D CMAKE_C_COMPILER_LAUNCHER=ccache 
           -D CMAKE_CXX_COMPILER_LAUNCHER=ccache
           --install-prefix ${{ github.workspace }}/install-${{ matrix.build_type }}
           -DUSE_LUAJIT=OFF
