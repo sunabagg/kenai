@@ -143,10 +143,12 @@ jobs:
         run: cmake --build GDExtension-build
 
       - name: Install
+        if: matrix.config.os != 'windows-11-arm'
         run: cmake --install GDExtension-build
 
       - name: Upload artifact (Debug)
         if: matrix.build_type == 'Debug'
+        if: matrix.config.os != 'windows-11-arm'
         uses: actions/upload-artifact@v4
         with:
           name: ${{ github.event.repository.name }}-${{ matrix.config.os }}-Debug
@@ -154,17 +156,42 @@ jobs:
             ${{ github.workspace }}/install-${{ matrix.build_type }}/sunaba/*
 
       - name: Upload artifact (Release)
-        if: matrix.build_type == 'Release'
+        if: matrix.build_type != 'Release'
+        if: matrix.config.os != 'windows-11-arm'
         uses: actions/upload-artifact@v4
         with:
           name: ${{ github.event.repository.name }}-${{ matrix.config.os }}-Release
           path: |
             ${{ github.workspace }}/install-${{ matrix.build_type }}/sunaba/*
+        
+      - name: Upload artifact (Windows Arm64) (Debug)
+        if: matrix.build_type == 'Debug'
+        if: matrix.config.os == 'windows-11-arm'
+        uses: actions/upload-artifact@v4
+        with:
+          name: ${{ github.event.repository.name }}-${{ matrix.config.os }}-Debug
+          path: |
+            ${{ github.workspace }}/GDExtension-build/sunaba/*
+
+      - name: Upload artifact (Windows Arm64) (Release)
+        if: matrix.build_type != 'Release'
+        if: matrix.config.os == 'windows-11-arm'
+        uses: actions/upload-artifact@v4
+        with:
+          name: ${{ github.event.repository.name }}-${{ matrix.config.os }}-Release
+          path: |
+            ${{ github.workspace }}/GDExtension-build/sunaba/*
 
       - name: Create archive (Debug) - Windows
-        if: matrix.build_type == 'Debug' && runner.os == 'Windows'
+        if: matrix.build_type == 'Debug' && matrix.config.os == 'windows-latest'
         run: |
           cd ${{ github.workspace }}/install-${{ matrix.build_type }}/sunaba/
+          Compress-Archive -Path * -DestinationPath ${{ github.workspace }}/${{ github.event.repository.name }}-${{ matrix.config.os }}-Debug.zip -CompressionLevel NoCompression
+      
+      - name: Create archive (Debug) - Windows Arm64
+        if: matrix.build_type == 'Debug' && matrix.config.os == 'windows-11-arm'
+        run: |
+          cd ${{ github.workspace }}/GDExtension-build/sunaba/
           Compress-Archive -Path * -DestinationPath ${{ github.workspace }}/${{ github.event.repository.name }}-${{ matrix.config.os }}-Debug.zip -CompressionLevel NoCompression
 
       - name: Create archive (Debug) - Unix
@@ -174,9 +201,15 @@ jobs:
           zip -r -0 ${{ github.workspace }}/${{ github.event.repository.name }}-${{ matrix.config.os }}-Debug.zip *
 
       - name: Create archive (Release) - Windows
-        if: matrix.build_type == 'Release' && runner.os == 'Windows'
+        if: matrix.build_type == 'Release' && matrix.config.os == 'windows-latest'
         run: |
           cd ${{ github.workspace }}/install-${{ matrix.build_type }}/sunaba/
+          Compress-Archive -Path * -DestinationPath ${{ github.workspace }}/${{ github.event.repository.name }}-${{ matrix.config.os }}-Release.zip -CompressionLevel NoCompression
+      
+      - name: Create archive (Release) - Windows Arm64
+        if: matrix.build_type == 'Release' && matrix.config.os == 'windows-11-arm'
+        run: |
+          cd ${{ github.workspace }}/GDExtension-build/sunaba/
           Compress-Archive -Path * -DestinationPath ${{ github.workspace }}/${{ github.event.repository.name }}-${{ matrix.config.os }}-Release.zip -CompressionLevel NoCompression
 
       - name: Create archive (Release) - Unix
