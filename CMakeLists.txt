@@ -156,13 +156,19 @@ if(CMAKE_CONFIGURATION_TYPES)
             ARCHIVE_OUTPUT_DIRECTORY_${CONFIG_UPPER} "${BUILD_OUTPUT_DIR}/${LIB_DIR}"
         )
     endforeach()
-endif()
-
-if( NOT DEFINED CMAKE_DEBUG_POSTFIX )
+    # For multi-config generators, disable debug postfix to avoid filename conflicts during install
     set_target_properties( ${PROJECT_NAME}
         PROPERTIES
-            DEBUG_POSTFIX "-d"
+            DEBUG_POSTFIX ""
     )
+else()
+    # Only use debug postfix for single-config generators
+    if( NOT DEFINED CMAKE_DEBUG_POSTFIX )
+        set_target_properties( ${PROJECT_NAME}
+            PROPERTIES
+                DEBUG_POSTFIX "-d"
+        )
+    endif()
 endif()
 
 # Copy over additional files from the support_files directory
@@ -172,11 +178,26 @@ add_custom_command(
     COMMAND ${CMAKE_COMMAND} -E echo "Build directory: ${CMAKE_CURRENT_BINARY_DIR}"
     COMMAND ${CMAKE_COMMAND} -E echo "Expected target location: $<TARGET_FILE:${PROJECT_NAME}>"
     COMMAND ${CMAKE_COMMAND} -E echo "Output directory: ${BUILD_OUTPUT_DIR}/${LIB_DIR}"
+    COMMAND ${CMAKE_COMMAND} -E echo "Configuration: $<CONFIG>"
+    COMMAND ${CMAKE_COMMAND} -E echo "Target name: $<TARGET_FILE_NAME:${PROJECT_NAME}>"
     COMMAND ${CMAKE_COMMAND} -E echo "=== END BUILD OUTPUT DEBUG INFO ==="
+    COMMAND ${CMAKE_COMMAND} -E make_directory "${BUILD_OUTPUT_DIR}/${LIB_DIR}"
     COMMAND ${CMAKE_COMMAND} -E copy_directory
             "${CMAKE_SOURCE_DIR}/support_files"
             ${BUILD_OUTPUT_DIR}
 )
+
+# For Windows, add a specific command to handle debug postfix naming issue
+if(WIN32 AND CMAKE_CONFIGURATION_TYPES)
+    add_custom_command(
+        TARGET ${PROJECT_NAME} POST_BUILD
+        COMMAND ${CMAKE_COMMAND} -E echo "Copying DLL for install compatibility..."
+        COMMAND ${CMAKE_COMMAND} -E copy_if_different 
+                "$<TARGET_FILE:${PROJECT_NAME}>"
+                "${BUILD_OUTPUT_DIR}/${LIB_DIR}/${PROJECT_NAME}.dll"
+        COMMENT "Ensuring DLL is available for install"
+    )
+endif()
 
 
 # Install library, extension file, and support files in ${CMAKE_INSTALL_PREFIX}/${PROJECT_NAME}
