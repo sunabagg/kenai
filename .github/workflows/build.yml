@@ -1,11 +1,11 @@
 name: Build
 
 on:
-  #push:
-  #  paths-ignore:
-  #    - '.gitignore'
-  #    - '*.md'
-  #    - '*.hx'
+  push:
+    paths-ignore:
+      - '.gitignore'
+      - '*.md'
+      - '*.hx'
   
   schedule:
     - cron: '0 8 * * *' # run at 8 AM UTC/ 12 AM AKDT
@@ -185,7 +185,7 @@ jobs:
           zip -r -0 ${{ github.workspace }}/${{ github.event.repository.name }}-${{ matrix.config.os }}-Release.zip *
 
       - name: Upload binaries (Debug)
-        if: matrix.build_type == 'Debug'
+        if: matrix.build_type == 'Debug' && github.ref_name == 'main'
         uses: svenstaro/upload-release-action@v2
         with:
           repo_token: ${{ secrets.GITHUB_TOKEN }}
@@ -195,7 +195,7 @@ jobs:
           overwrite: true
 
       - name: Upload binaries (Release)
-        if: matrix.build_type == 'Release'
+        if: matrix.build_type == 'Release' && github.ref_name == 'main'
         uses: svenstaro/upload-release-action@v2
         with:
           repo_token: ${{ secrets.GITHUB_TOKEN }}
