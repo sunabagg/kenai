@@ -20,6 +20,8 @@ using namespace sunaba::core;
 namespace sunaba::ui {
     void bindControl(sol::state &lua);
 
+    class Control;
+
     class ControlSignalWrapper : public Object {
         GDCLASS(ControlSignalWrapper, Object)
         protected:
