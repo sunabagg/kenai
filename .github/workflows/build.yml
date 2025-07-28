@@ -73,6 +73,11 @@ jobs:
         uses: ilammy/msvc-dev-cmd@v1
         with:
           arch: amd64_arm64
+      
+      - name: Set up JDK 17
+        uses: actions/setup-java@v1
+        with:
+          java-version: 17
 
       - name: ccache
         if: matrix.config.os != 'windows-11-arm'
@@ -100,7 +105,7 @@ jobs:
           ${{ github.workspace }}/vcpkg/vcpkg install --triplet arm64-windows
 
       - name: Configure
-        if: matrix.config.os == 'macos-latest' || matrix.config.os == 'ubuntu-22.04' || matrix.config.os == 'windows-latest'
+        if: matrix.config.os == 'macos-latest' || matrix.config.target == 'linux-amd64' || matrix.config.os == 'windows-latest'
         # For Windows Arm, we handle configuration separately
         run: >
           mkdir GDExtension-build
@@ -109,6 +114,29 @@ jobs:
           -B GDExtension-build
           -G "Ninja"
           -DCMAKE_BUILD_TYPE=${{ matrix.build_type }}
+          -D CMAKE_C_COMPILER_LAUNCHER=ccache 
+          -D CMAKE_CXX_COMPILER_LAUNCHER=ccache
+          --install-prefix ${{ github.workspace }}/install-${{ matrix.build_type }}
+          .
+      
+      - name: Export Android NDK Path
+        if: matrix.config.target == 'android'
+        run: export ANDROID_NDK_HOME=$ANDROID_SDK_ROOT/ndk/$(ls $ANDROID_SDK_ROOT/ndk | sort -V | tail -n 1)
+
+      - name: Configure (Android)
+        if: matrix.config.target == 'android'
+        run: >
+          mkdir GDExtension-build
+
+          cmake
+          -B GDExtension-build
+          -G "Ninja"
+          -DCMAKE_BUILD_TYPE=${{ matrix.build_type }}
+          -DCMAKE_SYSTEM_NAME=Android 
+          -DCMAKE_ANDROID_NDK=$ANDROID_NDK_HOME
+          -DCMAKE_ANDROID_ARCH_ABI=arm64-v8a
+          -DCMAKE_C_COMPILER=$ANDROID_NDK_HOME/toolchains/llvm/prebuilt/linux-x86_64/bin/aarch64-linux-android21-clang 
+          -DCMAKE_CXX_COMPILER=$ANDROID_NDK_HOME/toolchains/llvm/prebuilt/linux-x86_64/bin/aarch64-linux-android21-clang++ 
           -D CMAKE_C_COMPILER_LAUNCHER=ccache 
           -D CMAKE_CXX_COMPILER_LAUNCHER=ccache
           --install-prefix ${{ github.workspace }}/install-${{ matrix.build_type }}
@@ -167,7 +195,7 @@ jobs:
         if: matrix.build_type == 'Debug' && matrix.config.os == 'windows-11-arm'
         uses: actions/upload-artifact@v4
         with:
-          name: ${{ github.event.repository.name }}-${{ matrix.config.os }}-Debug
+          name: ${{ github.event.repository.name }}-${{ matrix.config.target }}-Debug
           path: |
             ${{ github.workspace }}/GDExtension-build/sunaba/*
 
@@ -175,7 +203,7 @@ jobs:
         if: matrix.build_type != 'Release' && matrix.config.os == 'windows-11-arm'
         uses: actions/upload-artifact@v4
         with:
-          name: ${{ github.event.repository.name }}-${{ matrix.config.os }}-Release
+          name: ${{ github.event.repository.name }}-${{ matrix.config.target }}-Release
           path: |
             ${{ github.workspace }}/GDExtension-build/sunaba/*
 
@@ -183,44 +211,44 @@ jobs:
         if: matrix.build_type == 'Debug' && matrix.config.os == 'windows-latest'
         run: |
           cd ${{ github.workspace }}/install-${{ matrix.build_type }}/sunaba/
-          Compress-Archive -Path * -DestinationPath ${{ github.workspace }}/${{ github.event.repository.name }}-${{ matrix.config.os }}-Debug.zip -CompressionLevel NoCompression
+          Compress-Archive -Path * -DestinationPath ${{ github.workspace }}/${{ github.event.repository.name }}-${{ matrix.config.target }}-Debug.zip -CompressionLevel NoCompression
       
       - name: Create archive (Debug) - Windows Arm64
         if: matrix.build_type == 'Debug' && matrix.config.os == 'windows-11-arm'
         run: |
           cd ${{ github.workspace }}/GDExtension-build/sunaba/
-          Compress-Archive -Path * -DestinationPath ${{ github.workspace }}/${{ github.event.repository.name }}-${{ matrix.config.os }}-Debug.zip -CompressionLevel NoCompression
+          Compress-Archive -Path * -DestinationPath ${{ github.workspace }}/${{ github.event.repository.name }}-${{ matrix.config.target }}-Debug.zip -CompressionLevel NoCompression
 
       - name: Create archive (Debug) - Unix
         if: matrix.build_type == 'Debug' && runner.os != 'Windows'
         run: |
           cd ${{ github.workspace }}/install-${{ matrix.build_type }}/sunaba/
-          zip -r -0 ${{ github.workspace }}/${{ github.event.repository.name }}-${{ matrix.config.os }}-Debug.zip *
+          zip -r -0 ${{ github.workspace }}/${{ github.event.repository.name }}-${{ matrix.config.target }}-Debug.zip *
 
       - name: Create archive (Release) - Windows
         if: matrix.build_type == 'Release' && matrix.config.os == 'windows-latest'
         run: |
           cd ${{ github.workspace }}/install-${{ matrix.build_type }}/sunaba/
-          Compress-Archive -Path * -DestinationPath ${{ github.workspace }}/${{ github.event.repository.name }}-${{ matrix.config.os }}-Release.zip -CompressionLevel NoCompression
-      
+          Compress-Archive -Path * -DestinationPath ${{ github.workspace }}/${{ github.event.repository.name }}-${{ matrix.config.target }}-Release.zip -CompressionLevel NoCompression
+
       - name: Create archive (Release) - Windows Arm64
         if: matrix.build_type == 'Release' && matrix.config.os == 'windows-11-arm'
         run: |
           cd ${{ github.workspace }}/GDExtension-build/sunaba/
-          Compress-Archive -Path * -DestinationPath ${{ github.workspace }}/${{ github.event.repository.name }}-${{ matrix.config.os }}-Release.zip -CompressionLevel NoCompression
+          Compress-Archive -Path * -DestinationPath ${{ github.workspace }}/${{ github.event.repository.name }}-${{ matrix.config.target }}-Release.zip -CompressionLevel NoCompression
 
       - name: Create archive (Release) - Unix
         if: matrix.build_type == 'Release' && runner.os != 'Windows'
         run: |
           cd ${{ github.workspace }}/install-${{ matrix.build_type }}/sunaba/
-          zip -r -0 ${{ github.workspace }}/${{ github.event.repository.name }}-${{ matrix.config.os }}-Release.zip *
+          zip -r -0 ${{ github.workspace }}/${{ github.event.repository.name }}-${{ matrix.config.target }}-Release.zip *
 
       - name: Upload binaries (Debug)
         if: matrix.build_type == 'Debug' && github.ref_name == 'main'
         uses: svenstaro/upload-release-action@v2
         with:
           repo_token: ${{ secrets.GITHUB_TOKEN }}
-          file: ${{ github.workspace }}/${{ github.event.repository.name }}-${{ matrix.config.os }}-Debug.*
+          file: ${{ github.workspace }}/${{ github.event.repository.name }}-${{ matrix.config.target }}-Debug.*
           file_glob: true
           tag: nightly
           overwrite: true
@@ -230,7 +258,7 @@ jobs:
         uses: svenstaro/upload-release-action@v2
         with:
           repo_token: ${{ secrets.GITHUB_TOKEN }}
-          file: ${{ github.workspace }}/${{ github.event.repository.name }}-${{ matrix.config.os }}-Release.*
+          file: ${{ github.workspace }}/${{ github.event.repository.name }}-${{ matrix.config.target }}-Release.*
           file_glob: true
           tag: nightly
           overwrite: true
