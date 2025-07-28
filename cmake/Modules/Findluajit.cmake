@@ -21,6 +21,7 @@ include(FindPackageHandleStandardArgs)
 find_package_handle_standard_args(luajit DEFAULT_MSG LUAJIT_INCLUDE_DIR LUAJIT_LIBRARIES)
 
 if(LUAJIT_FOUND)
+    message(STATUS "Found LuaJIT: ${LUAJIT_LIBRARIES} (include: ${LUAJIT_INCLUDE_DIR})")
     set(LUAJIT_LIBRARIES ${LUAJIT_LIBRARIES})
     set(LUAJIT_INCLUDE_DIRS ${LUAJIT_INCLUDE_DIR})
 else()
