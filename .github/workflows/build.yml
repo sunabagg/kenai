@@ -75,6 +75,7 @@ jobs:
           arch: amd64_arm64
       
       - name: Set up JDK 17
+        if: matrix.config.target == 'android'
         uses: actions/setup-java@v1
         with:
           java-version: 17
@@ -100,14 +101,29 @@ jobs:
           ${{ github.workspace }}/vcpkg/vcpkg install
 
       - name: Configure
-        if: matrix.config.os == 'macos-latest' || matrix.config.target == 'linux-amd64' || matrix.config.os == 'windows-latest'
-        # For Windows Arm, we handle configuration separately
+        if: matrix.config.os == 'macos-latest' || matrix.config.target == 'linux-amd64'
+        # For Windows and Windows Arm, we handle configuration separately
         run: >
           mkdir GDExtension-build
 
           cmake
           -B GDExtension-build
           -G "Ninja"
+          -DCMAKE_BUILD_TYPE=${{ matrix.build_type }}
+          -D CMAKE_C_COMPILER_LAUNCHER=ccache 
+          -D CMAKE_CXX_COMPILER_LAUNCHER=ccache
+          --install-prefix ${{ github.workspace }}/install-${{ matrix.build_type }}
+          .
+      
+      - name: Configure (Windows x64)
+        if: matrix.config.os == 'windows-latest'
+        run: >
+          mkdir GDExtension-build
+
+          cmake
+          -B GDExtension-build
+          -G "Visual Studio 17 2022"
+          -A x64
           -DCMAKE_BUILD_TYPE=${{ matrix.build_type }}
           -D CMAKE_C_COMPILER_LAUNCHER=ccache 
           -D CMAKE_CXX_COMPILER_LAUNCHER=ccache
@@ -144,11 +160,8 @@ jobs:
           -B GDExtension-build
           -G "Visual Studio 17 2022"
           -A ARM64
-          -DCMAKE_SYSTEM_PROCESSOR=ARM64
           -DCMAKE_BUILD_TYPE=${{ matrix.build_type }}
           -DVCPKG_TARGET_TRIPLET=arm64-windows
-          -D CMAKE_C_COMPILER_LAUNCHER=ccache 
-          -D CMAKE_CXX_COMPILER_LAUNCHER=ccache
           --install-prefix ${{ github.workspace }}/install-${{ matrix.build_type }}
           -DUSE_LUAJIT=OFF
           .
