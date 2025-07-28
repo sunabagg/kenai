@@ -87,22 +87,17 @@ jobs:
           key: ${{ matrix.config.os }}-${{ matrix.build_type }}
 
       - name: Setup Vcpkg
+        if: matrix.config.os != 'windows-11-arm' && matrix.config.os != 'macos-latest' && matrix.config.target != 'android'
         uses: lukka/run-vcpkg@v11
         with:
           vcpkgDirectory: '${{ github.workspace }}/vcpkg'
           runVcpkgInstall: true
           vcpkgJsonGlob: '**/vcpkg.json'
         
-      
       - name: Install vcpkg dependencies
         if: matrix.config.os != 'windows-11-arm' && matrix.config.os != 'macos-latest' && matrix.config.target != 'android'
         run: |
           ${{ github.workspace }}/vcpkg/vcpkg install
-
-      - name: Install vcpkg dependencies (ARM64)
-        if: matrix.config.os == 'windows-11-arm'
-        run: |
-          ${{ github.workspace }}/vcpkg/vcpkg install --triplet arm64-windows
 
       - name: Configure
         if: matrix.config.os == 'macos-latest' || matrix.config.target == 'linux-amd64' || matrix.config.os == 'windows-latest'
