@@ -100,7 +100,7 @@ if ( APPLE )
     set( LIB_ARCH "universal" )
 elseif ( ANDROID )
     set( LIB_ARCH ${CMAKE_ANDROID_ARCH_ABI} )
-elseif ( WIN32 AND CMAKE_GENERATOR_PLATFORM STREQUAL "arm64" )
+elseif ( WIN32 AND (CMAKE_GENERATOR_PLATFORM STREQUAL "ARM64" OR CMAKE_GENERATOR_PLATFORM STREQUAL "arm64") )
     # For Windows ARM64 cross-compilation, CMAKE_SYSTEM_PROCESSOR might still be AMD64
     set( LIB_ARCH "ARM64" )
 endif()
