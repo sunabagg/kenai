@@ -9,7 +9,7 @@ on:
   
   schedule:
     - cron: '0 8 * * *' # run at 8 AM UTC/ 12 AM AKDT
-    - cron: '0 20 * * *' # run at 8 PM UTC/ 12 PM AKDT
+    #- cron: '0 20 * * *' # run at 8 PM UTC/ 12 PM AKDT
 
   workflow_dispatch:
 
@@ -31,7 +31,7 @@ jobs:
           - { name: '🐧 Linux GCC', os: ubuntu-22.04, target: linux-amd64 }
           #- { name: '🤖 Android Clang', os: ubuntu-22.04, target: android }
           - { name: '🪟 Windows MSVC', os: windows-latest, target: windows-amd64 }
-          - { name: '💪🪟 Windows Arm MSVC', os: windows-11-arm, target: windows-arm64 }
+          #- { name: '💪🪟 Windows Arm MSVC', os: windows-11-arm, target: windows-arm64 }
 
     name: 🛠 Build / ${{ matrix.config.name }} (${{ matrix.build_type }})
     runs-on: ${{ matrix.config.os }}
