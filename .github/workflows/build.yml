@@ -27,10 +27,11 @@ jobs:
       matrix:
         build_type: ['Debug', 'Release']
         config:
-          - { name: '🍏 macOS Clang', os: macos-latest }
-          - { name: '🐧 Linux GCC', os: ubuntu-22.04 }
-          - { name: '🪟 Windows MSVC', os: windows-latest }
-          - { name: '💪🪟 Windows Arm MSVC', os: windows-11-arm }
+          - { name: '🍏 macOS Clang', os: macos-latest, target: macos-universal }
+          - { name: '🐧 Linux GCC', os: ubuntu-22.04, target: linux-amd64 }
+          - { name: '🐧 Android Clang', os: ubuntu-22.04, target: android }
+          - { name: '🪟 Windows MSVC', os: windows-latest, target: windows-amd64 }
+          - { name: '💪🪟 Windows Arm MSVC', os: windows-11-arm, target: windows-arm64 }
 
     name: 🛠 Build / ${{ matrix.config.name }} (${{ matrix.build_type }})
     runs-on: ${{ matrix.config.os }}
