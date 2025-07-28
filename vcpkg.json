@@ -8,7 +8,6 @@
       "platform": "x64 & windows & !mingw",
       "version>=": "2023-01-04#5"
     },
-    "openssl",
     "pkgconf"
   ]
 }
