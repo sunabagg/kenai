@@ -107,6 +107,12 @@ target_sources(${PROJECT_NAME} PRIVATE
         syntax_highlighter.cpp
         text_edit.h
         text_edit.cpp
+        text_edit_binding_properties.cpp
+        text_edit_binding_events.cpp
+        text_edit_binding_methods1.cpp
+        text_edit_binding_methods2.cpp
+        text_edit_binding_methods3.cpp
+        text_edit_binding_methods4.cpp
         code_edit.h
         code_edit.cpp
         texture_button.h

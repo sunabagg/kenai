@@ -20,6 +20,14 @@ using namespace sunaba::core;
 
 namespace sunaba::ui {
     void bindTextEdit(sol::state &lua);
+    void bindTextEditProperties(sol::usertype<TextEdit>& ut);
+    void bindTextEditEvents(sol::usertype<TextEdit>& ut);
+    void bindTextEditMethods1(sol::usertype<TextEdit>& ut);
+    void bindTextEditMethods2(sol::usertype<TextEdit>& ut);
+    void bindTextEditMethods3(sol::usertype<TextEdit>& ut);
+    void bindTextEditMethods4(sol::usertype<TextEdit>& ut);
+
+    class TextEdit;
 
     class TextEditSignalWrapper : public Object{
         GDCLASS(TextEditSignalWrapper, Object)
