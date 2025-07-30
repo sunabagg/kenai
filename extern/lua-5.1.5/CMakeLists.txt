@@ -163,6 +163,8 @@ endif ( )
 
 # Create static library, this is needed to compile luac in the 5.1.x Lua series
 add_library ( liblua_static STATIC ${SRC_LIB} )
+# Set PIC for static library to avoid relocation warnings when linking into shared libraries
+set_target_properties ( liblua_static PROPERTIES POSITION_INDEPENDENT_CODE ON )
 target_link_libraries ( liblua_static ${LIBS} )
 
 add_executable ( lua ${SRC_LUA} ${LUA_RC} )
