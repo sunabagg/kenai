@@ -406,7 +406,7 @@ elseif(WIN32 AND ${CMAKE_SYSTEM_PROCESSOR} MATCHES "ARM64|arm64")
     set(USE_LUAJIT OFF)
 elseif (CMAKE_SYSTEM_NAME STREQUAL "Linux" AND ${CMAKE_SYSTEM_PROCESSOR} MATCHES "x86_64|aarch64")
     # Use LuaJIT on Linux x64 and ARM64
-    set(USE_LUAJIT ON)
+    set(USE_LUAJIT OFF)
 endif()
 
 if (USE_LUAJIT)
@@ -605,7 +605,6 @@ else()
         target_link_libraries(${PROJECT_NAME}
             PRIVATE
                 godot-cpp
-                liblua_static
                 sol2
                 luasocket::static
                 #luasec::ssl
@@ -613,6 +612,19 @@ else()
                 #OpenSSL::Crypto
                 libluv_a
         )
+        
+        # Link Lua static library with whole-archive to ensure all symbols are included
+        if(CMAKE_SYSTEM_NAME STREQUAL "Linux")
+            target_link_libraries(${PROJECT_NAME}
+                PRIVATE
+                    -Wl,--whole-archive liblua_static -Wl,--no-whole-archive
+            )
+        else()
+            target_link_libraries(${PROJECT_NAME}
+                PRIVATE
+                    liblua_static
+            )
+        endif()
     endif()
 endif()
 
