@@ -1,6 +1,7 @@
 #include "io_manager.h"
 
 #include "system_io_interface.h"
+#include "file_system_io.h"
 #include "../string_utils.h"
 
 using namespace godot;
@@ -14,7 +15,13 @@ namespace sunaba::core::io {
                 return new IoManager();
             }),
             sol::base_classes, sol::bases<IoInterface>(),
-            "add", &IoManager::add,
+            // total hack
+            "add", sol::factories(
+                &IoManager::add,
+                [](IoManager* ioman, FileSystemIo* fsio) {
+                    ioman->add(fsio);
+                }
+            ),
             "remove", &IoManager::remove,
             "getFileUri", &IoManager::getFileUri
         );
