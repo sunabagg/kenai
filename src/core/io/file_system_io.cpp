@@ -10,7 +10,7 @@ namespace sunaba::core::io {
         lua.new_usertype<FileSystemIo>(
             "FileSystemIo",
             sol::no_constructor,
-            sol::base_classes, sol::bases<SystemIoInterface>(),
+            sol::base_classes, sol::bases<IoInterface, SystemIoInterface>(),
             "basePath", sol::property(
                 [](FileSystemIo& self) { return self.basePath; }
             ),
@@ -32,7 +32,7 @@ namespace sunaba::core::io {
         lua.new_usertype<FileSystemIo>(
             "FileSystemIo",
             sol::no_constructor,
-            sol::base_classes, sol::bases<SystemIoInterface>(),
+            sol::base_classes, sol::bases<IoInterface, SystemIoInterface>(),
             "basePath", sol::property(
                 [](FileSystemIo& self) { return self.basePath; }
             ),
