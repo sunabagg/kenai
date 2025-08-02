@@ -42,10 +42,10 @@ namespace sunaba::core::io {
         PackedStringArray files = zip_reader->get_files();
         std::vector<std::string> file_list;
 
-        auto currentDirName = String(path.c_str()).get_file();
+        auto currentDirName = getFilePath(path);
         for (int i = 0; i < files.size(); ++i) {
             std::string file = files[i].utf8().get_data();
-            auto folderName = String(file.c_str()).get_base_dir().get_file();
+            auto folderName = String(String(file.c_str()).get_base_dir()).utf8().get_data();
             if (folderName != currentDirName) {
                 continue; // Skip files not in the current directory
             }
@@ -59,7 +59,7 @@ namespace sunaba::core::io {
         if (recursive) {
             for (int i = 0; i < files.size(); ++i) {
                 std::string file = files[i].utf8().get_data();
-                auto folderName = String(file.c_str()).get_base_dir().get_file();
+                auto folderName = String(String(file.c_str()).get_base_dir()).utf8().get_data();
                 if (folderName == currentDirName) {
                     continue; // Skip files in the current directory
                 }
