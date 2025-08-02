@@ -7,6 +7,7 @@ using namespace sunaba::core;
 
 namespace sunaba::core::io {
     void bindFileSystemIo(sol::state& lua);
+    void bindFileSystemIoUnsandboxed(sol::state& lua);
 
     class FileSystemIo : public SystemIoInterface {
     public:

@@ -20,6 +20,29 @@ namespace sunaba::core::io {
             "altPath2", sol::property(
                 [](FileSystemIo& self) { return self.altPath2; }
             ),
+            "create", [](const std::string& path, const std::string& uri) {
+                throw new sol::error("Cannot create a FileSystemIo instance in a sandboxed context");
+            },
+            "getFileUri", &FileSystemIo::getFileUri,
+            "getFilePath", &FileSystemIo::getFilePath
+        );
+    }
+
+    void bindFileSystemIoUnsandboxed(sol::state& lua) {
+        lua.new_usertype<FileSystemIo>(
+            "FileSystemIo",
+            sol::no_constructor,
+            sol::base_classes, sol::bases<SystemIoInterface>(),
+            "basePath", sol::property(
+                [](FileSystemIo& self) { return self.basePath; }
+            ),
+            "altPath", sol::property(
+                [](FileSystemIo& self) { return self.altPath; }
+            ),
+            "altPath2", sol::property(
+                [](FileSystemIo& self) { return self.altPath2; }
+            ),
+            "create", &FileSystemIo::create,
             "getFileUri", &FileSystemIo::getFileUri,
             "getFilePath", &FileSystemIo::getFilePath
         );
