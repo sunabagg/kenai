@@ -107,7 +107,7 @@ namespace sunaba::core::io {
                 files.insert(files.end(), list.begin(), list.end());
             }
         }
-        return std::vector<std::string>();
+        return files;
     }
 
     void IoManager::deleteFile(const std::string &path) const {
