@@ -346,6 +346,8 @@ void App::initState(bool sandboxed) {
         global_state["printraw"] = [](const std::string& str) {
             UtilityFunctions::printraw(str.c_str());
         };
+
+        bindFileSystemIoUnsandboxed(global_state);
     }
 
     auto* rootElement = new sunaba::core::Element(this);
