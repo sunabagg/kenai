@@ -30,7 +30,7 @@ jobs:
           - { name: '🍏 macOS Clang', os: macos-latest, target: macos-universal }
           - { name: '🐧 Linux GCC', os: ubuntu-22.04, target: linux-amd64 }
           #- { name: '🤖 Android Clang', os: ubuntu-22.04, target: android }
-          - { name: '🪟 Windows MSVC', os: windows-latest-l, target: windows-amd64 }
+          - { name: '🪟 Windows MSVC', os: windows-latest-, target: windows-amd64 }
           #- { name: '💪🪟 Windows Arm MSVC', os: windows-11-arm, target: windows-arm64 }
 
     name: 🛠 Build / ${{ matrix.config.name }} (${{ matrix.build_type }})
@@ -55,7 +55,7 @@ jobs:
           sudo apt-get install -y ccache ninja-build pkg-config libluajit-5.1-2 libluajit-5.1-dev libluajit-5.1-common luajit linux-libc-dev
 
       - name: Install Dependencies (Windows x64)
-        if: matrix.config.os == 'windows-latest'
+        if: matrix.config.target == 'windows-amd64'
         run: |
           choco upgrade ccache ninja pkgconfiglite -y
 
@@ -65,7 +65,7 @@ jobs:
           choco upgrade ninja pkgconfiglite -y
 
       - name: Setup MSVC (Windows x64)
-        if: matrix.config.os == 'windows-latest'
+        if: matrix.config.target == 'windows-amd64'
         uses: ilammy/msvc-dev-cmd@v1
 
       - name: Setup MSVC (Windows ARM64)
@@ -101,7 +101,7 @@ jobs:
           ${{ github.workspace }}/vcpkg/vcpkg install
 
       - name: Configure
-        if: matrix.config.os == 'macos-latest' || matrix.config.target == 'linux-amd64' || matrix.config.os == 'windows-latest'
+        if: matrix.config.os == 'macos-latest' || matrix.config.target == 'linux-amd64' || matrix.config.target == 'windows-amd64'
         # For Windows and Windows Arm, we handle configuration separately
         run: >
           mkdir GDExtension-build
@@ -152,7 +152,7 @@ jobs:
           .
       
       - name: Copy luajit lib (Windows)
-        if: matrix.config.os == 'windows-latest'
+        if: matrix.config.target == 'windows-amd64'
         run: Copy-Item "${{ github.workspace }}\lua51.lib" -Destination "${{ github.workspace }}\GDExtension-build\lua51.lib"
 
       - name: Copy luajit lib (Windows ARM64)
@@ -200,7 +200,7 @@ jobs:
             ${{ github.workspace }}/GDExtension-build/sunaba/*
 
       - name: Create archive (Debug) - Windows
-        if: matrix.build_type == 'Debug' && matrix.config.os == 'windows-latest'
+        if: matrix.build_type == 'Debug' && matrix.config.target == 'windows-amd64'
         run: |
           cd ${{ github.workspace }}/install-${{ matrix.build_type }}/sunaba/
           Compress-Archive -Path * -DestinationPath ${{ github.workspace }}/${{ github.event.repository.name }}-${{ matrix.config.target }}-Debug.zip -CompressionLevel NoCompression
@@ -218,7 +218,7 @@ jobs:
           zip -r -0 ${{ github.workspace }}/${{ github.event.repository.name }}-${{ matrix.config.target }}-Debug.zip *
 
       - name: Create archive (Release) - Windows
-        if: matrix.build_type == 'Release' && matrix.config.os == 'windows-latest'
+        if: matrix.build_type == 'Release' && matrix.config.target == 'windows-amd64'
         run: |
           cd ${{ github.workspace }}/install-${{ matrix.build_type }}/sunaba/
           Compress-Archive -Path * -DestinationPath ${{ github.workspace }}/${{ github.event.repository.name }}-${{ matrix.config.target }}-Release.zip -CompressionLevel NoCompression
