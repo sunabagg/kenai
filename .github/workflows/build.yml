@@ -57,7 +57,7 @@ jobs:
       - name: Install Dependencies (Windows x64)
         if: matrix.config.target == 'windows-amd64'
         run: |
-          choco upgrade ccache ninja pkgconfiglite -y
+          choco upgrade sccache ninja pkgconfiglite -y
 
       - name: Install Dependencies (Windows ARM64)
         if: matrix.config.os == 'windows-11-arm'
@@ -87,6 +87,10 @@ jobs:
           max-size: '10G'
           key: ${{ matrix.config.os }}-${{ matrix.build_type }}
 
+      - name: Run sccache-cache
+        if: matrix.config.target == 'windows-amd64' || matrix.config.os == 'windows-11-arm'
+        uses: mozilla-actions/sccache-action@v0.0.3
+          
       - name: Setup Vcpkg
         if: matrix.config.os != 'windows-11-arm' && matrix.config.os != 'macos-latest' && matrix.config.target != 'android'
         uses: lukka/run-vcpkg@v11
@@ -101,7 +105,7 @@ jobs:
           ${{ github.workspace }}/vcpkg/vcpkg install
 
       - name: Configure
-        if: matrix.config.os == 'macos-latest' || matrix.config.target == 'linux-amd64' || matrix.config.target == 'windows-amd64'
+        if: matrix.config.os == 'macos-latest' || matrix.config.target == 'linux-amd64'
         # For Windows and Windows Arm, we handle configuration separately
         run: >
           mkdir GDExtension-build
@@ -112,6 +116,20 @@ jobs:
           -DCMAKE_BUILD_TYPE=${{ matrix.build_type }}
           -D CMAKE_C_COMPILER_LAUNCHER=ccache 
           -D CMAKE_CXX_COMPILER_LAUNCHER=ccache
+          --install-prefix ${{ github.workspace }}/install-${{ matrix.build_type }}
+        
+      - name: Configure (Windows)
+        if: matrix.config.target == 'windows-amd64'
+        # For Windows and Windows Arm, we handle configuration separately
+        run: >
+          mkdir GDExtension-build
+
+          cmake
+          -B GDExtension-build
+          -G "Ninja"
+          -DCMAKE_BUILD_TYPE=${{ matrix.build_type }}
+          -D CMAKE_C_COMPILER_LAUNCHER=sccache 
+          -D CMAKE_CXX_COMPILER_LAUNCHER=sccache
           --install-prefix ${{ github.workspace }}/install-${{ matrix.build_type }}
           .
       
