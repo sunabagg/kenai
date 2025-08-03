@@ -81,7 +81,7 @@ jobs:
           java-version: 17
 
       - name: ccache
-        if: matrix.config.os != 'windows-11-arm' && matrix.config.target != 'windows-amd64'
+        if: matrix.config.os != 'windows-11-arm'
         uses: hendrikmuhs/ccache-action@v1.2
         with:
           max-size: '10G'
@@ -128,8 +128,8 @@ jobs:
           -B GDExtension-build
           -G "Ninja"
           -DCMAKE_BUILD_TYPE=${{ matrix.build_type }}
-          -DCMAKE_C_COMPILER_LAUNCHER=sccache
-          -DCMAKE_CXX_COMPILER_LAUNCHER=sccache
+          -D CMAKE_C_COMPILER_LAUNCHER=sccache 
+          -D CMAKE_CXX_COMPILER_LAUNCHER=sccache
           --install-prefix ${{ github.workspace }}/install-${{ matrix.build_type }}
           .
       
