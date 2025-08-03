@@ -62,7 +62,7 @@ else ()
   if (NOT APPLE AND NOT ${CMAKE_SYSTEM_ARCH} STREQUAL "arm64")
     set(USE_LUAJIT ON)
   endif (NOT APPLE)
-endif ()
+endif (WITH_LUA_ENGINE STREQUAL Lua)
 
 set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} "${CMAKE_SOURCE_DIR}/cmake/Modules/")
 
