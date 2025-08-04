@@ -121,7 +121,9 @@ namespace sunaba::core {
             }
 
             static Error _filter_class(const String& cname) {
-                //if (!_glob_filters(cname))
+                if (!_glob_filters(cname, allowedClasses())) {
+                    return Error::ERR_UNAUTHORIZED;
+                }
                 if (!ClassDBSingleton::get_singleton()->class_exists(cname)) {
                     return Error::ERR_UNAVAILABLE;
                 }
