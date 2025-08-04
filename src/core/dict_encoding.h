@@ -8,6 +8,8 @@
 #include <godot_cpp/core/class_db.hpp>
 #include <godot_cpp/classes/resource_loader.hpp>
 
+#include "io/io_interface.h"
+
 using namespace godot;
 
 namespace sunaba::core {
@@ -113,7 +115,7 @@ namespace sunaba::core {
 
                 return list;
             }
-        public:
+
             static bool _glob_filters(const String& value, Array list) {
                 for (int i = 0; i < list.size(); i++) {
                     String expr = list[i];
@@ -123,27 +125,28 @@ namespace sunaba::core {
                 return false;
             }
 
-            static Error _filter_class(const String& cname) {
-                if (!_glob_filters(cname, allowedClasses())) {
+            static Error _filter_class(const std::string& cname) {
+                if (!_glob_filters(cname.c_str(), allowedClasses())) {
                     return Error::ERR_UNAUTHORIZED;
                 }
-                if (!ClassDBSingleton::get_singleton()->class_exists(cname)) {
+                if (!ClassDBSingleton::get_singleton()->class_exists(cname.c_str())) {
                     return Error::ERR_UNAVAILABLE;
                 }
-                if (!ClassDBSingleton::get_singleton()->can_instantiate(cname)) {
+                if (!ClassDBSingleton::get_singleton()->can_instantiate(cname.c_str())) {
                     return Error::ERR_UNAVAILABLE;
                 }
                 return Error::OK;
             }
 
-            static Error _filter_resource(const String& rpath) {
-                if (!ResourceLoader::get_singleton()->exists(rpath, "Resource")) {
+            static Error _filter_resource(const std::string& rpath, io::IoInterface* iointerface) {
+                if (!iointerface->fileExists(rpath)) {
                     return Error::ERR_FILE_NOT_FOUND;
                 }
                 return Error::OK;
             }
 
-            static Dictionary encode_dict(const Variant& value, Array dedup = Array(), bool recursed = false) {
+        public:
+            static Dictionary encode_dict(const Variant& value, io::IoInterface iointeface, Array dedup = Array(), bool recursed = false) {
                 auto type = value.get_type();
                 Dictionary dict;
                 dict["\\T"] = value.get_type_name(type);
@@ -152,13 +155,23 @@ namespace sunaba::core {
                     dict["\\R"] = pos;
                     return dict;
                 }
+                // Declare variables outside the switch to avoid bypassing initialization
+                Object* obj = nullptr;
+                Ref<Resource> res;
+                TypedArray<Dictionary> property_list;
+                Array arr;
+                Array outArr;
+                Error err = Error::OK;
+                Dictionary dic;
+                Dictionary outDic;
+
                 switch (type)
                 {
                     case Variant::OBJECT:
-                        Object* obj = value;
+                        obj = value;
                         dedup.push_back(obj);
                         if (recursed && obj->is_class("Resource")) {
-                            Ref<Resource> res = Ref<Resource>(
+                            res = Ref<Resource>(
                                 Object::cast_to<Resource>(
                                     obj
                                 )
@@ -168,46 +181,50 @@ namespace sunaba::core {
                                 return dict;
                             }
                             dict["\\V"] = Dictionary();
-                            const TypedArray<Dictionary>& property_list = obj->get_property_list();
+                            property_list = obj->get_property_list();
                             for (int p = 0; p < property_list.size(); p++ ) {
                                 const Dictionary& prop = property_list[p];
                                 String pn = prop["name"];
                                 if (pn == "script") continue;
                                 if (!prop["usage"] && PROPERTY_USAGE_STORAGE) continue;
-                                dict["\\V"] = encode_dict(obj->get(pn), dedup, true);
+                                dict["\\V"] = encode_dict(obj->get(pn), iointeface, dedup, true);
                             }
                         }
+                        break;
                     
                     case Variant::ARRAY:
-                        Array arr = value;
-                        Array outArr;
-                        auto err = outArr.resize(arr.size());
+                        arr = value;
+                        outArr = Array();
+                        err = outArr.resize(arr.size());
                         if (err != Error::OK) {
                             UtilityFunctions::push_error("Cannot allocate array");
                             return Dictionary();
                         }
                         for (int i = 0; i < arr.size(); i++) {
-                            outArr[i] = encode_dict(arr[i], dedup, true);
+                            outArr[i] = encode_dict(arr[i], iointeface, dedup, true);
                         }
                         dict["\\AT"] = Variant::get_type_name(static_cast<Variant::Type>(arr.get_typed_builtin()));
                         dict["\\AC"] = arr.get_typed_class_name();
                         dict["\\V"] = outArr; 
+                        break;
                 
                     case Variant::DICTIONARY:
-                        Dictionary dic = value;
-                        Dictionary outDic;
+                        dic = value;
+                        outDic = Dictionary();
                         for (int ki = 0; ki < dic.size(); ki++)
                         {
                             Variant k = dic.keys()[ki];
-                            outDic[k] = encode_dict(dic[k], dedup, true);
+                            outDic[k] = encode_dict(dic[k], iointeface, dedup, true);
                         }
                         dic["\\KT"] = Variant::get_type_name(static_cast<Variant::Type>(dic.get_typed_key_builtin()));
                         dic["\\VT"] = Variant::get_type_name(static_cast<Variant::Type>(dic.get_typed_value_builtin()));
                         dic["\\VC"] = dic.get_typed_value_class_name();
                         dic["\\V"] = outDic;
+                        break;
                         
                     default:
                         dic["\\V"] = value;
+                        break;
                 }
                 return dict;
             }
