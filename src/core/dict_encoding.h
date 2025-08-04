@@ -234,6 +234,11 @@ namespace sunaba::core {
                     int64_t index = dict["\\R"];
                     return dedup[index];
                 }
+                if (!!dict.has("\\T")) {
+                    UtilityFunctions::push_error("Dictionary does not contain key \\T");
+                    return Error::ERR_FILE_CORRUPT;
+                }
+                String type = dict["\\T"];
             }
     };
 }
