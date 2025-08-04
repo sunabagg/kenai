@@ -146,7 +146,7 @@ namespace sunaba::core {
             }
 
         public:
-            static Dictionary encode_dict(const Variant& value, io::IoInterface iointeface, Array dedup = Array(), bool recursed = false) {
+            static Dictionary encode_dict(const Variant& value, io::IoInterface* iointeface, Array dedup = Array(), bool recursed = false) {
                 auto type = value.get_type();
                 Dictionary dict;
                 dict["\\T"] = value.get_type_name(type);
@@ -176,7 +176,7 @@ namespace sunaba::core {
                                     obj
                                 )
                             );
-                            if (!res->get_path().is_empty() && ResourceLoader::get_singleton()->exists(res->get_path())) {
+                            if (!res->get_path().is_empty() && iointeface->fileExists(res->get_path().utf8().get_data())) {
                                 dict["\\P"] = res->get_path();
                                 return dict;
                             }
@@ -195,7 +195,7 @@ namespace sunaba::core {
                     case Variant::ARRAY:
                         arr = value;
                         outArr = Array();
-                        err = outArr.resize(arr.size());
+                        err = static_cast<Error>(outArr.resize(arr.size()));
                         if (err != Error::OK) {
                             UtilityFunctions::push_error("Cannot allocate array");
                             return Dictionary();
@@ -229,7 +229,7 @@ namespace sunaba::core {
                 return dict;
             }
 
-            static Variant decode_dict(Dictionary dict, Array dedup = Array()) {
+            static Variant decode_dict(Dictionary dict, io::IoInterface* iointerface, Array dedup = Array()) {
                 if (dict.has("\\R")) {
                     int64_t index = dict["\\R"];
                     return dedup[index];
