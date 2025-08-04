@@ -238,6 +238,10 @@ namespace sunaba::core {
                     UtilityFunctions::push_error("Dictionary does not contain key \\T");
                     return Error::ERR_FILE_CORRUPT;
                 }
+                if (dict["\\T"].get_type() != Variant::STRING) {
+                    UtilityFunctions::push_error("\\T is not a string.");
+                    return Error::ERR_FILE_CORRUPT;
+                }
                 String type = dict["\\T"];
             }
     };
