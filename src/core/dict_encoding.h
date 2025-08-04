@@ -177,6 +177,21 @@ namespace sunaba::core {
                                 dict["\\V"] = encode_dict(obj->get(pn), dedup, true);
                             }
                         }
+                    
+                    case Variant::ARRAY:
+                        Array arr = value;
+                        Array outArr;
+                        auto err = outArr.resize(arr.size());
+                        if (err != Error::OK) {
+                            UtilityFunctions::push_error("Cannot allocate array");
+                            return Dictionary();
+                        }
+                        for (int i = 0; i < arr.size(); i++) {
+                            outArr[i] = encode_dict(arr[i], dedup, true);
+                        }
+                        dict["\\AT"] = Variant::get_type_name(static_cast<Variant::Type>(arr.get_typed_builtin()));
+                        dict["\\AC"] = arr.get_typed_class_name();
+                        dict["\\V"] = outArr; 
                 
                     default:
                         break;
