@@ -3,6 +3,7 @@
 
 #include <godot_cpp/variant/variant.hpp>
 #include <godot_cpp/classes/object.hpp>
+#include <godot_cpp/core/class_db.hpp>
 
 using namespace godot;
 
@@ -19,6 +20,17 @@ namespace sunaba::core {
                         return true; 
                 }
                 return false;
+            }
+
+            static Error _filter_class(const String& cname) {
+                //if (!_glob_filters(cname))
+                if (!ClassDBSingleton::get_singleton()->class_exists(cname)) {
+                    return Error::ERR_UNAVAILABLE;
+                }
+                if (!ClassDBSingleton::get_singleton()->can_instantiate(cname)) {
+                    return Error::ERR_UNAVAILABLE;
+                }
+                return Error::OK;
             }
     };
 }
