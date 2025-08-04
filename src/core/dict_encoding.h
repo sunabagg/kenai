@@ -3,6 +3,8 @@
 
 #include <godot_cpp/variant/variant.hpp>
 #include <godot_cpp/classes/object.hpp>
+#include <godot_cpp/classes/resource.hpp>
+#include <godot_cpp/variant/dictionary.hpp>
 #include <godot_cpp/core/class_db.hpp>
 #include <godot_cpp/classes/resource_loader.hpp>
 
@@ -139,6 +141,46 @@ namespace sunaba::core {
                     return Error::ERR_FILE_NOT_FOUND;
                 }
                 return Error::OK;
+            }
+
+            static Dictionary encode_dict(const Variant& value, Array dedup = Array(), bool recursed = false) {
+                auto type = value.get_type();
+                Dictionary dict;
+                dict["\\T"] = value.get_type_name(type);
+                auto pos = dedup.find(value);
+                if (pos != -1) {
+                    dict["\\R"] = pos;
+                    return dict;
+                }
+                switch (type)
+                {
+                    case Variant::OBJECT:
+                        Object* obj = value;
+                        dedup.push_back(obj);
+                        if (recursed && obj->is_class("Resource")) {
+                            Ref<Resource> res = Ref<Resource>(
+                                Object::cast_to<Resource>(
+                                    obj
+                                )
+                            );
+                            if (!res->get_path().is_empty() && ResourceLoader::get_singleton()->exists(res->get_path())) {
+                                dict["\\P"] = res->get_path();
+                                return dict;
+                            }
+                            dict["\\V"] = Dictionary();
+                            const TypedArray<Dictionary>& property_list = obj->get_property_list();
+                            for (int p = 0; p < property_list.size(); p++ ) {
+                                const Dictionary& prop = property_list[p];
+                                String pn = prop["name"];
+                                if (pn == "script") continue;
+                                if (!prop["usage"] && PROPERTY_USAGE_STORAGE) continue;
+                                dict["\\V"] = encode_dict(obj->get(pn), dedup, true);
+                            }
+                        }
+                
+                    default:
+                        break;
+                }
             }
     };
 }
