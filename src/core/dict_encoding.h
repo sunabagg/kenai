@@ -193,9 +193,23 @@ namespace sunaba::core {
                         dict["\\AC"] = arr.get_typed_class_name();
                         dict["\\V"] = outArr; 
                 
+                    case Variant::DICTIONARY:
+                        Dictionary dic = value;
+                        Dictionary outDic;
+                        for (int ki = 0; ki < dic.size(); ki++)
+                        {
+                            Variant k = dic.keys()[ki];
+                            outDic[k] = encode_dict(dic[k], dedup, true);
+                        }
+                        dic["\\KT"] = Variant::get_type_name(static_cast<Variant::Type>(dic.get_typed_key_builtin()));
+                        dic["\\VT"] = Variant::get_type_name(static_cast<Variant::Type>(dic.get_typed_value_builtin()));
+                        dic["\\VC"] = dic.get_typed_value_class_name();
+                        dic["\\V"] = outDic;
+                        
                     default:
-                        break;
+                        dic["\\V"] = value;
                 }
+                return dict;
             }
     };
 }
