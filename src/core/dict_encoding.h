@@ -211,6 +211,13 @@ namespace sunaba::core {
                 }
                 return dict;
             }
+
+            static Variant decode_dict(Dictionary dict, Array dedup = Array()) {
+                if (dict.has("\\R")) {
+                    int64_t index = dict["\\R"];
+                    return dedup[index];
+                }
+            }
     };
 }
 
