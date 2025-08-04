@@ -4,6 +4,7 @@
 #include <godot_cpp/variant/variant.hpp>
 #include <godot_cpp/classes/object.hpp>
 #include <godot_cpp/core/class_db.hpp>
+#include <godot_cpp/classes/resource_loader.hpp>
 
 using namespace godot;
 
@@ -129,6 +130,13 @@ namespace sunaba::core {
                 }
                 if (!ClassDBSingleton::get_singleton()->can_instantiate(cname)) {
                     return Error::ERR_UNAVAILABLE;
+                }
+                return Error::OK;
+            }
+
+            static Error _filter_resource(const String& rpath) {
+                if (!ResourceLoader::get_singleton()->exists(rpath, "Resource")) {
+                    return Error::ERR_FILE_NOT_FOUND;
                 }
                 return Error::OK;
             }
