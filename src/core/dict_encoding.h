@@ -424,9 +424,16 @@ namespace sunaba::core {
                             if (isImagePath(ppath)) {
                                 Image* image = new Image();
                                 ret = static_cast<Error>(image->load(iointerface, ppath.utf8().get_data()));
+                                if (ret != Error::OK) {
+                                    UtilityFunctions::push_error("Invalid Image");
+                                    return ret;
+                                }
+                                return Ref<godot::Image>(image->getImage());
                             }
                             std::string resstr = iointerface->loadText(ppath.utf8().get_data());
-                            if (ppath.ends_with(".shdr"))
+                            if (ppath.ends_with(".shdr")) {
+
+                            }
                             Variant resjson = JSON::parse_string(resstr.c_str());
                             if (resjson.get_type() != Variant::DICTIONARY) {
                                 UtilityFunctions::push_error("JSON did not decode into Dictionary");
