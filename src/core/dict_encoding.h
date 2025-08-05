@@ -7,8 +7,10 @@
 #include <godot_cpp/variant/dictionary.hpp>
 #include <godot_cpp/core/class_db.hpp>
 #include <godot_cpp/classes/resource_loader.hpp>
+#include <godot_cpp/classes/json.hpp>
 
 #include "io/io_interface.h"
+
 
 using namespace godot;
 
@@ -168,21 +170,21 @@ namespace sunaba::core {
                 return false;
             }
 
-            static Error _filter_class(const std::string& cname) {
-                if (!_glob_filters(cname.c_str(), allowedClasses())) {
+            static Error _filter_class(const String& cname) {
+                if (!_glob_filters(cname, allowedClasses())) {
                     return Error::ERR_UNAUTHORIZED;
                 }
-                if (!ClassDBSingleton::get_singleton()->class_exists(cname.c_str())) {
+                if (!ClassDBSingleton::get_singleton()->class_exists(cname)) {
                     return Error::ERR_UNAVAILABLE;
                 }
-                if (!ClassDBSingleton::get_singleton()->can_instantiate(cname.c_str())) {
+                if (!ClassDBSingleton::get_singleton()->can_instantiate(cname)) {
                     return Error::ERR_UNAVAILABLE;
                 }
                 return Error::OK;
             }
 
-            static Error _filter_resource(const std::string& rpath, io::IoInterface* iointerface) {
-                if (!iointerface->fileExists(rpath)) {
+            static Error _filter_resource(const String& rpath, io::IoInterface* iointerface) {
+                if (!iointerface->fileExists(rpath.utf8().get_data())) {
                     return Error::ERR_FILE_NOT_FOUND;
                 }
                 return Error::OK;
@@ -318,6 +320,26 @@ namespace sunaba::core {
                         if (!dicHas(dict, "\\C")) {
                             UtilityFunctions::push_error("Dictionary does not containe key \\C");
                             return Error::ERR_FILE_CORRUPT;
+                        }
+                        Variant& cnamev = dict["\\C"];
+                        if (cnamev.get_type() != Variant::STRING) {
+                            UtilityFunctions::push_error("\\C is not a string: " + String(cnamev));
+                            return Error::ERR_FILE_CORRUPT;
+                        }
+                        String cname = cnamev;
+                        Error ret = _filter_class(cname);
+                        if (ret != Error::OK) 
+                            return ret;
+                        Object* res = ClassDBSingleton::get_singleton()->instantiate(cname);
+                        dedup.push_back(res);
+                        if (dicHas(dict, "\\P")) {
+                            String ppath = dict["\\P"];
+                            ret = _filter_resource(ppath, iointerface);
+                            if (ret != Error::OK) 
+                                return ret;
+                            std::string resstr = iointerface->loadText(ppath.utf8().get_data());
+                            Variant resjson = JSON::parse_string(resstr.c_str());
+                            return decode_dict(resjson, iointerface);
                         }
                 
                     default:
