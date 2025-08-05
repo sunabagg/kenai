@@ -13,6 +13,7 @@
 
 #include "../base_object.h"
 #include "binary_data.h"
+#include "../resource.h"
 
 using namespace godot;
 using namespace sunaba::core;
@@ -44,6 +45,10 @@ namespace sunaba::core::io {
             PackedByteArray bytes = data.toPackedByteArray();
             saveBytes(path, bytes);
         }
+
+        Resource* loadResource(const std::string &path);
+
+        void saveResource(const std::string& path, Resource* res);
 
         std::vector<std::string> getFileListAll(const std::string &extension = "", const bool recursive = true) const {
             return getFileList(pathUri, extension, recursive);
