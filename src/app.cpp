@@ -533,6 +533,19 @@ void App::loadAndExecuteSbx(const String &path) {
     auto parseResult = headerJson->parse_string(headerJsonStr.c_str());
     Dictionary headerDict = parseResult;
 
+    String appName = headerDict.get("name", "Sunaba App");
+
+    String appBaseUserDirPath = "user://appdata/";
+    if (!DirAccess::dir_exists_absolute(appBaseUserDirPath))
+        DirAccess::make_dir_absolute(appBaseUserDirPath);
+    
+    String appUserDirPath = appBaseUserDirPath + appName + "/";
+    if (!DirAccess::dir_exists_absolute(appBaseUserDirPath))
+        DirAccess::make_dir_absolute(appUserDirPath);
+
+    FileSystemIo* userFsio = FileSystemIo::create(appUserDirPath.utf8().get_data(), "user://");
+    ioManager->add(userFsio);
+
     auto type = headerDict.get("type", "executable");
     if (type != "executable") {
         UtilityFunctions::print("Error: type must be executable");
