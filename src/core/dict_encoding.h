@@ -433,7 +433,10 @@ namespace sunaba::core {
                             }
                             std::string resstr = iointerface->loadText(ppath.utf8().get_data());
                             if (ppath.ends_with(".shdr")) {
-
+                                Ref<Shader> shader = Ref<Shader>(memnew(Shader));
+                                String shaderCode = iointerface->loadText(ppath.utf8().get_data()).c_str();
+                                shader->set_code(shaderCode);
+                                return shader;
                             }
                             Variant resjson = JSON::parse_string(resstr.c_str());
                             if (resjson.get_type() != Variant::DICTIONARY) {
