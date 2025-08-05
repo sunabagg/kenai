@@ -11,7 +11,7 @@ class Main extends App {
 
     override function init() {
         var stylebox = new StyleBoxFlat();
-        stylebox.ExpandMarginBottom - 0.56;
+        stylebox.ExpandMarginBottom - 4.56;
         stylebox.borderWidthLeft = 3;
         stylebox.cornerRadiusTopRight = 1;
         var io : IoManager = untyped __lua__("_G.ioManager");
