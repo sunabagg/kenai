@@ -10,6 +10,7 @@
 #include <godot_cpp/classes/json.hpp>
 
 #include "io/io_interface.h"
+#include "image.h"
 
 
 using namespace godot;
@@ -244,6 +245,27 @@ namespace sunaba::core {
                 return false;
             }
 
+            static bool isImagePath(const String& path) {
+                if (path.ends_with(".png"))
+                    return true;
+                else if (path.ends_with(".jpg"))
+                    return true;
+                else if (path.ends_with(".jpeg"))
+                    return true;
+                else if (path.ends_with(".webp"))
+                    return true;
+                else if (path.ends_with(".tga"))
+                    return true;
+                else if (path.ends_with(".bmp"))
+                    return true;
+                else if (path.ends_with(".svg"))
+                    return true;
+                else if (path.ends_with(".ktx"))
+                    return true;
+                else 
+                    return false;
+            }
+
         public:
             static Dictionary encode_dict(const Variant& value, io::IoInterface* iointeface, Array dedup = Array(), bool recursed = false) {
                 auto type = value.get_type();
@@ -399,6 +421,10 @@ namespace sunaba::core {
                             ret = _filter_resource(ppath, iointerface);
                             if (ret != Error::OK) 
                                 return ret;
+                            if (isImagePath(ppath)) {
+                                Image* image = new Image();
+                                ret = static_cast<Error>(image->load(iointerface, ppath.utf8().get_data()));
+                            }
                             std::string resstr = iointerface->loadText(ppath.utf8().get_data());
                             Variant resjson = JSON::parse_string(resstr.c_str());
                             if (resjson.get_type() != Variant::DICTIONARY) {
