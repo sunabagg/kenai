@@ -24,6 +24,10 @@ namespace sunaba::core {
     }
 
     switch (target_type) {
+            case Variant::NIL: {
+                dest = Variant();
+                return true;
+            }
             case Variant::INT: {
                 if (src.get_type() == Variant::STRING) {
                     dest = String(src).to_int();
@@ -238,11 +242,13 @@ namespace sunaba::core {
                 return false;
             }
 
-            static bool dicHas(Dictionary dic, const Variant& v) {
-                Dictionary tn = typenames();
-                for (int i = 0; i < tn.size(); i++)
-                    if (tn.keys()[i] == v)
+            static bool dicHas(Dictionary dic, const String& v) {
+                for (int i = 0; i < dic.size(); i++) {
+                    String key = dic.keys()[i];
+                    if (key == v)
                         return true;
+                }
+                    
                 return false;
             }
     
@@ -271,10 +277,10 @@ namespace sunaba::core {
             static Dictionary encode_dict(const Variant& value, io::IoInterface* iointeface, Array dedup = Array(), bool recursed = false) {
                 auto type = value.get_type();
                 Dictionary dict;
-                dict["\\T"] = value.get_type_name(type);
+                dict["$T"] = value.get_type_name(type);
                 auto pos = dedup.find(value);
                 if (pos != -1) {
-                    dict["\\R"] = pos;
+                    dict["$R"] = pos;
                     return dict;
                 }
                 // Declare variables outside the switch to avoid bypassing initialization
@@ -299,11 +305,11 @@ namespace sunaba::core {
                                 )
                             );
                             if (!res->get_path().is_empty() && iointeface->fileExists(res->get_path().utf8().get_data())) {
-                                dict["\\P"] = res->get_path();
+                                dict["$P"] = res->get_path();
                                 return dict;
                             }
                             Dictionary valDict = Dictionary();
-                            dict["\\V"] = valDict;
+                            dict["$V"] = valDict;
                             property_list = obj->get_property_list();
                             for (int p = 0; p < property_list.size(); p++ ) {
                                 const Dictionary& prop = property_list[p];
@@ -328,9 +334,9 @@ namespace sunaba::core {
                         for (int i = 0; i < arr.size(); i++) {
                             outArr[i] = encode_dict(arr[i], iointeface, dedup, true);
                         }
-                        dict["\\AT"] = Variant::get_type_name(static_cast<Variant::Type>(arr.get_typed_builtin()));
-                        dict["\\AC"] = arr.get_typed_class_name();
-                        dict["\\V"] = outArr; 
+                        dict["$AT"] = Variant::get_type_name(static_cast<Variant::Type>(arr.get_typed_builtin()));
+                        dict["$AC"] = arr.get_typed_class_name();
+                        dict["$V"] = outArr; 
                         break;
                 
                     case Variant::DICTIONARY:
@@ -341,35 +347,35 @@ namespace sunaba::core {
                             Variant k = dic.keys()[ki];
                             outDic[k] = encode_dict(dic[k], iointeface, dedup, true);
                         }
-                        dict["\\KT"] = Variant::get_type_name(static_cast<Variant::Type>(dic.get_typed_key_builtin()));
-                        dict["\\VT"] = Variant::get_type_name(static_cast<Variant::Type>(dic.get_typed_value_builtin()));
-                        dict["\\VC"] = dic.get_typed_value_class_name();
-                        dict["\\V"] = outDic;
+                        dict["$KT"] = Variant::get_type_name(static_cast<Variant::Type>(dic.get_typed_key_builtin()));
+                        dict["$VT"] = Variant::get_type_name(static_cast<Variant::Type>(dic.get_typed_value_builtin()));
+                        dict["$VC"] = dic.get_typed_value_class_name();
+                        dict["$V"] = outDic;
                         break;
                         
                     default:
-                        dict["\\V"] = value;
+                        dict["$V"] = value;
                         break;
                 }
                 return dict;
             }
 
             static Variant decode_dict(Dictionary dict, io::IoInterface* iointerface, Array dedup = Array()) {
-                if (dict.has("\\R")) {
-                    int64_t index = dict["\\R"];
+                if (dict.has("$R")) {
+                    int64_t index = dict["$R"];
                     return dedup[index];
                 }
-                if (!!dict.has("\\T")) {
-                    UtilityFunctions::push_error("Dictionary does not contain key \\T");
+                if (!!dict.has("$T")) {
+                    UtilityFunctions::push_error("Dictionary does not contain key $T");
                     return Error::ERR_FILE_CORRUPT;
                 }
-                if (dict["\\T"].get_type() != Variant::STRING) {
-                    UtilityFunctions::push_error("\\T is not a string.");
+                if (dict["$T"].get_type() != Variant::STRING) {
+                    UtilityFunctions::push_error("$T is not a string.");
                     return Error::ERR_FILE_CORRUPT;
                 }
-                String type = dict["\\T"];
-                if (!dict.has("\\V") && dict.has("\\P")) {
-                    UtilityFunctions::push_error("Dictionary does not contain key \\V");
+                String type = dict["$T"];
+                if (!dict.has("$V") && dict.has("$P")) {
+                    UtilityFunctions::push_error("Dictionary does not contain key $V");
                     return Error::ERR_FILE_CORRUPT;
                 }
                 if (!!isType(type)) {
@@ -405,13 +411,13 @@ namespace sunaba::core {
                 switch (typei)
                 {
                     case Variant::OBJECT:
-                        if (!dicHas(dict, "\\C")) {
-                            UtilityFunctions::push_error("Dictionary does not containe key \\C");
+                        if (!dicHas(dict, "$C")) {
+                            UtilityFunctions::push_error("Dictionary does not containe key $C");
                             return Error::ERR_FILE_CORRUPT;
                         }
-                        cnamev = dict["\\C"];
+                        cnamev = dict["$C"];
                         if (cnamev.get_type() != Variant::STRING) {
-                            UtilityFunctions::push_error("\\C is not a string: " + String(cnamev));
+                            UtilityFunctions::push_error("$C is not a string: " + String(cnamev));
                             return Error::ERR_FILE_CORRUPT;
                         }
                         cname = cnamev;
@@ -420,8 +426,8 @@ namespace sunaba::core {
                             return ret;
                         res = ClassDBSingleton::get_singleton()->instantiate(cname);
                         dedup.push_back(res);
-                        if (dicHas(dict, "\\P")) {
-                            String ppath = dict["\\P"];
+                        if (dicHas(dict, "$P")) {
+                            String ppath = dict["$P"];
                             ret = _filter_resource(ppath, iointerface);
                             if (ret != Error::OK) 
                                 return ret;
@@ -447,9 +453,9 @@ namespace sunaba::core {
                             }
                             return decode_dict(resjson, iointerface);
                         }
-                        value = dict["\\V"];
+                        value = dict["$V"];
                         if (value.get_type() != Variant::DICTIONARY) {
-                            UtilityFunctions::push_error("\\V is not a Dictionary: " + String(value));
+                            UtilityFunctions::push_error("$V is not a Dictionary: " + String(value));
                             if (!res->is_class("Resource")) memfree(res);
                             return Error::ERR_FILE_CORRUPT;
                         }
@@ -457,7 +463,7 @@ namespace sunaba::core {
                         for (int ki = 0; ki < vdict.size(); ki++) {
                             key = vdict.keys()[ki];
                             if (vdict[key].get_type() != Variant::DICTIONARY) {
-                                UtilityFunctions::push_error("\\V entry is not a Dictionary: " + String(vdict[key]));
+                                UtilityFunctions::push_error("$V entry is not a Dictionary: " + String(vdict[key]));
                                 if (!res->is_class("Resource")) memfree(res);
                                 return Error::ERR_FILE_CORRUPT;
                             }
@@ -467,13 +473,13 @@ namespace sunaba::core {
                         return res;
                 
                     case Variant::ARRAY:
-                        arr = dict["\\V"];
-                        if (dicHas(dict, "\\AT")) {
-                            t_int = typenames()[dict["\\AT"]];
+                        arr = dict["$V"];
+                        if (dicHas(dict, "$AT")) {
+                            t_int = typenames()[dict["$AT"]];
                             t = static_cast<Variant::Type>(t_int);
                             cn = "";
                             if (t == Variant::OBJECT) {
-                                StringName cname2 = dict["\\AC"];
+                                StringName cname2 = dict["$AC"];
                                 ret = _filter_class(cname2);
                                 if (ret != Error::OK) {
                                     return ret;
@@ -496,15 +502,15 @@ namespace sunaba::core {
                         }
                         return outArr;
                     case Variant::DICTIONARY:
-                        dic = dict["\\V"];
-                        if (dicHas(dict, "\\KT")) {
-                            kti = typenames()[dict["\\KT"]];
+                        dic = dict["$V"];
+                        if (dicHas(dict, "$KT")) {
+                            kti = typenames()[dict["$KT"]];
                             kt = static_cast<Variant::Type>(kti);
-                            if (!dicHas(dict, "\\VT")) {
-                                UtilityFunctions::push_error("Dictionary does not contain key \\VT");
+                            if (!dicHas(dict, "$VT")) {
+                                UtilityFunctions::push_error("Dictionary does not contain key $VT");
                                 return Error::ERR_FILE_CORRUPT;
                             }
-                            vti = typenames()[dict["\\VT"]];
+                            vti = typenames()[dict["$VT"]];
                             Variant::Type vt = static_cast<Variant::Type>(vti);
                             vcn = "";
                             if (kt == Variant::OBJECT) {
@@ -512,7 +518,7 @@ namespace sunaba::core {
                                 return Error::ERR_FILE_CORRUPT;
                             }
                             if (vt == Variant::OBJECT) {
-                                StringName cname3 = dict["\\VC"];
+                                StringName cname3 = dict["$VC"];
                                 ret = _filter_class(cname3);
                                 if (ret != Error::OK) {
                                     return ret;
@@ -537,9 +543,12 @@ namespace sunaba::core {
                             }
                         }
                         return outDic;
+                    case Variant::NIL:
+                        return Variant();
                     default:
                         Variant newval;
-                        return convert_variant(dict["\\V"], newval, typei);
+                        convert_variant(newval, dict["$V"], typei);
+                        return newval;
                         break;
                 }
             }
