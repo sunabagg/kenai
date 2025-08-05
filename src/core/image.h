@@ -213,6 +213,7 @@ namespace sunaba::core {
         int load(IoInterface* io, const std::string& path) {
             PackedByteArray data = io->loadBytes(path);
             auto pathStr = String(path.c_str());
+            image->set_path(path.c_str());
             if (data.size() > 0) {
                 if (pathStr.ends_with(".bmp")) {
                     return image->load_bmp_from_buffer(data);
