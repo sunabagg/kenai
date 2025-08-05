@@ -67,3 +67,10 @@ sunaba::core::Resource* sunaba::core::io::IoInterface::loadResource(const std::s
     godot::Resource* res = Object::cast_to<godot::Resource>(resobj);
     return new sunaba::core::Resource(res);
 }
+
+void sunaba::core::io::IoInterface::saveResource(const std::string& path, Resource* res) {
+    godot::Resource* gdres = res->getResource();
+    Dictionary dict = DictEncoding::encode_dict(gdres, this);
+    String json = JSON::stringify(dict);
+    saveText(path, json.utf8().get_data());
+}
