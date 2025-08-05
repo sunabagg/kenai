@@ -401,6 +401,10 @@ namespace sunaba::core {
                                 return ret;
                             std::string resstr = iointerface->loadText(ppath.utf8().get_data());
                             Variant resjson = JSON::parse_string(resstr.c_str());
+                            if (resjson.get_type() != Variant::DICTIONARY) {
+                                UtilityFunctions::push_error("JSON did not decode into Dictionary");
+                                return Error::ERR_FILE_CORRUPT;
+                            }
                             return decode_dict(resjson, iointerface);
                         }
                         value = dict["\\V"];
