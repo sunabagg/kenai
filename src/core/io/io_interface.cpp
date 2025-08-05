@@ -83,6 +83,15 @@ sunaba::core::Resource* sunaba::core::io::IoInterface::loadResource(const std::s
 }
 
 void sunaba::core::io::IoInterface::saveResource(const std::string& path, Resource* res) {
+    if (StringUtils::endsWith(path, ".shdr")) {
+        if (!res->getResource()->is_class("Shader")) {
+            throw new sol::error("shdr file must be a shader");
+        }
+        Shader* shader = new Shader(Object::cast_to<godot::Shader>(res->getResource()));
+        std::string code = shader->getCode();
+        saveText(path, code);
+        return;
+    }
     godot::Resource* gdres = res->getResource();
     Dictionary dict = DictEncoding::encode_dict(gdres, this);
     String json = JSON::stringify(dict, "   ");
