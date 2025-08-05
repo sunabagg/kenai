@@ -1,6 +1,8 @@
 package sunaba;
 
+import haxe.macro.Expr.Catch;
 import sunaba.core.Element;
+import sunaba.ErrorD;
 
 class App {
     public var rootElement(get, default): Element;
@@ -24,7 +26,12 @@ class App {
     }
 
     public function new() {
-        init();
+        try {
+            init();
+        }
+        catch(e) {
+            ErrorD(e.toString());
+        }
     }
 
     public function init() {
