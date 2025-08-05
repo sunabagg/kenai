@@ -426,6 +426,7 @@ namespace sunaba::core {
                                 ret = static_cast<Error>(image->load(iointerface, ppath.utf8().get_data()));
                             }
                             std::string resstr = iointerface->loadText(ppath.utf8().get_data());
+                            if (ppath.ends_with(".shdr"))
                             Variant resjson = JSON::parse_string(resstr.c_str());
                             if (resjson.get_type() != Variant::DICTIONARY) {
                                 UtilityFunctions::push_error("JSON did not decode into Dictionary");
