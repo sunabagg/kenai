@@ -51,6 +51,14 @@ namespace sunaba::core {
         bool isNull() {
             return resource == nullptr;
         }
+
+        std::string getPath() {
+            return resource->get_path().utf8().get_data();
+        }
+
+        void setPath(const std::string& path) {
+            resource->set_path(path.c_str());
+        }
     };
 }
 
