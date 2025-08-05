@@ -297,6 +297,7 @@ namespace sunaba::core {
                 {
                     case Variant::OBJECT:
                         obj = value;
+                        dict["$C"] = obj->get_class();
                         dedup.push_back(obj);
                         if (recursed && obj->is_class("Resource")) {
                             res = Ref<godot::Resource>(

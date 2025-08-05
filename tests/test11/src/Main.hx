@@ -16,5 +16,14 @@ class Main extends App {
         stylebox.cornerRadiusTopRight = 1;
         var io : IoManager = untyped __lua__("_G.ioManager");
         io.saveResource("user://test.sres", stylebox);
+
+        var styleboxRes = io.loadResource("user://test.sres");
+        if (styleboxRes == null || styleboxRes.isNull()) {
+            return;
+        }
+        var newStylebox = StyleBoxFlat.castFrom(styleboxRes);
+        trace(newStylebox.ExpandMarginBottom);
+        trace(newStylebox.borderWidthLeft);
+        trace(newStylebox.cornerRadiusTopRight);
     }
 }
