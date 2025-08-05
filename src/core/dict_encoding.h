@@ -302,14 +302,17 @@ namespace sunaba::core {
                                 dict["\\P"] = res->get_path();
                                 return dict;
                             }
-                            dict["\\V"] = Dictionary();
+                            Dictionary valDict = Dictionary();
+                            dict["\\V"] = valDict;
                             property_list = obj->get_property_list();
                             for (int p = 0; p < property_list.size(); p++ ) {
                                 const Dictionary& prop = property_list[p];
+                                //UtilityFunctions::print(prop);
                                 String pn = prop["name"];
                                 if (pn == "script") continue;
                                 if (!prop["usage"] && PROPERTY_USAGE_STORAGE) continue;
-                                dict["\\V"] = encode_dict(obj->get(pn), iointeface, dedup, true);
+                                valDict[pn] = encode_dict(obj->get(pn), iointeface, dedup, true);
+                                //UtilityFunctions::print(dict);
                             }
                         }
                         break;
@@ -338,14 +341,14 @@ namespace sunaba::core {
                             Variant k = dic.keys()[ki];
                             outDic[k] = encode_dict(dic[k], iointeface, dedup, true);
                         }
-                        dic["\\KT"] = Variant::get_type_name(static_cast<Variant::Type>(dic.get_typed_key_builtin()));
-                        dic["\\VT"] = Variant::get_type_name(static_cast<Variant::Type>(dic.get_typed_value_builtin()));
-                        dic["\\VC"] = dic.get_typed_value_class_name();
-                        dic["\\V"] = outDic;
+                        dict["\\KT"] = Variant::get_type_name(static_cast<Variant::Type>(dic.get_typed_key_builtin()));
+                        dict["\\VT"] = Variant::get_type_name(static_cast<Variant::Type>(dic.get_typed_value_builtin()));
+                        dict["\\VC"] = dic.get_typed_value_class_name();
+                        dict["\\V"] = outDic;
                         break;
                         
                     default:
-                        dic["\\V"] = value;
+                        dict["\\V"] = value;
                         break;
                 }
                 return dict;
