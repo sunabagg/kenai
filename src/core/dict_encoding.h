@@ -341,6 +341,24 @@ namespace sunaba::core {
                             Variant resjson = JSON::parse_string(resstr.c_str());
                             return decode_dict(resjson, iointerface);
                         }
+                        Variant value = dict["\\V"];
+                        if (value.get_type() != Variant::DICTIONARY) {
+                            UtilityFunctions::push_error("\\V is not a Dictionary: " + String(value));
+                            if (!res->is_class("Resource")) memfree(res);
+                            return Error::ERR_FILE_CORRUPT;
+                        }
+                        Dictionary vdict = value;
+                        for (int ki = 0; ki < vdict.size(); ki++) {
+                            String key = vdict.keys()[ki];
+                            if (vdict[key].get_type() != Variant::DICTIONARY) {
+                                UtilityFunctions::push_error("\\V entry is not a Dictionary: " + String(vdict[key]));
+                                if (!res->is_class("Resource")) memfree(res);
+                                return Error::ERR_FILE_CORRUPT;
+                            }
+                            Dictionary intDict = vdict[key];
+                            res->set(key, decode_dict(intDict, iointerface, dedup));
+                        }
+                        return res;
                 
                     default:
                         break;
