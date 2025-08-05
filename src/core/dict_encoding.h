@@ -196,6 +196,14 @@ namespace sunaba::core {
                 return false;
             }
 
+            static bool dicHas(Dictionary dic, const Variant& v) {
+                Dictionary tn = typenames();
+                for (int i = 0; i < tn.size(); i++)
+                    if (tn.keys()[i] == v)
+                        return true;
+                return false;
+            }
+
         public:
             static Dictionary encode_dict(const Variant& value, io::IoInterface* iointeface, Array dedup = Array(), bool recursed = false) {
                 auto type = value.get_type();
@@ -301,6 +309,19 @@ namespace sunaba::core {
                 if (!!isType(type)) {
                     UtilityFunctions::push_error("Type " + type + " not recognized");
                     return Error::ERR_FILE_CORRUPT;
+                }
+                int64_t typei64 = typenames()[type];
+                Variant::Type typei = static_cast<Variant::Type>(typei64);
+                switch (typei)
+                {
+                    case Variant::OBJECT:
+                        if (!dicHas(dict, "\\C")) {
+                            UtilityFunctions::push_error("Dictionary does not containe key \\C");
+                            return Error::ERR_FILE_CORRUPT;
+                        }
+                
+                    default:
+                        break;
                 }
             }
     };
