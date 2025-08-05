@@ -256,7 +256,7 @@ namespace sunaba::core {
                 }
                 // Declare variables outside the switch to avoid bypassing initialization
                 Object* obj = nullptr;
-                Ref<Resource> res;
+                Ref<godot::Resource> res;
                 TypedArray<Dictionary> property_list;
                 Array arr;
                 Array outArr;
@@ -270,13 +270,13 @@ namespace sunaba::core {
                         obj = value;
                         dedup.push_back(obj);
                         if (recursed && obj->is_class("Resource")) {
-                            res = Ref<Resource>(
-                                Object::cast_to<Resource>(
+                            res = Ref<godot::Resource>(
+                                Object::cast_to<godot::Resource>(
                                     obj
                                 )
                             );
-                            if (!res->getResource()->get_path().is_empty() && iointeface->fileExists(res->getResource()->get_path().utf8().get_data())) {
-                                dict["\\P"] = res->getResource()->get_path();
+                            if (!res->get_path().is_empty() && iointeface->fileExists(res->get_path().utf8().get_data())) {
+                                dict["\\P"] = res->get_path();
                                 return dict;
                             }
                             dict["\\V"] = Dictionary();
