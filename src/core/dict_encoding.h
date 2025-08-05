@@ -15,6 +15,46 @@
 using namespace godot;
 
 namespace sunaba::core {
+    bool convert_variant(Variant &dest, const Variant &src, Variant::Type target_type) {
+    if (src.get_type() == target_type) {
+        dest = src;
+        return true;
+    }
+
+    switch (target_type) {
+            case Variant::INT: {
+                if (src.get_type() == Variant::STRING) {
+                    dest = String(src).to_int();
+                    return true;
+                }
+                if (src.get_type() == Variant::FLOAT) {
+                    dest = (int)(double)src;
+                    return true;
+                }
+                break;
+            }
+            case Variant::FLOAT: {
+                if (src.get_type() == Variant::STRING) {
+                    dest = String(src).to_float();
+                    return true;
+                }
+                if (src.get_type() == Variant::INT) {
+                    dest = (double)(int)src;
+                    return true;
+                }
+                break;
+            }
+            case Variant::STRING: {
+                dest = src.stringify();
+                return true;
+            }
+            default:
+                break;
+        }
+
+        return false; // Conversion not supported
+    }
+
     class DictEncoding : public Object {
         GDCLASS(DictEncoding, Object)
         protected:
@@ -360,6 +400,80 @@ namespace sunaba::core {
                         }
                         return res;
                 
+                    case Variant::ARRAY:
+                        Array arr = dict["\\V"];
+                        Array outArr;
+                        if (dicHas(dict, "\\AT")) {
+                            int64_t t_int = typenames()[dict["\\AT"]];
+                            Variant::Type  t = static_cast<Variant::Type>(t_int);
+                            StringName cn = "";
+                            if (t == Variant::OBJECT) {
+                                StringName cname = dict["\\AC"];
+                                Error ret = _filter_class(cname);
+                                if (ret != Error::OK) {
+                                    return ret;
+                                }
+                                cn = cname;
+                            }
+                            outArr = Array();
+                        }
+                        else  {
+                            outArr = Array();
+                        }
+                        Error err = static_cast<Error>(outArr.resize(arr.size()));
+                        if (err != Error::OK) {
+                            UtilityFunctions::push_error("Cannot allocate array");
+                            return err;
+                        }
+                        for (int i = 0; i < arr.size(); i++) {
+                            Dictionary d = arr[i];
+                            outArr[i] = decode_dict(d, iointerface, dedup);
+                        }
+                        return outArr;
+                    case Variant::DICTIONARY:
+                        Dictionary dic = dict["\\V"];
+                        Dictionary outDic;
+                        Variant::Type kt = Variant::NIL;
+                        if (dicHas(dict, "\\KT")) {
+                            int64_t kti = typenames()[dict["\\KT"]];
+                            kt = static_cast<Variant::Type>(kti);
+                            if (!dicHas(dict, "\\VT")) {
+                                UtilityFunctions::push_error("Dictionary does not contain key \\VT");
+                                return Error::ERR_FILE_CORRUPT;
+                            }
+                            int64_t vti = typenames()[dict["\\VT"]];
+                            Variant::Type vt = static_cast<Variant::Type>(vti);
+                            StringName vcn = "";
+                            if (kt == Variant::OBJECT) {
+                                UtilityFunctions::push_error("Objects are not supported");
+                                return Error::ERR_FILE_CORRUPT;
+                            }
+                            if (vt == Variant::OBJECT) {
+                                StringName cname = dict["\\VC"];
+                                Error ret = _filter_class(cname);
+                                if (ret != Error::OK) {
+                                    return ret;
+                                }
+                                vcn = cname;
+                            }
+                            outDic = Dictionary();
+                        }
+                        else  {
+                            outDic = Dictionary();
+                        }
+                        for (int ki = 0; ki < dic.size(); ki++) {
+                            Variant k = dic.keys()[ki];
+                            Dictionary d = dic[k];
+                            if (kt) {
+                                Variant nk; 
+                                convert_variant(k, kt, kt);
+                                outDic[nk] = decode_dict(d, iointerface, dedup);
+                            }
+                            else {
+                                outDic[k] = decode_dict(d, iointerface, dedup);
+                            }
+                        }
+                        return outDic;
                     default:
                         break;
                 }
