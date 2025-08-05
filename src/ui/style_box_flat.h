@@ -20,11 +20,11 @@ namespace sunaba::ui {
         GodotStyleBoxFlat* p_style_box_flat;
     public:
         StyleBoxFlat() {
-            setStyleBox(memnew(GodotStyleBoxFlat));
+            setStyleBoxFlat(memnew(GodotStyleBoxFlat));
         }
 
         StyleBoxFlat(GodotStyleBoxFlat* _p_style_box_flat) {
-            setStyleBox(_p_style_box_flat);
+            setStyleBoxFlat(_p_style_box_flat);
         }
 
         GodotStyleBoxFlat* getStyleBoxFlat() {
