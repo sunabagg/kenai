@@ -1,5 +1,6 @@
 #include "io_interface.h"
 #include "../string_utils.h"
+#include "../dict_encoding.h"
 
 using namespace godot;
 
@@ -57,4 +58,12 @@ std::string sunaba::core::io::IoInterface::getFilePathFromLuaRequirePath(const s
     }
 
     return newFilePath.utf8().get_data();
+}
+
+sunaba::core::Resource* sunaba::core::io::IoInterface::loadResource(const std::string& path) {
+    std::string resstr = loadText(path);
+    Variant resjson = JSON::parse_string(resstr.c_str());
+    Object* resobj = DictEncoding::decode_dict(resjson, this);
+    godot::Resource* res = Object::cast_to<godot::Resource>(resobj);
+    return new sunaba::core::Resource(res);
 }
