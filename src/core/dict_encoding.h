@@ -275,8 +275,8 @@ namespace sunaba::core {
                                     obj
                                 )
                             );
-                            if (!res->get_path().is_empty() && iointeface->fileExists(res->get_path().utf8().get_data())) {
-                                dict["\\P"] = res->get_path();
+                            if (!res->getResource()->get_path().is_empty() && iointeface->fileExists(res->getResource()->get_path().utf8().get_data())) {
+                                dict["\\P"] = res->getResource()->get_path();
                                 return dict;
                             }
                             dict["\\V"] = Dictionary();
