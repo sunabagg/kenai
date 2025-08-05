@@ -354,6 +354,30 @@ namespace sunaba::core {
                 }
                 int64_t typei64 = typenames()[type];
                 Variant::Type typei = static_cast<Variant::Type>(typei64);
+
+                // Declare all variables that are assigned inside the switch before the switch
+                Variant cnamev;
+                String cname;
+                Error ret = Error::OK;
+                Object* res = nullptr;
+                Variant value;
+                Dictionary vdict;
+                String key;
+                Dictionary intDict;
+                Array arr;
+                Array outArr;
+                Error err = Error::OK;
+                Dictionary d;
+                Dictionary dic;
+                Dictionary outDic;
+                Variant::Type kt = Variant::NIL;
+                int64_t t_int = 0;
+                Variant::Type t = Variant::NIL;
+                StringName cn = "";
+                StringName vcn = "";
+                int64_t kti = 0;
+                int64_t vti = 0;
+
                 switch (typei)
                 {
                     case Variant::OBJECT:
@@ -361,16 +385,16 @@ namespace sunaba::core {
                             UtilityFunctions::push_error("Dictionary does not containe key \\C");
                             return Error::ERR_FILE_CORRUPT;
                         }
-                        Variant& cnamev = dict["\\C"];
+                        cnamev = dict["\\C"];
                         if (cnamev.get_type() != Variant::STRING) {
                             UtilityFunctions::push_error("\\C is not a string: " + String(cnamev));
                             return Error::ERR_FILE_CORRUPT;
                         }
-                        String cname = cnamev;
-                        Error ret = _filter_class(cname);
+                        cname = cnamev;
+                        ret = _filter_class(cname);
                         if (ret != Error::OK) 
                             return ret;
-                        Object* res = ClassDBSingleton::get_singleton()->instantiate(cname);
+                        res = ClassDBSingleton::get_singleton()->instantiate(cname);
                         dedup.push_back(res);
                         if (dicHas(dict, "\\P")) {
                             String ppath = dict["\\P"];
@@ -381,80 +405,77 @@ namespace sunaba::core {
                             Variant resjson = JSON::parse_string(resstr.c_str());
                             return decode_dict(resjson, iointerface);
                         }
-                        Variant value = dict["\\V"];
+                        value = dict["\\V"];
                         if (value.get_type() != Variant::DICTIONARY) {
                             UtilityFunctions::push_error("\\V is not a Dictionary: " + String(value));
                             if (!res->is_class("Resource")) memfree(res);
                             return Error::ERR_FILE_CORRUPT;
                         }
-                        Dictionary vdict = value;
+                        vdict = value;
                         for (int ki = 0; ki < vdict.size(); ki++) {
-                            String key = vdict.keys()[ki];
+                            key = vdict.keys()[ki];
                             if (vdict[key].get_type() != Variant::DICTIONARY) {
                                 UtilityFunctions::push_error("\\V entry is not a Dictionary: " + String(vdict[key]));
                                 if (!res->is_class("Resource")) memfree(res);
                                 return Error::ERR_FILE_CORRUPT;
                             }
-                            Dictionary intDict = vdict[key];
+                            intDict = vdict[key];
                             res->set(key, decode_dict(intDict, iointerface, dedup));
                         }
                         return res;
                 
                     case Variant::ARRAY:
-                        Array arr = dict["\\V"];
-                        Array outArr;
+                        arr = dict["\\V"];
                         if (dicHas(dict, "\\AT")) {
-                            int64_t t_int = typenames()[dict["\\AT"]];
-                            Variant::Type  t = static_cast<Variant::Type>(t_int);
-                            StringName cn = "";
+                            t_int = typenames()[dict["\\AT"]];
+                            t = static_cast<Variant::Type>(t_int);
+                            cn = "";
                             if (t == Variant::OBJECT) {
-                                StringName cname = dict["\\AC"];
-                                Error ret = _filter_class(cname);
+                                StringName cname2 = dict["\\AC"];
+                                ret = _filter_class(cname2);
                                 if (ret != Error::OK) {
                                     return ret;
                                 }
-                                cn = cname;
+                                cn = cname2;
                             }
                             outArr = Array();
                         }
                         else  {
                             outArr = Array();
                         }
-                        Error err = static_cast<Error>(outArr.resize(arr.size()));
+                        err = static_cast<Error>(outArr.resize(arr.size()));
                         if (err != Error::OK) {
                             UtilityFunctions::push_error("Cannot allocate array");
                             return err;
                         }
                         for (int i = 0; i < arr.size(); i++) {
-                            Dictionary d = arr[i];
+                            d = arr[i];
                             outArr[i] = decode_dict(d, iointerface, dedup);
                         }
                         return outArr;
                     case Variant::DICTIONARY:
-                        Dictionary dic = dict["\\V"];
-                        Dictionary outDic;
-                        Variant::Type kt = Variant::NIL;
+                        dic = dict["\\V"];
                         if (dicHas(dict, "\\KT")) {
-                            int64_t kti = typenames()[dict["\\KT"]];
+                            kti = typenames()[dict["\\KT"]];
                             kt = static_cast<Variant::Type>(kti);
                             if (!dicHas(dict, "\\VT")) {
                                 UtilityFunctions::push_error("Dictionary does not contain key \\VT");
                                 return Error::ERR_FILE_CORRUPT;
                             }
-                            int64_t vti = typenames()[dict["\\VT"]];
+                            vti = typenames()[dict["\\VT"]];
                             Variant::Type vt = static_cast<Variant::Type>(vti);
-                            StringName vcn = "";
+                            vcn = "";
                             if (kt == Variant::OBJECT) {
                                 UtilityFunctions::push_error("Objects are not supported");
                                 return Error::ERR_FILE_CORRUPT;
                             }
                             if (vt == Variant::OBJECT) {
-                                StringName cname = dict["\\VC"];
-                                Error ret = _filter_class(cname);
+                                StringName cname3 = dict["\\VC"];
+                                ret = _filter_class(cname3);
                                 if (ret != Error::OK) {
                                     return ret;
                                 }
-                                vcn = cname;
+                                vcn = cname3;
                             }
                             outDic = Dictionary();
                         }
@@ -463,7 +484,7 @@ namespace sunaba::core {
                         }
                         for (int ki = 0; ki < dic.size(); ki++) {
                             Variant k = dic.keys()[ki];
-                            Dictionary d = dic[k];
+                            d = dic[k];
                             if (kt) {
                                 Variant nk; 
                                 convert_variant(k, kt, kt);
