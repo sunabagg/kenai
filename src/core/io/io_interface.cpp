@@ -71,6 +71,6 @@ sunaba::core::Resource* sunaba::core::io::IoInterface::loadResource(const std::s
 void sunaba::core::io::IoInterface::saveResource(const std::string& path, Resource* res) {
     godot::Resource* gdres = res->getResource();
     Dictionary dict = DictEncoding::encode_dict(gdres, this);
-    String json = JSON::stringify(dict);
+    String json = JSON::stringify(dict, "   ");
     saveText(path, json.utf8().get_data());
 }
