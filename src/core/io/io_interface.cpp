@@ -1,6 +1,7 @@
 #include "io_interface.h"
 #include "../string_utils.h"
 #include "../dict_encoding.h"
+#include "../shader.h"
 
 using namespace godot;
 
@@ -61,7 +62,20 @@ std::string sunaba::core::io::IoInterface::getFilePathFromLuaRequirePath(const s
 }
 
 sunaba::core::Resource* sunaba::core::io::IoInterface::loadResource(const std::string& path) {
+    if (DictEncoding::isImagePath(path.c_str())) {
+        Image* image = new Image();
+        Error err = static_cast<Error>(image->load(this, path));
+        if (err != Error::OK) {
+            throw new sol::error("Invalid Image");
+        }
+        return image;
+    }
     std::string resstr = loadText(path);
+    if (StringUtils::endsWith(path, ".shdr")) {
+        Shader* shader = new Shader();
+        shader->setCode(resstr);
+        return shader;
+    }
     Variant resjson = JSON::parse_string(resstr.c_str());
     Object* resobj = DictEncoding::decode_dict(resjson, this);
     godot::Resource* res = Object::cast_to<godot::Resource>(resobj);
