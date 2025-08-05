@@ -55,10 +55,8 @@ namespace sunaba::core {
         return false; // Conversion not supported
     }
 
-    class DictEncoding : public Object {
-        GDCLASS(DictEncoding, Object)
+    class DictEncoding {
         protected:
-            static void _bind_methods() {}
 
             static Array allowedClasses() {
                 Array list;
