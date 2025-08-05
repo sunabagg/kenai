@@ -1,6 +1,8 @@
 package sunaba.ui;
 
 import sunaba.core.Vector2;
+import sunaba.core.Resource;
+import sunaba.core.Color;
 
 @:native("StyleBoxFlat")
 extern class StyleBoxFlat extends StyleBox {
