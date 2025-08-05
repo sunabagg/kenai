@@ -116,47 +116,47 @@ namespace sunaba::core {
                 return list;
             }
 
-            Dictionary typenames() {
-                Dictionary typenames;
-                typenames["Nil"] = Variant::NIL;
-                typenames["bool"] = Variant::BOOL;
-                typenames["int"] = Variant::INT;
-                typenames["float"] = Variant::FLOAT;
-                typenames["String"] = Variant::STRING;
-                typenames["Vector2"] = Variant::VECTOR2;
-                typenames["Vector2i"] = Variant::VECTOR2I;
-                typenames["Rect2"] = Variant::RECT2;
-                typenames["Rect2i"] = Variant::RECT2I;
-                typenames["Vector3"] = Variant::VECTOR3;
-                typenames["Vector3i"] = Variant::VECTOR3I;
-                typenames["Transform2D"] = Variant::TRANSFORM2D;
-                typenames["Vector4"] = Variant::VECTOR4;
-                typenames["Vector4i"] = Variant::VECTOR4I;
-                typenames["Plane"] = Variant::PLANE;
-                typenames["Quaternion"] = Variant::QUATERNION;
-                typenames["AABB"] = Variant::AABB;
-                typenames["Basis"] = Variant::BASIS;
-                typenames["Transform3D"] = Variant::TRANSFORM3D;
-                typenames["Projection"] = Variant::PROJECTION;
-                typenames["Color"] = Variant::COLOR;
-                typenames["StringName"] = Variant::STRING_NAME;
-                typenames["NodePath"] = Variant::NODE_PATH;
-                typenames["RID"] = Variant::RID;
-                typenames["Object"] = Variant::OBJECT;
-                typenames["Callable"] = Variant::CALLABLE;
-                typenames["Signal"] = Variant::SIGNAL;
-                typenames["Dictionary"] = Variant::DICTIONARY;
-                typenames["Array"] = Variant::ARRAY;
-                typenames["PackedByteArray"] = Variant::PACKED_BYTE_ARRAY;
-                typenames["PackedInt32Array"] = Variant::PACKED_INT32_ARRAY;
-                typenames["PackedInt64Array"] = Variant::PACKED_INT64_ARRAY;
-                typenames["PackedFloat32Array"] = Variant::PACKED_FLOAT32_ARRAY;
-                typenames["PackedFloat64Array"] = Variant::PACKED_FLOAT64_ARRAY;
-                typenames["PackedStringArray"] = Variant::PACKED_STRING_ARRAY;
-                typenames["PackedVector2Array"] = Variant::PACKED_VECTOR2_ARRAY;
-                typenames["PackedVector3Array"] = Variant::PACKED_VECTOR3_ARRAY;
-                typenames["PackedVector4Array"] = Variant::PACKED_VECTOR4_ARRAY;
-                return typenames;
+            static Dictionary typenames() {
+                Dictionary tn;
+                tn["Nil"] = Variant::NIL;
+                tn["bool"] = Variant::BOOL;
+                tn["int"] = Variant::INT;
+                tn["float"] = Variant::FLOAT;
+                tn["String"] = Variant::STRING;
+                tn["Vector2"] = Variant::VECTOR2;
+                tn["Vector2i"] = Variant::VECTOR2I;
+                tn["Rect2"] = Variant::RECT2;
+                tn["Rect2i"] = Variant::RECT2I;
+                tn["Vector3"] = Variant::VECTOR3;
+                tn["Vector3i"] = Variant::VECTOR3I;
+                tn["Transform2D"] = Variant::TRANSFORM2D;
+                tn["Vector4"] = Variant::VECTOR4;
+                tn["Vector4i"] = Variant::VECTOR4I;
+                tn["Plane"] = Variant::PLANE;
+                tn["Quaternion"] = Variant::QUATERNION;
+                tn["AABB"] = Variant::AABB;
+                tn["Basis"] = Variant::BASIS;
+                tn["Transform3D"] = Variant::TRANSFORM3D;
+                tn["Projection"] = Variant::PROJECTION;
+                tn["Color"] = Variant::COLOR;
+                tn["StringName"] = Variant::STRING_NAME;
+                tn["NodePath"] = Variant::NODE_PATH;
+                tn["RID"] = Variant::RID;
+                tn["Object"] = Variant::OBJECT;
+                tn["Callable"] = Variant::CALLABLE;
+                tn["Signal"] = Variant::SIGNAL;
+                tn["Dictionary"] = Variant::DICTIONARY;
+                tn["Array"] = Variant::ARRAY;
+                tn["PackedByteArray"] = Variant::PACKED_BYTE_ARRAY;
+                tn["PackedInt32Array"] = Variant::PACKED_INT32_ARRAY;
+                tn["PackedInt64Array"] = Variant::PACKED_INT64_ARRAY;
+                tn["PackedFloat32Array"] = Variant::PACKED_FLOAT32_ARRAY;
+                tn["PackedFloat64Array"] = Variant::PACKED_FLOAT64_ARRAY;
+                tn["PackedStringArray"] = Variant::PACKED_STRING_ARRAY;
+                tn["PackedVector2Array"] = Variant::PACKED_VECTOR2_ARRAY;
+                tn["PackedVector3Array"] = Variant::PACKED_VECTOR3_ARRAY;
+                tn["PackedVector4Array"] = Variant::PACKED_VECTOR4_ARRAY;
+                return tn;
             }
 
             static bool _glob_filters(const String& value, Array list) {
@@ -186,6 +186,14 @@ namespace sunaba::core {
                     return Error::ERR_FILE_NOT_FOUND;
                 }
                 return Error::OK;
+            }
+
+            static bool isType(const String& t) {\
+                Dictionary tn = typenames();
+                for (int i = 0; i < tn.size(); i++)
+                    if (tn.keys()[i] == t)
+                        return true;
+                return false;
             }
 
         public:
@@ -290,7 +298,10 @@ namespace sunaba::core {
                     UtilityFunctions::push_error("Dictionary does not contain key \\V");
                     return Error::ERR_FILE_CORRUPT;
                 }
-                if ()
+                if (!!isType(type)) {
+                    UtilityFunctions::push_error("Type " + type + " not recognized");
+                    return Error::ERR_FILE_CORRUPT;
+                }
             }
     };
 }
