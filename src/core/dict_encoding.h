@@ -245,7 +245,8 @@ namespace sunaba::core {
                         return true;
                 return false;
             }
-
+    
+        public:
             static bool isImagePath(const String& path) {
                 if (path.ends_with(".png"))
                     return true;
@@ -267,7 +268,6 @@ namespace sunaba::core {
                     return false;
             }
 
-        public:
             static Dictionary encode_dict(const Variant& value, io::IoInterface* iointeface, Array dedup = Array(), bool recursed = false) {
                 auto type = value.get_type();
                 Dictionary dict;
