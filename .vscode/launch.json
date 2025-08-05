@@ -317,7 +317,7 @@
             "program": "/Applications/Godot.app/Contents/MacOS/Godot",
             "args": [
                 "--verbose",
-                "/Users/lucasabbas/sunaba/tests/test3/bin/test3.sbx"
+                "${workspaceFolder}/tests/test3/bin/test3.sbx"
             ],
             "cwd": "${command:cmake.buildDirectory}/sunaba",
             "preLaunchTask": "CMake: build",
@@ -330,7 +330,7 @@
             "program": "/Applications/Godot.app/Contents/MacOS/Godot",
             "args": [
                 "--verbose",
-                "/Users/lucasabbas/sunaba/tests/test5/bin/test5.sbx"
+                "${workspaceFolder}/tests/test5/bin/test5.sbx"
             ],
             "cwd": "${command:cmake.buildDirectory}/sunaba",
             "preLaunchTask": "CMake: build",
@@ -343,7 +343,7 @@
             "program": "/Applications/Godot.app/Contents/MacOS/Godot",
             "args": [
                 "--verbose",
-                "/Users/lucasabbas/sunaba/tests/test6/bin/test6.sbx"
+                "${workspaceFolder}/tests/test6/bin/test6.sbx"
             ],
             "cwd": "${command:cmake.buildDirectory}/sunaba",
             "preLaunchTask": "CMake: build",
@@ -356,7 +356,7 @@
             "program": "/Applications/Godot.app/Contents/MacOS/Godot",
             "args": [
                 "--verbose",
-                "/Users/lucasabbas/sunaba/tests/test7/bin/test7.sbx"
+                "${workspaceFolder}/tests/test7/bin/test7.sbx"
             ],
             "cwd": "${command:cmake.buildDirectory}/sunaba",
             "preLaunchTask": "CMake: build",
@@ -369,7 +369,46 @@
             "program": "/Applications/Godot.app/Contents/MacOS/Godot",
             "args": [
                 "--verbose",
-                "/Users/lucasabbas/sunaba/tests/test8/bin/test8.sbx"
+                "${workspaceFolder}/tests/test8/bin/test8.sbx"
+            ],
+            "cwd": "${command:cmake.buildDirectory}/sunaba",
+            "preLaunchTask": "CMake: build",
+            "internalConsoleOptions": "openOnSessionStart",
+        },
+        {
+            "name": "macOS Launch (Local) (test9)",
+            "type": "lldb-dap",
+            "request": "launch",
+            "program": "/Applications/Godot.app/Contents/MacOS/Godot",
+            "args": [
+                "--verbose",
+                "${workspaceFolder}/tests/test9/bin/test9.sbx"
+            ],
+            "cwd": "${command:cmake.buildDirectory}/sunaba",
+            "preLaunchTask": "CMake: build",
+            "internalConsoleOptions": "openOnSessionStart",
+        },
+        {
+            "name": "macOS Launch (Local) (test10)",
+            "type": "lldb-dap",
+            "request": "launch",
+            "program": "/Applications/Godot.app/Contents/MacOS/Godot",
+            "args": [
+                "--verbose",
+                "${workspaceFolder}/tests/test10/bin/test10.sbx"
+            ],
+            "cwd": "${command:cmake.buildDirectory}/sunaba",
+            "preLaunchTask": "CMake: build",
+            "internalConsoleOptions": "openOnSessionStart",
+        },
+        {
+            "name": "macOS Launch (Local) (test11)",
+            "type": "lldb-dap",
+            "request": "launch",
+            "program": "/Applications/Godot.app/Contents/MacOS/Godot",
+            "args": [
+                "--verbose",
+                "${workspaceFolder}/tests/test11/bin/test11.sbx"
             ],
             "cwd": "${command:cmake.buildDirectory}/sunaba",
             "preLaunchTask": "CMake: build",
