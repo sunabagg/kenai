@@ -540,7 +540,7 @@ void App::loadAndExecuteSbx(const String &path) {
         DirAccess::make_dir_absolute(appBaseUserDirPath);
     
     String appUserDirPath = appBaseUserDirPath + appName + "/";
-    if (!DirAccess::dir_exists_absolute(appBaseUserDirPath))
+    if (!DirAccess::dir_exists_absolute(appUserDirPath))
         DirAccess::make_dir_absolute(appUserDirPath);
 
     FileSystemIo* userFsio = FileSystemIo::create(appUserDirPath.utf8().get_data(), "user://");
