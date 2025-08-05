@@ -8,6 +8,7 @@
 #include <godot_cpp/core/class_db.hpp>
 #include <godot_cpp/classes/resource_loader.hpp>
 #include <godot_cpp/classes/json.hpp>
+#include <godot_cpp/classes/shader.hpp>
 
 #include "io/io_interface.h"
 #include "image.h"
