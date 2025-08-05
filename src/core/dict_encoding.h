@@ -475,6 +475,8 @@ namespace sunaba::core {
                         }
                         return outDic;
                     default:
+                        Variant newval;
+                        convert_variant(dict["\\V"], newval, typei);
                         break;
                 }
             }
