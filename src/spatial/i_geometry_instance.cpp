@@ -12,6 +12,7 @@ void sunaba::spatial::bindGeometryInstance(sol::state& lua) {
         "customAabb", sol::property(&IGeometryInstance::getCustomAabb, &IGeometryInstance::setCustomAabb),
         "extraCullMargin", sol::property(&IGeometryInstance::getExtraCullMargin, &IGeometryInstance::setExtraCullMargin),
         "lightmapScale", sol::property(&IGeometryInstance::getLightmapScale, &IGeometryInstance::setLightmapScale),
+        "lightmapTexelScale", sol::property(&IGeometryInstance::getLightmapTexelScale, &IGeometryInstance::setLightmapTexelScale),
         "giMode", sol::property(&IGeometryInstance::getGiMode, &IGeometryInstance::setGiMode),
         "lodBias", sol::property(&IGeometryInstance::getLodBias, &IGeometryInstance::setLodBias),
         "transparancy", sol::property(&IGeometryInstance::getTransparancy, &IGeometryInstance::setTransparancy),
