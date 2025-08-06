@@ -469,9 +469,7 @@ namespace sunaba::core {
                                 return Error::ERR_FILE_CORRUPT;
                             }
                             intDict = vdict[key];
-                            Variant val = decode_dict(intDict, iointerface, dedup);
-                            UtilityFunctions::print(val);
-                            res->set(key, val);
+                            res->set(key, decode_dict(intDict, iointerface, dedup));
                         }
                         return res;
                 
