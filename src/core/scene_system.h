@@ -148,6 +148,13 @@ namespace sunaba::core
             return dict;
         }
 
+        virtual void setData(godot::Dictionary dict) {
+            if (scriptInstance == sol::lua_nil) return;
+            auto func = scriptInstance["setData"].get<sol::function>();
+            if (!func) return;
+            auto result = func(scriptInstance, dict);
+        }
+
         sol::table getScriptType() {
             return scriptType;
         }
