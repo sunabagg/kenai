@@ -120,6 +120,14 @@ namespace sunaba::spatial
         void setVisibilityRangeFadeMode(int mode) {
             geometryInstance->set_visibility_range_fade_mode(static_cast<GeometryInstance3D::VisibilityRangeFadeMode>(mode));
         }
+
+        Dictionary getData() override {
+            Dictionary dict = IVisualInstance::getData();
+
+            dict["castShadow"] = getCastShadow();
+
+            return dict;
+        }
     };
 }
 
