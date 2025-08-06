@@ -127,6 +127,7 @@ namespace sunaba::spatial
             dict["castShadow"] = getCastShadow();
             dict["customAabb"] = getCustomAabb();
             dict["extraCullMargin"] = getExtraCullMargin();
+            dict["lightmapScale"] = getLightmapScale();
 
             return dict;
         }
