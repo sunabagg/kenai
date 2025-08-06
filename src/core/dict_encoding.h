@@ -14,7 +14,18 @@
 #include "image.h"
 
 
-using namespace godot;
+using names                            if (isImagePath(ppath)) {
+                                Image* image = new Image();
+                                ret = static_cast<Error>(image->load(iointerface, ppath.utf8().get_data()));
+                                if (ret != Error::OK) {
+                                    UtilityFunctions::push_error("Invalid Image");
+                                    delete image;
+                                    return ret;
+                                }
+                                Ref<godot::Image> imageRef = Ref<godot::Image>(image->getImage());
+                                delete image;
+                                return imageRef;
+                            }t;
 
 namespace sunaba::core {
     bool convert_variant(Variant &dest, const Variant &src, Variant::Type target_type) {
@@ -426,6 +437,16 @@ namespace sunaba::core {
                         if (ret != Error::OK) 
                             return ret;
                         res = ClassDBSingleton::get_singleton()->instantiate(cname);
+                        if (res == nullptr) {
+                            UtilityFunctions::push_error("Failed to instantiate class: " + cname);
+                            return Error::ERR_CANT_CREATE;
+                        }
+                        if (res->is_class("Resource")) {
+                            godot::Resource* r = Object::cast_to<godot::Resource>(res);
+                            if (r != nullptr) {
+                                r->reference();
+                            }
+                        }
                         dedup.push_back(res);
                         if (dicHas(dict, "$P")) {
                             String ppath = dict["$P"];
@@ -471,6 +492,9 @@ namespace sunaba::core {
                             intDict = vdict[key];
                             Variant val = decode_dict(intDict, iointerface, dedup);
                             UtilityFunctions::print(val);
+                            UtilityFunctions::print(key);
+                            UtilityFunctions::print(res);
+                            if (val.get_type() == Variant::NIL) continue;
                             res->set(key, val);
                         }
                         return res;
