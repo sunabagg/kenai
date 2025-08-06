@@ -10,6 +10,7 @@ void sunaba::spatial::bindGeometryInstance(sol::state& lua) {
         sol::meta_function::garbage_collect, sol::destructor([](IGeometryInstance* i) {  }),
         "castShadow", sol::property(&IGeometryInstance::getCastShadow, &IGeometryInstance::setCastShadow),
         "customAabb", sol::property(&IGeometryInstance::getCustomAabb, &IGeometryInstance::setCustomAabb),
+        "extraCullMargin", sol::property(&IGeometryInstance::getExtraCullMargin, &IGeometryInstance::setExtraCullMargin),
         "lightmapScale", sol::property(&IGeometryInstance::getLightmapScale, &IGeometryInstance::setLightmapScale),
         "giMode", sol::property(&IGeometryInstance::getGiMode, &IGeometryInstance::setGiMode),
         "lodBias", sol::property(&IGeometryInstance::getLodBias, &IGeometryInstance::setLodBias),
