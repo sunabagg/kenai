@@ -82,6 +82,7 @@ void sunaba::core::bindSceneSystem(sol::state& lua)
         "onPhysicsUpdate", &Component::onPhysicsUpdate,
         "onFree", &Component::onFree,
         "getData", &Component::getData,
+        "setData", &Component::setData,
         "setScriptType", &Component::setScriptType,
         "setScriptInstance", &Component::setScriptInstance
     );
