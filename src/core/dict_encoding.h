@@ -478,20 +478,40 @@ namespace sunaba::core {
                             }
                             intDict = vdict[key];
                             Variant val = decode_dict(intDict, iointerface, dedup);
+                            
+                            // Check if decode_dict returned an error
+                            if (val.get_type() == Variant::INT && (int)val < 0) {
+                                // This is likely an error code
+                                UtilityFunctions::push_error("Failed to decode property value for key: " + key);
+                                if (res != nullptr && !res->is_class("Resource")) memfree(res);
+                                return val; // Return the error
+                            }
+                            
                             UtilityFunctions::print(val);
                             
-                            // Critical null check before setting property
+                            // Critical validation before setting property
                             if (res == nullptr) {
                                 UtilityFunctions::push_error("Object became null before setting property: " + key);
                                 return Error::ERR_FILE_CORRUPT;
                             }
                             
-                            // Additional safety check - verify object is still valid
-                            if (res->get_class().is_empty()) {
-                                UtilityFunctions::push_error("Object has invalid class before setting property: " + key);
-                                return Error::ERR_FILE_CORRUPT;
+                            // Check if the property exists on this object
+                            bool property_exists = false;
+                            TypedArray<Dictionary> obj_properties = res->get_property_list();
+                            for (int prop_idx = 0; prop_idx < obj_properties.size(); prop_idx++) {
+                                Dictionary prop_info = obj_properties[prop_idx];
+                                if (prop_info["name"] == key) {
+                                    property_exists = true;
+                                    break;
+                                }
                             }
                             
+                            if (!property_exists) {
+                                UtilityFunctions::push_warning("Property '" + key + "' does not exist on object of class: " + cname + ", skipping");
+                                continue;
+                            }
+                            
+                            // Safely set the property
                             res->set(key, val);
                         }
                         return res;
