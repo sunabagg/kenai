@@ -125,6 +125,7 @@ namespace sunaba::spatial
             Dictionary dict = IVisualInstance::getData();
 
             dict["castShadow"] = getCastShadow();
+            dict["customAabb"] = getCustomAabb();
 
             return dict;
         }
