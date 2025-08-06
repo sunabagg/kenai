@@ -70,6 +70,13 @@ namespace sunaba::spatial::mesh {
 
             return dict;
         }
+
+        void setData(Dictionary dict) override {
+            setHeight(dict["height"]);
+            setRadialSegments(dict["radialSegments"]);
+            setRadius(dict["radius"]);
+            setRings(dict["rings"]);
+        }
     };
 }
 #endif // CAPSULE_H
