@@ -5,6 +5,7 @@
 
 #include "../core/scene_system.h"
 #include "i_visual_instance.h"
+#include "../core/material.h"
 
 using namespace godot;
 using namespace sunaba::core;
