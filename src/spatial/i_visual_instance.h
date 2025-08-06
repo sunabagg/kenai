@@ -59,6 +59,7 @@ namespace sunaba::spatial
             Dictionary dict;
 
             dict["layerMask"] = getLayerMask();
+            dict["sortingOffset"] = getSortingOffset();
 
             return dict;
         }
