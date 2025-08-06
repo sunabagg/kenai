@@ -53,6 +53,10 @@ namespace sunaba::spatial
             return geometryInstance->get_lightmap_texel_scale();
         }
 
+        void setLightmapTexelScale(float scale) {
+            geometryInstance->set_lightmap_texel_scale(scale);
+        }
+
         int getGiMode() {
             return geometryInstance->get_gi_mode(); 
         }
