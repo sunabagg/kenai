@@ -86,6 +86,10 @@ namespace sunaba::spatial
             return geometryInstance->get_transparency();
         }
 
+        sunaba::core::Material* getMaterialOverlay() {
+            return new sunaba::core::Material(geometryInstance->get_material_overlay().ptr());
+        }
+
         void setTransparancy(float transparancy) {
             geometryInstance->set_transparency(transparancy);
         }
