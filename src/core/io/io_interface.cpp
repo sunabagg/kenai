@@ -95,7 +95,7 @@ void sunaba::core::io::IoInterface::saveResource(const std::string& path, Resour
         return;
     }
     godot::Resource* gdres = res->getResource();
-    Dictionary dict = DictEncoding::encode_dict(gdres, this, Array(), true);
+    Dictionary dict = DictEncoding::encode_dict(gdres, this);
     String json = JSON::stringify(dict, "   ");
     saveText(path, json.utf8().get_data());
 }
