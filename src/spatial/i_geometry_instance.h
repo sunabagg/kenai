@@ -90,6 +90,10 @@ namespace sunaba::spatial
             return new sunaba::core::Material(geometryInstance->get_material_overlay().ptr());
         }
 
+        void setMaterialOverlay(sunaba::core::Material* mat) {
+            Ref<godot::Material> matref = Ref<godot::Material>(mat->getMaterial());
+        }
+
         void setTransparancy(float transparancy) {
             geometryInstance->set_transparency(transparancy);
         }
