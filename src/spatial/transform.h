@@ -270,6 +270,12 @@ namespace sunaba::spatial
 
             return dict;
         }
+
+        void setData(Dictionary dict) override {
+            setPosition(dict["position"]);
+            setRotation(dict["rotation"]);
+            setScale(dict["scale"]);
+        }
     };
 }
 
