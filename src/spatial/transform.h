@@ -260,6 +260,16 @@ namespace sunaba::spatial
                 entity->setNode(nullptr);
             }
         }
+
+        Dictionary getData() override {
+            Dictionary dict;
+
+            dict["position"] = getPosition();
+            dict["rotation"] = getRotation();
+            dict["scale"] = getScale();
+
+            return dict;
+        }
     };
 }
 
