@@ -76,6 +76,10 @@ namespace sunaba::spatial::mesh {
 
             return dict;
         }
+
+        void setData(Dictionary dict) override {
+            setHeight(dict["height"]);
+        }
     };
 }
 
