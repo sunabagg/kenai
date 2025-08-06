@@ -69,6 +69,7 @@ namespace sunaba::spatial
         void setData(Dictionary dict) override {
             setLayerMask(dict["layerMask"]);
             setSortingOffset(dict["sortingOffset"]);
+            setSortingUseAabbCenter(dict["sortingUseAabbCenter"]);
         }
     };
 }
