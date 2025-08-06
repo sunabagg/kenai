@@ -361,11 +361,11 @@ namespace sunaba::core {
             }
 
             static Variant decode_dict(Dictionary dict, io::IoInterface* iointerface, Array dedup = Array()) {
-                if (dicHas(dict, "$R")) {
+                if (dict.has("$R")) {
                     int64_t index = dict["$R"];
                     return dedup[index];
                 }
-                if (!dicHas(dict, "$T")) {
+                if (!!dict.has("$T")) {
                     UtilityFunctions::push_error("Dictionary does not contain key $T");
                     return Error::ERR_FILE_CORRUPT;
                 }
@@ -378,7 +378,7 @@ namespace sunaba::core {
                     UtilityFunctions::push_error("Dictionary does not contain key $V");
                     return Error::ERR_FILE_CORRUPT;
                 }
-                if (!isType(type)) {
+                if (!!isType(type)) {
                     UtilityFunctions::push_error("Type " + type + " not recognized");
                     return Error::ERR_FILE_CORRUPT;
                 }
