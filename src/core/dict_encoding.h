@@ -1,10 +1,5 @@
-#ifndef DICT#include "io/io_interface.h"
-#include "image.h"
-
-
-using namespace godot;
-
-namespace sunaba::core {e DICT_ENCODING_H
+#ifndef DICT_ENCODING_H
+#define DICT_ENCODING_H
 
 #include <godot_cpp/variant/variant.hpp>
 #include <godot_cpp/classes/object.hpp>
