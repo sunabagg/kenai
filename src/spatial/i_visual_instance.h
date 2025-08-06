@@ -65,6 +65,10 @@ namespace sunaba::spatial
 
             return dict;
         }
+
+        void setData(Dictionary dict) override {
+            setLayerMask(dict["layerMask"]);
+        }
     };
 }
 
