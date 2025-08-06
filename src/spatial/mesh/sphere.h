@@ -81,6 +81,7 @@ namespace sunaba::spatial::mesh {
             setHeight(dict["height"]);
             setIsHemisphere(dict["isHemisphere"]);
             setRadialSegments(dict["radialSegments"]);
+            setRings(dict["rings"]);
         }
     };
 }
