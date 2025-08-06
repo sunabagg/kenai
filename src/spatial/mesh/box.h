@@ -65,6 +65,14 @@ namespace sunaba::spatial::mesh {
             }
            
         }
+
+        Dictionary getData() override {
+            Dictionary dict;
+
+            dict["size"] = getSize();
+
+            return dict;
+        }
     };
 }
 
