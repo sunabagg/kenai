@@ -18,5 +18,5 @@ extern class Component extends BaseObject {
 
     public function onUpdate(deltaTime : Float) : Void;
 
-    public function onPhysicsUpdate(delatTime : Float) : Void;
+    public function onPhysicsUpdate(deltaTime : Float) : Void;
 }
