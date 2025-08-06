@@ -60,6 +60,7 @@ namespace sunaba::spatial
 
             dict["layerMask"] = getLayerMask();
             dict["sortingOffset"] = getSortingOffset();
+            dict["sortingUseAabbCenter"] = getSortingUseAabbCenter();
 
             return dict;
         }
