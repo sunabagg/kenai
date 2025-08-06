@@ -15,6 +15,6 @@ class Main extends App {
         stylebox.borderWidthLeft = 3;
         stylebox.cornerRadiusTopRight = 1;
         var io : IoManager = untyped __lua__("_G.ioManager");
-        io.saveResource("user://test.sres", stylebox);
+        //io.saveResource("user://test.sres", stylebox);
     }
 }
