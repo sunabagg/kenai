@@ -139,6 +139,15 @@ namespace sunaba::core
             func(scriptInstance);
         }
 
+        virtual godot::Dictionary getData() {
+            if (scriptInstance == sol::lua_nil) return;
+            auto func = scriptInstance["getData"].get<sol::function>();
+            if (!func) return;
+            auto result = func(scriptInstance);
+            godot::Dictionary dict = result.get<godot::Dictionary>();
+            return dict;
+        }
+
         sol::table getScriptType() {
             return scriptType;
         }
