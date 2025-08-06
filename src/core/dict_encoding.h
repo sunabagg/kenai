@@ -365,7 +365,7 @@ namespace sunaba::core {
                 if (dicHas(dict, "$R")) {
                     int64_t index = dict["$R"];
                     if (index < 0 || index >= dedup.size()) {
-                        UtilityFunctions::push_error("Invalid dedup array index: " + String::num_int64(index));
+                        UtilityFunctions::push_error("Invalid dedup index: " + String::num_int64(index));
                         return Error::ERR_FILE_CORRUPT;
                     }
                     return dedup[index];
@@ -417,7 +417,7 @@ namespace sunaba::core {
                 {
                     case Variant::OBJECT:
                         if (!dicHas(dict, "$C")) {
-                            UtilityFunctions::push_error("Dictionary does not containe key $C");
+                            UtilityFunctions::push_error("Dictionary does not contain key $C");
                             return Error::ERR_FILE_CORRUPT;
                         }
                         cnamev = dict["$C"];
@@ -478,17 +478,11 @@ namespace sunaba::core {
                             }
                             intDict = vdict[key];
                             Variant val = decode_dict(intDict, iointerface, dedup);
-                            UtilityFunctions::print(val);
+                            if (val.get_type() == Variant::NIL) continue;
                             
-                            // Critical null check before setting property
+                            // Additional safety check before setting property
                             if (res == nullptr) {
-                                UtilityFunctions::push_error("Object became null before setting property: " + key);
-                                return Error::ERR_FILE_CORRUPT;
-                            }
-                            
-                            // Additional safety check - verify object is still valid
-                            if (res->get_class().is_empty()) {
-                                UtilityFunctions::push_error("Object has invalid class before setting property: " + key);
+                                UtilityFunctions::push_error("Object became null during property iteration");
                                 return Error::ERR_FILE_CORRUPT;
                             }
                             
@@ -499,7 +493,13 @@ namespace sunaba::core {
                     case Variant::ARRAY:
                         arr = dict["$V"];
                         if (dicHas(dict, "$AT")) {
-                            t_int = typenames()[dict["$AT"]];
+                            Dictionary tn = typenames();
+                            String atKey = dict["$AT"];
+                            if (!tn.has(atKey)) {
+                                UtilityFunctions::push_error("Invalid array type: " + atKey);
+                                return Error::ERR_FILE_CORRUPT;
+                            }
+                            t_int = tn[atKey];
                             t = static_cast<Variant::Type>(t_int);
                             cn = "";
                             if (t == Variant::OBJECT) {
@@ -528,13 +528,24 @@ namespace sunaba::core {
                     case Variant::DICTIONARY:
                         dic = dict["$V"];
                         if (dicHas(dict, "$KT")) {
-                            kti = typenames()[dict["$KT"]];
+                            Dictionary tn = typenames();
+                            String ktKey = dict["$KT"];
+                            if (!tn.has(ktKey)) {
+                                UtilityFunctions::push_error("Invalid key type: " + ktKey);
+                                return Error::ERR_FILE_CORRUPT;
+                            }
+                            kti = tn[ktKey];
                             kt = static_cast<Variant::Type>(kti);
                             if (!dicHas(dict, "$VT")) {
                                 UtilityFunctions::push_error("Dictionary does not contain key $VT");
                                 return Error::ERR_FILE_CORRUPT;
                             }
-                            vti = typenames()[dict["$VT"]];
+                            String vtKey = dict["$VT"];
+                            if (!tn.has(vtKey)) {
+                                UtilityFunctions::push_error("Invalid value type: " + vtKey);
+                                return Error::ERR_FILE_CORRUPT;
+                            }
+                            vti = tn[vtKey];
                             Variant::Type vt = static_cast<Variant::Type>(vti);
                             vcn = "";
                             if (kt == Variant::OBJECT) {
