@@ -21,4 +21,6 @@ extern class Component extends BaseObject {
     public function onPhysicsUpdate(deltaTime : Float) : Void;
 
     public function getData(): Dictionary;
+
+    public function setData(data : Dictionary) : Void;
 }
