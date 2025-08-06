@@ -80,6 +80,7 @@ namespace sunaba::spatial::mesh {
         void setData(Dictionary dict) override {
             setHeight(dict["height"]);
             setIsHemisphere(dict["isHemisphere"]);
+            setRadialSegments(dict["radialSegments"]);
         }
     };
 }
