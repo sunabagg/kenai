@@ -54,6 +54,14 @@ namespace sunaba::spatial
         void setLayerMaskValue(int layer, bool value) {
             visualInstance->set_layer_mask_value(layer, value);
         }
+
+        Dictionary getData() override {
+            Dictionary dict;
+
+            dict["layerMask"] = getLayerMask();
+
+            return dict;
+        }
     };
 }
 
