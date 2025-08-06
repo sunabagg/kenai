@@ -65,6 +65,14 @@ namespace sunaba::spatial::mesh {
             sphereMesh->unreference();
             sphereMesh = nullptr;
         }
+
+        Dictionary getData() override {
+            Dictionary dict;
+
+            dict["height"] = getHeight();
+
+            return dict;
+        }
     };
 }
 
