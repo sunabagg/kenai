@@ -70,6 +70,7 @@ namespace sunaba::spatial::mesh {
             Dictionary dict;
 
             dict["height"] = getHeight();
+            dict["isHemisphere"] = getIsHemisphere();
 
             return dict;
         }
