@@ -59,6 +59,17 @@ namespace sunaba::spatial::mesh {
                 capsuleMesh = nullptr;
             }
         }
+
+        Dictionary getData() override {
+            Dictionary dict;
+
+            dict["height"] = getHeight();
+            dict["radialSegments"] = getRadialSegments();
+            dict["radius"] = getRadius();
+            dict["rings"] = getRings();
+
+            return dict;
+        }
     };
 }
 #endif // CAPSULE_H
