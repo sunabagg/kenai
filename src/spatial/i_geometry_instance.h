@@ -160,6 +160,8 @@ namespace sunaba::spatial
 
         void setData(Dictionary dict) override {
             IVisualInstance::setData(dict);
+
+            setCastShadow(dict["castShadow"]);
         }
     };
 }
