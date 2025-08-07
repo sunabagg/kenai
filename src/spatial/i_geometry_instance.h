@@ -162,6 +162,7 @@ namespace sunaba::spatial
             IVisualInstance::setData(dict);
 
             setCastShadow(dict["castShadow"]);
+            setCustomAabb(dict["customAabb"]);
         }
     };
 }
