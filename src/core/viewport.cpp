@@ -31,25 +31,25 @@ namespace sunaba::core {
         }
     }
 
-    void ViewportProxy::_input(const Ref<InputEvent>& event) {
+    void ViewportProxy::_input(const Ref<godot::InputEvent>& event) {
         if (this->element != nullptr) {
             this->element->input(event);
         }
     }
 
-    void ViewportProxy::_unhandled_input(const Ref<InputEvent>& event) {
+    void ViewportProxy::_unhandled_input(const Ref<godot::InputEvent>& event) {
         if (this->element != nullptr) {
             this->element->unhandledInput(event);
         }
     }
 
-    void ViewportProxy::_unhandled_key_input(const Ref<InputEvent>& event) {
+    void ViewportProxy::_unhandled_key_input(const Ref<godot::InputEvent>& event) {
         if (this->element != nullptr) {
             this->element->unhandledKeyInput(event);
         }
     }
 
-    void ViewportProxy::_shortcut_input(const Ref<InputEvent>& event) {
+    void ViewportProxy::_shortcut_input(const Ref<godot::InputEvent>& event) {
         if (this->element != nullptr) {
             this->element->shortcutInput(event);
         }
