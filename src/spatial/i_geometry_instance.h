@@ -173,6 +173,7 @@ namespace sunaba::spatial
             setVisibilityRangeBegin(dict["visibilityRangeBegin"]);
             setVisibilityRangeBeginMargin(dict["visibilityRangeBeginMargin"]);
             setVisibilityRangeEnd(dict["visibilityRangeEnd"]);
+            setVisibilityRangeEndMargin(dict["visibilityRangeEndMargin"]);
         }
     };
 }
