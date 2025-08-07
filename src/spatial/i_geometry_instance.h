@@ -166,6 +166,7 @@ namespace sunaba::spatial
             setExtraCullMargin(dict["extraCullMargin"]);
             setLightmapScale(dict["lightmapScale"]);
             setLightmapTexelScale(dict["lightmapTexelScale"]);
+            setGiMode(dict["giMode"]);
         }
     };
 }
