@@ -1,5 +1,7 @@
 #include "lua_bind.h"
 
+#include <godot_cpp/classes/json.hpp>
+
 void sunaba::core::bind_dictionary(sol::state& lua) {
     lua.new_usertype<Dictionary>("Dictionary",
         sol::constructors<Dictionary()>(),
@@ -48,7 +50,7 @@ void sunaba::core::bind_dictionary(sol::state& lua) {
         },
         sol::meta_function::length, &Dictionary::size,
         sol::meta_function::to_string, [](const Dictionary& dict) {
-            return "<Dictionary size=" + std::to_string(dict.size()) + ">";
+            return JSON::stringify(dict, "  ");
         }
     );
 }
