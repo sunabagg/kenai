@@ -50,7 +50,7 @@ void sunaba::core::bind_dictionary(sol::state& lua) {
         },
         sol::meta_function::length, &Dictionary::size,
         sol::meta_function::to_string, [](const Dictionary& dict) {
-            return JSON::stringify(dict, "  ");
+            return std::string(JSON::stringify(dict, "  ").utf8().get_data());
         }
     );
 }
