@@ -23,6 +23,8 @@ extern class Dictionary {
     public function size() : Int;
     public function sort() : Void;
     public function values() : ArrayList;
+    @:native("tostring")
+    public function toString() : String;
 }
 
 class DictionaryIterator {
