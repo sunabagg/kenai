@@ -13,6 +13,7 @@
 #include <godot_cpp/classes/file_access.hpp>
 #include <godot_cpp/classes/dir_access.hpp>
 #include <godot_cpp/classes/scene_tree.hpp>
+#include <godot_cpp/classes/json.hpp>
 #ifdef USE_PORTABLE_FILE_DIALOGS
 #include "portable-file-dialogs.h"
 #endif
@@ -312,6 +313,10 @@ void App::initState(bool sandboxed) {
             {
                 Vector3i vec = arg.as<Vector3i>();
                 msg += String(vec);
+            }
+            else if (arg.is<Dictionary>()) {
+                Dictionary dict = arg.as<Dictionary>();
+                msg += JSON::stringify(dict, "  ");
             }
         }
         godot::UtilityFunctions::print( msg );
