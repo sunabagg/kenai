@@ -13,7 +13,6 @@
 
 #include "../base_object.h"
 #include "binary_data.h"
-#include "../resource.h"
 
 using namespace godot;
 using namespace sunaba::core;

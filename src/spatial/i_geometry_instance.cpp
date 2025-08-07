@@ -14,7 +14,7 @@ void sunaba::spatial::bindGeometryInstance(sol::state& lua) {
         "lightmapScale", sol::property(&IGeometryInstance::getLightmapScale, &IGeometryInstance::setLightmapScale),
         "lightmapTexelScale", sol::property(&IGeometryInstance::getLightmapTexelScale, &IGeometryInstance::setLightmapTexelScale),
         "giMode", sol::property(&IGeometryInstance::getGiMode, &IGeometryInstance::setGiMode),
-        "ignoreOcclusionCulling"; sol::property(&IGeometryInstance::getIgnoreOcclusionCulling, &IGeometryInstance::setIgnoreOcclusionCulling),
+        "ignoreOcclusionCulling", sol::property(&IGeometryInstance::getIgnoreOcclusionCulling, &IGeometryInstance::setIgnoreOcclusionCulling),
         "lodBias", sol::property(&IGeometryInstance::getLodBias, &IGeometryInstance::setLodBias),
         "transparency", sol::property(&IGeometryInstance::getTransparancy, &IGeometryInstance::setTransparancy),
         "visibilityRangeBegin", sol::property(&IGeometryInstance::getVisibilityRangeBegin, &IGeometryInstance::setVisibilityRangeBegin),

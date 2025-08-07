@@ -5,8 +5,6 @@
 #include <godot_cpp/classes/resource.hpp>
 #include <sol/sol.hpp>
 
-#define GodotResource godot::Resource
-
 #include "base_object.h"
 
 namespace sunaba::core {
@@ -14,26 +12,26 @@ namespace sunaba::core {
 
     class Resource : public BaseObject {
     private:
-    GodotResource* resource = nullptr; // Pointer to the Resource instance
+    godot::Resource* resource = nullptr; // Pointer to the Resource instance
     public:
         // Constructor with Ref<GodotResource> parameter
-        Resource(GodotResource* res) {
+        Resource(godot::Resource* res) {
             setResource(res);
         }
 
         // Constructor with no parameters
         Resource() {
-            resource  = memnew(GodotResource);
+            resource  = memnew(godot::Resource);
             //resource = godot::Ref<GodotResource>(r);
         }
 
         // Getter for the Resource node
-        GodotResource* getResource() const {
+        godot::Resource* getResource() const {
             return resource;
         }
 
         // Setter for the Resource node
-        void setResource(GodotResource* res) {
+        void setResource(godot::Resource* res) {
             resource = res;
             if (resource != nullptr) {
                 resource->reference();

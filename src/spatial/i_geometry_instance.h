@@ -5,7 +5,7 @@
 
 #include "../core/scene_system.h"
 #include "i_visual_instance.h"
-#include "../core/material.h"
+//#include "../core/material.h"
 
 using namespace godot;
 using namespace sunaba::core;
@@ -86,14 +86,13 @@ namespace sunaba::spatial
             return geometryInstance->get_transparency();
         }
 
-        sunaba::core::Material* getMaterialOverlay() {
+        /*sunaba::core::Material* getMaterialOverlay() {
             return new sunaba::core::Material(geometryInstance->get_material_overlay().ptr());
         }
 
         void setMaterialOverlay(sunaba::core::Material* mat) {
             Ref<godot::Material> matref = Ref<godot::Material>(mat->getMaterial());
-        }
-
+        }*/
         void setTransparancy(float transparancy) {
             geometryInstance->set_transparency(transparancy);
         }
