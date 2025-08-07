@@ -151,6 +151,7 @@ namespace sunaba::spatial
             dict["lodBias"] = getLodBias();
             dict["transparency"] = getTransparancy();
             dict["visibilityRangeBegin"] = getVisibilityRangeBegin();
+            dict["visibilityRangeBeginMargin"] = getVisibilityRangeBeginMargin();
 
             return dict;
         }
