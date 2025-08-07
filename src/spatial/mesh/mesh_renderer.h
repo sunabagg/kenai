@@ -85,10 +85,6 @@ namespace sunaba::spatial::mesh
                 node->queue_free();
             }
         }
-
-        Dictionary getData() override {
-            Dictionary dict = IGeometryInstance::getData();
-        }
     };
 }
 
