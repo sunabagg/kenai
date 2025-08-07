@@ -170,6 +170,7 @@ namespace sunaba::spatial
             setIgnoreOcclusionCulling(dict["ignoreOcclusionCulling"]);
             setLodBias(dict["lodBias"]);
             setTransparancy(dict["transparency"]);
+            setVisibilityRangeBegin(dict["visibilityRangeBegin"])
         }
     };
 }
