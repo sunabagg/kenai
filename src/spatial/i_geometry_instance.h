@@ -158,7 +158,53 @@ namespace sunaba::spatial
 
             return dict;
         }
-    };
-}
+
+        void setData(Dictionary data) override {
+            IVisualInstance::setData(data);
+
+            if (data.has("castShadow")) {
+                setCastShadow(data["castShadow"]);
+            }
+            if (data.has("customAabb")) {
+                setCustomAabb(data["customAabb"]);
+            }
+            if (data.has("extraCullMargin")) {
+                setExtraCullMargin(data["extraCullMargin"]);
+            }
+            if (data.has("lightmapScale")) {
+                setLightmapScale(data["lightmapScale"]);
+            }
+            if (data.has("lightmapTexelScale")) {
+                setLightmapTexelScale(data["lightmapTexelScale"]);
+            }
+            if (data.has("giMode")) {
+                setGiMode(data["giMode"]);
+            }
+            if (data.has("ignoreOcclusionCulling")) {
+                setIgnoreOcclusionCulling(data["ignoreOcclusionCulling"]);
+            }
+            if (data.has("lodBias")) {
+                setLodBias(data["lodBias"]);
+            }
+            if (data.has("transparency")) {
+                setTransparency(data["transparency"]);
+            }
+            if (data.has("visibilityRangeBegin")) {
+                setVisibilityRangeBegin(data["visibilityRangeBegin"]);
+            }
+            if (data.has("visibilityRangeBeginMargin")) {
+                setVisibilityRangeBeginMargin(data["visibilityRangeBeginMargin"]);
+            }
+            if (data.has("visibilityRangeEnd")) {
+                setVisibilityRangeEnd(data["visibilityRangeEnd"]);
+            }
+            if (data.has("visibilityRangeEndMargin")) {
+                setVisibilityRangeEndMargin(data["visibilityRangeEndMargin"]);
+            }
+            if (data.has("visibilityRangeFadeMode")) {
+                setVisibilityRangeFadeMode(data["visibilityRangeFadeMode"]);
+            }
+        };
+    }
 
 #endif
