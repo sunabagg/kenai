@@ -146,6 +146,7 @@ namespace sunaba::spatial
             dict["extraCullMargin"] = getExtraCullMargin();
             dict["lightmapScale"] = getLightmapScale();
             dict["lightmapTexelScale"] = getLightmapTexelScale();
+            dict["giMode"] = getGiMode();
 
             return dict;
         }
