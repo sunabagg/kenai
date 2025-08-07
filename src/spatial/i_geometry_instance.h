@@ -147,6 +147,7 @@ namespace sunaba::spatial
             dict["lightmapScale"] = getLightmapScale();
             dict["lightmapTexelScale"] = getLightmapTexelScale();
             dict["giMode"] = getGiMode();
+            dict["ignoreOcclusionCulling"] = getIgnoreOcclusionCulling();
 
             return dict;
         }
