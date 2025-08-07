@@ -149,6 +149,8 @@ namespace sunaba::spatial
             dict["giMode"] = getGiMode();
             dict["ignoreOcclusionCulling"] = getIgnoreOcclusionCulling();
             dict["lodBias"] = getLodBias();
+            dict["transparency"] = getTransparancy();
+            dict["visibilityRangeBegin"] = getVisibilityRangeBegin();
 
             return dict;
         }
