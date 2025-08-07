@@ -73,6 +73,8 @@ namespace sunaba::spatial::mesh
 
         void onInit() override {
             node = memnew(MeshInstance3D);
+            geometryInstance = node;
+            visualInstance = node;
             SpatialTransform* transform = entity->getComponentByT<SpatialTransform>();
             if (transform) {
                 transform->getNode()->add_child(node);
