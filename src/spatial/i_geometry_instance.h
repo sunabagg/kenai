@@ -164,6 +164,7 @@ namespace sunaba::spatial
             setCastShadow(dict["castShadow"]);
             setCustomAabb(dict["customAabb"]);
             setExtraCullMargin(dict["extraCullMargin"]);
+            setLightmapScale(dict["lightmapScale"]);
         }
     };
 }
