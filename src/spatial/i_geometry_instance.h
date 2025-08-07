@@ -172,6 +172,7 @@ namespace sunaba::spatial
             setTransparancy(dict["transparency"]);
             setVisibilityRangeBegin(dict["visibilityRangeBegin"]);
             setVisibilityRangeBeginMargin(dict["visibilityRangeBeginMargin"]);
+            setVisibilityRangeEnd(dict["visibilityRangeEnd"]);
         }
     };
 }
