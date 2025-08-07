@@ -157,6 +157,10 @@ namespace sunaba::spatial
 
             return dict;
         }
+
+        void setData(Dictionary dict) override {
+            IVisualInstance::setData(dict);
+        }
     };
 }
 
