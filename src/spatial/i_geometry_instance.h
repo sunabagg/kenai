@@ -167,6 +167,9 @@ namespace sunaba::spatial
             setLightmapScale(dict["lightmapScale"]);
             setLightmapTexelScale(dict["lightmapTexelScale"]);
             setGiMode(dict["giMode"]);
+            setIgnoreOcclusionCulling(dict["ignoreOcclusionCulling"]);
+            setLodBias(dict["lodBias"]);
+            setTransparancy(dict["transparency"]);
         }
     };
 }
