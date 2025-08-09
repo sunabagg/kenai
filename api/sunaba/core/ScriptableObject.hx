@@ -5,6 +5,7 @@ class ScriptableObject {
         return new Dictionary();
     }
 
-    public function setData(data: Dictionary) : Void {
-    }
+    public function setData(data: Dictionary) : Void {}
+
+    public function new() {}
 }
