@@ -53,6 +53,7 @@ void sunaba::core::bindSceneSystem(sol::state& lua)
         "getComponentByName", &Entity::getComponentByName,
         "getComponentsByType", &Entity::getComponentsByType,
         "getUserComponentsByType", &Entity::getUserComponentsByType,
+        "getComponentNames", &Entity::getComponentNames,
         "addChild", &Entity::addChild,
         "removeChild", &Entity::removeChild,
         "hasChild", &Entity::hasChild,
