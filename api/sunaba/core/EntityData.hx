@@ -24,9 +24,14 @@ class EntityData extends ScriptableObject {
                 var userComp = component.getScriptInstance();
                 var userCompType = std.Type.typeof(userComp);
                 var userCompName = userCompType.getName();
-                comDict.set("utName", userCompName);
+                comDict.set("type", userCompName);
             }
-            data.components.set(name, compData);
+            else {
+                var metatable = untyped __lua__("getmetatable(component)");
+                var compName = ObjectUtils.getName(metatable);
+                comDict.set("type", compName);
+            }
+            data.components.set(name, comDict);
         }
 
         for (i in 0...entity.getChildCount()) {
