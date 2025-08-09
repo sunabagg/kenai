@@ -10,7 +10,12 @@ void sunaba::core::bind_dictionary(sol::state& lua) {
         "duplicate", &Dictionary::duplicate,
         "erase", &Dictionary::erase,
         "findKey", &Dictionary::find_key,
-        "get", &Dictionary::get,
+        "get", sol::factories(
+            &Dictionary::get,
+            [](Dictionary dict, Variant key) {
+                return dict[key];
+            }
+        ),
         "getOrAdd", &Dictionary::get_or_add,
         "has", &Dictionary::has,
         "hasAll", &Dictionary::has_all,
