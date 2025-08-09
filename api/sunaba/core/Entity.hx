@@ -26,6 +26,8 @@ extern class Entity extends BaseObject {
 
     public function getUserComponentsByType(type : Class<Behavior>) : sunaba.core.Vector<Behavior>;
 
+    public function getComponentNames(): Vector<String>;
+
     public function addChild(child: Entity): Void;
 
     public function removeChild(child: Entity): Void;
