@@ -1,3 +1,4 @@
+import sunaba.core.io.IoManager;
 import sunaba.App;
 import sunaba.core.*;
 import sunaba.spatial.Camera;
@@ -72,7 +73,9 @@ class Main extends App {
 
             var sceneFile = SceneFile.fromScene(scene);
             var sceneData = sceneFile.getData();
-            Sys.println(sceneData);
+            
+            var ioManager: IoManager = untyped __lua__("_G.ioManager");
+            ioManager.saveVariant("user://TestScene.scnj", sceneData);
         }
         catch (e : Dynamic) {
             Sys.println("Error: " + e + " : " + e.stack);
