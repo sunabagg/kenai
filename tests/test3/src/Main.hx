@@ -69,6 +69,10 @@ class Main extends App {
 
         try {
             printScene(scene);
+
+            var sceneFile = SceneFile.fromScene(scene);
+            var sceneData = sceneFile.getData();
+            Sys.println(sceneData);
         }
         catch (e : Dynamic) {
             Sys.println("Error: " + e + " : " + e.stack);
