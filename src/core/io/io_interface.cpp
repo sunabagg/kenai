@@ -21,6 +21,8 @@ void sunaba::core::io::bindIoInterface(sol::state& lua) {
         "saveText", &IoInterface::saveText,
         "loadBinary", &IoInterface::loadBinary,
         "saveBinary", &IoInterface::saveBinary,
+        "loadVariant", &IoInterface::loadVariant,
+        "saveVariant", &IoInterface::saveVariant,
         "getFileListAll", &IoInterface::getFileListAll,
         "getFileList", &IoInterface::getFileList,
         "fileExists", &IoInterface::fileExists,
