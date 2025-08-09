@@ -54,7 +54,14 @@ class Main extends App {
         entity4.addComponent(e4box, ObjectUtils.getName(Box));
         e4box.size = new Vector3(1, 1, 1);
         Sys.println(e4box.getData());
-        Sys.println(e4mesh.getData());
+        var e4meshData = e4mesh.getData();
+        Sys.println(e4meshData);
+        for (i in 0...e4meshData.size()) {
+            var key = e4meshData.keys().get(i);
+            var value = e4meshData.get(key);
+            trace("Key: " + key + " Value: " + value);
+
+        }
         var rotateComponent = new RotateComponent();
         entity4.addComponent(rotateComponent.component, "RotateComponent");
         scene.addEntity(entity4);
