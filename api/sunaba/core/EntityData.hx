@@ -16,6 +16,15 @@ class EntityData extends ScriptableObject {
         for (name in componentNames) {
             var component = entity.getComponentByName(name);
             var compData = component.getData();
+            var comDict = new Dictionary();
+            comDict.set("data", compData);
+            var isUserType = component.isUserType();
+            comDict.set("isUserType", isUserType);
+            if (isUserType) {
+                var userComp = component.getScriptInstance();
+                var userCompType = std.Type.typeof(userComp);
+                var userCompName = userCompType.getName();
+            }
             data.components.set(name, compData);
         }
 
