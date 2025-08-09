@@ -45,6 +45,8 @@ namespace sunaba::core::io {
             saveBytes(path, bytes);
         }
 
+        Variant loadVariant(const std::string &path) const;
+
         std::vector<std::string> getFileListAll(const std::string &extension = "", const bool recursive = true) const {
             return getFileList(pathUri, extension, recursive);
         }
