@@ -171,6 +171,10 @@ namespace sunaba::core
             scriptInstance = t;
         }
 
+        bool isUserType() {
+            return scriptInstance != sol::lua_nil;
+        }
+
         void onFree() override;
 
         /*
