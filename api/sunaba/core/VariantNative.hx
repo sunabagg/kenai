@@ -49,10 +49,10 @@ extern class VariantNative {
     //public static function fromPlane(value:Plane):Variant;
     @:native("new")
     public static function fromQuatrernion(value:Quaternion):VariantNative;
-    //@:native("new")
-    //public static function fromDictionary(value:Dictionary):Variant;
-    //@:native("new")
-    //public static function fromArrayList(value:ArrayList):Variant;
+    @:native("new")
+    public static function fromDictionary(value:Dictionary):Variant;
+    @:native("new")
+    public static function fromArrayList(value:ArrayList):Variant;
     public static function fromByteArray(value:BinaryData):VariantNative;
     public static function fromIntArray(value:Vector<Int>): VariantNative;
     public static function fromIntArray64(value:Vector<Int>): VariantNative;
@@ -86,8 +86,8 @@ extern class VariantNative {
     public function asTransform3D():Transform3D;
     //public function asPlane():Plane;
     public function asQuaternion():Quaternion;
-    //public function asDictionary():Dictionary;
-    //public function asArrayList():ArrayList;
+    public function asDictionary():Dictionary;
+    public function asArrayList():ArrayList;
     public function asByteArray():BinaryData;
     public function asIntArray():Vector<Int>;
     public function asIntArray64():sunaba.core.Vector<Int>;

@@ -199,6 +199,25 @@ abstract Variant(VariantNative) from VariantNative to VariantNative {
         return value.asIntArray();
     }
     */
+    
+    @:from
+    public static function fromArray(value:sunaba.core.ArrayList):Variant {
+        return VariantNative.fromArrayList(value);
+    }
+    @:to
+    public inline function toArray():sunaba.core.ArrayList {
+        return this.asArrayList();
+    }
+    
+    @:from
+    public static function fromDictionary(value:sunaba.core.Dictionary):Variant {
+        return VariantNative.fromDictionary(value);
+    }
+    @:to
+    public inline function toDictionary():sunaba.core.Dictionary {
+        return this.asDictionary();
+    }
+
     @:from
     public static function fromIntArray64(value:sunaba.core.Vector<Int>):Variant {
         return VariantNative.fromIntArray64(value);
