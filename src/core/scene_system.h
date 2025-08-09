@@ -386,7 +386,13 @@ namespace sunaba::core
             return false;
         }
 
-        
+        std::vector<std::string> getComponentNames() {
+            std::vector<std::string> componentNamess;
+            for (auto& comp : components) {
+                componentNamess.push_back(comp.first);
+            }
+            return componentNamess;
+        }
 
         void addChild(Entity* entity) {
             entity->parent = this;
