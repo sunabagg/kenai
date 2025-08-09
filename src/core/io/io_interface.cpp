@@ -71,6 +71,6 @@ Variant sunaba::core::io::IoInterface::loadVariant(const std::string &path) cons
 }
 
 void sunaba::core::io::IoInterface::saveVariant(const std::string &path, Variant data) const {
-    String json = JSON::stringify(data);
+    String json = JSON::stringify(data, "   ");
     saveText(path, json.utf8().get_data());
 }
