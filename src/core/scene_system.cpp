@@ -85,7 +85,8 @@ void sunaba::core::bindSceneSystem(sol::state& lua)
         "getData", &Component::getData,
         "setData", &Component::setData,
         "setScriptType", &Component::setScriptType,
-        "setScriptInstance", &Component::setScriptInstance
+        "setScriptInstance", &Component::setScriptInstance,
+        "isUserType", &Component::isUserType
     );
 }
 
