@@ -14,4 +14,17 @@ class SceneFile extends ScriptableObject {
 
         return data;
     }
+
+    public override function getData(): Dictionary {
+        var data = new Dictionary();
+
+        var entArray = new ArrayList();
+        for (entity in entities) {
+            var entData = entity.getData();
+            entArray.append(entData);
+        }
+        data.set("entities", entArray);
+
+        return data;
+    }
 }
