@@ -11,6 +11,8 @@ extern class Component extends BaseObject {
     public function setScriptType(type : Dynamic) : Void;
 
     public function setScriptInstance(instance : Dynamic) : Void;
+
+    public function getScriptInstance() : Behavior;
     
     public function isUserType() : Bool;
 
