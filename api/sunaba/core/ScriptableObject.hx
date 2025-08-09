@@ -1,6 +1,6 @@
 package sunaba.core;
 
-class ScriptableObject {
+abstract class ScriptableObject {
     public function getData() : Dictionary {
         return new Dictionary();
     }
