@@ -47,6 +47,8 @@ namespace sunaba::core::io {
 
         Variant loadVariant(const std::string &path) const;
 
+        void saveVariant(const std::string &path, Variant data) const;
+
         std::vector<std::string> getFileListAll(const std::string &extension = "", const bool recursive = true) const {
             return getFileList(pathUri, extension, recursive);
         }
