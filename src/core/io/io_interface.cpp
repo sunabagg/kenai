@@ -3,6 +3,8 @@
 #include "../dict_encoding.h"
 #include "../shader.h"
 
+#include <godot_cpp/classes/json.hpp>
+
 using namespace godot;
 
 void sunaba::core::io::bindIoInterface(sol::state& lua) {
@@ -59,4 +61,9 @@ std::string sunaba::core::io::IoInterface::getFilePathFromLuaRequirePath(const s
     }
 
     return newFilePath.utf8().get_data();
+}
+
+Variant sunaba::core::io::IoInterface::loadVariant(const std::string &path) const {
+    std::string text = loadText(path);
+    return JSON::parse_string(text.c_str());
 }
