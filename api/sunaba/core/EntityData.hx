@@ -44,4 +44,8 @@ class EntityData extends ScriptableObject {
 
         return data;
     }
+
+    public override function setData(data: Dictionary): Void {
+        name = data.get("name");
+    }
 }
