@@ -1,7 +1,7 @@
 package sunaba.core.io;
 
 import sunaba.core.BaseObject;
-import sunaba.core.Resource;
+import sunaba.core.Variant;
 
 @:native("IoInterface")
 extern class IoInterface extends BaseObject {
@@ -11,6 +11,8 @@ extern class IoInterface extends BaseObject {
     public function saveText(path: String, text: String): Void;
     public function loadBinary(path: String): BinaryData;
     public function saveBinary(path: String, data: BinaryData): Void;
+    public function loadVariant(path: String): Variant;
+    public function saveVariant(path: String, data: Variant): Void;
     public function getFileListAll(?extension: String, ?recursive: Bool): StringArray;
     public function getFileList(path: String, ?extension: String, ?recursive: Bool): StringArray;
     public function fileExists(path: String): Bool;
