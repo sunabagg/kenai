@@ -22,8 +22,8 @@ class EntityData extends ScriptableObject {
             comDict.set("isUserType", isUserType);
             if (isUserType) {
                 var userComp = component.getScriptInstance();
-                var userCompType = std.Type.typeof(userComp);
-                var userCompName = userCompType.getName();
+                var userCompClass = std.Type.getClass(userComp);
+                var userCompName = std.Type.getClassName(userCompClass);
                 comDict.set("type", userCompName);
             }
             else {
