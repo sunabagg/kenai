@@ -101,7 +101,7 @@ jobs:
           ${{ github.workspace }}/vcpkg/vcpkg install
 
       - name: Configure
-        if: matrix.config.os == 'macos-latest' || matrix.config.target == 'linux-amd64' || matrix.config.target == 'windows-amd64'
+        if: matrix.config.os == 'macos-14' || matrix.config.target == 'linux-amd64' || matrix.config.target == 'windows-amd64'
         # For Windows and Windows Arm, we handle configuration separately
         run: >
           mkdir GDExtension-build
