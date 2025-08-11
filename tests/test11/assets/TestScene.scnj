@@ -1,0 +1,124 @@
+{
+   "entities": [
+      {
+         "children": [
+            {
+               "children": [],
+               "components": {
+                  "sol.sunaba::spatial::SpatialTransform.user": {
+                     "data": {
+                        "position": "(4.0, 5.0, 6.0)",
+                        "rotation": "(0.0, 0.0, 0.0)",
+                        "scale": "(1.0, 1.0, 1.0)"
+                     },
+                     "isUserType": false,
+                     "type": "sol.sunaba::core::Component*"
+                  }
+               },
+               "name": "Child1"
+            }
+         ],
+         "components": {
+            "sol.sunaba::spatial::SpatialTransform.user": {
+               "data": {
+                  "position": "(1.0, 2.0, 3.0)",
+                  "rotation": "(0.0, 0.0, 0.0)",
+                  "scale": "(1.0, 1.0, 1.0)"
+               },
+               "isUserType": false,
+               "type": "sol.sunaba::core::Component*"
+            }
+         },
+         "name": "Entity1"
+      },
+      {
+         "children": [],
+         "components": {
+            "sol.sunaba::spatial::SpatialTransform.user": {
+               "data": {
+                  "position": "(7.0, 8.0, 9.0)",
+                  "rotation": "(0.0, 0.0, 0.0)",
+                  "scale": "(1.0, 1.0, 1.0)"
+               },
+               "isUserType": false,
+               "type": "sol.sunaba::core::Component*"
+            }
+         },
+         "name": "Entity2"
+      },
+      {
+         "children": [],
+         "components": {
+            "sol.sunaba::spatial::Camera.user": {
+               "data": {
+
+               },
+               "isUserType": false,
+               "type": "sol.sunaba::core::Component*"
+            },
+            "sol.sunaba::spatial::SpatialTransform.user": {
+               "data": {
+                  "position": "(0.0, 0.0, 1.0)",
+                  "rotation": "(0.0, 0.0, 0.0)",
+                  "scale": "(1.0, 1.0, 1.0)"
+               },
+               "isUserType": false,
+               "type": "sol.sunaba::core::Component*"
+            }
+         },
+         "name": "Camera"
+      },
+      {
+         "children": [],
+         "components": {
+            "RotateComponent": {
+               "data": {
+
+               },
+               "isUserType": true,
+               "type": "RotateComponent"
+            },
+            "sol.sunaba::spatial::SpatialTransform.user": {
+               "data": {
+                  "position": "(0.0, 0.0, -1.0)",
+                  "rotation": "(0.0, 0.0, 0.0)",
+                  "scale": "(1.0, 1.0, 1.0)"
+               },
+               "isUserType": false,
+               "type": "sol.sunaba::core::Component*"
+            },
+            "sol.sunaba::spatial::mesh::Box.user": {
+               "data": {
+                  "size": "(1.0, 1.0, 1.0)"
+               },
+               "isUserType": false,
+               "type": "sol.sunaba::core::Component*"
+            },
+            "sol.sunaba::spatial::mesh::MeshRenderer.user": {
+               "data": {
+                  "castShadow": 1,
+                  "customAabb": "[P: (0.0, 0.0, 0.0), S: (0.0, 0.0, 0.0)]",
+                  "extraCullMargin": 0.0,
+                  "giMode": 1,
+                  "ignoreOcclusionCulling": false,
+                  "layerMask": 1,
+                  "lightmapScale": 0,
+                  "lightmapTexelScale": 1.0,
+                  "lodBias": 1.0,
+                  "sortingOffset": 0.0,
+                  "sortingUseAabbCenter": true,
+                  "transparency": 0.0,
+                  "visibilityRangeBegin": 0.0,
+                  "visibilityRangeBeginMargin": 0.0,
+                  "visibilityRangeEnd": 0.0,
+                  "visibilityRangeEndMargin": 0.0,
+                  "visibilityRangeFadeMode": 0
+               },
+               "isUserType": false,
+               "type": "sol.sunaba::core::Component*"
+            }
+         },
+         "name": "Box"
+      }
+   ]
+}
