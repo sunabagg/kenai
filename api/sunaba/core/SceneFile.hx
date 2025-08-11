@@ -29,12 +29,15 @@ class SceneFile extends ScriptableObject {
     }
 
     public override function setData(data: Dictionary) {
-        var entArray: ArrayList = data.get("children");
+        var entArray: ArrayList = data.get("entities");
 
         for (i in 0...entArray.size()) {
+            trace(i);
             var entData = entArray.get(i);
             var entity = new EntityData();
             entity.setData(entData);
+            Sys.println(entity.getData().toString());
+            entities.push(entity);
         }
     }
 }
