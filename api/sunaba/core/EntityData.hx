@@ -62,7 +62,7 @@ class EntityData extends ScriptableObject {
 
     public override function setData(data: Dictionary): Void {
         name = data.get("name");
-        components = data.get("Components");
+        components = data.get("components");
 
         var childrenData: ArrayList = data.get("children");
         for (i in 0...childrenData.size()) {
