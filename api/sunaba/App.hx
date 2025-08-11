@@ -1,5 +1,6 @@
 package sunaba;
 
+import sunaba.core.io.IoManager;
 import haxe.macro.Expr.Catch;
 import sunaba.core.Element;
 import sunaba.ErrorD;
@@ -23,6 +24,11 @@ class App {
     public static var shareDir(get, default): String;
     private static function get_shareDir(): String {
         return untyped __lua__("_G.shareDir");
+    }
+
+    public static var io(get, default): IoManager;
+    private static function get_io(): IoManager {
+        return untyped __lua__("_G.ioManager");
     }
 
     public function new() {
