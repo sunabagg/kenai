@@ -14,6 +14,10 @@ class Main extends App {
     override function init() {
         var sceneFile = new SceneFile();
         var scenejson = io.loadVariant("app://TestScene.scnj");
-        sceneFile.setData(scenejson);
+        trace(scenejson);
+        trace(scenejson == null);
+        trace(io.loadText("app://TestScene.scnj"));
+        sceneFile.setData(scenejson.toDictionary()); 
+        trace(sceneFile.getData());
     }
 }
