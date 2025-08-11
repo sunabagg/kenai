@@ -17,7 +17,7 @@ class Main extends App {
         trace(scenejson);
         trace(scenejson == null);
         trace(io.loadText("app://TestScene.scnj"));
-        sceneFile.setData(scenejson.toDictionary()); 
+        sceneFile.setData(scenejson); 
         trace(sceneFile.getData());
     }
 }
