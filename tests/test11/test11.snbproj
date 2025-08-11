@@ -4,6 +4,7 @@
     "type": "executable",
     "rootUrl": "app://",
     "scriptdir": "src",
+    "assetsdir": "assets",
     "apisymbols": true,
     "sourcemap": true,
     "entrypoint": "Main",
