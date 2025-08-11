@@ -133,7 +133,7 @@ void sunaba::core::bind_varaint(sol::state& lua) {
         "asQuaternion", &Variant::operator Quaternion,
         "asAABB", &Variant::operator godot::AABB,
         "asProjection", &Variant::operator Projection,
-        "asArray", &Variant::operator Array,
+        "asArrayList", &Variant::operator Array,
         "asDictionary", &Variant::operator Dictionary,
         "asByteArray", [](const Variant& v) { return io::BinaryData(v); },
         "asIntArray", [](const Variant& v) { 
