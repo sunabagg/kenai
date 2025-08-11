@@ -26,8 +26,8 @@ class App {
         return untyped __lua__("_G.shareDir");
     }
 
-    public static var io(get, default): IoManager;
-    private static function get_io(): IoManager {
+    public var io(get, default): IoManager;
+    private function get_io(): IoManager {
         return untyped __lua__("_G.ioManager");
     }
 
