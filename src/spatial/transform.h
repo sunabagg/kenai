@@ -273,13 +273,9 @@ namespace sunaba::spatial
         }
 
         void setData(Dictionary dict) override {
-            UtilityFunctions::print(dict);
             setPosition(strToVec3(dict["position"]));
             setRotation(strToVec3(dict["rotation"]));
             setScale(strToVec3(dict["scale"]));
-            UtilityFunctions::print(getPosition());
-            UtilityFunctions::print(getRotation());
-            UtilityFunctions::print(getScale());
         }
     };
 }
