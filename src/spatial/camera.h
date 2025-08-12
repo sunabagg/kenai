@@ -175,6 +175,7 @@ namespace sunaba::spatial {
             data["fov"] = getFov();
             data["frustumOffset"] = getFrustumOffset();
             data["hOffset"] = getHOffset();
+            data["keepAspect"] = getKeepAspect();
 
             return data;
         }
