@@ -15,6 +15,18 @@ class SceneFile extends ScriptableObject {
         return data;
     }
 
+    public function toScene(): SceneManager {
+        var sceneManager = new SceneManager();
+        var scene = sceneManager.scene;
+
+        for (entData in entities) {
+            var entity = entData.toEntity();
+            scene.addEntity(entity);
+        }
+
+        return sceneManager;
+    }
+
     public override function getData(): Dictionary {
         var data = new Dictionary();
 
