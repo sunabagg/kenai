@@ -171,6 +171,7 @@ namespace sunaba::spatial {
             data["cullMask"] = getCullMask();
             data["current"] = getCurrent();
             data["dopplerTracking"] = getDopplerTracking();
+            data["far"] = getFar();
 
             return data;
         }
