@@ -25,6 +25,12 @@ class Behavior {
 
     public function onPhysicsUpdate(delatTime : Float) : Void {}
 
+    public function getData() : Dictionary {
+        return new Dictionary();
+    }
+
+    public function setData(data: Dictionary) : Void {}
+
     public function getComponentNG(type : Any, entity : Entity = null) {
         if (entity == null) {
             entity = this.component.entity;
