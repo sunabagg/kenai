@@ -172,6 +172,7 @@ namespace sunaba::spatial {
             data["current"] = getCurrent();
             data["dopplerTracking"] = getDopplerTracking();
             data["far"] = getFar();
+            data["fov"] = getFov();
 
             return data;
         }
