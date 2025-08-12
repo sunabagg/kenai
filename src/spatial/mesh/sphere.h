@@ -51,7 +51,7 @@ namespace sunaba::spatial::mesh {
             sphereMesh->set_rings(rings);
         }
 
-        void onInit() override {
+        void onReady() override {
             sphereMesh = memnew(SphereMesh);
             MeshRenderer* meshRenderer = entity->getComponentByT<MeshRenderer>();
             meshRenderer->getNode()->set_mesh(sphereMesh);
