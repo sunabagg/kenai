@@ -48,23 +48,30 @@ class EntityData extends ScriptableObject {
         entity.name = name;
 
         for (i in 0...components.size()) {
-            var compname = components.keys().get(i);
+            var compname: String = components.keys().get(i);
             var compDict : Dictionary = components.get(compname);
             var isUserType : Bool = compDict.get("isUserType");
             var compType : String = compDict.get("type");
             var compData: Dictionary = compDict.get("data");
-            if (isUserType) {
-                var typeClass = std.Type.resolveClass(compType);
-                var instance = std.Type.createInstance(typeClass, []);
-                var behavior: Behavior = cast instance;
-                behavior.setData(compData);
+            if (isUserType == true) {
+                //trace(compType);
+                //var typeClass = std.Type.resolveClass(compType);
+                //var instance = std.Type.createInstance(typeClass, []);
+                //var behavior: Behavior = cast instance;
+                //behavior.setData(compData);
                 //entity.addComponent(behavior.component, compname);
             }
-            else {
-                var typeArr = compType.split("::");
-                var typeNamePtr = typeArr[typeArr.length - 1];
-                var typeName = StringTools.replace(typeNamePtr, "*", "");
+            else if (isUserType == false) {
+                var typeArr = compname.split("::");
+                var typeNameUser = typeArr[typeArr.length - 1];
+                var typeName = StringTools.replace(typeNameUser, ".user", "");
                 trace(typeName);
+                var typeMetatable = untyped __lua__("_G[typeName]");
+                trace(typeMetatable == null);
+                var typeInstance: Component = untyped __lua__("typeMetatable.new()");
+                trace(typeInstance == null);
+                entity.addComponent(typeInstance, compname);
+                typeInstance.setData(compData);
             }
         }
 
