@@ -169,6 +169,7 @@ namespace sunaba::spatial {
             Dictionary data;
 
             data["cullMask"] = getCullMask();
+            data["current"] = getCurrent();
 
             return data;
         }
