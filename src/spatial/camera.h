@@ -165,6 +165,10 @@ namespace sunaba::spatial {
             return node->unproject_position(position);
         }
 
+        Dictionary getData() override {
+            Dictionary data;
+        }
+
         void onInit() override {
             node = memnew(Camera3D);
             node->set_name("Camera");
