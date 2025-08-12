@@ -5,6 +5,16 @@ using namespace godot;
 
 namespace sunaba::spatial {
 
+    Vector3 strToVec3(String str) {
+        String strWithoutBrackets = str.replace("(", "").replace(")", "");
+        auto strarr = strWithoutBrackets.split(", ");
+        Vector3 vec;
+        vec.x = strarr[0].to_float();
+        vec.y = strarr[1].to_float();
+        vec.z = strarr[2].to_float();
+        return vec;
+    }
+
     void bindSpatialTransform(sol::state& lua) {
         lua.new_usertype<SpatialTransform>("SpatialTransform",  
             "new", sol::factories(
