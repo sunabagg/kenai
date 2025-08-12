@@ -44,8 +44,11 @@ namespace sunaba::spatial::mesh {
             capsuleMesh->set_rings(rings);
         }
 
-        void onReady() override {
+        void onInit() override {
             capsuleMesh = memnew(CapsuleMesh);
+        }
+
+        void onReady() override {
             MeshRenderer* meshRenderer = entity->getComponentByT<MeshRenderer>();
             meshRenderer->getNode()->set_mesh(capsuleMesh);
         }
