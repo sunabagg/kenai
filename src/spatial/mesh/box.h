@@ -49,8 +49,11 @@ namespace sunaba::spatial::mesh {
             boxMesh->set_subdivide_width(width);
         }
 
-        void onReady() override {
+        void onInit() override {
             boxMesh = memnew(BoxMesh);
+        }
+
+        void onReady() override {
             MeshRenderer* meshRenderer = entity->getComponentByT<MeshRenderer>();
             meshRenderer->getNode()->set_mesh(boxMesh);
         }
