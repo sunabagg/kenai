@@ -169,6 +169,8 @@ namespace sunaba::spatial {
             Dictionary data;
 
             data["cullMask"] = getCullMask();
+
+            return data;
         }
 
         void onInit() override {
