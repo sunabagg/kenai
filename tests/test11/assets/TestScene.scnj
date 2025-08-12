@@ -87,13 +87,6 @@
                "isUserType": false,
                "type": "sol.sunaba::core::Component*"
             },
-            "sol.sunaba::spatial::mesh::Box.user": {
-               "data": {
-                  "size": "(1.0, 1.0, 1.0)"
-               },
-               "isUserType": false,
-               "type": "sol.sunaba::core::Component*"
-            },
             "sol.sunaba::spatial::mesh::MeshRenderer.user": {
                "data": {
                   "castShadow": 1,
@@ -116,7 +109,15 @@
                },
                "isUserType": false,
                "type": "sol.sunaba::core::Component*"
+            },
+            "sol.sunaba::spatial::mesh::Box.user": {
+               "data": {
+                  "size": "(1.0, 1.0, 1.0)"
+               },
+               "isUserType": false,
+               "type": "sol.sunaba::core::Component*"
             }
+
          },
          "name": "Box"
       }
