@@ -30,12 +30,12 @@ class Main extends App {
         var sceneManager = sceneFile.toScene();
 
         printScene(sceneManager.scene);
-        //rootElement.addChild(sceneManager);
+        rootElement.addChild(sceneManager);
     }
 
     public static function printEntity(entity : Entity, indent : String = "    ") : Void {
         Sys.println(indent + "Entity: " + entity.name);
-        /*var spatialTransform = SpatialTransform.getFromEntity(entity);
+        var spatialTransform = SpatialTransform.getFromEntity(entity);
         if (spatialTransform != null) {
             var position = spatialTransform.position;
             var rotation = spatialTransform.rotation;
@@ -43,7 +43,7 @@ class Main extends App {
             var global = spatialTransform.global;
             Sys.println(indent + "    Transform: " + position.toString() + ", " + rotation.toString() + ", " + scale.toString());
             Sys.println(indent + "    GlobalTransform: " + global.toString());
-        }*/        
+        }      
         for (child in 0...entity.getChildCount()) {
             var childEntity = entity.getChild(child);
             printEntity(childEntity, indent + "    ");
