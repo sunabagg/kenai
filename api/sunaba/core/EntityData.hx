@@ -43,6 +43,18 @@ class EntityData extends ScriptableObject {
         return data;
     }
 
+    public function toEntity(): Entity {
+        var entity = new Entity();
+        entity.name = name;
+
+        for (childData in children) {
+            var child = childData.toEntity();
+            entity.addChild(child);
+        }
+
+        return entity;
+    }
+
     public override function getData(): Dictionary {
         var data = new Dictionary();
 
