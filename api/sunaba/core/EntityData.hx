@@ -47,6 +47,19 @@ class EntityData extends ScriptableObject {
         var entity = new Entity();
         entity.name = name;
 
+        for (i in 0...components.size()) {
+            var compname = components.keys().get(i);
+            var compDict : Dictionary = components.get(compname);
+            var isUserType : Bool = compDict.get("isUserType");
+            var compType : String = compDict.get("type");
+            if (isUserType) {
+                
+            }
+            else {
+
+            }
+        }
+
         for (childData in children) {
             var child = childData.toEntity();
             entity.addChild(child);
