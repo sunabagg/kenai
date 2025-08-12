@@ -26,6 +26,11 @@ class Main extends App {
         trace(io.loadText("app://TestScene.scnj"));
         sceneFile.setData(scenejson.toDictionary()); 
         trace(sceneFile.getData());
+
+        var sceneManager = sceneFile.toScene();
+
+        printScene(sceneManager.scene);
+        //rootElement.addChild(sceneManager);
     }
 
     public static function printEntity(entity : Entity, indent : String = "    ") : Void {
