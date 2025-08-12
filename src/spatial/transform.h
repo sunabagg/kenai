@@ -19,6 +19,15 @@ namespace sunaba::spatial
 {
     void bindSpatialTransform( sol::state& lua );
 
+    Vector3 strToVec3(String str) {
+        String strWithoutBrackets = str.replace("(", "").replace(")", "");
+        auto strarr = strWithoutBrackets.split(", ");
+        Vector3 vec;
+        vec.x = strarr[0].to_float();
+        vec.y = strarr[1].to_float();
+        vec.z = strarr[2].to_float();
+        return vec;
+    }
     
     class SpatialTransform : public Component
     {
@@ -272,9 +281,13 @@ namespace sunaba::spatial
         }
 
         void setData(Dictionary dict) override {
-            setPosition(dict["position"]);
-            setRotation(dict["rotation"]);
-            setScale(dict["scale"]);
+            UtilityFunctions::print(dict);
+            setPosition(strToVec3(dict["position"]));
+            setRotation(strToVec3(dict["rotation"]));
+            setScale(strToVec3(dict["scale"]));
+            UtilityFunctions::print(getPosition());
+            UtilityFunctions::print(getRotation());
+            UtilityFunctions::print(getScale());
         }
     };
 }
