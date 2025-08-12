@@ -167,6 +167,8 @@ namespace sunaba::spatial {
 
         Dictionary getData() override {
             Dictionary data;
+
+            data["cullMask"] = getCullMask();
         }
 
         void onInit() override {
