@@ -191,7 +191,7 @@ namespace sunaba::spatial {
             setFar(data["far"]);
             setFov(data["fov"]);
             setFrustumOffset(data["frustumOffset"]);
-            setHOffset(data["hOffset"];)
+            setHOffset(data["hOffset"]);
         }
 
         void onInit() override {
