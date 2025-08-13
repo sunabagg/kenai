@@ -54,11 +54,11 @@ class EntityData extends ScriptableObject {
             var compType : String = compDict.get("type");
             var compData: Dictionary = compDict.get("data");
             if (isUserType == true) {
-                trace(compType);
+                //trace(compType);
                 var typeClass = std.Type.resolveClass(compType);
-                trace(typeClass == null);
+                //trace(typeClass == null);
                 var instance = std.Type.createInstance(typeClass, []);
-                trace(instance == null);
+                //trace(instance == null);
                 var behavior: Behavior = cast instance;
                 entity.addComponent(behavior.component, compname);
                 behavior.setData(compData);
@@ -67,11 +67,11 @@ class EntityData extends ScriptableObject {
                 var typeArr = compname.split("::");
                 var typeNameUser = typeArr[typeArr.length - 1];
                 var typeName = StringTools.replace(typeNameUser, ".user", "");
-                trace(typeName);
+                //trace(typeName);
                 var typeMetatable = untyped __lua__("_G[typeName]");
-                trace(typeMetatable == null);
+                //trace(typeMetatable == null);
                 var typeInstance: Component = untyped __lua__("typeMetatable.new()");
-                trace(typeInstance == null);
+                //trace(typeInstance == null);
                 entity.addComponent(typeInstance, compname);
                 typeInstance.setData(compData);
             }
