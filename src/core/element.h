@@ -400,6 +400,19 @@ namespace sunaba::core {
             }
         }
 
+        int getProcessMode() {
+            if (node != nullptr) {
+                node->get_process_mode();
+            }
+        }
+
+        void setProcessMode(int mode) {
+            if (isRootElement) return;
+            if (node != nullptr) {
+                node->set_process_mode(static_cast<Node::ProcessMode>(mode));
+            }
+        }
+
         std::vector<Element*> getChildren();
 
         virtual void onInit() {
