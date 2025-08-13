@@ -51,7 +51,18 @@
          "components": {
             "sol.sunaba::spatial::Camera.user": {
                "data": {
-
+                  "cullMask": 1048575,
+                  "current": false,
+                  "dopplerTracking": 0,
+                  "far": 4000.0,
+                  "fov": 75.0,
+                  "frustumOffset": "(0.0, 0.0)",
+                  "hOffset": 0.0,
+                  "keepAspect": 1.0,
+                  "near": 0.0500000007450581,
+                  "projection": 0,
+                  "size": 1.0,
+                  "vOffset": 0.0
                },
                "isUserType": false,
                "type": "sol.sunaba::core::Component*"
@@ -87,6 +98,13 @@
                "isUserType": false,
                "type": "sol.sunaba::core::Component*"
             },
+            "sol.sunaba::spatial::mesh::Box.user": {
+               "data": {
+                  "size": "(1.0, 1.0, 1.0)"
+               },
+               "isUserType": false,
+               "type": "sol.sunaba::core::Component*"
+            },
             "sol.sunaba::spatial::mesh::MeshRenderer.user": {
                "data": {
                   "castShadow": 1,
@@ -109,15 +127,7 @@
                },
                "isUserType": false,
                "type": "sol.sunaba::core::Component*"
-            },
-            "sol.sunaba::spatial::mesh::Box.user": {
-               "data": {
-                  "size": "(1.0, 1.0, 1.0)"
-               },
-               "isUserType": false,
-               "type": "sol.sunaba::core::Component*"
             }
-
          },
          "name": "Box"
       }
