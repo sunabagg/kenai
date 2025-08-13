@@ -15,6 +15,15 @@ namespace sunaba::spatial {
     class Camera : public Component {
     protected:
         Camera3D* node;
+
+        Vector2 strToVec2(const String& str) {
+            Vector2 vec;
+            String strWithoutBrackets = str.strip_edges().replace("(", "").replace(")", "");
+            auto parts = strWithoutBrackets.split(", ");
+            vec.x = parts[0].to_float();
+            vec.y = parts[1].to_float();
+            return vec;
+        }
     public:
         int getCullMask() {
             return node->get_cull_mask();
@@ -190,7 +199,7 @@ namespace sunaba::spatial {
             setDopplerTracking(data["dopplerTracking"]);
             setFar(data["far"]);
             setFov(data["fov"]);
-            setFrustumOffset(data["frustumOffset"]);
+            setFrustumOffset(strToVec2(data["frustumOffset"]));
             setHOffset(data["hOffset"]);
             setKeepAspect(data["keepAspect"]);
             setNear(data["near"]);
