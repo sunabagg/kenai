@@ -6,7 +6,7 @@ import haxe.Exception;
 
 class RotateComponent extends Behavior {
     public var transform : SpatialTransform;
-    public override function onInit() {
+    public override function onReady() {
         transform = getComponent(SpatialTransform);
     }
 
