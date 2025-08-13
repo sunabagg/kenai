@@ -1,4 +1,4 @@
-package;
+package myComponents;
 
 import sunaba.core.Behavior;
 import sunaba.spatial.SpatialTransform;

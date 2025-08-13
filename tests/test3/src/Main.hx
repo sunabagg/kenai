@@ -6,7 +6,7 @@ import sunaba.spatial.SpatialTransform;
 import sunaba.spatial.mesh.MeshRenderer;
 import sunaba.spatial.mesh.Box;
 import sunaba.core.SceneManager;
-import RotateComponent;
+import myComponents.RotateComponent;
 
 class Main extends App {
     public static function main() {
