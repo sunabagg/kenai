@@ -18,7 +18,7 @@ func _init() -> void:
 	if not sbx_path.is_empty():
 		load_and_execute_sbx(sbx_path)
 	else:
-		load_and_execute_sbx("res://test3.sbx")
+		load_and_execute_sbx("res://test11.sbx")
 
 func _ready() -> void:
 	get_tree().root.theme = theme
