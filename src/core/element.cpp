@@ -33,6 +33,10 @@ void sunaba::core::bindElement(sol::state &lua) {
                 e->scriptInstance = table;
             }
         ),
+        "processMode", sol::property(
+            &Element::getProcessMode,
+            &Element::setProcessMode
+        ),
         "childEnteredTree", sol::property(
             [](Element* e) {
                 return e->childEnteredTree;
