@@ -189,6 +189,7 @@ namespace sunaba::spatial {
             setCurrent(data["current"]);
             setDopplerTracking(data["dopplerTracking"]);
             setFar(data["far"]);
+            setFov(data["fov"]);
         }
 
         void onInit() override {
