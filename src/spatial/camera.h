@@ -211,6 +211,9 @@ namespace sunaba::spatial {
         void onInit() override {
             node = memnew(Camera3D);
             node->set_name("Camera");
+        }
+
+        void onReady() override {
             SpatialTransform* transform = entity->getComponentByT<SpatialTransform>();
             if (transform) {
                 transform->getNode()->add_child(node);
