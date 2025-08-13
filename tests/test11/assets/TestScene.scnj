@@ -87,7 +87,7 @@
 
                },
                "isUserType": true,
-               "type": "RotateComponent"
+               "type": "myComponents.RotateComponent"
             },
             "sol.sunaba::spatial::SpatialTransform.user": {
                "data": {
