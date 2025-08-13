@@ -54,12 +54,14 @@ class EntityData extends ScriptableObject {
             var compType : String = compDict.get("type");
             var compData: Dictionary = compDict.get("data");
             if (isUserType == true) {
-                //trace(compType);
-                //var typeClass = std.Type.resolveClass(compType);
-                //var instance = std.Type.createInstance(typeClass, []);
-                //var behavior: Behavior = cast instance;
-                //behavior.setData(compData);
-                //entity.addComponent(behavior.component, compname);
+                trace(compType);
+                var typeClass = std.Type.resolveClass(compType);
+                trace(typeClass == null);
+                var instance = std.Type.createInstance(typeClass, []);
+                trace(instance == null);
+                var behavior: Behavior = cast instance;
+                entity.addComponent(behavior.component, compname);
+                behavior.setData(compData);
             }
             else if (isUserType == false) {
                 var typeArr = compname.split("::");
