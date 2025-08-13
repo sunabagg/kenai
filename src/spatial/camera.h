@@ -179,6 +179,7 @@ namespace sunaba::spatial {
             data["near"] = getNear();
             data["projection"] = getProjection();
             data["size"] = getSize();
+            data["vOffset"] = getVOffset();
 
             return data;
         }
