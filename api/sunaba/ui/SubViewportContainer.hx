@@ -13,7 +13,7 @@ extern class SubViewportContainer extends Container {
 
 abstract SubViewportContainerAbstract(SubViewportContainer) from SubViewportContainer to SubViewportContainer {
     @:from
-    public static function fromElement(element: sunaba.core.Element): sunaba.ui.SubViewportContainer {
+    public static function fromElement(element: sunaba.core.Element): sunaba.ui.SubViewportContainerAbstract {
         var subViewportContainer = sunaba.ui.SubViewportContainer.toSubViewportContainer(element);
         if (subViewportContainer.isNull()) {
             return null;
