@@ -78,7 +78,7 @@ namespace sunaba::spatial::mesh {
         }
 
         void setData(Dictionary dict) override {
-            setSize(dict["size"]);
+            setSize(strToVec3(dict["size"]));
         }
     };
 }
