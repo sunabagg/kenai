@@ -194,6 +194,7 @@ namespace sunaba::spatial {
             setHOffset(data["hOffset"]);
             setKeepAspect(data["keepAspect"]);
             setNear(data["near"]);
+            setProjection(data["projection"]);
         }
 
         void onInit() override {
