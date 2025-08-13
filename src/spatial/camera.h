@@ -193,6 +193,7 @@ namespace sunaba::spatial {
             setFrustumOffset(data["frustumOffset"]);
             setHOffset(data["hOffset"]);
             setKeepAspect(data["keepAspect"]);
+            setNear(data["near"]);
         }
 
         void onInit() override {
