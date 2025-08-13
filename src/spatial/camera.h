@@ -185,7 +185,7 @@ namespace sunaba::spatial {
         }
 
         void setData(Dictionary data) override {
-            
+            setCullMask(data["cullMask"]);
         }
 
         void onInit() override {
