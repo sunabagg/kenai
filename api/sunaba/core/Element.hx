@@ -13,6 +13,7 @@ extern class Element extends BaseObject {
     public var treeEntered: Event;
     public var treeExited: Event;
     public var treeExiting: Event;
+    public var processMode: Int;
     public function new();
     public function find(path: String): Element;
     public function getParent(): Element;
