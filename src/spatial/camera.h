@@ -187,6 +187,7 @@ namespace sunaba::spatial {
         void setData(Dictionary data) override {
             setCullMask(data["cullMask"]);
             setCurrent(data["current"]);
+            setDopplerTracking(data["dopplerTracking"]);
         }
 
         void onInit() override {
