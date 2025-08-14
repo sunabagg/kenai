@@ -404,6 +404,7 @@ namespace sunaba::core {
             if (node != nullptr) {
                 node->get_process_mode();
             }
+            return Node::PROCESS_MODE_INHERIT; // Default to inherit if node is null
         }
 
         void setProcessMode(int mode) {
