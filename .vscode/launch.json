@@ -440,6 +440,20 @@
             "cwd": "${command:cmake.buildDirectory}/sunaba",
             "preLaunchTask": "CMake: build",
             "internalConsoleOptions": "openOnSessionStart",
+        },
+        {
+            "name": "macOS Launch (Local) (studio)",
+            "type": "lldb-dap",
+            "request": "launch",
+            "program": "/Applications/Godot.app/Contents/MacOS/Godot",
+            "args": [
+                "--verbose",
+                "--path",
+                "${env:HOME}/sunaba-studio/template"
+            ],
+            "cwd": "${command:cmake.buildDirectory}/sunaba",
+            "preLaunchTask": "CMake: build",
+            "internalConsoleOptions": "openOnSessionStart",
         }
     ]
 }
