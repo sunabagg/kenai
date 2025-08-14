@@ -207,7 +207,7 @@ sunaba::desktop::Window* sunaba::core::Element::getWindow() {
     if (node == nullptr) {
         return nullptr;
     }
-    godot::Window* window = Object::cast_to<godot::Window>(node->get_window());
+    godot::Window* window = node->get_window();
     if (window == nullptr) {
         return nullptr;
     }
