@@ -449,7 +449,7 @@
             "args": [
                 "--verbose",
                 "--path",
-                "${env:HOME}/sunaba-studio/template"
+                "${workspaceFolder}/../sunaba-studio/template"
             ],
             "cwd": "${command:cmake.buildDirectory}/sunaba",
             "preLaunchTask": "CMake: build",
