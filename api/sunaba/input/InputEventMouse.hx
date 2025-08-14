@@ -1,5 +1,7 @@
 package sunaba.input;
 
+import sunaba.core.Resource;
+
 import sunaba.core.Vector2;
 
 @:native("InputEventMouse")

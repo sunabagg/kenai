@@ -1,5 +1,7 @@
 package sunaba.input;
 
+import sunaba.core.Resource;
+
 @:native("InputEventWithModifiers")
 extern class InputEventWithModifiers extends InputEventFromWindow {
     public var altPressed: Bool;

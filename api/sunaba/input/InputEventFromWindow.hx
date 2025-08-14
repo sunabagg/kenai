@@ -1,5 +1,7 @@
 package sunaba.input;
 
+import sunaba.core.Resource;
+
 @:native("InputEventFromWindow")
 extern class InputEventFromWindow extends InputEvent {
     public var windowId: Int;

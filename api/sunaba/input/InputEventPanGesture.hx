@@ -1,5 +1,7 @@
 package sunaba.input;
 
+import sunaba.core.Resource;
+
 @:native("InputEventPanGesture")
 extern class InputEventPanGesture extends InputEventGesture {
     public var delta: Vector2;

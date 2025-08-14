@@ -1,5 +1,7 @@
 package sunaba.input;
 
+import sunaba.core.Resource;
+
 @:native("InputEventMouseButton")
 extern class InputEventMouseButton extends InputEventMouse {
     public var buttonIndex: Int;

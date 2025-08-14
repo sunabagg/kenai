@@ -1,5 +1,7 @@
 package sunaba.input;
 
+import sunaba.core.Resource;
+
 @:native("InputEventScreenTouch")
 extern class InputEventScreenTouch extends InputEventFromWindow {
     public var cancelled: Bool;

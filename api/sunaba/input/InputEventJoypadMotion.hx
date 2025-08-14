@@ -1,5 +1,7 @@
 package sunaba.input;
 
+import sunaba.core.Resource;
+
 @:native("InputEventJoypadMotion")
 extern class InputEventJoypadMotion extends InputEvent {
     public var axis: Int;
