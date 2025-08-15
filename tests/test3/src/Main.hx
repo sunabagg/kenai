@@ -75,7 +75,7 @@ class Main extends App {
             var sceneData = sceneFile.getData();
             
             var ioManager: IoManager = untyped __lua__("_G.ioManager");
-            ioManager.saveVariant("user://TestScene.scnj", sceneData);
+            ioManager.saveVariant("user://TestScene.vscn", sceneData);
         }
         catch (e : Dynamic) {
             Sys.println("Error: " + e + " : " + e.stack);
