@@ -1,5 +1,7 @@
 package sunaba.input;
 
+import sunaba.core.Resource;
+
 @:native("InputEventMagnifyGesture")
 extern class InputEventMagnifyGesture extends InputEventGesture {
     public var factor: Float;

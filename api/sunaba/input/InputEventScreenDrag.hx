@@ -1,5 +1,7 @@
 package sunaba.input;
 
+import sunaba.core.Resource;
+
 @:native("InputEventScreenDrag")
 extern class InputEventScreenDrag extends InputEventFromWindow {
     public var index: Int;

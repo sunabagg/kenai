@@ -1,5 +1,7 @@
 package sunaba.input;
 
+import sunaba.core.Resource;
+
 @:native("InputEventMidi")
 extern class InputEventMidi extends InputEvent {
     public var channel: Int;

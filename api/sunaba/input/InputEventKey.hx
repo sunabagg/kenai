@@ -1,5 +1,7 @@
 package sunaba.input;
 
+import sunaba.core.Resource;
+
 @:native("InputEventKey")
 extern class InputEventKey extends InputEventWithModifiers {
     public var echo: Bool;

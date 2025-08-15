@@ -1,5 +1,7 @@
 package sunaba.input;
 
+import sunaba.core.Resource;
+
 @:native("InputEventGesture")
 extern class InputEventGesture extends InputEventWithModifiers {
     public var position: Vector2;

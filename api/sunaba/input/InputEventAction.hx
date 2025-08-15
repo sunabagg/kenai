@@ -1,5 +1,7 @@
 package sunaba.input;
 
+import sunaba.core.Resource;
+
 @:native("InputEventAction")
 extern class InputEventAction extends InputEvent {
     public var action: String;
