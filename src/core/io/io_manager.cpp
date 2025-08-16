@@ -54,9 +54,8 @@ namespace sunaba::core::io {
             if (dynamic_cast<SystemIoInterface*>(io) != nullptr) {
                 SystemIoInterface* sio = dynamic_cast<SystemIoInterface*>(io);
                 if (sio != nullptr) {
-                    if (StringUtils::beginsWith(path, sio->pathUri)) {
-                        return sio->getFileUri(path);
-                    }
+                    std::string uri = sio->getFileUri(path);
+                    if (uri != "") return uri;
                 }
             }
         }
