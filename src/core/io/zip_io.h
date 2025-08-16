@@ -34,6 +34,8 @@ namespace sunaba::core::io {
                 return path; // Return the original path if it doesn't match the URI
             }
         }
+
+        std::string getFileUri(const std::string &path) const override;
         
         std::string loadText(const std::string &path) const override;
         PackedByteArray loadBytes(const std::string &path) const override;
