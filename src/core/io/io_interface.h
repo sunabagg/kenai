@@ -27,7 +27,7 @@ namespace sunaba::core::io {
 
         virtual std::string getFilePath(const std::string &path) const { return pathUri + path; }
 
-        virtual std::string getFileUri(const std::string &path) const { return pathUri + path; } 
+        virtual std::string getFileUri(const std::string &path) const { return ""; } 
 
         virtual std::string loadText(const std::string &path) const { return ""; }
 
