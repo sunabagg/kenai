@@ -90,6 +90,10 @@ jobs:
           max-size: '10G'
           key: ${{ matrix.config.os }}-${{ matrix.build_type }}
 
+      - name: Tell sccache to use Actions cache
+        if: matrix.config.target == 'windows-amd64'
+        run: Add-Content -Path $env:GITHUB_ENV -Value "SCCACHE_GHA_ENABLED=true"
+
       - name: Run sccache-cache
         if: matrix.config.target == 'windows-amd64'
         uses: mozilla-actions/sccache-action@v0.0.9
