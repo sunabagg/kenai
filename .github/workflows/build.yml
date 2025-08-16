@@ -1,5 +1,8 @@
 name: Build
 
+env:
+  SCCACHE_GHA_ENABLED: "true"
+
 on:
   push:
     paths-ignore:
@@ -87,6 +90,10 @@ jobs:
           max-size: '10G'
           key: ${{ matrix.config.os }}-${{ matrix.build_type }}
 
+      - name: Run sccache-cache
+        if: matrix.config.target == 'windows-amd64'
+        uses: mozilla-actions/sccache-action@v0.0.9
+
       - name: Setup Vcpkg
         if: matrix.config.os != 'windows-11-arm' && matrix.config.os != 'macos-14' && matrix.config.target != 'android'
         uses: lukka/run-vcpkg@v11
@@ -100,8 +107,8 @@ jobs:
         run: |
           ${{ github.workspace }}/vcpkg/vcpkg install
 
-      - name: Configure
-        if: matrix.config.os == 'macos-14' || matrix.config.target == 'linux-amd64' || matrix.config.target == 'windows-amd64'
+      - name: Configure (macOS/Linux)
+        if: matrix.config.os == 'macos-14' || matrix.config.target == 'linux-amd64'
         # For Windows and Windows Arm, we handle configuration separately
         run: >
           mkdir GDExtension-build
@@ -112,6 +119,21 @@ jobs:
           -DCMAKE_BUILD_TYPE=${{ matrix.build_type }}
           -D CMAKE_C_COMPILER_LAUNCHER=ccache 
           -D CMAKE_CXX_COMPILER_LAUNCHER=ccache
+          --install-prefix ${{ github.workspace }}/install-${{ matrix.build_type }}
+          .
+
+      - name: Configure (Windows)
+        if: matrix.config.target == 'windows-amd64'
+        # For Windows and Windows Arm, we handle configuration separately
+        run: >
+          mkdir GDExtension-build
+
+          cmake
+          -B GDExtension-build
+          -G "Ninja"
+          -DCMAKE_BUILD_TYPE=${{ matrix.build_type }}
+          -D CMAKE_C_COMPILER_LAUNCHER=sccache 
+          -D CMAKE_CXX_COMPILER_LAUNCHER=sccache
           --install-prefix ${{ github.workspace }}/install-${{ matrix.build_type }}
           .
       
