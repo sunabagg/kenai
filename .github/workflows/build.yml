@@ -60,7 +60,7 @@ jobs:
       - name: Install Dependencies (Windows x64)
         if: matrix.config.target == 'windows-amd64'
         run: |
-          choco upgrade ccache ninja pkgconfiglite -y
+          choco upgrade ccache ninja pkgconfiglite sccache -y
 
       - name: Install Dependencies (Windows ARM64)
         if: matrix.config.os == 'windows-11-arm'
