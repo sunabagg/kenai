@@ -18,6 +18,10 @@ namespace sunaba::core::io {
         );
     }
 
+    std::string ZipIo::getFileUri(const std::string &path) const {
+        return StringUtils::replace(pathUri, "//", "/") + path;
+    }
+
     std::string ZipIo::loadText(const std::string &path) const {
         std::string realPath = getFilePath(path);
         if (!zip_reader->file_exists(realPath.c_str())) {
