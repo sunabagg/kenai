@@ -1,14 +1,14 @@
 name: Build
 
 on:
-  #push:
-  #  paths-ignore:
-  #    - '.gitignore'
-  #    - '*.md'
-  #    - '*.hx'
+  push:
+    paths-ignore:
+      - '.gitignore'
+      - '*.md'
+      - '*.hx'
   
   schedule:
-    - cron: '0 7 * * SUN' # run at 8 AM UTC/ 12 AM AKDT
+    - cron: '0 7 * * *' # run at 8 AM UTC/ 12 AM AKDT
     #- cron: '0 20 * * *' # run at 8 PM UTC/ 12 PM AKDT
 
   workflow_dispatch:
