@@ -49,12 +49,12 @@ namespace sunaba::core::io {
         return path;
     }
 
-    std::string IoManager::getFileUri(const std::string &path, const std::string &base_url) const {
+    std::string IoManager::getFileUri(const std::string &path) const {
         for (auto& io : interfaces) {
             if (dynamic_cast<SystemIoInterface*>(io) != nullptr) {
                 SystemIoInterface* sio = dynamic_cast<SystemIoInterface*>(io);
                 if (sio != nullptr) {
-                    if (sio->pathUri == base_url) {
+                    if (StringUtils::beginsWith(path, sio->pathUri)) {
                         return sio->getFileUri(path);
                     }
                 }
