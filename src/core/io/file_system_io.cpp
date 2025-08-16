@@ -49,6 +49,8 @@ namespace sunaba::core::io {
     }
     
     std::string FileSystemIo::getFileUri(const std::string &path) const {
+        if (!StringUtils::beginsWith(path, basePath))
+            return "";
         return StringUtils::replace(path, basePath, pathUri);
     }
 
